@@ -63,7 +63,7 @@ next free number in that subdomain.
   branch your session assigns.
 - Everything reaches `main` through a PR the owner reviews. Content PRs follow
   `docs/automation/publishing.md`.
-- CI (`.github/workflows/ci.yml`) runs `pnpm check` and both app builds; keep it green.
+- CI (`.github/workflows/ci.yml`) runs `pnpm check` and the Cloudflare app build; keep it green.
 
 ## Never
 
