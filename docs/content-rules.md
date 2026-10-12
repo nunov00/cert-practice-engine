@@ -26,6 +26,8 @@ reviewers use them as the rubric.
 - No "all of the above", "none of the above", or options that overlap so that
   two are both right.
 - Options are similar in length and grammar, so the answer isn't given away by form.
+  The key must not be the longest, most qualified option by habit; `pnpm validate`
+  warns when it is more than 1.5x longer than every distractor.
 - Stay inside the subdomain's scope as the outline defines it. If a topic is
   only arguably in scope, choose a different one.
 - The answer must not depend on a vendor product, a specific version, or a
