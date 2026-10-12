@@ -4,10 +4,8 @@ Status: **Draft for owner review**. Nothing in this document is built or schedul
 Covers next steps 1 (repo structure) and 3 (app architecture, accounts, payments).
 Step 2 (AAIR recipe) waits on confirmed domain weights.
 
-> **Note on the recipe format.** The `recipe-format.yaml` v0.1 mentioned in the brief
-> was not in the repo or the thread when this was written. Section 3 lists what the
-> engine needs a recipe to carry; once v0.1 is added, it becomes the source of truth
-> and this section will be reconciled against it.
+> **Recipe format.** This proposal follows the owner's recipe format v0.1, checked in at
+> `recipes/_format/recipe-format.v0.1.yaml`. Section 3.1 lists a few suggested additions for v0.2.
 
 ---
 
@@ -21,7 +19,7 @@ are the ones that are expensive to reverse or that only the owner can make.
 | D1 | Payment provider: merchant of record (Paddle) or plain Stripe | **Paddle** (handles VAT/GST worldwide, refunds, invoices; ~5% + 0.50 per sale) |
 | D2 | Stack: Next.js + Supabase on Vercel | **Yes** (one TypeScript toolchain, managed auth + Postgres, EU region) |
 | D3 | Free sample without an account | **Yes**, progress kept in the browser; account required only at purchase |
-| D4 | CISSP mock format (real exam is adaptive 100–150) | **Fixed 150 questions / 3 h** for v1, adaptive mode later once difficulty is calibrated |
+| D4 | CISSP mock format (real exam is adaptive 100–150) | **Fixed 150 questions / 3 h** for v1, adaptive mode later once difficulty is calibrated; set via the proposed `product.mock` (§3.1) |
 | D5 | Brand name and domain (must not contain exam names) | Owner to choose; not blocking until launch |
 
 Details and alternatives are in the sections referenced below (D1 → §6.4, D2 → §6.1,
@@ -41,17 +39,17 @@ cert-practice-engine/
 ├── CLAUDE.md                  # One line: @AGENTS.md  (Claude Code imports it)
 ├── README.md
 ├── recipes/
-│   ├── _schema/recipe.schema.json
+│   ├── _format/recipe-format.v0.1.yaml   # Owner's format definition
+│   ├── _schema/recipe.schema.json         # Machine-checkable version of it
 │   ├── cissp/
-│   │   ├── recipe.yaml        # Format, domains, weights, style, targets, product
-│   │   └── outline-2024.md    # Our own paraphrased topic map, never the issuer's text
+│   │   └── recipe.yaml        # Format, domains, weights, style, bank, product
 │   └── aair/
 │       └── recipe.yaml        # Added in step 2
 ├── bank/
 │   ├── _schema/question.schema.json
 │   ├── cissp/
 │   │   ├── d1/                # One folder per domain
-│   │   │   └── cissp-d1-000001.yaml
+│   │   │   └── cissp-d1-1.1-0001.yaml
 │   │   └── ...
 │   └── aair/
 ├── tools/                     # Content CLI: validate, dedupe, coverage, build
@@ -94,9 +92,11 @@ import line.
 
 - **Branches:** `content/<exam>/<run-id>` for generation runs, `fix/<question-id>` for
   flagged-question fixes, `feat/...` for app work.
-- **Question IDs:** `<exam>-d<domain>-<6 digits>`, assigned by the CLI, never reused.
+- **Question IDs:** `<exam>-<domain>-<subdomain>-<4 digits>` as in v0.1
+  (e.g. `cissp-d1-1.1-0042`), assigned by the CLI, never reused.
   Retired questions keep their file with `status: retired`.
-- **Outline versions:** each question carries `outline_version` (e.g. `cissp-2024`).
+- **Outline versions:** each question carries `outline_version`, the outline's
+  effective date as in the recipe (e.g. `"2024-04-15"`).
   When an issuer publishes a new outline, a new recipe version is added and the
   coverage report shows which questions still need re-checking against it.
 - **Language:** TypeScript for both `tools/` and `app/`, sharing one set of Zod schemas
@@ -104,88 +104,69 @@ import line.
 
 ---
 
-## 3. Recipe: what the engine needs from it
+## 3. Recipe format
 
-Pending the owner's v0.1, a recipe must at least provide:
+The owner's draft **v0.1** is checked in verbatim at
+[`recipes/_format/recipe-format.v0.1.yaml`](../../recipes/_format/recipe-format.v0.1.yaml)
+and is the source of truth. Everything in this proposal reads from it:
 
-| Block | Fields the engine reads |
-|-------|------------------------|
-| `exam` | `id`, `issuer`, `display_name`, `outline_version`, `outline_effective_date`, `outline_source_url` |
-| `format` | `question_count` (or min/max), `duration_minutes`, `delivery` (`linear` / `adaptive`), `scoring` (scale, pass mark, for display only), `option_count` |
-| `domains` | `id`, `name`, `weight` (must sum to 100), optional `subtopics` (our own paraphrase) |
-| `style` | stem length, "BEST/MOST/FIRST" framing rules, scenario ratio, banned patterns (e.g. "all of the above") |
-| `bank_targets` | target questions per domain, difficulty mix |
-| `product` | `free_per_domain`, `price` (amount, currency), `access_days`, `mock` settings (length, time, number of distinct mock forms) |
+| v0.1 block | What the engine uses it for |
+|------------|-----------------------------|
+| `exam` (`id`, `name`, `issuer`, `disclaimer`, `outline.source_url/version/last_checked`) | Exam pages, the per-exam non-affiliation line, tagging every question with `outline.version`, and the outline-change watch (§5.1) |
+| `format` (`delivery`, `questions`, `duration_minutes`, `scoring`, `question_types`) | Mock exam shape (§6.5); scoring is shown for information only |
+| `style` (`voice`, `options_per_question`, `rules`) | Generator prompt and checker rubric; `options_per_question` is also enforced by the validator |
+| `domains` (`id`, `name`, `weight` as a fraction, `subdomains` with `target_questions`) | Mock blueprints, readiness weighting, coverage gaps that drive generation |
+| `bank` (`target_total`, `difficulty_mix`, `review.*`) | Coverage report, generation planning, auto-flag thresholds (§6.6) |
+| `product` (`free_sample_per_domain`, `unlock.price_chf/access_days`, `readiness.*`) | Free sample, checkout price and access length, the "looks ready" rule (§6.5) |
 
-Example of how CISSP would read (illustrative only):
-
-```yaml
-exam:
-  id: cissp
-  issuer: ISC2
-  outline_version: cissp-2024
-  outline_effective_date: 2024-04-15
-format:
-  delivery: adaptive          # real exam; our mock is linear per D4
-  question_count: {min: 100, max: 150}
-  duration_minutes: 180
-  scoring: {scale: [0, 1000], pass: 700}
-  option_count: 4
-domains:
-  - {id: d1, name: Security and Risk Management,          weight: 16}
-  - {id: d2, name: Asset Security,                        weight: 10}
-  - {id: d3, name: Security Architecture and Engineering, weight: 13}
-  - {id: d4, name: Communication and Network Security,    weight: 13}
-  - {id: d5, name: Identity and Access Management,        weight: 13}
-  - {id: d6, name: Security Assessment and Testing,       weight: 12}
-  - {id: d7, name: Security Operations,                   weight: 13}
-  - {id: d8, name: Software Development Security,         weight: 10}
-product:
-  free_per_domain: 10
-  price: {amount: 29, currency: CHF}
-  access_days: 120
-  mock: {questions: 150, minutes: 180, forms: 4}
-```
-
-Mock blueprints are derived from weights with largest-remainder rounding (CISSP at 150:
+Mock blueprints are derived from `weight` with largest-remainder rounding (CISSP at 150:
 24 / 15 / 20 / 20 / 19 / 18 / 19 / 15), so changing a weight in the recipe is the only
 change needed when an outline updates.
+
+### 3.1 Proposed additions for v0.2 (small, all optional)
+
+These are gaps the engine would hit; each is a suggestion for the owner to accept or drop.
+
+1. **`product.mock`**: `{ questions, minutes, forms }`. `format` describes the real exam,
+   but for an adaptive exam the engine still needs one concrete mock length (see D4).
+   For linear exams like AAIR it can default to `format`.
+2. **Question `provenance`**: `{ generated_by, run_id, checked_by, check_verdict }` on each
+   question, so the PR summary and later audits can tell which run produced what.
+3. **Question `sample: true`**: marks the questions in the free sample, so the sample is
+   stable and hand-pickable rather than "first 10 per domain".
+4. **Validation rules** written down: domain weights sum to 1.0, subdomain targets sum
+   to roughly `bank.target_total`, `difficulty_mix` sums to 1.0. The validator enforces them.
+5. **Subdomain titles** use the outline's short headings as labels only; no longer outline
+   text is copied into the repo (keeps with the originality rule).
 
 ---
 
 ## 4. Question format
 
+As in v0.1, one file per question, plus the two proposed fields from §3.1:
+
 ```yaml
-id: cissp-d3-000042
-exam: cissp
-outline_version: cissp-2024
-domain: d3
-subtopic: d3.cryptography          # from our paraphrased topic map
-type: single_choice
-difficulty: 3                      # 1–5, generator estimate, later recalibrated from stats
-stem: >
-  A company ...
-options:
-  A: ...
-  B: ...
-  C: ...
-  D: ...
-answer: C
+id: cissp-d1-1.1-0042          # <exam>-<domain>-<subdomain>-<4 digits>
+subdomain: "1.1"
+difficulty: medium             # easy | medium | hard
+stem: "..."
+options: { A: "...", B: "...", C: "...", D: "..." }
+answer: B
 explanation:
-  correct: Why C is the best answer.
-  distractors:
-    A: Why A is wrong or less suitable.
-    B: ...
-    D: ...
-sample: false                      # true = part of the free sample
-status: published                  # draft | published | flagged | retired
-provenance:
-  generated_by: claude | codex | human
-  run_id: 2026-10-20-cissp-d3-a
-  checked_by: checker run id
+  why_correct: "..."
+  why_not: { A: "...", C: "...", D: "..." }
+status: published              # draft | in_review | published | retired
+outline_version: "2024-04-15"
+sample: false                  # proposed (§3.1)
+provenance:                    # proposed (§3.1)
+  generated_by: claude         # claude | codex | human
+  run_id: 2026-10-20-cissp-d1-a
+  checked_by: 2026-10-20-cissp-d1-a-check
   check_verdict: pass
-  revisions: []                    # short notes when a published question is edited
 ```
+
+Exam and domain come from the ID and the folder, so they are not repeated in the file;
+the validator checks that the ID, folder and `subdomain` agree with the recipe.
 
 No question ever quotes or references official, leaked or vendor practice material.
 `docs/content-rules.md` states this and the checker enforces it as best it can (see §5).
@@ -225,6 +206,16 @@ recipe + coverage gaps
 Questions the checker rejects never enter the PR; they go into the PR summary with the
 reason, so the owner can see the reject rate per run. A rising reject rate is a signal
 to adjust the recipe's style rules or the generation prompt.
+
+### 5.1 Outline-change watch
+
+v0.1 has `exam.outline.last_checked`, updated by a scheduled task. Proposed behaviour:
+the task fetches `source_url`, compares it with the last snapshot, and if anything
+changed opens an issue (or PR updating `last_checked` only) describing the difference.
+It never edits weights or domains itself; the owner does that in a recipe PR. Like all
+automation, this is documented now and scheduled only after approval.
+
+### 5.2 Independence
 
 The generator and checker should be different runs with different instructions, and
 ideally alternate models (e.g. Claude generates, Codex checks, or vice versa), so the
@@ -266,7 +257,7 @@ answer keys would then be downloadable by anyone.
 ### 6.3 Accounts (D3)
 
 - **Free sample without sign-up.** Anyone can drill the free questions
-  (`free_per_domain` from the recipe). Progress lives in browser storage.
+  (`product.free_sample_per_domain` from the recipe, 10 for CISSP). Progress lives in browser storage.
 - **Sign-up at purchase**, or earlier if the learner wants progress synced. Email
   magic link plus Google sign-in, both via Supabase Auth. No passwords to store.
 - On first sign-in, browser progress is merged into the account.
@@ -310,28 +301,32 @@ Buying again while active extends `expires_at` by `access_days`. A refund webhoo
 | **Domain drills** | Pick a domain (or subtopic), get unanswered and due-for-review questions first; immediate feedback with explanation per option |
 | **Mock exams** (D4) | Fixed forms built from the recipe blueprint, real time limit, no feedback until the end, results by domain. CISSP v1: 150 questions / 180 min, linear, labelled as "CAT-length practice", not a simulation of adaptive scoring. AAIR: 90 / 150 min |
 | **Weak-spot review** | Queue of missed questions with spaced repetition (1, 3, 7, 14 days), plus extra drills from the lowest-readiness subtopics |
-| **Readiness score** | Per domain: recency-weighted accuracy on the last ~40 attempts, shrunk toward 50% when there are few attempts (so 3/3 correct doesn't read as "ready"), shown with a confidence band. Overall readiness is the domain scores weighted by the recipe weights. Shown as bands (Not yet / Getting there / Likely ready), never as a predicted official score or pass guarantee |
+| **Readiness score** | Per domain: recency-weighted accuracy, shrunk toward 50% when there are few attempts (so 3/3 correct doesn't read as "ready"). The "looks ready" message follows `product.readiness` in the recipe: at least `min_answered` (CISSP: 600) questions answered **and** every domain at or above `min_accuracy_per_domain` (75%). Below that, bands show progress (Not yet / Getting there). Never shown as a predicted official score or pass guarantee |
 | **Report question** | Button on every question: wrong key, ambiguous, typo, out of scope, other + free text |
 
 ### 6.6 Auto-flagging suspect questions
 
-Computed nightly from attempts once a question has enough answers (e.g. n ≥ 30):
+Computed nightly from attempts, using the thresholds in the recipe's `bank.review`:
 
-- reports from 3+ distinct users, or
-- fewer than 25% correct (possible wrong key), or
-- one distractor chosen more often than the keyed answer, or
-- negative discrimination (strong learners do worse on it than weak ones).
+- **Report rate** above `retire_if_report_rate_above` (CISSP: 5% of the learners who
+  saw it), counted only once at least 20 learners have seen the question, or
+- **Common wrong answer**: one distractor chosen by more than
+  `flag_if_common_wrong_answer_above` (50%) of answers, a likely bad key, after at
+  least 30 answers.
 
-A flagged question is pulled from mocks and drills immediately (status overlay in the
-database, no deploy needed) and listed in the weekly steering digest. The fix happens in
-the repo via a `fix/<id>` PR; on merge the overlay is cleared.
+A question that crosses a threshold is hidden from mocks and drills immediately (a status
+overlay in the database, no deploy needed) and listed in the weekly steering digest.
+Retiring or fixing it happens in the repo via a `fix/<id>` PR, so `status: retired`
+in the bank is always a human-approved change; on merge the overlay is cleared.
+The minimum-sample counts (20, 30) are proposed engine defaults; they could move into
+`bank.review` in v0.2 if the owner wants them per exam.
 
 ### 6.7 Data model (Postgres)
 
 | Table | Purpose |
 |-------|---------|
 | `exams` | Synced from recipes |
-| `questions` | Synced from bank; `status`, `content_hash`, `outline_version` |
+| `questions` | Synced from bank; `status`, `difficulty`, `sample`, `content_hash`, `outline_version` |
 | `question_overrides` | Runtime flag overlay (auto-flag, manual hide) |
 | `entitlements` | Who can access which exam until when |
 | `payment_events` | Raw webhook log, idempotency key |
@@ -346,8 +341,9 @@ server routes that check entitlement.
 
 ### 6.8 Legal and trust pages
 
-- Footer on every page: "Not affiliated with, endorsed by, or sponsored by ISC2 or
-  ISACA. CISSP is a registered mark of ISC2. AAIR is a mark of ISACA." Exam names
+- Every exam page shows that recipe's `exam.disclaimer`; the site footer carries a
+  general line ("Not affiliated with, endorsed by, or sponsored by ISC2 or ISACA.
+  CISSP is a registered mark of ISC2. AAIR is a mark of ISACA."). Exam names
   appear only descriptively (on exam pages), never in the brand, logo or domain.
 - Terms, privacy policy, refund policy. With Paddle, Paddle's buyer terms cover the
   sale; the site's own terms cover access and acceptable use.
@@ -373,9 +369,9 @@ change price or free sample size in the recipe.
 
 ## 8. Suggested build order (each phase starts only on owner approval)
 
-1. **Skeleton:** `AGENTS.md`, `CLAUDE.md`, folders, JSON Schemas, `tools validate`,
-   content CI, PR template, `docs/content-rules.md`. Add the owner's recipe v0.1 and the
-   CISSP recipe.
+1. **Skeleton:** `AGENTS.md`, `CLAUDE.md`, folders, JSON Schema for the recipe and
+   question formats, `tools validate`, content CI, PR template, `docs/content-rules.md`,
+   and the CISSP recipe filled in from v0.1 (subdomains from the official outline).
 2. **First content:** one manual generation + check run per CISSP domain to tune the
    prompts and the PR format before anything is scheduled.
 3. **App MVP:** free drills from the sample, no accounts yet.
