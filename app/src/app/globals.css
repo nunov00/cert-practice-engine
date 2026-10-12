@@ -52,12 +52,16 @@ a {
 .container {
   max-width: 760px;
   margin: 0 auto;
-  padding: 0 16px;
+  /* Sides only, so main/footer keep their vertical padding. */
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
 }
 
 header.site {
   border-bottom: 1px solid var(--border);
   background: var(--surface);
+  /* Installed on iPhone, content runs under the status bar. */
+  padding-top: env(safe-area-inset-top);
 }
 header.site .container {
   display: flex;
@@ -79,7 +83,7 @@ footer.site {
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: 0.85rem;
-  padding: 24px 0 40px;
+  padding: 24px 0 calc(40px + env(safe-area-inset-bottom));
 }
 
 h1 {
@@ -260,4 +264,14 @@ h2 {
 .option.correct,
 .option.wrong {
   box-shadow: none;
+}
+
+header.site .small-button {
+  padding: 5px 12px;
+  font-size: 0.875rem;
+}
+.install-hint {
+  margin: 0;
+  max-width: 55%;
+  text-align: right;
 }

@@ -9,6 +9,6 @@ Date: 2026-10-12. Decided by: owner, approving proposal 0001 as recommended.
 | D3 | Free sample usable **without an account**; sign-up at purchase |
 | D4 | CISSP mock: **fixed 150 questions / 180 minutes**, linear (`product.mock`) |
 | — | Recipe format **v0.2**: adds `product.mock`, question `sample` and `provenance`, written validation rules |
-| D5 | Brand name and domain: **open**, needed before launch; must not contain exam names |
+| D5 | Brand name and domain: name is **Knowmark** (see 0003); domain still to buy |
 
 Recipe format v0.1 (owner's draft) remains in `recipes/_format/` for history.
