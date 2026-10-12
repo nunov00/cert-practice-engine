@@ -7,6 +7,8 @@ import type { Issue, Question, Recipe } from "./types.ts";
 
 const EPS = 1e-9;
 const NEAR_DUPLICATE_THRESHOLD = 0.8;
+/** Warn when the key is this much longer than every distractor (a test-wise giveaway). */
+const KEY_LENGTH_RATIO = 1.5;
 
 function compileSchema(ajv: Ajv2020, root: string, rel: string) {
   return ajv.compile(JSON.parse(readFileSync(join(root, rel), "utf8")));
@@ -110,6 +112,12 @@ export function checkQuestion(q: Question, file: string, recipe: Recipe | undefi
   if (new Set(texts).size !== texts.length) err(`two options have the same text`);
   if (texts.some((t) => /\b(all|none) of the above\b/.test(t))) {
     err(`"all/none of the above" options are not allowed`);
+  }
+
+  const keyLength = q.options[q.answer]?.length ?? 0;
+  const longestWrong = Math.max(0, ...wrong.map((k) => q.options[k]?.length ?? 0));
+  if (longestWrong > 0 && keyLength / longestWrong > KEY_LENGTH_RATIO) {
+    warn(`answer is ${(keyLength / longestWrong).toFixed(1)}x longer than any distractor; balance option lengths`);
   }
 
   if (q.outline_version !== recipe.exam.outline.version && q.status !== "retired") {

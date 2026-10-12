@@ -97,6 +97,15 @@ test("id, subdomain and location must agree with the recipe", () => {
   assert.ok(errors(fixture([question({ subdomain: "1.8" })])).some((m) => m.includes("id says subdomain")));
 });
 
+test("a key much longer than every distractor is a warning", () => {
+  const q = question({
+    options: { A: "Insurance", B: "Present the assessment results to senior management for a treatment decision", C: "Firewall", D: "Pen test" },
+  });
+  const root = fixture([q]);
+  assert.deepEqual(errors(root), []);
+  assert.ok(warnings(root).some((m) => m.includes("balance option lengths")));
+});
+
 test("published questions need a passing independent check", () => {
   const q = question({ provenance: { generated_by: "claude", run_id: "r", check_verdict: "pending" } });
   assert.ok(errors(fixture([q])).some((m) => m.includes("check_verdict: pass")));
