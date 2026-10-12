@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DomainList } from "@/components/DomainList";
-import { formatDuration, formatQuestionCount, getExam, listExams, percent, sampleQuestions } from "@/lib/content";
+import { formatDuration, formatQuestionCount, getExam, isOpenAccess, listExams, percent, questionsFor } from "@/lib/content";
 
 type Params = { exam: string };
 
@@ -22,15 +22,17 @@ export default async function ExamPage({ params }: { params: Promise<Params> }) 
     id: d.id,
     name: d.name,
     weight: percent(d.weight),
-    questionIds: sampleQuestions(exam.id, d.id).map((q) => q.id),
+    questionIds: questionsFor(exam.id, d.id).map((q) => q.id),
   }));
 
   return (
     <>
       <h1>{exam.name} practice</h1>
       <p className="lead">
-        Free sample: up to {exam.free_sample_per_domain} questions per domain, written against the {exam.issuer} exam
-        outline effective {exam.outline_version}.
+        {isOpenAccess()
+          ? `${exam.published_questions} questions so far, more added regularly`
+          : `Free sample: up to ${exam.free_sample_per_domain} questions per domain`}
+        , written against the {exam.issuer} exam outline effective {exam.outline_version}.
       </p>
 
       <dl className="facts">
@@ -55,7 +57,7 @@ export default async function ExamPage({ params }: { params: Promise<Params> }) 
       </dl>
 
       <h2>Domains</h2>
-      <DomainList examId={exam.id} domains={domains} />
+      <DomainList examId={exam.id} domains={domains} free={!isOpenAccess()} />
 
       <p className="muted small" style={{ marginTop: 32 }}>
         {exam.disclaimer}

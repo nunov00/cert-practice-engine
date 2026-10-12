@@ -10,7 +10,7 @@ Order revised 2026-10-12 by the owner: **accounts and payments come last**.
 | 1 | Repo skeleton: recipes, bank, validator, CI, runbooks | Done (#2) |
 | 2 | First manual CISSP content run (Domain 1, 20 questions, free sample) | Done (#3) |
 | 3 | Free-drills web app on Cloudflare Workers, manual deploy | Done (#4) |
-| 3a | Installable app (iPhone home screen, Chrome install), offline free drills | In progress |
+| 3a | Installable app (iPhone home screen, Chrome install), offline free drills | Done (#5) |
 | 3b | Brand name and custom domain (decision D5) | Name done: Knowmark (decision 0003). Domain moved to phase 8 |
 | 4 | CISSP content for domains 2–8 (manual runs, same pipeline) | Next |
 | 5 | Mock exams, weak-spot review, readiness score, report-question button | Planned |
@@ -29,9 +29,12 @@ Kept here so it isn't lost while the free product grows. Design is in proposal
   CHF 29 / 120 days), checkout via a provider interface so it can be swapped.
 - `entitlements` table driven by verified, idempotent payment webhooks; refunds
   end access.
-- Paid questions served only by server routes that check entitlement; until then
-  the app ships only the free sample (`tools/src/build.ts`, guarded by
-  `app/test/content.test.ts`).
+- Paid questions served only by server routes that check entitlement. Until then
+  every published question is open to everyone (decision 0004). Switching on the
+  10-free-questions limit is part of this phase: set `PUBLIC_ACCESS` to
+  `free-sample` in `tools/src/build.ts` and pick the sample questions. Questions
+  already shipped while open should be treated as public for good, so the paid
+  bank should mostly be questions published after the switch.
 - Runs on Cloudflare Workers (decision 0002), so server code uses Web APIs.
 
 Owner prerequisites when this phase starts: a Supabase project, a Paddle account,

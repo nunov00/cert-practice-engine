@@ -11,7 +11,7 @@ export interface DomainSummary {
   questionIds: string[];
 }
 
-export function DomainList({ examId, domains }: { examId: string; domains: DomainSummary[] }) {
+export function DomainList({ examId, domains, free }: { examId: string; domains: DomainSummary[]; free: boolean }) {
   // Progress lives in the browser, so it is read after hydration.
   const [progress, setProgress] = useState<Progress>(emptyProgress);
   useEffect(() => setProgress(loadProgress()), []);
@@ -35,7 +35,7 @@ export function DomainList({ examId, domains }: { examId: string; domains: Domai
               </div>
               {stats.total > 0 ? (
                 <Link className="button" href={`/exams/${examId}/drill/${d.id}`}>
-                  {stats.answered > 0 ? "Drill again" : `Start ${stats.total} free questions`}
+                  {stats.answered > 0 ? "Drill again" : `Start ${stats.total}${free ? " free" : ""} questions`}
                 </Link>
               ) : (
                 <span className="pill">Coming soon</span>
