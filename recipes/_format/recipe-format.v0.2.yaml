@@ -1,0 +1,91 @@
+# Certification "recipe" format: one file per exam, v0.2
+# The engine reads this file; nothing exam-specific lives in code.
+# Machine-checkable version: recipes/_schema/recipe.schema.json
+#
+# Changes from v0.1 (approved 2026-10-12, proposal 0001 §3.1):
+#   - format_version field
+#   - product.mock: concrete mock length/time/forms (needed for adaptive exams)
+#   - questions gain `sample` and `provenance`
+#   - validation rules below are enforced by `pnpm validate`
+#
+# Validation rules:
+#   - domain weights sum to 1.0
+#   - bank.difficulty_mix sums to 1.0
+#   - subdomain ids start with the domain number ("1.x" under d1)
+#   - sum of subdomain target_questions equals bank.target_total
+#   - subdomain titles are the outline's short headings, used as labels only;
+#     no longer outline text is copied into the repo
+
+format_version: "0.2"
+
+exam:
+  id: cissp
+  name: "CISSP"                     # display name only
+  issuer: "ISC2"
+  disclaimer: "Independent practice material. Not affiliated with or endorsed by ISC2."
+  outline:
+    source_url: "https://www.isc2.org/certifications/cissp/cissp-certification-exam-outline"
+    version: "2024-04-15"           # effective date of the outline we built against
+    last_checked: "2026-10-12"      # the outline watch updates this and flags changes
+
+format:                             # the real exam, for information and mock defaults
+  delivery: adaptive                # adaptive | linear
+  questions: { min: 100, max: 150 } # or a single number for linear exams, e.g. 90
+  duration_minutes: 180
+  scoring: { scale: [0, 1000], pass: 700 }
+  question_types: [single_choice]   # extendable later: multi_select, ordering
+
+style:                              # tells the generator what "exam-like" means here
+  voice: "managerial, best-answer, scenario-based"
+  options_per_question: 4
+  rules:
+    - "Exactly one best answer; distractors plausible, not absurd"
+    - "No 'all of the above' or 'none of the above'"
+    - "Test judgment and application, not trivia recall"
+
+domains:
+  - id: d1
+    name: "Security and Risk Management"
+    weight: 0.16
+    subdomains:
+      - { id: "1.1", title: "<outline heading>", target_questions: 20 }
+  # ... every domain lists all of its subdomains
+
+bank:
+  target_total: 1500
+  difficulty_mix: { easy: 0.2, medium: 0.5, hard: 0.3 }
+  review:
+    independent_check: true
+    retire_if_report_rate_above: 0.05
+    flag_if_common_wrong_answer_above: 0.5
+
+product:
+  free_sample_per_domain: 10
+  unlock: { price_chf: 29, access_days: 120 }
+  readiness:
+    min_answered: 600
+    min_accuracy_per_domain: 0.75
+  mock:                             # NEW in v0.2
+    questions: 150
+    minutes: 180
+    forms: 4                        # distinct fixed mock exams
+
+# ---------------------------------------------------------------
+# Each question: bank/<exam>/<domain>/<id>.yaml
+# Machine-checkable version: bank/_schema/question.schema.json
+#
+# id: cissp-d1-1.1-0042             # <exam>-<domain>-<subdomain>-<4 digits>
+# subdomain: "1.1"
+# difficulty: medium                # easy | medium | hard
+# stem: "..."
+# options: { A: "...", B: "...", C: "...", D: "..." }
+# answer: B
+# explanation: { why_correct: "...", why_not: { A: "...", C: "...", D: "..." } }
+# status: published                 # draft | in_review | published | retired
+# outline_version: "2024-04-15"
+# sample: false                     # NEW: part of the free sample
+# provenance:                       # NEW
+#   generated_by: claude            # claude | codex | human
+#   run_id: 2026-10-20-cissp-d1-a
+#   checked_by: 2026-10-20-cissp-d1-a-check   # optional until checked
+#   check_verdict: pass             # pass | fail | pending
