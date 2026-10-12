@@ -1,0 +1,147 @@
+# CISSP recipe. Format: recipes/_format/recipe-format.v0.2.yaml
+# Domains, weights and subdomain headings checked against the official
+# outline (effective 2024-04-15) on 2026-10-12. Headings are short labels
+# only; "(e.g., ...)" examples from the outline are dropped.
+# Subdomain targets split each domain's share of bank.target_total evenly.
+
+format_version: "0.2"
+
+exam:
+  id: cissp
+  name: "CISSP"
+  issuer: "ISC2"
+  disclaimer: "Independent practice material. Not affiliated with or endorsed by ISC2."
+  outline:
+    source_url: "https://www.isc2.org/certifications/cissp/cissp-certification-exam-outline"
+    version: "2024-04-15"
+    last_checked: "2026-10-12"
+
+format:
+  delivery: adaptive
+  questions: { min: 100, max: 150 }
+  duration_minutes: 180
+  scoring: { scale: [0, 1000], pass: 700 }
+  question_types: [single_choice]
+
+style:
+  voice: "managerial, best-answer, scenario-based"
+  options_per_question: 4
+  rules:
+    - "Exactly one best answer; distractors plausible, not absurd"
+    - "No 'all of the above' or 'none of the above'"
+    - "Test judgment and application, not trivia recall"
+
+domains:
+  - id: d1
+    name: "Security and Risk Management"
+    weight: 0.16            # 240 of 1500 target questions
+    subdomains:
+      - { id: "1.1", title: "Understand, adhere to, and promote professional ethics", target_questions: 20 }
+      - { id: "1.2", title: "Understand and apply security concepts", target_questions: 20 }
+      - { id: "1.3", title: "Evaluate and apply security governance principles", target_questions: 20 }
+      - { id: "1.4", title: "Understand legal, regulatory, and compliance issues that pertain to information security in a holistic context", target_questions: 20 }
+      - { id: "1.5", title: "Understand requirements for investigation types", target_questions: 20 }
+      - { id: "1.6", title: "Develop, document, and implement security policy, standards, procedures, and guidelines", target_questions: 20 }
+      - { id: "1.7", title: "Identify, analyze, assess, prioritize, and implement Business Continuity (BC) requirements", target_questions: 20 }
+      - { id: "1.8", title: "Contribute to and enforce personnel security policies and procedures", target_questions: 20 }
+      - { id: "1.9", title: "Understand and apply risk management concepts", target_questions: 20 }
+      - { id: "1.10", title: "Understand and apply threat modeling concepts and methodologies", target_questions: 20 }
+      - { id: "1.11", title: "Apply Supply Chain Risk Management (SCRM) concepts", target_questions: 20 }
+      - { id: "1.12", title: "Establish and maintain a security awareness, education, and training program", target_questions: 20 }
+  - id: d2
+    name: "Asset Security"
+    weight: 0.1            # 150 of 1500 target questions
+    subdomains:
+      - { id: "2.1", title: "Identify and classify information and assets", target_questions: 25 }
+      - { id: "2.2", title: "Establish information and asset handling requirements", target_questions: 25 }
+      - { id: "2.3", title: "Provision information and assets securely", target_questions: 25 }
+      - { id: "2.4", title: "Manage data lifecycle", target_questions: 25 }
+      - { id: "2.5", title: "Ensure appropriate asset retention", target_questions: 25 }
+      - { id: "2.6", title: "Determine data security controls and compliance requirements", target_questions: 25 }
+  - id: d3
+    name: "Security Architecture and Engineering"
+    weight: 0.13            # 195 of 1500 target questions
+    subdomains:
+      - { id: "3.1", title: "Research, implement and manage engineering processes using secure design principles", target_questions: 20 }
+      - { id: "3.2", title: "Understand the fundamental concepts of security models", target_questions: 20 }
+      - { id: "3.3", title: "Select controls based upon systems security requirements", target_questions: 20 }
+      - { id: "3.4", title: "Understand security capabilities of Information Systems (IS)", target_questions: 20 }
+      - { id: "3.5", title: "Assess and mitigate the vulnerabilities of security architectures, designs, and solution elements", target_questions: 20 }
+      - { id: "3.6", title: "Select and determine cryptographic solutions", target_questions: 19 }
+      - { id: "3.7", title: "Understand methods of cryptanalytic attacks", target_questions: 19 }
+      - { id: "3.8", title: "Apply security principles to site and facility design", target_questions: 19 }
+      - { id: "3.9", title: "Design site and facility security controls", target_questions: 19 }
+      - { id: "3.10", title: "Manage the information system lifecycle", target_questions: 19 }
+  - id: d4
+    name: "Communication and Network Security"
+    weight: 0.13            # 195 of 1500 target questions
+    subdomains:
+      - { id: "4.1", title: "Apply secure design principles in network architectures", target_questions: 65 }
+      - { id: "4.2", title: "Secure network components", target_questions: 65 }
+      - { id: "4.3", title: "Implement secure communication channels according to design", target_questions: 65 }
+  - id: d5
+    name: "Identity and Access Management (IAM)"
+    weight: 0.13            # 195 of 1500 target questions
+    subdomains:
+      - { id: "5.1", title: "Control physical and logical access to assets", target_questions: 33 }
+      - { id: "5.2", title: "Design identification and authentication strategy", target_questions: 33 }
+      - { id: "5.3", title: "Federated identity with a third-party service", target_questions: 33 }
+      - { id: "5.4", title: "Implement and manage authorization mechanisms", target_questions: 32 }
+      - { id: "5.5", title: "Manage the identity and access provisioning lifecycle", target_questions: 32 }
+      - { id: "5.6", title: "Implement authentication systems", target_questions: 32 }
+  - id: d6
+    name: "Security Assessment and Testing"
+    weight: 0.12            # 180 of 1500 target questions
+    subdomains:
+      - { id: "6.1", title: "Design and validate assessment, test, and audit strategies", target_questions: 36 }
+      - { id: "6.2", title: "Conduct security control testing", target_questions: 36 }
+      - { id: "6.3", title: "Collect security process data", target_questions: 36 }
+      - { id: "6.4", title: "Analyze test output and generate report", target_questions: 36 }
+      - { id: "6.5", title: "Conduct or facilitate security audits", target_questions: 36 }
+  - id: d7
+    name: "Security Operations"
+    weight: 0.13            # 195 of 1500 target questions
+    subdomains:
+      - { id: "7.1", title: "Understand and comply with investigations", target_questions: 13 }
+      - { id: "7.2", title: "Conduct logging and monitoring activities", target_questions: 13 }
+      - { id: "7.3", title: "Perform Configuration Management (CM)", target_questions: 13 }
+      - { id: "7.4", title: "Apply foundational security operations concepts", target_questions: 13 }
+      - { id: "7.5", title: "Apply resource protection", target_questions: 13 }
+      - { id: "7.6", title: "Conduct incident management", target_questions: 13 }
+      - { id: "7.7", title: "Operate and maintain detection and preventative measures", target_questions: 13 }
+      - { id: "7.8", title: "Implement and support patch and vulnerability management", target_questions: 13 }
+      - { id: "7.9", title: "Understand and participate in change management processes", target_questions: 13 }
+      - { id: "7.10", title: "Implement recovery strategies", target_questions: 13 }
+      - { id: "7.11", title: "Implement Disaster Recovery (DR) processes", target_questions: 13 }
+      - { id: "7.12", title: "Test Disaster Recovery Plans (DRP)", target_questions: 13 }
+      - { id: "7.13", title: "Participate in Business Continuity (BC) planning and exercises", target_questions: 13 }
+      - { id: "7.14", title: "Implement and manage physical security", target_questions: 13 }
+      - { id: "7.15", title: "Address personnel safety and security concerns", target_questions: 13 }
+  - id: d8
+    name: "Software Development Security"
+    weight: 0.1            # 150 of 1500 target questions
+    subdomains:
+      - { id: "8.1", title: "Understand and integrate security in the Software Development Life Cycle (SDLC)", target_questions: 30 }
+      - { id: "8.2", title: "Identify and apply security controls in software development ecosystems", target_questions: 30 }
+      - { id: "8.3", title: "Assess the effectiveness of software security", target_questions: 30 }
+      - { id: "8.4", title: "Assess security impact of acquired software", target_questions: 30 }
+      - { id: "8.5", title: "Define and apply secure coding guidelines and standards", target_questions: 30 }
+
+bank:
+  target_total: 1500
+  difficulty_mix: { easy: 0.2, medium: 0.5, hard: 0.3 }
+  review:
+    independent_check: true
+    retire_if_report_rate_above: 0.05
+    flag_if_common_wrong_answer_above: 0.5
+
+product:
+  free_sample_per_domain: 10
+  unlock: { price_chf: 29, access_days: 120 }
+  readiness:
+    min_answered: 600
+    min_accuracy_per_domain: 0.75
+  mock:
+    questions: 150      # CAT maximum, linear (proposal 0001, D4)
+    minutes: 180
+    forms: 4
