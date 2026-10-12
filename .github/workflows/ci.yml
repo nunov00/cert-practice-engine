@@ -1,4 +1,4 @@
-name: content
+name: ci
 
 on:
   pull_request:
@@ -23,3 +23,8 @@ jobs:
       - run: pnpm test
       - run: pnpm validate
       - run: pnpm coverage
+      - run: pnpm --filter @cpe/app build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+      - name: Cloudflare Workers build
+        run: pnpm --filter @cpe/app exec opennextjs-cloudflare build --skipNextBuild

@@ -2,3 +2,10 @@ node_modules/
 dist/
 .env*
 !.env.example
+.next/
+.open-next/
+.wrangler/
+app/src/generated/
+next-env.d.ts
+*.tsbuildinfo
+.dev.vars

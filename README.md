@@ -8,6 +8,7 @@ and a bank of original, independently checked questions.
 - Architecture: [docs/proposals/0001-repo-structure-and-app-architecture.md](docs/proposals/0001-repo-structure-and-app-architecture.md)
 - Content rules: [docs/content-rules.md](docs/content-rules.md)
 - Automation runbooks: [docs/automation/](docs/automation/)
+- Running and deploying the app: [docs/deploy.md](docs/deploy.md)
 
 Exams: CISSP (recipe ready), AAIR (waiting on confirmed domain weights).
 
