@@ -65,6 +65,11 @@ next free number in that subdomain.
   `docs/automation/publishing.md`.
 - CI (`.github/workflows/ci.yml`) runs `pnpm check` and the Cloudflare app build; keep it green.
 
+## Budget
+
+- Stay well within the free plans of Cloudflare and GitHub (owner rule). Limits and
+  current usage: `docs/roadmap.md#stay-within-the-free-plans`.
+
 ## Never
 
 - Never schedule or enable automation (cron, triggers, scheduled workflows)
