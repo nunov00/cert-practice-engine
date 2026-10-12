@@ -5,6 +5,7 @@ mock exams, weak-spot review and a readiness score, driven by one recipe per exa
 and a bank of original, independently checked questions.
 
 - Agent and contributor rules: [AGENTS.md](AGENTS.md)
+- Roadmap: [docs/roadmap.md](docs/roadmap.md)
 - Architecture: [docs/proposals/0001-repo-structure-and-app-architecture.md](docs/proposals/0001-repo-structure-and-app-architecture.md)
 - Content rules: [docs/content-rules.md](docs/content-rules.md)
 - Automation runbooks: [docs/automation/](docs/automation/)
