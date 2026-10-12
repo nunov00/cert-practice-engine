@@ -1,0 +1,32 @@
+id: cissp-d1-1.1-0001
+subdomain: '1.1'
+difficulty: medium
+stem: A contractor holding a security certification is helping a hospital migrate its patient records
+  system. A hospital manager asks the contractor to quietly switch off audit logging on the system for
+  a week so the migration runs faster, even though hospital policy requires logging at all times. What
+  should the contractor do FIRST?
+options:
+  A: Keep logging on and continue the work without raising the request further
+  B: Switch off logging as asked, because the manager represents the client
+  C: Decline, and escalate it through the hospital's policy exception process
+  D: Report the request to the national health data regulator before acting
+answer: C
+explanation:
+  why_correct: The contractor owes diligent service to the client, and the client is the hospital, not
+    one manager. Declining and escalating through the proper channel protects the organisation and lets
+    the people authorised to grant exceptions decide.
+  why_not:
+    A: Quietly refusing protects the logs, but leaves the hospital unaware that a manager tried to bypass
+      a mandatory control. The people accountable for the policy need to know.
+    B: A single manager asking to break a written policy does not make it the client's decision. Complying
+      would undermine the hospital's controls and the contractor's integrity.
+    D: Going to an outside regulator before the hospital's own channels have had a chance to act is premature
+      and may breach the contractor's confidentiality duties.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-cissp-d1-a
+  checked_by: 2026-10-12-cissp-d1-a-check
+  check_verdict: pass

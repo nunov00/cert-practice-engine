@@ -1,0 +1,27 @@
+id: cissp-d1-1.8-0001
+subdomain: '1.8'
+difficulty: easy
+stem: Which control BEST prevents a single finance employee from both creating a new supplier and approving
+  payments to that supplier?
+options:
+  A: Separation of duties
+  B: Job rotation
+  C: Pre-employment screening
+  D: Mandatory vacation
+answer: A
+explanation:
+  why_correct: Splitting supplier creation and payment approval between different people means fraud requires
+    collusion. This is exactly the purpose of separation of duties.
+  why_not:
+    B: Rotation helps uncover fraud over time, but the same person could still hold both duties while
+      in the role.
+    C: Screening lowers the chance of hiring someone risky, but it does not remove the conflicting permissions.
+    D: Enforced leave helps detect ongoing fraud. It does not stop one person from holding both permissions.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-cissp-d1-a
+  checked_by: 2026-10-12-cissp-d1-a-check
+  check_verdict: pass

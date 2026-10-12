@@ -1,0 +1,29 @@
+id: cissp-d1-1.11-0001
+subdomain: '1.11'
+difficulty: hard
+stem: A company uses a SaaS payroll provider that hosts its platform in a data centre run by a separate
+  subcontractor. What is the BEST way for the company to gain assurance over the subcontractor's controls?
+options:
+  A: Review the provider's independent assurance report, including how it treats the subcontractor
+  B: Rely on the provider's contractual warranty that its subcontractors meet equivalent standards
+  C: Exercise a right to audit the subcontractor's data centre directly, as a fourth party
+  D: Send the subcontractor a detailed security questionnaire and review its responses
+answer: A
+explanation:
+  why_correct: Independent attestation reports are the usual way to get assurance over third and fourth
+    parties. Checking whether the subcontractor is included or carved out shows where gaps remain, and
+    the report also lists controls the customer is expected to run itself.
+  why_not:
+    B: A contractual promise gives recourse after a failure, but it is not evidence that the subcontractor's
+      controls actually work.
+    C: The company usually has no contract with the subcontractor and therefore no right to audit it.
+      Assurance flows through the provider.
+    D: A self-assessment from a party the company has no contract with gives weak, unverified assurance.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-cissp-d1-a
+  checked_by: 2026-10-12-cissp-d1-a-check
+  check_verdict: pass

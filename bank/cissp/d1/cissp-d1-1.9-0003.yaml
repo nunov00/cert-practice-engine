@@ -1,0 +1,28 @@
+id: cissp-d1-1.9-0003
+subdomain: '1.9'
+difficulty: easy
+stem: Management decides not to launch a product feature in one country because the regulatory risk there
+  is too high. Which risk response is this?
+options:
+  A: Risk mitigation
+  B: Risk acceptance
+  C: Risk avoidance
+  D: Risk transfer
+answer: C
+explanation:
+  why_correct: Avoidance means stopping or not starting the activity that creates the risk. Not launching
+    the feature does exactly that.
+  why_not:
+    A: Mitigation adds controls so the activity can go ahead with lower risk. Here the activity does not
+      go ahead at all.
+    B: Acceptance would mean launching and tolerating the risk.
+    D: Transfer shifts the financial impact to a third party, for example through insurance or contracts.
+      Here the activity is simply not carried out.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-cissp-d1-a
+  checked_by: 2026-10-12-cissp-d1-a-check
+  check_verdict: pass

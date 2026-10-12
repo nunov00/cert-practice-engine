@@ -1,0 +1,30 @@
+id: cissp-d1-1.4-0002
+subdomain: '1.4'
+difficulty: hard
+stem: A developer copies a function from an open-source library released under a strong copyleft licence
+  into the company's proprietary product, which is sold and distributed to customers. What is the PRIMARY
+  legal risk?
+options:
+  A: A licence obligation to release the product's source code under the same terms
+  B: A trademark infringement claim brought by the open-source library's authors
+  C: An export control violation arising from redistributing the copied code
+  D: A patent infringement claim, since the copied function implements a known algorithm
+answer: A
+explanation:
+  why_correct: Strong copyleft licences generally require distributed works that incorporate the code
+    to be licensed on the same terms. Distribution triggers the obligation, so the main exposure is forced
+    disclosure of source code or a breach of the licence.
+  why_not:
+    B: Copying code raises copyright and licence questions. Trademarks protect names and marks, not code.
+    C: Export controls depend on what the code does, such as cryptography, not on its licence, and nothing
+      suggests they apply.
+    D: Open-source code can be covered by patents, but nothing here suggests a patent issue. The licence
+      terms on the copied code are the direct, certain exposure.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-cissp-d1-a
+  checked_by: 2026-10-12-cissp-d1-a-check
+  check_verdict: pass

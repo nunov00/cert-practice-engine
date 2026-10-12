@@ -1,0 +1,27 @@
+id: cissp-d1-1.7-0001
+subdomain: '1.7'
+difficulty: easy
+stem: During a business impact analysis, the payments team says the business could tolerate losing no
+  more than 15 minutes of transaction data after a disruption. Which metric does this describe?
+options:
+  A: Work recovery time (WRT)
+  B: Maximum tolerable downtime (MTD)
+  C: Recovery point objective (RPO)
+  D: Recovery time objective (RTO)
+answer: C
+explanation:
+  why_correct: The RPO is the maximum acceptable amount of data loss, measured in time. It drives how
+    often data is backed up or replicated.
+  why_not:
+    A: WRT is the time needed after systems are restored to verify data and resume normal work.
+    B: The MTD is the total outage the business can survive. It describes time without service, not lost
+      data.
+    D: The RTO is how long restoring the service may take, not how much data may be lost.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-cissp-d1-a
+  checked_by: 2026-10-12-cissp-d1-a-check
+  check_verdict: pass
