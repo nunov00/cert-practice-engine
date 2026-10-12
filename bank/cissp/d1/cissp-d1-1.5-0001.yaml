@@ -1,0 +1,29 @@
+id: cissp-d1-1.5-0001
+subdomain: '1.5'
+difficulty: medium
+stem: A company suspects an employee of running a personal business on company laptops, against the acceptable
+  use policy. Nothing suggests any law has been broken. Which type of investigation is this, and what
+  standard of proof normally applies?
+options:
+  A: Criminal; beyond a reasonable doubt
+  B: Regulatory; the standard set by the relevant regulator
+  C: Administrative; the organisation's own internal standard
+  D: Civil; preponderance of the evidence
+answer: C
+explanation:
+  why_correct: Internal policy violations are handled as administrative investigations. The organisation
+    applies its own standard, which is usually lower than legal standards, though the process should still
+    be fair and documented.
+  why_not:
+    A: Nothing indicates a crime, so a criminal investigation and its high standard of proof do not apply.
+    B: No regulator or regulatory requirement is involved in this internal matter.
+    D: A civil investigation supports a lawsuit between parties. An internal policy breach does not need
+      one.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-cissp-d1-a
+  checked_by: 2026-10-12-cissp-d1-a-check
+  check_verdict: pass

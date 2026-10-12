@@ -1,0 +1,30 @@
+id: cissp-d1-1.9-0002
+subdomain: '1.9'
+difficulty: hard
+stem: An asset is valued at USD 200,000. A flood would destroy 25% of its value, and floods are expected
+  once every 10 years. A proposed control costs USD 8,000 per year and would cut the damage from a flood
+  to 5% of the asset's value. What is the control's net annual value?
+options:
+  A: A net gain of USD 32,000 per year
+  B: A net loss of USD 4,000 per year
+  C: A net gain of USD 4,000 per year
+  D: A net loss of USD 3,000 per year
+answer: B
+explanation:
+  why_correct: SLE before = 200,000 x 0.25 = 50,000, so ALE = 50,000 x 0.1 = 5,000. SLE after = 200,000
+    x 0.05 = 10,000, so ALE = 1,000. The control saves 4,000 a year but costs 8,000, a net value of -4,000.
+    It is not justified on cost alone.
+  why_not:
+    A: This subtracts the control cost from the reduction in single loss expectancy (40,000 - 8,000) and
+      ignores that floods occur only once in 10 years.
+    C: This is the yearly loss reduction. It leaves out the control's USD 8,000 annual cost.
+    D: This comes from subtracting the control cost from the original ALE (5,000 - 8,000). It ignores
+      the 1,000 of loss that remains.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-cissp-d1-a
+  checked_by: 2026-10-12-cissp-d1-a-check
+  check_verdict: pass
