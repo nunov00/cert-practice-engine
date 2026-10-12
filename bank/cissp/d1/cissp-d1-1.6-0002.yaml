@@ -1,0 +1,28 @@
+id: cissp-d1-1.6-0002
+subdomain: '1.6'
+difficulty: medium
+stem: A business unit asks for an exception to the authentication standard because a legacy application
+  cannot support multi-factor authentication. What is the BEST response?
+options:
+  A: Grant a permanent exception recorded in the application's documentation
+  B: Refuse, and require the application to be replaced before the next audit
+  C: Let the application administrator decide on suitable alternative controls
+  D: Document a time-limited exception with compensating controls, approved by the accountable risk owner
+answer: D
+explanation:
+  why_correct: A good exception process records the gap, adds compensating controls such as network isolation
+    or extra monitoring, gets sign-off from the person accountable for the risk, and sets an expiry date
+    so it gets reviewed.
+  why_not:
+    A: A permanent exception with no review or compensating controls leaves the risk unmanaged indefinitely.
+    B: Standards are mandatory, but a managed exception process exists for real technical limits. Refusing
+      outright tends to produce unofficial workarounds.
+    C: An administrator is a custodian and is not accountable for accepting business risk.
+status: published
+outline_version: '2024-04-15'
+sample: true
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-cissp-d1-a
+  checked_by: 2026-10-12-cissp-d1-a-check
+  check_verdict: pass

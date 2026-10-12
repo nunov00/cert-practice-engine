@@ -1,0 +1,27 @@
+id: cissp-d1-1.2-0001
+subdomain: '1.2'
+difficulty: easy
+stem: A payroll clerk notices that an employee's bank account number in the HR system was changed overnight,
+  and there is no matching change request. Which security objective has MOST directly failed?
+options:
+  A: Availability
+  B: Confidentiality
+  C: Non-repudiation
+  D: Integrity
+answer: D
+explanation:
+  why_correct: Integrity means data is changed only by authorised parties in authorised ways. An unexplained
+    change to a bank account number is a direct integrity failure.
+  why_not:
+    A: The system and the record are still accessible, so availability has not failed.
+    B: Nothing indicates the data was disclosed. The record was altered, which is an integrity problem.
+    C: Weak non-repudiation may make it harder to prove who made the change, but the objective that failed
+      first is the correctness of the data itself.
+status: published
+outline_version: '2024-04-15'
+sample: true
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-cissp-d1-a
+  checked_by: 2026-10-12-cissp-d1-a-check
+  check_verdict: pass

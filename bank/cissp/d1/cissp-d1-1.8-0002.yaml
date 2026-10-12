@@ -1,0 +1,28 @@
+id: cissp-d1-1.8-0002
+subdomain: '1.8'
+difficulty: medium
+stem: A systems administrator with wide privileged access is being dismissed and is expected to react
+  badly. When should their access be removed?
+options:
+  A: Straight after the exit interview has been completed
+  B: At the end of their contractual notice period
+  C: Within 24 hours of the dismissal meeting taking place
+  D: At the same time as, or just before, they are told of the dismissal
+answer: D
+explanation:
+  why_correct: Coordinating revocation with the notification closes the window in which an upset insider
+    could do damage, while keeping the process orderly.
+  why_not:
+    A: There is still a gap after notification during which harm could be done.
+    B: This leaves a high-risk insider with privileged access for days or weeks after learning of the
+      dismissal.
+    C: Even a short delay after notification gives the administrator time to act. Revocation should be
+      coordinated with the notification itself.
+status: published
+outline_version: '2024-04-15'
+sample: true
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-cissp-d1-a
+  checked_by: 2026-10-12-cissp-d1-a-check
+  check_verdict: pass
