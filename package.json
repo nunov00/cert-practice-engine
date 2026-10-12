@@ -2,12 +2,21 @@
   "name": "cert-practice-engine",
   "private": true,
   "packageManager": "pnpm@10.28.0",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "validate": "pnpm --filter @cpe/tools run validate",
     "coverage": "pnpm --filter @cpe/tools run coverage",
     "test": "pnpm -r run test",
     "typecheck": "pnpm -r run typecheck",
     "check": "pnpm typecheck && pnpm test && pnpm validate"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "workerd"
+    ]
   }
 }
