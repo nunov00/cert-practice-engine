@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "question.schema.json",
+  "title": "Question (recipe format v0.2)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "subdomain", "difficulty", "stem", "options", "answer", "explanation", "status", "outline_version", "sample", "provenance"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9]*-d[0-9]+-[0-9]+\\.[0-9]+-[0-9]{4}$" },
+    "subdomain": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+$" },
+    "difficulty": { "enum": ["easy", "medium", "hard"] },
+    "stem": { "type": "string", "minLength": 20 },
+    "options": {
+      "type": "object",
+      "minProperties": 2,
+      "propertyNames": { "pattern": "^[A-F]$" },
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "answer": { "type": "string", "pattern": "^[A-F]$" },
+    "explanation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["why_correct", "why_not"],
+      "properties": {
+        "why_correct": { "type": "string", "minLength": 20 },
+        "why_not": {
+          "type": "object",
+          "propertyNames": { "pattern": "^[A-F]$" },
+          "additionalProperties": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "status": { "enum": ["draft", "in_review", "published", "retired"] },
+    "outline_version": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "sample": { "type": "boolean" },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generated_by", "run_id", "check_verdict"],
+      "properties": {
+        "generated_by": { "enum": ["claude", "codex", "human"] },
+        "run_id": { "type": "string", "minLength": 1 },
+        "checked_by": { "type": "string", "minLength": 1 },
+        "check_verdict": { "enum": ["pass", "fail", "pending"] }
+      }
+    }
+  }
+}
