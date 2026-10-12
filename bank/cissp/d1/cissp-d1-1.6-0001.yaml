@@ -1,0 +1,28 @@
+id: cissp-d1-1.6-0001
+subdomain: '1.6'
+difficulty: easy
+stem: Which type of document should state that all company laptops must use full-disk encryption with
+  AES-256 through an approved product?
+options:
+  A: Procedure
+  B: Guideline
+  C: Policy
+  D: Standard
+answer: D
+explanation:
+  why_correct: Standards set specific, mandatory requirements, such as particular technologies or settings,
+    that put a higher-level policy into practice.
+  why_not:
+    A: Procedures give step-by-step instructions, such as how to enable encryption. They don't define
+      the requirement itself.
+    B: Guidelines are recommendations. This requirement is mandatory.
+    C: Policies state management intent at a high level, such as protecting data on portable devices,
+      and avoid naming specific technologies.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-cissp-d1-a
+  checked_by: 2026-10-12-cissp-d1-a-check
+  check_verdict: pass

@@ -1,0 +1,29 @@
+id: cissp-d1-1.2-0002
+subdomain: '1.2'
+difficulty: medium
+stem: A procurement platform must allow the company to prove to an outside arbitrator, if a dispute arises,
+  that a particular supplier submitted a particular bid and that the bid has not changed since. Which
+  control BEST meets this need?
+options:
+  A: Calculate a hash of each bid and keep it in the platform's database
+  B: Store every bid on mirrored, redundant disks
+  C: Protect bid uploads with TLS
+  D: Have suppliers digitally sign each bid with a private key that only they control
+answer: D
+explanation:
+  why_correct: A digital signature binds the bid to the holder of the private key and reveals any later
+    change, giving both origin proof and integrity that a third party can verify.
+  why_not:
+    A: A hash the company stores itself can be recalculated by the company, so it proves neither who sent
+      the bid nor that the company did not alter it.
+    B: Redundancy protects availability. It proves nothing about who wrote the bid.
+    C: TLS protects data in transit between two endpoints, but it leaves no evidence afterwards that a
+      third party could check.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-cissp-d1-a
+  checked_by: 2026-10-12-cissp-d1-a-check
+  check_verdict: pass

@@ -1,0 +1,31 @@
+id: cissp-d1-1.7-0002
+subdomain: '1.7'
+difficulty: hard
+stem: A business impact analysis sets a maximum tolerable downtime of 8 hours for order processing. The
+  proposed recovery solution restores systems within 6 hours, but staff then need about 4 more hours to
+  reconcile and verify transactions before orders can resume. What should the continuity manager conclude?
+options:
+  A: The maximum tolerable downtime should be raised to 10 hours to fit the solution
+  B: The solution is adequate, because the 6-hour recovery time is within the 8-hour limit
+  C: The solution is inadequate, because recovery time plus work recovery time exceeds the maximum tolerable
+    downtime
+  D: The recovery point objective must be reduced
+answer: C
+explanation:
+  why_correct: The business is back only once systems are restored and the data is verified. 6 + 4 = 10
+    hours exceeds the 8-hour MTD, so the design must change.
+  why_not:
+    A: The MTD comes from business impact, not from what a solution can achieve. Changing it to fit a
+      design defeats the analysis.
+    B: This ignores the work recovery time. Restored systems that cannot yet process orders do not end
+      the outage.
+    D: The RPO limits data loss, and nothing suggests data loss is the problem. The gap is in total recovery
+      time.
+status: published
+outline_version: '2024-04-15'
+sample: true
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-cissp-d1-a
+  checked_by: 2026-10-12-cissp-d1-a-check
+  check_verdict: pass

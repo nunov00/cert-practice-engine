@@ -1,0 +1,27 @@
+id: cissp-d1-1.3-0001
+subdomain: '1.3'
+difficulty: medium
+stem: A newly appointed CISO finds that security projects are funded case by case and are often stalled
+  by business units that see them as IT's concern. What should the CISO do FIRST to put security on a
+  sustainable footing?
+options:
+  A: Obtain executive approval for a security strategy and charter aligned to business goals
+  B: Deploy a high-visibility technical control to demonstrate quick wins to the business
+  C: Run an organisation-wide awareness campaign on why security is everyone's concern
+  D: Rewrite the technical security standards so that business units must follow them
+answer: A
+explanation:
+  why_correct: Governance starts with a mandate from senior leadership. Approved strategy, roles and accountability
+    give later projects funding and authority that do not depend on case-by-case negotiation.
+  why_not:
+    B: Quick wins can help, but without a mandate the funding and cooperation problems remain.
+    C: Awareness can shift attitudes, but it creates no mandate, funding model or accountability.
+    D: Standards sit below policy and strategy. Rewriting them first does nothing about the missing authority.
+status: published
+outline_version: '2024-04-15'
+sample: true
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-cissp-d1-a
+  checked_by: 2026-10-12-cissp-d1-a-check
+  check_verdict: pass

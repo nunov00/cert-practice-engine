@@ -1,0 +1,26 @@
+id: cissp-d1-1.9-0001
+subdomain: '1.9'
+difficulty: medium
+stem: A risk assessment of a business-critical customer database is complete and controls have been chosen.
+  Some residual risk remains. Who should formally accept it?
+options:
+  A: The business process owner
+  B: The chief information security officer
+  C: The head of internal audit
+  D: The database administrator
+answer: A
+explanation:
+  why_correct: Risk acceptance belongs to the person accountable for the business outcome and with authority
+    over its resources, which is the business owner, not the security or IT staff who advise on it.
+  why_not:
+    B: The CISO advises on and reports risk, but accepting business risk is the business owner's decision.
+    C: Audit must stay independent. Accepting risk would compromise its role of giving assurance.
+    D: The administrator is a custodian who runs controls, not someone accountable for business risk.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-cissp-d1-a
+  checked_by: 2026-10-12-cissp-d1-a-check
+  check_verdict: pass
