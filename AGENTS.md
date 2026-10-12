@@ -15,9 +15,9 @@ recipes/_schema/   JSON Schema for recipes
 recipes/<exam>/    recipe.yaml per exam
 bank/_schema/      JSON Schema for questions
 bank/<exam>/<domain>/<id>.yaml   one file per question
-tools/             Content CLI (TypeScript): validate, coverage
+tools/             Content CLI (TypeScript): validate, coverage, build (public content)
 docs/              Content rules, automation runbooks, decisions, proposals
-app/               Web app (not started yet)
+app/               Next.js web app, deployed to Cloudflare Workers (docs/deploy.md)
 ```
 
 ## Commands
@@ -28,7 +28,9 @@ Node 22+, pnpm 10.
 pnpm install
 pnpm validate      # schema + cross-checks on recipes and the whole bank
 pnpm coverage      # published/pending vs targets per subdomain (pnpm coverage -- cissp)
-pnpm test          # tool tests
+pnpm --filter @cpe/app dev       # run the site locally
+pnpm --filter @cpe/app preview   # run it in the local Cloudflare Workers runtime
+pnpm test          # tool and app tests
 pnpm typecheck
 pnpm check         # all of the above; run before every push
 ```
@@ -61,7 +63,7 @@ next free number in that subdomain.
   branch your session assigns.
 - Everything reaches `main` through a PR the owner reviews. Content PRs follow
   `docs/automation/publishing.md`.
-- CI (`.github/workflows/content.yml`) runs `pnpm check`; keep it green.
+- CI (`.github/workflows/ci.yml`) runs `pnpm check` and the Cloudflare app build; keep it green.
 
 ## Never
 
@@ -71,3 +73,6 @@ next free number in that subdomain.
 - Never edit a recipe's weights or domains except in a PR that cites the
   issuer's official outline.
 - Never weaken or skip a validator rule or test to make CI pass.
+- Never ship paid questions to the browser. Only `tools/src/build.ts` decides what
+  public content the app bundles (published free-sample questions only), and
+  `app/test/content.test.ts` guards it.
