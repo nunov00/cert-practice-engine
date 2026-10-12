@@ -25,8 +25,8 @@ agent (Claude checks Codex runs and vice versa).
 - **Pass:** set `status: published`, `provenance.checked_by: <run-id>-check`,
   `check_verdict: pass`. Small wording fixes are allowed; note them in the PR.
   Merging the PR is the owner's approval, so `published` on a branch is not live yet.
-- **Unsure:** set `status: in_review`, `check_verdict: pass` only if every check
-  passed, and list it in the PR for the owner to decide.
+- **Unsure:** set `status: in_review`, leave `check_verdict: pending`, and list it
+  in the PR with the open question for the owner to decide.
 - **Fail:** delete the draft file from the branch and record its ID, subdomain
   and reason in the PR's rejects table. The ID is not reused.
 
