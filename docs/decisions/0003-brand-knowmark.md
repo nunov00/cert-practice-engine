@@ -1,6 +1,6 @@
 # 0003: Brand name is Knowmark
 
-Date: 2026-10-12. Decided by: owner. Closes D5 in 0001 (name; the domain is still to buy).
+Date: 2026-10-12. Decided by: owner. Closes D5 in 0001 (name). Buying the domain is deferred to roadmap phase 8 with monetisation.
 
 - The site and app are called **Knowmark** ("know where you stand"). It names no
   exam or issuer, so it fits every exam the engine will serve.

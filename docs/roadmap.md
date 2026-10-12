@@ -11,12 +11,12 @@ Order revised 2026-10-12 by the owner: **accounts and payments come last**.
 | 2 | First manual CISSP content run (Domain 1, 20 questions, free sample) | Done (#3) |
 | 3 | Free-drills web app on Cloudflare Workers, manual deploy | Done (#4) |
 | 3a | Installable app (iPhone home screen, Chrome install), offline free drills | In progress |
-| 3b | Brand name and custom domain (decision D5) | Name chosen: Knowmark (decision 0003); domain knowmark.app to buy |
+| 3b | Brand name and custom domain (decision D5) | Name done: Knowmark (decision 0003). Domain moved to phase 8 |
 | 4 | CISSP content for domains 2–8 (manual runs, same pipeline) | Next |
 | 5 | Mock exams, weak-spot review, readiness score, report-question button | Planned |
 | 6 | Scheduled automation: generation/check runs, outline watch, weekly digest | Planned, needs approval |
 | 7 | AAIR recipe and content | Waiting on confirmed domain weights |
-| 8 | **Accounts and payments** (last) | Planned |
+| 8 | **Accounts, payments and domain** (last) | Planned |
 
 ## Phase 8: accounts and payments (deferred on purpose)
 
@@ -35,7 +35,9 @@ Kept here so it isn't lost while the free product grows. Design is in proposal
 - Runs on Cloudflare Workers (decision 0002), so server code uses Web APIs.
 
 Owner prerequisites when this phase starts: a Supabase project, a Paddle account,
-and terms, privacy and refund pages.
+terms, privacy and refund pages, and the domain **knowmark.app** (the owner deferred
+buying it to this phase on 2026-10-12; also run the EU and Swiss trademark searches
+noted in decision 0003 first). Until then the site stays on its workers.dev address.
 
 Until phase 8, phases 4–7 must not assume a signed-in user: anything per-learner
 (progress, weak spots, readiness) lives in the browser and is designed to move
