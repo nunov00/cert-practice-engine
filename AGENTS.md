@@ -7,7 +7,7 @@ Claude Code reads it through `CLAUDE.md`). Keep this the single source of truth.
 
 A self-study platform for multiple-choice certification exams. One engine serves
 many exams; each exam is defined by a **recipe**, and questions live in a
-**bank**. Design: `docs/proposals/0001-repo-structure-and-app-architecture.md`.
+**bank**. Design: `docs/proposals/0001-repo-structure-and-app-architecture.md`. Roadmap (what is next, and what is deliberately last): `docs/roadmap.md`.
 
 ```
 recipes/_format/   Recipe format definitions (current: v0.2)
