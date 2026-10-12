@@ -1,6 +1,6 @@
 # Proposal 0001: Repo structure and app architecture
 
-Status: **Draft for owner review**. Nothing in this document is built or scheduled yet.
+Status: **Approved by the owner on 2026-10-12** with all recommended defaults (D1–D4) and the v0.2 recipe additions in §3.1. D5 (brand name) is open until launch.
 Covers next steps 1 (repo structure) and 3 (app architecture, accounts, payments).
 Step 2 (AAIR recipe) waits on confirmed domain weights.
 
