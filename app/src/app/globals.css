@@ -864,14 +864,6 @@ a.test-card:hover {
 }
 
 /* Owner stats page (docs/analytics.md) */
-.eyebrow {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
 .stats .segmented {
   margin-bottom: 16px;
 }

@@ -10,7 +10,6 @@ import {
   periodStart,
   readStats,
   resetStatsSchemaCache,
-  sameKey,
   started,
   type KnownExams,
 } from "../src/lib/stats.ts";
@@ -96,12 +95,8 @@ test("buildReport totals, ranks and lists days newest first", () => {
   assert.deepEqual(r.days.map((d) => d.day), ["2026-10-13", "2026-10-12"]);
 });
 
-test("periodStart and sameKey", () => {
+test("periodStart", () => {
   const now = new Date("2026-10-13T23:00:00Z");
   assert.equal(periodStart(7, now), "2026-10-07");
   assert.equal(periodStart(null, now), null);
-  assert.equal(sameKey("abc", "abc"), true);
-  assert.equal(sameKey("abd", "abc"), false);
-  assert.equal(sameKey("ab", "abc"), false);
-  assert.equal(sameKey("", "abc"), false);
 });

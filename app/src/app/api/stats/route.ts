@@ -1,11 +1,12 @@
 import { listExams } from "@/lib/content";
 import { feedbackContext, json, overRateLimit, sameOrigin } from "@/lib/feedback-server";
-import { buildReport, countStat, parseStat, periodStart, readStats, sameKey, type KnownExams } from "@/lib/stats";
+import { buildReport, countStat, parseStat, periodStart, readStats, type KnownExams } from "@/lib/stats";
 
 export const dynamic = "force-dynamic";
 
 const known: KnownExams = new Map(listExams().map((e) => [e.id, new Set(e.domains.map((d) => d.id))]));
 const PERIODS = new Set([7, 30, 90]);
+const CACHE_SECONDS = 300;
 
 /**
  * Anonymous usage counts (docs/analytics.md). The browser sends each item at
@@ -28,21 +29,31 @@ export async function POST(request: Request) {
   return json({ ok: result === "counted" });
 }
 
-/** The owner's stats page reads totals here with their key (Worker secret STATS_READ_TOKEN). */
+/** Totals for the stats page. Open to anyone (owner's choice); cached for a few minutes to keep D1 reads low. */
 export async function GET(request: Request) {
-  const { env } = await feedbackContext();
-  if (!env.FEEDBACK_DB || !env.STATS_READ_TOKEN) return json({ error: "not-set-up" }, 503);
-  const given = (request.headers.get("authorization") ?? "").replace(/^Bearer\s+/i, "");
-  if (!given || !sameKey(given, env.STATS_READ_TOKEN)) {
-    if (await overRateLimit(env, request, "stats-read")) return json({ error: "Too many tries. Wait a minute." }, 429);
-    return json({ error: "That key isn't right." }, 401);
-  }
+  const { env, waitUntil } = await feedbackContext();
+  if (!env.FEEDBACK_DB) return json({ error: "Stats aren't available right now." }, 503);
   const days = Number(new URL(request.url).searchParams.get("days"));
+  const period = PERIODS.has(days) ? days : 0;
+  const cacheKey = new Request(new URL(`/api/stats?days=${period}`, request.url));
+  const cache = (globalThis.caches as (CacheStorage & { default?: Cache }) | undefined)?.default;
+  const hit = await cache?.match(cacheKey);
+  if (hit) return hit;
+  if (await overRateLimit(env, request, "stats-read", env.STATS_LIMITER)) {
+    return json({ error: "Too many requests. Wait a minute." }, 429);
+  }
+
   const now = new Date();
-  const from = periodStart(PERIODS.has(days) ? days : null, now);
+  const from = periodStart(period || null, now);
   const report = buildReport(await readStats(env.FEEDBACK_DB, from), from);
   const names = Object.fromEntries(
     listExams().map((e) => [e.id, { name: e.name, domains: Object.fromEntries(e.domains.map((d) => [d.id, d.name])) }]),
   );
-  return json({ ...report, today: now.toISOString().slice(0, 10), names });
+  const res = json({ ...report, today: now.toISOString().slice(0, 10), names });
+  if (cache) {
+    const cached = new Response(res.clone().body, res);
+    cached.headers.set("cache-control", `public, max-age=${CACHE_SECONDS}`);
+    waitUntil(cache.put(cacheKey, cached));
+  }
+  return res;
 }
