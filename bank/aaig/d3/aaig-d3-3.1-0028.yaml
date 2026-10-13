@@ -1,0 +1,29 @@
+id: aaig-d3-3.1-0028
+subdomain: '3.1'
+difficulty: hard
+stem: At an asset manager, investment teams were slow to check the outputs of their AI portfolio-analytics
+  tools, so the operational risk function (second line) took over the weekly checks and now signs them off.
+  The audit committee chair asks internal audit for its view. What is the MOST likely concern?
+options:
+  A: Second-line challenge is weakened when it runs first-line controls
+  B: Output checks should be done only by the external auditor
+  C: The risk function lacks the tools to check the AI outputs
+  D: The investment teams will lose interest in using AI tools
+answer: A
+explanation:
+  why_correct: Routine output checking is a first-line control owned by the business. When the second line performs
+    it, it ends up checking its own work and the business no longer owns its risk. The fix is to build first-line
+    capability while the second line sets standards and challenges results.
+  why_not:
+    B: External auditors give independent assurance; they do not run an organisation's routine checks.
+    C: Tooling may be an issue, but internal audit's concern about roles and independence goes deeper than
+      capability.
+    D: Loss of interest is speculative. The structural issue is blurred accountability between lines.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-a
+  checked_by: 2026-10-13-aaig-d3-a-check
+  check_verdict: pass

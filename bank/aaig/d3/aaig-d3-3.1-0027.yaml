@@ -1,0 +1,29 @@
+id: aaig-d3-3.1-0027
+subdomain: '3.1'
+difficulty: medium
+stem: After introducing an AI tool that drafts radiology reports, a hospital rewarded its radiology teams for
+  cutting report turnaround time. Turnaround halved, but corrected reports and queries from referring doctors
+  rose. What does this BEST illustrate about AI performance measures?
+options:
+  A: The AI tool was not accurate enough for radiology reporting
+  B: Turnaround time is a poor measure that should never be used
+  C: Teams should receive no incentives tied to AI adoption at all
+  D: A single efficiency KPI can be met at the expense of outcomes
+answer: D
+explanation:
+  why_correct: When one measure becomes a target, people optimise for it, sometimes at the cost of what really
+    matters. AI value should be tracked with a balanced set of measures, including quality and patient outcomes,
+    so efficiency gains are not bought with hidden harm.
+  why_not:
+    A: Nothing in the scenario shows the tool was inaccurate. The rise in corrections is consistent with
+      staff signing off drafts too quickly to hit the target.
+    B: Turnaround time is a legitimate efficiency measure. The problem is using it alone, not using it at all.
+    C: Incentives can support adoption if they are balanced. Removing them entirely overcorrects.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-a
+  checked_by: 2026-10-13-aaig-d3-a-check
+  check_verdict: pass

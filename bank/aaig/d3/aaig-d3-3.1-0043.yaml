@@ -1,0 +1,32 @@
+id: aaig-d3-3.1-0043
+subdomain: '3.1'
+difficulty: medium
+stem: A bank's central machine learning platform team hosts models for several business units. The card fraud unit's
+  models went offline twice over a weekend, and no one responded until Monday because the platform team supports
+  office hours only. No agreement on service levels exists between them. What should the governance leader recommend?
+options:
+  A: Agree internal service levels with each business unit that reflect how critical its services are
+  B: Let the fraud unit run its models on its own infrastructure so that it controls its support hours
+  C: Require the platform team to support every hosted model around the clock, whatever its use
+  D: Log the outages in the risk register and look at them again in the next annual risk assessment
+answer: A
+explanation:
+  why_correct: An internal platform is a service provider to the business, and it needs explicit service levels
+    just as an external vendor would. Agreeing availability, support hours, response times and escalation with each
+    consuming unit, scaled to the criticality of what they run, makes expectations clear and lets capacity and cost
+    be planned. Fraud scoring at night clearly needs a different level from an internal reporting model.
+  why_not:
+    B: Splitting off infrastructure duplicates cost and weakens shared controls to fix what is really a missing
+      agreement. It also leaves other critical users with the same gap.
+    C: Round-the-clock support for every model wastes money on low-criticality uses. Service levels should follow
+      business need.
+    D: Recording the risk is not treating it. A critical service with no agreed support should not wait a year for
+      attention.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-b
+  checked_by: 2026-10-13-aaig-d3-b-check
+  check_verdict: pass

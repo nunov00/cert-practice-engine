@@ -1,0 +1,33 @@
+id: aaig-d3-3.1-0041
+subdomain: '3.1'
+difficulty: medium
+stem: A water utility introduced AI that matches supplier invoices to purchase orders, and about 90% now go through
+  automatically. The business case removed most accounts payable clerk roles. Invoices the AI cannot match go to
+  a queue that no team was assigned to, and some suppliers are now charging late-payment fees. What should the governance
+  leader recommend?
+options:
+  A: Lower the matching confidence level so that more invoices are matched without people
+  B: Ask the vendor to retrain the model on the unmatched invoices to raise the automation rate
+  C: Rehire the clerks who were let go and restore the previous manual process for all invoices
+  D: Redesign the process end to end, giving a named team and service level for the exceptions
+answer: D
+explanation:
+  why_correct: The AI is doing what it was bought to do; the failure is in how it was fitted into the process. Removing
+    roles without deciding who handles exceptions left a gap in the operating model. The process needs an owner
+    for unmatched invoices, with enough capacity and a service level that protects supplier payments. Integration
+    means designing the whole process, not just the automated part.
+  why_not:
+    A: Accepting weaker matches shrinks the queue by letting more wrong payments through. It moves the problem rather
+      than solving it.
+    B: A higher automation rate may help over time, but there will always be exceptions. Someone still has to own
+      them, and that gap exists today.
+    C: Going back to manual handling of every invoice throws away a working benefit. Only the exceptions lack an
+      owner.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-b
+  checked_by: 2026-10-13-aaig-d3-b-check
+  check_verdict: pass

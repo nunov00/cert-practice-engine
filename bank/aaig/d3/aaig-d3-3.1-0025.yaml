@@ -1,0 +1,30 @@
+id: aaig-d3-3.1-0025
+subdomain: '3.1'
+difficulty: medium
+stem: A logistics firm's executives strongly support a new AI dispatching system, and frontline drivers have
+  been trained. Yet depot managers keep overriding the system with their own allocations. What change management
+  action is MOST likely to help?
+options:
+  A: Remove depot managers' ability to override the system
+  B: Repeat the driver training with more practical examples
+  C: Involve depot managers and align their targets
+  D: Ask the executives to send a further message of support
+answer: C
+explanation:
+  why_correct: Middle managers often decide whether a change sticks. If their targets and sense of control
+    are not addressed, they will resist. Involving them in how the system is used and aligning their objectives
+    with its goals turns them into sponsors rather than blockers.
+  why_not:
+    A: Removing overrides may also remove a sensible safeguard and is likely to deepen resistance without explaining
+      why managers distrust the system.
+    B: Drivers are not the group resisting. More training for them does not address depot managers' behaviour.
+    D: Executive messages have already been sent. Repeating them does not address managers' practical concerns
+      about their own targets.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-a
+  checked_by: 2026-10-13-aaig-d3-a-check
+  check_verdict: pass

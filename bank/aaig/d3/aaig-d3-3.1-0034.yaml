@@ -1,0 +1,29 @@
+id: aaig-d3-3.1-0034
+subdomain: '3.1'
+difficulty: hard
+stem: An insurer retrains its claims fraud model every quarter on the results of fraud investigations.
+  Investigators examine only the claims the model flags, so fraud among unflagged claims is rarely confirmed.
+  What risk should the governance leader raise?
+options:
+  A: Retraining every quarter is too frequent for a fraud model
+  B: Investigation results are unreliable because they arrive late
+  C: Customers with flagged claims may complain about the delays
+  D: The model may confirm its own past flags and miss new fraud
+answer: D
+explanation:
+  why_correct: When a model learns only from the cases it chose to send for investigation, it never tests
+    whether the claims it let through were clean. Its blind spots become entrenched and appear confirmed, and
+    new fraud patterns go unseen. Governance should require periodic checks, such as investigating a random
+    sample of unflagged claims, to detect this self-reinforcing loop.
+  why_not:
+    A: Retraining frequency is not the issue; the problem is what the training data cannot show.
+    B: Investigation results are sound evidence. The problem is that they exist only for flagged claims.
+    C: Delays for customers are a real concern, but they are a separate issue from the learning bias described.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-a
+  checked_by: 2026-10-13-aaig-d3-a-check
+  check_verdict: pass

@@ -1,0 +1,29 @@
+id: aaig-d3-3.1-0036
+subdomain: '3.1'
+difficulty: medium
+stem: Over a year, a utility's AI incident log shows six separate incidents, each closed after a technical
+  fix. Four were caused by upstream data changes that the model owners were not told about. What should the
+  governance leader do?
+options:
+  A: Ask each model owner to check upstream data sources more often
+  B: Address the common cause through a data change notification control
+  C: Escalate the four incidents individually to the risk committee
+  D: Add more automated alerts on each affected model's outputs
+answer: B
+explanation:
+  why_correct: 'Looking across incidents reveals a systemic cause: upstream changes are not communicated. Fixing
+    that through an enterprise process, such as requiring data change notification to dependent model owners,
+    prevents recurrence. Incident management should feed lessons back into governance, not only close tickets.'
+  why_not:
+    A: Asking owners to check more often puts the burden on them and does not stop changes being made silently.
+    C: Escalating closed incidents one by one misses the pattern. The committee needs the root cause and a
+      proposed control.
+    D: More output alerts may detect the next problem sooner but do not prevent it. The cause sits upstream.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-a
+  checked_by: 2026-10-13-aaig-d3-a-check
+  check_verdict: pass

@@ -1,0 +1,31 @@
+id: aaig-d3-3.1-0011
+subdomain: '3.1'
+difficulty: medium
+stem: Six months after a utility launched an AI system to forecast customer demand, the steering committee
+  plans a post-implementation review. Which focus would make the review MOST useful to the executive team?
+options:
+  A: Whether outcomes, risks and lessons match what was approved
+  B: Whether the project finished on time and within its budget
+  C: Whether the model's technical metrics match the design document
+  D: Whether users are satisfied with the forecasting interface
+answer: A
+explanation:
+  why_correct: 'A post-implementation review should compare what was approved with what actually happened:
+    the benefits, the risks that materialised, and how controls performed. It should also capture lessons for
+    future AI decisions. That gives executives a basis to continue, adjust or stop, and to improve how they
+    approve the next initiative.'
+  why_not:
+    B: Delivery on time and budget matters for project management, but it says little about whether the system
+      is delivering value safely in operation.
+    C: Technical conformance is one input, but a model can meet its specification and still fail to deliver
+      the expected business outcome.
+    D: User satisfaction is a useful signal of adoption but is too narrow to judge value, risk and lessons
+      for the enterprise.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-a
+  checked_by: 2026-10-13-aaig-d3-a-check
+  check_verdict: pass

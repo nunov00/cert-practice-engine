@@ -1,0 +1,33 @@
+id: aaig-d3-3.1-0040
+subdomain: '3.1'
+difficulty: hard
+stem: A hospital trust has used AI to suggest diagnosis codes for patient records for four years; coders confirm
+  or correct each suggestion. Most experienced coders have since retired, and newer staff have only ever worked
+  with the AI. Quality audits now show coders miss more AI errors on complex cases than before. What should the
+  governance leader recommend?
+options:
+  A: Add a second AI model that checks the first model's codes before they reach the coders
+  B: Raise the model's accuracy target so that fewer wrong codes reach the coders at all
+  C: Treat coder skill as a control, with regular unaided practice and competence checks
+  D: Require coders to write a short justification each time they accept an AI suggestion
+answer: C
+explanation:
+  why_correct: The human check only works if the people doing it can still recognise a wrong answer. Years of relying
+    on the AI have worn that skill away, so the control is weaker than it looks. Planning for skill retention, through
+    training and practice on unaided coding of complex cases and regular competence checks, keeps the review meaningful.
+    It also protects the trust if the AI is ever unavailable.
+  why_not:
+    A: A second model may share blind spots with the first and does nothing to restore the reviewers' ability. It
+      adds another layer to oversee without fixing the weakness found.
+    B: A better model is welcome but will never be perfect, and the errors that remain will be the subtle ones that
+      weakened reviewers are least able to catch.
+    D: Written justifications add effort and paperwork, but someone without the expertise will still justify a wrong
+      code. The problem is skill, not documentation.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-b
+  checked_by: 2026-10-13-aaig-d3-b-check
+  check_verdict: pass
