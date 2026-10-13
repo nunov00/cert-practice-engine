@@ -96,6 +96,19 @@ test("a preview recipe leaves out weights, length, delivery, scoring and the moc
   assert.ok(exam.domains.every((d) => d.weight === null));
 });
 
+test("an estimated pace is allowed only in a preview recipe", async () => {
+  const pace = { questions: 90, minutes: 150, basis: "test" };
+  const preview = previewOf(cissp);
+  preview.product.estimated_pace = pace;
+  assert.deepEqual(errors(fixture([question()], preview)), []);
+  const { buildPublicContent } = await import("../src/build.ts");
+  assert.deepEqual(buildPublicContent(fixture([question()], preview), "open").exams[0]!.estimated_pace, pace);
+
+  const published = structuredClone(cissp);
+  published.product.estimated_pace = pace;
+  assert.ok(errors(fixture([], published)).some((m) => m.includes("estimated_pace is for preview recipes only")));
+});
+
 test("a published recipe needs weights, length, delivery, scoring and the mock", () => {
   const bad = previewOf(cissp);
   delete bad.exam.outline.status;

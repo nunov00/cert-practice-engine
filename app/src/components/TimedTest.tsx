@@ -31,6 +31,8 @@ interface Props {
   size: number;
   /** The real exam's pace, from the recipe's product.mock. */
   pace: { questions: number; minutes: number };
+  /** Set when the pace is an estimate (preview exam); says what it is based on. */
+  estimate?: string;
   domains: TestDomain[];
   questions: PublicQuestion[];
   /** The recipe's min_accuracy_per_domain. */
@@ -43,7 +45,7 @@ type Phase = "loading" | "intro" | "running" | "done";
 
 const LOW_SECONDS = 5 * 60;
 
-export function TimedTest({ examId, kind, size, pace, domains, questions, target, domainId }: Props) {
+export function TimedTest({ examId, kind, size, pace, estimate, domains, questions, target, domainId }: Props) {
   const byId = useMemo(() => new Map(questions.map((q) => [q.id, q])), [questions]);
   const known = useMemo(() => new Set(byId.keys()), [byId]);
   const pools = useMemo(
@@ -214,8 +216,13 @@ export function TimedTest({ examId, kind, size, pace, domains, questions, target
             : ""}
           {kind === "missed"
             ? `Every question you got wrong last time${domainId ? " in this domain" : ", across all domains"}, in random order. `
-            : "Questions are picked at random, spread across the domains by their exam weight. "}
-          You get the same time per question as in the real exam. Answers and explanations are shown at the end, and
+            : estimate
+              ? "Questions are picked at random, spread evenly across the areas. "
+              : "Questions are picked at random, spread across the domains by their exam weight. "}
+          {estimate
+            ? `The time is an estimate (${estimate}) until the real exam length is published. `
+            : "You get the same time per question as in the real exam. "}
+          Answers and explanations are shown at the end, and
           you can go back and change an answer until then.
         </p>
         <div className="actions">
