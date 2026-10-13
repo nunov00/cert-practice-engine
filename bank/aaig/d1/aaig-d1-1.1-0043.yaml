@@ -1,0 +1,32 @@
+id: aaig-d1-1.1-0043
+subdomain: '1.1'
+difficulty: hard
+stem: A bank and a telecom operator form a joint venture to offer AI-based credit scoring to small merchants. Each
+  parent has its own AI governance framework, and the two differ on fairness testing and incident reporting. The
+  joint venture agreement is being drafted. What should the bank's governance leader insist on?
+options:
+  A: The agreement sets the standards and accountability for the venture's AI
+  B: Each parent applies its own framework to the parts of the venture it staffs
+  C: The venture follows whichever parent's framework is less demanding, to move fast
+  D: Governance questions are settled by the venture's managers once it is running
+answer: A
+explanation:
+  why_correct: In a joint venture, neither parent's framework applies automatically. Unless the agreement sets the
+    governance standards, decision rights and accountability for the venture's AI, including incident reporting
+    to both parents, gaps will appear exactly where the frameworks differ, and the bank keeps the reputational and
+    regulatory exposure.
+  why_not:
+    B: Splitting the venture by staffing creates two sets of rules for one product. Issues that cross the boundary,
+      such as a fairness problem found in production, would have no clear owner.
+    C: Choosing the weaker standard to save time leaves the bank exposed below its own appetite. The bank's regulators
+      and customers will judge it by the outcome, not by the venture's structure.
+    D: Once the venture runs, the parents have far less leverage to impose terms. Governance must be agreed in the
+      founding agreement, while both parties are still negotiating.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-b
+  checked_by: 2026-10-13-aaig-d1-b-check
+  check_verdict: pass

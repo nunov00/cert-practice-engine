@@ -1,0 +1,32 @@
+id: aaig-d1-1.1-0041
+subdomain: '1.1'
+difficulty: hard
+stem: At an all-staff event, the chief executive of a fast-growing online lender says teams should 'ship AI features
+  first and fix governance later' to beat competitors. The board-approved AI policy requires risk review before
+  customer-facing launches. Two teams have since skipped the review. What should the governance leader do FIRST?
+options:
+  A: Report the two teams to internal audit as policy breaches
+  B: Raise the conflict with the CEO and ask for the policy to be restated
+  C: Rewrite the policy so that customer-facing reviews are optional
+  D: Wait for the next board meeting and include the issue in the regular report
+answer: B
+explanation:
+  why_correct: Staff take their cue from what senior leaders say. The teams acted on a message from the top, so
+    the root cause is the conflicting tone, not the teams. Raising it directly with the CEO, and asking the CEO
+    to restate visibly that the board's policy applies, corrects the signal quickly; if the CEO refuses, the matter
+    goes to the board.
+  why_not:
+    A: The breaches should be handled, but blaming teams who followed the CEO's public lead treats the symptom.
+      More teams will follow the same signal unless it is corrected at the source.
+    C: Weakening a board-approved policy because an executive dislikes it reverses the governance order. Only the
+      board can change its policy, and it should do so on the merits, not under pressure.
+    D: Waiting lets more launches go ahead without review while the message stands. The leader should act now and
+      escalate to the board if talking to the CEO does not fix it.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-b
+  checked_by: 2026-10-13-aaig-d1-b-check
+  check_verdict: pass

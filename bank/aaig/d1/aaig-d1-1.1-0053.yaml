@@ -1,0 +1,32 @@
+id: aaig-d1-1.1-0053
+subdomain: '1.1'
+difficulty: hard
+stem: A wealth manager is launching an AI portfolio tool for independent financial advisers. Sales has agreed contract
+  terms with early clients that accept unlimited liability for losses from the tool's recommendations, to win deals.
+  The board's risk appetite sets limits on financial exposure from any single product. What should the governance
+  leader recommend?
+options:
+  A: Keep the terms, as early clients are strategically important
+  B: Leave liability terms to the legal team on a contract-by-contract basis
+  C: Buy insurance to cover any claims and keep the current terms
+  D: Set an approved liability position for AI products within appetite
+answer: D
+explanation:
+  why_correct: How much liability the firm accepts for AI-driven outcomes is a risk appetite decision, not a sales
+    tactic. An approved position, with authority levels for any departure, keeps contractual exposure within the
+    limits the board set and makes the allocation of risk between the firm and its clients deliberate.
+  why_not:
+    A: Strategic value does not justify exposure the board has not accepted. Unlimited liability on an AI product
+      could exceed the appetite on its own.
+    B: Case-by-case drafting without a set position leads to inconsistent exposure and leaves no one checking the
+      total against appetite.
+    C: Insurance may cover part of the exposure, but cover for AI losses is often limited and does not replace a
+      deliberate decision on how much risk to accept.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-b
+  checked_by: 2026-10-13-aaig-d1-b-check
+  check_verdict: pass

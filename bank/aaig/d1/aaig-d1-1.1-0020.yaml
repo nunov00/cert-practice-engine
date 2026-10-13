@@ -1,0 +1,29 @@
+id: aaig-d1-1.1-0020
+subdomain: '1.1'
+difficulty: medium
+stem: An insurer's enterprise AI inventory lists only the models built in-house by its data science team. What
+  is the MOST significant gap?
+options:
+  A: It does not record the size of each model's training dataset
+  B: It does not record the programming language of each model
+  C: It omits AI embedded in purchased software and services
+  D: It is not published anywhere on the company's public website
+answer: C
+explanation:
+  why_correct: Much of an enterprise's AI arrives inside bought products and cloud services. Leaving that out
+    means a large share of AI risk has no owner, no assessment and no visibility to the board, which undermines
+    the inventory's whole purpose.
+  why_not:
+    A: Dataset size is a technical detail that might be useful to record, but its absence is minor compared
+      with missing entire systems.
+    B: The programming language has little bearing on governance risk. It is not a meaningful gap.
+    D: An internal inventory does not need to be public. Some disclosure of AI use may be wise, but that is
+      a separate decision.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass

@@ -1,0 +1,30 @@
+id: aaig-d1-1.1-0027
+subdomain: '1.1'
+difficulty: easy
+stem: The head of AI governance at a construction firm learns that staff in the finance team are using unapproved
+  AI tools to summarise contracts. What should be done FIRST?
+options:
+  A: Discipline the staff who used the unapproved AI tools
+  B: Block every AI website across the corporate network
+  C: Find out what is used, why, and with which data
+  D: Buy an enterprise AI licence for the whole company
+answer: C
+explanation:
+  why_correct: 'Before deciding on a response, governance needs the facts: which tools, what business need
+    they meet, and whether confidential data has been exposed. This shapes both the immediate risk response
+    and the longer-term fix.'
+  why_not:
+    A: Discipline before understanding the situation may be unfair if policy was unclear, and it pushes use
+      further underground.
+    B: A blanket block is a heavy reaction taken without knowing the need or the exposure, and it is easily
+      bypassed.
+    D: Buying a licence may be part of the answer, but committing spend before understanding the need and risks
+      is premature.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass

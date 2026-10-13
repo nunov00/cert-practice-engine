@@ -1,0 +1,31 @@
+id: aaig-d1-1.1-0062
+subdomain: '1.1'
+difficulty: easy
+stem: A restaurant brand with 300 franchised outlets learns that some franchisees use AI chatbots for customer orders
+  under the brand's name. One chatbot gave customers false allergy information. What is the BEST governance response
+  for the brand?
+options:
+  A: Set AI standards in the franchise agreement for tools used under the brand
+  B: Leave AI choices to franchisees, since they run their own independent businesses
+  C: Ask each franchisee to sign a waiver releasing the brand from AI claims
+  D: Announce publicly that the brand does not use AI
+answer: A
+explanation:
+  why_correct: Franchisees are independent, but they trade under the brand, and customers hold the brand responsible.
+    Setting minimum standards for AI tools used under the brand, through the franchise agreement and operating manual,
+    protects customers and the brand while leaving franchisees free to run their businesses.
+  why_not:
+    B: Independence does not remove the brand's exposure. Customers harmed by false allergy information will blame
+      the brand, whoever operates the outlet.
+    C: A waiver between brand and franchisee does not protect customers or the brand's reputation. It shifts blame
+      on paper without reducing harm.
+    D: A public statement would be untrue while franchisees use AI under the brand, and it does nothing to prevent
+      the next incident.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-b
+  checked_by: 2026-10-13-aaig-d1-b-check
+  check_verdict: pass
