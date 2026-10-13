@@ -1,0 +1,31 @@
+id: aair-d1-1.1-0011
+subdomain: '1.1'
+difficulty: medium
+stem: A regional hospital's new AI strategy commits it to building its own diagnostic support models over
+  the next three years. The hospital has two data scientists, no staff to run models in production and
+  no experience of validating clinical models. What should the risk practitioner recommend?
+options:
+  A: Approve the strategy, as the hospital can hire more staff later
+  B: Replace the strategy with a rule to buy only certified products
+  C: Assess whether the planned approach fits the hospital's capabilities
+  D: Limit the strategy to models built from publicly available datasets
+answer: C
+explanation:
+  why_correct: A strategy that depends on capabilities the organisation lacks creates delivery and patient
+    safety risk. Assessing the capability gap shows whether to build, buy, partner or invest in skills
+    first, so the strategy is realistic and its risks are understood before the hospital commits to it.
+  why_not:
+    A: Hiring later assumes the right skills can be found in time. Meanwhile, models could be built and
+      used without competent validation.
+    B: Buying may be part of the answer, but replacing the strategy before the options are assessed is
+      premature. Bought products also need in-house skills to evaluate and monitor them.
+    D: Public datasets do not make up for the lack of validation and operations skills, and they may not
+      represent the hospital's own patients.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

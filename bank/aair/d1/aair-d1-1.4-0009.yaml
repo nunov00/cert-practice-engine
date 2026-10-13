@@ -1,0 +1,29 @@
+id: aair-d1-1.4-0009
+subdomain: '1.4'
+difficulty: medium
+stem: A water utility's AI policy states that AI must be 'fair, transparent and safe'. A year later, project
+  teams interpret these words in very different ways, and auditors cannot tell whether any project has
+  complied. What should the risk practitioner recommend?
+options:
+  A: Add more principles so that the policy covers more situations
+  B: Ask each project team to write its own definitions of the principles
+  C: Remove the principles and rely on the existing IT security policy
+  D: Turn the principles into specific requirements that can be checked
+answer: D
+explanation:
+  why_correct: Principles alone are too broad to act on or audit. Supporting them with concrete requirements,
+    such as what must be tested, documented and approved and by whom, gives teams clear direction and
+    gives auditors criteria for judging compliance.
+  why_not:
+    A: More principles would add breadth but the same vagueness, making the problem worse.
+    B: Team-by-team definitions would entrench the inconsistency that the policy should remove.
+    C: An IT security policy does not cover AI-specific concerns such as fairness, so dropping the principles
+      would leave gaps.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

@@ -1,0 +1,32 @@
+id: aair-d1-1.4-0010
+subdomain: '1.4'
+difficulty: hard
+stem: A mid-sized insurer is drafting its AI policy. One draft defines AI so narrowly that it would exclude
+  AI features in bought software; another is so broad that every spreadsheet formula would need review.
+  Business teams fear either too little coverage or too much bureaucracy. How should the policy BEST define
+  its scope?
+options:
+  A: Use the narrow definition and widen it later if incidents occur
+  B: Use the broad definition so that no system can fall outside it
+  C: Define AI by its features and add a route for deciding unclear cases
+  D: Leave the scope open and let each team decide what counts as AI
+answer: C
+explanation:
+  why_correct: A definition based on characteristics, such as systems that learn from data or generate
+    predictions, content or decisions, captures both bought and built AI without sweeping in simple calculations.
+    A set route for borderline cases, such as referral to the AI risk function, keeps the scope consistent
+    as new technology appears, and requirements can then be scaled by risk.
+  why_not:
+    A: Waiting for incidents accepts known gaps, such as AI inside bought software, that the policy should
+      cover from the start.
+    B: An over-broad scope wastes effort on trivial tools and can lead people to ignore the policy.
+    D: Letting teams decide would give inconsistent coverage and an incentive to define systems out of
+      scope.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

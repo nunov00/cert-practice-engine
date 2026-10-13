@@ -1,0 +1,30 @@
+id: aair-d1-1.6-0011
+subdomain: '1.6'
+difficulty: hard
+stem: A media technology company is preparing to launch a tool that clones a person's voice from a short
+  recording, aimed at podcasters who want to edit their own audio. Testers note that anyone could upload
+  a recording of someone else. What should the risk practitioner recommend before launch?
+options:
+  A: Add terms of service that forbid cloning voices without permission
+  B: Assess likely misuse and build in safeguards such as consent checks
+  C: Launch to podcasters only, as they are the intended group of users
+  D: Delay the launch until a law on synthetic voices has been passed
+answer: B
+explanation:
+  why_correct: A tool that could be used for fraud, harassment or impersonation must be assessed for foreseeable
+    misuse, not only for its intended use. Built-in safeguards, such as checking that the voice belongs
+    to the account holder and marking generated audio, reduce harm far more than rules users can simply
+    ignore.
+  why_not:
+    A: Terms of service set expectations but do not stop misuse; people intent on harm will ignore them.
+    C: Marketing to podcasters does not stop other people signing up and misusing the tool.
+    D: The ethical duty to prevent foreseeable harm exists without a specific law, and such a law may
+      never arrive.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass
