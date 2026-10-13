@@ -65,6 +65,11 @@ next free number in that subdomain.
   `docs/automation/publishing.md`.
 - CI (`.github/workflows/ci.yml`) runs `pnpm check` and the Cloudflare app build; keep it green.
 
+## Budget
+
+- Stay well within the free plans of Cloudflare and GitHub (owner rule). Limits and
+  current usage: `docs/roadmap.md#stay-within-the-free-plans`.
+
 ## Never
 
 - Never schedule or enable automation (cron, triggers, scheduled workflows)
@@ -73,6 +78,9 @@ next free number in that subdomain.
 - Never edit a recipe's weights or domains except in a PR that cites the
   issuer's official outline.
 - Never weaken or skip a validator rule or test to make CI pass.
-- Never ship paid questions to the browser. Only `tools/src/build.ts` decides what
-  public content the app bundles (published free-sample questions only), and
-  `app/test/content.test.ts` guards it.
+- Never ship drafts or unchecked questions to the browser. Only `tools/src/build.ts`
+  decides what public content the app bundles, via `PUBLIC_ACCESS`: `open` (all
+  published questions, the owner's choice until monetisation, decision 0004) or
+  `free-sample` (published sample questions only). Only the owner changes that
+  setting. `app/test/content.test.ts` guards the bundle. Once paid unlocks exist,
+  never ship paid questions to the browser.
