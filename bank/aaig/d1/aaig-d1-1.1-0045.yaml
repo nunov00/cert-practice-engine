@@ -1,0 +1,31 @@
+id: aaig-d1-1.1-0045
+subdomain: '1.1'
+difficulty: easy
+stem: A logistics company in a country with strong worker representation plans to use AI to set warehouse shift
+  patterns. The project team intends to inform the works council once the system is ready to launch. What should
+  the governance leader advise?
+options:
+  A: Keep the plan confidential until launch so that rumours do not spread
+  B: Involve the works council early, while the design can still change
+  C: Inform only the staff whose shifts will change at launch
+  D: Ask the vendor to run the consultation on the company's behalf
+answer: B
+explanation:
+  why_correct: When AI affects how people work, early engagement with their representatives lets their concerns
+    shape the design, builds trust and, in many countries, meets legal duties to consult before the decision is
+    made. Telling them only at launch turns consultation into an announcement and invites conflict or delay.
+  why_not:
+    A: Secrecy until launch damages trust and may breach consultation duties. Rumours are better handled by honest
+      early engagement.
+    C: Informing individuals is not the same as engaging their representatives, and it comes too late for their
+      views to shape the system.
+    D: The company, as employer, is responsible for engaging its workforce. A vendor has its own interests and cannot
+      take on that relationship.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-b
+  checked_by: 2026-10-13-aaig-d1-b-check
+  check_verdict: pass

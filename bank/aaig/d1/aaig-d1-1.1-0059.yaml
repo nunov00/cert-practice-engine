@@ -1,0 +1,32 @@
+id: aaig-d1-1.1-0059
+subdomain: '1.1'
+difficulty: hard
+stem: A conglomerate is selling one of its divisions. The division uses several AI models that were trained on data
+  pooled from across the group, including customer data from divisions that are not being sold. The buyer wants
+  the models included. What should the governance leader advise?
+options:
+  A: Transfer the models as they are, since models do not contain raw data
+  B: Refuse to transfer any AI models as part of the sale
+  C: Review data rights and obligations before deciding what models may transfer
+  D: Let the buyer take on all responsibility for the models after closing
+answer: C
+explanation:
+  why_correct: Models trained on group data can carry obligations tied to that data, such as the purposes customers
+    agreed to and contracts with partners. Before the models change hands, the group needs to know whether it has
+    the right to transfer them, and on what terms, so it does not breach commitments to customers who stay with
+    the group.
+  why_not:
+    A: Models can reveal or reflect the data they were trained on, and the obligations attached to that data may
+      still apply. 'No raw data' is not a sufficient basis.
+    B: A blanket refusal may destroy value in the sale without need. Some models may transfer safely, possibly after
+      retraining on the division's own data.
+    D: Contract terms with the buyer cannot cancel the group's own duties to its customers. The group remains responsible
+      for what it hands over.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-b
+  checked_by: 2026-10-13-aaig-d1-b-check
+  check_verdict: pass

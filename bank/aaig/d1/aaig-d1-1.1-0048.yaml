@@ -1,0 +1,31 @@
+id: aaig-d1-1.1-0048
+subdomain: '1.1'
+difficulty: easy
+stem: After a data leak through a public chatbot, a manufacturer's executive committee adopted an emergency rule
+  blocking all generative AI tools. The rule was meant as a stopgap while a proper policy was written. What should
+  the emergency rule have included?
+options:
+  A: A list of the staff involved in the leak
+  B: A requirement that only the CEO can grant access to AI tools
+  C: An expiry date or a set point at which it must be reviewed
+  D: A commitment never to use generative AI in the future
+answer: C
+explanation:
+  why_correct: Emergency measures taken under pressure are often broader than needed. A sunset date or mandatory
+    review point ensures the rule is reconsidered once the facts are known and a proper policy is ready, so a stopgap
+    does not become permanent by default.
+  why_not:
+    A: Naming individuals belongs in an investigation, not in a policy rule. It does nothing to make the rule fit
+      for purpose over time.
+    B: Routing all access through the CEO creates a bottleneck and puts a routine decision at the wrong level. It
+      also makes the stopgap harder to lift.
+    D: A permanent ban decided in a crisis closes off future value without analysis. The point of a stopgap is to
+      buy time for a considered decision.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-b
+  checked_by: 2026-10-13-aaig-d1-b-check
+  check_verdict: pass

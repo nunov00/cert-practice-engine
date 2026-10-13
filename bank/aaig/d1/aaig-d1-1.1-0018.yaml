@@ -1,0 +1,32 @@
+id: aaig-d1-1.1-0018
+subdomain: '1.1'
+difficulty: medium
+stem: The HR department of a large employer wants to use AI to analyse staff emails to predict who is likely
+  to resign. The practice is lawful where the company operates and is technically feasible. The company's AI
+  principles include respect for privacy and transparency. What should the AI governance committee do?
+options:
+  A: Approve it, as the use is lawful in the jurisdiction
+  B: Approve it if the model's accuracy is shown to be high
+  C: Let HR decide, as HR owns employee relationship matters
+  D: Weigh it against the company's principles, not only the law
+answer: D
+explanation:
+  why_correct: Legality is a minimum, not the whole test. The committee exists to apply the organisation's
+    own principles, and analysing staff emails to predict resignations raises clear privacy and transparency concerns. It
+    should assess the proposal against those principles and decide whether it can proceed, be changed or be
+    rejected.
+  why_not:
+    A: Being lawful does not make a use consistent with the company's stated principles or with employees'
+      trust.
+    B: High accuracy makes the intrusion more effective, not more acceptable. Accuracy does not answer the
+      ethical question.
+    C: HR owns the process, but a use that tests the enterprise's ethical principles is exactly what the governance
+      committee is there to decide.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass

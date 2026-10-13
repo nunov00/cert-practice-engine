@@ -1,0 +1,28 @@
+id: aaig-d1-1.1-0031
+subdomain: '1.1'
+difficulty: medium
+stem: A retail bank is about to launch an AI chatbot for customer service. What should the bank's disclosure
+  policy require for this use?
+options:
+  A: Disclose AI use only if a customer asks about it directly
+  B: Publish the chatbot's full model design on the bank's website
+  C: Tell customers they are dealing with AI and how to reach a person
+  D: Avoid any disclosure so that customers do not lose trust
+answer: C
+explanation:
+  why_correct: Customers should know when they are interacting with AI and have a clear way to reach a human,
+    especially for complex or sensitive matters. This respects their autonomy, supports trust and is increasingly
+    expected by regulators.
+  why_not:
+    A: Disclosing only on request places the burden on customers who may never think to ask, which is not real
+      transparency.
+    B: Technical design detail is meaningless to most customers and could expose security or commercial information.
+    D: Concealment risks a far greater loss of trust if customers discover it, and may breach disclosure rules.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass

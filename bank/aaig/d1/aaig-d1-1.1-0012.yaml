@@ -1,0 +1,31 @@
+id: aaig-d1-1.1-0012
+subdomain: '1.1'
+difficulty: hard
+stem: A bank's board-approved risk appetite says customer-facing AI must not produce unfair outcomes, and management
+  has set a measurable tolerance for outcome gaps between customer groups. A new credit model slightly exceeds
+  that tolerance but promises large revenue gains. The business head wants to launch. What should happen?
+options:
+  A: Escalate to the body that set the appetite for an explicit decision
+  B: Launch, since the breach is small and the revenue gain is large
+  C: Let the model owner widen the tolerance so it fits the new model's results
+  D: Launch, and report the breach in the next annual risk report
+answer: A
+explanation:
+  why_correct: A tolerance marks the point at which risk leaves what management may accept on its own. A breach,
+    however small, should go to the body that holds that authority, which can decide to accept, mitigate or
+    reject with full visibility. That keeps the appetite meaningful.
+  why_not:
+    B: Trading a tolerance breach for revenue is a decision only the authority that set the limit may make.
+      The business head cannot make it alone.
+    C: Changing a limit to fit a proposal makes the limit worthless. Tolerances are set in advance precisely
+      so they are not adjusted case by case.
+    D: Reporting after the fact means the board learns of the exposure months later, when customers may already
+      have been treated unfairly.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass
