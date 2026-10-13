@@ -21,10 +21,11 @@ explanation:
     B: Teaching the model to copy overrides that default more often would build the incentive problem into the model
       itself.
     D: A reminder does nothing to change the bonus that drives the behaviour. Incentives usually outweigh guidance.
-status: in_review
+status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  check_verdict: pending
+  checked_by: 2026-10-13-aaig-d3-b-check
+  check_verdict: pass
