@@ -6,8 +6,10 @@ import type { TestKind } from "@/lib/exam-session";
 export const QUICK_SIZE = 10;
 
 /** Server wrapper shared by the mock exam and quick test pages. */
-export function TestPage({ exam, kind }: { exam: PublicExam; kind: TestKind }) {
-  const questions = questionsFor(exam.id);
+/** `domainId` limits a wrong-answers test to one domain. */
+export function TestPage({ exam, kind, domainId }: { exam: PublicExam; kind: TestKind; domainId?: string }) {
+  const questions = questionsFor(exam.id, domainId);
+  const domain = exam.domains.find((d) => d.id === domainId);
   const size = kind === "mock" ? exam.mock.questions : QUICK_SIZE;
   return (
     <>
@@ -16,11 +18,13 @@ export function TestPage({ exam, kind }: { exam: PublicExam; kind: TestKind }) {
       </nav>
       <h1>{kind === "mock" ? "Mock exam" : kind === "missed" ? "Wrong answers" : `Quick ${Math.min(size, questions.length)}`}</h1>
       <p className="lead">
-        {exam.name} · timed, all domains
+        {exam.name} · timed, {domain ? domain.name : "all domains"}
         {kind === "missed" && (
           <>
             {" · "}
-            <Link href={`/exams/${exam.id}/review#missed`}>practise untimed instead</Link>
+            <Link href={domain ? `/exams/${exam.id}/drill/${domain.id}#missed` : `/exams/${exam.id}/review#missed`}>
+              practise untimed instead
+            </Link>
           </>
         )}
       </p>
@@ -29,9 +33,10 @@ export function TestPage({ exam, kind }: { exam: PublicExam; kind: TestKind }) {
         kind={kind}
         size={size}
         pace={exam.mock}
-        domains={exam.domains.map((d) => ({ id: d.id, name: d.name, weight: d.weight }))}
+        domains={(domain ? [domain] : exam.domains).map((d) => ({ id: d.id, name: d.name, weight: d.weight }))}
         questions={questions}
         target={exam.readiness.min_accuracy_per_domain}
+        domainId={domain?.id}
       />
     </>
   );

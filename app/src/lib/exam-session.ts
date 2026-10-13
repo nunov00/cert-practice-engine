@@ -98,27 +98,28 @@ export function parseSavedTest(text: string | null, exam: string, kind: TestKind
   }
 }
 
-const key = (exam: string, kind: TestKind) => `cpe.test.v1.${exam}.${kind}`;
+/** `scope` keeps tests on part of an exam (one domain) apart from exam-wide ones. */
+const key = (exam: string, kind: TestKind, scope?: string) => `cpe.test.v1.${exam}.${kind}${scope ? `.${scope}` : ""}`;
 
-export function loadTest(exam: string, kind: TestKind, known: Set<string>): SavedTest | null {
+export function loadTest(exam: string, kind: TestKind, known: Set<string>, scope?: string): SavedTest | null {
   try {
-    return parseSavedTest(window.localStorage.getItem(key(exam, kind)), exam, kind, known);
+    return parseSavedTest(window.localStorage.getItem(key(exam, kind, scope)), exam, kind, known);
   } catch {
     return null;
   }
 }
 
-export function saveTest(t: SavedTest): void {
+export function saveTest(t: SavedTest, scope?: string): void {
   try {
-    window.localStorage.setItem(key(t.exam, t.kind), JSON.stringify(t));
+    window.localStorage.setItem(key(t.exam, t.kind, scope), JSON.stringify(t));
   } catch {
     // Storage blocked: the test still works, it just can't survive a reload.
   }
 }
 
-export function clearTest(exam: string, kind: TestKind): void {
+export function clearTest(exam: string, kind: TestKind, scope?: string): void {
   try {
-    window.localStorage.removeItem(key(exam, kind));
+    window.localStorage.removeItem(key(exam, kind, scope));
   } catch {
     // Nothing to clear.
   }
