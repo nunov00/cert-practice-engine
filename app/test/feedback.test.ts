@@ -5,17 +5,13 @@ import {
   DAILY_CAP,
   VISITOR_DAILY_LIMIT,
   cleanPage,
-  deleteFeedback,
-  listFeedback,
+  feedbackFile,
+  feedbackPath,
+  flushOutbox,
   parseFeedback,
   resetSchemaCache,
   saveFeedback,
-  setStatus,
-  toCsv,
-  tokenMatches,
-  anyTokenMatches,
   type Db,
-  type FeedbackRow,
   type Stmt,
 } from "../src/lib/feedback.ts";
 
@@ -105,51 +101,51 @@ test("the whole site stops at the daily cap", async () => {
   assert.equal(await saveFeedback(db, { category: "idea", message: "one too many", page: null }, now, "10.9.9.9"), "daily-cap");
 });
 
-test("owner can list, change status and delete", async () => {
+test("messages are filed into the private repo and leave the outbox; failures are kept for later", async () => {
+  resetSchemaCache();
+  const { db, sqlite } = sqliteDb();
+  const now = new Date("2026-10-13T10:15:00.123Z");
+  await saveFeedback(db, { category: "idea", message: "first one", page: "/exams/cissp" }, now, "1.1.1.1");
+  await saveFeedback(db, { category: "problem", message: "second one", page: null }, now, "1.1.1.2");
+
+  const files = new Map<string, string>();
+  let up = false;
+  const write = async (path: string, content: string) => {
+    if (!up) return false;
+    files.set(path, content);
+    return true;
+  };
+  assert.equal(await flushOutbox(db, write), 0, "nothing filed while the repo is unreachable");
+  assert.equal((sqlite.prepare("SELECT COUNT(*) AS n FROM feedback").get() as { n: number }).n, 2);
+
+  up = true;
+  assert.equal(await flushOutbox(db, write), 2);
+  assert.equal((sqlite.prepare("SELECT COUNT(*) AS n FROM feedback").get() as { n: number }).n, 0);
+  assert.deepEqual([...files.keys()], [
+    "inbox/2026-10-13/20261013T101500Z-1.md",
+    "inbox/2026-10-13/20261013T101500Z-2.md",
+  ]);
+  assert.equal(
+    files.get("inbox/2026-10-13/20261013T101500Z-1.md"),
+    "---\nreceived: 2026-10-13T10:15:00.123Z\ncategory: idea # Idea or suggestion\npage: /exams/cissp\n---\n\nfirst one\n",
+  );
+  assert.ok(![...files.values()].some((f) => f.includes("1.1.1.")), "no IP in any file");
+});
+
+test("the site-wide cap still counts messages already filed", async () => {
   resetSchemaCache();
   const { db } = sqliteDb();
   const now = new Date("2026-10-13T10:00:00Z");
-  await saveFeedback(db, { category: "idea", message: "first one", page: null }, now, "1.1.1.1");
-  await saveFeedback(db, { category: "idea", message: "second one", page: "/" }, now, "1.1.1.1");
-  const list = await listFeedback(db);
-  assert.deepEqual(list.map((r) => r.message), ["second one", "first one"]);
-  assert.equal(await setStatus(db, list[0]!.id, "considering"), true);
-  assert.equal((await listFeedback(db))[0]!.status, "considering");
-  assert.equal(await deleteFeedback(db, list[1]!.id), true);
-  assert.equal(await deleteFeedback(db, 999), false);
-  assert.equal((await listFeedback(db)).length, 1);
+  for (let i = 0; i < 200; i++) {
+    await saveFeedback(db, { category: "idea", message: `idea ${i}`, page: null }, now, `10.0.${i >> 8}.${i & 255}`);
+    if (i % 50 === 0) await flushOutbox(db, async () => true, 1000);
+  }
+  await flushOutbox(db, async () => true, 1000);
+  assert.equal(await saveFeedback(db, { category: "idea", message: "one too many", page: null }, now, "10.9.9.9"), "daily-cap");
 });
 
-test("tokenMatches needs the exact, long-enough secret", async () => {
-  const secret = "a".repeat(32);
-  assert.equal(await tokenMatches(`Bearer ${secret}`, secret), true);
-  assert.equal(await tokenMatches(`Bearer ${secret}x`, secret), false);
-  assert.equal(await tokenMatches(secret, secret), false);
-  assert.equal(await tokenMatches(null, secret), false);
-  assert.equal(await tokenMatches("Bearer short", "short"), false, "short secrets count as not configured");
-  assert.equal(await tokenMatches("Bearer ", undefined), false);
-});
-
-test("toCsv quotes fields and defuses spreadsheet formulas", () => {
-  const csv = toCsv([
-    { id: 1, created_at: "2026-10-13T10:00:00.000Z", category: "idea", status: "new", page: null, message: '=HYPERLINK("x")\nline, two' },
-  ]);
-  assert.equal(csv, 'id,created_at,category,status,page,message\n1,2026-10-13T10:00:00.000Z,idea,new,,"\'=HYPERLINK(""x"")\nline, two"\n');
-});
-
-test("review summary lists new messages by default", async () => {
-  const { summarise } = await import("../scripts/feedback.ts");
-  const rows: FeedbackRow[] = [
-    { id: 2, created_at: "2026-10-13T10:00:00Z", category: "idea", message: "More drills\nplease", page: "/", status: "new" },
-    { id: 1, created_at: "2026-10-12T10:00:00Z", category: "problem", message: "Old one", page: null, status: "done" },
-  ];
-  assert.equal(summarise(rows, false), "# Feedback (1 new, 2 stored)\n\n- **#2** 2026-10-13 · Idea or suggestion · new · /\n  More drills\n  please");
-  assert.match(summarise(rows, true), /2 in total/);
-});
-
-test("anyTokenMatches accepts any configured agent key and nothing else", async () => {
-  const keys = ["c".repeat(30), "x".repeat(30)];
-  assert.equal(await anyTokenMatches(`Bearer ${"x".repeat(30)}`, keys), true);
-  assert.equal(await anyTokenMatches(`Bearer ${"y".repeat(30)}`, keys), false);
-  assert.equal(await anyTokenMatches(`Bearer ${"x".repeat(30)}`, []), false);
+test("feedbackPath and feedbackFile", () => {
+  const row = { id: 7, created_at: "2026-01-02T03:04:05.000Z", category: "other" as const, message: "hi there", page: null };
+  assert.equal(feedbackPath(row), "inbox/2026-01-02/20260102T030405Z-7.md");
+  assert.match(feedbackFile(row), /page: none/);
 });
