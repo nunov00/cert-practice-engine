@@ -9,3 +9,4 @@ app/src/generated/
 next-env.d.ts
 *.tsbuildinfo
 .dev.vars
+app/public/version.json
