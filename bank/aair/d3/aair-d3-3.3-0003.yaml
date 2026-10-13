@@ -1,0 +1,26 @@
+id: aair-d3-3.3-0003
+subdomain: '3.3'
+difficulty: easy
+stem: A building society is concerned that staff will paste customer account details into a public generative AI
+  website. Which control would MOST reliably prevent this from happening?
+options:
+  A: Annual training that explains the risks of sharing data with AI tools
+  B: A monthly review of web logs for visits to generative AI websites
+  C: A data loss prevention rule that blocks such data from being sent
+  D: A disciplinary policy for staff who share customer data with AI tools
+answer: C
+explanation:
+  why_correct: A technical preventive control that blocks the transfer stops the data leaving whether or not staff
+    remember the rules. Of the options, it is the most reliable at preventing the event.
+  why_not:
+    A: Training is a directive control. It relies on people remembering and choosing to comply.
+    B: Log review is detective. It finds the problem after the data has already left.
+    D: A disciplinary policy deters some staff, but it only acts after the data has been shared.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass

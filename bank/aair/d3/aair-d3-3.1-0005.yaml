@@ -1,0 +1,29 @@
+id: aair-d3-3.1-0005
+subdomain: '3.1'
+difficulty: medium
+stem: A manufacturer's twelve business units each use the same externally hosted foundation model for different
+  tasks. Each unit has assessed its own use with the group's standard method and rated the risk low. What should
+  the risk practitioner be MOST concerned about?
+options:
+  A: The units may be paying more than needed for separate licences
+  B: Some units may not have recorded their use in the AI inventory
+  C: The ratings may reflect the units' enthusiasm for using AI
+  D: One failure of the shared model could affect all units at once
+answer: D
+explanation:
+  why_correct: Each unit-level assessment sees only a small exposure, but the common dependency means an outage,
+    a harmful model update or a change in the provider's terms hits every unit together. This concentration risk
+    only becomes visible when the uses are assessed together at enterprise level, and the combined impact may exceed
+    appetite even when each part does not.
+  why_not:
+    A: Licence costs are a commercial efficiency point. They do not undermine the low risk ratings.
+    B: Each unit has already assessed its use, so the uses are known. An inventory gap is not the main issue here.
+    C: Optimism bias is possible but speculative. The shared dependency is a concrete, demonstrable gap in the assessments.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass

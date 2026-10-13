@@ -1,0 +1,30 @@
+id: aair-d3-3.2-0009
+subdomain: '3.2'
+difficulty: hard
+stem: A telehealth provider uses an AI tool to draft visit summaries from recorded consultations. To reduce the
+  risk of inaccurate summaries, the team proposes keeping every full recording for seven years so reviewers can
+  check summaries against them. Testing shows the check catches most errors. What should the risk practitioner MOST
+  ensure before this treatment is approved?
+options:
+  A: The privacy and security risk of keeping the recordings is assessed
+  B: Reviewers have enough time set aside to check every summary
+  C: The summary tool's vendor supports the proposed review process
+  D: Storage for seven years of recordings fits within the budget
+answer: A
+explanation:
+  why_correct: A treatment can create new risks. Keeping years of sensitive health recordings sharply increases
+    exposure to breaches and may conflict with data minimisation and retention duties. That secondary risk must
+    be assessed and controlled, for example through shorter retention or sampling, before the treatment is accepted.
+  why_not:
+    B: Reviewer capacity matters for running the check, but it does not address the significant new risk the proposal
+      creates.
+    C: Vendor support is a practical detail. It does not address the main new risk.
+    D: Budget fit is a cost question. A treatment can be affordable yet still create unacceptable privacy exposure.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass

@@ -1,0 +1,31 @@
+id: aair-d3-3.6-0008
+subdomain: '3.6'
+difficulty: hard
+stem: An e-commerce company's business impact analysis sets a one-hour recovery time objective for fraud scoring
+  at checkout. The scoring is provided by a third-party AI service whose contract commits to restoring service
+  within 24 hours. What is the MOST significant issue for the risk practitioner?
+options:
+  A: The contract does not include enough financial penalties for outages
+  B: The analysis should have assessed fraud scoring as a lower priority
+  C: The recovery objective cannot be met without a fallback or new terms
+  D: The supplier's performance has not been reviewed in the last year
+answer: C
+explanation:
+  why_correct: The continuity requirement and the supplier's commitment do not match, so in a real outage checkout
+    fraud controls could be missing for up to a day. The company needs a fallback, such as rules-based scoring,
+    or a contract that supports the one-hour objective.
+  why_not:
+    A: Penalties compensate after the fact. They would not restore fraud scoring within the hour the business
+      needs.
+    B: There is no evidence that the analysis was wrong. Lowering the priority to fit the contract would hide
+      a real gap.
+    D: Regular supplier reviews are good practice, but even a good review history does not close the gap between
+      24 hours and one hour.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass

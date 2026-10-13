@@ -1,0 +1,29 @@
+id: aair-d3-3.1-0006
+subdomain: '3.1'
+difficulty: hard
+stem: A retail chain uses an AI tool to rank job applicants for store roles. Its risk assessment rated impact as
+  low because a wrong ranking costs the company little, as there are plenty of other applicants. Which gap in the
+  assessment should MOST concern the risk practitioner?
+options:
+  A: It does not estimate the cost of repeating a hiring round
+  B: It ignores harm to applicants who are unfairly screened out
+  C: It does not compare the tool's speed with human recruiters
+  D: It ignores strong applicants being ranked low and lost to rivals
+answer: B
+explanation:
+  why_correct: Impact assessment for AI must consider the people affected by its decisions, not only the organisation's
+    direct costs. Systematic unfair exclusion of applicants harms individuals and can bring discrimination claims,
+    regulatory action and reputational damage, which can make the true impact high.
+  why_not:
+    A: Rework cost is a minor internal cost and would not change the rating much.
+    C: Speed is a measure of benefit, not of impact if the tool goes wrong.
+    D: Losing good candidates is a real impact, but it is an organisational cost of the kind the assessment already
+      judged small. It misses the larger harm to individuals and the legal exposure that follows.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass
