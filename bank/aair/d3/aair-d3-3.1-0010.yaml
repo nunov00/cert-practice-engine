@@ -1,0 +1,32 @@
+id: aair-d3-3.1-0010
+subdomain: '3.1'
+difficulty: easy
+stem: A digital health company is identifying risk scenarios for its AI symptom checker, which is designed
+  for adults only. User research shows that many parents are likely to enter their children's symptoms
+  into it. How should the risk practitioner treat this in the assessment?
+options:
+  A: Leave it out, since children are outside the tool's intended use
+  B: Include it as a reasonably foreseeable misuse and assess its impact
+  C: Add it to the register only if complaints about child cases arrive
+  D: Rely on the terms of service, which limit use to adult patients
+answer: B
+explanation:
+  why_correct: Scenario identification should cover reasonably foreseeable misuse, not only the intended
+    use. The research shows this misuse is likely, and wrong advice about a child could cause serious
+    harm, so it must be assessed so that suitable treatments (such as age prompts, warnings or design
+    changes) can be chosen.
+  why_not:
+    A: The intended use shapes the design, but it does not limit the harm that real use can cause. Leaving
+      out a likely misuse leaves a known gap in the assessment.
+    C: Waiting for complaints means harm may already have happened. The research already gives enough
+      evidence to assess the scenario now.
+    D: Terms of service may limit legal exposure, but they do not change user behaviour or prevent harm.
+      They are at most one possible treatment, not a reason to skip the assessment.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

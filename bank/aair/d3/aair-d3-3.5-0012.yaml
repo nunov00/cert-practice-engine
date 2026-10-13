@@ -1,0 +1,31 @@
+id: aair-d3-3.5-0012
+subdomain: '3.5'
+difficulty: easy
+stem: A retailer trains and hosts its models on a cloud provider's machine learning platform. A review finds that
+  a storage area holding training data was left open to the internet, because the team assumed the provider managed
+  such settings. What should the risk practitioner recommend to prevent a repeat?
+options:
+  A: Move all model training back to the retailer's own data centre
+  B: Ask the provider to take over configuration of the retailer's account
+  C: Agree and record which security duties sit with each party
+  D: Review the provider's independent assurance report again next year
+answer: C
+explanation:
+  why_correct: The exposure happened because the team misunderstood the split of responsibilities. Agreeing and
+    documenting which controls the provider runs and which the retailer must run closes that gap, so the team owns
+    settings such as storage access.
+  why_not:
+    A: Leaving the cloud is a drastic step that does not address the real cause. Misconfiguration can happen in-house
+      too if duties are unclear.
+    B: Providers generally do not configure customer accounts, and handing over control would not remove the retailer's
+      accountability for its data.
+    D: The provider's report covers the provider's own controls. The failure was in a setting the retailer was responsible
+      for.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

@@ -1,0 +1,31 @@
+id: aair-d3-3.6-0009
+subdomain: '3.6'
+difficulty: medium
+stem: A telecom operator's network fault prediction model began raising thousands of false alarms one weekend. The
+  on-call incident team had no one who could diagnose the model, and the data scientists could not be reached until
+  Monday. What should the risk practitioner recommend?
+options:
+  A: Turn off automated alarms from the model outside working hours
+  B: Train the incident team to retrain and redeploy the model themselves
+  C: Add model owners to incident roles and on-call cover for key models
+  D: Replace the model with a rules-based system the incident team knows
+answer: C
+explanation:
+  why_correct: AI incidents often need people who understand the model to diagnose them and decide on rollback or
+    fallback. Building model owners into the incident roles and on-call arrangements for critical models gives the
+    team that expertise when it is needed.
+  why_not:
+    A: Switching alarms off at weekends would leave real faults undetected for long periods, which is a bigger risk
+      than false alarms.
+    B: Retraining and redeploying needs specialist skill and its own controls. Asking general incident staff to
+      do it under pressure adds risk.
+    D: Abandoning the model over one response gap is disproportionate. The missing expertise in the response process
+      is the problem to fix.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

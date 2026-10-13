@@ -1,0 +1,32 @@
+id: aair-d3-3.1-0011
+subdomain: '3.1'
+difficulty: medium
+stem: A logistics firm's project team rates the risk of its new AI dispatch model as low. The rating assumes
+  an output monitoring control and a manual override, both of which are planned but will not operate until
+  three months after go-live. What should the risk practitioner do?
+options:
+  A: Accept the rating, as both planned controls are approved and funded
+  B: Raise the impact rating and leave the likelihood rating unchanged
+  C: Ask for the controls to be brought forward and keep the rating
+  D: Rate the risk on the controls that will be operating at go-live
+answer: D
+explanation:
+  why_correct: A current risk rating must reflect the controls that actually operate. Planned controls
+    support a target rating, not the current one. Rating on the go-live position shows the true exposure
+    for the first three months, so the risk owner can decide whether to launch, add interim measures or
+    accept the gap at the right level.
+  why_not:
+    A: Approval and funding do not reduce risk. A control only lowers exposure once it is operating, so
+      the rating overstates the protection at go-live.
+    B: The missing controls mainly affect how likely errors are to cause harm undetected. Adjusting impact
+      alone is arbitrary and leaves the rating on the wrong basis.
+    C: Bringing the controls forward may well help, but until they operate the low rating still misstates
+      the exposure that decision makers rely on.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass
