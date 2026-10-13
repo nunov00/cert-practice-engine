@@ -46,6 +46,7 @@ export function checkRecipe(recipe: Recipe, file: string): Issue[] {
     }
     if (recipe.product.mock) err(`preview recipe: leave out product.mock until the outline is published`);
   } else {
+    if (recipe.product.estimated_pace) err(`product.estimated_pace is for preview recipes only; use product.mock`);
     if (recipe.domains.some((d) => d.weight === undefined)) err(`every domain needs a weight`);
     else {
       const weights = sum(recipe.domains.map((d) => d.weight!));

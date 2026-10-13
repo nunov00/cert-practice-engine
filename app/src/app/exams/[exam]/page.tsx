@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DomainList } from "@/components/DomainList";
 import { Track } from "@/components/Track";
-import { hasTimedTests, QUICK_SIZE } from "@/components/TestPage";
+import { hasTimedTests, QUICK_SIZE, quickPace } from "@/components/TestPage";
 import { timeLimitSeconds } from "@/lib/exam-session";
 import { formatDuration, formatQuestionCount, getExam, isOpenAccess, listExams, percent, questionsFor } from "@/lib/content";
 
@@ -42,6 +42,11 @@ export default async function ExamPage({ params }: { params: Promise<Params> }) 
       pace: { questions: pace.questions, minutes: pace.minutes },
     };
   }
+  const estimate = tests ? null : quickPace(exam);
+  const estimatedQuick = estimate && {
+    questions: Math.min(QUICK_SIZE, total),
+    minutes: Math.max(1, Math.round(timeLimitSeconds(Math.min(QUICK_SIZE, total), estimate) / 60)),
+  };
   const notPublished = "Not yet published";
 
   return (
@@ -95,6 +100,7 @@ export default async function ExamPage({ params }: { params: Promise<Params> }) 
         free={!isOpenAccess()}
         target={exam.readiness.min_accuracy_per_domain}
         tests={tests}
+        estimatedQuick={estimatedQuick}
       />
 
       <p className="muted small" style={{ marginTop: 32 }}>

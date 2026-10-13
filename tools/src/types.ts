@@ -58,6 +58,8 @@ export interface Recipe {
     readiness: { min_answered: number; min_accuracy_per_domain: number };
     /** Absent only in a preview recipe: no mock until the real format is known. */
     mock?: { questions: number; minutes: number; forms: number };
+    /** Preview only: owner-approved estimated pace that times the Quick 10. */
+    estimated_pace?: { questions: number; minutes: number; basis: string };
   };
 }
 

@@ -10,20 +10,20 @@ export function hasTimedTests(exam: PublicExam): exam is PublicExam & { mock: No
   return exam.mock !== null && questionsFor(exam.id).length > 0;
 }
 
+/** The pace that times the Quick 10: the real one, or a preview exam's owner-approved estimate. */
+export function quickPace(exam: PublicExam): { questions: number; minutes: number } | null {
+  if (questionsFor(exam.id).length === 0) return null;
+  return exam.mock ?? exam.estimated_pace;
+}
+
 /** Server wrapper shared by the mock exam and quick test pages. */
 /** `domainId` limits a wrong-answers test to one domain. */
-export function TestPage({
-  exam,
-  kind,
-  domainId,
-}: {
-  exam: PublicExam & { mock: NonNullable<PublicExam["mock"]> };
-  kind: TestKind;
-  domainId?: string;
-}) {
+export function TestPage({ exam, kind, domainId }: { exam: PublicExam; kind: TestKind; domainId?: string }) {
   const questions = questionsFor(exam.id, domainId);
   const domain = exam.domains.find((d) => d.id === domainId);
-  const size = kind === "mock" ? exam.mock.questions : QUICK_SIZE;
+  const pace = kind === "quick" ? quickPace(exam) : exam.mock;
+  if (!pace) throw new Error(`no pace for a ${kind} test of ${exam.id}`);
+  const size = kind === "mock" ? pace.questions : QUICK_SIZE;
   return (
     <>
       <nav className="crumbs small" aria-label="Breadcrumb">
@@ -45,7 +45,8 @@ export function TestPage({
         examId={exam.id}
         kind={kind}
         size={size}
-        pace={exam.mock}
+        pace={pace}
+        estimate={exam.mock ? undefined : exam.estimated_pace?.basis}
         domains={(domain ? [domain] : exam.domains).map((d) => ({ id: d.id, name: d.name, weight: d.weight ?? 0 }))}
         questions={questions}
         target={exam.readiness.min_accuracy_per_domain}

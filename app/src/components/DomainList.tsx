@@ -41,6 +41,7 @@ export function DomainList({
   free,
   target,
   tests,
+  estimatedQuick,
 }: {
   examId: string;
   domains: DomainSummary[];
@@ -49,6 +50,8 @@ export function DomainList({
   target: number;
   /** Null for a preview exam: no timed tests until the real format is known. */
   tests: TimedTests | null;
+  /** Preview exam only: a Quick 10 timed at an owner-approved estimated pace. */
+  estimatedQuick?: TestSummary | null;
 }) {
   // Progress lives in the browser, so it is read after hydration.
   const [progress, setProgress] = useState<Progress>(emptyProgress);
@@ -125,9 +128,44 @@ export function DomainList({
         </>
       )}
       {all.length > 0 && !tests && (
-        <p className="muted small" style={{ marginTop: 24 }}>
-          Timed mock exams arrive once the exam outline is published. Until then, practise by domain below.
-        </p>
+        <>
+          <h2>Practice</h2>
+          <div className="test-grid">
+            {estimatedQuick ? (
+              <Link className="card test-card" href={`/exams/${examId}/quick`}>
+                <span className="name">Quick {estimatedQuick.questions}</span>
+                <span className="muted small">
+                  {estimatedQuick.questions} random questions · {formatDuration(estimatedQuick.minutes)} (estimated) · timed
+                </span>
+              </Link>
+            ) : (
+              <Link className="card test-card" href={`/exams/${examId}/review#quick`}>
+                <span className="name">Quick {Math.min(10, all.length)}</span>
+                <span className="muted small">{Math.min(10, all.length)} questions from all areas · untimed</span>
+              </Link>
+            )}
+            <Link className="card test-card" href={`/exams/${examId}/review`}>
+              <span className="name">All areas</span>
+              <span className="muted small">{all.length} questions · untimed</span>
+            </Link>
+            {missedAll > 0 ? (
+              <Link className="card test-card" href={`/exams/${examId}/review#missed`}>
+                <span className="name">Wrong answers</span>
+                <span className="muted small">{missedAll} you got wrong last time · untimed</span>
+              </Link>
+            ) : (
+              <div className="card test-card disabled" aria-disabled="true">
+                <span className="name">Wrong answers</span>
+                <span className="muted small">Questions you get wrong will appear here</span>
+              </div>
+            )}
+          </div>
+          <p className="muted small" style={{ marginTop: 12 }}>
+            {estimatedQuick
+              ? "The Quick test's time is an estimate. A timed mock exam arrives once the exam outline is published."
+              : "Timed tests arrive once the exam outline is published, since their clock follows the real exam's pace."}
+          </p>
+        </>
       )}
 
       <h2>Domains</h2>
