@@ -65,19 +65,15 @@ into the account later.
 ## Stay within the free plans
 
 Owner rule (2026-10-12): the project must stay well within the free plans of
-Cloudflare and GitHub. Check the current limits on their pricing pages before a
-change that could approach them. Limits as understood on 2026-10-12, with where
-we are:
-
-| Limit | Free plan | Now |
-|-------|-----------|-----|
-| Cloudflare Workers requests | 100,000 per day | Low traffic |
-| Worker CPU time | 10 ms per request | Static pages, prerendered at build |
-| Worker bundle size | 3 MiB compressed | About 0.9 MiB |
-| GitHub Actions (private repo) | 2,000 minutes per month | About 1 minute per CI or deploy run |
+Cloudflare and GitHub, with room for several pilots on the same accounts.
+Limits, our per-pilot budget, current usage and the guardrails are in
+`docs/platform-limits.md` (verified 2026-10-13). In short: each Worker is far
+below its limits (4.9 MiB of 64 MiB, 21 of 20,000 asset files); the shared
+limit to watch is 100,000 Worker requests a day per Cloudflare account, since
+every page view runs the Worker.
 
 Design consequences: keep pages static or cached so most requests cost no Worker
 CPU; keep question data small (search runs in the browser over a prebuilt index,
-not a server); no Actions on a schedule without the owner's approval; watch the
-bundle size as the bank grows (paid questions in phase 8 move to a database
-anyway).
+not a server); no Actions on a schedule without the owner's approval; CI and the
+deploy script check bundle capacity on every run (paid questions in phase 8 move
+to a database anyway).
