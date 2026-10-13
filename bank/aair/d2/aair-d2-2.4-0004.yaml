@@ -1,0 +1,31 @@
+id: aair-d2-2.4-0004
+subdomain: '2.4'
+difficulty: hard
+stem: A specialty chemicals firm trained a model on its confidential formulation data. The trained model
+  files are stored on a shared drive open to all engineers and contractors, while the source data sits
+  in a restricted system. Which action BEST addresses the risk?
+options:
+  A: Encrypt the shared drive where the model files are stored
+  B: Remove the formulation data now that training is complete
+  C: Add a watermark to the model so leaked copies can be traced
+  D: Protect the model files at the level of the training data
+answer: D
+explanation:
+  why_correct: A trained model can reveal or reproduce information from its training data, and it is valuable
+    in its own right. Classifying and restricting the model artefacts like the confidential data they
+    came from closes the gap between the two access regimes.
+  why_not:
+    A: Encryption at rest protects against theft of the storage, but every engineer and contractor with
+      drive access can still open the files.
+    B: Deleting the source data does nothing about the exposed model files and may harm retraining and
+      audit needs.
+    C: Watermarking may help after a leak, but it does not stop people without a need from accessing the
+      model.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-a
+  checked_by: 2026-10-13-aair-d2-a-check
+  check_verdict: pass

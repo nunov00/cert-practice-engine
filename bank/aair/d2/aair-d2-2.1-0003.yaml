@@ -1,0 +1,31 @@
+id: aair-d2-2.1-0003
+subdomain: '2.1'
+difficulty: easy
+stem: A city council is building an AI tool to triage building permit applications. The project lead plans
+  to decide on logging, human review and appeal handling after the pilot shows how the tool behaves. What
+  should the risk practitioner advise?
+options:
+  A: Wait for pilot results to show which risks actually occur
+  B: Add the controls after go-live, once usage patterns are known
+  C: Leave the controls to the provider of the hosting platform
+  D: Define the controls as design requirements before the build
+answer: D
+explanation:
+  why_correct: Controls such as decision logging and human review shape how the system is built. Defining
+    them at design time is cheaper and more reliable than retrofitting, and some, like logs of past decisions,
+    cannot be added afterwards. The pilot itself also needs them to run safely.
+  why_not:
+    A: Running a pilot without logging or review means early decisions cannot be traced or corrected,
+      and some risks would only be found after harm.
+    B: Retrofitting after go-live is costly and leaves live decisions about residents without safeguards
+      in the meantime.
+    C: The hosting provider runs infrastructure; it does not own how the council reviews and explains
+      permit decisions.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-a
+  checked_by: 2026-10-13-aair-d2-a-check
+  check_verdict: pass

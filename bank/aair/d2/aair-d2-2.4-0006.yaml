@@ -1,0 +1,30 @@
+id: aair-d2-2.4-0006
+subdomain: '2.4'
+difficulty: medium
+stem: A regional retailer plans to buy a large customer behaviour dataset from a data broker to train
+  a recommendation model. The broker gives few details about how the data was collected, and it includes
+  personal data. What should the risk practitioner check FIRST?
+options:
+  A: Whether the data matches the format of existing systems
+  B: Whether the dataset is large enough to train the model
+  C: Whether its origin and rights permit use for this purpose
+  D: Whether the price is in line with other brokers' offers
+answer: C
+explanation:
+  why_correct: If the data was collected unlawfully or without rights covering model training, every later
+    use inherits that problem and it is hard to undo once a model is trained. Confirming provenance and
+    permitted use comes before any technical or commercial assessment.
+  why_not:
+    A: Format compatibility is a technical detail that can be solved later and is irrelevant if the data
+      cannot lawfully be used.
+    B: Size matters for model quality, but a large dataset obtained without proper rights creates legal
+      exposure.
+    D: Price is a commercial question that should only matter once the data is known to be usable.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-a
+  checked_by: 2026-10-13-aair-d2-a-check
+  check_verdict: pass

@@ -1,0 +1,29 @@
+id: aair-d2-2.4-0005
+subdomain: '2.4'
+difficulty: medium
+stem: An insurer keeps all customer call recordings indefinitely because they might be useful for training
+  future AI models. No specific project currently uses them. What should the risk practitioner recommend?
+options:
+  A: Set retention periods tied to defined and documented purposes
+  B: Move the recordings to cheaper archive storage to cut costs
+  C: Encrypt the recordings and keep them for possible future use
+  D: Ask a data scientist to estimate their future training value
+answer: A
+explanation:
+  why_correct: Holding personal data with no defined purpose increases breach impact and conflicts with
+    data minimisation principles in most privacy laws. Linking retention to documented purposes means
+    data is kept only while there is a justified need.
+  why_not:
+    B: Cheaper storage reduces cost but keeps the same personal data for the same open-ended period.
+    C: Encryption lowers some exposure, yet keeping data indefinitely for undefined future use remains
+      the core problem.
+    D: A speculative value estimate does not create a legitimate purpose and leaves the indefinite retention
+      in place.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-a
+  checked_by: 2026-10-13-aair-d2-a-check
+  check_verdict: pass

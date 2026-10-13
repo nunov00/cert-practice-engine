@@ -1,0 +1,31 @@
+id: aair-d2-2.3-0005
+subdomain: '2.3'
+difficulty: medium
+stem: A social benefits agency is retiring a model that helped assess eligibility for housing support.
+  Applicants can appeal decisions for several years. Which action is MOST important for the agency to
+  complete as part of decommissioning?
+options:
+  A: Notify all past applicants that the model has been retired
+  B: Delete all model files to prevent any accidental future use
+  C: Publish the model's source code so the public can review it
+  D: Retain decision records and model details for the appeal period
+answer: D
+explanation:
+  why_correct: Appeals require the agency to show how a past decision was reached. Keeping decision logs,
+    the model version and its documentation for as long as appeals are possible preserves that evidence
+    after the model itself stops running.
+  why_not:
+    A: Telling applicants may be good communication, but it does not preserve the evidence needed to handle
+      their appeals.
+    B: Deleting everything would destroy the evidence needed for appeals. Preventing reuse can be done
+      by access controls instead.
+    C: Publication is a separate transparency decision and does not replace the records needed for individual
+      appeals.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-a
+  checked_by: 2026-10-13-aair-d2-a-check
+  check_verdict: pass
