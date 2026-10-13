@@ -669,3 +669,19 @@ h1 .pill {
     display: none;
   }
 }
+
+.update-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 8px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+.update-banner .small-button {
+  padding: 4px 12px;
+  font-size: 0.875rem;
+}
