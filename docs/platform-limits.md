@@ -58,6 +58,25 @@ run the Worker) until midnight UTC. Ways to stay low: keep pages static or
 cached, let the service worker serve repeat visits, and don't add routes that
 force the Worker to run first.
 
+### D1 and rate limiting (feedback, `docs/feedback.md`)
+
+Verified 2026-10-13 against [D1 limits](https://developers.cloudflare.com/d1/platform/limits/),
+[D1 pricing](https://developers.cloudflare.com/d1/platform/pricing/) and the
+[rate limiting binding](https://developers.cloudflare.com/workers/runtime-apis/bindings/rate-limit/).
+Per account, shared by every pilot:
+
+| Limit | Free plan | Our use |
+|---|---|---|
+| D1 databases | 10 | 1 (`knowmark-feedback`) |
+| D1 size per database / per account | 500 MB / 5 GB | well under 1 MB (feedback is text, capped at 200 messages a day) |
+| D1 rows written per day | 100,000 | at most about 200 (daily cap) |
+| D1 rows read per day | 5,000,000 | a few hundred (inbox reads, daily-cap counts) |
+| Rate limiting `namespace_id` | unique per account | `1001` = this pilot's feedback; give other pilots their own |
+
+Over a D1 daily limit, queries fail until 00:00 UTC. Rate limiting binding
+availability on the Free plan isn't stated on its page; the code works without
+it (the daily cap still applies).
+
 Workers Builds (Cloudflare building from GitHub) is not used: we build and deploy
 from GitHub Actions. Check its allowances if that changes.
 
