@@ -1,0 +1,28 @@
+id: aaig-d1-1.1-0055
+subdomain: '1.1'
+difficulty: medium
+stem: The audit committee of a telecom group asks how it can tell whether the AI governance framework is actually
+  working. Management reports the number of policies issued and the number of training courses held. Which measure
+  would BEST add to the picture?
+options:
+  A: The number of pages in the AI governance handbook
+  B: The number of meetings held by the AI governance committee
+  C: Issues found before launch compared with issues found after launch
+  D: The share of staff who say they like the AI policy
+answer: C
+explanation:
+  why_correct: Effective governance should catch problems before AI reaches customers. Comparing issues found in
+    review with those found later in production shows whether the framework is preventing harm, which counts of
+    activity cannot show.
+  why_not:
+    A: Document length measures effort spent writing, not whether the framework changes outcomes.
+    B: Meeting counts show that the committee is busy, not that its decisions prevent harm.
+    D: Liking the policy says little about whether it works. A policy can be popular because it is easy to ignore.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-b
+  checked_by: 2026-10-13-aaig-d1-b-check
+  check_verdict: pass

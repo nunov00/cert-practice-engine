@@ -1,0 +1,32 @@
+id: aaig-d1-1.1-0054
+subdomain: '1.1'
+difficulty: hard
+stem: A hotel group plans to let an AI agent approve supplier invoices for payment automatically. The agent will
+  run under the finance director's account. The company's delegation of authority lets the director approve payments
+  up to 250,000, and the project plans to give the agent the same limit. What should the governance leader advise?
+options:
+  A: Add the agent to the delegation of authority with its own lower limits
+  B: Allow the plan, since the agent acts for the director within the director's limit
+  C: Require the board to approve each payment the agent makes
+  D: Let the vendor set the limits based on how well the agent performs
+answer: A
+explanation:
+  why_correct: Authority given to an AI agent should be a deliberate, recorded delegation, not inherited from a
+    person's login. Listing the agent in the delegation framework, with limits set for what it can safely decide
+    alone and a named accountable human, keeps the agent's actions visible and proportionate to the controls around
+    it.
+  why_not:
+    B: A director's limit reflects human judgment and accountability. Copying it to an agent that acts at speed
+      and scale, under a shared login, hides who decided and may expose far more than intended.
+    C: Board approval of individual payments puts operational decisions at the wrong level and removes the benefit
+      of automation entirely.
+    D: Who may commit the company's money is a governance decision for the company. The vendor's view of performance
+      can inform it but not set it.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-b
+  checked_by: 2026-10-13-aaig-d1-b-check
+  check_verdict: pass

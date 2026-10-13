@@ -1,0 +1,31 @@
+id: aaig-d1-1.1-0015
+subdomain: '1.1'
+difficulty: medium
+stem: The general counsel of a hotel group reports that a risk-based AI law has been passed in one of the group's
+  main markets and takes effect in 18 months. The executive committee asks the governance leader where to
+  start. What should the governance leader do FIRST?
+options:
+  A: Ask the vendor of each AI tool to confirm in writing its own compliance
+  B: Wait for official guidance before taking any action at all
+  C: Train all staff on the detailed provisions of the regulation
+  D: Map the company's AI uses against the regulation's obligations
+answer: D
+explanation:
+  why_correct: The first step is to know which of the company's AI uses fall in scope and what each would have
+    to do. That gap view shows the size of the effort, the priorities and the owners, and it drives everything
+    else in the compliance plan.
+  why_not:
+    A: Vendor assurance helps for bought products, but the hotel group has its own obligations as a user, and
+      in-house systems are not covered at all.
+    B: Eighteen months is not long for significant changes. Waiting wastes time that is needed for assessment
+      and remediation.
+    C: Training everyone on detailed provisions before knowing which apply is costly and unfocused. Training
+      should follow the impact assessment.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass

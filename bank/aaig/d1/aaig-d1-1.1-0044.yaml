@@ -1,0 +1,31 @@
+id: aaig-d1-1.1-0044
+subdomain: '1.1'
+difficulty: medium
+stem: The remuneration committee of a contact-centre outsourcing firm is setting executive bonuses. Management proposes
+  paying the COO's bonus mainly on the number of customer contacts handled by AI. Recent audits found AI responses
+  that misled customers. What should the governance leader recommend to the committee?
+options:
+  A: Reject any AI-related element in executive bonuses
+  B: Increase the bonus weight on AI contacts to speed up adoption
+  C: Add quality and conduct measures that can reduce the bonus
+  D: Leave the bonus as proposed and rely on the audit team to catch problems
+answer: C
+explanation:
+  why_correct: Incentives shape behaviour. A bonus paid only on volume rewards pushing contacts to AI even when
+    customers are misled. Adding measures for outcome quality and conduct, with the power to reduce awards when
+    harm occurs, keeps the incentive aligned with the board's appetite while still rewarding responsible adoption.
+  why_not:
+    A: AI adoption may be a real strategic goal, and rewarding it is legitimate. The problem is a one-sided measure,
+      not the existence of an AI target.
+    B: Raising the weight strengthens exactly the incentive that is already linked to misleading answers. It would
+      make the conduct problem worse.
+    D: Audit is a later line of defence. Relying on it while paying for the risky behaviour leaves the root cause
+      in place and sets the auditors against the incentive.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-b
+  checked_by: 2026-10-13-aaig-d1-b-check
+  check_verdict: pass

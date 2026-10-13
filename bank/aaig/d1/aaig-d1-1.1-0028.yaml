@@ -1,0 +1,28 @@
+id: aaig-d1-1.1-0028
+subdomain: '1.1'
+difficulty: medium
+stem: A freight company finds widespread use of unapproved AI tools, even though its policy requires approval
+  first. Staff say the approval process takes about four months. What is the BEST long-term response?
+options:
+  A: Offer a faster route to approved tools for low-risk uses
+  B: Remind all staff of the policy through a company-wide email
+  C: Increase the penalties for using tools that are not approved
+  D: Remove the approval requirement for all AI tools in use
+answer: A
+explanation:
+  why_correct: Shadow AI here is a symptom of a governance process that does not meet business needs. A quicker,
+    proportionate route for low-risk tools removes the incentive to bypass controls, while keeping full review
+    for higher-risk uses.
+  why_not:
+    B: Staff already know the policy; they bypass it because it is too slow. A reminder does not change that.
+    C: Harsher penalties treat the symptom and can damage trust without removing the real reason for bypassing
+      the process.
+    D: Removing approval altogether loses control over higher-risk uses. The fix is proportion, not abolition.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass

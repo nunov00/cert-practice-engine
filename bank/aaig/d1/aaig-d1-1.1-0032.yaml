@@ -1,0 +1,30 @@
+id: aaig-d1-1.1-0032
+subdomain: '1.1'
+difficulty: hard
+stem: An insurer uses AI to rank claims for handling. Staff formally sign off each decision but rarely depart
+  from the AI's ranking. A journalist asks about AI in claims, and the communications team wants to say 'no
+  AI makes decisions about claims'. What should the governance leader advise?
+options:
+  A: Describe the AI's role accurately, including how much staff rely on it
+  B: Approve the statement, as humans formally make every decision
+  C: Decline to comment, as details of the AI system are commercially confidential
+  D: Approve the statement but add a note in the privacy notice
+answer: A
+explanation:
+  why_correct: The proposed statement is technically true but misleading, because the AI strongly shapes outcomes.
+    Accurate disclosure that explains the AI's role and the human review protects the insurer's credibility;
+    a misleading statement exposed later would cause far greater harm.
+  why_not:
+    B: Formal sign-off does not change the practical influence of the AI. A statement that hides it is misleading
+      even if literally true.
+    C: Refusing to comment invites suspicion, and the general role of AI in claims is not a trade secret.
+    D: A note buried elsewhere does not correct a misleading public statement. Transparency must be consistent
+      across channels.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass

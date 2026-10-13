@@ -1,0 +1,30 @@
+id: aaig-d1-1.1-0014
+subdomain: '1.1'
+difficulty: hard
+stem: A multinational has a mature enterprise IT governance framework and a well-run enterprise risk management
+  process. It now wants to govern AI across all its divisions. Which approach is MOST effective?
+options:
+  A: Build a separate AI governance structure with its own processes
+  B: Adopt an AI-specific framework and retire the existing IT governance one
+  C: Extend existing governance and risk processes to cover AI specifics
+  D: Leave AI to the existing framework with no changes at all
+answer: C
+explanation:
+  why_correct: Building on structures that already work avoids duplication and keeps AI risk visible in the
+    same place as other enterprise risks. The existing processes still need AI-specific additions, such as
+    bias, transparency and model change, so they are extended rather than copied or left alone.
+  why_not:
+    A: A parallel structure duplicates effort, confuses ownership and can hide AI risk from the enterprise
+      risk view the board relies on.
+    B: Retiring a mature framework throws away proven governance for the rest of IT and creates disruption
+      for no clear gain.
+    D: AI raises issues the existing framework may not cover. Assuming no change is needed leaves those risks
+      unmanaged.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass

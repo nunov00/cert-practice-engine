@@ -1,0 +1,32 @@
+id: aaig-d1-1.1-0042
+subdomain: '1.1'
+difficulty: medium
+stem: A healthcare software group plans to acquire a start-up whose AI diagnostic product drives most of the deal
+  value. Financial and legal due diligence are under way. What should the governance leader MOST ensure is added
+  to the due diligence before the price is agreed?
+options:
+  A: A comparison of the start-up's AI tools with the group's preferred platforms
+  B: A survey of the start-up's staff on their attitude to governance
+  C: A plan to move the start-up's models onto the group's governance framework
+  D: A review of its rights to training data and its regulatory exposure
+answer: D
+explanation:
+  why_correct: Before signing, the buyer needs to know whether the asset it is paying for is sound. If the start-up
+    lacks the rights to the data its models learned from, or its product faces unmet regulatory duties, the value
+    may be far lower or carry hidden liabilities. These findings can change the price, the warranties or the decision
+    itself.
+  why_not:
+    A: Platform fit matters for later integration, but it rarely changes what the business is worth. It can be addressed
+      after the deal.
+    B: Culture affects integration, but a staff survey says little about legal or regulatory liabilities that could
+      undermine the product's value.
+    C: Integration planning comes after the decision to buy. It does not reveal problems that should affect whether
+      to buy and at what price.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-b
+  checked_by: 2026-10-13-aaig-d1-b-check
+  check_verdict: pass

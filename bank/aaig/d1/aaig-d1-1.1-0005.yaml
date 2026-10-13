@@ -1,0 +1,31 @@
+id: aaig-d1-1.1-0005
+subdomain: '1.1'
+difficulty: medium
+stem: A pharmaceutical company set up an AI governance committee last year. Business units now launch AI tools
+  after only informing the committee, and the committee has no way to stop or delay them. What is the MOST
+  likely root cause?
+options:
+  A: The committee meets too rarely to review every new AI tool in time
+  B: The charter does not give the committee defined decision rights
+  C: The committee lacks enough data scientists among its members
+  D: Business units have not yet been trained on the AI policy
+answer: B
+explanation:
+  why_correct: A governance body that can only be informed is advisory in practice. Without decision rights
+    written into its charter and backed by senior leadership, business units have no obligation to wait for
+    approval. Fixing the mandate is the foundation for every other improvement.
+  why_not:
+    A: Meeting more often would not help if the committee still cannot block or condition a launch. Frequency
+      is not the issue; authority is.
+    C: Technical expertise improves the quality of reviews, but expert members without authority still cannot
+      stop a launch.
+    D: Training may raise awareness, but the scenario shows units already inform the committee. They proceed
+      because nothing requires them to wait.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass

@@ -1,0 +1,31 @@
+id: aaig-d1-1.1-0050
+subdomain: '1.1'
+difficulty: hard
+stem: A group headquartered in one country issues an AI policy for all its subsidiaries. A subsidiary abroad, which
+  has its own board, launched an AI pricing tool that breaches the group policy. Its managers say the policy was
+  never adopted locally, so it does not bind them. What should the group governance leader recommend?
+options:
+  A: Have each subsidiary board formally adopt the policy, with local additions
+  B: Instruct the subsidiary managers directly from headquarters to withdraw the tool
+  C: Accept the position and treat the group policy as guidance only
+  D: Replace the subsidiary board with group executives
+answer: A
+explanation:
+  why_correct: Subsidiaries are separate legal entities whose boards have their own duties under local law. A group
+    policy binds a subsidiary reliably once its own board adopts it, adding what local law requires. That gives
+    the policy legal standing in each entity and closes the gap the managers are using.
+  why_not:
+    B: Bypassing the subsidiary's board may conflict with local corporate law and does nothing to fix the gap for
+      future cases. The tool may still need to be addressed, but through the subsidiary's governance.
+    C: Giving up on group standards leaves the group exposed to reputational and legal risk from every subsidiary,
+      which is what the group policy was meant to manage.
+    D: Changing a board over one policy gap is disproportionate and may raise its own legal issues locally. Formal
+      adoption solves the problem across all subsidiaries.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-b
+  checked_by: 2026-10-13-aaig-d1-b-check
+  check_verdict: pass

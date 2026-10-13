@@ -1,0 +1,30 @@
+id: aaig-d1-1.1-0024
+subdomain: '1.1'
+difficulty: hard
+stem: Several projects in a retail group's AI portfolio have missed their value milestones for three quarters
+  in a row. Their sponsors argue that AI simply needs more time. What should the portfolio governance body
+  do?
+options:
+  A: Review each against its case and decide to continue, change or stop
+  B: Keep funding all of them, since AI benefits take time to appear
+  C: Stop all of them at once to free budget for new AI initiatives
+  D: Transfer them to IT so that their technical problems can be fixed first
+answer: A
+explanation:
+  why_correct: Good portfolio governance makes active, case-by-case decisions. Some projects may have sound
+    reasons for delay and deserve more time; others should be reshaped or stopped. Reviewing each against its
+    business case avoids both throwing good money after bad and killing viable work.
+  why_not:
+    B: Funding everything by default accepts the sponsors' argument without testing it, and lets weak projects
+      consume budget indefinitely.
+    C: A blanket stop ignores the possibility that some projects are recoverable and close to delivering value.
+    D: Missed value milestones may stem from business adoption, data or strategy, not only technology. Handing
+      them to IT assumes the cause without analysis.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass

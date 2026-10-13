@@ -1,0 +1,31 @@
+id: aaig-d1-1.1-0001
+subdomain: '1.1'
+difficulty: easy
+stem: The chief executive of a national retail chain asks the head of AI governance how the company should
+  decide which AI initiatives belong in its new enterprise AI strategy. What should the head of AI governance
+  advise FIRST?
+options:
+  A: Rank the initiatives by the maturity of the AI technology involved
+  B: Link each initiative to a stated business objective it supports
+  C: Fund the initiatives that competitors have already announced
+  D: Let each business unit choose initiatives within its own budget
+answer: B
+explanation:
+  why_correct: 'An AI strategy exists to serve the business strategy. Testing each initiative against a stated
+    business objective is the first filter: it shows which ideas create value the enterprise actually wants
+    and gives a basis for later prioritisation, funding and measurement.'
+  why_not:
+    A: Technology maturity matters for delivery risk, but a mature technology that serves no business goal
+      is still a poor investment. It is a later consideration, not the starting point.
+    C: Following competitors copies their choices without checking whether those choices fit this company's
+      goals, customers or risk appetite.
+    D: Letting each unit decide alone produces a scattered set of projects with no enterprise view of value,
+      overlap or risk, which defeats the purpose of an enterprise strategy.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass

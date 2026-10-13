@@ -1,0 +1,31 @@
+id: aaig-d1-1.1-0040
+subdomain: '1.1'
+difficulty: medium
+stem: The company secretary of a listed retailer proposes that directors use a public generative AI tool to summarise
+  board packs, which include unpublished financial results and merger plans. Directors like the idea because the
+  packs are long. What should the governance leader advise?
+options:
+  A: Allow it, since directors are not covered by the staff acceptable use policy
+  B: Allow it only for packs that the chair has marked as routine
+  C: An approved tool set up for board data, governed like any other AI use
+  D: Ban AI tools for board work, because the board must read every page itself
+answer: C
+explanation:
+  why_correct: The board's own use of AI handles the company's most sensitive information and should meet at least
+    the standard it expects of staff. Providing an approved tool with suitable data protection, and rules for how
+    directors use summaries, meets the real need while keeping inside information under control.
+  why_not:
+    A: Leaving directors outside the rules would expose the most sensitive data in the company and undercut the
+      board's authority when it asks staff to follow the policy.
+    B: A routine label does not change where the data goes. Even routine packs hold confidential material, and the
+      public tool's terms still apply to it.
+    D: An outright ban ignores a real workload problem and will likely be ignored. Directors remain responsible
+      for their judgment, but a well-governed tool can help them prepare.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-b
+  checked_by: 2026-10-13-aaig-d1-b-check
+  check_verdict: pass
