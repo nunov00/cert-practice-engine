@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { PublicQuestion } from "@/lib/content";
 import { drillOrder, loadProgress, missedIds, recordAttempt, saveProgress } from "@/lib/progress";
+import { track } from "@/lib/track";
 
 type Phase = "loading" | "answering" | "revealed" | "done";
 type Mode = "all" | "quick" | "missed";
@@ -15,7 +16,7 @@ interface Answer {
   correct: boolean;
 }
 
-export function Drill({ examId, questions }: { examId: string; questions: PublicQuestion[] }) {
+export function Drill({ examId, domainId, questions }: { examId: string; domainId?: string; questions: PublicQuestion[] }) {
   const byId = useMemo(() => new Map(questions.map((q) => [q.id, q])), [questions]);
   const allIds = useMemo(() => questions.map((q) => q.id), [questions]);
   const [mode, setMode] = useState<Mode>("all");
@@ -52,6 +53,12 @@ export function Drill({ examId, questions }: { examId: string; questions: Public
   // "#missed" comes from the exam page's "Review missed" link. A hash keeps the
   // page fully static: it never reaches the Worker.
   useEffect(() => start(window.location.hash === "#missed" ? "missed" : "all"), [start]);
+
+  // Anonymous daily counts for the owner's stats page (docs/analytics.md).
+  useEffect(() => track("drill_start", examId, domainId), [examId, domainId]);
+  useEffect(() => {
+    if (phase === "done") track("drill_finish", examId, domainId);
+  }, [phase, examId, domainId]);
 
   const q = phase === "answering" || phase === "revealed" ? byId.get(order[index]!) : undefined;
   const letters = useMemo(() => (q ? Object.keys(q.options).sort() : []), [q]);

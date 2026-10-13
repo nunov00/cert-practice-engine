@@ -58,7 +58,7 @@ run the Worker) until midnight UTC. Ways to stay low: keep pages static or
 cached, let the service worker serve repeat visits, and don't add routes that
 force the Worker to run first.
 
-### D1 and rate limiting (feedback, `docs/feedback.md`)
+### D1 and rate limiting (feedback `docs/feedback.md`, stats `docs/analytics.md`)
 
 Verified 2026-10-13 against [D1 limits](https://developers.cloudflare.com/d1/platform/limits/),
 [D1 pricing](https://developers.cloudflare.com/d1/platform/pricing/) and the
@@ -67,11 +67,14 @@ Per account, shared by every pilot:
 
 | Limit | Free plan | Our use |
 |---|---|---|
-| D1 databases | 10 | 1 (`knowmark-feedback`: feedback outbox and daily counters) |
+| D1 databases | 10 | 1 (`knowmark-feedback`: feedback outbox, daily counters, usage stats) |
 | D1 size per database / per account | 500 MB / 5 GB | well under 1 MB (feedback is text, capped at 200 messages a day) |
-| D1 rows written per day | 100,000 | at most about 1,000 (200 messages plus their daily-limit counters) |
-| D1 rows read per day | 5,000,000 | a few hundred (inbox reads, daily-cap counts) |
-| Rate limiting `namespace_id` | unique per account | `1001` = this pilot's feedback; give other pilots their own |
+| D1 rows written per day | 100,000 | at most about 11,000: feedback about 1,000 (200 messages plus counters), stats at most 10,000 (5,000-count daily cap, two rows each) |
+| D1 rows read per day | 5,000,000 | a few thousand (daily-cap counts, stats page reads of a few hundred rows) |
+| Rate limiting `namespace_id` | unique per account | `1001` = this pilot's feedback, `1002` = its stats; give other pilots their own |
+
+Stats cost Worker requests too: one per item a browser opens for the first time
+that day, capped at 5,000 counted a day, inside this pilot's 20,000 budget.
 
 Over a D1 daily limit, queries fail until 00:00 UTC. The rate limiting binding
 isn't listed on the Free plan's limits page, but it deployed and is active on

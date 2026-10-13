@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DomainList } from "@/components/DomainList";
+import { Track } from "@/components/Track";
 import { QUICK_SIZE } from "@/components/TestPage";
 import { timeLimitSeconds } from "@/lib/exam-session";
 import { formatDuration, formatQuestionCount, getExam, isOpenAccess, listExams, percent, questionsFor } from "@/lib/content";
@@ -35,6 +36,7 @@ export default async function ExamPage({ params }: { params: Promise<Params> }) 
 
   return (
     <>
+      <Track event="exam_open" exam={exam.id} />
       <nav className="crumbs small" aria-label="Breadcrumb">
         <Link href="/">Exams</Link> <span aria-hidden="true">/</span> {exam.issuer}
       </nav>
