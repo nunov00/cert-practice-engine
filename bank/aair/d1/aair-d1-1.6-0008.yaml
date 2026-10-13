@@ -1,0 +1,30 @@
+id: aair-d1-1.6-0008
+subdomain: '1.6'
+difficulty: hard
+stem: A mobile gaming company uses a model to personalise in-game purchase offers to maximise spending.
+  A review finds that the model sends the most offers to players whose behaviour shows signs of compulsive
+  play. All players have accepted the terms of service. What should the risk practitioner recommend?
+options:
+  A: Make the personalisation clearer in the terms of service
+  B: Continue, since players agreed to personalised offers
+  C: Cap the number of offers sent to every player each day
+  D: Stop the model targeting players who show signs of harm
+answer: D
+explanation:
+  why_correct: The model is exploiting the players most at risk, an ethical harm that acceptance of general
+    terms does not cure. Its objective needs constraints so that people showing signs of harmful play
+    are protected, even at some cost to revenue.
+  why_not:
+    A: Clearer terms improve transparency but do not stop the model from targeting vulnerable players.
+    B: General agreement to terms does not make it ethical to exploit people whose behaviour suggests
+      they cannot control their spending.
+    C: A blanket cap reduces volume for everyone but still lets the model direct its offers at the most
+      vulnerable players.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass

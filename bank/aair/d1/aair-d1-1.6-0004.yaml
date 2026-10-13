@@ -1,0 +1,32 @@
+id: aair-d1-1.6-0004
+subdomain: '1.6'
+difficulty: hard
+stem: A university is developing a model to identify students at risk of dropping out so that they can
+  be offered extra support. Analysts show that the fairness measures under consideration cannot all be
+  met at once. What should the risk practitioner recommend?
+options:
+  A: Agree with stakeholders which measure suits this use and record why
+  B: Choose the measure that gives the model its best overall accuracy
+  C: Stop the project, since the model cannot be fair on every measure
+  D: Let the data science team pick the measure it finds easiest to use
+answer: A
+explanation:
+  why_correct: Fairness measures can conflict, so choosing one is a value judgement about which errors
+    matter most for this decision. Here, missing students who need support may matter more than offering
+    help to some who do not. That choice should involve affected stakeholders and be documented so it
+    can be explained and reviewed.
+  why_not:
+    B: Accuracy is not a fairness criterion. Choosing on accuracy ignores how errors fall on different
+      groups of students.
+    C: Being unable to meet every measure is common and is not a reason to abandon a beneficial use. The
+      task is to make and justify a reasoned choice.
+    D: Ease of use is a technical convenience, not an ethical basis, and the decision should not rest
+      with developers alone.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass

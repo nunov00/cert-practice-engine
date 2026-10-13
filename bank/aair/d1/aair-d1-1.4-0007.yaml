@@ -1,0 +1,32 @@
+id: aair-d1-1.4-0007
+subdomain: '1.4'
+difficulty: hard
+stem: A multinational manufacturer has one global AI policy. A new law in one country requires consultation
+  with worker representatives before AI is used to monitor employees; the global policy does not cover
+  this. Worker representation differs widely across its other countries, and some sites have no such body.
+  How should the policy framework BEST handle this?
+options:
+  A: Keep the global policy as a baseline and add a local requirement
+  B: Add the consultation rule to the global policy for every country
+  C: Exempt that country's operations from the global AI policy
+  D: Leave it to local managers to follow the law as they see fit
+answer: A
+explanation:
+  why_correct: A tiered framework keeps one consistent global baseline while local requirements add stricter
+    rules where the law demands them. This meets the law in that country, keeps oversight central and
+    avoids forcing a process that cannot work everywhere.
+  why_not:
+    B: Imposing the rule everywhere is unworkable at sites with no worker body and adds burden where it
+      is not required. A global rule should fit every place it applies to.
+    C: Exempting the country removes all the global controls there just to handle one extra requirement,
+      creating a larger gap.
+    D: Leaving compliance to managers' judgement without a documented requirement gives no consistency
+      and no evidence that the law is met.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass
