@@ -1,0 +1,32 @@
+id: aair-d1-1.2-0006
+subdomain: '1.2'
+difficulty: hard
+stem: An insurer's data science teams release model updates every two weeks, but the model risk review
+  takes about eight weeks. Teams have started to label changes as minor to avoid review. What should the
+  risk practitioner recommend?
+options:
+  A: Enforce the current review for every change and discipline those who bypass it
+  B: Tier reviews by the risk of each change and build them into the delivery cycle
+  C: Exempt agile teams from review and rely on monitoring after each release
+  D: Move all reviews to a yearly cycle that covers every change at once
+answer: B
+explanation:
+  why_correct: The review process is out of step with how teams work, so they route around it. Risk-based
+    tiers with clear criteria let low-risk changes pass quickly while material changes still get full
+    review, and building reviews into the delivery cycle removes the incentive to bypass them. Clear criteria
+    also stop teams labelling their own changes.
+  why_not:
+    A: Enforcement may stop some bypassing for a while, but the eight-week delay still conflicts with
+      delivery and will keep creating pressure to evade the review.
+    C: Removing review leaves material model changes unchecked before they affect customers. Monitoring
+      alone detects harm only after it occurs.
+    D: A yearly review would let many changes run unchecked for months. It weakens control rather than
+      aligning it with delivery.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass

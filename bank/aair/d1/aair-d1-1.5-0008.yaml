@@ -1,0 +1,32 @@
+id: aair-d1-1.5-0008
+subdomain: '1.5'
+difficulty: hard
+stem: A health insurer wants to test its claims model for unfair bias by ethnicity. Its data protection
+  law treats ethnicity as a special category that may be processed only on limited grounds, and the insurer
+  does not hold this data today. What should the risk practitioner advise?
+options:
+  A: Drop the bias testing, because the data cannot lawfully be held
+  B: Work with legal on a lawful, safeguarded way to test for bias
+  C: Infer ethnicity from names and postcodes for internal analysis only
+  D: Make ethnicity a required field on all new claim forms
+answer: B
+explanation:
+  why_correct: 'Both duties apply: avoiding unlawful discrimination and protecting sensitive data. The
+    right approach is to work with legal and privacy specialists on a lawful basis and safeguards, for
+    example voluntary collection, strict access limits or privacy-preserving methods, and to record the
+    decision.'
+  why_not:
+    A: Giving up testing leaves possible discrimination undetected, which carries its own legal and ethical
+      risk. Limited, safeguarded processing is often possible.
+    C: Inferring a special category is still processing sensitive data, even if kept internal. Without
+      a lawful basis, transparency and safeguards it adds risk rather than removing it.
+    D: Compulsory collection from every claimant, without first establishing a lawful basis and need,
+      is likely to breach data protection law and goes beyond what testing requires.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass

@@ -1,0 +1,31 @@
+id: aair-d1-1.3-0006
+subdomain: '1.3'
+difficulty: medium
+stem: During an AI inventory review at a city council, the risk practitioner finds a chatbot that the
+  communications team built on a low-code platform. It answers residents' questions, but no owner is recorded
+  and nobody has assessed it. What should the practitioner recommend FIRST?
+options:
+  A: Disable the chatbot until the IT team can rebuild it properly
+  B: Add the chatbot to internal audit's plan for the coming year
+  C: Ask the communications team to self-assess its risks each year
+  D: Have a named business owner take accountability for the chatbot
+answer: D
+explanation:
+  why_correct: Without an owner, nobody is responsible for assessing, controlling or monitoring the chatbot.
+    Naming an accountable owner in the team that runs it, and recording this in the inventory, is the
+    basis for the risk assessment and controls that follow.
+  why_not:
+    A: Nothing suggests the chatbot is causing harm that needs an immediate stop, and rebuilding it does
+      not settle who owns it.
+    B: An audit next year leaves the system unmanaged for months. Internal audit gives assurance; it does
+      not own risks.
+    C: A yearly self-assessment with no named owner leaves nobody accountable for acting on the results.
+      Ownership comes first.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass

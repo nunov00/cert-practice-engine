@@ -1,0 +1,30 @@
+id: aair-d1-1.4-0006
+subdomain: '1.4'
+difficulty: medium
+stem: A media group reports that 98% of staff have completed its training on safe use of generative AI.
+  Yet monitoring still shows staff entering unpublished stories and source details into public AI tools.
+  What should the risk practitioner do NEXT?
+options:
+  A: Report the training objective as met, given the completion rate
+  B: Find out why the training is not changing behaviour and revise it
+  C: Make the remaining 2% of staff complete the training this month
+  D: Ask all staff to repeat the same course before the year ends
+answer: B
+explanation:
+  why_correct: Completion measures attendance, not effect. The continuing incidents show the training
+    is not changing behaviour, so the practitioner should find out why, for example unclear content or
+    no practical alternatives offered, and revise it.
+  why_not:
+    A: The aim of training is safer behaviour. Reporting success on completion figures alone would mislead
+      management.
+    C: The incidents are not limited to the few who have not trained, so finishing completion will not
+      solve the problem.
+    D: Repeating a course that is not working is unlikely to give a different result.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass
