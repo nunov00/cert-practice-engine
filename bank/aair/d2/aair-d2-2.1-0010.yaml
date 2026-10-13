@@ -1,0 +1,32 @@
+id: aair-d2-2.1-0010
+subdomain: '2.1'
+difficulty: hard
+stem: A city council is developing a model to decide which roads to inspect for potholes first. The team
+  plans to train it on the number of resident complaints logged for each road over the past five years.
+  Some districts log far fewer complaints online than others. What is the MOST significant design risk?
+options:
+  A: Complaint records may contain personal details of the residents involved
+  B: Five years of history may be too short to train a reliable model
+  C: The model may be hard for council staff to explain to residents
+  D: Complaint counts measure reporting habits, not actual road condition
+answer: D
+explanation:
+  why_correct: The chosen target is a proxy for the thing the council cares about. A model trained on
+    complaints learns who complains, so districts that report less would be inspected less, however bad
+    their roads. This flaw is built in at design and would persist even if the model predicted complaints
+    perfectly; the team should find a target closer to road condition, such as inspection survey data.
+  why_not:
+    A: Personal details can be removed or minimised during data preparation; they do not distort which
+      roads get inspected.
+    B: Nothing suggests five years is too short for this purpose, and more years of the same proxy would
+      not fix the bias.
+    C: Explainability matters, but a well-explained model that targets the wrong outcome would still send
+      inspectors to the wrong roads.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-b
+  checked_by: 2026-10-13-aair-d2-b-check
+  check_verdict: pass

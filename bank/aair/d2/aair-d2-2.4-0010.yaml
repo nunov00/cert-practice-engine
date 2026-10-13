@@ -1,0 +1,32 @@
+id: aair-d2-2.4-0010
+subdomain: '2.4'
+difficulty: hard
+stem: A consumer lender is building a new credit model trained only on loans it approved in the past,
+  because repayment outcomes exist only for those applicants. The model will score all future applicants,
+  including types the lender used to decline. What is the MOST significant data risk?
+options:
+  A: The training data does not represent the full population being scored
+  B: The historical loans may include personal data with outdated consent
+  C: Approved loans are too few to train a model with many features
+  D: Repayment outcomes may take several years to be fully observed
+answer: A
+explanation:
+  why_correct: Outcomes exist only for applicants past lenders accepted, so the model learns nothing about
+    how declined types would have repaid. Its scores for those applicants are unsupported by data and
+    may simply repeat past decisions. The gap needs assessing and treating, for example with careful outcome
+    inference or limited test lending.
+  why_not:
+    B: Consent issues need checking, but they do not explain why the model may be unreliable for applicants
+      it was never trained on.
+    C: Nothing indicates a shortage of approved loans; the issue is which applicants they represent, not
+      how many there are.
+    D: Outcome delay affects how recent the data is, but it is not the main gap between the training data
+      and the scored population.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-b
+  checked_by: 2026-10-13-aair-d2-b-check
+  check_verdict: pass

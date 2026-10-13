@@ -1,0 +1,31 @@
+id: aair-d2-2.4-0008
+subdomain: '2.4'
+difficulty: hard
+stem: A health research charity wants to give an external partner a synthetic version of its patient dataset,
+  instead of the real records, to train a model. The supplier of the generation tool says synthetic data
+  contains no personal data. What should the risk practitioner advise before the data is shared?
+options:
+  A: Test the synthetic data for both re-identification risk and fidelity
+  B: Accept the supplier's statement and share under a standard licence
+  C: Share the real records instead, as synthetic data adds complexity
+  D: Remove rare conditions so the dataset only shows common patterns
+answer: A
+explanation:
+  why_correct: Synthetic data can still reveal real patients, especially those with rare combinations
+    of traits, and it may not keep the patterns a model needs. Testing both privacy leakage and fidelity
+    gives evidence that the data is safe to share and fit for training, rather than relying on a general
+    claim.
+  why_not:
+    B: A general supplier claim is no substitute for testing this dataset; some synthetic data does leak
+      real records.
+    C: Sharing real patient records raises the privacy risk the synthetic approach is meant to reduce.
+    D: Removing rare conditions may lower re-identification risk, but it harms fidelity and is no substitute
+      for testing.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-b
+  checked_by: 2026-10-13-aair-d2-b-check
+  check_verdict: pass
