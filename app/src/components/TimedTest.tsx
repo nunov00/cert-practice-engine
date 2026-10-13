@@ -34,13 +34,15 @@ interface Props {
   questions: PublicQuestion[];
   /** The recipe's min_accuracy_per_domain. */
   target: number;
+  /** Set when the test covers one domain only. */
+  domainId?: string;
 }
 
 type Phase = "loading" | "intro" | "running" | "done";
 
 const LOW_SECONDS = 5 * 60;
 
-export function TimedTest({ examId, kind, size, pace, domains, questions, target }: Props) {
+export function TimedTest({ examId, kind, size, pace, domains, questions, target, domainId }: Props) {
   const byId = useMemo(() => new Map(questions.map((q) => [q.id, q])), [questions]);
   const known = useMemo(() => new Set(byId.keys()), [byId]);
   const pools = useMemo(
@@ -64,29 +66,29 @@ export function TimedTest({ examId, kind, size, pace, domains, questions, target
         if (choice) progress = recordAttempt(progress, id, choice === byId.get(id)!.answer);
       }
       saveProgress(progress);
-      clearTest(examId, kind);
+      clearTest(examId, kind, domainId);
       setTest(t);
       setPhase("done");
       window.scrollTo({ top: 0 });
     },
-    [byId, examId, kind],
+    [byId, examId, kind, domainId],
   );
 
   // A saved test resumes; one whose time ran out while away is marked now.
   useEffect(() => {
     setMissed(missedIds([...known], loadProgress()));
-    const saved = loadTest(examId, kind, known);
+    const saved = loadTest(examId, kind, known, domainId);
     if (saved && saved.deadline <= Date.now()) finish(saved);
     else {
       setTest(saved);
       setPhase("intro");
     }
-  }, [examId, kind, known, finish]);
+  }, [examId, kind, known, finish, domainId]);
 
   const update = useCallback((t: SavedTest) => {
     setTest(t);
-    saveTest(t);
-  }, []);
+    saveTest(t, domainId);
+  }, [domainId]);
 
   const start = () => {
     let order: string[];
@@ -208,7 +210,7 @@ export function TimedTest({ examId, kind, size, pace, domains, questions, target
             ? `The real exam has ${size} questions; this one uses all ${count} published so far, with time in proportion. `
             : ""}
           {kind === "missed"
-            ? "Every question you got wrong last time, across all domains, in random order. "
+            ? `Every question you got wrong last time${domainId ? " in this domain" : ", across all domains"}, in random order. `
             : "Questions are picked at random, spread across the domains by their exam weight. "}
           You get the same time per question as in the real exam. Answers and explanations are shown at the end, and
           you can go back and change an answer until then.
@@ -292,7 +294,7 @@ export function TimedTest({ examId, kind, size, pace, domains, questions, target
             <button className="button" onClick={start}>
               Take another {name.toLowerCase()}
             </button>
-            <Link className="button secondary" href={`/exams/${examId}/missed`}>
+            <Link className="button secondary" href={`/exams/${examId}/missed${domainId ? `/${domainId}` : ""}`}>
               Test wrong answers
             </Link>
             <Link className="button secondary" href={`/exams/${examId}`}>
