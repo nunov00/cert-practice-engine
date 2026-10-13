@@ -1,0 +1,31 @@
+id: aair-d1-1.2-0005
+subdomain: '1.2'
+difficulty: medium
+stem: An energy company approves AI business cases on build cost and expected benefits. Several models
+  approved last year now have no budget for monitoring or retraining, and their performance is falling.
+  Which change to the investment process would BEST address this?
+options:
+  A: Fund monitoring from a central contingency budget when needed
+  B: Limit approvals to AI projects with a payback under one year
+  C: Require business cases to cover costs over the model life cycle
+  D: Ask the data science team to absorb monitoring in its own budget
+answer: C
+explanation:
+  why_correct: AI models need ongoing monitoring, retraining and eventual retirement. Including these
+    costs in the business case gives decision makers a true view of value and makes sure funding for the
+    controls is agreed when the model is approved.
+  why_not:
+    A: Ad hoc contingency funding is uncertain and competes with other demands. Monitoring may still be
+      cut when money is tight.
+    B: A short payback rule changes which projects are approved but does not make anyone fund the ongoing
+      work that approved models need.
+    D: Shifting the cost to the builders hides it from decision makers and may starve other work. It does
+      not fix the approval process.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass

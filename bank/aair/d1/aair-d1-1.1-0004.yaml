@@ -1,0 +1,31 @@
+id: aair-d1-1.1-0004
+subdomain: '1.1'
+difficulty: medium
+stem: 'A hospital group has licensed one large language model and plans two uses: drafting minutes of
+  internal administrative meetings, and summarising emergency referrals to help clinicians prioritise
+  patients. How should the level of risk control for each use be decided?'
+options:
+  A: Apply the same controls to both uses, as the model is the same
+  B: Adopt the risk rating the model vendor gives to its product
+  C: Wait until the pilots produce accuracy data, then set controls
+  D: Set controls for each use according to the impact of its errors
+answer: D
+explanation:
+  why_correct: Risk depends on the use case as much as on the model. An error in meeting minutes is a
+    minor nuisance; an error in a referral summary could delay urgent care. Scaling controls to the impact
+    of each use puts strong safeguards where harm is possible and avoids wasted effort elsewhere.
+  why_not:
+    A: The same model can carry very different risks in different contexts. Uniform controls would either
+      under-protect the referral use or over-burden the minutes use.
+    B: A vendor rating describes the product in general and cannot reflect how this hospital uses it.
+      The hospital must assess its own use cases.
+    C: Running a clinical pilot without controls exposes patients to harm while data is gathered. Controls
+      should follow the expected impact before use begins.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass

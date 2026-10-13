@@ -1,0 +1,31 @@
+id: aair-d1-1.5-0005
+subdomain: '1.5'
+difficulty: medium
+stem: A telecom operator recorded customer service calls, telling customers the recordings were for quality
+  and staff training. The marketing team now wants to use the recordings to train a model that predicts
+  which customers will buy upgrades. What should the risk practitioner advise?
+options:
+  A: Assess whether the new purpose is compatible and has a lawful basis
+  B: Proceed, as the recordings are already held by the company
+  C: Use the recordings once names and numbers are removed from them
+  D: Proceed, as the model will be used only inside the company
+answer: A
+explanation:
+  why_correct: Data collected for one purpose cannot simply be reused for another. The marketing use must
+    be checked against the original purpose and notice, and a lawful basis found, with steps such as fresh
+    notice or consent where needed, before training begins.
+  why_not:
+    B: Holding data lawfully for one purpose does not permit any further use. Purpose limitation governs
+      what the data is used for.
+    C: Voices and conversation content can still identify people, so removing names and numbers may not
+      anonymise the data. The purpose question also remains.
+    D: Keeping the model internal does not change the purpose. Predicting upgrade sales is still a new
+      use that customers were not told about.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass

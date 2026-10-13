@@ -1,0 +1,31 @@
+id: aair-d1-1.2-0007
+subdomain: '1.2'
+difficulty: hard
+stem: A bank has acquired a fintech that uses several AI credit models approved under the fintech's own,
+  lighter governance. The models will keep running after the deal closes. What should the risk practitioner
+  do to align them with the bank's processes?
+options:
+  A: Accept the fintech's approvals, as the models are already in use
+  B: Switch off the fintech's models until the bank has rebuilt them
+  C: Leave them under the fintech's process until the next annual audit
+  D: Inventory them and assess each against the bank's framework by risk
+answer: D
+explanation:
+  why_correct: The bank is now responsible for these models, so they must meet its standards. Inventorying
+    them and assessing the highest-risk ones first lets the bank find gaps, add controls or plan changes
+    without stopping the business.
+  why_not:
+    A: Approvals given under weaker governance do not show that the models meet the bank's standards.
+      Accepting them carries the gaps into the bank.
+    B: Switching everything off is disproportionate and may harm customers and the business when many
+      models may need only modest changes.
+    C: Running two governance standards and waiting for an audit leaves known gaps unmanaged. Alignment
+      is a management task, not something to wait for assurance to find.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass

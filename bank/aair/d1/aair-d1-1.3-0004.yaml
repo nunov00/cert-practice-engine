@@ -1,0 +1,31 @@
+id: aair-d1-1.3-0004
+subdomain: '1.3'
+difficulty: medium
+stem: At an online retailer, the head of data science chairs the AI review committee that approves her
+  own team's models before deployment. No other committee member has technical expertise. What is the
+  MAIN oversight concern?
+options:
+  A: The committee may meet too rarely for the pace of releases
+  B: The committee may not record its decisions in enough detail
+  C: Approvals lack challenge that is independent of the builders
+  D: The head of data science may lack enough business knowledge
+answer: C
+explanation:
+  why_correct: Oversight depends on challenge from people who are independent of the work being approved.
+    Here the builder in effect approves her own team's models, and nobody else can question them on technical
+    grounds, so the review offers little real challenge.
+  why_not:
+    A: Meeting frequency may matter, but more meetings would not change the fact that the builders approve
+      their own work.
+    B: Better minutes help evidence decisions, but documenting a review that lacks independence does not
+      make it effective.
+    D: Her business knowledge may be limited, but the central weakness is the conflict of interest and
+      the lack of independent challenge.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass

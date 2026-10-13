@@ -1,0 +1,31 @@
+id: aair-d1-1.1-0007
+subdomain: '1.1'
+difficulty: hard
+stem: A telecom board has approved an AI strategy that aims to handle most customer service contacts with
+  AI within two years. The strategy sets targets for cost and speed but says nothing about risk. What
+  should the risk practitioner recommend?
+options:
+  A: Define the risk appetite and tolerances the strategy must respect
+  B: Reduce the automation target until the technology is more mature
+  C: Have the board approve each AI project before it can begin
+  D: Assess every candidate vendor before the strategy is put in place
+answer: A
+explanation:
+  why_correct: A strategy without a stated risk appetite gives no basis for deciding how much harm to
+    customers, compliance or reputation is acceptable on the way to its targets. Defining appetite and
+    measurable tolerances links the strategy to risk management and lets later decisions be judged consistently.
+  why_not:
+    B: The practitioner's role is to make risk visible and bounded, not to replace the board's chosen
+      ambition. Lowering the target without an agreed appetite is arbitrary.
+    C: Board approval of every project is impractical and confuses direction-setting with management.
+      It still leaves no shared standard for judging the projects.
+    D: Vendor assessment is needed later for specific solutions. Doing it now does not fix the strategy's
+      missing link to risk appetite.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass
