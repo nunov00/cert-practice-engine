@@ -18,9 +18,21 @@ moves up, then the user experience. Everything must fit the free plans (below).
 | 3e | User experience: look and feel, usability, finding and searching certifications | Next |
 | 4 | CISSP content for domains 2–8 (manual runs, same pipeline) | Planned |
 | 5 | Mock exams, weak-spot review, readiness score, report-question button | Planned |
-| 6 | Scheduled automation: generation/check runs, outline watch, weekly digest | Planned, needs approval |
+| 6 | Scheduled automation: generation/check runs, outline watch, periodic bank review, weekly digest | Planned, needs approval |
 | 7 | AAIR full bank | Planned (after 3d) |
 | 8 | **Accounts, payments and domain** (last) | Planned |
+
+## Keeping the bank current
+
+Asked by the owner on 2026-10-13. Design: `docs/automation/bank-review.md`.
+Every exam's bank gets a monthly outline check, a quarterly review that
+re-checks the oldest quarter of published questions against current practice
+and the current outline (so each question is re-checked at least once a year),
+and a quarterly audit of domain weights, difficulty mix and question types.
+Outdated questions are fixed or retired through reviewed PRs, and gaps become
+generation runs. It runs by hand until the owner approves scheduling in phase 6.
+Building it needs a `reviewed_on` date on each question and a `pnpm review`
+command.
 
 ## Phase 8: accounts and payments (deferred on purpose)
 
