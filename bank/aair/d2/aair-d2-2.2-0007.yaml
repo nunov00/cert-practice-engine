@@ -1,0 +1,31 @@
+id: aair-d2-2.2-0007
+subdomain: '2.2'
+difficulty: hard
+stem: A grocery chain's team built a demand forecasting model over several months. Each time they changed
+  features or settings, they checked the result against the same held-back test set and kept the changes
+  that improved it. They now present that test score as the expected live performance. What is the BEST
+  response?
+options:
+  A: Accept the score, as the test data was never used in training
+  B: Ask for cross-validation on the training data to confirm it
+  C: Ask the team to explain which features drive the forecasts
+  D: Evaluate the final model on fresh data not used in tuning
+answer: D
+explanation:
+  why_correct: Repeatedly choosing changes based on one test set tunes the model to that set, even if
+    it was never used for training. The score is therefore optimistic. A final check on data that played
+    no part in any decision gives an honest estimate of live performance.
+  why_not:
+    A: Not training on the data is not enough; using it to pick among many versions leaks information
+      and inflates the score.
+    B: Cross-validation on training data assesses fit during development, but it does not remove the bias
+      in the reported test score.
+    C: Understanding drivers is useful, yet it does not correct the overstated performance estimate.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-a
+  checked_by: 2026-10-13-aair-d2-a-check
+  check_verdict: pass

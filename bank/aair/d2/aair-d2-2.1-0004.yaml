@@ -1,0 +1,32 @@
+id: aair-d2-2.1-0004
+subdomain: '2.1'
+difficulty: medium
+stem: An energy utility approved the design of a model that ranks customers for energy-saving offers.
+  During development the team added household-level smart meter data and changed the output so it automatically
+  enrols customers in a tariff. The design document was not updated. What is the MOST significant risk?
+options:
+  A: The approval and risk assessment no longer cover what is being built
+  B: New team members will find it harder to understand the project history
+  C: Internal audit may raise a finding about document version control
+  D: The model may need more computing capacity than was first budgeted
+answer: A
+explanation:
+  why_correct: The approval was given for a ranking tool using less sensitive data. Adding granular personal
+    data and automatic decisions changes the risk profile substantially, so the system is going ahead
+    without its real risks having been assessed or accepted. Documentation matters because approvals rest
+    on it.
+  why_not:
+    B: Onboarding is harder with stale documents, but that is minor next to building an unassessed system
+      that acts on customers automatically.
+    C: An audit finding is a symptom; the underlying exposure is that the changed system was never risk
+      assessed or approved.
+    D: Capacity is a cost issue. It does not address the new privacy and decision risks introduced by
+      the changes.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-a
+  checked_by: 2026-10-13-aair-d2-a-check
+  check_verdict: pass

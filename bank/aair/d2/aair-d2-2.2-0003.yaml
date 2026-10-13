@@ -1,0 +1,29 @@
+id: aair-d2-2.2-0003
+subdomain: '2.2'
+difficulty: medium
+stem: A manufacturer's vision model inspects parts for defects, which occur in about 1% of output. The
+  test report shows 99% accuracy and the team proposes release. What should the risk practitioner ask
+  for before agreeing?
+options:
+  A: A larger test set drawn from the same production period
+  B: A comparison of accuracy against the previous model
+  C: The rate at which actual defects are caught and missed
+  D: The time the model takes to process each part image
+answer: C
+explanation:
+  why_correct: With defects this rare, a model that passes every part would also score about 99% accuracy.
+    The figure that matters is how many real defects the model catches and misses, measured on the defect
+    class itself.
+  why_not:
+    A: More data from the same period would still be dominated by good parts, so overall accuracy would
+      stay misleading.
+    B: Comparing one misleading figure with another does not show whether defects are being caught.
+    D: Speed matters on a production line, but a fast model that misses defects fails its purpose.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-a
+  checked_by: 2026-10-13-aair-d2-a-check
+  check_verdict: pass
