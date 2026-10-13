@@ -1,0 +1,31 @@
+id: aair-d3-3.5-0005
+subdomain: '3.5'
+difficulty: medium
+stem: A hospital is about to deploy an AI tool from a supplier that drafts clinical notes from recorded consultations.
+  The standard terms allow the supplier to use customer data to improve its models. What should the risk practitioner
+  do BEFORE deployment?
+options:
+  A: Rely on the supplier's published privacy policy to protect patient data
+  B: Update the patient privacy notice to say data may be used by the supplier
+  C: Negotiate terms that limit data use, with deletion and audit rights
+  D: Restrict the tool to consultations that involve no sensitive conditions
+answer: C
+explanation:
+  why_correct: Recorded consultations contain highly sensitive health data. Contract terms that prohibit or
+    tightly limit reuse for model training, and give the hospital rights to require deletion and to verify
+    compliance, control the risk at its source before any data is shared.
+  why_not:
+    A: A privacy policy can change and is not a binding commitment to the hospital. It does not override the
+      permissive contract terms.
+    B: Telling patients does not make the reuse appropriate or lawful, and it leaves the hospital exposed if
+      data is misused.
+    D: Almost all consultations involve sensitive health data, so this restriction is impractical and would
+      not remove the contract problem.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass

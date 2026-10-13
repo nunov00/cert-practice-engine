@@ -1,0 +1,31 @@
+id: aair-d3-3.6-0004
+subdomain: '3.6'
+difficulty: medium
+stem: During a disaster recovery test, a bank restored its credit decision application on time, but the AI
+  model inside it would not run. The backups held the application and its database, but not the model files,
+  feature definitions or library versions. What should the risk practitioner recommend?
+options:
+  A: Plan to retrain the model from scratch whenever a recovery takes place
+  B: Keep a copy of the model files on the data science team's own laptops
+  C: Lengthen the recovery time objective to allow the model to be rebuilt
+  D: Add model artefacts and dependencies to recovery scope and test them
+answer: D
+explanation:
+  why_correct: An AI system depends on more than code and data. Including the versioned model, its feature
+    logic and the exact libraries in backups, and proving restoration in tests, is what allows the decision
+    service to come back as it was.
+  why_not:
+    A: Retraining takes time, may not reproduce the same model and would need its own validation, so it would
+      miss the recovery objective.
+    B: Personal laptops are not controlled, secure or reliable backup locations, and versions could easily
+      be wrong.
+    C: The recovery objective should reflect business need. Relaxing it to suit a technical gap accepts more
+      impact than the bank decided it could bear.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass

@@ -1,0 +1,28 @@
+id: aair-d3-3.3-0009
+subdomain: '3.3'
+difficulty: hard
+stem: A power distribution company feeds an AI load forecast directly into automated switching decisions every five
+  minutes, including overnight when few staff are on duty. Unusual input data could make the forecast erratic. Which
+  control BEST limits harm from an erratic forecast?
+options:
+  A: A live dashboard of forecast accuracy for the overnight control room
+  B: Independent validation of every model version before it is released
+  C: A weekly review comparing forecasts with actual load to spot drift
+  D: Automatic plausibility checks that switch to a fallback method
+answer: D
+explanation:
+  why_correct: Forecasts act on the network within minutes and few people are watching. Automated checks that reject
+    implausible forecasts and fall back to a proven method act at the same speed as the risk, without relying on
+    someone noticing in time.
+  why_not:
+    A: A dashboard depends on a small overnight team spotting the problem and reacting within minutes.
+    B: Pre-release validation tests the model, not the unusual live inputs that would cause erratic output.
+    C: A weekly review is far too slow for a hazard that can cause harm within minutes.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass

@@ -1,0 +1,27 @@
+id: aair-d3-3.1-0007
+subdomain: '3.1'
+difficulty: medium
+stem: An online marketplace retrains its product recommendation model every night on the previous day's clicks and
+  purchases, with no checks on the incoming data. Which risk scenario is MOST important to add to the register?
+options:
+  A: Coordinated fake accounts skew the training data to promote certain products
+  B: Seasonal changes in buying habits make the previous day's data less representative
+  C: The recommendation service slows down during peak shopping periods
+  D: Customers find some of the recommendations irrelevant to their interests
+answer: A
+explanation:
+  why_correct: Training directly on unvetted user behaviour lets anyone who can generate clicks shape the model.
+    Coordinated manipulation of this data can unfairly promote sellers, mislead customers and breach marketplace
+    rules, and nightly retraining means it takes effect quickly.
+  why_not:
+    B: Nightly retraining actually helps the model keep up with seasonal shifts, so this is a lesser concern.
+    C: Slowness is an operational issue that is not linked to the stated weakness in the data pipeline.
+    D: Some irrelevant recommendations are expected and have low impact.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass
