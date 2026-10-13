@@ -101,8 +101,6 @@ pages, because drills are one page per domain, not per question.
 
 - Every action is pinned to a full commit SHA with the tag in a comment. Update
   the SHA and comment together.
-- `pull_request_target` workflows run from the default branch, so they can't be
-  tested on the PR that adds them; plan the first live test after merge.
 - No scheduled workflows without the owner's approval (AGENTS.md).
 
 ### Proposed `main` ruleset (not applied)
@@ -122,20 +120,39 @@ owner to apply in Settings, Rules, Rulesets:
 Untested: `require_extra_approval_for_unattributed_changes` with AI-connector
 commits; verify on the first real merge if it is turned on.
 
-## AI subscriptions (carried over from the earlier project, not re-verified)
+## AI subscriptions
 
-The project runs on subscriptions (ChatGPT Plus, Claude), with no API accounts.
+The project runs on subscriptions, with no API accounts, so none of these
+limits are metered in money. They matter once phase 6 schedules automation.
 
-- ChatGPT scheduled tasks: at most 5 active automations per plan; a 6th fails
-  with `too_many_active_automations`. Budget a slot for every recurring job.
+- ChatGPT scheduled tasks: at most **5 active tasks on Plus** (3 Free/Go, 10
+  Business, 15 Pro), verified 2026-10-13 against
+  [OpenAI help](https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt).
+  Budget a slot for every recurring job.
+
+Observed on the earlier project, not documented by the providers (re-test
+rather than trust):
+
 - Neither subscription shows a usage meter. Track run duration and throttling as
   proxies; don't exhaust the allowance to test it.
-- Scheduled tasks can start late or not at all: every scheduled job must be
+- Scheduled runs can start late or not at all: every scheduled job must be
   idempotent and safe if late or missed.
 - All agents act through the owner's single GitHub identity, so review
   provenance is self-reported, not authenticated.
-- Agents couldn't delete branches; clean up branches with a workflow (needs
-  approval if scheduled) or GitHub's "automatically delete head branches"
-  setting.
 - A Claude Code routine created through the API had no repository access.
   Create routines from the claude.ai Routines UI with the repository attached.
+
+## Carried over but left out
+
+From the owner's list from the earlier project, these don't apply here today:
+
+- **Static-site hosting limits as the main constraint.** This app runs a Worker,
+  so Worker size, startup time and the daily request quota matter more than
+  asset counts (covered above).
+- **Build memory at 2,000 to 20,000 pages.** Drills are one page per domain, so
+  the build has 12 pages and none per question. Revisit if pages per question
+  are ever added.
+- **Wrangler ≥ 4.34 for the 100,000-file limit.** That limit is paid-plan only.
+- **`pull_request_target` workflows.** None exist.
+- **Branch cleanup by workflow.** GitHub's "Automatically delete head branches"
+  setting does it without a workflow; proposed for the owner to switch on.
