@@ -8,7 +8,10 @@
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
   "observability": { "enabled": true },
-  // Anonymous feedback (docs/feedback.md). Wrangler creates the database on the
+  // Anonymous feedback (docs/feedback.md): filed as files in this private repo,
+  // written with the Worker secret FEEDBACK_GITHUB_TOKEN. Not a secret.
+  "vars": { "FEEDBACK_REPO": "nunov00/knowmark-feedback" },
+  // D1 is the outbox and holds the anonymous daily counters. Wrangler creates the database on the
   // first deploy (the API token needs D1 Edit); the table is created on first use.
   "d1_databases": [{ "binding": "FEEDBACK_DB", "database_name": "knowmark-feedback" }],
   // Per-visitor limit on feedback posts and inbox attempts. namespace_id must be

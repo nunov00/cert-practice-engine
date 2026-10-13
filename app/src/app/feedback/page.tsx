@@ -12,7 +12,7 @@ export default function FeedbackPage() {
       <h1>Send feedback</h1>
       <p className="lead">
         Ideas, problems, or a question that looks wrong: tell us what would make practice better. It is anonymous and
-        only the site owner reads it.
+        private: only the site owner and the assistants they use to review it read it.
       </p>
       <FeedbackForm />
     </>
