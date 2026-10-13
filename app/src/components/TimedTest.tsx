@@ -16,6 +16,7 @@ import {
 } from "@/lib/exam-session";
 import { formatDuration } from "@/lib/format";
 import { loadProgress, missedIds, recordAttempt, saveProgress } from "@/lib/progress";
+import { track } from "@/lib/track";
 
 export interface TestDomain {
   id: string;
@@ -67,6 +68,7 @@ export function TimedTest({ examId, kind, size, pace, domains, questions, target
       }
       saveProgress(progress);
       clearTest(examId, kind, domainId);
+      track(`${kind}_finish`, examId, domainId);
       setTest(t);
       setPhase("done");
       window.scrollTo({ top: 0 });
@@ -113,6 +115,7 @@ export function TimedTest({ examId, kind, size, pace, domains, questions, target
       deadline: Date.now() + timeLimitSeconds(order.length, pace) * 1000,
     };
     update(t);
+    track(`${kind}_start`, examId, domainId);
     setNow(Date.now());
     setPhase("running");
   };

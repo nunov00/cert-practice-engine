@@ -14,6 +14,10 @@ export interface FeedbackEnv {
   FEEDBACK_REPO?: string;
   /** Fine-grained GitHub token: that repo only, Contents read and write. */
   FEEDBACK_GITHUB_TOKEN?: string;
+  /** Per-visitor burst limit for anonymous usage counts (docs/analytics.md). */
+  STATS_LIMITER?: RateLimiter;
+  /** The owner's key for the private stats page; the page is off until it is set. */
+  STATS_READ_TOKEN?: string;
 }
 
 /** Writes files into the private feedback repo, or null until the owner has set it up. */
@@ -53,10 +57,15 @@ export async function feedbackContext(): Promise<{ env: FeedbackEnv; waitUntil: 
  * Per-visitor limit using Cloudflare's rate limiting binding. The IP is only the
  * counter key inside Cloudflare for the current minute; we never store it.
  */
-export async function overRateLimit(env: FeedbackEnv, request: Request, scope: string): Promise<boolean> {
-  if (!env.FEEDBACK_LIMITER) return false;
+export async function overRateLimit(
+  env: FeedbackEnv,
+  request: Request,
+  scope: string,
+  limiter = env.FEEDBACK_LIMITER,
+): Promise<boolean> {
+  if (!limiter) return false;
   const ip = request.headers.get("cf-connecting-ip") ?? "unknown";
-  const { success } = await env.FEEDBACK_LIMITER.limit({ key: `${scope}:${ip}` });
+  const { success } = await limiter.limit({ key: `${scope}:${ip}` });
   return !success;
 }
 
