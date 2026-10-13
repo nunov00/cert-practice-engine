@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { formatDuration, formatQuestionCount, listExams, sampleQuestions } from "@/lib/content";
+import { formatDuration, formatQuestionCount, isOpenAccess, listExams, questionsFor } from "@/lib/content";
 
 export default function Home() {
   const exams = listExams();
@@ -12,7 +12,7 @@ export default function Home() {
       </p>
       <div className="stack">
         {exams.map((exam) => {
-          const free = sampleQuestions(exam.id).length;
+          const count = questionsFor(exam.id).length;
           return (
             <div className="card" key={exam.id}>
               <div className="domain-row">
@@ -23,9 +23,9 @@ export default function Home() {
                     {formatDuration(exam.format.duration_minutes)}
                   </div>
                 </div>
-                {free > 0 ? (
+                {count > 0 ? (
                   <Link className="button" href={`/exams/${exam.id}`}>
-                    Try {free} free questions
+                    {isOpenAccess() ? `Practise ${count} questions` : `Try ${count} free questions`}
                   </Link>
                 ) : (
                   <span className="pill">Coming soon</span>
