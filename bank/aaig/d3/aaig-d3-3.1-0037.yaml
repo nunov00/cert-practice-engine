@@ -1,0 +1,27 @@
+id: aaig-d3-3.1-0037
+subdomain: '3.1'
+difficulty: easy
+stem: A law firm's executives want a single figure to show whether its new AI research assistant is being taken
+  up across the firm. Which measure would BEST serve as an adoption indicator?
+options:
+  A: The share of eligible staff using it regularly
+  B: The total licence cost paid for the assistant this year
+  C: The number of staff who attended the launch training
+  D: The number of features the vendor added since the launch
+answer: A
+explanation:
+  why_correct: Adoption is about sustained use by the people the tool is meant for. The share of eligible staff
+    using it regularly shows whether it has become part of daily work, and changes over time show whether change
+    management is working.
+  why_not:
+    B: Licence cost reflects spend, not use. The firm could pay fully for a tool few people use.
+    C: Training attendance shows exposure, not continued use. Many attendees may never use the tool.
+    D: Vendor features describe the product, not whether the firm's staff use it.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-a
+  checked_by: 2026-10-13-aaig-d3-a-check
+  check_verdict: pass

@@ -1,0 +1,33 @@
+id: aaig-d3-3.1-0038
+subdomain: '3.1'
+difficulty: medium
+stem: A garden supplies retailer in northern Europe sees its AI demand-forecasting error rise every winter, when
+  sales are low and erratic. This year the rise has tripped the drift alert, and the operations team wants an urgent
+  retrain. Past winters show the same pattern, with accuracy recovering by spring. What should the governance leader
+  advise?
+options:
+  A: Retrain at once, because every breach of an agreed drift alert requires corrective action
+  B: Compare the error with the same season in past years and make thresholds season-aware
+  C: Switch the alert off until spring, since the pattern is known and has always corrected itself
+  D: Move to manual forecasting each winter, since low and erratic sales are beyond the model's reach
+answer: B
+explanation:
+  why_correct: 'A known seasonal pattern is not the same as genuine degradation. Comparing this winter with earlier
+    winters shows whether the model is performing worse than its normal seasonal level, which is the real question.
+    Season-aware thresholds keep the alert meaningful: it then fires on true deterioration instead of on the calendar,
+    and retraining is decided on evidence rather than on alarm.'
+  why_not:
+    A: Retraining on the low, erratic winter data may make the model worse for the rest of the year and spends effort
+      on a pattern that recovers by itself. An alert breach calls for assessment, not an automatic fix.
+    C: Turning monitoring off removes protection exactly when a genuine problem could hide behind the seasonal noise.
+      The pattern should be built into the threshold, not used as a reason to stop watching.
+    D: Abandoning the model every winter discards its value on the strength of an untested assumption. Nothing shows
+      that it performs worse than people would in that season.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-b
+  checked_by: 2026-10-13-aaig-d3-b-check
+  check_verdict: pass

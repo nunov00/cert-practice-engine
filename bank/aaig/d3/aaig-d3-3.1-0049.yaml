@@ -1,0 +1,31 @@
+id: aaig-d3-3.1-0049
+subdomain: '3.1'
+difficulty: medium
+stem: An insurer is preparing its first public report on responsible AI, including performance figures for its main
+  AI systems. The marketing draft uses accuracy figures from vendor test results and picks the most favourable measure
+  for each system. Internal monitoring uses different definitions. What should the governance leader require?
+options:
+  A: Publish only qualitative statements, since numbers invite challenge from regulators and media
+  B: Use the vendor figures, since they come from tests on the product and are produced independently
+  C: Let each business unit choose the measures that best show the performance of its own systems
+  D: Take figures from internal monitoring with its definitions, approved like other disclosures
+answer: D
+explanation:
+  why_correct: External statements about AI performance should match what the insurer actually measures and governs
+    internally. Using monitoring data with consistent definitions makes the figures reconcilable and defensible,
+    and putting them through the same review and approval as other public disclosures guards against selective or
+    misleading reporting.
+  why_not:
+    A: Avoiding numbers altogether may look evasive and gives stakeholders little to rely on. The aim is accurate
+      figures, not none.
+    B: Vendor test results describe the product under the vendor's conditions, not its performance in the insurer's
+      own use. They may differ significantly.
+    C: Letting each unit pick its best measure is the same selective reporting problem, spread across more people.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-b
+  checked_by: 2026-10-13-aaig-d3-b-check
+  check_verdict: pass

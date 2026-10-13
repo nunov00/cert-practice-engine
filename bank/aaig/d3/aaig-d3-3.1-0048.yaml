@@ -1,0 +1,31 @@
+id: aaig-d3-3.1-0048
+subdomain: '3.1'
+difficulty: medium
+stem: A retail bank built a card fraud model meant to block suspicious payments as they happen. The core banking
+  system, however, can only receive scores in an overnight batch, so the model flags fraud the day after it occurs.
+  Six months after go-live, fraud savings are far below the business case, which assumed real-time blocking. What
+  lesson should the governance leader draw for future AI investments?
+options:
+  A: Fraud models should be bought rather than built, so that vendors carry the integration burden
+  B: Benefits should be judged only after a full year, since early figures tend to understate value
+  C: Business cases should test integration with existing systems before the investment is approved
+  D: The model should be retrained on batch data so that it fits the way the core system works
+answer: C
+explanation:
+  why_correct: The model's value depended on acting in real time, and the legacy system could not support that.
+    This was knowable before approval. Integration with existing systems is often what decides whether an AI benefit
+    is achievable, so business cases and approval reviews should check that the enterprise architecture can deliver
+    the operating mode the benefits assume.
+  why_not:
+    A: A bought model would face the same overnight constraint in the core system. The problem is the integration,
+      not who built the model.
+    B: Waiting longer will not close the gap; a next-day flag cannot block fraud that has already happened.
+    D: Retraining does not change when scores reach the core system. The benefit still cannot be captured.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-b
+  checked_by: 2026-10-13-aaig-d3-b-check
+  check_verdict: pass

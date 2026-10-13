@@ -1,0 +1,32 @@
+id: aaig-d3-3.1-0039
+subdomain: '3.1'
+difficulty: hard
+stem: An insurer's AI fast-track settles claims that its model scores as simple; claims handlers deal with the rest.
+  The quarterly report shows fast-track claims settle in 2 days against 11 days for handler claims, and management
+  proposes sending all claims through the AI, citing an 80% time saving. What is the MAIN flaw in this case?
+options:
+  A: The figures compare simple claims with complex ones, so the saving is not measured like for like
+  B: Settlement time is a lagging measure, and the case should rest on leading indicators instead
+  C: The report has not been reviewed by internal audit, so executives cannot rely on any figure in it
+  D: Faster settlement may hide more errors, so accuracy must be measured before any extension
+answer: A
+explanation:
+  why_correct: The AI only receives the claims it has already judged simple, while handlers get everything difficult.
+    Much of the gap between 2 and 11 days comes from the case mix, not from the AI. A fair comparison sets the AI
+    against human or pre-AI handling of comparable claims. Without that, the claimed 80% saving for all claims is
+    unsupported, and extending the AI to complex claims is a decision taken on a misleading number.
+  why_not:
+    B: Leading indicators help with early warning, but they do not fix a comparison between two different populations
+      of claims. The time figures are relevant; they are just not comparable.
+    C: Audit review can add confidence, but the flaw is visible in the design of the comparison itself. Management
+      can and should correct it without waiting for audit.
+    D: Accuracy matters too, and should be part of the decision. But even a perfectly accurate fast-track would
+      not justify the 80% figure, because the time comparison itself is biased by case mix.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-b
+  checked_by: 2026-10-13-aaig-d3-b-check
+  check_verdict: pass

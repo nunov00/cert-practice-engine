@@ -1,0 +1,28 @@
+id: aaig-d3-3.1-0035
+subdomain: '3.1'
+difficulty: easy
+stem: A retail group runs about forty AI models, from a tool that tags product photos to a model that sets
+  staff schedules. The monitoring team applies identical daily checks to all of them and is overstretched.
+  What should the governance leader recommend?
+options:
+  A: Reduce checks on all models to weekly to save team effort
+  B: Set monitoring depth and frequency by each model's risk
+  C: Hire more staff so that every model keeps daily checks
+  D: Stop monitoring models that have never shown any problem
+answer: B
+explanation:
+  why_correct: Monitoring effort should match the impact of failure. A model affecting staff schedules warrants
+    closer watch than one tagging photos. Tiering monitoring by risk puts effort where harm is possible and
+    frees the team from low-value checks.
+  why_not:
+    A: A uniform cut lowers coverage on high-impact models along with low-impact ones.
+    C: Adding staff keeps an inefficient design and spends money on low-risk checks.
+    D: A clean history does not mean a model cannot degrade. Some proportionate monitoring is still needed.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-a
+  checked_by: 2026-10-13-aaig-d3-a-check
+  check_verdict: pass
