@@ -1,0 +1,29 @@
+id: aaig-d2-2.1-0027
+subdomain: '2.1'
+difficulty: medium
+stem: A national statistics office plans to release synthetic data derived from census records so researchers
+  can train models. Leadership assumes synthetic data carries no privacy risk. What should the governance
+  lead advise?
+options:
+  A: Release it, since synthetic records belong to no real person
+  B: Release it only to researchers at accredited universities
+  C: Check re-identification risk and usefulness before release
+  D: Release it once its statistical accuracy against the census is confirmed
+answer: C
+explanation:
+  why_correct: Synthetic data can leak information about real people, especially outliers, if the generator
+    copies them too closely. It may also fail to preserve the patterns researchers need. Testing both
+    disclosure risk and utility before release lets the office make an informed decision.
+  why_not:
+    A: Synthetic records can still reproduce unusual real individuals closely enough to identify them.
+    B: Limiting who receives it reduces exposure but does not show whether the data itself is safe.
+    D: High accuracy can mean the data mirrors the original too closely, which raises privacy risk. Utility
+      testing alone is not enough.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

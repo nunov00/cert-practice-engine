@@ -1,0 +1,32 @@
+id: aaig-d2-2.1-0010
+subdomain: '2.1'
+difficulty: hard
+stem: A fitness app trains a personalisation model on users who consented. Several users withdraw consent
+  each month, and retraining from scratch costs a great deal. The board asks how the architecture should
+  handle this. What should the governance lead recommend?
+options:
+  A: Delete their raw records and keep the current model in service unchanged
+  B: Ask users to confirm they accept their data stays in the model
+  C: Stop using consent and rely on a different legal basis
+  D: Track which data trained each version and retrain on a set schedule
+answer: D
+explanation:
+  why_correct: Consent withdrawal has to flow through to models, not only to raw data. Recording which
+    records trained each model version makes it possible to exclude withdrawn data, and a defined retraining
+    cycle sets a predictable, defensible time within which the model stops reflecting it, at a cost the
+    business can plan.
+  why_not:
+    A: The model may still reflect the withdrawn data, so deleting raw records alone may not honour the
+      withdrawal. It treats the model as outside the scope of the user's choice.
+    B: Asking users to accept that their data remains undermines the meaning of withdrawal and would likely
+      be seen as unfair.
+    C: Switching legal basis to avoid honouring withdrawals is unlikely to be valid and damages trust.
+      The basis must fit the processing, not the cost of compliance.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

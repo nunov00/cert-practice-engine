@@ -1,0 +1,29 @@
+id: aaig-d2-2.1-0037
+subdomain: '2.1'
+difficulty: medium
+stem: A bank's data science team built a customer income-estimation model approved for setting credit
+  card limits. The collections team wants to reuse it to decide which customers to pursue first. Reuse
+  would save months. What should the governance lead advise?
+options:
+  A: Reuse it directly, since it has already been approved
+  B: Rebuild a new model, since models should never be reused
+  C: Reuse it, but only for customers who already have cards
+  D: Assess it for the new purpose before approving the reuse
+answer: D
+explanation:
+  why_correct: Reuse of shared assets saves cost, but an approval covers a specific purpose. Collections
+    is a different decision with different impacts, fairness concerns and data permissions. The model
+    should be assessed for the new use, which may confirm reuse with conditions, before it is applied.
+  why_not:
+    A: The approval was for credit limits. Applying it to collections without assessment ignores new risks
+      and possible purpose-limitation issues.
+    B: Refusing reuse wastes a valuable asset. Reuse is a good principle when the new purpose is assessed.
+    C: Limiting the population does not address whether the model is fit and permitted for collections.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

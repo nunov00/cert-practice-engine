@@ -1,0 +1,32 @@
+id: aaig-d2-2.1-0008
+subdomain: '2.1'
+difficulty: hard
+stem: An engineering firm fine-tuned a model on restricted design documents. A business unit now wants
+  to offer the model to suppliers through a portal, arguing that it holds 'only weights, not documents'.
+  What should the governance lead advise?
+options:
+  A: Allow it, as model weights are not covered by the classification policy
+  B: Allow it if suppliers sign a non-disclosure agreement first
+  C: Treat the model as restricted, since it can reveal what it learned
+  D: Allow it after removing the restricted documents from storage
+answer: C
+explanation:
+  why_correct: A model can memorise and reproduce parts of its training data, so it carries the sensitivity
+    of that data. The sound principle is that a model, and its outputs, inherit the highest classification
+    of the data used to train it unless testing shows otherwise. Sharing it externally would amount to
+    sharing restricted information.
+  why_not:
+    A: Treating weights as outside the policy is a gap, not a permission. The policy's intent is to protect
+      the information, and the model can still disclose it.
+    B: An NDA gives legal recourse after a leak but does not prevent one. It also does not change who
+      is authorised to see restricted design information.
+    D: Deleting the source documents does not remove what the model learned. The exposure sits in the
+      model itself.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

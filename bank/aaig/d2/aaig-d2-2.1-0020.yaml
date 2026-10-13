@@ -1,0 +1,31 @@
+id: aaig-d2-2.1-0020
+subdomain: '2.1'
+difficulty: hard
+stem: A pharmaceutical company built an enterprise assistant that retrieves from all internal document
+  stores. During testing, a junior employee received a summary of an unreleased merger plan. The project
+  team suggests adding a warning in the user terms. What should the governance lead require?
+options:
+  A: A filter that blocks answers mentioning the word 'merger'
+  B: Retrieval that enforces each user's existing access rights
+  C: A training course on handling confidential information
+  D: Restrict the assistant to senior staff only until the wider launch
+answer: B
+explanation:
+  why_correct: The design flaw is that retrieval ignores the access controls on the source documents.
+    The assistant should only retrieve what the requesting user is already allowed to read, so it cannot
+    become a route around existing permissions. This fixes the cause rather than the symptom.
+  why_not:
+    A: Keyword filters are easy to bypass and only cover one topic. Many other sensitive documents would
+      still be exposed.
+    C: Training helps people handle what they see, but the problem is that they are shown what they should
+      never have been able to see.
+    D: Senior staff are not entitled to every document either. The underlying permission gap would remain
+      and reappear at wider launch.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

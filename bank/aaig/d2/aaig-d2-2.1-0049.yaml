@@ -1,0 +1,33 @@
+id: aaig-d2-2.1-0049
+subdomain: '2.1'
+difficulty: medium
+stem: A payroll software company serving 3,000 business clients wants to add an AI feature that predicts
+  payroll errors. Its engineers propose one shared model trained on all clients' payroll data. Client
+  contracts say each client's data is used only to provide the service to that client. What should the
+  governance lead require in the design?
+options:
+  A: Pool all client data, since the feature benefits every client equally
+  B: Remove client names from the pooled data, then train the shared model
+  C: Build a separate model for each client, whatever the cost or accuracy
+  D: Keep each client's data in its own scope unless that client agrees to pooling
+answer: D
+explanation:
+  why_correct: The contracts limit each client's data to that client's service, so the architecture must
+    respect tenant separation by default. Pooled training is possible only where clients have agreed,
+    for example through an opt-in with clear terms. This keeps the company within its commitments while
+    still allowing a shared model where permitted.
+  why_not:
+    A: A shared benefit does not override what the contracts promise. Pooling without agreement breaches
+      the purpose limits.
+    B: Removing names does not change the purpose for which the data is used, and payroll data remains
+      identifiable in many ways.
+    C: Per-client models are one compliant option, but ruling out pooling even with consent ignores a
+      legitimate path and may give poor results for small clients.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-b
+  checked_by: 2026-10-13-aaig-d2-b-check
+  check_verdict: pass

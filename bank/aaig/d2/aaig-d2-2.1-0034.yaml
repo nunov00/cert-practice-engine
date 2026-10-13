@@ -1,0 +1,30 @@
+id: aaig-d2-2.1-0034
+subdomain: '2.1'
+difficulty: medium
+stem: A global consumer goods company is choosing a foundation model for marketing content and internal
+  knowledge search. The shortlist is based on public benchmark scores. Which additional criteria should
+  governance add?
+options:
+  A: How popular the model is on social media and among developer forums
+  B: The number of parameters, as larger models are always safer
+  C: Data handling terms, transparency, support and fit to risk needs
+  D: The length of time the vendor has been in the AI market
+answer: C
+explanation:
+  why_correct: Benchmarks measure general capability, not whether a model is acceptable for the company.
+    Governance criteria include how the provider uses submitted data, what it discloses about training
+    and limitations, contractual support and change notice, and fit with the company's risk and compliance
+    needs.
+  why_not:
+    A: Popularity is not evidence of suitability, safety or acceptable data terms.
+    B: Size does not guarantee safety or suitability and can raise cost. The claim that larger is always
+      safer is false.
+    D: Vendor age is a weak proxy for stability and says nothing about the model's terms or fit.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass
