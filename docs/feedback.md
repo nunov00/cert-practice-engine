@@ -17,7 +17,7 @@ private to the owner, to review every so often and pick ideas from.
 One row per message in the Cloudflare D1 database `knowmark-feedback`
 (table `feedback`): id, time, UTC day, category, message, page path, review
 status. Nothing else: no name, email, IP address, user agent, cookie or device
-ID. The page path is stripped of query strings and fragments.
+ID. The daily limit keeps short-lived counters in two more tables (below). The page path is stripped of query strings and fragments.
 
 Feedback is **private to the owner**. It is never committed to this repository
 (which is public), never shown on a public page, never written to GitHub Actions
@@ -25,11 +25,17 @@ logs, and the service worker never caches `/api/` responses.
 
 ## Abuse limits
 
-- Per visitor: 5 posts a minute, through Cloudflare's rate limiting binding
-  (`FEEDBACK_LIMITER`). The IP address is only the counter key inside
-  Cloudflare for that minute; we never see or store it.
-- Whole site: at most 200 messages per UTC day (`DAILY_CAP` in
-  `app/src/lib/feedback.ts`), so even abuse costs a few hundred D1 writes a day.
+- Per visitor: **5 messages a day** (owner's choice, 2026-10-13;
+  `VISITOR_DAILY_LIMIT` in `app/src/lib/feedback.ts`). To count without keeping
+  IP addresses, a visitor is identified only by a hash of their IP mixed with a
+  random value made fresh each UTC day. The IP itself is never stored, and each
+  day's random value and counters are deleted the next day, after which nobody
+  can link those hashes to anyone.
+- Bursts: at most 5 requests a minute per visitor through Cloudflare's rate
+  limiting binding (`FEEDBACK_LIMITER`, IP used only as an in-memory counter key
+  inside Cloudflare). This also slows down guessing at the inbox key.
+- Whole site: at most 200 messages per UTC day (`DAILY_CAP`), so even abuse
+  costs a few hundred D1 writes a day.
 - Posts from other websites are refused (Origin check), and a hidden honeypot
   field drops simple bots.
 

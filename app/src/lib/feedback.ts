@@ -22,6 +22,8 @@ export const MAX_MESSAGE = 2000;
 const MAX_PAGE = 200;
 /** Whole-site cap per UTC day. Keeps D1 writes tiny even under abuse (Free: 100,000 a day per account). */
 export const DAILY_CAP = 200;
+/** Messages one visitor can send per UTC day (owner's choice, 2026-10-13). */
+export const VISITOR_DAILY_LIMIT = 5;
 /** Shortest owner token we accept; shorter ones are treated as not configured. */
 export const MIN_TOKEN = 24;
 
@@ -91,6 +93,16 @@ const SCHEMA = [
     status TEXT NOT NULL DEFAULT 'new'
   )`,
   `CREATE INDEX IF NOT EXISTS feedback_day ON feedback (day)`,
+  // Per-visitor daily limit without keeping IP addresses: a visitor is
+  // SHA-256(today's random salt + IP). Both tables only ever hold today's rows;
+  // once yesterday's salt is deleted, yesterday's hashes can't be linked to anyone.
+  `CREATE TABLE IF NOT EXISTS feedback_salt (day TEXT PRIMARY KEY, salt TEXT NOT NULL)`,
+  `CREATE TABLE IF NOT EXISTS feedback_quota (
+    day TEXT NOT NULL,
+    visitor TEXT NOT NULL,
+    n INTEGER NOT NULL,
+    PRIMARY KEY (day, visitor)
+  )`,
 ];
 
 // Created on first use, so a deploy needs no migration step (once per isolate).
@@ -108,12 +120,45 @@ export function resetSchemaCache() {
   schemaReady = null;
 }
 
-export async function saveFeedback(db: Db, input: FeedbackInput, now: Date): Promise<"saved" | "daily-cap"> {
+async function sha256Hex(text: string): Promise<string> {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+  return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+function randomHex(bytes: number): string {
+  return [...crypto.getRandomValues(new Uint8Array(bytes))].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+/** Today's anonymous visitor id. The IP goes into the hash and nowhere else. */
+async function visitorId(db: Db, day: string, ip: string): Promise<string> {
+  await db.batch([
+    db.prepare("DELETE FROM feedback_salt WHERE day <> ?").bind(day),
+    db.prepare("DELETE FROM feedback_quota WHERE day <> ?").bind(day),
+    db.prepare("INSERT OR IGNORE INTO feedback_salt (day, salt) VALUES (?, ?)").bind(day, randomHex(32)),
+  ]);
+  const row = await db.prepare("SELECT salt FROM feedback_salt WHERE day = ?").bind(day).first<{ salt: string }>();
+  return sha256Hex(`${row?.salt ?? ""}:${ip}`);
+}
+
+export type SaveResult = "saved" | "daily-cap" | "visitor-limit";
+
+/** `ip` is used only to derive today's anonymous visitor id; it is never stored. */
+export async function saveFeedback(db: Db, input: FeedbackInput, now: Date, ip: string): Promise<SaveResult> {
   await ensureSchema(db);
   const iso = now.toISOString();
   const day = iso.slice(0, 10);
   const count = await db.prepare("SELECT COUNT(*) AS n FROM feedback WHERE day = ?").bind(day).first<{ n: number }>();
   if ((count?.n ?? 0) >= DAILY_CAP) return "daily-cap";
+  const visitor = await visitorId(db, day, ip);
+  // Counts and checks in one statement: no row back means the visitor is at the limit.
+  const used = await db
+    .prepare(
+      `INSERT INTO feedback_quota (day, visitor, n) VALUES (?, ?, 1)
+       ON CONFLICT (day, visitor) DO UPDATE SET n = n + 1 WHERE n < ? RETURNING n`,
+    )
+    .bind(day, visitor, VISITOR_DAILY_LIMIT)
+    .first<{ n: number }>();
+  if (!used) return "visitor-limit";
   await db
     .prepare("INSERT INTO feedback (created_at, day, category, message, page) VALUES (?, ?, ?, ?, ?)")
     .bind(iso, day, input.category, input.message, input.page)

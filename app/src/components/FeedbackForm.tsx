@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CATEGORIES, MAX_MESSAGE, MIN_MESSAGE, cleanPage, type Category } from "@/lib/feedback";
+import { CATEGORIES, MAX_MESSAGE, MIN_MESSAGE, VISITOR_DAILY_LIMIT, cleanPage, type Category } from "@/lib/feedback";
 
 type State = { kind: "idle" } | { kind: "sending" } | { kind: "sent" } | { kind: "error"; message: string };
 
@@ -118,7 +118,8 @@ export function FeedbackForm() {
         </button>
       </div>
       <p className="muted small">
-        We keep only your message, the category, the page and the date. No name, email, IP address or cookies.
+        We keep only your message, the category, the page and the date. No name, email, IP address or cookies. You
+        can send up to {VISITOR_DAILY_LIMIT} messages a day.
       </p>
     </form>
   );
