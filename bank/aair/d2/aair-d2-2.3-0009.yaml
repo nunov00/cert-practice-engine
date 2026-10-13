@@ -1,0 +1,29 @@
+id: aair-d2-2.3-0009
+subdomain: '2.3'
+difficulty: easy
+stem: A retailer retired its old product recommendation model six months ago. A security review now finds
+  that its interface is still running and answering requests, using a service account with access to customer
+  purchase history. Which control would MOST likely have prevented this?
+options:
+  A: Annual retraining of all active recommendation models
+  B: An inventory of the datasets used to train each model
+  C: A requirement to record the reasons for retiring a model
+  D: A sign-off that its services and access were removed
+answer: D
+explanation:
+  why_correct: Decommissioning is complete only when the model's running services, scheduled jobs and
+    access rights are actually shut down. A checklist with sign-off that these were removed would have
+    caught the live interface and the over-privileged account.
+  why_not:
+    A: Retraining applies to models in use and would not touch one that was meant to be retired.
+    B: A dataset inventory helps with data lineage but does not confirm that services were switched off.
+    C: Recording why a model is retired is good practice but does not verify that it was actually shut
+      down.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-b
+  checked_by: 2026-10-13-aair-d2-b-check
+  check_verdict: pass

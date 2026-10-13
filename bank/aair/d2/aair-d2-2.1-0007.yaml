@@ -1,0 +1,32 @@
+id: aair-d2-2.1-0007
+subdomain: '2.1'
+difficulty: medium
+stem: A water utility is procuring an AI system that detects leaks from pressure sensor data. The leading
+  vendor reports 95% detection on its own benchmark dataset, gathered from networks in other countries
+  with different pipe materials. What should the risk practitioner recommend before the contract is signed?
+options:
+  A: Run a proof of concept on the utility's own network data
+  B: Ask the vendor for a signed statement confirming the benchmark result
+  C: Choose the vendor whose benchmark shows the highest detection rate
+  D: Add a contract penalty for detection rates below the benchmark figure
+answer: A
+explanation:
+  why_correct: Results on other networks may not carry over to different pipes, sensors and operating
+    conditions. Testing the system on the utility's own representative data, against acceptance criteria
+    agreed in advance, shows whether it works where it will actually be used, while the utility can still
+    walk away or negotiate.
+  why_not:
+    B: A signed statement confirms that the vendor obtained the result, not that the result transfers
+      to this network.
+    C: Ranking vendors on benchmarks built from unrepresentative data only picks the best performer on
+      the wrong data.
+    D: A penalty offers some compensation after a poor result, but it does not establish fitness before
+      the utility commits, and it leaves the operational risk of missed leaks in place.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-b
+  checked_by: 2026-10-13-aair-d2-b-check
+  check_verdict: pass

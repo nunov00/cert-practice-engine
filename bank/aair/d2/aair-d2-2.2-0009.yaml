@@ -1,0 +1,31 @@
+id: aair-d2-2.2-0009
+subdomain: '2.2'
+difficulty: medium
+stem: A wind farm operator has trained a model to predict turbine gearbox failures. All testing used two
+  years of data from normal operation, during which there were no major storms or sensor outages. The
+  model will run all year. What should the risk practitioner request before approval?
+options:
+  A: A larger sample of the same normal operating data
+  B: A comparison with the gearbox maker's service schedule
+  C: Confirmation that the model's code passed peer review
+  D: Tests under extreme weather and faulty sensor inputs
+answer: D
+explanation:
+  why_correct: The model will meet conditions its test data never contained. Stress and robustness testing,
+    with simulated or borrowed data for storms and sensor faults, shows how it behaves at the edges and
+    whether limits or fallbacks are needed before it is relied on.
+  why_not:
+    A: More of the same normal data would not reveal how the model behaves in conditions it has never
+      seen.
+    B: A comparison with the service schedule may show added value, but it does not test behaviour in
+      unusual conditions.
+    C: Code review checks implementation quality, not how the model performs when inputs are extreme or
+      faulty.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-b
+  checked_by: 2026-10-13-aair-d2-b-check
+  check_verdict: pass

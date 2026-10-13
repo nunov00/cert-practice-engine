@@ -1,0 +1,31 @@
+id: aair-d2-2.3-0010
+subdomain: '2.3'
+difficulty: hard
+stem: A critical security vulnerability is announced in a machine learning library used by a hospital's
+  bed-demand forecasting model. The patched version of the library changes some numerical routines. The
+  model's annual revalidation is eight months away. What should the risk practitioner recommend?
+options:
+  A: Deploy the patch at once, since security fixes are exempt from model change control
+  B: Run regression tests on the model's outputs with the patch, then deploy it promptly
+  C: Delay the patch until the annual revalidation so that both can be done together
+  D: Leave the library unpatched and remove the model server from internet access
+answer: B
+explanation:
+  why_correct: 'Both risks need to be handled: the vulnerability needs fixing quickly, and the changed
+    numerical routines could shift forecasts. Comparing outputs on reference inputs before and after the
+    patch confirms the model still behaves as validated, with escalation to fuller validation only if
+    material differences appear.'
+  why_not:
+    A: Security fixes are changes like any other; deploying untested could silently change forecasts that
+      drive bed planning.
+    C: Leaving a critical vulnerability open for eight months is an unacceptable security exposure.
+    D: Removing internet access reduces one route of attack, but the flaw stays exploitable from inside
+      the network.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-b
+  checked_by: 2026-10-13-aair-d2-b-check
+  check_verdict: pass

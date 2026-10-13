@@ -1,0 +1,32 @@
+id: aair-d2-2.3-0011
+subdomain: '2.3'
+difficulty: hard
+stem: An insurer validated a model for estimating repair costs on motor claims. When it was connected
+  to the claims platform, the interface sent it every new claim, including home and travel claims, and
+  it has returned estimates for those too. Handlers have used some of them. What should the risk practitioner
+  recommend?
+options:
+  A: Retrain the model on home and travel claims so that its estimates improve
+  B: Add a warning to estimates produced for claim types other than motor
+  C: Restrict the interface to motor claims and review estimates already used
+  D: Ask the claims platform supplier to explain how the error occurred
+answer: C
+explanation:
+  why_correct: The implementation lets the model run outside the scope it was validated for. The fix is
+    technical, stopping out-of-scope claims reaching it, together with a review of the claims already
+    handled using unreliable estimates so that any harm to customers or the insurer is corrected.
+  why_not:
+    A: Retraining creates a new model that needs its own validation, and the invalid use continues in
+      the meantime.
+    B: A warning relies on handlers to ignore estimates that are still produced and have no validated
+      basis.
+    D: Understanding the cause helps, but it neither stops the invalid use nor deals with claims already
+      affected.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-b
+  checked_by: 2026-10-13-aair-d2-b-check
+  check_verdict: pass
