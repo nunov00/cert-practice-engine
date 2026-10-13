@@ -73,3 +73,10 @@ product:
   readiness:
     min_answered: 300
     min_accuracy_per_domain: 0.75
+  # Owner-approved estimate (2026-10-13) to time the Quick 10 until the outline
+  # gives the real length: ISACA's sister AI exam AAIR has 90 questions in 150
+  # minutes, and AAIG's beta exam is 150 minutes. Not an AAIG fact.
+  estimated_pace:
+    questions: 90
+    minutes: 150
+    basis: "ISACA's sister AI exams: 90 questions in 150 minutes"
