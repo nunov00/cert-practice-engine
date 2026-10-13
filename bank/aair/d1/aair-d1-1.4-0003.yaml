@@ -1,0 +1,30 @@
+id: aair-d1-1.4-0003
+subdomain: '1.4'
+difficulty: easy
+stem: A bank has given all staff a short course on AI awareness. Credit officers who act on model outputs
+  and developers who build models received the same course as everyone else. What should the risk practitioner
+  recommend?
+options:
+  A: Repeat the same awareness course every six months for all staff
+  B: Add training tailored to the AI duties of specific roles
+  C: Replace the course with written guidance on the intranet
+  D: Limit AI training to the developers who build the models
+answer: B
+explanation:
+  why_correct: General awareness is a good base, but people with specific duties need specific skills.
+    Officers need to judge and challenge model outputs, and developers need to apply the bank's standards.
+    Role-based training targets those duties.
+  why_not:
+    A: Repeating general content does not give either group the skills their roles require.
+    C: Written guidance can support training but is less effective at building skills, and it would remain
+      generic.
+    D: People who act on AI outputs also affect risk. Training only developers leaves officers unable
+      to spot and challenge poor outputs.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass

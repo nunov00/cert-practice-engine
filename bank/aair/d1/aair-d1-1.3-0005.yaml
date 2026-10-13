@@ -1,0 +1,32 @@
+id: aair-d1-1.3-0005
+subdomain: '1.3'
+difficulty: medium
+stem: A hospital uses a vendor's AI tool that flags possible fractures on X-rays for radiologists. Asked
+  who is accountable if a fracture is missed, the clinical director says the vendor is, because it built
+  the tool. How should the risk practitioner respond?
+options:
+  A: Agree, since the vendor designed and validated the tool
+  B: Explain that the hospital stays accountable for its use of the tool
+  C: Suggest that the radiologists alone are accountable for any miss
+  D: Propose that accountability is split equally with the vendor
+answer: B
+explanation:
+  why_correct: An organisation can buy a tool but cannot outsource its accountability for the care it
+    provides with that tool. The hospital decides how the tool is used and must manage that risk; the
+    contract can give the vendor specific duties, such as performance and fixing defects, without moving
+    overall accountability.
+  why_not:
+    A: The vendor has responsibilities for its product, but it does not decide how the hospital uses it
+      in patient care. Accountability for outcomes stays with the hospital.
+    C: Clinicians have professional duties, but placing all accountability on them ignores the hospital's
+      decisions about adopting, configuring and governing the tool.
+    D: Accountability is not shared in fixed proportions. Splitting it creates confusion about who must
+      act when something goes wrong.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass

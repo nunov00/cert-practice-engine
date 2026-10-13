@@ -1,0 +1,30 @@
+id: aair-d1-1.6-0005
+subdomain: '1.6'
+difficulty: medium
+stem: A delivery company's route optimisation model has cut fuel costs, but it now sends heavy vans through
+  narrow residential streets near two primary schools. Residents have started to complain. What should
+  the risk practitioner recommend?
+options:
+  A: Keep the routes, since the model is meeting its cost objective
+  B: Reply to residents explaining the fuel and emissions savings
+  C: Ask drivers to slow down when passing near the two schools
+  D: Include community effects in the model's impact assessment
+answer: D
+explanation:
+  why_correct: AI systems can affect people who are not their users. The impact assessment should take
+    in effects on the local community, such as safety and noise, so that constraints can be added to the
+    model's objective and trade-offs weighed openly.
+  why_not:
+    A: Meeting a cost target does not make the harm to residents acceptable. The narrow objective is the
+      source of the problem.
+    B: Explaining the benefits may ease relations, but it leaves the safety concern unaddressed.
+    C: Asking drivers to slow down is a partial, informal fix that relies on individual behaviour. The
+      routes would still pass the schools.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass

@@ -1,0 +1,31 @@
+id: aair-d1-1.4-0005
+subdomain: '1.4'
+difficulty: medium
+stem: A retailer's AI policy was approved eighteen months ago, before the company began testing AI agents
+  that can place orders with suppliers. The policy's next scheduled review is in ten months. What should
+  the risk practitioner recommend?
+options:
+  A: Bring the policy review forward to cover the new type of use
+  B: Wait for the scheduled review so that the policy stays stable
+  C: Let the procurement team write its own rules for the agents
+  D: Add a short line on agents to the policy without a review
+answer: A
+explanation:
+  why_correct: Policies should be reviewed when significant changes occur, not only on a fixed cycle.
+    Agents that act on the company's behalf raise questions about authority, limits and oversight that
+    the current policy may not address, so an early, proper review is warranted.
+  why_not:
+    B: Ten months is a long time to run a new kind of AI use with no policy coverage. Stability does not
+      justify a known gap.
+    C: Local rules may conflict with the wider policy and lack proper approval. Policy needs to be set
+      centrally and consistently.
+    D: A quick addition without review skips analysis and approval, so the change may be incomplete and
+      lack authority.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass

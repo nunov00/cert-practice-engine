@@ -1,0 +1,31 @@
+id: aair-d1-1.3-0007
+subdomain: '1.3'
+difficulty: hard
+stem: A pharmaceutical company has an AI ethics board and an enterprise risk committee. The ethics board
+  approved a patient-facing AI tool, then the risk committee rejected it, and the project team does not
+  know which decision applies. What should the risk practitioner recommend?
+options:
+  A: Define each body's decision rights and escalation route
+  B: Merge the two bodies into one committee covering all AI matters
+  C: Let the project team choose the decision that best fits its plans
+  D: Give the ethics board the final say on all AI-related decisions
+answer: A
+explanation:
+  why_correct: The conflict comes from overlapping, undefined mandates. Clear decision rights in each
+    body's charter, plus a route to escalate conflicts to a higher authority, make sure both bodies contribute
+    their view and there is always one final decision.
+  why_not:
+    B: Merging may lose the distinct expertise each body brings and is a larger change than needed. Unclear
+      decision rights could remain inside the new committee.
+    C: Letting the project choose invites the team to pick the outcome it prefers and undermines both
+      bodies' oversight.
+    D: Ethics is one input; the risk committee also weighs legal, financial and operational risks. Giving
+      one body automatic precedence ignores those concerns.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-a
+  checked_by: 2026-10-13-aair-d1-a-check
+  check_verdict: pass
