@@ -156,8 +156,8 @@ export function DomainList({
                       {stats.answered > 0 ? "Practise" : `Start ${stats.total}${free ? " free" : ""} questions`}
                     </Link>
                     {missed > 0 && (
-                      <Link className="button secondary" href={`/exams/${examId}/drill/${d.id}#missed`}>
-                        Review {missed} missed
+                      <Link className="button secondary" href={`/exams/${examId}/missed/${d.id}`}>
+                        Review {missed} missed, timed
                       </Link>
                     )}
                   </>
