@@ -1,0 +1,31 @@
+id: aair-d3-3.1-0002
+subdomain: '3.1'
+difficulty: hard
+stem: A professional services firm deploys an internal AI assistant that answers staff questions by searching
+  the firm's document repositories. The initial assessment rated the risk low because only employees can
+  use it. Which concern should MOST lead the practitioner to challenge that rating?
+options:
+  A: It may sometimes give staff inaccurate or incomplete answers
+  B: Staff may come to rely on it and lose some research skills over time
+  C: Its usage costs may grow faster than the firm has budgeted for
+  D: It may return content from files the asking employee is not allowed to open
+answer: D
+explanation:
+  why_correct: If the assistant retrieves documents with its own broad access rather than the user's permissions,
+    it can expose confidential client or HR material to any employee. "Internal only" does not mean every
+    employee may see everything, so the rating misses a significant confidentiality scenario.
+  why_not:
+    A: Inaccuracy is a real risk, but staff are expected to check answers and the effect is usually limited.
+      It is less severe than systemic exposure of restricted information.
+    B: Skill erosion is a slow and modest concern compared with immediate unauthorised access to sensitive
+      documents.
+    C: Cost overrun is a financial management issue that budgeting controls can handle. It does not undermine
+      the low risk rating in the way a data exposure does.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-aair-a
+  checked_by: 2026-10-12-aair-a-check
+  check_verdict: pass

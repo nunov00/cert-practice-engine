@@ -1,0 +1,26 @@
+id: aair-d3-3.1-0001
+subdomain: '3.1'
+difficulty: easy
+stem: An insurer is building its AI risk register. Which statement is the BEST-formed risk scenario for
+  its claims triage model?
+options:
+  A: Training data for the claims triage model is stored with a cloud provider
+  B: The claims triage model is complex, and few staff understand how it works
+  C: Unvetted changes to training data lead the model to pass fraudulent claims, raising losses
+  D: Fraud losses in the claims process may increase over the coming year
+answer: C
+explanation:
+  why_correct: A useful risk scenario links a cause, an event and a business consequence. This one names
+    all three, so owners can assess likelihood and impact and choose controls.
+  why_not:
+    A: This is a fact about the environment. It is not a risk until linked to a threat, event and impact.
+    B: This describes a condition that might contribute to risk, but it states no event or consequence.
+    D: This states a consequence only. Without a cause or event, it cannot guide which controls to apply.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-aair-a
+  checked_by: 2026-10-12-aair-a-check
+  check_verdict: pass

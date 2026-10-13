@@ -1,0 +1,32 @@
+id: aair-d3-3.2-0001
+subdomain: '3.2'
+difficulty: medium
+stem: An online retailer's customer chatbot sometimes gives wrong answers about refund eligibility, and
+  the residual risk is above appetite. The business owner proposes buying an insurance policy to cover
+  refund disputes. What should the risk practitioner advise?
+options:
+  A: Accept the risk, because chatbots are known to make occasional errors
+  B: Buy the policy, since transfer brings the financial exposure within appetite
+  C: Reduce wrong answers with controls first, as insurance leaves conduct and trust impacts
+  D: Withdraw the chatbot entirely and return all chats to human agents
+answer: C
+explanation:
+  why_correct: Insurance can transfer some financial loss, but it does not stop customers being misled,
+    and it leaves the regulatory and trust impact with the retailer. Controls such as limiting answers
+    to approved policy content and passing unclear cases to a person reduce the risk itself. Insurance
+    can then cover what remains.
+  why_not:
+    A: Accepting a risk above appetite is not appropriate without escalation and justification. Errors
+      being common is not a reason to tolerate them.
+    B: Transfer only covers part of the impact. The non-financial harm stays with the retailer, so the
+      risk would likely remain above appetite.
+    D: Avoidance is an option, but it gives up the benefit when practical controls could bring the risk
+      within appetite. It should not be the first recommendation.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-aair-a
+  checked_by: 2026-10-12-aair-a-check
+  check_verdict: pass
