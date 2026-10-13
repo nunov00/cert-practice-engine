@@ -4,6 +4,9 @@ export const SITE_NAME = "Knowmark";
 /** Shown under the home-screen icon; keep it under ~12 characters. */
 export const SITE_SHORT_NAME = "Knowmark";
 
+/** Brand line from decision 0003. */
+export const SITE_TAGLINE = "Know where you stand";
+
 export const SITE_DISCLAIMER =
   "Independent practice material. Not affiliated with, endorsed by, or sponsored by ISC2 or ISACA. " +
   "CISSP is a registered mark of ISC2. AAIR is a mark of ISACA.";

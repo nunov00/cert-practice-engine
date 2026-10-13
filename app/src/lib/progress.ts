@@ -49,6 +49,59 @@ export function domainStats(questionIds: string[], progress: Progress): DomainSt
   return { total: questionIds.length, answered, lastCorrect };
 }
 
+export type Band = "not-started" | "not-yet" | "getting-there" | "on-track";
+
+export interface Readiness {
+  /** 0..1, accuracy pulled toward 50% while few questions are answered. */
+  score: number;
+  band: Band;
+}
+
+/** Answers that count as much as the prior when shrinking toward 50%. */
+const PRIOR_WEIGHT = 10;
+
+/**
+ * Per-domain readiness (proposal 0001 §6.5): accuracy on the latest answer to
+ * each question, shrunk toward 50% when few are answered, so 3 of 3 right does
+ * not read as ready. `target` is the recipe's `min_accuracy_per_domain`.
+ * Phase 5 adds recency weighting and the exam-wide "looks ready" check.
+ */
+export function readiness(stats: DomainStats, target: number): Readiness {
+  if (stats.answered === 0) return { score: 0, band: "not-started" };
+  const score = (stats.lastCorrect + PRIOR_WEIGHT * 0.5) / (stats.answered + PRIOR_WEIGHT);
+  const band = score >= target ? "on-track" : score >= target - 0.15 ? "getting-there" : "not-yet";
+  return { score, band };
+}
+
+export const BAND_LABEL: Record<Band, string> = {
+  "not-started": "Not started",
+  "not-yet": "Not yet",
+  "getting-there": "Getting there",
+  "on-track": "On track",
+};
+
+/** Exams with at least one answer on this device, most recent first. Question IDs start with the exam ID. */
+export function recentExams(progress: Progress): { exam: string; answered: number; last_at: number }[] {
+  const byExam = new Map<string, { answered: number; last_at: number }>();
+  for (const [id, a] of Object.entries(progress.attempts)) {
+    const exam = id.split("-")[0]!;
+    const cur = byExam.get(exam) ?? { answered: 0, last_at: 0 };
+    byExam.set(exam, { answered: cur.answered + 1, last_at: Math.max(cur.last_at, a.last_at) });
+  }
+  return [...byExam].map(([exam, v]) => ({ exam, ...v })).sort((a, b) => b.last_at - a.last_at);
+}
+
+/** Drops every answer for one exam. */
+export function forgetExam(progress: Progress, examId: string): Progress {
+  const attempts = Object.fromEntries(Object.entries(progress.attempts).filter(([id]) => !id.startsWith(`${examId}-`)));
+  return { ...progress, attempts };
+}
+
+/** Question IDs whose latest answer was wrong. */
+export function missedIds(questionIds: string[], progress: Progress): string[] {
+  return questionIds.filter((id) => progress.attempts[id]?.last_correct === false);
+}
+
 /**
  * Drill order: never-seen first, then last answered wrong, then the rest
  * oldest-first. `random` breaks ties so repeat drills don't feel identical.

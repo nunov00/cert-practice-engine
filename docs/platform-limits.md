@@ -91,6 +91,12 @@ account.
 | Concurrent jobs | 20 | 1 |
 | Runner (`ubuntu-latest`) | public repo 4 CPU / 16 GB RAM; private 2 CPU / 8 GB | |
 
+Exam search runs in the browser over an index built when the home page is
+prerendered (`app/src/lib/catalogue.ts`): domain names plus deduplicated
+subdomain keywords, under 40 KB for 50 exams (`app/test/catalogue.test.ts`).
+Searching costs no Worker request, and the search box keeps its state in the
+tab rather than the URL, so it never creates new page requests.
+
 Build memory is the practical ceiling once there are thousands of pages
 (measured on the earlier project with a static site generator: about 0.9 GiB at
 2,000 pages, 2.9 GiB at 10,000, failed at 20,000 on a private-repo runner;
