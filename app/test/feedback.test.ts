@@ -125,3 +125,13 @@ test("toCsv quotes fields and defuses spreadsheet formulas", () => {
   ]);
   assert.equal(csv, 'id,created_at,category,status,page,message\n1,2026-10-13T10:00:00.000Z,idea,new,,"\'=HYPERLINK(""x"")\nline, two"\n');
 });
+
+test("review summary lists new messages by default", async () => {
+  const { summarise } = await import("../scripts/feedback.ts");
+  const rows: FeedbackRow[] = [
+    { id: 2, created_at: "2026-10-13T10:00:00Z", category: "idea", message: "More drills\nplease", page: "/", status: "new" },
+    { id: 1, created_at: "2026-10-12T10:00:00Z", category: "problem", message: "Old one", page: null, status: "done" },
+  ];
+  assert.equal(summarise(rows, false), "# Feedback (1 new, 2 stored)\n\n- **#2** 2026-10-13 · Idea or suggestion · new · /\n  More drills\n  please");
+  assert.match(summarise(rows, true), /2 in total/);
+});

@@ -11,6 +11,8 @@ export interface FeedbackEnv {
   FEEDBACK_DB?: Db;
   FEEDBACK_LIMITER?: RateLimiter;
   FEEDBACK_READ_TOKEN?: string;
+  /** Read-only key for Claude's periodic reviews; revocable on its own. */
+  FEEDBACK_AGENT_TOKEN?: string;
 }
 
 export async function feedbackEnv(): Promise<FeedbackEnv> {

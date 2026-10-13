@@ -50,6 +50,24 @@ pnpm exec wrangler d1 execute knowmark-feedback --remote \
   --command "SELECT id, created_at, category, status, page, message FROM feedback ORDER BY id DESC"
 ```
 
+## Claude's access (read-only, for reviews)
+
+Asked by the owner on 2026-10-13: Claude should be able to read feedback too.
+Claude gets its **own read-only key**, `FEEDBACK_AGENT_TOKEN`: it can list and
+export, but can't change a status or delete, and the owner can revoke it
+without changing their own key.
+
+A Claude session reads it with:
+
+```
+pnpm --filter @cpe/app run feedback            # new messages, as Markdown
+pnpm --filter @cpe/app run feedback -- --all   # everything
+```
+
+The output stays in the session. Claude never commits feedback, quotes it in a
+PR, issue or other public place, or fetches it from GitHub Actions (the repo
+and its logs are public; the script refuses to run there).
+
 ## One-time setup (owner)
 
 1. **Access key.** In the Cloudflare dashboard: Workers & Pages,
@@ -58,7 +76,15 @@ pnpm exec wrangler d1 execute knowmark-feedback --remote \
    least 24 characters; a password manager's generator is ideal). Keep it in
    your password manager. Secrets survive later deploys. Never put it in the
    repo, a GitHub secret log, or chat.
-2. **Database.** The first deploy creates `knowmark-feedback` automatically if
+2. **Claude's key (optional).** Add a second Worker secret the same way,
+   `FEEDBACK_AGENT_TOKEN`, with a different long random value. Then give the
+   same value to Claude's cloud environment: in the project's settings, add a
+   cloud environment, set the environment variable `FEEDBACK_AGENT_TOKEN`, and
+   under network access allow the domain
+   `cert-practice-engine.vitoria-nuno.workers.dev` (the default network
+   policy blocks it). New sessions then pick it up. To revoke, delete the
+   Worker secret.
+3. **Database.** The first deploy creates `knowmark-feedback` automatically if
    the `CLOUDFLARE_API_TOKEN` can manage D1. If the deploy log says Wrangler
    lacks permission, edit that API token in Cloudflare (My Profile, API Tokens)
    and add **Account, D1, Edit**, then re-run the deploy. The table is created
@@ -67,9 +93,11 @@ pnpm exec wrangler d1 execute knowmark-feedback --remote \
 ## Reviewing it
 
 Nothing is scheduled (AGENTS.md: no automation without the owner's approval).
-Suggested rhythm, by hand: once a week, open the inbox on the "new" filter,
+Suggested rhythm, by hand or by asking Claude in the project: once a week,
+read the "new" messages,
 mark each message considering, done or dismissed, and turn the considering
-ones into roadmap items or `fix/<question-id>` PRs. If the owner approves
-scheduling later (roadmap phase 6), a weekly digest could summarise new
-feedback for the owner privately; it must never post feedback to the public
+ones into roadmap items or `fix/<question-id>` PRs. Claude can summarise and
+suggest; the owner sets statuses (Claude's key is read-only). If the owner approves
+scheduling later (roadmap phase 6), a weekly Claude routine could summarise
+new feedback for the owner privately in the project; it must never post feedback to the public
 repo.

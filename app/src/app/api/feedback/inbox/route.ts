@@ -4,14 +4,19 @@ import { feedbackEnv, json, overRateLimit, text, type FeedbackEnv } from "@/lib/
 export const dynamic = "force-dynamic";
 
 // Owner-only: every method needs `Authorization: Bearer <FEEDBACK_READ_TOKEN>`.
-// Without the secret configured, everything is refused (docs/feedback.md).
+// GET also accepts FEEDBACK_AGENT_TOKEN, a read-only key for Claude's reviews.
+// Without a secret configured, everything is refused (docs/feedback.md).
 
 type Guard = { env: FeedbackEnv & { FEEDBACK_DB: NonNullable<FeedbackEnv["FEEDBACK_DB"]> } } | { denied: Response };
 
-async function guard(request: Request): Promise<Guard> {
+async function guard(request: Request, readOnly = false): Promise<Guard> {
   const env = await feedbackEnv();
   if (await overRateLimit(env, request, "inbox")) return { denied: json({ error: "Too many attempts. Wait a minute." }, 429) };
-  if (!(await tokenMatches(request.headers.get("authorization"), env.FEEDBACK_READ_TOKEN))) {
+  const auth = request.headers.get("authorization");
+  const allowed =
+    (await tokenMatches(auth, env.FEEDBACK_READ_TOKEN)) ||
+    (readOnly && (await tokenMatches(auth, env.FEEDBACK_AGENT_TOKEN)));
+  if (!allowed) {
     return { denied: json({ error: "Wrong or missing access key." }, 401) };
   }
   if (!env.FEEDBACK_DB) return { denied: json({ error: "Feedback storage isn't set up." }, 503) };
@@ -19,7 +24,7 @@ async function guard(request: Request): Promise<Guard> {
 }
 
 export async function GET(request: Request) {
-  const g = await guard(request);
+  const g = await guard(request, true);
   if ("denied" in g) return g.denied;
   const rows = await listFeedback(g.env.FEEDBACK_DB);
   if (new URL(request.url).searchParams.get("format") === "csv") {
