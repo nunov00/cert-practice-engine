@@ -14,7 +14,7 @@ moves up, then the user experience. Everything must fit the free plans (below).
 | 3a | Installable app (iPhone home screen, Chrome install), offline free drills | Done (#5) |
 | 3b | Brand name and custom domain (decision D5) | Name done: Knowmark (decision 0003). Domain moved to phase 8 |
 | 3c | All published questions open until monetisation (decision 0004) | Done (#6) |
-| 3d | AAIR recipe from ISACA's official outline, first original questions (nothing reused from earlier projects) | In progress |
+| 3d | AAIR recipe from ISACA's official outline, first original questions (nothing reused from earlier projects) | Done (#7, 24 questions) |
 | 3e | User experience: look and feel, usability, finding and searching certifications | Next |
 | 4 | CISSP content for domains 2–8 (manual runs, same pipeline) | Planned |
 | 5 | Mock exams, weak-spot review, readiness score, report-question button | Planned |
