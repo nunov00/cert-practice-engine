@@ -135,7 +135,7 @@ export function Drill({ examId, questions }: { examId: string; questions: Public
           <p className="muted" style={{ marginTop: 0 }}>
             {missed.length === 0
               ? "Every answer right in this session."
-              : `${missed.length} to review. Missed questions come first next time you practise this domain.`}
+              : `${missed.length} to review. Missed questions come first next time you practise.`}
           </p>
           <div className="actions">
             {missed.length > 0 && (
