@@ -9,12 +9,13 @@ import {
   loadTest,
   pickQuestions,
   saveTest,
+  shuffle,
   timeLimitSeconds,
   type SavedTest,
   type TestKind,
 } from "@/lib/exam-session";
 import { formatDuration } from "@/lib/format";
-import { loadProgress, recordAttempt, saveProgress } from "@/lib/progress";
+import { loadProgress, missedIds, recordAttempt, saveProgress } from "@/lib/progress";
 
 export interface TestDomain {
   id: string;
@@ -46,10 +47,11 @@ export function TimedTest({ examId, kind, size, pace, domains, questions, target
     () => domains.map((d) => ({ ...d, questionIds: questions.filter((q) => q.domain === d.id).map((q) => q.id) })),
     [domains, questions],
   );
-  const count = Math.min(size, questions.length);
-  const limit = timeLimitSeconds(count, pace);
-
   const [phase, setPhase] = useState<Phase>("loading");
+  // For "missed": the questions answered wrong last time, read from this browser.
+  const [missed, setMissed] = useState<string[]>([]);
+  const count = kind === "missed" ? missed.length : Math.min(size, questions.length);
+  const limit = timeLimitSeconds(count, pace);
   const [test, setTest] = useState<SavedTest | null>(null);
   const [now, setNow] = useState(() => Date.now());
   const topRef = useRef<HTMLDivElement>(null);
@@ -72,6 +74,7 @@ export function TimedTest({ examId, kind, size, pace, domains, questions, target
 
   // A saved test resumes; one whose time ran out while away is marked now.
   useEffect(() => {
+    setMissed(missedIds([...known], loadProgress()));
     const saved = loadTest(examId, kind, known);
     if (saved && saved.deadline <= Date.now()) finish(saved);
     else {
@@ -86,15 +89,26 @@ export function TimedTest({ examId, kind, size, pace, domains, questions, target
   }, []);
 
   const start = () => {
+    let order: string[];
+    if (kind === "missed") {
+      const ids = missedIds([...known], loadProgress());
+      setMissed(ids);
+      if (ids.length === 0) {
+        setTest(null);
+        setPhase("intro");
+        return;
+      }
+      order = shuffle(ids);
+    } else order = pickQuestions(pools, count);
     const t: SavedTest = {
       version: 1,
       exam: examId,
       kind,
-      order: pickQuestions(pools, count),
+      order,
       answers: {},
       flagged: [],
       index: 0,
-      deadline: Date.now() + limit * 1000,
+      deadline: Date.now() + timeLimitSeconds(order.length, pace) * 1000,
     };
     update(t);
     setNow(Date.now());
@@ -166,7 +180,21 @@ export function TimedTest({ examId, kind, size, pace, domains, questions, target
 
   if (phase === "loading") return <p className="muted">Loading…</p>;
 
-  const name = kind === "mock" ? "Mock exam" : `Quick ${count}`;
+  const name = kind === "mock" ? "Mock exam" : kind === "missed" ? "Wrong-answers test" : `Quick ${count}`;
+
+  if (phase === "intro" && kind === "missed" && count === 0 && !test) {
+    return (
+      <div className="card">
+        <p style={{ marginTop: 0 }}>No wrong answers to practise right now. Questions you get wrong in a drill or test will
+        appear here.</p>
+        <div className="actions">
+          <Link className="button" href={`/exams/${examId}`}>
+            Back to the exam
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   if (phase === "intro") {
     const answered = test ? Object.keys(test.answers).length : 0;
@@ -179,9 +207,11 @@ export function TimedTest({ examId, kind, size, pace, domains, questions, target
           {kind === "mock" && count < size
             ? `The real exam has ${size} questions; this one uses all ${count} published so far, with time in proportion. `
             : ""}
-          Questions are picked at random, spread across the domains by their exam weight. You get the same time per
-          question as in the real exam. Answers and explanations are shown at the end, and you can go back and change
-          an answer until then.
+          {kind === "missed"
+            ? "Every question you got wrong last time, across all domains, in random order. "
+            : "Questions are picked at random, spread across the domains by their exam weight. "}
+          You get the same time per question as in the real exam. Answers and explanations are shown at the end, and
+          you can go back and change an answer until then.
         </p>
         <div className="actions">
           {test ? (
@@ -262,8 +292,8 @@ export function TimedTest({ examId, kind, size, pace, domains, questions, target
             <button className="button" onClick={start}>
               Take another {name.toLowerCase()}
             </button>
-            <Link className="button secondary" href={`/exams/${examId}/review#missed`}>
-              Practise wrong answers
+            <Link className="button secondary" href={`/exams/${examId}/missed`}>
+              Test wrong answers
             </Link>
             <Link className="button secondary" href={`/exams/${examId}`}>
               Back to the exam
