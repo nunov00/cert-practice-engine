@@ -17,8 +17,8 @@ moves up, then the user experience. Everything must fit the free plans (below).
 | 3d | AAIR recipe from ISACA's official outline, first original questions (nothing reused from earlier projects) | Done (#7, 24 questions) |
 | 3e | User experience: brand header, exam catalogue with search and issuer filter (designed for ~50 exams), exam pages with per-domain readiness, practice sessions with running score and review of missed questions, progress kept on the device | Done (#10) |
 | 3f | Anonymous feedback form; messages filed in a private repo that AI agents review on request (`docs/feedback.md`) | Done (#12, #13, #15) |
-| 4 | CISSP content for domains 2–8 (manual runs, same pipeline) | Next |
-| 5 | Mock exams, spaced weak-spot review, exam-wide "looks ready" check, report-question button | Planned |
+| 4 | CISSP content for domains 2–8 (manual runs, same pipeline) | Next. AAIR grown to 109 questions first (#16–#18) |
+| 5 | Mock exams, spaced weak-spot review, exam-wide "looks ready" check, report-question button | Started: timed mock exam and quick 10 (weighted by domain, time in proportion to the real exam), exam-wide wrong-answer practice. Rest planned |
 | 6 | Scheduled automation: generation/check runs, outline watch, periodic bank review, weekly digest | Planned, needs approval |
 | 7 | AAIR full bank | Planned (after 3d) |
 | 8 | **Accounts, payments and domain** (last) | Planned |
