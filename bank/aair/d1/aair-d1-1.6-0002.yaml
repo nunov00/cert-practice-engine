@@ -1,0 +1,31 @@
+id: aair-d1-1.6-0002
+subdomain: '1.6'
+difficulty: medium
+stem: A hospital group pilots a model that screens job applications for nursing roles. It meets its overall
+  accuracy target, but applicants from one age group are shortlisted at a much lower rate than others
+  with similar qualifications. What should the risk practitioner recommend?
+options:
+  A: Add a notice to the careers page explaining that AI is used in screening
+  B: Accept the result, because the model meets its overall accuracy target
+  C: Remove age from the model's inputs and continue the rollout
+  D: Pause wider use until the cause and impact of the disparity are understood
+answer: D
+explanation:
+  why_correct: A large outcome gap between groups with similar qualifications is a sign of possible unfair
+    bias, with legal and ethical consequences. Overall accuracy can hide harm to a subgroup. The cause
+    must be found and addressed before the model affects more applicants.
+  why_not:
+    A: Disclosure supports transparency but does nothing to correct an unfair outcome for the affected
+      applicants.
+    B: An overall target says nothing about how errors and outcomes fall across groups. Accepting it ignores
+      clear evidence of potential discrimination.
+    C: Other features, such as years since qualifying, can act as proxies for age. Dropping the attribute
+      without analysis may leave the disparity in place while hiding it.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-aair-a
+  checked_by: 2026-10-12-aair-a-check
+  check_verdict: pass

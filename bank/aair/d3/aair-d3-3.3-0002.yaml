@@ -1,0 +1,31 @@
+id: aair-d3-3.3-0002
+subdomain: '3.3'
+difficulty: hard
+stem: A logistics company is giving an AI agent the ability to read supplier emails, update orders and
+  issue payments up to a set limit. The security team warns that a crafted email could instruct the agent
+  to act against the company. Which control MOST reduces the impact if such an attack succeeds?
+options:
+  A: Choose the model with the best published safety evaluation results
+  B: Restrict the agent's permissions and require human approval for payments
+  C: Log every action the agent takes and review the logs each week
+  D: Filter incoming emails for known prompt injection phrases and patterns
+answer: B
+explanation:
+  why_correct: Filters can lower the chance of a malicious instruction getting through, but none are fully
+    reliable. Limiting what the agent can do and putting a person in the path of high-impact actions caps
+    the damage even when an injected instruction is followed.
+  why_not:
+    A: A better-tested model may resist some attacks, but published results do not guarantee resistance
+      to new ones, and the agent would still hold broad powers.
+    C: Logging is detective. A weekly review would find a fraudulent payment only after the money has
+      gone.
+    D: Filtering reduces likelihood but attackers can word instructions in endless ways. It does little
+      to limit impact once something gets past it.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-aair-a
+  checked_by: 2026-10-12-aair-a-check
+  check_verdict: pass

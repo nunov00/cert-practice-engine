@@ -1,0 +1,31 @@
+id: aair-d2-2.2-0001
+subdomain: '2.2'
+difficulty: hard
+stem: A credit card issuer's team reports an AUC of 0.86 for a new default prediction model. They trained
+  and tested it by randomly splitting five years of account history into training and test sets. The model
+  will be used to predict defaults in future months. What is the risk practitioner's MAIN concern?
+options:
+  A: The test does not reflect use on future data, so a time-based holdout is needed
+  B: The test set is too small, so a larger random sample should be held back
+  C: An AUC of 0.86 is below what is usual, so a higher target should be set
+  D: The developers ran the test, so an independent team should repeat it
+answer: A
+explanation:
+  why_correct: A random split mixes later records into training, letting the model learn from conditions
+    it would not have known at prediction time. Results can look much better than live performance. Testing
+    on a later period than the training data mirrors how the model will be used.
+  why_not:
+    B: A bigger random test set would still contain the same mix of time periods, so the optimistic bias
+      remains. Size is not the problem.
+    C: The AUC is likely overstated, not too low. Raising the bar on a flawed measure does not tell the
+      organisation how the model will perform on future accounts.
+    D: Independent validation is good practice, but repeating the same flawed design would confirm the
+      same misleading figure. The test design must change.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-aair-a
+  checked_by: 2026-10-12-aair-a-check
+  check_verdict: pass
