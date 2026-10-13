@@ -1,0 +1,31 @@
+id: aair-d2-2.1-0006
+subdomain: '2.1'
+difficulty: medium
+stem: A tax authority is designing a model to select returns for audit. The law requires it to tell taxpayers
+  the main reasons they were selected. A complex model is slightly more accurate than a simpler one whose
+  drivers are easy to explain. What should the risk practitioner recommend?
+options:
+  A: The complex model, since higher accuracy recovers more unpaid tax
+  B: The simpler model, with the trade-off recorded in the design file
+  C: The complex model, with staff writing the reasons for each case
+  D: Neither, until a model is found that is both accurate and clear
+answer: B
+explanation:
+  why_correct: A legal duty to give reasons is a design requirement, not an optional extra. Choosing the
+    model that can meet it, and recording why a small accuracy gain was given up, keeps the design defensible
+    and traceable for reviewers and auditors.
+  why_not:
+    A: A small accuracy gain does not justify a design that cannot meet a legal obligation to explain
+      selections.
+    C: Reasons written by staff may not reflect what actually drove the model, which risks giving taxpayers
+      misleading explanations.
+    D: Waiting for an ideal model delays the project with no clear end, when an option that meets the
+      requirement already exists.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-a
+  checked_by: 2026-10-13-aair-d2-a-check
+  check_verdict: pass

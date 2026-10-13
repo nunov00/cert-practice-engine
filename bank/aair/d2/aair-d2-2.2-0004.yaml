@@ -1,0 +1,31 @@
+id: aair-d2-2.2-0004
+subdomain: '2.2'
+difficulty: hard
+stem: An insurer's claims fraud model scores 0.97 on its validation set, far above earlier models. Review
+  shows one of the strongest inputs is whether a claim was referred to the special investigations unit.
+  Claims are scored at first notification. What is the MAIN concern?
+options:
+  A: The validation set may be too small to support such a high score
+  B: The investigations unit may refer claims in an inconsistent way
+  C: The model may be too complex to explain to claims handlers
+  D: The input is only known after the outcome the model predicts
+answer: D
+explanation:
+  why_correct: A referral to investigators happens because fraud is already suspected and will not exist
+    when the claim is first scored. Training on it lets the model see the answer, so validation results
+    are inflated and live performance will be much worse. This target leakage must be removed before any
+    result can be trusted.
+  why_not:
+    A: Sample size could add uncertainty, but it would not explain an input that reveals the outcome.
+      The leak inflates the score whatever the size.
+    B: Inconsistent referrals would add noise; the larger issue is that the input is not available at
+      scoring time at all.
+    C: Explainability may matter, but it is secondary to results that are invalid because of leaked information.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-a
+  checked_by: 2026-10-13-aair-d2-a-check
+  check_verdict: pass
