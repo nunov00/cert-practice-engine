@@ -153,16 +153,22 @@ test("coverage counts published and pending against targets", () => {
   assert.equal(rows.reduce((a, r) => a + r.target, 0), cissp.bank.target_total);
 });
 
-test("public content ships only published free-sample questions, without provenance", async () => {
+test("public content never ships drafts or provenance; free-sample mode ships only sample questions", async () => {
   const { buildPublicContent } = await import("../src/build.ts");
   const root = fixture([
     question({ sample: true }),
     question({ id: "cissp-d1-1.9-0002", stem: "A different scenario entirely about vendor contracts and their review cadence.", sample: false }),
     question({ id: "cissp-d1-1.9-0003", stem: "Yet another distinct scenario on risk registers and how often to update them.", sample: true, status: "draft", provenance: { generated_by: "claude", run_id: "r", check_verdict: "pending" } }),
   ]);
-  const content = buildPublicContent(root);
-  assert.deepEqual(content.questions.map((q) => q.id), ["cissp-d1-1.9-0001"]);
-  assert.equal(content.questions[0]!.domain, "d1");
-  assert.ok(!("provenance" in content.questions[0]!));
-  assert.equal(content.exams[0]!.published_questions, 2);
+  const sample = buildPublicContent(root, "free-sample");
+  assert.equal(sample.access, "free-sample");
+  assert.deepEqual(sample.questions.map((q) => q.id), ["cissp-d1-1.9-0001"]);
+  assert.equal(sample.questions[0]!.domain, "d1");
+  assert.ok(!("provenance" in sample.questions[0]!));
+  assert.equal(sample.exams[0]!.published_questions, 2);
+
+  const open = buildPublicContent(root, "open");
+  assert.equal(open.access, "open");
+  assert.deepEqual(open.questions.map((q) => q.id), ["cissp-d1-1.9-0001", "cissp-d1-1.9-0002"]);
+  assert.ok(open.questions.every((q) => !("provenance" in q) && !("status" in q)));
 });
