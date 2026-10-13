@@ -69,7 +69,7 @@ Per account, shared by every pilot:
 |---|---|---|
 | D1 databases | 10 | 1 (`knowmark-feedback`) |
 | D1 size per database / per account | 500 MB / 5 GB | well under 1 MB (feedback is text, capped at 200 messages a day) |
-| D1 rows written per day | 100,000 | at most about 200 (daily cap) |
+| D1 rows written per day | 100,000 | at most about 1,000 (200 messages plus their daily-limit counters) |
 | D1 rows read per day | 5,000,000 | a few hundred (inbox reads, daily-cap counts) |
 | Rate limiting `namespace_id` | unique per account | `1001` = this pilot's feedback; give other pilots their own |
 
