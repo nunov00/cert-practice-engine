@@ -58,11 +58,21 @@ test("the real catalogue lists every exam, alphabetically", () => {
 test("search by name, issuer and topic", () => {
   const entries = buildCatalogue(real, count);
   assert.deepEqual(searchCatalogue(entries, "ciss").map((h) => h.entry.id), ["cissp"]);
-  assert.deepEqual(searchCatalogue(entries, "isaca").map((h) => h.entry.id), ["aair"]);
+  const isaca = searchCatalogue(entries, "isaca").map((h) => h.entry.id);
+  assert.ok(isaca.includes("aair") && !isaca.includes("cissp"));
   const hits = searchCatalogue(entries, "security");
   assert.ok(hits.some((h) => h.entry.id === "cissp" && h.topic !== undefined));
   assert.deepEqual(searchCatalogue(entries, "zzz"), []);
   assert.equal(searchCatalogue(entries, "  ").length, entries.length);
+});
+
+test("a preview exam has no published length", () => {
+  const entries = buildCatalogue(real, count);
+  for (const e of entries) {
+    const exam = real.find((x) => x.id === e.id)!;
+    assert.equal(e.preview, exam.preview);
+    assert.equal(e.examQuestions === null, exam.preview, e.id);
+  }
 });
 
 test("subdomain words are searchable but not stored twice", () => {

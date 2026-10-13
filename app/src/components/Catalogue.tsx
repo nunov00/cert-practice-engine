@@ -117,9 +117,12 @@ export function Catalogue({ entries, free }: { entries: CatalogueEntry[]; free: 
                   <span className="exam-card-head">
                     <span className="name">{entry.name}</span>
                     <span className="pill">{entry.issuer}</span>
+                    {entry.preview && <span className="pill">Preview</span>}
                   </span>
                   <span className="muted small">
-                    {entry.topics.length} domains · {entry.examQuestions} questions · {formatDuration(entry.minutes)}
+                    {entry.topics.length} domains ·{" "}
+                    {entry.examQuestions === null ? "outline not yet published" : `${entry.examQuestions} questions`} ·{" "}
+                    {formatDuration(entry.minutes)}
                   </span>
                   {topic ? (
                     <span className="small topics">Covers: {topic}</span>
