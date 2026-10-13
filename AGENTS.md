@@ -67,11 +67,11 @@ next free number in that subdomain.
 
 ## Learner feedback
 
-Anonymous, private to the owner (`docs/feedback.md`). To review it, run
-`pnpm --filter @cpe/app run feedback` with your own read-only key in
-`FEEDBACK_AGENT_TOKEN`; if you have none, ask the owner (the doc says how to
-grant one). Never commit, quote publicly, or route feedback through GitHub
-Actions: the repo and its logs are public.
+Anonymous, private to the owner (`docs/feedback.md`). Each message is a file
+under `inbox/` in the PRIVATE repo `nunov00/knowmark-feedback`. When the owner
+asks for a review, read the files there, summarise and classify them, and
+delete old or useless ones there when the owner agrees. Never copy feedback
+into this public repo, its PRs, issues or Actions logs.
 
 ## Budget
 
