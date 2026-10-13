@@ -1,0 +1,32 @@
+id: aair-d1-1.2-0009
+subdomain: '1.2'
+difficulty: medium
+stem: At a health insurer, a team launching an AI feature must complete a privacy impact assessment, a
+  security review and an AI risk assessment, each with its own form and many repeated questions. Some
+  teams now skip the AI assessment, and the three groups of reviewers rarely share findings. What should
+  the risk practitioner recommend?
+options:
+  A: Make the AI risk assessment a mandatory condition of release
+  B: Merge the three review teams into one single department
+  C: Create one intake with shared questions that routes to each review
+  D: Drop the AI assessment where a privacy assessment has been done
+answer: C
+explanation:
+  why_correct: A single intake removes the duplicated effort that is driving teams to skip steps, and
+    routes each case to the right specialists, who can then see each other's findings. It aligns the AI
+    assessment with existing processes instead of adding another separate hurdle.
+  why_not:
+    A: Enforcement may raise completion rates, but it leaves the duplication and the lack of shared findings
+      that cause the problem.
+    B: Merging departments is a large structural change that is not needed. The specialists can stay separate
+      while the process is joined up.
+    D: Privacy assessments do not cover AI-specific risks such as model performance or fairness, so this
+      would leave gaps.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

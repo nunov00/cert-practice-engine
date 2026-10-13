@@ -1,0 +1,31 @@
+id: aair-d1-1.2-0012
+subdomain: '1.2'
+difficulty: easy
+stem: At a pension fund, data scientists, lawyers and risk staff use words such as 'bias', 'validation'
+  and 'explainability' to mean different things. Committee papers are often misread, and two teams recently
+  reported the same model as both validated and not validated. What should the risk practitioner recommend?
+options:
+  A: Agree a shared glossary of AI terms for use across all functions
+  B: Ask the data scientists to present all committee papers in person
+  C: Remove technical AI terms from committee papers altogether
+  D: Have the legal team decide what each disputed word should mean
+answer: A
+explanation:
+  why_correct: A common vocabulary, agreed across functions and used in policies, assessments and reports,
+    aligns how teams describe AI and its risks. Reports then mean the same thing to every reader, and
+    decisions rest on a shared understanding.
+  why_not:
+    B: Presenting in person may clear up a single meeting but leaves written records and other forums
+      inconsistent.
+    C: Some technical terms are needed for accurate reporting. Removing them loses precision rather than
+      creating shared meaning.
+    D: The meanings need agreement among all the functions that use them. One team deciding alone may
+      not suit technical or risk use, and case-by-case rulings are not a lasting fix.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

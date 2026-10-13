@@ -1,0 +1,31 @@
+id: aair-d1-1.2-0008
+subdomain: '1.2'
+difficulty: medium
+stem: A retail bank's data science team is measured on the number of models it puts into production each
+  year. Several deployed models are barely used, and business units say they never asked for them. What
+  should the risk practitioner recommend?
+options:
+  A: Link each AI initiative to a business objective and a named sponsor
+  B: Set a lower annual target for the number of models put into use
+  C: Have the risk function approve every model idea before work starts
+  D: Decommission all deployed models that have few active users today
+answer: A
+explanation:
+  why_correct: The root problem is that AI work is not aligned with business needs. Requiring each initiative
+    to serve a defined objective, with a business sponsor accountable for its benefits and risks, directs
+    effort to useful work and avoids building unowned, low-value models that still carry risk.
+  why_not:
+    B: A lower target still rewards output rather than value. It does not connect the work to what the
+      business needs.
+    C: Judging business value is not the risk function's role, and approving every idea creates a bottleneck.
+      It does not fix the misaligned incentive.
+    D: Retiring unused models may make sense case by case, but it treats the symptom and does not stop
+      new ones being built.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

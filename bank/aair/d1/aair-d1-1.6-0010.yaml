@@ -1,0 +1,30 @@
+id: aair-d1-1.6-0010
+subdomain: '1.6'
+difficulty: medium
+stem: A home insurer removed ethnicity from its pricing model's inputs to avoid unfair treatment. The
+  model still uses postcode and the language customers choose for correspondence. The pricing team says
+  the model is fair because it cannot see ethnicity. What should the risk practitioner advise?
+options:
+  A: Accept the view, as the protected attribute is no longer an input
+  B: Remove every input that differs in any way between ethnic groups
+  C: Test outcomes across groups, as other inputs may act as proxies
+  D: Ask an external firm to certify the model as free of all bias
+answer: C
+explanation:
+  why_correct: Removing a protected attribute does not prevent indirect discrimination, because inputs
+    such as postcode or language can be closely correlated with it. Only measuring outcomes across groups
+    shows whether the model treats them unfairly, and whether particular proxies must be removed or justified.
+  why_not:
+    A: Hiding the attribute is not enough; the model can learn the same pattern from correlated inputs.
+    B: Almost every input differs somewhat between groups, so removing them all would leave no workable
+      model. Proxies should be found by testing.
+    D: Certification cannot replace the insurer's own testing, and no model can be certified as entirely
+      free of bias.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

@@ -1,0 +1,30 @@
+id: aair-d1-1.3-0009
+subdomain: '1.3'
+difficulty: easy
+stem: The board of an online travel agency asks for independent assurance that its AI governance framework
+  is working as intended. The AI risk team, which designed the framework, offers to carry out the review.
+  Who should BEST provide this assurance?
+options:
+  A: The AI risk team, as it understands the framework best
+  B: The data science team, as it applies the framework every day
+  C: The AI oversight committee, as it approves the AI models
+  D: Internal audit, being independent of the framework's design
+answer: D
+explanation:
+  why_correct: Internal audit is independent of both the people who run AI and the people who designed
+    its governance, so it can give the board objective assurance on whether the framework is well designed
+    and operating effectively.
+  why_not:
+    A: The team would be reviewing its own design, which is not independent assurance.
+    B: The data science team is subject to the framework and cannot objectively assess the controls over
+      its own work.
+    C: The committee is part of the framework being assessed, so it cannot give independent assurance
+      on it.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

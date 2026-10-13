@@ -1,0 +1,33 @@
+id: aair-d1-1.5-0014
+subdomain: '1.5'
+difficulty: hard
+stem: An employer uses an AI tool that scores recorded video interviews on speech patterns and facial
+  movement. A candidate with a speech impairment asks to be assessed in another way. Equality law in the
+  employer's market requires reasonable adjustments for disabled applicants. What should the risk practitioner
+  advise?
+options:
+  A: Score the candidate with the tool and note the impairment on file
+  B: Ask the vendor to retrain the tool to include more varied speakers
+  C: Tell the candidate that the tool treats all applicants the same way
+  D: Provide another way to be assessed, and review the tool's wider use
+answer: D
+explanation:
+  why_correct: The law requires an adjustment, and a tool that scores speech and facial movement is likely
+    to disadvantage this candidate. Offering another form of assessment meets the immediate duty, and
+    reviewing the tool addresses the wider risk that it disadvantages other disabled applicants who do
+    not ask.
+  why_not:
+    A: Scoring with a tool likely to disadvantage the candidate fails the adjustment duty, and a note
+      on file does not fix an unfair score.
+    B: Retraining might help over time, but it does not meet the candidate's present request or the legal
+      duty now.
+    C: Identical treatment can still be unlawful when it puts disabled people at a disadvantage; the law
+      requires adjustment.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

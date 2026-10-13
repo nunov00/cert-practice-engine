@@ -1,0 +1,32 @@
+id: aair-d1-1.1-0012
+subdomain: '1.1'
+difficulty: medium
+stem: A logistics group's AI programme has collected 45 candidate use cases from across the business.
+  Leadership plans to rank them by expected financial return alone and fund the top ten. How should the
+  risk practitioner BEST influence the ranking?
+options:
+  A: Ask that every candidate has a full risk assessment before ranking
+  B: Add an initial rating of each use case's inherent risk
+  C: Remove from the list any use case that involves personal data
+  D: Ask for low-return use cases to go first, as they carry less risk
+answer: B
+explanation:
+  why_correct: A light rating of each candidate's inherent risk lets leaders weigh value against risk
+    when choosing. High-risk uses can then be chosen knowingly, with the controls and costs they will
+    need, and low-risk, high-value uses can move faster. It brings risk into the strategic choice with
+    proportionate effort.
+  why_not:
+    A: Full assessments of 45 candidates would be slow and costly, mostly spent on ideas that will never
+      be funded. A light screening is enough at this stage.
+    C: Personal data raises risk but does not make a use case unacceptable. A blanket exclusion could
+      drop valuable uses whose risks can be managed well.
+    D: Return and risk are not inversely linked, so low return is no sign of low risk, and this ignores
+      business value altogether.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

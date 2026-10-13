@@ -1,0 +1,29 @@
+id: aair-d1-1.3-0014
+subdomain: '1.3'
+difficulty: medium
+stem: At a consumer bank, the second-line AI risk team is asked to build and run drift monitoring for
+  all production models, because it has the right skills. Model owners would then rely on the risk team's
+  alerts. What is the MAIN concern with this arrangement?
+options:
+  A: The risk team may lack the computing resources the monitoring needs
+  B: The risk team would run a control that it is also meant to challenge
+  C: Model owners may receive more alerts than they are able to handle
+  D: Drift monitoring matters less than validation before a model's release
+answer: B
+explanation:
+  why_correct: The second line sets standards and independently challenges first-line controls. If it
+    builds and runs the monitoring itself, it takes on a first-line role and can no longer give an independent
+    view of whether monitoring works, while model owners lose ownership of their models' performance.
+  why_not:
+    A: Resources can be found. The structural problem of lost independence would remain.
+    C: Alert volume is an operational design point, not the main concern about who runs the control.
+    D: Both are needed, and monitoring catches problems that validation cannot foresee. This does not
+      address the arrangement at all.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

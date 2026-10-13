@@ -1,0 +1,31 @@
+id: aair-d1-1.6-0014
+subdomain: '1.6'
+difficulty: hard
+stem: A city police service plans a model that decides where to send patrols, trained on past records
+  of recorded offences. More patrols in an area lead to more offences being recorded there, and the model
+  will be retrained every month on the new records. What is the MOST significant ethical concern?
+options:
+  A: The model may not adapt quickly to sudden changes in offending
+  B: Officers may come to rely too heavily on the model's choices
+  C: The model may reinforce existing patrol patterns over time
+  D: Records of past offences may contain some errors in their dates
+answer: C
+explanation:
+  why_correct: Because patrols generate the records the model learns from, areas that are already heavily
+    patrolled will show more recorded offences, attract more patrols and so produce still more records.
+    This feedback loop can entrench and amplify past over-policing of some communities regardless of actual
+    offending, a serious fairness and societal harm.
+  why_not:
+    A: Speed of adaptation matters, but monthly retraining addresses it; the feedback loop is the deeper
+      problem.
+    B: Over-reliance is a real concern but secondary; even careful officers would act on recommendations
+      that are systematically skewed.
+    D: Errors in dates are a minor accuracy issue compared with structural bias in what gets recorded.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass
