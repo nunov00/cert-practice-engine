@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DomainList } from "@/components/DomainList";
 import { formatDuration, formatQuestionCount, getExam, isOpenAccess, listExams, percent, questionsFor } from "@/lib/content";
@@ -27,7 +28,12 @@ export default async function ExamPage({ params }: { params: Promise<Params> }) 
 
   return (
     <>
-      <h1>{exam.name} practice</h1>
+      <nav className="crumbs small" aria-label="Breadcrumb">
+        <Link href="/">Exams</Link> <span aria-hidden="true">/</span> {exam.issuer}
+      </nav>
+      <h1>
+        {exam.name} practice <span className="pill">{exam.issuer}</span>
+      </h1>
       <p className="lead">
         {isOpenAccess()
           ? `${exam.published_questions} questions so far, more added regularly`
@@ -56,8 +62,13 @@ export default async function ExamPage({ params }: { params: Promise<Params> }) 
         </div>
       </dl>
 
-      <h2>Domains</h2>
-      <DomainList examId={exam.id} domains={domains} free={!isOpenAccess()} />
+      <h2>Your progress</h2>
+      <DomainList
+        examId={exam.id}
+        domains={domains}
+        free={!isOpenAccess()}
+        target={exam.readiness.min_accuracy_per_domain}
+      />
 
       <p className="muted small" style={{ marginTop: 32 }}>
         {exam.disclaimer}

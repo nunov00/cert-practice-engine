@@ -15,9 +15,9 @@ moves up, then the user experience. Everything must fit the free plans (below).
 | 3b | Brand name and custom domain (decision D5) | Name done: Knowmark (decision 0003). Domain moved to phase 8 |
 | 3c | All published questions open until monetisation (decision 0004) | Done (#6) |
 | 3d | AAIR recipe from ISACA's official outline, first original questions (nothing reused from earlier projects) | Done (#7, 24 questions) |
-| 3e | User experience: look and feel, usability, finding and searching certifications | Next |
-| 4 | CISSP content for domains 2–8 (manual runs, same pipeline) | Planned |
-| 5 | Mock exams, weak-spot review, readiness score, report-question button | Planned |
+| 3e | User experience: brand header, exam catalogue with search and issuer filter (designed for ~50 exams), exam pages with per-domain readiness, practice sessions with running score and review of missed questions, progress kept on the device | Done (#10) |
+| 4 | CISSP content for domains 2–8 (manual runs, same pipeline) | Next |
+| 5 | Mock exams, spaced weak-spot review, exam-wide "looks ready" check, report-question button | Planned |
 | 6 | Scheduled automation: generation/check runs, outline watch, periodic bank review, weekly digest | Planned, needs approval |
 | 7 | AAIR full bank | Planned (after 3d) |
 | 8 | **Accounts, payments and domain** (last) | Planned |

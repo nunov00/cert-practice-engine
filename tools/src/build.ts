@@ -26,6 +26,7 @@ export interface PublicExam {
   free_sample_per_domain: number;
   unlock: Recipe["product"]["unlock"];
   mock: Recipe["product"]["mock"];
+  readiness: Recipe["product"]["readiness"];
   published_questions: number;
 }
 
@@ -66,6 +67,7 @@ export function buildPublicContent(root: string, access: PublicAccess = PUBLIC_A
       free_sample_per_domain: r.product.free_sample_per_domain,
       unlock: r.product.unlock,
       mock: r.product.mock,
+      readiness: r.product.readiness,
       published_questions: published.filter((q) => q.id.startsWith(`${r.exam.id}-`)).length,
     }));
 

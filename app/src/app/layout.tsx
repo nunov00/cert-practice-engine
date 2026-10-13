@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import { InstallApp } from "@/components/InstallApp";
-import { SITE_DISCLAIMER, SITE_NAME, SITE_SHORT_NAME } from "@/lib/site";
+import { BrandMark } from "@/components/BrandMark";
+import { SITE_DISCLAIMER, SITE_NAME, SITE_SHORT_NAME, SITE_TAGLINE } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,16 +30,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <header className="site">
           <div className="container">
-            <Link href="/" className="brand">
-              {SITE_NAME}
+            <Link href="/" className="brand" aria-label={`${SITE_NAME} home`}>
+              <BrandMark />
+              <span>{SITE_NAME}</span>
             </Link>
-            <InstallApp />
+            <nav className="site-nav" aria-label="Main">
+              <Link href="/#all-exams">Exams</Link>
+              <InstallApp />
+            </nav>
           </div>
         </header>
         <main className="container">{children}</main>
         <footer className="site">
           <div className="container">
+            <p className="footer-brand">
+              <BrandMark /> {SITE_NAME} · {SITE_TAGLINE}
+            </p>
             <p>{SITE_DISCLAIMER}</p>
+            <p>Your answers and progress stay in this browser. There are no accounts and nothing is sent to us.</p>
             <p>All questions are original and written for practice. They are not real exam questions.</p>
           </div>
         </footer>
