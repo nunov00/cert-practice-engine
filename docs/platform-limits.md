@@ -73,9 +73,10 @@ Per account, shared by every pilot:
 | D1 rows read per day | 5,000,000 | a few hundred (inbox reads, daily-cap counts) |
 | Rate limiting `namespace_id` | unique per account | `1001` = this pilot's feedback; give other pilots their own |
 
-Over a D1 daily limit, queries fail until 00:00 UTC. Rate limiting binding
-availability on the Free plan isn't stated on its page; the code works without
-it (the daily cap still applies).
+Over a D1 daily limit, queries fail until 00:00 UTC. The rate limiting binding
+isn't listed on the Free plan's limits page, but it deployed and is active on
+this Free account (2026-10-13). Deploying D1 bindings needs **D1 Edit** on the
+deploy API token (added by the owner on 2026-10-13).
 
 Workers Builds (Cloudflare building from GitHub) is not used: we build and deploy
 from GitHub Actions. Check its allowances if that changes.
