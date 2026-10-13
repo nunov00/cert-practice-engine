@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import { InstallApp } from "@/components/InstallApp";
+import { UpdateCheck } from "@/components/UpdateCheck";
 import { BrandMark } from "@/components/BrandMark";
 import { SITE_DISCLAIMER, SITE_NAME, SITE_SHORT_NAME, SITE_TAGLINE } from "@/lib/site";
 import "./globals.css";
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </nav>
           </div>
         </header>
+        <UpdateCheck />
         <main className="container">{children}</main>
         <footer className="site">
           <div className="container">
