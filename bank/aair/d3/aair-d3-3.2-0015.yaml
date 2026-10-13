@@ -1,0 +1,31 @@
+id: aair-d3-3.2-0015
+subdomain: '3.2'
+difficulty: hard
+stem: An insurer lets each business line accept AI risks up to a set limit. Eight lines have each accepted
+  the risk of errors in customer letters drafted with generative AI, all within their own limits. Combined,
+  the potential customer redress is well above what any single line may accept. What should the risk practitioner
+  recommend?
+options:
+  A: Keep the acceptances, since each was within its line's own limit
+  B: Assess the combined exposure and escalate it to group-level owners
+  C: Ask every business line to halve its limit for future acceptances
+  D: Transfer the risk by buying one group-wide insurance policy
+answer: B
+explanation:
+  why_correct: Delegated limits apply to each decision, but the insurer bears the total. The combined
+    exposure needs its own assessment and a decision by an owner with authority at that level, who may
+    require treatment rather than acceptance.
+  why_not:
+    A: Each acceptance was valid locally, but none considered the accumulation, which is beyond any single
+      line's authority.
+    C: An arbitrary cut is not based on assessment and does nothing about the acceptances already in place.
+    D: Choosing transfer before assessing the combined exposure is premature, and insurance would not
+      cover conduct or regulatory consequences.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

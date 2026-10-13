@@ -1,0 +1,31 @@
+id: aair-d3-3.2-0013
+subdomain: '3.2'
+difficulty: medium
+stem: A freight forwarder uses an AI model to assign customs tariff codes to shipments. Wrong codes lead
+  to fines, and most errors occur in cases where the model reports low confidence. Staff have time to
+  review about 15% of shipments manually. Which treatment BEST reduces the risk?
+options:
+  A: Have staff review a random 15% sample of all shipments the model codes
+  B: Route shipments below a set confidence level to staff for coding
+  C: Retrain the model every month on the latest shipment data
+  D: Ask customers to confirm the tariff codes for their own shipments
+answer: B
+explanation:
+  why_correct: Errors cluster in low-confidence cases, so sending those to staff puts limited human capacity
+    where it removes the most risk. The confidence threshold can be set so that the routed volume fits
+    the 15% that staff can handle.
+  why_not:
+    A: A random sample spreads effort over mostly correct cases, so it catches far fewer errors with the
+      same staff time.
+    C: Nothing suggests out-of-date data causes the errors, and retraining would still let low-confidence
+      errors go through unchecked.
+    D: Customers may lack the expertise to judge codes, and the forwarder still bears the fines, so this
+      shifts work without reducing risk.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

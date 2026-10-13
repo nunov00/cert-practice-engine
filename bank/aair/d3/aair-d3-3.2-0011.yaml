@@ -1,0 +1,29 @@
+id: aair-d3-3.2-0011
+subdomain: '3.2'
+difficulty: easy
+stem: After a widely reported AI failure at a competitor, the board of an online bank lowers its appetite
+  for customer harm caused by AI. Several AI risks were accepted last year under the previous appetite.
+  What should the risk practitioner do?
+options:
+  A: Re-evaluate the accepted risks against the new appetite
+  B: Keep the acceptances until each one reaches its review date
+  C: Apply the new appetite only to AI systems approved from now on
+  D: Ask the competitor how it treated the risk behind its failure
+answer: A
+explanation:
+  why_correct: A risk acceptance is only valid relative to the appetite in force when it was made. Once
+    the board lowers appetite, earlier acceptances may now be outside it and need new treatment decisions
+    without delay.
+  why_not:
+    B: Waiting for scheduled reviews could leave risks outside the new appetite untreated for months.
+    C: Systems already in use create the same exposure as new ones, so they must also meet the new appetite.
+    D: Learning from others can help design treatments, but it does not tell the bank whether its own
+      accepted risks are still acceptable.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

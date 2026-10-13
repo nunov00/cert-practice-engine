@@ -1,0 +1,30 @@
+id: aair-d3-3.5-0015
+subdomain: '3.5'
+difficulty: medium
+stem: A medical imaging company sends scans with patient details to an overseas vendor to be labelled for model
+  training. The vendor uses freelance annotators who work from home on their own devices. The company's radiologists
+  check label quality on every batch. What is it MOST important for the risk practitioner to assess?
+options:
+  A: How quickly the vendor can label and return new batches of scans
+  B: How patient data is protected on annotators' devices and who can see it
+  C: Whether the vendor's annotators hold a medical qualification
+  D: Whether the vendor holds a general quality management certificate
+answer: B
+explanation:
+  why_correct: Sensitive health data is leaving the company and being handled on personal devices by freelancers
+    it does not employ. The main risk is a data breach or unlawful access, so the practitioner should assess the
+    vendor's controls over the devices, access and data handling, and whether patient details need to be sent at
+    all.
+  why_not:
+    A: Turnaround time is a service question. It does not address the exposure of patient data.
+    C: Label quality is already checked by the company's radiologists on every batch, so qualifications are not
+      the main gap.
+    D: A general quality certificate says little about how personal data is protected on freelancers' own devices.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

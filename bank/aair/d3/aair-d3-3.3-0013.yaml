@@ -1,0 +1,31 @@
+id: aair-d3-3.3-0013
+subdomain: '3.3'
+difficulty: medium
+stem: An insurer offers brokers a public API that returns instant premium quotes from its pricing model.
+  The risk team is concerned that a competitor could send large numbers of systematic queries to copy
+  the model's pricing behaviour. Which control BEST addresses this?
+options:
+  A: Encrypting the model files where they are stored on the servers
+  B: Rate limits per client and monitoring for systematic query patterns
+  C: A clause in the API terms of use that forbids copying the model
+  D: Retraining the pricing model more often so copies soon go out of date
+answer: B
+explanation:
+  why_correct: Copying a model through its interface needs many queries. Limiting volume per authenticated
+    client and watching for systematic patterns makes extraction slow, costly and visible, so the insurer
+    can act before much is learned.
+  why_not:
+    A: Encryption protects stored files, but the attack uses the legitimate API, so the files are never
+      touched.
+    C: A contract term may deter some misuse, but it neither detects nor prevents extraction and is hard
+      to enforce.
+    D: A copy stays useful for some time, and frequent retraining is costly; it does not stop the extraction
+      itself.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

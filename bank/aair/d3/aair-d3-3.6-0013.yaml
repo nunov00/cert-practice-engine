@@ -1,0 +1,29 @@
+id: aair-d3-3.6-0013
+subdomain: '3.6'
+difficulty: medium
+stem: A logistics firm's demand forecasting model retrains every night. The team discovers that a faulty data feed
+  has been adding corrupted records to the training data, and forecasts are now unreliable. It is still tracing
+  when the fault began. Which model version should it plan to restore?
+options:
+  A: The most recent backup, as it holds the latest learning
+  B: The version from one week ago, as a reasonable estimate
+  C: The latest version confirmed to predate the corrupted data
+  D: The original version that was deployed at the model's launch
+answer: C
+explanation:
+  why_correct: Restoring a version trained before the corruption began removes the fault while keeping as much valid
+    learning as possible. That is why the team needs to establish when the fault started before choosing the restore
+    point.
+  why_not:
+    A: The latest backup is likely to contain the corrupted training, so restoring it would bring the problem back.
+    B: A guess may land before or after the fault began. Restoring an unverified version risks keeping the corruption.
+    D: The launch version is clean but may be very out of date, discarding all valid learning since. It is a last
+      resort, not the best choice.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

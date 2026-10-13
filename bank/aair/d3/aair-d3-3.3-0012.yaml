@@ -1,0 +1,29 @@
+id: aair-d3-3.3-0012
+subdomain: '3.3'
+difficulty: medium
+stem: 'A council''s control description for its housing allocation model reads: the data team monitors
+  the model for bias. Testing finds that the team looks at a fairness report each month, but no level
+  of disparity has ever led to any action. What is the MAIN weakness in the control''s design?'
+options:
+  A: It sets no threshold or criteria that require a response
+  B: It relies on a monthly rather than a weekly fairness report
+  C: It is carried out by the data team instead of internal audit
+  D: It does not name the software used to produce the report
+answer: A
+explanation:
+  why_correct: A detective control needs defined criteria for when a result is an exception and what must
+    happen next. Without them, reviewing the report cannot reliably lead to action, so the control does
+    not actually manage the bias risk.
+  why_not:
+    B: Frequency can matter, but a weekly report without criteria for action would fail in the same way.
+    C: It is normal for the first line to operate monitoring controls. Internal audit gives independent
+      assurance; it does not run daily controls.
+    D: Tool details are not what makes a control effective; the absence of a trigger for action is.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass
