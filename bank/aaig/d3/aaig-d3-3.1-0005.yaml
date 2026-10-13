@@ -1,0 +1,32 @@
+id: aaig-d3-3.1-0005
+subdomain: '3.1'
+difficulty: medium
+stem: A health insurer's data science team monitors a claims triage model for drift and has set its own alert
+  thresholds based on statistical convention. The chief risk officer is uneasy about this arrangement. What
+  is the BEST improvement?
+options:
+  A: Have the business owner approve thresholds linked to risk appetite
+  B: Have an external firm validate the statistical method used for drift
+  C: Tighten all thresholds so that the team receives alerts sooner
+  D: Move monitoring to the IT operations team for more independence
+answer: A
+explanation:
+  why_correct: Thresholds decide when the organisation acts, so they are a risk decision, not only a statistical
+    one. They should reflect how much degradation the business can tolerate for this use, within the board's
+    risk appetite, and be approved by the accountable owner. The data scientists can then implement and monitor
+    against them.
+  why_not:
+    B: External validation may confirm the method is sound, but it still leaves a technical team deciding how
+      much harm is tolerable.
+    C: Tighter thresholds without a business rationale cause alert fatigue and still are not anchored to the
+      tolerance the organisation has agreed.
+    D: Moving the work changes who watches the alerts, but the thresholds would still lack a link to risk appetite
+      and an accountable approver.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-a
+  checked_by: 2026-10-13-aaig-d3-a-check
+  check_verdict: pass

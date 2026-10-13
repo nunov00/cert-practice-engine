@@ -1,0 +1,31 @@
+id: aaig-d3-3.1-0059
+subdomain: '3.1'
+difficulty: easy
+stem: A mining company has installed AI cameras in haul trucks to detect driver fatigue and prompt a rest break.
+  The business case was made on safety grounds, not cost. The board asks how the value of the system will be tracked.
+  What should the governance leader recommend?
+options:
+  A: Track the system's cost against its budget, since safety value cannot really be measured
+  B: Report the number of fatigue alerts raised each month as the measure of the system's value
+  C: Wait for the annual injury statistics to show whether the system has made a difference
+  D: Set measurable safety outcomes with targets as the benefits to track, not system activity
+answer: D
+explanation:
+  why_correct: Non-financial benefits can and should be tracked. Defining safety outcomes, such as fatigue-related
+    incidents and the share of alerts followed by a rest break, with targets and regular reporting, lets the board
+    see whether the system delivers the value it was approved for.
+  why_not:
+    A: Cost tracking is needed but says nothing about value. Accepting that safety cannot be measured leaves the
+      investment unassessed.
+    B: Alert counts measure activity, not benefit. More alerts could mean more fatigue, more false alarms or better
+      detection.
+    C: Annual injury figures are slow and influenced by many factors. Waiting a year gives no chance to act if the
+      system is not working.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-b
+  checked_by: 2026-10-13-aaig-d3-b-check
+  check_verdict: pass

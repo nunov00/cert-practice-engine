@@ -1,0 +1,31 @@
+id: aaig-d3-3.1-0004
+subdomain: '3.1'
+difficulty: easy
+stem: The board of a bank receives a quarterly AI report showing loan approval speed and cost per decision.
+  A director asks what in the report would warn the board that a credit model is becoming riskier before losses
+  appear. What should be added?
+options:
+  A: Key risk indicators such as drift scores and override rates
+  B: Additional key performance indicators on processing efficiency
+  C: A list of all models in production with their owners
+  D: Total spend on AI tools compared with the annual budget
+answer: A
+explanation:
+  why_correct: 'Speed and cost are performance indicators: they show how well the model delivers value. Key
+    risk indicators are designed to signal rising exposure early, such as input drift, a change in override
+    rates or growing segment disparities. The director is asking for leading risk signals, which is what KRIs
+    provide.'
+  why_not:
+    B: More efficiency measures still describe value delivered, not exposure building up. They could even look
+      better while risk grows.
+    C: An inventory with owners supports accountability but gives no signal about whether any model is deteriorating.
+    D: Spend against budget is a financial control measure. It says nothing about whether the credit model
+      is drifting toward unacceptable risk.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-a
+  checked_by: 2026-10-13-aaig-d3-a-check
+  check_verdict: pass

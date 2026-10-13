@@ -1,0 +1,31 @@
+id: aaig-d3-3.1-0030
+subdomain: '3.1'
+difficulty: hard
+stem: An online marketplace routes content its AI moderation model is unsure about to human reviewers. After
+  a viral event, uncertain cases rose tenfold; managers responded by raising the confidence level at which
+  the model decides alone so the queue would shrink. What is the governance concern?
+options:
+  A: Human reviewers should have been asked to work longer hours
+  B: The model should have been retrained on the viral content first
+  C: The change shifted risk without an approved decision or assessment
+  D: Uncertain cases should have been left visible until reviewed
+answer: C
+explanation:
+  why_correct: Changing the confidence threshold changes how many decisions go without human review, which
+    changes the risk accepted. Doing it to clear a queue, without assessment or approval by the accountable
+    owner, bypasses governance. Surge plans should define in advance what may be changed, by whom and within
+    what limits.
+  why_not:
+    A: Extra hours might help briefly, but the question is the governance of the threshold change, not staffing
+      tactics.
+    B: Retraining takes time and does not address who may change risk settings during a surge.
+    D: Leaving all uncertain content visible is itself a risk decision with possible harm. It is another operational
+      choice, not the governance gap.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-a
+  checked_by: 2026-10-13-aaig-d3-a-check
+  check_verdict: pass

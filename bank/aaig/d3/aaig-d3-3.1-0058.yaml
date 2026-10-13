@@ -1,0 +1,31 @@
+id: aaig-d3-3.1-0058
+subdomain: '3.1'
+difficulty: medium
+stem: A public procurement agency uses AI to score how well tenders meet requirements, and reviewers correct the
+  scores. Analysis shows that review teams in two cities shift the AI's scores in opposite directions on similar
+  bids. What should the governance leader recommend?
+options:
+  A: Retrain the model on corrections from the team whose scores appear to be more accurate
+  B: Let each team keep its own approach, since local judgement is the purpose of human review
+  C: Remove the reviewers' ability to change scores and treat the AI scores as final
+  D: Set shared review guidance, hold calibration sessions and track consistency between teams
+answer: D
+explanation:
+  why_correct: 'Human review is meant to add sound judgement, but it is now adding inconsistency: similar bids get
+    different results depending on the city. In public procurement that is a fairness and challenge risk. Common
+    guidance, calibration on shared examples and ongoing tracking of how reviewers adjust scores make the human
+    part of the process consistent and monitorable.'
+  why_not:
+    A: It is not yet known which team is right, and retraining on one team's view does not stop the other team departing
+      from it.
+    B: Similar bids should be treated alike. Local variation that changes outcomes is a weakness, not the purpose
+      of review.
+    C: Removing review loses the check on the AI's errors to fix a problem that lies with reviewer consistency.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-b
+  checked_by: 2026-10-13-aaig-d3-b-check
+  check_verdict: pass

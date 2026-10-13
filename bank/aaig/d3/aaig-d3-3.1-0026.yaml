@@ -1,0 +1,31 @@
+id: aaig-d3-3.1-0026
+subdomain: '3.1'
+difficulty: medium
+stem: 'A conglomerate runs a federated AI model: each division builds and monitors its own AI systems. A review
+  finds five divisions have each bought separate monitoring tools and define drift differently, so group risk
+  cannot compare them. What should the governance leader recommend?'
+options:
+  A: Set group-wide monitoring standards and metrics that divisions report on
+  B: Centralise all AI development and monitoring in a group function
+  C: Let each division continue and convert their results manually
+  D: Choose one division's tool and make the other divisions adopt it
+answer: A
+explanation:
+  why_correct: A federated model works when the centre sets common standards that divisions apply locally.
+    Shared definitions and reporting metrics allow group risk to aggregate and compare, while divisions keep
+    ownership. Tool choice can follow from the standards.
+  why_not:
+    B: Full centralisation reverses the operating model to fix a reporting issue. It would lose divisional
+      ownership and speed for a problem that standards can solve.
+    C: Manual conversion between inconsistent definitions is error-prone and does not fix the underlying lack
+      of comparability.
+    D: A single tool does not ensure common definitions, and imposing one division's choice may not fit the
+      others. Standards are the governance lever, not the product.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-a
+  checked_by: 2026-10-13-aaig-d3-a-check
+  check_verdict: pass
