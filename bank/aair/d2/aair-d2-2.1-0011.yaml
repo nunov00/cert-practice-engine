@@ -1,0 +1,30 @@
+id: aair-d2-2.1-0011
+subdomain: '2.1'
+difficulty: medium
+stem: Analysts at a broadcaster built a model in a notebook during an internal hackathon to predict which
+  programmes viewers will watch next. Marketing liked the results and now runs it weekly from an analyst's
+  laptop to target campaigns. What should the risk practitioner recommend?
+options:
+  A: Move the notebook to a shared drive so that others can run it too
+  B: Take the model through the standard development and approval process
+  C: Stop all marketing use and shelve the model until next year's budget
+  D: Ask the analyst to keep a log of each weekly run and its results
+answer: B
+explanation:
+  why_correct: A hackathon prototype has skipped the testing, documentation, risk assessment and controls
+    that production use needs. Putting it through the normal life cycle, in proportion to its risk, brings
+    it under control while keeping the value the business has found.
+  why_not:
+    A: A shared drive spreads uncontrolled use to more people without testing or approval.
+    C: Shelving it is out of proportion to a marketing use and throws away value that the normal process
+      could make safe.
+    D: A run log records use but does not test the model, approve it or secure a laptop holding viewer
+      data.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-b
+  checked_by: 2026-10-13-aair-d2-b-check
+  check_verdict: pass
