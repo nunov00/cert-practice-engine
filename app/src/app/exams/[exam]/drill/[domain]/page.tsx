@@ -27,12 +27,12 @@ export default async function DrillPage({ params }: { params: Promise<Params> })
 
   return (
     <>
-      <p className="small">
-        <Link href={`/exams/${exam.id}`}>← {exam.name}</Link>
-      </p>
+      <nav className="crumbs small" aria-label="Breadcrumb">
+        <Link href="/">Exams</Link> <span aria-hidden="true">/</span> <Link href={`/exams/${exam.id}`}>{exam.name}</Link>
+      </nav>
       <h1>{domain.name}</h1>
       <p className="lead">
-        {isOpenAccess() ? "Drill" : "Free drill"} · {questions.length} questions
+        {exam.name} · {isOpenAccess() ? "Domain drill" : "Free domain drill"} · {questions.length} questions
       </p>
       <Drill examId={exam.id} questions={questions} />
     </>

@@ -62,7 +62,7 @@ export function InstallApp() {
   if (mode === "ios") {
     return (
       <p className="muted small install-hint">
-        Use it like an app: tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>.
+        Install: <strong>Share</strong>, then <strong>Add to Home Screen</strong>
       </p>
     );
   }
