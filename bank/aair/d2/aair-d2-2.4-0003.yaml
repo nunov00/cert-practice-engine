@@ -1,0 +1,30 @@
+id: aair-d2-2.4-0003
+subdomain: '2.4'
+difficulty: medium
+stem: A news publisher outsourced the labelling of 200,000 articles by topic to train a classification
+  model. Spot checks show annotators interpreted some topic definitions differently. Which control would
+  BEST improve the reliability of the training labels?
+options:
+  A: Increase the volume of labelled articles to dilute the errors
+  B: Use clear guidelines, overlap samples and agreement checks
+  C: Ask the outsourcing firm to certify that labels are correct
+  D: Train the model first and correct labels if accuracy is low
+answer: B
+explanation:
+  why_correct: Inconsistent labels come from unclear definitions and a lack of checking. Clear guidelines,
+    having several annotators label the same samples and measuring how often they agree target the cause
+    and give ongoing evidence of label quality.
+  why_not:
+    A: More labels made the same way repeat the same inconsistencies, so the model still learns conflicting
+      signals.
+    C: A certificate shifts responsibility on paper but does not fix the inconsistency or show how well
+      labels agree.
+    D: Poor labels also distort the test results, so low quality may not even show up as low accuracy.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-a
+  checked_by: 2026-10-13-aair-d2-a-check
+  check_verdict: pass
