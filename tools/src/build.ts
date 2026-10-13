@@ -1,6 +1,6 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
-import { validateRepo } from "./validate.ts";
+import { isPreview, validateRepo } from "./validate.ts";
 import type { Question, Recipe } from "./types.ts";
 
 /**
@@ -21,11 +21,13 @@ export interface PublicExam {
   issuer: string;
   disclaimer: string;
   outline_version: string;
+  /** No published outline yet: weights, length, scoring and mock are null or absent; drills only. */
+  preview: boolean;
   format: Recipe["format"];
-  domains: { id: string; name: string; weight: number; subdomains: { id: string; title: string }[] }[];
+  domains: { id: string; name: string; weight: number | null; subdomains: { id: string; title: string }[] }[];
   free_sample_per_domain: number;
   unlock: Recipe["product"]["unlock"];
-  mock: Recipe["product"]["mock"];
+  mock: NonNullable<Recipe["product"]["mock"]> | null;
   readiness: Recipe["product"]["readiness"];
   published_questions: number;
 }
@@ -57,16 +59,17 @@ export function buildPublicContent(root: string, access: PublicAccess = PUBLIC_A
       issuer: r.exam.issuer,
       disclaimer: r.exam.disclaimer,
       outline_version: r.exam.outline.version,
+      preview: isPreview(r),
       format: r.format,
       domains: r.domains.map((d) => ({
         id: d.id,
         name: d.name,
-        weight: d.weight,
+        weight: d.weight ?? null,
         subdomains: d.subdomains.map((s) => ({ id: s.id, title: s.title })),
       })),
       free_sample_per_domain: r.product.free_sample_per_domain,
       unlock: r.product.unlock,
-      mock: r.product.mock,
+      mock: r.product.mock ?? null,
       readiness: r.product.readiness,
       published_questions: published.filter((q) => q.id.startsWith(`${r.exam.id}-`)).length,
     }));

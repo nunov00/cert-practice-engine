@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { TestPage } from "@/components/TestPage";
-import { getExam, listExams, questionsFor } from "@/lib/content";
+import { hasTimedTests, TestPage } from "@/components/TestPage";
+import { getExam, listExams } from "@/lib/content";
 
 type Params = { exam: string };
 
 export function generateStaticParams(): Params[] {
   return listExams()
-    .filter((e) => questionsFor(e.id).length > 0)
+    .filter(hasTimedTests)
     .map((e) => ({ exam: e.id }));
 }
 
@@ -18,6 +18,6 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
 export default async function MissedPage({ params }: { params: Promise<Params> }) {
   const exam = getExam((await params).exam);
-  if (!exam || questionsFor(exam.id).length === 0) notFound();
+  if (!exam || !hasTimedTests(exam)) notFound();
   return <TestPage exam={exam} kind="missed" />;
 }
