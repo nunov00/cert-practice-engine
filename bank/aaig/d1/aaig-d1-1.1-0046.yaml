@@ -1,0 +1,29 @@
+id: aaig-d1-1.1-0046
+subdomain: '1.1'
+difficulty: medium
+stem: An AI governance maturity assessment at a utility rates the company low on most dimensions, from policy and
+  inventory to monitoring and skills. The executive committee asks for a roadmap. Which approach is BEST?
+options:
+  A: Raise every dimension to the highest maturity level within one year
+  B: Start with the dimensions that are cheapest and quickest to improve
+  C: Copy the roadmap a peer utility published after its own assessment
+  D: Set targets per dimension from the AI strategy and risk exposure
+answer: D
+explanation:
+  why_correct: Maturity is a means, not an end. Target levels should reflect how much AI the company uses, how risky
+    those uses are and where the strategy is heading. Gaps that matter most to the risk profile come first, and
+    some dimensions may sensibly stay at a modest level.
+  why_not:
+    A: Aiming for the top everywhere at once is costly and unrealistic, and it spends effort on dimensions that
+      may not matter for the company's actual AI use.
+    B: Quick wins can help momentum, but choosing on ease alone may leave the most serious exposures until last.
+    C: A peer's roadmap reflects its own strategy, risks and starting point. It can inform ideas but should not
+      replace the company's own priorities.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-b
+  checked_by: 2026-10-13-aaig-d1-b-check
+  check_verdict: pass

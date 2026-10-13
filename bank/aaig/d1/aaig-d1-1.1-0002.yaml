@@ -1,0 +1,31 @@
+id: aaig-d1-1.1-0002
+subdomain: '1.1'
+difficulty: hard
+stem: Two years ago the board of a logistics company approved an AI strategy focused on cutting costs. The
+  company has since repositioned itself around premium customer service. Several AI projects still under way
+  aim to reduce headcount in the customer contact centre. What should the governance leader recommend?
+options:
+  A: Let the projects finish, then align new projects to the new strategy
+  B: Cancel all in-flight AI projects and restart strategic planning
+  C: Ask project sponsors to restate benefits in customer-service terms
+  D: Revisit the AI strategy and reassess in-flight projects against it
+answer: D
+explanation:
+  why_correct: When corporate strategy changes, the AI strategy that serves it must be refreshed, and the existing
+    portfolio judged against the new direction. Some projects may continue, some may be reshaped and some stopped.
+    This keeps AI spending aligned with what the board now wants, without throwing away work that still fits.
+  why_not:
+    A: Finishing projects that may now work against the new strategy wastes money and could damage the premium
+      service the company is trying to build.
+    B: Cancelling everything is an overreaction. Some projects may still fit the new direction, and a blanket
+      stop destroys value without any assessment.
+    C: Restating benefits in new language changes the paperwork, not the substance. A headcount-cutting project
+      does not become a service project because its business case is reworded.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass

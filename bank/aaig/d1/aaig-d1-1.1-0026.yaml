@@ -1,0 +1,31 @@
+id: aaig-d1-1.1-0026
+subdomain: '1.1'
+difficulty: hard
+stem: An energy company relies on a vendor's AI service to forecast grid demand, a function critical to operations.
+  The current contract gives the company no right to information about model changes or testing. Which governance
+  action is MOST important at contract renewal?
+options:
+  A: Negotiate a lower price to offset the model's unknown risks
+  B: Replace the vendor with an in-house model as soon as possible
+  C: Accept the terms, as the vendor is accountable for its own AI
+  D: Secure rights to change notice, test evidence and audit
+answer: D
+explanation:
+  why_correct: The company remains accountable for a critical operation even when the AI is supplied. Contract
+    rights to be told of changes, to see evidence of testing and to audit give it the information it needs
+    to oversee the risk. Renewal is the point of greatest leverage to obtain them.
+  why_not:
+    A: A discount does not reduce the operational risk; it only prices it. The company would still be blind
+      to changes in a critical system.
+    B: Building in-house may or may not be wise, but it is a major strategic decision, not the immediate fix
+      for a contract gap.
+    C: Outsourcing a function does not transfer accountability for its outcomes. The company still answers
+      for reliable supply.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass

@@ -1,0 +1,30 @@
+id: aaig-d1-1.1-0057
+subdomain: '1.1'
+difficulty: easy
+stem: A law firm approved an enterprise AI assistant after a careful review. The vendor adds new features every
+  few weeks, such as web browsing and connections to email, and turns them on for all users by default. What should
+  the firm's governance require?
+options:
+  A: A full re-approval of the whole assistant every time it changes
+  B: New features stay off until assessed against the approval
+  C: Users decide for themselves whether to use each new feature
+  D: Ending the contract, because the vendor changes the tool too often
+answer: B
+explanation:
+  why_correct: The original approval covered the tool as it was then. New capabilities can bring new risks, such
+    as client data leaving through web browsing. Keeping them off by default until assessed, scaling the check to
+    the change, lets the firm keep pace with the vendor while keeping control.
+  why_not:
+    A: Re-reviewing everything for every change wastes effort and cannot keep up with frequent releases. Only the
+      new capability needs assessing.
+    C: Leaving it to each user removes the firm's control over client data and produces inconsistent practice.
+    D: Frequent updates are normal for such tools. Ending the contract gives up the value already approved when
+      a simpler control solves the problem.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-b
+  checked_by: 2026-10-13-aaig-d1-b-check
+  check_verdict: pass

@@ -1,0 +1,28 @@
+id: aaig-d1-1.1-0030
+subdomain: '1.1'
+difficulty: medium
+stem: After an AI pricing error harmed customers at an online travel company, it emerged that several staff
+  had noticed the problem weeks earlier but said nothing. The board wants a culture in which AI concerns are
+  raised early. What is the BEST action?
+options:
+  A: Require every manager to sign an annual AI compliance statement
+  B: Provide safe channels to raise concerns and act on them visibly
+  C: Publish the number of AI incidents in the company's annual report
+  D: Add questions about AI to the annual employee engagement survey
+answer: B
+explanation:
+  why_correct: People speak up when they feel safe and believe it will make a difference. Easy, protected channels
+    combined with visible follow-up, such as feedback on what was done, build the habit of raising issues early.
+  why_not:
+    A: A signed statement creates paperwork and may increase fear of blame, which discourages raising problems.
+    C: External reporting of incidents can support transparency, but it does nothing to make staff more willing
+      to raise concerns.
+    D: A yearly survey measures sentiment but gives no route for raising a concern when it arises.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass

@@ -1,0 +1,30 @@
+id: aaig-d1-1.1-0009
+subdomain: '1.1'
+difficulty: easy
+stem: A professional services firm is writing its first AI acceptable use policy for all staff. Which content
+  BEST belongs in this policy?
+options:
+  A: Detailed configuration steps for each approved AI tool
+  B: The technical architecture of the firm's AI platform
+  C: A full list of the AI vendors the firm has evaluated
+  D: What staff may and may not do with AI, and with which data
+answer: D
+explanation:
+  why_correct: 'An acceptable use policy sets expectations for behaviour: permitted and prohibited uses, what
+    data may be entered into AI tools, and the user''s responsibilities. That is what staff need to act correctly,
+    and what the firm needs to enforce.'
+  why_not:
+    A: Configuration steps belong in procedures or user guides. Putting them in policy makes it long, quickly
+      outdated and hard to follow.
+    B: Architecture is a technical design matter for IT and architecture teams, not a statement of how staff
+      should behave.
+    C: A vendor evaluation list is procurement information. It does not tell staff what they may do, and it
+      would change often.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass

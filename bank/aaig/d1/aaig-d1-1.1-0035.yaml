@@ -1,0 +1,31 @@
+id: aaig-d1-1.1-0035
+subdomain: '1.1'
+difficulty: medium
+stem: At a shipping company, the head of AI governance wrote the AI control framework and chairs the committee
+  that applies it. To save cost, the CFO suggests that the head's own annual review of the framework replace
+  the internal audit of AI governance planned for the audit committee. What is the MAIN concern?
+options:
+  A: The head may lack the technical skills to assess AI models
+  B: The review would take too long alongside running governance
+  C: The head cannot give independent assurance on their own work
+  D: Internal audit has no mandate to review AI-related matters
+answer: C
+explanation:
+  why_correct: Assurance is valuable to the audit committee because it is independent of the people being assessed.
+    Someone reviewing a framework they designed and operate is assessing themselves, so the committee should
+    keep the internal audit or use an external provider.
+  why_not:
+    A: Skills may or may not be lacking, but even a highly skilled reviewer cannot provide independent assurance
+      on their own work.
+    B: Workload is a practical issue but not the fundamental one. A self-review is not independent however
+      quickly it is done.
+    D: Internal audit's mandate covers governance, risk and controls across the organisation, which includes
+      AI governance.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d1-a
+  checked_by: 2026-10-13-aaig-d1-a-check
+  check_verdict: pass
