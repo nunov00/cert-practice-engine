@@ -2,6 +2,12 @@
 // bank/_schema/question.schema.json (recipe format v0.2).
 
 export type Difficulty = "easy" | "medium" | "hard";
+/**
+ * "preview": the issuer has announced the exam but not published its outline.
+ * The recipe then leaves out what the issuer hasn't said (weights, length,
+ * delivery, scoring) and the mock; the site offers untimed drills only.
+ */
+export type OutlineStatus = "published" | "preview";
 export type QuestionStatus = "draft" | "in_review" | "published" | "retired";
 
 export interface Subdomain {
@@ -13,7 +19,8 @@ export interface Subdomain {
 export interface Domain {
   id: string;
   name: string;
-  weight: number;
+  /** Absent only in a preview recipe (no published outline yet). */
+  weight?: number;
   subdomains: Subdomain[];
 }
 
@@ -24,13 +31,14 @@ export interface Recipe {
     name: string;
     issuer: string;
     disclaimer: string;
-    outline: { source_url: string; version: string; last_checked: string };
+    outline: { source_url: string; version: string; last_checked: string; status?: OutlineStatus };
   };
+  /** delivery, questions and scoring are absent only in a preview recipe. */
   format: {
-    delivery: "adaptive" | "linear";
-    questions: number | { min: number; max: number };
+    delivery?: "adaptive" | "linear";
+    questions?: number | { min: number; max: number };
     duration_minutes: number;
-    scoring: { scale: [number, number]; pass: number };
+    scoring?: { scale: [number, number]; pass: number };
     question_types: string[];
   };
   style: { voice: string; options_per_question: number; rules: string[] };
@@ -48,7 +56,8 @@ export interface Recipe {
     free_sample_per_domain: number;
     unlock: { price_chf: number; access_days: number };
     readiness: { min_answered: number; min_accuracy_per_domain: number };
-    mock: { questions: number; minutes: number; forms: number };
+    /** Absent only in a preview recipe: no mock until the real format is known. */
+    mock?: { questions: number; minutes: number; forms: number };
   };
 }
 

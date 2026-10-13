@@ -15,6 +15,17 @@
 #   - sum of subdomain target_questions equals bank.target_total
 #   - subdomain titles are the outline's short headings, used as labels only;
 #     no longer outline text is copied into the repo
+#
+# Preview exams (added 2026-10-13, owner's choice for AAIG):
+#   An issuer may announce an exam before publishing its outline. Such a recipe
+#   sets exam.outline.status: preview and leaves out everything the issuer has
+#   not published: domain weights, format.delivery, format.questions,
+#   format.scoring and product.mock. Nothing is invented to fill the gaps.
+#   Domains are the announced topic areas, each with one subdomain until the
+#   outline gives real ones. The site labels the exam "Preview", shows no
+#   weights and offers untimed drills only (no mock or timed tests).
+#   When the outline appears, drop the status (or set it to published), add
+#   the missing facts from the outline, and remap questions to its subdomains.
 
 format_version: "0.2"
 

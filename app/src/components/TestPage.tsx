@@ -5,9 +5,22 @@ import type { TestKind } from "@/lib/exam-session";
 
 export const QUICK_SIZE = 10;
 
+/** Timed tests need the real exam's pace, so preview exams (no outline yet) have none. */
+export function hasTimedTests(exam: PublicExam): exam is PublicExam & { mock: NonNullable<PublicExam["mock"]> } {
+  return exam.mock !== null && questionsFor(exam.id).length > 0;
+}
+
 /** Server wrapper shared by the mock exam and quick test pages. */
 /** `domainId` limits a wrong-answers test to one domain. */
-export function TestPage({ exam, kind, domainId }: { exam: PublicExam; kind: TestKind; domainId?: string }) {
+export function TestPage({
+  exam,
+  kind,
+  domainId,
+}: {
+  exam: PublicExam & { mock: NonNullable<PublicExam["mock"]> };
+  kind: TestKind;
+  domainId?: string;
+}) {
   const questions = questionsFor(exam.id, domainId);
   const domain = exam.domains.find((d) => d.id === domainId);
   const size = kind === "mock" ? exam.mock.questions : QUICK_SIZE;
@@ -33,7 +46,7 @@ export function TestPage({ exam, kind, domainId }: { exam: PublicExam; kind: Tes
         kind={kind}
         size={size}
         pace={exam.mock}
-        domains={(domain ? [domain] : exam.domains).map((d) => ({ id: d.id, name: d.name, weight: d.weight }))}
+        domains={(domain ? [domain] : exam.domains).map((d) => ({ id: d.id, name: d.name, weight: d.weight ?? 0 }))}
         questions={questions}
         target={exam.readiness.min_accuracy_per_domain}
         domainId={domain?.id}
