@@ -1,0 +1,32 @@
+id: aair-d1-1.3-0010
+subdomain: '1.3'
+difficulty: medium
+stem: At a national retailer, the chief information officer, chief data officer and chief risk officer
+  each manage parts of AI. When a cross-cutting issue arose, staff use of public generative AI tools,
+  each assumed one of the others would deal with it, and nothing was done for months. What should the
+  risk practitioner recommend?
+options:
+  A: Give one senior executive a clear mandate for enterprise AI risk
+  B: Ask each executive to set up their own team for generative AI
+  C: Ask the board to review all AI decisions until the gap is closed
+  D: Ask the three executives to meet each week to discuss AI issues
+answer: A
+explanation:
+  why_correct: Shared, unclear responsibility let a significant risk go unmanaged. Giving one senior executive
+    accountability for enterprise-wide AI risk, with a defined mandate to work with the other functions,
+    closes the gap while keeping their specialist roles.
+  why_not:
+    B: Separate teams would duplicate effort and could produce conflicting rules, while still leaving
+      no one accountable overall.
+    C: The board sets direction and oversees; reviewing every AI decision is management's job and would
+      overload it.
+    D: Meetings improve communication but, without a named accountable owner, issues can still fall between
+      the three.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

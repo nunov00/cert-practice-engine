@@ -1,0 +1,28 @@
+id: aair-d1-1.4-0013
+subdomain: '1.4'
+difficulty: medium
+stem: A school district is rolling out an AI tool that helps teachers draft feedback on pupils' work.
+  Training on safe use, including which pupil data may be entered, is planned for the end of term, but
+  accounts will be active from next week. What should the risk practitioner recommend?
+options:
+  A: Send all teachers a written summary of the policy before the start
+  B: Monitor the tool's use and arrange training if problems are found
+  C: Grant access to the tool only after a teacher completes the training
+  D: Delay the entire rollout until the next school year begins
+answer: C
+explanation:
+  why_correct: Untrained users are the most likely to misuse a new tool, for example by entering sensitive
+    pupil data. Making training a condition of access ensures each user knows the rules before they can
+    act, without holding back those who are ready.
+  why_not:
+    A: A written summary helps but is easily skipped, and it is not the same as training.
+    B: Waiting for problems means harm to pupils' data may already have happened.
+    D: Delaying for everyone is disproportionate when access can simply follow training.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

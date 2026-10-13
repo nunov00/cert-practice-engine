@@ -1,0 +1,31 @@
+id: aair-d1-1.4-0012
+subdomain: '1.4'
+difficulty: hard
+stem: A bank's information security policy forbids sending customer data to any external service. Its
+  new AI policy allows approved external AI tools to process customer data under set conditions. Staff
+  are unsure which rule applies, and some managers block approved tools while others allow them. What
+  should the risk practitioner recommend?
+options:
+  A: Align the two policies and state clearly how they relate to each other
+  B: Tell staff that the newer AI policy takes priority over the older one
+  C: Withdraw the AI policy until the security policy is next reviewed
+  D: Let each manager decide which of the policies applies in their team
+answer: A
+explanation:
+  why_correct: Conflicting policies cause uncertainty and inconsistent practice. The policies should be
+    reconciled, typically by updating the security policy to allow approved AI tools under the AI policy's
+    conditions, with the hierarchy and cross-references set out so staff get one clear answer.
+  why_not:
+    B: An informal message leaves the written conflict in place and may override security conditions that
+      should still apply.
+    C: Withdrawing the AI policy removes the controls over approved tools and delays a fix that can be
+      made now.
+    D: Manager discretion is what is causing the inconsistency, and it leaves staff without clear rules.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

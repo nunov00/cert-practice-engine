@@ -1,0 +1,33 @@
+id: aair-d1-1.1-0013
+subdomain: '1.1'
+difficulty: hard
+stem: An insurer wants a large language model to summarise medical reports attached to claims. Its regulator
+  and customer contracts require this data to stay within the insurer's own environment, and the shortlisted
+  cloud provider cannot offer that. An open-weight model could be run on the insurer's own infrastructure.
+  What should the risk practitioner advise?
+options:
+  A: Use the cloud service, with a contract clause forbidding data storage
+  B: Use the cloud service after removing names from the reports
+  C: Postpone the use case until the provider can host the model locally
+  D: Use the self-hosted model and plan to secure, test and update it
+answer: D
+explanation:
+  why_correct: Only the self-hosted model meets the binding requirement that the data stays in the insurer's
+    environment. Choosing it moves duties that a provider would carry, such as securing the infrastructure,
+    evaluating the model and applying updates, onto the insurer, so the advice must include planning for
+    them. That is the best balance of compliance and managed risk.
+  why_not:
+    A: A contract clause does not change the fact that the data would leave the insurer's environment,
+      which the requirement forbids.
+    B: Medical reports contain many identifying details besides names, and the data would still leave
+      the insurer's environment, so the requirement is still breached.
+    C: Waiting is unnecessary when a compliant option exists, and it depends on a provider change that
+      may never happen.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

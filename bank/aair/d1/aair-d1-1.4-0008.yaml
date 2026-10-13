@@ -1,0 +1,29 @@
+id: aair-d1-1.4-0008
+subdomain: '1.4'
+difficulty: easy
+stem: A risk practitioner at a logistics company has finished drafting the company's first AI policy,
+  which sets principles and responsibilities for all AI use. Who should approve the policy?
+options:
+  A: Senior management or the board, as the governance charter sets out
+  B: The head of data science, as the company's main user of AI
+  C: The IT security manager, as AI tools are part of the IT estate
+  D: The risk practitioner who drafted it, after peer review by the team
+answer: A
+explanation:
+  why_correct: An enterprise policy sets binding rules for the whole organisation, so it needs approval
+    at a level with authority over every function, usually senior management or a board committee as the
+    governance charter provides. This gives the policy weight and shows leadership commitment.
+  why_not:
+    B: The head of data science is one of the people the policy governs and has no authority over other
+      functions.
+    C: AI risk goes well beyond IT security, and the IT security manager cannot bind the whole organisation.
+    D: Authors should not approve their own policies, and a practitioner does not have the authority to
+      make a policy binding.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass
