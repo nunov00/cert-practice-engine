@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { finished, started, type Counts, type StatsReport } from "@/lib/stats";
 
-const KEY = "knowmark-stats-key";
 const PERIODS = [
   { days: 7, label: "7 days" },
   { days: 30, label: "30 days" },
@@ -14,90 +13,34 @@ const PERIODS = [
 type Names = Record<string, { name: string; domains: Record<string, string> }>;
 type Report = StatsReport & { today: string; names: Names };
 
-type State =
-  | { kind: "key"; error?: string }
-  | { kind: "loading" }
-  | { kind: "off" }
-  | { kind: "ready"; report: Report }
-  | { kind: "error"; error: string };
-
-function readKey(): string | null {
-  try {
-    return localStorage.getItem(KEY);
-  } catch {
-    return null;
-  }
-}
+type State = { kind: "loading" } | { kind: "ready"; report: Report } | { kind: "error"; error: string };
 
 export function StatsDashboard() {
   const [state, setState] = useState<State>({ kind: "loading" });
   const [days, setDays] = useState<number>(30);
 
-  const load = useCallback(async (key: string, period: number) => {
+  const load = useCallback(async (period: number) => {
     setState({ kind: "loading" });
     try {
-      const res = await fetch(`/api/stats?days=${period}`, { headers: { authorization: `Bearer ${key}` }, cache: "no-store" });
+      const res = await fetch(`/api/stats?days=${period}`);
       const data = (await res.json()) as Report & { error?: string };
-      if (res.ok) {
-        try {
-          localStorage.setItem(KEY, key);
-        } catch {
-          // Not remembered: the key is asked for again next time.
-        }
-        setState({ kind: "ready", report: data });
-      } else if (data.error === "not-set-up") setState({ kind: "off" });
-      else if (res.status === 401) {
-        try {
-          localStorage.removeItem(KEY);
-        } catch {}
-        setState({ kind: "key", error: data.error });
-      } else setState({ kind: "error", error: data.error ?? "Couldn't load the numbers." });
+      if (res.ok) setState({ kind: "ready", report: data });
+      else setState({ kind: "error", error: data.error ?? "Couldn't load the numbers." });
     } catch {
       setState({ kind: "error", error: "Couldn't reach the site. Check your connection." });
     }
   }, []);
 
   useEffect(() => {
-    const key = readKey();
-    if (key) void load(key, 30);
-    else setState({ kind: "key" });
+    void load(30);
   }, [load]);
 
   const pick = (period: number) => {
     setDays(period);
-    const key = readKey();
-    if (key) void load(key, period);
+    void load(period);
   };
 
   if (state.kind === "loading") return <p className="muted">Loading…</p>;
-  if (state.kind === "off") {
-    return (
-      <p className="card">
-        Stats are being counted, but this page is switched off until the owner adds the key (Worker secret{" "}
-        <code>STATS_READ_TOKEN</code>, see docs/analytics.md).
-      </p>
-    );
-  }
-  if (state.kind === "key") {
-    return (
-      <form
-        className="card stack"
-        onSubmit={(e) => {
-          e.preventDefault();
-          const key = String(new FormData(e.currentTarget).get("key") ?? "").trim();
-          if (key) void load(key, days);
-        }}
-      >
-        <label className="field">
-          <span>Owner key</span>
-          <input name="key" type="password" autoComplete="current-password" required />
-        </label>
-        {state.error && <p className="verdict bad">{state.error}</p>}
-        <button className="button">Show stats</button>
-        <p className="muted small">This browser remembers the key until you clear site data.</p>
-      </form>
-    );
-  }
   if (state.kind === "error") return <p className="verdict bad">{state.error}</p>;
 
   const r = state.report;

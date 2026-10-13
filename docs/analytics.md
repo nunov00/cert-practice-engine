@@ -1,13 +1,14 @@
 # Usage stats
 
-Asked by the owner on 2026-10-13: a private stats page like the one on the
+Asked by the owner on 2026-10-13: a stats page like the one on the
 earlier Five Minutes site (headline totals, a ranked table, recent days as
 bars), adapted to this site.
 
 ## What the owner sees
 
-`/stats` (not linked anywhere, `noindex`). It asks once for the owner key and
-remembers it in that browser. Periods: 7, 30, 90 days or all time.
+`/stats` (not linked anywhere, `noindex`). Open to anyone with the link: the
+owner chose no key (2026-10-13), since it shows only anonymous totals and the
+repo is public anyway. Periods: 7, 30, 90 days or all time.
 
 - Tiles: exam page opens, practice sessions started and finished, mock exams
   started.
@@ -47,17 +48,12 @@ Nothing goes to GitHub, Actions logs or this public repo.
 - Burst: 30 counts a minute per visitor (rate limiting binding `STATS_LIMITER`,
   namespace `1002`; IP only as an in-memory key inside Cloudflare).
 - Whole site: 5,000 counts per UTC day (`STATS_DAILY_CAP`, table `stats_cap`).
-- Wrong keys on `/stats`: 5 tries a minute per visitor (`FEEDBACK_LIMITER`).
+- Reading: `GET /api/stats` responses are cached for 5 minutes per period
+  (Cloudflare cache API), and uncached reads share the 30 a minute per visitor
+  limit, so bots can't run up D1 reads.
 
 Budget: see `docs/platform-limits.md`. At the cap, at most about 10,000 D1 rows
 written a day (count plus cap row) and 5,000 Worker requests; real use is far
 lower because each browser sends each item once a day.
 
-## One-time setup (owner)
-
-Pick a long random key (a password manager's generator is fine). In Cloudflare:
-Workers & Pages, `cert-practice-engine`, Settings, Variables and Secrets, Add,
-type **Secret**, name `STATS_READ_TOKEN`, value the key. Never put it in a repo
-or chat. Then open `/stats` on the site and enter it. Until the secret exists,
-counting still runs and the page says it is switched off. To lock everyone out
-(for example after sharing a device), change the secret.
+No setup needed: no secrets, no new database.

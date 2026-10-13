@@ -16,8 +16,6 @@ export interface FeedbackEnv {
   FEEDBACK_GITHUB_TOKEN?: string;
   /** Per-visitor burst limit for anonymous usage counts (docs/analytics.md). */
   STATS_LIMITER?: RateLimiter;
-  /** The owner's key for the private stats page; the page is off until it is set. */
-  STATS_READ_TOKEN?: string;
 }
 
 /** Writes files into the private feedback repo, or null until the owner has set it up. */

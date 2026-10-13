@@ -173,12 +173,3 @@ export function periodStart(days: number | null, now: Date): string | null {
   if (!days) return null;
   return new Date(now.getTime() - (days - 1) * 86_400_000).toISOString().slice(0, 10);
 }
-
-/** Constant-time comparison for the owner's key. */
-export function sameKey(given: string, expected: string): boolean {
-  const a = new TextEncoder().encode(given);
-  const b = new TextEncoder().encode(expected);
-  let diff = a.length ^ b.length;
-  for (let i = 0; i < Math.max(a.length, b.length); i++) diff |= (a[i] ?? 0) ^ (b[i] ?? 0);
-  return diff === 0;
-}

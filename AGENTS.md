@@ -75,8 +75,8 @@ into this public repo, its PRs, issues or Actions logs.
 
 ## Usage stats
 
-Anonymous daily counts of exam opens, drills and tests, shown to the owner at
-`/stats` (`docs/analytics.md`). Never add visitor IDs, cookies, IPs or
+Anonymous daily counts of exam opens, drills and tests, shown at `/stats`
+(open, unlinked) (`docs/analytics.md`). Never add visitor IDs, cookies, IPs or
 third-party analytics.
 
 ## Budget
