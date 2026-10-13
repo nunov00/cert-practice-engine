@@ -67,8 +67,10 @@ next free number in that subdomain.
 
 ## Budget
 
-- Stay well within the free plans of Cloudflare and GitHub (owner rule). Limits and
-  current usage: `docs/roadmap.md#stay-within-the-free-plans`.
+- Stay well within the free plans of Cloudflare and GitHub (owner rule), leaving room
+  for several pilots. Limits, per-pilot budget and guardrails: `docs/platform-limits.md`.
+  CI warns over budget and fails over a Free limit (`pnpm --filter @cpe/app run capacity`).
+- Pin every GitHub Action to a full commit SHA and Wrangler to an exact version.
 
 ## Never
 
