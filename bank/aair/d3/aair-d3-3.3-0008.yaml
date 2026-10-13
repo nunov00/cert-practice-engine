@@ -1,0 +1,31 @@
+id: aair-d3-3.3-0008
+subdomain: '3.3'
+difficulty: hard
+stem: An online learning provider's release process requires a fairness test before each update to the model that
+  decides which students are offered extra tutoring. Under deadline pressure, the test was skipped for the last
+  two releases, which have now been live for a month. The test takes a day to run. What should the risk practitioner
+  recommend as the immediate priority?
+options:
+  A: Roll back to the last model version that passed the fairness test
+  B: Run the missed fairness test on the live model straight away
+  C: Record the control failure for the next annual control report
+  D: Retrain the release team on the required release steps
+answer: B
+explanation:
+  why_correct: The key question is whether students are being treated unfairly now. Running the test on the live
+    model within a day shows whether harm is occurring and informs the next step, such as a rollback if it fails.
+    Root cause analysis and reporting follow.
+  why_not:
+    A: Rolling back without knowing whether there is a problem discards two releases of changes and may reintroduce
+      issues they fixed. It may be needed, but only if the test fails.
+    C: The failure should be reported, but waiting for an annual report leaves possible harm unexamined.
+    D: Training addresses one possible cause of recurrence, not the exposure that exists now, and the stated cause
+      was deadline pressure.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass

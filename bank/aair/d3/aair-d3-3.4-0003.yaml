@@ -1,0 +1,28 @@
+id: aair-d3-3.4-0003
+subdomain: '3.4'
+difficulty: easy
+stem: A bank uses a machine learning model to approve personal loans. Its main AI risk concern is that the
+  model could treat some groups of applicants unfairly. Which key risk indicator is MOST suitable for this
+  concern?
+options:
+  A: The number of loan applications the model processes each week
+  B: The average time the model takes to return each decision
+  C: The total value of loans approved by the model each quarter
+  D: The gap in approval rates between applicant groups over time
+answer: D
+explanation:
+  why_correct: A key risk indicator should be tied directly to the risk being managed. A widening gap in approval
+    rates between applicant groups is an early signal of possible unfair treatment, so it tells the bank when
+    to investigate before harm builds up.
+  why_not:
+    A: Volume shows how busy the model is. It says nothing about whether decisions are fair to each group.
+    B: Response time is an operational performance measure. A fast model can still be unfair.
+    C: Loan value is a business volume measure. It could stay steady while some groups are wrongly declined.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass

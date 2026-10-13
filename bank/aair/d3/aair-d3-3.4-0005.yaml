@@ -1,0 +1,30 @@
+id: aair-d3-3.4-0005
+subdomain: '3.4'
+difficulty: medium
+stem: An insurer's AI risk dashboard shows that 100% of its production models completed annual validation.
+  A sample review finds that several validations were checklists completed by the model developers without
+  any testing. What should the risk practitioner recommend?
+options:
+  A: Keep the metric, since it shows the validation policy is being followed
+  B: Replace annual validation with continuous automated monitoring of models
+  C: Add measures of validation quality, such as independence and depth of testing
+  D: Remove the metric from the dashboard until all validations are redone
+answer: C
+explanation:
+  why_correct: The metric counts activity, not effectiveness, so it gives false comfort. Adding measures of
+    whether validations were independent and actually tested the models makes the dashboard reflect real assurance.
+  why_not:
+    A: Completion alone is misleading when the work behind it is weak. Reporting it unchanged overstates control
+      effectiveness.
+    B: Automated monitoring is useful but does not replace independent validation, and it does not fix how
+      the existing metric misleads.
+    D: Removing the metric leaves management with no view at all. Improving what is measured is better than
+      reporting nothing.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass
