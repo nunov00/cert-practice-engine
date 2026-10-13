@@ -1,0 +1,32 @@
+id: aair-d3-3.1-0013
+subdomain: '3.1'
+difficulty: hard
+stem: A hospital pharmacy uses an AI tool to suggest chemotherapy doses, which pharmacists then verify.
+  The risk register multiplies likelihood by impact. The scenario of a fatal overdose getting through
+  scores 5 out of 25 (rare times catastrophic), falls in the low band, and so has no further action planned.
+  What should the risk practitioner recommend?
+options:
+  A: Keep the low band, since the scoring method was applied correctly
+  B: Raise the likelihood rating so the score reaches the medium band
+  C: Add a rule that catastrophic impacts need review whatever the score
+  D: Remove the scenario, as pharmacist verification already covers it
+answer: C
+explanation:
+  why_correct: Multiplying likelihood by impact understates rare but catastrophic scenarios, which can
+    then drop out of attention. A severity rule makes sure severe, irreversible harms always get an explicit
+    treatment decision, and it fixes the method for every such scenario rather than this one only.
+  why_not:
+    A: Applying a method correctly does not make its result sound. Here the method hides a scenario that
+      could kill a patient.
+    B: Changing the likelihood to get a desired score misrepresents the evidence and fixes only this case,
+      leaving the flaw in the method.
+    D: Verification is a control that lowers likelihood. The scenario still exists and must stay in the
+      register so the control's reliability is tracked.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

@@ -1,0 +1,31 @@
+id: aair-d3-3.6-0012
+subdomain: '3.6'
+difficulty: hard
+stem: A utility's business impact analysis rated its AI billing assistant as low criticality because staff could
+  answer customers if it failed. Since then, the assistant has taken over 80% of contacts and the contact centre
+  has cut half its staff. What should the risk practitioner conclude?
+options:
+  A: The rating still holds, as a manual fallback remains in place
+  B: The rating is out of date, as the fallback can no longer cope
+  C: The assistant should be given priority for routine retraining
+  D: The contact centre should rehire staff to restore the fallback
+answer: B
+explanation:
+  why_correct: Criticality depends on whether the business can cope without the system. With fewer staff and far
+    more volume on the assistant, an outage would now cause serious disruption, so the analysis must be redone before
+    deciding how to treat the gap.
+  why_not:
+    A: A fallback exists on paper, but with half the staff it could not handle the volume. The rating rests on an
+      assumption that is no longer true.
+    C: Retraining affects model quality, not what happens when the assistant is unavailable. It does not address
+      the continuity question.
+    D: Rehiring is one possible treatment, but it is premature. The analysis must first be updated so the right
+      recovery options can be chosen.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

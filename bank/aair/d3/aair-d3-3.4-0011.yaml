@@ -1,0 +1,31 @@
+id: aair-d3-3.4-0011
+subdomain: '3.4'
+difficulty: medium
+stem: An asset manager's AI risk dashboard takes model performance figures from spreadsheets that each model team
+  fills in by hand every month. Nobody checks the figures, and one team was recently found to have resubmitted the
+  previous quarter's numbers. What should the risk practitioner recommend?
+options:
+  A: Ask each team to sign a statement confirming that its figures are correct
+  B: Show the dashboard figures with a note saying that they are self-reported
+  C: Draw the figures from monitoring systems and check them periodically
+  D: Reduce the dashboard to cover only the models with the highest ratings
+answer: C
+explanation:
+  why_correct: A report is only as reliable as the data behind it. Taking figures directly from monitoring systems
+    removes manual copying and selective reporting, and periodic independent checks confirm that the figures remain
+    accurate.
+  why_not:
+    A: A signed statement adds accountability but does not verify anything. The same errors could still be reported,
+      now with a signature attached.
+    B: A caveat warns readers but leaves the figures unreliable. Decision makers still cannot tell which numbers
+      to trust.
+    D: Covering fewer models does not make the remaining figures any more reliable. The weakness is in how the data
+      is produced, not how much is shown.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass
