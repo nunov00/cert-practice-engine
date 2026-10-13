@@ -73,6 +73,12 @@ asks for a review, read the files there, summarise and classify them, and
 delete old or useless ones there when the owner agrees. Never copy feedback
 into this public repo, its PRs, issues or Actions logs.
 
+## Usage stats
+
+Anonymous daily counts of exam opens, drills and tests, shown to the owner at
+`/stats` (`docs/analytics.md`). Never add visitor IDs, cookies, IPs or
+third-party analytics.
+
 ## Budget
 
 - Stay well within the free plans of Cloudflare and GitHub (owner rule), leaving room
