@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DomainList } from "@/components/DomainList";
+import { QUICK_SIZE } from "@/components/TestPage";
+import { timeLimitSeconds } from "@/lib/exam-session";
 import { formatDuration, formatQuestionCount, getExam, isOpenAccess, listExams, percent, questionsFor } from "@/lib/content";
 
 type Params = { exam: string };
@@ -25,6 +27,11 @@ export default async function ExamPage({ params }: { params: Promise<Params> }) 
     weight: percent(d.weight),
     questionIds: questionsFor(exam.id, d.id).map((q) => q.id),
   }));
+
+  const total = questionsFor(exam.id).length;
+  const mockCount = Math.min(exam.mock.questions, total);
+  const quickCount = Math.min(QUICK_SIZE, total);
+  const minutes = (n: number) => Math.max(1, Math.round(timeLimitSeconds(n, exam.mock) / 60));
 
   return (
     <>
@@ -68,6 +75,8 @@ export default async function ExamPage({ params }: { params: Promise<Params> }) 
         domains={domains}
         free={!isOpenAccess()}
         target={exam.readiness.min_accuracy_per_domain}
+        mock={{ questions: mockCount, minutes: minutes(mockCount) }}
+        quick={{ questions: quickCount, minutes: minutes(quickCount) }}
       />
 
       <p className="muted small" style={{ marginTop: 32 }}>

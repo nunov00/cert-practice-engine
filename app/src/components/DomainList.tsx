@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { formatDuration } from "@/lib/format";
 import {
   BAND_LABEL,
   domainStats,
@@ -21,17 +22,26 @@ export interface DomainSummary {
   questionIds: string[];
 }
 
+export interface TestSummary {
+  questions: number;
+  minutes: number;
+}
+
 export function DomainList({
   examId,
   domains,
   free,
   target,
+  mock,
+  quick,
 }: {
   examId: string;
   domains: DomainSummary[];
   free: boolean;
   /** The recipe's min_accuracy_per_domain. */
   target: number;
+  mock: TestSummary;
+  quick: TestSummary;
 }) {
   // Progress lives in the browser, so it is read after hydration.
   const [progress, setProgress] = useState<Progress>(emptyProgress);
@@ -39,13 +49,14 @@ export function DomainList({
 
   const all = domains.flatMap((d) => d.questionIds);
   const overall = domainStats(all, progress);
+  const missedAll = missedIds(all, progress).length;
 
   return (
     <>
       <div className="card summary">
         {overall.answered === 0 ? (
           <p className="muted" style={{ margin: 0 }}>
-            Pick a domain to start. Your answers are saved in this browser, so you can stop and come back any time.
+            Pick a practice test or a domain to start. Your answers are saved in this browser, so you can stop and come back any time.
           </p>
         ) : (
           <>
@@ -61,7 +72,7 @@ export function DomainList({
                 <span className="muted small">right last time</span>
               </div>
               <div>
-                <strong>{missedIds(all, progress).length}</strong>
+                <strong>{missedAll}</strong>
                 <span className="muted small">to review</span>
               </div>
             </div>
@@ -72,6 +83,39 @@ export function DomainList({
           </>
         )}
       </div>
+
+      {all.length > 0 && (
+        <>
+          <h2>Practice tests</h2>
+          <div className="test-grid">
+            <Link className="card test-card" href={`/exams/${examId}/mock`}>
+              <span className="name">Mock exam</span>
+              <span className="muted small">
+                {mock.questions} questions · {formatDuration(mock.minutes)} · timed, all domains
+              </span>
+            </Link>
+            <Link className="card test-card" href={`/exams/${examId}/quick`}>
+              <span className="name">Quick {quick.questions}</span>
+              <span className="muted small">
+                {quick.questions} random questions · {formatDuration(quick.minutes)} · timed
+              </span>
+            </Link>
+            {missedAll > 0 ? (
+              <Link className="card test-card" href={`/exams/${examId}/review#missed`}>
+                <span className="name">Wrong answers</span>
+                <span className="muted small">
+                  {missedAll} {missedAll === 1 ? "question" : "questions"} you got wrong last time · untimed
+                </span>
+              </Link>
+            ) : (
+              <div className="card test-card disabled" aria-disabled="true">
+                <span className="name">Wrong answers</span>
+                <span className="muted small">Questions you get wrong will appear here</span>
+              </div>
+            )}
+          </div>
+        </>
+      )}
 
       <h2>Domains</h2>
       <div className="stack">
