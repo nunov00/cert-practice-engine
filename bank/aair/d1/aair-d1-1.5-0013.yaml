@@ -1,0 +1,31 @@
+id: aair-d1-1.5-0013
+subdomain: '1.5'
+difficulty: hard
+stem: A medical device maker's AI imaging tool passed the conformity assessment that a risk-based regulation
+  requires before sale. The team now plans to let the tool keep learning from data at customer sites,
+  which would change its performance over time. The assessment covered only the original model. What should
+  the risk practitioner advise?
+options:
+  A: Allow the learning, provided performance is tracked at each site
+  B: Find out whether these changes need a new conformity assessment
+  C: Allow the learning, as the tool has already passed its assessment
+  D: Ask each customer site to approve the learning before it is enabled
+answer: B
+explanation:
+  why_correct: Rules for high-risk and medical AI commonly require significant changes after assessment
+    to be reassessed, unless the changes were planned and assessed in advance. Continuous learning changes
+    the product that was assessed, so the maker must establish its obligations before enabling it.
+  why_not:
+    A: Tracking performance is useful but does not settle whether the changed product is still covered
+      by its assessment.
+    C: The assessment covered the original model; a model that changes itself may no longer be the product
+      that was assessed.
+    D: Customer approval does not meet the maker's own regulatory obligations.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

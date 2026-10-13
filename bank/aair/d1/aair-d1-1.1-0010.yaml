@@ -1,0 +1,32 @@
+id: aair-d1-1.1-0010
+subdomain: '1.1'
+difficulty: medium
+stem: A supermarket chain's model shows that customers who use its mobile app spend 30% more than those
+  who do not. The marketing director proposes a strategy of paying every customer a bonus to install the
+  app, expecting their spending to rise by a similar amount. What should the risk practitioner point out?
+options:
+  A: It shows a link, not proof the app causes the extra spending
+  B: The model should first be retrained on a longer period of data
+  C: The bonus should go only to customers the model rates highly
+  D: The estimate should be confirmed with a more complex model
+answer: A
+explanation:
+  why_correct: Predictive models find patterns in data; they do not show cause and effect. Customers who
+    already spend more may simply be more likely to install the app. Building a strategy on an assumed
+    causal effect is a misuse of the model's output; a controlled trial would show whether the bonus actually
+    changes spending.
+  why_not:
+    B: More data of the same kind would still show a correlation, not a cause. The flaw is in how the
+      result is being interpreted, not in the amount of data.
+    C: Targeting accepts the causal assumption and only narrows where it is applied. It does not test
+      whether installing the app changes behaviour.
+    D: A more complex model trained on the same observational data has the same limitation, and is harder
+      to explain.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

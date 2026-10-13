@@ -1,0 +1,32 @@
+id: aair-d1-1.2-0011
+subdomain: '1.2'
+difficulty: hard
+stem: A motor insurer added an AI model that reads incoming claim documents and routes each claim to the
+  right team. When the model cannot classify a claim with enough confidence, it puts the claim in an 'unresolved'
+  queue. Months later, hundreds of claims there are past their legal response deadlines, as no team sees
+  the queue as its own. What does this MOST indicate?
+options:
+  A: The model's confidence threshold has been set too high
+  B: The model needs retraining on the claims it could not classify
+  C: Claims handlers need more training on the new routing model
+  D: The process redesign missed how exceptions would be handled
+answer: D
+explanation:
+  why_correct: Adding AI to a process changes the workflow around it. Here the exception path, for claims
+    the model cannot handle, was never given an owner, capacity or deadline tracking, so claims were left
+    untouched. The failure lies in how the process was redesigned around the model rather than in the
+    model itself.
+  why_not:
+    A: A lower threshold would send fewer claims to the queue but more to the wrong team, and the claims
+      that still landed in the queue would remain unowned.
+    B: Better classification would shrink the queue, but some exceptions will always occur. Without an
+      owner they would still be missed.
+    C: Handlers' skills are not the issue; no team had been given the queue at all.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

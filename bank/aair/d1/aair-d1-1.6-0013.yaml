@@ -1,0 +1,29 @@
+id: aair-d1-1.6-0013
+subdomain: '1.6'
+difficulty: easy
+stem: A tax agency plans to close its phone line and handle all taxpayer questions through an AI chatbot
+  on its website. Many older taxpayers and people in rural areas have limited internet access. What should
+  the risk practitioner recommend?
+options:
+  A: Keep an accessible non-digital channel for those who need it
+  B: Improve the chatbot's accuracy before the phone line closes
+  C: Publish online guides on how to use the new chatbot
+  D: Offer the chatbot in more languages to reach more people
+answer: A
+explanation:
+  why_correct: A public service must stay available to everyone it serves. Removing the only non-digital
+    route would exclude people who cannot use the chatbot, so a phone or in-person channel should remain
+    for them.
+  why_not:
+    B: Better accuracy helps those who can use the chatbot but does nothing for people who cannot reach
+      it.
+    C: Online guides do not reach people who lack internet access.
+    D: More languages improve inclusion for some, but not for those who cannot get online.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass

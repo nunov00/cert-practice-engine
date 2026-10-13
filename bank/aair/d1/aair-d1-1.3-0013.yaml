@@ -1,0 +1,33 @@
+id: aair-d1-1.3-0013
+subdomain: '1.3'
+difficulty: hard
+stem: At a mortgage lender, a document-reading model owned by operations extracts income figures from
+  payslips for several teams, and a credit model owned by the lending division uses those figures. A change
+  to the extraction model led to income being understated for some applicants, and each owner says the
+  other was responsible. What is the BEST way to prevent a repeat?
+options:
+  A: Make the lending division accountable for both models from now on
+  B: Ask the data science team to check every change to either model
+  C: Merge the two models into a single model with one owner
+  D: Agree each owner's duties at the hand-off, including change notice
+answer: D
+explanation:
+  why_correct: Where one model's output feeds another, accountability must be clear at the interface.
+    The upstream owner commits to output quality and to giving notice of changes, and the downstream owner
+    commits to checking the data is fit for its use. Recording these duties keeps each owner accountable
+    for their own model while the dependency is managed.
+  why_not:
+    A: The extraction model serves several teams, so moving it to lending would leave their needs unowned,
+      and it would still not define how changes are agreed.
+    B: Central checking may catch some problems, but it moves accountability away from the owners and
+      does not define who must notify whom.
+    C: Merging is a large technical change made to solve a governance problem, and it would remove a service
+      other teams rely on.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d1-b
+  checked_by: 2026-10-13-aair-d1-b-check
+  check_verdict: pass
