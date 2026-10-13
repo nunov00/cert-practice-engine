@@ -28,6 +28,8 @@ export interface PublicExam {
   free_sample_per_domain: number;
   unlock: Recipe["product"]["unlock"];
   mock: NonNullable<Recipe["product"]["mock"]> | null;
+  /** Preview only: estimated pace for the Quick 10, shown as an estimate. */
+  estimated_pace: NonNullable<Recipe["product"]["estimated_pace"]> | null;
   readiness: Recipe["product"]["readiness"];
   published_questions: number;
 }
@@ -70,6 +72,7 @@ export function buildPublicContent(root: string, access: PublicAccess = PUBLIC_A
       free_sample_per_domain: r.product.free_sample_per_domain,
       unlock: r.product.unlock,
       mock: r.product.mock ?? null,
+      estimated_pace: r.product.estimated_pace ?? null,
       readiness: r.product.readiness,
       published_questions: published.filter((q) => q.id.startsWith(`${r.exam.id}-`)).length,
     }));

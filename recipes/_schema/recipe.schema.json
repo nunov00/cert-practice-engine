@@ -168,6 +168,17 @@
             "minutes": { "type": "integer", "minimum": 1 },
             "forms": { "type": "integer", "minimum": 1 }
           }
+        },
+        "estimated_pace": {
+          "description": "Preview recipes only: an owner-approved estimate of the real exam's pace, used to time the Quick 10 until the outline gives the real one. basis says where the estimate comes from.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["questions", "minutes", "basis"],
+          "properties": {
+            "questions": { "type": "integer", "minimum": 1 },
+            "minutes": { "type": "integer", "minimum": 1 },
+            "basis": { "type": "string", "minLength": 1 }
+          }
         }
       }
     }

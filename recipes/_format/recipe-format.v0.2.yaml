@@ -24,6 +24,8 @@
 #   Domains are the announced topic areas, each with one subdomain until the
 #   outline gives real ones. The site labels the exam "Preview", shows no
 #   weights and offers untimed drills only (no mock or timed tests).
+#   With the owner's approval a preview recipe may add product.estimated_pace
+#   { questions, minutes, basis } to time the Quick 10, shown as an estimate.
 #   When the outline appears, drop the status (or set it to published), add
 #   the missing facts from the outline, and remap questions to its subdomains.
 

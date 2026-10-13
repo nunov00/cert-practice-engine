@@ -50,9 +50,12 @@ export function Drill({ examId, domainId, questions }: { examId: string; domainI
     [allIds],
   );
 
-  // "#missed" comes from the exam page's "Review missed" link. A hash keeps the
+  // "#missed" and "#quick" come from links on the exam page. A hash keeps the
   // page fully static: it never reaches the Worker.
-  useEffect(() => start(window.location.hash === "#missed" ? "missed" : "all"), [start]);
+  useEffect(() => {
+    const hash = window.location.hash;
+    start(hash === "#missed" ? "missed" : hash === "#quick" ? "quick" : "all");
+  }, [start]);
 
   // Anonymous daily counts for the owner's stats page (docs/analytics.md).
   useEffect(() => track("drill_start", examId, domainId), [examId, domainId]);
