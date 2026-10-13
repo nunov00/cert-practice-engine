@@ -1,0 +1,29 @@
+id: aair-d2-2.2-0012
+subdomain: '2.2'
+difficulty: medium
+stem: An online retailer's model risk team validated a new returns-fraud model by rerunning the developers'
+  performance tests and confirming they got the same results. They did not examine the model's design,
+  data choices or assumptions. What is the MAIN gap in this validation?
+options:
+  A: The tests should have been rerun on a faster computing platform
+  B: The performance results should have been reported to the board
+  C: The validators should have used a larger set of performance metrics
+  D: It does not assess whether the design suits its intended purpose
+answer: D
+explanation:
+  why_correct: 'Reproducing the developers'' results only confirms their arithmetic. Effective validation
+    also challenges conceptual soundness: whether the approach, data and assumptions are suitable for
+    detecting returns fraud, and where they could fail.'
+  why_not:
+    A: The computing platform does not change what the tests show or what they miss.
+    B: Board reporting is a governance matter and does not fill a gap in the validation itself.
+    C: More metrics would still only test outcomes within the developers' own framing, leaving design
+      and assumptions unchallenged.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-b
+  checked_by: 2026-10-13-aair-d2-b-check
+  check_verdict: pass

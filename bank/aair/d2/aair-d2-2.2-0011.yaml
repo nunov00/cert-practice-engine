@@ -1,0 +1,32 @@
+id: aair-d2-2.2-0011
+subdomain: '2.2'
+difficulty: hard
+stem: A bank's new model estimates each borrower's probability of default, and these probabilities feed
+  directly into its loan loss provisions. The validation report shows the model ranks borrowers well,
+  with a strong AUC, and the validator recommends approval. What should the risk practitioner MOST want
+  to see added?
+options:
+  A: A comparison of the model's AUC with industry averages
+  B: A check that predicted default rates match observed rates
+  C: A list of the variables that contribute most to the ranking
+  D: An explanation of each decision for declined applicants
+answer: B
+explanation:
+  why_correct: AUC only measures how well the model orders borrowers. Provisions use the probability values
+    themselves, so a model can rank well yet be systematically too low or too high. A calibration test
+    comparing predicted and observed default rates across score bands addresses the way the output is
+    actually used.
+  why_not:
+    A: Benchmarking AUC is still about ranking and says nothing about whether the probabilities are accurate.
+    C: Variable importance helps explain the model but does not show whether its probability levels are
+      right.
+    D: Explanations for declines concern lending decisions, while this use is setting provisions from
+      probability values.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d2-b
+  checked_by: 2026-10-13-aair-d2-b-check
+  check_verdict: pass
