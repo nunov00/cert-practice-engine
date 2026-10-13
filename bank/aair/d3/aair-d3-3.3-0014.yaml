@@ -1,0 +1,29 @@
+id: aair-d3-3.3-0014
+subdomain: '3.3'
+difficulty: medium
+stem: An online learning platform uses a content filter to stop its AI tutor from producing harmful material
+  for children. To cut complaints about harmless questions being refused, the team has loosened the filter's
+  settings. What should the risk practitioner ensure before the change is released?
+options:
+  A: Complaint levels are tracked for a month after the change goes live
+  B: The head of the product team has approved the change in writing
+  C: The filter vendor confirms that the new settings are widely used
+  D: The filter is retested against a maintained set of harmful prompts
+answer: D
+explanation:
+  why_correct: Loosening a preventive control can open gaps. Re-running a maintained set of known harmful
+    prompts, alongside legitimate ones, shows whether the filter still blocks what it must before children
+    are exposed to the change.
+  why_not:
+    A: Tracking after release would only show whether refusals fell; harmful outputs would be found late,
+      if at all.
+    B: Approval matters, but without test evidence the approver cannot know whether the filter still works.
+    C: Common use elsewhere does not show that the settings are effective for children on this platform.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

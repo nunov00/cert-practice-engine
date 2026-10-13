@@ -1,0 +1,32 @@
+id: aair-d3-3.2-0012
+subdomain: '3.2'
+difficulty: medium
+stem: 'A university uses an online exam proctoring tool with two features: identity checks against student
+  photos, and a detector that flags unusual eye movements as possible cheating. The detector produces
+  many false flags for students with certain disabilities and the vendor cannot fix this reliably, while
+  the identity checks work well. Which treatment is MOST appropriate?'
+options:
+  A: Accept the risk, as students can appeal any flag after the exam
+  B: Transfer the risk by having the vendor indemnify the university
+  C: Reduce the risk by lowering the detector's sensitivity for everyone
+  D: Avoid the risk by switching off the detector but keeping identity checks
+answer: D
+explanation:
+  why_correct: When one feature's risk cannot be reduced reliably, avoiding that specific activity removes
+    the harm while keeping the benefit of the feature that works. Targeted avoidance is better than abandoning
+    the whole tool or keeping a feature known to disadvantage disabled students.
+  why_not:
+    A: Appeals come after the stress and stigma of being flagged. Accepting a known discriminatory effect
+      is unlikely to be within appetite or lawful.
+    B: An indemnity may cover money, but it does not prevent harm to students or remove the university's
+      own legal duties.
+    C: The vendor cannot fix the disparity reliably, so lowering sensitivity for all may not remove it
+      and would also weaken detection.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

@@ -1,0 +1,30 @@
+id: aair-d3-3.6-0010
+subdomain: '3.6'
+difficulty: hard
+stem: A post-incident review at an insurer traces a pricing model's errors to a mislabelled field in a shared customer
+  dataset. The pricing model has been corrected and redeployed. Three other models, owned by different teams, were
+  trained on the same dataset. What should the review recommend?
+options:
+  A: Close the incident, since the affected model has now been fixed
+  B: Ask the other owners to review their models at the next validation
+  C: Retrain every model in the organisation as a precaution
+  D: Check the three other models for the fault and fix the dataset
+answer: D
+explanation:
+  why_correct: The root cause is in the shared data, not the pricing model alone. The review should fix the source
+    and check now whether the other models trained on it carry the same error, so the incident is closed at its
+    cause rather than at its first symptom.
+  why_not:
+    A: Closing now treats only the first symptom. The same fault may be causing harm in three other models.
+    B: Waiting for the next scheduled validation could leave a known fault in live models for months. The risk is
+      known now and should be checked now.
+    C: Retraining everything is costly and unfocused, and retraining on the uncorrected dataset would repeat the
+      error. The affected models are already known.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

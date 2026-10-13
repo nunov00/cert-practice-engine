@@ -1,0 +1,30 @@
+id: aair-d3-3.2-0014
+subdomain: '3.2'
+difficulty: medium
+stem: A law firm's AI research assistant sometimes cites court decisions that do not exist. The vendor
+  says this rate can be lowered but not removed, and a fake citation in a court filing could lead to sanctions.
+  The firm still wants the tool for research. Which treatment approach is BEST?
+options:
+  A: Move to the vendor's newest model, which has a lower error rate
+  B: Add a warning to each output that its citations may be wrong
+  C: Require each citation to be checked at source before filing
+  D: Limit use of the tool to partners with long research experience
+answer: C
+explanation:
+  why_correct: Because the likelihood of fake citations cannot be brought to zero, the treatment should
+    limit their impact. Checking every citation against the source before filing stops a fabricated case
+    reaching a court, which is where the serious harm occurs.
+  why_not:
+    A: A newer model lowers the likelihood but does not remove it, so the impact of an unchecked fake
+      citation remains.
+    B: Warnings depend on users heeding them each time and do not make sure that any check takes place.
+    D: Experience does not stop a plausible fabricated citation from being trusted, and restricting use
+      reduces the tool's benefit.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

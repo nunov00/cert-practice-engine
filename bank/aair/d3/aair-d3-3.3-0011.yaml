@@ -1,0 +1,28 @@
+id: aair-d3-3.3-0011
+subdomain: '3.3'
+difficulty: easy
+stem: A pension provider is launching an AI assistant that answers members' questions about their benefits.
+  The compliance team wants to be able to reconstruct, months later, why the assistant gave a particular
+  answer. Which control BEST supports this?
+options:
+  A: A monthly report on the most common questions members ask
+  B: A notice telling members the answers are only general guidance
+  C: Logs of each prompt, sources used, answer and model version
+  D: Satisfaction ratings collected from members after each chat
+answer: C
+explanation:
+  why_correct: To reconstruct a specific answer, the provider needs the input, the content the assistant
+    drew on, the output and the model version that produced it. Logging these, with suitable retention
+    and access controls, gives that traceability.
+  why_not:
+    A: Aggregate reports show trends but cannot explain any single answer.
+    B: A notice may manage expectations, but it records nothing that would help reconstruct an answer.
+    D: Ratings capture how members felt, not what the assistant was given or why it answered as it did.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

@@ -1,0 +1,30 @@
+id: aair-d3-3.3-0016
+subdomain: '3.3'
+difficulty: hard
+stem: A recruitment platform's fairness monitor compares shortlisting rates across candidate groups each
+  week and has raised no alerts for five months. A review finds that the feed supplying candidates' self-reported
+  group data stopped updating five months ago, after an application form was redesigned. Which change
+  would BEST stop this kind of failure going unnoticed again?
+options:
+  A: Lower the disparity threshold so the monitor raises alerts more readily
+  B: Have internal audit review the monitoring arrangements once a year
+  C: Add checks that alert when the monitor's input data is missing or stale
+  D: Ask the form design team to restore the field that feeds the monitor
+answer: C
+explanation:
+  why_correct: The control failed silently because nothing checked its inputs. Completeness and freshness
+    checks let the monitor signal its own failure, so that no alerts can be trusted to mean no issue,
+    whatever future change breaks the feed.
+  why_not:
+    A: With no current data, the threshold makes no difference; the monitor would still stay silent.
+    B: A yearly review would find such failures many months late, as happened here.
+    D: Restoring the field fixes this instance, but the next change to forms or systems could break the
+      feed again without warning.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

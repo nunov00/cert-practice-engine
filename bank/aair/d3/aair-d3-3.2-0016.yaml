@@ -1,0 +1,32 @@
+id: aair-d3-3.2-0016
+subdomain: '3.2'
+difficulty: hard
+stem: A public hospital's board wants to withdraw an AI tool that prioritises emergency patients because
+  its residual risk is slightly above appetite. The assessment shows that an extra nurse check on high-acuity
+  cases would bring it within appetite at moderate cost. The tool has cut waiting times for critical patients.
+  What should the risk practitioner advise?
+options:
+  A: Reduce the risk with the extra check rather than avoid it
+  B: Avoid the risk as proposed, since appetite has been exceeded
+  C: Accept the risk, since the benefits outweigh the small excess
+  D: Transfer the risk to the vendor through stronger contract terms
+answer: A
+explanation:
+  why_correct: Avoidance fits when a risk cannot be brought within appetite at reasonable cost, or the
+    benefit is small. Here a proportionate control brings the risk within appetite and keeps a clinical
+    benefit; withdrawing the tool would also bring back longer waits, which are themselves a risk to patients.
+  why_not:
+    B: Exceeding appetite calls for treatment, not necessarily avoidance. Avoiding here gives up a real
+      benefit when a feasible control exists.
+    C: Accepting risk above appetite needs the right authority and a reason, and it ignores an affordable
+      control that would solve the problem.
+    D: Contract terms do not move clinical harm or the hospital's accountability for patient care to the
+      vendor.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass

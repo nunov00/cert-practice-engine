@@ -1,0 +1,33 @@
+id: aair-d3-3.4-0014
+subdomain: '3.4'
+difficulty: hard
+stem: A consumer lender monitors its credit approval model by tracking the default rate of the loans it approves.
+  Defaults show up within three months, and the figures come straight from the loan servicing system. The rate has
+  been stable since launch, and the model team says this proves the model is still performing well. What is the
+  MOST important limitation of this monitoring?
+options:
+  A: It does not compare default rates with those of competing lenders
+  B: It shows nothing about applicants the model wrongly rejected
+  C: It does not break default rates down by loan size and term
+  D: It does not track the volume of approvals alongside defaults
+answer: B
+explanation:
+  why_correct: Outcomes are only observed for approved loans, so the monitoring cannot reveal applicants who would
+    have repaid but were declined. The model could be turning away more good customers, or treating some groups
+    unfairly, while the default rate looks fine. The lender needs other ways to examine rejections, such as reviewing
+    samples of declined cases.
+  why_not:
+    A: External comparison can add context, but competitors' portfolios differ and it would still only cover approved
+      loans. It does not address the blind spot.
+    C: Segmenting the default rate is a useful refinement, but every segment still contains only approved loans.
+      The same blind spot remains.
+    D: Approval volumes show how much the model approves, not whether rejections were correct. A stable volume could
+      hide a change in who is rejected.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-b
+  checked_by: 2026-10-13-aair-d3-b-check
+  check_verdict: pass
