@@ -1,8 +1,9 @@
 // Service worker: lets the installed app open and run free drills offline.
 // - Pages: network first, falling back to the last cached copy.
+// - /api/: never cached.
 // - Build assets (/_next/static, /icons): cache first; their names change per build.
 // Bump VERSION to drop old caches after a change to this file.
-const VERSION = "v1";
+const VERSION = "v2";
 const PAGES = `pages-${VERSION}`;
 const ASSETS = `assets-${VERSION}`;
 const PRECACHE = ["/", "/manifest.webmanifest"];
@@ -30,6 +31,8 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
+  // API responses (the private feedback inbox) are never cached.
+  if (url.pathname.startsWith("/api/")) return;
 
   if (url.pathname.startsWith("/_next/static/") || url.pathname.startsWith("/icons/")) {
     event.respondWith(cacheFirst(request));

@@ -36,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Link>
             <nav className="site-nav" aria-label="Main">
               <Link href="/#all-exams">Exams</Link>
+              <Link href="/feedback">Feedback</Link>
               <InstallApp />
             </nav>
           </div>
@@ -47,7 +48,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <BrandMark /> {SITE_NAME} · {SITE_TAGLINE}
             </p>
             <p>{SITE_DISCLAIMER}</p>
-            <p>Your answers and progress stay in this browser. There are no accounts and nothing is sent to us.</p>
+            <p>
+              Your answers and progress stay in this browser. There are no accounts. Only{" "}
+              <Link href="/feedback">feedback</Link> you choose to send reaches us, without your name or IP address.
+            </p>
             <p>All questions are original and written for practice. They are not real exam questions.</p>
           </div>
         </footer>
