@@ -1,0 +1,31 @@
+id: aaig-d2-2.1-0032
+subdomain: '2.1'
+difficulty: medium
+stem: A government benefits agency is designing a model that flags applications for fraud investigation.
+  Investigators and applicants may challenge a flag. When and how should the explainability requirement
+  be set?
+options:
+  A: By the data scientists, based on the best accuracy
+  B: After deployment, if investigators ask for reasons
+  C: By the vendor, according to what its product is able to provide
+  D: At design, proportionate to the impact on applicants
+answer: D
+explanation:
+  why_correct: 'Explainability must be a design requirement because it shapes the choice of model and
+    data. The level should match the impact: a flag that can trigger an investigation affecting someone''s
+    benefits needs reasons that investigators and applicants can understand and challenge.'
+  why_not:
+    A: Accuracy alone can favour opaque models. The requirement reflects public accountability, which
+      is a governance decision, not a technical one.
+    B: Retrofitting explanations is costly and may be impossible with the model already chosen. Affected
+      people need reasons from the first decision.
+    C: The agency is accountable for decisions, so it sets the requirement. Vendor capability is an input
+      to selection, not the standard.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

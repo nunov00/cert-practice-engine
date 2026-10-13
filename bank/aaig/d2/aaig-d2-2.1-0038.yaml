@@ -1,0 +1,33 @@
+id: aaig-d2-2.1-0038
+subdomain: '2.1'
+difficulty: medium
+stem: An insurance group wants its health-insurance subsidiary in one country to share claims records
+  with the group's analytics hub in another, to train a fraud model that every subsidiary will use. The
+  hub's director says no formal arrangement is needed because 'we are all one company'. What should the
+  governance lead advise?
+options:
+  A: Set up a written intra-group agreement defining purpose, use limits and duties
+  B: Allow it, since companies with one parent count as a single data controller
+  C: Share only aggregated statistics, as record-level data may never leave a subsidiary
+  D: Let each subsidiary's IT team approve the hub's access to its systems
+answer: A
+explanation:
+  why_correct: Group companies are usually separate legal entities with their own obligations to customers
+    and regulators, often in different jurisdictions. A written intra-group data sharing agreement fixes
+    the permitted purpose, safeguards, cross-border conditions, retention and who answers for what, so
+    the shared fraud model rests on a clear and defensible basis.
+  why_not:
+    B: Common ownership does not merge legal entities. Each subsidiary remains responsible for the data
+      it collected and the purposes it promised its customers.
+    C: Aggregated statistics would not support training a fraud model, and a blanket ban is stricter than
+      needed. Record-level sharing can be lawful with the right agreement and safeguards.
+    D: Technical access approval says nothing about purpose, legal basis or accountability. It treats
+      a governance decision as an IT permission.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-b
+  checked_by: 2026-10-13-aaig-d2-b-check
+  check_verdict: pass

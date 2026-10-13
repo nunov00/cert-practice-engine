@@ -1,0 +1,29 @@
+id: aaig-d2-2.1-0036
+subdomain: '2.1'
+difficulty: medium
+stem: A telecoms group has 40 AI pilots, each built on its own tools and cloud accounts. Running costs
+  are rising, and few pilots can be scaled without rebuilding. The executive committee asks for a principle
+  to guide future work. What should the governance lead propose?
+options:
+  A: Freeze all AI pilots until the costs have been fully analysed
+  B: New work uses shared platforms unless a deviation is justified
+  C: Move every pilot to the cheapest cloud provider available
+  D: Let each pilot team keep its stack but report costs monthly
+answer: B
+explanation:
+  why_correct: 'Fragmented stacks create technical debt: duplicated cost, uneven controls and pilots that
+    cannot scale. A principle of building on shared, governed platforms by default, with justified exceptions,
+    reduces cost and makes successful pilots easier to scale, while still allowing innovation where needed.'
+  why_not:
+    A: A freeze halts value and learning, and does not set a direction for future work.
+    C: Moving everything to the cheapest provider is a one-off cost cut that ignores capability, migration
+      effort and lock-in.
+    D: Reporting makes cost visible but does not stop the fragmentation that causes it.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

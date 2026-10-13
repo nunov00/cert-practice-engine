@@ -1,0 +1,31 @@
+id: aaig-d2-2.1-0007
+subdomain: '2.1'
+difficulty: medium
+stem: A consulting firm rolls out an internal AI assistant. Staff paste client material into prompts,
+  and the assistant stores conversation history. The firm already has a four-level classification scheme
+  for documents. What is the BEST governance step?
+options:
+  A: Ban client material from prompts until a new scheme is written
+  B: Let each practice decide how to classify the prompts its staff write
+  C: Label all assistant content as confidential by default
+  D: Apply the existing scheme to prompts, outputs and stored history
+answer: D
+explanation:
+  why_correct: Prompts, outputs and conversation history are data like any other and can contain the most
+    sensitive client information. Extending the existing, understood scheme to them means the same handling,
+    access and retention rules apply, with no need to invent a parallel system.
+  why_not:
+    A: A new scheme is unnecessary when one already exists, and a blanket ban would likely push staff
+      to unsanctioned tools. The gap is in coverage, not in the scheme itself.
+    B: Different rules per practice create inconsistent handling of the same client data and make enterprise
+      oversight difficult.
+    C: Over-classifying everything weakens the meaning of labels and makes routine work harder, so people
+      start ignoring them. Classification should reflect actual content.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

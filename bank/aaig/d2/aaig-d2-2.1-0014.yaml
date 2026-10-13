@@ -1,0 +1,31 @@
+id: aaig-d2-2.1-0014
+subdomain: '2.1'
+difficulty: easy
+stem: A manufacturing group has hundreds of data sets spread across plants. AI teams keep spending weeks
+  finding data and often use copies whose origin and restrictions are unclear. Which measure would help
+  MOST?
+options:
+  A: A data catalogue describing each set, its owner and use limits
+  B: A central data lake that copies every plant's data
+  C: A rule that AI teams use only data from their own plant
+  D: A help desk that answers questions about data locations
+answer: A
+explanation:
+  why_correct: 'A catalogue makes data findable and carries the metadata governance needs: owner, classification,
+    quality and permitted uses. Teams find the authoritative source quickly and know what they may do
+    with it, which cuts uncontrolled copies.'
+  why_not:
+    B: Copying everything into a lake creates yet another copy without solving the problem of knowing
+      what the data is, who owns it or how it may be used.
+    C: Restricting teams to local data reduces reuse and value, and still leaves them unsure of origin
+      and limits within their own plant.
+    D: A help desk relies on a few people's knowledge and does not scale. It also does not record use
+      restrictions in a reusable way.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

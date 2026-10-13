@@ -1,0 +1,30 @@
+id: aaig-d2-2.1-0024
+subdomain: '2.1'
+difficulty: hard
+stem: A retail bank runs all its generative AI uses on one external model provider. Architects propose
+  an abstraction layer so models can be switched, which adds cost and some performance loss. The CFO asks
+  whether it is worth it. What is the BEST basis for the decision?
+options:
+  A: Whether competitors have built a similar abstraction layer
+  B: How critical the uses are and the impact of losing the provider
+  C: Whether the current provider's models score best on public benchmarks
+  D: Whether the architects can deliver it within this budget year
+answer: B
+explanation:
+  why_correct: Portability is a form of insurance; its value depends on what is at stake. If critical
+    customer services depend on one provider, the cost of an abstraction layer may be justified by resilience
+    and bargaining power. If the uses are minor, simpler exit terms may suffice. The decision should be
+    proportionate to concentration risk.
+  why_not:
+    A: Peers may have different risk profiles. Copying them avoids the bank's own analysis of its dependency.
+    C: Today's benchmark lead says nothing about the risk of the provider failing, changing terms or withdrawing
+      a model.
+    D: Delivery timing is a planning matter, not a reason to accept or reject the risk reduction.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

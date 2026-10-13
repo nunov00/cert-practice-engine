@@ -1,0 +1,29 @@
+id: aaig-d2-2.1-0025
+subdomain: '2.1'
+difficulty: medium
+stem: A European public agency wants to use a cloud AI service to summarise citizen case files. The provider's
+  default processing region is outside the agency's jurisdiction. What should the governance lead check
+  FIRST?
+options:
+  A: Whether the summaries are more accurate than staff summaries
+  B: Whether the provider offers the lowest price in the market
+  C: Whether staff can use the service from their own devices
+  D: Whether residency rules allow processing in that location
+answer: D
+explanation:
+  why_correct: 'Citizen case files are likely subject to residency obligations and rules on cross-border
+    transfer. Where the data is processed is a threshold question: if the location is not permitted, the
+    service cannot be used in its default form, however good or cheap it is.'
+  why_not:
+    A: Accuracy matters for value, but an accurate service that processes data unlawfully cannot be used.
+    B: Price is a procurement factor that comes after legal and policy constraints are met.
+    C: Device access is a security question for later. It does not decide whether the data may leave the
+      jurisdiction.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

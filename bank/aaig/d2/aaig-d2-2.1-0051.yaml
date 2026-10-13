@@ -1,0 +1,30 @@
+id: aaig-d2-2.1-0051
+subdomain: '2.1'
+difficulty: medium
+stem: A supermarket loyalty programme's model groups shoppers into segments. One segment, labelled 'likely
+  expecting a baby', is inferred from purchases and used for targeted offers. The data team says the model
+  holds no sensitive data, as it uses only shopping baskets. What should the governance lead advise?
+options:
+  A: Agree, since the basket data was collected lawfully through the programme
+  B: Treat inferences as data in their own right and classify them by sensitivity
+  C: Rename the segment with a neutral label so the name no longer reveals anything
+  D: Delete the segment's purchase history but keep the inferred labels
+answer: B
+explanation:
+  why_correct: An inference about pregnancy is health-related information even if every input was ordinary.
+    Data classification must cover what models infer, not only what they ingest, so that inferred attributes
+    get the protections, purpose limits and access rules that their sensitivity demands.
+  why_not:
+    A: Lawful collection of inputs does not settle how sensitive the derived output is or whether it may
+      be used for targeting.
+    C: A new label hides the meaning but the inference and its use stay the same.
+    D: The sensitive element is the inferred label itself, so keeping it while deleting inputs leaves
+      the problem in place.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-b
+  checked_by: 2026-10-13-aaig-d2-b-check
+  check_verdict: pass

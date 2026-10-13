@@ -1,0 +1,28 @@
+id: aaig-d2-2.1-0021
+subdomain: '2.1'
+difficulty: easy
+stem: An energy trading firm has dozens of models in production, and nobody can say with confidence which
+  version of each is live or who approved it. What should the governance lead put in place?
+options:
+  A: A model registry recording versions, owners and approvals
+  B: A quarterly survey asking teams to list their models
+  C: A naming convention for model files across all teams
+  D: A shared folder where teams store their latest model files
+answer: A
+explanation:
+  why_correct: 'A model registry is the authoritative record of each model: its versions, which version
+    is deployed, who owns it and what approvals it received. Linking deployment to the registry means
+    only registered, approved versions reach production.'
+  why_not:
+    B: A survey gives a snapshot that is stale as soon as it is taken and relies on teams' accuracy.
+    C: Naming conventions help, but a name cannot record approval, ownership or which version is live.
+    D: A shared folder stores files but not approvals, ownership or deployment status, and it is easily
+      out of date.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass
