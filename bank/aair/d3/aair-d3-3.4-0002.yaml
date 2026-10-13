@@ -1,0 +1,30 @@
+id: aair-d3-3.4-0002
+subdomain: '3.4'
+difficulty: medium
+stem: A risk practitioner at a pharmaceutical company is preparing the first quarterly AI risk report
+  for the board. What should the report MAINLY contain?
+options:
+  A: Detailed accuracy and drift metrics for each model in production
+  B: The main AI risks against appetite, their trends and the decisions needed
+  C: The full technical test results of every model released this quarter
+  D: A count of AI incidents recorded during the quarter, by business unit
+answer: B
+explanation:
+  why_correct: Boards need a concise view of exposure relative to appetite, how it is moving and where
+    their decisions or support are required. This lets them oversee AI risk without getting lost in technical
+    detail.
+  why_not:
+    A: Model-level metrics are for model owners and risk teams. A board needs them summarised into risk
+      terms, not reported raw.
+    C: This volume of technical material hides what matters and does not tell the board where it must
+      act.
+    D: Incident counts are one useful input, but on their own they are backward-looking and do not show
+      exposure against appetite.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-aair-a
+  checked_by: 2026-10-12-aair-a-check
+  check_verdict: pass

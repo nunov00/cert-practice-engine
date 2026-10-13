@@ -1,0 +1,32 @@
+id: aair-d1-1.1-0001
+subdomain: '1.1'
+difficulty: medium
+stem: The pricing team at a mid-sized insurer proposes using a general-purpose generative AI model to
+  calculate individual premiums from free-text application notes. Premiums must be repeatable and explainable
+  to customers and the regulator. What should the AI risk practitioner recommend?
+options:
+  A: Require staff to review a random sample of the premiums it produces
+  B: Ask the data team to fine-tune the model on historic premium data first
+  C: Approve it if the model scores well on widely used public benchmarks
+  D: Question whether a generative model suits a task needing consistent, explainable results
+answer: D
+explanation:
+  why_correct: Choosing a model type is a risk decision. Generative models can give different outputs
+    for the same input and are hard to explain, which clashes with a use case that needs repeatable, justifiable
+    results. The practitioner should test the fit of the technique to the use case before any controls
+    are designed.
+  why_not:
+    A: Sample review is a useful detective control, but it accepts the unsuitable design and leaves most
+      premiums unexplained. The issue is the choice of technique, not only checking its results.
+    B: Fine-tuning may improve accuracy, but the model would still be hard to explain and could still
+      vary its outputs. It jumps to implementation before the basic suitability question is answered.
+    C: Public benchmarks measure general capability, not repeatability or explainability for this specific
+      task. A high score does not address the mismatch between the model type and the requirement.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-aair-a
+  checked_by: 2026-10-12-aair-a-check
+  check_verdict: pass

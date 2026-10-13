@@ -1,0 +1,31 @@
+id: aair-d1-1.5-0001
+subdomain: '1.5'
+difficulty: medium
+stem: A manufacturer that sells into several markets learns that a new regional AI regulation, which places
+  obligations on systems according to their risk category, will apply to some of its products and internal
+  tools. What should the risk practitioner do FIRST?
+options:
+  A: Apply the strictest category's controls to every AI system immediately
+  B: Ask legal counsel to draft a new company-wide AI compliance policy
+  C: Inventory the AI systems in use and classify each against the regulation's categories
+  D: Suspend all AI systems used in the region until legal advice is received
+answer: C
+explanation:
+  why_correct: Obligations under a risk-based regulation depend on how each system is classified. The
+    organisation cannot plan compliance until it knows which systems it has and which category each falls
+    into. The inventory and classification then drive the gap analysis.
+  why_not:
+    A: Treating every system as the highest risk wastes effort on low-risk tools and may delay work on
+      the systems that really need it. Classification should come first.
+    B: A policy is useful later, but drafting it before knowing which systems are in scope and how they
+      are classified risks a policy that does not fit the obligations.
+    D: Suspending everything is disproportionate and may harm the business when most systems may carry
+      few obligations. The facts about the systems are needed first.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-aair-a
+  checked_by: 2026-10-12-aair-a-check
+  check_verdict: pass

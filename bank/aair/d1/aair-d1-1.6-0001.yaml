@@ -1,0 +1,29 @@
+id: aair-d1-1.6-0001
+subdomain: '1.6'
+difficulty: easy
+stem: A utility company plans to replace its web chat agents with an AI chatbot that writes in a friendly,
+  human style. Which measure BEST supports transparency towards customers?
+options:
+  A: Give the chatbot a human name and photograph to build customer trust
+  B: Publish the chatbot's technical architecture on the company website
+  C: Log every conversation so complaints can be investigated later
+  D: Tell customers clearly that they are chatting with an AI system
+answer: D
+explanation:
+  why_correct: Transparency starts with people knowing when they are dealing with AI, so they can judge
+    the answers and ask for a person if needed. Many regulations and ethics frameworks expect this disclosure.
+  why_not:
+    A: Presenting the bot as a person does the opposite of transparency. Trust built on a false impression
+      is an ethical and reputational risk.
+    B: Architecture details are of little use to most customers and do not tell them, in the moment, that
+      they are talking to a machine.
+    C: Logging supports accountability and investigation, but customers would still not know they were
+      talking to an AI system.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-aair-a
+  checked_by: 2026-10-12-aair-a-check
+  check_verdict: pass
