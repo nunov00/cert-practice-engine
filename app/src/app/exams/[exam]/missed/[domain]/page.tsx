@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { TestPage } from "@/components/TestPage";
+import { hasTimedTests, TestPage } from "@/components/TestPage";
 import { getExam, listExams, questionsFor } from "@/lib/content";
 
 type Params = { exam: string; domain: string };
 
 export function generateStaticParams(): Params[] {
-  return listExams().flatMap((e) =>
+  return listExams().filter(hasTimedTests).flatMap((e) =>
     e.domains.filter((d) => questionsFor(e.id, d.id).length > 0).map((d) => ({ exam: e.id, domain: d.id })),
   );
 }
@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 export default async function DomainMissedPage({ params }: { params: Promise<Params> }) {
   const { exam: examId, domain: domainId } = await params;
   const exam = getExam(examId);
-  if (!exam || !exam.domains.some((d) => d.id === domainId) || questionsFor(examId, domainId).length === 0) notFound();
+  if (!exam || !hasTimedTests(exam)) notFound();
+  if (!exam.domains.some((d) => d.id === domainId) || questionsFor(examId, domainId).length === 0) notFound();
   return <TestPage exam={exam} kind="missed" domainId={domainId} />;
 }

@@ -18,7 +18,8 @@ import {
 export interface DomainSummary {
   id: string;
   name: string;
-  weight: string;
+  /** e.g. "37%"; null while the issuer hasn't published weights (preview). */
+  weight: string | null;
   questionIds: string[];
 }
 
@@ -27,24 +28,27 @@ export interface TestSummary {
   minutes: number;
 }
 
+export interface TimedTests {
+  mock: TestSummary;
+  quick: TestSummary;
+  /** The real exam's pace, from the recipe's product.mock. */
+  pace: TestSummary;
+}
+
 export function DomainList({
   examId,
   domains,
   free,
   target,
-  mock,
-  quick,
-  pace,
+  tests,
 }: {
   examId: string;
   domains: DomainSummary[];
   free: boolean;
   /** The recipe's min_accuracy_per_domain. */
   target: number;
-  mock: TestSummary;
-  quick: TestSummary;
-  /** The real exam's pace, from the recipe's product.mock. */
-  pace: TestSummary;
+  /** Null for a preview exam: no timed tests until the real format is known. */
+  tests: TimedTests | null;
 }) {
   // Progress lives in the browser, so it is read after hydration.
   const [progress, setProgress] = useState<Progress>(emptyProgress);
@@ -87,20 +91,20 @@ export function DomainList({
         )}
       </div>
 
-      {all.length > 0 && (
+      {all.length > 0 && tests && (
         <>
           <h2>Practice tests</h2>
           <div className="test-grid">
             <Link className="card test-card" href={`/exams/${examId}/mock`}>
               <span className="name">Mock exam</span>
               <span className="muted small">
-                {mock.questions} questions · {formatDuration(mock.minutes)} · timed, all domains
+                {tests.mock.questions} questions · {formatDuration(tests.mock.minutes)} · timed, all domains
               </span>
             </Link>
             <Link className="card test-card" href={`/exams/${examId}/quick`}>
-              <span className="name">Quick {quick.questions}</span>
+              <span className="name">Quick {tests.quick.questions}</span>
               <span className="muted small">
-                {quick.questions} random questions · {formatDuration(quick.minutes)} · timed
+                {tests.quick.questions} random questions · {formatDuration(tests.quick.minutes)} · timed
               </span>
             </Link>
             {missedAll > 0 ? (
@@ -108,7 +112,7 @@ export function DomainList({
                 <span className="name">Wrong answers</span>
                 <span className="muted small">
                   {missedAll} you got wrong last time ·{" "}
-                  {formatDuration(Math.max(1, Math.round((pace.minutes * missedAll) / pace.questions)))} · timed
+                  {formatDuration(Math.max(1, Math.round((tests.pace.minutes * missedAll) / tests.pace.questions)))} · timed
                 </span>
               </Link>
             ) : (
@@ -119,6 +123,11 @@ export function DomainList({
             )}
           </div>
         </>
+      )}
+      {all.length > 0 && !tests && (
+        <p className="muted small" style={{ marginTop: 24 }}>
+          Timed mock exams arrive once the exam outline is published. Until then, practise by domain below.
+        </p>
       )}
 
       <h2>Domains</h2>
@@ -133,7 +142,8 @@ export function DomainList({
                 <div>
                   <div className="name">{d.name}</div>
                   <div className="muted small">
-                    {d.weight} of the exam · {stats.total} {stats.total === 1 ? "question" : "questions"}
+                    {d.weight ? `${d.weight} of the exam · ` : ""}
+                    {stats.total} {stats.total === 1 ? "question" : "questions"}
                     {stats.answered > 0 ? ` · ${stats.answered} answered` : ""}
                   </div>
                 </div>
@@ -155,11 +165,16 @@ export function DomainList({
                     <Link className="button" href={`/exams/${examId}/drill/${d.id}`}>
                       {stats.answered > 0 ? "Practise" : `Start ${stats.total}${free ? " free" : ""} questions`}
                     </Link>
-                    {missed > 0 && (
-                      <Link className="button secondary" href={`/exams/${examId}/missed/${d.id}`}>
-                        Review {missed} missed, timed
-                      </Link>
-                    )}
+                    {missed > 0 &&
+                      (tests ? (
+                        <Link className="button secondary" href={`/exams/${examId}/missed/${d.id}`}>
+                          Review {missed} missed, timed
+                        </Link>
+                      ) : (
+                        <Link className="button secondary" href={`/exams/${examId}/drill/${d.id}#missed`}>
+                          Review {missed} missed
+                        </Link>
+                      ))}
                   </>
                 ) : (
                   <span className="pill">Questions coming soon</span>

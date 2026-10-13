@@ -1,0 +1,75 @@
+# AAIG recipe. Format: recipes/_format/recipe-format.v0.2.yaml
+# PREVIEW (owner's choice, 2026-10-13): ISACA has announced AAIG (Advanced in
+# AI Governance) but, as checked on isaca.org on 2026-10-13, has NOT published
+# an exam content outline. The certification is in beta: beta exams run
+# 11 Dec 2026 to 9 Jan 2027 and the program launches in Q1 2027.
+#
+# Confirmed on isaca.org (2026-10-13):
+#   - name "AAIG", issuer ISACA, the three practice areas below (AAIG page)
+#   - 150 minutes (beta exam details on ISACA's beta programme page)
+# NOT published, so left out rather than guessed:
+#   - domain weights, subdomains, number of questions, delivery, scoring and
+#     pass mark; hence no product.mock (no timed tests on the site)
+#
+# Domains are the three announced practice areas, each with a single
+# subdomain until the outline gives real ones. outline.version is the date the
+# announcement was checked, not an outline date. When the outline appears:
+# set the real facts, drop status: preview, and remap questions.
+# Subdomain targets are an internal bank goal split evenly; they are not exam
+# weights.
+
+format_version: "0.2"
+
+exam:
+  id: aaig
+  name: "AAIG"
+  issuer: "ISACA"
+  disclaimer: "Independent practice material. Not affiliated with or endorsed by ISACA."
+  outline:
+    source_url: "https://www.isaca.org/credentialing/aaig"
+    version: "2026-10-13"
+    last_checked: "2026-10-13"
+    status: preview
+
+format:
+  duration_minutes: 150
+  question_types: [single_choice]
+
+style:
+  voice: "governance-leader, best-answer, scenario-based"
+  options_per_question: 4
+  rules:
+    - "Exactly one best answer; distractors plausible, not absurd"
+    - "No 'all of the above' or 'none of the above'"
+    - "Test judgment and application, not trivia recall"
+    - "Take the view of a senior governance professional advising the board and executives, not an engineer or auditor"
+    - "Frameworks and laws are named only generically or where widely public (e.g. a governance framework, an AI regulation); never quote them"
+
+domains:
+  - id: d1
+    name: "AI Enterprise Governance"
+    subdomains:
+      - { id: "1.1", title: "AI enterprise governance", target_questions: 100 }
+  - id: d2
+    name: "Data and AI Architecture Principles"
+    subdomains:
+      - { id: "2.1", title: "Data and AI architecture principles", target_questions: 100 }
+  - id: d3
+    name: "AI Enterprise Integration and Performance Monitoring"
+    subdomains:
+      - { id: "3.1", title: "AI enterprise integration and performance monitoring", target_questions: 100 }
+
+bank:
+  target_total: 300
+  difficulty_mix: { easy: 0.2, medium: 0.5, hard: 0.3 }
+  review:
+    independent_check: true
+    retire_if_report_rate_above: 0.05
+    flag_if_common_wrong_answer_above: 0.5
+
+product:
+  free_sample_per_domain: 10
+  unlock: { price_chf: 29, access_days: 120 }
+  readiness:
+    min_answered: 300
+    min_accuracy_per_domain: 0.75

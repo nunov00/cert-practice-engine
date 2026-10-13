@@ -65,6 +65,46 @@ test("recipe weights must sum to 1", () => {
   assert.ok(errors(fixture([], bad)).some((m) => m.includes("domain weights sum")));
 });
 
+/** The CISSP recipe as a preview: nothing the issuer hasn't published. */
+function previewOf(recipe: Recipe): Recipe {
+  const r = structuredClone(recipe);
+  r.exam.outline.status = "preview";
+  for (const d of r.domains) delete d.weight;
+  delete r.format.delivery;
+  delete r.format.questions;
+  delete r.format.scoring;
+  delete r.product.mock;
+  return r;
+}
+
+test("a preview recipe leaves out weights, length, delivery, scoring and the mock", async () => {
+  const preview = previewOf(cissp);
+  assert.deepEqual(errors(fixture([question()], preview)), []);
+
+  const withWeight = structuredClone(preview);
+  withWeight.domains[0]!.weight = 0.5;
+  assert.ok(errors(fixture([], withWeight)).some((m) => m.includes("leave out domain weights")));
+
+  const withMock = structuredClone(preview);
+  withMock.product.mock = cissp.product.mock;
+  assert.ok(errors(fixture([], withMock)).some((m) => m.includes("leave out product.mock")));
+
+  const { buildPublicContent } = await import("../src/build.ts");
+  const exam = buildPublicContent(fixture([question()], preview), "open").exams[0]!;
+  assert.equal(exam.preview, true);
+  assert.equal(exam.mock, null);
+  assert.ok(exam.domains.every((d) => d.weight === null));
+});
+
+test("a published recipe needs weights, length, delivery, scoring and the mock", () => {
+  const bad = previewOf(cissp);
+  delete bad.exam.outline.status;
+  const msgs = errors(fixture([], bad));
+  for (const m of ["every domain needs a weight", "format.questions is required", "format.scoring is required", "product.mock is required"]) {
+    assert.ok(msgs.includes(m), m);
+  }
+});
+
 test("subdomain targets must add up to the bank target", () => {
   const bad = structuredClone(cissp);
   bad.domains[0]!.subdomains[0]!.target_questions += 1;

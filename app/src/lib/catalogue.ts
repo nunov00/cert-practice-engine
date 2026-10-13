@@ -16,8 +16,10 @@ export interface CatalogueEntry {
   keywords: string;
   /** Published questions the site can serve now. */
   questions: number;
-  /** Real exam length, e.g. "90" or "100–150". */
-  examQuestions: string;
+  /** Real exam length, e.g. "90" or "100–150"; null while the outline is unpublished. */
+  examQuestions: string | null;
+  /** The issuer hasn't published the exam outline yet. */
+  preview: boolean;
   minutes: number;
 }
 
@@ -60,6 +62,7 @@ export function buildCatalogue(exams: PublicExam[], questionCount: (examId: stri
         keywords: [...extra].join(" "),
         questions: questionCount(exam.id),
         examQuestions: formatQuestionCount(exam),
+        preview: exam.preview,
         minutes: exam.format.duration_minutes,
       };
     })

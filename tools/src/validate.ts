@@ -24,6 +24,8 @@ function schemaIssues(file: string, errors: ErrorObject[] | null | undefined): I
 
 const sum = (xs: number[]) => xs.reduce((a, b) => a + b, 0);
 
+export const isPreview = (recipe: Recipe) => recipe.exam.outline.status === "preview";
+
 /** Rules from the recipe format that JSON Schema can't express. */
 export function checkRecipe(recipe: Recipe, file: string): Issue[] {
   const issues: Issue[] = [];
@@ -34,8 +36,26 @@ export function checkRecipe(recipe: Recipe, file: string): Issue[] {
     err(`recipe for exam "${recipe.exam.id}" must live in recipes/${expectedDir}/`);
   }
 
-  const weights = sum(recipe.domains.map((d) => d.weight));
-  if (Math.abs(weights - 1) > EPS) err(`domain weights sum to ${weights}, expected 1.0`);
+  if (isPreview(recipe)) {
+    // Nothing the issuer hasn't published may appear, so nothing is invented.
+    if (recipe.domains.some((d) => d.weight !== undefined)) {
+      err(`preview recipe: leave out domain weights until the outline is published`);
+    }
+    for (const k of ["delivery", "questions", "scoring"] as const) {
+      if (recipe.format[k] !== undefined) err(`preview recipe: leave out format.${k} until the outline is published`);
+    }
+    if (recipe.product.mock) err(`preview recipe: leave out product.mock until the outline is published`);
+  } else {
+    if (recipe.domains.some((d) => d.weight === undefined)) err(`every domain needs a weight`);
+    else {
+      const weights = sum(recipe.domains.map((d) => d.weight!));
+      if (Math.abs(weights - 1) > EPS) err(`domain weights sum to ${weights}, expected 1.0`);
+    }
+    for (const k of ["delivery", "questions", "scoring"] as const) {
+      if (recipe.format[k] === undefined) err(`format.${k} is required`);
+    }
+    if (!recipe.product.mock) err(`product.mock is required`);
+  }
 
   const mix = sum(Object.values(recipe.bank.difficulty_mix));
   if (Math.abs(mix - 1) > EPS) err(`bank.difficulty_mix sums to ${mix}, expected 1.0`);
@@ -59,7 +79,7 @@ export function checkRecipe(recipe: Recipe, file: string): Issue[] {
   }
 
   const q = recipe.format.questions;
-  if (typeof q === "object" && q.min > q.max) err(`format.questions min > max`);
+  if (q && typeof q === "object" && q.min > q.max) err(`format.questions min > max`);
 
   return issues;
 }
