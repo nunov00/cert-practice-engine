@@ -34,7 +34,7 @@ export default async function DrillPage({ params }: { params: Promise<Params> })
       <p className="lead">
         {exam.name} · {isOpenAccess() ? "Domain drill" : "Free domain drill"} · {questions.length} questions
       </p>
-      <Drill examId={exam.id} questions={questions} />
+      <Drill examId={exam.id} domainId={domain.id} questions={questions} />
     </>
   );
 }

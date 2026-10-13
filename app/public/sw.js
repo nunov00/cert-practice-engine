@@ -31,7 +31,7 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
-  // API responses (the private feedback inbox) are never cached.
+  // API responses (feedback, stats) are never cached.
   if (url.pathname.startsWith("/api/")) return;
 
   if (url.pathname.startsWith("/_next/static/") || url.pathname.startsWith("/icons/")) {
