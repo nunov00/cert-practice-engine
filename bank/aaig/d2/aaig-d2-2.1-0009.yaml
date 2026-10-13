@@ -1,0 +1,32 @@
+id: aaig-d2-2.1-0009
+subdomain: '2.1'
+difficulty: medium
+stem: A hospital group holds years of messages that patients sent through its portal to ask clinical
+  questions. Its commercial arm now wants to use them to train a model that predicts which patients would
+  buy private health checks. What should the governance lead do FIRST?
+options:
+  A: Assess whether the new purpose is compatible with the original one
+  B: Anonymise the messages first and then release them to the commercial arm
+  C: Approve the use, since the data is already held by the company
+  D: Ask the commercial arm to estimate the revenue the model would add
+answer: A
+explanation:
+  why_correct: Purpose limitation means data collected for one purpose should not be reused for an unrelated
+    one without a lawful basis and fair notice. Selling health checks is a different purpose from answering
+    clinical questions, so the first step is to test compatibility and, if needed, obtain consent or another basis before
+    any reuse.
+  why_not:
+    B: Free-text health messages are very hard to anonymise effectively, and anonymisation is a later
+      safeguard. It skips the question of whether the purpose is legitimate.
+    C: Holding data does not make every use lawful or fair. Patients wrote to get clinical answers, not
+      to be profiled for sales.
+    D: Value matters for prioritisation, but a profitable use can still be impermissible. Legitimacy comes
+      before business case.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

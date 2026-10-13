@@ -1,0 +1,30 @@
+id: aaig-d2-2.1-0018
+subdomain: '2.1'
+difficulty: medium
+stem: A regional hospital network must choose between building a sepsis-alert model in-house and buying
+  a certified product. The in-house team argues building is cheaper. Which consideration should weigh
+  MOST in the governance view?
+options:
+  A: Which option the network can govern and support over its life
+  B: Which option the clinical staff find more modern
+  C: Which option has the lower cost in the first year
+  D: Which option can be delivered before the current budget year ends
+answer: A
+explanation:
+  why_correct: 'From a governance view, the decision turns on whether the network can control the risk
+    and keep the system safe across its life: validation, monitoring, retraining, accountability and support.
+    A cheaper build that the organisation cannot sustain is a poor choice for a patient-safety use.'
+  why_not:
+    B: User appeal helps adoption but says nothing about safety, accountability or sustainability.
+    C: First-year cost ignores the larger and longer costs of validation, maintenance and support, which
+      often dominate the total.
+    D: Budget timing is a weak reason for a clinical safety decision and can push the network toward the
+      less governable option.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

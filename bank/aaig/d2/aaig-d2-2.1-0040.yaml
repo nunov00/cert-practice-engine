@@ -1,0 +1,32 @@
+id: aaig-d2-2.1-0040
+subdomain: '2.1'
+difficulty: medium
+stem: An engineering consultancy plans to build a client-facing design assistant on an openly available
+  model downloaded from a public repository. The project team describes the model as 'open source, so
+  free to use however we like'. Which concern does this assumption MOST overlook?
+options:
+  A: Whether the model performs well on public engineering benchmarks
+  B: Whether its licence permits the intended commercial and client use
+  C: Whether hosting it internally would remove all licence obligations
+  D: Whether the files were scanned for malicious code before use
+answer: B
+explanation:
+  why_correct: Openly available models come with licences that can restrict commercial use, field of use,
+    user numbers or redistribution, and can impose attribution or other duties. Since the team assumes
+    there are no constraints, the gap is a licence review against the intended client-facing commercial
+    use, which should be a standard architecture check in model selection.
+  why_not:
+    A: Benchmark performance matters for fitness, but it is unrelated to the assumption that the model
+      can be used however the firm likes.
+    C: Licence terms apply to how the model is used, wherever it is hosted. Self-hosting does not remove
+      them.
+    D: Scanning files is a sound security control, but it addresses a different risk from the legal right
+      to use the model.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-b
+  checked_by: 2026-10-13-aaig-d2-b-check
+  check_verdict: pass

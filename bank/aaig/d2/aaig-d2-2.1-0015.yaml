@@ -1,0 +1,30 @@
+id: aaig-d2-2.1-0015
+subdomain: '2.1'
+difficulty: medium
+stem: An insurer's governance committee wants to set a minimum standard for data sets registered for AI
+  use. Which set of metadata should be mandatory?
+options:
+  A: The full list of teams and models that have used the data set so far
+  B: File format, storage size, creation date and last update
+  C: Business glossary terms and links to related reports
+  D: Owner, classification, source, permitted uses and quality status
+answer: D
+explanation:
+  why_correct: 'Governance metadata answers the questions that decide whether data may be used and how:
+    who is accountable, how sensitive it is, where it came from, what uses are allowed and whether it
+    is fit. These fields let reviewers approve AI uses consistently.'
+  why_not:
+    A: Usage history helps impact analysis, but it records past use rather than whether future use is
+      allowed. It is a useful addition, not the core minimum.
+    B: Technical metadata is useful for operations but says nothing about accountability, sensitivity
+      or permitted use, which are the governance questions.
+    C: Glossary links help understanding, but without owner, classification and permitted uses they do
+      not support approval decisions.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

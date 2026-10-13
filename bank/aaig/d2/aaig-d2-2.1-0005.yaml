@@ -1,0 +1,32 @@
+id: aaig-d2-2.1-0005
+subdomain: '2.1'
+difficulty: medium
+stem: A regulator asks a telecom operator which data sources fed the churn model that set retention offers
+  last year. The team can only reconstruct it from emails and memory. What should the governance lead
+  establish to prevent this in future?
+options:
+  A: Lineage recorded automatically from source to model in the pipelines
+  B: An annual attestation by each model owner listing the data sources used
+  C: A requirement to document sources in each model's user guide
+  D: A policy that teams keep project emails for seven years
+answer: A
+explanation:
+  why_correct: Lineage shows where data came from, how it was transformed and which model versions used
+    it. Capturing it automatically in the data and training pipelines makes it complete and reliable,
+    so the organisation can answer regulators, trace errors and assess the impact of a faulty source without
+    relying on memory.
+  why_not:
+    B: An attestation is a statement after the fact and depends on the owner's recollection. It adds accountability
+      but not the evidence trail a regulator asks for.
+    C: A user guide describes intended sources at one point in time. It drifts from reality as pipelines
+      change and does not link sources to specific model versions.
+    D: Keeping emails preserves fragments of discussion, not a reliable record of what actually flowed
+      into the model. It formalises the weak practice that caused the problem.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

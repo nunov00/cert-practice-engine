@@ -1,0 +1,32 @@
+id: aaig-d2-2.1-0019
+subdomain: '2.1'
+difficulty: medium
+stem: An engineering services company wants an assistant that helps field technicians troubleshoot equipment
+  from its maintenance manuals. Manufacturers issue revised manuals several times a year, and safety rules
+  require technicians to record which manual section they followed. Which architecture choice BEST meets
+  these needs?
+options:
+  A: Fine-tune a model on the manuals each time a revision is issued
+  B: Use a general model with no access to the manuals
+  C: Retrieve current manual sections and cite them in each answer
+  D: Train a new model from scratch once a year
+answer: C
+explanation:
+  why_correct: A retrieval-augmented design pulls the current documents at question time, so answers reflect
+    the latest manuals without retraining, and the system can show which sections it used. That meets
+    both governance needs, currency and traceability, at lower cost.
+  why_not:
+    A: Repeated fine-tuning is costly, lags the latest revisions, and does not reliably show which
+      source an answer came from.
+    B: A general model does not know the company's manuals and may give confident but wrong answers with
+      no source to check.
+    D: Training from scratch is the most expensive option, is slow to reflect changes and still gives
+      no source citations.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

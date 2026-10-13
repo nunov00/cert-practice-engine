@@ -1,0 +1,33 @@
+id: aaig-d2-2.1-0042
+subdomain: '2.1'
+difficulty: medium
+stem: A bank's group marketing team trains a cross-selling model on account data owned by the retail banking
+  division. Every month the marketing analysts find the same address and product-code errors and fix them
+  in their own copy before training. The retail division does not know about the problems. What should
+  the governance lead recommend?
+options:
+  A: Report the defects to the data owner and agree quality fixes at the source
+  B: Formalise the analysts' cleaning scripts so the fixes are applied consistently
+  C: Move ownership of the account data to group marketing as its main AI user
+  D: Ask the platform team to block training until the copy passes quality checks
+answer: A
+explanation:
+  why_correct: Quality is the responsibility of the data owner, and defects should be fixed where the
+    data is created. Telling the retail division and agreeing quality requirements for this use corrects
+    the data for every consumer, stops repeated hidden rework and keeps marketing's copy from drifting
+    away from the authoritative source.
+  why_not:
+    B: Standardising downstream fixes makes the workaround permanent, while the source stays wrong for
+      every other user of the data.
+    C: Ownership should sit with the division that creates and runs the data, not with whichever team
+      uses it most for AI.
+    D: Blocking training stops the model but does not get the defects corrected; the cause sits with the
+      source owner.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-b
+  checked_by: 2026-10-13-aaig-d2-b-check
+  check_verdict: pass
