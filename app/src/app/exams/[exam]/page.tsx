@@ -77,6 +77,7 @@ export default async function ExamPage({ params }: { params: Promise<Params> }) 
         target={exam.readiness.min_accuracy_per_domain}
         mock={{ questions: mockCount, minutes: minutes(mockCount) }}
         quick={{ questions: quickCount, minutes: minutes(quickCount) }}
+        pace={{ questions: exam.mock.questions, minutes: exam.mock.minutes }}
       />
 
       <p className="muted small" style={{ marginTop: 32 }}>

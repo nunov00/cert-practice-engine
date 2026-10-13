@@ -71,7 +71,7 @@ export function formatClock(seconds: number): string {
   return h > 0 ? `${h}:${pad(m)}:${pad(s % 60)}` : `${m}:${pad(s % 60)}`;
 }
 
-export type TestKind = "mock" | "quick";
+export type TestKind = "mock" | "quick" | "missed";
 
 /** A test in progress, saved so a reload or a locked phone doesn't lose it. */
 export interface SavedTest {

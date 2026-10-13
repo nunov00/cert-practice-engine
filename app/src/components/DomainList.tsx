@@ -34,6 +34,7 @@ export function DomainList({
   target,
   mock,
   quick,
+  pace,
 }: {
   examId: string;
   domains: DomainSummary[];
@@ -42,6 +43,8 @@ export function DomainList({
   target: number;
   mock: TestSummary;
   quick: TestSummary;
+  /** The real exam's pace, from the recipe's product.mock. */
+  pace: TestSummary;
 }) {
   // Progress lives in the browser, so it is read after hydration.
   const [progress, setProgress] = useState<Progress>(emptyProgress);
@@ -101,10 +104,11 @@ export function DomainList({
               </span>
             </Link>
             {missedAll > 0 ? (
-              <Link className="card test-card" href={`/exams/${examId}/review#missed`}>
+              <Link className="card test-card" href={`/exams/${examId}/missed`}>
                 <span className="name">Wrong answers</span>
                 <span className="muted small">
-                  {missedAll} {missedAll === 1 ? "question" : "questions"} you got wrong last time · untimed
+                  {missedAll} you got wrong last time ·{" "}
+                  {formatDuration(Math.max(1, Math.round((pace.minutes * missedAll) / pace.questions)))} · timed
                 </span>
               </Link>
             ) : (
