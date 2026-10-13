@@ -1,0 +1,32 @@
+id: aaig-d3-3.1-0050
+subdomain: '3.1'
+difficulty: medium
+stem: An accounting firm's finance software vendor has added an AI feature that categorises expense claims for tax
+  treatment. The vendor shares no information about the model or its performance, and wrong categories can cause
+  tax errors. How should the firm monitor the feature's performance?
+options:
+  A: Rely on the vendor's general assurance report, since the firm cannot see the model's design
+  B: Check a regular sample of categorised claims against the correct treatment and track errors
+  C: Turn the feature off, since a model that cannot be inspected cannot be monitored at all
+  D: Ask the vendor to share the model's training data so that the firm can test the model itself
+answer: B
+explanation:
+  why_correct: When the model is a black box, the firm can still watch what goes in and what comes out in its own
+    process. Comparing a regular sample of outputs with the correct tax treatment gives an error rate the firm owns
+    and can act on, including escalating to the vendor or adding review where errors cluster. Outcome monitoring
+    at the boundary is the main tool for embedded AI you cannot see inside.
+  why_not:
+    A: A general assurance report covers the vendor's controls, not how the feature performs on the firm's own claims.
+      It cannot replace the firm's own evidence.
+    C: Inability to inspect the model does not prevent monitoring its results. Switching it off may be unnecessary
+      if outcome checks show it performs well.
+    D: Vendors rarely share training data, and having it would not show how the model behaves on the firm's claims.
+      Monitoring outputs is more direct.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-b
+  checked_by: 2026-10-13-aaig-d3-b-check
+  check_verdict: pass

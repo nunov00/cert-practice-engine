@@ -1,0 +1,33 @@
+id: aaig-d3-3.1-0044
+subdomain: '3.1'
+difficulty: hard
+stem: 'A telecom operator uses an AI agent to handle billing disputes: it reads the complaint, checks the account,
+  decides on a credit, issues it and closes the case. Monitoring tracks the accuracy of each step, and all are within
+  threshold. Finance then finds that some customers received several credits for one dispute, because the agent
+  reopened cases and repeated steps. What should the governance leader recommend?'
+options:
+  A: Tighten the accuracy threshold for each step so that smaller deviations raise an alert
+  B: Require a person to approve every credit the agent issues, whatever the amount
+  C: Monitor whole task sequences and their combined effects, with limits per case
+  D: Retrain the step that decides the credit amount, since that is where the money was lost
+answer: C
+explanation:
+  why_correct: When AI takes chained actions, harm can come from the sequence rather than from any single step.
+    Each step here looked correct on its own; the problem was repetition across the whole case. Monitoring should
+    follow the complete task, with limits on what one case can trigger, such as one credit per dispute, so that
+    loops and cumulative effects are caught.
+  why_not:
+    A: Stricter step thresholds would still miss the problem, because each step was accurate. The failure is only
+      visible across the sequence.
+    B: Approving every credit would catch duplicates but removes most of the agent's value. Proportionate limits
+      and sequence monitoring address the cause at much lower cost.
+    D: The credit decision was not wrong each time; it was repeated. Retraining that step does not stop a loop in
+      the overall flow.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-b
+  checked_by: 2026-10-13-aaig-d3-b-check
+  check_verdict: pass

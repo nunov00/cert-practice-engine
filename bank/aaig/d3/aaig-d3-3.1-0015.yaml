@@ -1,0 +1,30 @@
+id: aaig-d3-3.1-0015
+subdomain: '3.1'
+difficulty: medium
+stem: A retailer's contract for an AI demand-forecasting service includes monthly reports on uptime and response
+  time. Store managers complain that stock forecasts have become unreliable, yet every vendor report shows
+  targets met. What should the governance leader recommend?
+options:
+  A: Replace the vendor at the next opportunity under the contract
+  B: Ask the vendor to publish its reports weekly instead of monthly
+  C: Ask store managers to log every forecasting error they find
+  D: Add outcome measures, such as forecast accuracy, to the service levels
+answer: D
+explanation:
+  why_correct: The service levels measure whether the system responds, not whether its forecasts are good.
+    Adding outcome measures tied to business needs, with regular independent checks by the retailer, aligns
+    the vendor's obligations with the value the retailer is paying for.
+  why_not:
+    A: Switching vendor may be premature and would repeat the problem if the new contract also measures only
+      technical availability.
+    B: More frequent reports of the wrong measures will continue to show targets met while forecasts fail.
+    C: Manual logging puts the burden on stores and gives anecdotal evidence. It is useful input but not a
+      substitute for contractual outcome measures.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-a
+  checked_by: 2026-10-13-aaig-d3-a-check
+  check_verdict: pass

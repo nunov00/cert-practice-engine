@@ -1,0 +1,31 @@
+id: aaig-d3-3.1-0056
+subdomain: '3.1'
+difficulty: hard
+stem: A retailer uses an AI model to estimate the provision for customer returns at each quarter end. Finance treats
+  the output like any other input to the accounts. The external auditor asks how the company ensures the estimate
+  is reliable. What should the governance leader recommend?
+options:
+  A: Replace the AI estimate with the previous manual method for all figures used at period end
+  B: Rely on the model's monitoring dashboard, which the data science team reviews each month
+  C: Bring the model into financial reporting controls, testing controls over data, changes and output
+  D: Ask the external auditor to validate the model as part of its annual audit of the accounts
+answer: C
+explanation:
+  why_correct: An AI model that produces a figure in the financial statements is part of financial reporting. Its
+    inputs, changes and outputs should be covered by the same documented and tested controls as any other key estimate,
+    with clear ownership in finance. That gives management evidence it can stand behind and gives the auditor something
+    to test.
+  why_not:
+    A: Reverting may be unnecessary if the model is better; the issue is missing controls, not the use of AI.
+    B: An informal dashboard reviewed by the model builders is not a documented, tested financial control. It does
+      not give the assurance the auditor is asking about.
+    D: The auditor provides independent assurance; it cannot design or operate the company's controls. Responsibility
+      for reliable estimates stays with management.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d3-b
+  checked_by: 2026-10-13-aaig-d3-b-check
+  check_verdict: pass
