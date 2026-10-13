@@ -4,10 +4,17 @@ import { validateRepo } from "./validate.ts";
 import type { Question, Recipe } from "./types.ts";
 
 /**
- * The content the public site may ship to browsers: exam facts from each
- * recipe plus the published free-sample questions. Paid questions are never
- * included here; they will be served by the backend behind an entitlement check.
+ * What the public site ships to browsers (decision 0004):
+ * - "open": every published question. Used until monetisation (roadmap phase 8);
+ *   anything shipped in this mode should be treated as public for good.
+ * - "free-sample": only published questions marked `sample: true`. Switch to this
+ *   when paid unlocks exist; paid questions are then served by the backend
+ *   behind an entitlement check, never bundled.
+ * Drafts, in-review and retired questions are never shipped in either mode.
  */
+export type PublicAccess = "open" | "free-sample";
+export const PUBLIC_ACCESS: PublicAccess = "open";
+
 export interface PublicExam {
   id: string;
   name: string;
@@ -28,11 +35,12 @@ export type PublicQuestion = Omit<Question, "status" | "sample" | "provenance"> 
 };
 
 export interface PublicContent {
+  access: PublicAccess;
   exams: PublicExam[];
   questions: PublicQuestion[];
 }
 
-export function buildPublicContent(root: string): PublicContent {
+export function buildPublicContent(root: string, access: PublicAccess = PUBLIC_ACCESS): PublicContent {
   const { issues, recipes, questions } = validateRepo(root);
   const errors = issues.filter((i) => i.level === "error");
   if (errors.length > 0) {
@@ -61,15 +69,15 @@ export function buildPublicContent(root: string): PublicContent {
       published_questions: published.filter((q) => q.id.startsWith(`${r.exam.id}-`)).length,
     }));
 
-  const sample: PublicQuestion[] = published
-    .filter((q) => q.sample)
+  const shipped: PublicQuestion[] = published
+    .filter((q) => access === "open" || q.sample)
     .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }))
     .map(({ status: _status, sample: _sample, provenance: _provenance, ...rest }) => {
       const [exam, domain] = rest.id.split("-");
       return { ...rest, exam: exam!, domain: domain! };
     });
 
-  return { exams, questions: sample };
+  return { access, exams, questions: shipped };
 }
 
 export function writePublicContent(root: string, outFile: string): PublicContent {
