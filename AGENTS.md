@@ -65,6 +65,14 @@ next free number in that subdomain.
   `docs/automation/publishing.md`.
 - CI (`.github/workflows/ci.yml`) runs `pnpm check` and the Cloudflare app build; keep it green.
 
+## Learner feedback
+
+Anonymous, private to the owner (`docs/feedback.md`). To review it, run
+`pnpm --filter @cpe/app run feedback` with your own read-only key in
+`FEEDBACK_AGENT_TOKEN`; if you have none, ask the owner (the doc says how to
+grant one). Never commit, quote publicly, or route feedback through GitHub
+Actions: the repo and its logs are public.
+
 ## Budget
 
 - Stay well within the free plans of Cloudflare and GitHub (owner rule), leaving room

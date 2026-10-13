@@ -1,10 +1,10 @@
-import { deleteFeedback, isStatus, listFeedback, setStatus, tokenMatches, toCsv } from "@/lib/feedback";
-import { feedbackEnv, json, overRateLimit, text, type FeedbackEnv } from "@/lib/feedback-server";
+import { anyTokenMatches, deleteFeedback, isStatus, listFeedback, setStatus, tokenMatches, toCsv } from "@/lib/feedback";
+import { agentTokens, feedbackEnv, json, overRateLimit, text, type FeedbackEnv } from "@/lib/feedback-server";
 
 export const dynamic = "force-dynamic";
 
 // Owner-only: every method needs `Authorization: Bearer <FEEDBACK_READ_TOKEN>`.
-// GET also accepts FEEDBACK_AGENT_TOKEN, a read-only key for Claude's reviews.
+// GET also accepts any FEEDBACK_AGENT_TOKEN_<NAME>: read-only keys, one per AI agent.
 // Without a secret configured, everything is refused (docs/feedback.md).
 
 type Guard = { env: FeedbackEnv & { FEEDBACK_DB: NonNullable<FeedbackEnv["FEEDBACK_DB"]> } } | { denied: Response };
@@ -15,7 +15,7 @@ async function guard(request: Request, readOnly = false): Promise<Guard> {
   const auth = request.headers.get("authorization");
   const allowed =
     (await tokenMatches(auth, env.FEEDBACK_READ_TOKEN)) ||
-    (readOnly && (await tokenMatches(auth, env.FEEDBACK_AGENT_TOKEN)));
+    (readOnly && (await anyTokenMatches(auth, agentTokens(env))));
   if (!allowed) {
     return { denied: json({ error: "Wrong or missing access key." }, 401) };
   }

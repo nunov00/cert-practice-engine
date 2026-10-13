@@ -11,8 +11,18 @@ export interface FeedbackEnv {
   FEEDBACK_DB?: Db;
   FEEDBACK_LIMITER?: RateLimiter;
   FEEDBACK_READ_TOKEN?: string;
-  /** Read-only key for Claude's periodic reviews; revocable on its own. */
-  FEEDBACK_AGENT_TOKEN?: string;
+  /**
+   * Read-only keys for AI agents (Claude, Codex, ...): one Worker secret per
+   * agent, named FEEDBACK_AGENT_TOKEN_<NAME>, so each can be revoked alone.
+   */
+  [agentKey: `FEEDBACK_AGENT_TOKEN_${string}`]: string | undefined;
+}
+
+/** All configured per-agent read-only keys. */
+export function agentTokens(env: FeedbackEnv): string[] {
+  return Object.entries(env)
+    .filter(([k, v]) => k.startsWith("FEEDBACK_AGENT_TOKEN_") && typeof v === "string")
+    .map(([, v]) => v as string);
 }
 
 export async function feedbackEnv(): Promise<FeedbackEnv> {

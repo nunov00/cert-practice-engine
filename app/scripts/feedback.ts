@@ -1,5 +1,6 @@
 // Prints the feedback inbox for a review, as Markdown (docs/feedback.md).
-// Needs FEEDBACK_AGENT_TOKEN (read-only) or FEEDBACK_READ_TOKEN in the environment.
+// Works for any agent (Claude, Codex, ...) or person: needs FEEDBACK_AGENT_TOKEN
+// (the agent's own read-only key) or FEEDBACK_READ_TOKEN in the environment.
 // Output goes to the terminal only: never commit it, paste it into a public
 // place, or run this in GitHub Actions (the repo and its logs are public).
 //

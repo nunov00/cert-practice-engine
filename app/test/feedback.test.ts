@@ -11,6 +11,7 @@ import {
   setStatus,
   toCsv,
   tokenMatches,
+  anyTokenMatches,
   type Db,
   type FeedbackRow,
   type Stmt,
@@ -134,4 +135,11 @@ test("review summary lists new messages by default", async () => {
   ];
   assert.equal(summarise(rows, false), "# Feedback (1 new, 2 stored)\n\n- **#2** 2026-10-13 · Idea or suggestion · new · /\n  More drills\n  please");
   assert.match(summarise(rows, true), /2 in total/);
+});
+
+test("anyTokenMatches accepts any configured agent key and nothing else", async () => {
+  const keys = ["c".repeat(30), "x".repeat(30)];
+  assert.equal(await anyTokenMatches(`Bearer ${"x".repeat(30)}`, keys), true);
+  assert.equal(await anyTokenMatches(`Bearer ${"y".repeat(30)}`, keys), false);
+  assert.equal(await anyTokenMatches(`Bearer ${"x".repeat(30)}`, []), false);
 });

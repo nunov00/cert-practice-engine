@@ -50,23 +50,48 @@ pnpm exec wrangler d1 execute knowmark-feedback --remote \
   --command "SELECT id, created_at, category, status, page, message FROM feedback ORDER BY id DESC"
 ```
 
-## Claude's access (read-only, for reviews)
+## AI agents' access (read-only, for reviews)
 
-Asked by the owner on 2026-10-13: Claude should be able to read feedback too.
-Claude gets its **own read-only key**, `FEEDBACK_AGENT_TOKEN`: it can list and
-export, but can't change a status or delete, and the owner can revoke it
-without changing their own key.
+Asked by the owner on 2026-10-13: Claude, Codex, or any other AI worker the
+owner sets up should be able to read feedback. Each agent gets **its own
+read-only key**: it can list and export, but can't change a status or delete,
+and the owner revokes one agent without touching the others or their own key.
 
-A Claude session reads it with:
+The keys live only in Cloudflare (as Worker secrets named
+`FEEDBACK_AGENT_TOKEN_<NAME>`) and in that agent's own environment (as
+`FEEDBACK_AGENT_TOKEN`). Never in this repo, a GitHub secret, or chat.
+
+Any agent reads feedback with:
 
 ```
 pnpm --filter @cpe/app run feedback            # new messages, as Markdown
 pnpm --filter @cpe/app run feedback -- --all   # everything
 ```
 
-The output stays in the session. Claude never commits feedback, quotes it in a
-PR, issue or other public place, or fetches it from GitHub Actions (the repo
-and its logs are public; the script refuses to run there).
+or, without the repo, `GET /api/feedback/inbox` (add `?format=csv` for CSV) with
+the header `Authorization: Bearer <key>`.
+
+Agents keep what they read private: never commit feedback, quote it in a PR,
+issue or other public place, or fetch it from GitHub Actions (the repo and its
+logs are public; the script refuses to run there).
+
+### Granting an agent access (owner)
+
+1. Make a long random value (24+ characters; a password manager's generator).
+2. Cloudflare dashboard: Workers & Pages, `cert-practice-engine`, Settings,
+   Variables and Secrets, Add, type **Secret**, name
+   `FEEDBACK_AGENT_TOKEN_<NAME>` (for example `FEEDBACK_AGENT_TOKEN_CLAUDE`,
+   `FEEDBACK_AGENT_TOKEN_CODEX`), value from step 1.
+3. Give the same value to the agent as the environment variable
+   `FEEDBACK_AGENT_TOKEN`, and let it reach
+   `cert-practice-engine.vitoria-nuno.workers.dev`:
+   - **Claude (project cloud sessions):** project settings, cloud environment,
+     add an environment; set the variable (or a network secret) and add the
+     domain under allowed network domains. New sessions pick it up.
+   - **Codex:** the environment's secrets or environment variables in Codex
+     settings, plus internet access for that domain.
+   - **Any other worker:** its own secret store, as an environment variable.
+4. To revoke: delete that `FEEDBACK_AGENT_TOKEN_<NAME>` secret in Cloudflare.
 
 ## One-time setup (owner)
 
@@ -76,14 +101,7 @@ and its logs are public; the script refuses to run there).
    least 24 characters; a password manager's generator is ideal). Keep it in
    your password manager. Secrets survive later deploys. Never put it in the
    repo, a GitHub secret log, or chat.
-2. **Claude's key (optional).** Add a second Worker secret the same way,
-   `FEEDBACK_AGENT_TOKEN`, with a different long random value. Then give the
-   same value to Claude's cloud environment: in the project's settings, add a
-   cloud environment, set the environment variable `FEEDBACK_AGENT_TOKEN`, and
-   under network access allow the domain
-   `cert-practice-engine.vitoria-nuno.workers.dev` (the default network
-   policy blocks it). New sessions then pick it up. To revoke, delete the
-   Worker secret.
+2. **AI agents (optional).** One read-only key per agent, as above.
 3. **Database.** The first deploy creates `knowmark-feedback` automatically if
    the `CLOUDFLARE_API_TOKEN` can manage D1. If the deploy log says Wrangler
    lacks permission, edit that API token in Cloudflare (My Profile, API Tokens)
@@ -93,11 +111,11 @@ and its logs are public; the script refuses to run there).
 ## Reviewing it
 
 Nothing is scheduled (AGENTS.md: no automation without the owner's approval).
-Suggested rhythm, by hand or by asking Claude in the project: once a week,
+Suggested rhythm, by hand or by asking an agent: once a week,
 read the "new" messages,
 mark each message considering, done or dismissed, and turn the considering
-ones into roadmap items or `fix/<question-id>` PRs. Claude can summarise and
-suggest; the owner sets statuses (Claude's key is read-only). If the owner approves
+ones into roadmap items or `fix/<question-id>` PRs. Agents can summarise and
+suggest; the owner sets statuses (agent keys are read-only). If the owner approves
 scheduling later (roadmap phase 6), a weekly Claude routine could summarise
 new feedback for the owner privately in the project; it must never post feedback to the public
 repo.

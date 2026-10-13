@@ -163,6 +163,12 @@ export async function tokenMatches(header: string | null, expected: string | und
   return diff === 0;
 }
 
+/** True when the header matches any of the keys (each compared in constant time). */
+export async function anyTokenMatches(header: string | null, keys: string[]): Promise<boolean> {
+  const results = await Promise.all(keys.map((k) => tokenMatches(header, k)));
+  return results.includes(true);
+}
+
 export function toCsv(rows: FeedbackRow[]): string {
   const cell = (v: unknown) => {
     let s = v == null ? "" : String(v);
