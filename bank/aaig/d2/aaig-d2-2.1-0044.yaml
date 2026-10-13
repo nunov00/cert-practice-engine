@@ -1,0 +1,33 @@
+id: aaig-d2-2.1-0044
+subdomain: '2.1'
+difficulty: easy
+stem: A home appliance maker is adding voice control to its ovens and fridges. One design sends all audio
+  to the cloud for processing; another handles commands on the device and sends only anonymous usage counts.
+  The cloud design is cheaper to update. From a governance view, what is the STRONGEST argument for the
+  on-device design?
+options:
+  A: It removes the need for a privacy notice to customers
+  B: It makes the model more accurate across different accents
+  C: It keeps raw recordings from homes under the customer's control
+  D: It removes the need to update the models once the appliances are sold
+answer: C
+explanation:
+  why_correct: Processing on the device means voice recordings from inside people's homes never leave
+    them, which applies data minimisation by design and sharply reduces the privacy and breach exposure
+    of a central audio store. That governance benefit is what must be weighed against the higher cost
+    of updating devices.
+  why_not:
+    A: Customers must still be told how the feature works and what usage data is sent, so a privacy notice
+      remains necessary.
+    B: On-device processing has no inherent accuracy advantage, and a smaller local model may be less
+      accurate.
+    D: On-device models still need updates and fixes; that is exactly why their update cost is a factor
+      in the decision.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-b
+  checked_by: 2026-10-13-aaig-d2-b-check
+  check_verdict: pass

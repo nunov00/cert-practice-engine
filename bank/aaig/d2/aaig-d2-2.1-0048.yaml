@@ -1,0 +1,31 @@
+id: aaig-d2-2.1-0048
+subdomain: '2.1'
+difficulty: medium
+stem: An engineering company's AI assistant answers staff questions from its intranet document library.
+  Users report answers based on withdrawn procedures, and it turns out nobody is responsible for keeping
+  most library content current or removing obsolete versions. What should the governance lead recommend?
+options:
+  A: Ask the AI team to tune the assistant to favour more recent documents
+  B: Add a reminder that users must check answers against the library
+  C: Give each content collection a named owner accountable for currency
+  D: Move the assistant to a stronger model that can detect outdated text
+answer: C
+explanation:
+  why_correct: The assistant is only as reliable as the content it draws on, and the root cause is that
+    the library has no owners. Assigning accountable owners to each collection, responsible for reviewing,
+    updating and archiving content, applies normal data governance to unstructured content and fixes the
+    problem for the assistant and for human readers alike.
+  why_not:
+    A: 'Favouring newer documents is a heuristic: an old procedure may still be valid and a new draft
+      may not be approved.'
+    B: Shifting the burden to users accepts unreliable answers and does not fix the stale content.
+    D: No model can reliably know which procedures the company has withdrawn if the library does not record
+      it.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-b
+  checked_by: 2026-10-13-aaig-d2-b-check
+  check_verdict: pass

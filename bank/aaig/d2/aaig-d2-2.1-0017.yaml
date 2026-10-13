@@ -1,0 +1,31 @@
+id: aaig-d2-2.1-0017
+subdomain: '2.1'
+difficulty: medium
+stem: A business unit at a shipping company wants to deploy an AI tool that does not meet the enterprise
+  logging standard, because the vendor cannot support it for six months. The tool would save significant
+  cost. What should the governance lead recommend?
+options:
+  A: Reject the request, as standards admit no exceptions
+  B: Let the business unit decide, as it owns the benefits
+  C: Ask the vendor to confirm in writing that the tool is low risk
+  D: Grant a time-limited exception with compensating controls
+answer: D
+explanation:
+  why_correct: A formal exception process lets the organisation take a reasoned risk. The deviation is
+    documented, an accountable executive accepts it, compensating controls reduce the gap, and an expiry
+    date makes sure the standard is met once the vendor can support it.
+  why_not:
+    A: Rigid refusal ignores real business value and tends to push teams toward workarounds. Standards
+      need a controlled way to handle justified deviations.
+    B: The unit owns the benefit, but missing logs affect enterprise risk such as incident investigation.
+      The decision needs enterprise accountability.
+    C: A vendor statement is not independent and does not replace the missing control. It shifts no accountability
+      away from the company.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

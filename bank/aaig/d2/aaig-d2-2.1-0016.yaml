@@ -1,0 +1,30 @@
+id: aaig-d2-2.1-0016
+subdomain: '2.1'
+difficulty: easy
+stem: The CIO of a growing retailer proposes an enterprise AI reference architecture. A board member asks
+  what governance benefit it brings. What is the BEST answer?
+options:
+  A: It removes the need for risk assessments of individual AI uses
+  B: It gives approved patterns so controls are built in consistently
+  C: It lists the vendors the retailer has chosen for AI services
+  D: It documents every AI system currently running in the company
+answer: B
+explanation:
+  why_correct: A reference architecture sets out approved building blocks and patterns, with security,
+    privacy and logging controls already designed in. Teams that follow it start from a governed baseline,
+    which makes systems more consistent, cheaper to assure and quicker to approve.
+  why_not:
+    A: Patterns reduce effort but do not remove the need to assess each use. The same platform can be
+      used for low- and high-impact purposes.
+    C: A vendor list may be one input, but the architecture's value lies in patterns and principles, not
+      in naming suppliers.
+    D: That describes an inventory of systems, which records what exists. A reference architecture guides
+      how new systems should be built.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

@@ -1,0 +1,32 @@
+id: aaig-d2-2.1-0002
+subdomain: '2.1'
+difficulty: easy
+stem: A logistics company is setting up a shared feature store for its AI models. The governance lead
+  must assign the role that applies encryption, backups and access rules exactly as the data owners specify.
+  Which role fits this responsibility?
+options:
+  A: Data steward, because it looks after data quality and definitions
+  B: Model owner, because the models consume the features
+  C: Data custodian, because it operates the technical safeguards
+  D: Data owner, because it sets the access rules
+answer: C
+explanation:
+  why_correct: 'The custodian runs the technical environment that holds the data and applies the safeguards
+    the owner decides on: encryption, backups, access provisioning. Separating the owner who decides from
+    the custodian who implements keeps accountability clear and lets the platform team work to agreed
+    rules.'
+  why_not:
+    A: 'Stewards focus on meaning and quality of data: definitions, quality rules, issue resolution. They
+      do not usually operate encryption or backup controls.'
+    B: A model owner is accountable for a model and its outcomes. Consuming features gives no responsibility
+      for operating the store's safeguards.
+    D: The owner decides what the rules are, but the question asks who applies them as specified. Mixing
+      the two removes the separation between deciding and implementing.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

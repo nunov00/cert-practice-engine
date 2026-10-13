@@ -1,0 +1,31 @@
+id: aaig-d2-2.1-0026
+subdomain: '2.1'
+difficulty: hard
+stem: A Swiss private bank chose an AI platform hosted in-country to keep client data local. During due
+  diligence it learns the provider's support staff in two other countries can access production data to
+  troubleshoot. What should the governance lead conclude?
+options:
+  A: Remote access counts as a transfer and must be assessed and controlled
+  B: Residency is met, since the data is stored in-country
+  C: The provider must be replaced with one that has no foreign staff
+  D: The risk is acceptable if support staff sign confidentiality terms
+answer: A
+explanation:
+  why_correct: Data residency is about where data can be accessed, not only where it is stored. Remote
+    access by foreign staff can amount to a cross-border transfer. The bank should assess it against its
+    obligations and require controls such as approval of each access, encryption with bank-held keys or
+    local-only support.
+  why_not:
+    B: Local storage alone does not satisfy residency obligations if the data can be viewed from abroad.
+    C: Replacement may be unnecessary if controls can limit or govern access. It jumps to the most costly
+      outcome before assessing options.
+    D: Confidentiality terms address misuse but not the legal question of whether foreign access is allowed
+      at all.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

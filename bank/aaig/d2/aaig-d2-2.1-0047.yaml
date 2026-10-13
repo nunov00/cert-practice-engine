@@ -1,0 +1,31 @@
+id: aaig-d2-2.1-0047
+subdomain: '2.1'
+difficulty: hard
+stem: Five hospitals plan to train a shared diagnostic model using federated learning, so patient records
+  never leave each hospital. The project lead says that because no data is shared, no agreement between
+  the hospitals is needed. What is the MAIN gap in this view?
+options:
+  A: Federated learning is not yet mature enough for clinical use
+  B: Ownership, use rights and accountability for the joint model still need agreeing
+  C: Each hospital must still send a copy of its records to a neutral host
+  D: The model will be less accurate than one trained on pooled records
+answer: B
+explanation:
+  why_correct: Keeping records local reduces privacy exposure, but the hospitals are still jointly creating
+    a valuable asset that will influence patient care. They need to agree who owns the model, who may
+    use or commercialise it, how contributions and withdrawals work, who validates it and who is accountable
+    when it errs.
+  why_not:
+    A: Maturity is a fair question for the project, but it does not address the governance gap in the
+      project lead's reasoning.
+    C: Federated learning is designed so that records stay at each site; sending copies to a host would
+      defeat its purpose.
+    D: Accuracy may differ, but that is a technical trade-off rather than the missing governance arrangements.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-b
+  checked_by: 2026-10-13-aaig-d2-b-check
+  check_verdict: pass

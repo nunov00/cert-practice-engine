@@ -1,0 +1,33 @@
+id: aaig-d2-2.1-0052
+subdomain: '2.1'
+difficulty: medium
+stem: A social media company outsources the labelling of violent and abusive content to train its moderation
+  model. A media investigation reports that the supplier's annotators are poorly paid, view disturbing
+  material for full shifts and get no psychological support. The labels themselves are of high quality.
+  What should the governance lead recommend?
+options:
+  A: Continue with the supplier, since label quality meets the agreed standard
+  B: Bring all labelling in-house at once and end the supplier contract
+  C: Set welfare standards for annotation suppliers and verify they are met
+  D: Replace human labelling with labels produced by another AI model
+answer: C
+explanation:
+  why_correct: Training data is part of the AI supply chain, and how it is produced is a governance and
+    ethics issue as well as a quality one. The company should set clear standards for pay, exposure limits
+    and psychological support for annotation work, write them into contracts and check compliance, whether
+    the work stays with this supplier or moves.
+  why_not:
+    A: Meeting the quality target does not make harmful working conditions acceptable or reduce the reputational
+      and ethical risk.
+    B: An abrupt exit may be one outcome, but it is not the lasting fix and would still need the same
+      standards for in-house teams.
+    D: AI-generated labels for harmful content still need human checking and do not resolve the company's
+      responsibility for past and future annotation work.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-b
+  checked_by: 2026-10-13-aaig-d2-b-check
+  check_verdict: pass

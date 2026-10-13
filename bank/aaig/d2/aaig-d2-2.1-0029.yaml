@@ -1,0 +1,28 @@
+id: aaig-d2-2.1-0029
+subdomain: '2.1'
+difficulty: medium
+stem: At a payments company, data scientists experiment with models in the same environment that serves
+  live fraud decisions, using copies of production customer data. Which design principle should the governance
+  lead require?
+options:
+  A: Separate environments, with approval for any production data in tests
+  B: More powerful servers so that experiments no longer slow down live decisions
+  C: Daily backups of the shared environment to allow rollback
+  D: Training that teaches data scientists to avoid live systems
+answer: A
+explanation:
+  why_correct: Segregating development, testing and production keeps experiments from disrupting live
+    decisions and limits who can touch real customer data. Using production data in lower environments
+    only with approval and safeguards, or using masked or synthetic data, reduces exposure.
+  why_not:
+    B: Capacity addresses performance, not the risk of untested changes or broad access to customer data.
+    C: Backups help recovery after damage but do not prevent experiments from affecting live decisions.
+    D: Training relies on behaviour and leaves the shared design in place. A structural control is stronger.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-a
+  checked_by: 2026-10-13-aaig-d2-a-check
+  check_verdict: pass

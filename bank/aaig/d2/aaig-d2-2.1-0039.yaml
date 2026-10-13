@@ -1,0 +1,33 @@
+id: aaig-d2-2.1-0039
+subdomain: '2.1'
+difficulty: hard
+stem: A retail group runs separate AI models for demand forecasting, pricing and promotions, built by
+  different units. Each unit keeps its own product hierarchy and store list. The models now give conflicting
+  recommendations for the same products, and executives cannot reconcile the reports. What is the BEST
+  architecture principle to adopt?
+options:
+  A: Merge the three models into one model owned by a central team
+  B: Have each unit document its own product hierarchy in the data catalogue
+  C: Treat product and store data as master data with one owner and one source
+  D: Add a reconciliation step that adjusts the models' outputs after each run
+answer: C
+explanation:
+  why_correct: The conflict comes from inconsistent reference data, not from the models themselves. Managing
+    products and stores as governed master data, with an accountable owner and one authoritative source
+    that every model uses, removes the root cause and lets separate models stay consistent with each other
+    and with reporting.
+  why_not:
+    A: The models serve different decisions and can legitimately remain separate. Merging them is costly
+      and still would not fix the inconsistent hierarchies other systems use.
+    B: Documentation makes the differences visible but leaves three competing versions of the truth in
+      place.
+    D: Adjusting outputs after the fact hides the inconsistency, adds a fragile layer and does nothing
+      for the next model that uses the same data.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-b
+  checked_by: 2026-10-13-aaig-d2-b-check
+  check_verdict: pass

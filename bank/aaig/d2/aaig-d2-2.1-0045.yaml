@@ -1,0 +1,33 @@
+id: aaig-d2-2.1-0045
+subdomain: '2.1'
+difficulty: hard
+stem: At a consumer lender, the approval cut-off score for its credit model is written into the model
+  code. When the credit committee wanted to tighten lending during a downturn, the change took six weeks
+  of development and revalidation, and nobody outside data science could see the current cut-off. Which
+  design principle should the governance lead promote?
+options:
+  A: Let the data science team adjust the cut-off whenever loss rates rise
+  B: Retrain the model more often so that the cut-off never needs to change
+  C: Replace the model with a simple rules engine owned by the credit team
+  D: Hold decision thresholds outside the model, owned and changed by the business
+answer: D
+explanation:
+  why_correct: The cut-off is a credit policy decision, not part of the model's logic. Keeping thresholds
+    as visible, configurable parameters owned by the business lets the credit committee change policy
+    quickly through its own controlled approval, with the change logged and its impact checked, while
+    the validated model stays unchanged.
+  why_not:
+    A: This leaves a business policy decision with the technical team and keeps it invisible to the people
+      accountable for lending risk.
+    B: Retraining changes the model's scores; it does not give the committee control over how much risk
+      it accepts.
+    C: Discarding a validated model to solve a design problem loses its predictive value. The fix is separating
+      policy settings from the model.
+status: published
+outline_version: '2026-10-13'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aaig-d2-b
+  checked_by: 2026-10-13-aaig-d2-b-check
+  check_verdict: pass
