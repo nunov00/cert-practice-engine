@@ -1,0 +1,29 @@
+id: aair-d3-3.2-0007
+subdomain: '3.2'
+difficulty: medium
+stem: A university's AI writing-integrity tool flags essays from students writing in a second language far more
+  often than others, and each flag triggers an automatic grade penalty. The vendor needs three months to investigate.
+  Which treatment is MOST appropriate in the meantime?
+options:
+  A: Raise the flagging threshold for all students to cut false positives
+  B: Stop automatic penalties and have trained staff review each flag
+  C: Warn students in the handbook that the tool may make some errors
+  D: Exclude essays by second-language students from the checks
+answer: B
+explanation:
+  why_correct: The harm comes from penalties applied without judgement to a group the tool treats unfairly. Requiring
+    a trained person to review flags before any action keeps the tool's benefit while preventing unfair outcomes
+    until the vendor fixes the cause.
+  why_not:
+    A: A single threshold change may still leave a gap between groups, and it weakens detection for everyone.
+    C: Telling students about errors does nothing to stop unfair penalties.
+    D: Excluding a group because of language background is itself unfair treatment, and it leaves integrity risk
+      uncontrolled for those essays.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass

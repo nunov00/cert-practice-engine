@@ -1,0 +1,31 @@
+id: aair-d3-3.6-0005
+subdomain: '3.6'
+difficulty: medium
+stem: An online retailer's dynamic pricing model charged some postcodes much higher prices for a week. Staff
+  noticed, but the incident process covers only system outages and security breaches, so no one logged it.
+  Which change BEST addresses the gap?
+options:
+  A: Ask the pricing team to report pricing anomalies to management monthly
+  B: Add a manual check of all model prices before they go live each day
+  C: Extend incident definitions and severity criteria to cover AI harms
+  D: Replace the dynamic pricing model with a set of fixed pricing rules
+answer: C
+explanation:
+  why_correct: The process failed because harmful model behaviour was not recognised as an incident. Defining
+    AI-specific harms, such as unfair or erroneous outputs, and how to rate their severity ensures they are
+    logged, escalated and handled like other incidents.
+  why_not:
+    A: A monthly report is too slow for active harm and sits outside the incident process, so there would be
+      no containment or escalation.
+    B: Reviewing every price daily is impractical at scale and addresses only this model, not the gap in how
+      incidents are recognised.
+    D: Dropping the model removes one source of harm but leaves the incident process blind to problems in any
+      other AI system.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass

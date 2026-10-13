@@ -1,0 +1,30 @@
+id: aair-d3-3.4-0008
+subdomain: '3.4'
+difficulty: hard
+stem: A telecom provider set its customer service team a target to cut the rate at which its AI assistant hands
+  chats to human agents. The rate has fallen sharply and the target is being met. However, complaints about
+  unresolved issues have risen. What should the risk practitioner conclude?
+options:
+  A: The target may be driving behaviour that raises risk and needs balancing measures
+  B: The assistant is improving, and the rise in complaints reflects unrelated issues
+  C: The handover rate should be dropped as a metric because it is now unreliable
+  D: More human agents are needed to deal with the higher volume of complaints
+answer: A
+explanation:
+  why_correct: When a single measure becomes a target, teams may optimise it at the expense of the outcome
+    it was meant to reflect. Here the assistant may be keeping chats it cannot resolve. The target should be
+    paired with outcome measures, such as resolution and complaint rates, and reviewed.
+  why_not:
+    B: Rising complaints at the same time as the change is a warning sign. Dismissing it without analysis ignores
+      a likely link.
+    C: The handover rate is still a useful signal. The problem is relying on it alone as a target, not the
+      metric itself.
+    D: Adding staff treats the symptom and leaves in place the incentive that is causing customers to go unserved.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass

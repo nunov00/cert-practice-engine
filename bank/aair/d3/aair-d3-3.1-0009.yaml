@@ -1,0 +1,28 @@
+id: aair-d3-3.1-0009
+subdomain: '3.1'
+difficulty: hard
+stem: A bank's fraud scoring model was assessed and approved for flagging suspicious card payments. The collections
+  team now wants to use the same scores to decide which customers in arrears to contact first. The model and its
+  data will not change. What should the risk practitioner do?
+options:
+  A: Approve the reuse, as the model has already passed the bank's risk assessment
+  B: Ask the model validation team to re-run the original accuracy tests
+  C: Add the collections team as a second owner in the existing risk record
+  D: Require a new risk assessment of the collections use before it starts
+answer: D
+explanation:
+  why_correct: Risk depends on the context of use, not only on the model. Using fraud scores to treat customers
+    in arrears raises new scenarios, such as unfair treatment of vulnerable customers or decisions based on a score
+    never designed for that purpose, so the new use needs its own assessment.
+  why_not:
+    A: The approval covered fraud detection only. It says nothing about fitness for, or harm in, collections.
+    B: Re-running the original tests confirms performance at detecting fraud, not suitability for a different decision.
+    C: Changing ownership records does not assess the new scenarios that the reuse creates.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass

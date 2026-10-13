@@ -1,0 +1,27 @@
+id: aair-d3-3.5-0007
+subdomain: '3.5'
+difficulty: medium
+stem: A large retailer has about two hundred suppliers whose products now include AI features, from shelf planning
+  tools to payroll software. The supplier risk team is small. What is the BEST way to organise AI due diligence?
+options:
+  A: Send the full AI risk questionnaire to every supplier once a year
+  B: Assess only the suppliers with the highest annual contract value
+  C: Accept each supplier's own written statement that its AI features are safe
+  D: Tier suppliers by impact and data sensitivity and scale the reviews
+answer: D
+explanation:
+  why_correct: Risk-based tiering puts limited effort where the potential harm is greatest, for example suppliers
+    whose AI handles personal data or drives important decisions, while lower-risk suppliers get lighter checks.
+  why_not:
+    A: A uniform full review spreads the small team too thinly, and answers from low-risk suppliers would crowd
+      out attention to critical ones.
+    B: Spend does not equal risk. A cheap tool can process sensitive payroll data or make significant decisions.
+    C: Self-attestation without any verification gives little assurance, especially for high-impact uses.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass

@@ -1,0 +1,30 @@
+id: aair-d3-3.1-0008
+subdomain: '3.1'
+difficulty: hard
+stem: A pharmacy chain's chatbot answers about 400,000 customer questions about medicines each month. In pre-launch
+  testing, 0.05% of its answers contained unsafe dosage advice. The product owner rates the likelihood of unsafe
+  advice as rare. What should the risk practitioner conclude?
+options:
+  A: The rating is reasonable, as the error rate is well below one in a thousand
+  B: The rating should wait until live data confirms the test error rate
+  C: The rating is too low, as about 200 unsafe answers a month are expected
+  D: The rating matters less than impact, so it can be left as it is
+answer: C
+explanation:
+  why_correct: Likelihood must reflect how often the event will occur at the real volume of use. A small percentage
+    across hundreds of thousands of answers means unsafe advice is expected many times every month, which is almost
+    certain rather than rare. With potential harm to health, this changes the risk level sharply.
+  why_not:
+    A: The percentage looks small, but applied to the volume of use it means hundreds of unsafe answers a month.
+    B: Waiting would expose customers to a known hazard. The test data is already enough to show that the rating
+      is wrong.
+    D: Likelihood and impact together set the risk level. A wrong likelihood rating misstates the risk even when
+      impact is rated correctly.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-13-aair-d3-a
+  checked_by: 2026-10-13-aair-d3-a-check
+  check_verdict: pass
