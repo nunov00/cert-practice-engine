@@ -1,33 +1,52 @@
 // Server-only helpers for the feedback API routes: Cloudflare bindings and responses.
 import { getCloudflareContext } from "@opennextjs/cloudflare";
-import type { Db } from "./feedback";
+import type { Db, FileWriter } from "./feedback";
 
 interface RateLimiter {
   limit(options: { key: string }): Promise<{ success: boolean }>;
 }
 
-/** Bindings from app/wrangler.jsonc, plus the owner's secret (docs/feedback.md). */
+/** Bindings and vars from app/wrangler.jsonc, plus the owner's secret (docs/feedback.md). */
 export interface FeedbackEnv {
   FEEDBACK_DB?: Db;
   FEEDBACK_LIMITER?: RateLimiter;
-  FEEDBACK_READ_TOKEN?: string;
-  /**
-   * Read-only keys for AI agents (Claude, Codex, ...): one Worker secret per
-   * agent, named FEEDBACK_AGENT_TOKEN_<NAME>, so each can be revoked alone.
-   */
-  [agentKey: `FEEDBACK_AGENT_TOKEN_${string}`]: string | undefined;
+  /** Private repo that receives the messages, e.g. "nunov00/knowmark-feedback". */
+  FEEDBACK_REPO?: string;
+  /** Fine-grained GitHub token: that repo only, Contents read and write. */
+  FEEDBACK_GITHUB_TOKEN?: string;
 }
 
-/** All configured per-agent read-only keys. */
-export function agentTokens(env: FeedbackEnv): string[] {
-  return Object.entries(env)
-    .filter(([k, v]) => k.startsWith("FEEDBACK_AGENT_TOKEN_") && typeof v === "string")
-    .map(([, v]) => v as string);
+/** Writes files into the private feedback repo, or null until the owner has set it up. */
+export function githubWriter(env: FeedbackEnv): FileWriter | null {
+  const repo = env.FEEDBACK_REPO;
+  const token = env.FEEDBACK_GITHUB_TOKEN;
+  if (!repo || !token || !/^[\w.-]+\/[\w.-]+$/.test(repo)) return null;
+  return async (path, content, message) => {
+    const res = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+      method: "PUT",
+      headers: {
+        authorization: `Bearer ${token}`,
+        accept: "application/vnd.github+json",
+        "x-github-api-version": "2022-11-28",
+        "user-agent": "knowmark-feedback",
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ message, content: base64Utf8(content) }),
+    });
+    // 422: the file already exists (another request filed it first), so it is stored.
+    return res.ok || res.status === 422;
+  };
 }
 
-export async function feedbackEnv(): Promise<FeedbackEnv> {
-  const { env } = await getCloudflareContext({ async: true });
-  return env as unknown as FeedbackEnv;
+function base64Utf8(text: string): string {
+  let bin = "";
+  for (const byte of new TextEncoder().encode(text)) bin += String.fromCharCode(byte);
+  return btoa(bin);
+}
+
+export async function feedbackContext(): Promise<{ env: FeedbackEnv; waitUntil: (p: Promise<unknown>) => void }> {
+  const { env, ctx } = await getCloudflareContext({ async: true });
+  return { env: env as unknown as FeedbackEnv, waitUntil: (p) => ctx.waitUntil(p) };
 }
 
 /**
@@ -57,8 +76,4 @@ const NO_STORE = { "cache-control": "no-store", "x-robots-tag": "noindex" };
 
 export function json(data: unknown, status = 200): Response {
   return Response.json(data, { status, headers: NO_STORE });
-}
-
-export function text(body: string, contentType: string, extra: Record<string, string> = {}): Response {
-  return new Response(body, { headers: { ...NO_STORE, "content-type": contentType, ...extra } });
 }

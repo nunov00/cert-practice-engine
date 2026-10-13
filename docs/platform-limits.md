@@ -67,7 +67,7 @@ Per account, shared by every pilot:
 
 | Limit | Free plan | Our use |
 |---|---|---|
-| D1 databases | 10 | 1 (`knowmark-feedback`) |
+| D1 databases | 10 | 1 (`knowmark-feedback`: feedback outbox and daily counters) |
 | D1 size per database / per account | 500 MB / 5 GB | well under 1 MB (feedback is text, capped at 200 messages a day) |
 | D1 rows written per day | 100,000 | at most about 1,000 (200 messages plus their daily-limit counters) |
 | D1 rows read per day | 5,000,000 | a few hundred (inbox reads, daily-cap counts) |
@@ -77,6 +77,11 @@ Over a D1 daily limit, queries fail until 00:00 UTC. The rate limiting binding
 isn't listed on the Free plan's limits page, but it deployed and is active on
 this Free account (2026-10-13). Deploying D1 bindings needs **D1 Edit** on the
 deploy API token (added by the owner on 2026-10-13).
+
+Feedback files go to a private GitHub repo through the contents API: one
+request per message (at most 200 a day), far below GitHub's 5,000 requests an
+hour per token, and one Worker subrequest each (limit 50 per request; we file
+at most 10 per request).
 
 Workers Builds (Cloudflare building from GitHub) is not used: we build and deploy
 from GitHub Actions. Check its allowances if that changes.

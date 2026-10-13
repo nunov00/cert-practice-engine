@@ -11,7 +11,6 @@
     "start": "next start",
     "preview": "pnpm run content && opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "capacity": "tsx scripts/capacity.ts",
-    "feedback": "tsx scripts/feedback.ts",
     "deploy": "pnpm run content && opennextjs-cloudflare build && pnpm run capacity && opennextjs-cloudflare deploy",
     "pretest": "pnpm run content",
     "test": "tsx --test test/*.test.ts",
