@@ -1,0 +1,32 @@
+id: aair-d1-1.3-0002
+subdomain: '1.3'
+difficulty: hard
+stem: A retailer's demand forecasting model is used by three business units. Each unit asks the data science
+  team for changes, and recent retraining for one unit caused stock shortages in another. The AI oversight
+  committee wants to stop this happening again. What is the BEST way to assign accountability?
+options:
+  A: Require the oversight committee itself to approve every change to the model
+  B: Name one accountable owner for the shared model who must consult all units on changes
+  C: Let each unit approve changes that affect its own forecasts independently
+  D: Make the data science team accountable, since they build and retrain the model
+answer: B
+explanation:
+  why_correct: A shared model needs a single owner with clear decision rights over changes, and a defined
+    duty to consult the units that rely on it. This removes conflicting instructions while making sure
+    each unit's needs and risks are weighed before a change is approved.
+  why_not:
+    A: An oversight committee sets direction and reviews significant matters. Making it approve every
+      routine change turns it into an operational owner, creates a bottleneck and weakens its oversight
+      role.
+    C: 'This is how the problem arose: changes requested by one unit affect the others. Independent approvals
+      leave nobody responsible for the effect of a change across the whole model.'
+    D: The builders can manage the technical work, but they are not placed to decide trade-offs between
+      business units' risks. Giving them ownership blurs the line between developer and risk owner.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-aair-a
+  checked_by: 2026-10-12-aair-a-check
+  check_verdict: pass

@@ -1,0 +1,27 @@
+id: aair-d3-3.6-0001
+subdomain: '3.6'
+difficulty: medium
+stem: Hours after an update, a broadcaster's public AI chatbot starts producing offensive replies, and
+  screenshots are spreading on social media. What should the incident response team do FIRST?
+options:
+  A: Retrain the model with additional filtering of offensive content
+  B: Take the chatbot offline or roll back to the last known good version
+  C: Carry out a root cause analysis of the update before taking action
+  D: Issue a public statement apologising for the chatbot's replies
+answer: B
+explanation:
+  why_correct: 'Containment comes first: stopping the harmful output limits further damage to people and
+    to the brand. Investigation, communication and fixes follow once the harm has stopped growing.'
+  why_not:
+    A: Retraining takes time and is a recovery step. The immediate need is to stop the harmful output.
+    C: Analysis is needed, but doing it first lets the chatbot keep producing harmful replies in the meantime.
+    D: Communication matters, but an apology while the chatbot is still producing offensive content would
+      ring hollow. Containment should come first.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-12-aair-a
+  checked_by: 2026-10-12-aair-a-check
+  check_verdict: pass
