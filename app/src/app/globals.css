@@ -937,56 +937,118 @@ a.test-card:hover {
 /* ---- Reversible visual refresh: design/visual-refresh-oct2026 ----
    Presentation-only overrides. No markup, state, or exam logic changes. */
 :root {
-  --bg: #f4f7fc;
-  --surface: #ffffff;
-  --text: #172a49;
-  --muted: #56657b;
-  --border: #dce4f0;
-  --accent: #315db6;
+  --bg: #f5f2eb;
+  --surface: #fffefa;
+  --text: #1b2b40;
+  --muted: #596779;
+  --border: #e1ddd3;
+  --accent: #bd5d40;
   --accent-text: #ffffff;
-  --radius: 14px;
+  --good: #287650;
+  --good-bg: #e9f4ec;
+  --bad: #b44840;
+  --bad-bg: #faece9;
+  --warn: #94621d;
+  --warn-bg: #f8f0df;
+  --radius: 16px;
+  color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #101722;
-    --surface: #192332;
-    --text: #edf3ff;
-    --muted: #aebcd0;
-    --border: #344154;
-    --accent: #91afff;
-    --accent-text: #10213e;
-    --radius: 14px;
+    --bg: #111a22;
+    --surface: #1b2832;
+    --text: #f5f1e8;
+    --muted: #b4c0c7;
+    --border: #35434b;
+    --accent: #ef9878;
+    --accent-text: #281913;
+    --good: #7bc99d;
+    --good-bg: #1c3429;
+    --bad: #f08e83;
+    --bad-bg: #3a2424;
+    --warn: #e6bd72;
+    --warn-bg: #382f1e;
+    color-scheme: dark;
   }
 }
 body { letter-spacing: -0.006em; }
-.container { max-width: 860px; padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
+.container { max-width: 920px; padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
 header.site { border-bottom-color: var(--border); }
-header.site .container { min-height: 66px; }
-header.site a.brand { font-size: 1.17rem; font-weight: 750; letter-spacing: -0.035em; }
-main { padding-top: 38px; padding-bottom: 64px; }
-h1 { font-size: clamp(2rem, 5vw, 2.7rem); line-height: 1.13; letter-spacing: -0.04em; margin-bottom: 14px; }
-h2 { font-size: 1.35rem; letter-spacing: -0.025em; margin-top: 38px; margin-bottom: 16px; }
+header.site .container { min-height: 68px; }
+header.site a.brand { font-size: 1.2rem; font-weight: 760; letter-spacing: -0.04em; }
+main { padding-top: 34px; padding-bottom: 68px; }
+h1 { font-size: clamp(2rem, 5vw, 2.75rem); line-height: 1.12; letter-spacing: -0.045em; margin-bottom: 14px; }
+h2 { font-size: 1.4rem; letter-spacing: -0.03em; margin-top: 38px; margin-bottom: 16px; }
 .lead { line-height: 1.7; }
-.hero { padding: 32px 0 22px; }
-.hero h1 { font-size: clamp(2.3rem, 6vw, 3.6rem); max-width: 16ch; line-height: 1.08; letter-spacing: -0.045em; }
-.hero .lead { max-width: 58ch; }
-.hero-stats { gap: 10px 20px; margin: 0 0 8px; }
+
+/* A confident, editorial hero gives the catalogue a stronger first impression. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 42px 44px 30px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 24px;
+  color: #f8f4ec;
+  background: radial-gradient(ellipse at 88% 15%, rgba(221,143,104,.25), transparent 34%),
+              linear-gradient(125deg, #172b45 0%, #203d56 58%, #315264 100%);
+  box-shadow: 0 16px 40px rgba(24,39,55,.12);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 310px;
+  aspect-ratio: 1;
+  right: -88px;
+  top: -186px;
+  border: 1px solid rgba(255,255,255,.17);
+  border-radius: 50%;
+  box-shadow: 0 0 0 30px rgba(255,255,255,.035), 0 0 0 61px rgba(255,255,255,.025);
+  pointer-events: none;
+}
+.hero h1 { max-width: 18ch; color: #fffaf1; font-size: clamp(2.45rem, 6vw, 3.75rem); line-height: 1.04; letter-spacing: -.055em; }
+.hero .lead { max-width: 62ch; color: #d6e0e1; margin-bottom: 22px; }
+.hero-stats { gap: 8px; margin: 0; color: #e2e8e3; }
+.hero-stats span { padding: 6px 11px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; background: rgba(255,255,255,.07); }
+.hero-stats strong { color: #ffd09a; }
+
 .card, .exam-card, .continue-card, .stat-tiles div, .facts div {
   border-radius: var(--radius);
-  box-shadow: 0 3px 14px rgba(15, 35, 67, 0.035);
+  box-shadow: 0 4px 16px rgba(31,43,53,.045);
 }
 .card { padding: 24px; }
 .exam-grid { gap: 16px; }
-.exam-card { padding: 22px; gap: 10px; transition: border-color .18s, transform .18s, box-shadow .18s; }
-.exam-card:hover { box-shadow: 0 10px 24px rgba(24, 49, 90, .09); transform: translateY(-2px); }
-.exam-card .name { font-size: 1.24rem; letter-spacing: -.025em; }
-.exam-card .topics { line-height: 1.55; }
-.exam-card-cta { margin-top: 12px; }
+.exam-card {
+  --card-accent: #bd5d40;
+  position: relative;
+  padding: 22px;
+  gap: 11px;
+  border-top: 3px solid var(--card-accent);
+  background: var(--surface);
+  box-shadow: 0 5px 18px rgba(31,43,53,.06);
+  transition: border-color .18s, transform .18s, box-shadow .18s;
+}
+.exam-grid li:nth-child(3n + 2) .exam-card { --card-accent: #397d78; }
+.exam-grid li:nth-child(3n) .exam-card { --card-accent: #5472a3; }
+.exam-card:hover { border-color: var(--card-accent); box-shadow: 0 13px 28px rgba(31,43,53,.12); transform: translateY(-3px); }
+.exam-card:focus-visible { outline-color: var(--card-accent); }
+.exam-card .name { font-size: 1.28rem; letter-spacing: -.035em; }
+.exam-card-head { justify-content: flex-start; flex-wrap: wrap; }
+.exam-card-head .name { margin-right: auto; }
+.exam-card .pill { border-color: color-mix(in srgb, var(--card-accent) 28%, var(--border)); color: var(--card-accent); background: color-mix(in srgb, var(--card-accent) 8%, var(--surface)); }
+.exam-card .topics { line-height: 1.6; }
+.exam-card-cta { align-self: flex-start; margin-top: 9px; padding: 8px 11px; border-radius: 9px; color: var(--card-accent); background: color-mix(in srgb, var(--card-accent) 9%, var(--surface)); }
+.exam-card-cta.soon { color: var(--muted); background: var(--bg); }
 .pill, .band { padding: 3px 10px; }
-.button { border-radius: 10px; padding: 11px 18px; min-height: 44px; transition: filter .15s, transform .15s; }
+.button { border-radius: 11px; padding: 11px 18px; min-height: 44px; transition: filter .15s, transform .15s; }
 .button:hover:not(:disabled) { filter: brightness(1.08); }
 .button:active:not(:disabled) { transform: scale(.985); }
-.search input, .search select { border-radius: 11px; min-height: 46px; }
+.search input, .search select { border-radius: 12px; min-height: 48px; background: var(--surface); }
+.search input:focus, .search select:focus { box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 16%, transparent); }
+.results { margin-top: 12px; }
+.continue-card { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
+.continue-card:hover { border-color: var(--accent); }
 .facts { gap: 12px; }
 .facts div { padding: 16px 18px; }
 .summary-stats strong { font-size: 1.65rem; letter-spacing: -.03em; }
@@ -1008,17 +1070,28 @@ h2 { font-size: 1.35rem; letter-spacing: -0.025em; margin-top: 38px; margin-bott
 .qgrid button { min-width: 34px; height: 36px; border-radius: 9px; }
 .review li { border-radius: 12px; padding: 16px; }
 footer.site { line-height: 1.65; }
-@media (max-width: 520px) {
-  main { padding-top: 26px; }
-  .hero { padding-top: 16px; }
-  .hero h1 { font-size: clamp(2.1rem, 9vw, 2.65rem); }
+@media (prefers-color-scheme: dark) {
+  .hero { background: radial-gradient(ellipse at 88% 15%, rgba(239,152,120,.2), transparent 34%), linear-gradient(125deg, #182a3a, #1b3543 58%, #24434a); }
+  .exam-card { --card-accent: #ef9878; }
+  .exam-grid li:nth-child(3n + 2) .exam-card { --card-accent: #72b8ad; }
+  .exam-grid li:nth-child(3n) .exam-card { --card-accent: #9aafd8; }
+  .card, .exam-card, .continue-card, .stat-tiles div, .facts div { box-shadow: 0 5px 20px rgba(0,0,0,.12); }
+}
+@media (max-width: 640px) {
+  main { padding-top: 22px; }
+  .hero { padding: 30px 24px 24px; border-radius: 20px; }
+  .hero::after { right: -175px; top: -190px; }
+  .hero h1 { max-width: 15ch; font-size: clamp(2.25rem, 10vw, 3rem); }
+  .hero .lead { margin-bottom: 18px; }
+  .hero-stats { gap: 7px; }
+  .hero-stats span { padding: 5px 9px; }
   .card { padding: 20px; }
-  .exam-card { padding: 20px; }
+  .exam-card { padding: 19px; }
   .test-card { padding: 19px; }
   .option { padding: 14px; }
   .qgrid button { min-width: 32px; height: 34px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .exam-card, .button, .option { transition: none; }
-  .exam-card:hover { transform: none; }
+  .exam-card:hover, .button:active:not(:disabled) { transform: none; }
 }
