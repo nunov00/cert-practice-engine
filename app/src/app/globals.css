@@ -932,3 +932,93 @@ a.test-card:hover {
 .day-bars strong {
   text-align: right;
 }
+
+
+/* ---- Reversible visual refresh: design/visual-refresh-oct2026 ----
+   Presentation-only overrides. No markup, state, or exam logic changes. */
+:root {
+  --bg: #f4f7fc;
+  --surface: #ffffff;
+  --text: #172a49;
+  --muted: #56657b;
+  --border: #dce4f0;
+  --accent: #315db6;
+  --accent-text: #ffffff;
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101722;
+    --surface: #192332;
+    --text: #edf3ff;
+    --muted: #aebcd0;
+    --border: #344154;
+    --accent: #91afff;
+    --accent-text: #10213e;
+    --radius: 14px;
+  }
+}
+body { letter-spacing: -0.006em; }
+.container { max-width: 860px; padding-left: max(20px, env(safe-area-inset-left)); padding-right: max(20px, env(safe-area-inset-right)); }
+header.site { border-bottom-color: var(--border); }
+header.site .container { min-height: 66px; }
+header.site a.brand { font-size: 1.17rem; font-weight: 750; letter-spacing: -0.035em; }
+main { padding-top: 38px; padding-bottom: 64px; }
+h1 { font-size: clamp(2rem, 5vw, 2.7rem); line-height: 1.13; letter-spacing: -0.04em; margin-bottom: 14px; }
+h2 { font-size: 1.35rem; letter-spacing: -0.025em; margin-top: 38px; margin-bottom: 16px; }
+.lead { line-height: 1.7; }
+.hero { padding: 32px 0 22px; }
+.hero h1 { font-size: clamp(2.3rem, 6vw, 3.6rem); max-width: 16ch; line-height: 1.08; letter-spacing: -0.045em; }
+.hero .lead { max-width: 58ch; }
+.hero-stats { gap: 10px 20px; margin: 0 0 8px; }
+.card, .exam-card, .continue-card, .stat-tiles div, .facts div {
+  border-radius: var(--radius);
+  box-shadow: 0 3px 14px rgba(15, 35, 67, 0.035);
+}
+.card { padding: 24px; }
+.exam-grid { gap: 16px; }
+.exam-card { padding: 22px; gap: 10px; transition: border-color .18s, transform .18s, box-shadow .18s; }
+.exam-card:hover { box-shadow: 0 10px 24px rgba(24, 49, 90, .09); transform: translateY(-2px); }
+.exam-card .name { font-size: 1.24rem; letter-spacing: -.025em; }
+.exam-card .topics { line-height: 1.55; }
+.exam-card-cta { margin-top: 12px; }
+.pill, .band { padding: 3px 10px; }
+.button { border-radius: 10px; padding: 11px 18px; min-height: 44px; transition: filter .15s, transform .15s; }
+.button:hover:not(:disabled) { filter: brightness(1.08); }
+.button:active:not(:disabled) { transform: scale(.985); }
+.search input, .search select { border-radius: 11px; min-height: 46px; }
+.facts { gap: 12px; }
+.facts div { padding: 16px 18px; }
+.summary-stats strong { font-size: 1.65rem; letter-spacing: -.03em; }
+.bar { height: 8px; border-radius: 999px; }
+.bar span { border-radius: 999px; }
+.test-grid { gap: 14px; }
+.test-card { padding: 22px; gap: 8px; }
+.test-card .name { font-size: 1.08rem; }
+.option { padding: 16px 18px; border-radius: 12px; min-height: 60px; align-items: flex-start; line-height: 1.55; transition: background .15s, border-color .15s; }
+.option .letter { display: inline-flex; justify-content: center; align-items: center; flex: 0 0 30px; height: 30px; border-radius: 8px; background: var(--bg); }
+.option[aria-pressed="true"] { background: color-mix(in srgb, var(--accent) 8%, var(--surface)); }
+.option.correct .letter, .option.wrong .letter { background: transparent; }
+.stem { font-size: 1.12rem; line-height: 1.65; }
+.steps { gap: 4px; margin: 8px 0 18px; }
+.steps span { height: 6px; border-radius: 999px; }
+.test-bar { padding: 12px 0; backdrop-filter: blur(12px); }
+.timer { border-radius: 10px; padding: 5px 12px; }
+.qgrid { gap: 6px; }
+.qgrid button { min-width: 34px; height: 36px; border-radius: 9px; }
+.review li { border-radius: 12px; padding: 16px; }
+footer.site { line-height: 1.65; }
+@media (max-width: 520px) {
+  main { padding-top: 26px; }
+  .hero { padding-top: 16px; }
+  .hero h1 { font-size: clamp(2.1rem, 9vw, 2.65rem); }
+  .card { padding: 20px; }
+  .exam-card { padding: 20px; }
+  .test-card { padding: 19px; }
+  .option { padding: 14px; }
+  .qgrid button { min-width: 32px; height: 34px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .exam-card, .button, .option { transition: none; }
+  .exam-card:hover { transform: none; }
+}
