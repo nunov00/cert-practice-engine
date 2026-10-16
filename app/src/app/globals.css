@@ -942,12 +942,12 @@ a.test-card:hover {
   --text: #1b2b40;
   --muted: #596779;
   --border: #e1ddd3;
-  --accent: #bd5d40;
+  --accent: #a9533a;
   --accent-text: #ffffff;
   --good: #287650;
   --good-bg: #e9f4ec;
-  --bad: #b44840;
-  --bad-bg: #faece9;
+  --bad: #b3261e;
+  --bad-bg: #fbeceb;
   --warn: #94621d;
   --warn-bg: #f8f0df;
   --radius: 16px;
@@ -964,8 +964,8 @@ a.test-card:hover {
     --accent-text: #281913;
     --good: #7bc99d;
     --good-bg: #1c3429;
-    --bad: #f08e83;
-    --bad-bg: #3a2424;
+    --bad: #f7889a;
+    --bad-bg: #3a2329;
     --warn: #e6bd72;
     --warn-bg: #382f1e;
     color-scheme: dark;
@@ -1020,7 +1020,7 @@ h2 { font-size: 1.4rem; letter-spacing: -0.03em; margin-top: 38px; margin-bottom
 .card { padding: 24px; }
 .exam-grid { gap: 16px; }
 .exam-card {
-  --card-accent: #bd5d40;
+  --card-accent: #a9533a;
   position: relative;
   padding: 22px;
   gap: 11px;
@@ -1029,8 +1029,8 @@ h2 { font-size: 1.4rem; letter-spacing: -0.03em; margin-top: 38px; margin-bottom
   box-shadow: 0 5px 18px rgba(31,43,53,.06);
   transition: border-color .18s, transform .18s, box-shadow .18s;
 }
-.exam-grid li:nth-child(3n + 2) .exam-card { --card-accent: #397d78; }
-.exam-grid li:nth-child(3n) .exam-card { --card-accent: #5472a3; }
+.exam-grid li:nth-child(3n + 2) .exam-card { --card-accent: #2f7069; }
+.exam-grid li:nth-child(3n) .exam-card { --card-accent: #4a6797; }
 .exam-card:hover { border-color: var(--card-accent); box-shadow: 0 13px 28px rgba(31,43,53,.12); transform: translateY(-3px); }
 .exam-card:focus-visible { outline-color: var(--card-accent); }
 .exam-card .name { font-size: 1.28rem; letter-spacing: -.035em; }
@@ -1041,6 +1041,8 @@ h2 { font-size: 1.4rem; letter-spacing: -0.03em; margin-top: 38px; margin-bottom
 .exam-card-cta { align-self: flex-start; margin-top: 9px; padding: 8px 11px; border-radius: 9px; color: var(--card-accent); background: color-mix(in srgb, var(--card-accent) 9%, var(--surface)); }
 .exam-card-cta.soon { color: var(--muted); background: var(--bg); }
 .pill, .band { padding: 3px 10px; }
+/* letter-spacing in em is inherited as a fixed length, so the h1 tracking would squash the pill. */
+h1 .pill { letter-spacing: normal; }
 .button { border-radius: 11px; padding: 11px 18px; min-height: 44px; transition: filter .15s, transform .15s; }
 .button:hover:not(:disabled) { filter: brightness(1.08); }
 .button:active:not(:disabled) { transform: scale(.985); }
