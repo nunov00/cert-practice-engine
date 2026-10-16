@@ -1,0 +1,25 @@
+id: aaism-d1-1.5-0009
+subdomain: '1.5'
+difficulty: easy
+stem: What is the MAIN purpose of running a tabletop exercise based on an AI incident scenario?
+options:
+  A: To test whether roles, decisions and playbooks work before a real incident
+  B: To measure how well the AI model resists attacks in a controlled environment
+  C: To show regulators that the organisation has deployed its AI systems safely
+  D: To train data scientists to carry out forensic analysis of compromised models
+answer: A
+explanation:
+  why_correct: A tabletop is a discussion-based exercise. Walking through a scenario such as a poisoned model or a leaking
+    chatbot shows gaps in roles, escalation, decisions and playbooks while there is still time to fix them.
+  why_not:
+    B: Testing model resistance is the job of adversarial or red team testing, not a discussion exercise.
+    C: Exercises may support compliance evidence, but they do not prove systems are safe.
+    D: Forensic skills need hands-on training. A tabletop focuses on coordination and decisions.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

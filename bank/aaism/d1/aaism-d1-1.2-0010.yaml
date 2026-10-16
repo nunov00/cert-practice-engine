@@ -1,0 +1,26 @@
+id: aaism-d1-1.2-0010
+subdomain: '1.2'
+difficulty: medium
+stem: Which of the following BEST shows that an AI security strategy is aligned with the business strategy?
+options:
+  A: Security priorities are ranked by each AI use's business value and risk
+  B: The strategy covers every AI system listed in the inventory
+  C: The strategy has been formally approved by the chief security officer
+  D: AI security spending has grown at the same rate as overall AI spending
+answer: A
+explanation:
+  why_correct: Alignment means security effort follows what matters to the business. Ranking priorities by the value
+    and risk of each AI use ties security work directly to business goals.
+  why_not:
+    B: Full coverage is useful, but it treats all systems alike. Alignment means effort follows each use's value
+      and risk to the business.
+    C: Approval by the security leader alone does not show the business agrees with the strategy.
+    D: Matching spend growth says nothing about whether money goes to the right risks.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

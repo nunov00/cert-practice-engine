@@ -1,0 +1,29 @@
+id: aaism-d3-3.2-0003
+subdomain: '3.2'
+difficulty: medium
+stem: At a small fintech, one machine learning engineer can change training code, approve the change and trigger deployment
+  to production. Which control is MOST effective?
+options:
+  A: A monthly review of all pipeline activity logs by the engineering team lead
+  B: Cryptographic signing of every model built by the pipeline
+  C: A background check and signed code of conduct for the engineer
+  D: A pipeline rule that needs a second person's approval to promote a model
+answer: D
+explanation:
+  why_correct: The weakness is a lack of separation of duties. Enforcing a second, independent approval in the pipeline itself
+    means no single person can put an unreviewed model into production. It prevents the problem rather than detecting it,
+    and works even in a small team.
+  why_not:
+    A: A monthly log review is a detective compensating control. It would find misuse weeks after a bad model went live.
+    B: Signing proves the model was built by the pipeline. Since the engineer controls the pipeline input, a signed model
+      can still be an unreviewed one.
+    C: Personnel checks reduce insider risk but do not stop honest mistakes or a compromised account. They do not restore
+      separation of duties.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

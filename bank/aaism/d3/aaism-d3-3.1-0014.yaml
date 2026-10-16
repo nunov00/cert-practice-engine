@@ -1,0 +1,29 @@
+id: aaism-d3-3.1-0014
+subdomain: '3.1'
+difficulty: medium
+stem: A retailer's mobile app calls a foundation model provider directly. The provider API key is kept in the phone's hardware-backed
+  secure store, and a monthly spending cap is set with the provider. What should the security manager recommend?
+options:
+  A: Route model calls through the retailer's back end, which holds the key and checks users
+  B: Issue every app installation its own provider key that can be revoked when abuse is seen
+  C: Rotate the provider key every month and push the new key out through app updates
+  D: Add certificate pinning so that the app's traffic to the provider cannot be intercepted
+answer: A
+explanation:
+  why_correct: Any key shipped to a device can be extracted by its owner, however it is stored, and then used to call the model directly,
+    bypassing the app's system prompt, filters and per-user limits. A server-side gateway keeps the key off devices and puts authentication,
+    rate limits and filtering at a trust boundary the retailer controls. The spending cap limits cost, not misuse.
+  why_not:
+    B: Per-installation keys make revocation easier, but each key is still on an untrusted device and can call the model without the
+      app's controls. Revocation only follows abuse that has already happened.
+    C: Rotation shortens the life of a stolen key, but every new key is shipped to every device and can be extracted again.
+    D: Pinning protects traffic in transit. The weakness is that the client holds the key, and pinning can itself be bypassed on a device
+      the attacker controls.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-c
+  checked_by: 2026-10-16-aaism-d3-c-check
+  check_verdict: pass

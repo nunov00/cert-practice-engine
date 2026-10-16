@@ -1,0 +1,27 @@
+id: aaism-d2-2.1-0008
+subdomain: '2.1'
+difficulty: medium
+stem: A card issuer set a tolerance of 2% for missed fraud by its AI model. The rate is now 1.8% and has risen each month
+  for four months. What should the risk manager do?
+options:
+  A: Take no action, because the rate still remains within the agreed tolerance
+  B: Retire the model at once and return to rule-based fraud detection
+  C: Escalate the trend to the risk owner and plan treatment before a breach
+  D: Propose raising the tolerance to 3% to allow for normal model drift
+answer: C
+explanation:
+  why_correct: A steady trend toward a threshold is an early warning. Escalating now gives the risk owner time to treat the
+    cause, such as drift or new fraud patterns, before the tolerance is breached.
+  why_not:
+    A: Waiting ignores a clear trend. The rate is likely to breach tolerance soon.
+    B: The model is still within tolerance. Retiring it now is out of proportion and may increase fraud losses.
+    D: Changing the tolerance to fit performance undermines the purpose of thresholds. That decision belongs to management,
+      not the model's behaviour.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-check

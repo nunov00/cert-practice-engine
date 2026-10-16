@@ -1,0 +1,28 @@
+id: aaism-d3-3.1-0007
+subdomain: '3.1'
+difficulty: easy
+stem: An education publisher plans to launch a public writing assistant and rely only on the foundation model provider's built-in
+  safety filter. What should the security manager recommend?
+options:
+  A: Accept the plan, because the provider is accountable for its filter
+  B: Replace the provider's filter with one built by the publisher
+  C: Ask the provider for a contractual guarantee on filter accuracy
+  D: Add the publisher's own input and output controls around the model
+answer: D
+explanation:
+  why_correct: Defence in depth means no single control should stand between users and harm. The provider's filter is generic
+    and outside the publisher's control. Adding application-level input and output checks tuned to the publisher's audience
+    gives an independent layer if the provider's filter misses something.
+  why_not:
+    A: The publisher remains accountable for what its product shows users. Relying on one external control leaves a single
+      point of failure.
+    B: Replacing the filter removes a layer instead of adding one. Both layers together are stronger than either alone.
+    C: A contract may shift some liability but does not add any protection for users. It is not a technical control.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

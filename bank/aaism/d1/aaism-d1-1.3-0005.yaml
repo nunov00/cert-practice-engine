@@ -1,0 +1,27 @@
+id: aaism-d1-1.3-0005
+subdomain: '1.3'
+difficulty: medium
+stem: A retailer's retention schedule requires customer purchase records to be deleted after five years. Copies
+  of these records were used to train a recommendation model. What should the security manager make sure of?
+options:
+  A: The model is deleted on the same day as the original purchase records
+  B: The records are kept for as long as the model remains in production
+  C: The data science team decides case by case which copies to keep
+  D: Training copies follow the schedule and the model's status is reviewed
+answer: D
+explanation:
+  why_correct: Retention rules apply to every copy of the data, including training sets. The model itself also needs
+    a decision on whether it can keep running, be retrained or must be retired, which should be made with legal
+    input.
+  why_not:
+    A: Deleting the model automatically may be unnecessary. Its status should be assessed, not assumed.
+    B: Keeping records to serve a model overrides the schedule and may breach legal or privacy duties.
+    C: Ad hoc decisions by the team using the data lead to inconsistency and lack proper authority.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

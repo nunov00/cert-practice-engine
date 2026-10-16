@@ -1,0 +1,27 @@
+id: aaism-d3-3.2-0009
+subdomain: '3.2'
+difficulty: medium
+stem: A university's student support model was validated by the same team that built it, using a test set the team chose.
+  What is the MOST significant weakness?
+options:
+  A: Validation lacks independence, so weaknesses may go undetected
+  B: The test set may be too small to give stable performance figures
+  C: The validation results may not have been documented in enough detail
+  D: The business owner may not have signed off the validation results
+answer: A
+explanation:
+  why_correct: Validation is meant to challenge the model. When builders test their own work with data they chose, blind spots
+    and test data overlap can go unnoticed, so results may be optimistic. Independent validation, or at least independent
+    test design, gives assurance that the model is fit for release.
+  why_not:
+    C: Documentation matters for evidence, but good documents of a biased test do not fix the bias.
+    B: Size may be an issue, but the root weakness is who chose the data and ran the tests.
+    D: Business sign-off is needed for release, but it relies on validation being sound in the first place.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

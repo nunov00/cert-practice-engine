@@ -1,0 +1,27 @@
+id: aaism-d3-3.3-0014
+subdomain: '3.3'
+difficulty: medium
+stem: A public body's chatbot answers from a policy library. Only the policy team can publish there, and each document is approved first.
+  Staff found the chatbot quoting a policy that had been withdrawn months ago. Which control BEST prevents this from happening again?
+options:
+  A: A monthly manual review of a sample of the chatbot's answers by the policy team
+  B: Index updates that remove or refresh content whenever source documents change
+  C: A notice on each answer that shows the date of the source and asks users to check
+  D: A second approval step for any document before it is added to the policy library
+answer: B
+explanation:
+  why_correct: Publication control already works; the gap is that withdrawn or changed documents stay in the search index. Tying the
+    index to the source life cycle, so that removals and updates flow through automatically, keeps the knowledge base an accurate copy
+    of approved content. That fixes the cause.
+  why_not:
+    A: Sampling answers may spot stale content, but only after users have relied on it and only in the answers sampled.
+    C: A date helps users judge answers, but it moves the burden to them and leaves withdrawn policy in the index.
+    D: The problem is not what gets in. The document was properly approved; it was its withdrawal that never reached the chatbot.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-c
+  checked_by: 2026-10-16-aaism-d3-c-check
+  check_verdict: pass

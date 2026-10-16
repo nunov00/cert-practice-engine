@@ -1,0 +1,29 @@
+id: aaism-d3-3.5-0005
+subdomain: '3.5'
+difficulty: medium
+stem: An energy company's AI platform sends its logs to an observability tool that only the data science team watches. The
+  security operations centre (SOC) cannot see AI events. What should the information security manager do FIRST?
+options:
+  A: Give SOC analysts read access to the data science tool
+  B: Feed security-relevant AI events into the SIEM with use cases
+  C: Ask the data science team to send the SOC a weekly summary
+  D: Replace the observability tool with the company SIEM
+answer: B
+explanation:
+  why_correct: AI events must be part of normal security monitoring. Defining which AI events matter for security, sending
+    them to the SIEM and building detection use cases lets the SOC correlate them with other signals and respond under existing
+    processes.
+  why_not:
+    A: Read access to another console is a partial fix. Analysts would have to watch a separate tool, with no correlation
+      or alerting.
+    C: A weekly summary is too slow for detection and depends on non-security staff spotting security events.
+    D: The observability tool still serves performance and quality monitoring. Replacing it would lose that without adding
+      security use cases.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-check

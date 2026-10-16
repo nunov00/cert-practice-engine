@@ -1,0 +1,30 @@
+id: aaism-d3-3.1-0002
+subdomain: '3.1'
+difficulty: medium
+stem: A law firm is building an internal assistant that answers questions using retrieval from its document store. Access
+  to client files is restricted by matter. Which design BEST protects confidentiality?
+options:
+  A: Build a separate vector index for each practice group and route users to their group's index
+  B: Exclude all documents marked confidential from the index so that the model never sees them
+  C: Instruct the model to withhold content from matters the user is not assigned to
+  D: Filter retrieved documents against the requesting user's existing matter permissions at query time
+answer: D
+explanation:
+  why_correct: The retrieval step is where data enters the model's context, so that is where existing access rights must be
+    enforced. Checking each retrieved document against the user's own matter permissions keeps the assistant consistent with
+    the firm's access model, at the right granularity, and does not rely on the model behaving.
+  why_not:
+    A: Practice groups are coarser than matters. Users in a group would still see matters they are walled off from, so ethical
+      walls could be breached.
+    B: Excluding confidential documents avoids the risk but removes most of the assistant's value at a law firm. It is avoidance,
+      not a design that enforces access.
+    C: The model cannot reliably enforce access rules, and prompt injection can override the instruction. Once the content
+      is in context it can leak.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

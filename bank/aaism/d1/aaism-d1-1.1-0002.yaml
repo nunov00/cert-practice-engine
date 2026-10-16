@@ -1,0 +1,28 @@
+id: aaism-d1-1.1-0002
+subdomain: '1.1'
+difficulty: easy
+stem: A company plans to use an AI tool to shortlist job applicants. Which stakeholder should the security manager
+  involve FIRST to decide whether the tool falls into a regulated high-risk category?
+options:
+  A: The data science lead who will configure the tool
+  B: Internal audit, which reviews compliance each year
+  C: The HR director who owns the recruitment process
+  D: The legal and compliance function of the company
+answer: D
+explanation:
+  why_correct: Deciding whether a use falls inside a regulated category is a legal interpretation. Legal and compliance
+    own that judgment, and their answer shapes which controls and duties apply.
+  why_not:
+    A: The data science lead knows how the tool works but is not qualified to interpret the regulation.
+    B: Internal audit gives independent assurance later. It should not make the first scoping decision it may later
+      audit.
+    C: HR owns the process and will carry the duties, but deciding which legal category applies is a legal interpretation.
+      HR relies on legal and compliance for it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

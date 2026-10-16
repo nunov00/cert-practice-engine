@@ -1,0 +1,27 @@
+id: aaism-d3-3.3-0004
+subdomain: '3.3'
+difficulty: medium
+stem: An agritech company plans to buy a labelled crop image dataset from a data broker to train a disease detection model.
+  What should be done FIRST?
+options:
+  A: Verify the dataset's source, collection rights and integrity before use
+  B: Train a small trial model first to check that the dataset gives good accuracy
+  C: Scan the dataset files with the company's malware scanning tools
+  D: Rely on the broker's warranty that the data is accurate and lawful
+answer: A
+explanation:
+  why_correct: Provenance verification comes first because it tells the company whether it may use the data and whether it
+    can be trusted. It covers where the data came from, how it was labelled, the right to use it, and hashes to confirm it
+    has not been altered.
+  why_not:
+    B: A trial model can look accurate while the data is poisoned or unlawfully obtained. Accuracy is not proof of origin.
+    C: Malware scanning addresses only one narrow risk and says nothing about labels, rights or poisoning.
+    D: A warranty may help recover losses later, but it does not verify anything before use.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

@@ -1,0 +1,26 @@
+id: aaism-d3-3.5-0001
+subdomain: '3.5'
+difficulty: easy
+stem: A law firm deploys an internal generative AI assistant. Which log data is MOST important for investigating possible
+  misuse of the assistant?
+options:
+  A: Prompts, outputs, user identity and time of each request
+  B: Processor and memory use of the model-serving servers
+  C: The model version that is currently deployed in production
+  D: Daily totals of requests made by each office of the firm
+answer: A
+explanation:
+  why_correct: To investigate misuse, the firm must know who asked what, what the assistant returned and when. Prompt and
+    output logs tied to user identity and time give that attribution and evidence.
+  why_not:
+    B: Resource use helps capacity planning and may hint at abuse, but it shows nothing about what was asked or by whom.
+    C: The model version is useful context but cannot show any individual's activity.
+    D: Aggregated counts hide the individual requests that an investigation needs.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-check

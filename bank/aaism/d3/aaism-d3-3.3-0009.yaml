@@ -1,0 +1,27 @@
+id: aaism-d3-3.3-0009
+subdomain: '3.3'
+difficulty: easy
+stem: An HR chatbot at a retail chain answers staff questions from intranet pages that any employee can edit. What is the
+  GREATEST concern?
+options:
+  A: Anyone can plant content that changes the chatbot's answers to staff
+  B: Employees may ask questions the intranet pages do not cover
+  C: Intranet pages may be too long for the model's context window
+  D: The chatbot's answers may become out of date between index refreshes
+answer: A
+explanation:
+  why_correct: The knowledge base is part of the model's input. If any employee can edit it, a single person can insert false
+    policy or hidden instructions that the chatbot then repeats with authority. Publishing to the knowledge base needs restricted
+    rights and content review.
+  why_not:
+    D: Stale answers are a quality issue that refresh scheduling can fix. They are less serious than deliberate manipulation.
+    B: Coverage gaps affect usefulness but do not create a security risk.
+    C: Context size is a design limitation handled by chunking. It is not a security concern.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

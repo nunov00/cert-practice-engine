@@ -1,0 +1,28 @@
+id: aaism-d1-1.2-0009
+subdomain: '1.2'
+difficulty: medium
+stem: A manufacturer approved an enterprise chatbot for internal data only. Staff still paste customer contract
+  terms into it, which breaches the classification rules. What is the BEST next step?
+options:
+  A: Withdraw the chatbot until the policy has been fully rewritten
+  B: Ask the vendor to delete the stored conversations with contract data
+  C: Combine targeted training with automated checks on sensitive input
+  D: Have leadership restate the policy in a company-wide email
+answer: C
+explanation:
+  why_correct: The policy is sound but not followed in practice. Training with real examples fixes the knowledge
+    gap, and automated checks catch mistakes that training alone will miss. Together they keep the tool's benefits
+    while cutting the breaches.
+  why_not:
+    A: Withdrawing the tool punishes everyone, may drive use to public tools, and the policy itself is not the problem.
+    B: Deleting stored data limits past exposure, but it does nothing to stop staff pasting contract terms tomorrow.
+    D: A reminder raises awareness briefly, but staff need to know which data is sensitive and a check that catches
+      mistakes.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

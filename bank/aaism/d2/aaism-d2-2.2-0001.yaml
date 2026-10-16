@@ -1,0 +1,24 @@
+id: aaism-d2-2.2-0001
+subdomain: '2.2'
+difficulty: medium
+stem: "An insurer is designing a claims-triage assistant that uses a large language model, searches internal policy documents and can open tickets in the claims system. The security manager wants AI-specific threats found early. What should be done FIRST?"
+options:
+  A: "Threat model the assistant across its data flows, trust boundaries and tool actions"
+  B: "Commission an external red team exercise against the assistant"
+  C: "Scan the hosting environment for known infrastructure vulnerabilities"
+  D: "Subscribe to a threat intelligence feed covering attacks on AI systems"
+answer: A
+explanation:
+  why_correct: "At the design stage there is nothing built to test yet. Threat modelling the design shows where untrusted content enters, where the model's output drives actions such as opening tickets, and which trust boundaries need controls. It is proactive and shapes every later security activity, including what the red team should target."
+  why_not:
+    B: "Red teaming needs a working system and is most useful once the threat model has shown what to test. It comes later in the life cycle."
+    C: "Infrastructure scanning matters, but it finds generic flaws in deployed hosts, not design-level AI threats such as injected content steering the tools."
+    D: "Threat intelligence supports threat modelling with current attack techniques. It does not by itself identify the threats in this specific design."
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-check
+  check_verdict: pass

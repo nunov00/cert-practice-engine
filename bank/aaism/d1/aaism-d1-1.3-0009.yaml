@@ -1,0 +1,27 @@
+id: aaism-d1-1.3-0009
+subdomain: '1.3'
+difficulty: medium
+stem: A logistics firm has 40 AI assets in its inventory and few security staff. How should the security manager
+  decide where to apply the strongest controls FIRST?
+options:
+  A: Start with the models the data science team says are most complex
+  B: Start with externally facing models, as they are exposed to attack
+  C: Start with the models that are built on third-party foundation models
+  D: Start with assets rated most critical for business impact and data
+answer: D
+explanation:
+  why_correct: Criticality combines business impact and data sensitivity, so it points limited resources at the
+    assets whose compromise would hurt most. Exposure and supply chain are inputs to the risk view, not the whole
+    picture.
+  why_not:
+    A: Complexity does not equal importance. A complex model may support a minor process.
+    B: Exposure raises likelihood, but an internal model handling critical decisions may matter more.
+    C: Third-party models bring supply chain risk, but this is one factor and ignores business impact.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

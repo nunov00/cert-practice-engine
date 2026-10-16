@@ -1,0 +1,28 @@
+id: aaism-d3-3.4-0006
+subdomain: '3.4'
+difficulty: medium
+stem: A staffing firm buys a candidate ranking tool. The vendor says the tool is fair because gender and age were removed
+  from its input features. What is the GREATEST concern with relying on this claim?
+options:
+  A: Removing the features may lower the tool's ranking accuracy
+  B: The vendor may not share the full list of input features used
+  C: Other features can act as proxies, so outcomes can still be biased
+  D: Some laws may require age and gender to be kept for reporting
+answer: C
+explanation:
+  why_correct: Fairness through unawareness is weak. Features such as career gaps, graduation year or hobbies can correlate
+    with gender or age, so the model can still discriminate. The firm should require outcome-based fairness testing on its
+    own population, not accept feature removal as proof.
+  why_not:
+    A: A possible accuracy loss is a performance trade-off. It does not undermine the claim of fairness.
+    B: Limited transparency is a real due diligence issue, but even a full feature list would not show whether proxies drive
+      bias.
+    D: Monitoring obligations may exist, but that concerns record keeping, not whether the tool's outcomes are fair.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-check

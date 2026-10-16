@@ -1,0 +1,27 @@
+id: aaism-d1-1.4-0007
+subdomain: '1.4'
+difficulty: easy
+stem: A hotel group's security manager is presenting a business case for funding the AI security program to the executive
+  team. Which approach is MOST likely to win support?
+options:
+  A: Cite industry statistics on the growth of attacks on AI systems worldwide
+  B: Compare the group's planned security spending with that of its main competitors
+  C: List the technical capabilities the security team currently lacks for AI systems
+  D: Link each proposed investment to the risks of the group's planned AI initiatives
+answer: D
+explanation:
+  why_correct: Executives fund what supports business objectives. Showing how each investment reduces risk to specific AI
+    initiatives the group is pursuing, such as guest chatbots or dynamic pricing, ties the spend to value and to the board's
+    risk appetite.
+  why_not:
+    A: General attack statistics raise awareness but do not show what this group should fund or why.
+    B: Peer spending comparisons are weak evidence. They ignore the group's own risk profile and plans.
+    C: A list of capability gaps is framed from the security team's view. It does not show business impact.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

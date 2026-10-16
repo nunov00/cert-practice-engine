@@ -1,0 +1,26 @@
+id: aaism-d1-1.1-0012
+subdomain: '1.1'
+difficulty: medium
+stem: A logistics company plans to train a model in a cloud region abroad using employee data from three countries.
+  What should the security manager verify FIRST?
+options:
+  A: Whether the cloud provider holds a recognised security certification
+  B: Whether employees were told that AI would be used in HR processes
+  C: Whether transfer rules allow the employee data to be moved there
+  D: Whether the storage in the chosen region is encrypted at rest
+answer: C
+explanation:
+  why_correct: If the data may not lawfully leave its home countries, the plan cannot go ahead as designed. Cross-border
+    transfer rules are a gating question, so they come before control and notice details.
+  why_not:
+    A: A certification shows general security maturity. It does not make a prohibited transfer lawful.
+    B: Transparency to employees matters, but it does not settle whether the data may be moved abroad.
+    D: Encryption is a needed control, but it is a later design detail once the transfer is allowed.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

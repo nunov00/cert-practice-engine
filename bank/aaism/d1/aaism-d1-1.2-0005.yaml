@@ -1,0 +1,26 @@
+id: aaism-d1-1.2-0005
+subdomain: '1.2'
+difficulty: easy
+stem: Which type of document should hold a mandatory, specific requirement such as "all production models must be
+  stored in the approved registry"?
+options:
+  A: A guideline
+  B: A policy
+  C: A standard
+  D: A procedure
+answer: C
+explanation:
+  why_correct: Standards turn policy intent into specific, mandatory requirements. A rule naming exactly where production
+    models must be stored is that kind of requirement.
+  why_not:
+    A: Guidelines are recommended practice. They are not mandatory.
+    B: Policies state high-level intent and direction. Specific technical rules sit below them in standards.
+    D: Procedures describe the steps to carry out a task. They support the standard but do not set the rule.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

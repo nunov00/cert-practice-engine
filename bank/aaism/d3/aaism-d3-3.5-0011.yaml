@@ -1,0 +1,28 @@
+id: aaism-d3-3.5-0011
+subdomain: '3.5'
+difficulty: medium
+stem: A software firm's support chatbot answers from a knowledge base. After it disclosed internal pricing, investigators
+  could not find the cause because only user prompts and final answers were logged. What additional logging would have been
+  MOST useful?
+options:
+  A: The source passages fetched to ground each answer
+  B: A checksum of the model weights taken at the time of each answer
+  C: The browser and device details of each user of the chatbot
+  D: Network flow records between the chatbot and its model host
+answer: A
+explanation:
+  why_correct: In a retrieval-augmented system the answer depends on what was retrieved. Logging the retrieved passages, with
+    the prompt template version, shows whether the leak came from a wrongly accessible document or from injected content.
+    That is what the investigators lacked.
+  why_not:
+    B: Weight checksums detect tampering with the model, which is unlikely to explain a leak of knowledge base content.
+    C: Device details may help identify a user, but they do not explain how the pricing reached the answer.
+    D: Flow records show traffic volumes, not the content that shaped the answer.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-check

@@ -1,0 +1,28 @@
+id: aaism-d3-3.4-0009
+subdomain: '3.4'
+difficulty: medium
+stem: A water utility launches an AI chatbot for customer queries. Which measure BEST supports customers' trust and the utility's
+  transparency duties?
+options:
+  A: Publish a summary of the data sources used to train the chatbot
+  B: Tell users they are talking to AI and how to reach a person
+  C: Publish the chatbot's measured accuracy rates on the website
+  D: Keep a log of all conversations for later quality reviews
+answer: B
+explanation:
+  why_correct: Users should know when they are dealing with an AI system and have a clear route to a human. This is the core
+    transparency expectation for customer-facing AI and lets users judge how far to rely on answers.
+  why_not:
+    A: A training data summary is a transparency measure mainly expected of model providers. For a utility deploying a chatbot,
+      it does not tell customers they are dealing with AI or how to reach a person.
+    C: Accuracy figures can help users calibrate their reliance, but they are secondary. Customers first need to know they
+      are talking to AI and have a human route.
+    D: Logging supports quality and investigation, but it is invisible to users and does not inform them.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-check

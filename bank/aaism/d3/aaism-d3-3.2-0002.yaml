@@ -1,0 +1,28 @@
+id: aaism-d3-3.2-0002
+subdomain: '3.2'
+difficulty: medium
+stem: An online retailer's recommendation model is retrained every week on new click data and pushed to production automatically.
+  What is the GREATEST concern?
+options:
+  A: Older model versions may not be kept for long enough to support a rollback
+  B: New versions reach customers without passing security and quality checks
+  C: The weekly cycle may not match seasonal patterns in customer demand
+  D: Retraining every week uses more compute than the budget assumed
+answer: B
+explanation:
+  why_correct: Automated retraining on fresh data is a change to production. Without evaluation gates, a model degraded by
+    bad data or deliberate manipulation of click behaviour goes live with no check. Retraining should pass the same tests
+    and approval criteria as any release.
+  why_not:
+    A: Keeping older versions matters for recovery, but it is a secondary control. It does not stop a bad model from reaching
+      customers.
+    C: Seasonal fit is a business performance question, not a security concern.
+    D: Cost overrun is a financial matter. It does not affect the integrity of the model in production.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

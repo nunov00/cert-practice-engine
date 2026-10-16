@@ -1,0 +1,28 @@
+id: aaism-d1-1.2-0014
+subdomain: '1.2'
+difficulty: medium
+stem: A security manager's draft AI security strategy focuses on protecting in-house training pipelines and hardening self-built
+  models. The CEO has since approved a strategy to buy AI capability as hosted services, with no in-house model building
+  planned for three years. What should the security manager do?
+options:
+  A: Keep the draft, since the firm may build its own models later on
+  B: Add an AI red-teaming capability to cover the hosted services
+  C: Benchmark the draft against peers that also buy hosted AI
+  D: Refocus the strategy on vendor risk and data shared with services
+answer: D
+explanation:
+  why_correct: A security strategy must follow the business strategy. With AI bought as services, the main exposures are
+    vendor risk, contracts, and the data the firm sends to and receives from those services. Effort spent on in-house pipelines
+    would protect assets the firm does not plan to have.
+  why_not:
+    A: A future option is not a reason to spend scarce effort now. The strategy can be revised if the business changes course.
+    B: Testing hosted services can help, but it is one capability. It does not realign the strategy as a whole.
+    C: Peer benchmarking is useful input, but the draft must first be rebuilt around the firm's own approved direction.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-c
+  checked_by: 2026-10-16-aaism-d1-c-check
+  check_verdict: pass

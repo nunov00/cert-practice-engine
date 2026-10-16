@@ -1,0 +1,25 @@
+id: aaism-d2-2.1-0007
+subdomain: '2.1'
+difficulty: easy
+stem: Which content makes an AI risk register entry MOST useful for managing the risk?
+options:
+  A: A named risk owner, the agreed treatment and its due date
+  B: A description of the model architecture and its parameters
+  C: The size and format of the dataset used to train the model
+  D: The name of the data scientist who developed the model
+answer: A
+explanation:
+  why_correct: A register entry becomes actionable when someone is accountable, the response is agreed and progress can be
+    tracked against a date. These fields let management follow up on the risk.
+  why_not:
+    B: Architecture details belong in technical documentation, not the risk register.
+    C: Dataset details may inform the assessment, but they do not drive treatment or accountability.
+    D: The developer is not the risk owner and may change. Naming them does not drive treatment.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-check

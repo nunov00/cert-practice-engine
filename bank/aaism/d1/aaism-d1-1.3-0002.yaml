@@ -1,0 +1,28 @@
+id: aaism-d1-1.3-0002
+subdomain: '1.3'
+difficulty: medium
+stem: A software company's AI inventory lists every model in production. Which addition would MOST improve its value
+  for security management?
+options:
+  A: The datasets, prompts, plugins and agents that each model relies on
+  B: The names of the data scientists who trained each of the models
+  C: The accuracy score reported at each model's most recent validation
+  D: The date on which each model was last retrained
+answer: A
+explanation:
+  why_correct: Many AI risks sit in the components around a model, such as training data, system prompts and connected
+    tools. Recording these dependencies lets the security team see the full attack surface and trace the impact
+    of a compromise.
+  why_not:
+    B: Knowing who trained a model helps with questions but does not reveal the assets that need protection.
+    C: Accuracy is a quality measure. It adds little to understanding security exposure.
+    D: Retraining dates help with change tracking, but they do not show what the model depends on or how a compromise
+      would spread.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

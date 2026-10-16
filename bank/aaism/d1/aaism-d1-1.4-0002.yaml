@@ -1,0 +1,29 @@
+id: aaism-d1-1.4-0002
+subdomain: '1.4'
+difficulty: medium
+stem: At a retail bank, the data science team says model security belongs to the security team, while the security team says
+  the models belong to data science. What is the BEST way for the AI security manager to resolve this?
+options:
+  A: Transfer all model security tasks to the security team so one group owns them
+  B: Ask internal audit to decide which team should own each model security task
+  C: Agree a RACI for AI security activities and have it endorsed by the steering committee
+  D: Add model security duties to the job descriptions of the individual data scientists
+answer: C
+explanation:
+  why_correct: The dispute is about unclear roles. A RACI that both teams agree, and that leadership endorses, assigns responsibility
+    and accountability for each activity, such as defining security requirements, implementing them in models and reviewing
+    them. Endorsement gives it authority so the gap does not reopen.
+  why_not:
+    A: The security team cannot carry out many model-level tasks without data science involvement. Moving everything to one
+      team ignores shared responsibility.
+    B: Internal audit should stay independent. Deciding management responsibilities would impair its ability to assess them
+      later.
+    D: Job descriptions for individuals do not clarify accountability between teams. They also lack program-level endorsement.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

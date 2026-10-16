@@ -1,0 +1,27 @@
+id: aaism-d1-1.2-0001
+subdomain: '1.2'
+difficulty: medium
+stem: An insurer's executives plan to halve claims handling time with AI within two years. What should the security
+  manager do FIRST when developing the AI security strategy?
+options:
+  A: Define the security architecture for the planned AI models
+  B: Benchmark the AI security spending of comparable insurers
+  C: Learn which AI uses the business plans and what each must do
+  D: Write technical hardening standards for models in production
+answer: C
+explanation:
+  why_correct: A security strategy has to support the business strategy. Knowing the planned AI uses and their goals
+    shows what must be protected, which risks matter most and where security can enable the plan.
+  why_not:
+    A: Architecture is designed to meet strategic needs. Starting with it risks building controls for the wrong
+      uses and priorities.
+    B: Peer benchmarks give context, but they do not reflect this insurer's own goals and risks.
+    D: Detailed standards come after strategy and policy. Writing them first risks targeting the wrong things.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

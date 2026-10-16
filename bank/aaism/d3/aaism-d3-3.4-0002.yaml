@@ -1,0 +1,27 @@
+id: aaism-d3-3.4-0002
+subdomain: '3.4'
+difficulty: medium
+stem: An insurer wants to reuse claims data, collected to settle claims, to train a fraud detection model. What should the
+  information security manager confirm FIRST?
+options:
+  A: That the claims data is encrypted wherever it is stored
+  B: That the fraud model will reach the required accuracy
+  C: That the new use is compatible with the original purpose
+  D: That the data scientists have completed privacy training
+answer: C
+explanation:
+  why_correct: Purpose limitation comes first. If the original notice and legal basis do not cover training a fraud model,
+    the reuse may be unlawful however well it is secured. Confirming compatibility, with privacy and legal input, decides
+    whether and how the project can go ahead.
+  why_not:
+    A: Encryption is a useful safeguard, but it does not make an incompatible use lawful.
+    B: Accuracy is a business and model quality question. It does not settle whether the data may be used at all.
+    D: Training helps staff handle data well. It is secondary to whether this use of the data is permitted.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-check

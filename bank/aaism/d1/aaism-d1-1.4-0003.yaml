@@ -1,0 +1,29 @@
+id: aaism-d1-1.4-0003
+subdomain: '1.4'
+difficulty: medium
+stem: A university's security team has no machine learning expertise, but the new AI security program requires it to assess
+  research and administrative AI systems. What should the security manager do FIRST?
+options:
+  A: Run a skills gap analysis against the program's planned AI security activities
+  B: Contract an external firm to carry out the AI assessments for the coming year
+  C: Enrol the security team in an advanced machine learning engineering course
+  D: Defer the AI assessments until a specialist has been recruited to the team
+answer: A
+explanation:
+  why_correct: The manager first needs to know which skills the program's activities actually require and where the gaps are.
+    A gap analysis then supports a mix of targeted training, pairing with data scientists, hiring or outside help, each chosen
+    for the gap it fills.
+  why_not:
+    B: Outsourcing may fill a short-term need, but it is a resourcing choice that should follow the gap analysis. On its own
+      it builds no internal capability.
+    C: Advanced engineering training may not match what a security role needs. Choosing training before knowing the gaps risks
+      wasting budget.
+    D: Deferring assessments leaves AI risk unmanaged for months. Interim options exist while the capability is built.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

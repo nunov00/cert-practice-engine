@@ -1,0 +1,29 @@
+id: aaism-d1-1.4-0015
+subdomain: '1.4'
+difficulty: medium
+stem: A business owner at a utility decides to launch an AI feature despite a high-rated security finding, citing a deadline.
+  The program charter says high risks need acceptance at executive level, and the owner is a middle manager. The security
+  manager cannot block launches. What should the security manager do?
+options:
+  A: Record the owner's decision and the finding in the risk register
+  B: Escalate the finding to the executive named for high-risk decisions
+  C: Ask internal audit to review the decision after the feature launches
+  D: Agree to a short delay while the team fixes the most severe issues
+answer: B
+explanation:
+  why_correct: The charter sets who may accept a high risk, and the owner does not have that authority. Escalating to the
+    right executive gets a valid decision, whether that is to accept, delay or fund a fix. The security manager does not
+    need power to block a launch, only a working escalation path.
+  why_not:
+    A: Recording is needed, but it would treat an acceptance made at the wrong level as if it were valid.
+    C: An audit after the fact may find the breach, but the risk is live by then. The decision should be made correctly
+      now.
+    D: A negotiated fix may help, but the owner still lacks authority to accept what remains. The right executive must decide.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-c
+  checked_by: 2026-10-16-aaism-d1-c-check
+  check_verdict: pass

@@ -1,0 +1,96 @@
+# AAISM recipe. Format: recipes/_format/recipe-format.v0.2.yaml
+# AAISM = ISACA Advanced in AI Security Management (for CISM or CISSP holders).
+# Domains, weights and subdomain headings checked against ISACA's official
+# exam content outline on 2026-10-16. Headings are short labels only;
+# "(e.g., ...)" examples from the outline are dropped.
+# ISACA letters subdomains (1A-1E, 2A-2C, 3A-3E); the schema needs numbers, so
+# 1A = 1.1, 1B = 1.2, ... 3E = 3.5.
+# ISACA publishes no outline date; outline.version is the launch date of the
+# credential (ISACA press release, 2025-08-19). Revisit if a dated outline appears.
+# Format: 90 questions is on the official outline page. The 150 minutes and the
+# 200-800 scale with 450 to pass match ISACA's sister exams AAIA and AAIR and are
+# reported by independent prep providers; the AAISM candidate guide PDF could not
+# be read from here to confirm.
+# Subdomain targets split each domain's share of bank.target_total evenly.
+#
+# Difficulty calibration (2026-10-16): from ISACA's free AAISM practice quiz
+# (isaca.org/credentialing/aaism/practice-quiz), read for level only and never
+# copied: 4 options, 1-2 sentence stems, about half short scenarios, most with a
+# BEST/MOST/PRIMARY qualifier; management judgment over configuration detail;
+# distractors are true-but-secondary, premature, reactive, too narrow, or owned
+# by the wrong role.
+
+format_version: "0.2"
+
+exam:
+  id: aaism
+  name: "AAISM"
+  issuer: "ISACA"
+  disclaimer: "Independent practice material. Not affiliated with or endorsed by ISACA."
+  outline:
+    source_url: "https://www.isaca.org/credentialing/aaism/aaism-exam-content-outline"
+    version: "2025-08-19"
+    last_checked: "2026-10-16"
+
+format:
+  delivery: linear
+  questions: 90
+  duration_minutes: 150
+  scoring: { scale: [200, 800], pass: 450 }
+  question_types: [single_choice]
+
+style:
+  voice: "security-manager, best-answer, scenario-based"
+  options_per_question: 4
+  rules:
+    - "Exactly one best answer; distractors plausible, not absurd"
+    - "No 'all of the above' or 'none of the above'"
+    - "Test judgment and application, not trivia recall"
+    - "Take the view of an information security manager responsible for AI systems; technical items ask for the right kind of control, not how to configure it"
+    - "Frameworks and laws are named only generically or where widely public (e.g. a security framework, an AI regulation); never quote them"
+
+domains:
+  - id: d1
+    name: "AI Governance and Program Management"
+    weight: 0.31            # 279 of 900 target questions
+    subdomains:
+      - { id: "1.1", title: "Stakeholder considerations, industry frameworks and regulatory requirements", target_questions: 56 }
+      - { id: "1.2", title: "AI-related strategies, policies and procedures", target_questions: 56 }
+      - { id: "1.3", title: "AI asset and data life cycle management", target_questions: 56 }
+      - { id: "1.4", title: "AI security program development and management", target_questions: 56 }
+      - { id: "1.5", title: "Business continuity and incident response", target_questions: 55 }
+  - id: d2
+    name: "AI Risk Management"
+    weight: 0.31            # 279 of 900 target questions
+    subdomains:
+      - { id: "2.1", title: "AI risk assessment, thresholds and treatment", target_questions: 93 }
+      - { id: "2.2", title: "AI threat and vulnerability management", target_questions: 93 }
+      - { id: "2.3", title: "AI vendor and supply chain management", target_questions: 93 }
+  - id: d3
+    name: "AI Technologies and Controls"
+    weight: 0.38            # 342 of 900 target questions
+    subdomains:
+      - { id: "3.1", title: "AI security architecture and design", target_questions: 69 }
+      - { id: "3.2", title: "AI life cycle", target_questions: 69 }
+      - { id: "3.3", title: "Data management controls", target_questions: 68 }
+      - { id: "3.4", title: "Privacy, ethical, trust and safety controls", target_questions: 68 }
+      - { id: "3.5", title: "Security controls and monitoring", target_questions: 68 }
+
+bank:
+  target_total: 900
+  difficulty_mix: { easy: 0.2, medium: 0.5, hard: 0.3 }
+  review:
+    independent_check: true
+    retire_if_report_rate_above: 0.05
+    flag_if_common_wrong_answer_above: 0.5
+
+product:
+  free_sample_per_domain: 10
+  unlock: { price_chf: 29, access_days: 120 }
+  readiness:
+    min_answered: 450
+    min_accuracy_per_domain: 0.75
+  mock:
+    questions: 90
+    minutes: 150
+    forms: 4

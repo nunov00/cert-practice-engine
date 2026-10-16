@@ -1,0 +1,26 @@
+id: aaism-d1-1.5-0004
+subdomain: '1.5'
+difficulty: medium
+stem: A lender's loan approval process now depends on an AI scoring model. During the business impact analysis, what should
+  the security manager determine FIRST?
+options:
+  A: How accurate the scoring model's decisions have been over the last twelve months
+  B: How long lending can continue without the model and whether a fallback exists
+  C: How much it would cost to rebuild and retrain the scoring model after a failure
+  D: Which cloud provider hosts the infrastructure the model runs on
+answer: B
+explanation:
+  why_correct: A business impact analysis starts with the process. It asks how long the business can tolerate losing the model
+    and whether an alternative way of working exists. That drives the recovery objectives and continuity investment.
+  why_not:
+    A: Accuracy is a model performance concern. It does not set continuity requirements.
+    C: Retraining cost is one input to recovery planning. It comes after the tolerable downtime is known.
+    D: Hosting details matter for recovery design, which follows the impact analysis.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

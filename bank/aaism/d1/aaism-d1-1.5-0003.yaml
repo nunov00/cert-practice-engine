@@ -1,0 +1,27 @@
+id: aaism-d1-1.5-0003
+subdomain: '1.5'
+difficulty: medium
+stem: A travel company's booking app relies on an in-house recommendation model. Its disaster recovery plan restores the application
+  servers and databases but makes no mention of model artefacts. What is the GREATEST concern?
+options:
+  A: The recovery time objective for the app may be set too short
+  B: The model may give poorer recommendations after a long outage
+  C: Model accuracy may not have been tested during the recovery test
+  D: The app could be restored without a working model to run on it
+answer: D
+explanation:
+  why_correct: Model weights, feature pipelines and inference settings are critical components. If they are not backed up
+    and included in recovery, restored servers and databases cannot deliver the service, and rebuilding the model could take
+    far longer than the recovery objective.
+  why_not:
+    A: The objective may need review, but the plan cannot meet any objective while a key component is missing.
+    B: Some degradation after an outage is a secondary quality issue compared with being unable to run the model at all.
+    C: Accuracy testing matters, but there is nothing to test if the artefacts cannot be restored.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

@@ -1,0 +1,29 @@
+id: aaism-d1-1.1-0009
+subdomain: '1.1'
+difficulty: medium
+stem: A university hospital wants to use a third-party language model service to summarise patient notes. Health
+  sector rules restrict how patient data is shared. What should be the security manager's GREATEST concern before
+  approval?
+options:
+  A: Whether patient data leaves the hospital's control or is reused
+  B: Whether the provider holds a recognised general security certification
+  C: Whether the contract caps the provider's liability for service outages
+  D: Whether the summaries are accurate enough for clinical use
+answer: A
+explanation:
+  why_correct: The sector rules target the sharing and secondary use of patient data. Where data is processed and
+    whether the provider keeps or trains on it decide whether the use is lawful at all, so this comes before other
+    checks.
+  why_not:
+    B: A certification supports trust but does not show that this data flow meets health sector rules.
+    C: Liability terms matter commercially, but the regulatory concern is data sharing, not outages.
+    D: Accuracy is a real clinical safety concern, but it is owned by clinical governance. Before approval, the
+      sector rules make data sharing the gating issue for security.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

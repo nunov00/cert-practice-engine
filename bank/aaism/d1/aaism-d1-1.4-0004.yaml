@@ -1,0 +1,29 @@
+id: aaism-d1-1.4-0004
+subdomain: '1.4'
+difficulty: medium
+stem: The board of an online retailer asks for one indicator that will warn it early if exposure to AI security risk is growing.
+  Which indicator is BEST for this purpose?
+options:
+  A: The number of prompt injection attempts blocked at the AI gateway each month
+  B: The number of AI security reviews completed by the security team each quarter
+  C: The share of staff who have completed AI security awareness training this year
+  D: The share of production AI systems running without a completed risk assessment
+answer: D
+explanation:
+  why_correct: A key risk indicator should track exposure. Production AI systems without a risk assessment are uncontrolled
+    in a known way, and a rising share signals that AI adoption is outpacing governance. That is the early warning the board
+    asked for.
+  why_not:
+    A: Blocked attempts show threat activity and that a control is working. They say little about how much unassessed or unprotected
+      AI the organisation runs.
+    B: Completed reviews measure the security team's activity. The count can rise while unreviewed systems grow even faster.
+    C: Training completion is a performance indicator for the awareness program. It does not measure risk exposure from AI
+      systems.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

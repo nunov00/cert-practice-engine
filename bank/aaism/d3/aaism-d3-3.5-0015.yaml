@@ -1,0 +1,30 @@
+id: aaism-d3-3.5-0015
+subdomain: '3.5'
+difficulty: medium
+stem: A lender's credit model raised an input drift alert. The data science team says the shift is seasonal and wants to raise the alert
+  threshold. The security manager notes that the shift began the week a partner changed how it submits applications. What should be
+  done FIRST?
+options:
+  A: Raise the threshold as requested, since the data science team owns model performance
+  B: Retrain the model on recent applications so that it reflects the new input pattern
+  C: Find out whether the shift is linked to the partner change before tuning the alert
+  D: Roll back to the model version in use before the drift alert was first raised
+answer: C
+explanation:
+  why_correct: The timing points to a possible cause other than the season, such as malformed or manipulated inputs from the partner.
+    Tuning or retraining before the cause is known could hide an integrity problem or build it into the model. Investigation comes first,
+    and the result decides the right response.
+  why_not:
+    A: Data science owns model performance, but raising the threshold on an unexplained signal could hide an attack or data fault. The
+      alert should be tuned after the cause is known.
+    B: Retraining on suspect inputs could build manipulated data into the model. It should wait until the inputs are understood.
+    D: The drift is in the inputs, not the model, so a rollback would not change what the model receives. It is also premature before
+      the cause is known.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-c
+  checked_by: 2026-10-16-aaism-d3-c-check
+  check_verdict: pass

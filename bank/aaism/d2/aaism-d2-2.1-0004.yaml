@@ -1,0 +1,26 @@
+id: aaism-d2-2.1-0004
+subdomain: '2.1'
+difficulty: easy
+stem: A credit union uses an AI model to make lending decisions for its members. Who should formally accept the residual risk
+  of this model?
+options:
+  A: The chief information security officer
+  B: The head of the data science team
+  C: The business owner of the lending process
+  D: The credit union's AI ethics review committee
+answer: C
+explanation:
+  why_correct: Residual risk is accepted by the risk owner, who is accountable for the business process and its results. The
+    lending business owner gains the benefit and bears the impact, so that person is the right one to accept it.
+  why_not:
+    A: The CISO advises on security risk, but does not own the lending business outcome.
+    B: Data science builds and maintains the model. It is not accountable for the lending decisions.
+    D: An ethics committee may advise or review. Formal acceptance sits with the accountable owner.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-check

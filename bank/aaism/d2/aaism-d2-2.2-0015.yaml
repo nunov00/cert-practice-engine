@@ -1,0 +1,28 @@
+id: aaism-d2-2.2-0015
+subdomain: '2.2'
+difficulty: hard
+stem: An email provider's spam filter model has not been retrained for four months. Over one week, spam getting through
+  rose sharply, and the missed messages share a new layout and wording. What should the security manager prioritise?
+options:
+  A: Review the training data for signs of poisoning
+  B: Roll the filter back to its previous model version
+  C: Treat it as evasion and update detection quickly
+  D: Retrain the filter daily using users' spam reports
+answer: C
+explanation:
+  why_correct: With no recent retraining, the model has not changed. Attackers have changed their inputs to slip past it,
+    which is evasion. The response is to collect the new samples, update detection and add other layers, such as rules,
+    while the model is improved.
+  why_not:
+    A: Poisoning works through training, and the model has not been retrained for months. It does not fit the facts.
+    B: No new version was deployed, so rolling back would not undo anything. An older model would be no better at spotting
+      the new layout.
+    D: Faster retraining may help over time, but feeding in user reports without checks opens a path for poisoning.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-c
+  checked_by: 2026-10-16-aaism-d2-c-check
+  check_verdict: pass

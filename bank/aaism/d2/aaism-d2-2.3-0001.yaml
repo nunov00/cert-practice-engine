@@ -1,0 +1,24 @@
+id: aaism-d2-2.3-0001
+subdomain: '2.3'
+difficulty: easy
+stem: "A law firm plans to buy a cloud contract-review tool that uses generative AI on client documents. What should the security manager do FIRST?"
+options:
+  A: "Negotiate a right-to-audit clause with the tool's vendor"
+  B: "Carry out due diligence on how the vendor handles client data"
+  C: "Run a penetration test on the tool after it goes live"
+  D: "Ask the legal team to draft exit, termination and data return terms"
+answer: B
+explanation:
+  why_correct: "Due diligence comes before the contract. It shows how the vendor stores, processes and retains client documents, whether it uses them to train models and which subprocessors are involved. Its findings decide whether to proceed and which contract terms are needed."
+  why_not:
+    A: "Audit rights are a useful contract term, but which terms matter is decided by what due diligence finds."
+    C: "Testing after go-live is too late to decide whether confidential client data should go to this vendor at all."
+    D: "Exit terms belong in the contract, which follows due diligence. They are not the first step."
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-check
+  check_verdict: pass

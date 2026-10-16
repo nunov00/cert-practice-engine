@@ -1,0 +1,26 @@
+id: aaism-d1-1.3-0008
+subdomain: '1.3'
+difficulty: medium
+stem: A regulator asks a consumer lender to show which data sources fed its credit model's decisions last year.
+  Which record would BEST support this?
+options:
+  A: The validation report written when the model was first approved
+  B: Data lineage records linked to each version of the model
+  C: The data dictionary that describes the current data warehouse
+  D: Access logs showing who used the training environment last year
+answer: B
+explanation:
+  why_correct: Lineage records trace each model version back to the data sources and transformations that built
+    it. Linked to versions, they show exactly which data was behind decisions at a given time.
+  why_not:
+    A: A validation report covers one point in time. It may not reflect later retraining or data changes.
+    C: The current data dictionary describes today's data, not what fed the model last year.
+    D: Access logs show who worked in the environment, not which data the model used.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

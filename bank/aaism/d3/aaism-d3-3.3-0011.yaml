@@ -1,0 +1,29 @@
+id: aaism-d3-3.3-0011
+subdomain: '3.3'
+difficulty: medium
+stem: A marketing firm trains a text model on large volumes of publicly scraped web content. Which control is MOST effective
+  against data poisoning?
+options:
+  A: Scraping a much larger volume of content so that poisoned pages are diluted
+  B: Testing the model's accuracy on a standard benchmark after each training run
+  C: Vetting sources, filtering anomalies and recording provenance for removal
+  D: Adversarial training so that the model learns to resist manipulated examples
+answer: C
+explanation:
+  why_correct: Anyone can publish on the web, so scraped data is untrusted. Vetting sources, filtering duplicates and outliers,
+    and keeping provenance for each item reduces what poisoned content gets in and allows targeted removal if poisoning is
+    found later.
+  why_not:
+    A: Dilution can help against crude attacks but gives false comfort. Targeted poisoning can work with very small amounts
+      of data.
+    B: Benchmarks measure general performance. Backdoors and targeted poisoning usually leave benchmark scores unchanged.
+    D: Adversarial training mainly hardens a model against crafted inputs at inference time. It does not keep poisoned items
+      out of the training data or let them be traced and removed.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

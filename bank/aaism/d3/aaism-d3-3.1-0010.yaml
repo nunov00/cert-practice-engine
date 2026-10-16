@@ -1,0 +1,29 @@
+id: aaism-d3-3.1-0010
+subdomain: '3.1'
+difficulty: hard
+stem: An HR assistant agent acts for employees by calling internal APIs for leave, payroll and personal records. Which credential
+  design BEST supports least privilege?
+options:
+  A: One dedicated service account with rights to all HR records and full logging of its use
+  B: Separate service accounts for each HR function, with keys rotated every month
+  C: An agent identity whose access has been approved by the HR director
+  D: Short-lived tokens scoped to the permissions of the employee making the request
+answer: D
+explanation:
+  why_correct: The agent should never be able to do more than the person it acts for. Delegated, short-lived tokens tied to
+    the requesting employee mean that a manipulated agent can only reach that employee's own data, and a stolen token expires
+    quickly. This keeps the existing access model intact.
+  why_not:
+    A: A single broad account lets any manipulated request reach every employee's records. Logging does not reduce that exposure.
+    B: Splitting by function narrows rights a little, but each account still sees all employees' data in its area. Rotation
+      does not address over-privilege.
+    C: Approval by a senior owner confirms a decision was made, but the agent still holds standing access beyond what each
+      user is entitled to.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

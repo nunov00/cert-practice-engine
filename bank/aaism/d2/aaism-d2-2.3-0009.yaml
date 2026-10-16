@@ -1,0 +1,24 @@
+id: aaism-d2-2.3-0009
+subdomain: '2.3'
+difficulty: medium
+stem: "During due diligence on a foundation model API provider, a bank learns that the provider holds a well-known information security management certification. The security manager still asks for more evidence. Which question does the certification MOST likely leave open?"
+options:
+  A: "Whether access to the provider's training environment is controlled"
+  B: "How the provider tests its models against AI-specific attacks"
+  C: "Whether the provider has an approved information security policy"
+  D: "Whether the provider screens staff before granting them access"
+answer: B
+explanation:
+  why_correct: "A general security management certification covers the provider's management system and common controls, such as policy, access control and personnel screening. It usually says little about model-specific risks such as prompt injection, data leakage through outputs or poisoning. Assurance on these has to be sought separately."
+  why_not:
+    A: "Access control over systems in scope, including those used for training, is a standard part of a general security management certification, even though the systems happen to be AI-related."
+    C: "A security policy is one of the most basic requirements of such a certification."
+    D: "Personnel screening is a common control within certified security management systems."
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-check
+  check_verdict: pass

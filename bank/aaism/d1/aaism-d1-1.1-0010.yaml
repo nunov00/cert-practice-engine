@@ -1,0 +1,27 @@
+id: aaism-d1-1.1-0010
+subdomain: '1.1'
+difficulty: easy
+stem: Which statement BEST describes the role of a widely used AI risk management framework for an organisation?
+options:
+  A: It defines the AI risk appetite the organisation should adopt
+  B: Adopting it shows that the organisation's AI use is compliant
+  C: It sets mandatory controls that regulators enforce directly
+  D: It gives a structured reference for managing AI risk
+answer: D
+explanation:
+  why_correct: Industry frameworks offer a structured, usually voluntary, way to organise AI risk management. The
+    organisation adapts them to its context. They support, but do not replace, legal compliance work.
+  why_not:
+    A: Frameworks describe how to set and use risk appetite, but the appetite itself is a decision for the organisation's
+      leadership.
+    B: Adoption alone shows nothing about compliance. Laws set the duties, and certification, where it exists, needs
+      an assessment.
+    C: Most frameworks are voluntary. Regulators enforce laws, not framework controls as such.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

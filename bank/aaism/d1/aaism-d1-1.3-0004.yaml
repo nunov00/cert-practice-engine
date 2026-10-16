@@ -1,0 +1,27 @@
+id: aaism-d1-1.3-0004
+subdomain: '1.3'
+difficulty: medium
+stem: A mortgage lender fine-tuned a language model on confidential loan files. The model has been labelled "internal"
+  because it "stores no customer records". What is the GREATEST concern?
+options:
+  A: The model may perform worse than one trained only on public data
+  B: The model can expose training data, so its label may be too low
+  C: The loan files may be kept longer than the retention schedule allows
+  D: The model may not yet have been added to the AI asset inventory
+answer: B
+explanation:
+  why_correct: Models can memorise and reveal parts of their training data through inversion or targeted prompting.
+    A model trained on confidential files should usually inherit a matching classification, or its access controls
+    will be too weak.
+  why_not:
+    A: Performance is a quality matter. It is not the security concern raised by the label.
+    C: Retention may be an issue, but nothing in the scenario suggests it. The labelling error is concrete.
+    D: Inventory gaps matter, but the scenario shows the model is known and has been classified, only wrongly.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

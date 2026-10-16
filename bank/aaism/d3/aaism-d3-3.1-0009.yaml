@@ -1,0 +1,29 @@
+id: aaism-d3-3.1-0009
+subdomain: '3.1'
+difficulty: medium
+stem: A software company offers a multi-tenant service in which each customer's assistant uses one shared language model with
+  retrieval from customer documents and saved chat history. What is the GREATEST architectural risk?
+options:
+  A: A tenant could use prompt injection to make its own assistant ignore its instructions
+  B: A provider update to the shared model could change answers for all tenants at once
+  C: Shared caches, indexes or memory could let one tenant's data appear in another's answers
+  D: Response times could rise for all tenants when one tenant sends very heavy traffic
+answer: C
+explanation:
+  why_correct: In a multi-tenant design the most serious failure is a breach of isolation. If retrieval indexes, caches or
+    conversation memory are not strictly separated per tenant, one customer's confidential data can reach another customer.
+    That is a confidentiality breach across organisations, with legal and trust impact on every tenant.
+  why_not:
+    A: Injection against a tenant's own assistant mainly affects that tenant. It matters, but isolation failure crosses customer
+      boundaries.
+    B: Model updates are a change management and availability concern. They do not disclose data between customers.
+    D: Noisy neighbours affect performance and can be handled with quotas. This is an availability issue, not a confidentiality
+      breach.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

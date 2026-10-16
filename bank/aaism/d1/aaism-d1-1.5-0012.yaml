@@ -1,0 +1,26 @@
+id: aaism-d1-1.5-0012
+subdomain: '1.5'
+difficulty: medium
+stem: A small e-commerce firm's customer support app depends on a third-party language model API. Which measure BEST supports
+  business continuity if the API becomes unavailable?
+options:
+  A: A contract clause that gives service credits for any extended outage
+  B: Close monitoring of the provider's public service status page
+  C: Caching of recent model answers for reuse during an outage
+  D: A tested fallback such as another provider or a degraded mode
+answer: D
+explanation:
+  why_correct: Continuity means keeping the service running. A planned and tested fallback, such as an alternative model provider,
+    a simpler rule-based mode or routing to human agents, lets support continue during an outage.
+  why_not:
+    A: Service credits give financial compensation, not continuity of the service.
+    B: Monitoring helps detection, but it does not keep the service running.
+    C: Cached answers cover only repeated questions and may be wrong for new contexts.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

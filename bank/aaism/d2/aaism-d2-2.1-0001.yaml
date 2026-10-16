@@ -1,0 +1,26 @@
+id: aaism-d2-2.1-0001
+subdomain: '2.1'
+difficulty: easy
+stem: A bank is about to assess its first set of AI use cases. What must be in place to decide whether the assessed risks
+  are acceptable?
+options:
+  A: A complete inventory of the AI models the bank currently runs
+  B: An external audit report on the bank's AI development practices
+  C: A list of the AI threats reported by industry peers this year
+  D: Risk appetite and tolerance thresholds approved by senior management
+answer: D
+explanation:
+  why_correct: An assessment produces a risk level. Only an approved appetite and tolerance thresholds tell the bank whether
+    that level is acceptable or needs treatment. Without them, decisions are inconsistent and depend on who assesses.
+  why_not:
+    A: An inventory shows what to assess, but it does not say what level of risk is acceptable.
+    B: An audit report gives assurance on practices. It does not set acceptance criteria.
+    C: Threat intelligence informs likelihood. It does not define acceptable risk.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-check

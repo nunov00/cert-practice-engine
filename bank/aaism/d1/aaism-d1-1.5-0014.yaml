@@ -1,0 +1,29 @@
+id: aaism-d1-1.5-0014
+subdomain: '1.5'
+difficulty: hard
+stem: A lender backs up its credit model's weights nightly and replicates its training data to a second site. In a recovery
+  test, the restored model ran but produced different scores from production for the same applicants. What is the MOST likely
+  gap in the recovery design?
+options:
+  A: The weights are backed up too rarely to restore the current model
+  B: The backups do not capture the matching data preparation steps
+  C: The replicated training data has not been checked for integrity
+  D: The recovery time objective for the model has been set too long
+answer: B
+explanation:
+  why_correct: A model only gives the same results when its weights run with the same data preparation, features and settings.
+    Restoring the weights alone, with newer or default preparation steps, gives different scores. Recovery must restore
+    the whole set of artefacts as one matched version.
+  why_not:
+    A: Nightly backups suit a model that changes less often than that. The issue is mismatched parts, not old weights.
+    C: Training data integrity matters for retraining, but the restored model was not retrained. Scoring does not use that
+      data.
+    D: A recovery time target is about speed. The test failed on correctness, which a different target would not fix.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-c
+  checked_by: 2026-10-16-aaism-d1-c-check
+  check_verdict: pass
