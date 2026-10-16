@@ -35,6 +35,7 @@ style:
   options_per_question: 4
   rules:
     - "Exactly one best answer; distractors plausible, not absurd"
+    - "Every distractor is a practice a competent professional would choose in some situation; the stem decides which is best. The key must not be guessable from the options alone (docs/content-rules.md, Distractors)"
     - "No 'all of the above' or 'none of the above'"
     - "Test judgment and application, not trivia recall"
     - "Frameworks and laws are named only generically or where widely public (e.g. a risk management framework, an AI regulation); never quote them"

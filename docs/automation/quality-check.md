@@ -8,6 +8,11 @@ agent (Claude checks Codex runs and vice versa).
 
 ## Steps, per question
 
+0. **Options-only test.** Before reading the stem, look at the four options alone
+   and note which one you would pick. If that is the key and the choice is
+   obvious (the others are straw men or carry giveaway wording), fail the
+   question for rewrite under `docs/content-rules.md` §2 "Distractors". Record
+   the share of questions that pass this test in the PR.
 1. **Answer blind.** Read stem and options only; pick an answer and give a reason.
 2. **Compare with the key.** If the blind answer differs, decide whether the key is
    wrong, the question is ambiguous, or the checker erred. Only "checker erred"
