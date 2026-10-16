@@ -10,6 +10,15 @@ const NEAR_DUPLICATE_THRESHOLD = 0.8;
 /** Warn when the key is this much longer than every distractor (a test-wise giveaway). */
 const KEY_LENGTH_RATIO = 1.5;
 
+/**
+ * Wording that marks an option as wrong to a test-wise reader when only distractors use it:
+ * absolute words ("ban all…", "every…") and options that justify themselves ("…, since…").
+ */
+const GIVEAWAY_CUES: { name: string; pattern: RegExp }[] = [
+  { name: "absolute words (all, every, never…)", pattern: /\b(all|every|never|always|immediately|indefinitely|at once|ban)\b/i },
+  { name: "a self-justifying clause (since/because…)", pattern: /\b(since|because)\b/i },
+];
+
 function compileSchema(ajv: Ajv2020, root: string, rel: string) {
   return ajv.compile(JSON.parse(readFileSync(join(root, rel), "utf8")));
 }
@@ -139,6 +148,14 @@ export function checkQuestion(q: Question, file: string, recipe: Recipe | undefi
   const longestWrong = Math.max(0, ...wrong.map((k) => q.options[k]?.length ?? 0));
   if (longestWrong > 0 && keyLength / longestWrong > KEY_LENGTH_RATIO) {
     warn(`answer is ${(keyLength / longestWrong).toFixed(1)}x longer than any distractor; balance option lengths`);
+  }
+
+  const key = q.options[q.answer] ?? "";
+  for (const cue of GIVEAWAY_CUES) {
+    const cued = wrong.filter((k) => cue.pattern.test(q.options[k] ?? ""));
+    if (cued.length > 0 && !cue.pattern.test(key)) {
+      warn(`only distractors (${cued.join(", ")}) use ${cue.name}; a test-wise reader can rule them out without the stem`);
+    }
   }
 
   if (q.outline_version !== recipe.exam.outline.version && q.status !== "retired") {

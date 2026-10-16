@@ -159,6 +159,18 @@ test("a key much longer than every distractor is a warning", () => {
   assert.ok(warnings(root).some((m) => m.includes("balance option lengths")));
 });
 
+test("giveaway wording used only by distractors is a warning", () => {
+  const q = question({
+    options: { A: "Ban all insurance purchases", B: "Present the results to senior management", C: "Install a firewall, since it is cheap", D: "Run a penetration test" },
+  });
+  const root = fixture([q]);
+  assert.deepEqual(errors(root), []);
+  const w = warnings(root);
+  assert.ok(w.some((m) => m.includes("only distractors (A) use absolute words")));
+  assert.ok(w.some((m) => m.includes("only distractors (C) use a self-justifying clause")));
+  assert.ok(!warnings(fixture([question()])).some((m) => m.includes("only distractors")));
+});
+
 test("published questions need a passing independent check", () => {
   const q = question({ provenance: { generated_by: "claude", run_id: "r", check_verdict: "pending" } });
   assert.ok(errors(fixture([q])).some((m) => m.includes("check_verdict: pass")));
