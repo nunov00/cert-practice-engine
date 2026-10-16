@@ -2,29 +2,30 @@ id: aair-d2-2.2-0010
 subdomain: '2.2'
 difficulty: medium
 stem: A pension provider is testing a generative AI assistant that will answer members' questions about
-  their benefits. So far the developers have tried about 40 questions they wrote themselves, and the answers
-  looked good. Which further testing is MOST important before launch?
+  their own benefits and options. So far the developers have tried about 40 questions they wrote themselves,
+  and the answers looked good. Which further testing is MOST important before launch?
 options:
-  A: A structured evaluation with realistic and adversarial questions
-  B: A load test showing the assistant can handle peak member traffic
-  C: A review of the assistant's tone by the marketing department
-  D: A repeat of the 40 questions after each change to the prompt
+  A: Scored testing on a large sample of real member questions
+  B: Red-team testing for prompt injection, data leakage and harmful answers
+  C: Pension experts scoring the 40 answers against agreed accuracy criteria
+  D: Automated regression tests on the 40 questions after each prompt change
 answer: A
 explanation:
-  why_correct: Forty questions written by the builders are narrow and share their assumptions. A broad
-    set of realistic member questions, edge cases and attempts to mislead or misuse the assistant, scored
-    against agreed criteria by people who know the pension rules, gives real evidence of answer quality
-    and safety.
+  why_correct: The main harm to members is a wrong answer about their benefits, and the only evidence
+    so far comes from 40 questions written by the builders, who share the same assumptions. Scored testing
+    on a large sample of real member questions shows how accurate the assistant is on what members will
+    actually ask.
   why_not:
-    B: Capacity matters for launch, but it says nothing about whether the answers are correct or safe.
-    C: Tone affects member experience, but the main risk is wrong or misleading answers about benefits.
-    D: Repeating a small set is useful as a regression check, but it does not widen the coverage that
-      is missing.
+    B: Red-teaming is needed for a public-facing assistant, but it does not show whether answers to ordinary
+      benefit questions are correct, which is the untested core risk.
+    C: Expert scoring makes the judgement of accuracy more reliable, but it still covers only the 40 questions
+      the developers chose.
+    D: Regression tests catch changes in known answers, but they keep testing the same narrow set of questions.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-b
-  checked_by: 2026-10-13-aair-d2-b-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

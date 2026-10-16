@@ -1,6 +1,6 @@
 id: aair-d2-2.2-0011
 subdomain: '2.2'
-difficulty: hard
+difficulty: medium
 stem: A bank's new model estimates each borrower's probability of default, and these probabilities feed
   directly into its loan loss provisions. The validation report shows the model ranks borrowers well,
   with a strong AUC, and the validator recommends approval. What should the risk practitioner MOST want
@@ -28,5 +28,5 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-b
-  checked_by: 2026-10-13-aair-d2-b-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

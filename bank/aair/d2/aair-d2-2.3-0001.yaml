@@ -1,11 +1,11 @@
 id: aair-d2-2.3-0001
 subdomain: '2.3'
-difficulty: medium
+difficulty: hard
 stem: An airline plans to retire a model that has scored customer churn risk for six years and replace
   it with a new vendor system. What should the risk practitioner ensure is done FIRST?
 options:
-  A: Delete the model's training data to reduce data protection exposure
-  B: Switch off the model as soon as the vendor system has gone live
+  A: Confirm how long the model's records and outputs must be kept
+  B: Plan a period of parallel running with the vendor system
   C: Identify the systems, reports and decisions that depend on the model's outputs
   D: Archive the model code and weights in the document management system
 answer: C
@@ -14,10 +14,10 @@ explanation:
     or marketing rules. Mapping dependencies first allows a planned cut-over, so nothing is left without
     an input when the model is switched off.
   why_not:
-    A: Data may be subject to retention duties or needed for audits and comparisons. Deleting it first
-      could breach obligations and remove evidence.
-    B: Turning it off without knowing what relies on it risks failures in downstream processes that the
-      new system may not feed.
+    A: Retention must be settled before anything is deleted, but it can follow. Until the dependencies
+      are known, the airline cannot tell what will break or which records matter.
+    B: Parallel running is a sensible transition step, but it needs to be planned around the systems and
+      decisions that rely on the old scores, so identifying them comes first.
     D: Archiving is a sensible step in retirement, but it can be done later. It does not prevent the business
       disruption caused by unknown dependencies.
 status: published
@@ -26,5 +26,5 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

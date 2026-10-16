@@ -6,8 +6,8 @@ stem: A regulator asks an insurer to show how a pricing model used eighteen mont
   since been overwritten by routine updates in the data warehouse. Which practice would have allowed it
   to respond?
 options:
-  A: Keeping detailed minutes of every model approval meeting
-  B: Recording which source systems feed the data warehouse
+  A: Keeping the training code and feature pipeline under version control
+  B: Logging the exact query used to extract each training set
   C: Keeping immutable, versioned snapshots of the training data
   D: Documenting the data fields used in each model version
 answer: C
@@ -16,8 +16,10 @@ explanation:
     versioned snapshots linked to each model version make the training reproducible even after the live
     tables change.
   why_not:
-    A: Approval minutes record decisions, not the records the model learned from.
-    B: Knowing the source systems does not recover the data as it stood eighteen months ago.
+    A: Versioned code is needed to rebuild a model, but rerunning it against overwritten tables would
+      produce different data. The original data itself must be kept.
+    B: The logged query shows how the data was selected, but running it today returns today's data. Only
+      an immutable snapshot preserves what the model actually learned from.
     D: A list of fields describes the data's structure but not the actual values used in training.
 status: published
 outline_version: '2026-04-15'
@@ -25,5 +27,5 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-b
-  checked_by: 2026-10-13-aair-d2-b-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

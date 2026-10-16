@@ -1,31 +1,33 @@
 id: aair-d2-2.1-0009
 subdomain: '2.1'
-difficulty: easy
+difficulty: medium
 stem: A small insurer's pricing model was built and is maintained by a single data scientist, who has
   just resigned with four weeks' notice. Her documentation consists of brief code comments. What standard
   should the risk practitioner set for the documentation she completes before leaving?
 options:
-  A: A summary of the model's business purpose for senior management
+  A: Enough detail to rebuild the model from source data and reproduce its outputs
   B: Enough detail for a competent peer to rerun, maintain and explain it
-  C: A full copy of her emails and meeting notes from the project
-  D: A list of every dataset she has accessed during her employment
+  C: The firm's standard documentation template, completed and peer-reviewed by a contractor
+  D: Enough detail for the model validation team to review and challenge it
 answer: B
 explanation:
   why_correct: The risk is that nobody left can operate, change or explain the model. The right test for
     the handover documentation is whether a competent person who did not build it could rebuild and run
     it, maintain it and answer questions about how it works.
   why_not:
-    A: A business summary is useful for managers but gives a successor nothing to run, fix or explain
-      the model with.
-    C: Raw emails and notes are unstructured and incomplete; a successor would still have to reconstruct
-      how the model works.
-    D: A list of datasets accessed is an access-review matter and does not explain the model, its data
-      preparation or its assumptions.
+    A: Reproducibility is part of the standard, but a successor also has to maintain, change and explain
+      the model, which needs design choices, assumptions and limitations, not only the build steps.
+    C: A completed template and an outside review help, but a template can be filled in without what a
+      peer needs to run and change the model. Adequacy is judged by whether a competent peer could take
+      over.
+    D: Validation-ready documentation shows the model is sound, but validators review a model rather than
+      run, retrain or fix it. A successor needs operational detail as well, so the standard is what a
+      competent peer would need to take the model over.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-b
-  checked_by: 2026-10-13-aair-d2-b-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

@@ -9,7 +9,7 @@ options:
   A: Retrain the model on home and travel claims so that its estimates improve
   B: Add a warning to estimates produced for claim types other than motor
   C: Restrict the interface to motor claims and review estimates already used
-  D: Ask the claims platform supplier to explain how the error occurred
+  D: Suspend the model until the interface error has been investigated
 answer: C
 explanation:
   why_correct: The implementation lets the model run outside the scope it was validated for. The fix is
@@ -20,13 +20,13 @@ explanation:
       the meantime.
     B: A warning relies on handlers to ignore estimates that are still produced and have no validated
       basis.
-    D: Understanding the cause helps, but it neither stops the invalid use nor deals with claims already
-      affected.
+    D: Suspension stops the misuse, but it also removes a validated tool for motor claims, and it does
+      nothing about the wrong estimates handlers have already relied on.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-b
-  checked_by: 2026-10-13-aair-d2-b-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

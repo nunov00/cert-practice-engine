@@ -6,25 +6,26 @@ stem: A university is validating a model that flags students at risk of dropping
   and international students. Which additional test is MOST important?
 options:
   A: Compare error rates across the main student groups
-  B: Repeat the overall test with a different random seed
-  C: Measure how long the model takes to score all students
-  D: Confirm that the scoring code has passed peer review
+  B: Check that the risk scores are well calibrated so advisers can rank whom to contact first
+  C: Repeat the test on the most recent intake of students only
+  D: Test performance separately for first-year and later-year students
 answer: A
 explanation:
   why_correct: Good overall figures can hide poor performance for smaller groups. If part-time or international
     students are missed more often, they lose support the model was meant to trigger. Breaking results
     down by group shows whether the model works for everyone it serves.
   why_not:
-    B: A new seed checks stability of the same overall measure, but still would not reveal weaker performance
-      for particular groups.
-    C: Scoring time is an operational detail and says nothing about who the model misses.
-    D: Code review catches implementation errors, but correct code can still produce a model that misses
-      particular groups of students.
+    B: Calibration helps advisers prioritise, but it is still a whole-population measure. It would not
+      show whether part-time or international students are flagged less reliably.
+    C: Testing on the latest intake checks for change over time, but it still reports overall figures.
+      It would not show whether part-time or international students are flagged less reliably.
+    D: This is a sensible subgroup cut, but not of the groups the scenario highlights. The large part-time
+      and international populations are where unequal errors are most likely.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-a
-  checked_by: 2026-10-13-aair-d2-a-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

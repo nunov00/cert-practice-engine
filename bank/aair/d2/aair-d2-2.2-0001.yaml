@@ -6,8 +6,8 @@ stem: A credit card issuer's team reports an AUC of 0.86 for a new default predi
   will be used to predict defaults in future months. What is the risk practitioner's MAIN concern?
 options:
   A: The test does not reflect use on future data, so a time-based holdout is needed
-  B: The test set is too small, so a larger random sample should be held back
-  C: An AUC of 0.86 is below what is usual, so a higher target should be set
+  B: AUC measures ranking only, so the calibration of predicted default rates should be tested
+  C: Accuracy should also be reported separately for each year of the history
   D: The developers ran the test, so an independent team should repeat it
 answer: A
 explanation:
@@ -15,10 +15,11 @@ explanation:
     it would not have known at prediction time. Results can look much better than live performance. Testing
     on a later period than the training data mirrors how the model will be used.
   why_not:
-    B: A bigger random test set would still contain the same mix of time periods, so the optimistic bias
-      remains. Size is not the problem.
-    C: The AUC is likely overstated, not too low. Raising the bar on a flawed measure does not tell the
-      organisation how the model will perform on future accounts.
+    B: Calibration testing is valid work, but it would use the same random split. The main issue is that
+      the test mixes past and future records, so every metric, calibration included, is likely to be optimistic.
+    C: Year-by-year results could reveal drift, but every year would still be tested on records mixed
+      randomly with the training data. The test would still not mimic predicting months the model has
+      never seen.
     D: Independent validation is good practice, but repeating the same flawed design would confirm the
       same misleading figure. The test design must change.
 status: published
@@ -27,5 +28,5 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

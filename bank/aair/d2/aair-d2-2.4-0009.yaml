@@ -1,13 +1,13 @@
 id: aair-d2-2.4-0009
 subdomain: '2.4'
-difficulty: easy
+difficulty: medium
 stem: Data scientists at a university copy full student records, including names, addresses and disability
   details, from the production system into their development environment to build a course recommendation
   model. Which practice BEST reduces the risk?
 options:
-  A: Encrypt the development environment's backups with a strong key
-  B: Ask the data scientists to sign a confidentiality agreement
-  C: Delete the copied records once the model has been deployed
+  A: Apply production-level access controls, logging and encryption to the development environment
+  B: Pseudonymise each record with a keyed hash before it leaves production
+  C: Build the model on synthetic records generated from the production data
   D: Use only the fields needed, with identifiers removed or masked
 answer: D
 explanation:
@@ -15,15 +15,18 @@ explanation:
     fields the model needs, with direct identifiers removed or masked, cuts the amount of sensitive data
     exposed in the first place.
   why_not:
-    A: Encrypting backups protects one copy but leaves the full sensitive data exposed in the working
-      environment.
-    B: An agreement sets expectations but does not reduce the sensitive data held or who could reach it.
-    C: Deletion after deployment still leaves full records exposed throughout development.
+    A: Securing the environment like production reduces the chance of a breach, but the team would still
+      hold addresses and disability details that a course recommendation model does not need.
+    B: Pseudonymisation protects identities, but every field, including disability details, would still
+      be copied. Minimisation removes what the model does not need.
+    C: Synthetic data can reduce risk, but generating it still processes the full records, and its privacy
+      and fidelity would need testing. Taking only the needed, de-identified fields is simpler and directly
+      limits exposure.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-b
-  checked_by: 2026-10-13-aair-d2-b-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

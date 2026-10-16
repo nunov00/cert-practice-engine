@@ -6,26 +6,28 @@ stem: A hospital deployed a sepsis alert model three months ago. Nurses now over
   practitioner do FIRST?
 options:
   A: Find out with clinical staff why the alerts are being overridden
-  B: Retrain the model on recent patient data to restore trust
-  C: Require nurses to act on every alert the model raises
-  D: Suspend the model until its accuracy has been revalidated
+  B: Compare the override rate with the rate assumed in the deployment risk assessment
+  C: Raise the alert threshold so that fewer, higher-risk alerts are sent
+  D: Report the override rate to the clinical governance committee as a safety risk
 answer: A
 explanation:
-  why_correct: The model performs as validated, so the problem lies in how it fits into clinical work,
-    for example alert volume, timing or thresholds. Understanding the reasons comes before any fix and
-    may reveal alert fatigue that could cause real cases to be ignored.
+  why_correct: The model still performs as validated, so the problem probably lies in how the alerts fit
+    clinical work, or in whether nurses trust them. The practitioner cannot choose a fix until the reasons
+    for the overrides are known, and the clinical staff who override the alerts are the people who can
+    explain them.
   why_not:
-    B: The evidence shows performance has not degraded, so retraining addresses a problem that has not
-      been shown to exist.
-    C: Forcing compliance ignores clinical judgement and could cause harm if the overrides reflect real
-      issues with the alerts.
-    D: Revalidation was effectively already done, and suspending removes a working safety aid without
-      knowing the cause.
+    B: The comparison shows how far use has drifted from the plan, which the overrides already make clear.
+      It does not reveal why nurses override, which is what a fix depends on.
+    C: Changing the threshold may turn out to be the fix, but it is a guess before the cause is known.
+      If nurses override alerts for workflow or trust reasons, fewer alerts could simply hide real sepsis
+      cases.
+    D: Escalation may be needed, but the committee will first ask why alerts are overridden. Finding the
+      cause with clinical staff gives it something to act on.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-a
-  checked_by: 2026-10-13-aair-d2-a-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

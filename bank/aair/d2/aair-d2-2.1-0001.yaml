@@ -5,27 +5,29 @@ stem: A clinic's internal team is designing a model to help prioritise patient r
   document covers the algorithm, data pipeline and code repository. From a risk perspective, which addition
   is MOST important?
 options:
-  A: The hyperparameter search history and the final chosen settings
-  B: A full list of the software libraries and their version numbers
+  A: The data sources used for training and how each was selected
+  B: The monitoring metrics and thresholds that will trigger a review after go-live
   C: The intended use, known limitations and situations it is not designed for
-  D: The project delivery schedule and the approved development budget
+  D: A description of the test datasets and the metrics used to evaluate it
 answer: C
 explanation:
   why_correct: 'Stating the intended use and its boundaries is the basis for later risk work: validation
     tests against it, monitoring watches for use outside it, and users know when not to rely on the model.
     Without it, misuse and scope creep go unnoticed.'
   why_not:
-    A: This is useful technical record-keeping, yet it tells reviewers and users nothing about safe use
-      or the model's limits.
-    B: Dependency details help reproducibility and security patching, but they do not define what the
-      model should and should not be used for.
-    D: Schedule and budget matter to project management, not to understanding the risks of the model once
-      it is in use.
+    A: Data sources and their selection belong in the documentation, but whether they are suitable can
+      only be judged against a stated purpose. Without the intended use and limits, there is nothing to
+      judge them against.
+    B: Monitoring thresholds matter after go-live, but they also depend on knowing what the model is for
+      and where it should not be used. The intended use comes first and also guards against misuse.
+    D: Test data and metrics belong in the documentation, but they describe how performance will be measured,
+      not what the model may be used for. Without a stated intended use and limits, nobody can judge whether
+      those tests are the right ones or stop the model being used outside its design.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

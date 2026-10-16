@@ -1,14 +1,14 @@
 id: aair-d2-2.1-0004
 subdomain: '2.1'
-difficulty: medium
+difficulty: hard
 stem: An energy utility approved the design of a model that ranks customers for energy-saving offers.
   During development the team added household-level smart meter data and changed the output so it automatically
   enrols customers in a tariff. The design document was not updated. What is the MOST significant risk?
 options:
   A: The approval and risk assessment no longer cover what is being built
-  B: New team members will find it harder to understand the project history
-  C: Internal audit may raise a finding about document version control
-  D: The model may need more computing capacity than was first budgeted
+  B: Smart meter readings may be less reliable for homes with older meters
+  C: Household smart meter data may reveal occupancy patterns and need a privacy assessment
+  D: Customers enrolled automatically may complain about tariffs they did not choose
 answer: A
 explanation:
   why_correct: The approval was given for a ranking tool using less sensitive data. Adding granular personal
@@ -16,17 +16,19 @@ explanation:
     without its real risks having been assessed or accepted. Documentation matters because approvals rest
     on it.
   why_not:
-    B: Onboarding is harder with stale documents, but that is minor next to building an unassessed system
-      that acts on customers automatically.
-    C: An audit finding is a symptom; the underlying exposure is that the changed system was never risk
-      assessed or approved.
-    D: Capacity is a cost issue. It does not address the new privacy and decision risks introduced by
-      the changes.
+    B: Data quality is a real concern for the new input, but it is one narrow risk. The bigger problem
+      is that nobody has assessed or approved the new data and the automatic enrolment at all.
+    C: The privacy question is real, but it is one of several new risks created by the changes. The bigger
+      exposure is that none of them has been assessed, because the approval no longer covers what is being
+      built.
+    D: Complaints are a likely consequence, but they are an effect of one change. The significant risk
+      is that a system with new data and automated decisions is going ahead outside its approval and risk
+      assessment.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-a
-  checked_by: 2026-10-13-aair-d2-a-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

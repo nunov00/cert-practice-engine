@@ -4,26 +4,27 @@ difficulty: medium
 stem: An insurer keeps all customer call recordings indefinitely because they might be useful for training
   future AI models. No specific project currently uses them. What should the risk practitioner recommend?
 options:
-  A: Set retention periods tied to defined and documented purposes
-  B: Move the recordings to cheaper archive storage to cut costs
-  C: Encrypt the recordings and keep them for possible future use
-  D: Ask a data scientist to estimate their future training value
+  A: Set retention by documented purpose and delete recordings no longer needed for it
+  B: Extend the records schedule with an AI training category for call recordings
+  C: Pseudonymise the recordings and restrict access to the data science team
+  D: Assess whether a lawful basis exists to keep them for future model training
 answer: A
 explanation:
-  why_correct: Holding personal data with no defined purpose increases breach impact and conflicts with
-    data minimisation principles in most privacy laws. Linking retention to documented purposes means
-    data is kept only while there is a justified need.
+  why_correct: Personal data should be kept only as long as a defined purpose needs it. With no project
+    using the recordings, a possible future use is not a purpose. Retention should follow the documented
+    purposes for which the calls were recorded, and recordings no longer needed for them should be deleted.
   why_not:
-    B: Cheaper storage reduces cost but keeps the same personal data for the same open-ended period.
-    C: Encryption lowers some exposure, yet keeping data indefinitely for undefined future use remains
-      the core problem.
-    D: A speculative value estimate does not create a legitimate purpose and leaves the indefinite retention
-      in place.
+    B: A schedule category would formalise the practice, but it would still allow retention for a purpose
+      that does not exist yet. Adding it to a schedule does not make an undefined purpose legitimate.
+    C: Pseudonymisation and access limits reduce the risk of keeping the data, but they do not address
+      keeping it with no purpose, and voices can still identify callers.
+    D: A lawful basis assessment needs a defined processing purpose to assess. With no project in view,
+      there is nothing specific to justify, so the recordings should follow existing purposes.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-a
-  checked_by: 2026-10-13-aair-d2-a-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass
