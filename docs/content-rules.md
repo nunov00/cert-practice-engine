@@ -34,6 +34,9 @@ reviewers use them as the rubric.
   direct items), a capitalised qualifier, short parallel options, and a real
   share of technical AI knowledge, not only governance judgment. Aim for about
   a third short direct items and the rest short scenarios.
+- Aim at the real exam's level or slightly above it, so learners over-prepare.
+  When unsure whether a question is hard enough, make it harder (owner rule,
+  2026-10-16).
 - Stay inside the subdomain's scope as the outline defines it. If a topic is
   only arguably in scope, choose a different one.
 - The answer must not depend on a vendor product, a specific version, or a
