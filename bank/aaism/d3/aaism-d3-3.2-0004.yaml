@@ -1,0 +1,26 @@
+id: aaism-d3-3.2-0004
+subdomain: '3.2'
+difficulty: easy
+stem: What is the MAIN purpose of signing model artefacts at the end of the training pipeline and checking the signature at
+  deployment?
+options:
+  A: To confirm that the deployed model is the approved one and has not been altered
+  B: To keep the model's weights confidential while they are stored or transferred
+  C: To show that the model was trained on data free from bias and errors
+  D: To stop attackers from copying the model by querying its interface
+answer: A
+explanation:
+  why_correct: A digital signature gives integrity and origin. Checking it at deployment shows the artefact is exactly what
+    the pipeline produced and approved, so a tampered or swapped model is rejected before it runs.
+  why_not:
+    B: Signing does not encrypt anything. Confidentiality of weights needs encryption and access control.
+    C: A signature says nothing about the quality of the training data. Bias needs data and model testing.
+    D: Extraction through queries uses the running model. Signing the artefact has no effect on it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

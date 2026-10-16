@@ -1,0 +1,29 @@
+id: aaism-d1-1.2-0003
+subdomain: '1.2'
+difficulty: medium
+stem: A law firm's policy bans all generative AI, yet network data shows many lawyers using public AI tools to draft
+  documents. What is the BEST response?
+options:
+  A: Block all AI websites at the proxy and remind staff of the ban
+  B: Allow use if lawyers first remove client names from their prompts
+  C: Run awareness training on why the ban on AI tools is in place
+  D: Review the policy and offer an approved tool with suitable safeguards
+answer: D
+explanation:
+  why_correct: Widespread use shows a real business need that the ban is not meeting. Revisiting the policy and
+    giving staff a safe, sanctioned option reduces shadow AI at its source, while blocks alone tend to push use
+    further out of sight.
+  why_not:
+    A: Blocking may help in the short term, but staff can switch to personal devices. The unmet need remains.
+    B: This leans on each lawyer's judgment with public tools that may keep data. Matter details can identify clients
+      even without names.
+    C: Training explains the rule, but staff use AI because it meets a real need. Without an approved option, use
+      will continue.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

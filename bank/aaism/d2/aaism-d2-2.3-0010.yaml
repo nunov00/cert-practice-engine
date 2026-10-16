@@ -1,0 +1,24 @@
+id: aaism-d2-2.3-0010
+subdomain: '2.3'
+difficulty: hard
+stem: "A small insurer relies on a large global AI provider that refuses to allow audits by individual customers. The insurer's policy normally requires a right to audit for critical vendors. What is the BEST way to obtain assurance?"
+options:
+  A: "Switch to a smaller provider that will accept the insurer's audit clause"
+  B: "Grant a policy exception and accept the provider's risk without taking other steps"
+  C: "Rely on the provider's contractual security commitments instead of an audit"
+  D: "Use independent assurance reports and cover any scope gaps with own controls"
+answer: D
+explanation:
+  why_correct: "Large providers commonly offer independent assurance reports in place of customer audits. Mapping their scope to the insurer's risks shows what is covered, and the insurer can add its own controls, such as data minimisation or output checks, for the gaps. This gives reasonable assurance and keeps the service."
+  why_not:
+    A: "Changing provider just to keep an audit clause may bring weaker security and capability. The audit clause is a means, not the goal."
+    B: "An exception may be needed, but accepting the risk without any alternative evidence leaves the insurer blind to the provider's controls."
+    C: "Contractual commitments are promises, not evidence. They give a remedy after a failure but do not show that the provider's controls actually work."
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-check
+  check_verdict: pass

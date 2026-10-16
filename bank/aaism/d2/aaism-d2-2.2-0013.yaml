@@ -1,0 +1,30 @@
+id: aaism-d2-2.2-0013
+subdomain: '2.2'
+difficulty: medium
+stem: An insurer wants to red team its claims assistant, which is built on a foundation model hosted by a vendor. The vendor's
+  terms forbid attack testing against its service without prior written approval. The launch is in six weeks. What should
+  the security manager do FIRST?
+options:
+  A: Test only the insurer's own code, since it is the insurer's system
+  B: Contact the vendor to authorise and scope the testing
+  C: Rely on the vendor's published red-team results for its base model
+  D: Test a similar open model on the insurer's servers to avoid the terms
+answer: B
+explanation:
+  why_correct: Testing must be authorised, and the vendor's terms make approval a precondition. Agreeing the scope early
+    lets the red team test the real system, including how the insurer's prompts and tools interact with the model. Six weeks
+    is enough time to get approval if the request starts now.
+  why_not:
+    A: Requests through the insurer's app still reach the vendor's service, so this would likely breach the terms. Approval
+      is still needed.
+    C: The vendor's results cover the base model, not the insurer's prompts, data and tools. They support the testing but
+      cannot replace it.
+    D: A stand-in model behaves differently from the real one, so the results may not reflect the deployed system.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-c
+  checked_by: 2026-10-16-aaism-d2-c-check
+  check_verdict: pass

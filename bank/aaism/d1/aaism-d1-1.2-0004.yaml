@@ -1,0 +1,26 @@
+id: aaism-d1-1.2-0004
+subdomain: '1.2'
+difficulty: medium
+stem: A marketing team asks for an exception to use an unapproved image generator for a campaign launching next
+  week. What should the security manager ensure FIRST?
+options:
+  A: The request is logged in the exceptions register for later review
+  B: The risk is assessed and accepted by an accountable owner for a set time
+  C: The head of marketing, who made the request, signs off the exception
+  D: The vendor signs a confidentiality agreement before the team starts
+answer: B
+explanation:
+  why_correct: A sound exception process assesses the risk, has it accepted by someone with authority over it, and
+    limits it in time so it is reviewed. That keeps exceptions controlled rather than becoming permanent workarounds.
+  why_not:
+    A: Logging is part of a good process, but a record alone does not assess or accept the risk before use starts.
+    C: The requester approving their own exception is a conflict of interest. Approval needs the right authority.
+    D: A confidentiality agreement may be one control, but it is not a risk assessment or acceptance.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

@@ -1,0 +1,27 @@
+id: aaism-d3-3.1-0006
+subdomain: '3.1'
+difficulty: medium
+stem: A hospital's data science team trains models in the same network segment as its internet-facing inference service. What
+  is the PRIMARY security reason to separate the two environments?
+options:
+  A: To ensure that each model is tested and approved before it reaches production
+  B: To stop a compromise of the exposed service from reaching training data and pipelines
+  C: To reduce the chance that training data is revealed through the model's answers
+  D: To prevent heavy training jobs from slowing down the responses that clinical users depend on
+answer: B
+explanation:
+  why_correct: The inference service faces the internet and is the most likely entry point. If it shares a segment with training,
+    an attacker can move laterally to sensitive patient data and to the pipeline, where they could poison or steal models.
+    Segregation contains that path.
+  why_not:
+    A: Testing and approval are change management controls. Network segregation supports them but is not their main purpose.
+    C: Leakage through answers comes from what the model memorised. Separating networks does not change what the model outputs.
+    D: Resource contention is an operational concern. It is real but secondary to the security reason.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

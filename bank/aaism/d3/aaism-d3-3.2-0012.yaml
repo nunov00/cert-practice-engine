@@ -1,0 +1,27 @@
+id: aaism-d3-3.2-0012
+subdomain: '3.2'
+difficulty: medium
+stem: Data scientists at a pharmaceutical company say security reviews slow down early experiments with new models. What is
+  the BEST approach?
+options:
+  A: Exempt experiments from security review until a model has shown clear business value
+  B: Apply the full production security review to every experiment, however small
+  C: Ask data scientists to self-assess security risk using a short checklist
+  D: Use an isolated sandbox without production data, then a full gate before release
+answer: D
+explanation:
+  why_correct: Controls should match the risk of each stage. An isolated sandbox without sensitive production data lets teams
+    move fast with low exposure, while the full security gate still applies before anything reaches production. This keeps
+    both speed and assurance.
+  why_not:
+    A: A blanket exemption leaves experiments free to use sensitive data on uncontrolled systems, which is a real exposure.
+    B: Full reviews of every experiment waste effort and push teams to work around security.
+    C: A checklist helps awareness but relies on self-assessment and gives no environmental protection.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

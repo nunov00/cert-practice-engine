@@ -1,0 +1,28 @@
+id: aaism-d3-3.2-0015
+subdomain: '3.2'
+difficulty: hard
+stem: A bank's customer chatbot model is under full change control, with testing and approval before each new version. The system prompt
+  and retrieval settings are edited directly in production by two named product owners, and each edit is logged. What should the security
+  manager recommend?
+options:
+  A: Put prompt and retrieval edits through the same tests and approval as models
+  B: Freeze the system prompt and retrieval settings so that they cannot be changed after launch
+  C: Review the chatbot's answers for harmful content within a day of each prompt or setting edit
+  D: Limit edit rights to one product owner and require a second person to review the edit log
+answer: A
+explanation:
+  why_correct: The system prompt and retrieval settings shape behaviour as much as the model does. A single edit can weaken guardrails
+    or expose new content. Treating them as part of the release, with the same security tests and approval, closes the gap. Access is
+    already limited and logged, so the missing control is testing before the change is live.
+  why_not:
+    B: A freeze stops the risk but also stops needed fixes and improvements. Change control lets changes happen safely.
+    C: Reviewing answers after an edit is detective. Customers are exposed to an untested change in the meantime.
+    D: Access is already restricted and logged. Fewer editors and a log review do not test whether an edit is safe before it goes live.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-c
+  checked_by: 2026-10-16-aaism-d3-c-check
+  check_verdict: pass

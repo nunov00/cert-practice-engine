@@ -1,0 +1,27 @@
+id: aaism-d1-1.4-0011
+subdomain: '1.4'
+difficulty: hard
+stem: Internal audit at a government agency offers to run continuous monitoring of AI security controls because it has strong
+  data analytics skills and the security team is short-staffed. What is the BEST response from the security manager?
+options:
+  A: Accept the offer, since it uses spare analytics capacity and saves budget
+  B: Accept the offer for six months while the security team recruits more staff
+  C: Split the monitoring so that audit covers models and security covers the rest
+  D: Keep monitoring with management and ask audit to assess it independently
+answer: D
+explanation:
+  why_correct: Control monitoring is a management responsibility. If internal audit runs it, audit cannot later give independent
+    assurance over the same controls. The manager should resource monitoring within the first or second line and let audit
+    review its design and effectiveness.
+  why_not:
+    A: Saving budget does not justify the loss of audit independence over AI controls.
+    B: A temporary arrangement still impairs independence for the period covered, and temporary roles tend to persist.
+    C: Splitting the work still puts audit in a management role for model controls.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

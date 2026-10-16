@@ -1,0 +1,27 @@
+id: aaism-d2-2.3-0015
+subdomain: '2.3'
+difficulty: medium
+stem: A hospital's preferred vendor for a critical AI scheduling tool refuses to provide a full AI bill of materials, citing
+  intellectual property. It is the only vendor that meets the hospital's clinical needs. What is the BEST approach?
+options:
+  A: Reject the vendor, as the bill of materials is a required control
+  B: Accept the refusal, given the vendor's strong security track record
+  C: Ask for the key components under a confidentiality agreement
+  D: Infer the tool's components by testing it in a test environment
+answer: C
+explanation:
+  why_correct: The hospital needs to know about key components, such as the base model, third-party services and critical
+    libraries, so it can react to supply chain issues. It does not need every detail. Asking for that subset under a confidentiality
+    agreement, with notice of changes, protects the vendor's interests and meets the hospital's need.
+  why_not:
+    A: Rejecting the only vendor that meets clinical needs puts a business need at risk when a middle path may work.
+    B: A good track record does not tell the hospital when a hidden component is affected by a new flaw.
+    D: Testing gives at best a partial picture of what is inside. It may also breach the licence terms.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-c
+  checked_by: 2026-10-16-aaism-d2-c-check
+  check_verdict: pass

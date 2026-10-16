@@ -1,0 +1,24 @@
+id: aaism-d2-2.2-0003
+subdomain: '2.2'
+difficulty: medium
+stem: "A red team testing a bank's customer chatbot reports two findings. Role-play prompts make it produce offensive text, and hidden instructions in uploaded documents make its email plug-in send account summaries to outside addresses. Remediation capacity is limited. Which should the security manager prioritise?"
+options:
+  A: "The offensive text, because public screenshots cause fast and visible reputational harm"
+  B: "The document instructions, because they lead to unauthorised disclosure through a tool"
+  C: "Whichever finding is cheaper to fix, so more risk is removed with the capacity"
+  D: "Neither until both are reproduced outside the red team's test environment"
+answer: B
+explanation:
+  why_correct: "Prioritisation should follow impact and exploitability. The indirect prompt injection lets an outside party trigger a real action, emailing customer account data, which is a confidentiality breach with regulatory consequences. The jailbreak produces harmful content but no data loss or unauthorised action, so it ranks lower."
+  why_not:
+    A: "Reputational harm from offensive output is real, but it is smaller and easier to contain than an exploitable path to customer data."
+    C: "Fixing the cheaper finding first sounds efficient, but cost is not risk. Limited capacity should go to the finding with the greatest impact, even if it costs more to fix."
+    D: "Red team findings are already demonstrated exploits. Demanding a second reproduction delays treatment and leaves a known disclosure path open."
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-check
+  check_verdict: pass

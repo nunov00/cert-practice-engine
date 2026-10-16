@@ -1,0 +1,28 @@
+id: aaism-d3-3.4-0007
+subdomain: '3.4'
+difficulty: easy
+stem: An airline uses an AI tool to propose aircraft maintenance actions. Which control BEST reduces the risk of an unsafe
+  proposal being carried out?
+options:
+  A: A qualified engineer approves each proposal before work starts
+  B: A second AI model cross-checks each proposal for consistency
+  C: Engineers are trained on the known limitations of the tool
+  D: A monthly sample of proposals is reviewed against outcomes
+answer: A
+explanation:
+  why_correct: In a safety-critical process, a competent human must review and approve each AI output before it is acted on.
+    Human-in-the-loop approval stops an unsafe proposal at the point where harm would occur.
+  why_not:
+    B: A second model may catch some errors, but it can share the same blind spots and still lets an unsafe proposal go ahead
+      without competent human judgment.
+    C: Training is a useful supporting control, but it relies on each engineer spotting the error and does not require anyone
+      to approve the work.
+    D: A monthly sample is a detective control. It finds problems after unsafe work may already have been done.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-check

@@ -1,0 +1,26 @@
+id: aaism-d1-1.5-0008
+subdomain: '1.5'
+difficulty: easy
+stem: A city council's public chatbot gave a resident incorrect legal advice, and the resident acted on it. What should the
+  post-incident review PRIMARILY focus on?
+options:
+  A: Which member of staff approved the chatbot for public use
+  B: Retraining the chatbot on a larger and newer set of legal documents
+  C: The control gaps that let the wrong advice reach the resident
+  D: The wording of a public statement about the chatbot's error
+answer: C
+explanation:
+  why_correct: A post-incident review aims to learn and improve. It should find why controls such as output guardrails, scope
+    limits, disclaimers or human review did not stop the harmful answer, and then update the risk assessment and playbooks.
+  why_not:
+    A: Reviews should be blame-free. Focusing on individuals discourages honest reporting.
+    B: Retraining is a possible fix, but choosing it before the gaps are understood is premature. More data may not stop hallucination.
+    D: Communication matters, but it is part of the response, not the main purpose of the review.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

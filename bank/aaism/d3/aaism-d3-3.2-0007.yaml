@@ -1,0 +1,27 @@
+id: aaism-d3-3.2-0007
+subdomain: '3.2'
+difficulty: easy
+stem: When should security requirements for a new AI system FIRST be defined?
+options:
+  A: During validation, when test results show where the risks are
+  B: At design, before the architecture and data sources are fixed
+  C: After deployment, once real usage patterns can be observed
+  D: At data collection, when the training sources are being chosen
+answer: B
+explanation:
+  why_correct: Security is cheapest and most effective when it shapes decisions instead of patching them. Defining requirements
+    at design, alongside threat modelling, lets the team choose architecture, data and controls with security in mind from
+    the start.
+  why_not:
+    A: By validation the system is largely built. Late requirements often mean rework or accepted risk.
+    C: Waiting until after deployment leaves the system exposed and makes changes costly.
+    D: Data collection is an important stage but comes after key design choices. Requirements should already exist to guide
+      it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

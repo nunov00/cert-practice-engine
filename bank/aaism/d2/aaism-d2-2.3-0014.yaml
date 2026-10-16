@@ -1,0 +1,28 @@
+id: aaism-d2-2.3-0014
+subdomain: '2.3'
+difficulty: medium
+stem: A law firm is reviewing an AI drafting service. The contract bars the vendor from training on client data. The vendor
+  still keeps prompts for 30 days for abuse monitoring, during which its staff may read flagged prompts. The firm would
+  enter privileged client material. What should the security manager do?
+options:
+  A: Accept the terms, since the vendor will not train on client data
+  B: Seek an opt-out or tight limits on retention and staff access
+  C: Have the firm encrypt prompts before they reach the AI service
+  D: Rely on the vendor's security certification to cover the risk
+answer: B
+explanation:
+  why_correct: 'The no-training clause leaves another route to exposure: stored prompts that vendor staff may read. For
+    privileged material, that could breach confidentiality duties. Negotiating removal or strict limits of retention and
+    human access, or keeping privileged content out if that fails, deals with the actual gap.'
+  why_not:
+    A: The training clause is valuable, but it does not cover retention or human review of prompts.
+    C: The model must read the text to process it. Encrypting prompts end to end would stop the service from working.
+    D: A certification shows general control maturity. It does not change the contract terms that allow staff to read prompts.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-c
+  checked_by: 2026-10-16-aaism-d2-c-check
+  check_verdict: pass

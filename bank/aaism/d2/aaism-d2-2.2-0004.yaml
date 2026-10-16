@@ -1,0 +1,24 @@
+id: aaism-d2-2.2-0004
+subdomain: '2.2'
+difficulty: easy
+stem: "A logistics company's vulnerability scans cover its servers and web applications. Its data science platform uses many open-source machine learning libraries that teams install into notebooks and training jobs. How should the security manager BEST address vulnerabilities in these components?"
+options:
+  A: "Prohibit open-source machine learning libraries on the data science platform"
+  B: "Ask each data science team to report known library flaws every quarter"
+  C: "Rely on the cloud provider to patch all libraries running on the managed platform"
+  D: "Bring the platform and its library dependencies into scanning and patching scope"
+answer: D
+explanation:
+  why_correct: "Machine learning libraries are software components with their own vulnerabilities and should be managed like any other part of the estate. Adding the platform and its dependencies to the existing scanning and patching program gives regular, consistent coverage and lets findings be prioritised with the rest of the company's vulnerabilities."
+  why_not:
+    A: "A ban is impractical, since most machine learning work depends on these libraries. It would also push teams towards unmanaged workarounds."
+    B: "Self-reporting is irregular and depends on each team's awareness. It is no substitute for systematic scanning."
+    C: "Under shared responsibility, libraries the customer installs are usually the customer's to patch, not the provider's."
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-check
+  check_verdict: pass

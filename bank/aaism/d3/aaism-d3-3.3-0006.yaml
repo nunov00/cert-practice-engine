@@ -1,0 +1,27 @@
+id: aaism-d3-3.3-0006
+subdomain: '3.3'
+difficulty: hard
+stem: A social media platform outsources the labelling of harmful content for its moderation model to a large external workforce.
+  Which control is MOST effective for label integrity?
+options:
+  A: Background checks and non-disclosure agreements for every labeller
+  B: Testing the final model's accuracy before each release to production users
+  C: A contract clause that makes the supplier liable for poor labels
+  D: Hidden known-answer items and overlapping labels with agreement checks
+answer: D
+explanation:
+  why_correct: Hidden known-answer items show whether each labeller is accurate, and overlapping labels show disagreement
+    and outliers. Together they detect careless or malicious labelling during the work, so bad labels can be removed before
+    training.
+  why_not:
+    A: Vetting reduces some insider risk, but it does not measure label quality or catch subtle manipulation.
+    B: Final testing comes after training and may not reveal targeted mislabelling of specific content.
+    C: Liability shifts some financial risk but does not detect or correct bad labels.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

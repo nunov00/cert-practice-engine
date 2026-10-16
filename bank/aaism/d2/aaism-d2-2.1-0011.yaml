@@ -1,0 +1,28 @@
+id: aaism-d2-2.1-0011
+subdomain: '2.1'
+difficulty: medium
+stem: A recruitment firm uses an AI model to screen candidates. It buys insurance covering claims from biased screening and
+  records the bias risk as treated. What is the GREATEST concern with this approach?
+options:
+  A: The insurance premium may rise once the insurer learns of the AI use
+  B: Insurance shifts some financial loss but not legal or reputational harm
+  C: The policy may not cover claims made in every country where the firm operates
+  D: The bias risk should have been avoided by not using AI for screening
+answer: B
+explanation:
+  why_correct: Transfer moves part of the financial impact to the insurer. The firm remains accountable for discriminatory
+    outcomes, regulatory action and reputational damage, and candidates are still harmed. The residual risk needs further
+    treatment, such as bias testing and human review.
+  why_not:
+    A: Premium changes are a cost issue. They do not affect whether the risk is properly treated.
+    C: Coverage gaps are a valid detail. Even full coverage would leave the non-financial harm in place.
+    D: Avoidance is one option, but it is not required. Screening with AI can be acceptable if bias is reduced by controls
+      such as testing and human review. The flaw is relying on transfer alone.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-check

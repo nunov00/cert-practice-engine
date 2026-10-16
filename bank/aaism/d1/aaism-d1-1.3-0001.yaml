@@ -1,0 +1,25 @@
+id: aaism-d1-1.3-0001
+subdomain: '1.3'
+difficulty: easy
+stem: What is the PRIMARY reason for an organisation to keep an inventory of its AI assets?
+options:
+  A: To track the licence and compute costs of each AI service
+  B: To answer internal audit requests for evidence more quickly
+  C: To show the board how far AI adoption has spread in the firm
+  D: To know what must be protected and who is accountable for it
+answer: D
+explanation:
+  why_correct: Assets that are not known cannot be protected. An inventory with owners is the base for classification,
+    risk assessment and control decisions across the AI estate.
+  why_not:
+    A: Cost tracking is a useful side benefit but not the security purpose of the inventory.
+    B: An inventory helps with audits, but that is a result of good asset management, not its main aim.
+    C: Board reporting may use inventory data, but showing adoption is not why the inventory exists.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

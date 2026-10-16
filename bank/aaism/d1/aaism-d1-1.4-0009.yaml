@@ -1,0 +1,28 @@
+id: aaism-d1-1.4-0009
+subdomain: '1.4'
+difficulty: medium
+stem: An insurer's AI security program reports that every model passed its pre-deployment security review this year. Two incidents
+  still occurred in reviewed models, both caused by prompt injection. What does this MOST likely show?
+options:
+  A: The review measures completion rather than whether it covers the actual threats
+  B: The incident response team failed to contain the attacks quickly enough to prevent harm
+  C: The reviewers need more training on the review checklist that the program already uses
+  D: The program should report the review pass rate to management more often than once a year
+answer: A
+explanation:
+  why_correct: A 100% pass rate shows the process ran, not that it worked. Incidents caused by a threat the review should
+    catch suggest the review criteria do not cover it. The program needs outcome-based measures of effectiveness and an updated
+    review scope.
+  why_not:
+    B: Response speed affects impact, but the incidents happened in models that had passed review. The question is why the
+      review missed the weakness.
+    C: Training on the existing checklist will not help if the checklist itself omits prompt injection.
+    D: Reporting a misleading metric more often does not make it more meaningful.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

@@ -1,0 +1,28 @@
+id: aaism-d3-3.3-0015
+subdomain: '3.3'
+difficulty: medium
+stem: Three partner banks contribute labelled transaction examples to fine-tune a shared fraud model. Each delivery is digitally signed
+  by the partner, and contracts include data quality warranties. Which control is MOST effective against poisoned contributions?
+options:
+  A: Request an independent audit of each partner's labelling process every year
+  B: Train a separate model for each partner so that any poisoning stays contained
+  C: Increase the contractual penalties for any partner that supplies bad data
+  D: Screen each delivery for anomalies and test its effect before it is merged
+answer: D
+explanation:
+  why_correct: Signatures prove which partner sent the data and warranties give recourse, but neither shows that the data is clean.
+    A partner may be compromised or have a malicious insider. Checking each delivery for outliers and label inconsistencies, and comparing
+    model behaviour with and without it, catches poisoning before it enters the shared model.
+  why_not:
+    A: An annual audit gives some assurance about process, but it cannot detect a poisoned batch delivered between audits.
+    B: Separate models limit spread, but they defeat the purpose of pooling data and still leave each model exposed to its own partner's
+      poisoned data.
+    C: Higher penalties transfer some financial loss. They do not prevent a poisoned model from making wrong fraud decisions.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-c
+  checked_by: 2026-10-16-aaism-d3-c-check
+  check_verdict: pass

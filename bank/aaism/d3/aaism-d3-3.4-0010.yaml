@@ -1,0 +1,27 @@
+id: aaism-d3-3.4-0010
+subdomain: '3.4'
+difficulty: medium
+stem: A broadcaster plans to use realistic synthetic voices to read some news bulletins. Which control BEST protects audience
+  trust?
+options:
+  A: Get licensed consent from the voice actors whose voices are used
+  B: Limit access to the voice generation tool to editorial staff only
+  C: Have editors check every script before the audio is generated
+  D: Disclose the synthetic audio and mark it with provenance data
+answer: D
+explanation:
+  why_correct: Audience trust depends on people knowing what is synthetic. Clear disclosure, backed by provenance marking
+    such as watermarks or content credentials, tells listeners what they hear and helps show later whether a clip is genuine
+    or a fake made outside the broadcaster.
+  why_not:
+    A: Consent is necessary to protect the voice actors' rights, but it tells the audience nothing about the audio being synthetic.
+    B: Access control reduces misuse inside the company. It does not address listeners being misled.
+    C: Script review protects accuracy of content, but listeners would still not know the voice is generated.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-check

@@ -1,0 +1,26 @@
+id: aaism-d2-2.1-0006
+subdomain: '2.1'
+difficulty: easy
+stem: An airline approved an AI tool that helps agents answer passenger questions. Which change MOST clearly requires the
+  risk assessment to be repeated?
+options:
+  A: The tool's measured accuracy dropped by one percent, staying within tolerance
+  B: The tool will now decide passenger compensation without agent involvement
+  C: The scheduled annual review of the tool's risk assessment is three months away
+  D: The vendor has changed its pricing from per-seat to per-request billing
+answer: B
+explanation:
+  why_correct: Moving from supporting agents to deciding compensation alone changes both the impact and the level of autonomy.
+    The original assessment assumed a human made the decision, so its conclusions no longer hold.
+  why_not:
+    A: A small change within tolerance is what monitoring is for. It does not by itself invalidate the assessment.
+    C: A calendar review is due soon anyway. A material change in use should trigger reassessment at once, not wait.
+    D: A pricing change is commercial. It does not change the risk profile of the use case.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-check

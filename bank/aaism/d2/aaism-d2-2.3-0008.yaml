@@ -1,0 +1,24 @@
+id: aaism-d2-2.3-0008
+subdomain: '2.3'
+difficulty: easy
+stem: "A public agency is renewing its contract for a hosted case-management AI service. The vendor's model has been fine-tuned on the agency's case records. What should the exit provisions MOST ensure?"
+options:
+  A: "A penalty payable to the agency if the vendor ends the contract early"
+  B: "Continued access to the vendor's support portal for one year after exit"
+  C: "Return or certified deletion of agency data and any model tuned on it"
+  D: "A copy of the vendor's base model for the agency to run internally"
+answer: C
+explanation:
+  why_correct: "A model fine-tuned on case records can hold or reveal that sensitive information. At exit, the agency must get its data back and have the vendor delete both the data and any derived model artefacts, with evidence. Otherwise the vendor keeps a lasting copy of agency information."
+  why_not:
+    A: "An early termination penalty is a commercial protection. It does not deal with agency data held by the vendor."
+    B: "Support access after exit is of little value and does nothing for data protection."
+    D: "Vendors rarely license their base models, and having one does not remove the agency's data from the vendor's systems."
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-check
+  check_verdict: pass

@@ -1,0 +1,24 @@
+id: aaism-d2-2.2-0007
+subdomain: '2.2'
+difficulty: easy
+stem: "What is the PRIMARY purpose of red teaming a generative AI application before it is launched?"
+options:
+  A: "To show that the application meets the applicable regulatory requirements"
+  B: "To discover ways the application can be misused or made to behave unsafely"
+  C: "To measure the application's accuracy and quality against standard benchmark tasks"
+  D: "To train the incident response team in handling AI security events"
+answer: B
+explanation:
+  why_correct: "AI red teaming takes an attacker's view to find vulnerabilities and failure modes, such as jailbreaks, prompt injection and data leakage, before real attackers or users find them. Its findings feed remediation and the risk decision on launch."
+  why_not:
+    A: "Red team results may support compliance evidence, but demonstrating compliance is not their main purpose."
+    C: "Benchmark accuracy is a quality measure from model evaluation. It does not test resistance to deliberate misuse."
+    D: "Exercising responders is the purpose of tabletop or simulation exercises, not of red teaming the application."
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-check
+  check_verdict: pass

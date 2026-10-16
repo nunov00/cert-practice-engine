@@ -1,0 +1,27 @@
+id: aaism-d2-2.1-0012
+subdomain: '2.1'
+difficulty: medium
+stem: A food company's board states a low appetite for AI errors that affect customers. Marketing wants to use generative
+  AI to draft internal campaign ideas. How should the security manager apply the appetite statement?
+options:
+  A: Block the request, because the board's appetite for AI errors is low
+  B: Approve the request without an assessment, since the ideas are only for internal use
+  C: Turn the statement into thresholds by use-case impact, then assess this case
+  D: Ask the board to approve each generative AI use case before it begins
+answer: C
+explanation:
+  why_correct: A broad appetite statement must be turned into practical thresholds. Tying thresholds to impact lets low-impact
+    internal uses go ahead with proportionate controls, while customer-facing uses face stricter limits. This use still gets
+    an assessment against those thresholds.
+  why_not:
+    A: The statement is about errors affecting customers. Blocking an internal use applies it too broadly.
+    B: Internal use can still carry risks, such as data leakage. It needs at least a light assessment.
+    D: Board approval for each case is impractical. The board sets appetite, and management applies it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-check

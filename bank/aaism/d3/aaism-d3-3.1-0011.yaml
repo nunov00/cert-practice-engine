@@ -1,0 +1,28 @@
+id: aaism-d3-3.1-0011
+subdomain: '3.1'
+difficulty: medium
+stem: A logistics company's assistant can write and run code to analyse shipment data for users. Which architectural control
+  is MOST important?
+options:
+  A: Have a second model review each piece of code before it is run
+  B: Allow only employees from the analytics team to use the feature
+  C: Scan generated code with the endpoint malware scanner before it is allowed to execute
+  D: Run generated code in an isolated sandbox with no network and limited resources
+answer: D
+explanation:
+  why_correct: Generated code can be harmful through error or manipulation. Running it in an isolated sandbox with no network
+    access and strict resource limits contains whatever it does. The control assumes the code may be hostile and limits the
+    blast radius, which is the core architectural principle.
+  why_not:
+    A: Model review can miss harmful code and can itself be manipulated. It supports, but does not replace, containment.
+    B: Limiting the user group reduces exposure slightly, but trusted users can still be tricked by injected content in the
+      data.
+    C: Malware scanners look for known signatures. Newly generated code that misuses legitimate functions will usually pass.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

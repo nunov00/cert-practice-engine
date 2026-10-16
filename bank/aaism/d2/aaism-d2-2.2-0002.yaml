@@ -1,0 +1,24 @@
+id: aaism-d2-2.2-0002
+subdomain: '2.2'
+difficulty: easy
+stem: "A retailer retrains its fraud detection model every week on recent transactions, including labels taken from customer dispute claims. Which threat should the threat model stress MOST for this data source?"
+options:
+  A: "Model extraction through repeated queries to the scoring service"
+  B: "Evasion through small changes to transactions at scoring time"
+  C: "Data poisoning through deliberately false dispute claims"
+  D: "Membership inference against records used in training"
+answer: C
+explanation:
+  why_correct: "Customer dispute claims are untrusted input that flows straight into the training labels. An attacker who files false disputes can shift what the model learns, for example teaching it to treat a fraud pattern as legitimate. Frequent automatic retraining makes this poisoning path the key concern for this source."
+  why_not:
+    A: "Extraction targets a model exposed to outside queries. It is not linked to the dispute data feeding training."
+    B: "Evasion is a real fraud threat, but it acts on inputs at scoring time. The question is about the labels that feed retraining."
+    D: "Membership inference is a privacy threat to training records. The dispute feed mainly creates an integrity risk to the model."
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-check
+  check_verdict: pass

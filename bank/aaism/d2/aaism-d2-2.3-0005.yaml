@@ -1,0 +1,24 @@
+id: aaism-d2-2.3-0005
+subdomain: '2.3'
+difficulty: easy
+stem: "After a flaw is announced in a widely used text-processing library, a bank takes weeks to work out which of its AI systems use it. What would have BEST helped the bank respond faster?"
+options:
+  A: "An AI bill of materials for each system listing its models, data and libraries"
+  B: "Security questionnaires completed by each AI vendor when it was first onboarded"
+  C: "A larger incident response team with specialists in machine learning"
+  D: "An annual penetration test of every AI system the bank operates"
+answer: A
+explanation:
+  why_correct: "An AI bill of materials records the components of each AI system, including models, datasets and software libraries. With it, the bank could search for the affected library and list impacted systems within hours, which is the purpose of supply chain transparency."
+  why_not:
+    B: "Onboarding questionnaires are high level and quickly out of date. They rarely list the exact libraries inside each system."
+    C: "More responders do not solve the missing information. They would still have to search system by system."
+    D: "An annual test is a point-in-time check of security, not a current record of components."
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-check
+  check_verdict: pass

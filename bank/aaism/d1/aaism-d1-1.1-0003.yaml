@@ -1,0 +1,28 @@
+id: aaism-d1-1.1-0003
+subdomain: '1.1'
+difficulty: medium
+stem: An online travel company has a mature information security management system certified to an international
+  standard. It now wants to adopt an AI security framework. What is the BEST approach?
+options:
+  A: Map the AI framework to the current system and extend it to close gaps
+  B: Build a separate AI management system with its own risk register
+  C: Adopt the AI framework in full and retire overlapping existing controls
+  D: Seek certification against the AI framework before changing any controls
+answer: A
+explanation:
+  why_correct: Mapping shows which AI needs are already met by existing controls and where new ones are needed.
+    Extending one system keeps a single risk register, one set of owners and consistent reporting, and avoids duplicated
+    effort.
+  why_not:
+    B: A parallel system splits risk information and duplicates processes such as access control and incident handling.
+    C: Retiring working controls that the certification depends on creates gaps and disruption with no clear benefit.
+    D: Certification may come later, but it needs the controls in place first. Starting with it puts an audit goal
+      ahead of managing the risk.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

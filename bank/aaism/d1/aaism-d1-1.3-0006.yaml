@@ -1,0 +1,25 @@
+id: aaism-d1-1.3-0006
+subdomain: '1.3'
+difficulty: easy
+stem: What is the MAIN security benefit of a model registry with version control?
+options:
+  A: It records which approved version is live and supports reliable rollback
+  B: It replaces the need for a separate inventory of all AI assets
+  C: It stops attackers extracting the model through its public interface
+  D: It removes the need for access controls on stored model files
+answer: A
+explanation:
+  why_correct: A registry gives a trusted record of each model version, its approval and where it runs. That supports
+    integrity checks and lets the team roll back to a known good version quickly.
+  why_not:
+    B: A registry covers models. The wider inventory also covers data, prompts, agents and other assets.
+    C: Extraction is an attack through queries. A registry does not limit how the live model can be queried.
+    D: Model files still need access control. A registry depends on it rather than replacing it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

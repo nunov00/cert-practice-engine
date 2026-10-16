@@ -1,0 +1,28 @@
+id: aaism-d1-1.1-0011
+subdomain: '1.1'
+difficulty: medium
+stem: At an energy utility, data scientists say security reviews slow delivery of a grid-forecasting model, while
+  the risk committee wants stronger controls. What is the BEST way for the security manager to resolve this?
+options:
+  A: Escalate to the board and ask it to choose between the two positions
+  B: Show each option's risk against appetite and let the model's owner decide
+  C: Apply the full control set because the model supports critical services
+  D: Ask internal audit to judge which of the two positions is right
+answer: B
+explanation:
+  why_correct: The security manager's role is to make the risk visible, not to make the business decision. Framing
+    each option against agreed appetite lets the accountable business owner choose, with escalation only if the
+    result is outside appetite.
+  why_not:
+    A: The board sets appetite. It should not referee an operational disagreement that the owner can resolve.
+    C: Imposing maximum controls ignores cost and appetite. It may be more than the risk requires.
+    D: Audit gives independent assurance. Asking it to settle a live design decision takes it into a management
+      role it may later need to review.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

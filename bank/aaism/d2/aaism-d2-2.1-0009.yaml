@@ -1,0 +1,26 @@
+id: aaism-d2-2.1-0009
+subdomain: '2.1'
+difficulty: medium
+stem: A logistics group wants to assess AI risks with its existing enterprise risk method. What is the MOST important change
+  to make to the method?
+options:
+  A: Replace it with a separate method designed only for AI systems
+  B: Have the data science team score AI risks using their own rating scales
+  C: Use quantitative scoring only, because AI systems produce metrics
+  D: Add AI-specific threat and impact categories to the existing method
+answer: D
+explanation:
+  why_correct: Extending the existing method keeps AI risks comparable with other enterprise risks. Adding categories such
+    as poisoning, model theft, hallucination and harm to individuals makes sure AI-specific risks are found and rated.
+  why_not:
+    A: A separate method makes it hard to compare and aggregate AI risks with others.
+    B: Separate scales prevent consistent comparison. Data science should provide input, not set its own scoring.
+    C: Model metrics do not cover all impacts, and many AI risks still need qualitative judgment.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-check

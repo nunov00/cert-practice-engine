@@ -1,0 +1,27 @@
+id: aaism-d3-3.4-0008
+subdomain: '3.4'
+difficulty: medium
+stem: A benefits agency requires a caseworker to review every fraud flag raised by its AI model. Logs show caseworkers confirm
+  99 percent of flags, most within ten seconds. What is the GREATEST concern?
+options:
+  A: Caseworkers are taking too long to process each flag
+  B: The model is producing far too many fraud flags overall
+  C: The human review may not be working as a real control
+  D: The agency is paying for more caseworkers than it needs
+answer: C
+explanation:
+  why_correct: Near-total agreement in a few seconds suggests automation bias or rubber stamping. The review exists on paper
+    but may not catch model errors, so citizens may be harmed by wrong decisions. The agency should check reviewer workload,
+    guidance and independence, and test the review with known cases.
+  why_not:
+    A: Ten seconds per flag is fast, not slow. Speed is the symptom, not the concern.
+    B: The flag volume may be high, but the data points to a weak review, not to the number of flags.
+    D: Cost is a secondary efficiency issue. The ethical and safety risk is ineffective oversight.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-check

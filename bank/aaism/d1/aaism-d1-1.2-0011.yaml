@@ -1,0 +1,27 @@
+id: aaism-d1-1.2-0011
+subdomain: '1.2'
+difficulty: medium
+stem: A policy requires that high-risk AI models be reviewed before release. Teams read this differently and review
+  quality varies widely. What should the security manager do to BEST fix this?
+options:
+  A: Rewrite the policy statement with detailed technical review criteria
+  B: Train the reviewers on what a good model review looks like
+  C: Publish guidelines that suggest good practice for model reviews
+  D: Define a standard review procedure with criteria, roles and evidence
+answer: D
+explanation:
+  why_correct: The policy intent is clear; what is missing is a consistent way to carry it out. A defined procedure
+    with criteria, roles and required evidence makes every review follow the same method and produces auditable
+    results.
+  why_not:
+    A: Policies should stay high-level. Loading them with technical detail makes them hard to maintain.
+    B: Training helps, but without a defined method, criteria and evidence, reviewers still apply their own interpretations.
+    C: Guidelines are optional. Teams could still ignore them, so quality would keep varying.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

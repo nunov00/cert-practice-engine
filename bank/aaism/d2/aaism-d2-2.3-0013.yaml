@@ -1,0 +1,28 @@
+id: aaism-d2-2.3-0013
+subdomain: '2.3'
+difficulty: hard
+stem: Data scientists at an engineering firm want to use an open-weight model from a well-known publisher. They found it
+  on a community hub, uploaded by another user, in a file format that cannot run code when loaded. What is the GREATEST
+  remaining supply chain concern?
+options:
+  A: The weights may have been altered from the publisher's release
+  B: The file could still contain code that runs when it is loaded
+  C: The model licence may restrict use in commercial products
+  D: The model may perform worse on the firm's engineering tasks
+answer: A
+explanation:
+  why_correct: A safe file format removes the code-execution risk, but not the risk of tampered weights. A copy uploaded
+    by a third party could hold a backdoor or poisoned behaviour. Checking it against the publisher's own hashes or signatures,
+    or downloading from the publisher, confirms provenance.
+  why_not:
+    B: The safe format already addresses code execution on load, which is the main reason to scan model files.
+    C: Licence terms must be checked, but they are a legal issue. They are not the main security concern in the supply chain.
+    D: Fitness for the task is tested in evaluation. It is a quality question, not a supply chain threat.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-c
+  checked_by: 2026-10-16-aaism-d2-c-check
+  check_verdict: pass

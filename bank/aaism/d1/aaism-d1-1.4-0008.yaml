@@ -1,0 +1,26 @@
+id: aaism-d1-1.4-0008
+subdomain: '1.4'
+difficulty: easy
+stem: A telecom operator forms an AI security steering committee. What is the PRIMARY reason to include senior business leaders
+  on it?
+options:
+  A: To approve the technical design of each model before it is trained
+  B: To align program priorities with business goals and secure support
+  C: To carry out the risk assessments for each of their business AI uses
+  D: To reduce the workload of the security team by sharing daily tasks
+answer: B
+explanation:
+  why_correct: A steering committee provides direction and oversight. Business leaders make sure the program targets what
+    matters to the organisation, and their membership gives it the backing and resources it needs.
+  why_not:
+    A: Technical design approval is an operational task for architects and engineers, not a steering committee.
+    C: Business units take part in risk assessments, but performing them is not the committee's role.
+    D: A steering committee gives direction. It does not take on the security team's daily work.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

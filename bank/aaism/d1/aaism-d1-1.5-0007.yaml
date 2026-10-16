@@ -1,0 +1,26 @@
+id: aaism-d1-1.5-0007
+subdomain: '1.5'
+difficulty: medium
+stem: A customer service AI agent at a utility can look up accounts and issue refunds. Attackers are using prompt injection
+  to make it issue refunds to their accounts. What is the BEST containment action?
+options:
+  A: Shut down the entire customer service platform until the investigation has ended
+  B: Suspend the agent's refund capability while keeping its read-only functions
+  C: Add a filter rule that blocks the exact prompt text seen in the attacks
+  D: Lower the maximum value of each refund that the agent is allowed to issue
+answer: B
+explanation:
+  why_correct: Removing the refund tool stops the harmful action at once, whatever prompt the attacker uses. Keeping the read-only
+    functions limits disruption to customers. This targets the excessive agency that the attack exploits.
+  why_not:
+    A: Shutting down the whole platform causes more disruption than needed when the risky capability can be isolated.
+    C: Attackers can easily change the wording of an injected prompt, so a rule for one string is not reliable containment.
+    D: A lower limit reduces each loss but still lets fraudulent refunds continue.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

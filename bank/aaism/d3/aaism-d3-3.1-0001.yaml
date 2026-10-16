@@ -1,0 +1,28 @@
+id: aaism-d3-3.1-0001
+subdomain: '3.1'
+difficulty: medium
+stem: A retailer's customer chatbot will call a back-end API to look up order status. Which design control BEST limits the
+  damage a prompt injection attack could cause?
+options:
+  A: System prompt instructions telling the model to refuse any request about orders that belong to other customers
+  B: An API layer that only returns orders belonging to the authenticated customer, whatever the model asks for
+  C: An input filter that blocks prompts containing known injection phrases before they reach the model
+  D: Full logging of prompts and API calls so that misuse can be investigated after the event
+answer: B
+explanation:
+  why_correct: Prompt injection can make the model ask for anything, so the model must never hold more access than the user.
+    Enforcing the customer's own authorisation outside the model, at the API, means a manipulated request still cannot return
+    another customer's data. This is a structural control that holds even when the model is fooled.
+  why_not:
+    A: Instructions in the system prompt are exactly what injection attacks override. They are a weak, bypassable control,
+      not a boundary.
+    C: Blocklists of known phrases help, but attackers rephrase easily. A filter reduces likelihood but does not cap the impact.
+    D: Logging is a detective control. It helps investigation but does nothing to stop the data being exposed.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

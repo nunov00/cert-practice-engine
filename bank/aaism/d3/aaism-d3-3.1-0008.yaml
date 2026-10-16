@@ -1,0 +1,28 @@
+id: aaism-d3-3.1-0008
+subdomain: '3.1'
+difficulty: medium
+stem: A bank's analytics team wants a language model to write and run SQL against the customer database to answer analysts'
+  questions. Which design choice BEST reduces the risk?
+options:
+  A: Connect the model through a read-only account limited to approved views
+  B: Have a second model check each generated query before it is executed
+  C: Log every generated query and review a sample each week
+  D: Train analysts to phrase questions that avoid destructive queries
+answer: A
+explanation:
+  why_correct: Least privilege caps what any query can do, however it was generated. A read-only account that can only see
+    approved views means a manipulated or mistaken query cannot change data or reach tables outside scope. The limit is enforced
+    by the database, not by model behaviour.
+  why_not:
+    B: A second model can be fooled in the same way as the first. It is a useful extra check but not a reliable boundary.
+    C: Sampling logs is detective and late. Damage from a harmful query would already be done.
+    D: Training users does not stop an attacker or a model error. The model may still generate unsafe SQL from a harmless
+      question.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

@@ -1,0 +1,27 @@
+id: aaism-d1-1.1-0006
+subdomain: '1.1'
+difficulty: easy
+stem: What is the PRIMARY purpose of stakeholder mapping in an AI security program?
+options:
+  A: To know who is affected by AI risk and who must be consulted
+  B: To decide who should sit on the AI governance committee
+  C: To plan how the AI security program is promoted to staff
+  D: To find which business units are already using AI tools
+answer: A
+explanation:
+  why_correct: Stakeholder mapping identifies who has an interest in or influence over AI systems, from executives
+    to users and regulators. It guides who to consult, inform and involve in decisions about AI risk.
+  why_not:
+    B: Mapping can inform committee membership, but the committee is only one forum. The aim is to know everyone
+      whose interests and input matter.
+    C: Communication planning uses the map, but promoting the program to staff is a narrow later use, not the purpose.
+    D: Finding where AI is used is asset discovery and inventory work. Stakeholder mapping is about people and their
+      interests, not tools.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

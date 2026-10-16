@@ -1,0 +1,24 @@
+id: aaism-d2-2.3-0006
+subdomain: '2.3'
+difficulty: medium
+stem: "A pharmaceutical company is assessing a vendor's research summarisation tool. Due diligence shows that the vendor sends users' prompts to a foundation model provider that it will not name. What is the GREATEST concern?"
+options:
+  A: "The vendor has not shared the results of its own penetration tests"
+  B: "The company cannot assess how the unnamed provider handles its research data"
+  C: "The tool's summaries may be less accurate than those of rival products"
+  D: "The vendor's draft contract offers no service credits for outages"
+answer: B
+explanation:
+  why_correct: "The research data in prompts is highly confidential. If the fourth party is unknown, the company cannot check its location, security, retention or training use, nor whether the vendor's contract with it passes down the needed protections. That gap is the key data risk."
+  why_not:
+    A: "Missing test results are a gap, but they can be requested. The hidden subprocessor is a structural block to assurance."
+    C: "Accuracy is a quality and business concern. It is not the main security risk in this scenario."
+    D: "Service credits are a commercial point. They do not affect the confidentiality of research data."
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-check
+  check_verdict: pass

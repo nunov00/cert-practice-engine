@@ -1,0 +1,31 @@
+id: aaism-d3-3.1-0015
+subdomain: '3.1'
+difficulty: medium
+stem: A bank's agent platform runs third-party plug-ins inside the agent's own process, which holds tokens for every connected system.
+  Each plug-in is code reviewed before approval. A penetration test used a flaw in one approved plug-in to call the payroll API. What
+  should the security manager recommend?
+options:
+  A: Deepen the code review that each plug-in must pass before it is approved for use
+  B: Require the user to confirm every plug-in call before the agent is allowed to run it
+  C: Allow only plug-ins developed in-house by the bank's own engineering teams
+  D: Run each plug-in separately, with access only to the tokens that it needs
+answer: D
+explanation:
+  why_correct: The test shows that a flaw which passed review could reach every system because all plug-ins share one process and all
+    tokens. Isolating plug-ins and giving each only its own scoped credentials limits the damage any single flaw can do. Review will
+    never catch every flaw, so the architecture must contain the ones it misses.
+  why_not:
+    A: Better review lowers the chance of flaws, but the flawed plug-in had already passed review. It does not limit the impact of the
+      next one that gets through.
+    B: Per-call confirmation adds friction to every task and users cannot judge which calls are safe. It also leaves the shared tokens
+      exposed to a flawed plug-in.
+    C: In-house code also has flaws, and this choice gives up useful plug-ins. Where code comes from does not fix the shared process
+      and tokens.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-c
+  checked_by: 2026-10-16-aaism-d3-c-check
+  check_verdict: pass

@@ -1,0 +1,27 @@
+id: aaism-d1-1.5-0002
+subdomain: '1.5'
+difficulty: medium
+stem: A payment provider finds that its fraud detection model was retrained last week on data that an attacker had poisoned.
+  What is the BEST immediate containment step?
+options:
+  A: Roll back to the last model version verified as good before the poisoning
+  B: Retrain the model at once on current data with extra input filtering applied
+  C: Raise the model's alert threshold so that fewer suspicious results are missed
+  D: Keep the current model running and add manual review of its declined cases
+answer: A
+explanation:
+  why_correct: Rolling back to a known-good version quickly removes the poisoned behaviour while the team investigates. It
+    restores model integrity without depending on data that may still be contaminated.
+  why_not:
+    B: Current data may still contain poisoned records, and the scope is not yet known. Retraining now risks repeating the
+      problem.
+    C: Changing a threshold does not remove the poisoned behaviour. It may also cause many false alerts.
+    D: 'Manual review of declines misses the main risk: a poisoned model may approve fraud that is never reviewed.'
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

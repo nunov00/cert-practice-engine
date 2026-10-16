@@ -1,0 +1,26 @@
+id: aaism-d3-3.3-0002
+subdomain: '3.3'
+difficulty: easy
+stem: A telecom's analytics team wants every customer field for a churn model 'in case it helps'. Which data management principle
+  should the security manager apply?
+options:
+  A: Data retention, so the fields are kept only for a fixed period
+  B: Data quality, so that every field is checked for accuracy before use
+  C: Data minimisation, so only fields needed for the purpose are used
+  D: Data lineage, so the source of every field is recorded
+answer: C
+explanation:
+  why_correct: Collecting fields without a clear need increases exposure if the data leaks and may break purpose limits. Minimisation
+    means using only the fields that are needed and justified for the model's stated purpose.
+  why_not:
+    A: Retention limits how long data is kept, but the issue is that unnecessary data is being collected at all.
+    B: Quality checks are useful but do not reduce the amount of sensitive data in use.
+    D: Lineage supports traceability but does not limit which fields are used.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

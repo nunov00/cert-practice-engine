@@ -1,0 +1,26 @@
+id: aaism-d1-1.2-0006
+subdomain: '1.2'
+difficulty: medium
+stem: Researchers at a pharmaceutical company want to use a public chatbot to help draft clinical study reports.
+  Which policy provision BEST addresses the main risk?
+options:
+  A: Do not enter confidential or unpublished data into public AI tools
+  B: Have all chatbot output reviewed by a person before external release
+  C: Use the chatbot only from company-managed devices on the network
+  D: Get approval from the head of research before each use of the tool
+answer: A
+explanation:
+  why_correct: The main risk is unpublished trial data leaving the company through a public service that may store
+    or reuse inputs. A clear rule on what data may be entered addresses that exposure directly.
+  why_not:
+    B: Human review limits errors in output, but it does nothing about confidential data already sent.
+    C: Managed devices help with endpoint control, but data typed into the public tool still leaves the company.
+    D: Per-use approval adds friction without stating what data is allowed, so the leakage risk remains.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

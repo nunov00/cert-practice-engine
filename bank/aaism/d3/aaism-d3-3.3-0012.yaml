@@ -1,0 +1,26 @@
+id: aaism-d3-3.3-0012
+subdomain: '3.3'
+difficulty: medium
+stem: Developers at an insurance broker copied a production customer database into a development environment to experiment
+  with a claims model. What should the security manager recommend?
+options:
+  A: Apply the production access controls to the development environment as well
+  B: Use masked or synthetic data in development instead of production records
+  C: Delete the copy once the experiment is finished and record the deletion
+  D: Ask the developers to confirm that they need the real data for the work
+answer: B
+explanation:
+  why_correct: Development environments usually have weaker controls and wider access. Replacing real customer data with masked
+    or synthetic data removes the exposure at its source while still allowing the experiment.
+  why_not:
+    A: Matching production controls in development is costly and rarely sustained. It also leaves real data in a riskier place.
+    C: Deleting the copy later still leaves the data exposed throughout the experiment.
+    D: A confirmation of need is a weak check and does not change the risk of holding real data in development.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

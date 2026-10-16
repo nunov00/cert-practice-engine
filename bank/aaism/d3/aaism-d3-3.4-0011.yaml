@@ -1,0 +1,27 @@
+id: aaism-d3-3.4-0011
+subdomain: '3.4'
+difficulty: easy
+stem: Before launch, testing shows that a game studio's AI companion for teenage players can produce self-harm content during
+  role-play. What is the BEST action?
+options:
+  A: Add a rule to the terms of service that forbids such prompts
+  B: Rely on the safety settings of the foundation model provider
+  C: Block players under thirteen by asking for age at sign-up
+  D: Add safety filters suited to young users, with safe replies
+answer: D
+explanation:
+  why_correct: The harm has been shown in testing, so a preventive control is needed before launch. Input and output safety
+    filters tuned to a teenage audience, with safe replies that point to support, address the harmful output directly. They
+    should then be retested.
+  why_not:
+    A: Terms of service do not stop the model generating harmful content and shift the burden to young users.
+    B: Testing already shows the provider's default settings are not enough for this audience.
+    C: Teenagers over thirteen are the target users and remain exposed. Self-declared age is also easy to bypass.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-check

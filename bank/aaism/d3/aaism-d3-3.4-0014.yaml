@@ -1,0 +1,30 @@
+id: aaism-d3-3.4-0014
+subdomain: '3.4'
+difficulty: hard
+stem: A fitness app's users agreed that their data may be used to improve its services. The company now wants to train a model on this
+  data and license it to insurers for pricing. The legal team says the consent wording is broad enough. What should the security manager
+  recommend?
+options:
+  A: Proceed on the legal team's advice and record their opinion with the project files
+  B: Anonymise the activity data before training so that no user can be identified
+  C: Hold a privacy impact assessment of the new use before any data is used
+  D: Train the model with differential privacy so that individual records are protected
+answer: C
+explanation:
+  why_correct: Selling a model that affects users' insurance prices is a new purpose that users would not expect, with a real chance
+    of harm to them. A legal reading of the wording does not settle whether the use is fair, proportionate or harmful. A privacy impact
+    assessment examines these issues and gives the risk owner an informed decision before data is used.
+  why_not:
+    A: Legal advice is an important input, but it answers whether the wording may be lawful, not whether the risk to users and to trust
+      is acceptable.
+    B: Anonymisation protects identities in the training data, but the model is still used to set prices for the same users. The purpose
+      problem remains.
+    D: Differential privacy limits what the model reveals about individuals. It does not address whether the new purpose is acceptable.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-c
+  checked_by: 2026-10-16-aaism-d3-c-check
+  check_verdict: pass

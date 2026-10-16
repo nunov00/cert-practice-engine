@@ -1,0 +1,30 @@
+id: aaism-d1-1.3-0013
+subdomain: '1.3'
+difficulty: medium
+stem: A lender's retention schedule says that personal data in training sets must be deleted after two years. A sector rule
+  requires the lender to describe the sources and features of the training data for its credit model for ten years. It does
+  not require copies of the data. What should the security manager advise?
+options:
+  A: Delete the data on schedule and keep the dataset documentation
+  B: Keep the training data for ten years under a recorded exception
+  C: Anonymise the training data and then keep it with no time limit
+  D: Let the model owner decide on retention for each dataset in turn
+answer: A
+explanation:
+  why_correct: The sector rule asks for a description of the data, not the data itself. Keeping lineage records and dataset
+    documentation meets it, while deleting the personal data on schedule meets the retention rule and limits exposure. Both
+    duties are satisfied without holding more personal data than needed.
+  why_not:
+    B: A recorded exception would be sound if copies were required. Here it keeps personal data for eight extra years with
+      no need.
+    C: Anonymising rich credit data well is hard. Keeping it without limit adds re-identification risk with no stated purpose.
+    D: The owner should apply the schedule, not decide case by case. That would make retention inconsistent and hard to
+      defend.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-c
+  checked_by: 2026-10-16-aaism-d1-c-check
+  check_verdict: pass

@@ -1,0 +1,29 @@
+id: aaism-d1-1.2-0015
+subdomain: '1.2'
+difficulty: hard
+stem: An insurer's AI policy requires a full security review for every new AI use case. Reviews now take three months, and
+  staff are turning to unapproved tools. Most requests are low-risk internal productivity uses. What should the security
+  manager do FIRST?
+options:
+  A: Hire more reviewers so that all reviews finish within a month
+  B: Apply a lighter review to low-risk cases now and record why
+  C: Propose a risk-tiered review to the policy's approving body
+  D: Block unapproved AI services at the web proxy for all staff
+answer: C
+explanation:
+  why_correct: The delay comes from the policy itself, which treats every case the same. Tiering reviews by risk fixes the
+    cause, but the manager cannot simply stop applying an approved policy. Taking the change to the body that approves the
+    policy fixes the bottleneck and keeps governance intact.
+  why_not:
+    A: More reviewers ease the queue, but full reviews for low-risk uses still waste effort. The design problem remains.
+    B: A lighter path is the right idea, but applying it before the policy changes means the manager is breaching the approved
+      policy.
+    D: Blocking may be needed later, but while approval takes three months it would push staff to personal devices instead.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-c
+  checked_by: 2026-10-16-aaism-d1-c-check
+  check_verdict: pass

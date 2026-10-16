@@ -1,0 +1,27 @@
+id: aaism-d1-1.5-0010
+subdomain: '1.5'
+difficulty: hard
+stem: A retailer suspects that some product reviews used to train its recommendation model were poisoned. The data science
+  team wants to delete the suspect records and retrain immediately. What is the security manager's GREATEST concern?
+options:
+  A: Retraining may reduce the model's accuracy for genuine customers
+  B: Deleting the records may destroy evidence of the poisoning's scope and source
+  C: Retraining may take longer than the recovery time objective for the model
+  D: Deleting the records may breach the retention period set for the training data
+answer: B
+explanation:
+  why_correct: Before remediation, the team must preserve copies of the suspect data, the current model and related logs.
+    Without them, the organisation cannot work out how the poisoning got in, how far it spread or who did it. It could also
+    miss other poisoned data and fail to close the entry point.
+  why_not:
+    A: Accuracy can be checked after retraining. Lost evidence cannot be recovered.
+    C: Recovery time matters, but the rollback options and evidence decide how recovery proceeds safely.
+    D: Retention rules rarely forbid removing compromised data, and preservation copies solve this anyway.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

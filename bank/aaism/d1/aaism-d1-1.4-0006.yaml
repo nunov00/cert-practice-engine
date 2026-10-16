@@ -1,0 +1,29 @@
+id: aaism-d1-1.4-0006
+subdomain: '1.4'
+difficulty: hard
+stem: A maturity assessment rates a pharmaceutical firm's AI security practices at level 2 in all areas against a target of
+  level 4. Budget for the coming year is limited. What should the security manager do FIRST?
+options:
+  A: Start with the areas that can reach the next level at the lowest cost
+  B: Lower the target to level 3 so that the roadmap fits the available budget
+  C: Rank the gaps by the risk they pose to the firm's most critical AI use cases
+  D: Follow the order of improvement that industry peers have reported
+answer: C
+explanation:
+  why_correct: With limited funds, improvement should go first to the gaps that most affect risk to critical AI use cases.
+    A risk-ranked roadmap gives the best risk reduction for the money and is easy to justify to management.
+  why_not:
+    A: Quick wins show progress cheaply, but cost per level says nothing about which gaps expose critical AI use cases. Spending
+      may go to low-risk areas.
+    B: The target reflects the risk the firm needs to manage. Cutting it to fit the budget hides the gap instead of prioritising
+      it; any change is a management risk decision, not a first step.
+    D: Peer sequencing reflects other firms' risks and use cases. It may fund areas that matter little to this firm's critical
+      AI systems.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

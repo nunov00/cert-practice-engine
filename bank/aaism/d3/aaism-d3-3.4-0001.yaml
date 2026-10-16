@@ -1,0 +1,27 @@
+id: aaism-d3-3.4-0001
+subdomain: '3.4'
+difficulty: easy
+stem: A retailer plans to train a product recommendation model on customers' purchase histories. When should the privacy impact
+  assessment be carried out?
+options:
+  A: After model validation, once its accuracy is known
+  B: During design, before the data is used for training
+  C: After the first month of live use, using real results
+  D: At the next scheduled annual privacy compliance audit
+answer: B
+explanation:
+  why_correct: A privacy impact assessment is a design-stage control. Done before personal data is used, it can still shape
+    what data is collected, the legal basis, minimisation and notices. Later timing turns it into a review of choices that
+    are already costly to change.
+  why_not:
+    A: By validation the data has already been used for training. Any privacy problem found then means rework or retraining.
+    C: Customers' data would already be processed in production without the risks being assessed. This is reactive.
+    D: An annual audit checks compliance after the fact. It does not replace an assessment tied to the new processing.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-check

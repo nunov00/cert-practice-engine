@@ -1,0 +1,28 @@
+id: aaism-d2-2.1-0010
+subdomain: '2.1'
+difficulty: medium
+stem: A telecom company has little historical data on AI security incidents, so its likelihood estimates for AI risks are
+  uncertain. What is the BEST approach for the risk assessment?
+options:
+  A: Use scenario analysis with ranges and record the assumptions behind them
+  B: Rank the AI risks on impact alone until reliable likelihood data exists
+  C: Use published industry rates of AI incidents as the likelihood of each risk
+  D: Rate every AI risk as high likelihood by default to stay on the safe side
+answer: A
+explanation:
+  why_correct: When data is scarce, structured scenarios with expert judgment and ranges give a defensible estimate. Recording
+    assumptions shows decision makers the uncertainty and lets estimates be updated as incidents and threat intelligence build
+    up.
+  why_not:
+    B: Ignoring likelihood treats rare and frequent scenarios alike, so treatment effort is misdirected. Uncertain estimates
+      with stated assumptions are more useful than none.
+    C: Industry rates are a useful input, but used alone they ignore this company's own exposure, controls and use cases.
+    D: Rating everything high removes the ability to prioritise and wastes treatment effort.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-check

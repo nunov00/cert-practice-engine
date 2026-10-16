@@ -1,0 +1,28 @@
+id: aaism-d3-3.4-0004
+subdomain: '3.4'
+difficulty: medium
+stem: A mobile network operator wants to give city planners a model trained on subscriber location data. It needs a measurable
+  limit on what the model can reveal about any one subscriber. Which approach BEST meets this need?
+options:
+  A: Remove names and phone numbers from the data before training
+  B: Encrypt the training data and the model files while at rest
+  C: Log every query that the city planners send to the model
+  D: Apply differential privacy when the model is being trained
+answer: D
+explanation:
+  why_correct: Differential privacy adds calibrated noise during training so that the output changes very little whether or
+    not any one person is included. It gives a quantified privacy budget, which is the measurable limit the operator needs.
+  why_not:
+    A: Removing direct identifiers is pseudonymisation. Location traces can still identify people, and it gives no measurable
+      bound.
+    B: Encryption protects the files from unauthorised access. It does not limit what an authorised user can learn from the
+      model.
+    C: Logging supports detection and accountability after the fact. It places no limit on what the model reveals.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-check

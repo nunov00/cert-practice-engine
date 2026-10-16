@@ -1,0 +1,24 @@
+id: aaism-d2-2.3-0007
+subdomain: '2.3'
+difficulty: hard
+stem: "Two years ago an e-commerce company onboarded an AI recommendation vendor after a full assessment. Since then the vendor has added generative features and two new subprocessors. The contract has not changed. What should the security manager do?"
+options:
+  A: "Request the vendor's latest independent assurance report and file it"
+  B: "Record the new features as open items in the vendor risk register"
+  C: "Ask internal audit to review the vendor relationship this year"
+  D: "Reassess the vendor for the changes and set monitoring based on its risk tier"
+answer: D
+explanation:
+  why_correct: "The vendor's risk profile has changed even though the contract has not. New generative features and subprocessors may change how company data is used and where it goes. A targeted reassessment, followed by monitoring scaled to the vendor's risk tier, keeps the company's view of the vendor current."
+  why_not:
+    A: "A new assurance report is useful evidence, but it may not cover the new features, and filing it is not an assessment."
+    B: "Recording the changes documents them but leaves the risk unassessed and untreated."
+    C: "Vendor risk management is a management responsibility. Internal audit gives independent assurance; it does not run vendor oversight."
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-check
+  check_verdict: pass

@@ -1,0 +1,28 @@
+id: aaism-d2-2.1-0015
+subdomain: '2.1'
+difficulty: hard
+stem: To keep a bank's AI advice assistant within tolerance, staff review every answer before it is sent. In the pilot,
+  reviewers approved 99.5% of answers in a few seconds each, and later spot checks found errors they had missed. What should
+  the risk manager do FIRST?
+options:
+  A: Re-rate the residual risk using the measured control effectiveness
+  B: Add a second reviewer to check each answer before it is sent out
+  C: Retrain the reviewers on the kinds of errors the model tends to make
+  D: Accept the risk, since reviewers rarely find any problems to correct
+answer: A
+explanation:
+  why_correct: The residual rating assumed human review would catch errors. The pilot shows reviewers rubber-stamp answers,
+    so the control is much weaker than assumed and the risk may be above tolerance. Re-rating with real evidence comes first,
+    so the owner can choose a treatment that works.
+  why_not:
+    B: A second reviewer may help, but it may suffer the same automation bias. Choosing it before re-rating is premature.
+    C: Training may improve review quality, but it is one treatment option. The current residual risk must be known first.
+    D: Few corrections combined with missed errors show the control is failing, not that the answers are good.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-c
+  checked_by: 2026-10-16-aaism-d2-c-check
+  check_verdict: pass

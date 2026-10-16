@@ -1,0 +1,30 @@
+id: aaism-d3-3.1-0003
+subdomain: '3.1'
+difficulty: medium
+stem: An insurer is deploying an AI agent that reads claim emails and can trigger payments through a finance tool. What is
+  the BEST design control against the agent taking harmful actions?
+options:
+  A: Require a human approval step before the agent can release any payment
+  B: Alert the fraud team when the agent's daily payment total exceeds a threshold
+  C: Fine-tune the agent's model on past claims so it learns which payments are valid
+  D: Limit the agent's service account to the payment function of the finance tool
+answer: A
+explanation:
+  why_correct: The agent processes untrusted email content, so it can be manipulated into acting. Putting a human approval
+    step in front of the high-impact action limits the agent's agency by design. A malicious or mistaken payment cannot happen
+    on the agent's decision alone.
+  why_not:
+    B: A threshold alert is detective and fires only after payments are made. Many harmful payments could also sit below the
+      threshold.
+    C: Fine-tuning may improve accuracy but cannot make the agent resistant to manipulation through crafted emails. It is
+      not a control on its actions.
+    D: Narrowing the account to payments is sound least privilege, but payment is exactly the harmful action. A manipulated
+      agent could still release a payment with no independent check.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

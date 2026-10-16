@@ -1,0 +1,26 @@
+id: aaism-d1-1.4-0001
+subdomain: '1.4'
+difficulty: easy
+stem: A logistics company is launching a formal AI security program. What should the program charter establish FIRST?
+options:
+  A: The list of AI tools that staff are allowed to use
+  B: The program's scope, authority and accountabilities
+  C: The technical hardening standards for deployed models
+  D: The schedule of red team exercises for the first year
+answer: B
+explanation:
+  why_correct: A charter is the founding governance document. It sets what the program covers, the mandate it has, and who
+    is accountable for what. Every later decision, including tools, standards and testing, depends on that mandate being clear
+    and endorsed by management.
+  why_not:
+    A: An approved tools list is a policy or standard output. It comes after the program has the authority to set such rules.
+    C: Hardening standards are detailed technical documents. They are produced by the program, not defined in its charter.
+    D: A testing schedule is an operational plan. It cannot be set sensibly before scope and authority are agreed.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check

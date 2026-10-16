@@ -1,0 +1,26 @@
+id: aaism-d1-1.3-0003
+subdomain: '1.3'
+difficulty: medium
+stem: Who should be accountable for classifying a fine-tuned customer-support model and the data used to train it?
+options:
+  A: The information security manager, who sets the classification scheme
+  B: The data scientist who carried out the fine-tuning of the model
+  C: The business owner of the customer-support process using the model
+  D: The cloud provider that hosts the model and the training data
+answer: C
+explanation:
+  why_correct: Classification is an owner decision because the business owner understands the value and sensitivity
+    of the asset and is accountable for its risk. Security defines the scheme and advises, but does not own the
+    asset.
+  why_not:
+    A: Security owns the scheme and supports owners. It is not accountable for each asset's classification.
+    B: The data scientist is a custodian who works on the model. Accountability sits with the business.
+    D: A hosting provider is a custodian under contract. It cannot be accountable for the customer's assets.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-check
+  check_verdict: pass

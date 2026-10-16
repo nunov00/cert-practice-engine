@@ -1,0 +1,27 @@
+id: aaism-d3-3.3-0003
+subdomain: '3.3'
+difficulty: medium
+stem: A health insurer plans to share claims data with an external AI developer after replacing member names and numbers with
+  random tokens. The insurer keeps the token table. What is the MAIN concern?
+options:
+  A: The developer may train a less accurate model without real member names
+  B: The data is pseudonymised and may still be linked back to members
+  C: Random tokens may collide and merge the claims of two members
+  D: The token table must be stored on separate servers from the claims
+answer: B
+explanation:
+  why_correct: Replacing direct identifiers with tokens is pseudonymisation, not anonymisation. The insurer can reverse it
+    with the table, and dates, diagnoses and locations can still single people out. The data remains personal data, so protection
+    duties and contractual safeguards still apply to the developer.
+  why_not:
+    A: Names rarely add predictive value. Accuracy is not the main issue with this approach.
+    C: Collisions are a data quality issue that can be designed out. They are not the main privacy risk.
+    D: Separating the token table is a good practice, but it does not change the fact that the shared data can still be re-identified.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-check
+  check_verdict: pass

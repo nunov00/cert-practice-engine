@@ -1,0 +1,27 @@
+id: aaism-d1-1.5-0005
+subdomain: '1.5'
+difficulty: medium
+stem: An insurer automated claims triage with AI and moved most of the former triage staff to other roles. In a tabletop exercise,
+  the model is taken offline for a week. What is the GREATEST continuity concern?
+options:
+  A: The model may need to be retrained before it can safely return to service
+  B: The model provider's service level agreement may not cover a full week
+  C: Triage decisions made during the outage may not be logged in the same way
+  D: The manual fallback may lack the staff and skills to triage claims in time
+answer: D
+explanation:
+  why_correct: A manual fallback is only real if it can handle the volume within the required time. Moving staff away erodes
+    both capacity and know-how, so the business may be unable to triage claims at all. This is a common hidden dependency
+    created by AI automation.
+  why_not:
+    A: Retraining may lengthen the outage, but the core issue is how the business operates while the model is down.
+    B: Service levels give remedies, not operational capacity. The model is in-house and the problem is the fallback.
+    C: Logging differences are a minor record-keeping issue compared with being unable to process claims.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-check
