@@ -3,7 +3,7 @@
 // - /api/: never cached.
 // - Build assets (/_next/static, /icons): cache first; their names change per build.
 // Bump VERSION to drop old caches after a change to this file.
-const VERSION = "v2";
+const VERSION = "v3";
 const PAGES = `pages-${VERSION}`;
 const ASSETS = `assets-${VERSION}`;
 const PRECACHE = ["/", "/manifest.webmanifest"];
