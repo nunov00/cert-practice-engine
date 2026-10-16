@@ -7,7 +7,7 @@ stem: A wind farm operator has trained a model to predict turbine gearbox failur
 options:
   A: A larger sample of the same normal operating data
   B: A comparison with the gearbox maker's service schedule
-  C: Confirmation that the model's code passed peer review
+  C: Back-testing against the failures recorded during the two years
   D: Tests under extreme weather and faulty sensor inputs
 answer: D
 explanation:
@@ -19,13 +19,13 @@ explanation:
       seen.
     B: A comparison with the service schedule may show added value, but it does not test behaviour in
       unusual conditions.
-    C: Code review checks implementation quality, not how the model performs when inputs are extreme or
-      faulty.
+    C: Back-testing on past failures is useful, but those failures all happened in normal conditions.
+      It still leaves storms and sensor faults, which the model will meet in live use, untested.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-b
-  checked_by: 2026-10-13-aair-d2-b-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

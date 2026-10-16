@@ -5,25 +5,28 @@ stem: A microfinance lender is preparing training data for a repayment model. Ab
   no income value, and the team plans to fill the gaps with the average income. Most of the missing values
   come from branches serving rural, informal workers. What should the risk practitioner recommend?
 options:
-  A: Delete all records with missing income so that only complete data is used
-  B: Investigate why the values are missing before choosing how to treat them
-  C: Fill the gaps with the median instead, as it is less affected by outliers
-  D: Drop the income field from the model so that missing values do not matter
+  A: Test whether missing income is correlated with repayment before imputing it
+  B: Establish with the rural branches why income is not recorded before choosing a treatment
+  C: Impute income from branch and occupation using a regression model
+  D: Add a missing-income flag alongside a median-imputed value
 answer: B
 explanation:
-  why_correct: The gaps are concentrated in one group, so they are not random. Any treatment could distort
-    how the model treats rural borrowers. Understanding the cause, checking the effect on each group and
-    then choosing and documenting a treatment is the sound order.
+  why_correct: The gaps are concentrated in branches serving rural, informal workers, which points to
+    a collection cause, for example informal income that is never documented. Only the branches can explain
+    that, and the right treatment depends on it. Filling the gaps without knowing why could misrepresent
+    the people the lender most needs to assess fairly.
   why_not:
-    A: Deleting these records would strip out many rural borrowers and make the training data unrepresentative.
-    C: 'The median has the same core problem as the mean: it imposes a typical urban figure on a different
-      group.'
-    D: Dropping a likely important field is premature, and other fields may still carry the same pattern.
+    A: A correlation test shows whether missingness predicts repayment, but not why income is missing.
+      Statistics cannot tell undocumented informal income from no income.
+    C: Model-based imputation is a recognised technique, but if income is missing because informal workers
+      lack documents, the imputed values may misrepresent them. The cause should be understood first.
+    D: A missing-value flag with imputation is common practice, but the flag can act as a proxy for rural
+      or informal applicants, and whether that is acceptable depends on why the data is missing.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-b
-  checked_by: 2026-10-13-aair-d2-b-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

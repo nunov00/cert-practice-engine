@@ -1,31 +1,34 @@
 id: aair-d2-2.1-0003
 subdomain: '2.1'
-difficulty: easy
-stem: A city council is building an AI tool to triage building permit applications. The project lead plans
-  to decide on logging, human review and appeal handling after the pilot shows how the tool behaves. What
-  should the risk practitioner advise?
+difficulty: medium
+stem: A city council is building an AI tool to triage building permit applications. The pilot will issue
+  real decisions to applicants. The project lead plans to decide on logging, human review and appeal handling
+  after the pilot shows how the tool behaves. What should the risk practitioner advise?
 options:
-  A: Wait for pilot results to show which risks actually occur
-  B: Add the controls after go-live, once usage patterns are known
-  C: Leave the controls to the provider of the hosting platform
-  D: Define the controls as design requirements before the build
+  A: Complete an impact assessment during the pilot and set controls from its findings
+  B: Run the pilot with each decision reviewed by an officer, logged in a spreadsheet and open to the
+    complaints process
+  C: Specify logging and human review now, and define the appeal route before full go-live
+  D: Specify logging, human review and appeal handling as requirements before the build
 answer: D
 explanation:
-  why_correct: Controls such as decision logging and human review shape how the system is built. Defining
-    them at design time is cheaper and more reliable than retrofitting, and some, like logs of past decisions,
-    cannot be added afterwards. The pilot itself also needs them to run safely.
+  why_correct: Logging, human review and appeals shape what data is kept, how interfaces work and how
+    decisions flow, so they are cheaper and more reliable when designed in than retrofitted. Because the
+    pilot issues real decisions, applicants need all three, including a route to appeal, from the first
+    decision.
   why_not:
-    A: Running a pilot without logging or review means early decisions cannot be traced or corrected,
-      and some risks would only be found after harm.
-    B: Retrofitting after go-live is costly and leaves live decisions about residents without safeguards
-      in the meantime.
-    C: The hosting provider runs infrastructure; it does not own how the council reviews and explains
-      permit decisions.
+    A: An impact assessment is valuable, but doing it during the pilot means real applicants are decided
+      on before the controls exist, and the controls would then have to be retrofitted.
+    B: Manual review, a spreadsheet log and the complaints route cover the pilot, but they sit outside
+      the tool. The real controls would still have to be built in later, and a general complaints process
+      is not designed for appeals against automated triage decisions.
+    C: This designs in most of the controls, but applicants in the pilot receive real decisions and would
+      have no way to appeal until full go-live.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-a
-  checked_by: 2026-10-13-aair-d2-a-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

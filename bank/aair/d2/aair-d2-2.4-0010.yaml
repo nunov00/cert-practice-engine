@@ -7,7 +7,7 @@ stem: A consumer lender is building a new credit model trained only on loans it 
 options:
   A: The training data does not represent the full population being scored
   B: The historical loans may include personal data with outdated consent
-  C: Approved loans are too few to train a model with many features
+  C: Past approval decisions may carry the lender's historical bias against some groups
   D: Repayment outcomes may take several years to be fully observed
 answer: A
 explanation:
@@ -18,8 +18,9 @@ explanation:
   why_not:
     B: Consent issues need checking, but they do not explain why the model may be unreliable for applicants
       it was never trained on.
-    C: Nothing indicates a shortage of approved loans; the issue is which applicants they represent, not
-      how many there are.
+    C: Historical bias is a real concern, but it is part of a wider problem. The model learns only from
+      applicants who were approved, so it has no evidence about the types it will now score, whether biased
+      or not.
     D: Outcome delay affects how recent the data is, but it is not the main gap between the training data
       and the scored population.
 status: published
@@ -28,5 +29,5 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-b
-  checked_by: 2026-10-13-aair-d2-b-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

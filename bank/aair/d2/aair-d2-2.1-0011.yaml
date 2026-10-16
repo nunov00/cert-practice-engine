@@ -5,26 +5,28 @@ stem: Analysts at a broadcaster built a model in a notebook during an internal h
   programmes viewers will watch next. Marketing liked the results and now runs it weekly from an analyst's
   laptop to target campaigns. What should the risk practitioner recommend?
 options:
-  A: Move the notebook to a shared drive so that others can run it too
+  A: Move the model to a managed server and schedule the weekly run there
   B: Take the model through the standard development and approval process
-  C: Stop all marketing use and shelve the model until next year's budget
-  D: Ask the analyst to keep a log of each weekly run and its results
+  C: Have a second analyst check each week's targeting list before it is used
+  D: Register it in the model inventory with a named owner and keep the weekly runs going
 answer: B
 explanation:
   why_correct: A hackathon prototype has skipped the testing, documentation, risk assessment and controls
     that production use needs. Putting it through the normal life cycle, in proportion to its risk, brings
     it under control while keeping the value the business has found.
   why_not:
-    A: A shared drive spreads uncontrolled use to more people without testing or approval.
-    C: Shelving it is out of proportion to a marketing use and throws away value that the normal process
-      could make safe.
-    D: A run log records use but does not test the model, approve it or secure a laptop holding viewer
-      data.
+    A: A managed server removes the laptop dependency, but the model would still be in use without validation,
+      documentation, ownership or approval. It fixes the hosting, not the governance gap.
+    C: A second check adds some assurance on each output, but it does not validate the model or bring
+      it under the organisation's model risk controls.
+    D: Registering the model with an owner is a sound first step, but use would continue with no validation,
+      documentation or approval. The model needs to go through the standard process before it keeps driving
+      campaigns.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-b
-  checked_by: 2026-10-13-aair-d2-b-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

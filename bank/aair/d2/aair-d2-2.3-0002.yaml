@@ -1,30 +1,31 @@
 id: aair-d2-2.3-0002
 subdomain: '2.3'
-difficulty: medium
+difficulty: hard
 stem: A freight insurer is replacing a rules engine with an AI model that routes incoming claims to handling
   teams. Testing went well, but the model has not yet seen live claim volumes. Which go-live approach
   BEST limits risk?
 options:
-  A: Switch over fully on a quiet day with extra staff on call
+  A: Load-test the model with synthetic claim volumes, then switch over
   B: Go live for one region and expand once complaints stay low
   C: Run the model alongside the rules engine and compare results
-  D: Go live fully and schedule a review after the first quarter
+  D: Go live fully, with handlers able to re-route any claim sent wrongly
 answer: C
 explanation:
   why_correct: Running the model in parallel lets the insurer see how it behaves on real claims without
     those decisions taking effect. Differences can be investigated and fixed before any claim depends
     on the model, which gives the most evidence for the least exposure.
   why_not:
-    A: Extra staff help respond to problems, but every claim is still exposed to an untried model from
-      the first day.
+    A: Load testing shows the model can cope with volume, but not whether its routing decisions on real
+      claims are right. The switch-over would still put every claim at risk at once.
     B: A regional rollout limits scope, yet relying on complaints means problems are found only after
       customers are affected.
-    D: A review after a quarter could leave errors in live routing undetected for months.
+    D: Manual re-routing limits harm, but it relies on handlers spotting each error after it has happened,
+      and it puts all live claims through an unproven model.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-a
-  checked_by: 2026-10-13-aair-d2-a-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass
