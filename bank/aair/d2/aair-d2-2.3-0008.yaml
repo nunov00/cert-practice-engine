@@ -1,13 +1,13 @@
 id: aair-d2-2.3-0008
 subdomain: '2.3'
-difficulty: medium
+difficulty: hard
 stem: A logistics company's delivery-time model uses package weights from a warehouse system. During an
   upgrade, the warehouse team changed the field from kilograms to pounds, and the model's estimates were
   wrong for two weeks before anyone noticed. Which control would BEST prevent a repeat?
 options:
   A: Include model owners in impact assessments of source system changes
-  B: Retrain the delivery-time model every week on the latest warehouse data
-  C: Require data science approval for every change to the warehouse system
+  B: Monitor the model's inputs for sudden shifts in their distribution
+  C: Require data science approval for changes to the warehouse system
   D: Give the data science team read access to the warehouse system's code
 answer: A
 explanation:
@@ -15,7 +15,9 @@ explanation:
     the impact assessment for changes to source systems means a change like this is spotted and handled
     before release, as part of normal change management.
   why_not:
-    B: Frequent retraining would blend the wrong units into the model rather than detect the change.
+    B: Input monitoring is valuable and would have caught the problem sooner, but it is detective, and
+      errors still reach customers before the alert. Including model owners in change assessments stops
+      the breaking change being made without preparation.
     C: Approval for every change is out of proportion, as most warehouse changes do not affect the model.
     D: Read access to code does not mean anyone will notice a change at the right time.
 status: published
@@ -24,5 +26,5 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-b
-  checked_by: 2026-10-13-aair-d2-b-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

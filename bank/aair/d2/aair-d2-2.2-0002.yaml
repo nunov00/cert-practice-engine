@@ -1,29 +1,34 @@
 id: aair-d2-2.2-0002
 subdomain: '2.2'
-difficulty: easy
+difficulty: hard
 stem: At a small fintech, the engineer who built a fraud scoring model also wrote and ran its validation
-  tests before release. Which is the MOST significant weakness in this approach?
+  tests. The tests used a holdout sample from the same months as the training data, and no pass criteria
+  were written down before the tests. Which is the MOST significant weakness?
 options:
-  A: The tests did not measure how quickly the model scores each transaction
-  B: The validation was done before release rather than after
-  C: The engineer may not have documented the model's source code
+  A: The holdout came from the same period as the training data
+  B: No acceptance criteria were agreed before testing
+  C: The engineer's manager did not review and approve the test results
   D: The validation is not independent of the development work
 answer: D
 explanation:
-  why_correct: Validation is meant to challenge the model. A developer checking their own work tends to
-    share the same assumptions and blind spots. Even in a small firm, a separate reviewer gives more reliable
-    assurance.
+  why_correct: Independence is the control that makes all other validation findings reliable. An independent
+    validator would set criteria in advance, choose an appropriate holdout and challenge coverage. When
+    the builder marks their own work, every weakness in the tests, including the others listed, is likely
+    to go unchallenged. Even a small firm can get independent challenge from a peer outside the build
+    or an external reviewer.
   why_not:
-    A: Scoring speed matters operationally, but it says nothing about whether the model's fraud decisions
-      are sound. Lack of independent challenge is the bigger weakness.
-    B: Validating before release is correct. The concern is who did it, not when.
-    C: Documentation matters, but nothing in the scenario suggests it is missing, and it is less serious
-      than the lack of independent challenge.
+    A: A same-period holdout is a real weakness because it hides drift, but it is a test design flaw that
+      independent validation would normally catch. Fixing it alone would leave the builder still checking
+      their own work.
+    B: Missing criteria let results be judged leniently, but this is also a symptom of the lack of independent
+      challenge. An independent validator would set the criteria before testing.
+    C: Management sign-off adds oversight, but a manager in the same team is not independent challenge
+      and would rarely question the test design or set criteria in advance.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

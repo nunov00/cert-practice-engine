@@ -1,31 +1,31 @@
 id: aair-d2-2.2-0006
 subdomain: '2.2'
-difficulty: easy
-stem: A logistics company tested a model that predicts delivery arrival times. After seeing the results,
-  the team set the pass threshold just below the error rate the model achieved. What is the main weakness
-  in this validation?
+difficulty: hard
+stem: A logistics company validated a model that predicts delivery arrival times. The team judged it on
+  average error only, set the pass threshold after reviewing the results, and did not compare it with
+  dispatchers' current estimates. What is the MOST significant weakness in this validation?
 options:
-  A: The threshold was set by the team rather than by the vendor
-  B: The acceptance criteria were set after seeing the results
-  C: The test measured average error instead of the worst case
-  D: The error was reported in minutes rather than as a percentage
+  A: Only average error was used, so large misses could be hidden
+  B: The pass threshold was set after the results were seen
+  C: The model was not compared with the dispatchers' current estimates
+  D: Error was not reported separately for each delivery region
 answer: B
 explanation:
-  why_correct: Acceptance criteria should come from business needs and be fixed before testing. Setting
-    them afterwards to fit the result means the test can no longer fail, so it gives no real assurance
-    that the model is good enough.
+  why_correct: A threshold chosen after seeing the results can be fitted to whatever the model achieved,
+    so the validation cannot fail. That removes the point of the test. The other gaps weaken the evidence,
+    but they can only be judged once there are criteria agreed in advance.
   why_not:
-    A: The team, with the business, is often the right party to set criteria. The problem is timing, not
-      who set them.
-    C: Which measure to use is a fair design question, but any measure loses value if its threshold is
-      fitted to the result.
-    D: The unit of measure is a presentation choice; either works if the threshold reflects business
-      needs and is fixed before testing.
+    A: Average error can hide large misses, and other metrics should be added. But even a richer set of
+      metrics would be meaningless if the pass levels are set after the results are known.
+    C: A comparison with current estimates shows whether the model adds value, but it is still a test
+      without a pre-agreed pass mark. Fixing the criteria comes first.
+    D: Regional results would show uneven performance, but the same problem applies. Any threshold set
+      after the fact can be made to pass.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-a
-  checked_by: 2026-10-13-aair-d2-a-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

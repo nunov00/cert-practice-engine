@@ -5,10 +5,10 @@ stem: A critical security vulnerability is announced in a machine learning libra
   bed-demand forecasting model. The patched version of the library changes some numerical routines. The
   model's annual revalidation is eight months away. What should the risk practitioner recommend?
 options:
-  A: Deploy the patch at once, since security fixes are exempt from model change control
+  A: Deploy the patch now and revalidate the model fully afterwards
   B: Run regression tests on the model's outputs with the patch, then deploy it promptly
-  C: Delay the patch until the annual revalidation so that both can be done together
-  D: Leave the library unpatched and remove the model server from internet access
+  C: Deploy the patch to a test copy, run the full revalidation, then deploy
+  D: Apply compensating network controls now and include the patch in next month's release
 answer: B
 explanation:
   why_correct: 'Both risks need to be handled: the vulnerability needs fixing quickly, and the changed
@@ -16,16 +16,18 @@ explanation:
     patch confirms the model still behaves as validated, with escalation to fuller validation only if
     material differences appear.'
   why_not:
-    A: Security fixes are changes like any other; deploying untested could silently change forecasts that
-      drive bed planning.
-    C: Leaving a critical vulnerability open for eight months is an unacceptable security exposure.
-    D: Removing internet access reduces one route of attack, but the flaw stays exploitable from inside
-      the network.
+    A: Speed matters for a critical vulnerability, but deploying first could put changed forecasts into
+      bed planning without anyone knowing. Targeted regression tests are quick and confirm outputs before
+      release.
+    C: Full revalidation is thorough but slow for a critical vulnerability. Targeted regression tests
+      on the model's outputs give enough assurance to deploy promptly.
+    D: Compensating controls reduce exposure, but leaving a critical flaw open for a month is hard to
+      justify when quick regression tests would allow the patch to go in safely now.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-b
-  checked_by: 2026-10-13-aair-d2-b-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

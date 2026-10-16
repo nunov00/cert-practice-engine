@@ -1,29 +1,31 @@
 id: aair-d2-2.3-0003
 subdomain: '2.3'
-difficulty: easy
-stem: At an online retailer, a data scientist retrained the production pricing model on new data and deployed
-  it the same afternoon without review, as the code had not changed. What is the main control weakness?
+difficulty: medium
+stem: A data scientist at an online retailer retrained the production pricing model on new data. The release
+  team approved deployment the same afternoon because no code had changed. Which control would BEST have
+  prevented this?
 options:
-  A: The retrained model bypassed change control and revalidation
-  B: The retraining was done by a data scientist, not an engineer
-  C: The deployment took place during normal trading hours
-  D: The new data was more recent than the original training data
+  A: A change policy that classifies retraining as a model change needing revalidation
+  B: Automated data quality checks in the retraining pipeline
+  C: Monitoring of live prices against the previous model's prices
+  D: Require a second data scientist to approve each deployment
 answer: A
 explanation:
-  why_correct: Retraining on new data produces a new model whose behaviour can differ even if the code
-    is the same. It should go through the same change approval and testing as any other production change
-    before it sets live prices.
+  why_correct: Separate people were already involved; the release team approved because its criteria looked
+    only at code. A policy that defines retraining as a model change needing revalidation closes that
+    gap for anyone who retrains or releases the model.
   why_not:
-    B: Data scientists commonly retrain models. The issue is the absence of review and testing, not the
-      person's job title.
-    C: Timing may affect the impact of a failure, but deploying an unvalidated model is the root weakness
-      at any hour.
-    D: Using recent data is often the purpose of retraining and is not itself a weakness.
+    B: Data quality checks are a useful preventive control, but they cover only the input data. A retrained
+      model can behave differently even on clean data, so it still needs revalidation.
+    C: Price monitoring is detective. It would show the effect after customers had already seen the new
+      prices.
+    D: Separation of duties already existed here, since the release team approved the deployment. A second
+      approver using the same criteria would also see no change to review.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-a
-  checked_by: 2026-10-13-aair-d2-a-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

@@ -6,24 +6,26 @@ stem: A telecom operator discovers that one of its customer datasets was collect
   control would MOST have helped?
 options:
   A: A maintained record linking each dataset to the models trained on it
-  B: Longer retention of access logs on the data storage platform
-  C: Encryption of all customer datasets held in the data lake
-  D: A rule that all models are retrained from scratch each quarter
+  B: A model inventory recording each model's training pipeline and owner
+  C: A data catalogue recording the consent terms of each dataset
+  D: Model cards that list each model's main data sources at summary level
 answer: A
 explanation:
   why_correct: Data lineage between datasets and models lets the organisation quickly find every affected
     model when a data problem appears, so it can assess and act. Without it, the scope of the issue is
     unknown.
   why_not:
-    B: Access logs show who read files, which might give clues, but they are a poor and incomplete substitute
-      for an intended record of dataset use in training.
-    C: Encryption protects confidentiality but records nothing about which models used which data.
-    D: Regular retraining does not show which data was used and may keep reusing the problem dataset.
+    B: An inventory with pipelines and owners helps, but pipeline names do not record which dataset versions
+      were used. The operator would still have to reconstruct which models consumed the affected data.
+    C: A catalogue of consent terms helps spot the problem dataset, which the operator has already done.
+      The gap is the link from that dataset to the models built from it.
+    D: Summary-level source lists may name a system rather than the exact dataset, so they might not show
+      which models used the affected data. A maintained dataset-to-model record does.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

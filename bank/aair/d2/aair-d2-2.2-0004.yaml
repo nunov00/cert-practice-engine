@@ -5,9 +5,9 @@ stem: An insurer's claims fraud model scores 0.97 on its validation set, far abo
   shows one of the strongest inputs is whether a claim was referred to the special investigations unit.
   Claims are scored at first notification. What is the MAIN concern?
 options:
-  A: The validation set may be too small to support such a high score
+  A: The validation data covers the same period as training, so drift is untested
   B: The investigations unit may refer claims in an inconsistent way
-  C: The model may be too complex to explain to claims handlers
+  C: The referral flag may carry investigators' biases against some claimant groups
   D: The input is only known after the outcome the model predicts
 answer: D
 explanation:
@@ -16,16 +16,17 @@ explanation:
     are inflated and live performance will be much worse. This target leakage must be removed before any
     result can be trusted.
   why_not:
-    A: Sample size could add uncertainty, but it would not explain an input that reveals the outcome.
-      The leak inflates the score whatever the size.
+    A: An out-of-time test is worth adding, but drift would not explain a score far above earlier models.
+      The score is inflated because the model uses information it will not have when it scores a claim.
     B: Inconsistent referrals would add noise; the larger issue is that the input is not available at
       scoring time at all.
-    C: Explainability may matter, but it is secondary to results that are invalid because of leaked information.
+    C: Bias in the referral flag is a real concern, but the more basic problem is that the flag does not
+      exist at first notification, so the model cannot work as validated.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-a
-  checked_by: 2026-10-13-aair-d2-a-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

@@ -6,9 +6,9 @@ stem: A grocery chain's team built a demand forecasting model over several month
   that improved it. They now present that test score as the expected live performance. What is the BEST
   response?
 options:
-  A: Accept the score, as the test data was never used in training
+  A: Re-split the existing data with a new random test set and rescore the final model
   B: Ask for cross-validation on the training data to confirm it
-  C: Ask the team to explain which features drive the forecasts
+  C: Ask for confidence intervals around the reported test score
   D: Evaluate the final model on fresh data not used in tuning
 answer: D
 explanation:
@@ -16,16 +16,18 @@ explanation:
     it was never used for training. The score is therefore optimistic. A final check on data that played
     no part in any decision gives an honest estimate of live performance.
   why_not:
-    A: Not training on the data is not enough; using it to pick among many versions leaks information
-      and inflates the score.
+    A: Records from the old test set already shaped many tuning choices, and a new random split would
+      mix them back into the test. The new estimate would still be partly leaked; only data unused in
+      tuning gives an honest figure.
     B: Cross-validation on training data assesses fit during development, but it does not remove the bias
       in the reported test score.
-    C: Understanding drivers is useful, yet it does not correct the overstated performance estimate.
+    C: Confidence intervals describe random error around the score, not the bias created by repeated tuning.
+      The interval would be centred on an inflated number.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-a
-  checked_by: 2026-10-13-aair-d2-a-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

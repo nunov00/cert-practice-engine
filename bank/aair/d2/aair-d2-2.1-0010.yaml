@@ -1,13 +1,13 @@
 id: aair-d2-2.1-0010
 subdomain: '2.1'
-difficulty: hard
+difficulty: medium
 stem: A city council is developing a model to decide which roads to inspect for potholes first. The team
   plans to train it on the number of resident complaints logged for each road over the past five years.
   Some districts log far fewer complaints online than others. What is the MOST significant design risk?
 options:
-  A: Complaint records may contain personal details of the residents involved
-  B: Five years of history may be too short to train a reliable model
-  C: The model may be hard for council staff to explain to residents
+  A: Roads with few complaints give the model too few examples to learn from
+  B: Repairs made over the five years may make older complaint counts out of date
+  C: Complaint counts are not adjusted for each road's length or traffic volume
   D: Complaint counts measure reporting habits, not actual road condition
 answer: D
 explanation:
@@ -16,17 +16,18 @@ explanation:
     their roads. This flaw is built in at design and would persist even if the model predicted complaints
     perfectly; the team should find a target closer to road condition, such as inspection survey data.
   why_not:
-    A: Personal details can be removed or minimised during data preparation; they do not distort which
-      roads get inspected.
-    B: Nothing suggests five years is too short for this purpose, and more years of the same proxy would
-      not fix the bias.
-    C: Explainability matters, but a well-explained model that targets the wrong outcome would still send
-      inspectors to the wrong roads.
+    A: Sparse data is a real modelling issue, but the bigger problem is not the number of examples. Even
+      with plenty of data, complaints would measure who reports, not road condition.
+    B: Repairs can make old complaints stale, and the team should handle that, for example by weighting
+      recent data. But that is a correctable data issue; the deeper flaw is that complaints measure who
+      reports, so the model would systematically under-serve districts that complain less.
+    C: Normalising by length or traffic would improve the measure, but it would still be a measure of
+      complaints. The districts that report less would still be under-served.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-b
-  checked_by: 2026-10-13-aair-d2-b-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass

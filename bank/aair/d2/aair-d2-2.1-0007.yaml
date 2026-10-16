@@ -6,8 +6,8 @@ stem: A water utility is procuring an AI system that detects leaks from pressure
   with different pipe materials. What should the risk practitioner recommend before the contract is signed?
 options:
   A: Run a proof of concept on the utility's own network data
-  B: Ask the vendor for a signed statement confirming the benchmark result
-  C: Choose the vendor whose benchmark shows the highest detection rate
+  B: Ask for the benchmark's method and an independent audit of the result
+  C: Ask the vendor's reference customers how well detection works in practice
   D: Add a contract penalty for detection rates below the benchmark figure
 answer: A
 explanation:
@@ -16,10 +16,12 @@ explanation:
     agreed in advance, shows whether it works where it will actually be used, while the utility can still
     walk away or negotiate.
   why_not:
-    B: A signed statement confirms that the vendor obtained the result, not that the result transfers
-      to this network.
-    C: Ranking vendors on benchmarks built from unrepresentative data only picks the best performer on
-      the wrong data.
+    B: An audit could confirm the benchmark was run properly, but the benchmark still comes from networks
+      with different pipe materials. A sound test on the wrong data does not show performance on this
+      network.
+    C: Reference customers give useful practical insight, but their networks may differ from the utility's
+      as much as the benchmark's do. Only a test on the utility's own data shows how the system will perform
+      here.
     D: A penalty offers some compensation after a poor result, but it does not establish fitness before
       the utility commits, and it leaves the operational risk of missed leaks in place.
 status: published
@@ -28,5 +30,5 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d2-b
-  checked_by: 2026-10-13-aair-d2-b-check
+  checked_by: 2026-10-16-aair-d2-rework-check
   check_verdict: pass
