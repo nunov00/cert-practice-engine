@@ -1,0 +1,47 @@
+# CISSP difficulty calibration profile. Format: recipes/_schema/calibration.schema.json
+# Standard and procedure: docs/calibration/standard.md. Official sources only;
+# structure was recorded, never wording.
+
+format_version: "0.1"
+exam: cissp
+outline_version: "2024-04-15"
+calibrated_on: "2026-10-16"
+
+sources:
+  - kind: outline
+    url: "https://www.isc2.org/certifications/cissp/cissp-certification-exam-outline"
+    used_for: "Scope per subdomain"
+  - kind: official_guidance
+    url: "https://www.isc2.org/certifications/computerized-adaptive-testing"
+    used_for: "Adaptive delivery: items range widely in difficulty, so the bank needs a real hard tail"
+
+unavailable:
+  - "ISC2's free 10-item CISSP practice quiz loads only in a browser and could not be read. Profile it (structure only) when it can be, and recalibrate."
+
+method: >-
+  Calibrated on the 2024 outline and ISC2's public description of adaptive
+  testing, with the managerial best/first/most judgment style. Blind
+  options-only test on all 20 D1 questions, then a writer and independent
+  checker loop with a recheck of fixed items. Definition-recall items turned
+  into short applied scenarios. Pitched slightly harder when unsure (owner
+  rule, 2026-10-16).
+
+official_profile:
+  - "Managerial viewpoint: the best answer is the one a security manager advising the business would choose"
+  - "Adaptive exam: questions span easy to hard, so the bank keeps a real share of hard judgment items"
+  - "No sample structure recorded yet (quiz unreadable from here)"
+
+targets:
+  options_only_obvious_max: 0.40
+  hard_share_min: 0.30
+  key_only_longest_max: 0.25
+  stem_words: { min: 12, max: 80 }
+
+writer_notes:
+  - "Prefer short applied scenarios over 'which document type / which control' recall"
+  - "No straw men such as complying with the manager, a permanent exception, refusing outright or an irrelevant role"
+  - "The stem must not rule options out one by one; parallel terms or computed figures make good same-form options"
+
+history:
+  - { date: "2026-10-16", scope: "audit, all 20 D1 questions", pr: 35, result: "11/20 obvious from options alone before the rework" }
+  - { date: "2026-10-17", scope: "D1 rework, 17 of 20 questions", pr: 42, result: "2/17 obvious after rework; the other 3 already passed" }

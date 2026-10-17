@@ -7,6 +7,8 @@ approves a schedule.
 
 - `recipes/<exam>/recipe.yaml`: style, domains, subdomain targets, difficulty mix,
   `outline.version`.
+- `recipes/<exam>/calibration.yaml` and `docs/calibration/writer-brief.md`: the
+  exam's difficulty profile and how to write to it.
 - `pnpm coverage -- <exam>`: which subdomains have the largest gaps.
 - `docs/content-rules.md`: the rules every question must follow.
 - Existing questions in the target subdomain (stems only), to avoid repeating topics.
@@ -22,7 +24,8 @@ approves a schedule.
    - `outline_version` = the recipe's `exam.outline.version`
    - `provenance: { generated_by: <claude|codex>, run_id: <run-id>, check_verdict: pending }`
    - next free ID in each subdomain
-4. Run `pnpm validate`; fix every error. Resolve near-duplicate warnings by
+4. Run `pnpm validate --since origin/main`; fix every error, including the
+   calibration errors on your new questions. Resolve near-duplicate warnings by
    rewriting the new question.
 5. Commit and hand over to the quality check (`quality-check.md`). The generator
    does not check its own work and does not open the PR.

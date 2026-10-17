@@ -41,7 +41,8 @@
         "generated_by": { "enum": ["claude", "codex", "human"] },
         "run_id": { "type": "string", "minLength": 1 },
         "checked_by": { "type": "string", "minLength": 1 },
-        "check_verdict": { "enum": ["pass", "fail", "pending"] }
+        "check_verdict": { "enum": ["pass", "fail", "pending"] },
+        "options_only": { "enum": ["obvious", "not_obvious"] }
       }
     }
   }

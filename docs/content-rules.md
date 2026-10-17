@@ -68,7 +68,13 @@ So:
 - **Prefer ranking items.** FIRST/MOST/BEST items where all four options are
   sound steps, and only the stem's situation decides the order or priority.
 - **Options-only test.** Before submitting, cover the stem and look only at the
-  options. If the key is obvious, rewrite the distractors.
+  options. If the key is obvious, rewrite the distractors. The independent
+  checker runs the same test and CI enforces the exam's target
+  (`docs/calibration/standard.md`).
+
+Each exam's calibration profile (`recipes/<exam>/calibration.yaml`) records the
+official sources, the structure of the official samples and the targets, plus
+exam-specific notes for writers.
 
 ## 3. Explanations
 
