@@ -1,31 +1,34 @@
 id: aaig-d3-3.1-0006
 subdomain: '3.1'
 difficulty: medium
-stem: A telecom provider's churn model has shown a slow, steady decline in accuracy for five months. Each monthly
-  result stays inside the alert threshold, so no action has been triggered. Marketing has noticed retention
-  offers going to the wrong customers. What should the governance leader recommend?
+stem: A telecom provider's churn model has shown a slow, steady decline in accuracy for five months. Each
+  monthly result stays inside the alert threshold, so no action has been triggered. Marketing has noticed
+  retention offers going to the wrong customers, and data science is investigating the cause. What change
+  to monitoring should the governance leader recommend?
 options:
-  A: Add trend-based triggers alongside the point thresholds and review now
-  B: Leave the model as it is, since every monthly result is still within threshold
-  C: Lower the point threshold so the latest month would have triggered
-  D: Retrain the model monthly from now on regardless of its results
+  A: Add a trend trigger that flags sustained decline across months
+  B: Add an outcome measure on offer take-up to model monitoring
+  C: Lower the monthly threshold so this decline would have triggered
+  D: Have the model validator review the accuracy results each quarter
 answer: A
 explanation:
-  why_correct: Point thresholds catch sudden failures but can miss gradual decline, where each reading looks
-    acceptable but the cumulative change is material. Adding trend triggers closes that gap, and the business
-    evidence of misdirected offers justifies a review now rather than waiting for a breach.
+  why_correct: Point thresholds catch sudden failures but miss gradual decline, where each reading looks
+    acceptable while the total change is material. The accuracy data already shows the decline; the monitoring
+    just does not read it over time. A trend trigger closes that blind spot and would flag the current
+    decline for review now.
   why_not:
-    B: Compliance with a threshold is not the same as acceptable performance. The business is already seeing
-      harm, which shows the monitoring design is missing something.
-    C: Moving the threshold to fit the latest result is reactive and arbitrary. It does not solve the underlying
-      blind spot for slow decline and may cause false alarms.
-    D: Routine retraining may hide the symptom but skips diagnosis. The cause might be a change in the market
-      or the data that retraining alone would not address.
+    B: Outcome measures are worth having, but take-up depends on offers, prices and competitors as well
+      as the model. It would not isolate the model's decline, which the accuracy data already shows.
+    C: A lower point threshold fitted to this month's result is arbitrary and raises false alarms on normal
+      noise. It still does not look at the direction of travel over time.
+    D: A quarterly review adds independent eyes and could spot the trend, but it is manual, periodic and
+      depends on someone looking for it. The monitoring already collects the monthly accuracy data, and
+      a trend trigger reads it automatically and flags the next slow decline without waiting for a review.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

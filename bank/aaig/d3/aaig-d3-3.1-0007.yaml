@@ -1,31 +1,34 @@
 id: aaig-d3-3.1-0007
 subdomain: '3.1'
-difficulty: hard
-stem: A public employment agency tested its job-matching model for fairness before launch and found no significant
-  disparities. A year later, a civil society group reports that older applicants receive noticeably fewer interview
-  referrals. The agency has not measured fairness since launch. What is the most important governance gap?
+difficulty: medium
+stem: A public employment agency tested its job-matching model for fairness before launch, using data
+  from two of its six regions, and found no significant disparities. Its ethics committee approved the
+  model once, at launch. A year later, a civil society group reports that older applicants receive fewer
+  interview referrals. The complaint form does not record age, and no fairness results have been produced
+  since launch. What is the MOST significant governance gap?
 options:
-  A: The pre-launch fairness test used too small a sample
-  B: The agency has no process for receiving external complaints
-  C: The model was not re-approved by the ethics committee each year
-  D: Fairness outcomes were not monitored once the model was live
+  A: The pre-launch test drew on data from two of the six regions
+  B: The complaint form does not capture the applicant's age
+  C: The ethics committee has not re-approved the model since launch
+  D: No fairness results have been produced since the launch
 answer: D
 explanation:
-  why_correct: Fairness can change after launch as the applicant population, labour market and data shift.
-    A one-off test cannot show how the model treats groups in operation. Ongoing monitoring of outcomes by
-    relevant groups is the control that would have detected the disparity before an outside group did.
+  why_correct: Fairness can change after launch as the applicant population, the labour market and the
+    data shift. Ongoing monitoring of outcomes by relevant groups is the control that would have detected
+    the disparity before an outside group did. Each of the other gaps matters less, because none of them
+    would show how the model treats people in live use.
   why_not:
-    A: Even a perfect pre-launch test only describes conditions at that time. The deeper gap is that nobody
-      checked how outcomes evolved in live use.
-    B: The complaint did reach the agency, so the intake route worked. The problem is that the agency had no
-      internal signal of its own.
-    C: An annual re-approval without fresh outcome data would rest on the same old test. Monitoring evidence
-      is what any committee would need.
+    A: Data from more regions would have improved the test, but it would still describe conditions at
+      launch only. Disparities that develop in live use would be missed.
+    B: Recording age on complaints would help analysis, but complaints are a reactive signal. Many applicants
+      never know they were disadvantaged, so they never complain.
+    C: A repeat approval would need fresh outcome evidence. Without monitoring, any later committee review
+      would rest on the same launch test.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

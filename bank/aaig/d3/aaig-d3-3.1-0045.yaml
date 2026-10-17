@@ -1,31 +1,32 @@
 id: aaig-d3-3.1-0045
 subdomain: '3.1'
 difficulty: medium
-stem: A national tax agency's AI assistant answers citizens' questions online. In the last week before last year's
-  filing deadline, the AI provider's usage limits throttled the service, citizens received errors and phone lines
-  were overwhelmed. What should the governance leader make sure is in place for this year?
+stem: A national tax agency's AI assistant answers citizens' questions online. In the last week before
+  last year's filing deadline, the AI provider's usage limits throttled the service, citizens received
+  errors and phone lines were overwhelmed. The agency already has a tested call-back queue for overload.
+  What should the governance leader make sure is in place for this year?
 options:
-  A: A move to a larger and faster model so that answers come back more quickly in the busiest week
-  B: A public notice asking citizens to avoid using the assistant during the final week before the deadline
-  C: An incident report from the provider on last year's throttling, filed with the agency's risk register
-  D: Capacity planned against the filing calendar, with agreed peak quotas and a plan for overload
+  A: Service credits from the provider if throttling happens again
+  B: A tested overload plan with a call-back queue for citizens
+  C: A demand forecast shared with the provider before the peak
+  D: Peak quotas agreed with the provider, based on the filing calendar
 answer: D
 explanation:
-  why_correct: 'Demand for this service is predictable: it peaks at the filing deadline. Governance should require
-    capacity to be planned against that calendar, with quotas agreed with the provider for the peak and a fallback
-    for overload, such as queuing or extra phone staff. This treats the AI as a business service with known demand
-    patterns rather than as a tool that is expected to cope on its own.'
+  why_correct: Demand for this service is predictable, peaking at the filing deadline. The failure was
+    quota, so capacity must be planned against that calendar with peak quotas agreed in advance. This
+    treats the AI as a business service with known demand rather than a tool expected to cope alone.
   why_not:
-    A: A larger model does not raise usage limits and may cost more per request. The constraint was quota, not speed.
-    B: Asking citizens to stay away at the busiest time defeats the purpose of the service and pushes demand onto
-      the phone lines that already failed.
-    C: Understanding last year's event is useful, but filing a report does not create the capacity needed for this
-      year's peak.
+    A: Service credits compensate the agency afterwards. They do not keep the assistant running for citizens
+      in the busiest week.
+    B: The overload plan is already in place and tested. It absorbs overflow but does not stop the provider's
+      limits throttling the assistant at the peak.
+    C: A forecast informs the provider but commits it to nothing. Usage limits can still throttle the
+      service unless peak quotas are agreed.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-13-aaig-d3-b-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

@@ -1,32 +1,33 @@
 id: aaig-d3-3.1-0013
 subdomain: '3.1'
 difficulty: medium
-stem: An airline's customer chatbot gave hundreds of passengers wrong information about refund rights over
-  a weekend. The AI team fixed the prompt on Monday and closed the matter internally. Legal and communications
-  learned of it from a news story. What is the main governance weakness?
+stem: An airline's customer chatbot gave hundreds of passengers wrong information about refund rights
+  over a weekend. The AI team's monitoring flagged the errors on Saturday. The team fixed the prompt on
+  Monday and closed the matter internally. Legal and communications learned of it from a news story. What
+  is the MAIN governance weakness?
 options:
-  A: The chatbot was deployed without enough testing before its launch
-  B: AI incidents had no route into enterprise incident handling
-  C: The AI team lacked authority to change the chatbot quickly
-  D: The vendor's model was not able to explain its answers
+  A: Pre-launch testing did not cover questions on refund rights
+  B: AI incidents had no criteria for escalation beyond the AI team
+  C: The team took two days to fix the prompt after the alert
+  D: The chatbot was allowed to answer questions on legal rights
 answer: B
 explanation:
-  why_correct: The technical fix was fast, but the incident had legal, customer and reputational consequences
-    that the AI team was not equipped to judge. AI incidents need defined criteria for escalation into the
-    enterprise incident and crisis processes so that legal, communications and affected customers are dealt
-    with properly.
+  why_correct: Monitoring worked and the fix was made, but the incident had legal, customer and reputational
+    consequences the AI team was not placed to judge. Without criteria that send AI incidents into enterprise
+    incident handling, legal, communications and affected passengers were left out. That is why the news
+    story came first.
   why_not:
-    A: Better testing might have prevented this error, but some incidents will always happen. The failure here
-      is in how the incident was handled once it occurred.
-    C: The team did change the chatbot quickly. Speed of the fix was not the problem; the missing escalation
-      was.
-    D: Explainability would not have alerted legal or communications. The gap is organisational, not a property
-      of the model.
+    A: Better testing might have prevented this error, but some incidents will always happen. The failure
+      shown here is in how the incident was handled once detected.
+    C: A faster fix would have reduced the number of wrong answers. Even an instant fix would still have
+      left legal and communications unaware and misinformed passengers uncorrected.
+    D: Limiting the chatbot's scope is a valid design choice that reduces exposure. It does not address
+      the weakness this event exposed, which is how incidents are escalated.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

@@ -1,31 +1,30 @@
 id: aaig-d3-3.1-0052
 subdomain: '3.1'
-difficulty: hard
-stem: An online retailer will launch AI-personalised offers next quarter. In the same quarter it is also cutting
-  prices and running a large brand campaign. The CFO wants a credible figure for the sales uplift caused by the
-  AI. What should the governance leader recommend before launch?
+difficulty: medium
+stem: An online retailer will launch AI-personalised offers next quarter. In the same quarter it is also
+  cutting prices and running a large brand campaign. The CFO wants a credible figure for the sales uplift
+  caused by the AI. What should the governance leader recommend before launch?
 options:
-  A: Measure sales in the quarter before launch to provide a baseline for comparison
-  B: Ask the vendor to estimate the uplift from its deployments at similar retailers
-  C: Split any sales increase across the three initiatives in line with their budgets
-  D: Keep a random group of customers without AI offers as a control for comparison
+  A: Record sales in the quarter before launch as a baseline
+  B: Estimate the uplift with marketing mix modelling afterwards
+  C: Launch the offers in one region and compare it with the others
+  D: Keep a random group of customers without AI offers as a control
 answer: D
 explanation:
-  why_correct: With other changes running at the same time, a before-and-after comparison cannot separate the AI's
-    effect from the price cut and the campaign. A randomly chosen control group experiences everything except the
-    AI offers, so the difference between the groups isolates the AI's contribution. The control must be designed
-    before launch; it cannot be added afterwards.
+  why_correct: With a price cut and a campaign in the same quarter, a before-and-after comparison cannot
+    separate the AI's effect. A random holdout group experiences everything except the AI offers, so the
+    difference isolates the AI's contribution. It must be designed before launch.
   why_not:
-    A: A baseline is useful, but the change from it will mix the effects of all three initiatives. It does not isolate
-      the AI.
-    B: Results elsewhere depend on different customers and conditions, and the vendor has an interest in a high
-      number. It is not evidence of this retailer's uplift.
-    C: Budget size has no link to effect. The split would be arbitrary and could reward an initiative that did nothing.
+    A: A baseline is useful, but the change from it mixes the effects of all three initiatives.
+    B: Mix modelling can estimate contributions, but it relies on assumptions and history. It is less
+      credible than a randomised comparison that can be set up before launch.
+    C: A regional test helps, but regions differ in customers and in how the campaign and prices land,
+      so the comparison is not clean.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-13-aaig-d3-b-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

@@ -1,28 +1,32 @@
 id: aaig-d3-3.1-0035
 subdomain: '3.1'
-difficulty: easy
-stem: A retail group runs about forty AI models, from a tool that tags product photos to a model that sets
-  staff schedules. The monitoring team applies identical daily checks to all of them and is overstretched.
-  What should the governance leader recommend?
+difficulty: medium
+stem: A retail group runs about forty AI models. Its product photo-tagging tool supports the most online
+  sales, while a simpler model sets staff working hours and pay. The monitoring team applies identical
+  daily checks to every model and is overstretched. How should the governance leader recommend tiering
+  the monitoring?
 options:
-  A: Reduce checks on all models to weekly to save team effort
-  B: Set monitoring depth and frequency by each model's risk
-  C: Hire more staff so that every model keeps daily checks
-  D: Stop monitoring models that have never shown any problem
+  A: By the impact each model has on customers
+  B: By the harm each model could cause
+  C: By each model's technical complexity
+  D: By how often each model is retrained
 answer: B
 explanation:
-  why_correct: Monitoring effort should match the impact of failure. A model affecting staff schedules warrants
-    closer watch than one tagging photos. Tiering monitoring by risk puts effort where harm is possible and
-    frees the team from low-value checks.
+  why_correct: Monitoring effort should follow the impact of failure. A wrong schedule affects people's
+    hours and pay, so the scheduling model warrants closer watch than the photo tagger, however much revenue
+    the tagger supports. Tiering by potential harm puts effort where it protects most.
   why_not:
-    A: A uniform cut lowers coverage on high-impact models along with low-impact ones.
-    C: Adding staff keeps an inefficient design and spends money on low-risk checks.
-    D: A clean history does not mean a model cannot degrade. Some proportionate monitoring is still needed.
+    A: Customer impact is one form of harm, but it misses harm to staff. It would leave the model that
+      sets staff hours and pay with light monitoring.
+    C: Complexity affects how a model can fail, but a simple model can still cause serious harm. The scheduling
+      model is simple and high impact.
+    D: Retraining frequency is one change signal, but it says nothing about the consequences when a model
+      goes wrong.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

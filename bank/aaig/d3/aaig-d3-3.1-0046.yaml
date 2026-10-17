@@ -1,32 +1,31 @@
 id: aaig-d3-3.1-0046
 subdomain: '3.1'
-difficulty: easy
-stem: An energy retailer uses AI to set repayment plans for customers in arrears. The board asks whether the AI
-  is causing customer harm. The complaints system records complaints only by product and channel. What should the
-  governance leader do FIRST?
+difficulty: medium
+stem: An energy retailer uses AI to set some repayment plans for customers in arrears; agents set the
+  rest. The board asks whether the AI is causing customer harm. The complaints system records complaints
+  only by product and channel. What should the governance leader do FIRST?
 options:
-  A: Commission a survey asking customers whether they feel the AI treated them fairly
-  B: Record on each complaint whether AI played a part in the decision complained about
-  C: Report total complaint numbers to the board, since any harm from AI would appear there
-  D: Ask the data science team to confirm the model's accuracy is still within threshold
+  A: Survey customers on repayment plans about their fair treatment
+  B: Record on each complaint whether AI set the plan concerned
+  C: Report complaint trends on repayment plans to the board
+  D: Confirm the model's accuracy is within its approved threshold
 answer: B
 explanation:
-  why_correct: Complaints are one of the most direct signals of customer harm, but only if they can be linked to
-    the AI. Today the data cannot show which complaints involve AI-set plans. Tagging complaints for AI involvement
-    lets the retailer track AI-related complaints over time, compare them with other decisions and report them to
-    the board.
+  why_correct: Complaints are one of the most direct signals of customer harm, but only if they can be
+    linked to the AI. Today the data cannot separate AI-set plans from those agents set. Tagging AI involvement
+    lets the retailer compare the two and report AI-related harm to the board.
   why_not:
-    A: A survey may add insight, but it is slow, depends on who responds, and many customers will not know AI was
-      used. It does not fix the gap in routine data.
-    C: Totals mix AI-related complaints with everything else, so a rise or fall says little about the AI. The board's
+    A: A survey may add insight, but it is slow, depends on who responds, and does not fix the gap in
+      routine data.
+    C: Plan complaints mix AI-set and agent-set plans, so trends say little about the AI. The board's
       question needs attributable data.
-    D: Model accuracy says whether the model predicts well, not whether customers are harmed by the plans it sets.
-      Harm is an outcome measure.
+    D: Accuracy shows whether the model predicts well, not whether customers are harmed by the plans it
+      sets. Harm is an outcome measure.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-13-aaig-d3-b-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

@@ -1,29 +1,31 @@
 id: aaig-d3-3.1-0028
 subdomain: '3.1'
-difficulty: hard
-stem: At an asset manager, investment teams were slow to check the outputs of their AI portfolio-analytics
-  tools, so the operational risk function (second line) took over the weekly checks and now signs them off.
-  The audit committee chair asks internal audit for its view. What is the MOST likely concern?
+difficulty: medium
+stem: At an asset manager, the model risk committee assessed and approved its AI portfolio-analytics tools
+  last quarter. Investment teams were slow to check the tools' outputs, so the operational risk function
+  (second line) took over the weekly checks and now signs them off. The audit committee chair asks internal
+  audit for its view. What is the MOST likely concern?
 options:
-  A: Second-line challenge is weakened when it runs first-line controls
-  B: Output checks should be done only by the external auditor
-  C: The risk function lacks the tools to check the AI outputs
-  D: The investment teams will lose interest in using AI tools
+  A: The second line now runs checks it should independently challenge
+  B: Operational risk has no charter mandate for performing the checks
+  C: Operational risk staff may lack the skill to judge AI outputs
+  D: The tools' risks have not been assessed by an independent body
 answer: A
 explanation:
-  why_correct: Routine output checking is a first-line control owned by the business. When the second line performs
-    it, it ends up checking its own work and the business no longer owns its risk. The fix is to build first-line
-    capability while the second line sets standards and challenges results.
+  why_correct: Routine output checks are a first-line control. When the second line runs and signs them
+    off, it can no longer challenge them independently, and the investment teams stop owning the risk.
+    The fix is to build first-line capability while the second line sets standards and challenges.
   why_not:
-    B: External auditors give independent assurance; they do not run an organisation's routine checks.
-    C: Tooling may be an issue, but internal audit's concern about roles and independence goes deeper than
-      capability.
-    D: Loss of interest is speculative. The structural issue is blurred accountability between lines.
+    B: A charter could be updated to cover the work, but that would not fix the conflict. The function
+      would still be challenging checks it performs.
+    C: Skill may be an issue, but internal audit's main concern is roles and independence, not capability.
+    D: The model risk committee assessed and approved the tools last quarter. The concern is who now runs
+      the checks, not whether the tools were assessed.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

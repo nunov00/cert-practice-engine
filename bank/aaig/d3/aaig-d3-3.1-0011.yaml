@@ -2,30 +2,30 @@ id: aaig-d3-3.1-0011
 subdomain: '3.1'
 difficulty: medium
 stem: Six months after a utility launched an AI system to forecast customer demand, the steering committee
-  plans a post-implementation review. Which focus would make the review MOST useful to the executive team?
+  plans a post-implementation review. The executive team must use it to decide whether to fund a second
+  phase. Which focus would make the review MOST useful to the executives?
 options:
-  A: Whether outcomes, risks and lessons match what was approved
-  B: Whether the project finished on time and within its budget
-  C: Whether the model's technical metrics match the design document
-  D: Whether users are satisfied with the forecasting interface
+  A: Whether realised outcomes match what the approved case promised
+  B: Whether controls are operating as the risk assessment assumed
+  C: Whether the system still fits the current enterprise AI strategy
+  D: Whether the project kept to its approved scope, time and budget
 answer: A
 explanation:
-  why_correct: 'A post-implementation review should compare what was approved with what actually happened:
-    the benefits, the risks that materialised, and how controls performed. It should also capture lessons for
-    future AI decisions. That gives executives a basis to continue, adjust or stop, and to improve how they
-    approve the next initiative.'
+  why_correct: A funding decision for a second phase turns on whether the first phase is delivering what
+    executives approved. Comparing realised outcomes with the approved case gives them that evidence,
+    and shows whether the assumptions behind a second phase still hold.
   why_not:
-    B: Delivery on time and budget matters for project management, but it says little about whether the system
-      is delivering value safely in operation.
-    C: Technical conformance is one input, but a model can meet its specification and still fail to deliver
-      the expected business outcome.
-    D: User satisfaction is a useful signal of adoption but is too narrow to judge value, risk and lessons
-      for the enterprise.
+    B: Control performance matters and belongs in the review, but working controls do not show that the
+      system is worth extending. The funding decision needs the value evidence first.
+    C: Strategic fit was tested when the case was approved. It is worth confirming, but it does not show
+      whether the system is delivering.
+    D: Delivery to scope, time and budget is a project closure question. It says little about whether
+      the system is creating value in operation.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

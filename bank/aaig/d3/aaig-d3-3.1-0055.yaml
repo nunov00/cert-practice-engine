@@ -1,32 +1,33 @@
 id: aaig-d3-3.1-0055
 subdomain: '3.1'
 difficulty: medium
-stem: A medical device manufacturer with a certified quality management system has added AI visual inspection to
-  its final assembly line. The project team proposes a separate AI process, run by data science, for model changes
-  and inspection defects. What should the governance leader recommend?
+stem: A medical device manufacturer with a certified quality management system has added AI visual inspection
+  to its final assembly line. The company also has an enterprise AI governance committee. The project
+  team proposes a separate AI process, run by data science, for model changes and inspection defects.
+  What should the governance leader recommend?
 options:
-  A: Bring the AI inspection under the quality system's existing change control and corrective action
-  B: Approve the separate process, since AI models change too often for quality system procedures
-  C: Keep the AI outside the quality system until the certification body issues AI-specific guidance
-  D: Let data science manage model changes while quality staff record any defects found afterwards
+  A: Bring the AI under the quality system's change and corrective action
+  B: Have the AI governance committee approve model changes and defects
+  C: Add a data science AI procedure that the quality manual references
+  D: Validate the model fully once and then lock it against changes
 answer: A
 explanation:
-  why_correct: The AI now performs a quality control, so it belongs inside the management system that governs quality.
-    Using the existing change control and corrective action processes, adapted where needed for model updates, keeps
-    one line of accountability, satisfies certification expectations and avoids a parallel process that auditors
-    and quality staff cannot see.
+  why_correct: The AI now performs a quality control on a regulated product, so it belongs in the certified
+    system that governs quality. Using the existing change control and corrective action processes, adapted
+    for model updates, keeps one line of accountability for product quality. Enterprise AI governance
+    can still set policy around it.
   why_not:
-    B: Frequent change is a reason to make change control efficient, not to bypass it. A separate process fragments
-      accountability for product quality.
-    C: The AI is already inspecting products. Leaving it outside the quality system until guidance appears leaves
-      a live control ungoverned.
-    D: Splitting change and defect handling between teams breaks the link between a model change and the defects
-      it may cause.
+    B: The committee sets enterprise AI policy, but it sits outside the certified quality system. Handling
+      inspection changes and defects there splits accountability for product quality.
+    C: A cross-reference makes the procedure visible but leaves data science running it outside quality's
+      change control and corrective action.
+    D: A locked model reduces change risk, but defects still need corrective action, and any later update
+      still needs change control.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-13-aaig-d3-b-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

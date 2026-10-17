@@ -1,29 +1,33 @@
 id: aaig-d3-3.1-0020
 subdomain: '3.1'
 difficulty: medium
-stem: A professional services firm gave all staff access to a generative AI assistant billed per use. Monthly
-  charges have tripled in a quarter, and finance cannot tell which teams or uses are driving the growth. What
-  should be the governance leader's priority?
+stem: A professional services firm gave all staff access to a generative AI assistant billed per use.
+  Monthly charges have tripled in a quarter. A new dashboard now shows spend by team and use case, led
+  by proposal drafting and research. Partners want to keep the uses that help win client work. What should
+  be the governance leader's priority?
 options:
-  A: Cap every employee's monthly use at a fixed amount
-  B: Track consumption by team and use case against value
-  C: Withdraw access until next year's budget is approved
-  D: Negotiate a flat-fee licence with the provider instead
+  A: Negotiate lower per-use rates with the AI provider
+  B: Have each team show the value of its main uses against cost
+  C: Set a firm-wide AI spending limit approved by executives
+  D: Require each new use case to be registered and approved
 answer: B
 explanation:
-  why_correct: The firm cannot judge whether the spend is waste or valuable growth without visibility. Attributing
-    consumption to teams and uses, and comparing it with the value they report, allows informed decisions about
-    budgets, limits and which uses to encourage.
+  why_correct: Spend is now visible by team and use, but the firm still cannot tell which uses are worth
+    their cost. Partners want to protect the uses that win work, so the next step is to set value against
+    cost for the main uses. Rate, budget and limit decisions can then rest on evidence.
   why_not:
-    A: 'A uniform cap is blunt: it may starve high-value work while barely affecting low-value use.'
-    C: Withdrawing access throws away whatever value is being created and may push staff to unsanctioned tools.
-    D: A flat fee might stabilise cost, but it still leaves the firm blind to which uses create value and may
-      cost more than current consumption.
+    A: Lower rates cut the bill, which matters after charges tripled, but they leave the firm unable to
+      tell which uses are worth their cost. Low-value use keeps growing at a lower price, and the partners
+      still cannot see which uses help win work.
+    C: A firm-wide limit controls the total, but set without knowing which uses create value, it may cut
+      the uses partners want to keep.
+    D: Registration governs new uses, but the growth comes from existing uses, led by drafting and research,
+      whose value is not yet known.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

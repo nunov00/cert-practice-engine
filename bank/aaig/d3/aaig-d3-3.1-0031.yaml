@@ -4,26 +4,27 @@ difficulty: medium
 stem: At a community hospital, a pharmacist caught an AI tool's wrong dosage suggestion before it reached
   a patient. Because no harm occurred, it was not reported. How should the governance leader view this?
 options:
-  A: As appropriate, since only incidents causing harm need reporting
-  B: As a training issue for the pharmacist rather than an AI issue
-  C: As a reason to withdraw the AI tool from use immediately
-  D: As a near miss to be reported and analysed for patterns
+  A: As evidence the human check works, to note in monitoring
+  B: As a defect to log with the vendor under the contract
+  C: As grounds to re-rate the tool's risk and add controls
+  D: As a near miss to record and analyse for patterns
 answer: D
 explanation:
-  why_correct: Near misses reveal weaknesses before they cause harm. Recording and analysing them shows whether
-    errors are isolated or systematic and whether human checks are carrying too much of the load. An AI incident
-    process should explicitly cover near misses.
+  why_correct: Near misses reveal weaknesses before they cause harm. Recording and analysing them shows
+    whether the error is isolated or systematic and whether human checks are carrying too much of the
+    load. An AI incident process should cover near misses explicitly.
   why_not:
-    A: Waiting for harm wastes the warning. Safety-critical sectors learn most from events that were caught
-      in time.
-    B: The pharmacist did exactly what was needed. The issue is the tool's error and the missing report.
-    C: One caught error does not justify immediate withdrawal without analysis. Reporting and investigation
-      should inform that decision.
+    A: Catching the error shows the check worked this time. It does not tell the hospital how often the
+      tool makes such errors, which only a record can show.
+    B: The vendor should be told, but a vendor log gives the hospital no record of its own and no view
+      of patterns across its use.
+    C: Re-rating may be needed, but one event is thin evidence. Analysis of recorded near misses should
+      inform any change to the risk rating or controls.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass
