@@ -5,27 +5,28 @@ stem: A telecom board has approved an AI strategy that aims to handle most custo
   AI within two years. The strategy sets targets for cost and speed but says nothing about risk. What
   should the risk practitioner recommend?
 options:
-  A: Define the risk appetite and tolerances the strategy must respect
-  B: Reduce the automation target until the technology is more mature
-  C: Have the board approve each AI project before it can begin
-  D: Assess every candidate vendor before the strategy is put in place
+  A: Have the board set the AI risk appetite the strategy must respect
+  B: Add key risk indicators to the cost and speed targets it reports on
+  C: Require a risk assessment of each AI use case before it goes live
+  D: Set up an AI steering group to oversee delivery of the strategy
 answer: A
 explanation:
   why_correct: A strategy without a stated risk appetite gives no basis for deciding how much harm to
-    customers, compliance or reputation is acceptable on the way to its targets. Defining appetite and
-    measurable tolerances links the strategy to risk management and lets later decisions be judged consistently.
+    customers, compliance or reputation is acceptable on the way to its targets. A board-set appetite,
+    with tolerances, links the strategy to risk management and gives the indicators, assessments and oversight
+    that follow a standard to judge against.
   why_not:
-    B: The practitioner's role is to make risk visible and bounded, not to replace the board's chosen
-      ambition. Lowering the target without an agreed appetite is arbitrary.
-    C: Board approval of every project is impractical and confuses direction-setting with management.
-      It still leaves no shared standard for judging the projects.
-    D: Vendor assessment is needed later for specific solutions. Doing it now does not fix the strategy's
-      missing link to risk appetite.
+    B: Risk indicators show how risk is moving, but without an agreed appetite nobody knows what level
+      is acceptable or when to act. They measure against a boundary that has not yet been set.
+    C: Use case assessments are needed, but without an appetite they cannot decide whether a given risk
+      is acceptable. Each team would judge by its own standard.
+    D: A steering group can oversee delivery, but it would steer towards cost and speed targets with no
+      agreed limits on risk. The missing element is the boundary itself, not a body to apply it.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

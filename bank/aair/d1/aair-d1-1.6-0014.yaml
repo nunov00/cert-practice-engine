@@ -5,27 +5,27 @@ stem: A city police service plans a model that decides where to send patrols, tr
   of recorded offences. More patrols in an area lead to more offences being recorded there, and the model
   will be retrained every month on the new records. What is the MOST significant ethical concern?
 options:
-  A: The model may not adapt quickly to sudden changes in offending
+  A: Monthly retraining may make the model's patrol choices unstable
   B: Officers may come to rely too heavily on the model's choices
-  C: The model may reinforce existing patrol patterns over time
-  D: Records of past offences may contain some errors in their dates
+  C: The model may amplify existing patrol patterns over time
+  D: Offences that go unreported will be missing from the training data
 answer: C
 explanation:
-  why_correct: Because patrols generate the records the model learns from, areas that are already heavily
-    patrolled will show more recorded offences, attract more patrols and so produce still more records.
-    This feedback loop can entrench and amplify past over-policing of some communities regardless of actual
-    offending, a serious fairness and societal harm.
+  why_correct: Because patrols generate the records the model learns from, heavily patrolled areas show
+    more recorded offences, attract more patrols and so produce still more records. Monthly retraining
+    feeds this loop, which can entrench past over-policing of some communities regardless of actual offending.
   why_not:
-    A: Speed of adaptation matters, but monthly retraining addresses it; the feedback loop is the deeper
-      problem.
-    B: Over-reliance is a real concern but secondary; even careful officers would act on recommendations
-      that are systematically skewed.
-    D: Errors in dates are a minor accuracy issue compared with structural bias in what gets recorded.
+    A: Unstable choices would be an operational problem, but the stem's details point to choices that
+      grow more fixed, not less.
+    B: Over-reliance is a real concern but secondary. Even careful officers would act on recommendations
+      that are skewed by the loop.
+    D: Under-reporting is a real data bias, but it is a fixed gap. The patrol-to-record loop compounds
+      with each retraining, which makes it more significant here.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

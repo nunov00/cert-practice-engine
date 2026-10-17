@@ -1,30 +1,31 @@
 id: aair-d1-1.4-0003
 subdomain: '1.4'
-difficulty: easy
-stem: A bank has given all staff a short course on AI awareness. Credit officers who act on model outputs
-  and developers who build models received the same course as everyone else. What should the risk practitioner
-  recommend?
+difficulty: medium
+stem: A bank gave all staff the same short course on AI awareness. A review finds that credit officers
+  accept model outputs they should challenge, and developers misapply the bank's model standards. Both
+  groups know the standards exist. What should the risk practitioner recommend?
 options:
-  A: Repeat the same awareness course every six months for all staff
-  B: Add training tailored to the AI duties of specific roles
-  C: Replace the course with written guidance on the intranet
-  D: Limit AI training to the developers who build the models
+  A: Add a scored test to the course and report pass rates to management
+  B: Add training modules aimed at the AI duties of each of these roles
+  C: Make completion of the course a condition of access to model tools
+  D: Issue procedures that set out each role's AI responsibilities
 answer: B
 explanation:
-  why_correct: General awareness is a good base, but people with specific duties need specific skills.
-    Officers need to judge and challenge model outputs, and developers need to apply the bank's standards.
-    Role-based training targets those duties.
+  why_correct: The gap is skill, not awareness. Officers need to know how to judge and challenge outputs,
+    and developers need to know how to apply the standards. Training built around each role's duties targets
+    those skills directly.
   why_not:
-    A: Repeating general content does not give either group the skills their roles require.
-    C: Written guidance can support training but is less effective at building skills, and it would remain
-      generic.
-    D: People who act on AI outputs also affect risk. Training only developers leaves officers unable
-      to spot and challenge poor outputs.
+    A: A test measures whether people remember the general course. It does not add the role-specific skills
+      the review found missing.
+    C: Gating access ensures people take the course, but they have already taken it. The content is the
+      problem, not attendance.
+    D: Both groups already know the standards exist. More written duties tell them what to do but do not
+      build the skill to do it.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

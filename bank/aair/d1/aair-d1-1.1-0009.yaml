@@ -1,31 +1,33 @@
 id: aair-d1-1.1-0009
 subdomain: '1.1'
-difficulty: medium
+difficulty: hard
 stem: A software company with 80 staff uses AI in two products and a few internal tools. Its new risk
   lead proposes adopting in full an AI risk management framework written with large multinationals in
   mind, with several committees and dozens of required documents. Staff are already pushing back. What
   should the risk practitioner recommend?
 options:
-  A: Adopt the framework in full so that no requirement is missed
-  B: Delay adopting any framework until the company has grown
-  C: Write a new framework from scratch that suits the company
-  D: Tailor the framework to the company's size and AI risk profile
+  A: Adopt the framework in phases, starting with the highest-risk AI uses
+  B: Apply the framework only to the two AI products, not internal tools
+  C: Keep the framework and give each requirement a named, accountable owner
+  D: Scale the framework's roles and documents to the company's risk
 answer: D
 explanation:
-  why_correct: Risk management frameworks are meant to be adapted. Tailoring keeps the framework's structure
-    and risk coverage while scaling roles, documents and review depth to the company's size and the actual
-    risk of its AI uses. That makes adoption realistic and keeps effort where the risk is highest.
+  why_correct: Risk management frameworks are meant to be adapted. Scaling roles, documents and review
+    depth to the company's size and the actual risk of its AI uses keeps the framework's structure and
+    risk coverage while making adoption realistic. Effort goes where the risk is highest.
   why_not:
-    A: Full adoption would create overhead a small company cannot sustain. Resistance and box-ticking
-      would likely follow, weakening risk management rather than strengthening it.
-    B: The company already uses AI in its products, so the risks exist now. Waiting leaves them unmanaged.
-    C: Starting from scratch wastes effort and risks gaps that an established framework already covers.
-      Adapting an existing framework is quicker and easier to justify.
+    A: Ordering the work by risk is sensible, but the company still ends up running committees and dozens
+      of documents designed for a multinational. The overhead is delayed, not reduced, and the pushback
+      will return.
+    B: Cutting scope by system leaves the internal tools unmanaged, though they may carry real risk. Tailoring
+      should adjust depth, not drop coverage.
+    C: Clear ownership helps adoption, but it does not reduce overhead that an 80-person company cannot
+      sustain. The requirements stay disproportionate.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

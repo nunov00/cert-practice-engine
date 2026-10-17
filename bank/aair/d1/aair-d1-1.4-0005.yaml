@@ -2,30 +2,31 @@ id: aair-d1-1.4-0005
 subdomain: '1.4'
 difficulty: medium
 stem: A retailer's AI policy was approved eighteen months ago, before the company began testing AI agents
-  that can place orders with suppliers. The policy's next scheduled review is in ten months. What should
-  the risk practitioner recommend?
+  that can place orders with suppliers. The policy requires review after any significant change in AI
+  use. Its next scheduled review is in ten months, and the agents will not go live for at least six. What
+  should the risk practitioner recommend?
 options:
-  A: Bring the policy review forward to cover the new type of use
-  B: Wait for the scheduled review so that the policy stays stable
-  C: Let the procurement team write its own rules for the agents
-  D: Add a short line on agents to the policy without a review
+  A: Start an early policy review covering agent authority and oversight
+  B: Issue an interim directive on agent use until the scheduled review
+  C: Have procurement add agent controls to its purchasing procedures
+  D: Require a risk assessment of each agent before it goes live
 answer: A
 explanation:
-  why_correct: Policies should be reviewed when significant changes occur, not only on a fixed cycle.
-    Agents that act on the company's behalf raise questions about authority, limits and oversight that
-    the current policy may not address, so an early, proper review is warranted.
+  why_correct: The policy itself calls for review after a significant change, and agents that act for
+    the company are one. Questions of authority, spending limits and oversight need proper analysis and
+    approval. The six months before go-live leave time to do this properly.
   why_not:
-    B: Ten months is a long time to run a new kind of AI use with no policy coverage. Stability does not
-      justify a known gap.
-    C: Local rules may conflict with the wider policy and lack proper approval. Policy needs to be set
-      centrally and consistently.
-    D: A quick addition without review skips analysis and approval, so the change may be incomplete and
-      lack authority.
+    B: An interim directive is a stopgap for urgent gaps. Here there is time for a full review, and a
+      directive would skip the analysis and approval the policy requires.
+    C: Procurement procedures cover one function's process. They cannot set enterprise rules on what authority
+      an AI agent may hold.
+    D: Assessments are needed, but they assess against the policy. A policy that does not address agent
+      authority gives them no criteria to apply.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

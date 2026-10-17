@@ -5,28 +5,28 @@ stem: A hospital uses a vendor's AI tool that flags possible fractures on X-rays
   who is accountable if a fracture is missed, the clinical director says the vendor is, because it built
   the tool. How should the risk practitioner respond?
 options:
-  A: Agree, since the vendor designed and validated the tool
+  A: Ensure the contract makes the vendor liable for missed fractures
   B: Explain that the hospital stays accountable for its use of the tool
-  C: Suggest that the radiologists alone are accountable for any miss
-  D: Propose that accountability is split equally with the vendor
+  C: Explain that the signing radiologist is accountable for each reading
+  D: Ask the vendor for evidence of the tool's clinical validation results
 answer: B
 explanation:
   why_correct: An organisation can buy a tool but cannot outsource its accountability for the care it
-    provides with that tool. The hospital decides how the tool is used and must manage that risk; the
+    provides with that tool. The hospital decides how the tool is used and must manage that risk. The
     contract can give the vendor specific duties, such as performance and fixing defects, without moving
     overall accountability.
   why_not:
-    A: The vendor has responsibilities for its product, but it does not decide how the hospital uses it
-      in patient care. Accountability for outcomes stays with the hospital.
-    C: Clinicians have professional duties, but placing all accountability on them ignores the hospital's
-      decisions about adopting, configuring and governing the tool.
-    D: Accountability is not shared in fixed proportions. Splitting it creates confusion about who must
-      act when something goes wrong.
+    A: Liability terms can recover costs from the vendor, but they do not move accountability for patient
+      care. The clinical director's misunderstanding would remain.
+    C: Radiologists have professional duties for what they sign, but this ignores the hospital's decisions
+      about adopting, configuring and governing the tool.
+    D: Validation evidence is worth having, but it answers whether the tool performs, not who is accountable
+      when it misses something.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

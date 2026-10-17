@@ -5,27 +5,27 @@ stem: A water utility plans to use AI to handle most billing queries, which woul
   done by its call centre staff. The business case covers savings but says nothing about the staff affected.
   What should the risk practitioner recommend from an ethical standpoint?
 options:
-  A: Proceed as planned, since staffing is a matter for HR alone
-  B: Delay the project until no job will be affected by the change
-  C: Assess the impact on staff and plan consultation and reskilling
-  D: Keep the project confidential from staff until it goes live
+  A: Add a reskilling and redeployment plan to the business case
+  B: Phase the rollout so that job losses come through natural turnover
+  C: Assess the effect on staff and consult them before approval
+  D: Consult staff representatives once the rollout plan is final
 answer: C
 explanation:
   why_correct: Responsible AI adoption considers its effects on workers as well as customers. Assessing
-    the impact and planning consultation, redeployment or reskilling treats staff fairly and reduces risks
-    such as loss of key skills, disputes and reputational harm.
+    the impact and consulting staff before the decision lets the company plan redeployment or reskilling
+    fairly, and reduces risks such as loss of key skills, disputes and reputational harm.
   why_not:
-    A: HR has a role, but the effect on staff is part of the ethical and risk assessment of the AI use
-      itself.
-    B: Waiting until no job is affected is unrealistic and ignores a legitimate business case. The aim
-      is to manage the impact responsibly.
-    D: Secrecy damages trust and may breach consultation duties. It increases rather than reduces the
-      risk.
+    A: Reskilling and redeployment are good measures, but planning them before assessing the impact or
+      hearing from staff fixes the answer in advance.
+    B: Phasing is a reasonable mitigation, but choosing it before assessing the impact and hearing from
+      staff skips the analysis that should guide the choice.
+    D: Consulting once the plan is final is too late for staff views to shape it, and it may breach consultation
+      duties.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

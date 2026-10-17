@@ -2,32 +2,30 @@ id: aair-d1-1.4-0001
 subdomain: '1.4'
 difficulty: medium
 stem: A law firm finds that several associates have been pasting client documents into a free public generative
-  AI tool to draft summaries. The firm has no rules on AI use. What should the risk manager recommend
-  FIRST?
+  AI tool to draft summaries. The general counsel is handling the documents already exposed. The firm
+  has no rules on AI use. What should the risk manager recommend FIRST to prevent a repeat?
 options:
-  A: Issue an acceptable use policy stating which tools and data are permitted
-  B: Deploy data loss prevention rules to detect client data in web uploads
-  C: Run awareness sessions on generative AI risks for all fee earners
-  D: Block access to all generative AI websites from the firm's network
+  A: Issue an acceptable use policy that sets permitted tools and data
+  B: Configure data loss prevention to block client data in web uploads
+  C: Run role-based training on generative AI risks for fee earners
+  D: Procure an enterprise AI tool with contractual confidentiality terms
 answer: A
 explanation:
-  why_correct: Staff cannot follow rules that do not exist. A policy that sets which tools may be used
-    and which data may never be entered gives a clear standard. Training and technical controls can then
-    be built around it.
+  why_correct: With no rules in place, every other control lacks a standard to apply. A policy that states
+    which tools may be used and which data may never be entered defines what is allowed. Data loss prevention
+    rules, training and the choice of an approved tool can then be built to match it.
   why_not:
-    B: Detection tools need a policy to define what is allowed. Deploying them first enforces rules that
-      have not been decided or communicated.
-    C: Awareness helps, but without a policy there is no standard to train against and nothing to hold
-      people to. Training supports policy rather than replacing it.
-    D: A blanket block ignores a real business need and tends to push use onto personal devices, where
-      the firm has even less visibility. It also leaves staff without guidance. An interim instruction
-      to stop using the tool can accompany the policy, but a permanent blanket block is not the first
-      recommendation.
+    B: Data loss prevention needs a policy to say what counts as a breach. Configuring it first enforces
+      rules that nobody has decided or told staff about.
+    C: Training needs a standard to teach. Without a policy there is nothing specific to train against
+      and nothing to hold people to.
+    D: An approved tool is a useful later step, but choosing one needs criteria the policy sets, such
+      as which data may go into it. Without the policy, staff still have no rule against using free tools.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

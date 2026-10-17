@@ -1,31 +1,31 @@
 id: aair-d1-1.6-0007
 subdomain: '1.6'
-difficulty: medium
+difficulty: hard
 stem: A retail chain proposes using cameras with AI emotion analysis to score how engaged its shop staff
   appear during shifts, and to use the scores in performance reviews. What should the risk practitioner
   advise?
 options:
-  A: Approve it if staff are told that the cameras are being installed
-  B: Challenge whether the method is valid and the use proportionate
-  C: Approve it once the vendor confirms high accuracy in its testing
-  D: Limit the scores to staff who have had poor reviews in the past
+  A: Require staff consent and a clear notice before cameras go live
+  B: Challenge the method's validity and the use's proportionality
+  C: Pilot the tool and check its scores against manager ratings
+  D: Use the scores only for coaching, not in formal performance reviews
 answer: B
 explanation:
-  why_correct: Inferring inner feelings from facial expressions has a weak scientific basis, and using
-    such scores in performance reviews is intrusive and could lead to unfair treatment. The practitioner
-    should question both the validity and the proportionality of the use before it goes any further.
+  why_correct: Inferring inner feelings from facial expressions has a weak scientific basis, and scoring
+    staff this way is intrusive. The practitioner should question both whether the method measures anything
+    real and whether the use is proportionate, before it goes further in any form.
   why_not:
-    A: Notice is necessary but not sufficient. Telling staff does not make an unreliable and intrusive
-      measure fair.
-    C: Vendor accuracy claims may not hold for real staff in real conditions, and accuracy does not address
-      the intrusion or the doubtful link between expressions and engagement.
-    D: Targeting staff with poor past reviews would compound possible unfairness and still rests on an
-      unreliable measure.
+    A: Notice is needed, but consent from employees is rarely freely given, and neither makes an unreliable
+      and intrusive measure fair.
+    C: Agreement with manager ratings would not show that the tool reads emotions, and a pilot already
+      subjects staff to the intrusion.
+    D: Lower stakes reduce the harm, but the measure is still unreliable and intrusive, so coaching based
+      on it may still mislead.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

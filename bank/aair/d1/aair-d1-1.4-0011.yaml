@@ -5,27 +5,27 @@ stem: A government department's AI policy and training apply to its employees. A
   who process citizens' applications are contractors supplied by an agency, and some of them use AI tools
   in their work. What should the risk practitioner recommend?
 options:
-  A: Ask the agency to confirm that its contractors use AI responsibly
-  B: Extend the policy and training duties to contractors by contract
-  C: Prevent contractors from using any AI tool during their assignments
-  D: Assume the agency's own policies already cover the department's needs
+  A: Require the agency to train contractors to its own AI standard
+  B: Bind contractors to the department's AI policy and training by contract
+  C: Give contractors access only to the AI tools the department has approved
+  D: Add contractor AI use to the agency's quarterly performance review
 answer: B
 explanation:
   why_correct: Contractors handle the same data and decisions as employees, so the same rules and training
-    should apply to them. Writing those duties into the agency contract makes them binding and allows
-    the department to check they are met.
+    should apply. Writing the department's policy and training duties into the agency contract makes them
+    binding and lets the department check that they are met.
   why_not:
-    A: A general assurance is not enforceable and does not tell contractors what the department's rules
-      are.
-    C: A blanket ban blocks legitimate approved uses and is hard to enforce while contractors are outside
-      the policy.
-    D: The agency's policies may not match the department's needs, and the department stays accountable
-      for how its work is done.
+    A: The agency's standard may not match the department's rules on citizens' data, and the department
+      stays accountable for how its work is done.
+    C: Limiting tools helps, but it does not tell contractors what data they may enter or how to use outputs.
+      Those rules sit in the policy they are not bound by.
+    D: A performance review checks after the fact, and without the department's rules in the contract
+      there is no agreed standard to review against.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

@@ -5,26 +5,27 @@ stem: An education app company plans to add AI-driven personalised learning path
   children aged 8 to 12. The feature would build a profile of each child's learning behaviour. Its compliance
   work so far has followed the rules for adult users. What should the risk practitioner recommend?
 options:
-  A: Treat the feature as low risk, as it is meant to benefit the children
-  B: Rely on schools to obtain any consent needed from parents
+  A: Run a data protection impact assessment on the adult template
+  B: Obtain verifiable parental consent before any profiling begins
   C: Identify the added legal protections that apply to children's data
-  D: Limit the profiling to children whose parents have paid for it
+  D: Keep the adult controls and add age checks at account sign-up
 answer: C
 explanation:
   why_correct: Many data protection and consumer laws give children extra protection, such as limits on
     profiling, stricter consent rules or duties of age-appropriate design. The company must first establish
-    which apply in its markets and design the feature to meet them; rules written for adults are not enough.
+    which apply in its markets and design the feature to meet them.
   why_not:
-    A: Good intentions do not remove legal duties, and profiling children can be restricted whatever its
-      purpose.
-    B: Schools may have a role, but the company remains responsible for its own legal basis and design
-      duties and cannot assume schools have handled them.
-    D: Whether parents have paid has no bearing on whether processing children's data is lawful.
+    A: An assessment is needed, but an adult template will not prompt the questions specific to children,
+      so it may miss the very duties at issue.
+    B: Parental consent is one possible protection, but some laws limit profiling of children whatever
+      consent is given, and other design duties may apply.
+    D: Age checks identify child users but do not tell the company what extra rules apply once it knows
+      they are children.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

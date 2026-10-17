@@ -5,26 +5,28 @@ stem: A home insurer removed ethnicity from its pricing model's inputs to avoid 
   model still uses postcode and the language customers choose for correspondence. The pricing team says
   the model is fair because it cannot see ethnicity. What should the risk practitioner advise?
 options:
-  A: Accept the view, as the protected attribute is no longer an input
-  B: Remove every input that differs in any way between ethnic groups
-  C: Test outcomes across groups, as other inputs may act as proxies
-  D: Ask an external firm to certify the model as free of all bias
+  A: Remove postcode and correspondence language from the inputs
+  B: Review each input with the pricing team for business justification
+  C: Measure pricing outcomes across ethnic groups
+  D: Have an independent reviewer confirm ethnicity is fully excluded
 answer: C
 explanation:
   why_correct: Removing a protected attribute does not prevent indirect discrimination, because inputs
-    such as postcode or language can be closely correlated with it. Only measuring outcomes across groups
-    shows whether the model treats them unfairly, and whether particular proxies must be removed or justified.
+    such as postcode or language can be closely correlated with it. Measuring outcomes across groups shows
+    whether the model treats them unfairly and which proxies must be removed or justified. Using or estimating
+    ethnicity for this test needs a lawful basis and safeguards.
   why_not:
-    A: Hiding the attribute is not enough; the model can learn the same pattern from correlated inputs.
-    B: Almost every input differs somewhat between groups, so removing them all would leave no workable
-      model. Proxies should be found by testing.
-    D: Certification cannot replace the insurer's own testing, and no model can be certified as entirely
-      free of bias.
+    A: These two inputs may be proxies, but other inputs may be too, and postcode may carry legitimate
+      risk information. Removing them without measuring outcomes may not fix the problem.
+    B: Justifying inputs matters, but without outcome data the review cannot show whether any input leads
+      to unfair prices.
+    D: Confirming that ethnicity is excluded checks the inputs, which is the step already taken. It does
+      not show whether other inputs reproduce the same effect.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

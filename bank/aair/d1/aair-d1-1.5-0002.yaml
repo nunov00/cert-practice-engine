@@ -5,27 +5,28 @@ stem: A subscription service receives a valid request from a customer to erase t
   customer's records were included, lawfully, in data used to train a recommendation model last year.
   What should the risk practitioner advise?
 options:
-  A: Erase the source records and assess with legal and data science whether the model must change
-  B: Refuse the request because the data was used lawfully at the time of training
-  C: Retrain the model straight away without the customer's records
-  D: Delete the database records only, since model weights never contain personal data
+  A: Erase the records and assess whether the model retains their data
+  B: Erase the records and add the customer to a suppression list
+  C: Erase the records and retrain the model without them straight away
+  D: Erase the records and document that model weights are out of scope
 answer: A
 explanation:
   why_correct: Erasure clearly applies to the stored records. Whether the trained model also holds the
-    person's data, for example through memorisation, is a technical and legal question that needs assessment.
-    The outcome decides whether retraining or other measures are needed, rather than assuming either answer.
+    person's data, for example through memorisation, is a technical and legal question. Assessing it with
+    legal and data science decides whether retraining or other measures are needed, rather than assuming
+    either answer.
   why_not:
-    B: Lawful collection and use in the past does not cancel a valid erasure right now. Refusing exposes
-      the organisation to regulatory and reputational harm.
-    C: Retraining for each request may be unnecessary and costly, and may not be what the law requires.
-      The decision should follow an assessment, not precede it.
-    D: Some models can memorise and reproduce training examples, so the assumption that weights never
-      hold personal data is unsafe. It closes the matter without the assessment the risk requires.
+    B: A suppression list stops the data being collected again, which is good practice, but it does not
+      address whether the trained model still holds the customer's data.
+    C: Retraining for each request may be costly and may not be what the law requires. The decision should
+      follow an assessment, not come before it.
+    D: Some models can memorise and reproduce training examples, so declaring weights out of scope is
+      an untested assumption. It closes the matter without the assessment the risk needs.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

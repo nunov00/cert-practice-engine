@@ -5,27 +5,26 @@ stem: A hospital group pilots a model that screens job applications for nursing 
   accuracy target, but applicants from one age group are shortlisted at a much lower rate than others
   with similar qualifications. What should the risk practitioner recommend?
 options:
-  A: Add a notice to the careers page explaining that AI is used in screening
-  B: Accept the result, because the model meets its overall accuracy target
-  C: Remove age from the model's inputs and continue the rollout
-  D: Pause wider use until the cause and impact of the disparity are understood
+  A: Rebalance the training data so age groups are equally represented
+  B: Continue the pilot and monitor shortlisting rates by age each month
+  C: Remove age and likely proxies from the inputs and continue rollout
+  D: Pause wider use while the cause and impact of the gap are analysed
 answer: D
 explanation:
-  why_correct: A large outcome gap between groups with similar qualifications is a sign of possible unfair
-    bias, with legal and ethical consequences. Overall accuracy can hide harm to a subgroup. The cause
-    must be found and addressed before the model affects more applicants.
+  why_correct: A large gap between groups with similar qualifications is a sign of possible unfair bias,
+    with legal and ethical consequences. The cause must be found before a fix can be chosen, and wider
+    use should wait so the model does not affect more applicants in the meantime.
   why_not:
-    A: Disclosure supports transparency but does nothing to correct an unfair outcome for the affected
-      applicants.
-    B: An overall target says nothing about how errors and outcomes fall across groups. Accepting it ignores
-      clear evidence of potential discrimination.
-    C: Other features, such as years since qualifying, can act as proxies for age. Dropping the attribute
-      without analysis may leave the disparity in place while hiding it.
+    A: Rebalancing is one possible fix, but the gap may come from labels or features rather than representation.
+      Choosing a fix before the cause is known may not work.
+    B: Monitoring tracks the gap but lets the model keep disadvantaging applicants while nobody works
+      out why.
+    C: Removing inputs without analysis may miss other proxies and hide the gap rather than remove it.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

@@ -1,30 +1,30 @@
 id: aair-d1-1.3-0003
 subdomain: '1.3'
-difficulty: easy
+difficulty: medium
 stem: A logistics group's board wants to strengthen its oversight of AI as the company expands its use
   of the technology. Which role is MOST appropriate for the board?
 options:
-  A: Set AI risk appetite and oversee reporting on major risks
-  B: Approve each AI model before it is deployed in the business
-  C: Delegate all AI matters to the chief technology officer
-  D: Review the design documents of the main AI systems in use
+  A: Set the AI risk appetite and monitor management against it
+  B: Approve AI models rated high risk before they are deployed
+  C: Require yearly training for directors on AI technology trends
+  D: Review an independent assessment of each key AI system's design
 answer: A
 explanation:
-  why_correct: 'The board''s job is direction and oversight: setting how much AI risk the company will
-    accept and holding management to account through regular reporting on the most significant risks.
-    Detailed approvals and design work belong to management.'
+  why_correct: The board's job is direction and oversight. Setting how much AI risk the company will accept,
+    and holding management to account against it through regular reporting, lets the board steer the expanding
+    use of AI. Approvals and design work belong to management.
   why_not:
-    B: Approving each model is an operational task. It would overload the board and blur the line between
-      oversight and management.
-    C: The board can delegate execution, but it cannot hand off its oversight duty entirely. It still
-      needs to set appetite and receive reporting.
-    D: Reviewing design documents is technical work for specialists, not an effective use of the board's
-      oversight role.
+    B: Limiting approvals to high-risk models seems proportionate, but it is still an operational decision.
+      It draws the board into management and blurs who is accountable for the model.
+    C: Director training builds the knowledge needed for oversight, but it is a support for the board's
+      role, not the role itself.
+    D: Design assessments are detailed technical assurance for management and specialists. Reviewing them
+      system by system is not an effective use of the board's oversight.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

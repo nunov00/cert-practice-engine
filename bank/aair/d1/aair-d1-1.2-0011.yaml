@@ -1,32 +1,33 @@
 id: aair-d1-1.2-0011
 subdomain: '1.2'
-difficulty: hard
+difficulty: medium
 stem: A motor insurer added an AI model that reads incoming claim documents and routes each claim to the
-  right team. When the model cannot classify a claim with enough confidence, it puts the claim in an 'unresolved'
-  queue. Months later, hundreds of claims there are past their legal response deadlines, as no team sees
-  the queue as its own. What does this MOST indicate?
+  right team. Claims it cannot classify with enough confidence go to an 'unresolved' queue. Months later,
+  hundreds of claims in that queue are past their legal response deadlines. The queue receives about 8%
+  of claims, as testing predicted, and 96% of routed claims reach the right team. What does this MOST
+  likely indicate?
 options:
-  A: The model's confidence threshold has been set too high
-  B: The model needs retraining on the claims it could not classify
-  C: Claims handlers need more training on the new routing model
-  D: The process redesign missed how exceptions would be handled
+  A: The confidence threshold is set too high for the current claim mix
+  B: Model performance has drifted since the model went live
+  C: Handlers need more training on how the routing model works
+  D: Handling of exceptions was left out of the process redesign
 answer: D
 explanation:
-  why_correct: Adding AI to a process changes the workflow around it. Here the exception path, for claims
-    the model cannot handle, was never given an owner, capacity or deadline tracking, so claims were left
-    untouched. The failure lies in how the process was redesigned around the model rather than in the
-    model itself.
+  why_correct: Adding AI to a process changes the workflow around it. The model is performing as tested,
+    so the failure lies in the exception path. Claims the model cannot handle were never given an owner,
+    capacity or deadline tracking, which is a gap in how the process was redesigned around the model.
   why_not:
-    A: A lower threshold would send fewer claims to the queue but more to the wrong team, and the claims
-      that still landed in the queue would remain unowned.
-    B: Better classification would shrink the queue, but some exceptions will always occur. Without an
-      owner they would still be missed.
-    C: Handlers' skills are not the issue; no team had been given the queue at all.
+    A: The queue receives the share of claims testing predicted, so the threshold is working as designed.
+      A lower one would send more claims to the wrong team, and those still queued would remain unhandled.
+    B: Routing accuracy is high and the queue rate matches testing, so there is no sign of drift. The
+      claims are late because nobody works the queue, not because the model changed.
+    C: Training helps handlers work with the model, but the late claims sit in a queue no team is assigned
+      to. Handler skill does not explain why it was never worked.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

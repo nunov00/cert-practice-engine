@@ -5,27 +5,28 @@ stem: An energy company approves AI business cases on build cost and expected be
   approved last year now have no budget for monitoring or retraining, and their performance is falling.
   Which change to the investment process would BEST address this?
 options:
-  A: Fund monitoring from a central contingency budget when needed
-  B: Limit approvals to AI projects with a payback under one year
-  C: Require business cases to cover costs over the model life cycle
-  D: Ask the data science team to absorb monitoring in its own budget
+  A: Create a central budget line to fund monitoring of production models
+  B: Require a performance review of each model a year after approval
+  C: Require business cases to cost upkeep over each model's life
+  D: Make monitoring a condition of deployment in the model risk policy
 answer: C
 explanation:
   why_correct: AI models need ongoing monitoring, retraining and eventual retirement. Including these
     costs in the business case gives decision makers a true view of value and makes sure funding for the
-    controls is agreed when the model is approved.
+    controls is agreed when each model is approved.
   why_not:
-    A: Ad hoc contingency funding is uncertain and competes with other demands. Monitoring may still be
-      cut when money is tight.
-    B: A short payback rule changes which projects are approved but does not make anyone fund the ongoing
-      work that approved models need.
-    D: Shifting the cost to the builders hides it from decision makers and may starve other work. It does
-      not fix the approval process.
+    A: A central budget helps, but it is not tied to each approval, so business cases still overstate
+      value and the pot may not match what the approved models need. Monitoring competes with other demands
+      when money is tight.
+    B: A yearly review would detect falling performance, but it does not fund the work needed to fix it.
+      The approval process still ignores ongoing costs.
+    D: A policy requirement sets the expectation, but the stem's problem is that no budget exists. Without
+      funding agreed at approval, the condition is hard to meet.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

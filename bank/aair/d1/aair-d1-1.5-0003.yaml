@@ -1,30 +1,31 @@
 id: aair-d1-1.5-0003
 subdomain: '1.5'
-difficulty: easy
+difficulty: medium
 stem: A consumer lender wants to approve or reject small loan applications automatically, with no staff
   involvement. Data protection law in its market gives people rights in relation to decisions with significant
   effects made solely by automated means. Which measure BEST addresses this legal consideration?
 options:
-  A: Publish the model's accuracy statistics on the lender's website
-  B: Ask applicants to accept automated decisions in the loan terms
-  C: Let rejected applicants ask for a person to review the decision
-  D: Keep all application data for longer in case of later disputes
+  A: Give each rejected applicant the main reasons for the decision
+  B: Obtain applicants' explicit consent to automated decision-making
+  C: Let applicants obtain human review of the decision and contest it
+  D: Have staff review a sample of automated decisions each month
 answer: C
 explanation:
-  why_correct: Laws of this kind typically expect safeguards when solely automated decisions have significant
-    effects, including the right to human intervention and to contest the decision. Offering a route to
-    human review addresses this directly.
+  why_correct: Laws of this kind expect safeguards when solely automated decisions have significant effects,
+    chiefly the right to obtain human intervention and to contest the decision. A route to human review
+    gives each person exactly that.
   why_not:
-    A: Accuracy figures do not let an individual challenge their own decision or obtain human involvement.
-    B: Consent hidden in loan terms may not be valid, and even where consent applies, safeguards such
-      as human review are usually still expected.
-    D: Keeping data longer may itself breach storage limits, and it does nothing for the individual's
-      rights about the decision.
+    A: Reasons support transparency and help people decide whether to challenge, but on their own they
+      leave the decision solely automated with no human to turn to.
+    B: Consent may give a basis for automated decisions, but safeguards such as human intervention are
+      usually still expected alongside it.
+    D: Sample reviews are good quality assurance, but they do not let an individual applicant obtain a
+      human review of their own decision.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

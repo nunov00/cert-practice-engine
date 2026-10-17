@@ -1,29 +1,29 @@
 id: aair-d1-1.6-0003
 subdomain: '1.6'
-difficulty: easy
+difficulty: medium
 stem: A city council uses an AI model to rank tenants' repair requests by urgency. Tenants complain that
-  they cannot understand why their requests are placed low on the list. Which measure BEST improves trust
-  in the system?
+  they cannot understand why their requests are placed low on the list. Which measure BEST addresses this
+  complaint?
 options:
-  A: Publish the model's source code on the council's website
-  B: Remind tenants that a model is used to rank all repair requests
+  A: Publish the factors the model uses and their general weighting
+  B: Let tenants ask a housing officer to review their own request's rank
   C: Give each tenant a plain-language reason for their request's rank
-  D: Commission a technical audit and keep the report for internal use
+  D: Commission an independent fairness audit and publish a summary
 answer: C
 explanation:
-  why_correct: People affected by an AI-supported decision trust it more when they can understand the
-    main reasons for their own outcome and challenge it if something is wrong. A plain-language explanation
-    answers the complaint directly.
+  why_correct: The complaint is about understanding individual outcomes. A plain-language reason for each
+    tenant's own rank answers it directly, and also lets tenants spot errors and challenge them.
   why_not:
-    A: Source code is unreadable for most tenants and does not explain an individual ranking.
-    B: Tenants already know a model is used; disclosure alone does not tell them why their request ranked
-      low.
-    D: An internal audit may improve the system, but tenants would still not understand their outcomes.
+    A: A general list of factors helps, but it does not tell a tenant why their own request ranked low.
+    B: A review route supports challenge, but tenants still would not understand their rank, and many
+      would not know whether to ask.
+    D: An audit can improve and reassure about the system as a whole, but it does not explain individual
+      rankings.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass
