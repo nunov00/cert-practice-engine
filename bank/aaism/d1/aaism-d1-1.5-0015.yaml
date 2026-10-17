@@ -1,30 +1,30 @@
 id: aaism-d1-1.5-0015
 subdomain: '1.5'
 difficulty: hard
-stem: At 2 a.m., a hospital suspects that its AI triage assistant has been manipulated through poisoned inputs over the
-  last two months, which covers its last two retraining cycles. Evidence is still unclear. Full manual triage is staffed
-  only in the daytime. What is the BEST immediate action?
+stem: At 2 a.m., a hospital suspects its AI triage assistant was manipulated through poisoned inputs over the last
+  two months, covering two retraining cycles. Evidence is unclear, and full manual triage is staffed only by day.
+  What is the BEST immediate action?
 options:
-  A: Keep the assistant running, with a clinician confirming each recommendation
-  B: Roll the assistant back to the version that was in use before the latest retraining
-  C: Shut the assistant down at once and switch to manual triage with night staff
-  D: Leave the assistant unchanged until the investigation confirms the poisoning
+  A: Keep it running with clinician confirmation
+  B: Roll back to the version before the latest retraining
+  C: Shut the assistant down and switch to manual triage
+  D: Add drift alerts on the assistant's outputs
 answer: A
 explanation:
-  why_correct: Human confirmation of each output limits the harm a manipulated model can do, while the service keeps running
-    with the staff on hand. It is a proportionate containment step while evidence is gathered. Full shutdown or rollback
-    can follow once the scope is clearer.
+  why_correct: Clinician confirmation limits the harm a manipulated model can do while the service keeps running
+    with the staff on hand. Rollback or shutdown can follow by day, once the scope is clearer and staff are available.
   why_not:
-    B: Rollback is a standard containment step, but the suspect period covers two retraining cycles. The previous version
-      may also be poisoned.
-    C: Shutdown removes the model risk, but manual triage cannot be staffed safely at night. That creates a bigger patient
-      risk.
-    D: Waiting for proof leaves a possibly manipulated clinical tool working with no added safeguard.
+    B: Rollback is a standard containment step for poisoning. The suspect period covers two retraining cycles, so
+      the previous version may be poisoned too.
+    C: Shutdown removes the model risk and would be right during the day. At night manual triage cannot be staffed
+      safely, which creates a bigger patient risk.
+    D: Output monitoring helps detect manipulation. It only raises alerts, leaving possibly wrong recommendations
+      to reach patients in the meantime.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-c
-  checked_by: 2026-10-16-aaism-d1-c-check
   check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-c-recheck3

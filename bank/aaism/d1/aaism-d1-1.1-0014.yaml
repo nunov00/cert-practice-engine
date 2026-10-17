@@ -1,31 +1,27 @@
 id: aaism-d1-1.1-0014
 subdomain: '1.1'
 difficulty: medium
-stem: A regulator has published draft AI rules for consultation. The draft would require all prompts to customer-facing
-  AI to be kept for five years, which conflicts with the bank's data minimisation policy. The compliance function owns regulatory
-  tracking but has little AI expertise. What is the security manager's BEST contribution?
+stem: A regulator's final AI rules require banks to keep customer prompts for five years. Legal has amended one
+  bank's data minimisation policy to match, and compliance has logged the duty. What is the security manager's BEST
+  contribution?
 options:
-  A: Give compliance an analysis of the draft's security and privacy impact
-  B: Start building five-year prompt retention now so the bank is ready if the rule passes
-  C: Take over AI regulatory tracking from compliance, given the technical content involved
-  D: Brief the board directly on the conflict between the draft and the minimisation policy
+  A: Design protected storage for the retained prompts
+  B: Give compliance an impact analysis for its consultation response
+  C: Lead AI regulatory tracking jointly with compliance
+  D: Brief the board on prompt retention versus minimisation
 answer: A
 explanation:
-  why_correct: The rules are still a draft, so the bank can still influence them and should not yet build to them. Compliance
-    owns the response, but it needs expert input on what the retention duty would mean for risk, cost and privacy. Feeding
-    that analysis into the consultation through the owner uses the security manager's skills in the right role.
+  why_correct: The obligation and the policy are settled. Five years of customer prompts is a new store of sensitive
+    data, and securing it is the security manager's part.
   why_not:
-    B: Building to a draft is premature. The retention period may change, and the store would create a large new privacy
-      exposure.
-    C: Lack of AI skills is a reason to support compliance, not to move its ownership. That would split regulatory tracking
-      across functions.
-    D: The board may need to hear about this later, through compliance. A draft under consultation does not yet need a direct
-      board briefing.
+    B: The rules are final, so the consultation stage has passed.
+    C: Compliance owns tracking and has already logged the duty; this does not act on the new obligation.
+    D: Legal has already resolved the conflict by amending the policy.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-c
-  checked_by: 2026-10-16-aaism-d1-c-check
+  checked_by: 2026-10-16-aaism-d1-c-recheck3
   check_verdict: pass

@@ -1,24 +1,25 @@
 id: aaism-d1-1.5-0011
 subdomain: '1.5'
 difficulty: hard
-stem: A health insurer is writing a playbook for a generative AI assistant that discloses confidential data. What should this
-  playbook include that the general data breach playbook usually lacks?
+stem: A health insurer is writing a playbook for its AI assistant disclosing confidential data. The assistant was
+  not fine-tuned, keeps no memory between sessions, and draws all content from a retrieval index over claims files.
+  What is the MOST important playbook addition?
 options:
-  A: Steps to retrain the model at once so that it no longer holds the disclosed data
-  B: Contact details for legal counsel, the privacy officer and the public relations team
-  C: Steps to find whether the data came from training data, retrieval or session context
-  D: Steps to rotate the keys the assistant uses to call the model provider's API
-answer: C
+  A: Steps to remove or restrict the exposed source content
+  B: Steps to find which AI component exposed the data
+  C: Steps to add the data to output filters
+  D: Criteria for notifying the privacy regulator
+answer: A
 explanation:
-  why_correct: The containment and fix differ by source. Data in retrieval sources can be removed or re-permissioned quickly.
-    Data memorised from training may need a rollback or retraining. Data from session context points to isolation failures.
-    An AI playbook must guide responders to tell these apart.
+  why_correct: All the assistant's content comes from the index, so that is where confidential data must be contained.
+    The playbook needs steps to remove it or fix its permissions quickly, which a general breach playbook does not
+    include.
   why_not:
-    A: Retraining only helps if the data was memorised from training. If it came from retrieval or session context, retraining
-      is slow and leaves the real cause open.
-    B: Contact lists for legal, privacy and communications are standard in any breach playbook.
-    D: Key rotation suits a credential compromise. Here the assistant itself disclosed data, so rotating keys does not stop
-      or explain the leak.
+    B: Locating the source is vital when data could come from training, memory or retrieval. This assistant has
+      only one source, so the step adds little.
+    C: Filtering can stop a repeat while the fix is made. It masks the symptom and leaves the data reachable in
+      the index.
+    D: Notification criteria are essential, but the general breach playbook already holds them.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -26,4 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d1-b-check
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

@@ -1,21 +1,26 @@
 id: aaism-d3-3.5-0004
 subdomain: '3.5'
-difficulty: easy
-stem: A logistics firm finds that its demand forecasting model became steadily less accurate over six months, and no one was
-  alerted. Which control was MOST likely missing?
+difficulty: hard
+stem: A logistics firm's dashboard shows its demand model's forecast error against actual demand each month. The
+  error grew for six months as customers changed how they order, but no one acted until stock ran short. Which control
+  was MOST likely missing?
 options:
-  A: Change management for retraining the forecasting model
-  B: Monitoring of input data and results against thresholds
-  C: Role-based access control on the training data store
-  D: Regular backups of the model weights and configuration
-answer: B
+  A: Tighter thresholds on the model's input drift alerts
+  B: Tracking of forecast error against actual demand
+  C: Monitoring of missing values in the input feeds
+  D: An error tolerance that triggers a named owner's review
+answer: D
 explanation:
-  why_correct: Gradual decline with no alert points to drift that nobody was watching. Monitoring input distributions and
-    performance metrics against defined thresholds, with alerts to a named owner, would have flagged the problem early.
+  why_correct: The firm measured the right thing, and the dashboard showed the decline. What was missing was a defined
+    tolerance and an accountable owner who must act when it is breached. Without that, monitoring produces information
+    but no response.
   why_not:
-    A: Change management governs planned changes. Here the model was not changed; the data around it was.
-    C: Access control prevents unauthorised changes but would not reveal slow drift.
-    D: Backups support recovery. They would not detect declining accuracy.
+    A: Input drift alerts are a common gap, but here the change was visible in the error figures. Another alert
+      without an owner to act would likely meet the same fate.
+    B: Tracking error against actuals is the standard control for this kind of drift, and the firm already had it
+      on its dashboard.
+    C: Missing-value checks catch broken feeds, but the problem was a real change in ordering behaviour, not missing
+      data.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -23,4 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d3-b-check
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

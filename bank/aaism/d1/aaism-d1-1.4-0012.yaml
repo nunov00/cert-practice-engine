@@ -1,21 +1,25 @@
 id: aaism-d1-1.4-0012
 subdomain: '1.4'
-difficulty: easy
-stem: A media group's board receives a quarterly AI security report. Which content is MOST useful to the board?
+difficulty: medium
+stem: A media group's quarterly AI security report already compares exposure with the board's risk limits. Exposure
+  has stayed above the limits for two quarters despite extra funding approved last year, and the board asks why.
+  Which content would MOST help?
 options:
-  A: Detailed counts of blocked prompts and filtered outputs for every AI system in use
-  B: AI risk exposure trends against appetite, with the decisions that are needed
-  C: A full list of the models tested this quarter and the test methods used
-  D: Technical details of each vulnerability found in the group's AI systems
-answer: B
+  A: Exposure trends compared with the board's risk limits
+  B: AI incident counts and impact since last year's funding
+  C: Delivery status of the AI security projects funded last year
+  D: Maturity scores against an industry framework
+answer: C
 explanation:
-  why_correct: Boards oversee risk and make decisions. Trends in AI risk exposure, compared with the agreed appetite, show
-    whether risk is under control. Highlighting the decisions needed, such as funding or accepting a risk, lets the board
-    act.
+  why_correct: The board knows exposure is too high; it wants to know why its investment has not reduced it. Showing
+    whether the funded projects were delivered, delayed or ineffective explains the gap and guides the next decision.
   why_not:
-    A: Operational counts are useful to the security team. They need interpretation before they mean anything to a board.
-    C: A list of tests shows activity, not whether risk is within appetite.
-    D: Vulnerability details are too technical for board oversight. They belong in management reporting.
+    A: This is usually the most useful board content when limits exist. The report already shows it, and it does
+      not explain why exposure has not fallen.
+    B: Incident data since the funding shows harm that has occurred. It does not show whether the funded projects
+      produced the planned controls, so it cannot explain why exposure stayed high.
+    D: Maturity scores show capability gaps. They are not tied to the funded projects, so they cannot explain the
+      lack of progress.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -23,4 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d1-b-check
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

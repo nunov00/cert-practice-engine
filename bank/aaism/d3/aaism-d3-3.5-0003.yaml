@@ -1,21 +1,22 @@
 id: aaism-d3-3.5-0003
 subdomain: '3.5'
-difficulty: medium
-stem: A payments firm lets merchants call its fraud scoring model through an API. Which monitoring control would BEST detect
-  attempts to replicate the model?
+difficulty: hard
+stem: Fraud losses at a payments firm rose while its fraud model's flag rate stayed flat. Investigators found fraudsters
+  submitting small variations of a transaction until one passes. Which monitoring BEST detects this?
 options:
-  A: A monthly review of the model's accuracy on new transactions
-  B: Transport encryption on all calls made to the scoring API
-  C: Hidden watermarks embedded in the scores the model returns
-  D: Per-merchant analysis of query volume and input patterns
-answer: D
+  A: Alerts on input drift across the merchant population
+  B: Alerts on repeated near-threshold scores from similar inputs
+  C: A monthly accuracy review using confirmed fraud labels
+  D: Alerts on spikes in the overall number of flagged transactions
+answer: B
 explanation:
-  why_correct: Model extraction needs many queries, often with systematically varied inputs. Baselining each merchant's normal
-    volume and input distribution and alerting on deviations detects this pattern while it is happening.
+  why_correct: 'This is an evasion attack by probing: many near-identical transactions scored just around the decision
+    threshold until one slips under it. Detecting clusters of similar inputs that land near the threshold spots
+    the probing while it is happening.'
   why_not:
-    A: Accuracy reviews measure model quality. A copied model does not change the original model's accuracy.
-    B: Encryption protects data in transit, but extraction uses legitimate, encrypted API calls.
-    C: Watermarks may help prove theft afterwards. They do not detect an extraction attempt in progress.
+    A: Drift alerts catch broad shifts in inputs, but a few probing sequences barely move the overall distribution.
+    C: Accuracy reviews on confirmed fraud will show the decline, but only after losses and with a lag of weeks.
+    D: The stem says the flag rate stayed flat, so an alert on overall flag volume would not have fired.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -23,4 +24,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d3-b-check
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

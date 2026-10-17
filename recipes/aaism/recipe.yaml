@@ -19,6 +19,9 @@
 # BEST/MOST/PRIMARY qualifier; management judgment over configuration detail;
 # distractors are true-but-secondary, premature, reactive, too narrow, or owned
 # by the wrong role.
+# Owner rule (2026-10-16): pitch slightly harder than the real exam. Measured by an
+# options-only test (a reader sees the four options but not the stem): ISACA's
+# quiz 7/12 guessable, this bank 22/60 after rework.
 
 format_version: "0.2"
 

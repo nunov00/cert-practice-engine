@@ -1,31 +1,28 @@
 id: aaism-d3-3.1-0013
 subdomain: '3.1'
 difficulty: hard
-stem: A consultancy's assistant reads each user's mailbox, summarises external web pages and can send email for the user. A prompt filter
-  screens retrieved pages. In a pilot, staff approved almost every send request without reading it. Which design change BEST reduces
-  the risk of data being sent out by hidden instructions?
+stem: A consultancy's assistant reads mailboxes, summarises web pages and can send email. Sending is disabled once
+  a session reads an external web page. A tester still exfiltrated data using hidden instructions in an email from
+  outside. Which change BEST closes this route?
 options:
-  A: Replace the prompt filter with a stronger classifier trained on recent attacks
-  B: Require the user to confirm each email in a clearer and more detailed prompt
-  C: Disable the send tool for any session that has processed external web content
-  D: Log all outgoing emails and alert the SOC when one goes to a new external domain
-answer: C
+  A: Treat external inbound email as untrusted content too
+  B: Alert the SOC on emails to new external domains
+  C: Show users a clearer, more detailed send confirmation
+  D: Disable sending once a session reads external pages
+answer: A
 explanation:
-  why_correct: 'Exfiltration needs three things together: access to private data, exposure to untrusted content and a way to send data
-    out. Removing the send capability once untrusted content has entered the session breaks that chain by design, whatever the filter
-    misses. The pilot shows that per-email approval is not working, so a structural control that does not depend on user attention is
-    best here.'
+  why_correct: The design breaks the exfiltration chain only for one untrusted source. Email from outside the firm
+    is just as attacker-controlled as a web page, so reading it must trigger the same loss of the send capability.
   why_not:
-    A: A better classifier lowers the hit rate, but filtering is probabilistic and new hidden instructions will still get through. It
-      improves a layer that already exists rather than removing the path.
-    B: Human confirmation is normally a strong control, but the pilot shows approval fatigue. A more detailed prompt does not change
-      the fact that staff approve without reading.
-    D: Alerting is a useful detective layer, but it fires after the email and its data have already left the organisation.
+    B: Alerting is a useful detective layer, but it fires after the email and its data have left.
+    C: Confirmation depends on user attention, and a well-crafted message can look legitimate. It does not remove
+      the unprotected route.
+    D: This is already in place and worked for web pages. The attack used a different untrusted source.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-c
-  checked_by: 2026-10-16-aaism-d3-c-check
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
   check_verdict: pass

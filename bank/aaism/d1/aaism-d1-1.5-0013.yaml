@@ -1,29 +1,28 @@
 id: aaism-d1-1.5-0013
 subdomain: '1.5'
-difficulty: hard
-stem: A bank's support chatbot showed some customers other customers' account details through a faulty retrieval filter.
-  The team has turned off retrieval, and the chatbot now answers only general questions. Logs show about 40 affected sessions.
-  What should the incident team do NEXT?
+difficulty: medium
+stem: A bank's chatbot showed some customers other customers' account details through a faulty retrieval filter.
+  The team turned off retrieval, identified the 40 affected customers and notified them and the regulator. Customers
+  now complain it cannot answer balance questions. What should the team do NEXT?
 options:
-  A: Fix the retrieval filter and turn retrieval back on
-  B: Hold a post-incident review to find the root cause
-  C: Retrain the chatbot to refuse account-related questions
-  D: Work out what data was disclosed and to which customers
-answer: D
+  A: Trace which retrieval results exposed data to whom
+  B: Fix and test the retrieval filter before re-enabling it
+  C: Hold the lessons-learned review
+  D: Add an output filter that masks account numbers
+answer: B
 explanation:
-  why_correct: Containment is done, so the priority is scoping the breach. Knowing exactly which data reached which people
-    drives notification to customers and regulators, often under deadlines. It also preserves evidence before systems change
-    during recovery.
+  why_correct: Containment, scoping and notification are done, so recovery comes next. Restoring retrieval only
+    after the filter is fixed and tested brings back the service without repeating the exposure.
   why_not:
-    A: Recovery is needed, but restoring the feature before the scope is known risks repeat exposure and changes the evidence.
-    B: A root-cause review is important, but it comes after scoping and notification duties are handled.
-    C: The cause was a retrieval filter, not model behaviour. Retraining targets the wrong layer and does not help with
-      notification.
+    A: Scoping is usually the step after containment. The affected customers are already identified, and notifications
+      have gone out.
+    C: A post-incident review is important. It normally follows recovery, and customers are losing service now.
+    D: An output filter adds depth. On its own it does not restore the balance answers that need retrieval.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-c
-  checked_by: 2026-10-16-aaism-d1-c-check
   check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-c-recheck3

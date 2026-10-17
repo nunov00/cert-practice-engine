@@ -1,24 +1,26 @@
 id: aaism-d3-3.5-0008
 subdomain: '3.5'
-difficulty: medium
-stem: An e-commerce company's SOC receives hundreds of alerts a day from a new prompt injection detector, and most are false
-  positives. What is the BEST action for the information security manager?
+difficulty: hard
+stem: A SOC gets hundreds of daily alerts from a new prompt injection detector. Most false positives come from one
+  internal app whose prompts legitimately contain code snippets. The vendor's detector cannot be tuned per app.
+  What is the BEST action?
 options:
-  A: Ask the vendor to retrain the detector before relying on it
-  B: Move triage of the detector's alerts to the AI engineering team
-  C: Add analysts to the SOC shift until the alert backlog is cleared
-  D: Tune thresholds on observed data and tier alerts by severity
+  A: Baseline the detector on that app's normal prompts
+  B: Raise the detector's global alert threshold
+  C: Exclude that app's traffic from the detector
+  D: Send that app's alerts to a separate lower-priority queue
 answer: D
 explanation:
-  why_correct: Alert thresholds should reflect risk and real data. Tuning on observed traffic and sending only higher-severity
-    alerts for immediate triage keeps the detection value while making the workload manageable. Tuning should be reviewed
-    as attacks evolve.
+  why_correct: Per-app tuning is ruled out, so the choice is how to handle the noise. Routing that app's alerts
+    to a separate, lower-priority queue frees the SOC's main queue while keeping coverage of the app and leaving
+    detection for other apps unchanged.
   why_not:
-    A: Vendor retraining may help later, but it is slow, outside the company's control and leaves the SOC flooded meanwhile.
-      Local tuning on the company's own traffic addresses the problem now.
-    B: Moving triage shifts the noise to a team that is not set up for security response and splits incident handling, without
-      improving alert quality.
-    C: More staff treats the symptom at high cost and leaves analysts facing poor quality alerts, which breeds alert fatigue.
+    A: Baselining on the app's normal traffic would be the best fix, but the stem says the detector cannot be tuned
+      per app.
+    B: A higher global threshold cuts noise everywhere by lowering sensitivity for every app, not only the noisy
+      one.
+    C: Excluding the app removes its false positives but also any real injection attempts against it, leaving a
+      blind spot.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -26,4 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d3-b-check
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

@@ -1,24 +1,31 @@
 id: aaism-d2-2.2-0005
 subdomain: '2.2'
 difficulty: hard
-stem: "A critical flaw is published in a numerical library used by a lender's production credit scoring model. The fixed version changes some calculations, and the data science team warns that scores may shift. What should the security manager recommend?"
+stem: A critical flaw in a numerical library used by a lender's credit scoring model is triggered by malformed numbers.
+  A gateway rule now blocks such values on every route to the model. The fixed library may shift scores. What should
+  be done NEXT?
 options:
-  A: "Reduce exposure to the flaw now and patch after regression testing of the model"
-  B: "Patch production at once, since a critical flaw outweighs any change in scores"
-  C: "Defer the patch until the next planned retraining of the model in six months"
-  D: "Accept the risk, since the scoring service is reachable only on the internal network"
-answer: A
+  A: Patch production and monitor the score distribution
+  B: Regression test the model on the fixed library
+  C: Filter malformed numeric values at the API gateway
+  D: Seek emergency change approval to patch tonight
+answer: B
 explanation:
-  why_correct: "Both risks are real: the flaw could be exploited, and an untested change to a credit model could produce wrong or unfair decisions. Compensating controls cut exposure straight away, and regression testing confirms that the patched model still performs as validated before release. This treats the security and integrity risks together."
+  why_correct: The gateway rule already cuts off the known trigger, so there is no longer a reason to rush. Because
+    the fix may change credit scores, the model should be regression tested on the fixed library before release,
+    so lending decisions do not change untested.
   why_not:
-    B: "Patching without testing swaps a security risk for an integrity risk in lending decisions, which may also breach model validation requirements."
-    C: "Six months is too long to leave a critical flaw untreated with no interim controls."
-    D: "Internal-only access lowers likelihood but does not remove it. A critical flaw should not be accepted on that basis alone."
+    A: Patching untested swaps a security risk for an integrity risk in credit decisions. Monitoring would only
+      show score shifts after they had affected applicants.
+    C: Filtering at the gateway is the right virtual patch for a reachable flaw, but the stem says this rule is
+      already in place.
+    D: An emergency change suits exposure that cannot otherwise be reduced. With the trigger blocked, an emergency
+      route would mainly skip the testing that credit scores need.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-b
-  checked_by: 2026-10-16-aaism-d2-b-check
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
   check_verdict: pass

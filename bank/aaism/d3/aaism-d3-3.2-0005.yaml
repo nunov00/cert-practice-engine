@@ -1,27 +1,29 @@
 id: aaism-d3-3.2-0005
 subdomain: '3.2'
-difficulty: easy
-stem: A hospital group's imaging triage model has passed accuracy tests on held-out data. Which further test is MOST important
-  from a security viewpoint before release?
+difficulty: hard
+stem: A hospital's imaging triage model was fine-tuned from a public pretrained model. It passed accuracy and adversarial
+  robustness tests on held-out images. Which further test is MOST important from a security viewpoint before release?
 options:
-  A: Load testing to confirm the model meets response times at peak demand
-  B: Testing on a larger held-out set to confirm the accuracy figures
-  C: Usability testing with clinicians to confirm the results are clear
-  D: Robustness testing with adversarial and unusual inputs
-answer: D
+  A: Scan for hidden triggers inherited from the base model
+  B: Robustness testing with adversarial images
+  C: Bias testing across patient age and sex groups
+  D: Evaluation on images from other hospitals' scanners
+answer: A
 explanation:
-  why_correct: Accuracy on clean held-out data says little about behaviour under manipulated or unexpected inputs. Robustness
-    and adversarial testing shows whether small crafted changes or out-of-range images can cause wrong triage decisions, which
-    is the main security and safety risk here.
+  why_correct: 'Adversarial robustness is already tested. The open security question is the public base model: a
+    backdoor planted upstream can survive fine-tuning and stay invisible on normal test images, firing only when
+    a specific trigger pattern appears.'
   why_not:
-    A: Load testing covers availability, which matters, but it is not the main gap left after accuracy tests.
-    B: A larger clean test set only repeats the same kind of evidence. It does not reveal weakness to hostile inputs.
-    C: Usability testing improves safe use but is not a security test of the model itself.
+    B: This has already been done and passed.
+    C: Fairness testing is needed before release, but it is an ethics and quality check rather than the remaining
+      security gap.
+    D: Testing on other scanners checks generalisation, which matters for safety, but it measures natural variation,
+      not deliberate manipulation.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-check
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
   check_verdict: pass

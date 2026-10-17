@@ -1,21 +1,24 @@
 id: aaism-d1-1.4-0010
 subdomain: '1.4'
-difficulty: easy
-stem: A manufacturer's new AI security program covers only models built by its own data science team. What is the GREATEST
-  weakness of this scope?
+difficulty: medium
+stem: A manufacturer's AI security program reviews in-house models and assesses each SaaS vendor's AI at contract
+  signing. Most of its AI use is in SaaS tools whose vendors switch on new AI features through routine updates.
+  What is the GREATEST weakness?
 options:
-  A: It does not set how often the in-house models must be retrained
-  B: It does not include the data science team's delivery and productivity goals
-  C: It leaves out AI embedded in purchased products and external services
-  D: It does not name which machine learning frameworks developers may use
-answer: C
+  A: No assessment of vendors' AI features before purchase
+  B: No standard for securing model training pipelines
+  C: No red team testing of in-house models before release
+  D: No tracking of AI features vendors add after purchase
+answer: D
 explanation:
-  why_correct: Much AI exposure comes from AI in third-party software, cloud services and tools staff adopt. A scope limited
-    to in-house models leaves that exposure ungoverned, so the program cannot give a complete view of AI risk.
+  why_correct: Most AI exposure is in SaaS tools, and their AI changes after the one-time assessment. New features
+    can process company data in new ways without review, so the largest share of AI use drifts out of oversight.
   why_not:
-    A: Retraining frequency is an operational detail for each model. It is not a program scope matter.
-    B: Delivery goals belong to data science management. Omitting them is not a security weakness.
-    D: Approved frameworks belong in standards set by the program. Their absence from the scope is minor.
+    A: Missing third-party coverage is a common gap. This program does assess each vendor's AI, at contract signing;
+      the gap is what changes afterwards.
+    B: Pipeline security matters for in-house models. Those are the smaller part of this firm's AI use.
+    C: Adversarial testing is good practice for models the firm builds. It does nothing for the SaaS features that
+      make up most of the exposure.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -23,4 +26,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d1-b-check
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

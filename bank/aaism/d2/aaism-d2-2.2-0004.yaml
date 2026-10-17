@@ -1,24 +1,31 @@
 id: aaism-d2-2.2-0004
 subdomain: '2.2'
-difficulty: easy
-stem: "A logistics company's vulnerability scans cover its servers and web applications. Its data science platform uses many open-source machine learning libraries that teams install into notebooks and training jobs. How should the security manager BEST address vulnerabilities in these components?"
+difficulty: medium
+stem: A first scan of a logistics company's data science platform finds 40 vulnerable machine learning library versions.
+  The model registry shows that 12 affected notebooks feed production models, and the fixed versions have passed
+  regression tests. What should the security manager do FIRST?
 options:
-  A: "Prohibit open-source machine learning libraries on the data science platform"
-  B: "Ask each data science team to report known library flaws every quarter"
-  C: "Rely on the cloud provider to patch all libraries running on the managed platform"
-  D: "Bring the platform and its library dependencies into scanning and patching scope"
-answer: D
+  A: Map the vulnerable libraries to the production models
+  B: Upgrade the libraries in the 12 production notebooks
+  C: Route library installs through a vetted internal mirror
+  D: Block internet access from the production notebooks
+answer: B
 explanation:
-  why_correct: "Machine learning libraries are software components with their own vulnerabilities and should be managed like any other part of the estate. Adding the platform and its dependencies to the existing scanning and patching program gives regular, consistent coverage and lets findings be prioritised with the rest of the company's vulnerabilities."
+  why_correct: 'The usual first questions are already answered: the registry shows which notebooks feed production,
+    and the fixes have passed regression testing. With exposure known and a tested fix ready, the first action is
+    to apply it where production models are affected.'
   why_not:
-    A: "A ban is impractical, since most machine learning work depends on these libraries. It would also push teams towards unmanaged workarounds."
-    B: "Self-reporting is irregular and depends on each team's awareness. It is no substitute for systematic scanning."
-    C: "Under shared responsibility, libraries the customer installs are usually the customer's to patch, not the provider's."
+    A: Mapping findings to production models is the right first step when that link is unknown. Here the model registry
+      already provides it.
+    C: A vetted mirror prevents future vulnerable installs, but it does not remove the vulnerable versions already
+      feeding production models.
+    D: Network restriction is a compensating control when no fix can be applied. A tested fix is available, and
+      blocking internet access does not stop exploits through data the notebooks process.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-b
-  checked_by: 2026-10-16-aaism-d2-b-check
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
   check_verdict: pass

@@ -1,24 +1,26 @@
 id: aaism-d1-1.4-0004
 subdomain: '1.4'
 difficulty: medium
-stem: The board of an online retailer asks for one indicator that will warn it early if exposure to AI security risk is growing.
-  Which indicator is BEST for this purpose?
+stem: An online retailer's board wants one early warning that AI adoption is outpacing security oversight. Every
+  system in its AI inventory has been risk-assessed, but staff surveys suggest many AI tools are never registered.
+  Which indicator is BEST?
 options:
-  A: The number of prompt injection attempts blocked at the AI gateway each month
-  B: The number of AI security reviews completed by the security team each quarter
-  C: The share of staff who have completed AI security awareness training this year
-  D: The share of production AI systems running without a completed risk assessment
-answer: D
+  A: AI services seen in network traffic but not inventoried
+  B: Share of inventoried AI systems not yet risk-assessed
+  C: Number of AI systems registered each quarter
+  D: Overdue high-rated findings from AI risk assessments
+answer: A
 explanation:
-  why_correct: A key risk indicator should track exposure. Production AI systems without a risk assessment are uncontrolled
-    in a known way, and a rising share signals that AI adoption is outpacing governance. That is the early warning the board
-    asked for.
+  why_correct: The oversight gap here sits outside the inventory, in tools staff adopt without registering. Comparing
+    observed AI use with the inventory measures that gap, and it rises as unregistered adoption grows, before incidents
+    reveal it.
   why_not:
-    A: Blocked attempts show threat activity and that a control is working. They say little about how much unassessed or unprotected
-      AI the organisation runs.
-    B: Completed reviews measure the security team's activity. The count can rise while unreviewed systems grow even faster.
-    C: Training completion is a performance indicator for the awareness program. It does not measure risk exposure from AI
-      systems.
+    B: This is often the best measure of oversight lag. Here every inventoried system is assessed, so it would read
+      zero while unregistered tools spread.
+    C: Registrations show the pace of known adoption. They count only tools people chose to register, which is the
+      part of adoption already under oversight.
+    D: Overdue findings track remediation on assessed systems. They cannot show AI use that was never registered
+      or assessed.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -26,4 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d1-b-check
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

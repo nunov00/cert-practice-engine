@@ -1,28 +1,31 @@
 id: aaism-d1-1.1-0004
 subdomain: '1.1'
-difficulty: medium
-stem: A retailer runs the same customer-service AI in eight countries, each with different and changing AI rules.
-  Which approach BEST supports compliance while keeping the program manageable?
+difficulty: hard
+stem: A retailer runs one shared customer-service AI platform in eight countries. The strictest country's AI rules
+  cover every requirement of the other seven and add only extra notice and documentation duties. Which approach
+  BEST keeps compliance manageable?
 options:
-  A: Adopt a recognised AI framework and treat it as meeting every local rule
-  B: Rely on the AI provider's compliance statements for each country
-  C: Set a group baseline from shared requirements and add local controls
-  D: Run a full separate compliance program and control set in each country
-answer: C
+  A: Map local rules to a recognised AI framework as a common reference
+  B: Set a group baseline from shared rules and add local controls
+  C: Give each country's compliance team its own control set
+  D: Apply the strictest country's rules as the group baseline
+answer: D
 explanation:
-  why_correct: A common baseline covers what most rules require once, so controls and evidence are consistent. Local
-    additions then handle the differences. This meets every jurisdiction while avoiding eight separate programs.
+  why_correct: The strictest rules already include every other country's requirements, and the extra notice and
+    documentation duties cost little and conflict with nothing elsewhere. Meeting them everywhere gives one shared
+    platform a single control set, with no local variants to build, test or evidence.
   why_not:
-    A: A framework gives structure, but it is not law. Local rules add duties, such as notices or registrations,
-      that a framework does not cover.
-    B: The deploying company keeps its own legal duties. Provider statements are one input and cannot show that
-      the retailer's use complies.
-    D: Separate programs would comply but duplicate most of the work. They are costly and hard to keep consistent.
+    A: A framework helps organise and compare requirements, but it is not law and does not by itself decide which
+      controls the platform needs.
+    B: A shared baseline with local additions suits rules that differ a lot or conflict. Here every local rule is
+      already inside the strictest set, so it would create country variants of one platform for little benefit.
+    C: Separate control sets suit separate systems. For one shared platform they duplicate work and drift apart
+      over time.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-a
-  checked_by: 2026-10-16-aaism-d1-a-check
+  checked_by: 2026-10-16-aaism-d1-a-recheck
   check_verdict: pass

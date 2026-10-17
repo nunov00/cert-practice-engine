@@ -1,30 +1,27 @@
 id: aaism-d1-1.1-0001
 subdomain: '1.1'
 difficulty: medium
-stem: After a news story about a chatbot leaking data, the board of a regional bank asks the information security
-  manager for a briefing on generative AI risk. What should the briefing MAINLY cover?
+stem: A bank's quarterly report shows every key AI system's residual risk within the board's approved appetite.
+  The board now asks how far it can rely on those ratings. What should the security manager MAINLY present?
 options:
-  A: Whether the bank's own chatbot has the flaw behind the reported leak
-  B: The main AI risks set against business goals and risk appetite
-  C: How the bank's AI controls compare with a recognised AI framework
-  D: The AI policy and the staff training planned for this year
+  A: Residual risk ratings for each key AI system
+  B: Independent test results for the controls behind the ratings
+  C: The bank's main AI risks ranked by business impact
+  D: Control maturity scores against a recognised AI framework
 answer: B
 explanation:
-  why_correct: Boards govern by setting direction and appetite. They need the few risks that matter, expressed in
-    business terms, with how far each sits from appetite and what is being done about it. That lets them decide
-    on priorities and funding.
+  why_correct: The residual ratings assume the controls work as designed. The board's question is about reliance,
+    which is answered by evidence that those controls actually operate, such as independent testing of them.
   why_not:
-    A: Checking exposure to the reported flaw is a sensible operational task, but it reacts to one incident. The
-      board needs the overall risk picture to set direction.
-    C: A framework comparison shows control maturity, but not which risks matter most to the business or whether
-      they sit within appetite.
-    D: Policy and training are useful responses, but they are means. The board first needs to know the risks they
-      address and how far exposure is from appetite.
+    A: The board already has these ratings. Repeating them does not show whether they can be trusted.
+    C: A ranking of inherent risks informs priorities, but says nothing about whether the residual ratings are sound.
+    D: Maturity scores describe how well controls are designed and managed, not whether the specific controls behind
+      the ratings are working.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-a
-  checked_by: 2026-10-16-aaism-d1-a-check
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
   check_verdict: pass

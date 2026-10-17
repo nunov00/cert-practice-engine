@@ -1,26 +1,27 @@
 id: aaism-d1-1.3-0011
 subdomain: '1.3'
-difficulty: medium
-stem: A customer-service team uses carefully tuned system prompts that hold business rules and name internal tools.
-  How should these prompts be treated?
+difficulty: hard
+stem: A support chatbot's system prompt holds refund limits. Prompt changes are reviewed and regression-tested,
+  yet customers got the bot to quote its instructions, limits included. Which control would MOST likely have prevented
+  this?
 options:
-  A: As temporary settings that do not need any formal control
-  B: As public content, since customers interact with the chatbot
-  C: As information assets with an owner, a class and change control
-  D: As source code that belongs to the vendor of the language model
-answer: C
+  A: Keeping refund limits in a back-end check, not the prompt
+  B: Reviewed and tested changes to the system prompt
+  C: Output filtering for refund amounts and limits
+  D: Classifying the system prompt as confidential
+answer: A
 explanation:
-  why_correct: System prompts shape model behaviour and reveal internal details useful to attackers. Treating them
-    as owned, classified assets under change control protects their integrity and confidentiality.
+  why_correct: Anything in a prompt can be coaxed out. Moving the limits to a back-end check means there is nothing
+    sensitive for the bot to reveal.
   why_not:
-    A: Uncontrolled changes to prompts can alter behaviour and weaken guardrails without anyone noticing.
-    B: Customers see the outputs, not the system prompt. Its contents are internal and can aid attacks if exposed.
-    D: The prompts are written by the organisation for its own use. The model vendor does not own them.
+    B: Change control is already in place; the leak came from the prompt's content, not a bad change.
+    C: Filters reduce leaks but can be evaded by rewording, while the data stays in the prompt.
+    D: A label sets handling rules for people but does not stop the bot repeating the prompt.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-a
-  checked_by: 2026-10-16-aaism-d1-a-check
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
   check_verdict: pass

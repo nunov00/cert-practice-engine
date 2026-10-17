@@ -1,28 +1,27 @@
 id: aaism-d3-3.2-0015
 subdomain: '3.2'
-difficulty: hard
-stem: A bank's customer chatbot model is under full change control, with testing and approval before each new version. The system prompt
-  and retrieval settings are edited directly in production by two named product owners, and each edit is logged. What should the security
-  manager recommend?
+difficulty: medium
+stem: A bank tests every change to its chatbot's system prompt and retrieval settings in staging. Product owners
+  then retype the approved text into the production console. Last month production differed from the tested version.
+  What should be recommended?
 options:
-  A: Put prompt and retrieval edits through the same tests and approval as models
-  B: Freeze the system prompt and retrieval settings so that they cannot be changed after launch
-  C: Review the chatbot's answers for harmful content within a day of each prompt or setting edit
-  D: Limit edit rights to one product owner and require a second person to review the edit log
+  A: Deploy tested prompts through the release pipeline
+  B: Have a second person review the edit log weekly
+  C: Review chatbot answers within a day of each edit
+  D: Pre-release testing for prompt and retrieval edits
 answer: A
 explanation:
-  why_correct: The system prompt and retrieval settings shape behaviour as much as the model does. A single edit can weaken guardrails
-    or expose new content. Treating them as part of the release, with the same security tests and approval, closes the gap. Access is
-    already limited and logged, so the missing control is testing before the change is live.
+  why_correct: Testing exists, but a manual retyping step lets what runs differ from what was tested. Deploying
+    the tested artefact itself through the pipeline makes production match the approved version.
   why_not:
-    B: A freeze stops the risk but also stops needed fixes and improvements. Change control lets changes happen safely.
-    C: Reviewing answers after an edit is detective. Customers are exposed to an untested change in the meantime.
-    D: Access is already restricted and logged. Fewer editors and a log review do not test whether an edit is safe before it goes live.
+    B: Log review would spot a difference later, while customers are already exposed.
+    C: Reviewing answers is detective and may miss a weakened guardrail.
+    D: Testing is already done. The failure is in getting the tested version into production.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-c
-  checked_by: 2026-10-16-aaism-d3-c-check
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
   check_verdict: pass

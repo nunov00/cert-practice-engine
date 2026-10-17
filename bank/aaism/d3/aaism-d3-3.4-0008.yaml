@@ -1,22 +1,26 @@
 id: aaism-d3-3.4-0008
 subdomain: '3.4'
 difficulty: medium
-stem: A benefits agency requires a caseworker to review every fraud flag raised by its AI model. Logs show caseworkers confirm
-  99 percent of flags, most within ten seconds. What is the GREATEST concern?
+stem: Caseworkers at a benefits agency confirm 99 percent of an AI model's fraud flags, most within ten seconds.
+  An audit re-examined a sample and found the flags accurate. What BEST shows whether caseworker review would catch
+  a wrong flag?
 options:
-  A: Caseworkers are taking too long to process each flag
-  B: The model is producing far too many fraud flags overall
-  C: The human review may not be working as a real control
-  D: The agency is paying for more caseworkers than it needs
-answer: C
+  A: Have a separate team re-examine another sample of flags
+  B: Compare the confirmation rate with other agencies' rates
+  C: Survey caseworkers on how they check each flag
+  D: Seed known incorrect flags into caseworkers' queues
+answer: D
 explanation:
-  why_correct: Near-total agreement in a few seconds suggests automation bias or rubber stamping. The review exists on paper
-    but may not catch model errors, so citizens may be harmed by wrong decisions. The agency should check reviewer workload,
-    guidance and independence, and test the review with known cases.
+  why_correct: The question is no longer whether the model is accurate, which the audit addressed, but whether the
+    human review would stop an error. Fast confirmations of mostly correct flags cannot show that. Inserting flags
+    known to be wrong and checking whether caseworkers reject them tests the oversight control directly.
   why_not:
-    A: Ten seconds per flag is fast, not slow. Speed is the symptom, not the concern.
-    B: The flag volume may be high, but the data points to a weak review, not to the number of flags.
-    D: Cost is a secondary efficiency issue. The ethical and safety risk is ineffective oversight.
+    A: Independent re-examination tests the model's accuracy, which the audit has already done. It says nothing
+      about whether caseworkers would notice a wrong flag.
+    B: Other agencies use different models and caseloads, so a comparison of confirmation rates cannot show whether
+      these reviewers catch errors.
+    C: Self-reported checking habits are weak evidence, especially where ten-second confirmations suggest the review
+      may be cursory.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -24,4 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d3-b-check
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

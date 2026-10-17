@@ -1,28 +1,31 @@
 id: aaism-d3-3.1-0001
 subdomain: '3.1'
-difficulty: medium
-stem: A retailer's customer chatbot will call a back-end API to look up order status. Which design control BEST limits the
-  damage a prompt injection attack could cause?
+difficulty: hard
+stem: A retailer's chatbot fetches orders through an API tool. The model fills in the customer ID, and the API authorises
+  each lookup against that ID. Red team prompts retrieved other customers' orders. Which change BEST limits the
+  impact?
 options:
-  A: System prompt instructions telling the model to refuse any request about orders that belong to other customers
-  B: An API layer that only returns orders belonging to the authenticated customer, whatever the model asks for
-  C: An input filter that blocks prompts containing known injection phrases before they reach the model
-  D: Full logging of prompts and API calls so that misuse can be investigated after the event
+  A: Cap lookups per customer ID and alert on spikes
+  B: Take the customer ID from the signed-in session
+  C: Authorise each order lookup at the API
+  D: Screen prompts with an injection classifier
 answer: B
 explanation:
-  why_correct: Prompt injection can make the model ask for anything, so the model must never hold more access than the user.
-    Enforcing the customer's own authorisation outside the model, at the API, means a manipulated request still cannot return
-    another customer's data. This is a structural control that holds even when the model is fooled.
+  why_correct: The API does authorise each lookup, but against an ID the model chose, so a manipulated model simply
+    asks for someone else's ID and the check passes. Binding the ID to the authenticated session, outside the model's
+    control, means even a successful injection can reach only the signed-in customer's orders.
   why_not:
-    A: Instructions in the system prompt are exactly what injection attacks override. They are a weak, bypassable control,
-      not a boundary.
-    C: Blocklists of known phrases help, but attackers rephrase easily. A filter reduces likelihood but does not cap the impact.
-    D: Logging is a detective control. It helps investigation but does nothing to stop the data being exposed.
+    A: Per-customer rate limits slow bulk harvesting and help detection, but a single injected lookup with another
+      customer's ID still returns that customer's order.
+    C: This is already in place. The weakness is that the identity being authorised comes from the model, so the
+      check approves whatever ID an injected prompt supplies.
+    D: A classifier lowers how often injection succeeds, but rephrased attacks still get through, and when one does
+      the model can still request any customer's ID.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-check
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
   check_verdict: pass

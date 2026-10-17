@@ -1,23 +1,26 @@
 id: aaism-d1-1.4-0009
 subdomain: '1.4'
-difficulty: medium
-stem: An insurer's AI security program reports that every model passed its pre-deployment security review this year. Two incidents
-  still occurred in reviewed models, both caused by prompt injection. What does this MOST likely show?
+difficulty: hard
+stem: An insurer added hidden-document prompt injection to its AI review checklist last quarter. Two chatbots that
+  passed that item were then hijacked exactly that way. Review records show developers ticked the item themselves.
+  What does this MOST likely show?
 options:
-  A: The review measures completion rather than whether it covers the actual threats
-  B: The incident response team failed to contain the attacks quickly enough to prevent harm
-  C: The reviewers need more training on the review checklist that the program already uses
-  D: The program should report the review pass rate to management more often than once a year
-answer: A
+  A: Review criteria lag behind emerging AI threats
+  B: Runtime monitoring of prompts and outputs is missing
+  C: Reviews accept developer attestation without test evidence
+  D: Developers lack training on prompt injection defences
+answer: C
 explanation:
-  why_correct: A 100% pass rate shows the process ran, not that it worked. Incidents caused by a threat the review should
-    catch suggest the review criteria do not cover it. The program needs outcome-based measures of effectiveness and an updated
-    review scope.
+  why_correct: The checklist covered the technique, yet both chatbots passed and then fell to it. The records show
+    the item was self-certified by the builders. The program needs reviews that require evidence, such as test results,
+    or independent testing for high-risk items.
   why_not:
-    B: Response speed affects impact, but the incidents happened in models that had passed review. The question is why the
-      review missed the weakness.
-    C: Training on the existing checklist will not help if the checklist itself omits prompt injection.
-    D: Reporting a misleading metric more often does not make it more meaningful.
+    A: Outdated criteria are a common reason reviews miss new attacks. This checklist was updated last quarter to
+      include this exact technique.
+    B: Runtime monitoring could detect such attacks and may be needed. It does not explain why a review that covered
+      the technique passed vulnerable chatbots.
+    D: Developer training may help, but the review exists to catch what builders miss. It passed the chatbots because
+      it relied on the builders' own tick, so training alone would not fix the review.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -25,4 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d1-b-check
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

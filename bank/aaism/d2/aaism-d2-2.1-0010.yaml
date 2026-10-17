@@ -1,23 +1,23 @@
 id: aaism-d2-2.1-0010
 subdomain: '2.1'
 difficulty: medium
-stem: A telecom company has little historical data on AI security incidents, so its likelihood estimates for AI risks are
-  uncertain. What is the BEST approach for the risk assessment?
+stem: A telecom company's AI agent has run in a staging environment for two months. There is no production incident
+  history, and industry data on similar agents is sparse. What is the BEST basis for estimating how likely prompt
+  injection is to succeed?
 options:
-  A: Use scenario analysis with ranges and record the assumptions behind them
-  B: Rank the AI risks on impact alone until reliable likelihood data exists
-  C: Use published industry rates of AI incidents as the likelihood of each risk
-  D: Rate every AI risk as high likelihood by default to stay on the safe side
-answer: A
+  A: Expert scenarios with stated likelihood ranges
+  B: Industry incident rates for similar AI agents
+  C: Adversarial testing of the running agent
+  D: Impact-only ranking until incident data builds up
+answer: C
 explanation:
-  why_correct: When data is scarce, structured scenarios with expert judgment and ranges give a defensible estimate. Recording
-    assumptions shows decision makers the uncertainty and lets estimates be updated as incidents and threat intelligence build
-    up.
+  why_correct: The agent exists and can be attacked safely in staging. Test results give direct evidence of how
+    often injection succeeds against this design, which neither history nor sparse industry data can give.
   why_not:
-    B: Ignoring likelihood treats rare and frequent scenarios alike, so treatment effort is misdirected. Uncertain estimates
-      with stated assumptions are more useful than none.
-    C: Industry rates are a useful input, but used alone they ignore this company's own exposure, controls and use cases.
-    D: Rating everything high removes the ability to prioritise and wastes treatment effort.
+    A: Structured expert judgment is the right method when nothing can be tested. Here a working agent is available
+      for testing.
+    B: Industry data is a useful input. It is sparse here and ignores this agent's design.
+    D: Ranking on impact is a fallback when likelihood cannot be estimated. Testing makes an estimate possible now.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -25,4 +25,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-a
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d2-a-check
+  checked_by: 2026-10-16-aaism-d2-a-recheck3

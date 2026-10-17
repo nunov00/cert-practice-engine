@@ -1,24 +1,30 @@
 id: aaism-d2-2.2-0011
 subdomain: '2.2'
-difficulty: medium
-stem: "A manufacturing group adopts a generic AI threat taxonomy for threat modelling. Business unit teams list threats only from the taxonomy and report that their systems face no others. What is the GREATEST concern?"
+difficulty: hard
+stem: A manufacturing group uses a vendor's AI threat taxonomy, updated quarterly, alongside design reviews of each
+  system's data flows. Each business unit rates likelihood on its own scale, and the group committee ranks AI risks
+  across units to allocate funding. What is the GREATEST concern?
 options:
-  A: "The taxonomy may need updating as new attack techniques are published"
-  B: "Teams may be using the taxonomy as a checklist and missing design-specific threats"
-  C: "The taxonomy's technical terms may be hard for senior managers to follow"
-  D: "Different units may score the likelihood of the same threat differently"
-answer: B
+  A: The taxonomy may lag newly published attack techniques
+  B: Threats from each system's own design may be missed
+  C: Risk ratings may not be comparable across business units
+  D: Results may be too technical for the funding committee
+answer: C
 explanation:
-  why_correct: "A taxonomy is a starting point that helps teams think broadly. Threat modelling must still examine each system's own data flows, integrations and use context. Teams that stop at the list will miss threats that come from their particular design, so the results give false assurance."
+  why_correct: The committee compares risks across units to decide funding, but each unit scores likelihood on its
+    own scale. A high rating in one unit may mean something different in another, so money can go to the wrong risks.
+    A common rating scale is needed for the ranking to be valid.
   why_not:
-    A: "Keeping the taxonomy current matters, but the immediate problem is how teams use it, which affects every system now."
-    C: "Communication to management can be handled by summarising results. It does not affect whether threats are found."
-    D: "Inconsistent scoring is a calibration issue that comes after threats are identified. Missing threats is more basic."
+    A: Taxonomy currency matters, but it is updated each quarter, and the teams also run their own design reviews.
+    B: Relying on a taxonomy alone can miss design-specific threats, but the stem says each system also gets a design
+      review of its data flows.
+    D: Technical detail can be summarised for a committee. Presentation does not change whether the ranking itself
+      is sound.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-b
-  checked_by: 2026-10-16-aaism-d2-b-check
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
   check_verdict: pass

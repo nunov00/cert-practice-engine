@@ -1,24 +1,31 @@
 id: aaism-d2-2.2-0008
 subdomain: '2.2'
-difficulty: medium
-stem: "An online marketplace uses a machine learning classifier to block listings of prohibited goods. Sellers have learned that small edits to images and wording let these listings pass. Which approach BEST reduces this risk over time?"
+difficulty: hard
+stem: An online marketplace's classifier screens listings for prohibited goods. Small edits to images and wording
+  now get such listings through, and almost all come from seller accounts under a week old. Which approach BEST
+  reduces this risk over time?
 options:
-  A: "Retrain the classifier using the evading listings found so far"
-  B: "Keep the classifier's features, rules and decision thresholds strictly confidential"
-  C: "Replace the classifier with manual review of every new listing"
-  D: "Test regularly with adversarial variants and feed them into retraining"
-answer: D
+  A: Use seller account history in the screening decision
+  B: Retrain the classifier with generated adversarial image and text variants
+  C: Route low-confidence listings to human review
+  D: Keep the classifier's features and thresholds confidential
+answer: A
 explanation:
-  why_correct: "This is an evasion attack, and attackers will keep adapting. A repeating cycle of adversarial testing, monitoring and retraining with the variants found makes the classifier more robust over time and tracks new evasion methods as they appear."
+  why_correct: 'Content evasion is an arms race: sellers can keep editing images and wording. The stem shows a signal
+    they cannot change cheaply, the age and history of the account. Using it in the decision makes evasion costly
+    over time, because each new attempt needs an aged account rather than a quick edit.'
   why_not:
-    A: "A single retraining fixes only today's tricks. Sellers will find new edits, so the defence must be continuous."
-    B: "Secrecy may slow attackers a little, but they have already found working evasions by trial and error. It is not a robust control."
-    C: "Full manual review does not scale for a marketplace and would bring large cost and delay. It avoids the model rather than managing the risk."
+    B: Adversarial training improves robustness and should continue, but it keeps the defence on the content layer,
+      which sellers have shown they can keep changing.
+    C: Human review of uncertain cases is useful, but successful evasions are usually scored as confidently acceptable,
+      so they would not be routed for review.
+    D: Secrecy may slow attackers slightly, but they have already found working edits by trial and error. It is
+      not a robust control.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-b
-  checked_by: 2026-10-16-aaism-d2-b-check
+  checked_by: 2026-10-16-aaism-d2-b-recheck
   check_verdict: pass

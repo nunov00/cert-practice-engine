@@ -1,26 +1,27 @@
 id: aaism-d1-1.3-0012
 subdomain: '1.3'
-difficulty: medium
-stem: A media group has acquired a smaller firm that runs several in-house AI models. Before connecting them to
-  group systems, what should the security manager do FIRST?
+difficulty: hard
+stem: A media group inventoried the AI models of a firm it acquired. Legal has confirmed that the consent behind
+  one model's training data does not cover credit scoring, which the model does for subscribers. What should the
+  security manager do NEXT?
 options:
-  A: Retrain all of the acquired models on the group's own data
-  B: Inventory the models and data, with owners and classifications
-  C: Run a penetration test against each acquired model's external interface
-  D: Retire the acquired models and replace them with group models
+  A: Confirm the lawful basis for the training data
+  B: Have the model's scoring suspended pending a decision
+  C: Retrain the scoring model on the group's own data
+  D: Connect the model to group systems under monitoring
 answer: B
 explanation:
-  why_correct: Before deciding on testing, integration or retirement, the group must know what it has acquired,
-    who owns it and how sensitive it is. Inventory and classification are the base for every later risk decision.
+  why_correct: The model is processing without a lawful basis today. Stopping that processing comes before choosing
+    a longer-term fix.
   why_not:
-    A: Retraining is a business and technical choice. It does not tell the group what risks it has taken on.
-    C: Testing is valuable, but scoping and prioritising it needs the assets and their criticality known first.
-    D: Retiring models without assessing them may destroy business value and is premature.
+    A: Legal has already done this, and the basis is missing.
+    C: Retraining may be the eventual fix, but it takes time while unlawful scoring continues.
+    D: Integrating the model extends unlawful processing.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-a
-  checked_by: 2026-10-16-aaism-d1-a-check
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
   check_verdict: pass

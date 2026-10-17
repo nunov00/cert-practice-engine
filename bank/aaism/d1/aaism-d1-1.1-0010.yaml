@@ -1,27 +1,26 @@
 id: aaism-d1-1.1-0010
 subdomain: '1.1'
-difficulty: easy
-stem: Which statement BEST describes the role of a widely used AI risk management framework for an organisation?
+difficulty: medium
+stem: A company holds a certified AI management system. Its regulator now asks for evidence that the threat scenarios
+  in its AI risk assessments reflect real attacker behaviour. Which type of framework BEST supports this?
 options:
-  A: It defines the AI risk appetite the organisation should adopt
-  B: Adopting it shows that the organisation's AI use is compliant
-  C: It sets mandatory controls that regulators enforce directly
-  D: It gives a structured reference for managing AI risk
-answer: D
+  A: A certifiable AI management system standard
+  B: A voluntary AI risk management framework
+  C: A knowledge base of adversary tactics against AI
+  D: The sector regulator's AI guidance notes
+answer: C
 explanation:
-  why_correct: Industry frameworks offer a structured, usually voluntary, way to organise AI risk management. The
-    organisation adapts them to its context. They support, but do not replace, legal compliance work.
+  why_correct: A catalogue of observed attacker tactics and techniques against AI systems is designed to ground
+    threat scenarios in real behaviour, which is exactly what the regulator asks for.
   why_not:
-    A: Frameworks describe how to set and use risk appetite, but the appetite itself is a decision for the organisation's
-      leadership.
-    B: Adoption alone shows nothing about compliance. Laws set the duties, and certification, where it exists, needs
-      an assessment.
-    C: Most frameworks are voluntary. Regulators enforce laws, not framework controls as such.
+    A: The company is already certified; the standard governs how risk is managed, not which attacks are realistic.
+    B: A risk framework structures the risk process, but it does not describe how real attackers operate.
+    D: Guidance notes set expectations, but they are not a source of evidence about attacker behaviour.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-a
-  checked_by: 2026-10-16-aaism-d1-a-check
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
   check_verdict: pass

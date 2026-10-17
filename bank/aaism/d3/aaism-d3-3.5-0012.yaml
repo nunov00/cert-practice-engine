@@ -1,24 +1,22 @@
 id: aaism-d3-3.5-0012
 subdomain: '3.5'
-difficulty: medium
-stem: A bank's security team changes a rule in the guardrail that screens prompts to its customer chatbot. What BEST confirms
-  that the changed rule can be relied on?
+difficulty: hard
+stem: A bank changes a rule in the guardrail that screens prompts to its customer chatbot. Customer prompts vary
+  widely, and the team's test library holds about fifty examples. What BEST confirms the rule can be relied on before
+  enforcement?
 options:
-  A: A peer review of the rule's logic by a second security engineer
-  B: Approval of the change by the change advisory board before release
-  C: Tests with prompts it should block and prompts it should allow
-  D: A week of monitoring the rule's block rate after it goes live
-answer: C
+  A: Peer review of the rule logic by a second engineer
+  B: Approval by the change advisory board
+  C: Tests against the team's library of sample prompts
+  D: Running the rule in log-only mode on live traffic
+answer: D
 explanation:
-  why_correct: Reliance needs evidence that the control works. Testing with cases the rule should block and cases it should
-    let through shows directly that it stops the intended prompts and does not break normal use, before customers depend on
-    it.
+  why_correct: A small library cannot represent widely varied real prompts. Running the rule in log-only (shadow)
+    mode shows what it would block and allow on real traffic, without affecting customers, before it is enforced.
   why_not:
-    A: Peer review can catch logic errors, but reading a rule is not evidence of how it behaves on real prompts, which are
-      hard to predict.
-    B: Change approval is a governance step that authorises the change. It does not show the rule works as intended.
-    D: Block-rate monitoring after go-live is useful, but it comes after reliance has begun and a rate alone cannot show whether
-      the right prompts were blocked.
+    A: Peer review can catch logic errors, but reading a rule does not show how it behaves on real prompts.
+    B: Change approval authorises the change. It is not evidence that the rule works.
+    C: Library tests are a necessary first check, but fifty examples cannot cover the variety the stem describes.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -26,4 +24,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d3-b-check
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

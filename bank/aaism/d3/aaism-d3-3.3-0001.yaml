@@ -1,27 +1,28 @@
 id: aaism-d3-3.3-0001
 subdomain: '3.3'
-difficulty: medium
-stem: An email provider trains its spam filter on users' 'report spam' clicks. A group of accounts starts reporting a competitor's
-  legitimate newsletters as spam. Which control BEST protects the training data?
+difficulty: hard
+stem: An email provider trains its spam filter on 'report spam' clicks and screens reports for bursts against one
+  sender. A competitor's newsletters were still buried by a few hundred accounts reporting slowly over six months.
+  Which control BEST protects the training data?
 options:
-  A: Retrain the filter more often so that bad labels are diluted quickly
-  B: Encrypt the label data between the mail client and the training store
-  C: Increase the size of the model so that it is less sensitive to noise
-  D: Screen user labels for coordinated or unusual patterns before training
-answer: D
+  A: Require a CAPTCHA before each spam report
+  B: Screen reports for coordinated bursts before training
+  C: Compare verdict shifts on known sources with trusted labels
+  D: Cap the weight any single account's reports carry
+answer: C
 explanation:
-  why_correct: This is label poisoning through a user feedback channel. Checking contributions for coordinated or anomalous
-    behaviour, for example many new accounts reporting the same sender, and weighting labels by reporter history, stops manipulated
-    data from reaching training.
+  why_correct: Burst screening misses a slow campaign by design. Comparing how each retrained filter changes its
+    verdict on specific senders against an independently labelled reference set catches the effect of the poisoning,
+    however slowly the labels arrived.
   why_not:
-    A: Retraining more often feeds poisoned labels into the model faster. It does not filter them out.
-    B: Encryption protects the labels in transit, but the attack uses genuine labels from real accounts.
-    C: A larger model does not make poisoned labels less harmful and may even memorise them better.
+    A: CAPTCHAs stop bots, but these reports came from real accounts used by people.
+    B: This is already in place, and the campaign was paced to avoid it.
+    D: A few hundred normal accounts each reporting a little stay under any per-account cap.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-check
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
   check_verdict: pass

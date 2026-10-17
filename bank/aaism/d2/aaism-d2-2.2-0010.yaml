@@ -1,24 +1,31 @@
 id: aaism-d2-2.2-0010
 subdomain: '2.2'
-difficulty: medium
-stem: "A hospital group plans to give partner clinics a copy of its diagnostic model, trained on patient records, to run on their own servers. Today the model is offered only through a hosted service. Which threat becomes MORE significant because of this change?"
+difficulty: hard
+stem: A hospital group will give partner clinics a copy of its imaging model, trained on patient records, instead
+  of hosted access. The model flags scans, and a radiologist reads every scan. Which threat becomes MORE significant
+  because of this change?
 options:
-  A: "Denial of service attacks that make the hosted service unavailable"
-  B: "Prompt injection hidden in free-text notes that clinicians submit"
-  C: "Analysis of the model to infer details about the patients used in training"
-  D: "Gradual drift in accuracy as patient populations change over time"
+  A: Evasion using subtly altered input images
+  B: Poisoning through feedback labels from clinics
+  C: Membership inference against the training records
+  D: Model drift as patient populations change
 answer: C
 explanation:
-  why_correct: "Once the model leaves the hosted service, the group loses query limits, logging and output controls. Anyone with the copy has full access to the model and can probe it without limit, which makes model inversion and membership inference attacks against patient training data much easier. For a model trained on health records this is the main new risk."
+  why_correct: Once the model leaves the hosted service, the group loses query limits, logging and output controls.
+    Anyone holding a copy can probe it without limit, which makes inference attacks on the patient training data
+    much easier. For a model trained on health records this is the main new risk.
   why_not:
-    A: "Distributing copies, if anything, reduces dependence on the hosted service. It does not raise denial of service risk."
-    B: "Prompt injection affects language models that follow instructions in their input. It is not linked to where the model runs."
-    D: "Drift is a performance issue that exists whether the model is hosted or distributed. It is not an attack enabled by the change."
+    A: White-box access does make evasion easier, but every scan is also read by a radiologist, so a missed flag
+      has limited impact.
+    B: Poisoning needs a path into training. Distributing copies does not create a feedback route, and the stem
+      describes none.
+    D: Drift is a performance issue that exists whether the model is hosted or distributed. It is not made worse
+      by the change.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-b
-  checked_by: 2026-10-16-aaism-d2-b-check
+  checked_by: 2026-10-16-aaism-d2-b-recheck
   check_verdict: pass

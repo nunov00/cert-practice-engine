@@ -1,29 +1,31 @@
 id: aaism-d2-2.1-0013
 subdomain: '2.1'
 difficulty: hard
-stem: Last year the risk owner accepted the residual risk of an internal AI assistant. It was rated low because the assistant
-  could read only public intranet pages. It has now been connected to HR case files through normal IT change management,
-  with no risk review. Only HR staff can use the new connection. What should the security manager do FIRST?
+stem: Last year the risk owner accepted a low residual risk for an internal AI assistant reading only public intranet
+  pages. A routine IT change, with no risk review, has since connected it to HR case files, usable only by HR staff.
+  What should the security manager do FIRST?
 options:
-  A: Disconnect the HR files until a full security review is completed
-  B: Add an AI risk review step to the IT change management process
-  C: Reassess the risk and ask the owner for a new acceptance decision
-  D: Report the change to internal audit as a breach of AI policy
+  A: Disconnect the HR files pending a security review
+  B: Add an AI risk check to IT change management
+  C: Reassess the risk and seek a new decision
+  D: Test the assistant for leakage of HR case data
 answer: C
 explanation:
-  why_correct: The earlier acceptance rested on the assistant reading only public pages. That basis no longer holds, so
-    the acceptance is out of date. Access is already limited to HR staff, so there is no urgent exposure. The right first
-    step is a fresh assessment and a decision by the owner.
+  why_correct: The acceptance rested on the assistant reading only public pages, which no longer holds. Access is
+    limited to HR staff, so exposure is not urgent. A fresh assessment and owner decision restore a valid basis
+    for the risk.
   why_not:
-    A: Disconnecting would suit an exposure open to everyone. With access limited to HR staff, it disrupts work before the
-      risk is even known.
-    B: Changing the process stops this happening again, but it does not deal with the change that has already been made.
-    D: Audit may take an interest later, but reporting a breach does not restore a valid risk decision.
+    A: Disconnecting suits an exposure open to everyone. With access limited to HR staff, it disrupts work before
+      the risk is known.
+    B: Fixing the process stops this happening again and should follow. It does not deal with the change already
+      made.
+    D: Leakage testing would give useful evidence for the reassessment. On its own it does not produce the owner
+      decision the stale acceptance needs.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-c
-  checked_by: 2026-10-16-aaism-d2-c-check
   check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-c-recheck3

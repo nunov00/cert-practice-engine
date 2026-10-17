@@ -1,29 +1,27 @@
 id: aaism-d1-1.1-0008
 subdomain: '1.1'
 difficulty: hard
-stem: A payment firm's regulator requires notice of "material AI incidents" within a short deadline, but does not
-  define material. What should the security manager do to BEST make sure the duty is met?
+stem: A payment firm must notify its regulator of material AI incidents within 72 hours. Its triage already rates
+  harms such as wrong decisions at scale, but last quarter's AI incidents reached triage after four days via data
+  science tickets. What BEST fixes this?
 options:
-  A: Report every AI-related security event so that no notice is ever missed
-  B: Reuse the materiality test from the firm's cyber incident reporting
-  C: Agree materiality criteria with legal early and embed them in triage
-  D: Wait for regulator guidance and decide case by case until then
+  A: Add AI-specific harm criteria to the triage scale
+  B: Pre-draft notification templates for likely AI incidents
+  C: Route model anomaly reports straight to incident triage
+  D: Train responders on the regulator's notification process
 answer: C
 explanation:
-  why_correct: Deadlines are short, so the reporting decision cannot be invented during an incident. Criteria agreed
-    in advance with legal and compliance, and built into incident classification, make decisions fast, consistent
-    and defensible.
+  why_correct: Triage can already judge AI harm; the failure is that AI incidents arrive too late. Sending model
+    anomaly reports directly to triage removes the delay that makes the deadline unreachable.
   why_not:
-    A: Over-reporting floods the regulator, damages credibility and wastes effort. It does not show sound judgment.
-    B: Reusing existing criteria is a sensible start, but cyber tests miss AI harms such as biased or wrong decisions,
-      and they were not agreed for this regulator's duty.
-    D: Guidance may come later, but the duty applies now. Deciding case by case under a short deadline is slow and
-      inconsistent.
+    A: The triage scale already covers AI harms, so this does not address the four-day delay before triage.
+    B: Templates save time once an incident is triaged, but the deadline is already lost before triage starts.
+    D: Responders cannot act on incidents that have not reached them yet.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-a
-  checked_by: 2026-10-16-aaism-d1-a-check
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
   check_verdict: pass

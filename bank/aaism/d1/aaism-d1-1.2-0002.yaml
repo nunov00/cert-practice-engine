@@ -1,26 +1,26 @@
 id: aaism-d1-1.2-0002
 subdomain: '1.2'
-difficulty: easy
-stem: What is the PRIMARY purpose of an acceptable use policy for generative AI tools?
+difficulty: medium
+stem: A company's AI acceptable use policy allows customer data only in approved tools. Administrators ask what
+  chat retention period and connector settings the approved chatbot must have. Which document should answer this?
 options:
-  A: To set rules for how staff may use the tools and with what data
-  B: To list the technical settings required on each approved tool
-  C: To assign accountability for AI risks to business owners
-  D: To document how the business buys and renews its AI tool licences
-answer: A
+  A: The acceptable use policy for AI tools
+  B: The configuration baseline for the approved chatbot
+  C: The data classification standard
+  D: The software procurement procedure
+answer: B
 explanation:
-  why_correct: An acceptable use policy tells staff what is allowed and what is not, including which data may be
-    entered and which uses are forbidden. It sets clear expectations that can be trained and enforced.
+  why_correct: Required settings for a specific system, such as retention periods and connectors, belong in its
+    configuration baseline.
   why_not:
-    B: Technical settings belong in standards or configuration baselines, not in a user-facing policy.
-    C: Accountability is set in governance documents such as the AI policy or charter. An acceptable use policy
-      governs what users may do.
-    D: Procurement steps are a separate process. They do not govern how staff use the tools.
+    A: The policy governs what users may do; it is not where technical settings for one tool are defined.
+    C: Classification defines data categories and handling rules, not the settings of a particular tool.
+    D: Procurement covers buying software, not how an approved tool is configured.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-a
-  checked_by: 2026-10-16-aaism-d1-a-check
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
   check_verdict: pass

@@ -1,30 +1,30 @@
 id: aaism-d1-1.1-0013
 subdomain: '1.1'
 difficulty: medium
-stem: A manufacturer plans an AI tool that scans staff email for signs of insider threat. Legal has confirmed the tool is
-  lawful and a privacy impact assessment is complete. In two of its countries, works councils have legal rights over any
-  new technology used to monitor staff. What should the security manager do FIRST?
+stem: A manufacturer will roll out an AI tool that scans staff email for insider threats. Legal confirms it is lawful,
+  the privacy assessment is signed off, and works councils have been consulted. What should the security manager
+  make sure of BEFORE scanning starts?
 options:
-  A: Launch a pilot in the countries that have no consultation duty
-  B: Publish a staff notice that explains what the tool monitors
-  C: Consult the staff bodies in those two countries before rollout
-  D: Ask internal audit to confirm that the access controls work
-answer: C
+  A: Employees are told what the tool monitors and why
+  B: Alert thresholds are tuned on a pilot group
+  C: Investigators are trained to handle alerts discreetly
+  D: Scanning covers message metadata, not content
+answer: A
 explanation:
-  why_correct: Consulting the works councils is a legal precondition in those countries, and the other gating checks are
-    already done. Bringing the representatives in before rollout meets the duty and gives a key stakeholder group a voice
-    while the design can still change. Skipping them would make the deployment unlawful there, however good the controls
-    are.
+  why_correct: Lawfulness, assessment and consultation are settled, but nothing yet tells employees their email
+    will be scanned. Privacy and employment rules generally require that people who are monitored are told what
+    is collected and why before monitoring starts, so this is the remaining precondition.
   why_not:
-    A: A pilot elsewhere is a reasonable way to learn, but it does not meet the duty and can harden the design before the
-      required consultation takes place.
-    B: Transparency to staff is good practice, but a notice informs people. It does not replace a legal duty to consult.
-    D: Assurance on access controls is useful later. The open question here is a stakeholder duty, not control design.
+    B: Tuning improves alert quality, but a pilot still scans real employees' email, so they must be told first.
+    C: Trained investigators are good practice for handling alerts, but this is an operational step; transparency
+      to those monitored is a precondition for any scanning.
+    D: The signed-off privacy assessment already set the scope; narrowing it now does not address that employees
+      have not been told.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-c
-  checked_by: 2026-10-16-aaism-d1-c-check
+  checked_by: 2026-10-16-aaism-d1-c-recheck3
   check_verdict: pass

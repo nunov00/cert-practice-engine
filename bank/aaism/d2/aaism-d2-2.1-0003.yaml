@@ -1,22 +1,24 @@
 id: aaism-d2-2.1-0003
 subdomain: '2.1'
 difficulty: medium
-stem: A hospital wants an AI tool that drafts discharge summaries. The assessment rates the risk of fabricated clinical details
-  above tolerance because of possible patient harm. The clinical director still wants to proceed. What is the BEST treatment?
+stem: A hospital's AI tool drafts discharge summaries, and a clinician signs off each one. The risk of fabricated
+  medication details remains above tolerance, because reviewers rarely recheck long medication lists. Which treatment
+  BEST brings it within tolerance while keeping the time saving?
 options:
-  A: Require clinician review of every draft before release, then reassess the residual risk
-  B: Obtain an indemnity from the vendor so that it bears the cost of any patient harm
-  C: Accept the risk because qualified clinicians will read the summaries in due course
-  D: Avoid the risk by banning the use of all AI tools across the whole hospital
-answer: A
+  A: Require clinician sign-off before release
+  B: Fill medication lists from pharmacy records, not the model
+  C: Have pharmacists spot-check medication lists weekly
+  D: Obtain vendor indemnity for patient harm claims
+answer: B
 explanation:
-  why_correct: Mitigation directly reduces the likelihood that fabricated details reach patients. The residual risk must then
-    be reassessed to confirm it is within tolerance before the tool goes live. This meets the business need without accepting
-    harm above tolerance.
+  why_correct: Taking medication lists straight from the pharmacy system removes fabrication from the section where
+    review is weakest. The tool still drafts the narrative, so clinicians keep the time saving.
   why_not:
-    B: Transfer moves financial cost but not patient harm. Clinical and reputational impact stay with the hospital.
-    C: Accepting a risk above tolerance is not allowed. Relying on informal reading is not a defined control.
-    D: A hospital-wide ban is out of proportion. It removes AI benefits well beyond this one use case.
+    A: Human sign-off is the usual control for generated clinical text. It is already in place and is not catching
+      medication errors.
+    C: Sampling by pharmacists finds some errors and shows how often they occur. Most lists still go out unchecked,
+      so the risk of fabricated details reaching patients stays above tolerance.
+    D: Indemnity shifts some cost. Patient harm stays, so the risk is not brought within tolerance.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -24,4 +26,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-a
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d2-a-check
+  checked_by: 2026-10-16-aaism-d2-a-recheck3

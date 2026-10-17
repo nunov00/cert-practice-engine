@@ -1,30 +1,30 @@
 id: aaism-d3-3.1-0002
 subdomain: '3.1'
-difficulty: medium
-stem: A law firm is building an internal assistant that answers questions using retrieval from its document store. Access
-  to client files is restricted by matter. Which design BEST protects confidentiality?
+difficulty: hard
+stem: A law firm's assistant filters every retrieved passage against the user's matter permissions, synced nightly
+  from the records system. A lawyer walled off from a matter at 10:00 still received passages from it that afternoon.
+  Which change BEST closes this gap?
 options:
-  A: Build a separate vector index for each practice group and route users to their group's index
-  B: Exclude all documents marked confidential from the index so that the model never sees them
-  C: Instruct the model to withhold content from matters the user is not assigned to
-  D: Filter retrieved documents against the requesting user's existing matter permissions at query time
-answer: D
+  A: Tag each indexed chunk with its matter label
+  B: Build a separate vector index per practice group
+  C: Apply ethical-wall changes to the filter immediately
+  D: Filter retrieved passages on the user's matter permissions
+answer: C
 explanation:
-  why_correct: The retrieval step is where data enters the model's context, so that is where existing access rights must be
-    enforced. Checking each retrieved document against the user's own matter permissions keeps the assistant consistent with
-    the firm's access model, at the right granularity, and does not rely on the model behaving.
+  why_correct: 'Query-time filtering already exists and works at the right granularity. The failure is timing: a
+    wall added during the day is invisible to the filter until the nightly sync. Pushing wall changes as they happen,
+    or checking the authoritative source at query time, removes that window.'
   why_not:
-    A: Practice groups are coarser than matters. Users in a group would still see matters they are walled off from, so ethical
-      walls could be breached.
-    B: Excluding confidential documents avoids the risk but removes most of the assistant's value at a law firm. It is avoidance,
-      not a design that enforces access.
-    C: The model cannot reliably enforce access rules, and prompt injection can override the instruction. Once the content
-      is in context it can leak.
+    A: Matter tags are what the filter already relies on. Better tagging does not help when the permission data
+      behind the filter is hours out of date.
+    B: Walls exist inside practice groups, so a group index would still expose walled-off matters to colleagues,
+      and it does nothing about the sync delay.
+    D: This control is already in place. It enforced stale permissions, so repeating it does not fix the delay.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-check
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
   check_verdict: pass

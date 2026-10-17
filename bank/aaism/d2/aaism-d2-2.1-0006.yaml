@@ -1,21 +1,24 @@
 id: aaism-d2-2.1-0006
 subdomain: '2.1'
-difficulty: easy
-stem: An airline approved an AI tool that helps agents answer passenger questions. Which change MOST clearly requires the
-  risk assessment to be repeated?
+difficulty: hard
+stem: An airline's AI tool helps agents answer passenger questions. Its low risk rating relied on agents reviewing
+  every answer before passengers see it. Which change MOST clearly requires reassessment?
 options:
-  A: The tool's measured accuracy dropped by one percent, staying within tolerance
-  B: The tool will now decide passenger compensation without agent involvement
-  C: The scheduled annual review of the tool's risk assessment is three months away
-  D: The vendor has changed its pricing from per-seat to per-request billing
-answer: B
+  A: Its vendor moved it to a newer base model
+  B: It will serve agents at two more call centres
+  C: It will decide compensation without agents
+  D: It will answer in four more languages
+answer: C
 explanation:
-  why_correct: Moving from supporting agents to deciding compensation alone changes both the impact and the level of autonomy.
-    The original assessment assumed a human made the decision, so its conclusions no longer hold.
+  why_correct: The low rating rested on agent review. Letting the tool decide compensation removes that control
+    and raises both autonomy and impact, so the basis of the assessment no longer holds.
   why_not:
-    A: A small change within tolerance is what monitoring is for. It does not by itself invalidate the assessment.
-    C: A calendar review is due soon anyway. A material change in use should trigger reassessment at once, not wait.
-    D: A pricing change is commercial. It does not change the risk profile of the use case.
+    A: A model change can alter behaviour and should be checked through change management. Agents still review every
+      answer, so the control behind the rating is unchanged.
+    B: Wider rollout raises exposure in volume. The use stays the same and agents still review answers, so the assessment
+      largely holds.
+    D: New languages can bring new error patterns, and quality should be tested. Agent review still catches errors
+      before passengers see them.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -23,4 +26,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-a
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d2-a-check
+  checked_by: 2026-10-16-aaism-d2-a-recheck3

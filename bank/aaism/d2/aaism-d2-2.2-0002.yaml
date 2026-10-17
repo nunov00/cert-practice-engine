@@ -1,24 +1,31 @@
 id: aaism-d2-2.2-0002
 subdomain: '2.2'
-difficulty: easy
-stem: "A retailer retrains its fraud detection model every week on recent transactions, including labels taken from customer dispute claims. Which threat should the threat model stress MOST for this data source?"
+difficulty: hard
+stem: A card issuer's fraud model retrains weekly on disputes that investigators have confirmed. Customers see only
+  approve or decline, but a declined payment can be retried at once with a changed amount or merchant, with no retry
+  limit. Which threat should the threat model stress MOST?
 options:
-  A: "Model extraction through repeated queries to the scoring service"
-  B: "Evasion through small changes to transactions at scoring time"
-  C: "Data poisoning through deliberately false dispute claims"
-  D: "Membership inference against records used in training"
-answer: C
+  A: Label poisoning through fabricated customer disputes
+  B: Extraction of the model through repeated scoring queries
+  C: Membership inference against cardholder training records
+  D: Evasion by adjusting declined payments until approved
+answer: D
 explanation:
-  why_correct: "Customer dispute claims are untrusted input that flows straight into the training labels. An attacker who files false disputes can shift what the model learns, for example teaching it to treat a fraud pattern as legitimate. Frequent automatic retraining makes this poisoning path the key concern for this source."
+  why_correct: Unlimited instant retries turn every decline into free feedback. A fraudster can change the amount
+    or merchant and try again until the model approves the payment. That is evasion at scoring time, and the retry
+    design makes it cheap, so the threat model should stress it.
   why_not:
-    A: "Extraction targets a model exposed to outside queries. It is not linked to the dispute data feeding training."
-    B: "Evasion is a real fraud threat, but it acts on inputs at scoring time. The question is about the labels that feed retraining."
-    D: "Membership inference is a privacy threat to training records. The dispute feed mainly creates an integrity risk to the model."
+    A: Fabricated disputes are the classic poisoning path for a model that learns from dispute labels, but here
+      investigators confirm each dispute before it becomes a label, which closes most of that path.
+    B: Repeated queries can approximate a model, but a bare approve or decline answer makes extraction slow, and
+      a fraudster gets approval faster by simply retrying until one payment passes.
+    C: Membership inference is a privacy attack that relies on detailed outputs such as confidence scores. A binary
+      approve or decline gives little to work with, and it does not lead to fraud getting through.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-b
-  checked_by: 2026-10-16-aaism-d2-b-check
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
   check_verdict: pass

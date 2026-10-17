@@ -1,22 +1,23 @@
 id: aaism-d1-1.5-0010
 subdomain: '1.5'
-difficulty: hard
-stem: A retailer suspects that some product reviews used to train its recommendation model were poisoned. The data science
-  team wants to delete the suspect records and retrain immediately. What is the security manager's GREATEST concern?
+difficulty: medium
+stem: A retailer found poisoned reviews in its recommendation model's training data, rolled back to a clean model
+  and secured forensic copies. Data science flagged suspect reviews by matching twelve known attacker accounts and
+  wants to delete them and retrain. What is the GREATEST concern?
 options:
-  A: Retraining may reduce the model's accuracy for genuine customers
-  B: Deleting the records may destroy evidence of the poisoning's scope and source
-  C: Retraining may take longer than the recovery time objective for the model
-  D: Deleting the records may breach the retention period set for the training data
-answer: B
+  A: Deleting those accounts' reviews may destroy evidence
+  B: Retraining may reduce accuracy for genuine customers
+  C: Poisoned reviews from other accounts may remain
+  D: Retraining may disrupt the model now in service
+answer: C
 explanation:
-  why_correct: Before remediation, the team must preserve copies of the suspect data, the current model and related logs.
-    Without them, the organisation cannot work out how the poisoning got in, how far it spread or who did it. It could also
-    miss other poisoned data and fail to close the entry point.
+  why_correct: The suspect set was built only from known accounts. Attackers often use many accounts, so retraining
+    on what is left may bring the poisoning back. The data needs content-based checks before retraining.
   why_not:
-    A: Accuracy can be checked after retraining. Lost evidence cannot be recovered.
-    C: Recovery time matters, but the rollback options and evidence decide how recovery proceeds safely.
-    D: Retention rules rarely forbid removing compromised data, and preservation copies solve this anyway.
+    A: Evidence must often be preserved before deletion. Forensic copies have already been secured.
+    B: Removing data can affect accuracy, which can be tested before release. A model retrained on still-poisoned
+      data is the bigger risk.
+    D: The clean model stays in service while a new one is built and tested, so retraining need not cause disruption.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -24,4 +25,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d1-b-check
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

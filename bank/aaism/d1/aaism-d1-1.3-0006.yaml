@@ -1,25 +1,27 @@
 id: aaism-d1-1.3-0006
 subdomain: '1.3'
-difficulty: easy
-stem: What is the MAIN security benefit of a model registry with version control?
+difficulty: medium
+stem: After a poisoned model version reached production, the registry named the last approved version within minutes.
+  Recovery still took two days because that version's weights had been purged and had to be rebuilt. Which control
+  would MOST have shortened recovery?
 options:
-  A: It records which approved version is live and supports reliable rollback
-  B: It replaces the need for a separate inventory of all AI assets
-  C: It stops attackers extracting the model through its public interface
-  D: It removes the need for access controls on stored model files
-answer: A
+  A: A model registry recording approved versions
+  B: Integrity hashes verified at each deployment
+  C: Runtime monitoring of model output drift
+  D: Retention of artefacts for prior approved versions
+answer: D
 explanation:
-  why_correct: A registry gives a trusted record of each model version, its approval and where it runs. That supports
-    integrity checks and lets the team roll back to a known good version quickly.
+  why_correct: The approved version was known but no longer available. Keeping its artefacts would have allowed
+    an immediate redeploy.
   why_not:
-    B: A registry covers models. The wider inventory also covers data, prompts, agents and other assets.
-    C: Extraction is an attack through queries. A registry does not limit how the live model can be queried.
-    D: Model files still need access control. A registry depends on it rather than replacing it.
+    A: The registry exists and did its job; the artefacts it pointed to were gone.
+    B: Hashes confirm a model is unaltered, but they cannot restore weights that were deleted.
+    C: Monitoring may speed detection, but the delay here was in restoring the clean version.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-a
-  checked_by: 2026-10-16-aaism-d1-a-check
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
   check_verdict: pass

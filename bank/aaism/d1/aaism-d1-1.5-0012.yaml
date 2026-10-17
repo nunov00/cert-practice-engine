@@ -1,21 +1,25 @@
 id: aaism-d1-1.5-0012
 subdomain: '1.5'
-difficulty: medium
-stem: A small e-commerce firm's customer support app depends on a third-party language model API. Which measure BEST supports
-  business continuity if the API becomes unavailable?
+difficulty: hard
+stem: A small online shop's support app uses a third-party language model API for about 150 chats a day. The six
+  staff who handled every chat before the app are still employed, and budget is tight. What BEST supports continuity
+  if the API fails?
 options:
-  A: A contract clause that gives service credits for any extended outage
-  B: Close monitoring of the provider's public service status page
-  C: Caching of recent model answers for reuse during an outage
-  D: A tested fallback such as another provider or a degraded mode
+  A: A tested secondary model provider
+  B: A contract with a higher availability commitment
+  C: A cache of answers to frequent chat questions
+  D: Manual handling by the original team during outages
 answer: D
 explanation:
-  why_correct: Continuity means keeping the service running. A planned and tested fallback, such as an alternative model provider,
-    a simpler rule-based mode or routing to human agents, lets support continue during an outage.
+  why_correct: The staff handled the full volume before the app, so a human fallback is proven and costs nothing
+    extra. It keeps support running during an API outage.
   why_not:
-    A: Service credits give financial compensation, not continuity of the service.
-    B: Monitoring helps detection, but it does not keep the service running.
-    C: Cached answers cover only repeated questions and may be wrong for new contexts.
+    A: A second provider is a strong design where volume exceeds human capacity. Here staff can carry the load,
+      so it adds cost the shop does not need.
+    B: Higher commitments reduce the chance of outages and give remedies. They do not keep support running when
+      an outage happens.
+    C: Caching can cover common questions. Account-specific requests would go unanswered, while staff could handle
+      them all.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -23,4 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d1-b-check
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

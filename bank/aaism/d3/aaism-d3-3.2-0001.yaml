@@ -1,29 +1,31 @@
 id: aaism-d3-3.2-0001
 subdomain: '3.2'
-difficulty: easy
-stem: A manufacturer's quality inspection model is ready to move to production. What BEST ensures security issues are dealt
-  with before go-live?
+difficulty: hard
+stem: A manufacturer's inspection model has two high-risk findings open. The business owner formally accepted them
+  for go-live next week, on condition that input validation and extra monitoring are added first. What should the
+  security manager do FIRST?
 options:
-  A: Monitoring the model closely during its first month in production
-  B: User acceptance testing by the quality team on real production lines
-  C: A release gate that requires security test results and formal sign-off
-  D: A written statement from the data scientists that testing is complete
+  A: Delay go-live until both findings are fixed and retested
+  B: Ask the data scientists to document root causes
+  C: Verify the acceptance conditions are in place
+  D: Ask the business owner to reconsider the acceptance
 answer: C
 explanation:
-  why_correct: A defined security gate makes release depend on evidence that security testing was done and that findings are
-    resolved or accepted by the right owner. It is a preventive control built into the life cycle, so an unsafe model cannot
-    be promoted by default.
+  why_correct: The risk decision has been made by the right person, and it is conditional. The security manager's
+    job now is to confirm that the conditions the acceptance depends on exist before go-live. Without them, the
+    system would run on a risk nobody actually accepted.
   why_not:
-    A: Monitoring after go-live is important, but it finds problems once the model is already exposed. It does not prevent
-      an unsafe release.
-    B: User acceptance tests check that the model meets business needs. They rarely test security aspects such as robustness
-      or misuse.
-    D: Self-attestation by the builders is not independent evidence and can be given under schedule pressure.
+    A: The security manager does not own the business risk, and the owner has accepted it on conditions. Overriding
+      that decision is not the security manager's call.
+    B: Root-cause notes help with the eventual fix, but they do not check that the compensating controls exist before
+      go-live.
+    D: The owner has already decided, on conditions. Reopening the decision delays the release without checking
+      the one thing still open.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-check
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
   check_verdict: pass

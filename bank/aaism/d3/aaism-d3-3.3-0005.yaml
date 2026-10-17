@@ -1,27 +1,26 @@
 id: aaism-d3-3.3-0005
 subdomain: '3.3'
 difficulty: medium
-stem: At a utility company, all analysts can read and write every training dataset in a shared data lake. What should the
-  security manager recommend?
+stem: At a utility, read access to training datasets in the data lake is granted by classification. Every analyst
+  can still write to every dataset, and lineage records who wrote each file. What should the security manager recommend?
 options:
-  A: Encrypt the whole data lake with keys that are held only by the central IT team
-  B: Set need-to-know access by classification and limit writes to the pipeline
-  C: Turn on detailed access logging and review the logs every quarter
-  D: Ask analysts to sign an acceptable use agreement for the data lake
-answer: B
+  A: Writes only through controlled pipeline identities
+  B: Masking of billing fields across the data lake
+  C: Monthly review of the lineage write records
+  D: Reads granted by data classification
+answer: A
 explanation:
-  why_correct: Open read access exposes sensitive data, and open write access lets anyone change data that models learn from.
-    Need-to-know access by classification, with write rights limited to controlled pipeline identities, protects both confidentiality
-    and integrity.
+  why_correct: 'Confidentiality is handled, but integrity is not: anyone can change data that models learn from.
+    Lineage only records the change. Restricting writes to controlled pipeline identities prevents unreviewed changes.'
   why_not:
-    A: Encryption protects against storage-level access, but analysts would still read and write through the normal interface.
-    C: Logging is detective. Quarterly review is too late to stop poisoned data reaching models.
-    D: An agreement sets expectations but does not technically prevent misuse or mistakes.
+    B: Masking protects confidentiality, but analysts can still change every training dataset.
+    C: Review is detective and finds a change after models have trained on it.
+    D: This is already in place and addresses confidentiality, not the open write access.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-check
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
   check_verdict: pass

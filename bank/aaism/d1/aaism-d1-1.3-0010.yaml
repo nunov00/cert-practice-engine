@@ -1,27 +1,26 @@
 id: aaism-d1-1.3-0010
 subdomain: '1.3'
 difficulty: medium
-stem: A security manager suspects the AI inventory is incomplete because teams build agents on a low-code platform
-  without telling anyone. What is the BEST way to make the inventory complete and keep it so?
+stem: A firm's low-code agent platform blocks publishing until an agent is registered in the AI inventory. Builders
+  later add tools and data connections to live agents, and entries go stale. What BEST keeps the inventory accurate?
 options:
-  A: Make registration a condition for deployment and production data access
-  B: Send every team a yearly survey asking them to list all the AI tools they use
-  C: Ask internal audit to compile the inventory during its next review
-  D: Run a one-off scan of code repositories and platforms for AI assets
-answer: A
+  A: Enforce registration in the platform's publish step
+  B: Ask internal audit to test inventory completeness
+  C: Survey teams yearly on the agents they build
+  D: Require inventory updates when an agent's tools change
+answer: D
 explanation:
-  why_correct: Linking registration to the things teams need, such as deployment rights and data access, makes the
-    inventory self-maintaining. Unregistered assets simply cannot go live, so completeness no longer depends on
-    people remembering.
+  why_correct: Registration at publish works; entries go stale after it. Triggering an update whenever tools or
+    connections change keeps the record current.
   why_not:
-    B: Surveys rely on self-reporting and go out of date quickly between rounds.
-    C: Audit can test completeness but should not own building and maintaining the inventory.
-    D: A one-off scan helps find today's gaps, but new agents built tomorrow would be missed.
+    A: This is already enforced and does not catch changes made afterwards.
+    B: Audit finds gaps periodically after the fact; it does not keep entries current.
+    C: A yearly survey leaves entries stale for most of the year.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-a
-  checked_by: 2026-10-16-aaism-d1-a-check
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
   check_verdict: pass

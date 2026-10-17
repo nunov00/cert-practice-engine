@@ -1,30 +1,31 @@
 id: aaism-d3-3.4-0014
 subdomain: '3.4'
 difficulty: hard
-stem: A fitness app's users agreed that their data may be used to improve its services. The company now wants to train a model on this
-  data and license it to insurers for pricing. The legal team says the consent wording is broad enough. What should the security manager
-  recommend?
+stem: Fitness app users agreed their data may be used 'to improve our services'. The company plans to license a
+  model, trained with differential privacy, to insurers for pricing under a strict use contract. Legal says the
+  wording covers this. What is the GREATEST remaining concern?
 options:
-  A: Proceed on the legal team's advice and record their opinion with the project files
-  B: Anonymise the activity data before training so that no user can be identified
-  C: Hold a privacy impact assessment of the new use before any data is used
-  D: Train the model with differential privacy so that individual records are protected
-answer: C
+  A: Users would not expect their data to affect their premiums
+  B: The model could reveal individual users' training records
+  C: Insurers may use the model beyond the licensed purpose
+  D: The training dataset could be exposed in a data breach
+answer: A
 explanation:
-  why_correct: Selling a model that affects users' insurance prices is a new purpose that users would not expect, with a real chance
-    of harm to them. A legal reading of the wording does not settle whether the use is fair, proportionate or harmful. A privacy impact
-    assessment examines these issues and gives the risk owner an informed decision before data is used.
+  why_correct: The new use moves far from what users agreed to and can directly raise their insurance prices. A
+    legal reading of broad wording does not make that use fair or expected. This purpose and expectation gap is
+    the main risk to users and to trust, and the stem leaves it unaddressed.
   why_not:
-    A: Legal advice is an important input, but it answers whether the wording may be lawful, not whether the risk to users and to trust
-      is acceptable.
-    B: Anonymisation protects identities in the training data, but the model is still used to set prices for the same users. The purpose
-      problem remains.
-    D: Differential privacy limits what the model reveals about individuals. It does not address whether the new purpose is acceptable.
+    B: Leakage from the model is a real risk, but training with differential privacy is the control the stem says
+      is already in place for it.
+    C: Misuse by licensees is a valid concern, but the stem says a strict use contract covers it; the licensed purpose
+      itself is the problem.
+    D: A breach of the training data is a standard security risk handled by normal controls. It is not specific
+      to the decision to license the model for pricing.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-c
-  checked_by: 2026-10-16-aaism-d3-c-check
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
   check_verdict: pass

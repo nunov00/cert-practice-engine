@@ -1,28 +1,29 @@
 id: aaism-d2-2.3-0014
 subdomain: '2.3'
-difficulty: medium
-stem: A law firm is reviewing an AI drafting service. The contract bars the vendor from training on client data. The vendor
-  still keeps prompts for 30 days for abuse monitoring, during which its staff may read flagged prompts. The firm would
-  enter privileged client material. What should the security manager do?
+difficulty: hard
+stem: A law firm's AI drafting contract bars training on client data. The vendor keeps prompts 30 days for abuse
+  monitoring, its staff may read flagged prompts, and it has refused the firm's request for an opt-out. Lawyers
+  would enter privileged material. What should the security manager do?
 options:
-  A: Accept the terms, since the vendor will not train on client data
-  B: Seek an opt-out or tight limits on retention and staff access
-  C: Have the firm encrypt prompts before they reach the AI service
-  D: Rely on the vendor's security certification to cover the risk
-answer: B
+  A: Limit the tool to work without privileged material
+  B: Negotiate an opt-out from retention and human review
+  C: Redact client names from prompts before submission
+  D: Confirm the vendor encrypts retained prompts at rest
+answer: A
 explanation:
-  why_correct: 'The no-training clause leaves another route to exposure: stored prompts that vendor staff may read. For
-    privileged material, that could breach confidentiality duties. Negotiating removal or strict limits of retention and
-    human access, or keeping privileged content out if that fails, deals with the actual gap.'
+  why_correct: Vendor staff may read stored prompts, and the vendor will not change that. Privileged material in
+    those prompts could breach the firm's confidentiality duties, so the firm should restrict the tool to work that
+    contains no privileged material.
   why_not:
-    A: The training clause is valuable, but it does not cover retention or human review of prompts.
-    C: The model must read the text to process it. Encrypting prompts end to end would stop the service from working.
-    D: A certification shows general control maturity. It does not change the contract terms that allow staff to read prompts.
+    B: An opt-out is the usual remedy, but the stem says the vendor has already refused it.
+    C: Redacting names reduces identifiability, but privileged content can still reveal the client and the advice.
+    D: Encryption at rest protects against storage breaches, but the vendor's own reviewers can still read the decrypted
+      prompts.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-c
-  checked_by: 2026-10-16-aaism-d2-c-check
+  checked_by: 2026-10-16-aaism-d2-c-recheck3
   check_verdict: pass
