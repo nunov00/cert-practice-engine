@@ -1,32 +1,34 @@
 id: aair-d1-1.1-0001
 subdomain: '1.1'
-difficulty: medium
+difficulty: hard
 stem: The pricing team at a mid-sized insurer proposes using a general-purpose generative AI model to
   calculate individual premiums from free-text application notes. Premiums must be repeatable and explainable
   to customers and the regulator. What should the AI risk practitioner recommend?
 options:
-  A: Require staff to review a random sample of the premiums it produces
-  B: Ask the data team to fine-tune the model on historic premium data first
-  C: Approve it if the model scores well on widely used public benchmarks
-  D: Question whether a generative model suits a task needing consistent, explainable results
+  A: Fix the model's settings so the same notes always give the same premium
+  B: Fine-tune the model on past premiums and validate its accuracy before launch
+  C: Add an explanation tool that describes the factors behind each premium
+  D: Price with an interpretable model, using AI only to extract inputs
 answer: D
 explanation:
-  why_correct: Choosing a model type is a risk decision. Generative models can give different outputs
-    for the same input and are hard to explain, which clashes with a use case that needs repeatable, justifiable
-    results. The practitioner should test the fit of the technique to the use case before any controls
-    are designed.
+  why_correct: The requirement is for premiums that are both repeatable and explainable. A generative
+    model is weak on both counts. Using it only to turn free-text notes into structured inputs, and letting
+    an interpretable pricing model set the premium, keeps the useful part of the technology while the
+    price itself comes from logic that is stable and can be explained to customers and the regulator.
+    It fits the technique to the task.
   why_not:
-    A: Sample review is a useful detective control, but it accepts the unsuitable design and leaves most
-      premiums unexplained. The issue is the choice of technique, not only checking its results.
-    B: Fine-tuning may improve accuracy, but the model would still be hard to explain and could still
-      vary its outputs. It jumps to implementation before the basic suitability question is answered.
-    C: Public benchmarks measure general capability, not repeatability or explainability for this specific
-      task. A high score does not address the mismatch between the model type and the requirement.
+    A: Fixed settings can make outputs more consistent, though not always fully repeatable. Even then,
+      nobody could explain why a given premium was produced, so the explainability requirement is still
+      not met.
+    B: Fine-tuning and validation may improve accuracy, but the model would still be hard to explain and
+      its outputs could still vary. Accuracy is not the requirement the stem stresses.
+    C: Explanation tools give an approximate, after-the-fact account of a generative model's output, which
+      may not reflect how the premium was really produced. Repeatability is also left unaddressed.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

@@ -1,32 +1,32 @@
 id: aair-d1-1.2-0010
 subdomain: '1.2'
-difficulty: hard
+difficulty: medium
 stem: A manufacturing group runs all AI work through a central centre of excellence. Its backlog is now
   nine months long, and plant teams have started buying their own AI tools without telling it. The group
   wants to keep consistent risk standards while delivering faster. Which operating model BEST fits these
   needs?
 options:
-  A: Keep the central model and add staff to clear the backlog quickly
+  A: Keep central delivery and triage the backlog by business value and risk
   B: Set standards centrally and let plants deliver under central oversight
-  C: Let each plant choose its own approach and report AI use once a year
-  D: Ban AI purchases by plants until the central backlog has been cleared
+  C: Let plants deliver their own AI and register each tool centrally
+  D: Approve a list of AI tools that plants may buy without central review
 answer: B
 explanation:
   why_correct: A federated, hub-and-spoke model keeps one set of standards, tools and oversight at the
-    centre while letting business teams deliver within them. It removes the bottleneck that is driving
-    unmanaged buying, yet keeps consistency and visibility, so it meets both stated needs.
+    centre while letting plant teams deliver within them. It removes the bottleneck that is driving unmanaged
+    buying, yet keeps consistency and visibility, so it meets both stated needs.
   why_not:
-    A: Extra staff may shrink the backlog for a while, but a single central queue stays a bottleneck as
-      demand grows, and unmanaged buying would likely continue.
-    C: Full decentralisation gives speed but loses the consistent standards the group wants, and yearly
-      reporting is too late to catch problems.
-    D: A ban adds delay to an already slow model and tends to push more AI use out of sight rather than
-      less.
+    A: Triage puts the most valuable work first, but a single central queue stays a bottleneck, so delivery
+      is not faster overall and plants would likely keep buying around it.
+    C: Registration gives visibility, but without central standards each plant would manage risk in its
+      own way, losing the consistency the group wants.
+    D: An approved list vets products, but not how plants use them. The same tool can carry very different
+      risk in different uses, so standards would still be inconsistent.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

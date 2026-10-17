@@ -6,28 +6,27 @@ stem: A telecom company's AI oversight committee rejected a customer credit-scor
   had the model deployed anyway, citing revenue targets. The committee's charter says its decisions bind
   management. What should the practitioner do?
 options:
-  A: Ask the chief commercial officer to withdraw the model within a week
+  A: Raise the breach with the chief executive and ask for withdrawal
   B: Escalate the breach to the board risk committee under the charter
-  C: Report the matter to the regulator as a governance failure
+  C: Report the matter to the regulator as a failure of governance
   D: Complete the fairness testing on the live model as a priority
 answer: B
 explanation:
   why_correct: A senior executive overriding a binding oversight decision is a governance failure that
-    management cannot be left to settle itself. Escalating to the board's risk committee, as the charter
-    allows, puts the matter with the body that holds management to account and can decide on both the
-    model and the breach.
+    management cannot be left to settle itself. Escalating to the board's risk committee puts the matter
+    with the body that holds management to account and can decide on both the model and the breach.
   why_not:
-    A: The practitioner has no authority to direct a senior executive, and a private request bypasses
-      the governance route.
+    A: The chief executive can order a withdrawal, but leaving the breach with management lets the executive
+      team judge one of its own members. The board, which oversees management, needs to know.
     C: External reporting may later be needed, but internal escalation to the board comes first unless
       a specific legal duty requires immediate reporting.
-    D: Testing may reduce the model's risk, but it treats only the symptom and leaves the override of
-      governance unaddressed.
+    D: Testing may reduce the model's risk, but it leaves the override of a binding decision unaddressed
+      and lets the deployment stand.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

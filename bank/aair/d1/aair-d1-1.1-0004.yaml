@@ -1,31 +1,35 @@
 id: aair-d1-1.1-0004
 subdomain: '1.1'
 difficulty: medium
-stem: 'A hospital group has licensed one large language model and plans two uses: drafting minutes of
-  internal administrative meetings, and summarising emergency referrals to help clinicians prioritise
-  patients. How should the level of risk control for each use be decided?'
+stem: A hospital group has licensed one large language model for two uses. One drafts minutes of internal
+  administrative meetings. The other summarises emergency referrals to help clinicians prioritise patients.
+  Both uses handle confidential personal information. How should the level of control for each use be
+  decided?
 options:
-  A: Apply the same controls to both uses, as the model is the same
-  B: Adopt the risk rating the model vendor gives to its product
-  C: Wait until the pilots produce accuracy data, then set controls
-  D: Set controls for each use according to the impact of its errors
+  A: Set controls by the sensitivity of the data each use processes
+  B: Rate the licensed model once and apply that rating to both uses
+  C: Pilot both uses with staff checks, then set controls from error rates
+  D: Set controls for each use by the harm its errors could cause
 answer: D
 explanation:
   why_correct: Risk depends on the use case as much as on the model. An error in meeting minutes is a
-    minor nuisance; an error in a referral summary could delay urgent care. Scaling controls to the impact
-    of each use puts strong safeguards where harm is possible and avoids wasted effort elsewhere.
+    minor nuisance, while an error in a referral summary could delay urgent care. Scaling controls to
+    the impact of each use puts strong safeguards where harm is possible and avoids wasted effort elsewhere.
   why_not:
-    A: The same model can carry very different risks in different contexts. Uniform controls would either
-      under-protect the referral use or over-burden the minutes use.
-    B: A vendor rating describes the product in general and cannot reflect how this hospital uses it.
-      The hospital must assess its own use cases.
-    C: Running a clinical pilot without controls exposes patients to harm while data is gathered. Controls
-      should follow the expected impact before use begins.
+    A: Data sensitivity drives privacy and security controls, but both uses handle confidential personal
+      data, so it does not tell them apart. The difference in risk lies in what happens when the output
+      is wrong.
+    B: A model-level rating treats the model as the unit of risk. The same model can carry very different
+      risks in different contexts, so one rating would under-protect the referral use or over-burden the
+      minutes use.
+    C: Error rates show how often mistakes happen, not how much harm they cause. The same error rate means
+      very different risk in the two uses, and a clinical pilot needs controls sized to impact before
+      it starts.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

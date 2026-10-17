@@ -3,30 +3,29 @@ subdomain: '1.4'
 difficulty: hard
 stem: A mid-sized insurer is drafting its AI policy. One draft defines AI so narrowly that it would exclude
   AI features in bought software; another is so broad that every spreadsheet formula would need review.
-  Business teams fear either too little coverage or too much bureaucracy. How should the policy BEST define
+  Vendors often add AI features to existing software through updates. How should the policy BEST define
   its scope?
 options:
-  A: Use the narrow definition and widen it later if incidents occur
-  B: Use the broad definition so that no system can fall outside it
-  C: Define AI by its features and add a route for deciding unclear cases
-  D: Leave the scope open and let each team decide what counts as AI
+  A: Use the broad definition with a list of exempt tool types
+  B: Use the narrow definition plus AI checks when buying software
+  C: Define AI by its characteristics, with a route for unclear cases
+  D: Define the scope as the systems listed in the AI inventory
 answer: C
 explanation:
   why_correct: A definition based on characteristics, such as systems that learn from data or generate
-    predictions, content or decisions, captures both bought and built AI without sweeping in simple calculations.
-    A set route for borderline cases, such as referral to the AI risk function, keeps the scope consistent
-    as new technology appears, and requirements can then be scaled by risk.
+    predictions, content or decisions, captures bought and built AI without sweeping in simple calculations.
+    A set route for unclear cases keeps decisions consistent as vendors add new features.
   why_not:
-    A: Waiting for incidents accepts known gaps, such as AI inside bought software, that the policy should
-      cover from the start.
-    B: An over-broad scope wastes effort on trivial tools and can lead people to ignore the policy.
-    D: Letting teams decide would give inconsistent coverage and an incentive to define systems out of
-      scope.
+    A: An exemption list goes out of date quickly, and anything not listed still falls under the broad
+      definition. The burden on simple tools remains.
+    B: Checks at purchase miss AI features that arrive later through updates to software already in use.
+    D: An inventory records what is known. Defining scope by it leaves out any AI that nobody has yet
+      listed, which is exactly what the policy should catch.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

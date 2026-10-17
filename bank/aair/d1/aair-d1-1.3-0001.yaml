@@ -1,31 +1,32 @@
 id: aair-d1-1.3-0001
 subdomain: '1.3'
-difficulty: easy
+difficulty: medium
 stem: A lender uses a machine learning model to recommend approval or decline on small business loans.
-  The model was built by the central data science team and is used by the commercial lending division.
-  Who should be accountable for the risk the model creates in lending decisions?
+  The central data science team built it and the commercial lending division uses it. The model inventory
+  lists the head of data science as model owner. Who should be accountable for the risk the model creates
+  in lending decisions?
 options:
-  A: The chief information officer, who runs the platform hosting it
-  B: The lead data scientist who designed and trained the model
-  C: The second-line risk function that reviews the model each year
-  D: The head of the commercial lending division that relies on the model
+  A: The head of data science, whose team built and maintains the model
+  B: The chief risk officer, who sets the bank's model risk policy
+  C: The chief information officer, whose team runs the model platform
+  D: The head of commercial lending, whose division uses the model
 answer: D
 explanation:
   why_correct: Risk ownership sits with the business owner of the process the AI supports, because that
-    person decides how it is used and bears the consequences. Builders and oversight functions support
-    the owner but do not replace that accountability.
+    person decides how it is used and bears the consequences. The inventory entry reflects technical ownership.
+    Builders, platform teams and oversight functions support the risk owner but do not replace that accountability.
   why_not:
-    A: The CIO is accountable for the technology platform, not for the credit decisions made with the
+    A: The builder is responsible for the model's technical quality, and the inventory may list it as
+      technical owner. It does not decide how the model is used in lending or own the credit outcomes.
+    B: The chief risk officer sets standards and challenges risk owners. Owning the risk would remove
+      the independence that challenge needs.
+    C: The CIO is accountable for the technology platform, not for the credit decisions made with the
       model. Hosting a system does not make someone the owner of its business risk.
-    B: The developer is responsible for building the model well, but does not decide how it is used in
-      lending or own the business outcomes. Accountability for the risk belongs to the process owner.
-    C: The second line sets standards and challenges the owner. If it owned the risk it could not independently
-      challenge it.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

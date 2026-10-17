@@ -1,31 +1,32 @@
 id: aair-d1-1.1-0006
 subdomain: '1.1'
-difficulty: hard
-stem: A bank wants a generative AI assistant to answer staff questions about internal policies, which
-  change several times a month. Wrong or outdated answers could lead to breaches of conduct rules. Which
-  approach BEST fits the use case?
+difficulty: medium
+stem: A bank wants a generative AI assistant to answer staff questions about internal policies. The policy
+  library runs to several thousand pages and changes several times a month. Wrong or outdated answers
+  could lead to breaches of conduct rules. Which approach BEST fits the use case?
 options:
-  A: Fine-tune a model on the current policy library every quarter
-  B: Use a general model with instructions to answer only from policy
-  C: Retrieve answers from the policy library, citing sources
-  D: Use a general model and show a warning to verify every answer
+  A: Fine-tune a model on the policy library after each round of changes
+  B: Load summaries of the policies into a general model's instructions
+  C: Retrieve passages from the current library and cite them in answers
+  D: Use a general model, with compliance sampling its answers each week
 answer: C
 explanation:
-  why_correct: 'Grounding answers in the current, controlled policy library means changes take effect
-    as soon as the library is updated, and citations let staff check the source. This directly reduces
-    the main risk of the use case: outdated or invented answers.'
+  why_correct: Grounding answers in passages retrieved from the current, controlled library means changes
+    take effect as soon as the library is updated, and citations let staff check the source. This directly
+    reduces the main risks of the use case, which are outdated and invented answers.
   why_not:
-    A: A fine-tuned model holds a snapshot of the policies, so its answers go out of date between quarterly
-      updates. It also cannot show where an answer came from.
-    B: Instructions do not give the model access to the actual policies. It would still answer from its
-      general training and could invent plausible but wrong rules.
-    D: A blanket warning shifts all the checking to staff, who may not know where to look. It leaves the
-      underlying risk of wrong answers in place.
+    A: Frequent fine-tuning narrows the gap but is costly, and the model still holds a snapshot that lags
+      behind changes. It also cannot show where an answer came from, and it may still blend or invent
+      rules.
+    B: Summaries lose the detail that conduct rules depend on, and a library of thousands of pages cannot
+      be fully summarised in instructions. The model would fill gaps from its general training.
+    D: Weekly sampling is a useful detective control, but it finds wrong answers only after staff have
+      relied on them. It does nothing to make the answers current.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

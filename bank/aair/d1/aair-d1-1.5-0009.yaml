@@ -1,30 +1,30 @@
 id: aair-d1-1.5-0009
 subdomain: '1.5'
-difficulty: medium
+difficulty: easy
 stem: A retailer wants to use an AI customer service tool whose provider processes all data in data centres
   in another country. The retailer's data protection law restricts transfers of personal data abroad unless
   certain conditions are met. What should the risk practitioner check BEFORE customer data is sent?
 options:
-  A: Whether the provider holds a recognised information security certificate
-  B: Whether customers have been told that the retailer uses AI tools
-  C: Whether the provider's service performs well in the retailer's language
-  D: Whether the transfer meets the legal conditions, with any safeguards needed
+  A: Whether the provider holds a recognised security certification
+  B: Whether the privacy notice tells customers their data goes abroad
+  C: Whether the provider contract includes data processing terms
+  D: Whether a lawful transfer mechanism and safeguards are in place
 answer: D
 explanation:
   why_correct: Because the law restricts transfers abroad, the retailer must establish that this transfer
-    is permitted, for example through a recognised adequacy decision, contractual safeguards or another
-    lawful mechanism, before any data leaves. Without that, the use would breach the law however well
-    the service performs.
+    is permitted, for example through an adequacy decision, contractual safeguards or another lawful mechanism,
+    before any data leaves.
   why_not:
-    A: A security certificate gives assurance about protection, but it does not make an otherwise restricted
-      transfer lawful.
-    B: Transparency matters, but telling customers about AI use does not meet the transfer conditions.
-    C: Language performance is a quality issue, not a legal condition for the transfer.
+    A: A certification gives assurance about security, but it does not make an otherwise restricted transfer
+      lawful.
+    B: Customers should be told, but a notice does not meet the legal conditions for the transfer itself.
+    C: Processing terms are needed with any provider, but they do not on their own satisfy the separate
+      conditions on sending data abroad.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

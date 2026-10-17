@@ -1,30 +1,29 @@
 id: aair-d1-1.6-0011
 subdomain: '1.6'
-difficulty: hard
+difficulty: medium
 stem: A media technology company is preparing to launch a tool that clones a person's voice from a short
   recording, aimed at podcasters who want to edit their own audio. Testers note that anyone could upload
   a recording of someone else. What should the risk practitioner recommend before launch?
 options:
-  A: Add terms of service that forbid cloning voices without permission
-  B: Assess likely misuse and build in safeguards such as consent checks
-  C: Launch to podcasters only, as they are the intended group of users
-  D: Delay the launch until a law on synthetic voices has been passed
+  A: Add terms of service that forbid cloning voices without consent
+  B: Build in a check that the voice belongs to the account holder
+  C: Watermark generated audio so that cloned speech can be traced
+  D: Set up a reporting channel for people whose voices are misused
 answer: B
 explanation:
-  why_correct: A tool that could be used for fraud, harassment or impersonation must be assessed for foreseeable
-    misuse, not only for its intended use. Built-in safeguards, such as checking that the voice belongs
-    to the account holder and marking generated audio, reduce harm far more than rules users can simply
-    ignore.
+  why_correct: The testers found that anyone could clone someone else's voice. A built-in check that the
+    voice belongs to the account holder prevents that misuse at the source, before any harm, and fits
+    the intended use by podcasters editing their own audio.
   why_not:
-    A: Terms of service set expectations but do not stop misuse; people intent on harm will ignore them.
-    C: Marketing to podcasters does not stop other people signing up and misusing the tool.
-    D: The ethical duty to prevent foreseeable harm exists without a specific law, and such a law may
-      never arrive.
+    A: Terms set expectations, but people intent on fraud or harassment will ignore them.
+    C: Watermarks help detect and trace fakes after they spread, but they do not stop someone cloning
+      another person's voice.
+    D: A reporting channel is reactive. Harm such as fraud has already happened by the time a report arrives.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

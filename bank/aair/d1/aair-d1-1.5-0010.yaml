@@ -1,29 +1,30 @@
 id: aair-d1-1.5-0010
 subdomain: '1.5'
-difficulty: easy
+difficulty: medium
 stem: A car finance company plans to use machine learning to set interest rates for borrowers. The country
   has no law specific to AI, and the product manager concludes that the model is therefore free of legal
   constraints. How should the risk practitioner respond?
 options:
-  A: Agree, but suggest tracking AI-specific bills under debate
-  B: Point out that consumer credit and equality laws still apply
-  C: Agree, provided the model's accuracy is checked every year
-  D: Point out that only internal policy can limit the model's use
+  A: Advise tracking AI bills so the model is ready when one becomes law
+  B: Explain that existing credit, equality and data laws already apply
+  C: Advise adopting a voluntary AI framework in the absence of law
+  D: Advise a fairness test of the model before it goes live
 answer: B
 explanation:
   why_correct: Laws on consumer credit, equal treatment, data protection and fair dealing apply to the
-    decision whatever technology makes it. A model that sets rates in a discriminatory or unfair way can
-    breach them, so legal review is needed now, not only when AI-specific law arrives.
+    decision whatever technology makes it. Correcting the manager's conclusion is the first step, because
+    it changes what reviews and tests the project needs now.
   why_not:
-    A: Tracking new bills is good practice, but agreeing with the conclusion ignores obligations that
-      already apply.
-    C: Accuracy checks do not address legal duties such as non-discrimination and fair treatment of customers.
-    D: Internal policy matters, but existing external laws also constrain the model.
+    A: Tracking bills is good practice, but it accepts the premise that no law applies today.
+    C: A voluntary framework adds good practice, but it also accepts the premise and leaves current legal
+      duties unaddressed.
+    D: A fairness test is valuable, but recommending it without correcting the conclusion leaves the wider
+      legal review, such as credit and data rules, unaddressed.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

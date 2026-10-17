@@ -5,21 +5,21 @@ stem: A product team at an online lender wants to launch a new AI feature next w
   the bias testing that the AI policy requires. The sponsor says the deadline cannot move. What should
   the risk practitioner advise?
 options:
-  A: Let the launch go ahead and complete the testing soon afterwards
-  B: Rewrite the policy so that bias testing is optional for new features
-  C: Raise a formal policy exception for the risk owner to decide on
-  D: Ask the team to record the gap in the project's issues log
+  A: Ask the AI governance committee to amend the release requirement
+  B: Approve a limited launch to a small segment while testing finishes
+  C: Raise a formal policy exception for the accountable risk owner
+  D: Record the gap in the risk register with a remediation date
 answer: C
 explanation:
-  why_correct: Policies need a controlled way to handle departures. A formal exception makes the gap visible,
-    requires the accountable owner to accept or reject the risk at the right level, and sets compensating
-    controls and a deadline. If the risk is not accepted, the launch waits.
+  why_correct: Policies need a controlled way to handle departures. A formal exception makes the gap visible
+    and puts the decision with the owner who is accountable for the risk. That owner can accept it with
+    compensating controls and a deadline, or refuse it so that the launch waits.
   why_not:
-    A: Launching without an approved exception is a silent policy breach. Nobody with authority has weighed
-      the risk of untested bias to customers.
-    B: Changing the policy to suit one deadline weakens the standard for everyone and avoids, rather than
-      manages, the risk.
-    D: An issues log records the gap but involves nobody with authority to accept the risk. The launch
+    A: Changing a requirement to suit one project's deadline weakens the standard for everyone. The issue
+      is a single departure, which the exception process exists to handle.
+    B: A smaller launch still exposes real customers to untested bias, and the practitioner has no authority
+      to approve a breach of policy. That decision belongs to the risk owner.
+    D: A register entry records the risk but does not get anyone with authority to accept it. The launch
       would still breach the policy.
 status: published
 outline_version: '2026-04-15'
@@ -27,5 +27,5 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

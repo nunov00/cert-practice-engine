@@ -5,21 +5,21 @@ stem: At a university, departments start AI projects on their own, and the risk 
   them only after they are in use. The university already has a project approval process for IT investments.
   What is the BEST way to make sure AI risks are considered early?
 options:
-  A: Ask departments to self-certify their AI projects every year
-  B: Have internal audit review AI projects after they go live
-  C: Set up an AI committee that reviews projects on request
-  D: Add an AI risk screening step to the project approval process
+  A: Require departments to record AI projects in a central inventory
+  B: Scan purchasing and expense records each quarter for AI tools
+  C: Set up an AI committee that reviews projects departments refer to it
+  D: Add an AI risk screening step to the IT project approval process
 answer: D
 explanation:
-  why_correct: An AI screening step in the existing approval gate catches projects when they seek resources,
-    before design choices are fixed. It uses a process departments already follow, so coverage is better
-    than with a separate, optional route.
+  why_correct: A screening step in the existing approval gate catches AI projects when they seek resources,
+    before design choices are fixed. It uses a process departments already follow, so coverage does not
+    depend on them choosing to come forward.
   why_not:
-    A: Annual self-certification is late and relies on departments recognising and reporting their own
-      risks. It does not catch projects at the start.
-    B: A review after go-live is assurance after the fact. Risks found then are costlier to fix, and harm
-      may already have occurred.
-    C: A committee that acts only on request depends on departments choosing to come forward, which is
+    A: An inventory is useful, but recording relies on departments reporting their own projects, which
+      is the gap the university already has. It also records projects rather than screening them.
+    B: Scanning spend is a useful detective control, but it finds projects after money has been spent
+      and often after they are in use. It does not bring risk in early.
+    C: A committee that acts only on referral depends on departments choosing to come forward, which is
       the gap the university already has.
 status: published
 outline_version: '2026-04-15'
@@ -27,5 +27,5 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

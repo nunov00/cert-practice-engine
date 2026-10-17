@@ -6,28 +6,27 @@ stem: An employer uses an AI tool that scores recorded video interviews on speec
   employer's market requires reasonable adjustments for disabled applicants. What should the risk practitioner
   advise?
 options:
-  A: Score the candidate with the tool and note the impairment on file
-  B: Ask the vendor to retrain the tool to include more varied speakers
-  C: Tell the candidate that the tool treats all applicants the same way
-  D: Provide another way to be assessed, and review the tool's wider use
+  A: Score with the tool and have a panel take the impairment into account
+  B: Ask the vendor to adjust the weight the tool gives to speech features
+  C: Extend the time limit for the candidate's recorded interview
+  D: Offer an alternative assessment of equal weight in the decision
 answer: D
 explanation:
-  why_correct: The law requires an adjustment, and a tool that scores speech and facial movement is likely
-    to disadvantage this candidate. Offering another form of assessment meets the immediate duty, and
-    reviewing the tool addresses the wider risk that it disadvantages other disabled applicants who do
-    not ask.
+  why_correct: The law requires a reasonable adjustment, and a tool that scores speech and facial movement
+    is likely to disadvantage this candidate. An alternative assessment with equal standing removes that
+    disadvantage now. The employer should also review the tool's wider use, as others may be affected
+    without asking.
   why_not:
-    A: Scoring with a tool likely to disadvantage the candidate fails the adjustment duty, and a note
-      on file does not fix an unfair score.
-    B: Retraining might help over time, but it does not meet the candidate's present request or the legal
-      duty now.
-    C: Identical treatment can still be unlawful when it puts disabled people at a disadvantage; the law
-      requires adjustment.
+    A: A panel adjusting a score that rests on the impaired features cannot know how much to correct.
+      The disadvantage is built into the measure.
+    B: Changing the tool might help over time, but it does not meet this candidate's request now.
+    C: Extra time is a common adjustment, but the tool would still score the candidate on speech patterns
+      the impairment affects.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass
