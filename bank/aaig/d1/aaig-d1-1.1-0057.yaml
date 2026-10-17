@@ -1,31 +1,37 @@
 id: aaig-d1-1.1-0057
 subdomain: '1.1'
-difficulty: medium
-stem: A law firm approved an enterprise AI assistant after a careful review. The vendor adds new features
-  every few weeks, such as web browsing and connections to email, and turns them on for all users by default.
-  What should the firm's governance require?
+difficulty: hard
+stem: A law firm approved an enterprise AI assistant after a review that assumed it would handle only
+  documents lawyers upload for one client matter at a time. The vendor adds features every few weeks and
+  turns them on by default. Recent ones include web browsing, email connections and a memory that carries
+  content from one client matter into another. Which control BEST keeps the assistant within what the
+  firm approved?
 options:
-  A: New features stay on but are reviewed within 30 days of release
+  A: New features that reach outside data stay off until assessed
   B: New features stay off until assessed against the approval
   C: New features are enabled for a pilot group until assessed
-  D: A full re-approval of the assistant at each major vendor release
+  D: New features the vendor rates high-risk stay off until assessed
 answer: B
 explanation:
-  why_correct: The original approval covered the tool as it was then. New capabilities can bring new risks,
-    such as client data leaving through web browsing. Keeping them off until assessed, with the check
-    scaled to the change, lets the firm keep pace with the vendor while keeping control.
+  why_correct: The approval rests on two assumptions, uploaded documents only and one client matter at
+    a time, so any new feature can break it in more than one way. Keeping each new feature off until it
+    is assessed against those assumptions catches web browsing and email connections, which reach new
+    data, and the memory feature, which breaks the separation between client matters, while still letting
+    the firm adopt features that fit.
   why_not:
-    A: A prompt review is useful, but features would run for up to a month before anyone looked. Client
-      data could leave through web browsing in that time.
-    C: A pilot limits exposure, but pilot lawyers would still handle client data through features nobody
-      has assessed. The risk is reduced, not controlled.
-    D: Major releases may need a fuller look, but features arrive every few weeks and are on by default.
-      They would be live long before the next re-approval.
+    A: Screening for outside data catches web browsing and email connections, but the memory feature reaches
+      no outside data. It would go live and carry one client's content into another client's matter.
+    C: A pilot limits exposure, but pilot lawyers would still use features the approval never covered,
+      carrying client content between matters or into email. The risk is reduced, not controlled.
+    D: The vendor rates risk for its customers in general, not against this firm's approval. A memory across
+      matters is a convenience to most customers but a confidentiality breach for a law firm, so it could
+      go live unassessed.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-b
-  checked_by: 2026-10-17-aaig-d1-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

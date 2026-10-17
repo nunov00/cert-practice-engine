@@ -1,31 +1,33 @@
 id: aaig-d2-2.1-0005
 subdomain: '2.1'
-difficulty: medium
+difficulty: hard
 stem: A regulator asks a telecom operator which data sources fed the churn model that set retention offers
-  last year. The model was retrained several times as pipelines changed. The team can only rebuild the
-  answer from emails and memory. What should the governance lead establish to prevent this?
+  last year. The model registry records each version, its training tables and its approval. But the tables
+  kept the same names while the upstream feeds behind them changed several times. What should the governance lead establish to BEST prevent this gap from recurring?
 options:
-  A: Lineage captured automatically from source to each model version
-  B: An annual attestation by each model owner of the sources used
+  A: Lineage captured automatically from source feeds to each version
+  B: A registry rule to snapshot the training tables for each version
   C: Source documentation required in each model's validation report
   D: A data inventory linking each production model to approved sources
 answer: A
 explanation:
-  why_correct: Lineage shows where data came from, how it was transformed and which model version used
-    it. Captured automatically in the pipelines, it stays complete as they change. The operator can then
-    answer for any past version without relying on memory.
+  why_correct: The registry already ties each version to named tables, and the gap sits one layer further
+    up. The tables kept their names while the feeds that filled them changed. Lineage captured automatically
+    in the pipelines records which sources and transformations produced the data each version used, and
+    it stays complete as pipelines change, so the operator can answer for any past version.
   why_not:
-    B: An attestation is a statement after the fact and depends on the owner's recollection. It adds accountability
-      but not the evidence trail the regulator asks for.
+    B: A snapshot preserves the data a version was trained on, which helps reproduce it. It does not record
+      which upstream feeds produced that data, which is what the regulator asked.
     C: A validation report records sources at the time of validation. Later retraining and pipeline changes
       are not captured, so it would not show what fed last year's versions.
     D: An inventory records the sources a model is approved to use. It does not show what actually flowed
-      into a given version after the pipelines changed.
+      into a given version after the feeds behind the tables changed.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-17-aaig-d2-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

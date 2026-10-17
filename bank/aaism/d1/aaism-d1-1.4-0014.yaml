@@ -6,9 +6,9 @@ stem: 'Midyear, an AI security budget is cut by 40%. Workstreams: an AI inventor
   campaign; and a board risk dashboard. Which should be protected FIRST?'
 options:
   A: Completion of the AI asset inventory
-  B: A second awareness campaign for all staff
+  B: A second staff awareness campaign
   C: A dashboard reporting AI risk to the board
-  D: Pre-launch security testing of the customer refund agent
+  D: Pre-launch testing of the refund agent
 answer: D
 explanation:
   why_correct: The agent will soon move money for customers, so an untested flaw could cause direct loss. The inventory
@@ -26,4 +26,5 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-c
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d1-c-recheck3
+  options_only: not_obvious
+  checked_by: 2026-10-17-aaism-length-check

@@ -1,31 +1,33 @@
 id: aaig-d2-2.1-0014
 subdomain: '2.1'
-difficulty: medium
-stem: A manufacturing group has hundreds of data sets spread across plants. AI teams keep spending weeks
-  finding data and often use copies whose origin and restrictions are unclear. Which measure would help
-  MOST?
+difficulty: hard
+stem: A manufacturing group's automated catalogue scans every plant system and lists each data set's schema,
+  location and size. AI teams now find data quickly, but they keep training on copies of uncertain standing
+  and cannot tell which uses are allowed or who could approve one. Which measure would help MOST?
 options:
-  A: A data catalogue recording each set's owner, origin and use limits
-  B: A data catalogue built by scanning the plants' systems automatically
-  C: A data catalogue limited to the sets certified for AI use
-  D: A data lake with a search index over the plants' data sets
+  A: Catalogue entries naming each set's owner, origin and allowed uses
+  B: Lineage tooling that traces each copy back to its authoritative source
+  C: A certified tier in the catalogue for sets approved for AI use
+  D: A data lake consolidating the plants' sets behind one access layer
 answer: A
 explanation:
-  why_correct: A catalogue makes data findable, and the owner, origin and permitted uses it records are
-    exactly what the teams lack. Teams find the authoritative source quickly and know what they may do
-    with it, which cuts uncontrolled copies.
+  why_correct: Finding data is solved; the scanner already gives technical metadata. What teams lack is
+    business metadata, which a scanner cannot infer. Recording each set's accountable owner, its authoritative
+    origin and its allowed uses tells teams which source to use, what they may do with it and whom to ask,
+    so uncontrolled copies lose their purpose.
   why_not:
-    B: Automated scanning finds data quickly but captures technical metadata. Owners, origin and use limits
-      still have to be recorded, so teams remain unsure what they may do.
-    C: Listing only certified sets leaves most of the plants' data hard to find, so teams keep searching
-      and copying.
-    D: A searchable lake helps finding but creates yet another copy, and it does not record who owns the
-      data or how it may be used.
+    B: Lineage shows where a copy came from, which answers part of the problem. It does not say who owns
+      the source or which uses are allowed, so teams still cannot tell whether their use is permitted.
+    C: A certified tier gives a short list of approved sets, but it leaves most of the plants' data without
+      owners or use limits. Teams needing other sets are back to guessing.
+    D: Consolidation adds one more copy and one access point, but it does not record who owns each set
+      or what it may be used for.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-17-aaig-d2-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

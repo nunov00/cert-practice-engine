@@ -5,7 +5,7 @@ stem: A bank's chatbot showed some customers other customers' account details th
   The team turned off retrieval, identified the 40 affected customers and notified them and the regulator. Customers
   now complain it cannot answer balance questions. What should the team do NEXT?
 options:
-  A: Trace which retrieval results exposed data to whom
+  A: Trace which retrieval results exposed data to which customers
   B: Fix and test the retrieval filter before re-enabling it
   C: Hold the lessons-learned review
   D: Add an output filter that masks account numbers
@@ -25,4 +25,5 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-c
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d1-c-recheck3
+  options_only: not_obvious
+  checked_by: 2026-10-17-aaism-length-check

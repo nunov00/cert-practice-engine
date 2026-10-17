@@ -1,24 +1,26 @@
 id: aaig-d2-2.1-0036
 subdomain: '2.1'
-difficulty: medium
+difficulty: hard
 stem: A telecoms group has 40 AI pilots, each built on its own tools and cloud accounts. Running costs
-  are rising, and few pilots can be scaled without rebuilding. The executive committee asks for a principle
-  to guide future work. What should the governance lead propose?
+  are rising, and few pilots can be scaled without rebuilding. A reference architecture was published
+  last year as guidance, but few teams adopted it. The executive committee asks for a principle to guide
+  future work. What is the BEST principle for the governance lead to propose?
 options:
   A: A review gate before any pilot is scaled into production
   B: New work uses shared platforms unless a deviation is approved
-  C: A central team that rebuilds successful pilots for production
+  C: A refreshed reference architecture promoted to pilot teams
   D: Monthly cost reporting with a chargeback to each pilot's budget
 answer: B
 explanation:
   why_correct: Fragmented stacks create technical debt, with duplicated cost, uneven controls and pilots
-    that cannot scale. Building on shared, governed platforms by default, with approved exceptions, cuts
-    cost and makes successful pilots easier to scale. It still allows deviation where it is justified.
+    that cannot scale. The group already has guidance, and it was ignored because it was optional. Making
+    shared, governed platforms the default for new work, with approved deviations, changes how work starts
+    while still allowing exceptions where they are justified.
   why_not:
     A: A gate checks pilots once they want to scale, but by then they are already built on their own stacks
       and need rebuilding.
-    C: Central rebuilding accepts the duplication and pays for it twice. It does not change how new work
-      starts.
+    C: A better reference architecture is useful, but the existing one failed through low adoption, not
+      poor content. Promoting guidance again leaves adoption optional.
     D: Reporting and chargeback make cost visible but do not stop the fragmentation that causes it.
 status: published
 outline_version: '2026-10-13'
@@ -26,5 +28,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-17-aaig-d2-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

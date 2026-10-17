@@ -1,33 +1,34 @@
 id: aaig-d1-1.1-0061
 subdomain: '1.1'
-difficulty: medium
-stem: An insurer wants to use AI to settle simple claims with no human involvement, which is new in its
-  market. The rules do not clearly say whether this is allowed, and external counsel's view is that it
-  is probably permitted. What should the governance leader recommend before launch?
+difficulty: hard
+stem: An insurer wants to use AI to settle simple claims with no human involvement. No other insurer in
+  its market does this, and the rules do not clearly say whether it is allowed. External counsel's view
+  is that it is probably permitted. What is the BEST recommendation for the governance leader to make before launch?
 options:
-  A: Tell customers clearly that their claims are settled by AI
+  A: Obtain a second opinion from a specialist regulatory law firm
   B: Launch as a pilot with human review of a sample of settlements
   C: Ask the industry association to seek guidance for its members
   D: Discuss the design and its controls with the regulator
 answer: D
 explanation:
-  why_correct: Counsel can only say the use is probably permitted, because the rules are unclear and the
-    use is new. Early, open dialogue with the regulator lowers the risk of a forced reversal later and
-    shows good faith. The firm learns what the regulator expects and can design controls to match before
-    customers are affected.
+  why_correct: The rules are unclear and no other insurer has tried this, so only the regulator can say
+    how it reads them. Early, open dialogue about the design and its controls lowers the risk of a forced
+    reversal later and shows good faith. The firm learns what the regulator expects and can adjust its
+    controls before customers are affected.
   why_not:
-    A: Clear notice is good practice and may be required, but it does not settle whether the regulator
-      accepts fully automated settlement. If it does not, the firm faces a reversal whatever the notice
-      said.
+    A: A second opinion is sensible on a hard legal point, but where the rules themselves are unclear
+      another firm can only offer its own 'probably'. It does not tell the insurer how the regulator will
+      read them.
     B: A sampled pilot limits harm, but it still launches without knowing the regulator's view. If the
       regulator objects, customers and the firm still bear the reversal.
-    C: An industry approach can help with sector-wide questions, but it is slow and general. The firm's
-      specific design is better discussed directly with the regulator.
+    C: An industry request suits questions many members share, but no other insurer in the market does
+      this. The association has little reason to act, and its guidance would be slow and general.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-b
-  checked_by: 2026-10-17-aaig-d1-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

@@ -5,7 +5,7 @@ stem: A small insurer depends on a large AI provider that refuses audits by indi
   audits by groups of customers. Its independent assurance report excludes the AI service the insurer uses. Policy
   requires audit rights for critical vendors. What is the BEST way to obtain assurance?
 options:
-  A: Take part in a joint audit with other customers of the provider
+  A: Take part in a joint audit with other customers
   B: Map the provider's assurance report to the insurer's risks
   C: Obtain contractual security warranties from the provider
   D: Raise a policy exception for the audit requirement
@@ -25,5 +25,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-b
-  checked_by: 2026-10-16-aaism-d2-b-recheck3
+  checked_by: 2026-10-17-aaism-length-check
   check_verdict: pass
+  options_only: not_obvious

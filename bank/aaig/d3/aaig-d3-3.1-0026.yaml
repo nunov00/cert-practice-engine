@@ -1,33 +1,25 @@
 id: aaig-d3-3.1-0026
 subdomain: '3.1'
-difficulty: medium
-stem: A conglomerate runs a federated AI model in which each division builds and monitors its own AI systems.
-  A group policy already requires every division to monitor drift, and each division has a named AI risk
-  owner. A review finds five divisions use separate tools and define drift differently, so group risk
-  cannot compare their results. What should the governance leader recommend?
+difficulty: hard
+stem: A conglomerate runs a federated AI model in which each division builds and monitors its own AI systems. Group policy requires divisions to monitor drift, but group risk cannot compare the five divisions' results. Most divisions use separate tools, yet the two that share one tool still define drift differently. What is the BEST recommendation for the governance leader?
 options:
   A: Set group definitions of drift and metrics that divisions report on
-  B: Form a group committee to review each division's monitoring reports
-  C: Have internal audit assess each division's monitoring each year
-  D: Name an accountable AI risk owner for each division's monitoring
+  B: Have the divisions adopt a single group monitoring tool
+  C: Form a group committee to review each division's monitoring reports
+  D: Set group drift thresholds that divisions apply to their models
 answer: A
 explanation:
-  why_correct: A federated model works when the centre sets common standards that divisions apply locally.
-    The policy already requires monitoring, but without shared definitions and reporting metrics the results
-    cannot be compared or aggregated. Setting those keeps divisional ownership and gives group risk a
-    consistent view.
+  why_correct: A federated model works when the centre sets common standards that divisions apply locally. The two divisions sharing a tool still produce results that cannot be compared, so the gap is the definitions, not the tooling. Group definitions of drift and reporting metrics keep divisional ownership and give group risk a consistent view.
   why_not:
-    B: A committee can only compare what is reported on the same basis. With different definitions it
-      would still be unable to compare divisions.
-    C: Audit can confirm that each division follows its own practice, but it does not make the results
-      comparable.
-    D: Accountable owners are already named in every division. Ownership does not make results comparable
-      when each owner defines drift differently.
+    B: A common tool is the usual first fix, but the two divisions that share one still define drift differently. One tool without shared definitions would not make the results comparable.
+    C: A committee can only compare what is reported on the same basis. With different definitions it would still be unable to compare divisions.
+    D: Group thresholds set common tolerances, but a threshold means different things when each division measures drift its own way. The two divisions on one tool show that the measure itself differs.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-17-aaig-d3-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

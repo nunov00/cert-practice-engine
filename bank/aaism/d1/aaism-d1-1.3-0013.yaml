@@ -7,7 +7,7 @@ stem: A lender's schedule deletes personal data in training sets after two years
 options:
   A: Delete the data on schedule and keep dataset documentation
   B: Anonymise the training data and keep it for reference
-  C: Keep the data in a restricted archive under a recorded exception
+  C: Keep it in a restricted archive under a recorded exception
   D: Keep the data in the training environment for ten years
 answer: C
 explanation:
@@ -23,5 +23,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-c
-  checked_by: 2026-10-16-aaism-d1-c-recheck3
+  checked_by: 2026-10-17-aaism-length-check
   check_verdict: pass
+  options_only: not_obvious

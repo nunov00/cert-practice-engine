@@ -1,31 +1,36 @@
 id: aaig-d1-1.1-0017
 subdomain: '1.1'
-difficulty: medium
-stem: A media group published AI ethics principles on fairness, transparency and accountability, and its
-  AI policy requires staff to follow them. A year later, nobody can point to a single decision the principles
-  influenced. What should the governance lead do?
+difficulty: hard
+stem: A media group published AI ethics principles and trained staff on them. A year later, nobody can
+  point to a decision they changed, and teams call them too abstract to apply. A review of reader complaints
+  found the harms came from what AI was used for, such as profiling readers, not from how systems were
+  built. What is the BEST way for the governance lead to give the principles effect?
 options:
-  A: Build the principles into the AI policy as binding requirements
-  B: Build the principles into use-case intake and approval criteria
-  C: Build the principles into project leads' annual objectives
-  D: Ask each project to self-assess against the principles at closure
+  A: Turn the principles into binding requirements in the AI policy
+  B: Turn the principles into criteria for approving AI use cases
+  C: Turn the principles into design standards for build teams
+  D: Give each principle an executive owner who reports to the board
 answer: B
 explanation:
-  why_correct: Principles shape behaviour only when they are turned into concrete tests at the points
-    where decisions are made. Adding them to intake questions and approval criteria makes teams show how
-    each proposal meets them, which creates evidence and changes outcomes.
+  why_correct: Principles change outcomes only when they become concrete tests at the point where the
+    decision that causes harm is made. The complaints trace the harm to what AI was used for, which is
+    settled when a use case is proposed and approved. Turning the principles into approval criteria makes
+    each team show how its use case meets them before it goes ahead, which makes them concrete and puts
+    them where the harm starts.
   why_not:
-    A: The policy already requires staff to follow the principles, and that has not changed any decision.
-      Restating them as requirements does not say where or how they are applied.
-    C: Objectives create personal motivation, but they are judged once a year and do not make any specific
-      proposal show how it meets the principles.
-    D: A closure self-assessment comes after the decisions it should have shaped. It records views on
-      finished work rather than influencing what gets approved.
+    A: Binding status raises the principles' weight, but they would stay as abstract as before and still
+      not say where or how they apply. Teams already find them too abstract to use.
+    C: Design standards make the principles concrete for build teams, which answers the abstraction complaint,
+      but they act on how systems are built. The harm came from what AI was used for, and a well-built
+      profiling tool still profiles readers.
+    D: Executive owners create accountability and board visibility for each principle, but reporting on
+      a principle does not change which uses are proposed and approved, where the harm arose.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-17-aaig-d1-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

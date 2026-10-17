@@ -1,31 +1,33 @@
 id: aaig-d3-3.1-0053
 subdomain: '3.1'
-difficulty: medium
-stem: A consumer lender's branch loan officers earn a bonus for each loan approved. They may override
-  the AI credit model's declines, and override rates vary widely by branch. Loans approved by override
-  default much more often than others. What should the governance leader recommend?
+difficulty: hard
+stem: A consumer lender's branch loan officers and their managers earn bonuses on the number of loans
+  approved. Officers may override the AI credit model's declines, and override rates vary widely by
+  branch. Credit risk already reviews override outcomes by branch each quarter. Loans approved by
+  override default much more often than others. What is the BEST recommendation for the governance leader?
 options:
   A: Set override-rate limits for each branch, owned by credit risk
-  B: Retrain the model on the applications officers override
-  C: Base officers' bonuses on loan quality, not approval count
-  D: Review override outcomes by branch each quarter
+  B: Require branch manager sign-off for each override of a decline
+  C: Base branch bonuses on loan quality, not approval count
+  D: Report override outcomes by branch to the credit committee
 answer: C
 explanation:
-  why_correct: The volume bonus rewards officers for overriding declines, so the human judgement meant
-    to improve decisions is pulled one way. Rewarding loan quality removes that pressure and keeps the
-    override as a genuine judgement.
+  why_correct: Officers and their managers are both rewarded for approvals, so the human judgement meant
+    to improve decisions is pulled one way. Basing branch bonuses on loan quality removes that pressure
+    and keeps the override as a genuine judgement.
   why_not:
-    A: Rate limits curb the volume of overrides, but they also block good overrides and leave the bonus
+    A: Rate limits curb the number of overrides, but they also block good overrides and leave the bonus
       pushing officers toward approval within the limit.
-    B: Teaching the model to copy overrides that default more often would build the incentive problem
-      into the model.
-    D: Branch reviews show where overrides go wrong and are worth doing, but they detect the behaviour
-      after loans are made. The bonus keeps driving it.
+    B: A second sign-off is a standard control on overrides, but branch managers are also paid on
+      approvals, so the check is under the same pressure.
+    D: Credit risk already reviews override outcomes by branch. Reporting them upward adds visibility,
+      but the bonus keeps driving the behaviour.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-17-aaig-d3-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

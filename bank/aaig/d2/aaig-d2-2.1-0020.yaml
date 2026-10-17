@@ -1,32 +1,36 @@
 id: aaig-d2-2.1-0020
 subdomain: '2.1'
-difficulty: medium
-stem: A pharmaceutical company built an assistant that retrieves from all internal document stores to
-  help teams with their own project files. During testing, a junior employee received a summary of an
-  unreleased merger plan. The project team suggests a warning in the user terms. What should the governance
-  lead require?
+difficulty: hard
+stem: A pharmaceutical company built an assistant that retrieves from its internal document stores to
+  help staff with project work. In testing, a finance analyst cleared for confidential material received
+  a summary of an unreleased merger plan from a folder only the deal team can open. Team membership changes
+  weekly as projects start and end. Which design change BEST closes the gap?
 options:
-  A: Restrict the index to documents marked for company-wide sharing
-  B: Make retrieval enforce each user's existing document permissions
-  C: Add sensitivity labels to the index and block restricted content
-  D: Restrict the assistant to staff cleared for restricted documents
+  A: Screen generated answers for sensitive content before display
+  B: Make retrieval check each user's current document permissions
+  C: Copy each document's access list into the index at indexing time
+  D: Make retrieval match each user's clearance to sensitivity labels
 answer: B
 explanation:
-  why_correct: The flaw is that retrieval ignores the access controls on the source documents. The assistant
-    should only retrieve what the requesting user may already read, so it cannot become a route around
-    existing permissions. This fixes the cause, which a warning in the user terms would not.
+  why_correct: The folder's access list already said who may see the plan, but the assistant retrieved
+    it with its own broad access. Checking each user's current permissions at query time makes the assistant
+    honour exactly the access the user has in the source, and it stays right as team membership changes
+    each week.
   why_not:
-    A: This would keep sensitive files out, but it also removes the project files teams are meant to work
-      with, which are rarely marked for company-wide sharing.
-    C: Labels are often missing or wrong, and blocking restricted content stops people who are entitled
-      to it. It does not follow each user's actual rights.
-    D: Clearance for restricted documents does not entitle staff to every project's files. The permission
-      gap would remain for those users.
+    A: Output screening judges how sensitive the content is, not whether this user may see it. Confidential
+      material is normal in project work, so the screen would either block legitimate answers or pass the
+      merger plan.
+    C: Copying access lists into the index enforces the source permissions, but only as they stood when
+      each document was indexed. With team membership changing weekly, people who leave a project would
+      keep seeing its files until the next re-index.
+    D: Clearance against labels controls sensitivity, not need to know. The analyst is cleared for confidential
+      material, so a confidential merger plan would still reach her although she is not on the deal team.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-17-aaig-d2-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

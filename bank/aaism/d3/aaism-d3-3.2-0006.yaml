@@ -6,7 +6,7 @@ stem: Data scientists at an energy company train models on grid data in cloud no
   every grid dataset. Which control BEST secures this environment?
 options:
   A: Internal package mirror and restricted egress
-  B: MFA and conditional access for notebook logins
+  B: MFA and device-based conditional access for notebook logins
   C: Per-project service accounts scoped to each project's data
   D: Customer-managed keys for grid data at rest
 answer: C
@@ -26,5 +26,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  checked_by: 2026-10-17-aaism-length-check
   check_verdict: pass
+  options_only: not_obvious

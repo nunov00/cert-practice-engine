@@ -1,32 +1,25 @@
 id: aaig-d3-3.1-0045
 subdomain: '3.1'
-difficulty: medium
-stem: A national tax agency's AI assistant answers citizens' questions online. In the last week before
-  last year's filing deadline, the AI provider's usage limits throttled the service, citizens received
-  errors and phone lines were overwhelmed. The agency already has a tested call-back queue for overload.
-  What should the governance leader make sure is in place for this year?
+difficulty: hard
+stem: A national tax agency's AI assistant answers citizens' questions online. In the final week before last year's filing deadline, the provider's usage limits throttled the service and phone lines were overwhelmed. The provider had spare capacity, but its standard contract caps each customer's usage. What is MOST important for the governance leader to have in place for this year?
 options:
-  A: Service credits from the provider if throttling happens again
-  B: A tested overload plan with a call-back queue for citizens
+  A: Real-time alerts to the agency as usage nears the provider's limits
+  B: A tested fallback provider the assistant switches to when throttled
   C: A demand forecast shared with the provider before the peak
   D: Peak quotas agreed with the provider, based on the filing calendar
 answer: D
 explanation:
-  why_correct: Demand for this service is predictable, peaking at the filing deadline. The failure was
-    quota, so capacity must be planned against that calendar with peak quotas agreed in advance. This
-    treats the AI as a business service with known demand rather than a tool expected to cope alone.
+  why_correct: Demand for this service is predictable, peaking at the filing deadline, and the throttling came from a contractual cap, not a lack of capacity. Peak quotas agreed in advance against the filing calendar lift the cap where it matters and commit the provider's spare capacity to the agency.
   why_not:
-    A: Service credits compensate the agency afterwards. They do not keep the assistant running for citizens
-      in the busiest week.
-    B: The overload plan is already in place and tested. It absorbs overflow but does not stop the provider's
-      limits throttling the assistant at the peak.
-    C: A forecast informs the provider but commits it to nothing. Usage limits can still throttle the
-      service unless peak quotas are agreed.
+    A: Alerts tell the agency the limit is near, but they add no capacity. Citizens would still be throttled in the busiest week.
+    B: A fallback provider adds resilience, but it means assuring and paying for a second service to work around a cap the current provider could lift. The contract limit that caused the throttling would remain.
+    C: A forecast tells the provider what is coming, but the cap sits in the standard contract. Without an agreed quota the service would still be throttled at the limit.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-17-aaig-d3-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious
