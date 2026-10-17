@@ -1,30 +1,32 @@
 id: aaig-d3-3.1-0009
 subdomain: '3.1'
-difficulty: easy
-stem: A manufacturer is about to pilot an AI quality-inspection system on one production line before deciding
-  whether to roll it out to all plants. When should the go/no-go criteria for the rollout decision be agreed?
+difficulty: medium
+stem: A manufacturer will pilot an AI quality-inspection system on one production line before deciding
+  whether to roll it out to all plants. The chief operating officer will make the rollout decision. The
+  group quality director owns the company's inspection standards. Who should agree the go/no-go criteria
+  for rollout before the pilot starts?
 options:
-  A: After the pilot, once the results can be reviewed
-  B: During the pilot, as the team learns what is realistic
-  C: Before the pilot, with the accountable executive
-  D: At rollout, by each plant manager for their own site
+  A: The group quality director, who owns the inspection standards
+  B: The project team that will run the pilot on the line
+  C: The chief operating officer, who will decide on the rollout
+  D: Each plant manager, for the conditions at their own site
 answer: C
 explanation:
-  why_correct: 'Criteria agreed in advance make the decision objective: the pilot is designed to produce exactly
-    the evidence needed, and results cannot be rationalised afterwards. The accountable executive should own
-    them because they will make, and answer for, the rollout decision.'
+  why_correct: The person who will make and answer for the rollout decision should own the criteria it
+    rests on. If the chief operating officer agrees them before the pilot starts, the later decision is
+    judged against a standard set in advance, not one shaped by the results. The COO should draw on quality
+    and plant input, but the criteria belong to the decision-maker.
   why_not:
-    A: Setting criteria after seeing results invites bias toward whatever the pilot achieved and makes the
-      go/no-go decision a formality.
-    B: Adjusting criteria mid-pilot has the same weakness in a milder form, and the pilot may not collect the
-      data the final criteria need.
-    D: Local judgment is useful for site readiness, but the enterprise-level rollout decision needs common
-      criteria agreed before the evidence is gathered.
+    A: The quality director should shape the inspection criteria, but does not make the rollout decision.
+      Criteria owned by someone other than the decision-maker can be set aside when the decision comes.
+    B: The team running the pilot has an interest in its success and does not make the rollout decision.
+    D: Plant managers can add site readiness checks, but an enterprise rollout needs one set of go/no-go
+      criteria owned by whoever makes the decision.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

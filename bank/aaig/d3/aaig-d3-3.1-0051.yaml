@@ -1,30 +1,31 @@
 id: aaig-d3-3.1-0051
 subdomain: '3.1'
 difficulty: easy
-stem: A commercial insurer introduced an AI tool that writes a risk summary for each new application. Underwriters
-  say the summaries are accurate. However, procedures still require them to compile the full manual file as before,
-  with the AI summary added on top, and cost per application has risen. What is the MOST likely reason the expected
-  benefit has not appeared?
+stem: A commercial insurer introduced an AI tool that writes a risk summary for each new application.
+  Underwriters say the summaries are accurate, though some still check them line by line. Training covered
+  the tool's features only. Procedures still require the full manual file as before, with the summary
+  added. Cost per application has risen. What is the MOST likely reason the expected benefit has not appeared?
 options:
-  A: The process was not redesigned, so the AI added a step instead of replacing work
-  B: The model is not yet accurate enough for underwriters to rely on its summaries alone
-  C: Underwriters have not been trained well enough on how to use the AI tool
-  D: The business case overstated the time that the AI would save on each case
+  A: Procedures still require the old work, so nothing was removed
+  B: Underwriters do not yet trust the summaries enough to rely on them
+  C: Underwriters were not trained to work from the summaries
+  D: The business case overstated the time each summary saves
 answer: A
 explanation:
-  why_correct: Benefits from AI come from changing how work is done, not from installing a tool. Here the old procedure
-    is unchanged, so underwriters do all the previous work plus read the summary. The procedure needs redesigning
-    so the summary replaces the manual compilation where that is appropriate.
+  why_correct: Benefits from AI come from changing how work is done. While procedures still require the
+    full manual file, underwriters do all the previous work plus the summary, so cost can only rise. Trust
+    and training matter only once the process allows the summary to replace work.
   why_not:
-    B: The underwriters themselves say the summaries are accurate. Accuracy is not what blocks the benefit.
-    C: Training would not help when the procedure requires the full manual file anyway. The constraint is the process,
-      not skills.
-    D: The estimate may or may not have been optimistic, but no saving can appear while the old work remains mandatory.
+    B: Some line-by-line checking adds time, but even full trust would not remove the manual file the
+      procedures require.
+    C: Better training would not help while the procedure mandates the manual file anyway. The constraint
+      is the process.
+    D: The estimate may have been optimistic, but no saving can appear while the old work remains mandatory.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-13-aaig-d3-b-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

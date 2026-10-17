@@ -1,31 +1,33 @@
 id: aaig-d3-3.1-0026
 subdomain: '3.1'
 difficulty: medium
-stem: 'A conglomerate runs a federated AI model: each division builds and monitors its own AI systems. A review
-  finds five divisions have each bought separate monitoring tools and define drift differently, so group risk
-  cannot compare them. What should the governance leader recommend?'
+stem: A conglomerate runs a federated AI model in which each division builds and monitors its own AI systems.
+  A group policy already requires every division to monitor drift, and each division has a named AI risk
+  owner. A review finds five divisions use separate tools and define drift differently, so group risk
+  cannot compare their results. What should the governance leader recommend?
 options:
-  A: Set group-wide monitoring standards and metrics that divisions report on
-  B: Centralise all AI development and monitoring in a group function
-  C: Let each division continue and convert their results manually
-  D: Choose one division's tool and make the other divisions adopt it
+  A: Set group definitions of drift and metrics that divisions report on
+  B: Form a group committee to review each division's monitoring reports
+  C: Have internal audit assess each division's monitoring each year
+  D: Name an accountable AI risk owner for each division's monitoring
 answer: A
 explanation:
   why_correct: A federated model works when the centre sets common standards that divisions apply locally.
-    Shared definitions and reporting metrics allow group risk to aggregate and compare, while divisions keep
-    ownership. Tool choice can follow from the standards.
+    The policy already requires monitoring, but without shared definitions and reporting metrics the results
+    cannot be compared or aggregated. Setting those keeps divisional ownership and gives group risk a
+    consistent view.
   why_not:
-    B: Full centralisation reverses the operating model to fix a reporting issue. It would lose divisional
-      ownership and speed for a problem that standards can solve.
-    C: Manual conversion between inconsistent definitions is error-prone and does not fix the underlying lack
-      of comparability.
-    D: A single tool does not ensure common definitions, and imposing one division's choice may not fit the
-      others. Standards are the governance lever, not the product.
+    B: A committee can only compare what is reported on the same basis. With different definitions it
+      would still be unable to compare divisions.
+    C: Audit can confirm that each division follows its own practice, but it does not make the results
+      comparable.
+    D: Accountable owners are already named in every division. Ownership does not make results comparable
+      when each owner defines drift differently.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

@@ -1,33 +1,32 @@
 id: aaig-d3-3.1-0038
 subdomain: '3.1'
 difficulty: medium
-stem: A garden supplies retailer in northern Europe sees its AI demand-forecasting error rise every winter, when
-  sales are low and erratic. This year the rise has tripped the drift alert, and the operations team wants an urgent
-  retrain. Past winters show the same pattern, with accuracy recovering by spring. What should the governance leader
-  advise?
+stem: A garden supplies retailer in northern Europe sees its AI demand-forecasting error rise every winter,
+  when sales are low and erratic. This year the rise has tripped the drift alert, and the operations team
+  wants an urgent retrain. Past winters show the same pattern, with accuracy recovering by spring. What
+  should the governance leader advise?
 options:
-  A: Retrain at once, because every breach of an agreed drift alert requires corrective action
-  B: Compare the error with the same season in past years and make thresholds season-aware
-  C: Switch the alert off until spring, since the pattern is known and has always corrected itself
-  D: Move to manual forecasting each winter, since low and erratic sales are beyond the model's reach
+  A: Retrain the model on recent winter data to clear the alert
+  B: Compare with past winters and set seasonal thresholds
+  C: Add seasonal features to the model at the next retrain
+  D: Escalate the breach to the model risk committee to decide
 answer: B
 explanation:
-  why_correct: 'A known seasonal pattern is not the same as genuine degradation. Comparing this winter with earlier
-    winters shows whether the model is performing worse than its normal seasonal level, which is the real question.
-    Season-aware thresholds keep the alert meaningful: it then fires on true deterioration instead of on the calendar,
-    and retraining is decided on evidence rather than on alarm.'
+  why_correct: A known seasonal pattern is not the same as degradation. Comparing this winter with earlier
+    winters shows whether the model is worse than its normal seasonal level. Season-aware thresholds then
+    fire on true deterioration rather than on the calendar, and retraining is decided on evidence.
   why_not:
-    A: Retraining on the low, erratic winter data may make the model worse for the rest of the year and spends effort
-      on a pattern that recovers by itself. An alert breach calls for assessment, not an automatic fix.
-    C: Turning monitoring off removes protection exactly when a genuine problem could hide behind the seasonal noise.
-      The pattern should be built into the threshold, not used as a reason to stop watching.
-    D: Abandoning the model every winter discards its value on the strength of an untested assumption. Nothing shows
-      that it performs worse than people would in that season.
+    A: An alert breach calls for assessment, not an automatic fix. Retraining on low, erratic winter data
+      may make the model worse for the rest of the year.
+    C: Seasonal features may improve the model later, but the alert would keep firing each winter until
+      then, and the current breach still needs judging.
+    D: Escalation suits a breach that needs a risk decision. Here the data to judge it is at hand, and
+      the committee would first need that comparison anyway.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-13-aaig-d3-b-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

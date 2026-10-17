@@ -1,30 +1,32 @@
 id: aaig-d3-3.1-0029
 subdomain: '3.1'
 difficulty: medium
-stem: A city council deployed an AI tool to speed up planning permit decisions. A year later, it claims a 30%
-  improvement, but nobody measured processing times before the launch. Councillors question the figure. What
-  lesson should the governance leader draw for future AI initiatives?
+stem: A city council deployed an AI tool to speed up planning permit decisions. The business case set
+  a 25% target for faster processing, and the planning director owned the benefit. A year later, the council
+  claims a 30% improvement, based on staff recollection of how long permits took before launch. Councillors
+  question the figure. What lesson should the governance leader draw for future AI initiatives?
 options:
-  A: Avoid publishing any benefit figures until an external audit
-  B: Measure a baseline before launch in the benefits plan
-  C: Use staff estimates of time saved as the main benefit measure
-  D: Report adoption rates instead of benefit figures in future
+  A: Have internal audit verify benefit figures before publication
+  B: Measure processing times before launch as the baseline
+  C: Name an accountable benefit owner for each AI initiative
+  D: Define benefit measures and targets in each business case
 answer: B
 explanation:
-  why_correct: Benefits can only be shown by comparing results with a reliable starting point. Capturing a
-    baseline before launch, with agreed measures and owners, should be part of every benefits realisation plan;
-    without it, any claimed improvement is open to challenge.
+  why_correct: A benefit can only be shown against a reliable starting point. Recollection is not measurement.
+    Measuring processing times before launch, as part of the benefits plan, is what makes a later improvement
+    credible. Without it the claim is open to challenge, however it is reviewed.
   why_not:
-    A: External audit can add credibility, but without a baseline the auditor faces the same problem. The fix
-      belongs at the start.
-    C: Staff estimates are subjective and prone to optimism. They are a weak substitute for measured before-and-after
-      data.
-    D: Adoption shows usage, not value. Swapping to it avoids the question councillors are asking.
+    A: Audit can add credibility, but without a baseline the auditor faces the same problem. The fix belongs
+      before launch.
+    C: Ownership matters, but this benefit already had an owner. An owner without a baseline still cannot
+      prove the improvement.
+    D: This business case already set a measure and a target. A target is of little use without a measured
+      starting point to compare against.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

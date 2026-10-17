@@ -1,33 +1,33 @@
 id: aaig-d3-3.1-0041
 subdomain: '3.1'
 difficulty: medium
-stem: A water utility introduced AI that matches supplier invoices to purchase orders, and about 90% now go through
-  automatically. The business case removed most accounts payable clerk roles. Invoices the AI cannot match go to
-  a queue that no team was assigned to, and some suppliers are now charging late-payment fees. What should the governance
-  leader recommend?
+stem: A water utility introduced AI that matches supplier invoices to purchase orders, and about 90% now
+  go through automatically. The business case removed most accounts payable clerk roles. Invoices the
+  AI cannot match go to a queue that no team was assigned to. Resolving them needs contact with buyers
+  and budget holders. Some suppliers are now charging late-payment fees. What should the governance leader
+  recommend?
 options:
-  A: Lower the matching confidence level so that more invoices are matched without people
-  B: Ask the vendor to retrain the model on the unmatched invoices to raise the automation rate
-  C: Rehire the clerks who were let go and restore the previous manual process for all invoices
-  D: Redesign the process end to end, giving a named team and service level for the exceptions
+  A: Lower the match confidence level to shrink the queue
+  B: Contract the vendor to clear exceptions within set times
+  C: Record the queue as a risk with an owner and action plan
+  D: Assign the exception queue to a named team with a service level
 answer: D
 explanation:
-  why_correct: The AI is doing what it was bought to do; the failure is in how it was fitted into the process. Removing
-    roles without deciding who handles exceptions left a gap in the operating model. The process needs an owner
-    for unmatched invoices, with enough capacity and a service level that protects supplier payments. Integration
-    means designing the whole process, not just the automated part.
+  why_correct: The AI is doing what it was bought to do. The failure is that roles were removed without
+    deciding who handles exceptions. Giving the queue an owner with capacity and a service level protects
+    supplier payments, and makes the exceptions part of the designed process.
   why_not:
-    A: Accepting weaker matches shrinks the queue by letting more wrong payments through. It moves the problem rather
-      than solving it.
-    B: A higher automation rate may help over time, but there will always be exceptions. Someone still has to own
-      them, and that gap exists today.
-    C: Going back to manual handling of every invoice throws away a working benefit. Only the exceptions lack an
-      owner.
+    A: Accepting weaker matches shrinks the queue by letting more wrong payments through. It moves the
+      problem rather than solving it.
+    B: Exceptions need contact with the utility's buyers and budget holders and decisions on its own payments.
+      The vendor lacks that authority and knowledge.
+    C: A risk owner makes the gap visible, but the queue still has no one working it. Fees keep building
+      until a team handles the exceptions.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-13-aaig-d3-b-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

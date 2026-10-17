@@ -1,33 +1,33 @@
 id: aaig-d3-3.1-0044
 subdomain: '3.1'
-difficulty: hard
-stem: 'A telecom operator uses an AI agent to handle billing disputes: it reads the complaint, checks the account,
-  decides on a credit, issues it and closes the case. Monitoring tracks the accuracy of each step, and all are within
-  threshold. Finance then finds that some customers received several credits for one dispute, because the agent
-  reopened cases and repeated steps. What should the governance leader recommend?'
+difficulty: medium
+stem: A telecom operator uses an AI agent to handle billing disputes. It reads the complaint, checks the
+  account, decides on a credit, issues it and closes the case. Most credits are small. Monitoring tracks
+  the accuracy of each step, and all are within threshold. Finance then finds that some customers received
+  several credits for one dispute, because the agent reopened cases and repeated steps. What should the
+  governance leader recommend?
 options:
-  A: Tighten the accuracy threshold for each step so that smaller deviations raise an alert
-  B: Require a person to approve every credit the agent issues, whatever the amount
-  C: Monitor whole task sequences and their combined effects, with limits per case
-  D: Retrain the step that decides the credit amount, since that is where the money was lost
+  A: Tighten each step's accuracy threshold to catch smaller errors
+  B: Require a person to approve credits above a set amount
+  C: Monitor each case end to end, with a limit on credits per case
+  D: Cap the total value of credits the agent issues each day
 answer: C
 explanation:
-  why_correct: When AI takes chained actions, harm can come from the sequence rather than from any single step.
-    Each step here looked correct on its own; the problem was repetition across the whole case. Monitoring should
-    follow the complete task, with limits on what one case can trigger, such as one credit per dispute, so that
-    loops and cumulative effects are caught.
+  why_correct: When AI takes chained actions, harm can come from the sequence rather than from any step.
+    Each step here was correct on its own; the problem was repetition across the case. Monitoring whole
+    cases, with limits such as one credit per dispute, catches loops and combined effects.
   why_not:
-    A: Stricter step thresholds would still miss the problem, because each step was accurate. The failure is only
-      visible across the sequence.
-    B: Approving every credit would catch duplicates but removes most of the agent's value. Proportionate limits
-      and sequence monitoring address the cause at much lower cost.
-    D: The credit decision was not wrong each time; it was repeated. Retraining that step does not stop a loop in
-      the overall flow.
+    A: Each step was already accurate, so stricter step thresholds would still miss a problem visible
+      only across the sequence.
+    B: Approval above an amount suits large credits, but most credits are small. Repeated small credits
+      would pass without review.
+    D: A daily cap limits total exposure, but duplicates can fit under it, and when it is hit valid credits
+      are blocked too. It does not see repetition within a case.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-13-aaig-d3-b-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

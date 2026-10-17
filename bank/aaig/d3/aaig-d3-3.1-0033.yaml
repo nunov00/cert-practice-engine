@@ -1,28 +1,31 @@
 id: aaig-d3-3.1-0033
 subdomain: '3.1'
 difficulty: medium
-stem: An insurer's broker support desk uses a generative AI tool to draft answers to brokers' questions about
-  policy wording, which staff edit before sending. Leadership wants assurance the drafts stay accurate and
-  compliant over time. Which monitoring approach is MOST appropriate?
+stem: An insurer's broker support desk uses a generative AI tool to draft answers to brokers' questions
+  about policy wording, which staff edit before sending. Leadership wants assurance the drafts stay accurate
+  and compliant over time. Which monitoring approach is MOST appropriate?
 options:
-  A: Sample drafts and final replies against set criteria
-  B: Track how many drafts staff send each day without edits
-  C: Rely on brokers to raise any problems in their replies
-  D: Review the provider's published quality scores each quarter
+  A: Sample live drafts and final replies against set criteria
+  B: Track how much staff change each draft before sending
+  C: Require staff to review and edit each draft before sending
+  D: Re-test the tool on a fixed set of questions each quarter
 answer: A
 explanation:
-  why_correct: Generative output has no single accuracy score, so quality is best tracked by structured sampling
-    against defined criteria such as accuracy, tone and regulatory content, comparing drafts with what was
-    sent. That shows both model quality and whether staff edits are catching problems.
+  why_correct: Generative output has no single accuracy score, so quality is best tracked by sampling
+    against defined criteria such as accuracy and compliant wording. Comparing live drafts with what was
+    sent shows both the tool's quality and whether staff edits are catching problems.
   why_not:
-    B: Unedited drafts could mean high quality or careless review. On its own the count is ambiguous.
-    C: Broker complaints are a lagging signal and many errors would never be raised.
-    D: Provider scores reflect general benchmarks, not this insurer's use, policy wordings and brokers.
+    B: The amount of editing is ambiguous. Light edits could mean good drafts or careless review, and
+      heavy edits do not show whether the final reply is right.
+    C: Staff already review and edit every draft. That is the human control, but it is not monitoring,
+      and it does not show whether drafts or edits are getting worse over time.
+    D: A fixed question set is useful for regression testing, but it does not reflect the live questions
+      or show what staff actually send.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

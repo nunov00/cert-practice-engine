@@ -1,33 +1,33 @@
 id: aaig-d3-3.1-0042
 subdomain: '3.1'
-difficulty: hard
+difficulty: medium
 stem: A manufacturer has deployed an AI agent that creates purchase orders from demand signals. The procurement
-  manager sets the agent's ordering rules and limits. The project team proposes that the same manager approve the
-  orders it creates under 50,000, arguing that the agent, not the manager, prepared them. What should the governance
-  leader advise?
+  manager sets the agent's ordering rules and limits. The project team proposes that the same manager
+  approve the orders it creates under 50,000, arguing that the agent, not the manager, prepared them.
+  What should the governance leader advise?
 options:
-  A: Accept the design, since segregation of duties applies only between people and not to systems
-  B: Treat setting the agent's rules as preparing the orders, so approval must be independent
-  C: Drop approval for orders under the limit and rely on the spending caps built into the agent
-  D: Keep the design but have internal audit review a sample of the agent's orders once a year
+  A: Review the agent's access as a privileged system account
+  B: Have someone other than the rule-setter approve the orders
+  C: Rely on the agent's built-in spending caps below the limit
+  D: Have finance approve the agent's rules and limits quarterly
 answer: B
 explanation:
-  why_correct: Whoever controls an AI agent's configuration effectively shapes every order it raises. If that same
-    person also approves the orders, the separation between preparing and approving disappears, even though the
-    agent does the typing. When AI enters an approval workflow, the segregation of duties design should be redone
-    with the agent and its configuration treated as part of the preparer role.
+  why_correct: Whoever controls an agent's rules shapes every order it raises. If the same person approves
+    those orders, preparing and approving are no longer separated, even though the agent does the typing.
+    The agent's configuration should be treated as part of the preparer role, so approval must be independent
+    of it.
   why_not:
-    A: Segregation of duties exists to stop one party controlling a transaction from start to finish. A person acting
-      through an agent they configure is still that one party.
-    C: Spending caps limit size, not legitimacy. Removing approval altogether weakens the control further instead
-      of restoring independence.
-    D: A yearly sample review is a detective check that finds problems long after payment. It does not replace an
-      independent approval in the workflow.
+    A: Privileged access reviews are good practice for agents, but they check what the agent can reach.
+      They do not separate the person who configures it from the person who approves its orders.
+    C: Spending caps limit size, not legitimacy, and the same manager sets them. Dropping approval weakens
+      the control further.
+    D: Independent approval of the rules adds oversight, but the manager who configures the agent would
+      still approve each order it raises.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-13-aaig-d3-b-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

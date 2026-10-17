@@ -1,32 +1,31 @@
 id: aaig-d3-3.1-0047
 subdomain: '3.1'
 difficulty: medium
-stem: A building society validates its mortgage affordability model every three years; the last validation was 18
-  months ago. Since then the model has been extended to buy-to-let mortgages, and a new source of income data has
-  been added. The next validation is due in 18 months. What should the governance leader recommend?
+stem: A building society validates its mortgage affordability model every three years, the cycle its tiering
+  scheme sets for this model. The last validation was 18 months ago. Since then the model has been extended
+  to buy-to-let mortgages, and a new source of income data has been added. What should the governance
+  leader recommend?
 options:
-  A: Define material changes, such as new products or data sources, that trigger revalidation early
-  B: Shorten the validation cycle for all of the society's models from three years to one year
-  C: Keep to the scheduled date, since a validation within its cycle remains in force until it expires
-  D: Ask the model owner to confirm in writing that the changes have not affected performance
+  A: Define material changes that trigger revalidation ahead of the cycle
+  B: Move this model to a shorter cycle within the tiering scheme
+  C: Require the owner to attest to performance after each change
+  D: Increase monitoring of the model until the scheduled validation
 answer: A
 explanation:
-  why_correct: A validation covers the model as it was used when it was validated. A new product and a new data
-    source change both the population and the inputs, so the earlier conclusion may no longer hold. Calendar cycles
-    should be backed by event triggers that bring validation forward when material changes happen. That keeps assurance
-    current for the models that change, without raising cost for those that do not.
+  why_correct: A validation covers the model as it was when validated. A new product and a new data source
+    change the population and the inputs, so the earlier conclusion may no longer hold. Event triggers
+    for material changes bring validation forward now and for future changes, whatever the calendar says.
   why_not:
-    B: A shorter cycle for every model raises cost across the board and could still miss a change made the week
-      after a validation. The trigger, not the frequency, is the gap.
-    C: The earlier validation did not cover buy-to-let lending or the new data. Treating it as still valid gives
-      false assurance.
-    D: The owner is not independent of the model, and a written statement is not a test. Material changes need independent
-      review.
+    B: A shorter cycle still runs on the calendar. It brings the next validation closer but could still
+      miss a change made just after one.
+    C: The owner is not independent of the model, and an attestation is not a test.
+    D: Monitoring shows trends but is not an independent check that the model is sound for a product it
+      was never validated for.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-13-aaig-d3-b-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

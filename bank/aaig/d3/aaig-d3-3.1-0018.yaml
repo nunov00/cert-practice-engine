@@ -1,30 +1,32 @@
 id: aaig-d3-3.1-0018
 subdomain: '3.1'
 difficulty: medium
-stem: A media company's AI model that recommends articles now costs more to run each year than the extra subscriptions
-  it is credited with, and newer features in the main platform do the same job. The model owner wants to keep
-  tuning it. What should the governance leader recommend?
+stem: A media company's AI model that recommends articles now costs more to run each year than the extra
+  subscriptions it is credited with, and newer features in the main platform do the same job. The model
+  owner wants to keep tuning it. What should the governance leader recommend?
 options:
-  A: Keep the model and assign more staff to improve its accuracy
-  B: Keep the model running alongside the platform as a backup
-  C: Put a retirement case to the portfolio body
-  D: Move the model to a cheaper hosting provider to reduce cost
+  A: Set the owner improvement targets and review in six months
+  B: Move the model to cheaper hosting to restore a positive return
+  C: Present a retirement case to the AI portfolio board
+  D: Ask finance to re-test how subscriptions are credited to it
 answer: C
 explanation:
-  why_correct: AI systems should be reviewed through their whole life, including whether they still earn their
-    place. Here costs exceed benefits and an alternative exists. Bringing a retirement case to the body that
-    governs the AI portfolio ensures an objective decision rather than one driven by the owner's attachment.
+  why_correct: AI systems should be reviewed through their whole life, including whether they still earn
+    their place. Here costs exceed benefits and the platform already does the same job. A retirement case
+    to the body that governs the portfolio gives an objective decision rather than one driven by the owner's
+    attachment.
   why_not:
-    A: Investing more in a model with negative net value and a ready replacement is unlikely to be the best
-      use of resources.
-    B: Running both duplicates cost and risk without a clear need for a backup in a non-critical service.
-    D: Cheaper hosting trims cost but avoids the real question of whether the model should exist at all now
-      that an alternative does the job.
+    A: Improvement targets suit a model with a unique role. Here the platform does the same job, so better
+      accuracy adds little value.
+    B: Cheaper hosting trims cost but avoids the real question of whether the model is needed now that
+      the platform does the job.
+    D: Re-testing attribution makes sense when value is disputed. Even a higher credit would not justify
+      running a duplicate of a platform feature.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

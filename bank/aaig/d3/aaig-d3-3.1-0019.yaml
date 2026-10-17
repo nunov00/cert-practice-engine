@@ -1,33 +1,33 @@
 id: aaig-d3-3.1-0019
 subdomain: '3.1'
-difficulty: hard
-stem: A retail bank is replacing the AI model that has set customers' credit card limits for five years. To
-  cut hosting costs, the project manager plans to shut down its servers and delete the model files and decision
-  logs on the day the new model goes live. Customers can complain about past limit decisions for several years.
-  What should the governance leader require FIRST?
+difficulty: easy
+stem: A retail bank is replacing the AI model that has set customers' credit card limits for five years.
+  An interface review confirms that no other system uses its scores. To cut hosting costs, the project
+  manager plans to delete the model files and decision logs on the day the new model goes live. Customers
+  can complain about past limit decisions for several years. What should the governance leader require
+  FIRST?
 options:
-  A: A check that no other system still consumes the model's scores
-  B: A plan covering dependencies, record retention and complaint evidence
-  C: Approval from the original vendor before any data is deleted
-  D: A final accuracy test so the model's last performance is recorded
+  A: A parallel run of the old and new models before shutdown
+  B: Retention of the model files and decision logs for complaints
+  C: Approval of the shutdown date by the model risk committee
+  D: A final accuracy test recorded for the outgoing model
 answer: B
 explanation:
-  why_correct: Decommissioning is a governed process, not just a shutdown. The bank must confirm downstream
-    dependencies, keep records it is required to retain, and preserve evidence of how past decisions were
-    made, because customers may still challenge them. Deleting logs could leave the bank unable to explain
-    earlier decisions.
+  why_correct: Deletion cannot be undone, and the bank may need to explain past limit decisions for years.
+    Keeping the model and its decision logs for that period preserves the evidence. Dependencies are already
+    confirmed, so retention is the gap to close before anything is deleted.
   why_not:
-    A: Checking dependencies is part of the job, but it misses the retention and evidence obligations that
-      deleting logs would breach.
-    C: The vendor is not the authority on the bank's retention duties. The bank decides, under its own
-      obligations.
-    D: A final test may be useful for the record but does nothing to protect evidence of past decisions or
-      manage dependencies.
+    A: A parallel run tests the new model, which is useful, but does nothing to stop the loss of evidence
+      on past decisions.
+    C: Committee approval of a date does not settle what must be kept. The committee could approve the
+      same deletion.
+    D: A final test records the model's last performance. It cannot explain individual past limit decisions,
+      which need the logs.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

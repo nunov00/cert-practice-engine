@@ -1,32 +1,31 @@
 id: aaig-d3-3.1-0057
 subdomain: '3.1'
-difficulty: hard
-stem: A public pension administrator is introducing an AI service for member enquiries. The approved business case
-  includes cutting contact centre staff by 40%. HR wants to make the reductions at go-live to capture savings in
-  this financial year, although the AI has not yet run at full volume in production. What should the governance
-  leader recommend?
+difficulty: medium
+stem: A public pension administrator is introducing an AI service for member enquiries. The approved business
+  case includes cutting contact centre staff by 40%. HR wants to make the reductions at go-live to capture
+  savings in this financial year, although the AI has not yet run at full volume in production. What should
+  the governance leader recommend?
 options:
-  A: Proceed with the reductions at go-live, since the savings form part of the approved business case
-  B: Link the reductions to agreed performance milestones in production, keeping capacity until they are met
-  C: Cancel the staff reduction and treat the AI as an improvement in service quality only
-  D: Retain all staff but freeze hiring, so that normal turnover delivers the saving over time
+  A: Make the reductions at go-live to capture this year's savings
+  B: Tie the reductions to agreed performance milestones in production
+  C: Freeze hiring so that turnover delivers the saving over time
+  D: Make half the reductions at go-live and the rest after a year
 answer: B
 explanation:
-  why_correct: Removing human capacity before the AI has proven itself at full volume leaves members exposed if
-    it underperforms, and the expertise may be hard to rebuild. Tying reductions to agreed milestones in production
-    still captures the approved benefit, but only once the evidence supports it. Sequencing benefit capture against
-    proven performance is part of integrating AI responsibly.
+  why_correct: Removing capacity before the AI has proven itself at full volume leaves members exposed
+    if it underperforms, and the expertise may be hard to rebuild. Tying reductions to agreed milestones
+    in production still captures the approved benefit, once the evidence supports it.
   why_not:
-    A: Approval of the business case assumed the AI would work; it did not guarantee it. Acting before that is shown
+    A: The approved case assumed the AI would work; it did not prove it. Acting before full-volume evidence
       risks service failure for members.
-    C: Abandoning an approved benefit is not needed. The issue is timing, which milestones resolve.
-    D: A hiring freeze is a reasonable lever, but it ties savings to turnover rather than to evidence. Capacity
-      may fall before the AI is ready, or long after.
+    C: A hiring freeze ties savings to turnover rather than to evidence. Capacity may fall before the
+      AI is ready, or long after.
+    D: Phasing by calendar still cuts staff before the AI has shown it can handle full volume.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-13-aaig-d3-b-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass
