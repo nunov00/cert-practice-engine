@@ -9,6 +9,9 @@
   - counts per subdomain and difficulty
   - checker rejects with reasons
   - **suggested spot-check sample**: 3 to 5 random questions, linked
+  - **difficulty calibration**: the profile's `method` (or what changed in it),
+    the options-only table from `pnpm calibration record`, the hard share from
+    `pnpm calibration <exam>`, and the number of writer and checker rounds
 - Questions in the PR are `published` with `check_verdict: pass` (they go live
   only when merged); any held for the owner's call are `in_review`.
 - CI must be green.

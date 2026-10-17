@@ -8,6 +8,7 @@
   "scripts": {
     "validate": "pnpm --filter @cpe/tools run validate",
     "coverage": "pnpm --filter @cpe/tools run coverage",
+    "calibration": "pnpm --filter @cpe/tools run calibration",
     "test": "pnpm -r run test",
     "typecheck": "pnpm -r run typecheck",
     "check": "pnpm typecheck && pnpm test && pnpm validate"

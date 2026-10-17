@@ -3,7 +3,8 @@ import { basename, dirname, join, sep } from "node:path";
 import { Ajv2020 } from "ajv/dist/2020.js";
 import type { ErrorObject } from "ajv";
 import { isLoadError, loadQuestions, loadRecipes, type Loaded } from "./load.ts";
-import type { Issue, Question, Recipe } from "./types.ts";
+import { changedQuestionFiles, checkCalibration, checkChangedBatch, loadCalibration } from "./calibration.ts";
+import type { CalibrationProfile, Issue, Question, Recipe } from "./types.ts";
 
 const EPS = 1e-9;
 const NEAR_DUPLICATE_THRESHOLD = 0.8;
@@ -14,7 +15,7 @@ const KEY_LENGTH_RATIO = 1.5;
  * Wording that marks an option as wrong to a test-wise reader when only distractors use it:
  * absolute words ("ban all…", "every…") and options that justify themselves ("…, since…").
  */
-const GIVEAWAY_CUES: { name: string; pattern: RegExp }[] = [
+export const GIVEAWAY_CUES: { name: string; pattern: RegExp }[] = [
   { name: "absolute words (all, every, never…)", pattern: /\b(all|every|never|always|immediately|indefinitely|at once|ban)\b/i },
   { name: "a self-justifying clause (since/because…)", pattern: /\b(since|because)\b/i },
 ];
@@ -94,11 +95,43 @@ export function checkRecipe(recipe: Recipe, file: string): Issue[] {
   return issues;
 }
 
+/** How many times longer the key is than the longest distractor. */
+export function keyLengthRatio(q: Question): number {
+  const keyLength = q.options[q.answer]?.length ?? 0;
+  const longestWrong = Math.max(0, ...Object.keys(q.options).filter((k) => k !== q.answer).map((k) => q.options[k]!.length));
+  return longestWrong > 0 ? keyLength / longestWrong : 0;
+}
+
+/** Giveaway cues used only by distractors, as "<cue> (letters)". */
+export function giveawayCues(q: Question): { name: string; options: string[] }[] {
+  const key = q.options[q.answer] ?? "";
+  const wrong = Object.keys(q.options).filter((k) => k !== q.answer).sort();
+  const out: { name: string; options: string[] }[] = [];
+  for (const cue of GIVEAWAY_CUES) {
+    const cued = wrong.filter((k) => cue.pattern.test(q.options[k] ?? ""));
+    if (cued.length > 0 && !cue.pattern.test(key)) out.push({ name: cue.name, options: cued });
+  }
+  return out;
+}
+
+export const stemWords = (q: Question) => q.stem.trim().split(/\s+/).length;
+
+export interface QuestionCheckOptions {
+  /**
+   * The question is new or changed in this PR (`--since`): calibration cues
+   * become errors and the options-only result must be recorded.
+   */
+  strict?: boolean;
+  profile?: CalibrationProfile;
+}
+
 /** Rules linking one question to its recipe and its location in bank/. */
-export function checkQuestion(q: Question, file: string, recipe: Recipe | undefined): Issue[] {
+export function checkQuestion(q: Question, file: string, recipe: Recipe | undefined, opts: QuestionCheckOptions = {}): Issue[] {
   const issues: Issue[] = [];
   const err = (message: string) => issues.push({ level: "error", file, message });
   const warn = (message: string) => issues.push({ level: "warning", file, message });
+  const strict = opts.strict === true && q.status !== "retired";
+  const cue = strict ? err : warn;
 
   if (basename(file).replace(/\.ya?ml$/, "") !== q.id) err(`file name must be ${q.id}.yaml`);
 
@@ -144,17 +177,23 @@ export function checkQuestion(q: Question, file: string, recipe: Recipe | undefi
     err(`"all/none of the above" options are not allowed`);
   }
 
-  const keyLength = q.options[q.answer]?.length ?? 0;
-  const longestWrong = Math.max(0, ...wrong.map((k) => q.options[k]?.length ?? 0));
-  if (longestWrong > 0 && keyLength / longestWrong > KEY_LENGTH_RATIO) {
-    warn(`answer is ${(keyLength / longestWrong).toFixed(1)}x longer than any distractor; balance option lengths`);
+  const ratio = keyLengthRatio(q);
+  if (ratio > KEY_LENGTH_RATIO) {
+    cue(`answer is ${ratio.toFixed(1)}x longer than any distractor; balance option lengths`);
   }
 
-  const key = q.options[q.answer] ?? "";
-  for (const cue of GIVEAWAY_CUES) {
-    const cued = wrong.filter((k) => cue.pattern.test(q.options[k] ?? ""));
-    if (cued.length > 0 && !cue.pattern.test(key)) {
-      warn(`only distractors (${cued.join(", ")}) use ${cue.name}; a test-wise reader can rule them out without the stem`);
+  for (const c of giveawayCues(q)) {
+    cue(`only distractors (${c.options.join(", ")}) use ${c.name}; a test-wise reader can rule them out without the stem`);
+  }
+
+  if (strict) {
+    if (q.status === "published" && !q.provenance.options_only) {
+      err(`new or changed published question needs provenance.options_only from the checker's options-only test (docs/calibration/standard.md)`);
+    }
+    const range = opts.profile?.targets.stem_words;
+    const words = stemWords(q);
+    if (range && (words < range.min || words > range.max)) {
+      warn(`stem has ${words} words; the ${recipe.exam.id} calibration profile expects ${range.min} to ${range.max}`);
     }
   }
 
@@ -249,16 +288,25 @@ export function checkSampleSize(questions: Loaded<Question>[], recipes: Map<stri
 export interface ValidationResult {
   issues: Issue[];
   recipes: Map<string, Recipe>;
+  profiles: Map<string, CalibrationProfile>;
   questions: Loaded<Question>[];
 }
 
-export function validateRepo(root: string): ValidationResult {
+export interface ValidateOptions {
+  /** Git ref (e.g. origin/main): questions changed since its merge base get the strict calibration checks. */
+  since?: string;
+}
+
+export function validateRepo(root: string, opts: ValidateOptions = {}): ValidationResult {
   const ajv = new Ajv2020({ allErrors: true });
   const recipeSchema = compileSchema(ajv, root, "recipes/_schema/recipe.schema.json");
+  const calibrationSchema = compileSchema(ajv, root, "recipes/_schema/calibration.schema.json");
   const questionSchema = compileSchema(ajv, root, "bank/_schema/question.schema.json");
   const issues: Issue[] = [];
   const recipes = new Map<string, Recipe>();
+  const profiles = new Map<string, CalibrationProfile>();
   const questions: Loaded<Question>[] = [];
+  const changed = opts.since === undefined ? undefined : changedQuestionFiles(root, opts.since);
 
   for (const r of loadRecipes(root)) {
     if (isLoadError(r)) {
@@ -272,6 +320,24 @@ export function validateRepo(root: string): ValidationResult {
     const recipe = r.data as Recipe;
     issues.push(...checkRecipe(recipe, r.file));
     recipes.set(recipe.exam.id, recipe);
+
+    // Every exam needs a difficulty calibration profile before it can pass CI.
+    const c = loadCalibration(root, recipe.exam.id);
+    if (c === undefined) {
+      issues.push({
+        level: "error",
+        file: r.file,
+        message: `no recipes/${recipe.exam.id}/calibration.yaml; calibrate difficulty first (docs/calibration/standard.md)`,
+      });
+    } else if (isLoadError(c)) {
+      issues.push({ level: "error", ...c });
+    } else if (!calibrationSchema(c.data)) {
+      issues.push(...schemaIssues(c.file, calibrationSchema.errors));
+    } else {
+      const profile = c.data as CalibrationProfile;
+      issues.push(...checkCalibration(profile, recipe, c.file));
+      profiles.set(recipe.exam.id, profile);
+    }
   }
 
   for (const q of loadQuestions(root)) {
@@ -285,11 +351,14 @@ export function validateRepo(root: string): ValidationResult {
     }
     const question = q.data as Question;
     const exam = question.id.split("-")[0]!;
-    issues.push(...checkQuestion(question, q.file, recipes.get(exam)));
+    const strict = changed?.has(q.file) ?? false;
+    issues.push(...checkQuestion(question, q.file, recipes.get(exam), { strict, profile: profiles.get(exam) }));
     questions.push({ file: q.file, data: question });
   }
 
+  if (changed) issues.push(...checkChangedBatch(questions.filter((q) => changed.has(q.file)), profiles));
+
   issues.push(...checkDuplicates(questions));
   issues.push(...checkSampleSize(questions, recipes));
-  return { issues, recipes, questions };
+  return { issues, recipes, profiles, questions };
 }

@@ -79,7 +79,40 @@ export interface Question {
     run_id: string;
     checked_by?: string;
     check_verdict: "pass" | "fail" | "pending";
+    /**
+     * Result of the checker's options-only test (docs/calibration/standard.md):
+     * "obvious" when the key could be picked confidently without the stem.
+     * Required on every new or changed published question.
+     */
+    options_only?: "obvious" | "not_obvious";
   };
+}
+
+/** recipes/<exam>/calibration.yaml: how the exam's difficulty was calibrated and the targets it sets. */
+export interface CalibrationProfile {
+  format_version: "0.1";
+  exam: string;
+  /** The recipe outline version this profile was built against. */
+  outline_version: string;
+  calibrated_on: string;
+  sources: { kind: "outline" | "official_samples" | "official_guidance"; url: string; used_for: string }[];
+  /** Official material that exists but could not be used, and why. */
+  unavailable?: string[];
+  method: string;
+  /** Structure of the official samples, never their wording. */
+  official_profile: string[];
+  targets: {
+    /** Highest share of new or changed questions whose key is obvious from the options alone. */
+    options_only_obvious_max: number;
+    /** Lowest share of published questions labelled hard. */
+    hard_share_min: number;
+    /** Highest share of questions whose key is the only longest option (chance is 1/options). */
+    key_only_longest_max: number;
+    stem_words: { min: number; max: number };
+  };
+  /** Exam-specific guidance for writers and checkers. */
+  writer_notes: string[];
+  history: { date: string; scope: string; pr: number; result: string }[];
 }
 
 export interface Issue {

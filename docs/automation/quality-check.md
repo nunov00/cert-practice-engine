@@ -6,13 +6,18 @@ The checker is a separate session from the generator, with different
 instructions and no access to the generator's reasoning. Preferably a different
 agent (Claude checks Codex runs and vice versa).
 
+Follow `docs/calibration/checker-brief.md`, which runs these steps in three
+phases (options only, full questions blind, then compare) with
+`pnpm calibration packets` and `pnpm calibration record`.
+
 ## Steps, per question
 
 0. **Options-only test.** Before reading the stem, look at the four options alone
    and note which one you would pick. If that is the key and the choice is
-   obvious (the others are straw men or carry giveaway wording), fail the
-   question for rewrite under `docs/content-rules.md` §2 "Distractors". Record
-   the share of questions that pass this test in the PR.
+   obvious (the others are straw men or carry giveaway wording), send the
+   question back for rewrite under `docs/content-rules.md` §2 "Distractors".
+   `pnpm calibration record` stores the result in `provenance.options_only`;
+   CI fails a batch above the exam profile's `options_only_obvious_max`.
 1. **Answer blind.** Read stem and options only; pick an answer and give a reason.
 2. **Compare with the key.** If the blind answer differs, decide whether the key is
    wrong, the question is ambiguous, or the checker erred. Only "checker erred"
@@ -35,4 +40,5 @@ agent (Claude checks Codex runs and vice versa).
 - **Fail:** delete the draft file from the branch and record its ID, subdomain
   and reason in the PR's rejects table. The ID is not reused.
 
-Then run `pnpm check` and open the PR as described in `publishing.md`.
+Then run `pnpm check` and `pnpm validate --since origin/main`, and open the PR
+as described in `publishing.md`.

@@ -1,0 +1,54 @@
+# AAIG difficulty calibration profile. Format: recipes/_schema/calibration.schema.json
+# Standard and procedure: docs/calibration/standard.md. Official sources only;
+# structure was recorded, never wording.
+
+format_version: "0.1"
+exam: aaig
+outline_version: "2026-10-13"
+calibrated_on: "2026-10-16"
+
+sources:
+  - kind: official_guidance
+    url: "https://www.isaca.org/credentialing/aaig"
+    used_for: "The three announced practice areas and the governance-leader viewpoint"
+  - kind: official_samples
+    url: "https://www.isaca.org/credentialing/aaia/practice-quiz"
+    used_for: "Sister AI exam, 12 items, as a proxy: structural profile only"
+  - kind: official_samples
+    url: "https://www.isaca.org/credentialing/aaism/practice-quiz"
+    used_for: "Sister AI exam, 12 items, as a proxy: structural profile only"
+
+unavailable:
+  - "No AAIG exam content outline or sample questions published yet (preview recipe). Recalibrate on ISACA's own AAIG samples when they appear."
+
+method: >-
+  AAIG has no outline or samples yet, so the profile is taken from ISACA's
+  free AAIA and AAISM items (structure only) and the recipe's governance-leader
+  view. Whole-bank statistics and a blind options-only test, then every
+  question reworked through a writer and an independent checker loop (two to
+  three writer rounds per domain) until the options-only share met the target.
+  Pitched slightly harder than the proxy samples (owner rule, 2026-10-16).
+
+official_profile:
+  - "Proxy (AAIA, AAISM): stems about 14 to 24 words, nearly all with a capitalised MOST/BEST/FIRST qualifier"
+  - "Options short and parallel; the key is never the only longest"
+  - "Distractors are relevant practices that miss on one point (wrong layer, too narrow, too early, overclaim)"
+  - "Real AI technical knowledge appears alongside governance judgment"
+
+targets:
+  options_only_obvious_max: 0.40
+  hard_share_min: 0.30
+  key_only_longest_max: 0.25
+  stem_words: { min: 12, max: 80 }
+
+writer_notes:
+  - "Viewpoint is the governance leader: accountability, policy, oversight, alignment with strategy and regulation"
+  - "Experts spot the 'textbook principle' key (accountable owner, risk-based tiering, shared definitions). Add a second principle-level option that the stem shows is already in place"
+  - "The key must not be the only governance-level, appetite-based or two-part option, and the stem must not paraphrase it"
+  - "Overlap with AAIR topics is fine; dedupe within AAIG only"
+
+history:
+  - { date: "2026-10-16", scope: "audit, 28-question sample", pr: 35, result: "27/28 obvious from options alone before the rework" }
+  - { date: "2026-10-17", scope: "D2 rework, 49 questions", pr: 39, result: "17/49 (35%) obvious after two writer rounds" }
+  - { date: "2026-10-17", scope: "D1 rework, 57 questions", pr: 40, result: "15/57 (26%) obvious after two writer rounds" }
+  - { date: "2026-10-17", scope: "D3 rework, 50 questions", pr: 41, result: "13/50 (26%) obvious after three writer rounds" }

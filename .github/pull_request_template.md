@@ -9,6 +9,7 @@
 - Questions added / changed / retired:
 - Checker rejects (count and main reasons):
 - Suggested spot-check sample:
+- Difficulty calibration (profile method, options-only table, hard share, rounds):
 
 ## Checks
 

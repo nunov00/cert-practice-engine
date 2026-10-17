@@ -12,11 +12,11 @@ many exams; each exam is defined by a **recipe**, and questions live in a
 ```
 recipes/_format/   Recipe format definitions (current: v0.2)
 recipes/_schema/   JSON Schema for recipes
-recipes/<exam>/    recipe.yaml per exam
+recipes/<exam>/    recipe.yaml and calibration.yaml (difficulty profile) per exam
 bank/_schema/      JSON Schema for questions
 bank/<exam>/<domain>/<id>.yaml   one file per question
 tools/             Content CLI (TypeScript): validate, coverage, build (public content)
-docs/              Content rules, automation runbooks, decisions, proposals
+docs/              Content rules, calibration, automation runbooks, decisions, proposals
 app/               Next.js web app, deployed to Cloudflare Workers (docs/deploy.md)
 ```
 
@@ -28,6 +28,8 @@ Node 22+, pnpm 10.
 pnpm install
 pnpm validate      # schema + cross-checks on recipes and the whole bank
 pnpm coverage      # published/pending vs targets per subdomain (pnpm coverage -- cissp)
+pnpm validate --since origin/main   # strict difficulty checks on new/changed questions (CI runs this on PRs)
+pnpm calibration   # bank difficulty stats vs each exam's profile (pnpm calibration cissp)
 pnpm --filter @cpe/app dev       # run the site locally
 pnpm --filter @cpe/app preview   # run it in the local Cloudflare Workers runtime
 pnpm test          # tool and app tests
@@ -44,6 +46,11 @@ pnpm check         # all of the above; run before every push
   no "all/none of the above", judgment over trivia.
 - Every option gets an explanation (`why_correct` and `why_not` for each wrong option).
 - Tag each question with the recipe's current `outline_version`.
+- **Difficulty calibration** (`docs/calibration/standard.md`): a new exam needs
+  `recipes/<exam>/calibration.yaml`, built from official outline and samples only,
+  before CI passes. Every new or changed question goes through the writer and
+  checker briefs there, including the options-only test; pitch slightly harder
+  than the official samples when unsure, and say how in the PR.
 - The site and brand are independent of the issuers; exam names never appear in
   the brand, logo or domain.
 
