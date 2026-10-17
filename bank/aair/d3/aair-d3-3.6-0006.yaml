@@ -1,31 +1,31 @@
 id: aair-d3-3.6-0006
 subdomain: '3.6'
-difficulty: medium
-stem: An insurer finds that its AI claims model has been wrongly rejecting a type of valid claim. The data
-  science team is ready to replace the model with a corrected version today. What should the incident manager
-  ensure BEFORE the replacement goes ahead?
+difficulty: hard
+stem: An insurer finds that its AI claims model has been wrongly rejecting a type of valid claim. The
+  corrected version has passed validation, and the data science team is ready to replace the model today.
+  What should the incident manager ensure BEFORE the replacement goes ahead?
 options:
   A: The faulty model version, inputs and decision logs are preserved
-  B: The corrected version has run in production for a trial period
-  C: A public statement about the issue has been approved and issued
-  D: The team that built the faulty model has been identified and named
+  B: The affected claimants have been identified from the decision logs
+  C: The regulator has been notified of the wrongly rejected claims
+  D: Claims handlers are reviewing rejections manually until go-live
 answer: A
 explanation:
-  why_correct: Once the faulty model is overwritten, it may be impossible to work out what went wrong or which
-    claims were affected. Preserving the version, inputs and logs supports root cause analysis, customer redress
-    and any regulatory enquiry.
+  why_correct: Once the faulty model is overwritten, it may be impossible to work out what went wrong
+    or which claims were affected. Preserving the version, inputs and logs supports root cause analysis,
+    customer redress and any regulatory enquiry, and only this step must happen before the change.
   why_not:
-    B: The corrected model should be tested, but a production trial before replacement would prolong the harm.
-      Evidence must be kept whatever the test approach.
-    C: Communication may be needed, but it can follow later. It does not have to happen before the fix, whereas
-      evidence will be lost if not kept first.
-    D: Incident response looks for causes, not blame. Naming individuals does not help contain or investigate
-      the issue.
+    B: Claimants must be identified, but that can be done after go-live as long as the logs are kept.
+      Waiting for it would delay the fix.
+    C: Notification may be required, but its timing follows legal deadlines, not the deployment. It does
+      not have to happen before the fix.
+    D: Manual review is a reasonable interim measure, but the fix goes live today. It does not protect
+      the evidence that the replacement would destroy.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

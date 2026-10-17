@@ -1,27 +1,31 @@
 id: aair-d3-3.2-0004
 subdomain: '3.2'
-difficulty: easy
-stem: A small online retailer uses a generative AI tool to draft product descriptions, which staff edit before publishing.
-  The residual risk is within appetite, and the owner decides to accept it. What should support this decision?
+difficulty: medium
+stem: A small online retailer uses a generative AI tool to draft product descriptions, which staff edit
+  before publishing. The residual risk is within appetite, and the owner decides to accept it. What should
+  support this decision?
 options:
-  A: A full independent audit of the tool before the acceptance is confirmed
-  B: An insurance policy that covers errors in product descriptions
-  C: Confirmation from the tool's provider that its outputs are accurate
-  D: A record of the owner's decision, the rationale and a review date
+  A: An independent review of the tool before the acceptance is confirmed
+  B: A treatment plan that brings the risk further below appetite
+  C: Sign-off from the compliance function on behalf of the owner
+  D: A recorded rationale and a date to review the owner's decision
 answer: D
 explanation:
-  why_correct: Acceptance is a valid treatment for a risk within appetite, but it should be a documented, owned
-    decision. Recording the rationale and a review date makes the acceptance visible and ensures it is revisited
-    if the use or conditions change.
+  why_correct: Acceptance is a valid treatment for a risk within appetite, but it should be a documented,
+    owned decision. Recording the rationale and a review date makes the acceptance visible and ensures
+    it is revisited if the use or conditions change.
   why_not:
-    A: An independent audit is disproportionate for a low risk that is already within appetite.
-    B: Insurance is a transfer option. It is not needed to accept a risk that is within appetite.
-    C: Providers do not guarantee output accuracy, and the retailer's own staff review is the relevant control.
+    A: Independent review is valuable for higher risks, but it is disproportionate for a low risk already
+      within appetite with staff editing every output.
+    B: Further treatment is not needed for a risk within appetite. It would spend effort without changing
+      whether the risk is acceptable.
+    C: The owner is accountable for the acceptance. Compliance can advise, but signing on the owner's
+      behalf blurs that accountability.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

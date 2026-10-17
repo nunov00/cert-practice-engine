@@ -1,29 +1,31 @@
 id: aair-d3-3.4-0007
 subdomain: '3.4'
 difficulty: medium
-stem: An energy utility uses an AI model to flag faults on its grid. The risk team must set thresholds for
-  a key risk indicator that tracks the model's missed fault rate. How should the thresholds BEST be set?
+stem: An energy utility uses an AI model to flag faults on its grid. A missed fault can lead to a safety
+  incident. The risk team must set thresholds for a key risk indicator that tracks the model's missed
+  fault rate. How should the thresholds BEST be set?
 options:
-  A: Use the default alert levels in the monitoring tool supplied with the model
-  B: Set them at the missed fault rate the model achieved in pre-release testing
-  C: Set them as low as possible so that any change at all raises an alert
-  D: Agree them with the risk owner using appetite and a measured baseline
+  A: Use the missed fault rate the model achieved in pre-release testing
+  B: Set them at two standard deviations above the production baseline
+  C: Benchmark them against missed fault rates reported by peer utilities
+  D: Agree them with the risk owner from the miss rate the utility can tolerate
 answer: D
 explanation:
-  why_correct: Thresholds should reflect how much risk the organisation is willing to accept and what normal
-    performance looks like in production. Agreeing them with the risk owner also makes clear who must act when
-    they are crossed.
+  why_correct: Thresholds should reflect how much risk the organisation is willing to accept, which matters
+    most where misses affect safety. Agreeing them with the risk owner from a tolerable miss rate also
+    makes clear who must act when they are crossed.
   why_not:
-    A: Tool defaults are generic. They do not reflect this utility's appetite or the safety impact of a missed
-      fault.
-    B: Test results are a useful reference, but live performance often differs, and the figure says nothing
+    A: Test results are a useful reference, but live performance often differs, and the figure says nothing
       about what level of misses is tolerable.
-    C: Overly tight thresholds produce constant alerts. Staff soon start ignoring them, which weakens monitoring.
+    B: A statistical band detects unusual change, which is useful. But it is anchored to whatever the
+      model currently does, not to what the utility can safely accept.
+    C: Peer figures reflect other networks, models and risk appetites. They show what is common, not what
+      level of missed faults this utility can safely accept.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

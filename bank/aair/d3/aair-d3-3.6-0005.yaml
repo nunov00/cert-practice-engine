@@ -1,31 +1,31 @@
 id: aair-d3-3.6-0005
 subdomain: '3.6'
-difficulty: medium
-stem: An online retailer's dynamic pricing model charged some postcodes much higher prices for a week. Staff
-  noticed, but the incident process covers only system outages and security breaches, so no one logged it.
-  Which change BEST addresses the gap?
+difficulty: hard
+stem: An online retailer's dynamic pricing model charged some postcodes much higher prices for a week.
+  Staff noticed, but the incident process covers only system outages and security breaches, so no one
+  logged it. Which change BEST addresses the gap?
 options:
-  A: Ask the pricing team to report pricing anomalies to management monthly
-  B: Add a manual check of all model prices before they go live each day
+  A: Add automated alerts for unusual price differences between postcodes
+  B: Require a fairness review of the pricing model before each release
   C: Extend incident definitions and severity criteria to cover AI harms
-  D: Replace the dynamic pricing model with a set of fixed pricing rules
+  D: Give staff a channel to report concerns about model outputs
 answer: C
 explanation:
   why_correct: The process failed because harmful model behaviour was not recognised as an incident. Defining
-    AI-specific harms, such as unfair or erroneous outputs, and how to rate their severity ensures they are
-    logged, escalated and handled like other incidents.
+    AI-specific harms, such as unfair or erroneous outputs, and how to rate their severity ensures they
+    are logged, escalated and handled like other incidents.
   why_not:
-    A: A monthly report is too slow for active harm and sits outside the incident process, so there would be
-      no containment or escalation.
-    B: Reviewing every price daily is impractical at scale and addresses only this model, not the gap in how
-      incidents are recognised.
-    D: Dropping the model removes one source of harm but leaves the incident process blind to problems in any
-      other AI system.
+    A: Alerts would detect this pattern sooner, but the staff already noticed. The gap is that nothing
+      defined the harm as an incident, and that gap covers other AI systems too.
+    B: A release review may prevent some unfair pricing, but it does not change how live harms are recognised
+      and handled when they occur.
+    D: Staff did notice the problem. A reporting channel into a process that only covers outages and breaches
+      would still not treat it as an incident.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

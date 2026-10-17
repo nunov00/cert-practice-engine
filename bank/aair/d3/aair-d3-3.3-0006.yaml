@@ -1,28 +1,30 @@
 id: aair-d3-3.3-0006
 subdomain: '3.3'
 difficulty: medium
-stem: An insurance broker has a two-person data team, and the same person usually builds and deploys updates to
-  its pricing model. Separating these duties is not practical. Which control BEST compensates for the lack of segregation?
+stem: An insurance broker has a two-person data team, and the same person usually builds and deploys updates
+  to its pricing model. Separating these duties is not practical. Which control BEST compensates for the
+  lack of segregation?
 options:
   A: Review of each deployment by a competent person outside the data team
-  B: A signed statement from each data scientist to follow deployment policy
+  B: Automatic logging of each deployment for later audit sampling
   C: Detailed documentation of every update by the person who made it
   D: Automated tests that model code must pass before it can be deployed
 answer: A
 explanation:
-  why_correct: The risk from combined duties is that one person can make an unchecked or unauthorised change. An
-    independent, competent person reviewing each deployment, after the event if necessary, restores a second pair
-    of eyes and detects improper changes.
+  why_correct: The risk from combined duties is that one person can make an unchecked or unauthorised
+    change. An independent, competent person reviewing each deployment, after the event if necessary,
+    restores a second pair of eyes and detects improper changes.
   why_not:
-    B: A signed statement relies on the same person's honesty and adds no independent check.
+    B: Logging creates evidence, but no one reviews each change, so an improper deployment may go unnoticed
+      until an audit happens to sample it.
     C: Documentation is useful, but it is produced by the person whose work needs checking.
-    D: Automated tests catch code defects, but the same person controls the tests and the deployment, so they give
-      no independent oversight.
+    D: Automated tests catch code defects, but the same person controls the tests and the deployment,
+      so they give no independent oversight.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

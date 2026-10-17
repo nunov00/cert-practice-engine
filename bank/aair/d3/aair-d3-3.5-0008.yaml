@@ -1,31 +1,31 @@
 id: aair-d3-3.5-0008
 subdomain: '3.5'
 difficulty: hard
-stem: A media company wants to use a major provider's generative AI service to draft news summaries. The provider
-  refuses individual customer audits but offers independent assurance reports and documentation of its safety
-  testing. What is the BEST course of action for the risk practitioner?
+stem: A media company wants to use a major provider's generative AI service to draft news summaries. The
+  provider refuses individual customer audits but offers independent assurance reports and documentation
+  of its safety testing. What is the BEST course of action for the risk practitioner?
 options:
-  A: Reject the provider, since the right to audit is a mandatory contract term
-  B: Accept the provider's reports as full assurance and proceed with the service
-  C: Review the reports, test outputs for this use and record the residual risk
-  D: Insist on an on-site audit as a condition before any contract is signed
+  A: Negotiate a pooled audit right shared with other large customers
+  B: Secure contract rights to future assurance reports and bridge letters
+  C: Assess the reports' scope and test the service for this use
+  D: Escalate to the board to accept the lack of audit rights
 answer: C
 explanation:
-  why_correct: Large providers often cannot allow every customer to audit them, so other assurance must be
-    used. Reviewing independent reports for relevance, testing how the service performs for the company's own
-    use and documenting any residual risk for acceptance gives a sound, proportionate basis for the decision.
+  why_correct: Large providers often cannot allow every customer to audit them, so other assurance must
+    be used. Checking that the independent reports cover the relevant controls, and testing how the service
+    performs for news summaries, gives a sound and proportionate basis for the decision.
   why_not:
-    A: Treating audit rights as non-negotiable may rule out suitable providers when equivalent assurance is
-      available by other means.
-    B: The reports cover the provider's own controls, not whether the outputs are accurate and suitable for
-      news summaries. Gaps would go unexamined.
-    D: The provider has already said it refuses audits, so insisting is unlikely to succeed and delays the
-      assessment the company can actually do.
+    A: Pooled audits can work with some providers, but this one refuses customer audits, and an audit
+      of its controls still would not show whether the outputs suit news summaries.
+    B: Ongoing rights to reports keep the assurance current, which is worth having. But the reports cover
+      only the provider's own controls, not whether the outputs are suitable for news summaries.
+    D: Escalation is premature. The available reports and testing have not yet been assessed, so the residual
+      risk the board would accept is not yet known.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

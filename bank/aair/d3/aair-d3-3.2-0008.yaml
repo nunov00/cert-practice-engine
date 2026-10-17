@@ -1,28 +1,31 @@
 id: aair-d3-3.2-0008
 subdomain: '3.2'
 difficulty: medium
-stem: A media company has finished putting in place the controls planned for its generative AI image tool, including
-  human content review and labelling of AI-generated images. What should the risk practitioner do NEXT?
+stem: A media company has finished putting in place the controls planned for its generative AI image tool,
+  including human content review and labelling of AI-generated images. What should the risk practitioner
+  do NEXT?
 options:
-  A: Mark the risk as closed in the register, since treatment is complete
-  B: Buy insurance cover for any copyright claims that may remain
-  C: Schedule a full audit of the tool for the following year
+  A: Close the treatment action and keep the risk under routine review
+  B: Report to the risk committee that the planned treatment is complete
+  C: Set up key risk indicators to monitor the tool from now on
   D: Reassess the residual risk and compare it with appetite
 answer: D
 explanation:
-  why_correct: Completing controls does not by itself show that the risk is acceptable. Reassessing the residual
-    risk shows whether the controls work as intended and whether the risk is now within appetite, or whether more
-    treatment or a formal acceptance is needed.
+  why_correct: Completing controls does not by itself show that the risk is acceptable. Reassessing the
+    residual risk shows whether the controls work as intended and whether the risk is now within appetite,
+    or whether more treatment or a formal acceptance is needed.
   why_not:
-    A: The risk still exists after treatment. Closing it would remove it from oversight.
-    B: Insurance may form part of a later decision, but buying it before the residual level is known is premature.
-    C: A later audit is useful, but the residual risk needs to be known now to decide whether the tool can operate
-      as it is.
+    A: Closing the action assumes the controls worked. Without a reassessment, no one knows whether the
+      risk is within appetite or needs more treatment.
+    B: Reporting completion tells the committee what was done, not whether the remaining risk is acceptable.
+    C: Indicators are useful for ongoing monitoring, but they track change from a baseline. The residual
+      risk must first be assessed and compared with appetite to know whether the tool can operate as it
+      is.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

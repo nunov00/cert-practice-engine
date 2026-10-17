@@ -6,27 +6,27 @@ stem: 'Two analysts at a retail bank separately assessed the same AI scenario: a
   five-level impact scale, which gives only a one-word label for each level. What should the risk practitioner
   recommend?'
 options:
-  A: Define each impact level with criteria and examples for AI harms
-  B: Average the two ratings and record that result in the register
-  C: Use the higher of the two ratings for all AI scenarios from now on
-  D: Have one analyst carry out all of the bank's AI risk assessments
+  A: Define each impact level with criteria and examples of AI harms
+  B: Hold a calibration session where the analysts agree one rating
+  C: Have a second reviewer moderate every AI impact rating
+  D: Rate impact as an estimated financial loss for each scenario
 answer: A
 explanation:
   why_correct: The two ratings differ because the scale is vague. Defining each level with measurable
     criteria, such as customers affected, financial loss and regulatory consequences, with examples of
     AI harms, makes ratings repeatable and comparable whoever does the assessment.
   why_not:
-    B: Averaging hides the disagreement and produces a rating that neither analyst supports. The scale
-      stays as vague as before.
-    C: Always taking the higher rating inflates results and distorts priorities. It treats the symptom,
-      not the unclear scale that causes it.
-    D: One person may be consistent but not necessarily right. It also creates a key-person dependency
-      and leaves the scale undefined for everyone else.
+    B: Calibration settles this one scenario, but the scale stays vague, so the next pair of analysts
+      will disagree again.
+    C: Moderation catches some outliers, but the moderator has the same vague scale to work from, so consistency
+      still depends on one person's view.
+    D: Money alone misses non-financial harms such as unsuitable advice to vulnerable customers and regulatory
+      consequences, which matter most in this scenario.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

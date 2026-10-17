@@ -1,14 +1,14 @@
 id: aair-d3-3.1-0015
 subdomain: '3.1'
-difficulty: medium
+difficulty: hard
 stem: An online travel agency is assessing two pricing tools with the same impact per wrong price. In
   one, analysts approve each price change. The other is an AI agent that changes thousands of prices an
   hour with no human step. When rating the agent's risk scenarios, which factor should the practitioner
   MOST weigh?
 options:
-  A: The agent's lower staff cost compared with the analyst-approved tool
-  B: The higher accuracy the agent showed when back-tested on past prices
-  C: The vendor's assurance that many other clients have tested the agent
+  A: The agent's error rate per price compared with the analysts' rate
+  B: The severity of the harm caused by each individual wrong price
+  C: How quickly the agent's model drifts as market prices change
   D: How many wrong prices could go live before an error is noticed
 answer: D
 explanation:
@@ -16,17 +16,17 @@ explanation:
     anyone notices. The exposure therefore depends on volume and time to detection, which raises the impact
     of each scenario and should shape both the rating and the controls chosen.
   why_not:
-    A: Staff savings belong in the business case. They do not change how much harm a fault in the agent
-      could cause.
-    B: Back-tested accuracy speaks to how often single errors occur, but not to how far a systematic error
-      spreads at machine speed.
-    C: Other clients' experience does not measure this agency's exposure, which depends on how the agent
-      is deployed here.
+    A: Error rate per price speaks to how often single errors occur, but not to how far a systematic error
+      spreads at machine speed before detection.
+    B: The stem says the impact per wrong price is the same for both tools, so this factor does not separate
+      their risk.
+    C: Drift affects how likely errors become over time, but the distinctive exposure here is how many
+      errors go live before anyone notices.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

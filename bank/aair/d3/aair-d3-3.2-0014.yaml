@@ -6,9 +6,9 @@ stem: A law firm's AI research assistant sometimes cites court decisions that do
   The firm still wants the tool for research. Which treatment approach is BEST?
 options:
   A: Move to the vendor's newest model, which has a lower error rate
-  B: Add a warning to each output that its citations may be wrong
+  B: Train lawyers to spot the signs of a fabricated citation
   C: Require each citation to be checked at source before filing
-  D: Limit use of the tool to partners with long research experience
+  D: Limit the tool to early research rather than drafting filings
 answer: C
 explanation:
   why_correct: Because the likelihood of fake citations cannot be brought to zero, the treatment should
@@ -17,14 +17,15 @@ explanation:
   why_not:
     A: A newer model lowers the likelihood but does not remove it, so the impact of an unchecked fake
       citation remains.
-    B: Warnings depend on users heeding them each time and do not make sure that any check takes place.
-    D: Experience does not stop a plausible fabricated citation from being trusted, and restricting use
-      reduces the tool's benefit.
+    B: Training helps, but fabricated citations often look plausible, and spotting them by sight does
+      not ensure that each one is checked.
+    D: Citations found in early research still flow into filings, so the impact remains unless they are
+      checked.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

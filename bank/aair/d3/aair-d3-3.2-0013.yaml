@@ -8,7 +8,7 @@ options:
   A: Have staff review a random 15% sample of all shipments the model codes
   B: Route shipments below a set confidence level to staff for coding
   C: Retrain the model every month on the latest shipment data
-  D: Ask customers to confirm the tariff codes for their own shipments
+  D: Have staff review the shipments with the highest declared value
 answer: B
 explanation:
   why_correct: Errors cluster in low-confidence cases, so sending those to staff puts limited human capacity
@@ -19,13 +19,13 @@ explanation:
       same staff time.
     C: Nothing suggests out-of-date data causes the errors, and retraining would still let low-confidence
       errors go through unchecked.
-    D: Customers may lack the expertise to judge codes, and the forwarder still bears the fines, so this
-      shifts work without reducing risk.
+    D: Value-based review targets the largest shipments, but the stem shows errors cluster in low-confidence
+      cases, so this catches fewer errors with the same staff time.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

@@ -1,29 +1,30 @@
 id: aair-d3-3.1-0003
 subdomain: '3.1'
-difficulty: easy
-stem: A hospital is preparing to deploy an AI tool that alerts nurses to early signs of sepsis. The risk practitioner
-  must identify risk scenarios for the tool before go-live. Which approach will BEST produce a complete set of scenarios?
+difficulty: medium
+stem: A cross-functional workshop has drafted risk scenarios for a hospital's sepsis alert tool before
+  go-live. Which step would BEST check the list for gaps?
 options:
-  A: Run a workshop with clinicians, data scientists, IT and compliance staff
-  B: Adopt the list of risks given in the developer's product documentation
-  C: Ask the data science team to list the ways the model could fail technically
-  D: Wait for the pilot period and record the issues that nurses report
+  A: Walk the list through each lifecycle stage and each affected group
+  B: Compare the list with incident reports from hospitals using similar tools
+  C: Run a failure mode analysis of the model with the data science team
+  D: Survey ward nurses on how they would respond to the alerts
 answer: A
 explanation:
-  why_correct: Scenarios for a clinical AI tool span clinical workflow, data, technology, privacy and compliance.
-    Bringing these perspectives together surfaces scenarios that any one group would miss, such as alert fatigue
-    on busy wards or missed alerts where local data differs from the training data.
+  why_correct: A gap check needs a structured frame that covers the whole scope. Walking the list through
+    each stage, from data and build to use, change and retirement, and through each affected group, such
+    as patients, nurses, doctors and IT, shows where no scenario exists yet.
   why_not:
-    B: A developer's list is a useful input, but it reflects the developer's view and not how this hospital will
-      use the tool.
-    C: Technical failures are only part of the picture. This misses workflow, clinical and compliance scenarios,
-      such as nurses ignoring frequent alerts.
-    D: Waiting for issues is reactive. Scenarios should be identified before patients are exposed to the tool.
+    B: Other hospitals' incidents are a useful input, but they only show scenarios that have already happened
+      elsewhere, so new and local gaps stay hidden.
+    C: Failure mode analysis is good at technical failures, but done by one team it misses workflow, clinical
+      and compliance gaps.
+    D: Nurses give valuable workflow insight, but a survey of one group checks only their part of the
+      scope.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

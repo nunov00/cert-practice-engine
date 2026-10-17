@@ -5,27 +5,27 @@ stem: A travel company builds its customer assistant on a third-party foundation
   an API. The provider updated the model without notice, and the assistant began giving poorer itinerary
   advice for several days before anyone noticed. Which action BEST addresses this risk going forward?
 options:
-  A: Agree change notice and version terms, and retest before adopting updates
-  B: Monitor the assistant's answers more closely to detect quality drops
-  C: Obtain the provider's independent assurance report on its controls
-  D: Move to another foundation model provider with a stronger reputation
+  A: Contract for advance notice and version pinning, then test upgrades
+  B: Add automated quality monitoring of answers, with alerts to the team
+  C: Obtain the provider's assurance report and review its change controls
+  D: Route traffic across two model providers so one can take over
 answer: A
 explanation:
   why_correct: The root cause is uncontrolled change from a supplier. Contract terms for advance notice
     and the option to stay on a fixed version, combined with the company's own regression tests before
-    moving to a new version, prevent silent changes from reaching customers.
+    moving to a new version, stop silent changes from reaching customers.
   why_not:
-    B: Better monitoring would shorten detection time, but it still lets the faulty change reach customers.
-      It complements, rather than replaces, change control with the supplier.
-    C: Assurance reports usually cover security and service controls, not how model changes affect a particular
-      customer's use. They would not have prevented this issue.
-    D: Any provider may change its models. Switching without changing contract terms and testing practice
-      leaves the same exposure in place.
+    B: Better monitoring would shorten detection time, but the faulty change would still reach customers
+      before the alert fired. It is detective, while the gap is preventive.
+    C: Assurance reports usually cover the provider's own change process, not how a model update affects
+      this customer's use. The company would still receive unannounced changes.
+    D: A second provider helps with outages, but here the service did not fail. Someone would still need
+      to notice the quality drop before switching, and the second provider can change its model too.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

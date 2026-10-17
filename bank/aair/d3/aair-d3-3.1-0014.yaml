@@ -1,32 +1,32 @@
 id: aair-d3-3.1-0014
 subdomain: '3.1'
-difficulty: medium
+difficulty: hard
 stem: A genetic testing company plans to give researchers public API access to a model trained on its
   customers' genetic and health records. The API will return a detailed confidence score with each prediction.
   Which risk scenario should the practitioner MOST ensure is assessed?
 options:
   A: Researchers find the predictions less accurate for their own populations
   B: Attackers use the API to infer whether a person was in the training data
-  C: Demand for the API exceeds capacity and response times rise sharply
-  D: Researchers publish findings the company considers commercially sensitive
+  C: Researchers use the predictions for clinical decisions they were not validated for
+  D: Attackers send many queries to reconstruct a working copy of the model
 answer: B
 explanation:
   why_correct: Detailed confidence scores can let an attacker test whether a specific person's record
-    was used in training. That would reveal that the person is a customer and may expose health information,
-    which is highly sensitive. This scenario arises directly from the planned design and has the most
-    severe impact on individuals.
+    was used in training. That would reveal that the person is a customer and may expose genetic and health
+    information, which is highly sensitive. This scenario arises directly from the planned design and
+    has the most severe impact on individuals.
   why_not:
     A: Poor accuracy for some populations matters to researchers, but it is a quality issue with far less
       impact than exposing customers' genetic data.
-    C: Capacity problems are an operational issue that can be managed, and they do not harm the customers
-      whose data trained the model.
-    D: Publication of sensitive findings is a commercial concern that contracts can address. It does not
-      compare with a breach of genetic privacy.
+    C: Misuse of outputs is a real scenario, but it mainly harms third parties and can be limited through
+      terms and guidance. It does not expose the customers whose data trained the model.
+    D: Confidence scores do make model extraction easier, but the main harm is loss of intellectual property.
+      Exposing customers' genetic data is more severe.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

@@ -6,8 +6,8 @@ stem: A professional services firm deploys an internal AI assistant that answers
   use it. Which concern should MOST lead the practitioner to challenge that rating?
 options:
   A: It may sometimes give staff inaccurate or incomplete answers
-  B: Staff may come to rely on it and lose some research skills over time
-  C: Its usage costs may grow faster than the firm has budgeted for
+  B: Staff may use its answers to draft client advice without a second review
+  C: Its answers may cite superseded versions of the firm's internal procedures
   D: It may return content from files the asking employee is not allowed to open
 answer: D
 explanation:
@@ -17,15 +17,15 @@ explanation:
   why_not:
     A: Inaccuracy is a real risk, but staff are expected to check answers and the effect is usually limited.
       It is less severe than systemic exposure of restricted information.
-    B: Skill erosion is a slow and modest concern compared with immediate unauthorised access to sensitive
-      documents.
-    C: Cost overrun is a financial management issue that budgeting controls can handle. It does not undermine
-      the low risk rating in the way a data exposure does.
+    B: Unreviewed use of answers is a real quality risk, but the rating's logic was about who can use
+      the tool. This concern does not show that the "employees only" premise is wrong.
+    C: Outdated sources can mislead staff, but this is an accuracy issue that version control of the repositories
+      can handle. It does not undermine the low rating the way exposure of restricted files does.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

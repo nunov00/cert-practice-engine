@@ -1,31 +1,32 @@
 id: aair-d3-3.4-0011
 subdomain: '3.4'
 difficulty: medium
-stem: An asset manager's AI risk dashboard takes model performance figures from spreadsheets that each model team
-  fills in by hand every month. Nobody checks the figures, and one team was recently found to have resubmitted the
-  previous quarter's numbers. What should the risk practitioner recommend?
+stem: An asset manager's AI risk dashboard takes model performance figures from spreadsheets that each
+  model team fills in by hand every month. Every model already logs its performance to a central monitoring
+  platform. One team was recently found to have resubmitted the previous quarter's numbers. What should
+  the risk practitioner recommend?
 options:
-  A: Ask each team to sign a statement confirming that its figures are correct
-  B: Show the dashboard figures with a note saying that they are self-reported
-  C: Draw the figures from monitoring systems and check them periodically
-  D: Reduce the dashboard to cover only the models with the highest ratings
+  A: Require each team lead to sign off its figures before submission
+  B: Have internal audit test a sample of the spreadsheets each year
+  C: Feed the dashboard directly from the central monitoring platform
+  D: Have the risk team review the spreadsheets for anomalies monthly
 answer: C
 explanation:
-  why_correct: A report is only as reliable as the data behind it. Taking figures directly from monitoring systems
-    removes manual copying and selective reporting, and periodic independent checks confirm that the figures remain
-    accurate.
+  why_correct: A report is only as reliable as the data behind it. Because the figures already exist on
+    the monitoring platform, taking them directly from it removes manual copying and selective reporting
+    at the source.
   why_not:
-    A: A signed statement adds accountability but does not verify anything. The same errors could still be reported,
-      now with a signature attached.
-    B: A caveat warns readers but leaves the figures unreliable. Decision makers still cannot tell which numbers
-      to trust.
-    D: Covering fewer models does not make the remaining figures any more reliable. The weakness is in how the data
-      is produced, not how much is shown.
+    A: Sign-off adds accountability but verifies nothing. The same stale figures could be submitted with
+      a signature.
+    B: An annual audit sample is independent, but it is detective and infrequent. Wrong figures could
+      drive decisions for most of a year before being found.
+    D: A monthly review may catch obvious anomalies, but it keeps the manual process and can miss plausible
+      wrong figures. The data can be taken from the platform instead.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass
