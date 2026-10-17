@@ -1,28 +1,33 @@
 id: cissp-d1-1.6-0002
 subdomain: '1.6'
-difficulty: medium
+difficulty: hard
 stem: A business unit asks for an exception to the authentication standard because a legacy application
-  cannot support multi-factor authentication. What is the BEST response?
+  cannot support multi-factor authentication. The application sits on an isolated segment reachable only
+  through a monitored jump host, and its replacement is funded for next year. What is the BEST response?
 options:
-  A: Grant a permanent exception recorded in the application's documentation
-  B: Refuse, and require the application to be replaced before the next audit
-  C: Let the application administrator decide on suitable alternative controls
-  D: Document a time-limited exception with compensating controls, approved by the accountable risk owner
+  A: Grant an exception until replacement, approved by the CISO
+  B: Ask internal audit to review the request before granting an exception
+  C: Grant an exception until replacement, approved by the IT service owner
+  D: Grant an exception until replacement, approved by the business unit head
 answer: D
 explanation:
-  why_correct: A good exception process records the gap, adds compensating controls such as network isolation
-    or extra monitoring, gets sign-off from the person accountable for the risk, and sets an expiry date
-    so it gets reviewed.
+  why_correct: The isolation and monitored jump host already act as compensating controls, and the funded
+    replacement gives a natural end date. What remains is acceptance of the risk of running without MFA,
+    which is a business risk. It belongs to the business unit head, who is accountable for the application
+    and its outcomes. Security advises and records the exception.
   why_not:
-    A: A permanent exception with no review or compensating controls leaves the risk unmanaged indefinitely.
-    B: Standards are mandatory, but a managed exception process exists for real technical limits. Refusing
-      outright tends to produce unofficial workarounds.
-    C: An administrator is a custodian and is not accountable for accepting business risk.
+    A: The CISO should review the compensating controls and record the exception, but the risk of running
+      without MFA belongs to the business. If security approves alone, the owner accountable for the risk
+      is left out of the decision.
+    B: Audit gives independent assurance on how exceptions are managed. Approving or vetting individual
+      exceptions would compromise that independence, and audit does not own the risk.
+    C: The IT service owner runs the application for the business, which is a custodial role. They can
+      confirm that the isolation works, but they cannot accept the business risk.
 status: published
 outline_version: '2024-04-15'
 sample: true
 provenance:
   generated_by: claude
   run_id: 2026-10-12-cissp-d1-a
-  checked_by: 2026-10-12-cissp-d1-a-check
+  checked_by: 2026-10-17-cissp-d1-rework-check
   check_verdict: pass

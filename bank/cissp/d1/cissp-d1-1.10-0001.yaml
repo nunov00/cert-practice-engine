@@ -1,29 +1,34 @@
 id: cissp-d1-1.10-0001
 subdomain: '1.10'
 difficulty: medium
-stem: During STRIDE threat modelling of a payments app, the team notes that a customer could later deny
-  having approved a transfer, and the system has no reliable way to show otherwise. Which category is
-  this, and which control MOST directly addresses it?
+stem: During STRIDE threat modelling of a payments app, the team confirms that approvals require multi-factor
+  login and that the transfer log sits on write-once storage. Each log entry records the amount, the accounts
+  and the time of the transfer. A customer could still deny having approved a transfer, and the bank could
+  not show otherwise. Which category is this, and which control MOST directly addresses it?
 options:
-  A: Spoofing; multi-factor authentication enforced at every customer login
-  B: Repudiation; tamper-evident audit records tied to each authenticated approval
-  C: Elevation of privilege; role-based access limited to least-privilege roles
-  D: Tampering; server-side validation and integrity checks on transfer requests
+  A: Spoofing; step-up authentication at the moment of each approval
+  B: Repudiation; the authenticated customer's identity in each approval record
+  C: Elevation of privilege; separate rights to create and to approve a transfer
+  D: Tampering; integrity hashing of each transfer record held in the log
 answer: B
 explanation:
-  why_correct: Repudiation threats are about users denying actions. Strong authentication combined with
-    protected, attributable logs or signed transactions gives evidence that settles the dispute.
+  why_correct: The threat is that a customer can deny an action and the bank has no evidence to answer,
+    which is repudiation. Login is already strong and the log cannot be altered, but the log never says
+    who approved each transfer. Binding the authenticated identity to each approval record closes exactly
+    that gap.
   why_not:
-    A: Stronger login helps establish identity, but without attributable records of the approval the customer
-      can still deny it.
-    C: Nothing in the scenario involves gaining unauthorised privileges.
-    D: Validation and integrity checks stop altered requests. They do not create evidence of who approved
-      a transfer.
+    A: Step-up authentication strengthens proof of identity at approval, but login already uses multiple
+      factors. Without the identity in the record, the stronger check still leaves no evidence of who
+      approved.
+    C: Splitting create and approve rights is a sound fraud control, but nobody here gains rights they
+      should not have. It does not create evidence of who approved a transfer.
+    D: The log already sits on write-once storage, so alteration is not the gap. Hashing proves a record
+      is unchanged, not who approved the transfer it describes.
 status: published
 outline_version: '2024-04-15'
 sample: true
 provenance:
   generated_by: claude
   run_id: 2026-10-12-cissp-d1-a
-  checked_by: 2026-10-12-cissp-d1-a-check
+  checked_by: 2026-10-17-cissp-d1-rework-check
   check_verdict: pass

@@ -1,30 +1,35 @@
 id: cissp-d1-1.4-0001
 subdomain: '1.4'
-difficulty: hard
-stem: A European subsidiary plans to move customer personal data to a cloud provider in a country that
-  has no adequacy decision under the GDPR. What should the privacy lead ensure BEFORE the transfer takes
-  place?
+difficulty: medium
+stem: A European subsidiary plans to move customer personal data to a cloud provider in a country with
+  no GDPR adequacy decision. The legal team has already documented an assessment of the destination's
+  laws and found the risk manageable. The processing itself is routine. What should the privacy lead make
+  sure is in place BEFORE the transfer?
 options:
-  A: Customers are notified of the transfer in an updated privacy notice after migration
-  B: A valid transfer mechanism, such as standard contractual clauses, is in place
-  C: All personal data is encrypted at rest with keys managed by the provider
-  D: The provider holds a current ISO/IEC 27001 certificate covering the service
+  A: A completed data protection impact assessment for the migration
+  B: Standard contractual clauses agreed with the provider for the transfer
+  C: Explicit consent from each customer to the move of their data abroad
+  D: A documented transfer impact assessment of the destination's laws
 answer: B
 explanation:
-  why_correct: Transfers to countries without adequacy need an approved safeguard. Standard contractual
-    clauses are the usual route, supported by an assessment of the destination's laws and any extra measures
-    it calls for. They must be in place before data moves.
+  why_correct: Without an adequacy decision, a systematic transfer needs an appropriate safeguard under
+    GDPR Article 46, such as standard contractual clauses or binding corporate rules. For a transfer to
+    an outside cloud provider, standard contractual clauses are the usual tool, and they must be signed
+    before data moves. The assessment of the destination's laws that supports them is already done.
   why_not:
-    A: Transparency duties apply, but telling customers afterwards does not make an unlawful transfer
-      lawful.
-    C: Encryption may be a supplementary measure, and with provider-held keys it is a weak one. On its
-      own it does not give the transfer a legal basis.
-    D: Certification is evidence of security management, not a lawful transfer mechanism.
+    A: A DPIA is needed when processing is likely to be high risk, and the stem says this processing is
+      routine. Even where one is needed, it assesses the processing. It is not a transfer mechanism.
+    C: Explicit consent is a derogation under Article 49, not an appropriate safeguard under Article 46.
+      Regulators read derogations narrowly and expect them to be used for occasional transfers, not systematic
+      ones. Consent is also hard to obtain validly from every customer and can be withdrawn, so it does
+      not suit an ongoing move to a cloud provider.
+    D: A transfer impact assessment is required alongside the clauses, but the legal team has already
+      completed it. The missing element is the transfer mechanism itself.
 status: published
 outline_version: '2024-04-15'
 sample: true
 provenance:
   generated_by: claude
   run_id: 2026-10-12-cissp-d1-a
-  checked_by: 2026-10-12-cissp-d1-a-check
+  checked_by: 2026-10-17-cissp-d1-rework-check
   check_verdict: pass
