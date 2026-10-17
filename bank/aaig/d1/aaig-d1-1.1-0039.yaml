@@ -1,32 +1,32 @@
 id: aaig-d1-1.1-0039
 subdomain: '1.1'
 difficulty: medium
-stem: The board of a mid-sized insurer approves AI proposals from management without asking questions. In a private
-  session, several directors admit they do not understand AI well enough to know what to challenge. What should
-  the governance leader recommend?
+stem: The board of a mid-sized insurer approves AI proposals from management without asking questions.
+  In a private session, several directors admit they do not understand AI well enough to know what to
+  challenge. The next board appointment is about two years away. What should the governance leader recommend?
 options:
-  A: Tailored board education, plus independent expert advice on request
-  B: Moving every AI decision to management so that the board is not exposed
-  C: Appointing the head of data science as a voting member of the board
-  D: Sending directors the full technical documentation for each AI proposal
+  A: Tailored board education and independent advice on request
+  B: Board briefings on AI from the company's own data science leads
+  C: Creating a board technology committee to review AI proposals
+  D: Recruiting a director with AI expertise at the next board renewal
 answer: A
 explanation:
-  why_correct: Directors do not need to be engineers, but they must understand AI well enough to ask informed questions
-    and judge management's answers. Focused education on the risks, value drivers and governance of AI, plus access
-    to independent advice when a decision needs it, builds the board's ability to challenge without blurring its
-    role.
+  why_correct: Directors do not need to be engineers, but they must understand AI well enough to ask informed
+    questions and judge management's answers. Focused education on AI risk, value and governance, plus
+    independent advice when a decision needs it, builds the board's ability to challenge now and without
+    blurring its role.
   why_not:
-    B: The board cannot avoid its oversight duty by handing decisions away. Strategic and high-risk AI matters still
-      need board oversight, so the knowledge gap has to be closed, not avoided.
-    C: Putting a manager whose team builds the systems on the board mixes oversight with execution and creates a
-      conflict. It also leaves the other directors as dependent as before.
-    D: More technical detail does not help directors who lack the background to read it. They need material framed
-      around decisions, risk and value, and the skills to question it.
+    B: Briefings from data science leads build knowledge, but they come from the management whose proposals
+      the board must challenge. Directors need an independent view as well.
+    C: A committee can give AI more attention, but its members would be the same directors who lack the
+      knowledge. The gap would move rather than close.
+    D: An expert director is a sound long-term step, but the next appointment is two years away. The other
+      directors would still be unable to challenge in the meantime.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-b
-  checked_by: 2026-10-13-aaig-d1-b-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

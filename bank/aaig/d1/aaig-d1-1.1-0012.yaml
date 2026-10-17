@@ -1,31 +1,34 @@
 id: aaig-d1-1.1-0012
 subdomain: '1.1'
 difficulty: hard
-stem: A bank's board-approved risk appetite says customer-facing AI must not produce unfair outcomes, and management
-  has set a measurable tolerance for outcome gaps between customer groups. A new credit model slightly exceeds
-  that tolerance but promises large revenue gains. The business head wants to launch. What should happen?
+stem: A bank's board-approved risk appetite says customer-facing AI must not produce unfair outcomes,
+  and management has set a measurable tolerance for outcome gaps between customer groups. A new credit
+  model slightly exceeds that tolerance but promises large revenue gains. The model team says retraining
+  cannot close the gap without losing most of the gain. The business head wants to launch. What should
+  happen?
 options:
   A: Escalate to the body that set the appetite for an explicit decision
-  B: Launch, since the breach is small and the revenue gain is large
-  C: Let the model owner widen the tolerance so it fits the new model's results
-  D: Launch, and report the breach in the next annual risk report
+  B: Launch with enhanced monitoring and a plan to close the gap
+  C: Ask the risk function to recalibrate the tolerance for this product
+  D: Launch to a small pilot group to confirm the size of the gap
 answer: A
 explanation:
-  why_correct: A tolerance marks the point at which risk leaves what management may accept on its own. A breach,
-    however small, should go to the body that holds that authority, which can decide to accept, mitigate or
-    reject with full visibility. That keeps the appetite meaningful.
+  why_correct: A tolerance marks the point at which risk leaves what management may accept on its own.
+    Retraining would remove most of the value, so the choice is now a trade-off between fairness risk
+    and revenue. That trade-off belongs to the body that holds the authority, which can accept, mitigate
+    or reject it with full visibility.
   why_not:
-    B: Trading a tolerance breach for revenue is a decision only the authority that set the limit may make.
-      The business head cannot make it alone.
-    C: Changing a limit to fit a proposal makes the limit worthless. Tolerances are set in advance precisely
-      so they are not adjusted case by case.
-    D: Reporting after the fact means the board learns of the exposure months later, when customers may already
-      have been treated unfairly.
+    B: Monitoring and a remediation plan are sound conditions for a launch, but they do not authorise
+      one. The model would still operate outside tolerance on the business's own decision.
+    C: Tolerances can be recalibrated through a proper review, but doing it for one product to fit its
+      results makes the limit worthless. It also leaves the trade-off with the wrong people.
+    D: A pilot can give better evidence, but the gap is already measured. Pilot customers would still
+      face outcomes outside tolerance that nobody with authority has accepted.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

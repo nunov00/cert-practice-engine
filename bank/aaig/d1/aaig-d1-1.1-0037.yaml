@@ -5,27 +5,28 @@ stem: A health insurer's AI policy says that denials of prior authorisation reco
   involvement'. An internal review finds that nurses confirm the denials in batches of fifty with a single
   click, and none has overturned a denial in the past year. What should the governance lead recommend?
 options:
-  A: Remove the human review, as it adds cost without adding value
-  B: Hire more reviewers so that each can spend longer per case
-  C: Accept the practice, as the policy's review requirement is met
-  D: Define in policy what effective oversight must involve
+  A: Track override rates and report them to the governance committee
+  B: Hire more nurse reviewers so that each can spend longer per case
+  C: Train the nurses on automation bias and their power to override
+  D: Define in policy what effective human oversight must involve
 answer: D
 explanation:
-  why_correct: A vague requirement allows rubber-stamping that gives no real protection. Policy should state
-    what oversight means in practice, such as which cases need review, the authority and information reviewers
-    need, and how overrides are tracked, so that oversight is effective and can be checked.
+  why_correct: A vague requirement for human involvement allows rubber-stamping that gives no real protection.
+    Policy should state what oversight means in practice, such as which cases need individual review,
+    the authority and information reviewers need, and how overrides are tracked. Training, staffing and
+    monitoring then have a standard to meet.
   why_not:
-    A: Removing review because it is ineffective abandons a control the insurer decided it needed. The fix is
-      to make it meaningful.
-    B: More reviewers might add time, but without clear expectations, authority and information the review
-      can remain a formality.
-    C: The policy is met in form only. Confirming batches with one click and never overturning a denial suggests
-      automation bias, not real oversight.
+    A: Override rates are a useful indicator, and the review already shows they are zero. Reporting the
+      number again does not say what reviewers must do differently.
+    B: More reviewers give more time per case, but the policy would still accept batch confirmation as
+      human involvement. Extra time alone may not change the practice.
+    C: Training helps nurses resist automation bias, but the policy still treats a one-click batch confirmation
+      as compliant. Without a clear standard, the process can stay a formality.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

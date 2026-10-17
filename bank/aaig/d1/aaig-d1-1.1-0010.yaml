@@ -1,29 +1,31 @@
 id: aaig-d1-1.1-0010
 subdomain: '1.1'
 difficulty: medium
-stem: A university's AI policy, written two years ago, bans all use of generative AI by staff. A recent survey
-  shows that most staff use such tools anyway for routine work. What should the governance lead recommend?
+stem: A university's AI policy, written two years ago, bans all use of generative AI by staff. A recent
+  survey shows that most staff use such tools anyway, mainly for routine drafting with non-sensitive material,
+  and it lists which tools they use. What should the governance lead recommend?
 options:
-  A: Enforce the ban strictly with disciplinary action for breaches
-  B: Revise the policy to allow defined uses with clear safeguards
-  C: Withdraw the policy and let each faculty set its own rules
-  D: Block all generative AI websites on the university network
+  A: Reinforce the policy with training on the risks behind it
+  B: Revise the policy to allow defined uses with safeguards
+  C: Grant exceptions to faculties that show a business need
+  D: Monitor network traffic to confirm which tools staff use
 answer: B
 explanation:
-  why_correct: A policy that most people ignore is not controlling risk. Revising it to permit legitimate uses
-    under clear conditions, such as approved tools and limits on sensitive data, brings real behaviour inside
-    governance where it can be overseen.
+  why_correct: A policy that most people ignore is not controlling risk. Most of the use is routine and
+    low risk, so revising the policy to permit defined uses under clear conditions, such as approved tools
+    and limits on sensitive data, brings real behaviour inside governance where it can be overseen.
   why_not:
-    A: Strict enforcement of an unrealistic rule drives use further out of sight and damages trust, while the
-      real need remains unmet.
-    C: Removing the enterprise policy creates inconsistent rules across faculties and leaves the university
-      with no common baseline.
-    D: Network blocks are easily bypassed on personal devices and do not address why staff turn to these tools.
+    A: Training explains the risks, but staff are already choosing to ignore the rule for routine work.
+      Reinforcing a ban that does not fit how people work keeps use out of sight.
+    C: Exceptions suit limited, temporary departures. Using them for something most staff do keeps an
+      unrealistic rule on paper and creates uneven practice across faculties.
+    D: Monitoring is a useful detective control, but the survey already shows which tools are in use.
+      More data does not fix a policy that does not fit the need.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

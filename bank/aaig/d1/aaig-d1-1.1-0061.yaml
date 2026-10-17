@@ -1,31 +1,33 @@
 id: aaig-d1-1.1-0061
 subdomain: '1.1'
 difficulty: medium
-stem: An insurer wants to use AI to settle simple claims with no human involvement, which is new in its market.
-  The rules do not clearly say whether this is allowed, and the regulator has an innovation office that discusses
-  new approaches with firms. What should the governance leader recommend?
+stem: An insurer wants to use AI to settle simple claims with no human involvement, which is new in its
+  market. The rules do not clearly say whether this is allowed, and external counsel's view is that it
+  is probably permitted. What should the governance leader recommend before launch?
 options:
-  A: Launch quietly and respond if the regulator raises concerns
-  B: Drop the idea until the regulator issues specific rules
-  C: Ask a competitor whether it plans to do the same
-  D: Engage the regulator's innovation office before launch
+  A: Tell customers clearly that their claims are settled by AI
+  B: Launch as a pilot with human review of a sample of settlements
+  C: Ask the industry association to seek guidance for its members
+  D: Discuss the design and its controls with the regulator
 answer: D
 explanation:
-  why_correct: When the rules are unclear and the use is new, early, open dialogue with the regulator lowers the
-    risk of a forced reversal later and shows good faith. The firm gains insight into the regulator's expectations
-    and can design controls to match before customers are affected.
+  why_correct: Counsel can only say the use is probably permitted, because the rules are unclear and the
+    use is new. Early, open dialogue with the regulator lowers the risk of a forced reversal later and
+    shows good faith. The firm learns what the regulator expects and can design controls to match before
+    customers are affected.
   why_not:
-    A: Launching quietly in an unclear area risks enforcement, remediation costs and damaged trust if the regulator
-      later objects.
-    B: Waiting for specific rules may mean waiting indefinitely and losing a legitimate opportunity that the regulator
-      might well support.
-    C: Discussing plans with a competitor can raise competition law concerns and says nothing about what the regulator
-      expects.
+    A: Clear notice is good practice and may be required, but it does not settle whether the regulator
+      accepts fully automated settlement. If it does not, the firm faces a reversal whatever the notice
+      said.
+    B: A sampled pilot limits harm, but it still launches without knowing the regulator's view. If the
+      regulator objects, customers and the firm still bear the reversal.
+    C: An industry approach can help with sector-wide questions, but it is slow and general. The firm's
+      specific design is better discussed directly with the regulator.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-b
-  checked_by: 2026-10-13-aaig-d1-b-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

@@ -1,30 +1,32 @@
 id: aaig-d1-1.1-0034
 subdomain: '1.1'
 difficulty: hard
-stem: Across a hospital network, departments have approved dozens of exceptions to the AI policy. Each was
-  judged low risk on its own and approved at department level. What should the governance lead do?
+stem: Across a hospital network, departments have approved dozens of exceptions to the AI policy. Each
+  was judged low risk on its own and approved at department level. Most exceptions relax the same two
+  requirements. What should the governance lead do?
 options:
-  A: Take no action, since each exception was properly approved
+  A: Report the combined exposure and move approvals to the AI committee
   B: Report the combined exposure and review whether the policy fits
-  C: Revoke all exceptions at once and suspend all of the affected AI uses
-  D: Move all exception approvals to the IT security department
+  C: Review whether the policy fits and set expiry dates on exceptions
+  D: Set expiry dates on exceptions and move approvals to the AI committee
 answer: B
 explanation:
-  why_correct: Many small exceptions can add up to a material exposure no single approver sees. A pattern of
-    exceptions also signals that the policy may be impractical. Reporting the aggregate to the right governance
-    level and reviewing the policy addresses both the risk and its cause.
+  why_correct: Many small exceptions can add up to a material exposure no single approver sees. When most
+    relax the same two requirements, that also signals the policy may not fit practice. Reporting the
+    aggregate to the right governance level and reviewing the policy addresses both the risk and its cause.
   why_not:
-    A: Individual approvals do not show the combined risk. Ignoring the pattern leaves the network exposed
-      and the policy weakened.
-    C: Mass revocation could disrupt clinical and administrative services without any assessment of which exceptions
-      actually matter.
-    D: IT security is not the right owner for business and ethical AI risk, and moving approvals does not address
-      the aggregate exposure.
+    A: Reporting the aggregate is right, but central approval would keep granting the same exceptions
+      to two requirements that may not fit practice. The cause stays in place.
+    C: Reviewing the policy addresses the cause, but the combined exposure already approved is not reported
+      to anyone who can act on it now. Expiry dates help only as exceptions come up for renewal.
+    D: Expiry dates and central approval tighten control of future exceptions, but neither shows anyone
+      the combined exposure already approved, and the two requirements that keep being relaxed are never
+      questioned.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

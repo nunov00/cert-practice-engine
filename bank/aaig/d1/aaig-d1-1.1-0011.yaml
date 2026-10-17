@@ -4,27 +4,27 @@ difficulty: medium
 stem: The board of a health insurer is asked to approve an AI risk appetite statement. Which of the following
   draft statements is MOST useful for guiding management?
 options:
-  A: The company accepts no risk of any kind from its AI systems
-  B: AI risk will be managed in line with recognised industry good practice
+  A: The company has a low appetite for AI risk in customer-facing uses
+  B: AI risk will be managed in line with the company's risk framework
   C: No AI system may make a final claim denial without human review
-  D: Each business unit will set its own appetite for AI risk
+  D: AI models must reach 95% accuracy before they are used in claims
 answer: C
 explanation:
-  why_correct: A useful appetite statement is specific enough to guide decisions and to be monitored. A clear
-    boundary on fully automated claim denials tells management exactly where the board draws the line on a
-    high-impact use.
+  why_correct: A useful appetite statement is specific enough to guide decisions and to be monitored,
+    and it targets the harms the board cares about. A clear boundary on fully automated claim denials
+    tells management exactly where the board draws the line on a high-impact use.
   why_not:
-    A: Zero tolerance for all AI risk is unrealistic and would prevent any use of AI. Management cannot act
-      on it, so it gets ignored.
-    B: This sounds reassuring but sets no boundary. It gives management nothing to measure against and the
-      board nothing to monitor.
-    D: Risk appetite is set by the board for the enterprise. Business units can apply it, but letting each
-      set its own removes the board's control.
+    A: Qualitative statements like this are common, but on their own they leave management to guess what
+      low means in practice. They need specific boundaries to guide decisions.
+    B: This describes how risk is managed, not how much risk the board will accept. It gives management
+      no boundary to act on.
+    D: It is specific, but it is a technical threshold that management should set. Accuracy alone does
+      not address the harm to members from a wrong denial with nobody to review it.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

@@ -1,31 +1,34 @@
 id: aaig-d1-1.1-0026
 subdomain: '1.1'
 difficulty: hard
-stem: An energy company relies on a vendor's AI service to forecast grid demand, a function critical to operations.
-  The current contract gives the company no right to information about model changes or testing. Which governance
-  action is MOST important at contract renewal?
+stem: An energy company relies on a vendor's AI service to forecast grid demand, a function critical to
+  operations. Last year the vendor retrained the model without warning, and forecasts were off for weeks
+  before the company noticed or could find out what had changed. Which governance action is MOST important
+  at contract renewal?
 options:
-  A: Negotiate a lower price to offset the model's unknown risks
-  B: Replace the vendor with an in-house model as soon as possible
-  C: Accept the terms, as the vendor is accountable for its own AI
+  A: Add accuracy service levels with penalties and monthly reporting
+  B: Require an independent AI certification renewed each year
+  C: Agree exit terms and a tested fallback forecasting method
   D: Secure rights to change notice, test evidence and audit
 answer: D
 explanation:
-  why_correct: The company remains accountable for a critical operation even when the AI is supplied. Contract
-    rights to be told of changes, to see evidence of testing and to audit give it the information it needs
-    to oversee the risk. Renewal is the point of greatest leverage to obtain them.
+  why_correct: The company remains accountable for a critical operation even when the AI is supplied.
+    Last year's problem came from a change it was not told about and could not examine. Rights to advance
+    notice of changes, to see test evidence and to audit let it oversee the model before and after each
+    change. Renewal is the point of greatest leverage to obtain them.
   why_not:
-    A: A discount does not reduce the operational risk; it only prices it. The company would still be blind
-      to changes in a critical system.
-    B: Building in-house may or may not be wise, but it is a major strategic decision, not the immediate fix
-      for a contract gap.
-    C: Outsourcing a function does not transfer accountability for its outcomes. The company still answers
-      for reliable supply.
+    A: Accuracy service levels with penalties would have compensated for the weeks of poor forecasts,
+      but only after they happened. They do not warn the company before the model changes or show how
+      a new version was tested.
+    B: A certificate gives general assurance about the vendor, but it does not give the company information
+      on changes to this model or its testing.
+    C: Exit terms and a fallback are sound resilience measures for a critical service, but they address
+      losing the vendor. They do not close the information gap in the contract.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

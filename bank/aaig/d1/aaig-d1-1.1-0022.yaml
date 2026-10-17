@@ -1,29 +1,33 @@
 id: aaig-d1-1.1-0022
 subdomain: '1.1'
 difficulty: hard
-stem: A manufacturing group has 30 approved AI use cases but budget for only eight this year. The CIO proposes
-  ranking them by technical feasibility alone. What should the governance leader recommend?
+stem: A manufacturing group has 30 approved AI use cases but budget for only eight this year. Its AI strategy
+  names two priority goals, several high-value cases would use sensitive customer data, and some depend
+  on a data platform that will not be ready this year. The CIO proposes ranking them by technical feasibility
+  alone. What should the governance leader recommend?
 options:
-  A: Rank by feasibility, as delivery success matters most
-  B: Rank by strategic value, risk and feasibility together
-  C: Fund the cases put forward by the most senior sponsors
-  D: Split the budget evenly so all 30 cases make progress
+  A: Score the cases on financial return, risk and delivery feasibility
+  B: Score the cases on strategic contribution, risk and feasibility
+  C: Score the cases on strategic contribution, return and feasibility
+  D: Score the cases on strategic contribution, risk and return
 answer: B
 explanation:
-  why_correct: 'Portfolio choices should maximise value to the enterprise within its risk appetite. Combining
-    strategic contribution, risk and feasibility gives a balanced ranking: an easy project with little value,
-    or a valuable one with unacceptable risk, should not automatically win.'
+  why_correct: Portfolio choices should maximise value to the enterprise within its risk appetite. The
+    strategy's priority goals make strategic contribution central, the sensitive data makes risk material,
+    and some cases cannot be delivered this year, so feasibility still counts. Combining all three means
+    an easy case with little value, or a valuable one with unacceptable risk, does not win by default.
   why_not:
-    A: Feasibility alone favours easy projects whether or not they matter. The group may deliver eight projects
-      that add little value.
-    C: Seniority reflects influence, not value. This replaces transparent criteria with internal politics.
-    D: Spreading funds thinly means few projects receive enough to deliver anything, which wastes the whole
-      budget.
+    A: Return, risk and feasibility are sound measures, but return alone can favour cases outside the
+      two priority goals the strategy names.
+    C: This ties the ranking to strategy and value, but it leaves out risk. Several high-value cases use
+      sensitive customer data, so the ranking could fund exposure the group would not accept.
+    D: This covers strategy and risk, but it drops feasibility. Some cases depend on a platform that will
+      not be ready this year, so scarce budget could go to cases that cannot deliver.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

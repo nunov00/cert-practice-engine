@@ -1,31 +1,31 @@
 id: aaig-d1-1.1-0035
 subdomain: '1.1'
-difficulty: medium
+difficulty: easy
 stem: At a shipping company, the head of AI governance wrote the AI control framework and chairs the committee
   that applies it. To save cost, the CFO suggests that the head's own annual review of the framework replace
   the internal audit of AI governance planned for the audit committee. What is the MAIN concern?
 options:
-  A: The head may lack the technical skills to assess AI models
-  B: The review would take too long alongside running governance
+  A: The review would cover control design but not how controls operate
+  B: The review would not follow internal audit standards and methods
   C: The head cannot give independent assurance on their own work
-  D: Internal audit has no mandate to review AI-related matters
+  D: A yearly review is too infrequent for a fast-changing area
 answer: C
 explanation:
-  why_correct: Assurance is valuable to the audit committee because it is independent of the people being assessed.
-    Someone reviewing a framework they designed and operate is assessing themselves, so the committee should
-    keep the internal audit or use an external provider.
+  why_correct: Assurance is valuable to the audit committee because it is independent of the people being
+    assessed. Someone reviewing a framework they designed and operate is assessing themselves, so the
+    committee should keep the internal audit or use an external provider.
   why_not:
-    A: Skills may or may not be lacking, but even a highly skilled reviewer cannot provide independent assurance
-      on their own work.
-    B: Workload is a practical issue but not the fundamental one. A self-review is not independent however
-      quickly it is done.
-    D: Internal audit's mandate covers governance, risk and controls across the organisation, which includes
-      AI governance.
+    A: A self-review could test operation as well as design if it were scoped that way. Even with a full
+      scope, it would still be the head assessing their own work.
+    B: Method matters, but a review could follow sound audit methods and still lack independence. The
+      basic problem is who is doing it.
+    D: Frequency can be adjusted, but a more frequent self-review is still a self-review. It would not
+      give the audit committee independent assurance.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

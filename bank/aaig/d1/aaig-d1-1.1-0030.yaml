@@ -1,28 +1,33 @@
 id: aaig-d1-1.1-0030
 subdomain: '1.1'
 difficulty: medium
-stem: After an AI pricing error harmed customers at an online travel company, it emerged that several staff
-  had noticed the problem weeks earlier but said nothing. The board wants a culture in which AI concerns are
-  raised early. What is the BEST action?
+stem: After an AI pricing error harmed customers at an online travel company, it emerged that several
+  staff had noticed the problem weeks earlier but said nothing. Interviews show they did not know whom
+  to tell and doubted anything would change. The board wants AI concerns raised early. What is the BEST
+  action?
 options:
-  A: Require every manager to sign an annual AI compliance statement
-  B: Provide safe channels to raise concerns and act on them visibly
-  C: Publish the number of AI incidents in the company's annual report
-  D: Add questions about AI to the annual employee engagement survey
+  A: Add AI concerns to the whistleblowing policy and publicise it widely
+  B: Provide easy channels to raise concerns and show what action follows
+  C: Name an AI concerns contact in each team and train staff to use it
+  D: Recognise staff who raise AI concerns in team meetings and reviews
 answer: B
 explanation:
-  why_correct: People speak up when they feel safe and believe it will make a difference. Easy, protected channels
-    combined with visible follow-up, such as feedback on what was done, build the habit of raising issues early.
+  why_correct: The interviews give two causes, not knowing where to go and not believing it would matter.
+    Easy, known channels answer the first, and showing what action followed answers the second. Together
+    they build the habit of raising issues early.
   why_not:
-    A: A signed statement creates paperwork and may increase fear of blame, which discourages raising problems.
-    C: External reporting of incidents can support transparency, but it does nothing to make staff more willing
-      to raise concerns.
-    D: A yearly survey measures sentiment but gives no route for raising a concern when it arises.
+    A: Whistleblowing channels suit serious misconduct and are often confidential, so staff rarely see
+      the outcome. Publicising them tells people where to go but does little for the doubt that anything
+      will change.
+    C: A named contact and training tell staff whom to tell, which answers one cause. Without visible
+      follow-up, the doubt that anything will change remains.
+    D: Recognition encourages people who speak up, but it does not tell staff where to go. It also says
+      nothing about whether their concerns lead to action.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

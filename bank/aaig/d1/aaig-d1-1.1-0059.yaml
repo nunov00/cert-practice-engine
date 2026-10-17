@@ -1,32 +1,32 @@
 id: aaig-d1-1.1-0059
 subdomain: '1.1'
 difficulty: hard
-stem: A conglomerate is selling one of its divisions. The division uses several AI models that were trained on data
-  pooled from across the group, including customer data from divisions that are not being sold. The buyer wants
-  the models included. What should the governance leader advise?
+stem: A conglomerate is selling one of its divisions. The division uses several AI models that were trained
+  on data pooled from across the group, including customer data from divisions that are not being sold.
+  The buyer wants the models included. What should the governance leader advise?
 options:
-  A: Transfer the models as they are, since models do not contain raw data
-  B: Refuse to transfer any AI models as part of the sale
-  C: Review data rights and obligations before deciding what models may transfer
-  D: Let the buyer take on all responsibility for the models after closing
+  A: Review each model's value to the buyer before deciding on transfer
+  B: Retrain the models on the division's own data before the transfer
+  C: Review the data rights behind each model before any transfer
+  D: Seek consent from the affected customers to transfer the models
 answer: C
 explanation:
-  why_correct: Models trained on group data can carry obligations tied to that data, such as the purposes customers
-    agreed to and contracts with partners. Before the models change hands, the group needs to know whether it has
-    the right to transfer them, and on what terms, so it does not breach commitments to customers who stay with
-    the group.
+  why_correct: Models trained on group data can carry obligations tied to that data, such as the purposes
+    customers agreed to and contracts with partners. Before the models change hands, the group needs to
+    know whether it may transfer each one, and on what terms, so it does not breach commitments to customers
+    who stay with the group.
   why_not:
-    A: Models can reveal or reflect the data they were trained on, and the obligations attached to that data may
-      still apply. 'No raw data' is not a sufficient basis.
-    B: A blanket refusal may destroy value in the sale without need. Some models may transfer safely, possibly after
-      retraining on the division's own data.
-    D: Contract terms with the buyer cannot cancel the group's own duties to its customers. The group remains responsible
-      for what it hands over.
+    A: Value matters for the price, but it does not answer whether the group may transfer each model.
+      A valuable model could still breach commitments to customers who stay.
+    B: Retraining may be the right fix for some models, but deciding it for all before the review may
+      destroy value. Some models may transfer as they are, and some may not transfer at all.
+    D: Consent may be the answer for some data, but seeking it from many customers before knowing what
+      is required is costly and may not be needed. The review should come first.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-b
-  checked_by: 2026-10-13-aaig-d1-b-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

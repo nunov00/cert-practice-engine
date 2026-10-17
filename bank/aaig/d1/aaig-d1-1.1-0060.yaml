@@ -1,31 +1,33 @@
 id: aaig-d1-1.1-0060
 subdomain: '1.1'
 difficulty: hard
-stem: A non-executive director of a consumer bank receives management's quarterly report stating that all AI models
-  are within risk appetite. The same week, the director reads press reports of customer complaints about one of
-  the bank's AI lending decisions. What should the director do?
+stem: A non-executive director of a consumer bank receives management's quarterly report stating that
+  all AI models are within risk appetite. The same week, the director reads press reports of customer
+  complaints about one of the bank's AI lending decisions. The next board meeting is two months away.
+  What should the director do?
 options:
-  A: Rely on the report, since directors are entitled to trust what management tells them
-  B: Ask management to explain the gap and to provide supporting evidence
-  C: Commission an external investigation without telling management
-  D: Contact the customers named in the press directly
+  A: Ask management for the complaint data on the lending model
+  B: Ask management to explain the gap and show supporting evidence
+  C: Ask internal audit to review the lending model's fairness testing
+  D: Raise the press reports at the next scheduled board meeting
 answer: B
 explanation:
-  why_correct: 'Directors may generally rely on management reports in good faith, but not when they have reason
-    to doubt them. A clear warning sign requires the director to inquire: ask management to reconcile the report
-    with the complaints and to show evidence, and escalate through the board if the answers are not satisfactory.'
+  why_correct: Directors may rely on management reports in good faith, but not when they have reason to
+    doubt them. A clear warning sign requires the director to inquire now, asking management to reconcile
+    the report with the complaints and to show evidence, and to escalate through the board if the answers
+    are not satisfactory.
   why_not:
-    A: Reliance on management is reasonable only without warning signs. Ignoring a visible conflict between the
-      report and the facts would fall short of the director's duty of care.
-    C: An external review may become necessary, but launching it secretly as a first step bypasses the board and
-      management and damages trust before the facts are known.
-    D: Directors oversee; they do not handle individual cases. Contacting customers directly could also create legal
-      and conduct problems for the bank.
+    A: Complaint data is useful, but it answers only part of the question. The director needs management
+      to reconcile its report with the complaints and show the evidence behind the claim.
+    C: An audit review may become useful, but an individual director directing internal audit bypasses
+      the audit committee. It also skips the simpler step of asking management first.
+    D: The board should discuss it, but two months is a long wait while customers may be affected. The
+      director can ask management for an explanation now.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-b
-  checked_by: 2026-10-13-aaig-d1-b-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass
