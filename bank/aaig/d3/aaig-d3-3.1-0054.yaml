@@ -1,31 +1,31 @@
 id: aaig-d3-3.1-0054
 subdomain: '3.1'
-difficulty: easy
-stem: An airline's AI crew scheduling system reduced the number of standby crew needed. The operations division
-  reports a saving of 6 million from fewer standby shifts, and the finance division reports the same 6 million as
-  lower payroll. The AI portfolio report adds both, showing 12 million. What should the governance leader put in
-  place?
+difficulty: medium
+stem: An airline's AI crew scheduling system reduced the number of standby crew needed. The operations
+  division reports a saving of 6 million from fewer standby shifts, and the finance division reports the
+  same 6 million as lower payroll. Each figure is correct on its own. The AI portfolio report adds both,
+  showing 12 million. What should the governance leader put in place?
 options:
-  A: A request for internal audit to check each claim separately before the year-end report
-  B: A single benefits register with rules on which unit records each benefit and how
-  C: A rule to report only the smaller of two claimed figures, to stay on the safe side
-  D: Removal of AI benefits from the portfolio report until each one can be fully proven
+  A: Finance validation of each benefit figure before it is reported
+  B: One benefits register with rules on who records each benefit
+  C: A year-end reconciliation of AI benefits with the ledger
+  D: Sign-off of each benefit figure by its sponsoring executive
 answer: B
 explanation:
-  why_correct: The same saving has been counted twice because there is no shared record of benefits or rule about
-    who claims what. A single register with attribution rules prevents double counting across units and makes portfolio
-    totals reliable, which matters for future investment decisions.
+  why_correct: Both figures are right, but the same saving has been counted twice, because there is no
+    shared record or rule about who claims what. A single register with attribution rules prevents double
+    counting across units and makes portfolio totals reliable during the year.
   why_not:
-    A: Audit might catch this instance, but without attribution rules the same problem will recur in every reporting
-      cycle.
-    C: Picking the smaller figure is arbitrary and still does not say which unit owns the benefit. It also does
-      not stop double counting where figures differ.
-    D: Dropping benefits from reporting hides real value and leaves the board unable to judge the portfolio.
+    A: Each figure is correct on its own, so validating them one by one finds nothing wrong. The problem
+      only appears across units.
+    C: Reconciliation could reveal the double count, but only at year end, after reports and investment
+      decisions have used the inflated total. It also sets no rule on who records each benefit.
+    D: Each sponsor would sign off their own correct figure, so both claims would still stand.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-13-aaig-d3-b-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

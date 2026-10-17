@@ -1,27 +1,29 @@
 id: aaig-d3-3.1-0037
 subdomain: '3.1'
-difficulty: easy
-stem: A law firm's executives want a single figure to show whether its new AI research assistant is being taken
-  up across the firm. Which measure would BEST serve as an adoption indicator?
+difficulty: medium
+stem: A law firm bought licences for its new AI research assistant for 300 of its 900 lawyers, although
+  all 900 are eligible to use it. Executives want a single figure to show whether the assistant is being
+  taken up across the firm. Which measure would BEST serve as an adoption indicator?
 options:
-  A: The share of eligible staff using it regularly
-  B: The total licence cost paid for the assistant this year
-  C: The number of staff who attended the launch training
-  D: The number of features the vendor added since the launch
+  A: The share of eligible staff who use it each week
+  B: Weekly active users as a share of licences bought
+  C: The number of staff who have logged in at least once
+  D: The average user satisfaction score from a quarterly survey
 answer: A
 explanation:
-  why_correct: Adoption is about sustained use by the people the tool is meant for. The share of eligible staff
-    using it regularly shows whether it has become part of daily work, and changes over time show whether change
-    management is working.
+  why_correct: Adoption is about sustained use by the people the tool is meant for. The share of eligible
+    staff using it regularly shows whether it has become part of daily work, and its trend shows whether
+    change management is working.
   why_not:
-    B: Licence cost reflects spend, not use. The firm could pay fully for a tool few people use.
-    C: Training attendance shows exposure, not continued use. Many attendees may never use the tool.
-    D: Vendor features describe the product, not whether the firm's staff use it.
+    B: Use as a share of licences is a common measure, but here licences cover only a third of eligible
+      lawyers. A high figure could hide low uptake across the firm.
+    C: A single login shows trial, not continued use. Many may try the tool once and stop.
+    D: Satisfaction shows how users feel about the tool, not how many eligible staff use it.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

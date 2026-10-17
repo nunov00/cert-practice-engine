@@ -1,32 +1,32 @@
 id: aaig-d3-3.1-0043
 subdomain: '3.1'
 difficulty: medium
-stem: A bank's central machine learning platform team hosts models for several business units. The card fraud unit's
-  models went offline twice over a weekend, and no one responded until Monday because the platform team supports
-  office hours only. No agreement on service levels exists between them. What should the governance leader recommend?
+stem: A bank's central machine learning platform team hosts models for several business units. The bank's
+  service catalogue already rates fraud scoring as critical. The card fraud unit's models went offline
+  twice over a weekend, and no one responded until Monday because the platform team supports office hours
+  only. What should the governance leader recommend?
 options:
-  A: Agree internal service levels with each business unit that reflect how critical its services are
-  B: Let the fraud unit run its models on its own infrastructure so that it controls its support hours
-  C: Require the platform team to support every hosted model around the clock, whatever its use
-  D: Log the outages in the risk register and look at them again in the next annual risk assessment
+  A: Agree service levels with each unit based on its services' criticality
+  B: Classify each hosted model by its business criticality
+  C: Set one platform-wide support standard for hosted models
+  D: Agree weekend on-call cover with the fraud unit for its models
 answer: A
 explanation:
-  why_correct: An internal platform is a service provider to the business, and it needs explicit service levels
-    just as an external vendor would. Agreeing availability, support hours, response times and escalation with each
-    consuming unit, scaled to the criticality of what they run, makes expectations clear and lets capacity and cost
-    be planned. Fraud scoring at night clearly needs a different level from an internal reporting model.
+  why_correct: An internal platform is a service provider to the business. Like an external vendor, it
+    needs explicit service levels. Agreeing support hours, response times and escalation with each unit,
+    scaled to how critical its services are, sets clear expectations and lets capacity and cost be planned.
   why_not:
-    B: Splitting off infrastructure duplicates cost and weakens shared controls to fix what is really a missing
-      agreement. It also leaves other critical users with the same gap.
-    C: Round-the-clock support for every model wastes money on low-criticality uses. Service levels should follow
-      business need.
-    D: Recording the risk is not treating it. A critical service with no agreed support should not wait a year for
-      attention.
+    B: Classifying criticality is a sound first step, but fraud scoring is already rated critical. The
+      gap is that no support levels follow from that rating.
+    C: One standard is consistent, but it either over-serves a low-criticality tool or under-serves fraud
+      detection. Support should be scaled to each unit's need.
+    D: On-call cover fixes the fraud unit's case, but other units still have no agreed levels. It also
+      gives no basis for sizing support across the platform.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-13-aaig-d3-b-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

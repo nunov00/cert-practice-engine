@@ -1,31 +1,32 @@
 id: aaig-d3-3.1-0030
 subdomain: '3.1'
 difficulty: hard
-stem: An online marketplace routes content its AI moderation model is unsure about to human reviewers. After
-  a viral event, uncertain cases rose tenfold; managers responded by raising the confidence level at which
-  the model decides alone so the queue would shrink. What is the governance concern?
+stem: An online marketplace routes content its AI moderation model is unsure about to human reviewers.
+  After a viral event, uncertain cases rose tenfold; managers responded by raising the confidence level
+  at which the model decides alone so the queue would shrink. What is the governance concern?
 options:
-  A: Human reviewers should have been asked to work longer hours
-  B: The model should have been retrained on the viral content first
-  C: The change shifted risk without an approved decision or assessment
-  D: Uncertain cases should have been left visible until reviewed
+  A: The surge plan set no reviewer capacity for viral events
+  B: The new confidence level was not tested before it went live
+  C: The change raised accepted risk without the owner's approval
+  D: Monitoring gave no alert as uncertain cases rose tenfold
 answer: C
 explanation:
-  why_correct: Changing the confidence threshold changes how many decisions go without human review, which
-    changes the risk accepted. Doing it to clear a queue, without assessment or approval by the accountable
-    owner, bypasses governance. Surge plans should define in advance what may be changed, by whom and within
-    what limits.
+  why_correct: Raising the confidence level means more decisions are made with no human review, so the
+    organisation accepts more risk. A change like that is a risk-acceptance decision for the accountable
+    owner. Managers made it on their own to clear a queue. Surge plans should set in advance what may
+    be changed, by whom and within what limits.
   why_not:
-    A: Extra hours might help briefly, but the question is the governance of the threshold change, not staffing
-      tactics.
-    B: Retraining takes time and does not address who may change risk settings during a surge.
-    D: Leaving all uncertain content visible is itself a risk decision with possible harm. It is another operational
-      choice, not the governance gap.
+    A: Planned surge capacity would have eased the pressure, but the concern is the response the managers
+      chose. Even with a capacity plan, nobody had approved shifting risk to clear the queue.
+    B: Testing would show how the change affects error rates, but a tested change can still exceed what
+      the owner is willing to accept. The missing step is the owner's decision, not the test.
+    D: The rise was noticed, since managers reacted to it. Detection worked. The weakness is in who decided
+      how to respond.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

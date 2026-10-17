@@ -1,31 +1,32 @@
 id: aaig-d3-3.1-0010
 subdomain: '3.1'
-difficulty: hard
-stem: A healthcare network piloted an AI tool that prioritises radiology scans in its urban hospitals, and
-  the pilot met every go/no-go criterion. Executives now want to switch it on immediately across rural clinics,
-  which use older scanners and serve an older population. What should the governance leader advise?
+difficulty: medium
+stem: A healthcare network piloted an AI tool that prioritises radiology scans in its urban hospitals,
+  and the pilot met every go/no-go criterion. Executives now want to switch it on immediately across rural
+  clinics, which use older scanners and serve an older population. What should the governance leader advise?
 options:
-  A: Proceed, since the pilot met all of the agreed criteria
-  B: Cancel the rural rollout until a fully new pilot is designed
-  C: Run a limited rural stage with monitoring before wider rollout
-  D: Proceed but ask clinicians to report any problems they notice
+  A: Proceed everywhere, with rural drift monitoring from the first day
+  B: Design and run a new full pilot in the rural clinics first
+  C: Run a limited, monitored rural stage before wider rollout
+  D: Proceed everywhere, with clinicians checking scans ranked low
 answer: C
 explanation:
-  why_correct: A pilot's evidence only holds for conditions like those tested. Different equipment and patient
-    mix could change performance. A limited, monitored stage in the new setting tests that risk at small scale
-    while keeping momentum, which is proportionate to the evidence gap.
+  why_correct: A pilot's evidence holds only for conditions like those tested. Older scanners and an older
+    population could change performance. A limited, monitored stage in the rural setting tests that risk
+    at small scale while keeping momentum, which is proportionate to the evidence gap.
   why_not:
-    A: The criteria were met under urban conditions. Treating them as valid for a materially different setting
-      ignores a known risk to patient safety.
-    B: Cancelling discards strong evidence and delays benefits. A staged extension can address the specific
-      differences without starting over.
-    D: Relying on ad hoc reports is reactive. Clinicians may not notice subtle degradation, and harm could
-      occur before reports accumulate.
+    A: Monitoring from day one would detect problems, but only after every rural patient is exposed. The
+      evidence gap should be closed at small scale first.
+    B: A full new pilot repeats work already done and delays benefits. Only the differences in equipment
+      and population need testing, which a limited stage can do.
+    D: Checking low-ranked scans protects patients but loads clinicians across every clinic and removes
+      much of the benefit. It also does not produce the evidence needed to decide whether the tool works
+      in rural settings.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

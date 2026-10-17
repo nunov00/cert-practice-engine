@@ -1,32 +1,34 @@
 id: aaig-d3-3.1-0005
 subdomain: '3.1'
-difficulty: medium
-stem: A health insurer's data science team monitors a claims triage model for drift and has set its own alert
-  thresholds based on statistical convention. The chief risk officer is uneasy about this arrangement. What
-  is the BEST improvement?
+difficulty: hard
+stem: A health insurer's data science team monitors a claims triage model for drift. Model validation
+  has confirmed the statistical method, and alerts reach the business owner within a day. The business
+  owner is accountable for triage outcomes, and the risk function provides challenge. The team chose the
+  alert thresholds itself, using statistical convention. What is the BEST improvement?
 options:
   A: Have the business owner approve thresholds linked to risk appetite
-  B: Have an external firm validate the statistical method used for drift
-  C: Tighten all thresholds so that the team receives alerts sooner
-  D: Move monitoring to the IT operations team for more independence
+  B: Have the risk function set the thresholds from the enterprise appetite
+  C: Have the risk committee set a single threshold policy across models
+  D: Have the second line take over drift monitoring from the team
 answer: A
 explanation:
   why_correct: Thresholds decide when the organisation acts, so they are a risk decision, not only a statistical
-    one. They should reflect how much degradation the business can tolerate for this use, within the board's
-    risk appetite, and be approved by the accountable owner. The data scientists can then implement and monitor
-    against them.
+    one. The business owner is accountable for triage outcomes, so the owner should approve how much degradation
+    this use can tolerate within the appetite. The risk function then challenges that choice rather than
+    making it.
   why_not:
-    B: External validation may confirm the method is sound, but it still leaves a technical team deciding how
-      much harm is tolerable.
-    C: Tighter thresholds without a business rationale cause alert fatigue and still are not anchored to the
-      tolerance the organisation has agreed.
-    D: Moving the work changes who watches the alerts, but the thresholds would still lack a link to risk appetite
-      and an accountable approver.
+    B: Linking thresholds to appetite is right, but having the risk function set them moves a first-line
+      decision to the second line. It would then be challenging its own choice, and the accountable owner
+      would not own the tolerance.
+    C: A group policy helps consistency, but one threshold policy for all models ignores how different
+      the harm from drift is in each use. Claims triage needs its own tolerance.
+    D: Independent monitoring can add challenge, but alerts already reach the owner quickly. Moving the
+      work does not link the thresholds to risk appetite or to an accountable approver.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

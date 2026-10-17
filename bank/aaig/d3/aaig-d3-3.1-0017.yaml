@@ -1,31 +1,31 @@
 id: aaig-d3-3.1-0017
 subdomain: '3.1'
-difficulty: hard
-stem: A payments company released a new version of its fraud model. Within two days, false declines of legitimate
-  card payments doubled, and merchant complaints are rising. The previous version performed acceptably. What
-  should the governance leader support as the immediate action?
+difficulty: medium
+stem: A payments company released a new version of its fraud model. Within two days, false declines of
+  legitimate card payments doubled, and merchant complaints are rising. The previous version performed
+  acceptably. What should the governance leader support as the immediate action?
 options:
-  A: Keep the new version and retrain it urgently on the latest data
-  B: Keep the new version but add a manual review of declined payments
-  C: Roll back to the previous version and then investigate the cause
-  D: Pause the fraud model completely until the root cause is found
+  A: Escalate the release to the model risk committee to decide
+  B: Keep the new version and add manual review of declines
+  C: Roll back to the previous version while the cause is found
+  D: Return the most affected merchants to the previous version
 answer: C
 explanation:
-  why_correct: When a new release causes clear harm and a known-good version exists, rolling back restores
-    acceptable service quickly and limits damage to customers and merchants. The cause can then be investigated
-    without pressure. This is why tested rollback capability should be a release requirement.
+  why_correct: The new release is causing clear harm, and a version that performed acceptably exists.
+    Rolling back restores acceptable service quickly and limits damage to customers and merchants. The
+    cause can then be investigated without pressure.
   why_not:
-    A: Urgent retraining keeps the harm going while a fix is built and tested, and a rushed retrain may introduce
-      new problems.
-    B: Manual review of every decline at payment volumes is unlikely to be fast enough and leaves customers
-      facing delays meanwhile.
-    D: Switching off fraud detection would expose the company to fraud losses. A working earlier version is
-      available and safer.
+    A: The committee should hear about the release failure, but waiting for its decision keeps the harm
+      going. Rolling back to a known-good version is within normal release control.
+    B: Manual review of declines at payment volumes is slow and leaves customers waiting. It treats the
+      symptom while the faulty version keeps running.
+    D: A partial rollback protects some merchants but leaves the rest exposed to a version already shown
+      to harm legitimate payments.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

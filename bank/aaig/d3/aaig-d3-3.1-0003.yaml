@@ -1,31 +1,33 @@
 id: aaig-d3-3.1-0003
 subdomain: '3.1'
-difficulty: easy
-stem: A logistics company approved an AI route-planning system on the basis of a business case promising a
-  12% fuel saving. After go-live, nobody is measuring fuel use against that figure. Who should be accountable
-  for confirming that the promised benefits are realised?
+difficulty: medium
+stem: A logistics company approved an AI route-planning system on a business case promising a 12% fuel
+  saving. The chief financial officer approved the investment, the chief digital officer's team built
+  it, and the operations director sponsored the case. A year after go-live, nobody is measuring fuel use
+  against the promised figure. Who should be accountable for confirming that the benefit is realised?
 options:
-  A: The data science team that designed and built the model
-  B: The internal audit function, in its yearly plan
-  C: The business owner who sponsored the business case
-  D: The IT operations team running the system
+  A: The chief financial officer, who approved the investment
+  B: The chief digital officer, whose team delivered the system
+  C: The operations director, who sponsored the business case
+  D: The portfolio office, which tracks the AI investments
 answer: C
 explanation:
-  why_correct: Benefits realisation belongs to the business owner who argued for the investment. They control
-    the process changes needed to capture the saving and are answerable to executives for the return. Without
-    a named benefit owner, value tracking tends to stop at go-live, as it has here.
+  why_correct: Benefits realisation belongs to the business sponsor who argued for the investment. The
+    operations director controls how depots and drivers use the routes, which is where the fuel saving
+    is made, and answers to executives for the return. Others approve, build or report, but the sponsor
+    owns the outcome.
   why_not:
-    A: The builders can report model performance, but fuel savings depend on how depots and drivers use the
-      routes. They do not own the business outcome.
-    B: Internal audit can later test whether benefits were tracked, but it provides independent assurance;
-      it does not own or deliver the benefit.
-    D: Operations keeps the system available and performing. Availability is necessary but is not the same
-      as proving the business saving.
+    A: The CFO approves investments and may challenge reported returns, but does not run the operations
+      that produce the saving. Approving the spend is not owning the benefit.
+    B: The delivery team's accountability is for building a working system. Whether depots use it to save
+      fuel is outside its control.
+    D: The portfolio office can collect and report benefit data, but it does not run the depots and cannot
+      be answerable for whether the saving is achieved.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

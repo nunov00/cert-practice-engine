@@ -1,29 +1,29 @@
 id: aaig-d3-3.1-0023
 subdomain: '3.1'
-difficulty: easy
+difficulty: medium
 stem: A hospital uses an AI service to schedule nursing shifts. The service has never failed, but it depends
-  on an external cloud provider. What should the governance leader confirm is in place?
+  on an external cloud provider. The hospital's business impact analysis already rates the service as
+  critical. What should the governance leader confirm is in place?
 options:
-  A: A clause in the contract that guarantees the service never fails
-  B: A second AI vendor kept on standby for immediate switching
-  C: A monthly report from the provider on its past availability
-  D: A tested fallback process for scheduling when the service is down
+  A: An availability service level with penalties in the contract
+  B: A business impact analysis covering the scheduling service
+  C: Regular reports from the provider on availability and incidents
+  D: A tested way to produce rosters when the service is down
 answer: D
 explanation:
-  why_correct: Any service can fail. For a critical operation such as nurse staffing, the hospital needs a
-    documented, tested way to keep scheduling if the AI service is unavailable. That keeps patient care safe
-    regardless of the cause of the outage.
+  why_correct: Any service can fail, from the provider, the network or the AI service itself. For nurse
+    staffing the hospital needs its own documented, tested way to keep scheduling during an outage. That
+    keeps wards staffed whatever the cause.
   why_not:
-    A: No provider can guarantee zero failure, and a contractual promise does not keep wards staffed during
-      an outage.
-    B: A standby vendor is costly and may still take time to switch to. A manual or simpler fallback is usually
-      more proportionate.
-    C: Past availability reports describe history, not readiness. They do not help on the day the service fails.
+    A: Penalties compensate the hospital after an outage. They do not staff the wards while it lasts.
+    B: The impact analysis is already done and rates the service critical. The next step is to make sure
+      the hospital can keep rostering when the service fails.
+    C: Reports describe past performance. They do not help the hospital on the day the service fails.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass

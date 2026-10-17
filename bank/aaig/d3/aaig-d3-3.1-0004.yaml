@@ -1,31 +1,34 @@
 id: aaig-d3-3.1-0004
 subdomain: '3.1'
-difficulty: easy
-stem: The board of a bank receives a quarterly AI report showing loan approval speed and cost per decision.
-  A director asks what in the report would warn the board that a credit model is becoming riskier before losses
-  appear. What should be added?
+difficulty: medium
+stem: The board of a bank receives a quarterly AI report on its credit model showing approval speed, cost
+  per decision and input drift scores by product and channel against tolerances. A director asks what
+  else would warn the board that the model is becoming riskier before arrears and losses appear. What
+  should be added?
 options:
-  A: Key risk indicators such as drift scores and override rates
-  B: Additional key performance indicators on processing efficiency
-  C: A list of all models in production with their owners
-  D: Total spend on AI tools compared with the annual budget
+  A: Trends in how often credit officers override the model
+  B: Accuracy on recent loans compared with the validation results
+  C: Findings from the yearly independent model validation
+  D: Loss rates on model-approved loans by customer segment
 answer: A
 explanation:
-  why_correct: 'Speed and cost are performance indicators: they show how well the model delivers value. Key
-    risk indicators are designed to signal rising exposure early, such as input drift, a change in override
-    rates or growing segment disparities. The director is asking for leading risk signals, which is what KRIs
-    provide.'
+  why_correct: The report already carries input drift by segment, so the board needs a second, different
+    early signal. A rising or shifting override rate shows that the officers closest to the decisions
+    increasingly disagree with the model, which often comes before arrears appear. It adds a human view
+    that drift scores cannot give.
   why_not:
-    B: More efficiency measures still describe value delivered, not exposure building up. They could even look
-      better while risk grows.
-    C: An inventory with owners supports accountability but gives no signal about whether any model is deteriorating.
-    D: Spend against budget is a financial control measure. It says nothing about whether the credit model
-      is drifting toward unacceptable risk.
+    B: Accuracy on a credit model can only be measured once loans have had time to repay or default, so
+      it lags in the same way as arrears. It confirms deterioration after outcomes arrive rather than
+      warning ahead of them.
+    C: Independent validation gives valuable assurance, but once a year. It cannot warn the board between
+      validations that the model is becoming riskier.
+    D: Loss rates by segment are useful outcome measures, but they are lagging. They show the risk after
+      it has turned into losses, which is what the director wants to get ahead of.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-13-aaig-d3-a-check
+  checked_by: 2026-10-17-aaig-d3-rework-check
   check_verdict: pass
