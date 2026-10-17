@@ -1,29 +1,31 @@
 id: aair-d3-3.6-0015
 subdomain: '3.6'
 difficulty: medium
-stem: A public library service found out that its AI book recommendation tool was suggesting adult titles to children
-  only when a parent posted about it online, weeks after the problem began. Library staff had heard similar remarks
-  from visitors but had no way to raise them. The tool has since been fixed. What should the risk practitioner recommend?
+stem: A public library service found out that its AI book recommendation tool was suggesting adult titles
+  to children only when a parent posted about it online, weeks after the problem began. Library staff
+  had heard similar remarks from visitors but had no way to raise them. The tool has since been fixed.
+  What should the risk practitioner recommend?
 options:
-  A: Remove the recommendation tool from the children's area of the site
-  B: Monitor social media every day for mentions of the library's AI tools
+  A: Add content filters that block adult titles from children's suggestions
+  B: Monitor social media daily for mentions of the library's AI tools
   C: Give staff and users a simple way to report AI problems for handling
-  D: Ask the vendor to send monthly reports on recommendation accuracy
+  D: Include questions on AI tools in the library's annual visitor survey
 answer: C
 explanation:
-  why_correct: The incident was detected late because the people who noticed the problem had no route into incident
-    handling. A simple reporting channel that feeds the incident process turns these early signals into prompt investigation.
+  why_correct: The incident was detected late because the people who noticed the problem had no route
+    into incident handling. A simple reporting channel that feeds the incident process turns these early
+    signals into prompt investigation.
   why_not:
-    A: The tool has been fixed, and removing it does not address the detection gap for this or other AI tools.
-    B: Social media monitoring finds problems only after they become public. The library's own staff had earlier
-      signals that went nowhere.
-    D: Monthly accuracy reports are slow and may not show that suggestions are unsuitable for children. They do
-      not use the signals staff were already receiving.
+    A: A filter prevents this specific failure, but the tool is already fixed. The gap was that early
+      signals from staff had no route into incident handling.
+    B: Social media monitoring finds problems only after they become public. The library's own staff had
+      earlier signals that went nowhere.
+    D: A survey collects feedback, but once a year is far too slow to trigger incident handling.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

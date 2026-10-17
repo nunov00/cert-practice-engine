@@ -1,28 +1,31 @@
 id: aair-d3-3.2-0006
 subdomain: '3.2'
 difficulty: medium
-stem: An energy company agreed treatment plans for twelve AI risks six months ago. A review finds that half are
-  overdue and several have no named owner, yet the register still shows all twelve risks as being treated. What
-  should the risk practitioner do?
+stem: An energy company agreed treatment plans for twelve AI risks six months ago. A review finds that
+  half are overdue and several have no named owner, yet the register still shows all twelve risks as being
+  treated. What should the risk practitioner do?
 options:
-  A: Ask the AI team to deliver all the overdue plans within the next month
-  B: Report the register as accurate, since the plans are still in progress
-  C: Assign accountable owners and new dates, and escalate long delays
-  D: Close the overdue plans and open new ones with fresh target dates
+  A: Set new target dates and report progress monthly to the risk committee
+  B: Update the register to show the overdue risks as untreated
+  C: Name an accountable owner for each overdue treatment plan
+  D: Ask internal audit to review the firm's treatment planning process
 answer: C
 explanation:
-  why_correct: Treatment plans only work if someone is accountable for delivering them and progress is tracked.
-    Assigning owners, setting realistic dates and escalating serious delays restores accountability and lets management
-    see risks that remain above target.
+  why_correct: Treatment plans only work if someone is accountable for delivering them. Naming an owner
+    for each plan restores that accountability, and the owner can then set realistic dates, report progress
+    and escalate serious delays.
   why_not:
-    A: An arbitrary deadline for one team ignores the missing ownership and may be unrealistic.
-    B: The register would overstate the treatment in place and give management false assurance.
-    D: Closing and reopening plans hides the delay and loses the record of slippage.
+    A: New dates and monthly reports without owners repeat the original failure. No one is accountable
+      for meeting the dates.
+    B: The register does need correcting, but that only describes the problem. The plans would still have
+      no one to deliver them.
+    D: An audit could confirm the weakness, but it is already known, and the overdue plans stay without
+      owners in the meantime.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

@@ -1,30 +1,30 @@
 id: aair-d3-3.6-0011
 subdomain: '3.6'
-difficulty: medium
-stem: A gym chain's AI chatbot revealed one member's address and payment history to another member who asked a cleverly
-  worded question. The chatbot has been taken offline. What should the incident manager do NEXT?
+difficulty: hard
+stem: A gym chain's AI chatbot revealed one member's address and payment history to another member who
+  asked a cleverly worded question. The chatbot has been taken offline. What should the incident manager
+  do NEXT?
 options:
   A: Involve the privacy officer to assess breach notification duties
-  B: Retrain the chatbot with stronger instructions and relaunch it
-  C: Wait for further complaints to judge how widespread the issue is
-  D: Publish a public statement explaining the cause of the chatbot error
+  B: Have the technical team search the logs for similar disclosures
+  C: Contact the affected member to apologise and explain what happened
+  D: Fix the chatbot's prompt filtering and test it before relaunch
 answer: A
 explanation:
-  why_correct: With containment done, the disclosure of personal data may be a reportable breach with strict deadlines
-    for telling the regulator and affected people. The privacy officer should assess scope and notification duties
-    straight away.
+  why_correct: With containment done, the disclosure of personal data may be a reportable breach with
+    strict deadlines for telling the regulator and affected people. The privacy officer should assess
+    scope and notification duties straight away.
   why_not:
-    B: A quick relaunch before the cause and scope are understood could repeat the leak. Fixing the chatbot follows
-      assessment, not the other way round.
-    C: Waiting for complaints is passive and could miss legal deadlines. The organisation should establish scope
-      itself from logs.
-    D: A public statement before facts and obligations are clear risks being wrong or incomplete. Communication
-      should follow assessment and be coordinated.
+    B: Scoping from logs is needed, but notification deadlines may already be running. The privacy officer
+      should lead so that scoping serves the legal assessment rather than happening separately.
+    C: The affected member may need to be told, but what to say and when depends on the breach assessment.
+      Contact before that risks an incomplete or wrong message.
+    D: Fixing the chatbot follows assessment. The legal duties arising from the disclosure come first.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

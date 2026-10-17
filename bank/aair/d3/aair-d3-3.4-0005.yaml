@@ -3,28 +3,28 @@ subdomain: '3.4'
 difficulty: medium
 stem: An insurer's AI risk dashboard shows that 100% of its production models completed annual validation.
   A sample review finds that several validations were checklists completed by the model developers without
-  any testing. What should the risk practitioner recommend?
+  any testing. Which change to the dashboard BEST addresses this finding?
 options:
-  A: Keep the metric, since it shows the validation policy is being followed
-  B: Replace annual validation with continuous automated monitoring of models
-  C: Add measures of validation quality, such as independence and depth of testing
-  D: Remove the metric from the dashboard until all validations are redone
+  A: Report the completion rate with a note explaining the sample findings
+  B: Report the share of models with open validation findings
+  C: Report validation quality, such as independence and depth of testing
+  D: Report completion only for validations signed off by the risk team
 answer: C
 explanation:
-  why_correct: The metric counts activity, not effectiveness, so it gives false comfort. Adding measures of
-    whether validations were independent and actually tested the models makes the dashboard reflect real assurance.
+  why_correct: The metric counts activity, not effectiveness, so it gives false comfort. Measuring whether
+    validations were independent and actually tested the models makes the dashboard reflect real assurance.
   why_not:
-    A: Completion alone is misleading when the work behind it is weak. Reporting it unchanged overstates control
-      effectiveness.
-    B: Automated monitoring is useful but does not replace independent validation, and it does not fix how
-      the existing metric misleads.
-    D: Removing the metric leaves management with no view at all. Improving what is measured is better than
-      reporting nothing.
+    A: A note warns readers once, but the headline figure still overstates assurance and will do so again
+      next period.
+    B: Open findings only arise from validations that tested something. A checklist with no testing produces
+      no findings, so this measure would look even better.
+    D: Sign-off adds a review step, but a reviewer can approve a checklist too. It does not show whether
+      real, independent testing took place.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

@@ -1,27 +1,29 @@
 id: aair-d3-3.3-0010
 subdomain: '3.3'
-difficulty: easy
+difficulty: medium
 stem: A growing retailer's AI controls were set up by several teams over time. The risk practitioner suspects
   that some AI risks have no control while others are covered several times over. Which step will BEST
   reveal this?
 options:
-  A: Ask each team to rate how well its own controls are working
-  B: Count the number of AI controls that each team owns
-  C: Benchmark the number of AI controls against similar retailers
+  A: Ask each risk owner to confirm that their risks are controlled
+  B: Compile one inventory of all AI controls and their owners
+  C: Test the operating effectiveness of each team's controls
   D: Map each control to the risks it addresses in the register
 answer: D
 explanation:
   why_correct: Mapping controls to risks shows directly which risks have no control (gaps) and which have
     several (possible duplication), giving a basis to add, merge or retire controls.
   why_not:
-    A: Self-ratings speak to how controls perform, not to which risks they cover, so gaps stay hidden.
-    B: A count per team says nothing about which risks are covered.
-    C: Comparing totals with other firms does not show whether this retailer's own risks are covered.
+    A: Attestations rely on owners' views and do not show which controls cover which risks, so gaps and
+      overlaps stay hidden.
+    B: An inventory lists the controls, but without linking them to risks it cannot show gaps or duplication.
+    C: Effectiveness testing shows how well controls work, not whether each risk has one, and it is wasted
+      on duplicated controls.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

@@ -1,31 +1,32 @@
 id: aair-d3-3.4-0012
 subdomain: '3.4'
 difficulty: medium
-stem: A retail bank reports a single AI risk score to its executive committee, calculated as the average of the
-  risk ratings of its 30 models. The score has been green all year. Meanwhile, a model used in mortgage decisions
-  has been rated above appetite for two quarters. What is the MAIN weakness in this reporting?
+stem: A retail bank reports a single AI risk score to its executive committee, calculated as the average
+  of the risk ratings of its 30 models. The score has been green all year. Meanwhile, a model used in
+  mortgage decisions has been rated above appetite for two quarters. What is the MAIN weakness in this
+  reporting?
 options:
-  A: The score is not weighted by each model's development cost
-  B: The committee receives the score quarterly rather than monthly
-  C: Thirty models are too many to combine into a single figure
-  D: Averaging hides individual risks that are outside appetite
+  A: The score is not weighted by each model's business criticality
+  B: The ratings are not independently validated before averaging
+  C: The score shows the current position but no trend over time
+  D: Averaging lets an individual breach of appetite go unseen
 answer: D
 explanation:
-  why_correct: An average lets many low ratings offset a serious one, so the committee never sees that a mortgage
-    model has been outside appetite for six months. Reporting should show every risk that breaches appetite on its
-    own, whatever the overall picture.
+  why_correct: Any average lets many low ratings offset a serious one, so the committee never sees that
+    a mortgage model has been outside appetite for six months. Reporting should show every risk that breaches
+    appetite on its own, whatever the overall picture.
   why_not:
-    A: Development cost does not reflect risk. Weighting by cost would still allow an important breach to be diluted
-      by other models.
-    B: More frequent reporting of the same average would still show green. The problem is what the figure hides,
-      not how often it is shown.
-    C: The number of models is not the issue. An average of five models could hide a breach just as easily as an
-      average of thirty.
+    A: Weighting by criticality is a better aggregate, but it is still an aggregate. The mortgage model
+      would be diluted by 29 others and the breach could still be hidden.
+    B: Independent validation of ratings improves their quality. But the mortgage model is already rated
+      above appetite, so the rating is not what failed to reach the committee.
+    C: Trends add useful context, but a trend in the same average would also stay green. The breach would
+      still be invisible.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

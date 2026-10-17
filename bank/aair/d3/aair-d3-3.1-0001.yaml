@@ -1,26 +1,30 @@
 id: aair-d3-3.1-0001
 subdomain: '3.1'
-difficulty: easy
+difficulty: medium
 stem: An insurer is building its AI risk register. Which statement is the BEST-formed risk scenario for
   its claims triage model?
 options:
-  A: Training data for the claims triage model is stored with a cloud provider
-  B: The claims triage model is complex, and few staff understand how it works
+  A: Weak AI governance leads the model to make poor decisions, causing financial and reputational harm
+  B: Unvetted changes to training data lower the model's accuracy score, breaching its performance target
   C: Unvetted changes to training data lead the model to pass fraudulent claims, raising losses
-  D: Fraud losses in the claims process may increase over the coming year
+  D: Data, model or process weaknesses may lead the model to pass fraudulent claims, raising losses
 answer: C
 explanation:
-  why_correct: A useful risk scenario links a cause, an event and a business consequence. This one names
-    all three, so owners can assess likelihood and impact and choose controls.
+  why_correct: A useful risk scenario links a specific cause, an event and a business consequence. This
+    one names a cause precise enough to point to controls, a concrete event and a business impact, so
+    owners can assess likelihood and impact and choose treatments.
   why_not:
-    A: This is a fact about the environment. It is not a risk until linked to a threat, event and impact.
-    B: This describes a condition that might contribute to risk, but it states no event or consequence.
-    D: This states a consequence only. Without a cause or event, it cannot guide which controls to apply.
+    A: It has the shape of a scenario, but each part is too vague. Weak governance and poor decisions
+      cannot be rated or tied to specific controls.
+    B: The cause and event are specific, but the consequence is a technical metric. A missed accuracy
+      target does not tell the business what loss or harm follows.
+    D: The event and consequence are sound, but the catch-all cause covers almost anything. It cannot
+      guide which controls would lower the likelihood.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

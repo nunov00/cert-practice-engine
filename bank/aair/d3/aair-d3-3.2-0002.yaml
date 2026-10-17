@@ -6,27 +6,27 @@ stem: A digital bank's head of product wants to launch an AI-based savings advis
   will take two months. The head of product says, as risk owner, she accepts the risk. What should the
   risk practitioner do?
 options:
-  A: Escalate so the acceptance is made, documented and time-limited at the right authority level
-  B: Allow the launch with extra monitoring and review the position after two months
-  C: Block the launch until every outstanding control has been put in place
-  D: Record her acceptance, since the risk owner has the right to make this decision
+  A: Escalate the acceptance decision to the level that owns the appetite
+  B: Allow the launch with extra monitoring until the controls are in place
+  C: Recommend delaying the launch until the remaining controls are ready
+  D: Record her acceptance with a review date two months from now
 answer: A
 explanation:
   why_correct: Risk owners can usually accept risk only within appetite. Accepting a risk above appetite
     needs a decision from the level that set the appetite, such as executive management or the board,
-    with conditions, a deadline for the controls and a record of the decision.
+    which can set conditions and a deadline for the controls and record the decision.
   why_not:
     B: Monitoring may form part of the conditions, but it does not resolve who may accept an above-appetite
       risk. Proceeding without the right approval is the core problem.
-    C: The practitioner advises and challenges but does not normally hold the authority to block a business
-      decision. The right response is escalation to those who do.
-    D: Ownership does not give unlimited authority. Recording an acceptance that exceeds her delegated
-      limits would bypass the appetite the bank's leaders set.
+    C: Delay is one option the decision maker may choose, but the practitioner's role is to get the decision
+      to the right authority, not to substitute a recommendation for that decision.
+    D: A review date makes the acceptance time-limited, but ownership does not give authority beyond appetite.
+      Recording it would bypass the appetite the bank's leaders set.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

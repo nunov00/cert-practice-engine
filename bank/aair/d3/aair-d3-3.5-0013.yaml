@@ -1,31 +1,31 @@
 id: aair-d3-3.5-0013
 subdomain: '3.5'
 difficulty: hard
-stem: Developers at a software company use an AI coding assistant. A security researcher shows that the assistant
-  sometimes suggests importing code packages that do not exist, and attackers have begun publishing malicious packages
-  under those names. Which control BEST addresses this supply chain risk?
+stem: Developers at a software company use an AI coding assistant. A security researcher shows that the
+  assistant sometimes suggests importing code packages that do not exist, and attackers have begun publishing
+  malicious packages under those names. Which control BEST addresses this supply chain risk?
 options:
-  A: Ask developers to read the assistant's suggestions more carefully
-  B: Switch to another coding assistant that has a lower error rate
-  C: Scan released code for vulnerabilities once every quarter
+  A: Train developers to check each suggested package before use
+  B: Turn off package suggestions in the coding assistant
+  C: Run software composition scanning on code at each release
   D: Install packages only from a vetted internal repository
 answer: D
 explanation:
-  why_correct: Allowing builds to pull only from an approved internal repository stops an unknown or malicious package
-    from entering the code, whatever the assistant suggests. It is a preventive control at the point where the third-party
-    code enters.
+  why_correct: Allowing builds to pull only from an approved internal repository stops an unknown or malicious
+    package from entering the code, whatever the assistant suggests. It is a preventive control at the
+    point where the third-party code enters.
   why_not:
-    A: Awareness helps, but a package with a believable name is hard to spot by reading. Relying on care alone leaves
+    A: Awareness helps, but a package with a believable name is hard to spot. Relying on care alone leaves
       the main exposure open.
-    B: Any assistant can suggest packages that do not exist. A lower error rate reduces but does not control the
-      risk.
-    C: Quarterly scanning after release is detective and late. A malicious package could run in development or production
-      long before the next scan.
+    B: Turning off suggestions removes one source of bad names, but developers can still mistype or copy
+      names from elsewhere, and it gives up useful help. The point of entry stays uncontrolled.
+    C: Scanning at release is detective and late. A malicious package runs as soon as it is installed
+      in development, long before release.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

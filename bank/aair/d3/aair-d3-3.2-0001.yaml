@@ -5,28 +5,28 @@ stem: An online retailer's customer chatbot sometimes gives wrong answers about 
   the residual risk is above appetite. The business owner proposes buying an insurance policy to cover
   refund disputes. What should the risk practitioner advise?
 options:
-  A: Accept the risk, because chatbots are known to make occasional errors
-  B: Buy the policy, since transfer brings the financial exposure within appetite
-  C: Reduce wrong answers with controls first, as insurance leaves conduct and trust impacts
-  D: Withdraw the chatbot entirely and return all chats to human agents
+  A: Accept the risk with a formal sign-off by the business owner
+  B: Buy the policy to transfer the cost of refund disputes
+  C: Reduce wrong answers by limiting replies to approved refund policy text
+  D: Add a notice that chatbot refund answers are not binding
 answer: C
 explanation:
   why_correct: Insurance can transfer some financial loss, but it does not stop customers being misled,
-    and it leaves the regulatory and trust impact with the retailer. Controls such as limiting answers
-    to approved policy content and passing unclear cases to a person reduce the risk itself. Insurance
-    can then cover what remains.
+    and it leaves the regulatory and trust impact with the retailer. Limiting replies to approved policy
+    text reduces the risk itself by cutting wrong answers at the source. Insurance may later cover what
+    remains.
   why_not:
-    A: Accepting a risk above appetite is not appropriate without escalation and justification. Errors
-      being common is not a reason to tolerate them.
+    A: The residual risk is above appetite, so a business owner's sign-off is not enough. It needs treatment
+      or acceptance at a higher level with a justification.
     B: Transfer only covers part of the impact. The non-financial harm stays with the retailer, so the
       risk would likely remain above appetite.
-    D: Avoidance is an option, but it gives up the benefit when practical controls could bring the risk
-      within appetite. It should not be the first recommendation.
+    D: A notice may limit some legal exposure, but customers are still misled, and regulators may see
+      it as unfair, so the conduct risk remains.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

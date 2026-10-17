@@ -1,31 +1,31 @@
 id: aair-d3-3.4-0016
 subdomain: '3.4'
-difficulty: easy
-stem: A payments firm's monthly AI risk report counts only AI incidents that caused a financial loss. Last month,
-  staff caught several wrong outputs from its dispute-handling model before they reached customers, but these cases
-  appear nowhere in the report. What should the risk practitioner recommend?
+difficulty: medium
+stem: A payments firm's monthly AI risk report counts only AI incidents that caused a financial loss.
+  Last month, staff caught several wrong outputs from its dispute-handling model before they reached customers,
+  but these cases appear nowhere in the report. What should the risk practitioner recommend?
 options:
-  A: Report near misses as well, as an early sign of control strain
-  B: Keep the report as it is, since no loss arose from these cases
-  C: Replace incident counts with the model's monthly accuracy score
-  D: Raise the loss threshold so only material incidents are reported
+  A: Report near misses caught by staff alongside loss incidents
+  B: Report the model's sampled error rate alongside loss incidents
+  C: Add a commentary on operational issues to the monthly report
+  D: Report incidents by severity, including customer harm without loss
 answer: A
 explanation:
-  why_correct: Near misses show how often the model fails and how much the business relies on staff catching the
-    errors. Reporting them gives leaders an early warning before a failure gets through and causes a loss, which
-    a loss-only count cannot do.
+  why_correct: Near misses show how often the model fails and how much the business relies on staff catching
+    the errors. Reporting them gives leaders early warning before a failure gets through and causes a
+    loss.
   why_not:
-    B: The absence of loss this time depended on staff catching the errors. Leaving these cases out hides a growing
-      exposure until it turns into actual losses.
-    C: An accuracy score is useful, but dropping incident reporting loses information about real failures and how
-      they were caught. Near misses add to incident reporting rather than replacing it.
-    D: This would make the report even less sensitive. The gap is that early signals are missing, not that too many
-      minor items are shown.
+    B: An error rate is a useful model measure, but it does not show how many errors were stopped by staff,
+      which is the control dependency the report is missing.
+    C: A free-text commentary may mention the cases, but it gives no consistent count that leaders can
+      track over time or compare against thresholds.
+    D: Widening incidents to include customer harm is sensible, but these errors never reached customers.
+      They would still be left out of the report.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

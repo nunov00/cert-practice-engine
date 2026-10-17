@@ -1,27 +1,30 @@
 id: aair-d3-3.4-0001
 subdomain: '3.4'
-difficulty: easy
-stem: A risk team wants a key risk indicator that gives early warning that a deployed demand forecasting
-  model is becoming less reliable. Which indicator is MOST suitable?
+difficulty: medium
+stem: A risk team wants a key risk indicator that warns that a deployed demand forecasting model is becoming
+  less reliable, before planners or sales results show any effect. Which indicator is MOST suitable?
 options:
-  A: The total cost of running the model on the cloud platform each month
-  B: The number of AI models the organisation has deployed in production
+  A: The monthly forecast error, calculated once actual sales are recorded
+  B: The share of forecasts that planners override each week
   C: The trend in how far current input data differs from the training data
-  D: The accuracy the model achieved in testing before it was released
+  D: The model's accuracy on its original held-out test set, rerun quarterly
 answer: C
 explanation:
-  why_correct: A growing gap between live inputs and training data signals drift before errors become
-    visible in business results. A good key risk indicator is forward-looking and tied to the risk being
-    managed.
+  why_correct: A growing gap between live inputs and training data signals drift before errors reach forecasts,
+    planners or sales results. The stem asks for a warning ahead of any visible effect, and input drift
+    is the only option that moves first.
   why_not:
-    A: Running cost is a performance or financial measure. It says nothing about forecast quality.
-    B: This measures the size of the AI estate, not whether this particular model is becoming unreliable.
-    D: A fixed historical figure cannot warn of change. It is a baseline for comparison, not an indicator.
+    A: Forecast error is the most direct measure of reliability, but it is lagging. It appears only after
+      sales are recorded, which is after the effect the team wants to anticipate.
+    B: Planner overrides are a useful signal of lost trust, but they happen only once planners notice
+      bad forecasts. The stem wants a warning before that point.
+    D: A fixed test set does not change, so rerunning it shows the same result even while live data drifts
+      away from it. It cannot warn of change in production.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

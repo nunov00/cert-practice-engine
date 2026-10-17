@@ -1,29 +1,30 @@
 id: aair-d3-3.2-0010
 subdomain: '3.2'
 difficulty: easy
-stem: A mid-sized insurer has budget this year to treat only some of the AI risks in its register. Each
-  risk has a residual rating that can be compared with the insurer's appetite. Which risks should the
-  practitioner recommend treating FIRST?
+stem: A mid-sized insurer has budget this year to treat only some of the AI risks in its register. Several
+  residual risks are rated above appetite. Which risks should the practitioner recommend treating FIRST?
 options:
-  A: Those whose treatments are the cheapest and quickest to deliver
-  B: Those that the business units raised most recently
+  A: Those above appetite whose treatments are cheapest to deliver
+  B: Those with the highest inherent risk before any controls
   C: Those whose residual risk is furthest above appetite
-  D: Those linked to the AI models with the most users
+  D: Those whose residual rating has risen most since last year
 answer: C
 explanation:
   why_correct: Limited treatment resources should go first where exposure is furthest outside what the
     organisation is willing to accept. Cost and speed then help choose between treatment options for those
     risks, not which risks come first.
   why_not:
-    A: Quick wins can be attractive, but they may leave the largest exposures untreated while budget is
-      spent on minor risks.
-    B: When a risk was raised says nothing about how severe it is or how far it sits from appetite.
-    D: The number of users is one input to impact, but it is not a measure of exposure against appetite.
+    A: Cheap treatments can be attractive, but they may leave the largest exposures untreated while budget
+      goes to risks only slightly above appetite.
+    B: Inherent risk ignores the controls already in place. A risk with high inherent risk may already
+      be well controlled and within appetite.
+    D: A rising rating is a useful warning sign, but a risk that rose sharply may still sit less far above
+      appetite than others that stayed high.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass
