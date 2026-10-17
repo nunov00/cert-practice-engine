@@ -1,32 +1,33 @@
 id: aaig-d2-2.1-0003
 subdomain: '2.1'
-difficulty: medium
-stem: A health insurer plans to train a claims triage model. The data team says the claims data 'meets
-  the enterprise quality standard', which was written for financial reporting. What should the governance
-  lead require before training starts?
+difficulty: easy
+stem: A health insurer plans to train a claims triage model next month. The data team says the claims
+  data meets the enterprise quality standard, which was written for financial reporting. Nobody has said
+  what the triage model needs from the data. What should the governance lead require before training starts?
 options:
-  A: A sign-off from finance that the claims figures reconcile to the ledger
-  B: Quality criteria defined for this model's purpose, then tested
-  C: A larger data set so that quality issues average out
-  D: An external audit of the enterprise data quality standard
+  A: Quality criteria from the enterprise standard, retested on claims data
+  B: Quality criteria set for the triage purpose and tested before training
+  C: Quality criteria from a published AI data standard, tested in full
+  D: Quality criteria agreed with the claims owner for claims reporting
 answer: B
 explanation:
-  why_correct: Data quality is fitness for a stated purpose. A standard built for financial reporting
-    checks things like completeness and reconciliation of totals, but a triage model also needs representativeness,
-    correct labels and coverage of rare claim types. The governance lead should require purpose-specific
-    criteria, agreed before training, and evidence that the data meets them.
+  why_correct: Data quality means fitness for a stated purpose. A standard for financial reporting checks
+    completeness and reconciled totals, but a triage model also needs correct labels, representative cases
+    and coverage of rare claim types. Criteria set for this model, then tested, show whether the data
+    is fit before it shapes the model.
   why_not:
-    A: Reconciliation shows the financial totals are right. It says nothing about label accuracy or whether
-      the data represents the cases the model will see.
-    C: More data does not cure systematic problems such as biased labels or missing groups; it can scale
-      them. Volume is not a substitute for defined quality criteria.
-    D: Auditing the existing standard might confirm it works for reporting, but the problem is that it
-      was never designed for this use. The model needs its own criteria.
+    A: Retesting against the reporting standard repeats checks the data has already passed. That standard
+      was never designed for triage, so passing it again says nothing new about fitness.
+    C: A published AI standard lists general dimensions, but it does not say what this model needs, such
+      as label accuracy or coverage of rare claim types. Testing it in full may still miss the gaps that
+      matter.
+    D: Criteria for claims reporting serve a different purpose. The triage model's needs have still not
+      been defined.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

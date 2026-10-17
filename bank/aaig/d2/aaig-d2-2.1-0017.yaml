@@ -5,27 +5,27 @@ stem: A business unit at a shipping company wants to deploy an AI tool that does
   logging standard, because the vendor cannot support it for six months. The tool would save significant
   cost. What should the governance lead recommend?
 options:
-  A: Reject the request, as standards admit no exceptions
-  B: Let the business unit decide, as it owns the benefits
-  C: Ask the vendor to confirm in writing that the tool is low risk
-  D: Grant a time-limited exception with compensating controls
+  A: Grant a six-month exception approved by the business unit head
+  B: Grant a six-month exception once the vendor commits to a delivery date
+  C: Grant an exception that lasts until the vendor delivers logging
+  D: Grant a six-month exception with compensating controls for the gap
 answer: D
 explanation:
-  why_correct: A formal exception process lets the organisation take a reasoned risk. The deviation is
-    documented, an accountable executive accepts it, compensating controls reduce the gap, and an expiry
-    date makes sure the standard is met once the vendor can support it.
+  why_correct: A formal exception lets the organisation take a reasoned risk. The deviation is documented
+    and accepted at the right level, and compensating controls reduce the gap while logs are missing.
+    A fixed expiry makes sure the standard is met once the vendor can support it.
   why_not:
-    A: Rigid refusal ignores real business value and tends to push teams toward workarounds. Standards
-      need a controlled way to handle justified deviations.
-    B: The unit owns the benefit, but missing logs affect enterprise risk such as incident investigation.
-      The decision needs enterprise accountability.
-    C: A vendor statement is not independent and does not replace the missing control. It shifts no accountability
-      away from the company.
+    A: Missing logs affect enterprise risks such as incident investigation, which the unit head does not
+      own. Approval alone also leaves the gap uncontrolled for six months.
+    B: A vendor commitment makes the end date more likely, but nothing covers the missing logs in the
+      meantime.
+    C: An exception with no fixed end depends on the vendor's timing, and nothing reduces the gap while
+      it lasts.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

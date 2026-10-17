@@ -3,22 +3,24 @@ subdomain: '2.1'
 difficulty: hard
 stem: A bank's customer chatbot logs every prompt and response. Security wants the logs kept indefinitely
   for investigations; privacy wants them deleted after 30 days. Complaints about chatbot advice can arise
-  up to two years later. What should the governance lead propose?
+  up to two years later. No record-keeping rule sets a longer period for these logs. What should the governance
+  lead propose?
 options:
-  A: Keep all logs indefinitely, as investigations outweigh privacy
-  B: Delete logs after 30 days and rely on customers' own records
-  C: Set a period linked to the complaint window, with tight access
+  A: Keep logs in a restricted archive for as long as security needs them
+  B: Delete logs after 30 days and keep complaint-related logs on request
+  C: Keep logs for the complaint window, with access limited
   D: Keep full logs for 30 days and aggregated statistics after that
 answer: C
 explanation:
-  why_correct: Retention should follow a documented need. The complaint window gives a clear, defensible
-    reason to keep logs for about two years so the bank can reconstruct what the chatbot told a customer.
-    Limiting access and deleting after that period balances traceability with minimisation.
+  why_correct: Retention should follow a documented need. The complaint window gives a clear reason to
+    keep logs for about two years, so the bank can rebuild what the chatbot told a customer. Limiting
+    access and deleting after that period balances traceability with minimisation.
   why_not:
-    A: Indefinite retention has no defined purpose and keeps growing the privacy and breach exposure.
-      'Might be useful' is not a retention rule.
-    B: Deleting after 30 days leaves the bank unable to answer complaints it is obliged to handle, which
-      is its own risk to customers and the bank.
+    A: Security's wish to investigate is not a defined need for each log, and an open-ended period gives
+      nothing to delete against. It covers the complaint window but adds privacy and breach exposure with
+      no end point.
+    B: Complaints can arrive up to two years later, long after the 30 days. By then the logs would already
+      be gone and could not be held on request.
     D: Aggregates cannot show what was said to a particular customer, so they do not support complaint
       handling within the two-year window.
 status: published
@@ -27,5 +29,5 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

@@ -5,27 +5,28 @@ stem: A government benefits agency is designing a model that flags applications 
   Investigators and applicants may challenge a flag. When and how should the explainability requirement
   be set?
 options:
-  A: By the data scientists, based on the best accuracy
-  B: After deployment, if investigators ask for reasons
-  C: By the vendor, according to what its product is able to provide
+  A: At design, matched to what the chosen model type can explain
+  B: At design, at the level the agency's AI policy sets for its models
+  C: After the pilot, based on the questions investigators raise
   D: At design, proportionate to the impact on applicants
 answer: D
 explanation:
-  why_correct: 'Explainability must be a design requirement because it shapes the choice of model and
-    data. The level should match the impact: a flag that can trigger an investigation affecting someone''s
-    benefits needs reasons that investigators and applicants can understand and challenge.'
+  why_correct: Explainability must be set at design because it shapes the choice of model and data. The
+    level should match the impact. A flag that can trigger an investigation into someone's benefits needs
+    reasons that investigators and applicants can understand and challenge.
   why_not:
-    A: Accuracy alone can favour opaque models. The requirement reflects public accountability, which
-      is a governance decision, not a technical one.
-    B: Retrofitting explanations is costly and may be impossible with the model already chosen. Affected
-      people need reasons from the first decision.
-    C: The agency is accountable for decisions, so it sets the requirement. Vendor capability is an input
-      to selection, not the standard.
+    A: This lets the model choice set the standard. The need comes from the people affected, and the model
+      should be chosen to meet it.
+    B: A policy level is a sound baseline, but one level across the agency's models ignores that this
+      flag can open an investigation into someone's benefits. The requirement should follow the impact
+      of this use.
+    C: Retrofitting explanations is costly and may not be possible with the chosen model. Applicants need
+      reasons from the first flag, and investigators are not the only ones who may challenge.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

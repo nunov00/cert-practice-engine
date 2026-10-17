@@ -5,21 +5,19 @@ stem: An engineering consultancy plans to build a client-facing design assistant
   model downloaded from a public repository. The project team describes the model as 'open source, so
   free to use however we like'. Which concern does this assumption MOST overlook?
 options:
-  A: Whether the model performs well on public engineering benchmarks
-  B: Whether its licence permits the intended commercial and client use
-  C: Whether hosting it internally would remove all licence obligations
+  A: Whether the model's training data sources are publicly disclosed
+  B: Whether its licence permits the intended commercial client use
+  C: Whether the model card describes known limits and risks
   D: Whether the files were scanned for malicious code before use
 answer: B
 explanation:
-  why_correct: Openly available models come with licences that can restrict commercial use, field of use,
-    user numbers or redistribution, and can impose attribution or other duties. Since the team assumes
-    there are no constraints, the gap is a licence review against the intended client-facing commercial
-    use, which should be a standard architecture check in model selection.
+  why_correct: Openly available models come with licences that can restrict commercial use, field of use
+    or redistribution, and can impose attribution or other duties. The team assumes there are no limits,
+    so the gap is a review of the licence against the intended client use.
   why_not:
-    A: Benchmark performance matters for fitness, but it is unrelated to the assumption that the model
-      can be used however the firm likes.
-    C: Licence terms apply to how the model is used, wherever it is hosted. Self-hosting does not remove
-      them.
+    A: Training data disclosure supports transparency and risk review, but it does not answer whether
+      the firm may use the model however it likes.
+    C: A model card helps judge fitness and risk. It does not grant or limit the right to use the model.
     D: Scanning files is a sound security control, but it addresses a different risk from the legal right
       to use the model.
 status: published
@@ -28,5 +26,5 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-b
-  checked_by: 2026-10-13-aaig-d2-b-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

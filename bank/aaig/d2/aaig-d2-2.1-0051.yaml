@@ -5,26 +5,27 @@ stem: A supermarket loyalty programme's model groups shoppers into segments. One
   expecting a baby', is inferred from purchases and used for targeted offers. The data team says the model
   holds no sensitive data, as it uses only shopping baskets. What should the governance lead advise?
 options:
-  A: Agree, since the basket data was collected lawfully through the programme
-  B: Treat inferences as data in their own right and classify them by sensitivity
-  C: Rename the segment with a neutral label so the name no longer reveals anything
-  D: Delete the segment's purchase history but keep the inferred labels
+  A: Treat the basket data as sensitive because it reveals buying habits
+  B: Treat inferences as data and classify them by their sensitivity
+  C: Treat the segment as marketing data covered by programme consent
+  D: Treat the targeting as a fairness issue for the ethics committee
 answer: B
 explanation:
   why_correct: An inference about pregnancy is health-related information even if every input was ordinary.
-    Data classification must cover what models infer, not only what they ingest, so that inferred attributes
-    get the protections, purpose limits and access rules that their sensitivity demands.
+    Classification must cover what models infer, not only what they ingest. Inferred attributes then get
+    the protections, purpose limits and access rules their sensitivity demands.
   why_not:
-    A: Lawful collection of inputs does not settle how sensitive the derived output is or whether it may
-      be used for targeting.
-    C: A new label hides the meaning but the inference and its use stay the same.
-    D: The sensitive element is the inferred label itself, so keeping it while deleting inputs leaves
-      the problem in place.
+    A: Ordinary baskets are not health data, and classifying all of them as sensitive would be excessive.
+      The sensitive element is what the model concludes from them.
+    C: Programme consent covered ordinary marketing, not inferences about pregnancy. Calling it marketing
+      data repeats the team's error.
+    D: Ethics review may help, but the immediate gap is classification. Until the inference is recognised
+      as health-related, it lacks the protections and limits it needs.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-b
-  checked_by: 2026-10-13-aaig-d2-b-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

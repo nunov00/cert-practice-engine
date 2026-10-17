@@ -1,30 +1,31 @@
 id: aaig-d2-2.1-0015
 subdomain: '2.1'
 difficulty: medium
-stem: An insurer's governance committee wants to set a minimum standard for data sets registered for AI
-  use. Which set of metadata should be mandatory?
+stem: An insurer's governance committee wants a minimum metadata standard for data sets registered for
+  AI use. Reviewers must be able to decide from it whether a proposed AI use may go ahead. Which set of
+  fields should be mandatory?
 options:
-  A: The full list of teams and models that have used the data set so far
-  B: File format, storage size, creation date and last update
-  C: Business glossary terms and links to related reports
-  D: Owner, classification, source, permitted uses and quality status
+  A: Owner, steward, retention period and next review date
+  B: Steward, sensitivity, lineage and retention period
+  C: Owner, source, lineage and usage history
+  D: Owner, sensitivity, permitted uses and quality status
 answer: D
 explanation:
-  why_correct: 'Governance metadata answers the questions that decide whether data may be used and how:
-    who is accountable, how sensitive it is, where it came from, what uses are allowed and whether it
-    is fit. These fields let reviewers approve AI uses consistently.'
+  why_correct: Reviewers need to know who is accountable, how sensitive the data is, which uses are allowed
+    and whether it is fit. These fields answer the questions that decide whether a proposed use may go
+    ahead.
   why_not:
-    A: Usage history helps impact analysis, but it records past use rather than whether future use is
-      allowed. It is a useful addition, not the core minimum.
-    B: Technical metadata is useful for operations but says nothing about accountability, sensitivity
-      or permitted use, which are the governance questions.
-    C: Glossary links help understanding, but without owner, classification and permitted uses they do
-      not support approval decisions.
+    A: These fields support data management and accountability, but they do not say how sensitive the
+      data is or which uses are allowed, so reviewers still cannot decide.
+    B: Sensitivity helps, but without an owner and permitted uses reviewers do not know who answers for
+      the data or whether the proposed use is allowed.
+    C: These fields show who owns the data and where it came from. Without sensitivity and permitted uses,
+      they do not support an approval decision.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

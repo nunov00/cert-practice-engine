@@ -4,26 +4,28 @@ difficulty: medium
 stem: A mid-sized insurer is about to sign a five-year contract for an AI claims platform. The vendor
   stores models and data in a proprietary format. What should the governance lead insist on before signing?
 options:
-  A: A discount for committing to the full five years
-  B: A seat for the insurer on the vendor's customer product advisory board
-  C: An exit plan with data and model export in usable formats
-  D: A guarantee that the vendor will not change its prices
+  A: A termination right if the vendor misses agreed service levels
+  B: Source code escrow released to the insurer if the vendor fails
+  C: Exit terms with export of data and models in usable formats
+  D: A transition clause with vendor support for a set handover period
 answer: C
 explanation:
   why_correct: Lock-in becomes a governance risk when the organisation cannot leave without losing its
-    data or models. Agreeing exit terms before signing, including export of data, model artefacts and
-    logs in usable formats, keeps options open and strengthens the insurer's position for the whole contract.
+    data or models. With a proprietary format and five years ahead, agreed exit terms keep options open.
+    Export of data, model artefacts and logs in usable formats strengthens the insurer's position for
+    the whole contract.
   why_not:
-    A: A discount makes the commitment cheaper but deepens lock-in. It does nothing to make leaving possible.
-    B: Influence on the roadmap is nice to have, but it does not give the insurer a way out if the vendor
-      fails or underperforms.
-    D: Price protection covers one risk but not the risks of vendor failure, poor performance or changing
-      needs.
+    A: A right to terminate is of little use if the insurer cannot take its data and models with it. Leaving
+      would still mean starting again.
+    B: Escrow helps only if the vendor fails. Source code does not return the insurer's data and models
+      in a usable form, and it does not help if the insurer simply wants to leave.
+    D: Vendor help during a handover is useful, but if data and models can only be read on the vendor's
+      platform there is little to hand over.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

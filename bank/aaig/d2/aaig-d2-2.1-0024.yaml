@@ -1,14 +1,14 @@
 id: aaig-d2-2.1-0024
 subdomain: '2.1'
-difficulty: hard
+difficulty: medium
 stem: A retail bank runs all its generative AI uses on one external model provider. Architects propose
   an abstraction layer so models can be switched, which adds cost and some performance loss. The CFO asks
   whether it is worth it. What is the BEST basis for the decision?
 options:
-  A: Whether competitors have built a similar abstraction layer
+  A: Whether the provider contract gives enough notice of model changes
   B: How critical the uses are and the impact of losing the provider
-  C: Whether the current provider's models score best on public benchmarks
-  D: Whether the architects can deliver it within this budget year
+  C: How likely the provider is to fail or withdraw the models it offers
+  D: How much the bank already spends with the provider each year
 answer: B
 explanation:
   why_correct: Portability is a form of insurance; its value depends on what is at stake. If critical
@@ -16,15 +16,17 @@ explanation:
     and bargaining power. If the uses are minor, simpler exit terms may suffice. The decision should be
     proportionate to concentration risk.
   why_not:
-    A: Peers may have different risk profiles. Copying them avoids the bank's own analysis of its dependency.
-    C: Today's benchmark lead says nothing about the risk of the provider failing, changing terms or withdrawing
-      a model.
-    D: Delivery timing is a planning matter, not a reason to accept or reject the risk reduction.
+    A: Notice terms reduce one risk, a model change. They do not address provider failure or withdrawal,
+      and they do not tell the CFO what protection is worth.
+    C: Likelihood is half the picture. Even a stable provider can justify the layer if critical services
+      depend on it, and a fragile one may not if the uses are minor.
+    D: Spend shows commercial weight, not what the bank stands to lose if the provider goes. A small spend
+      can support a critical service.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass
