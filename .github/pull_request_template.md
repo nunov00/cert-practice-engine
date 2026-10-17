@@ -1,3 +1,6 @@
+Review class: routine | material | mandatory
+Author agent: <agent> (<provider>)
+
 ## What changed
 
 <!-- Before / After in plain words. -->
