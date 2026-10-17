@@ -1,22 +1,23 @@
 id: aaig-d2-2.1-0033
 subdomain: '2.1'
-difficulty: medium
-stem: A car insurer's AI system assists adjusters in settling claims. An internal review cannot tell whether
-  a disputed settlement followed the AI recommendation or the adjuster's override. Which design requirement
-  would have prevented this?
+difficulty: hard
+stem: A car insurer's AI system assists adjusters in settling claims. Adjusters must write a reason
+  when they override a recommendation. An internal review still cannot tell whether a disputed settlement
+  followed the AI recommendation or an override. Which design requirement would BEST have prevented this?
 options:
-  A: Require a written reason whenever an adjuster overrides the AI
+  A: Log each recommendation with the model version and inputs used
   B: Log each AI recommendation with the adjuster's resulting action
   C: Show a confidence score and key factors with each recommendation
   D: Store the final settlement and the adjuster's notes for each claim
 answer: B
 explanation:
-  why_correct: Traceability means being able to rebuild who or what decided, and on what basis. Logging
-    each recommendation and what the adjuster did with it shows whether a settlement followed the AI or
-    an override. The insurer can then explain decisions and handle disputes.
+  why_correct: Traceability means being able to rebuild who or what decided, and on what basis. Override
+    reasons depend on adjusters noticing and recording a departure, and nothing ties them to what the
+    system actually recommended. Logging each recommendation together with what the adjuster did with
+    it shows directly whether a settlement followed the AI or an override.
   why_not:
-    A: This depends on adjusters noticing and recording their departures. The review still could not check
-      which recommendation an adjuster saw.
+    A: This records the AI side well and supports reproducing a recommendation. It does not record what
+      the adjuster then did, so the review still cannot tell whether the settlement followed it.
     C: Scores and factors help the adjuster decide but do not record what happened afterwards.
     D: The outcome and notes do not show what the AI recommended, so the review still could not tell whether
       the AI shaped the settlement.
@@ -26,5 +27,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-17-aaig-d2-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

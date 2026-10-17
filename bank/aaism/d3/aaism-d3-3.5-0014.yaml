@@ -8,7 +8,7 @@ options:
   A: Write the agent's logs to an account it cannot modify
   B: Hash the agent's log files nightly and store the hashes
   C: Require human approval for bulk deletions by the agent
-  D: Monitor the cloud provider's audit trail of the agent's calls
+  D: 'Monitor the provider''s audit trail of the agent''s calls'
 answer: D
 explanation:
   why_correct: The locked bucket stops the agent's logs from being altered, but they are still the agent's own account
@@ -26,5 +26,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-c
-  checked_by: 2026-10-16-aaism-d3-c-recheck3
+  checked_by: 2026-10-17-aaism-length-check
   check_verdict: pass
+  options_only: not_obvious

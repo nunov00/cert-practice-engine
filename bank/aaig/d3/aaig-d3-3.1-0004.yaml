@@ -1,34 +1,35 @@
 id: aaig-d3-3.1-0004
 subdomain: '3.1'
-difficulty: medium
-stem: The board of a bank receives a quarterly AI report on its credit model showing approval speed, cost
-  per decision and input drift scores by product and channel against tolerances. A director asks what
-  else would warn the board that the model is becoming riskier before arrears and losses appear. What
-  should be added?
+difficulty: hard
+stem: The board of a bank receives a quarterly AI report on its credit model showing approval speed,
+  cost per decision and input drift scores by product and channel against tolerances. A director asks
+  what else would warn the board that the model is becoming riskier before arrears and losses appear.
+  Which addition would BEST answer the director?
 options:
   A: Trends in how often credit officers override the model
   B: Accuracy on recent loans compared with the validation results
-  C: Findings from the yearly independent model validation
-  D: Loss rates on model-approved loans by customer segment
+  C: Shifts in the applicant mix by product and channel
+  D: First-payment defaults on model-approved loans by segment
 answer: A
 explanation:
-  why_correct: The report already carries input drift by segment, so the board needs a second, different
-    early signal. A rising or shifting override rate shows that the officers closest to the decisions
-    increasingly disagree with the model, which often comes before arrears appear. It adds a human view
-    that drift scores cannot give.
+  why_correct: The report already carries input drift by product and channel, so the board needs a
+    different kind of early signal. A rising or shifting override rate shows that the officers closest
+    to the decisions increasingly disagree with the model, which often comes before arrears appear. It
+    adds a human view that drift scores cannot give.
   why_not:
     B: Accuracy on a credit model can only be measured once loans have had time to repay or default, so
       it lags in the same way as arrears. It confirms deterioration after outcomes arrive rather than
       warning ahead of them.
-    C: Independent validation gives valuable assurance, but once a year. It cannot warn the board between
-      validations that the model is becoming riskier.
-    D: Loss rates by segment are useful outcome measures, but they are lagging. They show the risk after
-      it has turned into losses, which is what the director wants to get ahead of.
+    C: A shift in the applicant mix by product and channel is what the input drift scores in the report
+      already measure. Reporting it again in another form adds no new warning.
+    D: First-payment defaults are an early outcome measure and are useful in credit monitoring, but they
+      are themselves arrears. The director wants a signal that warns before arrears appear.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-17-aaig-d3-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

@@ -1,33 +1,25 @@
 id: aaig-d1-1.1-0044
 subdomain: '1.1'
-difficulty: medium
-stem: The remuneration committee of a contact-centre outsourcing firm is setting executive bonuses. Management
-  proposes paying the COO's bonus mainly on the number of customer contacts handled by AI. Recent audits
-  found AI responses that misled customers. What should the governance leader recommend to the committee?
+difficulty: hard
+stem: The remuneration committee of a contact-centre outsourcing firm is setting executive bonuses. Management proposes paying the COO's bonus mainly on the number of customer contacts handled by AI. Satisfaction scores for AI contacts are high, yet quality audits regularly find AI responses that misled customers. What is the BEST recommendation for the governance leader to make to the committee?
 options:
-  A: Add a customer satisfaction measure alongside AI contact volume
-  B: Add a malus clause so the committee can cut awards after misconduct
-  C: Add quality and conduct measures that carry real weight in the bonus
-  D: Defer part of the bonus for two years before it is paid
+  A: Weight part of the bonus on satisfaction scores for AI contacts
+  B: Apply malus to the bonus when audits find misleading AI responses
+  C: Weight part of the bonus on audited accuracy of AI responses
+  D: Defer part of the bonus for two years, reducible for audit findings
 answer: C
 explanation:
-  why_correct: Incentives shape behaviour. A bonus paid mainly on volume rewards pushing contacts to AI
-    even when customers are misled. Giving measures of outcome quality and conduct real weight in the
-    formula means the COO earns the bonus only when AI handles contacts well, which aligns the incentive
-    with the board's appetite while still rewarding responsible adoption.
+  why_correct: Incentives shape behaviour. A bonus paid mainly on volume rewards pushing contacts to AI even when customers are misled. Giving audited accuracy a weight in the formula means the COO earns the bonus only when AI handles contacts well, so the incentive points the right way from the start while still rewarding responsible adoption.
   why_not:
-    A: Satisfaction is a useful balance, but customers may be content at the moment they are misled. It
-      would not capture the harm the audits found.
-    B: A malus clause is a valuable backstop, but it is used only after misconduct is established and
-      rarely for routine harm. Day to day, the formula would still reward volume regardless of how often
-      customers are misled.
-    D: Deferral is a sound remuneration tool, but without conduct measures nothing reduces the deferred
-      amount. It delays a payment that is still based on volume.
+    A: Satisfaction with AI contacts is high while audits find misleading answers, so customers are content at the moment they are misled. Weighting the bonus on it would reward the same contacts the audits criticise.
+    B: Malus is a valuable backstop, but it removes pay after findings, at the committee's discretion. The formula would still reward volume first, and the audits show misleading answers are a regular pattern, not a rare event.
+    D: Deferral with reduction gives the committee time to act on audit findings, but the amount deferred is still earned on volume. It corrects after the fact instead of changing what the bonus rewards.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-b
-  checked_by: 2026-10-17-aaig-d1-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

@@ -38,7 +38,8 @@ writer_notes:
   - "Viewpoint is the security manager of AI systems: program, risk, controls and technologies"
   - "Include the answer a well-read candidate would pick on reflex as a wrong option, ruled out by a stem fact ('already in place', or it does not reach the failure described)"
   - "Hard means two or more strong wrong answers that only a stem detail separates"
-  - "Watch option length: the key is the only longest option in 36% of the current bank, above the 25% chance rate"
+  - "Watch option length: the key must not be the only longest option more often than chance (25%). It was 36% until PR #44"
 
 history:
   - { date: "2026-10-16", scope: "new exam, 193 questions", pr: 34, result: "37/40 obvious in the first draft, 22/60 (37%) after two rewrites; official quiz 7/12 (58%)" }
+  - { date: "2026-10-17", scope: "option-length rebalance, 30 questions", pr: 44, result: "key only longest 36% to 21%; 0/30 obvious from options alone" }

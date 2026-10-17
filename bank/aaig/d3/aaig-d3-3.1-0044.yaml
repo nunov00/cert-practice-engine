@@ -1,33 +1,35 @@
 id: aaig-d3-3.1-0044
 subdomain: '3.1'
-difficulty: medium
+difficulty: hard
 stem: A telecom operator uses an AI agent to handle billing disputes. It reads the complaint, checks the
   account, decides on a credit, issues it and closes the case. Most credits are small. Monitoring tracks
-  the accuracy of each step, and all are within threshold. Finance then finds that some customers received
-  several credits for one dispute, because the agent reopened cases and repeated steps. What should the
-  governance leader recommend?
+  each step's accuracy, and all are within threshold. Finance's quarterly reconciliation then finds that
+  some customers received several credits for one dispute, because the agent reopened cases and repeated
+  steps. What is the BEST recommendation for the governance leader?
 options:
-  A: Tighten each step's accuracy threshold to catch smaller errors
+  A: Reconcile credits to disputes monthly and recover duplicates
   B: Require a person to approve credits above a set amount
   C: Monitor each case end to end, with a limit on credits per case
-  D: Cap the total value of credits the agent issues each day
+  D: Cap the daily value of agent credits and alert as the cap nears
 answer: C
 explanation:
-  why_correct: When AI takes chained actions, harm can come from the sequence rather than from any step.
-    Each step here was correct on its own; the problem was repetition across the case. Monitoring whole
-    cases, with limits such as one credit per dispute, catches loops and combined effects.
+  why_correct: When AI takes chained actions, harm can come from the sequence rather than from any one
+    step. Each step here was correct on its own; the problem was repetition across the case. Monitoring
+    whole cases, with limits such as one credit per dispute, stops loops as they happen rather than
+    finding them afterwards.
   why_not:
-    A: Each step was already accurate, so stricter step thresholds would still miss a problem visible
-      only across the sequence.
+    A: More frequent reconciliation finds duplicates sooner, but only after the credits are paid, and
+      recovering them from customers is costly. It does not stop the agent looping.
     B: Approval above an amount suits large credits, but most credits are small. Repeated small credits
       would pass without review.
-    D: A daily cap limits total exposure, but duplicates can fit under it, and when it is hit valid credits
-      are blocked too. It does not see repetition within a case.
+    D: A daily cap limits total exposure, but small duplicates fit under it, and when it is hit valid
+      credits are blocked too. It does not see repetition within a case.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-17-aaig-d3-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

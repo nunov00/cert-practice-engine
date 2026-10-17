@@ -1,31 +1,33 @@
 id: aaig-d3-3.1-0033
 subdomain: '3.1'
-difficulty: medium
+difficulty: hard
 stem: An insurer's broker support desk uses a generative AI tool to draft answers to brokers' questions
-  about policy wording, which staff edit before sending. Leadership wants assurance the drafts stay accurate
-  and compliant over time. Which monitoring approach is MOST appropriate?
+  about policy wording, which staff edit before sending. Leadership wants assurance that the replies
+  brokers receive stay accurate and compliant over time. Which monitoring approach is MOST appropriate?
 options:
   A: Sample live drafts and final replies against set criteria
   B: Track how much staff change each draft before sending
-  C: Require staff to review and edit each draft before sending
+  C: Have a second model score each draft against the policy wording
   D: Re-test the tool on a fixed set of questions each quarter
 answer: A
 explanation:
-  why_correct: Generative output has no single accuracy score, so quality is best tracked by sampling
-    against defined criteria such as accuracy and compliant wording. Comparing live drafts with what was
-    sent shows both the tool's quality and whether staff edits are catching problems.
+  why_correct: Leadership's concern is what brokers receive, which depends on both the drafts and the
+    staff edits. Sampling live drafts and the final replies against defined criteria, such as accuracy
+    and compliant wording, shows the tool's quality, whether edits catch problems, and how both change
+    over time.
   why_not:
     B: The amount of editing is ambiguous. Light edits could mean good drafts or careless review, and
       heavy edits do not show whether the final reply is right.
-    C: Staff already review and edit every draft. That is the human control, but it is not monitoring,
-      and it does not show whether drafts or edits are getting worse over time.
-    D: A fixed question set is useful for regression testing, but it does not reflect the live questions
-      or show what staff actually send.
+    C: Automated scoring by a second model can scale checks on drafts, but it judges only the drafts,
+      not the replies staff actually send, and its own reliability would need checking.
+    D: A fixed question set is useful for regression testing of the tool, but it does not reflect the
+      live questions or show what staff actually send.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-17-aaig-d3-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

@@ -1,30 +1,35 @@
 id: aaig-d2-2.1-0029
 subdomain: '2.1'
-difficulty: medium
-stem: At a payments company, data scientists experiment with models in the same environment that serves
-  live fraud decisions, using copies of production customer data. Last month an experiment overwrote a
-  live model's settings. Which design principle should the governance lead require?
+difficulty: hard
+stem: At a payments company, data scientists build and test fraud models on the platform that runs live
+  fraud scoring, using copies of production customer data. To work quickly they need broad rights to create
+  and change jobs, data stores and settings on that platform. Last month a test job overwrote a live model's
+  settings. Which design principle is MOST important for the governance lead to require?
 options:
-  A: Separate experiment and production environments
-  B: Masked or synthetic copies of customer data for experiments
-  C: Role-based access limiting who can deploy to production
-  D: Resource quotas so experiments cannot slow live decisions
+  A: Separate environments for experimentation and live production
+  B: Masked or synthetic copies of customer data for each experiment
+  C: Least-privilege access for experiment jobs to live systems
+  D: Change control with approval for live model setting changes
 answer: A
 explanation:
-  why_correct: Segregating experimentation from production keeps experiments from changing live decisions
-    and limits who can touch the live system. It also creates the boundary at which the use of production
-    data in tests can be approved and controlled.
+  why_correct: The data scientists need broad rights, and on a shared platform those rights reach live
+    systems too. Separate environments let them keep broad rights where they experiment while live scoring
+    sits behind a boundary their jobs cannot cross. The same boundary is where the use of production data
+    in tests can be approved and controlled.
   why_not:
-    B: Masking reduces exposure of customer data, but experiments would still run where they can change
-      live models, which is what happened last month.
-    C: Deployment rights limit formal releases. An experiment in the shared environment changed a live
-      model without any deployment.
-    D: Quotas protect performance, not the integrity of live models or access to customer data.
+    B: Masking reduces exposure of customer data, but test jobs would still run where they can change live
+      models, which is what happened last month.
+    C: Least privilege is the right instinct, but on one shared platform the broad rights the data scientists
+      need are rights over the live system. Narrowing them enough to protect live scoring would block the
+      work they need to do.
+    D: Change control governs changes people intend to make to live settings. The overwrite came from a
+      test job, not a planned change, so it would bypass the approval step.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-17-aaig-d2-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

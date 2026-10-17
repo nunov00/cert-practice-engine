@@ -7,7 +7,7 @@ stem: An insurer added hidden-document prompt injection to its AI review checkli
 options:
   A: Review criteria lag behind emerging AI threats
   B: Runtime monitoring of prompts and outputs is missing
-  C: Reviews accept developer attestation without test evidence
+  C: Reviews accept self-attestation without test evidence
   D: Developers lack training on prompt injection defences
 answer: C
 explanation:
@@ -28,4 +28,5 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d1-b-recheck3
+  options_only: not_obvious
+  checked_by: 2026-10-17-aaism-length-check

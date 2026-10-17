@@ -8,7 +8,7 @@ options:
   A: Require a CAPTCHA before each spam report
   B: Screen reports for coordinated bursts before training
   C: Compare verdict shifts on known sources with trusted labels
-  D: Cap the weight any single account's reports carry
+  D: 'Cap the weight any single account''s reports carry in training'
 answer: C
 explanation:
   why_correct: Burst screening misses a slow campaign by design. Comparing how each retrained filter changes its
@@ -24,5 +24,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  checked_by: 2026-10-17-aaism-length-check
   check_verdict: pass
+  options_only: not_obvious

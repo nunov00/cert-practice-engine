@@ -1,34 +1,35 @@
 id: aaig-d3-3.1-0006
 subdomain: '3.1'
-difficulty: medium
-stem: A telecom provider's churn model has shown a slow, steady decline in accuracy for five months. Each
-  monthly result stays inside the alert threshold, so no action has been triggered. Marketing has noticed
-  retention offers going to the wrong customers, and data science is investigating the cause. What change
-  to monitoring should the governance leader recommend?
+difficulty: hard
+stem: A telecom provider's churn model has lost accuracy slowly and steadily for five months. Its
+  monthly accuracy threshold is set wide because monthly results are noisy, and each result has stayed
+  inside it. Input drift checks also run and show no shift. Marketing has noticed retention offers going
+  to the wrong customers. Which change to monitoring is BEST for the governance leader to recommend?
 options:
   A: Add a trend trigger that flags sustained decline across months
-  B: Add an outcome measure on offer take-up to model monitoring
+  B: Add a check for input drift on the model's main features
   C: Lower the monthly threshold so this decline would have triggered
   D: Have the model validator review the accuracy results each quarter
 answer: A
 explanation:
   why_correct: Point thresholds catch sudden failures but miss gradual decline, where each reading looks
-    acceptable while the total change is material. The accuracy data already shows the decline; the monitoring
-    just does not read it over time. A trend trigger closes that blind spot and would flag the current
-    decline for review now.
+    acceptable while the total change is material. The threshold is wide for a good reason, monthly
+    noise, so the answer is to read the direction of travel. A trend trigger flags sustained decline
+    over several months without reacting to one noisy month.
   why_not:
-    B: Outcome measures are worth having, but take-up depends on offers, prices and competitors as well
-      as the model. It would not isolate the model's decline, which the accuracy data already shows.
-    C: A lower point threshold fitted to this month's result is arbitrary and raises false alarms on normal
-      noise. It still does not look at the direction of travel over time.
+    B: Input drift checks already run and show no shift. The decline lies in how the inputs relate to
+      churn, which input checks cannot see, and the accuracy data already shows it.
+    C: The threshold is wide because monthly accuracy is noisy. Narrowing it to fit this decline would
+      raise false alarms on normal variation, and it still would not look at the trend over time.
     D: A quarterly review adds independent eyes and could spot the trend, but it is manual, periodic and
-      depends on someone looking for it. The monitoring already collects the monthly accuracy data, and
-      a trend trigger reads it automatically and flags the next slow decline without waiting for a review.
+      depends on someone looking for it. A trend trigger reads the monthly data automatically and flags
+      the next slow decline without waiting for a review.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-a
-  checked_by: 2026-10-17-aaig-d3-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

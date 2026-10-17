@@ -5,7 +5,7 @@ stem: Six months after a bank approved its AI policy, which by design routes age
   an agent standard exists, four findings arrive. Which BEST shows the policy text itself needs revision?
 options:
   A: An audit finds several staff did not follow the policy
-  B: A new regulator rule on AI credit decisions is missing from it
+  B: A new regulator rule on AI lending is missing from it
   C: A survey shows half of staff cannot recall the policy
   D: Agent pilots routinely go through the exception process
 answer: B
@@ -21,5 +21,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-a
-  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  checked_by: 2026-10-17-aaism-length-check
   check_verdict: pass
+  options_only: not_obvious
