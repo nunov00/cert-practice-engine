@@ -1,29 +1,31 @@
 id: aair-d3-3.1-0004
 subdomain: '3.1'
-difficulty: medium
-stem: A government agency plans to use an AI model to flag benefit applications for extra checks. It has no history
-  of losses or incidents from AI systems to draw on when rating likelihood. How should the risk practitioner BEST
-  estimate likelihood for the scenarios it has identified?
+difficulty: hard
+stem: A government agency plans to use an AI model to flag benefit applications for extra checks. It has
+  no history of losses or incidents from AI systems to draw on when rating likelihood. How should the
+  risk practitioner BEST estimate likelihood for the scenarios it has identified?
 options:
-  A: Give every scenario the highest likelihood rating until real data is available
-  B: Leave likelihood unrated and rank the scenarios on impact alone for now
-  C: Use structured expert judgement and record the assumptions for later review
-  D: Apply loss frequencies published for AI systems in other sectors directly
+  A: Base likelihood on manual error history, adjusted for AI failure modes
+  B: Base likelihood on other agencies' AI incident data, adjusted for local controls
+  C: Use structured expert estimates, with assumptions recorded for review
+  D: Rate likelihood from error rates on a back-test of past applications
 answer: C
 explanation:
-  why_correct: When internal data is lacking, structured judgement from informed people, such as estimates given
-    as ranges, produces usable ratings. Recording the assumptions lets the agency compare them with real results
-    once the model is running and revise the ratings.
+  why_correct: When internal loss data is lacking, structured judgement from informed people, such as
+    estimates given as ranges, can cover every identified scenario. Recording the assumptions lets the
+    agency compare them with real results once the model is running and revise the ratings.
   why_not:
-    A: Rating everything at the maximum removes any basis for prioritising and would drive excessive treatment.
-    B: Ignoring likelihood prevents sensible prioritisation, because severe but very unlikely scenarios would crowd
-      out likely ones.
-    D: External data can inform judgement, but applying it directly ignores differences in context, use and controls.
+    A: Manual error history describes a different process. Adjusting it still starts from failure modes
+      that do not match AI risks such as bias, drift or misuse.
+    B: Other agencies' data can inform the experts, but it reflects different models, uses and populations,
+      and adjusting only for controls leaves those differences unaddressed.
+    D: A back-test shows how often the model misclassifies past cases, but it says nothing about scenarios
+      such as misuse, data changes or unfair treatment, so it cannot rate most of them.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

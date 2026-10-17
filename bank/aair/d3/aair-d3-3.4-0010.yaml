@@ -1,30 +1,31 @@
 id: aair-d3-3.4-0010
 subdomain: '3.4'
 difficulty: medium
-stem: A housing association uses a generative AI assistant to answer tenants' questions about rent, repairs and
-  tenancy rights. There are no labelled outcomes that show whether each answer was correct. Which monitoring approach
-  BEST tracks the accuracy of its answers over time?
+stem: A housing association uses a generative AI assistant to answer tenants' questions about rent, repairs
+  and tenancy rights. There are no labelled outcomes that show whether each answer was correct. Which
+  monitoring approach BEST tracks the accuracy of its answers over time?
 options:
-  A: Track the average time the assistant takes to answer each question
-  B: Have reviewers grade a regular sample of answers against policies
-  C: Count how many tenants rate their conversation with a thumbs-up
-  D: Rely on the accuracy level measured in testing before the launch
+  A: Have a second language model rate each live answer for relevance
+  B: Have reviewers grade a regular sample of answers against policy
+  C: Track the share of conversations that tenants escalate to staff
+  D: Rerun the pre-launch test questions against the assistant monthly
 answer: B
 explanation:
-  why_correct: Where no ground truth arrives automatically, regular human grading of a sample against the authoritative
-    source creates an accuracy measure that can be tracked over time. It directly measures the risk of wrong answers
-    about tenants' rights and obligations.
+  why_correct: Where no ground truth arrives automatically, regular human grading of a sample of real
+    answers against the authoritative policies creates an accuracy measure that can be tracked over time.
+    It covers the questions tenants actually ask, including after policies change.
   why_not:
-    A: Response time is an operational measure. A fast answer can still be wrong, so it says nothing about accuracy.
-    C: Satisfaction ratings show whether tenants liked the answer, not whether it was correct. Tenants often cannot
-      judge the accuracy of advice on their rights, and a confident wrong answer may be rated highly.
-    D: A pre-launch result is a fixed point in time. It cannot show changes caused by new questions, policy updates
-      or model changes after launch.
+    A: Automated rating scales well, but relevance is not accuracy, and an uncalibrated model judge has
+      no reliable view of the association's own policies. It needs human grading to anchor it.
+    C: Escalations show when tenants were not satisfied. A tenant who receives a confident but wrong answer
+      about their rights may never escalate.
+    D: A fixed regression set is useful for catching change in known cases, but it does not reflect the
+      new questions tenants ask in live use, so it misses much of the real accuracy risk.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

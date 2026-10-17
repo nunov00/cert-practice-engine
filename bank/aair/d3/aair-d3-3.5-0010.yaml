@@ -1,31 +1,31 @@
 id: aair-d3-3.5-0010
 subdomain: '3.5'
-difficulty: medium
-stem: A regional hospital network plans to adopt a scheduling tool from a young start-up. The start-up's AI model
-  will be fine-tuned on the network's own appointment data, and its funding position is uncertain. Which contract
-  provision BEST protects the network?
+difficulty: hard
+stem: A regional hospital network plans to adopt a scheduling tool from a young start-up. The start-up's
+  AI model will be fine-tuned on the network's own appointment data, and its funding position is uncertain.
+  Which contract provision BEST protects the network?
 options:
   A: Return of its data and the fine-tuned model in usable form on exit
-  B: A discount on fees whenever the tool misses agreed service levels
-  C: Free upgrades to new versions of the tool for at least three years
-  D: A requirement for the start-up to hold cyber insurance cover
+  B: Escrow of the application source code, released on insolvency
+  C: Service credits whenever the tool misses agreed service levels
+  D: Quarterly financial reports from the start-up, reviewed by the network
 answer: A
 explanation:
-  why_correct: The main supply chain risk is that the supplier fails and the network loses both the service and
-    the model built from its own data. Rights to get back its data and the fine-tuned model in a usable form support
-    continuity and a move to another provider.
+  why_correct: The main supply chain risk is that the supplier fails and the network loses both the service
+    and the model built from its own data. Rights to get back its data and the fine-tuned model in a usable
+    form support continuity and a move to another provider.
   why_not:
-    B: Service credits compensate for poor performance while the supplier operates. They are worth nothing if the
-      start-up stops trading.
-    C: Upgrades only have value while the supplier exists. This term does nothing for the risk that the start-up
-      fails.
-    D: Cyber insurance covers some security losses at the supplier. It does not keep the scheduling service running
-      or return the network's assets.
+    B: Escrow is a standard protection against supplier failure, but source code alone cannot restore
+      the service. The fine-tuned model and the network's data are what took effort to build.
+    C: Service credits compensate for poor performance while the supplier operates. They are worth nothing
+      if the start-up stops trading.
+    D: Financial reports may give early warning of trouble, but warning alone does not let the network
+      recover its data or model if the start-up fails.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

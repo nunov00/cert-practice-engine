@@ -4,24 +4,27 @@ difficulty: medium
 stem: Hours after an update, a broadcaster's public AI chatbot starts producing offensive replies, and
   screenshots are spreading on social media. What should the incident response team do FIRST?
 options:
-  A: Retrain the model with additional filtering of offensive content
-  B: Take the chatbot offline or roll back to the last known good version
-  C: Carry out a root cause analysis of the update before taking action
-  D: Issue a public statement apologising for the chatbot's replies
+  A: Add an output filter to block offensive replies and keep it running
+  B: Roll the chatbot back to the last known good version
+  C: Collect logs of the offensive replies to scope the incident
+  D: Alert the communications team to prepare a holding statement
 answer: B
 explanation:
-  why_correct: 'Containment comes first: stopping the harmful output limits further damage to people and
-    to the brand. Investigation, communication and fixes follow once the harm has stopped growing.'
+  why_correct: Containment comes first. The problem started with the update, so rolling back to the last
+    known good version stops the harmful output quickly with a tested state. Investigation, communication
+    and fixes follow.
   why_not:
-    A: Retraining takes time and is a recovery step. The immediate need is to stop the harmful output.
-    C: Analysis is needed, but doing it first lets the chatbot keep producing harmful replies in the meantime.
-    D: Communication matters, but an apology while the chatbot is still producing offensive content would
-      ring hollow. Containment should come first.
+    A: A new filter is untested and takes time to build, and the chatbot keeps producing harmful replies
+      meanwhile. Rollback gives a known safe state now.
+    C: Logs are needed to understand scope, but collecting them first lets the harm continue. They can
+      be gathered after or during containment.
+    D: Communications must be prepared, but a statement while the chatbot is still producing offensive
+      replies would not limit the harm. Containment comes first.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

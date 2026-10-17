@@ -1,27 +1,32 @@
 id: aair-d3-3.2-0003
 subdomain: '3.2'
-difficulty: easy
-stem: A city council is considering live facial recognition to identify people entering its benefit offices. The
-  assessment finds that the privacy and discrimination risks are far above appetite, no practical controls would
-  bring them within it, and the expected benefit is small. Which risk treatment is MOST appropriate?
+difficulty: hard
+stem: A city council is considering live facial recognition to confirm the identity of people entering
+  its benefit offices. Its privacy and discrimination risks are far above appetite. The only controls
+  that bring them within appetite amount to the staff ID checks already done at each desk. Which risk
+  treatment is MOST appropriate?
 options:
   A: Transfer the risk by contracting the system out to a specialist provider
   B: Avoid the risk by deciding not to go ahead with the system
-  C: Accept the risk and monitor complaints from the public closely
-  D: Reduce the risk by adding signs that tell visitors about the cameras
+  C: Accept the risk with explicit approval from the council's leadership
+  D: Reduce the risk by having staff confirm every match at the desk
 answer: B
 explanation:
-  why_correct: When a risk is far above appetite, controls cannot bring it within appetite and the benefit is small,
-    the sensible choice is not to undertake the activity. Avoidance removes the exposure entirely.
+  why_correct: Controls that bring the risk within appetite would simply repeat the existing ID checks,
+    so the system would add risk without adding benefit. When reduction removes the reason for the activity,
+    not undertaking it is the sensible treatment, and it removes the exposure entirely.
   why_not:
-    A: Outsourcing does not remove the council's accountability for privacy and discrimination harms to the public.
-    C: Accepting a risk far above appetite is not justified, especially when the benefit is small.
-    D: Signs improve transparency but do little to reduce the underlying privacy and discrimination risks.
+    A: Outsourcing does not remove the council's accountability for privacy and discrimination harms to
+      the public.
+    C: Senior approval can make some above-appetite acceptances valid, but a risk far above appetite with
+      no added benefit gives leadership no sound basis to accept it.
+    D: Staff confirmation would bring the risk within appetite, but it repeats the checks already done,
+      so the council keeps the privacy exposure of live capture while gaining nothing.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

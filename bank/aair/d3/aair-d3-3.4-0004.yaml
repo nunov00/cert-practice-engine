@@ -1,29 +1,32 @@
 id: aair-d3-3.4-0004
 subdomain: '3.4'
-difficulty: easy
-stem: A logistics company monitors its route planning model with a key risk indicator for late deliveries caused
-  by model errors. This month the indicator crossed its agreed threshold. What should the risk practitioner
-  do?
+difficulty: medium
+stem: A logistics company monitors its route planning model with a key risk indicator for late deliveries
+  caused by model errors. The indicator is fed automatically from the dispatch system, and the agreed
+  procedure requires the risk owner to be told within one working day of a breach. This month it crossed
+  its threshold. What should the risk practitioner do FIRST?
 options:
   A: Escalate the breach to the risk owner under the agreed procedure
-  B: Raise the threshold so that it reflects the recent level of performance
-  C: Note the breach and include it in the next scheduled quarterly report
-  D: Instruct the data science team to retrain the model straight away
+  B: Record the breach in the risk register and update the risk rating
+  C: Confirm the breach with the operations team before reporting it
+  D: Ask the data science team to start diagnosing the model's errors
 answer: A
 explanation:
-  why_correct: Thresholds exist to trigger action. When one is crossed, the agreed escalation path should be
-    followed so the risk owner can decide on a response while the issue is still small.
+  why_correct: A threshold exists to trigger a defined response. The procedure sets a one-day deadline
+    and the data comes straight from the dispatch system, so the practitioner should escalate now and
+    let the risk owner decide on diagnosis and treatment.
   why_not:
-    B: Moving the threshold to fit current results hides the problem and defeats the purpose of the indicator.
-    C: Waiting for a routine report delays the response. A threshold breach should prompt timely escalation,
-      not just a later mention.
-    D: Retraining may be the eventual fix, but the cause is not yet known and the response is the risk owner's
-      decision, not the practitioner's.
+    B: Updating the register is good practice, but it is record-keeping. It does not put the breach in
+      front of the person who must decide on a response within the agreed time.
+    C: Checking data before escalating can be sensible when data is manual or doubtful. Here it is fed
+      automatically, and a confirmation step risks missing the one-day deadline.
+    D: Diagnosis will probably be needed, but directing it is the risk owner's call. Starting it first
+      bypasses the escalation the procedure requires.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

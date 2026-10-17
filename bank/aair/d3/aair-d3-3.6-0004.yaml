@@ -1,31 +1,31 @@
 id: aair-d3-3.6-0004
 subdomain: '3.6'
 difficulty: medium
-stem: During a disaster recovery test, a bank restored its credit decision application on time, but the AI
-  model inside it would not run. The backups held the application and its database, but not the model files,
-  feature definitions or library versions. What should the risk practitioner recommend?
+stem: During a disaster recovery test, a bank restored its credit decision application on time, but the
+  AI model inside it would not run. The backups held the application and its database, but not the model
+  files, feature definitions or library versions. What should the risk practitioner recommend?
 options:
-  A: Plan to retrain the model from scratch whenever a recovery takes place
-  B: Keep a copy of the model files on the data science team's own laptops
-  C: Lengthen the recovery time objective to allow the model to be rebuilt
-  D: Add model artefacts and dependencies to recovery scope and test them
+  A: Rebuild the model from the training pipeline during each recovery
+  B: Add the model artefacts to the backups and confirm the jobs succeed
+  C: Add a manual decision process to use while the model is rebuilt
+  D: Add the model artefacts to recovery scope and repeat the restore test
 answer: D
 explanation:
-  why_correct: An AI system depends on more than code and data. Including the versioned model, its feature
-    logic and the exact libraries in backups, and proving restoration in tests, is what allows the decision
-    service to come back as it was.
+  why_correct: An AI system depends on more than code and data. Bringing the versioned model, its feature
+    logic and its exact libraries into recovery scope, and proving restoration by repeating the test,
+    is what shows the decision service can come back as it was.
   why_not:
-    A: Retraining takes time, may not reproduce the same model and would need its own validation, so it would
-      miss the recovery objective.
-    B: Personal laptops are not controlled, secure or reliable backup locations, and versions could easily
-      be wrong.
-    C: The recovery objective should reflect business need. Relaxing it to suit a technical gap accepts more
-      impact than the bank decided it could bear.
+    A: Rebuilding takes time, may not reproduce the same model and needs its own validation, so it would
+      likely miss the recovery objective.
+    B: Backing up the artefacts is necessary, but a successful backup job does not prove they restore
+      and run together. Without a repeated restore test, the next recovery could fail the same way.
+    C: A manual fallback is a useful continuity measure, but it leaves the gap in recovery scope unfixed.
+      The bank would rely on it in every future recovery.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

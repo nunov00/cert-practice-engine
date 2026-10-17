@@ -6,8 +6,8 @@ stem: An online learning platform uses a content filter to stop its AI tutor fro
   settings. What should the risk practitioner ensure before the change is released?
 options:
   A: Complaint levels are tracked for a month after the change goes live
-  B: The head of the product team has approved the change in writing
-  C: The filter vendor confirms that the new settings are widely used
+  B: The child safety lead has approved the change in writing
+  C: Previously refused harmless questions are retested and now answered
   D: The filter is retested against a maintained set of harmful prompts
 answer: D
 explanation:
@@ -17,13 +17,14 @@ explanation:
   why_not:
     A: Tracking after release would only show whether refusals fell; harmful outputs would be found late,
       if at all.
-    B: Approval matters, but without test evidence the approver cannot know whether the filter still works.
-    C: Common use elsewhere does not show that the settings are effective for children on this platform.
+    B: Approval matters, but without test evidence the approver cannot know whether the filter still blocks
+      harmful content.
+    C: This shows the change meets its goal, but not that the loosened filter still blocks harmful material.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

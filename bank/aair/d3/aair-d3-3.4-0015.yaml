@@ -1,31 +1,31 @@
 id: aair-d3-3.4-0015
 subdomain: '3.4'
 difficulty: medium
-stem: An engineering consultancy has approved two generative AI tools for staff and banned all others. The risk
-  committee wants a key risk indicator that shows whether staff are following this rule. Which indicator is MOST
-  suitable?
+stem: An engineering consultancy has approved two generative AI tools for staff and banned all others.
+  The risk committee wants a key risk indicator that shows whether staff are following this rule. Which
+  indicator is MOST suitable?
 options:
-  A: The number of staff who have finished training on the approved tools
-  B: The number of licences bought for the two approved AI tools
+  A: The share of staff who have attested to following the AI rule
+  B: Usage of the two approved tools, tracked month by month
   C: Traffic to unapproved AI services seen in network logs, over time
-  D: The number of AI policy questions that staff send to the risk team
+  D: The number of breaches of the AI rule reported by line managers
 answer: C
 explanation:
-  why_correct: The risk is staff using banned tools, so the indicator should measure that behaviour directly. A
-    trend in attempted access to unapproved AI services shows whether the rule is being followed and whether the
-    problem is growing.
+  why_correct: The risk is staff using banned tools, so the indicator should measure that behaviour directly.
+    A trend in attempted access to unapproved AI services shows whether the rule is being followed and
+    whether the problem is growing.
   why_not:
-    A: Training completion shows that staff were told the rule, not that they follow it. People can complete training
-      and still use banned tools.
-    B: Licence numbers show supply of approved tools, not whether staff also use banned ones. Usage of unapproved
-      services could rise regardless.
-    D: The number of questions reflects interest or confusion about the policy. It does not measure whether anyone
-      is breaking the rule.
+    A: Attestation shows that staff say they follow the rule. It does not measure whether they actually
+      use banned tools.
+    B: Rising use of approved tools is encouraging, but staff can use approved and banned tools side by
+      side. It measures adoption, not compliance.
+    D: Manager reports measure breaches someone noticed and chose to report. Most use of banned tools
+      would go unseen, so the count would understate the risk.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

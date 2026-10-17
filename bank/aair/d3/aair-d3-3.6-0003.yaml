@@ -1,30 +1,32 @@
 id: aair-d3-3.6-0003
 subdomain: '3.6'
-difficulty: medium
-stem: A hospital uses an AI system to prioritise urgent scans for radiologists. The continuity plan says staff
-  will return to manual prioritisation if the system fails. The system has run without problems for two years,
-  and many current staff have never prioritised scans manually. What should the risk practitioner recommend?
+difficulty: easy
+stem: A hospital uses an AI system to prioritise urgent scans for radiologists. The continuity plan says
+  staff will return to manual prioritisation if the system fails. The system has run without problems
+  for two years, and many current staff have never prioritised scans manually. What should the risk practitioner
+  recommend?
 options:
-  A: Contract a second AI supplier to provide a standby prioritisation system
-  B: Exercise the manual procedure regularly and train staff who will use it
+  A: Test failover to a standby instance of the system each quarter
+  B: Run regular exercises of the manual prioritisation procedure
   C: Add more detailed written steps for manual prioritisation to the plan
   D: Negotiate a stronger availability commitment from the system's supplier
 answer: B
 explanation:
-  why_correct: A fallback is only useful if people can carry it out under pressure. Regular exercises and training
-    keep the manual procedure workable and reveal gaps before a real failure puts patients at risk.
+  why_correct: A fallback is only useful if people can carry it out under pressure. Many current staff
+    have never prioritised scans by hand, so regular exercises build that skill and reveal gaps before
+    a real failure puts patients at risk.
   why_not:
-    A: A standby system adds cost and complexity and may share the same failure causes. It does not fix the
-      gap in staff ability to use the existing fallback.
+    A: Failover testing improves system resilience, but the gap here is that staff cannot carry out the
+      manual procedure the plan relies on.
     C: Better documentation helps, but staff who have never performed the task will still struggle without
       practice.
-    D: A stronger commitment may reduce how often outages occur but cannot prevent them, and the fallback would
-      still fail when needed.
+    D: A stronger commitment may reduce how often outages occur but cannot prevent them, and the fallback
+      would still fail when needed.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

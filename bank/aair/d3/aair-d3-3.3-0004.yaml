@@ -1,22 +1,24 @@
 id: aair-d3-3.3-0004
 subdomain: '3.3'
-difficulty: medium
-stem: A bank's policy requires every change to a production credit model to be approved by the model risk team.
-  The risk practitioner has confirmed that the policy and approval workflow are well designed. Which evidence BEST
-  shows that the control is operating effectively?
+difficulty: hard
+stem: A bank's policy requires every change to a production credit model to be approved by the model risk
+  team. The risk practitioner has confirmed that the policy and approval workflow are well designed. Which
+  evidence BEST shows that the control is operating effectively?
 options:
-  A: The written procedure describing the approval steps for model changes
-  B: Statements from the head of data science that all changes are approved
+  A: Approval records for a sample of logged change requests
+  B: A walkthrough of one recent change from request to approval
   C: The configuration settings of the change approval workflow tool
   D: Approved change records matched to a sample of deployed model versions
 answer: D
 explanation:
-  why_correct: Operating effectiveness is shown by evidence that the control worked in practice over a period. Starting
-    from what actually reached production and tracing each version to an approval tests whether any changes bypassed
-    the process.
+  why_correct: Operating effectiveness is shown by evidence that the control worked in practice over a
+    period. Starting from what actually reached production and tracing each version to an approval tests
+    whether any changes bypassed the process.
   why_not:
-    A: The procedure supports the design of the control, which has already been confirmed.
-    B: Statements from management are weak evidence on their own and are not independent.
+    A: Starting from change requests only tests changes that entered the process. Changes deployed without
+      a request would never appear in the sample.
+    B: A walkthrough confirms that the control is in place, but one change does not show that it operated
+      over the whole period.
     C: Configuration shows how the tool should work, not whether every deployed change went through it.
 status: published
 outline_version: '2026-04-15'
@@ -24,5 +26,5 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

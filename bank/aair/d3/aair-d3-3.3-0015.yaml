@@ -6,24 +6,26 @@ stem: A bank uses a large language model to draft replies to customer complaints
   the checker flags very few problems. What should the risk practitioner be MOST concerned about?
 options:
   A: The checker may share the drafting model's blind spots and miss its errors
-  B: The checker may slow replies enough to breach complaint handling deadlines
-  C: The checker's instructions may need updating when complaint policies change
-  D: The checker doubles the cost of model usage for every complaint handled
+  B: The checker's prompt may not define clearly what counts as inaccurate
+  C: The checker's results may not be logged for later quality review
+  D: The checker may flag accurate drafts and slow down the replies
 answer: A
 explanation:
   why_correct: A check that uses the same model as the process it reviews is not independent. Errors that
     come from the model's own gaps are likely to be repeated, so a low flag rate gives false comfort.
     The control should be tested with drafts containing known errors, or use a different method.
   why_not:
-    B: Delay is a manageable operational issue and is not what makes the control unreliable.
-    C: Keeping instructions current is ordinary maintenance; it does not address whether the check can
-      detect errors at all.
-    D: Cost is a business consideration and says nothing about whether the control works.
+    B: A vague prompt can cause missed errors, but it can be fixed and tested. Even with a clear prompt,
+      a checker that shares the drafter's gaps would still miss the same errors.
+    C: Logging supports oversight, but it does not tell whether the check can detect errors in the first
+      place.
+    D: Few problems are being flagged, so false positives and delay are not the concern the evidence points
+      to.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

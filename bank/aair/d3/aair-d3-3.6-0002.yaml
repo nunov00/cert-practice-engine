@@ -7,7 +7,7 @@ options:
   A: How the impact grows over time if routes cannot be planned by the model
   B: Which technical faults are most likely to cause the model to fail
   C: How accurate the model's routes are compared with manual planning
-  D: Which controls are needed to stop the model from being compromised
+  D: Which recovery option would restore route planning at the lowest cost
 answer: A
 explanation:
   why_correct: A business impact analysis looks at what happens to the business when a process is disrupted
@@ -16,14 +16,15 @@ explanation:
   why_not:
     B: Likely causes of failure belong to a risk assessment. A business impact analysis focuses on consequences,
       whatever the cause.
-    C: Accuracy compared with manual planning is a performance question. It does not tell the firm how long
-      it can cope without the model.
-    D: Selecting preventive controls is part of risk treatment, not the purpose of a business impact analysis.
+    C: Accuracy compared with manual planning is a performance question. It does not tell the firm how
+      long it can cope without the model.
+    D: Choosing a recovery option is the next step. It depends on the time limits the business impact
+      analysis sets, so it cannot be the analysis's main output.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

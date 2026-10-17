@@ -1,27 +1,29 @@
 id: aair-d3-3.3-0005
 subdomain: '3.3'
 difficulty: medium
-stem: A grocery retailer has an automated control that alerts when its demand forecasting model's accuracy drops
-  below a set threshold. A review finds that alerts go to a shared mailbox and that three alerts last quarter were
-  not acted on. What should the risk practitioner recommend?
+stem: A grocery retailer has an automated control that alerts when its demand forecasting model's accuracy
+  drops below a set threshold. A review finds that alerts go to a shared mailbox and that three alerts
+  last quarter were not acted on. What should the risk practitioner recommend?
 options:
   A: Lower the alert threshold so that issues are flagged earlier
   B: Assign an owner for the alerts with a defined response procedure
-  C: Replace the alerts with a quarterly accuracy report to management
-  D: Send the alerts to every member of the data science team
+  C: Escalate unanswered alerts to management after two working days
+  D: Post the alerts to the data science team's shared chat channel
 answer: B
 explanation:
-  why_correct: A detective control only works if someone is accountable for responding to it. Naming an owner and
-    setting out what to do when an alert fires turns the alert into an effective control.
+  why_correct: A detective control only works if someone is accountable for responding to it. Naming an
+    owner and setting out what to do when an alert fires turns the alert into an effective control.
   why_not:
     A: Earlier alerts would also go unanswered. The gap is in the response, not in detection.
-    C: A quarterly report is slower and still has no named person to act on it.
-    D: Spreading alerts across a team can lead everyone to assume that someone else will act.
+    C: Escalation helps only if someone is first expected to act. Without an owner, alerts still wait
+      two days and then land on managers with no defined response.
+    D: A wider audience can lead everyone to assume that someone else will act, the same problem as the
+      shared mailbox.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-a
-  checked_by: 2026-10-13-aair-d3-a-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass

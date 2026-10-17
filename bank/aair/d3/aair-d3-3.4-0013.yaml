@@ -1,32 +1,33 @@
 id: aair-d3-3.4-0013
 subdomain: '3.4'
 difficulty: hard
-stem: 'A warehouse operator has tracked one key risk indicator for its robot scheduling model for eighteen months:
-  the share of jobs the model fails to schedule. The indicator has stayed green throughout. In the same period,
-  the model four times sent robots into the same aisle at once, causing near-collisions. What should the risk practitioner
-  conclude?'
+stem: 'A warehouse operator has tracked one key risk indicator for its robot scheduling model for eighteen
+  months: the share of jobs the model fails to schedule. The indicator has stayed green throughout. In
+  the same period, the model four times sent robots into the same aisle at once, causing near-collisions.
+  What should the risk practitioner conclude?'
 options:
   A: The indicator does not reflect the main risk and should be revised
   B: The indicator's thresholds are too loose and should be tightened
-  C: The near-collisions are outliers, as the indicator has stayed stable
-  D: The indicator should be reported more often to show problems sooner
+  C: The near-collisions need incident handling, but the indicator is sound
+  D: The indicator's data feed may be faulty and should be checked first
 answer: A
 explanation:
-  why_correct: A key risk indicator is useful only if it moves when the risk it is meant to track rises. Here the
-    indicator measures scheduling failures, while the serious risk is unsafe schedules, so it stayed green while
-    safety events occurred. The indicator set needs a measure linked to that risk, such as conflicting route assignments.
+  why_correct: A key risk indicator is useful only if it moves when the risk it is meant to track rises.
+    Here the indicator measures scheduling failures, while the serious risk is unsafe schedules, so it
+    stayed green while safety events occurred. The indicator set needs a measure linked to that risk,
+    such as conflicting route assignments.
   why_not:
-    B: Tighter thresholds on the same measure would not help, because failing to schedule a job is not what caused
-      the near-collisions. The measure itself is wrong, not its limits.
-    C: Four safety events are real evidence that the indicator misses the risk. Dismissing them because the indicator
-      was stable reverses the logic of monitoring.
-    D: Reporting the same unrelated measure more often would still show green. Frequency cannot fix an indicator
-      that does not track the risk.
+    B: Tighter thresholds on the same measure would not help, because failing to schedule a job is not
+      what caused the near-collisions. The measure itself is wrong, not its limits.
+    C: The near-collisions should be handled as incidents, but calling the indicator sound ignores that
+      it stayed green through four safety events. Monitoring would keep missing the risk.
+    D: Checking data is reasonable when an indicator looks odd. Here the indicator may be accurate, but
+      it measures scheduling failures, which are not what caused the near-collisions.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d3-b
-  checked_by: 2026-10-13-aair-d3-b-check
+  checked_by: 2026-10-16-aair-d3-rework-check
   check_verdict: pass
