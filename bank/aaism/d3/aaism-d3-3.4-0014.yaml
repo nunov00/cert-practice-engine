@@ -1,0 +1,31 @@
+id: aaism-d3-3.4-0014
+subdomain: '3.4'
+difficulty: hard
+stem: Fitness app users agreed their data may be used 'to improve our services'. The company plans to license a
+  model, trained with differential privacy, to insurers for pricing under a strict use contract. Legal says the
+  wording covers this. What is the GREATEST remaining concern?
+options:
+  A: Users would not expect their data to affect their premiums
+  B: The model could reveal individual users' training records
+  C: Insurers may use the model beyond the licensed purpose
+  D: The training dataset could be exposed in a data breach
+answer: A
+explanation:
+  why_correct: The new use moves far from what users agreed to and can directly raise their insurance prices. A
+    legal reading of broad wording does not make that use fair or expected. This purpose and expectation gap is
+    the main risk to users and to trust, and the stem leaves it unaddressed.
+  why_not:
+    B: Leakage from the model is a real risk, but training with differential privacy is the control the stem says
+      is already in place for it.
+    C: Misuse by licensees is a valid concern, but the stem says a strict use contract covers it; the licensed purpose
+      itself is the problem.
+    D: A breach of the training data is a standard security risk handled by normal controls. It is not specific
+      to the decision to license the model for pricing.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-c
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
+  check_verdict: pass

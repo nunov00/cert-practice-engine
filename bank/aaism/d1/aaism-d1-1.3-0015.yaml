@@ -1,0 +1,27 @@
+id: aaism-d1-1.3-0015
+subdomain: '1.3'
+difficulty: medium
+stem: An insurer's scoring service logs the model version with each claim decision, and the registry keeps every
+  version. In a complaint, the team cannot reproduce one claim's score because the customer's data has since changed.
+  Which change would BEST close this gap?
+options:
+  A: Log the input features used for each decision
+  B: Log the model version identifier with each decision
+  C: Pin the scoring service to a named model version
+  D: Keep retired versions in the registry for longer
+answer: A
+explanation:
+  why_correct: The model version is known; what is missing is the input it scored. Logging the features used at
+    decision time allows the score to be reproduced.
+  why_not:
+    B: This is already logged.
+    C: The version is already known; pinning does not recover the inputs.
+    D: Every version is already kept.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-c
+  checked_by: 2026-10-16-aaism-d1-c-recheck3
+  check_verdict: pass

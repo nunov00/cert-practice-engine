@@ -1,0 +1,29 @@
+id: aaism-d2-2.1-0006
+subdomain: '2.1'
+difficulty: hard
+stem: An airline's AI tool helps agents answer passenger questions. Its low risk rating relied on agents reviewing
+  every answer before passengers see it. Which change MOST clearly requires reassessment?
+options:
+  A: Its vendor moved it to a newer base model
+  B: It will serve agents at two more call centres
+  C: It will decide compensation without agents
+  D: It will answer in four more languages
+answer: C
+explanation:
+  why_correct: The low rating rested on agent review. Letting the tool decide compensation removes that control
+    and raises both autonomy and impact, so the basis of the assessment no longer holds.
+  why_not:
+    A: A model change can alter behaviour and should be checked through change management. Agents still review every
+      answer, so the control behind the rating is unchanged.
+    B: Wider rollout raises exposure in volume. The use stays the same and agents still review answers, so the assessment
+      largely holds.
+    D: New languages can bring new error patterns, and quality should be tested. Agent review still catches errors
+      before passengers see them.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-recheck3

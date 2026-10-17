@@ -1,0 +1,31 @@
+id: aaism-d2-2.2-0006
+subdomain: '2.2'
+difficulty: medium
+stem: A threat report describes a new way to extract system prompts from language model assistants. A travel company
+  runs three customer assistants. Credentials were moved out of their prompts and rotated last year, but the prompts
+  hold confidential pricing rules. What should the security manager do FIRST?
+options:
+  A: Test the three assistants against the new technique
+  B: Move secrets out of the prompts and rotate them
+  C: Add filter rules for the technique's published patterns
+  D: Ask the model provider whether a fix is planned
+answer: A
+explanation:
+  why_correct: The highest-impact exposure, credentials in prompts, was removed last year. What remains is confidential
+    business logic that the assistants need. Testing the three assistants against the technique shows whether that
+    information is actually exposed and which assistants need further controls.
+  why_not:
+    B: Removing and rotating secrets is the right first move when credentials sit in a prompt, but that was done
+      last year. Pricing rules are not credentials and cannot be rotated.
+    C: Pattern filters are narrow and easy to reword around, and adding them before testing means not knowing whether
+      they are needed or effective.
+    D: The provider's plans are useful input, but prompt extraction is hard to fix at model level, and waiting does
+      not show the company its own exposure.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
+  check_verdict: pass

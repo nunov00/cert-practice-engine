@@ -1,0 +1,29 @@
+id: aaism-d2-2.1-0009
+subdomain: '2.1'
+difficulty: medium
+stem: A logistics group added AI threat categories such as poisoning and model theft to its enterprise risk method.
+  In a second pilot, rating panels of business and risk staff still marked those threats not applicable to every
+  system. What is the MOST important change?
+options:
+  A: Add AI threat categories to the existing method
+  B: Run a separate AI risk method that feeds into it
+  C: Recalibrate rating scales for AI-specific harms
+  D: Add data scientists to each AI rating panel
+answer: D
+explanation:
+  why_correct: The categories now exist, but the panels lack the knowledge to judge where they apply. People who
+    know how the models are built and trained can recognise exposure to poisoning and theft.
+  why_not:
+    A: Missing categories are a common reason AI threats go unseen. They have already been added.
+    B: A specialist method would still need people who understand the threats. It adds overhead without fixing the
+      skills gap.
+    C: Rating scales may need work. The problem is that the panels dismiss the threats as not applicable before
+      any impact is rated.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-recheck3

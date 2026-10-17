@@ -1,0 +1,28 @@
+id: aaism-d3-3.2-0007
+subdomain: '3.2'
+difficulty: medium
+stem: An insurer has agreed business goals and security requirements for a claims fraud model. The team now wants
+  to sign with a shortlisted vendor whose model will run in the vendor's cloud on claims data. What should the security
+  manager do FIRST?
+options:
+  A: Add the vendor model to the AI inventory
+  B: Plan adversarial testing for the validation stage
+  C: Define security requirements with the project team
+  D: Assess the vendor against the security requirements
+answer: D
+explanation:
+  why_correct: Requirements exist, and the next decision is the vendor. Assessing the vendor against those requirements,
+    including how it handles claims data in its cloud, has to happen before signing, when gaps can still be fixed
+    or the vendor rejected.
+  why_not:
+    A: Inventory records matter, but listing the model does not tell the insurer whether it should sign.
+    B: Test planning is useful, but validation comes later, and the contract decision is due now.
+    C: Requirements have already been agreed. Redoing them delays the decision that is actually pending.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

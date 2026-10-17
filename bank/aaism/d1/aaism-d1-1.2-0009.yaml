@@ -1,0 +1,28 @@
+id: aaism-d1-1.2-0009
+subdomain: '1.2'
+difficulty: hard
+stem: A manufacturer's chatbot is approved for internal data only. Staff were trained and a detection tool warns
+  on contract data in prompts, but logs show most pastes come from one sales team, under deadlines its manager sets.
+  What is the BEST next step?
+options:
+  A: Switch the detection tool from warning to blocking
+  B: Repeat the training with more realistic examples
+  C: Take the pattern up with the sales team's manager
+  D: Ask the vendor to delete the sales team's stored chats
+answer: C
+explanation:
+  why_correct: Training and detection exist and the behaviour is concentrated in one team driven by its manager's
+    deadlines. The accountable line manager is the one who can change that pressure and enforce the rule.
+  why_not:
+    A: Blocking would stop these pastes, but the deadline pressure behind them remains and may push the team to
+      unapproved tools; only its manager can change that pressure.
+    B: The team was trained and knows the rule; the cause is pressure from its own management.
+    D: Cleaning up the team's stored chats may be worthwhile, but it does not stop the pastes continuing.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

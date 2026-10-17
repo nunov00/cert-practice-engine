@@ -1,0 +1,31 @@
+id: aaism-d2-2.2-0005
+subdomain: '2.2'
+difficulty: hard
+stem: A critical flaw in a numerical library used by a lender's credit scoring model is triggered by malformed numbers.
+  A gateway rule now blocks such values on every route to the model. The fixed library may shift scores. What should
+  be done NEXT?
+options:
+  A: Patch production and monitor the score distribution
+  B: Regression test the model on the fixed library
+  C: Filter malformed numeric values at the API gateway
+  D: Seek emergency change approval to patch tonight
+answer: B
+explanation:
+  why_correct: The gateway rule already cuts off the known trigger, so there is no longer a reason to rush. Because
+    the fix may change credit scores, the model should be regression tested on the fixed library before release,
+    so lending decisions do not change untested.
+  why_not:
+    A: Patching untested swaps a security risk for an integrity risk in credit decisions. Monitoring would only
+      show score shifts after they had affected applicants.
+    C: Filtering at the gateway is the right virtual patch for a reachable flaw, but the stem says this rule is
+      already in place.
+    D: An emergency change suits exposure that cannot otherwise be reduced. With the trigger blocked, an emergency
+      route would mainly skip the testing that credit scores need.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
+  check_verdict: pass

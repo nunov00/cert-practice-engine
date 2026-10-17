@@ -1,0 +1,30 @@
+id: aaism-d1-1.1-0013
+subdomain: '1.1'
+difficulty: medium
+stem: A manufacturer will roll out an AI tool that scans staff email for insider threats. Legal confirms it is lawful,
+  the privacy assessment is signed off, and works councils have been consulted. What should the security manager
+  make sure of BEFORE scanning starts?
+options:
+  A: Employees are told what the tool monitors and why
+  B: Alert thresholds are tuned on a pilot group
+  C: Investigators are trained to handle alerts discreetly
+  D: Scanning covers message metadata, not content
+answer: A
+explanation:
+  why_correct: Lawfulness, assessment and consultation are settled, but nothing yet tells employees their email
+    will be scanned. Privacy and employment rules generally require that people who are monitored are told what
+    is collected and why before monitoring starts, so this is the remaining precondition.
+  why_not:
+    B: Tuning improves alert quality, but a pilot still scans real employees' email, so they must be told first.
+    C: Trained investigators are good practice for handling alerts, but this is an operational step; transparency
+      to those monitored is a precondition for any scanning.
+    D: The signed-off privacy assessment already set the scope; narrowing it now does not address that employees
+      have not been told.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-c
+  checked_by: 2026-10-16-aaism-d1-c-recheck3
+  check_verdict: pass

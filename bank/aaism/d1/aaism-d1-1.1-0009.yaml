@@ -1,0 +1,29 @@
+id: aaism-d1-1.1-0009
+subdomain: '1.1'
+difficulty: medium
+stem: A hospital plans to use a language model service to summarise patient notes. The contract keeps data in-region
+  with no retention or training on inputs. Clinicians will paste summaries into patient records. What is the GREATEST
+  concern before approval?
+options:
+  A: Whether patient data could be reused to train models
+  B: Whether the provider holds a recognised security certification
+  C: Whether the service stays available during clinic hours
+  D: Whether summaries can introduce errors into patient records
+answer: D
+explanation:
+  why_correct: 'The contract already addresses data sharing and reuse. What remains is integrity: language models
+    can omit or invent details, and here their output enters the legal patient record and informs care. Accuracy
+    checks and clinician review are the gating issue.'
+  why_not:
+    A: Reuse is a key concern for health data, but the contract terms in the scenario already rule it out.
+    B: A certification supports trust in the provider's general controls. It does not address the quality of the
+      summaries.
+    C: Availability matters for workflow, but an outage delays work while an undetected error can harm a patient.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck
+  check_verdict: pass

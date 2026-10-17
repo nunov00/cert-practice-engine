@@ -1,0 +1,29 @@
+id: aaism-d1-1.2-0006
+subdomain: '1.2'
+difficulty: medium
+stem: A drug maker gives researchers an enterprise chatbot whose contract bars retention of inputs and training
+  on them. Researchers will use it to draft study reports sent to regulators. Which policy provision BEST addresses
+  the main risk?
+options:
+  A: Enter no unpublished trial data into AI tools
+  B: Use the chatbot from company-managed devices alone
+  C: Get approval from the head of research before each use
+  D: Have a qualified person verify drafts before submission
+answer: D
+explanation:
+  why_correct: 'The contract already limits data leakage, so the main remaining risk is in the output: a model can
+    introduce wrong figures or invented references into reports that regulators rely on. Verification by a qualified
+    person before submission addresses that.'
+  why_not:
+    A: A data-entry restriction is the right provision for public tools that may keep inputs. Here the contract
+      covers that, and the restriction would block the intended use.
+    B: Managed devices support endpoint control, but they do not catch errors in the drafted reports.
+    C: Per-use approval adds friction without checking what the tool produces.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck
+  check_verdict: pass

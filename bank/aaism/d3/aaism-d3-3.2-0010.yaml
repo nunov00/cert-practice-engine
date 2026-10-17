@@ -1,0 +1,28 @@
+id: aaism-d3-3.2-0010
+subdomain: '3.2'
+difficulty: hard
+stem: A bank's chatbot has started giving harmful advice on pension transfers, and only on that topic. Retraining
+  will take three weeks. The normal change board meets in two weeks. What is the BEST course of action?
+options:
+  A: Take the chatbot offline until retraining finishes
+  B: Release the retrained model as an emergency change
+  C: Wait for the change board to approve a response
+  D: Restrict the bot's scope through an emergency change
+answer: D
+explanation:
+  why_correct: There is no fix ready, so the priority is containing the harm now under control. Narrowing the bot's
+    scope to drop pension-transfer questions through the emergency change process stops the harmful advice quickly,
+    with authorised approval and review, while the rest of the service keeps running.
+  why_not:
+    A: This contains the harm but removes the whole service for weeks when the problem is confined to one topic.
+    B: Emergency change is the right route, but the retrained model will not exist for three weeks. Customers stay
+      exposed until then.
+    C: Waiting two weeks leaves customers receiving harmful advice when an emergency route exists.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

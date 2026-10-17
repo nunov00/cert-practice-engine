@@ -1,0 +1,27 @@
+id: aaism-d3-3.3-0011
+subdomain: '3.3'
+difficulty: hard
+stem: A marketing firm tags each scraped training item with its source. When one source was found poisoned, the
+  firm removed its items but could not show auditors exactly which data each released model had been trained on.
+  Which control BEST meets this?
+options:
+  A: Record the source of each item in the corpus
+  B: Vet sources against a reputation list before scraping
+  C: Keep a hash-verified corpus snapshot for each model
+  D: Filter scraped pages for known poisoning patterns
+answer: C
+explanation:
+  why_correct: Source tags let the firm remove a source's items, but the corpus keeps changing. A tamper-evident
+    snapshot tied to each model version shows exactly what that model learned from.
+  why_not:
+    A: This is already done and solved removal, but it does not show what a past model was trained on.
+    B: Vetting reduces what gets in but records nothing about what each model used.
+    D: Filtering at intake catches some poisoning but provides no training record.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

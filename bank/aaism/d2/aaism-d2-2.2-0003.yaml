@@ -1,0 +1,31 @@
+id: aaism-d2-2.2-0003
+subdomain: '2.2'
+difficulty: hard
+stem: A red team tests a bank's chatbot. Role-play prompts make it write abusive text. Hidden instructions in uploaded
+  files trigger its email plug-in, which can send only to the logged-in customer's registered address. Which fix
+  should come FIRST?
+options:
+  A: Screen generated replies for abusive or offensive content
+  B: Restrict the email plug-in to approved recipient addresses
+  C: Strip hidden text from uploaded files before processing
+  D: Add refusal instructions for role-play to the system prompt
+answer: A
+explanation:
+  why_correct: The email plug-in is already limited to the customer's own registered address, so the injection finding
+    can at worst send a customer their own data. The jailbreak puts abusive text in the bank's name in front of
+    customers. Screening replies blocks that output however the prompt is phrased, so it is the higher-impact fix.
+  why_not:
+    B: Limiting where the plug-in can send mail is the right containment for injected instructions, but the stem
+      says it already sends only to the customer's registered address.
+    C: Removing hidden text narrows the injection vector, but with recipients already restricted, that finding has
+      lower impact than abusive replies from a bank.
+    D: The role-play prompts already get past the system prompt, so more instructions at the same layer are unlikely
+      to hold and are easy to talk around.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
+  check_verdict: pass

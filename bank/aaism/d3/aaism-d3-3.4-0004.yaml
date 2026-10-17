@@ -1,0 +1,32 @@
+id: aaism-d3-3.4-0004
+subdomain: '3.4'
+difficulty: hard
+stem: A mobile operator gives city planners a location model trained with differential privacy at an epsilon its
+  regulator approved. Planners now want monthly versions, each trained on the latest twelve months of subscriber
+  traces. What should the security manager require?
+options:
+  A: Generalise the location traces to k-anonymity before each run
+  B: Train each monthly version with the approved epsilon
+  C: Track the privacy loss spent across the released versions
+  D: Replace the subscriber traces with synthetic traces each month
+answer: C
+explanation:
+  why_correct: Differential privacy guarantees add up when the same people's data feeds several releases. With a
+    rolling twelve-month window, each subscriber appears in up to twelve models, so the total privacy loss can be
+    many times the approved epsilon even if each model meets it. The operator must track the cumulative budget and
+    cap releases or adjust per-model epsilon.
+  why_not:
+    A: K-anonymity gives no provable bound and is weak for location traces, which are highly unique. It would also
+      replace the guarantee the regulator already accepted.
+    B: 'Training each version at the approved epsilon looks compliant, but it ignores composition: overlapping releases
+      together leak more than any single one.'
+    D: Synthetic traces generated from real data still need a privacy guarantee of their own, so this changes the
+      method without solving the cumulative leakage.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

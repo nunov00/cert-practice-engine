@@ -1,0 +1,28 @@
+id: aaism-d1-1.3-0003
+subdomain: '1.3'
+difficulty: easy
+stem: A customer-support model runs on a cloud service operated by the IT platform team. The customer support director
+  funds it and decides how it is used. Who should be accountable for classifying the model?
+options:
+  A: The information security manager
+  B: The customer support director
+  C: The IT platform team lead
+  D: The data protection officer
+answer: B
+explanation:
+  why_correct: Classification is an owner decision, and the owner is the person accountable for the asset's use
+    and value. Here that is the support director. Security sets the scheme and advises; the platform team and cloud
+    provider are custodians.
+  why_not:
+    A: Security owns the classification scheme and supports owners, but it does not own each asset.
+    C: The platform team runs the model as a custodian. It applies controls that match the classification but does
+      not set it.
+    D: The data protection officer advises on personal data as an independent adviser, not as the asset's owner.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck
+  check_verdict: pass

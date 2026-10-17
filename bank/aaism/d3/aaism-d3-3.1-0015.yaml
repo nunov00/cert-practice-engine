@@ -1,0 +1,30 @@
+id: aaism-d3-3.1-0015
+subdomain: '3.1'
+difficulty: hard
+stem: 'A bank''s agent runs each third-party plug-in in its own sandbox with tokens for that plug-in''s system only.
+  A penetration test still reached payroll: a weather plug-in''s response told the agent to call the payroll plug-in,
+  and it did. What should be recommended?'
+options:
+  A: Narrow each plug-in's token to read-only scopes
+  B: Add dynamic testing to each plug-in's security review
+  C: Limit each task to the plug-ins its purpose needs
+  D: Run each plug-in apart with its own tokens
+answer: C
+explanation:
+  why_correct: Sandboxing stops one plug-in using another's tokens, but the agent itself can call any plug-in, so
+    output from a harmless one can steer it to a sensitive one. Restricting which plug-ins a task may invoke means
+    a weather request can never reach payroll, whatever text comes back.
+  why_not:
+    A: Payroll calls may legitimately need write access, and even read access to payroll is more than a weather
+      request should reach.
+    B: The weather plug-in may have no flaw at all; its output carried the instructions. Testing it more does not
+      limit what the agent does next.
+    D: This is already in place. The attack did not use another plug-in's tokens; it steered the agent.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-c
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
+  check_verdict: pass

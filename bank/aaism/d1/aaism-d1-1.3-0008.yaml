@@ -1,0 +1,26 @@
+id: aaism-d1-1.3-0008
+subdomain: '1.3'
+difficulty: medium
+stem: A lender keeps data lineage records for each version of its credit model. A regulator asks it to show that
+  last year's two retrainings did not introduce bias against protected groups. Which record would BEST support this?
+options:
+  A: Fairness test results comparing each retrained version
+  B: Data lineage records linked to each model version
+  C: The validation report from the model's first approval
+  D: Decision logs that record the model version used
+answer: A
+explanation:
+  why_correct: The question is about outcomes for protected groups across versions, which is what fairness testing
+    of each version measures.
+  why_not:
+    B: Lineage shows which data went in, not whether the resulting model treats groups fairly.
+    C: It predates both retrainings.
+    D: Logs could feed an analysis, but on their own they do not show whether outcomes were fair.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

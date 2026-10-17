@@ -1,0 +1,27 @@
+id: aaism-d1-1.3-0009
+subdomain: '1.3'
+difficulty: medium
+stem: A firm has rated its 40 AI assets, and 12 are high criticality. Threat reports show attackers targeting customer-facing
+  chatbots at similar firms. Which high-criticality assets should get the strongest controls FIRST?
+options:
+  A: Those with the most internal users
+  B: Those built on third-party foundation models
+  C: Those processing the most sensitive data
+  D: Those exposed to external users
+answer: D
+explanation:
+  why_correct: Among assets of similar impact, those facing active threats carry the most risk. The threat reports
+    point to externally reachable chatbots, so those high-criticality assets have the highest likelihood of attack
+    and should be hardened first.
+  why_not:
+    A: User numbers affect business impact, which the criticality rating already reflects.
+    B: Third-party models add supply chain risk, but the reported threat comes through external access.
+    C: Data sensitivity is already part of the criticality rating that put all 12 at the top.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck
+  check_verdict: pass

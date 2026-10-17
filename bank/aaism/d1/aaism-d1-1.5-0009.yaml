@@ -1,0 +1,28 @@
+id: aaism-d1-1.5-0009
+subdomain: '1.5'
+difficulty: medium
+stem: After two tabletop exercises, a firm's data science and security responders coordinate well on AI incidents.
+  Their playbook assumes a poisoned model can be rolled back within an hour, which nobody has tried. Which exercise
+  BEST fits next?
+options:
+  A: A third tabletop with a harder poisoning scenario
+  B: A live drill restoring a previous model version
+  C: A red team attack on a production model
+  D: A purple team test of AI detection rules
+answer: B
+explanation:
+  why_correct: Coordination has been tested; the untested piece is the technical step the playbook depends on. A
+    live rollback drill shows whether the one-hour assumption holds.
+  why_not:
+    A: Tabletops are the right start for new teams. These teams already coordinate well, and discussion cannot prove
+      that a rollback works.
+    C: Red teaming tests resistance to attack. It does not test the recovery step the playbook relies on.
+    D: Purple teaming tunes detection. The untested assumption is in recovery, not detection.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

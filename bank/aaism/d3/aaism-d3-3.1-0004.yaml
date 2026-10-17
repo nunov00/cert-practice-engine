@@ -1,0 +1,31 @@
+id: aaism-d3-3.1-0004
+subdomain: '3.1'
+difficulty: hard
+stem: A support assistant's replies are HTML-encoded before display, and its Markdown renderer loads images from
+  any URL. Testers planted instructions in a help article that made replies include image links carrying chat data
+  to an outside server. Which control BEST stops this?
+options:
+  A: Load reply images only from approved domains
+  B: Encode model output for the page context
+  C: Screen user prompts with an injection filter
+  D: Have a second model screen replies for image links
+answer: A
+explanation:
+  why_correct: The leak works because the browser fetches an attacker's image URL, sending the data in the request.
+    Encoding does not stop a well-formed image link. Restricting rendered images to approved domains removes the
+    outbound channel deterministically, whatever the model is tricked into writing.
+  why_not:
+    B: Output is already HTML-encoded. A Markdown image link is valid output, so encoding renders it faithfully
+      and the browser still makes the request.
+    C: The instructions came from a help article the assistant retrieved, not from the user, so a prompt filter
+      never sees them.
+    D: A screening model is probabilistic and can be evaded with encoded or reworded image URLs. The renderer would
+      still load whatever gets past it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

@@ -1,0 +1,29 @@
+id: aaism-d2-2.1-0004
+subdomain: '2.1'
+difficulty: hard
+stem: A credit union's head of consumer lending owns its AI lending model. The model's residual bias risk is above
+  the appetite the board set, and policy lets risk owners accept residual risk only within that appetite. Who should
+  decide whether to accept it?
+options:
+  A: The head of consumer lending
+  B: The chief risk officer
+  C: The board or its risk committee
+  D: The chair of the AI risk committee
+answer: C
+explanation:
+  why_correct: The risk sits beyond what the board said it will tolerate. Only the body that set the appetite can
+    choose to exceed it, so the decision goes to the board or the committee it has delegated to.
+  why_not:
+    A: The process owner normally accepts residual risk. Policy limits that to risks within appetite, and this one
+      is above it.
+    B: The CRO oversees risk and challenges decisions. Accepting a risk above appetite would compromise that role
+      and exceed the CRO's authority.
+    D: That committee reviews and advises on AI risks. It does not hold the board's authority to exceed appetite.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-recheck3

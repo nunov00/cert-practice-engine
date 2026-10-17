@@ -1,0 +1,26 @@
+id: aaism-d1-1.2-0002
+subdomain: '1.2'
+difficulty: medium
+stem: A company's AI acceptable use policy allows customer data only in approved tools. Administrators ask what
+  chat retention period and connector settings the approved chatbot must have. Which document should answer this?
+options:
+  A: The acceptable use policy for AI tools
+  B: The configuration baseline for the approved chatbot
+  C: The data classification standard
+  D: The software procurement procedure
+answer: B
+explanation:
+  why_correct: Required settings for a specific system, such as retention periods and connectors, belong in its
+    configuration baseline.
+  why_not:
+    A: The policy governs what users may do; it is not where technical settings for one tool are defined.
+    C: Classification defines data categories and handling rules, not the settings of a particular tool.
+    D: Procurement covers buying software, not how an approved tool is configured.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

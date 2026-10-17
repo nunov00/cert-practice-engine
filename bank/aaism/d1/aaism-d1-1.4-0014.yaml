@@ -1,0 +1,29 @@
+id: aaism-d1-1.4-0014
+subdomain: '1.4'
+difficulty: hard
+stem: 'Midyear, an AI security budget is cut by 40%. Workstreams: an AI inventory that already lists every system
+  and now adds lineage fields; testing a refund-issuing customer agent launching next month; a second awareness
+  campaign; and a board risk dashboard. Which should be protected FIRST?'
+options:
+  A: Completion of the AI asset inventory
+  B: A second awareness campaign for all staff
+  C: A dashboard reporting AI risk to the board
+  D: Pre-launch security testing of the customer refund agent
+answer: D
+explanation:
+  why_correct: The agent will soon move money for customers, so an untested flaw could cause direct loss. The inventory
+    already serves its main purpose of showing what AI exists, so its remaining fields can wait.
+  why_not:
+    A: An incomplete inventory is often the first thing to protect, since other priorities depend on it. This one
+      already lists every system; only extra fields remain.
+    B: Awareness reduces misuse, but one campaign has already run and a second is easy to defer.
+    C: Board reporting supports oversight. It can be built later, while an untested agent that moves money launches
+      next month.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-c
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-c-recheck3

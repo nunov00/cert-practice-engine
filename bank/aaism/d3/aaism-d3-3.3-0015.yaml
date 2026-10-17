@@ -1,0 +1,28 @@
+id: aaism-d3-3.3-0015
+subdomain: '3.3'
+difficulty: hard
+stem: Three partner banks pool labelled transactions to fine-tune a shared fraud model. Each delivery is screened
+  for outliers and impact-tested before use. One partner now supplies 70% of the training data. Which control BEST
+  limits poisoning risk?
+options:
+  A: A separate model for each partner's data
+  B: Caps on each partner's share of the pooled data
+  C: Annual independent audits of partners' labelling
+  D: Screening and impact testing of each delivery
+answer: B
+explanation:
+  why_correct: Screening and impact tests are in place, but when one partner dominates, its data defines what normal
+    looks like, so its poisoned labels may not stand out. Capping each partner's share limits any one partner's
+    influence.
+  why_not:
+    A: Separate models defeat the purpose of pooling and leave each model exposed to its own partner.
+    C: Audits give assurance about process but cannot catch a poisoned batch between them.
+    D: This is already done, and it is weaker when the suspect data sets the norm.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-c
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
+  check_verdict: pass

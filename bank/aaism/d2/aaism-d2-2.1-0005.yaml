@@ -1,0 +1,30 @@
+id: aaism-d2-2.1-0005
+subdomain: '2.1'
+difficulty: hard
+stem: Two staff-only assistants use the same model. One answers from the public handbook. The other answers from
+  HR policy documents and can create leave requests in the HR system. Why should the second get a higher risk rating?
+options:
+  A: Its source documents hold more sensitive data
+  B: Its inputs raise the likelihood of prompt injection
+  C: Wrong HR policy answers could mislead staff
+  D: A manipulated prompt could change HR records
+answer: D
+explanation:
+  why_correct: Both assistants take input from the same staff and use the same model, so the likelihood of manipulation
+    is similar. The second can act in the HR system, which raises the impact if it is manipulated. Its sources are
+    policies, not personal records.
+  why_not:
+    A: Source sensitivity often drives ratings. HR policy documents are internal guidance, not personal records,
+      so they add little exposure compared with the ability to act.
+    B: Untrusted input, such as external email, raises injection likelihood. Both assistants take input only from
+      staff, so likelihood does not differ much.
+    C: Hallucination is a real risk for policy answers. Both assistants use the same model, and a wrong answer that
+      staff can check is a smaller concern than unauthorised changes to records.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-recheck3

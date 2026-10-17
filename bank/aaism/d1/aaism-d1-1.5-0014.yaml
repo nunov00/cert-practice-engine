@@ -1,0 +1,30 @@
+id: aaism-d1-1.5-0014
+subdomain: '1.5'
+difficulty: hard
+stem: A lender backs up its credit model's weights nightly and replicates training data to a second site. In a recovery
+  test the restored model ran, but its scores for the same applicants differed widely from production. What is the
+  MOST likely gap?
+options:
+  A: The weight backups are older than the model in production
+  B: The backups miss the matching feature pipeline
+  C: The replicated training data has lost integrity
+  D: The recovery site runs on different hardware
+answer: B
+explanation:
+  why_correct: A model gives the same scores only when its weights run with the same feature preparation and settings.
+    Restoring the weights with a newer or default pipeline gives different inputs and so different scores. Recovery
+    must restore the whole set of artefacts as one matched version.
+  why_not:
+    A: Stale backups can cause differences. The model's weights are backed up nightly, so they are unlikely to be
+      out of date.
+    C: Training data integrity matters for retraining. The restored model was not retrained, and scoring does not
+      use the training data.
+    D: Different hardware can cause tiny numeric differences. It does not explain scores that differ widely.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-c
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-c-recheck3

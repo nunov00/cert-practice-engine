@@ -1,0 +1,28 @@
+id: aaism-d3-3.3-0012
+subdomain: '3.3'
+difficulty: hard
+stem: Developers at an insurance broker need realistic claim values but no identities for a claims model. Their
+  plan copies the production database into development, then runs a masking job there overnight. What should be
+  recommended?
+options:
+  A: Mask identities in the development copy
+  B: Encrypt the development database and log access
+  C: Restrict the copy to the project's named developers
+  D: Mask the data in production before copying
+answer: D
+explanation:
+  why_correct: Masking is the right technique, but in this plan real identities sit in a less controlled environment
+    until the job runs, and a failed job leaves them there. Masking before the data leaves production means development
+    never holds identities.
+  why_not:
+    A: This is the current plan. It exposes real identities in development before and if masking fails.
+    B: Encryption and logging protect storage, but developers and tools still read real identities before masking.
+    C: Narrowing access reduces exposure, but identities still sit in development with no need for them.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

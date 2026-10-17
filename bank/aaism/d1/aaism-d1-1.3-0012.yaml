@@ -1,0 +1,27 @@
+id: aaism-d1-1.3-0012
+subdomain: '1.3'
+difficulty: hard
+stem: A media group inventoried the AI models of a firm it acquired. Legal has confirmed that the consent behind
+  one model's training data does not cover credit scoring, which the model does for subscribers. What should the
+  security manager do NEXT?
+options:
+  A: Confirm the lawful basis for the training data
+  B: Have the model's scoring suspended pending a decision
+  C: Retrain the scoring model on the group's own data
+  D: Connect the model to group systems under monitoring
+answer: B
+explanation:
+  why_correct: The model is processing without a lawful basis today. Stopping that processing comes before choosing
+    a longer-term fix.
+  why_not:
+    A: Legal has already done this, and the basis is missing.
+    C: Retraining may be the eventual fix, but it takes time while unlawful scoring continues.
+    D: Integrating the model extends unlawful processing.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

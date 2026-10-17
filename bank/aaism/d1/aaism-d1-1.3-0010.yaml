@@ -1,0 +1,26 @@
+id: aaism-d1-1.3-0010
+subdomain: '1.3'
+difficulty: medium
+stem: A firm's low-code agent platform blocks publishing until an agent is registered in the AI inventory. Builders
+  later add tools and data connections to live agents, and entries go stale. What BEST keeps the inventory accurate?
+options:
+  A: Enforce registration in the platform's publish step
+  B: Ask internal audit to test inventory completeness
+  C: Survey teams yearly on the agents they build
+  D: Require inventory updates when an agent's tools change
+answer: D
+explanation:
+  why_correct: Registration at publish works; entries go stale after it. Triggering an update whenever tools or
+    connections change keeps the record current.
+  why_not:
+    A: This is already enforced and does not catch changes made afterwards.
+    B: Audit finds gaps periodically after the fact; it does not keep entries current.
+    C: A yearly survey leaves entries stale for most of the year.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

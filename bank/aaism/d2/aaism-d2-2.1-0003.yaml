@@ -1,0 +1,29 @@
+id: aaism-d2-2.1-0003
+subdomain: '2.1'
+difficulty: medium
+stem: A hospital's AI tool drafts discharge summaries, and a clinician signs off each one. The risk of fabricated
+  medication details remains above tolerance, because reviewers rarely recheck long medication lists. Which treatment
+  BEST brings it within tolerance while keeping the time saving?
+options:
+  A: Require clinician sign-off before release
+  B: Fill medication lists from pharmacy records, not the model
+  C: Have pharmacists spot-check medication lists weekly
+  D: Obtain vendor indemnity for patient harm claims
+answer: B
+explanation:
+  why_correct: Taking medication lists straight from the pharmacy system removes fabrication from the section where
+    review is weakest. The tool still drafts the narrative, so clinicians keep the time saving.
+  why_not:
+    A: Human sign-off is the usual control for generated clinical text. It is already in place and is not catching
+      medication errors.
+    C: Sampling by pharmacists finds some errors and shows how often they occur. Most lists still go out unchecked,
+      so the risk of fabricated details reaching patients stays above tolerance.
+    D: Indemnity shifts some cost. Patient harm stays, so the risk is not brought within tolerance.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-recheck3

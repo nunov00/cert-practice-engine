@@ -1,0 +1,29 @@
+id: aaism-d1-1.4-0010
+subdomain: '1.4'
+difficulty: medium
+stem: A manufacturer's AI security program reviews in-house models and assesses each SaaS vendor's AI at contract
+  signing. Most of its AI use is in SaaS tools whose vendors switch on new AI features through routine updates.
+  What is the GREATEST weakness?
+options:
+  A: No assessment of vendors' AI features before purchase
+  B: No standard for securing model training pipelines
+  C: No red team testing of in-house models before release
+  D: No tracking of AI features vendors add after purchase
+answer: D
+explanation:
+  why_correct: Most AI exposure is in SaaS tools, and their AI changes after the one-time assessment. New features
+    can process company data in new ways without review, so the largest share of AI use drifts out of oversight.
+  why_not:
+    A: Missing third-party coverage is a common gap. This program does assess each vendor's AI, at contract signing;
+      the gap is what changes afterwards.
+    B: Pipeline security matters for in-house models. Those are the smaller part of this firm's AI use.
+    C: Adversarial testing is good practice for models the firm builds. It does nothing for the SaaS features that
+      make up most of the exposure.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

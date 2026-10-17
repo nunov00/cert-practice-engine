@@ -1,0 +1,30 @@
+id: aaism-d2-2.3-0013
+subdomain: '2.3'
+difficulty: hard
+stem: Data scientists want an open-weight model from a well-known publisher. They downloaded it from the publisher's
+  own account, the hash matches the published release, and the format cannot run code when loaded. What is the GREATEST
+  remaining supply chain concern?
+options:
+  A: The weights may differ from the publisher's release
+  B: The file could run code when it is loaded
+  C: Hidden behaviour from the publisher's training data
+  D: The licence may restrict use in commercial products
+answer: C
+explanation:
+  why_correct: The download source, hash and file format settle integrity and code execution. They do not show what
+    the model learned. Poisoned or backdoored behaviour introduced through the publisher's own training data would
+    pass every one of those checks, so behavioural evaluation is still needed.
+  why_not:
+    A: Tampered weights are the main concern for a third-party copy, but this file came from the publisher's account
+      and its hash matches the release.
+    B: The stem says the format cannot run code when loaded.
+    D: Licence terms must be checked, but they are a legal question rather than a security threat in the supply
+      chain.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-c
+  checked_by: 2026-10-16-aaism-d2-c-recheck3
+  check_verdict: pass

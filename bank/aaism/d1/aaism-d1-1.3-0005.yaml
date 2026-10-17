@@ -1,0 +1,27 @@
+id: aaism-d1-1.3-0005
+subdomain: '1.3'
+difficulty: hard
+stem: A retailer deletes purchase records after five years, and training copies follow the same schedule. Legal
+  now advises that its recommendation model can reproduce some expired records. What should the security manager
+  make sure of?
+options:
+  A: Training copies are deleted on the same schedule
+  B: Output filters block expired records in responses
+  C: The model is retrained without the expired records
+  D: Source records are kept while the model is in use
+answer: C
+explanation:
+  why_correct: The model itself now holds data that should be gone. Retraining without those records removes them
+    while keeping a useful model.
+  why_not:
+    A: This is already the case, yet the data remains inside the model.
+    B: A filter hides the data but keeps it in the model beyond its retention period.
+    D: This would extend retention rather than honour it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

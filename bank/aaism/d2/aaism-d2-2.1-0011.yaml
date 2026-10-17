@@ -1,0 +1,28 @@
+id: aaism-d2-2.1-0011
+subdomain: '2.1'
+difficulty: hard
+stem: A recruitment firm's AI screening model passed independent bias testing, and staff review every rejection.
+  Afterwards, the firm bought insurance against discrimination claims, which it plans to rely on for any regulatory
+  fines. What is the GREATEST concern?
+options:
+  A: Some penalties may be legally uninsurable
+  B: Insurance does not change the model's decisions
+  C: The insured amount was set before bias testing
+  D: Premiums may rise after any discrimination claim
+answer: A
+explanation:
+  why_correct: The firm has mitigated the bias and is using insurance for what remains. Fines for discrimination
+    are often not insurable, so the part of the exposure it plans to transfer may stay with the firm.
+  why_not:
+    B: Relying on transfer alone leaves biased decisions in place, a common flaw. Here the firm has also tested
+      for bias and added human review.
+    C: Sizing cover without testing would be a weakness. The insurance was bought after the testing.
+    D: Premiums affect the cost of the treatment. They do not affect whether the exposure is covered.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-recheck3

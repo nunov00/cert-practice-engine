@@ -1,0 +1,31 @@
+id: aaism-d3-3.2-0004
+subdomain: '3.2'
+difficulty: hard
+stem: A retailer's model store is write-protected and hash-checked. Only the pipeline's release-test stage holds
+  the signing key, and it signs a model only after all its tests pass. Production loads only signed models. What
+  does the signature check MAINLY add?
+options:
+  A: Model files cannot be tampered with in storage
+  B: Only models trained on approved data reach production
+  C: Only the newest model version reaches production
+  D: Only models that cleared testing reach production
+answer: D
+explanation:
+  why_correct: Storage integrity is already covered. Because the key is held only by the test stage and used only
+    on success, a valid signature is evidence that this artefact passed its release tests, so production cannot
+    load one that skipped or failed them.
+  why_not:
+    A: Signatures do protect artefact integrity, but the store is already write-protected and hash-checked, so this
+      adds little here.
+    B: The signature covers the output artefact. A model trained on the wrong dataset can still pass tests and be
+      signed.
+    C: Every earlier model that passed tests carries a valid signature too. Preventing old versions needs version
+      checks.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

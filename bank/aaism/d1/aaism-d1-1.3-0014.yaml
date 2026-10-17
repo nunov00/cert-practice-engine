@@ -1,0 +1,27 @@
+id: aaism-d1-1.3-0014
+subdomain: '1.3'
+difficulty: hard
+stem: A demand-forecasting model rated low criticality now feeds automatic purchase orders. It has been re-rated
+  high, but its required high-criticality controls will take two months to apply. What should the security manager
+  do FIRST?
+options:
+  A: Require human approval for large purchase orders
+  B: Review recent purchase orders for model errors
+  C: Start applying the high-criticality control set
+  D: Add sign-off for new consumers of model outputs
+answer: A
+explanation:
+  why_correct: The full control set is two months away while orders flow now. Human approval of large orders limits
+    the harm in the meantime.
+  why_not:
+    B: Checking past orders may find earlier errors, but new orders keep flowing without a check in the meantime.
+    C: That work is planned and takes two months; it does not cover the gap until then.
+    D: This helps prevent future surprises but does nothing about the current exposure.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-c
+  checked_by: 2026-10-16-aaism-d1-c-recheck3
+  check_verdict: pass

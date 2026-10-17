@@ -1,0 +1,31 @@
+id: aaism-d2-2.2-0014
+subdomain: '2.2'
+difficulty: hard
+stem: A retailer's chat assistant has no tools and already runs its own output filter for offensive content. A new
+  jailbreak gets past both the system prompt and the filter, producing off-brand jokes; no customer has reported
+  one. The model vendor's fix is due in three weeks. What is the BEST response?
+options:
+  A: Accept and record the risk until the vendor fix
+  B: Tighten the system prompt against role-play requests
+  C: Add output filtering in the retailer's application
+  D: Begin evaluating an alternative model vendor
+answer: A
+explanation:
+  why_correct: 'The impact is low: no tools, mild off-brand output, no customer exposure so far, and a fix due in
+    three weeks. The retailer''s own controls are already in place. Recording a time-limited acceptance with the
+    risk owner, and reviewing it when the fix arrives, is proportionate.'
+  why_not:
+    B: The stem says the jailbreak already gets past the system prompt, so more instructions at the same layer are
+      unlikely to hold.
+    C: Application-level filtering is the usual control while waiting for a vendor fix, but the retailer already
+      filters outputs and this jailbreak gets past it.
+    D: Changing vendors is slow and costly, and a new model may have similar flaws. It is out of proportion to a
+      low-impact issue with a fix weeks away.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-c
+  checked_by: 2026-10-16-aaism-d2-c-recheck3
+  check_verdict: pass

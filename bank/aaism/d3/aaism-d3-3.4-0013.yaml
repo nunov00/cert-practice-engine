@@ -1,0 +1,30 @@
+id: aaism-d3-3.4-0013
+subdomain: '3.4'
+difficulty: hard
+stem: A city council's model prioritises housing repair requests. Staff cannot review every rating. Complaints show
+  urgent cases for vulnerable tenants were rated low and waited months. What BEST improves oversight?
+options:
+  A: Review a random weekly sample of low ratings
+  B: Route low ratings with vulnerability signs to a caseworker
+  C: Publish the criteria and offer tenants an appeal route
+  D: Retrain the model on the complaint cases, relabelled
+answer: B
+explanation:
+  why_correct: When full review is impossible, human oversight should target the decisions most likely to cause
+    serious harm. Routing low ratings that show vulnerability signs to a caseworker puts judgment where errors hurt
+    most, before tenants are left waiting.
+  why_not:
+    A: Sampling low ratings checks their quality, but a random sample will miss most of the rare high-harm cases
+      and finds them only after the delay.
+    C: Transparency and appeal are valuable, but they depend on vulnerable tenants noticing and challenging a rating,
+      which many may not do.
+    D: Retraining may reduce such errors, but a few relabelled cases will not remove them, and there is still no
+      human check on the high-harm outcomes.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-c
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
+  check_verdict: pass

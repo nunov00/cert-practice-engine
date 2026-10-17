@@ -1,0 +1,31 @@
+id: aaism-d3-3.2-0001
+subdomain: '3.2'
+difficulty: hard
+stem: A manufacturer's inspection model has two high-risk findings open. The business owner formally accepted them
+  for go-live next week, on condition that input validation and extra monitoring are added first. What should the
+  security manager do FIRST?
+options:
+  A: Delay go-live until both findings are fixed and retested
+  B: Ask the data scientists to document root causes
+  C: Verify the acceptance conditions are in place
+  D: Ask the business owner to reconsider the acceptance
+answer: C
+explanation:
+  why_correct: The risk decision has been made by the right person, and it is conditional. The security manager's
+    job now is to confirm that the conditions the acceptance depends on exist before go-live. Without them, the
+    system would run on a risk nobody actually accepted.
+  why_not:
+    A: The security manager does not own the business risk, and the owner has accepted it on conditions. Overriding
+      that decision is not the security manager's call.
+    B: Root-cause notes help with the eventual fix, but they do not check that the compensating controls exist before
+      go-live.
+    D: The owner has already decided, on conditions. Reopening the decision delays the release without checking
+      the one thing still open.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

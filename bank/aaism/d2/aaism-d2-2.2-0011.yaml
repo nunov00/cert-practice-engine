@@ -1,0 +1,30 @@
+id: aaism-d2-2.2-0011
+subdomain: '2.2'
+difficulty: hard
+stem: A manufacturing group uses a vendor's AI threat taxonomy, updated quarterly, alongside design reviews of each
+  system's data flows. Each business unit rates likelihood on its own scale, and the group committee ranks AI risks
+  across units to allocate funding. What is the GREATEST concern?
+options:
+  A: The taxonomy may lag newly published attack techniques
+  B: Threats from each system's own design may be missed
+  C: Risk ratings may not be comparable across business units
+  D: Results may be too technical for the funding committee
+answer: C
+explanation:
+  why_correct: The committee compares risks across units to decide funding, but each unit scores likelihood on its
+    own scale. A high rating in one unit may mean something different in another, so money can go to the wrong risks.
+    A common rating scale is needed for the ranking to be valid.
+  why_not:
+    A: Taxonomy currency matters, but it is updated each quarter, and the teams also run their own design reviews.
+    B: Relying on a taxonomy alone can miss design-specific threats, but the stem says each system also gets a design
+      review of its data flows.
+    D: Technical detail can be summarised for a committee. Presentation does not change whether the ranking itself
+      is sound.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
+  check_verdict: pass

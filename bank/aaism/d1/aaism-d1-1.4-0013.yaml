@@ -1,0 +1,30 @@
+id: aaism-d1-1.4-0013
+subdomain: '1.4'
+difficulty: medium
+stem: To avoid a second gate, a bank added security criteria to its model validation, scored by security staff.
+  Six months on, validation records show high-rated security findings marked as noted and the models approved anyway.
+  What should the security manager do FIRST?
+options:
+  A: Add a separate security review gate after validation
+  B: Train model validators to score the security criteria
+  C: Report high-rated findings to the CISO quarterly
+  D: Make high-rated security findings block validation sign-off
+answer: D
+explanation:
+  why_correct: The integrated review works and finds issues, but its findings carry no weight in the approval. Making
+    high-rated findings stop sign-off, unless the right owner formally accepts the risk, gives them effect without
+    adding a gate.
+  why_not:
+    A: A separate gate would give security its own decision. It brings back the extra step the bank chose to avoid,
+      while the existing review already finds the issues.
+    B: Training spreads skills. Security staff already score the criteria; the problem is what happens to their
+      findings.
+    C: Reporting adds visibility. Models would still be approved with high-rated findings open between reports.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-c
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-c-recheck3

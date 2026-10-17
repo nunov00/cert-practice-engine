@@ -1,0 +1,31 @@
+id: aaism-d3-3.4-0007
+subdomain: '3.4'
+difficulty: hard
+stem: An airline's AI tool proposes maintenance actions that licensed engineers approve. It has now been validated
+  on the wide-body aircraft joining the fleet next month. Their proposals will be approved by contract engineers
+  who have never used the tool. What should the security manager recommend FIRST?
+options:
+  A: Brief the new approvers on the tool's known failure modes
+  B: Restrict the tool to narrow-body aircraft for the time being
+  C: Require a second engineer to approve each wide-body proposal
+  D: Review a monthly sample of wide-body proposals against outcomes
+answer: A
+explanation:
+  why_correct: Human approval is the safeguard here, and it works only if approvers know where the tool tends to
+    be wrong. The new risk is not the tool, which is validated for the new aircraft, but approvers who have never
+    used it. Briefing them on its known failure modes makes their approval meaningful from the first day.
+  why_not:
+    B: Limiting an AI tool to its validated scope is sound practice, but the stem says the tool has been validated
+      on the wide-body aircraft, so this removes value without addressing the actual gap.
+    C: A second approver adds cost and may share the same unfamiliarity with the tool. It doubles the check without
+      making either reviewer better at spotting the tool's errors.
+    D: Sampling against outcomes is useful ongoing assurance, but it finds problems after the fact. It should follow,
+      not replace, preparing the approvers.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

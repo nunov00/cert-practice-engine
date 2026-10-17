@@ -1,0 +1,27 @@
+id: aaism-d1-1.2-0011
+subdomain: '1.2'
+difficulty: hard
+stem: A review procedure for high-risk models sets criteria, roles and required evidence. Reviewers trained on AI-specific
+  flaws last quarter still miss test data leaking into training sets; teams submit only accuracy results. What BEST
+  fixes this?
+options:
+  A: Train reviewers again using worked leakage cases
+  B: Require dataset split records as review evidence
+  C: Restate the review requirement in the AI policy
+  D: Publish guidelines with good-practice review examples
+answer: B
+explanation:
+  why_correct: Reviewers already know the flaw, but the evidence they receive cannot reveal it. Requiring records
+    of how data was split lets them check for leakage.
+  why_not:
+    A: Reviewers were recently trained; they cannot spot leakage in evidence that does not show it.
+    C: The requirement to review is not in question; the evidence for it is.
+    D: Guidelines are optional and do not change what teams must submit.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

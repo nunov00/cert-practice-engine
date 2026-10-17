@@ -1,0 +1,31 @@
+id: aaism-d2-2.2-0013
+subdomain: '2.2'
+difficulty: medium
+stem: An insurer will red team its claims assistant, built on a vendor-hosted model. The vendor has approved attack
+  testing, with an agreed scope, for a two-week window starting in four weeks, and launch is two weeks after the
+  window closes. What should the security manager do FIRST?
+options:
+  A: Request written approval and agree the test scope
+  B: Build and dry-run the test cases against a mock model
+  C: Rely on the vendor's red team results for the base model
+  D: Ask the vendor to move the testing window earlier
+answer: B
+explanation:
+  why_correct: Approval and scope are in hand and the window fits before launch, so the risk is wasting the limited
+    live testing time. Preparing the test cases and dry-running them against a mock model now means the two-week
+    window can be spent testing rather than setting up.
+  why_not:
+    A: Written approval and an agreed scope are the usual first step for testing a vendor-hosted model, but the
+      stem says the vendor has already approved a scoped window.
+    C: The vendor's results cover the base model, not the insurer's prompts, data and tools. They can inform the
+      test plan but do not replace it.
+    D: An earlier window could help, but the approved one already ends two weeks before launch, and renegotiating
+      risks losing it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-c
+  checked_by: 2026-10-16-aaism-d2-c-recheck3
+  check_verdict: pass

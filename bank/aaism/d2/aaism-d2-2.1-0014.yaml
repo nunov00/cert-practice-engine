@@ -1,0 +1,29 @@
+id: aaism-d2-2.1-0014
+subdomain: '2.1'
+difficulty: medium
+stem: A logistics firm's AI assistant reads inbound supplier emails and drafts replies. The team rated prompt injection
+  as rare because a year of logs shows no attempts. The logs record only errors and response times. What is the
+  GREATEST concern with this rating?
+options:
+  A: The rating ignored injection attempts seen across the industry
+  B: The impact was not expressed in money terms
+  C: The second line did not review the rating
+  D: The logs could not show injection attempts
+answer: D
+explanation:
+  why_correct: Logs that do not record prompts or outputs cannot reveal an injection. Finding none says nothing
+    about whether any occurred, and the assistant reads untrusted external email. The rare rating may be badly wrong.
+  why_not:
+    A: Industry data on injection attempts would improve the estimate. The core flaw is relying on local evidence
+      that could never show an attack.
+    B: Money terms help comparison, but the error here is in likelihood, not in how impact is expressed.
+    C: Challenge from the second line is good practice. It is a process gap, and the rating rests on blind evidence
+      either way.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-c
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-c-recheck3

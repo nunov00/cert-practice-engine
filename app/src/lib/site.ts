@@ -9,4 +9,4 @@ export const SITE_TAGLINE = "Know where you stand";
 
 export const SITE_DISCLAIMER =
   "Independent practice material. Not affiliated with, endorsed by, or sponsored by ISC2 or ISACA. " +
-  "CISSP is a registered mark of ISC2. AAIR and AAIG are marks of ISACA.";
+  "CISSP is a registered mark of ISC2. AAIR, AAIG and AAISM are marks of ISACA.";
