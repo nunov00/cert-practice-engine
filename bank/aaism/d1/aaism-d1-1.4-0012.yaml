@@ -6,8 +6,8 @@ stem: A media group's quarterly AI security report already compares exposure wit
   Which content would MOST help?
 options:
   A: Exposure trends compared with the board's risk limits
-  B: AI incident counts and impact since last year's funding
-  C: Delivery status of the AI security projects funded last year
+  B: AI incident counts and impact after last year's funding
+  C: Delivery status of the projects funded last year
   D: Maturity scores against an industry framework
 answer: C
 explanation:
@@ -27,4 +27,5 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d1-b-recheck3
+  options_only: not_obvious
+  checked_by: 2026-10-17-aaism-length-check

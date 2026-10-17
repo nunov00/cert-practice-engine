@@ -5,13 +5,13 @@ stem: A support chatbot's system prompt holds refund limits. Prompt changes are 
   yet customers got the bot to quote its instructions, limits included. Which control would MOST likely have prevented
   this?
 options:
-  A: Keeping refund limits in a back-end check, not the prompt
+  A: Keeping refund limits in back-end code, not the prompt
   B: Reviewed and tested changes to the system prompt
-  C: Output filtering for refund amounts and limits
+  C: Output filtering that blocks refund amounts and limits
   D: Classifying the system prompt as confidential
 answer: A
 explanation:
-  why_correct: Anything in a prompt can be coaxed out. Moving the limits to a back-end check means there is nothing
+  why_correct: Anything in a prompt can be coaxed out. Moving the limits to back-end code means there is nothing
     sensitive for the bot to reveal.
   why_not:
     B: Change control is already in place; the leak came from the prompt's content, not a bad change.
@@ -23,5 +23,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-a
-  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  checked_by: 2026-10-17-aaism-length-check
   check_verdict: pass
+  options_only: not_obvious

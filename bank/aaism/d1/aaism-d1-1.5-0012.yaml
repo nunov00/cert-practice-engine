@@ -8,7 +8,7 @@ options:
   A: A tested secondary model provider
   B: A contract with a higher availability commitment
   C: A cache of answers to frequent chat questions
-  D: Manual handling by the original team during outages
+  D: Manual handling by existing staff during outages
 answer: D
 explanation:
   why_correct: The staff handled the full volume before the app, so a human fallback is proven and costs nothing
@@ -27,4 +27,5 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d1-b-recheck3
+  options_only: not_obvious
+  checked_by: 2026-10-17-aaism-length-check

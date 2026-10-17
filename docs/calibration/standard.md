@@ -113,6 +113,10 @@ in the project files) and the rework PRs #34 to #42:
 - **Bundled keys:** "both X and Y", or "investigate first" when the others act.
 - **Stems that point at the key:** the stem paraphrases it or rules the other
   options out one by one.
+- **A repeated stem device:** the same kind of deciding fact across a batch
+  (for example "X is already in place", always killing a distractor, or the key
+  always being the "before approval" option) becomes a rule learners can apply
+  without thinking. Vary it; the checker looks at the batch as well as each item.
 - **Labels that follow length:** hard means two or more strong distractors that
   only a stem detail separates, not a long stem.
 

@@ -1,32 +1,25 @@
 id: aaig-d3-3.1-0043
 subdomain: '3.1'
-difficulty: medium
-stem: A bank's central machine learning platform team hosts models for several business units. The bank's
-  service catalogue already rates fraud scoring as critical. The card fraud unit's models went offline
-  twice over a weekend, and no one responded until Monday because the platform team supports office hours
-  only. What should the governance leader recommend?
+difficulty: hard
+stem: A bank's central machine learning platform team hosts models for several business units and supports office hours only. Some hosted models, such as card fraud scoring, run around the clock, while others are used only in branch hours. The fraud models went offline twice over a weekend, and no one responded until Monday. What is the BEST recommendation for the governance leader?
 options:
-  A: Agree service levels with each unit based on its services' criticality
-  B: Classify each hosted model by its business criticality
-  C: Set one platform-wide support standard for hosted models
+  A: Agree service levels with each unit, scaled to its criticality
+  B: Classify each hosted model by the criticality of its business use
+  C: Set one platform-wide support standard for the hosted models
   D: Agree weekend on-call cover with the fraud unit for its models
 answer: A
 explanation:
-  why_correct: An internal platform is a service provider to the business. Like an external vendor, it
-    needs explicit service levels. Agreeing support hours, response times and escalation with each unit,
-    scaled to how critical its services are, sets clear expectations and lets capacity and cost be planned.
+  why_correct: An internal platform is a service provider to the business. Like an external vendor, it needs explicit service levels. The units' needs differ, from round-the-clock fraud scoring to branch-hours tools, so agreeing support hours, response times and escalation with each unit, scaled to how critical its services are, closes the gap and lets capacity and cost be planned.
   why_not:
-    B: Classifying criticality is a sound first step, but fraud scoring is already rated critical. The
-      gap is that no support levels follow from that rating.
-    C: One standard is consistent, but it either over-serves a low-criticality tool or under-serves fraud
-      detection. Support should be scaled to each unit's need.
-    D: On-call cover fixes the fraud unit's case, but other units still have no agreed levels. It also
-      gives no basis for sizing support across the platform.
+    B: Classifying criticality is a sound step and would feed the service levels. On its own it changes no one's support hours, so a weekend outage would still wait until Monday.
+    C: One standard is consistent, but needs here range from round-the-clock to branch hours. It either over-serves the branch-hours models or under-serves the round-the-clock ones.
+    D: On-call cover fixes the fraud unit's case, but other hosted models also run around the clock with no agreed support. It treats one incident rather than the platform's gap.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-17-aaig-d3-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

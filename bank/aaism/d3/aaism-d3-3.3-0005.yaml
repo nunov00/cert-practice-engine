@@ -4,7 +4,7 @@ difficulty: medium
 stem: At a utility, read access to training datasets in the data lake is granted by classification. Every analyst
   can still write to every dataset, and lineage records who wrote each file. What should the security manager recommend?
 options:
-  A: Writes only through controlled pipeline identities
+  A: Writes only via controlled pipeline identities
   B: Masking of billing fields across the data lake
   C: Monthly review of the lineage write records
   D: Reads granted by data classification
@@ -22,5 +22,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  checked_by: 2026-10-17-aaism-length-check
   check_verdict: pass
+  options_only: not_obvious

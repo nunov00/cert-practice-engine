@@ -8,7 +8,7 @@ options:
   A: Add a separate security review gate after validation
   B: Train model validators to score the security criteria
   C: Report high-rated findings to the CISO quarterly
-  D: Make high-rated security findings block validation sign-off
+  D: Make high-rated findings block validation sign-off
 answer: D
 explanation:
   why_correct: The integrated review works and finds issues, but its findings carry no weight in the approval. Making
@@ -27,4 +27,5 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-c
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d1-c-recheck3
+  options_only: not_obvious
+  checked_by: 2026-10-17-aaism-length-check

@@ -1,31 +1,25 @@
 id: aaig-d3-3.1-0048
 subdomain: '3.1'
-difficulty: medium
-stem: A retail bank built a card fraud model meant to block suspicious payments as they happen. The core
-  banking system, however, can only receive scores in an overnight batch, so the model flags fraud the
-  day after it occurs. Six months after go-live, fraud savings are far below the business case, which
-  assumed real-time blocking. What lesson should the governance leader draw for future AI investments?
+difficulty: hard
+stem: A retail bank approved a card fraud model to block suspicious payments as they happen. During build, the team found the core banking system can receive scores only in an overnight batch, so the model flags fraud the next day. Six months after go-live, savings are far below the case. A review finds the case's fraud-loss estimates were sound. What is the PRIMARY lesson the governance leader should draw for future AI investments?
 options:
-  A: Prefer bought models so that vendors carry integration work
-  B: Judge benefits after a full year of operation
+  A: Review integration with core systems at the build stage gate
+  B: Have finance review benefit assumptions before approval
   C: Check integration with core systems before approval
   D: Track benefits monthly from go-live to spot shortfalls
 answer: C
 explanation:
-  why_correct: The model's value depended on acting in real time, and the core system could not support
-    that. This was knowable before approval. Business cases should check that existing systems can deliver
-    the operating mode the benefits assume.
+  why_correct: The model's value depended on acting in real time, and the core system could not support that. This was knowable before approval. Checking integration with core systems before approval tests whether the operating mode the benefits assume can be delivered before money is committed.
   why_not:
-    A: A bought model would face the same overnight constraint in the core system. The problem is integration,
-      not who built the model.
-    B: Waiting will not close the gap, because a next-day flag cannot block fraud that has already happened.
-    D: Monthly tracking would reveal the shortfall sooner, but only after the money is spent. The lesson
-      is to catch the constraint before approval.
+    A: A build-stage review is where this constraint surfaced, after funding was committed. The check belongs before the approval decision.
+    B: Finance review of benefit assumptions is sound practice, but the review found the fraud-loss estimates were right. The shortfall came from an operating mode the core system could not support, which a financial review would not test.
+    D: Monthly tracking would reveal the shortfall sooner, but only after the money is spent. The lesson is to catch the constraint before approval.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d3-b
-  checked_by: 2026-10-17-aaig-d3-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious
