@@ -1,23 +1,23 @@
 id: aaig-d2-2.1-0016
 subdomain: '2.1'
-difficulty: easy
+difficulty: medium
 stem: The CIO of a growing retailer proposes an enterprise AI reference architecture. A board member asks
   what governance benefit it brings. What is the BEST answer?
 options:
-  A: It removes the need for risk assessments of individual AI uses
-  B: It gives approved patterns so controls are built in consistently
-  C: It lists the vendors the retailer has chosen for AI services
-  D: It documents every AI system currently running in the company
+  A: It sets who must approve each new AI use before it is built
+  B: It gives approved patterns with security and logging built in
+  C: It lowers delivery cost by reusing shared platform components
+  D: It gives a view of the AI systems now in use and their owners
 answer: B
 explanation:
   why_correct: A reference architecture sets out approved building blocks and patterns, with security,
     privacy and logging controls already designed in. Teams that follow it start from a governed baseline,
-    which makes systems more consistent, cheaper to assure and quicker to approve.
+    so systems are more consistent, cheaper to assure and quicker to approve.
   why_not:
-    A: Patterns reduce effort but do not remove the need to assess each use. The same platform can be
-      used for low- and high-impact purposes.
-    C: A vendor list may be one input, but the architecture's value lies in patterns and principles, not
-      in naming suppliers.
+    A: Approval rights belong in the governance framework and operating model. A reference architecture
+      shapes how systems are built, not who decides whether to build them.
+    C: Reuse does lower cost, but that is an efficiency benefit. The board member asked about governance,
+      which comes from controls being built in.
     D: That describes an inventory of systems, which records what exists. A reference architecture guides
       how new systems should be built.
 status: published
@@ -26,5 +26,5 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

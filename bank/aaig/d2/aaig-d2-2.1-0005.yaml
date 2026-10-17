@@ -2,31 +2,30 @@ id: aaig-d2-2.1-0005
 subdomain: '2.1'
 difficulty: medium
 stem: A regulator asks a telecom operator which data sources fed the churn model that set retention offers
-  last year. The team can only reconstruct it from emails and memory. What should the governance lead
-  establish to prevent this in future?
+  last year. The model was retrained several times as pipelines changed. The team can only rebuild the
+  answer from emails and memory. What should the governance lead establish to prevent this?
 options:
-  A: Lineage recorded automatically from source to model in the pipelines
-  B: An annual attestation by each model owner listing the data sources used
-  C: A requirement to document sources in each model's user guide
-  D: A policy that teams keep project emails for seven years
+  A: Lineage captured automatically from source to each model version
+  B: An annual attestation by each model owner of the sources used
+  C: Source documentation required in each model's validation report
+  D: A data inventory linking each production model to approved sources
 answer: A
 explanation:
-  why_correct: Lineage shows where data came from, how it was transformed and which model versions used
-    it. Capturing it automatically in the data and training pipelines makes it complete and reliable,
-    so the organisation can answer regulators, trace errors and assess the impact of a faulty source without
-    relying on memory.
+  why_correct: Lineage shows where data came from, how it was transformed and which model version used
+    it. Captured automatically in the pipelines, it stays complete as they change. The operator can then
+    answer for any past version without relying on memory.
   why_not:
     B: An attestation is a statement after the fact and depends on the owner's recollection. It adds accountability
-      but not the evidence trail a regulator asks for.
-    C: A user guide describes intended sources at one point in time. It drifts from reality as pipelines
-      change and does not link sources to specific model versions.
-    D: Keeping emails preserves fragments of discussion, not a reliable record of what actually flowed
-      into the model. It formalises the weak practice that caused the problem.
+      but not the evidence trail the regulator asks for.
+    C: A validation report records sources at the time of validation. Later retraining and pipeline changes
+      are not captured, so it would not show what fed last year's versions.
+    D: An inventory records the sources a model is approved to use. It does not show what actually flowed
+      into a given version after the pipelines changed.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

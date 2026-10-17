@@ -1,30 +1,31 @@
 id: aaig-d2-2.1-0028
 subdomain: '2.1'
-difficulty: hard
+difficulty: medium
 stem: A dermatology start-up's model underperforms on darker skin tones because few real images exist.
   The team proposes generating synthetic images to balance the training set. What should the governance
   lead require?
 options:
-  A: A disclosure that the model was trained partly on synthetic data
-  B: Validation of performance on real images from those groups
-  C: A ban on synthetic images in any medical model
-  D: Generating enough images to make all groups equal in size
+  A: Validate on held-out synthetic images from the under-represented groups
+  B: Validate performance on real images from under-represented groups
+  C: Have dermatologists review the synthetic images for realism
+  D: Validate overall accuracy on real images from the existing test set
 answer: B
 explanation:
-  why_correct: Synthetic data can help, but it may not capture real clinical variation, so a model can
+  why_correct: Synthetic data can help, but it may not capture real clinical variation. A model can then
     look balanced on paper while still failing patients. The decisive evidence is performance measured
     on genuine images from the under-represented groups, even if collecting them takes effort.
   why_not:
-    A: Disclosure supports transparency, but it does not show that the model works for those patients.
-    C: A blanket ban discards a useful technique. The issue is validating its effect, not prohibiting
-      it.
-    D: Equal numbers do not prove equal quality. Synthetic images could be unrealistic, so the model would
-      still need real-world validation.
+    A: Testing on synthetic images checks the model against the same kind of data it learned from. It
+      does not show how it performs on real patients.
+    C: Expert review checks that the inputs look real. It does not show that the model now works for real
+      patients, which is the outcome that matters.
+    D: The existing test set has few darker skin images, so overall accuracy can rise while the gap for
+      those patients stays.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

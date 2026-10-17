@@ -1,30 +1,30 @@
 id: aaig-d2-2.1-0050
 subdomain: '2.1'
-difficulty: easy
+difficulty: medium
 stem: A news publisher will use generative AI to create illustrations for some articles. Readers and partner
   sites need to be able to tell which images are AI-generated, even after the images are shared elsewhere.
   Which design requirement BEST meets this need?
 options:
-  A: Attach machine-readable provenance data to each image when it is created
-  B: Mention the use of AI on the publisher's editorial policy page
-  C: Keep an internal log of which images were generated with AI
-  D: Generate images only in a cartoon style so that readers can recognise them
+  A: Attach machine-readable provenance data to each image at creation
+  B: Embed an invisible watermark that the publisher's own tools detect
+  C: Add a visible label to each image where it is published
+  D: Record each image's AI origin in the publisher's asset register
 answer: A
 explanation:
-  why_correct: The need is for the origin of each image to remain identifiable wherever it travels. Embedding
-    provenance information in the image at creation, using an open standard where possible, makes the
-    AI origin travel with the content, which is what traceability by design means for generated material.
+  why_correct: The need is for the origin of each image to stay identifiable wherever it travels. Embedding
+    provenance data in the image when it is created, using an open standard where possible, makes the
+    AI origin travel with the content. That is what traceability by design means for generated material.
   why_not:
-    B: A policy page tells readers AI is used somewhere but does not identify individual images, and it
-      does not travel with shared images.
-    C: An internal log supports the publisher's own records but is invisible to readers and partner sites.
-    D: A visual style is not a reliable signal, restricts editorial choice and can be imitated by images
-      that are not AI-generated.
+    B: A proprietary watermark does travel with the image, but partner sites and readers cannot read it,
+      so they still cannot tell.
+    C: A label on the publisher's page is lost as soon as the image is shared elsewhere.
+    D: An asset register supports the publisher's own records but is invisible to readers and partner
+      sites.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-b
-  checked_by: 2026-10-13-aaig-d2-b-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

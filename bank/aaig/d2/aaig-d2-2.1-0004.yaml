@@ -1,32 +1,31 @@
 id: aaig-d2-2.1-0004
 subdomain: '2.1'
-difficulty: hard
-stem: A pan-European lender is about to approve a credit model trained mostly on data from its two largest
-  markets. It will be used in all eight markets. The data quality report shows high accuracy and completeness,
-  but three smaller markets are barely represented. What should the governance lead advise?
+difficulty: medium
+stem: A pan-European lender is about to approve a credit model for all eight of its markets. It was trained
+  mostly on data from its five larger markets. The data quality report shows high accuracy and completeness,
+  but the three smaller markets are barely represented. What should the governance lead advise?
 options:
-  A: Approve it everywhere, since the quality scores meet the standard
-  B: Approve it everywhere and monitor default rates in smaller markets
-  C: Replace the model with separate models built for each market
-  D: Restrict use to markets the data represents until the gap is closed
+  A: Approve use in the eight markets with a stricter score cut-off in the smaller ones
+  B: Approve use in the eight markets after reweighting the smaller-market records
+  C: Approve use in the two largest markets until more data is gathered
+  D: Approve use in the represented markets and extend once the gap closes
 answer: D
 explanation:
-  why_correct: 'Accuracy and completeness scores can be high while the data still fails to represent part
-    of the population the model will serve. Limiting use to the markets the training data covers keeps
-    the decision within what the evidence supports, and sets a clear condition for wider use: close the
-    representativeness gap and revalidate.'
+  why_correct: Accuracy and completeness can be high while the data still fails to represent part of the
+    population the model will serve. Approving use in the five markets the data covers keeps the decision
+    within the evidence. Wider use then has a clear condition, which is to close the gap and revalidate.
   why_not:
-    A: The scores measure the records that exist, not the populations that are missing. Approving use
-      in under-represented markets accepts an untested risk of unfair or wrong decisions.
-    B: Monitoring would detect harm only after customers in the smaller markets had been affected. Detective
-      controls do not justify deploying where the data gives no assurance.
-    C: Separate models may be one answer, but it is a costly design choice made before the gap is understood.
-      The immediate governance decision is to keep use within the evidence.
+    A: A stricter cut-off changes how many applicants are accepted, not whether the scores are right for
+      people the model barely learned. It can also refuse sound borrowers unfairly.
+    B: Reweighting a handful of records gives them more influence but adds no new information. The model
+      would still be unvalidated in those markets.
+    C: The data supports five markets, not only the two largest. Limiting use to two gives up value the
+      evidence already supports.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

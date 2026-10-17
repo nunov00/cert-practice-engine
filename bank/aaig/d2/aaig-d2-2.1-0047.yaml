@@ -2,30 +2,34 @@ id: aaig-d2-2.1-0047
 subdomain: '2.1'
 difficulty: hard
 stem: Five hospitals plan to train a shared diagnostic model using federated learning, so patient records
-  never leave each hospital. The project lead says that because no data is shared, no agreement between
-  the hospitals is needed. What is the MAIN gap in this view?
+  never leave each hospital and updates are combined by secure aggregation. The project lead says that
+  because no data is shared, no agreement between the hospitals is needed. What is the MAIN gap in this
+  view?
 options:
-  A: Federated learning is not yet mature enough for clinical use
-  B: Ownership, use rights and accountability for the joint model still need agreeing
-  C: Each hospital must still send a copy of its records to a neutral host
-  D: The model will be less accurate than one trained on pooled records
+  A: A privacy impact assessment at each hospital for its part
+  B: Ownership, use rights and accountability for the joint model
+  C: Data sharing terms for patient records moved between the sites
+  D: Security terms for each hospital's link to the aggregator
 answer: B
 explanation:
-  why_correct: Keeping records local reduces privacy exposure, but the hospitals are still jointly creating
-    a valuable asset that will influence patient care. They need to agree who owns the model, who may
-    use or commercialise it, how contributions and withdrawals work, who validates it and who is accountable
-    when it errs.
+  why_correct: The lead concludes that no agreement is needed. Keeping records local and using secure
+    aggregation reduce what the updates reveal, but the hospitals are still jointly creating an asset
+    that will influence patient care. They must agree who owns it, who may use or sell it, how withdrawals
+    work, who validates it and who answers when it errs.
   why_not:
-    A: Maturity is a fair question for the project, but it does not address the governance gap in the
-      project lead's reasoning.
-    C: Federated learning is designed so that records stay at each site; sending copies to a host would
-      defeat its purpose.
-    D: Accuracy may differ, but that is a technical trade-off rather than the missing governance arrangements.
+    A: Each hospital's assessment covers its own privacy risk and is often required. The lead's error
+      is about the joint model, which no single site's assessment settles, such as who owns it, who may
+      use it and who answers when it errs.
+    C: Under federated learning the patient records stay at each hospital, so terms for moving records
+      misdescribe the arrangement. What the hospitals create together is the joint model, and its ownership,
+      use and accountability are what remain unsettled.
+    D: Connection security terms are sensible, but they protect the training channel. They leave open
+      who owns the resulting model, who may use or sell it and who answers when it errs.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-b
-  checked_by: 2026-10-13-aaig-d2-b-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

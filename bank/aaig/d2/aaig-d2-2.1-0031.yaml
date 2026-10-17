@@ -4,24 +4,26 @@ difficulty: easy
 stem: A review at a media group finds API keys for a paid AI service pasted directly into shared notebooks
   and scripts. What is the BEST principle to apply?
 options:
-  A: Rotate the keys every year and keep them in the notebooks
-  B: Ask staff to delete the notebooks after each project ends
+  A: Store keys in environment variables set in each notebook session
+  B: Store keys in an encrypted file shared with each project team
   C: Store keys in a secrets vault and retrieve them at run time
-  D: Share one key across all teams to make tracking simpler
+  D: Store keys in the code repository with access limited to the team
 answer: C
 explanation:
   why_correct: Credentials embedded in code are easily copied, leaked or committed to repositories. Keeping
     them in a managed vault, issued per application and retrieved at run time, controls who can use them
     and allows quick revocation.
   why_not:
-    A: Yearly rotation helps a little, but keys stay exposed in shared notebooks for most of the year.
-    B: Deletion is unreliable and still leaves keys exposed while projects run.
-    D: A single shared key removes accountability and means any leak affects everyone.
+    A: Variables set in notebooks still put keys in the notebook text, where they are copied and shared.
+    B: An encrypted file still has to be decrypted and shared, and anyone with the file and password keeps
+      the key. It gives no control over use or quick revocation.
+    D: Keys in repositories are a common source of leaks, and access limits rarely survive forks, copies
+      and history.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

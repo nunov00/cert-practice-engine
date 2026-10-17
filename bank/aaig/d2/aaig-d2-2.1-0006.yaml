@@ -2,31 +2,32 @@ id: aaig-d2-2.1-0006
 subdomain: '2.1'
 difficulty: medium
 stem: A media company wants to fine-tune a writing model on a large set of articles and forum posts that
-  a contractor scraped from the web. The contractor says the material was 'freely accessible online'. The
-  content team is eager to start. What should the governance lead require FIRST?
+  a contractor scraped from the web. The contractor says the material was 'freely accessible online'.
+  The content team is eager to start. What should the governance lead require FIRST?
 options:
-  A: A quality check that removes duplicates and offensive material
-  B: Evidence of the content's sources and licence terms for this use
-  C: A contract clause making the contractor liable for any claims
-  D: A small pilot to confirm the data improves the model
+  A: A legal review of the contractor's collection methods against site terms
+  B: A record of each source and its licence terms for this use
+  C: A contractor warranty that the content was collected lawfully
+  D: A legal opinion on whether data mining exceptions cover the use
 answer: B
 explanation:
-  why_correct: '''Freely accessible'' does not mean licensed for training. Before the data enters the
-    model, the company needs provenance: where the data came from, under what terms, and whether those
-    terms permit fine-tuning and commercial use. Once data is absorbed into a model it is very hard to
-    remove, so rights must be settled first.'
+  why_correct: Freely accessible does not mean licensed for training. Before the data enters the model,
+    the company needs to know where each item came from and under what terms. Only then can it judge whether
+    those terms allow fine-tuning and commercial use. Data absorbed into a model is very hard to remove,
+    so rights must be settled first.
   why_not:
-    A: Cleaning is needed later, but it does not answer whether the company may use the data at all. Clean
-      data used without rights is still a legal and reputational risk.
-    C: An indemnity may shift some financial loss, but it does not make the use lawful, and the contractor
-      may be unable to pay. Contracts complement provenance checks; they do not replace them.
-    D: A pilot already uses the data in training, which is the act whose legitimacy is in question. Value
-      should be tested only after the right to use the data is confirmed.
+    A: How the contractor scraped matters, but lawful collection does not show a right to fine-tune and
+      use the content commercially. That depends on the terms of each source.
+    C: A warranty may shift some financial loss, but it does not make the use lawful, and it covers collection
+      rather than the right to train. It supports provenance checks but does not replace them.
+    D: An opinion on legal exceptions depends on knowing where the content came from and on what terms.
+      Exceptions may be limited to research or overridden by rights holders' opt-outs, so without the
+      record the lawyers have nothing specific to assess.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

@@ -3,28 +3,29 @@ subdomain: '2.1'
 difficulty: hard
 stem: A property management firm plans an AI agent that reads tenant emails and updates the finance system.
   To save time, the project gives the agent the same administrator account the integration team uses.
-  What should the governance lead require?
+  What should the governance lead require FIRST?
 options:
-  A: Monitoring of the administrator account for unusual activity
-  B: Using the administrator account only during business hours
-  C: Human approval of every action the agent takes
+  A: Monitoring of the agent's actions on the shared admin account
+  B: Human approval of payments and supplier changes the agent proposes
+  C: Input filtering to screen tenant emails for injected instructions
   D: A dedicated identity limited to the actions the agent needs
 answer: D
 explanation:
   why_correct: An agent that reads external email can be manipulated by crafted messages, so its permissions
-    define the damage it could do. A dedicated identity with only the rights it needs, separate from human
-    admin accounts, limits that damage and makes its actions traceable.
+    define the damage it could do. A dedicated identity with only the rights it needs limits that damage.
+    Kept separate from human admin accounts, it also makes the agent's actions traceable.
   why_not:
-    A: Monitoring may detect misuse but leaves broad rights in place. Prevention through least privilege
-      should come first.
-    B: Time limits shrink the window but not the scope of what a manipulated agent could do.
-    C: Approving every action removes most of the benefit and approvers tire quickly. Proportionate oversight
-      starts from narrow permissions.
+    A: Monitoring may detect misuse but leaves broad admin rights in place, and the shared account mixes
+      the agent's actions with the team's.
+    B: Approving high-risk actions is sound, but the agent would keep admin rights over everything else
+      in the finance system.
+    C: Filtering lowers the chance of manipulation, but filters miss crafted messages. When one gets through,
+      the agent still holds admin rights.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

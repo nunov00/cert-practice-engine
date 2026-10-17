@@ -5,24 +5,26 @@ stem: A car insurer's AI system assists adjusters in settling claims. An interna
   a disputed settlement followed the AI recommendation or the adjuster's override. Which design requirement
   would have prevented this?
 options:
-  A: Requiring adjusters to accept the AI recommendation every time
-  B: Recording each recommendation, model version and human action
-  C: Showing a confidence score with every recommendation
-  D: Storing the final settlement amount for each claim
+  A: Require a written reason whenever an adjuster overrides the AI
+  B: Log each AI recommendation with the adjuster's resulting action
+  C: Show a confidence score and key factors with each recommendation
+  D: Store the final settlement and the adjuster's notes for each claim
 answer: B
 explanation:
-  why_correct: Traceability means being able to reconstruct who or what decided, on what basis. Logging
-    the model's recommendation, the version that produced it and what the adjuster did with it lets the
-    insurer explain decisions, handle disputes and learn where overrides help or harm.
+  why_correct: Traceability means being able to rebuild who or what decided, and on what basis. Logging
+    each recommendation and what the adjuster did with it shows whether a settlement followed the AI or
+    an override. The insurer can then explain decisions and handle disputes.
   why_not:
-    A: Forcing acceptance removes human judgment and would not explain the decision any better.
-    C: Confidence scores help the adjuster but do not record what happened afterwards.
-    D: The outcome alone does not show how it was reached or whether the AI shaped it.
+    A: This depends on adjusters noticing and recording their departures. The review still could not check
+      which recommendation an adjuster saw.
+    C: Scores and factors help the adjuster decide but do not record what happened afterwards.
+    D: The outcome and notes do not show what the AI recommended, so the review still could not tell whether
+      the AI shaped the settlement.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

@@ -5,25 +5,27 @@ stem: A bank's data science team built a customer income-estimation model approv
   card limits. The collections team wants to reuse it to decide which customers to pursue first. Reuse
   would save months. What should the governance lead advise?
 options:
-  A: Reuse it directly, since it has already been approved
-  B: Rebuild a new model, since models should never be reused
-  C: Reuse it, but only for customers who already have cards
-  D: Assess it for the new purpose before approving the reuse
+  A: Reuse it once the collections team tests its accuracy on their cases
+  B: Reuse it once model risk confirms the original validation still holds
+  C: Reuse it with a monitoring plan for collections outcomes
+  D: Reuse it once it is assessed and approved for the collections purpose
 answer: D
 explanation:
   why_correct: Reuse of shared assets saves cost, but an approval covers a specific purpose. Collections
-    is a different decision with different impacts, fairness concerns and data permissions. The model
-    should be assessed for the new use, which may confirm reuse with conditions, before it is applied.
+    is a different decision with different impacts, fairness concerns and data permissions. An assessment
+    for the new use, which may confirm reuse with conditions, has to come before the model is applied.
   why_not:
-    A: The approval was for credit limits. Applying it to collections without assessment ignores new risks
-      and possible purpose-limitation issues.
-    B: Refusing reuse wastes a valuable asset. Reuse is a good principle when the new purpose is assessed.
-    C: Limiting the population does not address whether the model is fit and permitted for collections.
+    A: Accuracy is one question, but collections raises new questions of fairness, impact and permission
+      to use the data. The team that wants the model should not be the one to confirm it.
+    B: The original validation tested fitness for setting credit limits. Confirming it still holds says
+      nothing about how the model behaves when it decides whom to pursue for debt.
+    C: Monitoring finds harm after customers have been pursued. The fairness and permission questions
+      of the new use need answering before it starts.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

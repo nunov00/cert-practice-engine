@@ -1,29 +1,29 @@
 id: aaig-d2-2.1-0043
 subdomain: '2.1'
-difficulty: easy
+difficulty: medium
 stem: A new chief technology officer at an airline asks why the AI platform was built on a particular
   cloud service and model family. The architects who made these choices have left, and the only records
   are old slide decks. Which practice would BEST have prevented this?
 options:
-  A: Keeping a register of all software licences and renewal dates
+  A: Recording each major design with its diagrams, components and interfaces
   B: Recording each major decision with its context, options and rationale
-  C: Requiring the review board to approve every code change on the platform
-  D: Storing all architecture diagrams in a single shared repository
+  C: Recording each architecture board approval with its conditions attached
+  D: Recording each platform contract with its scope and renewal date
 answer: B
 explanation:
   why_correct: Architecture decision records written in plain language capture what was decided, the alternatives
     considered, the reasons and the risks accepted. They let later leaders, auditors and review boards
     understand and revisit choices without relying on the memory of people who may leave.
   why_not:
-    A: A licence register shows what is used and when it renews, not why it was chosen over alternatives.
-    C: Approving every code change is excessive and focuses on detail rather than on the significant decisions
-      and their reasons.
-    D: Diagrams show what was built, not the reasoning or trade-offs behind it.
+    A: Design records show what was built, not the alternatives or the reasons for choosing it.
+    C: Approval records show that a design was accepted and on what terms, but rarely the options considered
+      and why this one was chosen.
+    D: A contract record shows what is used and when it renews, not why it was chosen over alternatives.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-b
-  checked_by: 2026-10-13-aaig-d2-b-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

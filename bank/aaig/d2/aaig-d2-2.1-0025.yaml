@@ -2,28 +2,30 @@ id: aaig-d2-2.1-0025
 subdomain: '2.1'
 difficulty: medium
 stem: A European public agency wants to use a cloud AI service to summarise citizen case files. The provider's
-  default processing region is outside the agency's jurisdiction. What should the governance lead check
-  FIRST?
+  public-sector terms bar it from training on agency data. Its default processing region is outside the
+  agency's jurisdiction. What should the governance lead check FIRST?
 options:
-  A: Whether the summaries are more accurate than staff summaries
-  B: Whether the provider offers the lowest price in the market
-  C: Whether staff can use the service from their own devices
+  A: Whether the provider's security certifications cover the AI service
+  B: Whether the provider's terms meet public procurement rules
+  C: Whether the provider can process in-region for an added fee
   D: Whether residency rules allow processing in that location
 answer: D
 explanation:
-  why_correct: 'Citizen case files are likely subject to residency obligations and rules on cross-border
-    transfer. Where the data is processed is a threshold question: if the location is not permitted, the
-    service cannot be used in its default form, however good or cheap it is.'
+  why_correct: Citizen case files are likely subject to residency obligations and rules on cross-border
+    transfer. Where the data is processed is a threshold question. If the location is not permitted, the
+    service cannot be used in its default form, however secure, accurate or cheap it is.
   why_not:
-    A: Accuracy matters for value, but an accurate service that processes data unlawfully cannot be used.
-    B: Price is a procurement factor that comes after legal and policy constraints are met.
-    C: Device access is a security question for later. It does not decide whether the data may leave the
-      jurisdiction.
+    A: Certification is an important check, but secure processing in a place the agency may not use is
+      still not allowed. Location comes first.
+    B: Procurement rules govern how the service is bought. They do not decide whether the files may be
+      processed outside the jurisdiction.
+    C: An in-region option may be the fix, but whether it is needed depends on what the residency rules
+      allow. That check comes first.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass
