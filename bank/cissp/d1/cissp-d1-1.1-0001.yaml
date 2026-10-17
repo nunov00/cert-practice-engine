@@ -1,32 +1,35 @@
 id: cissp-d1-1.1-0001
 subdomain: '1.1'
-difficulty: medium
-stem: A contractor holding a security certification is helping a hospital migrate its patient records
-  system. A hospital manager asks the contractor to quietly switch off audit logging on the system for
-  a week so the migration runs faster, even though hospital policy requires logging at all times. What
-  should the contractor do FIRST?
+difficulty: hard
+stem: A contractor holding a security certification is migrating a hospital's patient records system.
+  The contract names the hospital's CISO as the contractor's point of contact. The ward operations manager
+  asks the contractor to quietly switch off audit logging for a week so the migration runs faster. Hospital
+  policy requires logging at all times. What should the contractor do FIRST?
 options:
-  A: Keep logging on and continue the work without raising the request further
-  B: Switch off logging as asked, because the manager represents the client
-  C: Decline, and escalate it through the hospital's policy exception process
-  D: Report the request to the national health data regulator before acting
+  A: Keep logging on and explain the logging policy to the manager
+  B: Ask the manager to submit a policy exception request to the CISO
+  C: Decline, and tell the CISO about the request directly
+  D: Report the request through the hospital's confidential ethics line
 answer: C
 explanation:
-  why_correct: The contractor owes diligent service to the client, and the client is the hospital, not
-    one manager. Declining and escalating through the proper channel protects the organisation and lets
-    the people authorised to grant exceptions decide.
+  why_correct: The contractor's duty of diligent service is to the hospital, not to one manager. The manager
+    asked for a mandatory control to be switched off quietly, so the accountable person needs to hear
+    about it from the contractor. The contract already names the CISO as the contact, so declining and
+    telling the CISO directly is the proper, prompt channel.
   why_not:
-    A: Quietly refusing protects the logs, but leaves the hospital unaware that a manager tried to bypass
-      a mandatory control. The people accountable for the policy need to know.
-    B: A single manager asking to break a written policy does not make it the client's decision. Complying
-      would undermine the hospital's controls and the contractor's integrity.
-    D: Going to an outside regulator before the hospital's own channels have had a chance to act is premature
-      and may breach the contractor's confidentiality duties.
+    A: Keeping logging on protects the control, but the attempt to bypass it stays hidden. The people
+      accountable for the policy cannot judge the risk or the manager's conduct if they never learn of
+      it.
+    B: Routing a real need through the exception process is normally sound. Here the manager wanted the
+      change kept quiet, so leaving it to the manager to raise means the CISO may never hear of it.
+    D: An ethics line suits cases where the normal channel cannot be used safely. The contract gives a
+      direct, accountable contact, and an anonymous report is slower and loses the contractor's first-hand
+      account.
 status: published
 outline_version: '2024-04-15'
 sample: true
 provenance:
   generated_by: claude
   run_id: 2026-10-12-cissp-d1-a
-  checked_by: 2026-10-12-cissp-d1-a-check
+  checked_by: 2026-10-17-cissp-d1-rework-check
   check_verdict: pass
