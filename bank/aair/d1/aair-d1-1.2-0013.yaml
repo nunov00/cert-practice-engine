@@ -5,26 +5,26 @@ stem: A public broadcaster approves AI projects on business cases that promise s
   out the expected risks. Once a project goes live, nobody checks whether the benefits arrived or whether
   the risks turned out as expected. What should the risk practitioner recommend?
 options:
-  A: Ask for more detailed business cases before projects are approved
-  B: Tie project managers' bonuses to the benefits stated in their cases
-  C: Add a post-implementation review against the approved business case
-  D: Hand responsibility for live AI systems to the internal audit team
+  A: Require a more detailed risk section in each business case
+  B: Add live AI systems to the risk register with key risk indicators
+  C: Add a post-launch review against each approved business case
+  D: Have internal audit review a sample of live AI projects each year
 answer: C
 explanation:
   why_correct: A review some months after go-live compares the benefits and risks that actually occurred
     with what was approved. It shows whether each system is worth its risk, feeds lessons into future
     approvals and closes the loop between the approval process and real results.
   why_not:
-    A: More detail up front does not show what actually happened after launch.
-    B: Bonuses tied to stated benefits may encourage inflated claims, and they still do not create any
-      review of risks.
-    D: Internal audit gives independent assurance. Owning live systems is not its role and would compromise
-      its independence.
+    A: More detail up front improves the estimate but does not show what actually happened after launch.
+    B: Risk indicators track ongoing risk, which helps, but they do not check whether the promised benefits
+      arrived or compare results with what was approved.
+    D: Audit sampling gives independent assurance on some projects, but it is not a management step for
+      every project and does not own the loop back into approvals.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

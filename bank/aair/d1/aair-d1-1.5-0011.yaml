@@ -5,26 +5,27 @@ stem: A recruitment software company plans to advertise that its AI 'removes all
   own testing shows smaller but still measurable differences in outcomes between groups of candidates.
   What should the risk practitioner advise?
 options:
-  A: Revise the claim so that test evidence supports it, with legal review
-  B: Keep the claim, as the testing shows a clear reduction in bias
-  C: Keep the claim and add more fairness tests over the coming year
-  D: Publish the full test results alongside the original advertising claim
+  A: Revise the claim to match the test evidence, with legal review
+  B: Commission an independent bias audit before deciding on the claim
+  C: Retrain the model to close the remaining gaps before launch
+  D: Qualify the claim as based on the company's internal testing
 answer: A
 explanation:
-  why_correct: Claims about what an AI product does are subject to consumer protection and advertising
-    law. An absolute claim that the company's own testing contradicts could be misleading, exposing it
-    to enforcement and to claims from customers who relied on it. The wording should match the evidence
-    and be checked by legal counsel.
+  why_correct: Claims about what an AI product does fall under consumer protection and advertising law.
+    An absolute claim that the company's own testing contradicts could mislead. The wording should match
+    the evidence and be checked by legal counsel.
   why_not:
-    B: A reduction does not support an absolute claim, so the claim would still be misleading.
-    C: Future tests cannot justify a claim that current evidence contradicts.
-    D: Publishing results that contradict the headline does not cure a misleading claim and may draw more
-      attention to it.
+    B: The company's own testing already contradicts an absolute claim. An audit would delay the decision
+      without changing that answer.
+    C: Narrowing the gaps is worthwhile, but no testing can show that all bias has been removed, so the
+      absolute claim would still mislead.
+    D: A qualifier does not cure a headline that the evidence contradicts. The main message would still
+      promise something untrue.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

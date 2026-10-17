@@ -1,29 +1,31 @@
 id: aair-d1-1.4-0009
 subdomain: '1.4'
-difficulty: medium
+difficulty: easy
 stem: A water utility's AI policy states that AI must be 'fair, transparent and safe'. A year later, project
   teams interpret these words in very different ways, and auditors cannot tell whether any project has
   complied. What should the risk practitioner recommend?
 options:
-  A: Add more principles so that the policy covers more situations
-  B: Ask each project team to write its own definitions of the principles
-  C: Remove the principles and rely on the existing IT security policy
-  D: Turn the principles into specific requirements that can be checked
+  A: Publish guidance with worked examples of each principle in practice
+  B: Train project teams on what each principle means for their work
+  C: Require each project to self-attest compliance with the principles
+  D: Set specific, testable requirements for each principle in a standard
 answer: D
 explanation:
-  why_correct: Principles alone are too broad to act on or audit. Supporting them with concrete requirements,
-    such as what must be tested, documented and approved and by whom, gives teams clear direction and
-    gives auditors criteria for judging compliance.
+  why_correct: Principles alone are too broad to act on or audit. Requirements that say what must be tested,
+    documented and approved, and by whom, give teams clear direction and give auditors criteria for judging
+    compliance.
   why_not:
-    A: More principles would add breadth but the same vagueness, making the problem worse.
-    B: Team-by-team definitions would entrench the inconsistency that the policy should remove.
-    C: An IT security policy does not cover AI-specific concerns such as fairness, so dropping the principles
-      would leave gaps.
+    A: Worked examples help teams interpret the principles, but guidance does not bind them. Auditors
+      would still have no criteria to test against.
+    B: Training spreads a shared understanding but does not create checkable requirements. Auditors would
+      still be unable to judge compliance.
+    C: An attestation records that a team believes it complied. Without defined requirements, neither
+      the team nor the auditor can show what compliance means.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

@@ -5,28 +5,27 @@ stem: A retailer's demand forecasting model is used by three business units. Eac
   team for changes, and recent retraining for one unit caused stock shortages in another. The AI oversight
   committee wants to stop this happening again. What is the BEST way to assign accountability?
 options:
-  A: Require the oversight committee itself to approve every change to the model
-  B: Name one accountable owner for the shared model who must consult all units on changes
-  C: Let each unit approve changes that affect its own forecasts independently
-  D: Make the data science team accountable, since they build and retrain the model
+  A: Have the oversight committee approve changes that affect several units
+  B: Name one business owner for the model, who must consult each unit
+  C: Make the data science team the model owner, with change approval rights
+  D: Require testing against every unit's forecasts before each release
 answer: B
 explanation:
-  why_correct: A shared model needs a single owner with clear decision rights over changes, and a defined
-    duty to consult the units that rely on it. This removes conflicting instructions while making sure
-    each unit's needs and risks are weighed before a change is approved.
+  why_correct: A shared model needs a single owner with clear decision rights over changes and a defined
+    duty to consult the units that rely on it. This removes conflicting instructions and makes sure each
+    unit's needs and risks are weighed before a change is approved.
   why_not:
-    A: An oversight committee sets direction and reviews significant matters. Making it approve every
-      routine change turns it into an operational owner, creates a bottleneck and weakens its oversight
-      role.
-    C: 'This is how the problem arose: changes requested by one unit affect the others. Independent approvals
-      leave nobody responsible for the effect of a change across the whole model.'
-    D: The builders can manage the technical work, but they are not placed to decide trade-offs between
+    A: An oversight committee sets direction and reviews significant matters. Approving routine changes
+      turns it into an operational owner, creates a bottleneck and weakens its oversight role.
+    C: The builders can manage the technical work, but they are not placed to decide trade-offs between
       business units' risks. Giving them ownership blurs the line between developer and risk owner.
+    D: Cross-unit testing is a good control and would reveal impacts, but it does not say who decides
+      when a change helps one unit and harms another. The question is about accountability.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

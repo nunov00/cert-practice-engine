@@ -1,28 +1,31 @@
 id: aair-d1-1.5-0006
 subdomain: '1.5'
 difficulty: medium
-stem: An education technology company sells AI tutoring software in several countries. Its legal team
-  learned of a new AI transparency rule in one market only after a customer asked about it. What should
-  the risk practitioner recommend to prevent a repeat?
+stem: An education technology company sells AI tutoring software in several countries. A new AI transparency
+  rule in one market was flagged by the legal team's alert service, but nobody linked it to the products
+  it affected until a customer asked. What should the risk practitioner recommend to prevent a repeat?
 options:
-  A: Ask each sales team to report legal changes they hear about
-  B: Set up regulatory change tracking linked to the AI inventory
-  C: Apply the rules of the strictest country to all products now
-  D: Commission an external legal review of all products every year
+  A: Route each alert to product managers for them to review
+  B: Assign owners to assess AI rule changes against the AI inventory
+  C: Require local counsel in each market to confirm compliance yearly
+  D: Add regulatory change as a standing item at the risk committee
 answer: B
 explanation:
-  why_correct: A defined process for tracking legal developments in each market, with clear ownership
-    and a link to the products and systems affected, lets the company spot new obligations early and act
-    on them in time.
+  why_correct: The alert arrived; the failure was that nobody owned assessing it against the products.
+    A defined process with named owners who map each change to the systems in the AI inventory turns alerts
+    into action on the affected products.
   why_not:
-    A: Informal reports from sales staff are incomplete and depend on chance, which is how the gap occurred.
-    C: Adopting today's strictest rules does not detect future changes and may impose needless obligations.
-    D: A yearly review can miss changes for many months between reviews. Ongoing tracking is needed.
+    A: Product managers know their products but not how to judge legal applicability, and nobody owns
+      tracking each change to a decision across the full AI inventory.
+    C: A yearly confirmation can leave a new rule unaddressed for months, and it does not fix the gap
+      between alerts and products.
+    D: Committee oversight helps, but a standing agenda item does not assign anyone to assess each change
+      against the products it affects.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

@@ -1,15 +1,15 @@
 id: aair-d1-1.5-0007
 subdomain: '1.5'
-difficulty: hard
+difficulty: medium
 stem: A recruitment firm licenses an AI screening tool, substantially changes how it scores candidates,
   and plans to sell the modified tool to other employers under its own brand. A risk-based AI regulation
   in its market sets different duties for those who supply AI systems and those who use them. What should
   the risk practitioner advise?
 options:
-  A: Keep only the user duties, since the firm did not build the tool
-  B: Rely on the original vendor's compliance documentation as it is
-  C: Pass all regulatory duties to the employers that buy the tool
-  D: Check whether the changes make the firm a supplier, with its duties
+  A: Meet the user duties and obtain the vendor's technical file
+  B: Agree contract terms with the vendor that allocate supplier duties
+  C: Have buyers confirm their user duties in each sale contract
+  D: Determine whether the changes make the firm a supplier in law
 answer: D
 explanation:
   why_correct: Under risk-based regulations, an organisation that substantially modifies a system and
@@ -17,16 +17,17 @@ explanation:
     role first, because that decides which duties apply, such as documentation, testing and conformity
     steps.
   why_not:
-    A: Not having built the original tool does not settle the firm's role. Its changes and rebranding
-      may make it the supplier in law.
-    B: The vendor's documentation covers the original tool, not the modified version the firm is selling.
-    C: Buyers have their own duties as users, but they cannot take on the supplier's obligations for a
-      tool they did not change or bring to market.
+    A: The vendor's file covers the original tool, not the modified version, and the firm's role may no
+      longer be that of a user.
+    B: Contracts can share practical work, but the regulation assigns roles by what a firm does. A contract
+      cannot move the supplier's legal duties.
+    C: Buyers do carry user duties, but confirming them leaves open whether the firm itself has supplier
+      duties for the tool it sells.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

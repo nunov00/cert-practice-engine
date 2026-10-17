@@ -7,26 +7,26 @@ stem: A multinational manufacturer has one global AI policy. A new law in one co
   How should the policy framework BEST handle this?
 options:
   A: Keep the global policy as a baseline and add a local requirement
-  B: Add the consultation rule to the global policy for every country
-  C: Exempt that country's operations from the global AI policy
-  D: Leave it to local managers to follow the law as they see fit
+  B: Add the consultation rule to the global policy for each country
+  C: Add a global clause stating that stricter local law takes precedence
+  D: Have the local compliance lead attest to compliance each year
 answer: A
 explanation:
-  why_correct: A tiered framework keeps one consistent global baseline while local requirements add stricter
-    rules where the law demands them. This meets the law in that country, keeps oversight central and
-    avoids forcing a process that cannot work everywhere.
+  why_correct: A tiered framework keeps one global baseline and adds a specific local requirement where
+    the law demands more. The consultation step is written down for that country, so it can be followed
+    and checked, without forcing a process that cannot work at sites with no worker body.
   why_not:
-    B: Imposing the rule everywhere is unworkable at sites with no worker body and adds burden where it
-      is not required. A global rule should fit every place it applies to.
-    C: Exempting the country removes all the global controls there just to handle one extra requirement,
-      creating a larger gap.
-    D: Leaving compliance to managers' judgement without a documented requirement gives no consistency
-      and no evidence that the law is met.
+    B: A consultation rule cannot work at sites with no worker body, and it adds burden where no law requires
+      it.
+    C: A general precedence clause is useful, but it does not say what must be done. Nobody is required
+      to consult before monitoring starts, and there is no evidence that it happens.
+    D: An annual attestation checks after the fact. It does not build the consultation step into the process
+      before monitoring is introduced.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

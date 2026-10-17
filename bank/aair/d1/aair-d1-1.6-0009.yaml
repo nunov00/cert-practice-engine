@@ -5,25 +5,25 @@ stem: A bank has made a public commitment to cut its carbon emissions. Its AI te
   several very large models from scratch for tasks where smaller existing models perform almost as well.
   Project assessments cover accuracy, cost and fairness only. What should the risk practitioner recommend?
 options:
-  A: Add energy use and emissions to the assessment of each project
-  B: Approve the plan, as AI is outside the scope of the commitment
-  C: Ask the team to buy carbon offsets for the energy training uses
-  D: Postpone all AI model training until the bank meets its targets
+  A: Add energy use and emissions to each project's assessment criteria
+  B: Buy certified carbon offsets for the energy the training runs will use
+  C: Run the training in a data centre powered by renewable energy
+  D: Report AI energy use in the bank's annual sustainability report
 answer: A
 explanation:
-  why_correct: Training very large models uses a lot of energy. Adding energy and emissions to each assessment
-    lets the bank weigh them against small performance gains and choose options consistent with its public
-    commitment, reducing both environmental impact and reputational risk.
+  why_correct: Training very large models uses a lot of energy, and here smaller models perform almost
+    as well. Adding energy and emissions to each assessment lets the bank weigh them against small gains
+    and choose options consistent with its public commitment.
   why_not:
-    B: Emissions from AI count toward the bank's footprint like any other activity; leaving them out could
-      make the commitment misleading.
-    C: Offsets do not avoid the emissions and do not address whether such large models are needed at all.
-    D: A blanket postponement is disproportionate and blocks low-impact AI uses as well.
+    B: Offsets do not avoid the emissions and do not question whether such large models are needed.
+    C: Cleaner power reduces the impact, but the energy and hardware are still used for little gain, and
+      the choice of model size is left unexamined.
+    D: Reporting adds transparency after the fact but does not change project decisions.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

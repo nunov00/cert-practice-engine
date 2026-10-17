@@ -5,28 +5,28 @@ stem: A supermarket chain's model shows that customers who use its mobile app sp
   who do not. The marketing director proposes a strategy of paying every customer a bonus to install the
   app, expecting their spending to rise by a similar amount. What should the risk practitioner point out?
 options:
-  A: It shows a link, not proof the app causes the extra spending
-  B: The model should first be retrained on a longer period of data
-  C: The bonus should go only to customers the model rates highly
-  D: The estimate should be confirmed with a more complex model
+  A: A link between app use and spending does not show the app causes it
+  B: The model should be validated on a holdout sample before it is used
+  C: The bonus cost should be weighed against the forecast rise in spending
+  D: The data may under-represent customers who shop only in stores
 answer: A
 explanation:
   why_correct: Predictive models find patterns in data; they do not show cause and effect. Customers who
-    already spend more may simply be more likely to install the app. Building a strategy on an assumed
-    causal effect is a misuse of the model's output; a controlled trial would show whether the bonus actually
-    changes spending.
+    already spend more may simply be more likely to install the app. The strategy assumes a causal effect
+    the model cannot support, so a controlled trial is needed to show whether the bonus actually changes
+    spending.
   why_not:
-    B: More data of the same kind would still show a correlation, not a cause. The flaw is in how the
-      result is being interpreted, not in the amount of data.
-    C: Targeting accepts the causal assumption and only narrows where it is applied. It does not test
-      whether installing the app changes behaviour.
-    D: A more complex model trained on the same observational data has the same limitation, and is harder
-      to explain.
+    B: Holdout validation checks that the pattern is stable, and it would likely confirm it. A confirmed
+      correlation is still not evidence that paying people to install the app will raise their spending.
+    C: A cost-benefit check is sensible, but it uses the forecast rise as if it were real. The flaw is
+      in that forecast's assumption, not in the arithmetic.
+    D: Representativeness matters for any model, but app users and non-users are both in the data. Better
+      coverage would not turn a correlation into a cause.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

@@ -6,28 +6,28 @@ stem: At a mortgage lender, a document-reading model owned by operations extract
   to the extraction model led to income being understated for some applicants, and each owner says the
   other was responsible. What is the BEST way to prevent a repeat?
 options:
-  A: Make the lending division accountable for both models from now on
-  B: Ask the data science team to check every change to either model
-  C: Merge the two models into a single model with one owner
-  D: Agree each owner's duties at the hand-off, including change notice
+  A: Make the lending division accountable for both of the models
+  B: Add checks in the credit model for unusual shifts in income data
+  C: Have the model risk team validate each change to the extraction model
+  D: Agree each owner's duties at the hand-off, with notice of changes
 answer: D
 explanation:
   why_correct: Where one model's output feeds another, accountability must be clear at the interface.
     The upstream owner commits to output quality and to giving notice of changes, and the downstream owner
     commits to checking the data is fit for its use. Recording these duties keeps each owner accountable
-    for their own model while the dependency is managed.
+    while the dependency is managed.
   why_not:
     A: The extraction model serves several teams, so moving it to lending would leave their needs unowned,
       and it would still not define how changes are agreed.
-    B: Central checking may catch some problems, but it moves accountability away from the owners and
-      does not define who must notify whom.
-    C: Merging is a large technical change made to solve a governance problem, and it would remove a service
-      other teams rely on.
+    B: Input checks are a good downstream control, but they catch problems only after a change lands,
+      and they leave the upstream owner with no duty to warn of changes.
+    C: Second-line validation may catch some problems, but it moves first-line work to the risk team and
+      still does not define who must notify whom.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-b
-  checked_by: 2026-10-13-aair-d1-b-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

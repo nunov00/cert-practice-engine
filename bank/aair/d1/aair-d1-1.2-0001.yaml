@@ -1,32 +1,32 @@
 id: aair-d1-1.2-0001
 subdomain: '1.2'
 difficulty: medium
-stem: A regional bank has set up a separate AI risk register maintained by its data science group. The
-  board now receives one report on enterprise risk and a separate one on AI risk, using different rating
-  scales. What should the risk practitioner recommend?
+stem: A regional bank's data science group maintains a separate AI risk register. The board receives one
+  report on enterprise risk and another on AI risk, using different rating scales. Several AI risks also
+  appear in the enterprise register under other names and owners. What should the risk practitioner recommend?
 options:
-  A: Keep both registers but ask both teams to meet every quarter
-  B: Bring AI risks into the enterprise register, taxonomy and rating scales
-  C: Convert the enterprise register to the AI team's more detailed scales
-  D: Transfer ownership of the AI register to the internal audit function
+  A: Keep the AI register but map its ratings to the enterprise scale
+  B: Move AI risks into the enterprise register, using its taxonomy and scales
+  C: Combine the two reports into one board pack with a common summary
+  D: Have the second-line risk team take over the AI register from data science
 answer: B
 explanation:
-  why_correct: AI risk management works best when it is part of the existing enterprise risk process.
-    Using one register, taxonomy and rating method lets the board compare AI risks with other risks against
-    a single risk appetite and allocate resources consistently.
+  why_correct: AI risk management works best inside the existing enterprise risk process. One register,
+    taxonomy and rating method removes the duplicates with conflicting owners and lets the board compare
+    AI risks with other risks against a single risk appetite.
   why_not:
-    A: Regular meetings may improve communication, but the board would still see two incompatible views
-      of risk. The structural misalignment remains.
-    C: Changing the whole enterprise process to suit one risk category reverses the logic of integration
-      and would disrupt every other risk owner. AI should fit the enterprise framework, adapted where
-      needed.
-    D: Internal audit provides independent assurance and should not own or maintain a risk register. This
-      would also harm its independence without fixing the inconsistency.
+    A: Mapping makes the board's ratings comparable, but two registers remain, so the same risks are still
+      recorded twice under different owners. It fixes the reporting, not the duplication.
+    C: A combined pack improves presentation, but the board would still see two inconsistent views of
+      risk underneath, with duplicated entries.
+    D: Moving the register to the second line changes who maintains it, not the fact that it is separate.
+      Two registers with different scales and duplicate entries would remain, and the board would still
+      get two inconsistent views of risk.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-aair-a
-  checked_by: 2026-10-12-aair-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass

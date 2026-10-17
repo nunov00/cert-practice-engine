@@ -5,27 +5,28 @@ stem: A bank has acquired a fintech that uses several AI credit models approved 
   lighter governance. The models will keep running after the deal closes. What should the risk practitioner
   do to align them with the bank's processes?
 options:
-  A: Accept the fintech's approvals, as the models are already in use
-  B: Switch off the fintech's models until the bank has rebuilt them
-  C: Leave them under the fintech's process until the next annual audit
-  D: Inventory them and assess each against the bank's framework by risk
+  A: Have the bank's validation team revalidate the models, highest risk first
+  B: Bring the models under the bank's monitoring and reporting, highest risk first
+  C: Have internal audit review the fintech's model governance after closing
+  D: Assess each model against bank standards, highest risk first
 answer: D
 explanation:
-  why_correct: The bank is now responsible for these models, so they must meet its standards. Inventorying
-    them and assessing the highest-risk ones first lets the bank find gaps, add controls or plan changes
-    without stopping the business.
+  why_correct: The bank is now responsible for these models, so they must meet its standards. Assessing
+    each one against those standards, starting with the highest-risk models, finds the gaps in validation,
+    ownership, monitoring and documentation and fixes them in order without stopping the business.
   why_not:
-    A: Approvals given under weaker governance do not show that the models meet the bank's standards.
-      Accepting them carries the gaps into the bank.
-    B: Switching everything off is disproportionate and may harm customers and the business when many
-      models may need only modest changes.
-    C: Running two governance standards and waiting for an audit leaves known gaps unmanaged. Alignment
-      is a management task, not something to wait for assurance to find.
+    A: Revalidation by the bank's team is part of the answer, but validation covers model performance
+      only. It does not find the gaps in ownership, documentation, approval or monitoring left by the
+      fintech's lighter governance.
+    B: Bank-standard monitoring gives ongoing oversight from now on, but it does not find where the models'
+      validation, documentation or approval fell short of bank standards. Those gaps remain.
+    C: Audit gives later, independent assurance, but it is not the management action that brings each
+      model up to bank standards. Credit decisions continue on the old basis meanwhile.
 status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aair-d1-a
-  checked_by: 2026-10-13-aair-d1-a-check
+  checked_by: 2026-10-16-aair-d1-rework-check
   check_verdict: pass
