@@ -68,9 +68,28 @@ next free number in that subdomain.
 
 - Branches: `content/<exam>/<run-id>`, `fix/<question-id>`, `feat/<topic>`, or the
   branch your session assigns.
-- Everything reaches `main` through a PR the owner reviews. Content PRs follow
-  `docs/automation/publishing.md`.
+- Everything reaches `main` through a PR. Content PRs follow
+  `docs/automation/publishing.md`; the owner may spot-check any of them.
 - CI (`.github/workflows/ci.yml`) runs `pnpm check` and the Cloudflare app build; keep it green.
+
+## Governance
+
+Read `PROJECT.md` (stage, profile, overrides, standing delegations) and
+`GOVERNANCE.md` (roles, change classes, approvals, waivers) before substantial
+work. The active profile is **Lightweight**: no approvals are required, but every
+PR description declares `Review class: routine | material | mandatory` and
+`Author agent: <agent> (<provider>)`.
+
+- The owner steers and decides; agents review code. Ask the owner for decisions,
+  never for code review. Record a mandatory-class decision in the PR as
+  `Owner decision: "<their words>" (<date>)`.
+- Work autonomously within approved scope; escalate new product scope, major
+  architecture, cost, privacy or security, and destructive changes.
+- Never bypass a gate or create, widen or extend a review waiver on your own.
+- Before roadmap phase 8 (accounts, payments, domain), stop and propose a
+  profile assessment (`PROJECT.md` → Production checkpoint).
+- The approval check in `templates/github/` stays inactive until the owner
+  moves the project to Standard or Strict.
 
 ## Learner feedback
 
