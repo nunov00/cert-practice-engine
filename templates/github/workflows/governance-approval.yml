@@ -1,0 +1,151 @@
+# Governance approval check (Standard and Strict profiles).
+# Copy to .github/workflows/ and make `governance/approval` a required status check.
+# Reads the profile and material paths from PROJECT.md on the base branch, then
+# sets a commit status on the PR head. See GOVERNANCE.md → Approvals / Waivers.
+name: Governance approval
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, edited, ready_for_review]
+  issue_comment:
+    types: [created, edited, deleted]
+  issues:
+    types: [edited, closed, reopened, labeled, unlabeled]
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+  statuses: write
+
+concurrency:
+  group: governance-approval-${{ github.event.pull_request.number || github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  approval:
+    # Issue events only for waiver issues: re-check the open PRs that reference them.
+    if: >-
+      github.event_name == 'pull_request' ||
+      (github.event_name == 'issue_comment' && github.event.issue.pull_request) ||
+      (github.event_name == 'issues' &&
+        (contains(github.event.issue.labels.*.name, 'review-waiver') || github.event.label.name == 'review-waiver'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7.1.0
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+
+            async function evaluate(number) {
+              const { data: pr } = await github.rest.pulls.get({ owner, repo, pull_number: number });
+              const sha = pr.head.sha;
+
+              const setStatus = (state, description) =>
+                github.rest.repos.createCommitStatus({
+                  owner, repo, sha, state, context: 'governance/approval',
+                  description: description.slice(0, 140),
+                });
+
+              // --- Configuration from PROJECT.md on the base branch (a PR cannot change its own gate).
+              let projectMd = '';
+              try {
+                const { data } = await github.rest.repos.getContent({ owner, repo, path: 'PROJECT.md', ref: pr.base.ref });
+                projectMd = Buffer.from(data.content, 'base64').toString('utf8');
+              } catch (e) {
+                return setStatus('failure', 'PROJECT.md not found on base branch');
+              }
+              const field = (name) => {
+                const m = projectMd.match(new RegExp(`\\*\\*${name}:\\*\\*\\s*(.*)`, 'i'));
+                return m ? m[1].trim() : '';
+              };
+              const profile = field('Governance profile').split(/\s/)[0].toLowerCase();
+              const materialPaths = (field('Material paths').match(/`([^`]+)`/g) || []).map((p) => p.slice(1, -1));
+
+              if (profile === 'lightweight') return setStatus('success', 'Lightweight: no approval required');
+              if (!['standard', 'strict'].includes(profile)) return setStatus('failure', `Unknown governance profile "${profile}"`);
+
+              // --- PR declarations.
+              const body = pr.body || '';
+              const declared = (name) => (body.match(new RegExp(`^\\s*${name}:\\s*(.+)$`, 'im')) || [])[1]?.trim() || '';
+              const reviewClass = declared('Review class').toLowerCase().split(/\s/)[0];
+              const authorAgent = declared('Author agent');
+              if (!['routine', 'material', 'mandatory'].includes(reviewClass))
+                return setStatus('failure', 'PR description must declare "Review class: routine | material | mandatory"');
+
+              // --- Material paths make a PR material regardless of the declared class.
+              const globToRegex = (g) => new RegExp('^' + g
+                .replace(/[.+^${}()|[\]\\]/g, '\\$&')
+                .replace(/\*\*\/?/g, '\u0000')
+                .replace(/\*/g, '[^/]*')
+                .replace(/\?/g, '[^/]')
+                .replace(/\u0000/g, '.*') + '$');
+              const matchers = materialPaths.map(globToRegex);
+              const files = await github.paginate(github.rest.pulls.listFiles, { owner, repo, pull_number: number, per_page: 100 });
+              const hit = files.find((f) => matchers.some((r) => r.test(f.filename)));
+              const effectiveClass = reviewClass === 'routine' && hit ? 'material' : reviewClass;
+
+              if (profile === 'standard' && effectiveClass === 'routine')
+                return setStatus('success', 'Standard: routine change, no approval required');
+
+              // --- Waiver: open, labelled, not expired, and covering this PR's branch (never for mandatory changes).
+              let waiverProblem = '';
+              const waiverRef = declared('Waiver').match(/#(\d+)/);
+              if (waiverRef && effectiveClass === 'mandatory') waiverProblem = 'waivers never cover mandatory changes';
+              else if (waiverRef) {
+                try {
+                  const { data: issue } = await github.rest.issues.get({ owner, repo, issue_number: Number(waiverRef[1]) });
+                  const text = issue.body || '';
+                  const ends = (text.match(/^\s*Ends:\s*(\d{4}-\d{2}-\d{2})\b/im) || [])[1];
+                  const branchLine = (text.match(/^\s*Branches:\s*(.+)$/im) || [])[1] || '';
+                  const branchGlobs = (branchLine.match(/`([^`]+)`/g) || []).map((b) => b.slice(1, -1));
+                  const today = new Date().toISOString().slice(0, 10);
+                  const validDate = ends && !isNaN(Date.parse(`${ends}T00:00:00Z`)) && new Date(`${ends}T00:00:00Z`).toISOString().slice(0, 10) === ends;
+                  if (issue.pull_request) waiverProblem = `#${issue.number} is not an issue`;
+                  else if (!issue.labels.some((l) => (l.name || l) === 'review-waiver')) waiverProblem = `#${issue.number} lacks the review-waiver label`;
+                  else if (issue.state !== 'open') waiverProblem = `waiver #${issue.number} is closed`;
+                  else if (!validDate) waiverProblem = `waiver #${issue.number} needs a valid "Ends: YYYY-MM-DD"`;
+                  else if (today > ends) waiverProblem = `waiver #${issue.number} ended ${ends}`;
+                  else if (!branchGlobs.length) waiverProblem = `waiver #${issue.number} has no "Branches:"`;
+                  else if (!branchGlobs.some((g) => globToRegex(g).test(pr.head.ref))) waiverProblem = `waiver #${issue.number} does not cover branch ${pr.head.ref}`;
+                  else return setStatus('success', `Covered by review waiver #${issue.number} (ends ${ends})`);
+                } catch (e) { waiverProblem = `waiver #${waiverRef[1]} not found`; }
+              }
+
+              // --- Approval comment for the current head commit.
+              if (!authorAgent) return setStatus('failure', 'PR description must declare "Author agent: <agent> (<provider>)"');
+              const norm = (s) => s.toLowerCase().replace(/\s+/g, ' ').trim();
+              const name = (s) => norm(s).replace(/\s*\(.*\)\s*$/, '');
+              const provider = (s) => (norm(s).match(/\(([^)]*)\)\s*$/) || [])[1] || '';
+              const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number: number, per_page: 100 });
+              const re = /^APPROVED\s*·\s*reviewer:\s*(.+?)\s*·\s*author:\s*(.+?)\s*·\s*commit\s+([0-9a-f]{7,40})\b/im;
+              const needDifferentProvider = profile === 'strict' && effectiveClass === 'mandatory';
+              let reason = `No approval for commit ${sha.slice(0, 7)}`;
+              for (const c of comments) {
+                const m = (c.body || '').match(re);
+                if (!m) continue;
+                const [, reviewer, author, commit] = m;
+                if (!sha.startsWith(commit.toLowerCase())) { reason = `Approval is for ${commit}, head is ${sha.slice(0, 7)}`; continue; }
+                if (name(author) !== name(authorAgent)) { reason = 'Approval names a different author agent'; continue; }
+                const byOwner = name(reviewer) === 'owner';
+                if (!byOwner && name(reviewer) === name(authorAgent)) { reason = 'Reviewer must differ from the author agent'; continue; }
+                if (/copilot/i.test(reviewer)) { reason = 'Copilot review does not count as an approval'; continue; }
+                if (needDifferentProvider && !byOwner && provider(reviewer) === provider(authorAgent)) {
+                  reason = 'Mandatory change in Strict needs a different-provider reviewer'; continue;
+                }
+                // The Owner's own approval stands alone; an agent approval of a mandatory change also needs the recorded Owner decision.
+                if (!byOwner && effectiveClass === 'mandatory' && !declared('Owner decision')) {
+                  reason = 'Mandatory change: PR description must record "Owner decision: ..."'; continue;
+                }
+                return setStatus('success', `Approved by ${reviewer} for ${commit}`);
+              }
+              return setStatus('failure', `${profile}/${effectiveClass}: ${waiverProblem ? `${waiverProblem}; ` : ''}${reason}`);
+            }
+
+            if (context.eventName !== 'issues') return evaluate(context.payload.pull_request?.number ?? context.payload.issue.number);
+            // A waiver issue changed: re-check every open PR that references it.
+            const waiver = context.payload.issue.number;
+            const openPrs = await github.paginate(github.rest.pulls.list, { owner, repo, state: 'open', per_page: 100 });
+            const refRe = new RegExp(`^\\s*Waiver:\\s*#${waiver}\\b`, 'im');
+            for (const p of openPrs.filter((p) => refRe.test(p.body || ''))) await evaluate(p.number);
