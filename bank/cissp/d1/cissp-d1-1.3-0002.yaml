@@ -1,28 +1,29 @@
 id: cissp-d1-1.3-0002
 subdomain: '1.3'
 difficulty: medium
-stem: 'Before connecting a newly acquired subsidiary to its corporate network, a company reviews the subsidiary''s
-  security controls, open audit findings and recent incidents. This activity is BEST described as:'
+stem: Before connecting a newly acquired subsidiary to its corporate network, a company reviews the subsidiary's
+  security controls, open audit findings and recent incidents. Which term BEST describes this activity?
 options:
-  A: Risk acceptance
+  A: Compliance audit
   B: Due diligence
   C: Due care
-  D: Separation of duties
+  D: Risk acceptance
 answer: B
 explanation:
   why_correct: Due diligence is the investigation done before a decision, to understand the risk being
     taken on. Reviewing controls before connecting the networks fits that definition.
   why_not:
-    A: Acceptance is a decision to tolerate a known risk. The company is still gathering information.
+    A: An audit tests controls against set criteria and reports on conformance. Here the company is gathering
+      information to decide whether and how to connect, which is due diligence.
     C: Due care is acting responsibly on what is known, such as running and maintaining appropriate controls.
       The review described is the investigation that comes before that.
-    D: Separation of duties is a control that splits critical tasks between people. It is unrelated to
-      assessing an acquisition.
+    D: Acceptance is a decision to tolerate a known risk. The company is still gathering the information
+      needed to make that decision.
 status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-cissp-d1-a
-  checked_by: 2026-10-12-cissp-d1-a-check
+  checked_by: 2026-10-17-cissp-d1-rework-check
   check_verdict: pass

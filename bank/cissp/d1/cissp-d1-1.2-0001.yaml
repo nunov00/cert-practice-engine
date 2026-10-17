@@ -1,27 +1,32 @@
 id: cissp-d1-1.2-0001
 subdomain: '1.2'
 difficulty: easy
-stem: A payroll clerk notices that an employee's bank account number in the HR system was changed overnight,
-  and there is no matching change request. Which security objective has MOST directly failed?
+stem: A payroll clerk notices that an employee's bank account number in the HR system was changed overnight.
+  The audit log shows which HR administrator account made the change, and the record is still readable.
+  There is no matching change request. Which security objective has MOST directly failed?
 options:
-  A: Availability
+  A: Accountability
   B: Confidentiality
   C: Non-repudiation
   D: Integrity
 answer: D
 explanation:
-  why_correct: Integrity means data is changed only by authorised parties in authorised ways. An unexplained
-    change to a bank account number is a direct integrity failure.
+  why_correct: Integrity means data is changed only by authorised parties in authorised ways. A change
+    with no approved request is an unauthorised change, so integrity failed, whoever made it. The log
+    shows attribution still works.
   why_not:
-    A: The system and the record are still accessible, so availability has not failed.
+    A: The log ties the change to an administrator account, so the action can be traced and investigated.
+      Accountability may be weak if the account is shared, but the failure the clerk found is that the
+      data was changed without authorisation.
     B: Nothing indicates the data was disclosed. The record was altered, which is an integrity problem.
-    C: Weak non-repudiation may make it harder to prove who made the change, but the objective that failed
-      first is the correctness of the data itself.
+    C: Non-repudiation means a party cannot credibly deny an action, which usually needs stronger proof
+      than an account name in a log, such as a personal digital signature. That proof may be weak here,
+      but it is not what failed. The record was changed without authorisation, which is integrity.
 status: published
 outline_version: '2024-04-15'
 sample: true
 provenance:
   generated_by: claude
   run_id: 2026-10-12-cissp-d1-a
-  checked_by: 2026-10-12-cissp-d1-a-check
+  checked_by: 2026-10-17-cissp-d1-rework-check
   check_verdict: pass
