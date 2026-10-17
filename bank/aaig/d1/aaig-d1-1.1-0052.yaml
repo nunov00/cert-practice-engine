@@ -1,31 +1,32 @@
 id: aaig-d1-1.1-0052
 subdomain: '1.1'
 difficulty: medium
-stem: An industrial design firm's engineers are using generative AI to create new product designs that the firm
-  intends to patent and license. Legal advises that protection for AI-generated work is uncertain in several of
-  its markets. What should the firm's AI policy require?
+stem: An industrial design firm's engineers are using generative AI to create new product designs that
+  the firm intends to patent and license. Legal advises that protection for AI-generated work is uncertain
+  in several of its markets. What should the firm's AI policy require?
 options:
-  A: That engineers stop using AI for any design work
-  B: That core designs record the human contribution and get legal review before filing
-  C: That the firm claims ownership of every AI output in all its customer and licensing contracts
-  D: That the AI vendor confirms the firm owns all outputs
+  A: That AI is used only for early concepts, not for final designs
+  B: That core designs record human input and get legal review before filing
+  C: That AI-assisted designs are filed early to secure priority dates
+  D: That only AI tools whose terms assign output rights to the firm are used
 answer: B
 explanation:
-  why_correct: If the firm's business depends on owning its designs, the policy must protect that value. Recording
-    the human creative contribution and reviewing core assets with legal before filing gives the best chance of
-    protection and shows where AI use could weaken it, without giving up the productivity gain.
+  why_correct: The firm's business depends on owning its designs, so the policy must protect that value.
+    Recording the human creative contribution and reviewing core assets with legal before filing gives
+    the best chance of protection and shows where AI use could weaken it, without giving up the productivity
+    gain.
   why_not:
-    A: A total ban gives up a real benefit. The concern applies mainly to assets the firm needs to own, which can
-      be managed without stopping all use.
-    C: A contract claim does not create rights that the law may not recognise. It could also mislead customers about
-      what the firm can actually protect.
-    D: A vendor can waive its own claims, but it cannot grant legal protection that the law does not give. The uncertainty
-      remains.
+    A: Limiting AI to concepts reduces the risk, but it gives up much of the benefit and does not show
+      how much human contribution a final design holds.
+    C: Early filing protects priority, but it does not help if the design cannot be protected because
+      too little of it is human work. It may also waste filing costs.
+    D: Vendor terms that assign rights remove the vendor's claim, but they cannot create protection that
+      the law may not give. The legal uncertainty remains.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-b
-  checked_by: 2026-10-13-aaig-d1-b-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

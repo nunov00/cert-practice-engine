@@ -1,31 +1,32 @@
 id: aaig-d1-1.1-0056
 subdomain: '1.1'
 difficulty: medium
-stem: On a Saturday night, an online retailer's AI pricing system starts selling some products far below cost. The
-  on-call engineer can switch it off, but nobody is sure who has the authority to stop a revenue-critical system,
-  and the commercial director cannot be reached. What governance gap does this MOST reveal?
+stem: On a Saturday night, an online retailer's AI pricing system starts selling some products far below
+  cost. The on-call engineer knows how to switch it off, but spends three hours trying to reach the commercial
+  director, who owns the system, before acting. What governance gap does this MOST reveal?
 options:
-  A: The pricing system was not tested enough before it went live
-  B: The on-call engineer lacked training on the pricing system
-  C: The vendor's support contract does not cover weekends
-  D: No one was given advance authority to suspend critical AI systems
+  A: The pricing system had no automatic floor on below-cost prices
+  B: The on-call engineer had no runbook for the pricing system
+  C: The incident process did not cover AI pricing systems
+  D: No one held advance authority to suspend critical AI systems
 answer: D
 explanation:
-  why_correct: 'When an AI system causes harm in real time, the decision to suspend it must be quick. That needs
-    authority set in advance: who may stop which systems, under what conditions, without waiting for senior approval.
-    Without it, people capable of acting hesitate while losses grow.'
+  why_correct: When an AI system causes harm in real time, the decision to suspend it must be quick. That
+    needs authority set in advance on who may stop which systems, under what conditions, without waiting
+    for senior approval. Without it, people capable of acting hesitate while losses grow.
   why_not:
-    A: Better testing might have prevented the fault, but faults will still happen. The gap here is the inability
-      to act when one does.
-    B: The engineer already knows how to switch the system off. The problem is uncertainty about whether they are
-      allowed to.
-    C: Vendor support may help with diagnosis, but deciding to stop the company's own pricing is the company's decision
-      and needs clear authority.
+    A: A price floor is a sensible preventive control, but faults of other kinds will still happen. The
+      gap the night revealed is the inability to act once one does.
+    B: The engineer already knows how to switch the system off. A runbook describes the steps, but the
+      engineer was not missing steps. They waited for someone to allow them to act.
+    C: An incident process coordinates a response, but the engineer was not short of a process. They waited
+      for permission. What was missing was authority, set in advance, to suspend a critical system without
+      reaching its owner.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-b
-  checked_by: 2026-10-13-aaig-d1-b-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

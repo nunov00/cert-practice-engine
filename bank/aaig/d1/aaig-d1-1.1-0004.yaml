@@ -1,31 +1,32 @@
 id: aaig-d1-1.1-0004
 subdomain: '1.1'
-difficulty: hard
-stem: A director of a listed manufacturer proposes that the board itself approve every AI model before it goes
-  into use, to show strong oversight. The company runs several hundred models, most of them low risk. What
+difficulty: medium
+stem: A director of a listed manufacturer proposes that the board itself approve every AI model before
+  it goes into use, to show strong oversight. The company runs several hundred models. Most are low risk,
+  but a few make decisions about customers that could breach the board's risk appetite on their own. What
   is the BEST response from the governance advisor?
 options:
-  A: Agree, as approval by the board gives the strongest possible assurance
-  B: Decline, as AI is purely an operational matter for management
-  C: Have the board set direction and thresholds, delegating approvals
-  D: Create a board subcommittee of directors to review each model
+  A: Delegate approvals to a management AI committee that reports quarterly
+  B: Have the audit committee oversee model approvals through internal audit
+  C: Set escalation thresholds for board approval and delegate the rest
+  D: Create a board AI subcommittee to approve each model before use
 answer: C
 explanation:
-  why_correct: The board's role is to set direction, risk appetite and the limits of delegated authority, then
-    hold management to account. Defining which AI uses must come to the board, and delegating the rest to management
-    within clear thresholds, gives real oversight without turning directors into a model review team.
+  why_correct: The board's role is to set direction, risk appetite and the limits of delegated authority.
+    Thresholds that bring the few high-impact models to the board before use, and delegate the rest, give
+    real oversight where it matters without turning directors into a model review team.
   why_not:
-    A: Reviewing hundreds of models would overwhelm the board, slow the business and blur accountability. Directors
-      would be approving work they cannot meaningfully assess.
-    B: AI can create strategic, legal and reputational risk that directors must oversee. Treating it as purely
-      operational leaves the board blind to material exposure.
-    D: A subcommittee still puts directors into case-by-case approvals. It narrows the burden but keeps the
-      board doing management's job.
+    A: Delegating to a management committee suits most models, but with quarterly reports only, the few
+      that could breach appetite on their own would go live before the board sees them.
+    B: Internal audit gives useful assurance on the process, but it reports after the fact. It does not
+      bring the high-impact models to the board before they are used.
+    D: A subcommittee narrows the burden but still puts directors into case-by-case approval of hundreds
+      of mostly low-risk models. The board would be doing management's job.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

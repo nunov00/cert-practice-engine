@@ -1,31 +1,31 @@
 id: aaig-d1-1.1-0045
 subdomain: '1.1'
-difficulty: easy
-stem: A logistics company in a country with strong worker representation plans to use AI to set warehouse shift
-  patterns. The project team intends to inform the works council once the system is ready to launch. What should
-  the governance leader advise?
+difficulty: medium
+stem: A logistics company in a country with strong worker representation plans to use AI to set warehouse
+  shift patterns. The project team intends to inform the works council once the system is ready to launch.
+  What should the governance leader advise?
 options:
-  A: Keep the plan confidential until launch so that rumours do not spread
-  B: Involve the works council early, while the design can still change
-  C: Inform only the staff whose shifts will change at launch
-  D: Ask the vendor to run the consultation on the company's behalf
+  A: Involve the works council at the pilot stage, using real results
+  B: Involve the works council now, while the design is still open
+  C: Survey staff on their shift preferences before configuring the system
+  D: Agree a joint review with the works council six months after launch
 answer: B
 explanation:
-  why_correct: When AI affects how people work, early engagement with their representatives lets their concerns
-    shape the design, builds trust and, in many countries, meets legal duties to consult before the decision is
-    made. Telling them only at launch turns consultation into an announcement and invites conflict or delay.
+  why_correct: When AI affects how people work, early engagement with their representatives lets their
+    concerns shape the design, builds trust and, in many countries, meets legal duties to consult before
+    the decision is made. Waiting turns consultation into a reaction to choices already made.
   why_not:
-    A: Secrecy until launch damages trust and may breach consultation duties. Rumours are better handled by honest
-      early engagement.
-    C: Informing individuals is not the same as engaging their representatives, and it comes too late for their
-      views to shape the system.
-    D: The company, as employer, is responsible for engaging its workforce. A vendor has its own interests and cannot
-      take on that relationship.
+    A: Pilot results make the discussion concrete, but by then the main design choices are fixed and staff
+      are already working to the new patterns. Consultation duties usually apply before such decisions.
+    C: A preference survey gathers useful input, but it does not engage the workers' representatives,
+      who play a formal role in a country with strong worker representation.
+    D: A post-launch review is good practice, but it only lets the council comment on a system already
+      in use. Their views should shape the design first.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-b
-  checked_by: 2026-10-13-aaig-d1-b-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

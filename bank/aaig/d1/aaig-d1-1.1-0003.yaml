@@ -1,31 +1,32 @@
 id: aaig-d1-1.1-0003
 subdomain: '1.1'
 difficulty: medium
-stem: The board of a regional bank receives a quarterly AI update made up of a long list of project milestones
-  and model accuracy figures. Directors say they still cannot tell whether AI is being governed well. What
-  should the chief risk officer change in the reporting?
+stem: The board of a regional bank approved an AI risk appetite last year. Its quarterly AI update is
+  a long list of project milestones and model accuracy figures, and a separate report already tracks AI
+  benefits against the strategy. Directors say they still cannot tell whether AI is being governed well.
+  What should the chief risk officer change in the reporting?
 options:
-  A: Report AI exposure against risk appetite and key decisions needed
-  B: Add a technical appendix explaining each accuracy metric in detail
-  C: Shorten the report to a one-page list of project status colours
-  D: Invite the data science leads to present each project in turn
+  A: Report total AI exposure against appetite and flag decisions needed
+  B: Report AI benefits against the strategy and flag projects off track
+  C: Report key risk indicators for each AI project against set thresholds
+  D: Report the maturity of AI governance against an industry framework
 answer: A
 explanation:
-  why_correct: Boards oversee direction, risk and value, not engineering progress. Reporting that shows AI
-    exposure against the appetite the board set, and highlights the decisions directors must take, lets them
-    judge whether governance is working and where to intervene.
+  why_correct: Boards oversee direction, risk and value, and the board has already set an AI risk appetite.
+    Showing total AI exposure against that appetite, and highlighting the decisions directors must take,
+    lets them judge whether governance is keeping risk where they want it and where to intervene.
   why_not:
-    B: More technical detail makes the report longer but no more useful for oversight. Directors need meaning
-      and implications, not a tutorial on metrics.
-    C: Status colours are brief but say little about risk, value or compliance. A short report can still miss
-      what the board needs to know.
-    D: Project presentations add more operational detail and take board time without connecting AI activity
-      to appetite, strategy or accountability.
+    B: Tying benefits to strategy is good board reporting, but a separate report already does it. The
+      missing view is risk against the limits the board set.
+    C: Key risk indicators with thresholds are a good management tool, but per-project figures still leave
+      directors judging a long list. They need the total picture against the appetite they approved.
+    D: A maturity rating shows how capable the governance processes are, but not whether current exposure
+      is inside the board's appetite. A mature framework can still carry too much risk.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

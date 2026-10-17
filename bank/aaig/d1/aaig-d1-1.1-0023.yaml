@@ -2,29 +2,30 @@ id: aaig-d1-1.1-0023
 subdomain: '1.1'
 difficulty: medium
 stem: After two years of significant AI spending, the board of a private bank asks whether the investments
-  delivered value. Management cannot give an answer. What governance gap does this MOST likely reveal?
+  delivered value. Management has usage and cost figures for each project but cannot say what any of them
+  was meant to achieve. What governance gap does this MOST likely reveal?
 options:
-  A: The AI models were not accurate enough to add any value
-  B: The AI budget was too small to show meaningful results
+  A: Benefits were not tracked once the projects had gone live
+  B: Business units did not own the AI investments they used
   C: Expected benefits were not defined and approved up front
-  D: The board did not get enough technical briefings on AI
+  D: The board did not set an appetite for AI investment
 answer: C
 explanation:
-  why_correct: Value can only be judged against what was promised. If investments were approved without clear
-    expected benefits, measures and owners, there is nothing to compare results with. Defining these at approval
-    is a basic investment governance control.
+  why_correct: Value can only be judged against what was promised. Management cannot say what the projects
+    were meant to achieve, so the expected benefits, measures and owners were never set when the money
+    was approved. Defining these at approval is a basic investment governance control.
   why_not:
-    A: Accuracy may or may not be a problem, but the scenario shows management cannot answer at all, which
-      points to missing value targets rather than model quality.
-    B: Budget size is not the issue. Even large investments cannot show value if nobody defined what value
-      should look like.
-    D: Technical briefings would not tell the board whether value was delivered. The gap is in business measures,
-      not technical knowledge.
+    A: Tracking matters, but management does have usage and cost data. What it lacks is a target to compare
+      it with, which had to be set before approval.
+    B: Business ownership helps realise benefits, but even an owner cannot show value without an agreed
+      statement of what the investment should deliver.
+    D: An investment appetite sets how much the bank will spend and on what, but it does not define what
+      each project should achieve. The missing piece is at project approval.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

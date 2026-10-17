@@ -1,29 +1,33 @@
 id: aaig-d1-1.1-0013
 subdomain: '1.1'
-difficulty: easy
-stem: A family-owned food producer with about 600 staff has no formal AI governance. Its executive team decides
-  to base its approach on a widely used published AI governance framework. What is the BEST way to adopt it?
+difficulty: medium
+stem: A family-owned food producer with about 600 staff has no formal AI governance and few documented
+  risk controls. It uses a handful of AI tools, mostly in forecasting and marketing. The executive team
+  decides to base its approach on a widely used published AI governance framework. What is the BEST way
+  to adopt it?
 options:
-  A: Implement every control in the framework exactly as written
-  B: Adapt it to the firm's scale, risks and the AI it actually uses
-  C: Wait until a regulator mandates one specific framework
-  D: Combine several frameworks so that no control is missed
+  A: Tailor it to match the firm's existing risk management structure
+  B: Tailor it to the firm's scale, risks and the AI it actually uses
+  C: Tailor it to the expectations of the firm's largest retail customers
+  D: Start with the controls the framework marks as foundational
 answer: B
 explanation:
-  why_correct: Published frameworks are designed to be adapted. Tailoring to the organisation's scale, risk
-    exposure and actual AI uses gives proportionate governance that people will follow, and focuses effort
-    where the risks are.
+  why_correct: Published frameworks are designed to be adapted. Tailoring to the organisation's scale,
+    risk exposure and actual AI uses gives proportionate governance that people will follow, and focuses
+    effort where the firm's real risks are.
   why_not:
-    A: Adopting everything as written can impose controls that do not fit a firm of this size, creating cost and
-      box-ticking without reducing real risk.
-    C: Waiting leaves current AI use ungoverned. Good governance does not need a mandate to start.
-    D: Stacking frameworks adds overlap and complexity. Coverage comes from understanding the firm's risks,
-      not from collecting controls.
+    A: Fitting the framework to existing structures works where those are mature. This firm has few documented
+      risk controls, so there is little structure to tailor to.
+    C: Major customers' expectations matter commercially, but they reflect one group's concerns. They
+      do not cover the firm's own risks across forecasting and marketing.
+    D: Foundational controls are a reasonable start, but they are foundational in the framework's terms.
+      Choosing by the framework's order rather than the firm's own risks may spend effort where exposure
+      is low.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

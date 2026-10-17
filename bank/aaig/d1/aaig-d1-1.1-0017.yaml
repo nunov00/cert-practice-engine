@@ -1,30 +1,31 @@
 id: aaig-d1-1.1-0017
 subdomain: '1.1'
 difficulty: medium
-stem: A media group published AI ethics principles on fairness, transparency and accountability. A year later,
-  nobody can point to a single decision the principles influenced. What should the governance lead do?
+stem: A media group published AI ethics principles on fairness, transparency and accountability, and its
+  AI policy requires staff to follow them. A year later, nobody can point to a single decision the principles
+  influenced. What should the governance lead do?
 options:
-  A: Republish the principles with a personal statement from the CEO
-  B: Build the principles into intake criteria and approval checks
-  C: Hire an ethicist to give talks on the principles to all staff
-  D: Add more principles so the set covers every possible issue
+  A: Build the principles into the AI policy as binding requirements
+  B: Build the principles into use-case intake and approval criteria
+  C: Build the principles into project leads' annual objectives
+  D: Ask each project to self-assess against the principles at closure
 answer: B
 explanation:
-  why_correct: Principles shape behaviour only when they are turned into concrete requirements at the points
-    where decisions are made. Adding them to use-case intake questions and approval criteria makes teams show
-    how each proposal meets them, which creates evidence and changes outcomes.
+  why_correct: Principles shape behaviour only when they are turned into concrete tests at the points
+    where decisions are made. Adding them to intake questions and approval criteria makes teams show how
+    each proposal meets them, which creates evidence and changes outcomes.
   why_not:
-    A: Leadership support helps, but restating the principles does not create any mechanism for applying them
-      to decisions.
-    C: Talks can raise awareness, yet without process changes the principles remain aspirations that do not
-      affect approvals.
-    D: The problem is not the scope of the principles but that none are applied. More principles add words,
-      not influence.
+    A: The policy already requires staff to follow the principles, and that has not changed any decision.
+      Restating them as requirements does not say where or how they are applied.
+    C: Objectives create personal motivation, but they are judged once a year and do not make any specific
+      proposal show how it meets the principles.
+    D: A closure self-assessment comes after the decisions it should have shaped. It records views on
+      finished work rather than influencing what gets approved.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

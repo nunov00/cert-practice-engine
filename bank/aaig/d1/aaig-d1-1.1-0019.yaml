@@ -1,27 +1,29 @@
 id: aaig-d1-1.1-0019
 subdomain: '1.1'
 difficulty: easy
-stem: The board of a water utility asks why the company should invest effort in maintaining an enterprise AI
-  inventory. What is the MAIN governance value of the inventory?
+stem: The board of a water utility asks why the company should invest effort in maintaining an enterprise
+  AI inventory. What is the MAIN governance value of the inventory?
 options:
-  A: It shows what AI is in use so that it can be overseen
-  B: It lowers licence costs for the AI tools the company uses
-  C: It removes the need for separate AI risk assessments
-  D: It proves to regulators that all AI in use is compliant
+  A: It shows what AI is in use so each use can be overseen
+  B: It records the risk rating of each AI system for reporting
+  C: It gives regulators evidence of the company's AI controls
+  D: It finds duplicate AI tools so that spending can be reduced
 answer: A
 explanation:
-  why_correct: Governance cannot cover what it cannot see. A complete inventory is the foundation for assigning
-    owners, assessing risk, meeting regulatory duties and reporting to the board.
+  why_correct: Governance cannot cover what it cannot see. A complete inventory is the foundation for
+    assigning owners, assessing risk, meeting regulatory duties and reporting to the board.
   why_not:
-    B: An inventory may reveal duplicate licences, but cost saving is a side benefit, not its governance purpose.
-    C: The inventory tells you which systems need assessment. It does not replace the assessments themselves.
-    D: Listing systems shows what exists, not whether each one meets its obligations. Compliance needs separate
-      evidence.
+    B: An inventory often holds risk ratings, but the ratings come from assessments. Recording them depends
+      on first knowing which systems exist.
+    C: An inventory may be shown to regulators, but listing systems is not evidence that controls work.
+      That needs separate testing.
+    D: Finding duplicate tools is a real side benefit, but it is a cost matter, not the main governance
+      purpose.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

@@ -1,30 +1,30 @@
 id: aaig-d1-1.1-0049
 subdomain: '1.1'
 difficulty: easy
-stem: A director on a hospital trust's board is asked to vote on a contract for an AI scheduling system. The director
-  holds shares in the vendor that is bidding. What should happen?
+stem: A director on a hospital trust's board is asked to vote on a contract for an AI scheduling system.
+  The director holds shares in the vendor that is bidding. What should happen?
 options:
-  A: The director votes, since the board as a whole makes the decision
-  B: The director votes but asks for the shareholding to be noted later
-  C: The board delays the decision until the director sells the shares
-  D: The director declares the interest and takes no part in the decision
+  A: The director declares the interest and votes with it recorded
+  B: The director declares the interest and leaves the room for the vote
+  C: The director declares the interest and an adviser reviews the bid
+  D: The director declares the interest and leaves discussion and vote
 answer: D
 explanation:
-  why_correct: A personal financial interest in a supplier is a clear conflict. The standard governance response
-    is to declare it, record it, and have the conflicted person step out of the discussion and vote, so the decision
-    stays objective and can be defended later.
+  why_correct: A personal financial interest in a supplier is a clear conflict. The standard governance
+    response is to declare it, record it, and have the conflicted person take no part in either the discussion
+    or the vote, so the decision stays objective and can be defended later.
   why_not:
-    A: Collective decision-making does not cancel an individual conflict. One conflicted vote can sway the outcome
-      and undermines confidence in the whole decision.
-    B: Recording the interest after voting is too late. The point is to keep the conflict out of the decision, not
-      merely to document it.
-    C: Forcing a share sale is not needed and delays the trust's business. Recusal resolves the conflict without
-      holding up the decision.
+    A: Declaring and recording are needed, but voting with a known interest still lets it influence the
+      outcome. Disclosure alone does not remove the conflict.
+    B: Leaving for the vote is better than voting, but the director could still shape the discussion that
+      leads to it. The conflict influences the decision before the vote is taken.
+    C: An independent review of the bid can add assurance, but the conflicted director would still take
+      part in the board's decision.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-b
-  checked_by: 2026-10-13-aaig-d1-b-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

@@ -1,30 +1,32 @@
 id: aaig-d1-1.1-0009
 subdomain: '1.1'
 difficulty: easy
-stem: A professional services firm is writing its first AI acceptable use policy for all staff. Which content
-  BEST belongs in this policy?
+stem: A professional services firm already has an AI governance policy that covers the governance committee,
+  risk tiers and the approval process. It is now writing a short acceptable use policy for all staff.
+  Which content BEST belongs in this policy?
 options:
-  A: Detailed configuration steps for each approved AI tool
-  B: The technical architecture of the firm's AI platform
-  C: A full list of the AI vendors the firm has evaluated
+  A: The current list of approved AI tools and their licence terms
+  B: The criteria for classifying AI use cases into risk tiers
+  C: The roles and decision rights of the AI governance committee
   D: What staff may and may not do with AI, and with which data
 answer: D
 explanation:
-  why_correct: 'An acceptable use policy sets expectations for behaviour: permitted and prohibited uses, what
-    data may be entered into AI tools, and the user''s responsibilities. That is what staff need to act correctly,
-    and what the firm needs to enforce.'
+  why_correct: An acceptable use policy sets expectations for behaviour, such as permitted and prohibited
+    uses, what data may be entered into AI tools, and the user's responsibilities. That is what staff
+    need to act correctly, and what the firm needs to enforce. The governance matters are already covered
+    elsewhere.
   why_not:
-    A: Configuration steps belong in procedures or user guides. Putting them in policy makes it long, quickly
-      outdated and hard to follow.
-    B: Architecture is a technical design matter for IT and architecture teams, not a statement of how staff
-      should behave.
-    C: A vendor evaluation list is procurement information. It does not tell staff what they may do, and it
-      would change often.
+    A: Staff need to know where to find approved tools, but the list changes often. It belongs in a register
+      the policy points to, not in the policy text, and licence terms are not a rule of behaviour.
+    B: Risk tier criteria guide the people who assess use cases. They already sit in the governance policy
+      and do not tell staff how to behave.
+    C: Committee roles and decision rights are governance structure, already set out in the governance
+      policy. Repeating them does not tell staff what they may do.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

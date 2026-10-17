@@ -5,27 +5,27 @@ stem: A logistics company's procurement policy was written before AI became comm
   has just added AI-based candidate screening to the product through a routine update. Which policy change
   would BEST address this kind of situation?
 options:
-  A: Ban all software vendors from adding AI features to products
+  A: Require an AI risk review whenever new software is bought
   B: Require vendors to give notice of AI features so they are reviewed
-  C: Rely on each vendor's own published ethics statement about its AI use
-  D: Ask IT to scan vendor software for AI components once a year
+  C: Require vendors to certify that their AI meets recognised standards
+  D: Have IT check release notes for key software for new AI features
 answer: B
 explanation:
-  why_correct: Embedded AI often arrives silently through updates. A policy and contract terms that oblige
-    vendors to notify the company when AI is added or changed, and that trigger the internal review process,
-    bring that AI into governance before it affects decisions such as hiring.
+  why_correct: Embedded AI often arrives silently through updates to software already in use. A policy
+    and contract terms that oblige vendors to notify the company when AI is added or changed, and that
+    trigger internal review, bring that AI into governance before it affects decisions such as hiring.
   why_not:
-    A: A blanket ban is unrealistic, as AI is being added across most software, and would cut the company off
-      from useful features.
-    C: A vendor's ethics statement is generic and self-declared. The company still owns how the tool affects
-      its own candidates.
-    D: An annual scan could find the feature many months after it began screening candidates, and code scanning
-      may not reveal AI features at all.
+    A: A review at purchase is good practice, but this feature arrived later through a routine update.
+      A purchase check would not have caught it.
+    C: A certificate says something about the vendor's product in general. It does not tell the company
+      when AI is added, or whether its own use for screening candidates is acceptable.
+    D: Checking release notes is a useful detective step, but it depends on notes that may not mention
+      AI and covers only software someone thinks is key.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

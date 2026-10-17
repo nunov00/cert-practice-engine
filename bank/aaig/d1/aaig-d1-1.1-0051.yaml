@@ -1,31 +1,32 @@
 id: aaig-d1-1.1-0051
 subdomain: '1.1'
 difficulty: medium
-stem: A regional authority is buying an AI system to help decide which families receive social care visits. The
-  preferred vendor says its model is a trade secret and refuses to explain how decisions are reached. What should
-  the governance leader require in the procurement?
+stem: A regional authority is buying an AI system to help decide which families receive social care visits.
+  The preferred vendor says its model is a trade secret and refuses to explain how decisions are reached.
+  What should the governance leader require in the procurement?
 options:
-  A: Choose the vendor anyway, because the authority is not responsible for the vendor's methods
-  B: Ask the vendor to sign a statement that its model is fair
-  C: Contract terms that let auditors and families get decisions explained
-  D: Delay the purchase until the vendor publishes its source code
+  A: Require an independent fairness audit of the model before purchase
+  B: Require the vendor to share model documentation with the authority under NDA
+  C: Require terms that let auditors and families get decisions explained
+  D: Choose the vendor whose model performs best in a pilot on local cases
 answer: C
 explanation:
-  why_correct: A public body must be able to explain and justify decisions that affect people's lives, and to answer
-    to oversight bodies. Making adequate transparency a contract requirement, such as access for auditors and explanations
-    for families, protects accountability while still allowing the vendor to protect its secrets.
+  why_correct: A public body must be able to explain and justify decisions that affect people's lives,
+    and answer to oversight bodies. Making adequate transparency a contract requirement, with access for
+    auditors and explanations for families, protects accountability while still allowing the vendor to
+    protect its secrets.
   why_not:
-    A: The authority stays accountable for decisions made with tools it buys. Accepting a black box removes its
-      ability to explain or defend those decisions.
-    B: A signed statement is the vendor marking its own work. It gives no basis for explaining individual decisions
-      or for independent checking.
-    D: Full source code goes far beyond what accountability needs and few vendors will agree to it. Targeted transparency
-      terms meet the need without stalling the purchase.
+    A: A fairness audit before purchase gives useful assurance, but it is a one-time check. It does not
+      let the authority explain individual decisions to families or to oversight bodies later.
+    B: Documentation under NDA helps the authority understand the model, but families and auditors would
+      still get no explanation of the decisions that affect them.
+    D: A pilot shows how the model performs on local cases, but good results do not make its decisions
+      explainable. The accountability gap remains.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-b
-  checked_by: 2026-10-13-aaig-d1-b-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

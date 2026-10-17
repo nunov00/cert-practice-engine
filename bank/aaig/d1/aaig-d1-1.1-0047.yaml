@@ -1,31 +1,31 @@
 id: aaig-d1-1.1-0047
 subdomain: '1.1'
 difficulty: medium
-stem: A government agency funds its AI governance office by charging each AI project a share of its budget. When
-  projects are cut, the office loses reviewers, and sponsors have started hinting that a quick approval would keep
-  the funding flowing. What should the governance leader recommend?
+stem: A government agency funds its AI governance office by charging each AI project a share of its budget.
+  When projects are cut, the office loses reviewers, and sponsors have started hinting that a quick approval
+  would keep the funding flowing. What should the governance leader recommend?
 options:
-  A: Raise the share charged to each project so the office can hire more reviewers
-  B: Fund the office from a central baseline budget sized to the AI portfolio
-  C: Let sponsors choose which reviewers they pay for from a shared pool
-  D: Reduce reviews to a self-assessment that projects can fund themselves
+  A: Charge each project a fixed review fee, whatever its budget
+  B: Fund the office from a central budget sized to the AI portfolio
+  C: Have the office report to the audit committee instead of the CIO
+  D: Require approval decisions to be recorded and audited each year
 answer: B
 explanation:
-  why_correct: Oversight that depends on payments from those it oversees is neither stable nor independent. A central
-    baseline budget, sized to the volume and risk of the AI portfolio, keeps the office's capacity steady and removes
-    the link between approvals and funding.
+  why_correct: Oversight that depends on payments from those it oversees is neither stable nor independent.
+    A central baseline budget, sized to the volume and risk of the AI portfolio, keeps the office's capacity
+    steady and removes the link between approvals and funding.
   why_not:
-    A: 'A higher charge keeps the same dependency and makes it stronger: the office would rely even more on sponsors
-      whose projects it must judge.'
-    C: Letting sponsors pick and pay reviewers invites them to choose lenient ones. It deepens the conflict instead
-      of removing it.
-    D: Self-assessment removes independent challenge altogether. It cuts cost by giving up the very oversight the
-      office exists to provide.
+    A: A flat fee is fairer than a budget share, but the office would still be paid by the projects it
+      reviews. Its capacity would still fall when projects are cut.
+    C: A stronger reporting line helps independence, but the funding would still come from the projects.
+      Sponsors could still hint that approvals keep the money flowing.
+    D: Recording and auditing decisions can detect lenient approvals, but only after the fact. The pressure
+      built into the funding model stays in place.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-b
-  checked_by: 2026-10-13-aaig-d1-b-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass
