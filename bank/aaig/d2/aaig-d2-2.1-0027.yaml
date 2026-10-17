@@ -5,25 +5,27 @@ stem: A national statistics office plans to release synthetic data derived from 
   can train models. Leadership assumes synthetic data carries no privacy risk. What should the governance
   lead advise?
 options:
-  A: Release it, since synthetic records belong to no real person
-  B: Release it only to researchers at accredited universities
-  C: Check re-identification risk and usefulness before release
-  D: Release it once its statistical accuracy against the census is confirmed
+  A: Test it for statistical fidelity against the census before release
+  B: Test it for usefulness with a group of pilot researchers
+  C: Test it for re-identification risk before release
+  D: Release it under a licence that bars attempts at re-identification
 answer: C
 explanation:
   why_correct: Synthetic data can leak information about real people, especially outliers, if the generator
-    copies them too closely. It may also fail to preserve the patterns researchers need. Testing both
-    disclosure risk and utility before release lets the office make an informed decision.
+    copies them too closely. Leadership's assumption needs evidence. Testing disclosure risk before release
+    shows whether the data is safe and what changes are needed.
   why_not:
-    A: Synthetic records can still reproduce unusual real individuals closely enough to identify them.
-    B: Limiting who receives it reduces exposure but does not show whether the data itself is safe.
-    D: High accuracy can mean the data mirrors the original too closely, which raises privacy risk. Utility
-      testing alone is not enough.
+    A: Fidelity shows usefulness, not safety. High fidelity can mean the data mirrors real records too
+      closely, which raises privacy risk.
+    B: A pilot tests whether researchers can use the data, not whether it reveals people. It also releases
+      the data before the risk is known.
+    D: A licence gives recourse against misuse but does not show whether the data itself reveals people.
+      It relies on every recipient complying.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

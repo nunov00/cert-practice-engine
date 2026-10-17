@@ -2,30 +2,29 @@ id: aaig-d2-2.1-0046
 subdomain: '2.1'
 difficulty: hard
 stem: A large conglomerate plans to move from a central data lake to an approach in which each business
-  domain publishes its own data products for AI teams to use. Domain heads welcome the autonomy. What
-  should the governance lead insist on as a condition of the change?
+  domain publishes its own data products for AI teams to use. Each domain head will own its products.
+  Domain heads welcome the autonomy. What should the governance lead insist on as a condition of the change?
 options:
-  A: Shared standards on quality, metadata and access that every product must meet
-  B: Keeping the central data team as approver of every new data product
-  C: Letting each domain set its own standards, as it knows its data best
-  D: Delaying the change until all AI models have moved off the data lake
+  A: Shared standards on quality, metadata and access for every product
+  B: Central data team approval of each new data product before release
+  C: A named domain owner accountable for each data product
+  D: A central catalogue where each domain registers its products
 answer: A
 explanation:
-  why_correct: Decentralised ownership can improve quality and speed because domains know their data,
-    but without common rules each domain's products become incompatible and uneven in control. Enterprise
-    standards for quality, metadata, classification and access, applied to every data product and ideally
-    checked automatically, keep autonomy within a governed whole.
+  why_correct: Decentralised ownership can improve quality and speed, but without common rules each domain's
+    products become incompatible and uneven in control. Enterprise standards for quality, metadata and
+    access, ideally checked automatically, keep domain autonomy within a governed whole.
   why_not:
     B: A central approval gate for every product recreates the bottleneck the change is meant to remove.
-    C: Fully independent standards make data products hard to combine and leave control strength to each
-      domain's discretion.
-    D: Migration sequencing is a delivery question. It does not set the governance conditions the new
-      approach needs.
+    C: Named owners are needed, but each owner would still apply its own rules. Products would remain
+      hard to combine and uneven in control.
+    D: A catalogue makes products findable, but it does not set the quality, metadata or access rules
+      they must meet.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-b
-  checked_by: 2026-10-13-aaig-d2-b-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

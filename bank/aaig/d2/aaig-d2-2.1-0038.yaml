@@ -6,28 +6,28 @@ stem: An insurance group wants its health-insurance subsidiary in one country to
   hub's director says no formal arrangement is needed because 'we are all one company'. What should the
   governance lead advise?
 options:
-  A: Set up a written intra-group agreement defining purpose, use limits and duties
-  B: Allow it, since companies with one parent count as a single data controller
-  C: Share only aggregated statistics, as record-level data may never leave a subsidiary
-  D: Let each subsidiary's IT team approve the hub's access to its systems
+  A: A written intra-group agreement setting purpose, limits and duties
+  B: Written consent from each customer for transfer to the hub
+  C: A group data protection policy that each subsidiary must follow
+  D: Written approval of the transfer from the subsidiary's privacy officer
 answer: A
 explanation:
-  why_correct: Group companies are usually separate legal entities with their own obligations to customers
-    and regulators, often in different jurisdictions. A written intra-group data sharing agreement fixes
-    the permitted purpose, safeguards, cross-border conditions, retention and who answers for what, so
-    the shared fraud model rests on a clear and defensible basis.
+  why_correct: Group companies are usually separate legal entities with their own duties to customers
+    and regulators, often in different countries. A written agreement between them fixes the permitted
+    purpose, safeguards, cross-border conditions, retention and who answers for what. The shared fraud
+    model then rests on a clear basis.
   why_not:
-    B: Common ownership does not merge legal entities. Each subsidiary remains responsible for the data
-      it collected and the purposes it promised its customers.
-    C: Aggregated statistics would not support training a fraud model, and a blanket ban is stricter than
-      needed. Record-level sharing can be lawful with the right agreement and safeguards.
-    D: Technical access approval says nothing about purpose, legal basis or accountability. It treats
-      a governance decision as an IT permission.
+    B: Consent is hard to make free and informed for insurance customers, and it would not set the hub's
+      duties or who answers for the model. The entities still need an arrangement between them.
+    C: A group policy sets common standards, but it is not a binding arrangement between the two entities
+      for this transfer and use.
+    D: An approval inside the subsidiary records its own decision but binds nothing at the hub. Purpose,
+      limits and accountability on the receiving side are left open.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-b
-  checked_by: 2026-10-13-aaig-d2-b-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

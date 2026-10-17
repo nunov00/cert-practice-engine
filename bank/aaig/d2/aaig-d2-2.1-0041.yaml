@@ -1,33 +1,32 @@
 id: aaig-d2-2.1-0041
 subdomain: '2.1'
-difficulty: hard
+difficulty: medium
 stem: A law firm's retention schedule requires client files to be destroyed six years after a matter closes.
   Its AI research assistant draws on a vector store built from text chunks and embeddings of past client
   files. When records management destroys an expired file, nothing changes in the vector store. What should
   the governance lead require?
 options:
-  A: Exclude the vector store from the schedule, since embeddings are not documents
-  B: Rebuild the vector store once a year from the files still held at that time
-  C: Disable the assistant until the firm proves no expired content remains
-  D: Register the vector store as a data asset under the same retention rules
+  A: Give the vector store its own retention period suited to knowledge tools
+  B: Rebuild the vector store each quarter from the client files still held
+  C: Restrict retrieval to matters closed less than six years ago
+  D: Bring the vector store under the retention rules of its source files
 answer: D
 explanation:
   why_correct: The vector store holds text chunks and representations derived from client files, and the
-    assistant can surface that content. It is a new data asset and should be inventoried, classified and
-    covered by the retention schedule, with deletion of a source file triggering removal of its derived
-    entries. This keeps the firm's retention commitments true across every copy.
+    assistant can surface that content. It is a data asset that should follow the retention rules of its
+    sources. Destroying a source file should then trigger removal of its derived entries.
   why_not:
-    A: The store contains readable chunks of client text, and embeddings can reveal content. Excluding
-      it means destroyed files survive in another form.
-    B: A yearly rebuild leaves expired content available for up to a year and treats the store as outside
+    A: A separate period breaks the link with the source files. Content could outlive a destroyed file,
+      which breaks the firm's commitment for the client.
+    B: A quarterly rebuild leaves expired content held for up to three months and keeps the store outside
       normal records governance.
-    C: Shutting the tool down may be an overreaction while a fix is designed. The lasting need is to bring
-      the store under retention control.
+    C: Filtering by date hides expired content but still holds it, so the firm breaks its destruction
+      commitment. It also misses files destroyed for other reasons.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-b
-  checked_by: 2026-10-13-aaig-d2-b-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

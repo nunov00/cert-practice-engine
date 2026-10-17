@@ -1,31 +1,31 @@
 id: aaig-d2-2.1-0014
 subdomain: '2.1'
-difficulty: easy
+difficulty: medium
 stem: A manufacturing group has hundreds of data sets spread across plants. AI teams keep spending weeks
   finding data and often use copies whose origin and restrictions are unclear. Which measure would help
   MOST?
 options:
-  A: A data catalogue describing each set, its owner and use limits
-  B: A central data lake that copies every plant's data
-  C: A rule that AI teams use only data from their own plant
-  D: A help desk that answers questions about data locations
+  A: A data catalogue recording each set's owner, origin and use limits
+  B: A data catalogue built by scanning the plants' systems automatically
+  C: A data catalogue limited to the sets certified for AI use
+  D: A data lake with a search index over the plants' data sets
 answer: A
 explanation:
-  why_correct: 'A catalogue makes data findable and carries the metadata governance needs: owner, classification,
-    quality and permitted uses. Teams find the authoritative source quickly and know what they may do
-    with it, which cuts uncontrolled copies.'
+  why_correct: A catalogue makes data findable, and the owner, origin and permitted uses it records are
+    exactly what the teams lack. Teams find the authoritative source quickly and know what they may do
+    with it, which cuts uncontrolled copies.
   why_not:
-    B: Copying everything into a lake creates yet another copy without solving the problem of knowing
-      what the data is, who owns it or how it may be used.
-    C: Restricting teams to local data reduces reuse and value, and still leaves them unsure of origin
-      and limits within their own plant.
-    D: A help desk relies on a few people's knowledge and does not scale. It also does not record use
-      restrictions in a reusable way.
+    B: Automated scanning finds data quickly but captures technical metadata. Owners, origin and use limits
+      still have to be recorded, so teams remain unsure what they may do.
+    C: Listing only certified sets leaves most of the plants' data hard to find, so teams keep searching
+      and copying.
+    D: A searchable lake helps finding but creates yet another copy, and it does not record who owns the
+      data or how it may be used.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

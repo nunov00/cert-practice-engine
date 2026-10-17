@@ -1,32 +1,32 @@
 id: aaig-d2-2.1-0001
 subdomain: '2.1'
-difficulty: easy
+difficulty: medium
 stem: A retail bank's analytics team wants to use five years of card transaction data to train a fraud
-  model. The data platform team has granted them technical access. Who should approve whether this data
-  may be used for the new purpose?
+  model. The platform team can grant access, and the privacy office has confirmed a lawful basis exists.
+  Who should decide whether the data may be used for this new purpose?
 options:
-  A: The business data owner accountable for the transaction data
-  B: The platform administrator who granted the technical access
-  C: The lead data scientist building the fraud model
-  D: The data steward who maintains the data definitions and quality rules
+  A: The head of cards, who is accountable for the transaction data
+  B: The privacy officer, who confirmed the lawful basis for the use
+  C: The model risk committee, which will validate the fraud model
+  D: The data steward, who maintains the definitions and quality rules
 answer: A
 explanation:
-  why_correct: 'Decisions about whether data may be used, and for what, belong to the data owner: the
-    business leader accountable for that data set and its risks. Technical access is not the same as permission
-    to use the data for a new purpose. The owner weighs the business value against privacy, contractual
-    and reputational risk and is answerable for the decision.'
+  why_correct: Decisions about whether data may be used, and for what, belong to the data owner. That
+    is the business leader accountable for the data set and its risks, here the head of cards. A lawful
+    basis shows the use is permitted, not that it is wise. The owner weighs the value against contractual,
+    customer and reputational risk and answers for the decision.
   why_not:
-    B: The administrator acts as a custodian who implements controls on the owner's instructions. Granting
-      access is an operational act, not authority to approve a new use of the data.
-    C: The data scientist is the requester. Letting the user of the data approve its own use removes the
-      independent accountability that ownership is meant to provide.
-    D: The steward manages definitions, quality rules and day-to-day data care, and often advises the
-      owner. The steward does not normally hold the authority to approve new uses.
+    B: The privacy office decides whether a use is lawful, and its view is an input. Whether the bank
+      should use its card data this way is a business decision the owner is accountable for.
+    C: The committee judges whether the model is sound once it is built. It does not decide whether a
+      business unit's data may be put to a new use in the first place.
+    D: The steward manages definitions and quality and often advises the owner. The steward does not hold
+      the authority to approve new uses of the data.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

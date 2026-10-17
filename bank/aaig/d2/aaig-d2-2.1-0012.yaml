@@ -5,27 +5,27 @@ stem: A recruitment platform's matching model uses 140 attributes about candidat
   of them, including date of birth and home address, add almost nothing to accuracy. What should the governance
   lead recommend?
 options:
-  A: Keep them in case they become useful in future versions
-  B: Keep them but restrict access to the data science team only
+  A: Keep them and test the model for age and location bias each quarter
+  B: Remove them from the model but keep them in the training data store
   C: Remove them from the model and stop collecting them for it
-  D: Encrypt them so the model can still use them safely
+  D: Replace them with banded age and region values in the model
 answer: C
 explanation:
   why_correct: Data minimisation means using only the data needed for the purpose. Attributes that add
     little value but carry privacy and discrimination risk, such as age and address, should be removed
     from the model and from the collection that feeds it. This cuts risk with almost no loss of value.
   why_not:
-    A: Holding personal data 'just in case' is exactly what minimisation rules out. Future needs should
-      be justified when they arise.
-    B: Restricting access reduces one risk but keeps unnecessary data in the model, where age and address
-      can still drive unfair outcomes.
-    D: Encryption protects data at rest and in transit, but the model still uses the attributes. It does
-      not address whether the data should be processed at all.
+    A: Bias testing is detective. It may find unfair outcomes after candidates are affected, while keeping
+      data that adds nothing to the model's purpose.
+    B: Taking them out of the model helps, but the data would still be collected and stored with no purpose,
+      keeping the privacy and breach risk.
+    D: Banding reduces precision, but the attributes still add almost nothing to accuracy. Age and region
+      bands can still drive unfair matching, so the data is still not needed.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

@@ -6,27 +6,26 @@ stem: An engineering services company wants an assistant that helps field techni
   require technicians to record which manual section they followed. Which architecture choice BEST meets
   these needs?
 options:
-  A: Fine-tune a model on the manuals each time a revision is issued
-  B: Use a general model with no access to the manuals
+  A: Fine-tune on each revision and name the manual version in each answer
+  B: Retrieve sections from an index rebuilt once a year, with citations
   C: Retrieve current manual sections and cite them in each answer
-  D: Train a new model from scratch once a year
+  D: Retrieve current manual sections and blend them into one summary
 answer: C
 explanation:
   why_correct: A retrieval-augmented design pulls the current documents at question time, so answers reflect
     the latest manuals without retraining, and the system can show which sections it used. That meets
     both governance needs, currency and traceability, at lower cost.
   why_not:
-    A: Repeated fine-tuning is costly, lags the latest revisions, and does not reliably show which
-      source an answer came from.
-    B: A general model does not know the company's manuals and may give confident but wrong answers with
-      no source to check.
-    D: Training from scratch is the most expensive option, is slow to reflect changes and still gives
-      no source citations.
+    A: Naming the manual version does not show which section was followed, and fine-tuning does not reliably
+      tie an answer to a source. Each revision also needs a costly retrain.
+    B: Citations meet the traceability need, but a yearly index misses revisions issued several times
+      a year.
+    D: The answers would be current, but technicians could not record which section they followed.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass

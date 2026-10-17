@@ -5,27 +5,27 @@ stem: A consulting firm rolls out an internal AI assistant. Staff paste client m
   and the assistant stores conversation history. The firm already has a four-level classification scheme
   for documents. What is the BEST governance step?
 options:
-  A: Ban client material from prompts until a new scheme is written
-  B: Let each practice decide how to classify the prompts its staff write
-  C: Label all assistant content as confidential by default
-  D: Apply the existing scheme to prompts, outputs and stored history
+  A: Write a separate classification scheme for AI conversation data
+  B: Set a 30-day retention limit on stored assistant conversation history
+  C: Label assistant content as confidential by default
+  D: Extend the existing scheme to prompts, outputs and stored history
 answer: D
 explanation:
-  why_correct: Prompts, outputs and conversation history are data like any other and can contain the most
+  why_correct: Prompts, outputs and conversation history are data like any other and can hold the most
     sensitive client information. Extending the existing, understood scheme to them means the same handling,
-    access and retention rules apply, with no need to invent a parallel system.
+    access and retention rules apply. The firm needs no parallel system.
   why_not:
-    A: A new scheme is unnecessary when one already exists, and a blanket ban would likely push staff
-      to unsanctioned tools. The gap is in coverage, not in the scheme itself.
-    B: Different rules per practice create inconsistent handling of the same client data and make enterprise
-      oversight difficult.
-    C: Over-classifying everything weakens the meaning of labels and makes routine work harder, so people
-      start ignoring them. Classification should reflect actual content.
+    A: A second scheme for the same client data creates two sets of rules and confusion over which applies.
+      The existing scheme is understood, and the gap is in its coverage.
+    B: Retention limits how long history is kept, but not who can see prompts or how outputs are handled.
+      Retention periods should follow from how the data is classified.
+    C: Over-classifying content by default weakens the meaning of labels and makes routine work harder,
+      so people start ignoring them. Classification should reflect actual content.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-13-aaig-d2-a-check
+  checked_by: 2026-10-17-aaig-d2-rework-check
   check_verdict: pass
