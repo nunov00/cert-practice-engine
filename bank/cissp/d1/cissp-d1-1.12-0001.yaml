@@ -1,27 +1,34 @@
 id: cissp-d1-1.12-0001
 subdomain: '1.12'
 difficulty: medium
-stem: After a year of annual compliance videos, the click rate in phishing simulations has stayed at about
-  20%. Which change is MOST likely to improve results?
+stem: A company sends monthly phishing simulations, and anyone who clicks sees a short teaching page straight
+  away. Other training is one annual compliance video. After a year the click rate is flat at about 20%.
+  Most repeat clickers work in finance and recruitment, where opening unexpected invoices and CVs is part
+  of the job. Which change is MOST likely to improve results?
 options:
-  A: Require employees who click a simulated phish to repeat the annual video module
-  B: Use short, frequent, role-relevant training with instant feedback on simulation failures
-  C: Add an external-sender warning banner to email and retire the awareness videos
-  D: Replace the annual video with a longer, more detailed annual classroom course
+  A: Run weekly simulations for finance and recruitment with harder lures
+  B: Add short monthly modules built on the invoice and CV lures those teams receive
+  C: Report finance and recruitment's phish reporting rate to management with the click rate
+  D: Require repeat clickers in those teams to retake the annual video and confirm in writing
 answer: B
 explanation:
-  why_correct: Behaviour changes through regular reinforcement, relevance to the job, and feedback at
-    the moment of the mistake. Tracking the trend shows whether the programme works.
+  why_correct: The clicks cluster in roles whose daily work looks like the lure, so generic content is
+    not reaching them. Short, frequent training built on the invoices and CVs those staff actually handle
+    teaches them how to check such files as part of the job. Instant feedback already exists, so role-relevant
+    content is the missing piece.
   why_not:
-    A: Repeating a format that has already failed is remedial at best and is unlikely to change behaviour.
-    C: A banner is a useful technical aid, but retiring training removes reinforcement. It is not an improvement
-      to the awareness programme.
-    D: This changes the format but keeps the once-a-year rhythm that has already failed to change behaviour.
+    A: More frequent, harder tests measure the same behaviour more often, and each failure still leads
+      to the same generic teaching page. Staff whose job is to open invoices and CVs need to learn how
+      to check them, not more tests.
+    C: The reporting rate is a better measure of programme health, but measuring differently does not
+      change behaviour. It shows results rather than improving them.
+    D: Remedial training for repeat clickers is common, but it reuses the generic annual content that
+      has already failed to reach these roles. The written confirmation adds paperwork, not skill.
 status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-cissp-d1-a
-  checked_by: 2026-10-12-cissp-d1-a-check
+  checked_by: 2026-10-17-cissp-d1-rework-check
   check_verdict: pass

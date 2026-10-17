@@ -1,31 +1,32 @@
 id: cissp-d1-1.7-0002
 subdomain: '1.7'
-difficulty: hard
-stem: A business impact analysis sets a maximum tolerable downtime of 8 hours for order processing. The
-  proposed recovery solution restores systems within 6 hours, but staff then need about 4 more hours to
-  reconcile and verify transactions before orders can resume. What should the continuity manager conclude?
+difficulty: medium
+stem: A business impact analysis, signed off by the business last month, sets a maximum tolerable downtime
+  of 8 hours for order processing. The proposed recovery solution restores systems within 6 hours. Staff
+  then need about 4 more hours to reconcile and verify transactions before orders can resume. What should
+  the continuity manager conclude?
 options:
-  A: The maximum tolerable downtime should be raised to 10 hours to fit the solution
-  B: The solution is adequate, because the 6-hour recovery time is within the 8-hour limit
-  C: The solution is inadequate, because recovery time plus work recovery time exceeds the maximum tolerable
-    downtime
-  D: The recovery point objective must be reduced
+  A: The solution is adequate if the business re-approves a 10-hour limit
+  B: The solution is adequate, as systems are restored inside 8 hours
+  C: The solution is inadequate, as orders resume about 2 hours too late
+  D: The solution is inadequate until the recovery point objective is confirmed
 answer: C
 explanation:
-  why_correct: The business is back only once systems are restored and the data is verified. 6 + 4 = 10
-    hours exceeds the 8-hour MTD, so the design must change.
+  why_correct: The business is back only once systems are restored and the data is verified. Six hours
+    of recovery plus four hours of work recovery is 10 hours, two more than the 8-hour MTD. The design
+    must change.
   why_not:
-    A: The MTD comes from business impact, not from what a solution can achieve. Changing it to fit a
-      design defeats the analysis.
-    B: This ignores the work recovery time. Restored systems that cannot yet process orders do not end
-      the outage.
-    D: The RPO limits data loss, and nothing suggests data loss is the problem. The gap is in total recovery
-      time.
+    A: The MTD comes from business impact and was signed off last month. Asking the business to raise
+      it to fit a design reverses the analysis.
+    B: This counts only the recovery time. Restored systems that cannot yet process orders do not end
+      the outage, so the work recovery time must be added.
+    D: The RPO limits data loss, and nothing suggests data loss is the problem. The solution already fails
+      on total recovery time, whatever the RPO.
 status: published
 outline_version: '2024-04-15'
 sample: true
 provenance:
   generated_by: claude
   run_id: 2026-10-12-cissp-d1-a
-  checked_by: 2026-10-12-cissp-d1-a-check
+  checked_by: 2026-10-17-cissp-d1-rework-check
   check_verdict: pass

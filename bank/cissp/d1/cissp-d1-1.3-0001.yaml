@@ -1,27 +1,32 @@
 id: cissp-d1-1.3-0001
 subdomain: '1.3'
-difficulty: medium
-stem: A newly appointed CISO finds that security projects are funded case by case and are often stalled
-  by business units that see them as IT's concern. What should the CISO do FIRST to put security on a
-  sustainable footing?
+difficulty: hard
+stem: A newly appointed CISO finds that the board approved a security charter last year that names the
+  CISO accountable for the programme. Business units hold their own budgets, fund security projects case
+  by case, and often stall them as IT's concern. What should the CISO do FIRST to put security on a sustainable
+  footing?
 options:
-  A: Obtain executive approval for a security strategy and charter aligned to business goals
-  B: Deploy a high-visibility technical control to demonstrate quick wins to the business
-  C: Run an organisation-wide awareness campaign on why security is everyone's concern
-  D: Rewrite the technical security standards so that business units must follow them
+  A: Set up a steering committee of business heads to rank and fund security work
+  B: Ask the board to reaffirm the security charter and the CISO's mandate
+  C: Prepare a costed multi-year security roadmap for the next budget cycle
+  D: Run an awareness campaign for managers on security as a business concern
 answer: A
 explanation:
-  why_correct: Governance starts with a mandate from senior leadership. Approved strategy, roles and accountability
-    give later projects funding and authority that do not depend on case-by-case negotiation.
+  why_correct: The mandate already exists, so the gap is the lack of a forum where business units share
+    decisions on security. A steering committee of business heads turns case-by-case funding into agreed
+    priorities that the people holding the budgets own. That makes later projects sustainable.
   why_not:
-    B: Quick wins can help, but without a mandate the funding and cooperation problems remain.
-    C: Awareness can shift attitudes, but it creates no mandate, funding model or accountability.
-    D: Standards sit below policy and strategy. Rewriting them first does nothing about the missing authority.
+    B: Executive backing is the usual first step, but the board has already given it. Reaffirming the
+      charter does not change how business units decide or fund the work.
+    C: A roadmap is needed, but one prepared by the CISO alone stays an IT plan. It works best after business
+      heads have agreed the priorities it should fund.
+    D: Awareness can shift attitudes, but it creates no decision forum or funding model. Managers who
+      agree in principle will still fund projects case by case.
 status: published
 outline_version: '2024-04-15'
 sample: true
 provenance:
   generated_by: claude
   run_id: 2026-10-12-cissp-d1-a
-  checked_by: 2026-10-12-cissp-d1-a-check
+  checked_by: 2026-10-17-cissp-d1-rework-check
   check_verdict: pass

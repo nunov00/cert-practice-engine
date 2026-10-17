@@ -1,26 +1,34 @@
 id: cissp-d1-1.9-0001
 subdomain: '1.9'
 difficulty: medium
-stem: A risk assessment of a business-critical customer database is complete and controls have been chosen.
-  Some residual risk remains. Who should formally accept it?
+stem: A risk assessment of the customer database used by the sales division is complete and controls have
+  been chosen. The residual risk is rated medium, within the risk appetite the board has set. IT runs
+  the database, and the sales division uses it to manage its customers. Who should formally accept the
+  residual risk?
 options:
-  A: The business process owner
-  B: The chief information security officer
-  C: The head of internal audit
-  D: The database administrator
+  A: The sales director, who owns the customer process
+  B: The CISO, who led the risk assessment
+  C: The risk committee, which oversees the risk register
+  D: The head of IT, who runs the database
 answer: A
 explanation:
-  why_correct: Risk acceptance belongs to the person accountable for the business outcome and with authority
-    over its resources, which is the business owner, not the security or IT staff who advise on it.
+  why_correct: Risk acceptance belongs to the person accountable for the business outcome, with authority
+    over its resources. The risk is within appetite, so the sales director, who owns the process the data
+    supports, should sign it off.
   why_not:
-    B: The CISO advises on and reports risk, but accepting business risk is the business owner's decision.
-    C: Audit must stay independent. Accepting risk would compromise its role of giving assurance.
-    D: The administrator is a custodian who runs controls, not someone accountable for business risk.
+    B: The CISO led the assessment and advises on and reports risk, but accepting a business risk is the
+      business owner's decision. If the CISO signs, the business owner who is accountable for the risk
+      is left out of the decision.
+    C: The committee oversees the organisation's risk profile and decides on risks that exceed the board's
+      appetite or need escalation. A risk within appetite is accepted by its owner, and sending it to
+      the committee dilutes that owner's accountability.
+    D: The head of IT runs and maintains the database for the business. That is a custodial role, not
+      accountability for the business risk.
 status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-cissp-d1-a
-  checked_by: 2026-10-12-cissp-d1-a-check
+  checked_by: 2026-10-17-cissp-d1-rework-check
   check_verdict: pass

@@ -1,29 +1,31 @@
 id: cissp-d1-1.2-0002
 subdomain: '1.2'
-difficulty: medium
+difficulty: hard
 stem: A procurement platform must allow the company to prove to an outside arbitrator, if a dispute arises,
   that a particular supplier submitted a particular bid and that the bid has not changed since. Which
   control BEST meets this need?
 options:
-  A: Calculate a hash of each bid and keep it in the platform's database
-  B: Store every bid on mirrored, redundant disks
-  C: Protect bid uploads with TLS
-  D: Have suppliers digitally sign each bid with a private key that only they control
+  A: Have the platform sign each bid with the company's private key on receipt
+  B: Register each bid's hash with an independent timestamping service
+  C: Require mutual TLS with a client certificate for each supplier upload
+  D: Have each supplier digitally sign its bid before uploading it
 answer: D
 explanation:
-  why_correct: A digital signature binds the bid to the holder of the private key and reveals any later
-    change, giving both origin proof and integrity that a third party can verify.
+  why_correct: Only the supplier's own signature ties the bid to that supplier, and any later change breaks
+    it. The arbitrator can verify it with the supplier's public key without trusting the company, which
+    is a party to the dispute. It gives both origin and integrity evidence.
   why_not:
-    A: A hash the company stores itself can be recalculated by the company, so it proves neither who sent
-      the bid nor that the company did not alter it.
-    B: Redundancy protects availability. It proves nothing about who wrote the bid.
-    C: TLS protects data in transit between two endpoints, but it leaves no evidence afterwards that a
-      third party could check.
+    A: A company signature proves what the company received and holds, but the company is a party to the
+      dispute. It does not prove the supplier wrote the bid, and the company could sign an altered bid.
+    B: An independent timestamp proves the bid existed in that form at that time, which covers integrity.
+      It does not prove which supplier submitted it.
+    C: Mutual TLS authenticates the supplier during the upload and protects the data in transit. Once
+      the session ends it leaves no evidence about the bid that an arbitrator could check.
 status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-12-cissp-d1-a
-  checked_by: 2026-10-12-cissp-d1-a-check
+  checked_by: 2026-10-17-cissp-d1-rework-check
   check_verdict: pass
