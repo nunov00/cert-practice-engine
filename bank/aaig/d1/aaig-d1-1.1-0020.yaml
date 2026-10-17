@@ -1,29 +1,31 @@
 id: aaig-d1-1.1-0020
 subdomain: '1.1'
-difficulty: medium
-stem: An insurer's enterprise AI inventory lists only the models built in-house by its data science team. What
-  is the MOST significant gap?
+difficulty: easy
+stem: An insurer's enterprise AI inventory lists only the models built in-house by its data science team.
+  The insurer buys most of its claims and underwriting software from vendors. What is the MOST significant
+  gap?
 options:
-  A: It does not record the size of each model's training dataset
-  B: It does not record the programming language of each model
+  A: It does not record a named business owner for each model
+  B: It does not record each model's risk tier or last review date
   C: It omits AI embedded in purchased software and services
-  D: It is not published anywhere on the company's public website
+  D: It is not reconciled with the model validation schedule
 answer: C
 explanation:
-  why_correct: Much of an enterprise's AI arrives inside bought products and cloud services. Leaving that out
-    means a large share of AI risk has no owner, no assessment and no visibility to the board, which undermines
-    the inventory's whole purpose.
+  why_correct: Much of this insurer's AI arrives inside bought claims and underwriting products. Leaving
+    that out means a large share of AI risk has no owner, no assessment and no visibility to the board,
+    which undermines the inventory's whole purpose.
   why_not:
-    A: Dataset size is a technical detail that might be useful to record, but its absence is minor compared
-      with missing entire systems.
-    B: The programming language has little bearing on governance risk. It is not a meaningful gap.
-    D: An internal inventory does not need to be public. Some disclosure of AI use may be wise, but that is
-      a separate decision.
+    A: Owners are an important field, and their absence should be fixed. But a missing field on known
+      models matters less than whole systems that nobody knows about.
+    B: Risk tiers and review dates help prioritise oversight, but they can only be recorded for systems
+      the inventory includes. The larger gap is the systems left out.
+    D: Reconciling with the validation schedule improves accuracy for the models listed. It cannot reveal
+      vendor AI that neither list contains.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

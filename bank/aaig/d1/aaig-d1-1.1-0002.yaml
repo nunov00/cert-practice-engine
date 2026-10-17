@@ -1,31 +1,35 @@
 id: aaig-d1-1.1-0002
 subdomain: '1.1'
 difficulty: hard
-stem: Two years ago the board of a logistics company approved an AI strategy focused on cutting costs. The
-  company has since repositioned itself around premium customer service. Several AI projects still under way
-  aim to reduce headcount in the customer contact centre. What should the governance leader recommend?
+stem: Two years ago the board of a logistics company approved an AI strategy focused on cutting costs.
+  The company has since repositioned itself around premium customer service, but the AI strategy still
+  names cost reduction as its main aim. New AI proposals are still scored against it, and several projects
+  under way aim to cut contact-centre headcount. What should the governance leader recommend FIRST?
 options:
-  A: Let the projects finish, then align new projects to the new strategy
-  B: Cancel all in-flight AI projects and restart strategic planning
-  C: Ask project sponsors to restate benefits in customer-service terms
-  D: Revisit the AI strategy and reassess in-flight projects against it
+  A: Ask each project sponsor to confirm fit with the new corporate direction
+  B: Pause the contact-centre projects until their business cases are reviewed
+  C: Add customer experience measures to each project's benefit tracking
+  D: Refresh the AI strategy so that it reflects the new corporate direction
 answer: D
 explanation:
-  why_correct: When corporate strategy changes, the AI strategy that serves it must be refreshed, and the existing
-    portfolio judged against the new direction. Some projects may continue, some may be reshaped and some stopped.
-    This keeps AI spending aligned with what the board now wants, without throwing away work that still fits.
+  why_correct: The AI strategy is the reference that proposals and projects are judged against, and it
+    still points at cost cutting. Until it is refreshed, every new proposal is approved against the wrong
+    aim. Once it reflects the new direction, the in-flight projects can be reassessed against criteria
+    the board has endorsed.
   why_not:
-    A: Finishing projects that may now work against the new strategy wastes money and could damage the premium
-      service the company is trying to build.
-    B: Cancelling everything is an overreaction. Some projects may still fit the new direction, and a blanket
-      stop destroys value without any assessment.
-    C: Restating benefits in new language changes the paperwork, not the substance. A headcount-cutting project
-      does not become a service project because its business case is reworded.
+    A: Sponsor confirmation looks at the current portfolio, but each sponsor judges their own project,
+      and new proposals would still be scored against the outdated cost aim. The reference that drives
+      every approval has to change first.
+    B: Pausing the contact-centre projects may be prudent, but it covers only one area and does not say
+      what the reviewed business cases should be judged against. The outdated strategy would still drive
+      new approvals.
+    C: Better measures show how projects affect customers, but they track results without changing the
+      direction. Projects built to cut headcount would continue under a strategy that still rewards it.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

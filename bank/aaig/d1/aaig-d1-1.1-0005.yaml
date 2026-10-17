@@ -1,31 +1,34 @@
 id: aaig-d1-1.1-0005
 subdomain: '1.1'
 difficulty: medium
-stem: A pharmaceutical company set up an AI governance committee last year. Business units now launch AI tools
-  after only informing the committee, and the committee has no way to stop or delay them. What is the MOST
-  likely root cause?
+stem: A pharmaceutical company's executive committee set up an AI governance committee last year, chaired
+  by the chief operating officer. The committee has published review criteria, and units register each
+  new AI tool with it. Units now launch tools after only informing the committee, and two launches went
+  ahead last quarter despite its written objections. What is the MOST likely root cause?
 options:
-  A: The committee meets too rarely to review every new AI tool in time
-  B: The charter does not give the committee defined decision rights
-  C: The committee lacks enough data scientists among its members
-  D: Business units have not yet been trained on the AI policy
+  A: The committee has no agreed criteria for judging AI tools
+  B: The committee's charter grants it no decision rights
+  C: Senior executives have not visibly sponsored the committee
+  D: The AI policy has no process for registering new AI tools
 answer: B
 explanation:
-  why_correct: A governance body that can only be informed is advisory in practice. Without decision rights
-    written into its charter and backed by senior leadership, business units have no obligation to wait for
-    approval. Fixing the mandate is the foundation for every other improvement.
+  why_correct: A governance body whose objections can be ignored is advisory in practice. The committee
+    has criteria, a senior chair and a register, yet launches go ahead over its objections. That points
+    to its mandate. Without decision rights written into its charter, units have no obligation to wait
+    for approval or act on its view.
   why_not:
-    A: Meeting more often would not help if the committee still cannot block or condition a launch. Frequency
-      is not the issue; authority is.
-    C: Technical expertise improves the quality of reviews, but expert members without authority still cannot
-      stop a launch.
-    D: Training may raise awareness, but the scenario shows units already inform the committee. They proceed
-      because nothing requires them to wait.
+    A: Missing criteria would weaken reviews, but the committee has published them. The problem is that
+      its view does not bind anyone.
+    C: Weak sponsorship can undermine a committee, but this one was set up by the executive committee
+      and is chaired by the COO. Sponsorship is visible. What the committee lacks is a mandate that makes
+      its objections binding.
+    D: Units already register each new tool, so the committee knows what is launching. Knowing is not
+      the same as being able to stop or condition a launch.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

@@ -1,29 +1,31 @@
 id: aaig-d1-1.1-0029
 subdomain: '1.1'
 difficulty: easy
-stem: A global company with 40,000 employees is designing its AI awareness programme. Which approach is MOST
-  effective?
+stem: A global company with 40,000 employees is designing its AI awareness programme. Its staff range
+  from factory workers who rarely use AI, to analysts who build models, to executives who approve AI investments.
+  Which approach is MOST effective?
 options:
-  A: The same technical course on AI models for every employee
-  B: A one-time video at onboarding covering the AI policy
-  C: Training only for the data scientists who build AI models
-  D: Training tailored to each role's use of AI and its duties
+  A: A common AI awareness course, refreshed each year
+  B: Mandatory AI policy training with a yearly signed attestation
+  C: In-depth AI training for model developers and model approvers
+  D: Training tailored to each role's use of AI and its AI duties
 answer: D
 explanation:
-  why_correct: 'People use and influence AI in different ways: executives make decisions about it, managers
-    approve uses, and staff enter data into it. Role-based training gives each group what it needs to act responsibly,
-    which makes the programme relevant and effective.'
+  why_correct: People use and influence AI in different ways, from executives who decide on it to staff
+    who enter data into it. Role-based training gives each group what it needs to act responsibly, which
+    makes the programme relevant and effective across this mix of roles.
   why_not:
-    A: A single technical course is too deep for most staff and too shallow for specialists, so it serves almost
-      nobody well.
-    B: A one-off video is quickly forgotten and cannot keep pace with changing tools and policy.
-    C: Most AI risk now comes from people who use AI, not only those who build it. Leaving them out ignores
-      a large exposure.
+    A: A common baseline course is useful, but one level of content is too deep for factory staff and
+      too shallow for analysts and executives.
+    B: Policy training with attestation shows that people have read the rules, but it does not build the
+      different skills each group needs.
+    C: Developers and approvers need depth, but leaving out everyone else ignores the many staff who use
+      AI and the executives who decide on it.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

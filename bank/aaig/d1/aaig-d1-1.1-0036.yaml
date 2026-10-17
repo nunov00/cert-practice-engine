@@ -1,30 +1,32 @@
 id: aaig-d1-1.1-0036
 subdomain: '1.1'
 difficulty: medium
-stem: A chief audit executive at a large retailer is planning the first internal audit of AI governance. Which
-  audit scope would give the board the MOST useful assurance?
+stem: A chief audit executive at a large retailer is planning the first internal audit of AI governance.
+  The retailer has about 200 AI uses, most of them low risk. The framework's design was reviewed by consultants
+  last year, and the AI inventory has been validated. Which audit scope would give the board the MOST
+  useful assurance?
 options:
-  A: Whether governance controls work as designed for high-risk AI uses
-  B: Whether the data science team consistently follows its development standards
-  C: Whether model accuracy is tested against the agreed thresholds
-  D: Whether the AI policy text matches the latest AI regulation
+  A: Whether controls operate effectively for the high-risk AI uses
+  B: Whether controls operate effectively for a random sample of AI uses
+  C: Whether the governance framework's design covers each type of AI use
+  D: Whether the AI policy and standards meet the latest regulation
 answer: A
 explanation:
-  why_correct: The board needs to know whether governance actually works where it matters most. Testing that
-    controls such as approval, ownership, oversight and monitoring operate effectively for high-risk uses gives
-    assurance on the system as a whole.
+  why_correct: The board needs to know whether governance actually works where it matters most. Testing
+    that controls such as approval, ownership, oversight and monitoring operate effectively for the high-risk
+    uses gives assurance where failure would do the most harm.
   why_not:
-    B: Development standards are one part of the picture, but a narrow technical scope misses the governance
-      processes the board relies on.
-    C: Accuracy testing is a single control. Its success says nothing about ownership, approval or ethical
-      oversight.
-    D: Policy alignment on paper does not show whether governance operates in practice, which is what assurance
-      must cover.
+    B: Testing operation is right, but a random sample of mostly low-risk uses would spend the audit where
+      failures matter least. The high-risk uses could be barely covered.
+    C: A design review is a sound audit scope, but consultants reviewed the design last year. Repeating
+      it adds less than testing whether the controls work in practice.
+    D: Policy alignment is useful, but it tests design on paper. It does not show whether governance operates
+      in practice.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

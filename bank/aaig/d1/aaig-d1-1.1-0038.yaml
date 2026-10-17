@@ -1,30 +1,30 @@
 id: aaig-d1-1.1-0038
 subdomain: '1.1'
-difficulty: easy
-stem: A public benefits agency is writing policy on which AI-supported decisions require human review before
-  they take effect. Which factor should MOST determine the level of human oversight?
+difficulty: medium
+stem: A public benefits agency is writing policy on which AI-supported decisions require human review
+  before they take effect. Which factor should MOST determine the level of human oversight?
 options:
-  A: The accuracy rate the AI vendor reports for its product
+  A: The likelihood of error found in the agency's own pilot testing
   B: The impact of the decision on people and its reversibility
-  C: The number of decisions the AI system makes each day
-  D: Whether the AI was built in-house or bought from a vendor
+  C: The degree of autonomy the AI system has in each decision
+  D: The sensitivity of the personal data the system processes
 answer: B
 explanation:
-  why_correct: Oversight should be proportionate to potential harm. Decisions that significantly affect people,
-    especially ones that are hard to reverse such as denying benefits, need stronger human involvement than
-    low-impact, easily corrected ones.
+  why_correct: Oversight should be proportionate to potential harm. Decisions that significantly affect
+    people, especially ones that are hard to reverse such as denying benefits, need stronger human involvement
+    than low-impact, easily corrected ones.
   why_not:
-    A: Reported accuracy is a general figure and even an accurate system can cause serious harm in individual
-      cases. Impact matters more.
-    C: Volume affects how oversight is resourced, not how much is needed. High volume does not justify less
-      protection for people.
-    D: Who built the system does not change its effect on people. The same oversight principles apply to bought
-      and built AI.
+    A: The agency's own error rate matters, but even a rare error can do serious harm in a high-impact
+      case. Impact sets how much oversight is needed, and the error rate then informs how it is designed.
+    C: Autonomy describes how much the system decides alone, which is what the policy is setting. It is
+      the outcome of the oversight decision, not the factor that should drive it.
+    D: Data sensitivity drives privacy and security controls. A decision can use ordinary data and still
+      have a severe effect on someone's benefits.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

@@ -2,27 +2,32 @@ id: aaig-d1-1.1-0028
 subdomain: '1.1'
 difficulty: medium
 stem: A freight company finds widespread use of unapproved AI tools, even though its policy requires approval
-  first. Staff say the approval process takes about four months. What is the BEST long-term response?
+  first. Staff say approval takes about four months. Most requests are for low-risk uses, yet each goes
+  through the same full review. Reviews of high-risk uses need specialist legal and data input that cannot
+  be rushed. What is the BEST long-term response?
 options:
-  A: Offer a faster route to approved tools for low-risk uses
-  B: Remind all staff of the policy through a company-wide email
-  C: Increase the penalties for using tools that are not approved
-  D: Remove the approval requirement for all AI tools in use
+  A: Create a faster approval route for low-risk tools and uses
+  B: Set a 30-day service level for completing each approval
+  C: Publish a list of pre-approved tools that staff may use now
+  D: Delegate approval of AI tools to the business unit heads
 answer: A
 explanation:
-  why_correct: Shadow AI here is a symptom of a governance process that does not meet business needs. A quicker,
-    proportionate route for low-risk tools removes the incentive to bypass controls, while keeping full review
-    for higher-risk uses.
+  why_correct: Shadow AI here comes from a process that does not match effort to risk. A quicker, proportionate
+    route for low-risk uses removes the incentive to bypass controls, while keeping full review for higher-risk
+    ones.
   why_not:
-    B: Staff already know the policy; they bypass it because it is too slow. A reminder does not change that.
-    C: Harsher penalties treat the symptom and can damage trust without removing the real reason for bypassing
-      the process.
-    D: Removing approval altogether loses control over higher-risk uses. The fix is proportion, not abolition.
+    B: A service level speeds the process for everyone, but high-risk reviews need specialist input that
+      cannot be rushed. Forcing them into 30 days weakens the reviews that matter most, while low-risk
+      requests still get a full review.
+    C: A pre-approved list helps in the short term, but any new need would still face the four-month process.
+      It does not fix the design that drives the bypassing.
+    D: Delegation speeds decisions, but it gives up consistent review for higher-risk uses too. The fix
+      is a route that scales with risk, not moving the whole decision.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

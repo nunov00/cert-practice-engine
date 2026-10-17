@@ -1,31 +1,33 @@
 id: aaig-d1-1.1-0016
 subdomain: '1.1'
 difficulty: hard
-stem: A fintech operating in five jurisdictions has twice been caught out by new AI-related rules that required
-  costly last-minute changes. The board asks the governance leader how to avoid a repeat. What is the BEST
-  recommendation?
+stem: A fintech operating in five jurisdictions has twice been caught out by new AI-related rules that
+  required costly last-minute changes. Both rules had been public in draft for over a year. Legal already
+  sends product teams alerts on new drafts, but the teams rarely act on them. The board asks the governance
+  leader how to avoid a repeat. What is the BEST recommendation?
 options:
-  A: Assign ownership for horizon scanning with a route into decisions
-  B: Subscribe to a legal update service for each of the jurisdictions
-  C: Delay AI launches until every jurisdiction has final AI rules
-  D: Ask external counsel to review each AI system once a year
+  A: Assign an owner to assess emerging rules and feed them into plans
+  B: Ask legal to send product teams more detailed alerts on draft rules
+  C: Require a compliance sign-off before each AI launch in each market
+  D: Have the risk committee review the regulatory outlook each quarter
 answer: A
 explanation:
-  why_correct: The failure is not a lack of information but a lack of a process that turns it into action.
-    A named owner who tracks emerging rules, assesses their impact and feeds them into strategy and project
-    decisions gives the early warning the board wants.
+  why_correct: The rules were visible and alerts went out, so the failure was not information but the
+    lack of anyone charged with turning it into action. A named owner who assesses what each emerging
+    rule means for products and feeds that into strategy and project decisions gives the early warning
+    the board wants.
   why_not:
-    B: Subscriptions provide information, but without an owner to assess and act on it the updates can be missed
-      just as before.
-    C: AI regulation keeps evolving, so waiting for final rules everywhere would halt AI use indefinitely and
-      give up its value.
-    D: An annual system review looks at what exists today. It does not anticipate rules still being developed
-      or inform new initiatives early.
+    B: More detail may help a little, but teams already ignore the alerts they get. Nobody is charged
+      with working out the impact and making sure plans change.
+    C: A launch sign-off checks rules in force at launch. It does not prepare for drafts that will apply
+      later to systems already running.
+    D: A committee review keeps the outlook in front of senior people, but discussing the outlook is not
+      the same as assessing each draft's impact on products and roadmaps. The same gap would remain.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-a
-  checked_by: 2026-10-13-aaig-d1-a-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass

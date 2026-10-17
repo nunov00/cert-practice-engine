@@ -1,31 +1,32 @@
 id: aaig-d1-1.1-0048
 subdomain: '1.1'
 difficulty: easy
-stem: After a data leak through a public chatbot, a manufacturer's executive committee adopted an emergency rule
-  blocking all generative AI tools. The rule was meant as a stopgap while a proper policy was written. What should
-  the emergency rule have included?
+stem: After a data leak through a public chatbot, a manufacturer's executive committee adopted an emergency
+  rule blocking generative AI tools while a proper policy was written. A policy was drafted within three
+  months but has sat unapproved since. Eighteen months later the block is still in force because nobody
+  reopened it. What should the emergency rule have included?
 options:
-  A: A list of the staff involved in the leak
-  B: A requirement that only the CEO can grant access to AI tools
+  A: A condition that it lapses once the new AI policy is approved
+  B: A named owner responsible for writing the full AI policy
   C: An expiry date or a set point at which it must be reviewed
-  D: A commitment never to use generative AI in the future
+  D: A route for staff to request urgent business exceptions
 answer: C
 explanation:
-  why_correct: Emergency measures taken under pressure are often broader than needed. A sunset date or mandatory
-    review point ensures the rule is reconsidered once the facts are known and a proper policy is ready, so a stopgap
-    does not become permanent by default.
+  why_correct: Emergency measures taken under pressure are often broader than needed. A sunset date or
+    mandatory review point ensures the rule is reconsidered once the facts are known and a proper policy
+    is ready, so a stopgap does not become permanent by default.
   why_not:
-    A: Naming individuals belongs in an investigation, not in a policy rule. It does nothing to make the rule fit
-      for purpose over time.
-    B: Routing all access through the CEO creates a bottleneck and puts a routine decision at the wrong level. It
-      also makes the stopgap harder to lift.
-    D: A permanent ban decided in a crisis closes off future value without analysis. The point of a stopgap is to
-      buy time for a considered decision.
+    A: Linking the rule to the new policy is a sensible design, but the policy is still unapproved. The
+      condition would never have triggered, and the block would still stand.
+    B: An owner for the policy is useful, but the policy was drafted on time. What was missing was a trigger
+      to reopen the emergency rule itself.
+    D: An exception route eases the impact of a broad rule, but it does not bring the rule itself back
+      for decision. The block would still stay in place by default.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-b
-  checked_by: 2026-10-13-aaig-d1-b-check
+  checked_by: 2026-10-17-aaig-d1-rework-check
   check_verdict: pass
