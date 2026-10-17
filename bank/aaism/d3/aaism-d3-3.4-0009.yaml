@@ -1,23 +1,25 @@
 id: aaism-d3-3.4-0009
 subdomain: '3.4'
 difficulty: medium
-stem: A water utility launches an AI chatbot for customer queries. Which measure BEST supports customers' trust and the utility's
-  transparency duties?
+stem: A water utility's chatbot answers billing questions only from approved policy documents and cites them. Customers
+  complain it confidently quoted bill credit rules that were withdrawn in the spring. Which measure BEST restores
+  their trust?
 options:
-  A: Publish a summary of the data sources used to train the chatbot
-  B: Tell users they are talking to AI and how to reach a person
-  C: Publish the chatbot's measured accuracy rates on the website
-  D: Keep a log of all conversations for later quality reviews
+  A: Ground billing answers in approved policy and cite sources
+  B: Review the policy library each time a billing rule changes
+  C: Publish the chatbot's measured accuracy on the website
+  D: Add a notice that answers may contain errors
 answer: B
 explanation:
-  why_correct: Users should know when they are dealing with an AI system and have a clear route to a human. This is the core
-    transparency expectation for customer-facing AI and lets users judge how far to rely on answers.
+  why_correct: 'The chatbot did what it was designed to do: it answered from the approved library. The failure is
+    that the library still held withdrawn rules. Making a library review part of each billing rule change keeps
+    the grounding source current, which removes the cause of the wrong answers.'
   why_not:
-    A: A training data summary is a transparency measure mainly expected of model providers. For a utility deploying a chatbot,
-      it does not tell customers they are dealing with AI or how to reach a person.
-    C: Accuracy figures can help users calibrate their reliance, but they are secondary. Customers first need to know they
-      are talking to AI and have a human route.
-    D: Logging supports quality and investigation, but it is invisible to users and does not inform them.
+    A: Grounding with citations is the usual fix for confident wrong answers, but the chatbot already does it. Grounding
+      in an outdated library reproduces the outdated rules.
+    C: Publishing an accuracy figure informs customers but does not stop the chatbot from quoting withdrawn rules.
+    D: A disclaimer shifts the burden to customers and may further reduce trust, while the outdated rules remain
+      in use.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -25,4 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d3-b-check
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

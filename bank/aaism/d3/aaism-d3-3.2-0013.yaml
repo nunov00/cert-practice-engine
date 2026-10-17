@@ -1,29 +1,27 @@
 id: aaism-d3-3.2-0013
 subdomain: '3.2'
 difficulty: medium
-stem: An insurer's claims triage model passed adversarial robustness tests and was approved for release. To cut hosting costs, the engineers
-  now plan to deploy a compressed, lower-precision version of the same model. What should the security manager require?
+stem: An insurer's approved claims triage model has a compressed, lower-precision version. The compressed version
+  reran the robustness tests and passed, and its accuracy matches. Engineers want to deploy it under the original
+  model's approval. What should the security manager require?
 options:
-  A: Close monitoring of the compressed version for errors during its first weeks in production
-  B: A rerun of the security and robustness tests on the compressed version itself
-  C: A comparison of outputs from both versions on a sample of recent ordinary claims
-  D: A change record noting that the compressed version is a cost change with no new function
+  A: Compare both versions' outputs on recent claims
+  B: Register it as a new version with its own sign-off
+  C: Rerun the robustness tests on the compressed version
+  D: Monitor the compressed version closely for early errors
 answer: B
 explanation:
-  why_correct: Approval applies to the artefact that was tested. Compression changes the model's weights and can change how it behaves
-    near decision boundaries, which is exactly where adversarial inputs work. The version going to production should pass the same security
-    gate before release.
+  why_correct: The evidence exists, but approval belongs to a specific artefact. Recording the compressed model
+    as its own version, with its test results and approval, keeps the inventory, lineage and rollback accurate.
   why_not:
-    A: Monitoring is needed in operation, but it is reactive and is unlikely to reveal weaker robustness until an attacker uses it.
-    C: Matching outputs on ordinary claims shows normal accuracy is kept. It says nothing about behaviour under crafted inputs, which
-      the original tests covered.
-    D: Recording the change is good practice, but calling it non-functional skips the evidence. Behaviour can change even when the intended
-      function does not.
+    A: Accuracy is already shown to match, so further comparison adds little.
+    C: This has already been done and passed.
+    D: Monitoring is useful after release, but it does not fix deploying an unregistered artefact.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-c
-  checked_by: 2026-10-16-aaism-d3-c-check
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
   check_verdict: pass

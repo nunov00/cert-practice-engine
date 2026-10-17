@@ -1,30 +1,30 @@
 id: aaism-d3-3.4-0013
 subdomain: '3.4'
 difficulty: hard
-stem: A city council uses a model to set the priority of housing repair requests. Volumes are too high for staff to review every decision.
-  Complaints show that some cases affecting vulnerable tenants were rated low and left waiting for months. What should be done to improve
-  oversight?
+stem: A city council's model prioritises housing repair requests. Staff cannot review every rating. Complaints show
+  urgent cases for vulnerable tenants were rated low and waited months. What BEST improves oversight?
 options:
-  A: Route low ratings to a caseworker when vulnerability signs exist or confidence is low
-  B: Have staff review a random five percent sample of all ratings each week and report the findings
-  C: Publish how priority is set and give tenants a simple way to appeal a low rating
-  D: Retrain the model with the cases from the complaints labelled with their correct priority
-answer: A
+  A: Review a random weekly sample of low ratings
+  B: Route low ratings with vulnerability signs to a caseworker
+  C: Publish the criteria and offer tenants an appeal route
+  D: Retrain the model on the complaint cases, relabelled
+answer: B
 explanation:
-  why_correct: Where reviewing every decision is not possible, oversight should be targeted at the decisions most likely to cause serious
-    harm. Routing low ratings with vulnerability signs or low model confidence to a person puts human judgement where errors hurt most,
-    before the harm happens.
+  why_correct: When full review is impossible, human oversight should target the decisions most likely to cause
+    serious harm. Routing low ratings that show vulnerability signs to a caseworker puts judgment where errors hurt
+    most, before tenants are left waiting.
   why_not:
-    B: Random sampling measures overall quality, but it will miss most of the rare high-harm cases and finds them only after the fact.
-    C: Transparency and appeal are valuable, but they rely on vulnerable tenants noticing and challenging a rating, which many may not
-      do.
-    D: Retraining may improve the model, but a few corrected cases will not remove all such errors, and there is still no human check
-      on high-risk outcomes.
+    A: Sampling low ratings checks their quality, but a random sample will miss most of the rare high-harm cases
+      and finds them only after the delay.
+    C: Transparency and appeal are valuable, but they depend on vulnerable tenants noticing and challenging a rating,
+      which many may not do.
+    D: Retraining may reduce such errors, but a few relabelled cases will not remove them, and there is still no
+      human check on the high-harm outcomes.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-c
-  checked_by: 2026-10-16-aaism-d3-c-check
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
   check_verdict: pass

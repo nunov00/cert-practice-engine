@@ -1,26 +1,27 @@
 id: aaism-d3-3.3-0010
 subdomain: '3.3'
-difficulty: medium
-stem: A dataset was reviewed and approved for training at a car maker in March. Training will start in June using the copy
-  in a shared store. What BEST ensures the data used is the data that was approved?
+difficulty: hard
+stem: A car maker recorded an approved training dataset's hash in March, in a manifest file next to the data in
+  a shared store. Training starts in June after a hash check. Several engineers hold admin rights on the store.
+  What BEST ensures the approved data is used?
 options:
-  A: Record a hash of the approved version and verify it before training starts
-  B: Repeat the full manual review of the dataset in the week before training begins
-  C: Restrict read access to the shared store to the data science team only
-  D: Keep a daily backup of the shared store throughout the waiting period
-answer: A
+  A: Lock the dataset folder against writes after approval
+  B: Repeat the dataset review the week before training
+  C: Verify the dataset's hash before training
+  D: Keep the approved hash in a separately controlled record
+answer: D
 explanation:
-  why_correct: A fixed version with a recorded hash links approval to the exact content. Checking the hash before training
-    proves nothing changed in the three months between, and the check can be automated in the pipeline.
+  why_correct: Hash checking is in place, but an admin who can change the data can also change the manifest so the
+    two still match. Holding the approved hash in a separate, protected record makes the check meaningful.
   why_not:
-    B: A second manual review is slow and costly, and changes could still happen after it.
-    C: Read restrictions protect confidentiality, not integrity, and do not prove the content is unchanged.
-    D: Backups help recovery but do not show whether the data was altered.
+    A: Admins can lift the lock, and it gives no proof the content is unchanged.
+    B: A second review is slow and costly, and changes could still happen after it.
+    C: This is already planned. It proves nothing if the reference hash can be changed with the data.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-check
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
   check_verdict: pass

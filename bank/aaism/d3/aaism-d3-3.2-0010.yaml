@@ -1,28 +1,28 @@
 id: aaism-d3-3.2-0010
 subdomain: '3.2'
 difficulty: hard
-stem: A bank's customer chatbot has started giving harmful advice, and a retrained model that fixes the issue is ready. The
-  normal change board meets in two weeks. What is the BEST course of action?
+stem: A bank's chatbot has started giving harmful advice on pension transfers, and only on that topic. Retraining
+  will take three weeks. The normal change board meets in two weeks. What is the BEST course of action?
 options:
-  A: Deploy the retrained model now and add it to the change record at the next board meeting
-  B: Wait for the next change board so that the retrained model gets a full review
-  C: Use the emergency change process with expedited testing, approval and a later review
-  D: Take the chatbot offline until a full retraining and normal release cycle can be completed
-answer: C
+  A: Take the chatbot offline until retraining finishes
+  B: Release the retrained model as an emergency change
+  C: Wait for the change board to approve a response
+  D: Restrict the bot's scope through an emergency change
+answer: D
 explanation:
-  why_correct: 'The harm needs fast action, but bypassing change control creates new risk. An emergency change process exists
-    for this: a reduced but real test and approval by authorised people, followed by a formal review. It balances speed with
-    control and keeps an audit trail.'
+  why_correct: There is no fix ready, so the priority is containing the harm now under control. Narrowing the bot's
+    scope to drop pension-transfer questions through the emergency change process stops the harmful advice quickly,
+    with authorised approval and review, while the rest of the service keeps running.
   why_not:
-    A: Deploying first and recording later skips approval and testing. A rushed model could cause new harm with no check.
-    B: Waiting two weeks leaves customers exposed to harmful advice. The risk is too high for the normal cycle.
-    D: Taking the service offline may be a valid short-term containment step, but it ignores a tested fix and a process designed
-      for this situation.
+    A: This contains the harm but removes the whole service for weeks when the problem is confined to one topic.
+    B: Emergency change is the right route, but the retrained model will not exist for three weeks. Customers stay
+      exposed until then.
+    C: Waiting two weeks leaves customers receiving harmful advice when an emergency route exists.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-check
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
   check_verdict: pass

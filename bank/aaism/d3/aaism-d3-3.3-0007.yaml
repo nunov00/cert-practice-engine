@@ -1,26 +1,27 @@
 id: aaism-d3-3.3-0007
 subdomain: '3.3'
 difficulty: easy
-stem: Which control MOST directly protects the confidentiality of training data if the storage media in a cloud provider's
-  data centre are accessed without authorisation?
+stem: A company's cloud training data is encrypted at rest with keys held in its own hardware security module. An
+  auditor worries about a compromised data scientist account copying datasets. Which control MOST directly reduces
+  this risk?
 options:
-  A: Strict role-based access to the training data in the cloud console
-  B: Detailed logs of every read and write on the training datasets
-  C: Encryption at rest with keys that the organisation manages
-  D: Regular backups of the training data to a second region
-answer: C
+  A: Detailed logs of reads on the datasets
+  B: Role-based access scoped to each project's datasets
+  C: Encryption at rest with organisation-held keys
+  D: Replication of the training data to a second region
+answer: B
 explanation:
-  why_correct: Access to the physical media bypasses application and console controls. Encryption at rest with keys the organisation
-    controls makes the data unreadable without those keys.
+  why_correct: A compromised account reads through normal, authorised paths, so encryption decrypts for it. Limiting
+    each account to its own project's datasets reduces what any single compromise can copy.
   why_not:
-    A: Console access controls do not apply when someone reaches the underlying media directly.
-    B: Logs record access through normal interfaces but neither prevent nor reliably capture media-level access.
-    D: Backups support availability and create another copy to protect. They do not keep the data confidential.
+    A: Logs help investigation but do not prevent the copy.
+    C: This is already in place, and it does not stop an authorised account reading the data.
+    D: Replication supports availability and creates another copy to protect.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-check
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
   check_verdict: pass

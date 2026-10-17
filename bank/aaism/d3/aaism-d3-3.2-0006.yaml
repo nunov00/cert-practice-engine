@@ -1,28 +1,30 @@
 id: aaism-d3-3.2-0006
 subdomain: '3.2'
 difficulty: medium
-stem: Data scientists at an energy company train models on sensitive grid data in cloud notebooks. They can install any library
-  from the internet and the notebooks have open outbound access. Which control BEST secures this training environment?
+stem: Data scientists at an energy company train models on grid data in cloud notebooks. Libraries come from a vetted
+  internal mirror and outbound internet is blocked. All notebooks run under one shared cloud identity that can read
+  every grid dataset. Which control BEST secures this environment?
 options:
-  A: Add multi-factor authentication for access to the notebook service
-  B: Allow packages only from an approved internal repository and restrict egress
-  C: Encrypt the grid data at rest in the storage accounts used for model training
-  D: Scan each trained model for malicious code before it is deployed
-answer: B
+  A: Internal package mirror and restricted egress
+  B: MFA and conditional access for notebook logins
+  C: Per-project service accounts scoped to each project's data
+  D: Customer-managed keys for grid data at rest
+answer: C
 explanation:
-  why_correct: The gap is that untrusted code can enter freely and data can leave freely. An approved package source cuts
-    the risk of a malicious dependency, and egress restrictions stop sensitive data or models from being sent out. Together
-    they harden the environment where the most sensitive work happens.
+  why_correct: Supply chain and egress are already controlled. The remaining gap is that any notebook, or any code
+    running in it, can read every sensitive dataset. Project-scoped identities limit each workload to the data it
+    needs and make access attributable.
   why_not:
-    A: MFA protects logins but does nothing about a malicious library run by a legitimate user, or about data leaving over
-      open egress.
-    C: Encryption at rest protects stored data, but running code inside the notebook reads it decrypted.
-    D: Scanning the final model comes late and may miss a compromise that stole data during training.
+    A: Both are already in place, so this adds nothing to the gap in data access.
+    B: Stronger logins protect user accounts, but once inside, every notebook still runs as the identity that reads
+      all data.
+    D: The shared identity is authorised to read the data, so it would read it decrypted regardless of who holds
+      the keys.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-check
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
   check_verdict: pass

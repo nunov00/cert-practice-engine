@@ -1,30 +1,27 @@
 id: aaism-d1-1.3-0013
 subdomain: '1.3'
 difficulty: medium
-stem: A lender's retention schedule says that personal data in training sets must be deleted after two years. A sector rule
-  requires the lender to describe the sources and features of the training data for its credit model for ten years. It does
-  not require copies of the data. What should the security manager advise?
+stem: A lender's schedule deletes personal data in training sets after two years. A new sector rule requires it
+  to keep its credit model's exact training data for ten years so decisions can be reproduced. What should the security
+  manager advise?
 options:
-  A: Delete the data on schedule and keep the dataset documentation
-  B: Keep the training data for ten years under a recorded exception
-  C: Anonymise the training data and then keep it with no time limit
-  D: Let the model owner decide on retention for each dataset in turn
-answer: A
+  A: Delete the data on schedule and keep dataset documentation
+  B: Anonymise the training data and keep it for reference
+  C: Keep the data in a restricted archive under a recorded exception
+  D: Keep the data in the training environment for ten years
+answer: C
 explanation:
-  why_correct: The sector rule asks for a description of the data, not the data itself. Keeping lineage records and dataset
-    documentation meets it, while deleting the personal data on schedule meets the retention rule and limits exposure. Both
-    duties are satisfied without holding more personal data than needed.
+  why_correct: The rule needs the exact data, so deletion is not possible. A restricted archive with a recorded
+    exception meets the rule while limiting access and keeping the schedule's deviation documented.
   why_not:
-    B: A recorded exception would be sound if copies were required. Here it keeps personal data for eight extra years with
-      no need.
-    C: Anonymising rich credit data well is hard. Keeping it without limit adds re-identification risk with no stated purpose.
-    D: The owner should apply the schedule, not decide case by case. That would make retention inconsistent and hard to
-      defend.
+    A: Documentation alone cannot reproduce decisions; the rule needs the data itself.
+    B: Anonymised data is no longer the exact data, so decisions cannot be reproduced.
+    D: The data must be kept, but leaving it in a working environment exposes it more than needed.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-c
-  checked_by: 2026-10-16-aaism-d1-c-check
+  checked_by: 2026-10-16-aaism-d1-c-recheck3
   check_verdict: pass

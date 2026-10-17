@@ -1,24 +1,31 @@
 id: aaism-d2-2.3-0012
 subdomain: '2.3'
 difficulty: medium
-stem: "A university's departments subscribe to dozens of AI-enabled cloud tools. The security team cannot assess all of them in depth. What is the BEST approach?"
+stem: A university's security team has finished in-depth reviews of the few AI research tools that process health
+  trial data. Dozens of other AI cloud tools remain, mostly writing aids used with public material, and there is
+  no capacity for more deep reviews. What is the BEST approach?
 options:
-  A: "Send the same detailed security questionnaire to every vendor"
-  B: "Assess first the tools that have the largest number of users"
-  C: "Tier vendors by data sensitivity and criticality and scale reviews"
-  D: "Block all tools that are not yet on a central approved list of vendors"
-answer: C
+  A: Review the most widely used remaining tools in depth
+  B: Apply a short standard check with approved-use rules
+  C: Prioritise the tools that process health trial data
+  D: Require a security certification from each vendor
+answer: B
 explanation:
-  why_correct: "A risk-based approach sets the depth of due diligence by what is at stake: tools that handle student records or research data, or support critical processes, get a full review, and low-risk tools get a light one. Limited effort goes where the exposure is greatest."
+  why_correct: The high-risk tools have had their deep reviews. The rest handle mainly public material, so a light,
+    consistent check plus clear rules on what data may be entered gives proportionate coverage that the team can
+    actually deliver.
   why_not:
-    A: "One questionnaire for all wastes effort on low-risk tools and is usually too shallow for high-risk ones."
-    B: "User numbers are a weak proxy for risk. A tool with few users may handle the most sensitive data."
-    D: "Blocking everything at once disrupts teaching and research and pushes use into shadow channels before any risk is understood."
+    A: In-depth reviews need capacity the team does not have, and user numbers are a weak proxy for risk when the
+      tools handle public material.
+    C: Risk-based prioritisation would put the trial-data tools first, but the stem says those reviews are already
+      finished.
+    D: Many small writing tools hold no certification, so this would block low-risk tools without telling staff
+      what data they may enter.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-b
-  checked_by: 2026-10-16-aaism-d2-b-check
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
   check_verdict: pass

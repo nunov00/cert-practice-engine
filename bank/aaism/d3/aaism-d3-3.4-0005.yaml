@@ -1,22 +1,25 @@
 id: aaism-d3-3.4-0005
 subdomain: '3.4'
-difficulty: medium
-stem: A letting agency's tenant screening model has drawn complaints that it rejects applicants from one ethnic group more
-  often. What should the information security manager recommend FIRST?
+difficulty: hard
+stem: Analysis confirms that a letting agency's tenant screening model rejects one ethnic group more often, with
+  postcode acting as a proxy. A fixed model will take three months to build. What should the security manager recommend
+  for the meantime?
 options:
-  A: Retrain the model with the ethnicity field removed
-  B: Analyse the model's outcomes across applicant groups
-  C: Notify the regulator that the model is discriminatory
-  D: Add a notice to the application form about the model
-answer: B
+  A: Repeat the fairness analysis on next month's decisions
+  B: Retrain the model without postcode and related features
+  C: Route rejections in affected postcodes to a human reviewer
+  D: Update the privacy notice to describe the model's inputs
+answer: C
 explanation:
-  why_correct: The complaints need to be confirmed with evidence. A fairness analysis of outcomes by group shows whether there
-    is a disparity, how large it is and where it comes from. That evidence then drives the right treatment and any reporting
-    duty.
+  why_correct: The harm is confirmed and continues while the fix is built. Human review of the rejections most likely
+    to be affected is an interim control that reduces harm to applicants now, without waiting three months.
   why_not:
-    A: Removing the field is premature and often ineffective, because other features can act as proxies for ethnicity.
-    C: Notifying a regulator may become necessary, but stating the model is discriminatory before analysis is premature.
-    D: A notice improves transparency but does nothing to find or fix a possible bias.
+    A: Ongoing fairness monitoring is good practice, but the disparity is already confirmed; repeating the analysis
+      measures the harm without reducing it.
+    B: Removing the proxy features is part of the fix, which the stem says takes three months. It does not protect
+      applicants in the meantime.
+    D: Transparency about inputs is worthwhile, but it does not change any decision and leaves the discriminatory
+      rejections in place.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -24,4 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d3-b-check
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

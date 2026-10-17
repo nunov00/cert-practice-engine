@@ -1,24 +1,31 @@
 id: aaism-d2-2.2-0001
 subdomain: '2.2'
-difficulty: medium
-stem: "An insurer is designing a claims-triage assistant that uses a large language model, searches internal policy documents and can open tickets in the claims system. The security manager wants AI-specific threats found early. What should be done FIRST?"
+difficulty: hard
+stem: An insurer's claims assistant uses a large language model, searches policy documents and opens tickets. Its
+  design threat model was approved last month, and the build is now in staging. What should be done NEXT to find
+  AI-specific weaknesses?
 options:
-  A: "Threat model the assistant across its data flows, trust boundaries and tool actions"
-  B: "Commission an external red team exercise against the assistant"
-  C: "Scan the hosting environment for known infrastructure vulnerabilities"
-  D: "Subscribe to a threat intelligence feed covering attacks on AI systems"
-answer: A
+  A: Threat model the data flows, trust boundaries and tool actions
+  B: Run adversarial prompt and tool-call testing against the staged build
+  C: Enable runtime logging of prompts, retrieved content and tool calls
+  D: Map AI attack techniques from threat intelligence to the design
+answer: B
 explanation:
-  why_correct: "At the design stage there is nothing built to test yet. Threat modelling the design shows where untrusted content enters, where the model's output drives actions such as opening tickets, and which trust boundaries need controls. It is proactive and shapes every later security activity, including what the red team should target."
+  why_correct: 'The design threat model is done and approved, and there is now a working build. The next way to
+    find weaknesses is to attack it: adversarial prompts, injected content in documents and attempts to misuse the
+    ticket tool. Testing checks whether the controls the threat model called for actually hold in the built system.'
   why_not:
-    B: "Red teaming needs a working system and is most useful once the threat model has shown what to test. It comes later in the life cycle."
-    C: "Infrastructure scanning matters, but it finds generic flaws in deployed hosts, not design-level AI threats such as injected content steering the tools."
-    D: "Threat intelligence supports threat modelling with current attack techniques. It does not by itself identify the threats in this specific design."
+    A: Threat modelling is the right first step at design, but the stem says it was completed and approved last
+      month. Repeating it now would not show whether the built controls work.
+    C: Runtime telemetry is needed to detect attacks in production. It records behaviour; it does not by itself
+      find weaknesses before launch.
+    D: Mapping threat intelligence to the design feeds the threat model, which is already complete. It identifies
+      likely techniques but does not test the build against them.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-b
-  checked_by: 2026-10-16-aaism-d2-b-check
+  checked_by: 2026-10-16-aaism-d2-b-recheck
   check_verdict: pass

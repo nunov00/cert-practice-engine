@@ -1,27 +1,30 @@
 id: aaism-d3-3.1-0005
 subdomain: '3.1'
-difficulty: medium
-stem: A fintech exposes its credit-scoring model to partners through a public API. The security manager is concerned that
-  a competitor could copy the model by sending large numbers of queries. Which control is MOST effective?
+difficulty: hard
+stem: A fintech's credit-scoring API caps each partner at 50,000 queries a day and alerts on probing by any one
+  account. Logs show 30 newly onboarded partner accounts, each under quota, sending systematically varied queries.
+  Which control BEST reduces model extraction risk?
 options:
-  A: Encrypt the model weights at rest on the inference servers
-  B: Return full-precision confidence scores so partners can audit decisions
-  C: Enforce authentication with per-client rate limits and query quotas
-  D: Keep the model architecture and features out of partner documentation
-answer: C
+  A: Correlate query patterns across partner accounts
+  B: Per-account query quotas with probing alerts
+  C: Round returned scores to fewer decimal places
+  D: Watermark model outputs to prove later copying
+answer: A
 explanation:
-  why_correct: Model extraction works by collecting many input and output pairs through the normal interface. Authenticating
-    every client and capping how many queries each can send makes large-scale harvesting slow, visible and attributable. It
-    addresses the attack path directly.
+  why_correct: Per-account quotas and alerts work only if the attacker uses one account. Spreading the harvest across
+    30 accounts keeps each one under every threshold. Looking for shared query patterns across accounts reveals
+    the combined probing that per-account controls cannot see.
   why_not:
-    A: Encryption at rest protects stolen files, but extraction uses the API and never touches the stored weights.
-    B: Detailed confidence scores give an attacker more information per query and make extraction easier, not harder.
-    D: Hiding design details is security by obscurity. An attacker can still copy the model's behaviour through queries.
+    B: These are already in place, and the attacker has split the queries so that no single account trips them.
+    C: Coarser scores give less information per query and are a real anti-extraction measure, but with hundreds
+      of thousands of queries a day the attacker can still approximate the model.
+    D: Watermarking can support legal action once a copy appears, but it does nothing to stop the harvesting under
+      way.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-check
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
   check_verdict: pass

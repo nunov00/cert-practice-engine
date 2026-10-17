@@ -1,28 +1,26 @@
 id: aaism-d1-1.3-0007
 subdomain: '1.3'
 difficulty: hard
-stem: A credit card issuer is replacing its fraud-scoring model with a new one. Which step is MOST important when
-  retiring the old model?
+stem: A card issuer's new fraud model is live after three months in shadow mode. The old model's endpoints and credentials
+  were disabled at cutover, and its decision records are archived. What is MOST important to complete its retirement?
 options:
-  A: Keep the old model running in parallel as a permanent fallback
-  B: Delete the old model's training data as soon as the model is switched off
-  C: Remove its access paths and handle its artefacts per retention rules
-  D: Compare the outputs of the old and new models for a set period
-answer: C
+  A: Disable the old model's endpoints and service credentials
+  B: Archive the old model's artefacts under retention rules
+  C: Mark the old model as retired in the AI inventory
+  D: Compare the old and new models' outputs for a further period
+answer: B
 explanation:
-  why_correct: A retired model left reachable is an unmonitored attack surface. Closing endpoints, credentials and
-    integrations, then archiving or destroying artefacts as the retention rules require, ends the risk while keeping
-    records that may be needed to explain past decisions.
+  why_correct: Archived decisions may need to be explained or reproduced later, which requires the model that made
+    them. Keeping its artefacts under retention rules makes that possible.
   why_not:
-    A: An unmanaged parallel model adds cost and exposure. A fallback should be a deliberate, controlled choice.
-    B: Immediate deletion may breach retention duties, such as being able to explain past fraud decisions.
-    D: Parallel comparison is a useful transition check, but it does not close the old model's access paths or settle
-      what happens to its artefacts.
+    A: This was done at cutover.
+    C: Updating the inventory matters, but losing the means to explain past decisions is the larger risk.
+    D: Three months of shadow running has already done this comparison.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-a
-  checked_by: 2026-10-16-aaism-d1-a-check
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
   check_verdict: pass

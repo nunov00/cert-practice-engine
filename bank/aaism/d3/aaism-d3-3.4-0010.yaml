@@ -1,22 +1,25 @@
 id: aaism-d3-3.4-0010
 subdomain: '3.4'
-difficulty: medium
-stem: A broadcaster plans to use realistic synthetic voices to read some news bulletins. Which control BEST protects audience
-  trust?
+difficulty: hard
+stem: A broadcaster attaches signed content credentials to the audio it publishes. Fake clips imitating its presenters
+  circulate on social media, where platforms strip file metadata when clips are reshared. Which control BEST lets
+  fact-checkers confirm a reshared clip is genuine?
 options:
-  A: Get licensed consent from the voice actors whose voices are used
-  B: Limit access to the voice generation tool to editorial staff only
-  C: Have editors check every script before the audio is generated
-  D: Disclose the synthetic audio and mark it with provenance data
-answer: D
+  A: Embed a robust watermark in the audio signal itself
+  B: Attach signed content credentials to each published clip
+  C: Monitor social media for clips imitating its presenters
+  D: Add a spoken AI disclosure to each synthetic bulletin
+answer: A
 explanation:
-  why_correct: Audience trust depends on people knowing what is synthetic. Clear disclosure, backed by provenance marking
-    such as watermarks or content credentials, tells listeners what they hear and helps show later whether a clip is genuine
-    or a fake made outside the broadcaster.
+  why_correct: Content credentials travel as metadata, and the stem says platforms strip it on resharing, so a genuine
+    reshared clip arrives with nothing to verify. A robust watermark sits in the audio signal and survives re-encoding,
+    so a fact-checker's detector can still recognise the broadcaster's genuine audio.
   why_not:
-    A: Consent is necessary to protect the voice actors' rights, but it tells the audience nothing about the audio being synthetic.
-    B: Access control reduces misuse inside the company. It does not address listeners being misled.
-    C: Script review protects accuracy of content, but listeners would still not know the voice is generated.
+    B: Signed credentials are the standard provenance control, but the broadcaster already uses them and they are
+      lost when platforms strip metadata.
+    C: Monitoring helps find fakes for takedown, but it does not give fact-checkers a way to verify any given clip.
+    D: A spoken disclosure labels the broadcaster's own synthetic bulletins. A faker can copy or omit it, so it
+      does not prove a clip is genuine.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -24,4 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d3-b-check
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

@@ -1,24 +1,30 @@
 id: aaism-d2-2.3-0002
 subdomain: '2.3'
-difficulty: easy
-stem: "A retailer wants to use a generative AI service to summarise customer service transcripts. The provider's standard terms allow it to use customer inputs to improve its models. Which contract provision is MOST important for the retailer?"
+difficulty: medium
+stem: A retailer wants a generative AI service to summarise customer service transcripts with personal data. The
+  provider's terms bar training on inputs, require encryption and delete inputs after 30 days, but allow processing
+  in any of its global data centres. Which contract provision is MOST important?
 options:
-  A: "A ban on using the retailer's data for training, with deletion commitments"
-  B: "A service level agreement with guaranteed uptime and service credits"
-  C: "A cap on price rises for the length of the initial contract term"
-  D: "The right to choose which model version processes the retailer's customer data"
-answer: A
+  A: No use of the retailer's inputs for model training
+  B: Deletion of inputs within 30 days of processing
+  C: Encryption of transcripts in transit and at rest
+  D: Processing and storage within the retailer's region
+answer: D
 explanation:
-  why_correct: "Transcripts hold customers' personal data. If the provider trains on them, that data could be kept indefinitely, used for a new purpose and possibly reproduced in outputs for other customers. Prohibiting training use and committing to deletion addresses the main confidentiality and privacy risk created by the standard terms."
+  why_correct: 'The standard terms already cover training use, encryption and retention. The remaining gap is location:
+    personal data could be processed in any country where the provider has a data centre, which can breach transfer
+    rules and puts the data under foreign jurisdictions. A regional processing clause closes that gap.'
   why_not:
-    B: "Availability terms matter for operations, but they do not address the loss of control over customers' personal data."
-    C: "Price protection is a commercial term with no bearing on the data risk."
-    D: "Version choice helps manage output changes, but it does not stop the provider from training on the data."
+    A: Barring training use is often the key clause for generative AI services, but the provider's terms already
+      include it.
+    B: Short retention limits exposure, but the terms already delete inputs after 30 days.
+    C: Encryption protects against interception and storage breaches, and the terms already require it. It does
+      not control where the data is processed.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-b
-  checked_by: 2026-10-16-aaism-d2-b-check
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
   check_verdict: pass

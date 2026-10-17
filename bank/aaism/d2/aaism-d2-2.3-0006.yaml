@@ -1,24 +1,31 @@
 id: aaism-d2-2.3-0006
 subdomain: '2.3'
 difficulty: medium
-stem: "A pharmaceutical company is assessing a vendor's research summarisation tool. Due diligence shows that the vendor sends users' prompts to a foundation model provider that it will not name. What is the GREATEST concern?"
+stem: A pharmaceutical company assesses a vendor's research summarisation tool for unpublished trial results. The
+  vendor names its model provider, which keeps no prompts. The vendor stores every customer's documents in one shared
+  index, filtered by customer at query time. What is the GREATEST concern?
 options:
-  A: "The vendor has not shared the results of its own penetration tests"
-  B: "The company cannot assess how the unnamed provider handles its research data"
-  C: "The tool's summaries may be less accurate than those of rival products"
-  D: "The vendor's draft contract offers no service credits for outages"
-answer: B
+  A: The company cannot assess the provider receiving prompts
+  B: The vendor's penetration tests may not cover the model
+  C: A filter flaw could expose trial data to other customers
+  D: The tool does not let the company pin a model version
+answer: C
 explanation:
-  why_correct: "The research data in prompts is highly confidential. If the fourth party is unknown, the company cannot check its location, security, retention or training use, nor whether the vendor's contract with it passes down the needed protections. That gap is the key data risk."
+  why_correct: Separation between customers depends on a single query-time filter over a shared index. One flaw
+    in that filter, or a crafted query, could return the company's unpublished trial results to another customer,
+    possibly a competitor. That is the main confidentiality exposure.
   why_not:
-    A: "Missing test results are a gap, but they can be requested. The hidden subprocessor is a structural block to assurance."
-    C: "Accuracy is a quality and business concern. It is not the main security risk in this scenario."
-    D: "Service credits are a commercial point. They do not affect the confidentiality of research data."
+    A: An unnamed downstream provider would block assurance, but this vendor names its provider, and the provider
+      keeps no prompts.
+    B: Test coverage is worth asking about, but it is a gap in evidence, not the design weakness that puts trial
+      data at risk.
+    D: Version pinning manages changes in output quality. It does not address where confidential documents are stored
+      or who can retrieve them.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-b
-  checked_by: 2026-10-16-aaism-d2-b-check
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
   check_verdict: pass

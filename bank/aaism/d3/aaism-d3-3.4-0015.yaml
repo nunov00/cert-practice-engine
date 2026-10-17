@@ -1,29 +1,31 @@
 id: aaism-d3-3.4-0015
 subdomain: '3.4'
-difficulty: medium
-stem: A hospital offers researchers an API to its diagnosis model. Membership inference tests show high risk for patients with rare
-  diseases. Training with differential privacy cut accuracy on those diseases below clinical use. What is the BEST way to reduce the
-  privacy risk?
+difficulty: hard
+stem: A hospital's diagnosis model API returns full confidence scores for every condition. Membership inference
+  tests show high risk for rare-disease patients, and differential privacy made those diagnoses clinically unusable.
+  What BEST reduces the risk?
 options:
-  A: Retrain with strong differential privacy and accept the lower accuracy for rare diseases
-  B: Return only the top diagnosis to vetted researchers, with per-user query limits
-  C: Remove the rare disease patients from the training data before the next retraining
-  D: Tell patients in a privacy notice that their data may be inferable from the model
-answer: B
+  A: Retrain with differential privacy and accept lower accuracy
+  B: Remove rare-disease patients from the training data
+  C: Return the predicted diagnosis without scores
+  D: Monitor researchers' queries for inference patterns
+answer: C
 explanation:
-  why_correct: Membership inference relies on detailed outputs such as confidence scores and many queries. Returning only the label,
-    restricting access to vetted users and limiting queries cuts the attack surface while keeping the model clinically useful. This
-    fits the constraint that the stronger training-time control is not workable here.
+  why_correct: Membership inference attacks rely mostly on detailed confidence scores. Returning only the predicted
+    label removes the main signal the attack uses while keeping the model clinically useful, which fits the constraint
+    that the training-time control is not workable.
   why_not:
-    A: Differential privacy is the strongest formal protection, but the test showed it makes the model unusable for the patients who
-      most need it.
-    C: Removing these patients protects them but makes the model fail on rare diseases, which is a safety and fairness harm.
-    D: Transparency is good practice, but telling patients about the risk does not reduce it.
+    A: Differential privacy is the strongest formal protection, but the stem says it makes the model unusable for
+      the patients who most need it.
+    B: Excluding these patients protects their records but makes the model fail on rare diseases, a safety and fairness
+      harm.
+    D: Query monitoring is a useful detective control, but each query still returns the scores the attack needs,
+      and subtle attacks may not stand out.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-c
-  checked_by: 2026-10-16-aaism-d3-c-check
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
   check_verdict: pass

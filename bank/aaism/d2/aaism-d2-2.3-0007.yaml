@@ -1,24 +1,31 @@
 id: aaism-d2-2.3-0007
 subdomain: '2.3'
 difficulty: hard
-stem: "Two years ago an e-commerce company onboarded an AI recommendation vendor after a full assessment. Since then the vendor has added generative features and two new subprocessors. The contract has not changed. What should the security manager do?"
+stem: An e-commerce company's AI recommendation vendor switched on generative features that send customer data to
+  a new subprocessor. A targeted reassessment found the subprocessor unvetted and outside the contract. Amending
+  the contract will take months. What should the security manager do FIRST?
 options:
-  A: "Request the vendor's latest independent assurance report and file it"
-  B: "Record the new features as open items in the vendor risk register"
-  C: "Ask internal audit to review the vendor relationship this year"
-  D: "Reassess the vendor for the changes and set monitoring based on its risk tier"
+  A: Request the vendor's latest independent assurance report
+  B: Amend the contract to cover the new subprocessor
+  C: Reassess the vendor for the new features and subprocessor
+  D: Have the generative features disabled until terms cover them
 answer: D
 explanation:
-  why_correct: "The vendor's risk profile has changed even though the contract has not. New generative features and subprocessors may change how company data is used and where it goes. A targeted reassessment, followed by monitoring scaled to the vendor's risk tier, keeps the company's view of the vendor current."
+  why_correct: Customer data is flowing now to a subprocessor that has not been vetted and is not bound by the contract.
+    Contract changes will take months, so the flow should be stopped first by turning off the features that cause
+    it, and turned back on once terms are in place.
   why_not:
-    A: "A new assurance report is useful evidence, but it may not cover the new features, and filing it is not an assessment."
-    B: "Recording the changes documents them but leaves the risk unassessed and untreated."
-    C: "Vendor risk management is a management responsibility. Internal audit gives independent assurance; it does not run vendor oversight."
+    A: An assurance report is useful evidence, but it is unlikely to cover the new subprocessor and does nothing
+      about the data already flowing.
+    B: The contract does need amending, but that takes months, and data keeps going to the unvetted subprocessor
+      in the meantime.
+    C: Reassessment is the usual response to a vendor change, but the stem says a targeted reassessment has already
+      been done.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-b
-  checked_by: 2026-10-16-aaism-d2-b-check
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
   check_verdict: pass

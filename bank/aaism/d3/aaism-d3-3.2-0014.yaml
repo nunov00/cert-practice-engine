@@ -1,28 +1,27 @@
 id: aaism-d3-3.2-0014
 subdomain: '3.2'
 difficulty: hard
-stem: A retailer's training pipeline signs every model it builds, and production accepts only signed models. Each training run downloads
-  the latest base model and libraries from public sources. What is the MAIN limitation of relying on the signature check?
+stem: A retailer's pipeline pins its base model and libraries by hash and signs every model it builds. Production
+  accepts only signed models. The signing key is a plain pipeline variable readable by every job, including third-party
+  test plug-ins. What is the MAIN limitation?
 options:
-  A: The signing key could be stolen from the pipeline and used to sign an attacker's model
-  B: A signature does not keep the model's weights confidential while they are in production
-  C: An older signed model with known flaws could be redeployed and would pass the check
-  D: A tampered input would be built into a model that still carries a valid signature
-answer: D
+  A: An old signed model with known flaws could be redeployed
+  B: Any job could sign an arbitrary model
+  C: Signing gives no confidentiality for the weights
+  D: A tampered input yields a validly signed model
+answer: B
 explanation:
-  why_correct: A signature proves that the model came from the pipeline unchanged. It cannot show that what went into the pipeline was
-    trustworthy. Because each run pulls unpinned components from public sources, a compromised base model or library would produce a
-    properly signed but malicious model. The fix is to pin and verify inputs, not only outputs.
+  why_correct: A signature is only as trustworthy as the key. If every job, including third-party code, can read
+    the key, a compromised plug-in can sign a malicious model that production will accept.
   why_not:
-    A: Key theft is a real risk for any signing scheme, but it is managed with key protection. The scenario's distinctive weakness is
-      the unverified inputs.
-    B: Signing was never meant to provide confidentiality, so this is not a limitation of relying on it for integrity.
-    C: Rollback of old signed models is a valid concern handled by version checks. It does not arise from the facts given here.
+    A: Rollback is a valid concern, but nothing in the scenario points to it, while the key exposure is stated.
+    C: True, but signing is used here for integrity, so this is not a limitation for that purpose.
+    D: Inputs are pinned by hash, so tampered components would be rejected before training.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-c
-  checked_by: 2026-10-16-aaism-d3-c-check
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
   check_verdict: pass

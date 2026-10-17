@@ -1,26 +1,27 @@
 id: aaism-d1-1.2-0007
 subdomain: '1.2'
-difficulty: medium
-stem: At a telecom operator, business units launch AI pilots quickly and security often hears about them only after
-  go-live. Which measure is MOST effective in making sure security is considered early?
+difficulty: hard
+stem: A telecom operator checks SaaS renewals for AI features, yet security still learns of AI uses after go-live.
+  Most are AI features that vendors switch on mid-contract inside already approved tools. Which measure is MOST
+  effective?
 options:
-  A: Have internal audit review each AI pilot shortly after it goes live
-  B: Build a security risk check into intake and approval of AI use cases
-  C: Run awareness sessions on AI risk for the heads of business units
-  D: Require every AI vendor to complete a security questionnaire up front
-answer: B
+  A: Add an AI feature check to SaaS renewals
+  B: Scan network traffic for unapproved AI services
+  C: Run AI risk awareness sessions for business unit heads
+  D: Track vendor feature releases and tenant AI settings
+answer: D
 explanation:
-  why_correct: Making a security check part of the standard path for approving a new AI use case means it happens
-    every time, before launch. It is structural and proactive rather than dependent on goodwill or later detection.
+  why_correct: The features appear between renewals inside approved tools. Watching vendor releases and the tenant's
+    AI settings catches them when they are switched on.
   why_not:
-    A: Post-launch audit is reactive, and audit should not own a management control.
-    C: Awareness helps, but it relies on people remembering to involve security. It does not ensure it.
-    D: Vendor questionnaires cover only bought tools and one type of risk. In-house pilots would still be missed.
+    A: Renewal checks already exist and miss features switched on mid-contract.
+    B: The traffic goes to already approved SaaS domains, so a scan for unapproved services will not flag it.
+    C: Business heads may not know a vendor has switched a feature on, so awareness does not close the gap.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-a
-  checked_by: 2026-10-16-aaism-d1-a-check
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
   check_verdict: pass

@@ -1,23 +1,26 @@
 id: aaism-d3-3.4-0006
 subdomain: '3.4'
-difficulty: medium
-stem: A staffing firm buys a candidate ranking tool. The vendor says the tool is fair because gender and age were removed
-  from its input features. What is the GREATEST concern with relying on this claim?
+difficulty: hard
+stem: A staffing firm hiring for rural warehouse roles reviews a candidate ranking tool. An independent auditor
+  confirmed equal selection rates by gender and age across the vendor's clients, mostly urban office employers.
+  What is the GREATEST concern with this evidence?
 options:
-  A: Removing the features may lower the tool's ranking accuracy
-  B: The vendor may not share the full list of input features used
-  C: Other features can act as proxies, so outcomes can still be biased
-  D: Some laws may require age and gender to be kept for reporting
-answer: C
+  A: Other features may still act as proxies for gender or age
+  B: The tested population may differ from the firm's applicants
+  C: The results may rely on the vendor's own selection of data
+  D: The vendor may not disclose its full list of input features
+answer: B
 explanation:
-  why_correct: Fairness through unawareness is weak. Features such as career gaps, graduation year or hobbies can correlate
-    with gender or age, so the model can still discriminate. The firm should require outcome-based fairness testing on its
-    own population, not accept feature removal as proof.
+  why_correct: Outcome-based fairness results hold only for the population tested. The audit covered mostly urban
+    office hiring, while the firm recruits for rural warehouse roles, where applicants and job criteria differ.
+    The tool may treat this population differently, so the firm should test outcomes on its own applicant data.
   why_not:
-    A: A possible accuracy loss is a performance trade-off. It does not undermine the claim of fairness.
-    B: Limited transparency is a real due diligence issue, but even a full feature list would not show whether proxies drive
-      bias.
-    D: Monitoring obligations may exist, but that concerns record keeping, not whether the tool's outcomes are fair.
+    A: Proxy bias is a real risk in general, but outcome-based testing would show proxy effects in the population
+      tested. The problem is which population that was.
+    C: Independence of the evidence is the usual concern, but the stem says an independent auditor confirmed it.
+      Even a perfect audit of urban clients says little about rural warehouse applicants.
+    D: Limited feature disclosure is a due diligence gap, but a full list would not show whether outcomes are fair
+      for the firm's own applicants.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -25,4 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d3-b-check
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

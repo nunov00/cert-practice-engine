@@ -1,21 +1,26 @@
 id: aaism-d1-1.5-0006
 subdomain: '1.5'
-difficulty: medium
-stem: A law firm's incident classification scheme has no AI-specific categories. What is the PRIMARY benefit of adding them?
+difficulty: hard
+stem: A law firm's AI incident category sent a prompt injection against its research assistant to model-skilled
+  responders within minutes. It was still rated low, since severity counts only records exposed, though tainted
+  research had reached court filings. What change would MOST help?
 options:
-  A: AI incidents reach the right responders and playbooks with suitable severity
-  B: Regulators can see that the firm has a formal and documented approach to AI incidents
-  C: Management can measure how many incidents each AI team is responsible for
-  D: AI incidents can be handled separately from the normal security reporting
-answer: A
+  A: Faster routing of AI tickets to model specialists
+  B: A playbook step to check outputs for tampering
+  C: Severity criteria that reflect AI-specific harms
+  D: Trend reporting on AI incident severity over time
+answer: C
 explanation:
-  why_correct: Classification drives routing and severity. Categories such as prompt injection, poisoned model or harmful
-    output make sure the right people, including data scientists and model owners, are engaged and the correct AI playbook
-    is used.
+  why_correct: Routing worked; rating did not. A scale that counts only exposed records missed the harm of manipulated
+    output reaching court. Severity rules covering output integrity and the actions taken on outputs would set the
+    right urgency.
   why_not:
-    B: Showing a formal approach may help with regulators, but it is a side effect, not the primary purpose.
-    C: Classification is for response, not for assigning blame to teams.
-    D: AI incidents should be part of normal incident reporting, not split from it.
+    A: Routing to the right skills is a main benefit of AI categories. Here the ticket reached specialists within
+      minutes.
+    B: Checking outputs is a sound response step. With a low rating, the case still gets low priority and limited
+      escalation, so the step may come too late.
+    D: Trend data supports planning. It reports the ratings as given and does not change how this kind of incident
+      is rated.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -23,4 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d1-b-check
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

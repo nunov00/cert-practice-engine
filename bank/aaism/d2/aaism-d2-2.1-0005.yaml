@@ -1,22 +1,25 @@
 id: aaism-d2-2.1-0005
 subdomain: '2.1'
-difficulty: medium
-stem: A firm runs two assistants on the same language model. One answers questions from a public staff handbook. The other
-  can read and send email on users' behalf. Why should the second assistant receive a higher risk rating?
+difficulty: hard
+stem: Two staff-only assistants use the same model. One answers from the public handbook. The other answers from
+  HR policy documents and can create leave requests in the HR system. Why should the second get a higher risk rating?
 options:
-  A: It is likely to have more users, which raises the chance of an attack
-  B: Its model is more exposed to prompt injection than the first assistant
-  C: Its answers are longer, so they are more likely to contain mistakes
-  D: A successful injection could make it act on email and leak data
+  A: Its source documents hold more sensitive data
+  B: Its inputs raise the likelihood of prompt injection
+  C: Wrong HR policy answers could mislead staff
+  D: A manipulated prompt could change HR records
 answer: D
 explanation:
-  why_correct: Both use the same model, so their basic weakness to prompt injection is similar. The second assistant's tool
-    access raises the impact. A manipulated prompt could send emails or expose mailbox contents, which the handbook assistant
-    cannot do.
+  why_correct: Both assistants take input from the same staff and use the same model, so the likelihood of manipulation
+    is similar. The second can act in the HR system, which raises the impact if it is manipulated. Its sources are
+    policies, not personal records.
   why_not:
-    A: User numbers are not given and are not what sets the two apart. The key difference is what the assistant can do.
-    B: The model is the same, so its inherent susceptibility does not differ.
-    C: Answer length is not a meaningful risk factor here compared with tool access.
+    A: Source sensitivity often drives ratings. HR policy documents are internal guidance, not personal records,
+      so they add little exposure compared with the ability to act.
+    B: Untrusted input, such as external email, raises injection likelihood. Both assistants take input only from
+      staff, so likelihood does not differ much.
+    C: Hallucination is a real risk for policy answers. Both assistants use the same model, and a wrong answer that
+      staff can check is a smaller concern than unauthorised changes to records.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -24,4 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-a
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d2-a-check
+  checked_by: 2026-10-16-aaism-d2-a-recheck3

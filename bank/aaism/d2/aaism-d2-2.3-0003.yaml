@@ -1,24 +1,30 @@
 id: aaism-d2-2.3-0003
 subdomain: '2.3'
-difficulty: easy
-stem: "A telecom company's fraud screening depends on a third-party foundation model API. The provider updated the model without warning, and missed fraud cases rose sharply. Which contract provision would MOST have reduced this risk?"
+difficulty: medium
+stem: A telecom's fraud screening uses a provider's model API. Its contract gives change notice and version pinning,
+  but pinned versions are retired 30 days after a successor ships. The telecom needs 90 days to validate a version
+  on its fraud cases. Which contract change MOST reduces risk?
 options:
-  A: "Higher service credits payable whenever the API is unavailable to users"
-  B: "A right to audit the provider's data centre security controls"
-  C: "Breach notification within a fixed number of hours"
-  D: "Advance notice of model changes and the option to pin a version"
+  A: Service credits for periods when the API is unavailable
+  B: Access to the provider's evaluation reports for each version
+  C: Advance notice of model changes and version pinning
+  D: Support for each pinned version for six months
 answer: D
 explanation:
-  why_correct: "The harm came from an unannounced change in model behaviour, not from an outage or breach. Advance notice and the ability to stay on a tested version give the company time to evaluate a new version before its fraud controls rely on it."
+  why_correct: Pinning only helps if the pinned version stays available long enough to validate its successor. With
+    30 days of support against a 90-day validation, the telecom will be forced onto an unvalidated model. A six-month
+    support period covers the validation time.
   why_not:
-    A: "Service credits cover downtime. The API stayed available; its behaviour changed."
-    B: "Data centre audits address physical and infrastructure security, which was not the problem here."
-    C: "Breach notification applies to security incidents. A planned model update is not a breach and would not trigger it."
+    A: Service credits compensate for downtime. The risk here is being moved to an untested model, not an outage.
+    B: The provider's general evaluations would not show the effect on this telecom's fraud cases, and they do not
+      buy validation time.
+    C: Change notice and pinning are the usual protection against silent model changes, but the contract already
+      has both. The problem is how long the pinned version lasts.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-b
-  checked_by: 2026-10-16-aaism-d2-b-check
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
   check_verdict: pass

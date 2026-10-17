@@ -1,27 +1,27 @@
 id: aaism-d3-3.2-0008
 subdomain: '3.2'
 difficulty: medium
-stem: At a media company, trained models are copied to a shared file server, and the deployment team picks them up from there.
-  What should the security manager recommend?
+stem: A media company promotes models through a registry that records each version and its approval. The deployment
+  script pulls whichever version is tagged 'latest', and twice an unapproved build carried that tag. What should
+  be recommended?
 options:
-  A: Move the file share to a separate network segment used only by engineering staff
-  B: Ask the deployment team to compare file sizes with the training logs before use
-  C: Use a controlled model registry as the only promotion path to production
-  D: Back up the file server daily so that earlier models can be restored if needed
-answer: C
+  A: A model registry with approval-based promotion
+  B: Deploy approved models by immutable version ID
+  C: Access logging on the registry with each model's hash
+  D: A version naming standard checked by the deployment team
+answer: B
 explanation:
-  why_correct: A shared file server gives weak control over who can place or swap models. A controlled registry with access
-    control, versioning and integrity checks, used as the only route to production, makes promotion traceable and stops unapproved
-    or tampered models from being deployed.
+  why_correct: The registry holds the right approval data, but deployment ignores it and trusts a movable tag. Deploying
+    a specific, immutable approved version ties what runs in production to the approval record.
   why_not:
-    A: Segmentation narrows access but leaves many people able to replace files without traceability or approval.
-    B: File size checks are weak and manual. A tampered model can easily have the same size.
-    D: Backups support recovery but do not stop a tampered model from being deployed in the first place.
+    A: The registry and approvals exist. The failure is that deployment does not use them.
+    C: Logs would show who moved the tag, but the wrong model would still be deployed first.
+    D: A naming standard relies on manual checking and does not stop the script deploying whatever is tagged.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-check
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
   check_verdict: pass

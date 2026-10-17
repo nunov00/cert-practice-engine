@@ -1,22 +1,25 @@
 id: aaism-d1-1.5-0001
 subdomain: '1.5'
-difficulty: easy
-stem: An online retailer's customer chatbot has started showing some users other customers' order details. What should the
-  incident response team do FIRST?
+difficulty: medium
+stem: An online retailer's support chatbot is showing some users other customers' order details. The team disabled
+  its order lookup tool an hour ago, but new leaks keep appearing and their source is not yet known. What should
+  the team do NEXT?
 options:
-  A: Retrain the chatbot so that it no longer reveals personal order data
-  B: Notify every customer whose order data may have been shown to others
-  C: Switch off the chatbot or the feature that retrieves order details
-  D: Review the chatbot logs to establish the root cause of the leak
-answer: C
+  A: Disable the chatbot's other tools one at a time
+  B: Take the chatbot offline on all channels
+  C: Add an output filter that masks order numbers
+  D: Review session logs to identify affected customers
+answer: B
 explanation:
-  why_correct: The leak is ongoing, so containment comes first. Disabling the chatbot or its order retrieval feature stops
-    further exposure at once. Analysis, notification and a lasting fix follow.
+  why_correct: Targeted containment has failed, and the leak continues from an unknown source. Until the cause is
+    found, taking the chatbot offline is the only reliable way to stop further exposure.
   why_not:
-    A: Retraining takes time and may not fix the cause, which could be in retrieval or access control. Data keeps leaking
-      meanwhile.
-    B: Notification may be required, but the scope is not yet known and the leak has not been stopped.
-    D: Root cause analysis is needed, but it should not delay containment of an active leak.
+    A: Narrow isolation is better when the source is known. With the source unknown, trying tools one by one leaves
+      customers exposed while each step is tested.
+    C: Filtering is a useful extra layer. Names, addresses and items can still leak, so it does not reliably stop
+      an active exposure.
+    D: Scoping is needed for notification. It should follow once the leak is stopped, not while more customers are
+      being exposed.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -24,4 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d1-b-check
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

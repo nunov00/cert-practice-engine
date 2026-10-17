@@ -1,23 +1,26 @@
 id: aaism-d3-3.4-0007
 subdomain: '3.4'
-difficulty: easy
-stem: An airline uses an AI tool to propose aircraft maintenance actions. Which control BEST reduces the risk of an unsafe
-  proposal being carried out?
+difficulty: hard
+stem: An airline's AI tool proposes maintenance actions that licensed engineers approve. It has now been validated
+  on the wide-body aircraft joining the fleet next month. Their proposals will be approved by contract engineers
+  who have never used the tool. What should the security manager recommend FIRST?
 options:
-  A: A qualified engineer approves each proposal before work starts
-  B: A second AI model cross-checks each proposal for consistency
-  C: Engineers are trained on the known limitations of the tool
-  D: A monthly sample of proposals is reviewed against outcomes
+  A: Brief the new approvers on the tool's known failure modes
+  B: Restrict the tool to narrow-body aircraft for the time being
+  C: Require a second engineer to approve each wide-body proposal
+  D: Review a monthly sample of wide-body proposals against outcomes
 answer: A
 explanation:
-  why_correct: In a safety-critical process, a competent human must review and approve each AI output before it is acted on.
-    Human-in-the-loop approval stops an unsafe proposal at the point where harm would occur.
+  why_correct: Human approval is the safeguard here, and it works only if approvers know where the tool tends to
+    be wrong. The new risk is not the tool, which is validated for the new aircraft, but approvers who have never
+    used it. Briefing them on its known failure modes makes their approval meaningful from the first day.
   why_not:
-    B: A second model may catch some errors, but it can share the same blind spots and still lets an unsafe proposal go ahead
-      without competent human judgment.
-    C: Training is a useful supporting control, but it relies on each engineer spotting the error and does not require anyone
-      to approve the work.
-    D: A monthly sample is a detective control. It finds problems after unsafe work may already have been done.
+    B: Limiting an AI tool to its validated scope is sound practice, but the stem says the tool has been validated
+      on the wide-body aircraft, so this removes value without addressing the actual gap.
+    C: A second approver adds cost and may share the same unfamiliarity with the tool. It doubles the check without
+      making either reviewer better at spotting the tool's errors.
+    D: Sampling against outcomes is useful ongoing assurance, but it finds problems after the fact. It should follow,
+      not replace, preparing the approvers.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -25,4 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d3-b-check
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

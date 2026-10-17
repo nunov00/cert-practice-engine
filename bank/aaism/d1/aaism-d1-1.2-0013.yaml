@@ -1,30 +1,30 @@
 id: aaism-d1-1.2-0013
 subdomain: '1.2'
 difficulty: hard
-stem: A research team was granted a six-month policy exception to use an unapproved coding assistant, on condition that
-  no client code is entered. The exception ends next week. The team now relies on the tool, and a completed vendor assessment
-  rates its residual risk within appetite. What should the security manager do?
+stem: A research team's six-month exception to use an unapproved coding assistant ends next week. Logs show its
+  no-client-code condition was met, and a vendor assessment completed last month rates residual risk within appetite.
+  What should the security manager do?
 options:
-  A: Renew the exception for six more months with the same conditions
-  B: Move the tool through the standard approval process
-  C: Let the exception lapse and block the tool until approval is done
-  D: Ask internal audit to check that the conditions were followed
-answer: B
+  A: Renew the exception with the same conditions
+  B: Let the exception lapse until approval is complete
+  C: Approve the tool through the standard process
+  D: Commission a fresh vendor assessment
+answer: C
 explanation:
-  why_correct: Exceptions are meant to be temporary. Now that the tool has been assessed and found within appetite, the
-    right path is to approve it formally, with its conditions written into the standard rules. This ends a standing exception
-    and brings the tool under normal policy, monitoring and review.
+  why_correct: Exceptions are meant to be temporary. The tool has been assessed and the condition held, so the right
+    move is formal approval, with the condition written into the standard rules. That ends a standing exception
+    and brings the tool under normal monitoring and review.
   why_not:
-    A: Renewal is defensible in the short term, but rolling exceptions turn into a permanent shadow approval that bypasses
-      the normal process.
-    C: Blocking a tool that is already assessed as within appetite disrupts the team with no risk benefit, and invites workarounds.
-    D: Checking compliance with the conditions is useful input, but it does not decide how the tool should be governed from
-      next week.
+    A: Renewal is defensible short term, but rolling exceptions become a shadow approval that bypasses the normal
+      process.
+    B: Lapsing follows the letter of the exception, but it disrupts a team using a tool already assessed as acceptable
+      and invites workarounds.
+    D: A fresh assessment adds delay without new information, since a recent one already exists.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-c
-  checked_by: 2026-10-16-aaism-d1-c-check
+  checked_by: 2026-10-16-aaism-d1-c-recheck
   check_verdict: pass

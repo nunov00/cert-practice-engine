@@ -1,21 +1,25 @@
 id: aaism-d3-3.4-0012
 subdomain: '3.4'
-difficulty: easy
-stem: A consumer lender must tell applicants why its credit model refused them. Which capability is MOST important for this
-  duty?
+difficulty: medium
+stem: A consumer lender must tell each refused applicant the main reasons for refusal. Its credit model already
+  produces per-decision feature attributions, but refusal letters list engineered features such as 'util_ratio_6m_delta'.
+  What is MOST needed?
 options:
-  A: Reports on the model's overall accuracy and error rates
-  B: Documentation of the model's architecture and training
-  C: Explanations of the main factors in each single decision
-  D: Human review of every application that the model approves
-answer: C
+  A: Per-decision feature attributions for each applicant
+  B: Global feature importance for the model as a whole
+  C: Documentation of the training data and model design
+  D: Plain-language reason statements mapped to each feature
+answer: D
 explanation:
-  why_correct: The duty is to explain individual outcomes. Local explanations that show the main factors behind each refusal
-    let the lender give each applicant meaningful reasons.
+  why_correct: The lender has the right technical output, per-decision attributions, but the duty is to give applicants
+    reasons they can understand and act on. Engineered feature names are meaningless to them. A reviewed mapping
+    from each feature to a plain-language reason turns the attributions into a usable explanation.
   why_not:
-    A: Overall accuracy describes the model as a whole. It does not explain why one applicant was refused.
-    B: Technical documentation supports governance but is not an explanation of a specific decision.
-    D: Reviewing approvals does nothing for refused applicants, who are the ones owed reasons.
+    A: Per-decision attributions are the right basis for individual reasons, but the lender already produces them.
+      The gap is that their output is not understandable.
+    B: Global importance describes the model overall, not why a particular applicant was refused.
+    C: Model documentation supports oversight and audit, but it does not give an individual applicant the reasons
+      for a decision.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -23,4 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d3-b-check
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

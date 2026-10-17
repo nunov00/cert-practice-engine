@@ -1,27 +1,30 @@
 id: aaism-d2-2.3-0015
 subdomain: '2.3'
-difficulty: medium
-stem: A hospital's preferred vendor for a critical AI scheduling tool refuses to provide a full AI bill of materials, citing
-  intellectual property. It is the only vendor that meets the hospital's clinical needs. What is the BEST approach?
+difficulty: hard
+stem: A hospital's only suitable vendor for a critical AI scheduling tool will not share a full AI bill of materials,
+  citing intellectual property. The hospital's last two supply chain responses stalled because it could not tell
+  which systems used affected components. What is the BEST approach?
 options:
-  A: Reject the vendor, as the bill of materials is a required control
-  B: Accept the refusal, given the vendor's strong security track record
-  C: Ask for the key components under a confidentiality agreement
-  D: Infer the tool's components by testing it in a test environment
-answer: C
+  A: Require notice when a flaw affects the tool's components
+  B: Record a risk exception approved by the clinical owner
+  C: Commission an independent security assessment of the tool
+  D: Request the key components under a confidentiality agreement
+answer: D
 explanation:
-  why_correct: The hospital needs to know about key components, such as the base model, third-party services and critical
-    libraries, so it can react to supply chain issues. It does not need every detail. Asking for that subset under a confidentiality
-    agreement, with notice of changes, protects the vendor's interests and meets the hospital's need.
+  why_correct: The hospital's problem has been not knowing which systems contain an affected component. Getting
+    the key components, such as the base model, third-party services and critical libraries, under a confidentiality
+    agreement gives it that visibility while respecting the vendor's intellectual property.
   why_not:
-    A: Rejecting the only vendor that meets clinical needs puts a business need at risk when a middle path may work.
-    B: A good track record does not tell the hospital when a hidden component is affected by a new flaw.
-    D: Testing gives at best a partial picture of what is inside. It may also breach the licence terms.
+    A: A notice clause is useful, but it relies on the vendor spotting and reporting each issue. It does not give
+      the hospital its own view of what the tool contains.
+    B: An exception may be needed if the vendor refuses everything, but it records the gap rather than closing it.
+    C: An independent assessment tests security at a point in time. It does not give an ongoing record of components
+      to check against new flaws.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-c
-  checked_by: 2026-10-16-aaism-d2-c-check
+  checked_by: 2026-10-16-aaism-d2-c-recheck
   check_verdict: pass

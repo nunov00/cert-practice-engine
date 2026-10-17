@@ -1,30 +1,31 @@
 id: aaism-d3-3.1-0004
 subdomain: '3.1'
-difficulty: easy
-stem: In a large language model application, how should the output of the model be treated before it is passed to a database
-  query or displayed in a web page?
+difficulty: hard
+stem: A support assistant's replies are HTML-encoded before display, and its Markdown renderer loads images from
+  any URL. Testers planted instructions in a help article that made replies include image links carrying chat data
+  to an outside server. Which control BEST stops this?
 options:
-  A: As trusted, once the user's prompt has already passed input validation
-  B: As trusted, provided the system prompt forbids generating code or markup
-  C: As untrusted input that must be validated and encoded for its destination
-  D: As untrusted only when the user who prompted the model is external
-answer: C
+  A: Load reply images only from approved domains
+  B: Encode model output for the page context
+  C: Screen user prompts with an injection filter
+  D: Have a second model screen replies for image links
+answer: A
 explanation:
-  why_correct: Model output can be shaped by user prompts and by content the model retrieved, so it can carry malicious code
-    or commands. Treating it as untrusted and validating and encoding it for each destination prevents injection into downstream
-    systems.
+  why_correct: The leak works because the browser fetches an attacker's image URL, sending the data in the request.
+    Encoding does not stop a well-formed image link. Restricting rendered images to approved domains removes the
+    outbound channel deterministically, whatever the model is tricked into writing.
   why_not:
-    A: Input validation cannot catch every crafted prompt, and output is also shaped by retrieved content that never passed
-      through it. Validating the input does not make the output safe for a database or browser.
-    B: System prompt rules are guidance that injected instructions can override. The model may still emit code or markup,
-      so the destination must be protected by validation and encoding.
-    D: Internal users, documents and emails can also carry injected content. The trust decision should not depend on the user
-      being external.
+    B: Output is already HTML-encoded. A Markdown image link is valid output, so encoding renders it faithfully
+      and the browser still makes the request.
+    C: The instructions came from a help article the assistant retrieved, not from the user, so a prompt filter
+      never sees them.
+    D: A screening model is probabilistic and can be evaded with encoded or reworded image URLs. The renderer would
+      still load whatever gets past it.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-check
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
   check_verdict: pass

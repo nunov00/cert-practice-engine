@@ -1,24 +1,30 @@
 id: aaism-d2-2.2-0012
 subdomain: '2.2'
 difficulty: hard
-stem: "An airline's customer assistant uses a vendor safety filter. Red team testing shows that role-play prompts get past the filter in a small share of attempts. The product owner says this rate is low enough to launch. What is the BEST response from the security manager?"
+stem: An airline's assistant can issue travel vouchers, and customers confirm each voucher in the app. Red team
+  role-play prompts talk it into issuing vouchers the customer is not entitled to in a small share of attempts.
+  What should the security manager require before launch?
 options:
-  A: "Agree to launch, since no safety filter can block every bypass attempt"
-  B: "Approve launch if the vendor commits to fix the bypass within 30 days"
-  C: "Ask the red team to keep retesting until the bypass rate falls below one percent"
-  D: "Judge the impact of a bypass and add controls in proportion to that impact"
+  A: Rate limits on sessions with repeated refused requests
+  B: An output classifier tuned to role-play responses
+  C: Customer confirmation before each voucher is issued
+  D: Entitlement checks on vouchers outside the model
 answer: D
 explanation:
-  why_correct: "With many users, a low bypass rate still means some bypasses will succeed. The decision should rest on what a successful bypass can lead to, for example harmful advice, misuse of booking tools or data exposure, and on whether further layers such as output checks and limited tool permissions bring the risk within appetite."
+  why_correct: The person exploiting the bypass is the customer, so a confirmation step they approve themselves
+    does not stop it. A check outside the model that the customer is entitled to the voucher blocks the abuse whichever
+    prompt technique gets past the safety filter.
   why_not:
-    A: "No filter is perfect, which is exactly why the impact of a bypass must be assessed and other layers considered. Launching on the rate alone ignores impact."
-    B: "A vendor fix date leaves the bypass open at launch and fixes only this technique. It still skips the question of what harm a bypass could do in the meantime."
-    C: "An arbitrary rate target ignores impact. Repeated retesting also tends to tune the system to the test rather than reduce the risk."
+    A: Rate limiting slows repeated probing, but a bypass that works early in a session still gets a voucher issued.
+    B: An output classifier works on text, but the harm here is a tool action, and role-play responses can be varied
+      to slip past it.
+    C: Confirmation is a strong control when the risk is acting against the user's wishes. Here it already exists,
+      and the customer confirming is the one gaining the voucher.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-b
-  checked_by: 2026-10-16-aaism-d2-b-check
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
   check_verdict: pass

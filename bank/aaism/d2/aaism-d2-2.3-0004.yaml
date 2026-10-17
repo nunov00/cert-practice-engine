@@ -1,24 +1,30 @@
 id: aaism-d2-2.3-0004
 subdomain: '2.3'
-difficulty: medium
-stem: "Data scientists at an energy utility want to download a popular pre-trained model from a public model hub. The file uses a serialisation format that can run code when it is loaded. What is the BEST control?"
+difficulty: hard
+stem: Data scientists want a pre-trained model from a public hub, uploaded by the publisher's verified account.
+  The file format can run code when loaded, and the publisher provides no hashes or signatures. What is the BEST
+  control before use?
 options:
-  A: "Accept the model if it has many downloads and positive user ratings"
-  B: "Scan the file with antivirus software before loading it in production"
-  C: "Verify its source and integrity and load it only in an isolated environment"
-  D: "Block every model from public hubs for all data science teams"
-answer: C
+  A: Check the file hash against the publisher's release
+  B: Scan the file with a model-aware serialisation scanner
+  C: Add the model to the AI inventory with a named owner
+  D: Convert it to a safe format in an isolated environment
+answer: D
 explanation:
-  why_correct: "Model files in such formats can carry malicious code that runs on load, and popular models can be tampered with or imitated. Checking provenance and hashes, scanning, preferring safe formats, and opening the file only in an isolated environment manage this supply chain risk while still allowing open models to be used."
+  why_correct: The format can run code on load, so the danger is executing a payload on the team's systems. Opening
+    and converting the file only in an isolated environment contains any payload, and the converted copy cannot
+    run code when the team loads it later.
   why_not:
-    A: "Popularity is not evidence of safety. Attackers deliberately publish lookalike or compromised models on popular hubs."
-    B: "Malware scanning helps but is too narrow: general antivirus often misses code embedded in model files, it does not confirm where the model came from, and loading it straight into production removes any containment."
-    D: "A total ban stops valuable work and tends to drive teams to unmanaged downloads. Controlled use is the better treatment."
+    A: Hash checks confirm integrity, but the stem says the publisher provides no hashes or signatures, so there
+      is nothing to compare against.
+    B: Scanning is a sound layer, but it relies on detection and can miss obfuscated payloads. Containment does
+      not depend on spotting the code.
+    C: Inventory records support oversight, but they do nothing to stop code running when the file is loaded.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-b
-  checked_by: 2026-10-16-aaism-d2-b-check
+  checked_by: 2026-10-16-aaism-d2-b-recheck
   check_verdict: pass

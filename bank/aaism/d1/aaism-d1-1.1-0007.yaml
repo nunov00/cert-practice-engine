@@ -1,28 +1,27 @@
 id: aaism-d1-1.1-0007
 subdomain: '1.1'
 difficulty: medium
-stem: A medical device maker's AI imaging feature is classed as high-risk and needs a conformity assessment before
-  release. What is the security manager's MOST important contribution?
+stem: A device maker's AI imaging feature is in conformity assessment. Its adversarial robustness report covers
+  an earlier model version; the device ships a version retrained on new scans. Which evidence BEST shows the shipped
+  model resists altered images?
 options:
-  A: Lead the conformity assessment as its accountable owner
-  B: Supply evidence that security and robustness controls work as intended
-  C: Run a penetration test of the feature shortly before release
-  D: Approve the clinical accuracy thresholds proposed by the data scientists
-answer: B
+  A: Robustness testing repeated on the shipped model
+  B: The earlier robustness report with a change impact note
+  C: Held-out accuracy results for the shipped model
+  D: A penetration test of the device's network interfaces
+answer: A
 explanation:
-  why_correct: Conformity assessment needs documented proof that required controls exist and are effective. Security
-    and robustness are within the security manager's remit, so providing tested evidence is their core contribution.
+  why_correct: Retraining can change how a model reacts to crafted inputs, so only tests on the version that ships
+    show that it resists them.
   why_not:
-    A: Accountability for conformity sits with the manufacturer's product and regulatory leadership. Security contributes
-      evidence for its part but does not own the whole assessment.
-    C: A single late test is useful but narrow. The assessment needs evidence that security and robustness controls
-      are designed in and work across the life cycle.
-    D: Clinical accuracy thresholds are a clinical and product decision. Security should not approve them.
+    B: A change note explains what differs but cannot show how the retrained model behaves under attack.
+    C: Accuracy on normal scans says nothing about resistance to deliberately altered ones.
+    D: A network test covers how the device is reached, not how the model responds to manipulated images.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-a
-  checked_by: 2026-10-16-aaism-d1-a-check
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
   check_verdict: pass

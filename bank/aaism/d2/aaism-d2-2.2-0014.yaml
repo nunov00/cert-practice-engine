@@ -1,28 +1,31 @@
 id: aaism-d2-2.2-0014
 subdomain: '2.2'
-difficulty: medium
-stem: A retailer's customer chat assistant has no tool access. Testing found a jailbreak that makes it produce off-brand
-  and offensive replies. The model vendor confirms the flaw and plans to fix it in a release due in three months. What is
-  the BEST response?
+difficulty: hard
+stem: A retailer's chat assistant has no tools and already runs its own output filter for offensive content. A new
+  jailbreak gets past both the system prompt and the filter, producing off-brand jokes; no customer has reported
+  one. The model vendor's fix is due in three weeks. What is the BEST response?
 options:
-  A: Accept the risk until the vendor's fixed release becomes available
-  B: Take the chat assistant offline until the vendor's fix is released
-  C: Begin moving the assistant to a different model vendor right away
-  D: Add output filtering in the app and track the risk to a review date
-answer: D
+  A: Accept and record the risk until the vendor fix
+  B: Tighten the system prompt against role-play requests
+  C: Add output filtering in the retailer's application
+  D: Begin evaluating an alternative model vendor
+answer: A
 explanation:
-  why_correct: The fix is out of the retailer's hands for three months, so compensating controls in its own layer are the
-    best lever. Output filtering cuts the reputational harm while the service keeps running. Tracking the risk makes sure
-    it is reviewed when the vendor's release arrives.
+  why_correct: 'The impact is low: no tools, mild off-brand output, no customer exposure so far, and a fix due in
+    three weeks. The retailer''s own controls are already in place. Recording a time-limited acceptance with the
+    risk owner, and reviewing it when the fix arrives, is proportionate.'
   why_not:
-    A: Acceptance leaves three months of reputational exposure open when a practical compensating control is available.
-    B: With no tool access the harm is reputational, not financial or data loss. Going offline is out of proportion.
-    C: Switching vendors is costly and slow, and the new model may have similar flaws. It does not reduce the exposure now.
+    B: The stem says the jailbreak already gets past the system prompt, so more instructions at the same layer are
+      unlikely to hold.
+    C: Application-level filtering is the usual control while waiting for a vendor fix, but the retailer already
+      filters outputs and this jailbreak gets past it.
+    D: Changing vendors is slow and costly, and a new model may have similar flaws. It is out of proportion to a
+      low-impact issue with a fix weeks away.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-c
-  checked_by: 2026-10-16-aaism-d2-c-check
+  checked_by: 2026-10-16-aaism-d2-c-recheck3
   check_verdict: pass

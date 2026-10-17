@@ -1,23 +1,26 @@
 id: aaism-d3-3.5-0002
 subdomain: '3.5'
-difficulty: medium
-stem: A telecom company logs all prompts to its call-centre AI assistant. The privacy team finds that the logs contain customers'
-  personal data. What is the BEST response?
+difficulty: hard
+stem: A telecom's call-centre AI assistant logs prompts for security monitoring. The privacy team found customers'
+  card numbers in a year of stored logs, and masking now removes them from new prompts. SOC investigations have
+  never needed card numbers. What is the BEST next step?
 options:
-  A: Stop logging prompts and keep a record of only the outputs
-  B: Keep logging, with masking, tight access and set retention
-  C: Move the logs to the AI team's storage for easier access
-  D: Stop all logging until a full privacy audit is complete
-answer: B
+  A: Mask card numbers in prompts before they are logged
+  B: Restrict log access to named SOC analysts
+  C: Redact the card numbers already held in stored logs
+  D: Encrypt the log store with a dedicated key
+answer: C
 explanation:
-  why_correct: 'Prompt logs are needed for security monitoring and investigations. The right answer is to protect them: mask
-    sensitive fields where possible, restrict access to those who need it and apply a defined retention period. This balances
-    security and privacy.'
+  why_correct: Masking fixes new logs, but a year of stored logs still holds card numbers that serve no monitoring
+    purpose. Redacting them removes the exposure rather than guarding it, while keeping the rest of the logs for
+    investigations.
   why_not:
-    A: Without prompts, attacks such as prompt injection or data extraction cannot be detected or investigated. Outputs may
-      also hold personal data.
-    C: Moving logs for convenience widens access to personal data and weakens their integrity as evidence.
-    D: Stopping all logging leaves the assistant unmonitored for an open-ended period, which creates a larger risk.
+    A: Masking at the source is the right control, and the stem says it is already in place. It does nothing for
+      the card numbers stored before it was introduced.
+    B: Access restriction reduces who can see the card numbers, but they stay in the logs with no purpose for keeping
+      them.
+    D: Encryption protects the store against outside theft, but authorised users and processes still see the card
+      numbers, which should not be there.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -25,4 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d3-b-check
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

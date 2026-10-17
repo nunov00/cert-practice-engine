@@ -1,27 +1,27 @@
 id: aaism-d3-3.3-0009
 subdomain: '3.3'
-difficulty: easy
-stem: An HR chatbot at a retail chain answers staff questions from intranet pages that any employee can edit. What is the
-  GREATEST concern?
+difficulty: medium
+stem: A retail chain's HR chatbot answers from intranet policy pages that only HR can edit, after review. The chatbot
+  also indexes the comments any employee can post under each page. All pages are meant for every employee. What
+  is the GREATEST concern?
 options:
-  A: Anyone can plant content that changes the chatbot's answers to staff
-  B: Employees may ask questions the intranet pages do not cover
-  C: Intranet pages may be too long for the model's context window
-  D: The chatbot's answers may become out of date between index refreshes
-answer: A
+  A: Staff seeing pages meant for managers
+  B: Unreviewed edits to HR pages altering answers
+  C: Unvetted staff posts shaping the bot's answers
+  D: Stale answers between scheduled index refreshes
+answer: C
 explanation:
-  why_correct: The knowledge base is part of the model's input. If any employee can edit it, a single person can insert false
-    policy or hidden instructions that the chatbot then repeats with authority. Publishing to the knowledge base needs restricted
-    rights and content review.
+  why_correct: Page edits are controlled, but comments are open to everyone and enter the same knowledge base. One
+    person can plant false policy or hidden instructions in a comment, and the chatbot may repeat it with authority.
   why_not:
-    D: Stale answers are a quality issue that refresh scheduling can fix. They are less serious than deliberate manipulation.
-    B: Coverage gaps affect usefulness but do not create a security risk.
-    C: Context size is a design limitation handled by chunking. It is not a security concern.
+    A: Every page is meant for every employee, so over-exposure is not the concern.
+    B: Only HR can edit pages, after review, so this path is controlled.
+    D: Staleness is a quality issue and less serious than deliberate manipulation.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-check
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
   check_verdict: pass

@@ -1,30 +1,27 @@
 id: aaism-d1-1.1-0015
 subdomain: '1.1'
 difficulty: hard
-stem: A retailer has bought an AI hiring tool that is in a regulated high-risk category. The vendor has completed the required
-  conformity assessment. The retailer now plans to fine-tune the tool on its own hiring data and offer it to its franchisees
-  under the retailer's brand. What is the GREATEST concern?
+stem: A retailer will use a high-risk AI hiring tool unmodified and under the vendor's brand. The vendor completed
+  the required conformity assessment. Recruiters will act on its rankings. What is the GREATEST compliance concern
+  for the retailer?
 options:
-  A: The hiring data used for fine-tuning may hold more personal data than needed
-  B: Franchisees may use the tool in ways that the retailer cannot easily supervise
-  C: The fine-tuned version may perform worse than the vendor's original version
-  D: The retailer may take on the legal duties of a provider for the changed tool
-answer: D
+  A: Taking on the provider's legal duties for the tool
+  B: Meeting its own deployer duties, such as human oversight
+  C: Relying on a conformity assessment that may be out of date
+  D: Sending more applicant data to the vendor than needed
+answer: B
 explanation:
-  why_correct: Changing a high-risk system substantially and supplying it to others under one's own name can shift the provider's
-    obligations to the retailer. The vendor's conformity assessment covered the original tool, not the fine-tuned and rebranded
-    one. This changes the whole compliance position, so legal and compliance must assess it before the plan goes ahead.
+  why_correct: Using the tool as supplied keeps the retailer a deployer. Deployers still have their own duties,
+    such as human oversight of rankings, which the vendor's assessment does not cover.
   why_not:
-    A: Data minimisation is a real issue, but it is one control question within the plan, not a change in the retailer's
-      legal role.
-    B: Franchisee oversight matters and should be addressed by contract, but it follows from the bigger question of who
-      is the provider.
-    C: Performance must be tested, but a drop in quality can be measured and fixed. It does not change the regulatory duties.
+    A: Provider duties follow substantial modification or supplying under one's own brand. The retailer does neither.
+    C: The assessment is the vendor's duty and is complete; there is no sign it is stale.
+    D: Minimisation matters, but nothing suggests excess data, and it is not the core duty this use creates.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-c
-  checked_by: 2026-10-16-aaism-d1-c-check
+  checked_by: 2026-10-16-aaism-d1-c-recheck3
   check_verdict: pass

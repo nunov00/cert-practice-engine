@@ -1,27 +1,29 @@
 id: aaism-d3-3.3-0008
 subdomain: '3.3'
 difficulty: hard
-stem: A bank plans to give a fintech partner synthetic transaction data, generated from real customer records, to build a
-  fraud model. What should the security manager require BEFORE the data is shared?
+stem: A bank's synthetic transaction data, generated from real customer records, passed tests showing no real customers
+  are replicated. The fintech partner now also asks for the generator model, to produce more data itself. What should
+  the security manager require BEFORE sharing it?
 options:
-  A: Testing that shows the synthetic data does not reproduce real customer records
-  B: Evidence that the synthetic data keeps the statistical patterns of real fraud
-  C: A partner agreement stating that the synthetic data contains no personal data
-  D: Encryption of the synthetic dataset during transfer to the fintech partner
-answer: A
+  A: Encrypt the generator during transfer to the partner
+  B: Assess the generator itself for memorised records
+  C: Contract terms prohibiting re-identification attempts
+  D: Rely on the leakage tests already run on the data
+answer: B
 explanation:
-  why_correct: Synthetic data is not automatically safe. A generator trained on real records can memorise and reproduce near-copies
-    of them, especially rare ones such as fraud cases. Privacy testing for re-identification and record leakage is needed
-    before the data leaves the bank.
+  why_correct: The tests covered one dataset, not everything the generator can produce. A generator trained on real
+    records can reproduce near-copies when sampled heavily or prompted for rare cases, so the model itself needs
+    privacy testing before it leaves the bank.
   why_not:
-    B: Statistical fidelity is a utility check. High fidelity can even increase the chance that real records are reproduced.
-    C: A contract statement does not make it true. The bank needs evidence, not a declaration.
-    D: Encryption in transit is good practice but does not reduce the privacy risk once the partner holds the data.
+    A: Encryption in transit does not reduce the privacy risk once the partner holds the model.
+    C: A contract is a useful safeguard, but it does not reveal whether the generator can reproduce customers.
+    D: Those tests covered one sample. The partner could generate far more, including the rare cases most likely
+      to be memorised.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-check
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
   check_verdict: pass

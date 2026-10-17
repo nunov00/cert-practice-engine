@@ -1,29 +1,29 @@
 id: aaism-d1-1.4-0014
 subdomain: '1.4'
 difficulty: hard
-stem: Midway through the year, an AI security program's budget is cut by 40%. Its three workstreams are an AI inventory
-  that is 80% complete, pre-launch security testing of a customer-facing agent that can issue refunds, and a second awareness
-  campaign. The agent's launch date is fixed. Which should the security manager protect FIRST?
+stem: 'Midyear, an AI security budget is cut by 40%. Workstreams: an AI inventory that already lists every system
+  and now adds lineage fields; testing a refund-issuing customer agent launching next month; a second awareness
+  campaign; and a board risk dashboard. Which should be protected FIRST?'
 options:
-  A: The pre-launch testing of the customer agent
-  B: The remaining 20% of the AI asset inventory
-  C: The second awareness campaign for all staff
-  D: An equal share of each of the three workstreams
-answer: A
+  A: Completion of the AI asset inventory
+  B: A second awareness campaign for all staff
+  C: A dashboard reporting AI risk to the board
+  D: Pre-launch security testing of the customer refund agent
+answer: D
 explanation:
-  why_correct: The agent faces customers and can move money, and it will launch whether or not it is tested. That is the
-    largest risk the cut could leave open. The inventory is mostly done and awareness has already been delivered once, so
-    both can slow down with less harm.
+  why_correct: The agent will soon move money for customers, so an untested flaw could cause direct loss. The inventory
+    already serves its main purpose of showing what AI exists, so its remaining fields can wait.
   why_not:
-    B: An inventory is foundational, but at 80% most of its value is already there. A short delay costs less than an untested
-      agent.
-    C: Awareness matters, but one campaign has already run. A second round is the easiest work to defer.
-    D: Spreading the cut evenly avoids hard choices, but it may leave the highest-risk activity underfunded.
+    A: An incomplete inventory is often the first thing to protect, since other priorities depend on it. This one
+      already lists every system; only extra fields remain.
+    B: Awareness reduces misuse, but one campaign has already run and a second is easy to defer.
+    C: Board reporting supports oversight. It can be built later, while an untested agent that moves money launches
+      next month.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-c
-  checked_by: 2026-10-16-aaism-d1-c-check
   check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-c-recheck3

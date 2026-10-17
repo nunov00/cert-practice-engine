@@ -1,29 +1,27 @@
 id: aaism-d3-3.3-0013
 subdomain: '3.3'
-difficulty: medium
-stem: A hospital's data scientists need to link each patient's visits over time to train a readmission model. A synthetic data trial
-  lost the rare conditions the model must learn. Which approach BEST protects the data while meeting the need?
+difficulty: hard
+stem: Hospital data scientists link each patient's visits over time to train a readmission model. They work on pseudonymised
+  records in an enclave that blocks export. The same team runs the pseudonymisation and holds the token-to-patient
+  key. Which change BEST protects the data?
 options:
-  A: Generate a larger synthetic dataset with extra weight given to the rare conditions
-  B: Fully anonymise the records by removing all identifiers and the visit dates
-  C: Train on pseudonymised records in a secure enclave that blocks export
-  D: Give the team encrypted extracts of the records and log every access to them
-answer: C
+  A: Logging of each access to the enclave
+  B: Key held by an independent custodian
+  C: Pseudonymised records in an enclave that blocks export
+  D: Anonymised records with identifiers and dates removed
+answer: B
 explanation:
-  why_correct: The model needs linked visits and real rare cases, which rules out full anonymisation and synthetic data. Pseudonymised
-    records keep the linkage without direct identifiers, and a secure enclave with no export keeps the data inside protected boundaries.
-    This gives the most protection that still allows the work.
+  why_correct: The enclave keeps data in, and pseudonymisation preserves linkage, but the team using the data can
+    reverse it. Separating custody of the re-identification key means the users cannot see identities.
   why_not:
-    A: Weighting may improve the synthetic data, but the trial showed it misses rare conditions. It adds more uncertainty and does not
-      meet the need.
-    B: Removing identifiers and dates breaks the visit linkage and timing that a readmission model depends on.
-    D: Extracts move the data out to many locations. Encryption and logging help, but they protect it far less than keeping it in a
-      controlled environment.
+    A: Logging supports review, but the team can still re-identify patients.
+    C: This is already in place. It does not stop re-identification inside the enclave by key holders.
+    D: Removing dates breaks the visit timing the readmission model needs.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-c
-  checked_by: 2026-10-16-aaism-d3-c-check
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
   check_verdict: pass

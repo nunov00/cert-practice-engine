@@ -1,28 +1,30 @@
 id: aaism-d2-2.3-0013
 subdomain: '2.3'
 difficulty: hard
-stem: Data scientists at an engineering firm want to use an open-weight model from a well-known publisher. They found it
-  on a community hub, uploaded by another user, in a file format that cannot run code when loaded. What is the GREATEST
+stem: Data scientists want an open-weight model from a well-known publisher. They downloaded it from the publisher's
+  own account, the hash matches the published release, and the format cannot run code when loaded. What is the GREATEST
   remaining supply chain concern?
 options:
-  A: The weights may have been altered from the publisher's release
-  B: The file could still contain code that runs when it is loaded
-  C: The model licence may restrict use in commercial products
-  D: The model may perform worse on the firm's engineering tasks
-answer: A
+  A: The weights may differ from the publisher's release
+  B: The file could run code when it is loaded
+  C: Hidden behaviour from the publisher's training data
+  D: The licence may restrict use in commercial products
+answer: C
 explanation:
-  why_correct: A safe file format removes the code-execution risk, but not the risk of tampered weights. A copy uploaded
-    by a third party could hold a backdoor or poisoned behaviour. Checking it against the publisher's own hashes or signatures,
-    or downloading from the publisher, confirms provenance.
+  why_correct: The download source, hash and file format settle integrity and code execution. They do not show what
+    the model learned. Poisoned or backdoored behaviour introduced through the publisher's own training data would
+    pass every one of those checks, so behavioural evaluation is still needed.
   why_not:
-    B: The safe format already addresses code execution on load, which is the main reason to scan model files.
-    C: Licence terms must be checked, but they are a legal issue. They are not the main security concern in the supply chain.
-    D: Fitness for the task is tested in evaluation. It is a quality question, not a supply chain threat.
+    A: Tampered weights are the main concern for a third-party copy, but this file came from the publisher's account
+      and its hash matches the release.
+    B: The stem says the format cannot run code when loaded.
+    D: Licence terms must be checked, but they are a legal question rather than a security threat in the supply
+      chain.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-c
-  checked_by: 2026-10-16-aaism-d2-c-check
+  checked_by: 2026-10-16-aaism-d2-c-recheck3
   check_verdict: pass

@@ -1,27 +1,30 @@
 id: aaism-d3-3.1-0006
 subdomain: '3.1'
-difficulty: medium
-stem: A hospital's data science team trains models in the same network segment as its internet-facing inference service. What
-  is the PRIMARY security reason to separate the two environments?
+difficulty: hard
+stem: A hospital's public symptom-checker model was fine-tuned on identifiable patient notes. Training runs in a
+  segment isolated from the internet-facing API, and only signed models cross via a registry needing two approvals.
+  Which risk remains MOST significant?
 options:
-  A: To ensure that each model is tested and approved before it reaches production
-  B: To stop a compromise of the exposed service from reaching training data and pipelines
-  C: To reduce the chance that training data is revealed through the model's answers
-  D: To prevent heavy training jobs from slowing down the responses that clinical users depend on
-answer: B
+  A: Patient details memorised and repeated in answers
+  B: Unapproved models promoted through the registry
+  C: Volumetric attacks degrading the inference API
+  D: Lateral movement from the API to patient data
+answer: A
 explanation:
-  why_correct: The inference service faces the internet and is the most likely entry point. If it shares a segment with training,
-    an attacker can move laterally to sensitive patient data and to the pipeline, where they could poison or steal models.
-    Segregation contains that path.
+  why_correct: Segmentation and gated promotion address network attack paths and unapproved models. They do nothing
+    about what the model learned. A model fine-tuned on identifiable notes and exposed to the public can be prompted
+    to reproduce fragments of those notes.
   why_not:
-    A: Testing and approval are change management controls. Network segregation supports them but is not their main purpose.
-    C: Leakage through answers comes from what the model memorised. Separating networks does not change what the model outputs.
-    D: Resource contention is an operational concern. It is real but secondary to the security reason.
+    B: Promotion needs signed models and two approvals, so this risk is already well controlled.
+    C: Availability attacks are possible on any public API, but they disclose no patient data and are less significant
+      than leakage of identifiable notes.
+    D: The training environment is already isolated from the internet-facing API, which is the control for this
+      path.
 status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-check
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
   check_verdict: pass

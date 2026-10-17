@@ -1,22 +1,25 @@
 id: aaism-d3-3.4-0011
 subdomain: '3.4'
-difficulty: easy
-stem: Before launch, testing shows that a game studio's AI companion for teenage players can produce self-harm content during
-  role-play. What is the BEST action?
+difficulty: hard
+stem: A game studio's AI companion for teenagers recalls past chats through saved memory notes. A classifier scores
+  each whole conversation for harm. Red-team testers got self-harm content by building a role-play across many short
+  sessions. Which control BEST addresses this?
 options:
-  A: Add a rule to the terms of service that forbids such prompts
-  B: Rely on the safety settings of the foundation model provider
-  C: Block players under thirteen by asking for age at sign-up
-  D: Add safety filters suited to young users, with safe replies
-answer: D
+  A: A classifier that scores each full conversation for harm
+  B: A shorter limit on the number of turns per session
+  C: Harm scoring that covers context carried between sessions
+  D: Prompt screening for known jailbreak phrases
+answer: C
 explanation:
-  why_correct: The harm has been shown in testing, so a preventive control is needed before launch. Input and output safety
-    filters tuned to a teenage audience, with safe replies that point to support, address the harmful output directly. They
-    should then be retested.
+  why_correct: The attack spreads the role-play over sessions, and the memory notes carry it from one session to
+    the next. Each session looks harmless to a classifier that sees only that conversation. Scoring that includes
+    the context carried between sessions, such as the memory notes, lets the control see the accumulated context
+    that the attack relies on.
   why_not:
-    A: Terms of service do not stop the model generating harmful content and shift the burden to young users.
-    B: Testing already shows the provider's default settings are not enough for this audience.
-    C: Teenagers over thirteen are the target users and remain exposed. Self-declared age is also easy to bypass.
+    A: Conversation-level scoring is the usual answer to multi-turn attacks, but the studio already has it. The
+      attack works across sessions, beyond what one conversation shows.
+    B: Shorter sessions make the problem worse, because the attack already uses many short sessions linked by memory.
+    D: Phrase screening catches known jailbreak wording, but a gradual role-play needs no such phrases.
 status: published
 outline_version: '2025-08-19'
 sample: false
@@ -24,4 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-b
   check_verdict: pass
-  checked_by: 2026-10-16-aaism-d3-b-check
+  checked_by: 2026-10-16-aaism-d3-b-recheck3
