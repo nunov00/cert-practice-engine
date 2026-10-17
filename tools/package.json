@@ -6,6 +6,7 @@
   "scripts": {
     "validate": "tsx src/cli.ts validate --root ..",
     "coverage": "tsx src/cli.ts coverage --root ..",
+    "calibration": "tsx src/cli.ts calibration --root ..",
     "build-content": "tsx src/cli.ts build --root .. --out ../app/src/generated/content.json",
     "test": "tsx --test test/*.test.ts",
     "typecheck": "tsc --noEmit"

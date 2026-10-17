@@ -1,0 +1,56 @@
+# AAIR difficulty calibration profile. Format: recipes/_schema/calibration.schema.json
+# Standard and procedure: docs/calibration/standard.md. Official sources only;
+# structure was recorded, never wording.
+
+format_version: "0.1"
+exam: aair
+outline_version: "2026-04-15"
+calibrated_on: "2026-10-16"
+
+sources:
+  - kind: outline
+    url: "https://www.isaca.org/credentialing/aair/aair-exam-content-outline"
+    used_for: "Scope per subdomain and the risk-practitioner viewpoint"
+  - kind: official_samples
+    url: "https://www.isaca.org/credentialing/aair/practice-quiz"
+    used_for: "Structural profile of the 5 free items (stem length, qualifier, option form, how distractors fail)"
+  - kind: official_samples
+    url: "https://www.isaca.org/credentialing/aaia/practice-quiz"
+    used_for: "Sister AI exam, 12 items; same structural profile, used to widen the small AAIR sample"
+  - kind: official_samples
+    url: "https://www.isaca.org/credentialing/aaism/practice-quiz"
+    used_for: "Sister AI exam, 12 items; same structural profile"
+
+method: >-
+  Profiled the official free practice items for structure only (stem length,
+  qualifier, option length and form, cognitive level, how each distractor
+  fails). Whole-bank statistics plus a blind options-only test on a random
+  sample, then every question reworked through a writer and an independent
+  checker loop until the options-only share met the target. Pitched slightly
+  harder than the official items (owner rule, 2026-10-16).
+
+official_profile:
+  - "Stems about 14 to 24 words; most are direct questions, about a quarter short scenarios"
+  - "Nearly all use a capitalised qualifier (MOST, BEST, PRIMARY, FIRST)"
+  - "Options short (2 to 12 words) and parallel; the key is never the only longest"
+  - "Every distractor is a real, relevant concept that misses on one point: wrong layer, narrower activity, too early, or an overclaim"
+  - "Recall and application with a judgment tail, including real AI technical knowledge (model types, class imbalance, model- vs data-level testing, runtime telemetry, prompt manipulation)"
+
+targets:
+  options_only_obvious_max: 0.40
+  hard_share_min: 0.30
+  key_only_longest_max: 0.25
+  stem_words: { min: 12, max: 80 }
+
+writer_notes:
+  - "Viewpoint is the risk practitioner: identify, assess, treat, monitor and report AI risk, not build the model"
+  - "About a third short direct items; more FIRST/MOST sequencing items where all four options are valid steps"
+  - "About a quarter of items in the life cycle, monitoring and third-party subdomains need technical AI knowledge"
+  - "Swapping one weak distractor is not enough: every distractor sits at the same level of abstraction as the key (no lone umbrella, root-cause or principle option)"
+  - "Avoid investigate-first giveaways and bundled 'both X and Y' keys"
+
+history:
+  - { date: "2026-10-16", scope: "audit, 27-question sample", pr: 35, result: "27/27 obvious from options alone before the rework" }
+  - { date: "2026-10-16", scope: "D2 rework, 40 questions", pr: 36, result: "36/40 obvious before, about 8/40 after; four check rounds" }
+  - { date: "2026-10-17", scope: "D1 rework, 73 questions", pr: 37, result: "two check rounds; giveaway warnings 43 to 4" }
+  - { date: "2026-10-17", scope: "D3 rework, 89 questions", pr: 38, result: "two check rounds; giveaway warnings 41 to 8" }

@@ -5,12 +5,15 @@ import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse, stringify } from "yaml";
+import { execFileSync } from "node:child_process";
 import { validateRepo, similarity } from "../src/validate.ts";
+import { optionsOnlyVerdict, setOptionsOnly } from "../src/calibration.ts";
 import { coverage } from "../src/coverage.ts";
-import type { Question, Recipe } from "../src/types.ts";
+import type { CalibrationProfile, Question, Recipe } from "../src/types.ts";
 
 const repo = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 const cissp = parse(readFileSync(join(repo, "recipes/cissp/recipe.yaml"), "utf8")) as Recipe;
+const cisspCalibration = parse(readFileSync(join(repo, "recipes/cissp/calibration.yaml"), "utf8")) as CalibrationProfile;
 
 function question(overrides: Partial<Question> = {}): Question {
   return {
@@ -32,13 +35,17 @@ function question(overrides: Partial<Question> = {}): Question {
   };
 }
 
-/** A throwaway repo with the real schemas and CISSP recipe plus the given questions. */
-function fixture(questions: Question[], recipe: Recipe = cissp): string {
+/** A throwaway repo with the real schemas, CISSP recipe and calibration profile plus the given questions. */
+function fixture(questions: Question[], recipe: Recipe = cissp, calibration: CalibrationProfile | null = cisspCalibration): string {
   const root = mkdtempSync(join(tmpdir(), "cpe-"));
   cpSync(join(repo, "recipes/_schema"), join(root, "recipes/_schema"), { recursive: true });
   cpSync(join(repo, "bank/_schema"), join(root, "bank/_schema"), { recursive: true });
   mkdirSync(join(root, "recipes", recipe.exam.id), { recursive: true });
   writeFileSync(join(root, "recipes", recipe.exam.id, "recipe.yaml"), stringify(recipe));
+  if (calibration) {
+    const profile = { ...calibration, exam: recipe.exam.id, outline_version: recipe.exam.outline.version };
+    writeFileSync(join(root, "recipes", recipe.exam.id, "calibration.yaml"), stringify(profile));
+  }
   for (const q of questions) {
     const [exam, domain] = q.id.split("-");
     const dir = join(root, "bank", exam!, domain!);
@@ -236,4 +243,78 @@ test("public content never ships drafts or provenance; free-sample mode ships on
   assert.equal(open.access, "open");
   assert.deepEqual(open.questions.map((q) => q.id), ["cissp-d1-1.9-0001", "cissp-d1-1.9-0002"]);
   assert.ok(open.questions.every((q) => !("provenance" in q) && !("status" in q)));
+});
+
+// Difficulty calibration (docs/calibration/standard.md)
+
+/** A fixture under git, with `changed` questions added in a commit after the base. */
+function gitFixture(base: Question[], changed: Question[]): string {
+  const root = fixture(base);
+  const g = (...args: string[]) => execFileSync("git", ["-C", root, ...args], { stdio: "pipe" });
+  g("init", "-q", "-b", "main");
+  g("-c", "user.name=t", "-c", "user.email=t@t", "commit", "-q", "--allow-empty", "-m", "empty");
+  g("add", "-A");
+  g("-c", "user.name=t", "-c", "user.email=t@t", "commit", "-q", "-m", "base");
+  g("branch", "base");
+  for (const q of changed) {
+    const [, domain] = q.id.split("-");
+    mkdirSync(join(root, "bank/cissp", domain!), { recursive: true });
+    writeFileSync(join(root, "bank/cissp", domain!, `${q.id}.yaml`), stringify(q));
+  }
+  return root;
+}
+
+const sinceErrors = (root: string) =>
+  validateRepo(root, { since: "base" }).issues.filter((i) => i.level === "error").map((i) => i.message);
+
+const checked = (n: number, options_only: "obvious" | "not_obvious") =>
+  question({
+    id: `cissp-d1-1.9-${String(n).padStart(4, "0")}`,
+    stem: `Scenario ${n}: a company has finished a risk assessment of system ${n}. What should the security manager do FIRST?`,
+    options: { A: "Buy cyber insurance", B: "Brief senior management", C: "Install a new firewall", D: "Run a penetration test" },
+    provenance: { generated_by: "claude", run_id: "r", checked_by: "r-check", check_verdict: "pass", options_only },
+  });
+
+test("every recipe needs a calibration profile", () => {
+  assert.ok(errors(fixture([], cissp, null)).some((m) => m.includes("calibration.yaml")));
+});
+
+test("a profile built on an older outline is a warning", () => {
+  const old = { ...cissp, exam: { ...cissp.exam, outline: { ...cissp.exam.outline, version: "2027-01-01" } } };
+  const root = fixture([], old);
+  writeFileSync(join(root, "recipes/cissp/calibration.yaml"), stringify(cisspCalibration));
+  assert.ok(warnings(root).some((m) => m.includes("recalibrate")));
+});
+
+test("unchanged questions only warn; changed ones must record the options-only test", () => {
+  const unrecorded = question();
+  assert.deepEqual(errors(fixture([unrecorded])), []);
+  const root = gitFixture([], [unrecorded]);
+  assert.ok(sinceErrors(root).some((m) => m.includes("provenance.options_only")));
+  assert.deepEqual(sinceErrors(gitFixture([unrecorded], [])), []);
+});
+
+test("giveaway wording is an error on changed questions", () => {
+  const q = checked(1, "not_obvious");
+  q.options.A = "Buy insurance immediately for every system";
+  assert.ok(sinceErrors(gitFixture([], [q])).some((m) => m.includes("absolute words")));
+});
+
+test("a changed batch fails when too many keys are obvious from the options", () => {
+  const ten = (obvious: number) => Array.from({ length: 10 }, (_, i) => checked(i + 1, i < obvious ? "obvious" : "not_obvious"));
+  assert.ok(sinceErrors(gitFixture([], ten(5))).some((m) => m.includes("obvious from the options alone")));
+  assert.deepEqual(sinceErrors(gitFixture([], ten(4))), []);
+});
+
+test("the options-only verdict is obvious only when sure and right", () => {
+  const q = question();
+  assert.equal(optionsOnlyVerdict(q, { pick: "B", sure: true }), "obvious");
+  assert.equal(optionsOnlyVerdict(q, { pick: "B", sure: false }), "not_obvious");
+  assert.equal(optionsOnlyVerdict(q, { pick: "A", sure: true }), "not_obvious");
+});
+
+test("recording the verdict keeps the file as written", () => {
+  const text = "id: x\nprovenance:\n  run_id: r\n  check_verdict: pass\n";
+  assert.equal(setOptionsOnly(text, "obvious"), "id: x\nprovenance:\n  run_id: r\n  check_verdict: pass\n  options_only: obvious\n");
+  assert.equal(setOptionsOnly(setOptionsOnly(text, "obvious"), "not_obvious"), setOptionsOnly(text, "not_obvious"));
 });

@@ -1,0 +1,44 @@
+# AAISM difficulty calibration profile. Format: recipes/_schema/calibration.schema.json
+# Standard and procedure: docs/calibration/standard.md. Official sources only;
+# structure was recorded, never wording.
+
+format_version: "0.1"
+exam: aaism
+outline_version: "2025-08-19"
+calibrated_on: "2026-10-16"
+
+sources:
+  - kind: outline
+    url: "https://www.isaca.org/credentialing/aaism/aaism-exam-content-outline"
+    used_for: "Scope per subdomain and the security-manager viewpoint"
+  - kind: official_samples
+    url: "https://www.isaca.org/credentialing/aaism/practice-quiz"
+    used_for: "Structural profile of the 12 free items, and their options-only score as a baseline"
+
+method: >-
+  Profiled ISACA's 12 free AAISM items for structure only and ran the same
+  options-only test on them as on our bank (a fresh checker who had not seen
+  the bank). Questions were written through a writer and an independent
+  checker loop, rewritten twice until the options-only share fell below the
+  official items' own score. Pitched slightly harder than the official items
+  (owner rule, 2026-10-16).
+
+official_profile:
+  - "Stems about 14 to 24 words with a capitalised MOST/BEST/FIRST qualifier"
+  - "Options short and parallel; distractors are relevant security practices that miss on one point"
+  - "Official items are 7/12 (58%) obvious from the options alone under our test, so the bank aims well below that"
+
+targets:
+  options_only_obvious_max: 0.40
+  hard_share_min: 0.30
+  key_only_longest_max: 0.25
+  stem_words: { min: 12, max: 80 }
+
+writer_notes:
+  - "Viewpoint is the security manager of AI systems: program, risk, controls and technologies"
+  - "Include the answer a well-read candidate would pick on reflex as a wrong option, ruled out by a stem fact ('already in place', or it does not reach the failure described)"
+  - "Hard means two or more strong wrong answers that only a stem detail separates"
+  - "Watch option length: the key is the only longest option in 36% of the current bank, above the 25% chance rate"
+
+history:
+  - { date: "2026-10-16", scope: "new exam, 193 questions", pr: 34, result: "37/40 obvious in the first draft, 22/60 (37%) after two rewrites; official quiz 7/12 (58%)" }
