@@ -1,0 +1,30 @@
+id: aaism-d1-1.4-0007
+subdomain: '1.4'
+difficulty: medium
+stem: A hotel group's AI security budget request already maps each cost to one of five approved AI initiatives.
+  Executives push back, saying attacks on hotel AI systems are hypothetical. What should the security manager add
+  to MOST strengthen the case?
+options:
+  A: A breakdown of security costs for each approved initiative
+  B: AI security spending benchmarks from peer hotel groups
+  C: Likely attack scenarios mapped to a recognised threat framework
+  D: Documented attacks on AI systems at comparable hospitality firms
+answer: D
+explanation:
+  why_correct: The executives accept the initiatives and can see what the budget covers. Their objection is that
+    the threat is not real, and evidence of actual attacks on similar firms answers that doubt directly.
+  why_not:
+    A: Linking spend to business initiatives is usually the strongest budget argument. The request already does
+      this, and the executives' doubt is about the threat, not about what the money covers.
+    B: Benchmarks show whether the amount is in line with peers. Peers may be spending on a threat the executives
+      would call hypothetical too, so this does not answer the objection.
+    C: Threat scenarios help prioritise controls. They describe what could happen, which is exactly what the executives
+      dismiss as hypothetical; they do not show that attackers actually target hotel AI systems.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

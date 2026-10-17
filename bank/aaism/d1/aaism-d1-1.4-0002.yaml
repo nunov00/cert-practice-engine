@@ -1,0 +1,31 @@
+id: aaism-d1-1.4-0002
+subdomain: '1.4'
+difficulty: hard
+stem: An AI steering committee endorsed a RACI making data science accountable for model monitoring. Six months
+  on, no monitoring has been done, and the data science lead says no one in the team was ever tasked with it. What
+  should the security manager do NEXT?
+options:
+  A: Return the RACI to the steering committee for endorsement
+  B: Ask data science to assign monitoring to named staff
+  C: Move monitoring from data science to the security team
+  D: Add model monitoring to next year's internal audit plan
+answer: B
+explanation:
+  why_correct: The RACI is endorsed and nobody disputes the assignment. The gap is that the accountable team never
+    turned it into individual tasks. Getting named people, with time and a procedure, makes the endorsed duty happen
+    without reopening settled roles.
+  why_not:
+    A: Endorsement gives a RACI its authority and is often the missing step. This RACI already has it, and the failure
+      lies inside the accountable team, not in the agreed roles.
+    C: Moving the duty may look faster, but the committee placed it with data science, which has the model knowledge.
+      Taking it away because the team has not staffed it reopens roles that leadership has settled.
+    D: Audit can later confirm that monitoring works. Scheduling it for next year leaves models unmonitored now
+      and does not get anyone to do the work.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

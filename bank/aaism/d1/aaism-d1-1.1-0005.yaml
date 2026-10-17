@@ -1,0 +1,28 @@
+id: aaism-d1-1.1-0005
+subdomain: '1.1'
+difficulty: medium
+stem: A health insurer's claims triage model falls under a high-risk AI regulation in 18 months. The owner has accepted
+  accountability, and a gap assessment shows weak logging and human oversight. What should the security manager
+  do NEXT?
+options:
+  A: Assess the model's controls against the high-risk duties
+  B: Brief the owner on the regulation's deadline and penalties
+  C: Reassess the model's risks under the insurer's AI risk method
+  D: Agree a dated remediation plan for the gaps with the owner
+answer: D
+explanation:
+  why_correct: The duties are known and the gaps are identified. What is missing is a plan with dates that closes
+    them before the regulation applies, agreed with the accountable owner.
+  why_not:
+    A: That assessment has been done; it is what found the logging and oversight gaps.
+    B: The owner has already accepted accountability and the gaps are known; restating the deadline does not close
+      them.
+    C: The compliance gaps are already known. Another risk assessment does not move them towards closure.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

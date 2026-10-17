@@ -1,0 +1,26 @@
+id: aaism-d1-1.2-0014
+subdomain: '1.2'
+difficulty: medium
+stem: A draft AI security strategy focuses on protecting in-house training pipelines. The CEO has since approved
+  one hosted AI service for HR, while all other AI stays in-house. What should the security manager do?
+options:
+  A: Rebuild the strategy around vendor and data-sharing risk
+  B: Add AI red-teaming of the hosted service to the plan
+  C: Keep the draft and add coverage for the hosted service
+  D: Benchmark the draft against peers using hosted AI
+answer: C
+explanation:
+  why_correct: The business direction is still mainly in-house. One hosted service needs vendor and data-sharing
+    coverage, which can be added without discarding a draft that fits the rest.
+  why_not:
+    A: That would fit a move to hosted AI, but here only one service is hosted, so a rebuild overreacts.
+    B: Testing may follow, but it is one activity, not strategic coverage of the new vendor relationship.
+    D: Peers mainly using hosted AI have a different profile from this company.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-c
+  checked_by: 2026-10-16-aaism-d1-c-recheck3
+  check_verdict: pass

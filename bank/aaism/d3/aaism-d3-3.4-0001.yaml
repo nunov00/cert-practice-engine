@@ -1,0 +1,31 @@
+id: aaism-d3-3.4-0001
+subdomain: '3.4'
+difficulty: hard
+stem: A retailer's privacy impact assessment approved a recommendation model on condition that purchase histories
+  older than two years are excluded. The privacy office has tested the extraction filter, and the training store
+  will keep accumulating monthly feeds. What should the security manager verify NEXT?
+options:
+  A: The extraction filter excludes histories older than two years
+  B: The training store limits access to named data scientists
+  C: The model is tested for bias before each monthly release
+  D: Records ageing past two years are purged from the training store
+answer: D
+explanation:
+  why_correct: The condition is about the age of the data, not only about what is extracted. A store that keeps
+    accumulating monthly feeds holds records that were in scope when loaded but pass the two-year limit later. Unless
+    aged records are purged, the model is soon trained on exactly the data the assessment excluded.
+  why_not:
+    A: Checking the filter is the usual first step, but the privacy office has already tested it. A correct filter
+      does nothing about records that age out of scope after they are loaded.
+    B: Restricting access is a sound safeguard, but it protects whatever data is in the store. It does not keep
+      out-of-scope records from being used for training.
+    C: Bias testing is a separate release control. It does not enforce the data condition the assessment was approved
+      on.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

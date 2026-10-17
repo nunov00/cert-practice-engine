@@ -1,0 +1,30 @@
+id: aaism-d1-1.5-0002
+subdomain: '1.5'
+difficulty: medium
+stem: A payment provider found its fraud model was retrained last week on data an attacker poisoned. It has rolled
+  back to a clean version and closed the contractor access used, finding no other attacker access. What is the BEST
+  next step?
+options:
+  A: Review payments approved while the retrained model ran
+  B: Retrain on current data with outlier filtering
+  C: Add drift monitoring to the model's outputs
+  D: Tighten the model's fraud alert threshold
+answer: A
+explanation:
+  why_correct: Containment and eradication are done. The poisoned model may have let fraudulent payments through
+    for a week, so re-checking those payments, for example by re-scoring them with the clean model, finds losses
+    to recover or report while the investigation continues.
+  why_not:
+    B: Retraining is part of recovery. The extent of the poisoning is not yet known and the clean model is in service,
+      so retraining now risks repeating the problem for no gain.
+    C: Drift monitoring helps detect future manipulation. It does nothing about fraud that may already have passed.
+    D: A stricter threshold raises false alerts and is not needed now that the clean model is restored. It does
+      not deal with payments the poisoned model already approved.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

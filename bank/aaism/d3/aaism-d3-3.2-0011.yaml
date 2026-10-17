@@ -1,0 +1,27 @@
+id: aaism-d3-3.2-0011
+subdomain: '3.2'
+difficulty: medium
+stem: A travel company fine-tunes its chatbot monthly on customer conversations. Each version must pass a security
+  test suite before release. The suite has not changed since launch two years ago, and every version has passed
+  it. What should be the PRIMARY security requirement?
+options:
+  A: Each version passes security testing before release
+  B: Each training set is retained for later investigation
+  C: Conversation data is encrypted on transfer to training
+  D: The security tests are updated for new attack techniques
+answer: D
+explanation:
+  why_correct: A release gate exists, but a test suite frozen for two years checks only for attacks known at launch.
+    Updating it with current attack techniques keeps the gate meaningful for each new version.
+  why_not:
+    A: This is already required. The weakness is what the tests contain, not whether they run.
+    B: Retention supports investigation and lineage, but it acts after a weak version has already gone live.
+    C: Encryption in transit is hygiene, but it does nothing about how well new versions are tested.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

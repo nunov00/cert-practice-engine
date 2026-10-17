@@ -1,0 +1,29 @@
+id: aaism-d3-3.1-0010
+subdomain: '3.1'
+difficulty: hard
+stem: An HR agent calls leave, payroll and personnel APIs using tokens that carry the requesting employee's own
+  rights. During a leave question, a poisoned policy document led the agent to change that employee's payroll bank
+  details. Which control BEST prevents this?
+options:
+  A: An injection filter on documents the agent retrieves
+  B: Agent credentials held in a vault and rotated daily
+  C: Employee confirmation before any change the agent makes
+  D: Tokens carrying the requesting employee's own rights
+answer: C
+explanation:
+  why_correct: Delegated tokens already stop the agent reaching other people's records, but the employee's own rights
+    include changing their bank details. Requiring the employee to confirm each write means content the agent reads
+    cannot turn a question into a change the employee never asked for.
+  why_not:
+    A: A filter lowers how often hidden instructions get through, but it is probabilistic. A missed instruction
+      still results in an unrequested change.
+    B: Vaulting protects against stolen credentials, but the attack used valid tokens exactly as designed.
+    D: This is already in place. It limits whose data is reached, not which actions are taken on it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

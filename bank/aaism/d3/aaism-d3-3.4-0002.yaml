@@ -1,0 +1,31 @@
+id: aaism-d3-3.4-0002
+subdomain: '3.4'
+difficulty: hard
+stem: An insurer's privacy notice covers using claims data for settlement and fraud prevention. Its data scientists
+  plan to copy five years of claims, including medical reports, into a cloud workspace to train a fraud model. What
+  should the security manager confirm FIRST?
+options:
+  A: That the privacy notice covers fraud detection uses
+  B: That the medical reports are needed for the model
+  C: That the cloud workspace encrypts stored data
+  D: That the data scientists have had privacy training
+answer: B
+explanation:
+  why_correct: 'The stem already settles purpose: the notice covers fraud prevention. The open question is minimisation.
+    Medical reports are highly sensitive special category data, and fraud models often work on claim patterns without
+    them. Confirming whether they are needed decides what is copied at all, which shapes every later control.'
+  why_not:
+    A: Purpose compatibility is normally the first check for reused data, but the stem states the notice already
+      covers fraud prevention, so it is not the open question here.
+    C: Encryption in the workspace is a sensible safeguard, but it protects data that may not need to be copied
+      in the first place.
+    D: Privacy training helps staff handle data well, but it does not decide whether the most sensitive part of
+      the dataset should be used.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

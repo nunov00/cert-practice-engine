@@ -1,0 +1,31 @@
+id: aaism-d3-3.1-0001
+subdomain: '3.1'
+difficulty: hard
+stem: A retailer's chatbot fetches orders through an API tool. The model fills in the customer ID, and the API authorises
+  each lookup against that ID. Red team prompts retrieved other customers' orders. Which change BEST limits the
+  impact?
+options:
+  A: Cap lookups per customer ID and alert on spikes
+  B: Take the customer ID from the signed-in session
+  C: Authorise each order lookup at the API
+  D: Screen prompts with an injection classifier
+answer: B
+explanation:
+  why_correct: The API does authorise each lookup, but against an ID the model chose, so a manipulated model simply
+    asks for someone else's ID and the check passes. Binding the ID to the authenticated session, outside the model's
+    control, means even a successful injection can reach only the signed-in customer's orders.
+  why_not:
+    A: Per-customer rate limits slow bulk harvesting and help detection, but a single injected lookup with another
+      customer's ID still returns that customer's order.
+    C: This is already in place. The weakness is that the identity being authorised comes from the model, so the
+      check approves whatever ID an injected prompt supplies.
+    D: A classifier lowers how often injection succeeds, but rephrased attacks still get through, and when one does
+      the model can still request any customer's ID.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

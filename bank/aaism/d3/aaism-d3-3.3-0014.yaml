@@ -1,0 +1,27 @@
+id: aaism-d3-3.3-0014
+subdomain: '3.3'
+difficulty: medium
+stem: A public body's chatbot answers from a policy library whose search index drops withdrawn documents within
+  an hour. Staff still found it quoting a policy withdrawn weeks ago, word for word from earlier answers. Which
+  control BEST prevents a repeat?
+options:
+  A: Source dates shown on each answer for users
+  B: Monthly sampled review of answers by the policy team
+  C: Index sync that drops withdrawn or changed sources
+  D: Clear cached answers when their sources change
+answer: D
+explanation:
+  why_correct: 'The index is already kept in step with the library, so the stale text came from somewhere else:
+    stored answers reused without retrieval. Invalidating cached answers when their sources change closes that path.'
+  why_not:
+    A: Dates help users judge answers but leave the withdrawn policy being served.
+    B: Sampling may spot stale answers, but late and only in the answers sampled.
+    C: This is already in place and working. The old text came from cached answers.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-c
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
+  check_verdict: pass

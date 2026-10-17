@@ -1,0 +1,30 @@
+id: aaism-d3-3.1-0005
+subdomain: '3.1'
+difficulty: hard
+stem: A fintech's credit-scoring API caps each partner at 50,000 queries a day and alerts on probing by any one
+  account. Logs show 30 newly onboarded partner accounts, each under quota, sending systematically varied queries.
+  Which control BEST reduces model extraction risk?
+options:
+  A: Correlate query patterns across partner accounts
+  B: Per-account query quotas with probing alerts
+  C: Round returned scores to fewer decimal places
+  D: Watermark model outputs to prove later copying
+answer: A
+explanation:
+  why_correct: Per-account quotas and alerts work only if the attacker uses one account. Spreading the harvest across
+    30 accounts keeps each one under every threshold. Looking for shared query patterns across accounts reveals
+    the combined probing that per-account controls cannot see.
+  why_not:
+    B: These are already in place, and the attacker has split the queries so that no single account trips them.
+    C: Coarser scores give less information per query and are a real anti-extraction measure, but with hundreds
+      of thousands of queries a day the attacker can still approximate the model.
+    D: Watermarking can support legal action once a copy appears, but it does nothing to stop the harvesting under
+      way.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

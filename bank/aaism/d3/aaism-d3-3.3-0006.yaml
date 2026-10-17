@@ -1,0 +1,27 @@
+id: aaism-d3-3.3-0006
+subdomain: '3.3'
+difficulty: medium
+stem: A social media platform's labelling vendor uses known-answer items and two labellers per item. An audit found
+  one vendor team mislabelling a hate symbol as harmless; both labellers on each affected item came from that team.
+  Which change BEST detects this?
+options:
+  A: Detailed labelling guidelines with worked examples
+  B: Known-answer items and two labellers per item
+  C: Background checks and NDAs for each labeller
+  D: Pair labellers at random across teams
+answer: D
+explanation:
+  why_correct: Double labelling only detects errors if the two labellers are independent. Pairs from the same team
+    can share a mistake or collude. Random pairing across teams turns their agreement back into a real check.
+  why_not:
+    A: Guidelines reduce honest errors, but they prevent rather than detect and do nothing about deliberate mislabelling.
+    B: These are already in place. The weakness is how the pairs are formed.
+    C: Vetting reduces some insider risk before work starts, but it does not measure the labels produced.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

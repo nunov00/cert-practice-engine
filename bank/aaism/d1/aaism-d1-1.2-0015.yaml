@@ -1,0 +1,27 @@
+id: aaism-d1-1.2-0015
+subdomain: '1.2'
+difficulty: hard
+stem: An insurer's AI policy required a full security review for every AI use case. Reviews took three months, so
+  the policy's approver has just authorised a lighter path for low-risk cases. What should the security manager
+  do FIRST?
+options:
+  A: Propose a lighter low-risk path to the policy's approver
+  B: Define the criteria that make a case low-risk
+  C: Publish a list of pre-approved tools for common uses
+  D: Hire more reviewers to clear the queue faster
+answer: B
+explanation:
+  why_correct: The lighter path cannot be applied safely until it is clear which cases qualify. Clear criteria stop
+    high-risk cases slipping into it.
+  why_not:
+    A: The approver has already authorised it.
+    C: A list may help later, but tools on it would need to pass through a defined path first.
+    D: Extra staff treat the symptom; the approved change already tackles the cause.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-c
+  checked_by: 2026-10-16-aaism-d1-c-recheck3
+  check_verdict: pass

@@ -1,0 +1,31 @@
+id: aaism-d3-3.4-0003
+subdomain: '3.4'
+difficulty: hard
+stem: A bank will offer a fintech partner its credit default model through a bank-hosted API that returns only approve
+  or decline, under strict rate limits. The partner will send its own applicants' details for scoring. Which privacy
+  risk should the security manager raise MOST?
+options:
+  A: Retention of the partner applicants' data in the bank's logs
+  B: Membership inference against the bank's training customers
+  C: Extraction of the model by the partner through repeated queries
+  D: Unfair credit decisions the partner makes with the results
+answer: A
+explanation:
+  why_correct: 'The design shifts the data flow: personal data about people who never dealt with the bank now arrives
+    at the bank with every request. If the API logs or keeps those inputs, the bank holds third-party personal data
+    without a defined purpose, basis or retention period. That is the new privacy exposure the design creates.'
+  why_not:
+    B: Membership inference is the classic risk of sharing a model, but label-only answers under strict rate limits
+      leave an attacker very little signal to work with.
+    C: Model extraction threatens the bank's intellectual property rather than anyone's privacy, and label-only
+      answers with rate limits make it slow and costly.
+    D: Fairness of the partner's decisions matters, but it is an ethics and conduct risk owned by the partner, not
+      the main privacy risk this design creates for the bank.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

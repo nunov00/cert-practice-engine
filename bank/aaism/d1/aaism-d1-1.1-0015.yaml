@@ -1,0 +1,27 @@
+id: aaism-d1-1.1-0015
+subdomain: '1.1'
+difficulty: hard
+stem: A retailer will use a high-risk AI hiring tool unmodified and under the vendor's brand. The vendor completed
+  the required conformity assessment. Recruiters will act on its rankings. What is the GREATEST compliance concern
+  for the retailer?
+options:
+  A: Taking on the provider's legal duties for the tool
+  B: Meeting its own deployer duties, such as human oversight
+  C: Relying on a conformity assessment that may be out of date
+  D: Sending more applicant data to the vendor than needed
+answer: B
+explanation:
+  why_correct: Using the tool as supplied keeps the retailer a deployer. Deployers still have their own duties,
+    such as human oversight of rankings, which the vendor's assessment does not cover.
+  why_not:
+    A: Provider duties follow substantial modification or supplying under one's own brand. The retailer does neither.
+    C: The assessment is the vendor's duty and is complete; there is no sign it is stale.
+    D: Minimisation matters, but nothing suggests excess data, and it is not the core duty this use creates.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-c
+  checked_by: 2026-10-16-aaism-d1-c-recheck3
+  check_verdict: pass

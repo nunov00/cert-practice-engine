@@ -1,0 +1,27 @@
+id: aaism-d3-3.3-0010
+subdomain: '3.3'
+difficulty: hard
+stem: A car maker recorded an approved training dataset's hash in March, in a manifest file next to the data in
+  a shared store. Training starts in June after a hash check. Several engineers hold admin rights on the store.
+  What BEST ensures the approved data is used?
+options:
+  A: Lock the dataset folder against writes after approval
+  B: Repeat the dataset review the week before training
+  C: Verify the dataset's hash before training
+  D: Keep the approved hash in a separately controlled record
+answer: D
+explanation:
+  why_correct: Hash checking is in place, but an admin who can change the data can also change the manifest so the
+    two still match. Holding the approved hash in a separate, protected record makes the check meaningful.
+  why_not:
+    A: Admins can lift the lock, and it gives no proof the content is unchanged.
+    B: A second review is slow and costly, and changes could still happen after it.
+    C: This is already planned. It proves nothing if the reference hash can be changed with the data.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

@@ -1,0 +1,30 @@
+id: aaism-d1-1.5-0011
+subdomain: '1.5'
+difficulty: hard
+stem: A health insurer is writing a playbook for its AI assistant disclosing confidential data. The assistant was
+  not fine-tuned, keeps no memory between sessions, and draws all content from a retrieval index over claims files.
+  What is the MOST important playbook addition?
+options:
+  A: Steps to remove or restrict the exposed source content
+  B: Steps to find which AI component exposed the data
+  C: Steps to add the data to output filters
+  D: Criteria for notifying the privacy regulator
+answer: A
+explanation:
+  why_correct: All the assistant's content comes from the index, so that is where confidential data must be contained.
+    The playbook needs steps to remove it or fix its permissions quickly, which a general breach playbook does not
+    include.
+  why_not:
+    B: Locating the source is vital when data could come from training, memory or retrieval. This assistant has
+      only one source, so the step adds little.
+    C: Filtering can stop a repeat while the fix is made. It masks the symptom and leaves the data reachable in
+      the index.
+    D: Notification criteria are essential, but the general breach playbook already holds them.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

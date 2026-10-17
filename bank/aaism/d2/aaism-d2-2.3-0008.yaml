@@ -1,0 +1,29 @@
+id: aaism-d2-2.3-0008
+subdomain: '2.3'
+difficulty: medium
+stem: A public agency is renewing a hosted case-management AI service. The vendor's model is fine-tuned on agency
+  case records, which exist only in the vendor's system. The contract already requires certified deletion of the
+  data and the tuned model at exit. What should the renewal add?
+options:
+  A: Return of agency data in a usable export format
+  B: Transition support to a successor vendor
+  C: Escrow of the application's source code
+  D: Certified deletion of the data and the tuned model
+answer: A
+explanation:
+  why_correct: The case records exist only with the vendor. At exit, deletion without a prior return in a usable
+    format would destroy the agency's own records or leave it unable to move them. A return clause with a defined
+    export format protects the agency's continuity.
+  why_not:
+    B: Transition support helps a move to a new vendor, but it depends on the agency getting its data back first.
+    C: Escrow protects against vendor failure for the application code. It does not give the agency its case records.
+    D: Deletion of the data and the tuned model is a key exit term for fine-tuned services, but the contract already
+      requires it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
+  check_verdict: pass

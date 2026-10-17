@@ -1,0 +1,27 @@
+id: aaism-d1-1.3-0004
+subdomain: '1.3'
+difficulty: hard
+stem: A lender fine-tuned a language model on confidential loan files and labelled it 'internal' because it stores
+  no customer records. It will now be offered to partners through a public API. What should the security manager
+  do FIRST?
+options:
+  A: Reclassify the model to match its training data
+  B: Test the model for extraction of training data
+  C: Rate-limit partner queries on the public API
+  D: Monitor the model for accuracy drift on partner queries
+answer: A
+explanation:
+  why_correct: A model can reveal what it was trained on, so it takes the classification of that data. Correcting
+    the label first means the external release is judged against the right handling rules.
+  why_not:
+    B: Testing is useful, but the release decision and its controls depend on a correct classification first.
+    C: Rate limits slow extraction attempts but do not correct the misclassification that drives the controls.
+    D: Drift is a quality issue; the confidentiality issue is more pressing.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

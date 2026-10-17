@@ -1,0 +1,28 @@
+id: aaism-d1-1.1-0011
+subdomain: '1.1'
+difficulty: hard
+stem: Data scientists at an energy utility won lighter security reviews for a grid-forecasting model. The security
+  manager escalated the above-appetite risk, and the board accepted it for six months while extra monitoring is
+  built. What should the manager do now?
+options:
+  A: Escalate the acceptance above the model owner
+  B: Apply the stronger controls the analysis supports
+  C: Ask internal audit to review the board's decision
+  D: Track the acceptance conditions and its expiry date
+answer: D
+explanation:
+  why_correct: The board, which sets the appetite, has made a time-limited acceptance with a condition. The manager's
+    role now is to make sure the condition is delivered and the acceptance is revisited when it expires.
+  why_not:
+    A: This has already happened; the board has decided.
+    B: That would override a decision the board was entitled to make with full information.
+    C: Audit may later test whether the conditions were met, but asking it to second-guess a properly made board
+      decision is not the manager's next step.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

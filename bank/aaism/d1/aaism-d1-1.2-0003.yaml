@@ -1,0 +1,27 @@
+id: aaism-d1-1.2-0003
+subdomain: '1.2'
+difficulty: medium
+stem: A law firm's approved AI tool now covers drafting and translation. Network data shows a few lawyers still
+  use public AI sites for client documents, even after reminders from their practice heads. What is the BEST response?
+options:
+  A: Filter public AI sites at the web proxy
+  B: Add a translation service to the approved tool set
+  C: Run training on why public AI tools are not allowed
+  D: Survey lawyers on features the approved tool lacks
+answer: A
+explanation:
+  why_correct: An approved tool meets the need and reminders have failed, so the remaining use is a choice. A technical
+    block now stops client data leaving without leaving lawyers without a tool.
+  why_not:
+    B: The approved tool already covers translation.
+    C: The lawyers have already been reminded by their own practice heads; more awareness is unlikely to change
+      a deliberate choice.
+    D: The tool covers the known needs, and a survey does not stop client data going to public sites meanwhile.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

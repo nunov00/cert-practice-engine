@@ -1,0 +1,29 @@
+id: aaism-d1-1.1-0006
+subdomain: '1.1'
+difficulty: easy
+stem: In the stakeholder map for a new AI claims model, the sector regulator is rated high influence but low current
+  interest. Which engagement approach BEST fits this rating?
+options:
+  A: Involve it closely in design decisions
+  B: Monitor it with minimal engagement
+  C: Keep it satisfied with targeted updates
+  D: Keep it informed with regular detailed reports
+answer: C
+explanation:
+  why_correct: 'On a power-interest grid, high influence with low interest calls for keeping the stakeholder satisfied:
+    brief updates on the points it cares about, so that its interest does not turn into sudden intervention. Engagement
+    steps up if its interest rises.'
+  why_not:
+    A: Close involvement suits stakeholders with both high influence and high interest. It would make heavy demands
+      on a regulator that is not yet engaged.
+    B: Minimal monitoring suits low influence and low interest. A regulator's high influence makes that too light.
+    D: Regular detailed reports suit stakeholders with high interest but little influence, such as affected staff
+      groups.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck
+  check_verdict: pass

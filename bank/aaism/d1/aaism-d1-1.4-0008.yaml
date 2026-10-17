@@ -1,0 +1,28 @@
+id: aaism-d1-1.4-0008
+subdomain: '1.4'
+difficulty: medium
+stem: A telecom operator is forming an AI security steering committee. Security often learns of business AI projects
+  only after go-live. Which duty for senior business leaders on the committee would MOST directly address this?
+options:
+  A: Accepting residual AI risks on behalf of their units
+  B: Approving AI security policies before they are issued
+  C: Presenting their units' planned AI projects each quarter
+  D: Reviewing security metrics for live AI projects
+answer: C
+explanation:
+  why_correct: The problem is late visibility of business AI plans. A standing duty to bring planned projects to
+    the committee gives security sight of them before launch, so reviews can be scheduled into delivery.
+  why_not:
+    A: Business leaders are often the right risk owners. Acceptance happens after a risk has been assessed, so it
+      does not bring unknown projects to security any earlier.
+    B: Policy approval gives the program business backing. It does not tell security which projects are coming.
+    D: Metric review is normal committee oversight. It covers projects that are already live, so it gives no early
+      sight of new ones.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

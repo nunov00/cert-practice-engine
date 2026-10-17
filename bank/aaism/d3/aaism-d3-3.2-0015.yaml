@@ -1,0 +1,27 @@
+id: aaism-d3-3.2-0015
+subdomain: '3.2'
+difficulty: medium
+stem: A bank tests every change to its chatbot's system prompt and retrieval settings in staging. Product owners
+  then retype the approved text into the production console. Last month production differed from the tested version.
+  What should be recommended?
+options:
+  A: Deploy tested prompts through the release pipeline
+  B: Have a second person review the edit log weekly
+  C: Review chatbot answers within a day of each edit
+  D: Pre-release testing for prompt and retrieval edits
+answer: A
+explanation:
+  why_correct: Testing exists, but a manual retyping step lets what runs differ from what was tested. Deploying
+    the tested artefact itself through the pipeline makes production match the approved version.
+  why_not:
+    B: Log review would spot a difference later, while customers are already exposed.
+    C: Reviewing answers is detective and may miss a weakened guardrail.
+    D: Testing is already done. The failure is in getting the tested version into production.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-c
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
+  check_verdict: pass

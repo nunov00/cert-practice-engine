@@ -1,0 +1,29 @@
+id: aaism-d3-3.1-0012
+subdomain: '3.1'
+difficulty: hard
+stem: A telecom's support bot passes user prompts and retrieved web pages through the same injection filter. Red
+  team instructions hidden in HTML comments and image alt text still reached the model. The filter extracts visible
+  text only. Which design gap does this MOST clearly show?
+options:
+  A: The filter inspects a different view than the model
+  B: Output filtering on the bot's replies is missing
+  C: The injection pattern list is out of date
+  D: Retrieved content bypasses injection screening
+answer: A
+explanation:
+  why_correct: Retrieved content is screened, but the filter and the model see different versions of the page. Anything
+    the model receives that the filter drops, such as comments and alt text, is unscreened input. The control must
+    inspect exactly what is passed to the model.
+  why_not:
+    B: Output checks are a useful extra layer, but the test specifically shows unscreened input reaching the model.
+    C: Better patterns would not help, because the hidden text never reaches the filter at all.
+    D: 'Retrieved pages do go through the filter. The gap is narrower: parts of each page reach the model without
+      being screened.'
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

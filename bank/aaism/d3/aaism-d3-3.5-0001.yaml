@@ -1,0 +1,31 @@
+id: aaism-d3-3.5-0001
+subdomain: '3.5'
+difficulty: hard
+stem: A law firm suspects a former associate used its AI assistant to gather client files before leaving. Legal
+  has put the assistant's logs on hold. The associate's login was disabled, but the assistant also accepts personal
+  API tokens. What should the security manager do FIRST?
+options:
+  A: Search the logs for client matters the associate queried
+  B: Revoke API tokens issued to the associate's account
+  C: Notify the clients whose files may have been taken
+  D: Copy the assistant logs and token records to forensic storage
+answer: B
+explanation:
+  why_correct: 'Evidence is already protected by the legal hold. The open risk is ongoing access: disabling the
+    login does not stop API tokens the associate created, so the associate may still be pulling client files. Revoking
+    those tokens contains the incident before the investigation goes further.'
+  why_not:
+    A: Searching the logs is the core of the investigation, but it should not run while the suspected insider may
+      still have working access.
+    C: Client notification may be required, but it depends on what the investigation finds. It is premature before
+      access is cut and scope is known.
+    D: Preserving evidence is usually an early step, but legal has already put the logs on hold, and a forensic
+      copy does nothing about access that is still open.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

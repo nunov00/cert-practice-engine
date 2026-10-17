@@ -1,0 +1,26 @@
+id: aaism-d1-1.2-0010
+subdomain: '1.2'
+difficulty: medium
+stem: An approved AI security strategy, built from the full AI inventory, ranks the revenue-critical pricing engine
+  as its top priority. Yet most security effort goes to an internal chatbot. What does this MOST indicate?
+options:
+  A: Work planning is not driven by the strategy
+  B: Strategy priorities were not set by business value
+  C: The AI inventory is missing important assets
+  D: The security budget is too small for the AI estate
+answer: A
+explanation:
+  why_correct: The strategy sets the right priority, but effort does not follow it. The gap is between the strategy
+    and the work that is actually planned.
+  why_not:
+    B: The strategy does rank the revenue-critical engine first.
+    C: The strategy was built from the full inventory, and the engine is in it.
+    D: Even a small budget would be spent on the top priority first; the issue is where effort goes.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

@@ -1,0 +1,31 @@
+id: aaism-d2-2.3-0012
+subdomain: '2.3'
+difficulty: medium
+stem: A university's security team has finished in-depth reviews of the few AI research tools that process health
+  trial data. Dozens of other AI cloud tools remain, mostly writing aids used with public material, and there is
+  no capacity for more deep reviews. What is the BEST approach?
+options:
+  A: Review the most widely used remaining tools in depth
+  B: Apply a short standard check with approved-use rules
+  C: Prioritise the tools that process health trial data
+  D: Require a security certification from each vendor
+answer: B
+explanation:
+  why_correct: The high-risk tools have had their deep reviews. The rest handle mainly public material, so a light,
+    consistent check plus clear rules on what data may be entered gives proportionate coverage that the team can
+    actually deliver.
+  why_not:
+    A: In-depth reviews need capacity the team does not have, and user numbers are a weak proxy for risk when the
+      tools handle public material.
+    C: Risk-based prioritisation would put the trial-data tools first, but the stem says those reviews are already
+      finished.
+    D: Many small writing tools hold no certification, so this would block low-risk tools without telling staff
+      what data they may enter.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
+  check_verdict: pass

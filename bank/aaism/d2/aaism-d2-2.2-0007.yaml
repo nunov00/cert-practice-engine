@@ -1,0 +1,30 @@
+id: aaism-d2-2.2-0007
+subdomain: '2.2'
+difficulty: hard
+stem: A red team has two weeks before an HR assistant goes live on kiosks at public job fairs. It answers from published
+  HR policies that anyone may read, only HR staff add documents, and it has no tools. What should testing prioritise?
+options:
+  A: Queries that retrieve documents above the user's access rights
+  B: Prompt injection hidden in documents in the knowledge base
+  C: Extraction of the assistant's system prompt and instructions
+  D: Jailbreak prompts that produce offensive or unsafe replies
+answer: D
+explanation:
+  why_correct: The documents are public, the knowledge base is controlled and the assistant cannot act. The main
+    exposure is what it says to members of the public on a kiosk, where offensive or unsafe replies would cause
+    direct reputational harm. With limited time, jailbreak testing addresses that.
+  why_not:
+    A: Access-rights testing is the priority when retrieval covers restricted records. Here every document is a
+      published policy that anyone may read.
+    B: Indirect injection matters when outsiders can add content or the assistant can act. Only HR staff add documents
+      and the assistant has no tools.
+    C: Prompt extraction is worth a check, but the instructions for a policy assistant are unlikely to be sensitive
+      enough to outrank harmful public replies.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
+  check_verdict: pass

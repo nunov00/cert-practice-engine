@@ -1,0 +1,31 @@
+id: aaism-d3-3.1-0003
+subdomain: '3.1'
+difficulty: medium
+stem: An insurer's agent reads claim emails and proposes payments. An adjuster approves each one after reading the
+  agent's claim summary. Test emails led the agent to write summaries justifying inflated amounts, and adjusters
+  approved them. Which control BEST prevents fraudulent payments?
+options:
+  A: Check each payout against the independent loss assessment
+  B: Human approval of each payment before release
+  C: Payee verification against the policyholder's bank details
+  D: Fine-tune the agent's model on past fraudulent claims
+answer: A
+explanation:
+  why_correct: Human approval is already in place, but the approver sees the claim through the agent's summary,
+    which the attack controls. A deterministic check of the amount against the loss assessment held in the claims
+    system does not depend on anything the agent writes, so an inflated amount is stopped however persuasive the
+    summary is.
+  why_not:
+    B: Approval already happens. It failed because adjusters judged the claim from the manipulated summary, so adding
+      the same step again changes nothing.
+    C: Payee checks stop redirected payments, but the attack inflates the amount, not the destination.
+    D: Training may help recognise known fraud patterns, but it does not make the model resistant to crafted instructions
+      in new emails, and it is not a control on the payment.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

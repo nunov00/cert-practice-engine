@@ -1,0 +1,27 @@
+id: aaism-d1-1.5-0005
+subdomain: '1.5'
+difficulty: medium
+stem: An insurer keeps a trained manual team, drilled quarterly, to triage claims if its AI model fails. In a tabletop,
+  the model keeps running but gives every claim the same default score for two days. What is the MAIN gap the exercise
+  reveals?
+options:
+  A: Manual triage capacity may no longer exist
+  B: Silent model failures may not trigger the fallback
+  C: Claims backlogs may breach regulatory deadlines
+  D: The model may need revalidation before reuse
+answer: B
+explanation:
+  why_correct: The fallback works only if someone invokes it. A model that fails silently keeps feeding bad scores,
+    so the plan needs output checks, such as alerts on unusual score patterns, that trigger the switch.
+  why_not:
+    A: Lost manual skills are a common gap after automation. This insurer keeps a trained, drilled team.
+    C: Missed deadlines could follow. They are a consequence of the late switch, not the gap itself.
+    D: Revalidation after a fault is good practice. It does not address two days of wrong scores before anyone noticed.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

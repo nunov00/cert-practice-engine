@@ -1,0 +1,27 @@
+id: aaism-d3-3.2-0013
+subdomain: '3.2'
+difficulty: medium
+stem: An insurer's approved claims triage model has a compressed, lower-precision version. The compressed version
+  reran the robustness tests and passed, and its accuracy matches. Engineers want to deploy it under the original
+  model's approval. What should the security manager require?
+options:
+  A: Compare both versions' outputs on recent claims
+  B: Register it as a new version with its own sign-off
+  C: Rerun the robustness tests on the compressed version
+  D: Monitor the compressed version closely for early errors
+answer: B
+explanation:
+  why_correct: The evidence exists, but approval belongs to a specific artefact. Recording the compressed model
+    as its own version, with its test results and approval, keeps the inventory, lineage and rollback accurate.
+  why_not:
+    A: Accuracy is already shown to match, so further comparison adds little.
+    C: This has already been done and passed.
+    D: Monitoring is useful after release, but it does not fix deploying an unregistered artefact.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-c
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
+  check_verdict: pass

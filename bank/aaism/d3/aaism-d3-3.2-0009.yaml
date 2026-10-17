@@ -1,0 +1,28 @@
+id: aaism-d3-3.2-0009
+subdomain: '3.2'
+difficulty: medium
+stem: A university's student support model was validated by an independent team on 20,000 records they selected
+  from the training period. Since then, the support service has redesigned its intake form, which feeds the model.
+  What is the MOST significant weakness?
+options:
+  A: The test set may be too small for stable results
+  B: Validation results lack business owner sign-off
+  C: Validation data no longer reflects live inputs
+  D: Builders validated their own work on chosen data
+answer: C
+explanation:
+  why_correct: Independence and size are fine. But the model now receives inputs shaped by a new form, which the
+    validation data never contained, so its validated behaviour, including how it handles unusual or manipulated
+    inputs, may not hold.
+  why_not:
+    A: Twenty thousand records is a large test set for this use. Size is not what the facts point to.
+    B: Sign-off relies on the validation being relevant. Signing off outdated results would not fix the gap.
+    D: The validators were independent of the builders, so this weakness does not apply.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

@@ -1,0 +1,28 @@
+id: aaism-d3-3.3-0003
+subdomain: '3.3'
+difficulty: hard
+stem: A health insurer sends monthly claims extracts to an external AI developer, with member names and numbers
+  replaced by tokens that stay the same each month. The contract treats the data as personal and requires deletion
+  at contract end. What is the MAIN concern?
+options:
+  A: A breach of the token table would expose members
+  B: Stable tokens let extracts build linkable histories
+  C: The developer may keep data after the contract ends
+  D: The shared claims are still personal data
+answer: B
+explanation:
+  why_correct: The contract already handles the data as personal and covers deletion. Because the tokens never change,
+    the developer can join every month into long histories per member, which are far easier to re-identify than
+    any one extract.
+  why_not:
+    A: The table stays with the insurer, and protecting it is ordinary key management.
+    C: The contract already requires deletion at the end, so this is covered.
+    D: The contract already recognises this and treats the data accordingly.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

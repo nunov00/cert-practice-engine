@@ -1,0 +1,27 @@
+id: aaism-d3-3.3-0013
+subdomain: '3.3'
+difficulty: hard
+stem: Hospital data scientists link each patient's visits over time to train a readmission model. They work on pseudonymised
+  records in an enclave that blocks export. The same team runs the pseudonymisation and holds the token-to-patient
+  key. Which change BEST protects the data?
+options:
+  A: Logging of each access to the enclave
+  B: Key held by an independent custodian
+  C: Pseudonymised records in an enclave that blocks export
+  D: Anonymised records with identifiers and dates removed
+answer: B
+explanation:
+  why_correct: The enclave keeps data in, and pseudonymisation preserves linkage, but the team using the data can
+    reverse it. Separating custody of the re-identification key means the users cannot see identities.
+  why_not:
+    A: Logging supports review, but the team can still re-identify patients.
+    C: This is already in place. It does not stop re-identification inside the enclave by key holders.
+    D: Removing dates breaks the visit timing the readmission model needs.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-c
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
+  check_verdict: pass

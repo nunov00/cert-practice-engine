@@ -1,0 +1,27 @@
+id: aaism-d1-1.2-0007
+subdomain: '1.2'
+difficulty: hard
+stem: A telecom operator checks SaaS renewals for AI features, yet security still learns of AI uses after go-live.
+  Most are AI features that vendors switch on mid-contract inside already approved tools. Which measure is MOST
+  effective?
+options:
+  A: Add an AI feature check to SaaS renewals
+  B: Scan network traffic for unapproved AI services
+  C: Run AI risk awareness sessions for business unit heads
+  D: Track vendor feature releases and tenant AI settings
+answer: D
+explanation:
+  why_correct: The features appear between renewals inside approved tools. Watching vendor releases and the tenant's
+    AI settings catches them when they are switched on.
+  why_not:
+    A: Renewal checks already exist and miss features switched on mid-contract.
+    B: The traffic goes to already approved SaaS domains, so a scan for unapproved services will not flag it.
+    C: Business heads may not know a vendor has switched a feature on, so awareness does not close the gap.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

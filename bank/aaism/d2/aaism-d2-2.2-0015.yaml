@@ -1,0 +1,30 @@
+id: aaism-d2-2.2-0015
+subdomain: '2.2'
+difficulty: hard
+stem: An email provider retrained its spam filter last week on messages users reported as not spam. Since then,
+  missed spam has risen sharply, and the missed messages share a layout seen in many of those reports. What should
+  the security manager do FIRST?
+options:
+  A: Check the new training data for poisoned samples
+  B: Retrain the filter more often on user reports
+  C: Roll the filter back to its previous model version
+  D: Add the new spam samples and update detection
+answer: C
+explanation:
+  why_correct: The timing and the shared layout point to poisoning through fake not-spam reports, and the poisoned
+    model is protecting users now. Rolling back to the previous version restores the earlier protection at once,
+    while the training data is investigated.
+  why_not:
+    A: Finding the poisoned samples is necessary, but it takes time while users keep receiving spam. The previous
+      model can be restored first.
+    B: Retraining more often on unchecked user reports widens the path the attackers appear to be using.
+    D: Adding samples and retraining on top of a poisoned training set may not remove the planted behaviour, and
+      it delays restoring protection.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-c
+  checked_by: 2026-10-16-aaism-d2-c-recheck3
+  check_verdict: pass

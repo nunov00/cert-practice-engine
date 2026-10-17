@@ -1,0 +1,26 @@
+id: aaism-d1-1.3-0007
+subdomain: '1.3'
+difficulty: hard
+stem: A card issuer's new fraud model is live after three months in shadow mode. The old model's endpoints and credentials
+  were disabled at cutover, and its decision records are archived. What is MOST important to complete its retirement?
+options:
+  A: Disable the old model's endpoints and service credentials
+  B: Archive the old model's artefacts under retention rules
+  C: Mark the old model as retired in the AI inventory
+  D: Compare the old and new models' outputs for a further period
+answer: B
+explanation:
+  why_correct: Archived decisions may need to be explained or reproduced later, which requires the model that made
+    them. Keeping its artefacts under retention rules makes that possible.
+  why_not:
+    A: This was done at cutover.
+    C: Updating the inventory matters, but losing the means to explain past decisions is the larger risk.
+    D: Three months of shadow running has already done this comparison.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

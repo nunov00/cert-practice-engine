@@ -1,0 +1,29 @@
+id: aaism-d3-3.5-0005
+subdomain: '3.5'
+difficulty: hard
+stem: An energy company will add its AI platform's events to SOC monitoring. The SOC has agreed six AI attack scenarios
+  to detect. The platform emits thousands of event types, and SIEM licensing is charged by volume. What should be
+  done NEXT?
+options:
+  A: Map the platform events each scenario needs
+  B: Choose the attack scenarios the SOC must detect
+  C: Connect the platform's full event stream to the SIEM
+  D: Write correlation rules for the six agreed scenarios
+answer: A
+explanation:
+  why_correct: With the scenarios agreed, the next step is to work out which of the thousands of event types each
+    one depends on. That defines what to collect, keeps volume-based licensing costs down, and gives the rule writers
+    the data they need.
+  why_not:
+    B: Choosing scenarios first is the right starting point for SIEM onboarding, but the SOC has already done it.
+    C: Ingesting everything is costly under volume licensing and buries the useful events in noise.
+    D: Correlation rules come later. They cannot be written or tested until the needed events are identified and
+      flowing into the SIEM.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d3-b-recheck3

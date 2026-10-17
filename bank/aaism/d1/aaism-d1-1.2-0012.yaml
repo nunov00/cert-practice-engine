@@ -1,0 +1,26 @@
+id: aaism-d1-1.2-0012
+subdomain: '1.2'
+difficulty: hard
+stem: HR used an unapproved AI CV-screening tool on a free trial for two months, then stopped when the trial ended.
+  The trial terms let the vendor reuse uploaded CVs to train its models. What should the security manager do FIRST?
+options:
+  A: Stop further uploads to the tool pending review
+  B: Assess the use and route it through approval
+  C: Report the policy breach to HR leadership
+  D: Establish what applicant data the vendor holds and uses
+answer: D
+explanation:
+  why_correct: Use has stopped, but applicant data may still sit with the vendor and be used for training. Finding
+    out what it holds is the basis for any deletion request and for deciding whether a breach must be handled.
+  why_not:
+    A: Use has already ended with the trial.
+    B: There is no ongoing use to approve; the exposure is the data already handed over.
+    C: The breach should be reported, but the more urgent matter is what has happened to applicants' data.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

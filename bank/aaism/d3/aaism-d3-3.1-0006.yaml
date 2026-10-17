@@ -1,0 +1,30 @@
+id: aaism-d3-3.1-0006
+subdomain: '3.1'
+difficulty: hard
+stem: A hospital's public symptom-checker model was fine-tuned on identifiable patient notes. Training runs in a
+  segment isolated from the internet-facing API, and only signed models cross via a registry needing two approvals.
+  Which risk remains MOST significant?
+options:
+  A: Patient details memorised and repeated in answers
+  B: Unapproved models promoted through the registry
+  C: Volumetric attacks degrading the inference API
+  D: Lateral movement from the API to patient data
+answer: A
+explanation:
+  why_correct: Segmentation and gated promotion address network attack paths and unapproved models. They do nothing
+    about what the model learned. A model fine-tuned on identifiable notes and exposed to the public can be prompted
+    to reproduce fragments of those notes.
+  why_not:
+    B: Promotion needs signed models and two approvals, so this risk is already well controlled.
+    C: Availability attacks are possible on any public API, but they disclose no patient data and are less significant
+      than leakage of identifiable notes.
+    D: The training environment is already isolated from the internet-facing API, which is the control for this
+      path.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

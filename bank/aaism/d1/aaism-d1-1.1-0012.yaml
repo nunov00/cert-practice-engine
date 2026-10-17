@@ -1,0 +1,27 @@
+id: aaism-d1-1.1-0012
+subdomain: '1.1'
+difficulty: medium
+stem: Testing confirms a logistics firm pseudonymises employee records before sending them abroad for model training,
+  and keys stay at home. The training team now plans to join them with a public professional profiles dataset. What
+  should the security manager verify FIRST?
+options:
+  A: That records are pseudonymised before they leave home
+  B: That the joined data cannot re-identify staff
+  C: That data in the training region is encrypted at rest
+  D: That provider staff access to the joined data is logged
+answer: B
+explanation:
+  why_correct: Pseudonymisation protects only while records cannot be linked back to people. Joining them with public
+    profiles is the new step that could re-identify staff, so that is what must be checked.
+  why_not:
+    A: Testing has already confirmed this.
+    C: Encryption at rest protects against storage theft, not re-identification by the people using the data.
+    D: Access logging helps detect misuse, but it does not prevent the join from re-identifying people.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

@@ -1,0 +1,29 @@
+id: aaism-d3-3.1-0007
+subdomain: '3.1'
+difficulty: hard
+stem: A children's writing assistant uses the model provider's safety filter plus the publisher's own reply checker,
+  tuned to its young audience. Testers steered it over many turns into unsuitable stories, although each reply passed
+  the checks alone. What should the security manager recommend?
+options:
+  A: Require age verification before users sign in
+  B: Ask the provider to raise its filter sensitivity
+  C: Add output checks tuned to the young audience
+  D: Assess the whole conversation, not single replies
+answer: D
+explanation:
+  why_correct: Both filters judge one reply at a time, and the attack works by building unsuitable content in steps
+    that are each harmless alone. Evaluating the conversation as a whole lets the checker see where the story is
+    going and stop it.
+  why_not:
+    A: The audience is meant to be children, so verifying age neither excludes the users at risk nor stops the content.
+    B: A stricter generic filter would block more harmless replies and still judge each turn alone, so stepwise
+      steering still works.
+    C: An audience-specific reply checker is already in place. The gap is that it sees each reply in isolation.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

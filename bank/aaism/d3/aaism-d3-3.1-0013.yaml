@@ -1,0 +1,28 @@
+id: aaism-d3-3.1-0013
+subdomain: '3.1'
+difficulty: hard
+stem: A consultancy's assistant reads mailboxes, summarises web pages and can send email. Sending is disabled once
+  a session reads an external web page. A tester still exfiltrated data using hidden instructions in an email from
+  outside. Which change BEST closes this route?
+options:
+  A: Treat external inbound email as untrusted content too
+  B: Alert the SOC on emails to new external domains
+  C: Show users a clearer, more detailed send confirmation
+  D: Disable sending once a session reads external pages
+answer: A
+explanation:
+  why_correct: The design breaks the exfiltration chain only for one untrusted source. Email from outside the firm
+    is just as attacker-controlled as a web page, so reading it must trigger the same loss of the send capability.
+  why_not:
+    B: Alerting is a useful detective layer, but it fires after the email and its data have left.
+    C: Confirmation depends on user attention, and a well-crafted message can look legitimate. It does not remove
+      the unprotected route.
+    D: This is already in place and worked for web pages. The attack used a different untrusted source.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-c
+  checked_by: 2026-10-16-aaism-d3-c-recheck3
+  check_verdict: pass

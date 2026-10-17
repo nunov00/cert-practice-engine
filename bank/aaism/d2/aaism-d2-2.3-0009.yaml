@@ -1,0 +1,31 @@
+id: aaism-d2-2.3-0009
+subdomain: '2.3'
+difficulty: medium
+stem: During due diligence on a foundation model API provider, a bank has received an independent red team report
+  on prompt injection and extraction. The provider also cites a well-known information security management certification.
+  What should the bank review NEXT?
+options:
+  A: Independent test results on prompt injection resistance
+  B: The certificate's scope and statement of applicability
+  C: The provider's encryption standards for stored data
+  D: The provider's screening procedures for staff
+answer: B
+explanation:
+  why_correct: A certification only gives assurance for what it covers. The scope and statement of applicability
+    show whether the model hosting and training environments the bank relies on are inside the certified system
+    and which controls apply. Without that check, the certificate may say little about the service.
+  why_not:
+    A: Model-level test evidence is needed because a management certification does not cover it, but the bank has
+      already received an independent red team report.
+    C: Encryption of stored data is one control. Reviewing it alone, before knowing the certificate's scope, leaves
+      open which systems the certification covers.
+    D: Staff screening is one control. Like encryption, it should be judged after confirming which systems and controls
+      the certification covers.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
+  check_verdict: pass

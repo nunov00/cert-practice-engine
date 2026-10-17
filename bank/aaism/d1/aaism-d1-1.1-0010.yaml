@@ -1,0 +1,26 @@
+id: aaism-d1-1.1-0010
+subdomain: '1.1'
+difficulty: medium
+stem: A company holds a certified AI management system. Its regulator now asks for evidence that the threat scenarios
+  in its AI risk assessments reflect real attacker behaviour. Which type of framework BEST supports this?
+options:
+  A: A certifiable AI management system standard
+  B: A voluntary AI risk management framework
+  C: A knowledge base of adversary tactics against AI
+  D: The sector regulator's AI guidance notes
+answer: C
+explanation:
+  why_correct: A catalogue of observed attacker tactics and techniques against AI systems is designed to ground
+    threat scenarios in real behaviour, which is exactly what the regulator asks for.
+  why_not:
+    A: The company is already certified; the standard governs how risk is managed, not which attacks are realistic.
+    B: A risk framework structures the risk process, but it does not describe how real attackers operate.
+    D: Guidance notes set expectations, but they are not a source of evidence about attacker behaviour.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

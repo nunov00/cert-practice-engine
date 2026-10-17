@@ -1,0 +1,30 @@
+id: aaism-d1-1.4-0015
+subdomain: '1.4'
+difficulty: medium
+stem: After a middle manager tried to accept a high-rated AI finding, a utility's security manager escalated it
+  as the charter requires. The executive accepted the risk in writing, on condition it is fixed within 90 days.
+  What should the security manager do NEXT?
+options:
+  A: Record the acceptance and its expiry in the risk register
+  B: Escalate the acceptance to the board risk committee
+  C: Require compensating controls before the launch
+  D: Grant a time-limited exception through the security team
+answer: A
+explanation:
+  why_correct: A valid owner has made the decision, so the security manager now records it and tracks the condition.
+    Logging the 90-day expiry makes sure the risk comes back for decision if the fix is late.
+  why_not:
+    B: Escalation is right when someone without authority accepts a risk. This executive holds the authority the
+      charter requires.
+    C: Proposing compensating controls is reasonable. The security manager cannot impose them on a risk the right
+      executive has already accepted.
+    D: Exceptions are a normal tool for policy deviations. The risk has already been accepted at the right level,
+      so a separate exception adds nothing.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-c
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-c-recheck3

@@ -1,0 +1,28 @@
+id: aaism-d3-3.1-0009
+subdomain: '3.1'
+difficulty: hard
+stem: A SaaS vendor's assistant serves many client companies. Each tenant has its own vector index, cache and conversation
+  memory. Tenants' uploaded documents are also used each month to fine-tune the one shared model. What is the GREATEST
+  risk?
+options:
+  A: Provider model updates silently changing results
+  B: Cached or remembered content reaching another tenant
+  C: One tenant's heavy traffic degrading service for others
+  D: One tenant's data resurfacing in others' answers
+answer: D
+explanation:
+  why_correct: 'Per-tenant indexes, caches and memory close the usual isolation gaps. Fine-tuning one shared model
+    on every tenant''s documents reopens it: the model can learn and repeat one client''s content, or be poisoned
+    by one client, in answers to all the others.'
+  why_not:
+    A: Model updates are a change management and quality concern. They do not disclose one client's data to another.
+    B: Cache and memory are already separated per tenant, so this path is closed.
+    C: Noisy neighbours affect availability and can be handled with quotas. It is not a confidentiality breach.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

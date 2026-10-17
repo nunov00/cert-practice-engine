@@ -1,0 +1,28 @@
+id: aaism-d2-2.1-0001
+subdomain: '2.1'
+difficulty: medium
+stem: A bank's security team rated its first AI use cases against board-approved risk thresholds, and six exceed
+  them. The business units sponsoring those use cases have not yet seen the ratings. Before deciding how to treat
+  the six risks, what must the bank have?
+options:
+  A: Thresholds that define acceptable risk levels
+  B: Control effectiveness ratings for each use case
+  C: A complete inventory of AI systems in use
+  D: An accountable owner for each risk
+answer: D
+explanation:
+  why_correct: Thresholds are in place and show which risks need treatment. Treatment choices, and any later acceptance,
+    belong to the business owners who carry the risk, so each risk needs a named owner before decisions are made.
+  why_not:
+    A: Without thresholds a bank cannot tell which risks need treatment. This bank already has board-approved ones.
+    B: Control effectiveness feeds the residual ratings. The ratings are done; the gap is who decides what to do
+      about them.
+    C: An inventory shows what still needs assessment. It does not affect how the six known risks are treated.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-recheck3

@@ -1,0 +1,31 @@
+id: aaism-d1-1.4-0003
+subdomain: '1.4'
+difficulty: medium
+stem: A university's security team, which has no machine learning expertise, must begin assessing AI systems next
+  month. A completed skills review names adversarial testing of models as the largest gap. What should the security
+  manager do FIRST?
+options:
+  A: Engage external specialists for the first assessments
+  B: Map required AI assessment skills against current staff
+  C: Fund machine learning certifications for the security team
+  D: Recruit two permanent AI security specialists
+answer: A
+explanation:
+  why_correct: The gaps are already known, and assessments start in a month. Only outside specialists can supply
+    adversarial testing skills in that time. Internal capability can be built alongside, for example by having staff
+    shadow the specialists.
+  why_not:
+    B: A gap analysis is the usual first step before choosing how to build skills. It has already been done, and
+      repeating it uses time the team does not have.
+    C: Training builds lasting capability and may follow from the review. Certifications take months, so they cannot
+      cover assessments that start next month.
+    D: Hiring may be the right long-term answer. Recruiting takes longer than a month, so the first assessments
+      would start without the missing skills.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

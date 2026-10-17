@@ -1,0 +1,28 @@
+id: aaism-d2-2.1-0002
+subdomain: '2.1'
+difficulty: medium
+stem: A retailer's risk team can fully assess four AI use cases a month. An impact screen of forty proposals rated
+  twelve as high; three of those launch next month and the rest next year. What is the BEST approach?
+options:
+  A: Rate all forty on impact and assess the highest first
+  B: Shorten the assessment so all forty fit the year
+  C: Assess high-impact cases by how soon they go live
+  D: Assess cases that use external AI vendors first
+answer: C
+explanation:
+  why_correct: The impact screen has already sorted the cases. Among the high-impact ones, launch dates set the
+    deadline, so the three launching next month go first and the rest fit within the year.
+  why_not:
+    A: Screening by impact is the right way to use scarce capacity. It has already been done.
+    B: A lighter path suits low-impact cases. Applying it to all forty gives the twelve high-impact cases too shallow
+      a look.
+    D: Vendor reliance adds supply chain risk, but it is one factor. Ordering by it ignores the impact screen and
+      the launch deadlines.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-recheck3

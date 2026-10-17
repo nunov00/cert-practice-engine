@@ -1,0 +1,30 @@
+id: aaism-d1-1.5-0007
+subdomain: '1.5'
+difficulty: hard
+stem: During a storm outage, a utility's customer service agent must issue thousands of compensation refunds within
+  a regulatory deadline. Attackers are now using prompt injection to have refunds paid into their own bank accounts.
+  What is the BEST containment action?
+options:
+  A: Suspend the agent's refund tool
+  B: Add prompt injection filtering on inputs
+  C: Cap refund value per bank account per day
+  D: Restrict refunds to the bank account on file
+answer: D
+explanation:
+  why_correct: The attack works by redirecting payments. Limiting the refund tool to each customer's registered
+    account blocks that, while legitimate refunds keep flowing within the deadline.
+  why_not:
+    A: Removing a misused tool is often the fastest containment. Here it would stop thousands of refunds the utility
+      must pay by a regulatory deadline.
+    B: Input filtering is a useful layer. Attackers can vary their wording, so a filter added in haste is not reliable
+      containment.
+    C: A cap reduces each loss. Attackers can spread fraud over many accounts, so fraudulent refunds still go through,
+      and genuine larger refunds may be delayed.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

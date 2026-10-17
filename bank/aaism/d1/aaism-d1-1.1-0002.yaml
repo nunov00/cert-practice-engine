@@ -1,0 +1,27 @@
+id: aaism-d1-1.1-0002
+subdomain: '1.1'
+difficulty: medium
+stem: Legal has confirmed an AI applicant-ranking tool is high-risk. The HR director, who owns hiring, has set when
+  recruiters must review and override rankings. Who should the security manager work with NEXT to build that override
+  into the tool?
+options:
+  A: The HR director who owns the hiring process
+  B: The data science lead who configures the tool
+  C: Internal audit, which reviews AI compliance
+  D: The legal team that classified the tool
+answer: B
+explanation:
+  why_correct: The oversight rules are decided. Building an override into the tool is a configuration task, so the
+    person who configures the tool is the right partner now.
+  why_not:
+    A: The process owner has already set the oversight rules; the open task is implementing them in the tool.
+    C: Audit should test the oversight once it exists. Designing it would compromise audit's independence.
+    D: Legal has already settled the classification and duty. It does not configure how the tool handles overrides.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

@@ -1,0 +1,31 @@
+id: aaism-d2-2.3-0006
+subdomain: '2.3'
+difficulty: medium
+stem: A pharmaceutical company assesses a vendor's research summarisation tool for unpublished trial results. The
+  vendor names its model provider, which keeps no prompts. The vendor stores every customer's documents in one shared
+  index, filtered by customer at query time. What is the GREATEST concern?
+options:
+  A: The company cannot assess the provider receiving prompts
+  B: The vendor's penetration tests may not cover the model
+  C: A filter flaw could expose trial data to other customers
+  D: The tool does not let the company pin a model version
+answer: C
+explanation:
+  why_correct: Separation between customers depends on a single query-time filter over a shared index. One flaw
+    in that filter, or a crafted query, could return the company's unpublished trial results to another customer,
+    possibly a competitor. That is the main confidentiality exposure.
+  why_not:
+    A: An unnamed downstream provider would block assurance, but this vendor names its provider, and the provider
+      keeps no prompts.
+    B: Test coverage is worth asking about, but it is a gap in evidence, not the design weakness that puts trial
+      data at risk.
+    D: Version pinning manages changes in output quality. It does not address where confidential documents are stored
+      or who can retrieve them.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
+  check_verdict: pass

@@ -1,0 +1,31 @@
+id: aaism-d2-2.3-0005
+subdomain: '2.3'
+difficulty: hard
+stem: A bank receives a software bill of materials for every AI system, including vendor-supplied ones, and files
+  each as a PDF with the contract. After a flaw in a tokenisation library is published, finding the affected systems
+  takes weeks. What would BEST have sped this up?
+options:
+  A: Software composition scanning in the bank's build pipelines
+  B: Bills of materials for each system's software components
+  C: A searchable component index linked to the AI inventory
+  D: A criticality rating added to each inventory entry
+answer: C
+explanation:
+  why_correct: The bank already has the component data, but it is locked in PDFs filed with contracts, so someone
+    has to open each one. Loading the bills into a searchable index tied to the inventory would let the bank query
+    for the library and list affected systems in minutes.
+  why_not:
+    A: Composition scanning produces component data for software the bank builds, but vendor-supplied systems never
+      pass through its pipelines, and the data already exists.
+    B: Bills of materials are the right source, but the stem says the bank already receives one for every system.
+      The gap is that they cannot be searched.
+    D: Criticality helps prioritise once affected systems are known. It does not show which systems contain the
+      library.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
+  check_verdict: pass

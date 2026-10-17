@@ -1,0 +1,27 @@
+id: aaism-d1-1.3-0006
+subdomain: '1.3'
+difficulty: medium
+stem: After a poisoned model version reached production, the registry named the last approved version within minutes.
+  Recovery still took two days because that version's weights had been purged and had to be rebuilt. Which control
+  would MOST have shortened recovery?
+options:
+  A: A model registry recording approved versions
+  B: Integrity hashes verified at each deployment
+  C: Runtime monitoring of model output drift
+  D: Retention of artefacts for prior approved versions
+answer: D
+explanation:
+  why_correct: The approved version was known but no longer available. Keeping its artefacts would have allowed
+    an immediate redeploy.
+  why_not:
+    A: The registry exists and did its job; the artefacts it pointed to were gone.
+    B: Hashes confirm a model is unaltered, but they cannot restore weights that were deleted.
+    C: Monitoring may speed detection, but the delay here was in restoring the clean version.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

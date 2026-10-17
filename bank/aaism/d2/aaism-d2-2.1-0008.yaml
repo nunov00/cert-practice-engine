@@ -1,0 +1,28 @@
+id: aaism-d2-2.1-0008
+subdomain: '2.1'
+difficulty: medium
+stem: A card issuer's tolerance for missed fraud is 2%; the rate is 1.8% and rising. Retraining takes eight weeks.
+  Interim rules and manual review are already at full capacity, yet a breach is expected in three weeks. What should
+  the risk manager do NEXT?
+options:
+  A: Bring the expected breach to the risk owner for decision
+  B: Agree interim controls to cover the gap
+  C: Track the expected breach with weekly miss-rate reports
+  D: Reassess the risk using the new trend data
+answer: A
+explanation:
+  why_correct: The available interim measures are in use and will not prevent the breach. The owner must decide,
+    with management, whether to accept a temporary breach, add resources or limit the business, and that decision
+    should be recorded.
+  why_not:
+    B: Interim controls are the usual step when a fix is late. They are already running at full capacity.
+    C: Closer monitoring shows the breach sooner. It does not prevent it or produce a decision about it.
+    D: Reassessment helps when the picture is unclear. The trend, cause and timing are already known.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-recheck3

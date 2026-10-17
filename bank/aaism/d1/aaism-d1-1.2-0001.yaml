@@ -1,0 +1,30 @@
+id: aaism-d1-1.2-0001
+subdomain: '1.2'
+difficulty: hard
+stem: An insurer plans to halve claims handling time with AI. The security manager has agreed the planned AI uses,
+  their goals and their risk ratings with executives. What should come NEXT in developing the AI security strategy?
+options:
+  A: Draft a roadmap of AI security projects with budgets
+  B: Benchmark AI security programmes at comparable insurers
+  C: Assess the risks each planned AI use would introduce
+  D: Assess current capability against what those uses need
+answer: D
+explanation:
+  why_correct: 'The desired state is known: the uses, their goals and their agreed risk ratings. Strategy now measures
+    the gap between current people, processes and controls and what those uses require. The gaps then shape the
+    roadmap, architecture and standards.'
+  why_not:
+    A: A roadmap is the output of the strategy, but projects and budgets can only be set once the gaps they must
+      close are known.
+    B: Peer benchmarks are useful context for budgeting, but they reflect other firms' plans, not this insurer's
+      gaps.
+    C: Risk assessment of the planned uses is part of defining the desired state, and the stem says their risk ratings
+      are already agreed. Repeating it delays the next step.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck
+  check_verdict: pass

@@ -1,0 +1,27 @@
+id: aaism-d1-1.3-0002
+subdomain: '1.3'
+difficulty: hard
+stem: A firm's AI inventory lists each agent's owner, model and permitted tools. Security cannot say which agents
+  could receive an indirect prompt injection from outside content. Which addition would MOST close this gap?
+options:
+  A: The tools, data and actions each agent may use
+  B: The model and version each agent runs on
+  C: The content filters applied to each agent's inputs
+  D: The external content sources each agent reads
+answer: D
+explanation:
+  why_correct: Indirect injection arrives through content the agent reads, such as emails or web pages. Recording
+    those sources shows which agents are exposed.
+  why_not:
+    A: Permitted tools are already recorded; they show impact, not exposure to injected content.
+    B: These are already listed and do not show where hostile content could enter.
+    C: Content filters affect how likely an injection is to work, but not whether the agent receives outside content
+      at all.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-a
+  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  check_verdict: pass

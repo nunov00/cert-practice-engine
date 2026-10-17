@@ -1,0 +1,28 @@
+id: aaism-d1-1.5-0004
+subdomain: '1.5'
+difficulty: medium
+stem: During a business impact analysis, a lender finds its loan approval process cannot run without its AI scoring
+  model and can tolerate at most four hours without it. What should the security manager determine NEXT?
+options:
+  A: How long lending can tolerate losing the model
+  B: Which data feeds and services the model depends on
+  C: What it would cost to rebuild and retrain the model
+  D: Which recovery strategy fits the available budget
+answer: B
+explanation:
+  why_correct: The tolerance is set, so the analysis now identifies what the model needs to run. Each dependency
+    must meet the four-hour target, and these needs drive the recovery strategy.
+  why_not:
+    A: Tolerable downtime is the usual starting point of the analysis. It has already been set at four hours.
+    C: Rebuild cost informs the choice of recovery strategy. That choice comes after the dependencies the target
+      applies to are known.
+    D: Strategy selection follows the impact analysis. Choosing one before mapping dependencies risks a plan that
+      misses a critical feed.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

@@ -1,0 +1,28 @@
+id: aaism-d1-1.5-0008
+subdomain: '1.5'
+difficulty: hard
+stem: A city council's chatbot gave a resident wrong legal advice that the resident acted on. Logs show the scope
+  guardrail flagged the question and the main reply declined, but a suggested-answers panel beside it showed the
+  advice. What should the review PRIMARILY examine?
+options:
+  A: Which output paths the scope guardrail does not cover
+  B: Why the scope guardrail failed to trigger
+  C: Whether the source documents had legal errors
+  D: Whether a disclaimer was shown with the answer
+answer: A
+explanation:
+  why_correct: The guardrail worked on the main reply, but the panel produced its own answer outside it. The review
+    should find every path that produces content and check whether the guardrail applies to each.
+  why_not:
+    B: A guardrail that did not fire is a common root cause. Here the logs show it fired and the main reply declined.
+    C: Source accuracy matters for wrong answers. The chatbot should not have given legal advice at all, so source
+      quality is secondary.
+    D: Disclaimers affect liability. A disclaimer would not have stopped advice the guardrail was meant to block.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

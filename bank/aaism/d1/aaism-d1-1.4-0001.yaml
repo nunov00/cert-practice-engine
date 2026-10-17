@@ -1,0 +1,31 @@
+id: aaism-d1-1.4-0001
+subdomain: '1.4'
+difficulty: medium
+stem: A logistics company's AI security charter, signed by the CEO, gives the program authority to review AI projects.
+  Business units using forecasting and routing tools say they never requested reviews because they did not think
+  those tools counted. What should be added to the charter?
+options:
+  A: Executive reaffirmation of the program's review authority
+  B: Penalties for business units that skip security reviews
+  C: Metrics for reporting program performance to management
+  D: A definition of the AI systems the program covers
+answer: D
+explanation:
+  why_correct: The program's mandate is already in place and endorsed. What failed is that business units could
+    not tell which of their tools fall under it. A clear scope definition, for example any system that learns from
+    data to make predictions or decisions, tells them when a review applies.
+  why_not:
+    A: Authority is often the missing piece when business units avoid reviews. Here the CEO has already granted
+      it and nobody disputes it; the units did not know their tools were in scope.
+    B: Sanctions can support compliance once the rules are clear. Penalising units that honestly misread an unclear
+      scope does not tell them which tools need review.
+    C: Metrics help management oversee the program. They would not tell business units which of their tools must
+      come for review.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

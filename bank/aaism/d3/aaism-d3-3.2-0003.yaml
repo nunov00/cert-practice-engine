@@ -1,0 +1,28 @@
+id: aaism-d3-3.2-0003
+subdomain: '3.2'
+difficulty: hard
+stem: At a small fintech, promoting a model to production needs a second engineer's approval in the pipeline. The
+  engineer who maintains the pipeline can edit its configuration, including the approval step, without review. Which
+  control is MOST effective?
+options:
+  A: Reviewed change control over the pipeline definition
+  B: Signing of each model artefact the pipeline produces
+  C: Pipeline-enforced second approval before promotion
+  D: A monthly review of pipeline logs by the team lead
+answer: A
+explanation:
+  why_correct: Second approval exists, but one person can switch it off. Putting the pipeline definition itself
+    under reviewed change control protects the control that enforces separation of duties.
+  why_not:
+    B: Signing proves a model came from the pipeline. If the pipeline itself was altered, its output is still signed.
+    C: This is already in place. It is only as strong as the configuration that defines it, which one person can
+      edit.
+    D: Log review is detective and would find a bypass weeks after the model went live.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

@@ -1,0 +1,27 @@
+id: aaism-d2-2.1-0007
+subdomain: '2.1'
+difficulty: medium
+stem: An AI risk register lists each risk's owner, agreed treatment and target date. A year later, most treatments
+  are past their dates with no progress, and nobody outside the security team has noticed. What would MOST help?
+options:
+  A: Adding owners, treatments and target dates to entries
+  B: Regular reporting of overdue treatments to senior management
+  C: Key risk indicators with alert thresholds
+  D: Documented rationale behind each risk rating
+answer: B
+explanation:
+  why_correct: Owners and dates exist, but nobody with authority sees the slippage. Regular reporting of overdue
+    treatments puts pressure on owners and lets management reprioritise or escalate.
+  why_not:
+    A: These fields create accountability and are often missing. This register already has them.
+    C: Indicators show whether a risk is changing. Alerts seen only by the security team would repeat the current
+      blind spot.
+    D: Rationale improves rating quality. It does nothing about treatments that are not being done.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-a
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d2-a-recheck3

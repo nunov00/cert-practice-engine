@@ -1,0 +1,27 @@
+id: aaism-d3-3.3-0007
+subdomain: '3.3'
+difficulty: easy
+stem: A company's cloud training data is encrypted at rest with keys held in its own hardware security module. An
+  auditor worries about a compromised data scientist account copying datasets. Which control MOST directly reduces
+  this risk?
+options:
+  A: Detailed logs of reads on the datasets
+  B: Role-based access scoped to each project's datasets
+  C: Encryption at rest with organisation-held keys
+  D: Replication of the training data to a second region
+answer: B
+explanation:
+  why_correct: A compromised account reads through normal, authorised paths, so encryption decrypts for it. Limiting
+    each account to its own project's datasets reduces what any single compromise can copy.
+  why_not:
+    A: Logs help investigation but do not prevent the copy.
+    C: This is already in place, and it does not stop an authorised account reading the data.
+    D: Replication supports availability and creates another copy to protect.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

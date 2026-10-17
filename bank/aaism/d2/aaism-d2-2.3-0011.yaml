@@ -1,0 +1,31 @@
+id: aaism-d2-2.3-0011
+subdomain: '2.3'
+difficulty: medium
+stem: A media company's AI transcription contract requires incident notice within 24 hours. After a breach, notice
+  came on time, but the vendor could not say which unreleased files were accessed, so every project was treated
+  as exposed. Which clause would MOST help next time?
+options:
+  A: Indemnity for losses caused by vendor breaches
+  B: A right to audit the vendor after an incident
+  C: Per-file access logs provided during incidents
+  D: Incident notice within a shorter fixed period
+answer: C
+explanation:
+  why_correct: Notice arrived in time; what failed was scoping. Without file-level access records the company could
+    not tell which content was exposed. A clause requiring per-file access logs, shared during an incident, lets
+    it contain the leak to the affected projects.
+  why_not:
+    A: An indemnity shifts some financial loss after the event. It does not help the company work out which files
+      were exposed.
+    B: A post-incident audit confirms causes and fixes, but it comes after containment and does not create logs
+      that were never kept.
+    D: Faster notice is the usual fix when the company learns too late, but notice came on time here. The gap was
+      knowing what was accessed.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d2-b
+  checked_by: 2026-10-16-aaism-d2-b-recheck3
+  check_verdict: pass

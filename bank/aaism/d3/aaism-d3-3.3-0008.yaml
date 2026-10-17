@@ -1,0 +1,29 @@
+id: aaism-d3-3.3-0008
+subdomain: '3.3'
+difficulty: hard
+stem: A bank's synthetic transaction data, generated from real customer records, passed tests showing no real customers
+  are replicated. The fintech partner now also asks for the generator model, to produce more data itself. What should
+  the security manager require BEFORE sharing it?
+options:
+  A: Encrypt the generator during transfer to the partner
+  B: Assess the generator itself for memorised records
+  C: Contract terms prohibiting re-identification attempts
+  D: Rely on the leakage tests already run on the data
+answer: B
+explanation:
+  why_correct: The tests covered one dataset, not everything the generator can produce. A generator trained on real
+    records can reproduce near-copies when sampled heavily or prompted for rare cases, so the model itself needs
+    privacy testing before it leaves the bank.
+  why_not:
+    A: Encryption in transit does not reduce the privacy risk once the partner holds the model.
+    C: A contract is a useful safeguard, but it does not reveal whether the generator can reproduce customers.
+    D: Those tests covered one sample. The partner could generate far more, including the rare cases most likely
+      to be memorised.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

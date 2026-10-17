@@ -1,0 +1,31 @@
+id: aaism-d1-1.4-0006
+subdomain: '1.4'
+difficulty: hard
+stem: A maturity assessment rates a pharmaceutical firm's AI security at level 2 against a target of 4. Budget is
+  limited, and a regulator will inspect its clinical-trial AI models in six months. Which gaps should the roadmap
+  address FIRST?
+options:
+  A: Gaps that can be raised one level at lowest cost
+  B: Gaps in controls over the trial models
+  C: Foundational gaps that other practice areas depend on
+  D: Gaps that peers closed before regulatory inspections
+answer: B
+explanation:
+  why_correct: The inspection sets a fixed date on which weaknesses in these models carry regulatory as well as
+    operational impact. With limited funds, closing gaps that affect the highest-impact systems first gives the
+    greatest risk reduction for the money, and the rest of the roadmap can follow.
+  why_not:
+    A: Quick wins show progress and can build support. Cost per level does not show which gaps expose the clinical-trial
+      models the regulator is about to examine.
+    C: Foundations such as governance and inventory are often fixed first, and that would be sound without a deadline.
+      Here they may not close the specific weaknesses an inspection in six months will find.
+    D: Peer experience of inspections is a useful reference. It reflects other firms' gaps and models, not the weaknesses
+      in this firm's own clinical-trial models that its inspectors will examine.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-recheck3

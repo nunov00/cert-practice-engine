@@ -1,0 +1,30 @@
+id: aaism-d3-3.3-0004
+subdomain: '3.3'
+difficulty: hard
+stem: An agritech company is buying a labelled crop-image dataset. The broker documented where each image came from
+  and grants a commercial licence. Labelling was crowdsourced by a subcontractor the broker will not name. What
+  should be done FIRST?
+options:
+  A: Sample-check labels against expert annotations
+  B: Screen the images for personal and location metadata
+  C: Establish where the images came from and usage rights
+  D: Obtain warranties on label accuracy and lawful collection
+answer: A
+explanation:
+  why_correct: Origin and usage rights are already established. The unknown is the labels, which models learn from
+    directly and which could be careless or deliberately wrong. Checking a sample against expert labels shows whether
+    the data is fit before purchase.
+  why_not:
+    B: This is sensible hygiene, but crop images carry little personal data, and it does not address the unknown
+      labelling.
+    C: The broker has already documented sources and granted a licence.
+    D: Warranties, even on label accuracy, give recourse after a problem appears. They do not show whether the labels
+      are trustworthy before purchase.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

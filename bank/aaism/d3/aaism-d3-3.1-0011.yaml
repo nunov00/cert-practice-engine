@@ -1,0 +1,30 @@
+id: aaism-d3-3.1-0011
+subdomain: '3.1'
+difficulty: hard
+stem: A logistics assistant writes Python to analyse users' uploads and runs it in a fresh container with no network.
+  Each container mounts the shared upload folder holding every user's files. Uploads contain free text from customers
+  and carriers. Which change is MOST important?
+options:
+  A: Review of each generated script by the requesting user
+  B: Static analysis of each generated script before it runs
+  C: Give each run access to the requester's data alone
+  D: A fresh isolated container per run with no network
+answer: C
+explanation:
+  why_correct: Isolation and blocked egress are in place, but any run can read every user's files, so injected text
+    in one upload can make the code read and summarise other users' data back to the requester. Mounting only that
+    user's files removes the data the code should never see.
+  why_not:
+    A: The requester is not a code reviewer, and the person who benefits from the leak is the requester, so the
+      review adds little.
+    B: Reading another file is an ordinary operation a scanner will not flag, so this reduces little of the risk.
+    D: This is already how scripts run. The exposure comes from what is mounted into the container, not from the
+      network.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d3-a
+  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  check_verdict: pass

@@ -1,0 +1,31 @@
+id: aaism-d1-1.4-0011
+subdomain: '1.4'
+difficulty: hard
+stem: Internal audit at a government agency offers to help with continuous monitoring of AI security controls. It
+  has strong data analytics skills; the security team is short-staffed and has little analytics experience. What
+  is the BEST response?
+options:
+  A: Let audit run the monitoring for an agreed interim period
+  B: Have audit advise on the design while security builds and runs it
+  C: Ask audit to review the design after security builds it
+  D: Defer continuous monitoring until new security staff are hired
+answer: B
+explanation:
+  why_correct: Advising on control design is an accepted consulting role for internal audit, as long as management
+    builds, owns and operates the control. Early advice puts audit's analytics skills to use where the security
+    team is weakest, while audit stays free to give assurance over the monitoring later.
+  why_not:
+    A: Interim help is tempting while staff are short. For that period audit operates a management control, and
+      it cannot later give independent assurance over it.
+    C: Review after the build keeps audit independent, but so does advice given beforehand. Waiting until security
+      has built the analytics alone wastes the skills audit offers now and means design flaws are found late.
+    D: Phasing work to match staff is often reasonable. Here it leaves AI controls unmonitored when a way to build
+      the capability now is available.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-16-aaism-d1-b
+  check_verdict: pass
+  checked_by: 2026-10-16-aaism-d1-b-recheck3
