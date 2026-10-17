@@ -1,31 +1,33 @@
 id: aaig-d2-2.1-0028
 subdomain: '2.1'
-difficulty: medium
-stem: A dermatology start-up's model underperforms on darker skin tones because few real images exist.
-  The team proposes generating synthetic images to balance the training set. What should the governance
-  lead require?
+difficulty: easy
+stem: A dermatology start-up's model underperforms on darker skin tones because it has few real images
+  of them. The team used those few images to generate synthetic ones and rebalanced the training set. Partner
+  clinics, which photograph lesions with their own devices, will start using the model next quarter. What
+  is the BEST evidence for the governance lead to require before release?
 options:
-  A: Validate on held-out synthetic images from the under-represented groups
-  B: Validate performance on real images from under-represented groups
-  C: Have dermatologists review the synthetic images for realism
-  D: Validate overall accuracy on real images from the existing test set
+  A: Validate on the real images that seeded the synthetic set
+  B: Validate on new real images of those groups from partner clinics
+  C: Validate on real darker-skin images from a public research set
+  D: Validate on real partner-clinic images, scored as one pooled result
 answer: B
 explanation:
-  why_correct: Synthetic data can help, but it may not capture real clinical variation. A model can then
-    look balanced on paper while still failing patients. The decisive evidence is performance measured
-    on genuine images from the under-represented groups, even if collecting them takes effort.
+  why_correct: The question is whether the model now works for patients with darker skin in the setting
+    where it will be used. New real images of those groups, taken with the partner clinics' own devices,
+    test exactly that, and they are independent of the data the model learned from.
   why_not:
-    A: Testing on synthetic images checks the model against the same kind of data it learned from. It
-      does not show how it performs on real patients.
-    C: Expert review checks that the inputs look real. It does not show that the model now works for real
-      patients, which is the outcome that matters.
-    D: The existing test set has few darker skin images, so overall accuracy can rise while the gap for
-      those patients stays.
+    A: These images are real, but they seeded the synthetic set, so the model has in effect already learned
+      from them. Good results on them would overstate how it performs on new patients.
+    C: A public set gives real, independent images of darker skin, but they were taken with other equipment.
+      The clinics photograph lesions with their own devices, so results may not carry over.
+    D: Clinic images are the right source, but one pooled score is dominated by the groups the
+      model already handles well. It can look good while the model still fails patients with darker skin.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-a
-  checked_by: 2026-10-17-aaig-d2-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: obvious

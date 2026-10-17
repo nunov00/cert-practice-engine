@@ -6,7 +6,7 @@ stem: A company holds a certified AI management system. Its regulator now asks f
 options:
   A: A certifiable AI management system standard
   B: A voluntary AI risk management framework
-  C: A knowledge base of adversary tactics against AI
+  C: A catalogue of adversary tactics against AI
   D: The sector regulator's AI guidance notes
 answer: C
 explanation:
@@ -22,5 +22,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-a
-  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  checked_by: 2026-10-17-aaism-length-check
   check_verdict: pass
+  options_only: not_obvious

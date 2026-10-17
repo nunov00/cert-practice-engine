@@ -1,31 +1,25 @@
 id: aaig-d1-1.1-0055
 subdomain: '1.1'
-difficulty: medium
-stem: The audit committee of a telecom group asks how it can tell whether the AI governance framework
-  is actually working. Management reports the number of policies issued and the number of training courses
-  held. Which measure would BEST add to the picture?
+difficulty: hard
+stem: The audit committee of a telecom group asks how it can tell whether the AI governance framework is actually working. Management reports the number of policies issued, training courses held and AI reviews completed. Which measure would BEST add to the picture?
 options:
-  A: The share of AI proposals changed or rejected at review
+  A: The share of inventoried AI uses with a completed risk assessment
   B: The number of AI incidents reported by customers each quarter
   C: Issues caught before launch against those found after launch
-  D: The average time taken to approve each new AI use case request
+  D: The share of AI proposals that review changes or rejects
 answer: C
 explanation:
-  why_correct: Effective governance should catch problems before AI reaches customers. Comparing issues
-    found in review with those found later in production shows whether the framework is preventing harm,
-    which counts of activity cannot show.
+  why_correct: Effective governance should catch problems before AI reaches customers. Comparing issues found before launch with those found after shows whether the framework is preventing harm. Counts of policies, courses and reviews, like coverage or change rates, show effort and strictness but not effect.
   why_not:
-    A: Changed or rejected proposals show the review is active, but not whether it catches the problems
-      that matter. A high rate could reflect strict paperwork rather than harm prevented.
-    B: Customer-reported incidents show harm after launch, which is useful, but on their own they cannot
-      show whether the framework caught other problems earlier. The comparison is what shows effect.
-    D: Approval time measures efficiency, which matters to the business, but a fast process can still
-      let problems through.
+    A: Assessment coverage shows the process is followed across the inventory, which is useful, but like the current reports it measures activity. Full coverage can sit alongside assessments that miss the problems that matter.
+    B: Customer-reported incidents show harm after launch, which is useful, but on their own they cannot show whether the framework caught other problems earlier. The comparison is what shows effect.
+    D: A change rate shows the review is active and strict, which the committee does not see today. It still does not show whether the changes were the ones that prevent later harm.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d1-b
-  checked_by: 2026-10-17-aaig-d1-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious

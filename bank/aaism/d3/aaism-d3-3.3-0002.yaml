@@ -6,7 +6,7 @@ stem: A regulator asks a telecom to show that each field in its churn model's tr
   is MOST needed?
 options:
   A: Minimisation to the fields the purpose needs
-  B: Retention limits for each training field
+  B: Retention limits for each field based on its legal basis
   C: Lineage tracing each field to its source and legal basis
   D: Quality checks on each field's accuracy
 answer: C
@@ -15,7 +15,7 @@ explanation:
     back to each source and its collection terms can answer.
   why_not:
     A: Fields have already been minimised, and minimisation does not show the terms they were collected under.
-    B: Retention controls how long data is kept, not whether it was collected for this use.
+    B: Retention limits, even when tied to legal basis, control how long data is kept, not whether it was collected for this use.
     D: Quality checks show whether values are correct, not whether their use was permitted.
 status: published
 outline_version: '2025-08-19'
@@ -23,5 +23,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-a
-  checked_by: 2026-10-16-aaism-d3-a-recheck3
+  checked_by: 2026-10-17-aaism-length-check
   check_verdict: pass
+  options_only: not_obvious

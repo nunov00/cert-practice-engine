@@ -7,8 +7,8 @@ stem: A retailer's mobile app sends model requests to its own back end, which ho
 options:
   A: Move the provider key from devices into a back end
   B: Rotate the provider key monthly
-  C: Obfuscate the app and block rooted devices
-  D: Authenticate callers and rate-limit each at the back end
+  C: Obfuscate the app and block rooted or jailbroken devices
+  D: Authenticate and rate-limit callers at the back end
 answer: D
 explanation:
   why_correct: The key is already off the devices, but the gateway is open to anyone, so it lends the key's power
@@ -24,5 +24,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d3-c
-  checked_by: 2026-10-16-aaism-d3-c-recheck3
+  checked_by: 2026-10-17-aaism-length-check
   check_verdict: pass
+  options_only: not_obvious

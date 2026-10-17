@@ -7,7 +7,7 @@ stem: A hospital group will give partner clinics a copy of its imaging model, tr
 options:
   A: Evasion using subtly altered input images
   B: Poisoning through feedback labels from clinics
-  C: Membership inference against the training records
+  C: Membership inference on the training records
   D: Model drift as patient populations change
 answer: C
 explanation:
@@ -27,5 +27,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d2-b
-  checked_by: 2026-10-16-aaism-d2-b-recheck
+  checked_by: 2026-10-17-aaism-length-check
   check_verdict: pass
+  options_only: not_obvious

@@ -46,9 +46,13 @@ writer_notes:
   - "Experts spot the 'textbook principle' key (accountable owner, risk-based tiering, shared definitions). Add a second principle-level option that the stem shows is already in place"
   - "The key must not be the only governance-level, appetite-based or two-part option, and the stem must not paraphrase it"
   - "Overlap with AAIR topics is fine; dedupe within AAIG only"
+  - "Vary the deciding stem fact. A stem fact that some control already exists, whose option is then wrong, gives a free elimination when repeated; use it in at most a third of a batch"
+  - "Don't let the key always be the 'before approval / until assessed' option with an after-the-fact version as a distractor; give a rival the same timing, wrong for another reason"
+  - "Use a capitalised MOST/BEST/FIRST/PRIMARY qualifier, as the official samples do"
 
 history:
   - { date: "2026-10-16", scope: "audit, 28-question sample", pr: 35, result: "27/28 obvious from options alone before the rework" }
   - { date: "2026-10-17", scope: "D2 rework, 49 questions", pr: 39, result: "17/49 (35%) obvious after two writer rounds" }
   - { date: "2026-10-17", scope: "D1 rework, 57 questions", pr: 40, result: "15/57 (26%) obvious after two writer rounds" }
   - { date: "2026-10-17", scope: "D3 rework, 50 questions", pr: 41, result: "13/50 (26%) obvious after three writer rounds" }
+  - { date: "2026-10-17", scope: "hard-share rework, 27 medium questions made hard", pr: 44, result: "1/27 obvious after three writer rounds; one relabelled easy; bank hard share 16% to 33%" }

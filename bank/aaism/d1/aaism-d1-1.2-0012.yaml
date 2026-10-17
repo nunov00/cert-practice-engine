@@ -5,9 +5,9 @@ stem: HR used an unapproved AI CV-screening tool on a free trial for two months,
   The trial terms let the vendor reuse uploaded CVs to train its models. What should the security manager do FIRST?
 options:
   A: Stop further uploads to the tool pending review
-  B: Assess the use and route it through approval
+  B: Assess the use and route it through AI tool approval
   C: Report the policy breach to HR leadership
-  D: Establish what applicant data the vendor holds and uses
+  D: Establish what CV data the vendor holds and uses
 answer: D
 explanation:
   why_correct: Use has stopped, but applicant data may still sit with the vendor and be used for training. Finding
@@ -22,5 +22,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-16-aaism-d1-a
-  checked_by: 2026-10-16-aaism-d1-a-recheck3
+  checked_by: 2026-10-17-aaism-length-check
   check_verdict: pass
+  options_only: not_obvious

@@ -1,32 +1,34 @@
 id: aaig-d2-2.1-0039
 subdomain: '2.1'
-difficulty: medium
+difficulty: hard
 stem: A retail group runs separate AI models for demand forecasting, pricing and promotions, built by
-  different units. Each unit keeps its own product hierarchy and store list. The models now give conflicting
-  recommendations for the same products, and executives cannot reconcile the reports. What is the BEST
-  architecture principle to adopt?
+  different units. The group already has an agreed business glossary defining products and stores, yet
+  each unit keeps its own product hierarchy and store list. The models give conflicting recommendations
+  for the same products. What is the BEST architecture principle to adopt?
 options:
-  A: Manage the three models under one central model owner
+  A: Manage product and store definitions through the business glossary
   B: Manage product and store data in one warehouse fed by each unit
   C: Manage product and store data as master data with one owner
-  D: Manage the reports through one reconciled executive dashboard
+  D: Manage the models' inputs through one shared feature store
 answer: C
 explanation:
-  why_correct: The conflict comes from inconsistent reference data, not from the models. Managing products
-    and stores as master data, with an accountable owner and one authoritative source, removes the cause.
-    Separate models then stay consistent with each other and with reporting.
+  why_correct: The conflict comes from inconsistent reference data, not from the models or the definitions.
+    The glossary already agrees what a product and a store mean, but each unit holds its own values and
+    hierarchies. Managing products and stores as master data, with an accountable owner and one authoritative
+    source, removes the cause, so separate models stay consistent with each other and with reporting.
   why_not:
-    A: The models serve different decisions and can rightly stay separate. One model owner would not fix
-      the inconsistent hierarchies the models are fed.
+    A: The glossary exists and agrees the meaning of terms. Shared definitions do not give
+      one authoritative list of products, stores and hierarchies, which is where the units differ.
     B: One warehouse puts the data in one place, but each unit would still feed its own hierarchy. With
       no owner deciding the one true version, the conflict remains.
-    D: A reconciled dashboard hides the inconsistency at the reporting layer. The models would still give
-      conflicting recommendations.
+    D: A feature store shares computed features across models, but the features would still be built from
+      each unit's own hierarchy unless the reference data itself is mastered.
 status: published
 outline_version: '2026-10-13'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-13-aaig-d2-b
-  checked_by: 2026-10-17-aaig-d2-rework-check
+  checked_by: 2026-10-17-aaig-hard-rework-check
   check_verdict: pass
+  options_only: not_obvious
