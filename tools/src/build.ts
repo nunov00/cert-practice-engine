@@ -1,7 +1,10 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 import { isPreview, validateRepo } from "./validate.ts";
+import { TOPICS, type Topic } from "./topics.ts";
 import type { Question, Recipe } from "./types.ts";
+
+export type { Topic };
 
 /**
  * What the public site ships to browsers (decision 0004):
@@ -19,6 +22,8 @@ export interface PublicExam {
   id: string;
   name: string;
   issuer: string;
+  /** Subject area id; one of PublicContent.topics. */
+  topic: string;
   disclaimer: string;
   outline_version: string;
   /** No published outline yet: weights, length, scoring and mock are null or absent; drills only. */
@@ -41,6 +46,8 @@ export type PublicQuestion = Omit<Question, "status" | "sample" | "provenance"> 
 
 export interface PublicContent {
   access: PublicAccess;
+  /** Every subject area, in display order. */
+  topics: Topic[];
   exams: PublicExam[];
   questions: PublicQuestion[];
 }
@@ -59,6 +66,7 @@ export function buildPublicContent(root: string, access: PublicAccess = PUBLIC_A
       id: r.exam.id,
       name: r.exam.name,
       issuer: r.exam.issuer,
+      topic: r.exam.topic,
       disclaimer: r.exam.disclaimer,
       outline_version: r.exam.outline.version,
       preview: isPreview(r),
@@ -85,7 +93,7 @@ export function buildPublicContent(root: string, access: PublicAccess = PUBLIC_A
       return { ...rest, exam: exam!, domain: domain! };
     });
 
-  return { access, exams, questions: shipped };
+  return { access, topics: [...TOPICS], exams, questions: shipped };
 }
 
 export function writePublicContent(root: string, outFile: string): PublicContent {

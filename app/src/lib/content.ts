@@ -1,15 +1,20 @@
 // Public content compiled from recipes/ and bank/ by `pnpm content`
 // (tools/src/build.ts). Which published questions are included depends on the
 // access mode there (decision 0004); drafts are never included.
-import type { PublicContent, PublicExam, PublicQuestion } from "@cpe/tools/build";
+import type { PublicContent, PublicExam, PublicQuestion, Topic } from "@cpe/tools/build";
 import raw from "../generated/content.json";
 
-export type { PublicExam, PublicQuestion };
+export type { PublicExam, PublicQuestion, Topic };
 
 const content = raw as unknown as PublicContent;
 
 export function listExams(): PublicExam[] {
   return content.exams;
+}
+
+/** Subject areas, in the order the home page shows them. */
+export function listTopics(): Topic[] {
+  return content.topics;
 }
 
 export function getExam(id: string): PublicExam | undefined {

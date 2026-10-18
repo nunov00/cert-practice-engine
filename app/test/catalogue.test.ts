@@ -2,11 +2,12 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import type { PublicContent, PublicExam } from "@cpe/tools/build";
-import { buildCatalogue, issuers, normalize, searchCatalogue } from "../src/lib/catalogue.ts";
+import { buildCatalogue, groupByTopic, issuers, normalize, searchCatalogue } from "../src/lib/catalogue.ts";
 
 const content = JSON.parse(readFileSync(new URL("../src/generated/content.json", import.meta.url), "utf8")) as PublicContent;
 const real = content.exams;
 const count = (id: string) => content.questions.filter((q) => q.exam === id).length;
+const topics = content.topics;
 
 // A catalogue the size the home page is designed for: about 50 exams from 10
 // issuers, each with 8 domains of 6 subdomains (CISSP-sized, the largest today).
@@ -31,6 +32,7 @@ function synthetic(n: number): PublicExam[] {
     id: `x${i}`,
     name: `EXAM${String(i).padStart(2, "0")}`,
     issuer: `Issuer ${String.fromCharCode(65 + (i % 10))}`,
+    topic: topics[i % topics.length]!.id,
     domains: Array.from({ length: 8 }, (_, d) => ({
       id: `d${d + 1}`,
       name: `${TOPICS[(i + d) % TOPICS.length]} management and operations ${d + 1}`,
@@ -48,7 +50,7 @@ test("normalize lowers case and drops accents and punctuation", () => {
 });
 
 test("the real catalogue lists every exam, alphabetically", () => {
-  const entries = buildCatalogue(real, count);
+  const entries = buildCatalogue(real, topics, count);
   assert.equal(entries.length, real.length);
   const names = entries.map((e) => e.name);
   assert.deepEqual(names, [...names].sort((a, b) => a.localeCompare(b)));
@@ -56,18 +58,44 @@ test("the real catalogue lists every exam, alphabetically", () => {
 });
 
 test("search by name, issuer and topic", () => {
-  const entries = buildCatalogue(real, count);
+  const entries = buildCatalogue(real, topics, count);
   assert.deepEqual(searchCatalogue(entries, "ciss").map((h) => h.entry.id), ["cissp"]);
   const isaca = searchCatalogue(entries, "isaca").map((h) => h.entry.id);
   assert.ok(isaca.includes("aair") && !isaca.includes("cissp"));
-  const hits = searchCatalogue(entries, "security");
-  assert.ok(hits.some((h) => h.entry.id === "cissp" && h.topic !== undefined));
+  assert.ok(searchCatalogue(entries, "security").some((h) => h.entry.id === "cissp"));
+  const hits = searchCatalogue(entries, "asset");
+  assert.ok(hits.some((h) => h.entry.id === "cissp" && h.domain !== undefined));
   assert.deepEqual(searchCatalogue(entries, "zzz"), []);
   assert.equal(searchCatalogue(entries, "  ").length, entries.length);
 });
 
+test("every real exam has a known subject area, and search finds it", () => {
+  const entries = buildCatalogue(real, topics, count);
+  for (const e of entries) assert.ok(topics.some((t) => t.id === e.topic.id && t.label === e.topic.label), e.id);
+  const ai = topics.find((t) => t.id === "ai-governance")!;
+  const hits = searchCatalogue(entries, ai.label.split(" ")[0]!).map((h) => h.entry.id);
+  assert.ok(hits.includes("aair") && !hits.includes("cissp"));
+});
+
+test("sections follow the topic order and leave out empty areas", () => {
+  const entries = buildCatalogue(synthetic(10), topics, () => 10);
+  const sections = groupByTopic(searchCatalogue(entries, ""), topics);
+  const used = topics.filter((t) => entries.some((e) => e.topic.id === t.id));
+  assert.deepEqual(
+    sections.map((s) => s.topic.id),
+    used.map((t) => t.id),
+  );
+  assert.equal(
+    sections.reduce((n, s) => n + s.hits.length, 0),
+    entries.length,
+  );
+  for (const s of sections) assert.ok(s.hits.every((h) => h.entry.topic.id === s.topic.id));
+  const filtered = groupByTopic(searchCatalogue(entries, "", "Issuer A"), topics);
+  assert.ok(filtered.every((s) => s.hits.length > 0 && s.hits.every((h) => h.entry.issuer === "Issuer A")));
+});
+
 test("a preview exam has no published length", () => {
-  const entries = buildCatalogue(real, count);
+  const entries = buildCatalogue(real, topics, count);
   for (const e of entries) {
     const exam = real.find((x) => x.id === e.id)!;
     assert.equal(e.preview, exam.preview);
@@ -76,7 +104,7 @@ test("a preview exam has no published length", () => {
 });
 
 test("subdomain words are searchable but not stored twice", () => {
-  const entries = buildCatalogue(real, count);
+  const entries = buildCatalogue(real, topics, count);
   const aair = entries.find((e) => e.id === "aair")!;
   const kw = aair.keywords.split(" ");
   assert.equal(new Set(kw).size, kw.length);
@@ -85,7 +113,7 @@ test("subdomain words are searchable but not stored twice", () => {
 });
 
 test("issuer filter narrows results and lists counts", () => {
-  const entries = buildCatalogue(synthetic(50), () => 10);
+  const entries = buildCatalogue(synthetic(50), topics, () => 10);
   const list = issuers(entries);
   assert.equal(list.length, 10);
   assert.ok(list.every((i) => i.count === 5));
@@ -95,15 +123,18 @@ test("issuer filter narrows results and lists counts", () => {
 });
 
 test("name matches rank above topic matches", () => {
-  const entries = buildCatalogue(synthetic(50), () => 10);
+  const entries = buildCatalogue(synthetic(50), topics, () => 10);
   const hits = searchCatalogue(entries, "exam07");
   assert.equal(hits[0]?.entry.id, "x7");
-  const multi = searchCatalogue(entries, "cloud oper");
-  assert.ok(multi.length > 0 && multi.every((h) => h.topic !== undefined));
+  // Domain matches name the domain and rank above matches on subdomain words only.
+  const multi = searchCatalogue(entries, "continuity");
+  const inDomain = multi.map((h) => h.domain !== undefined);
+  assert.ok(inDomain.includes(true) && inDomain.includes(false));
+  assert.deepEqual(inDomain, [...inDomain].sort((a, b) => Number(b) - Number(a)));
 });
 
 test("a 50-exam index stays small and searches fast", () => {
-  const entries = buildCatalogue(synthetic(50), () => 900);
+  const entries = buildCatalogue(synthetic(50), topics, () => 900);
   const bytes = Buffer.byteLength(JSON.stringify(entries));
   // Sent twice with the home page (HTML and React payload); keep it well under 100 KB.
   assert.ok(bytes < 40_000, `index is ${bytes} bytes`);

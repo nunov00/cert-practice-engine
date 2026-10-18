@@ -10,11 +10,16 @@
     "exam": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "name", "issuer", "disclaimer", "outline"],
+      "required": ["id", "name", "issuer", "topic", "disclaimer", "outline"],
       "properties": {
         "id": { "type": "string", "pattern": "^[a-z][a-z0-9]*$" },
         "name": { "type": "string", "minLength": 1 },
         "issuer": { "type": "string", "minLength": 1 },
+        "topic": {
+          "description": "Subject area that groups exams on the home page; one of the ids in tools/src/topics.ts.",
+          "type": "string",
+          "pattern": "^[a-z][a-z-]*$"
+        },
         "disclaimer": { "type": "string", "minLength": 1 },
         "outline": {
           "type": "object",
