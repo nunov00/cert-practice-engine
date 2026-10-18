@@ -1,6 +1,6 @@
 # Independent quality check
 
-**Status: documented, not scheduled.**
+**Status: scheduled daily since 2026-10-18 as part of the [daily batch](daily-batch.md); also run by hand.**
 
 The checker is a separate session from the generator, with different
 instructions and no access to the generator's reasoning. Preferably a different

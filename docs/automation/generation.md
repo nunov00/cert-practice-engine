@@ -1,7 +1,6 @@
 # Generation run
 
-**Status: documented, not scheduled.** Runs are started by hand until the owner
-approves a schedule.
+**Status: scheduled daily since 2026-10-18 as part of the [daily batch](daily-batch.md); also run by hand.**
 
 ## Inputs
 
