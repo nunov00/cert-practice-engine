@@ -1,6 +1,6 @@
 # Publishing via pull request
 
-**Status: documented, not scheduled.**
+**Status: scheduled daily since 2026-10-18 as part of the [daily batch](daily-batch.md); also run by hand.**
 
 ## The PR
 
