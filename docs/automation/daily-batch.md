@@ -6,11 +6,12 @@ question pool size, add 10 questions; if all exams already have the ideal pool
 size, suggest a new exam, at the moment only security related." The owner also
 agreed to an independent Codex review between opening and merging.
 
-**Batch size: 30 per exam, on trial from 2026-10-19** (owner, 2026-10-18). After
-the second night, the run summary reports the two nights' totals so the owner
-can check the cost against the weekly plan limits and keep 30 or scale back.
-**AAIG is paused** until ISACA publishes its outline, because its questions
-will need remapping to the real domains.
+**Batch size: 30 per exam, on trial from 2026-10-19** (owner, 2026-10-18). The merge
+run on 2026-10-20 ends its summary with both trial nights' question counts and
+asks the owner to check the cost against the weekly plan limits and keep 30 or
+scale back. **AAIG is paused** until ISACA publishes its outline, because its
+questions will need remapping to the real domains; a paused exam counts as at
+target for step 3.
 
 Two Claude scheduled tasks and one Codex scheduled task run every day
 (times are Europe/Zurich):
