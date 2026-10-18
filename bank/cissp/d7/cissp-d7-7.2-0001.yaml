@@ -1,0 +1,26 @@
+id: cissp-d7-7.2-0001
+subdomain: '7.2'
+difficulty: easy
+stem: A company's SIEM collects logs from 400 servers. During an incident review, investigators could not put events
+  from different servers in order, because server clocks differed by up to four minutes. What BEST fixes this?
+options:
+  A: Lengthen log retention in the SIEM to one year
+  B: Normalise time zones when the SIEM parses events
+  C: Stamp each event with the SIEM's receipt time
+  D: Sync server clocks to a common time source
+answer: D
+explanation:
+  why_correct: Events can only be ordered reliably if the clocks that stamp them agree. Synchronising servers to
+    an authoritative time source (for example through NTP) removes the drift at its source.
+  why_not:
+    A: Retention keeps logs longer but does nothing about inaccurate timestamps.
+    B: Time zone normalisation fixes offsets between zones, not clocks that run fast or slow.
+    C: Receipt time depends on transport delays and batching, so it can misorder events and hides when they actually
+      happened.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-cissp
+  check_verdict: pending

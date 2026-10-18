@@ -1,0 +1,26 @@
+id: aair-d3-3.2-0017
+subdomain: '3.2'
+difficulty: medium
+stem: An insurer offers AI liability cover for a retailer's in-house customer chatbot. The policy excludes losses
+  from deliberate misuse by third parties, and the retailer's main chatbot risk is prompt injection by outsiders.
+  What should the risk practitioner recommend?
+options:
+  A: Buy the cover as the main treatment for the chatbot
+  B: Mitigate the excluded risk with controls of its own
+  C: Accept the excluded risk as residual after buying cover
+  D: Shift the excluded risk to the chatbot vendor by contract
+answer: B
+explanation:
+  why_correct: The policy does not cover the main risk, so transfer does not treat it. That risk needs its own mitigation,
+    such as input and tool controls, while the cover may still help with the risks it does include.
+  why_not:
+    A: Treating the cover as the main response leaves the largest risk untreated.
+    C: Accepting the main risk without assessing whether it is within appetite skips the treatment decision.
+    D: The chatbot was built in-house, so there is no vendor to transfer the risk to.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aair
+  check_verdict: pending

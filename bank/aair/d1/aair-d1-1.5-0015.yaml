@@ -1,0 +1,28 @@
+id: aair-d1-1.5-0015
+subdomain: '1.5'
+difficulty: hard
+stem: A regional AI regulation requires deployers of high-risk systems to keep the system's automatic logs for at
+  least six months. A bank uses a vendor-hosted credit tool classed as high-risk. The vendor keeps logs for 30 days,
+  and the bank holds no copy. What should the risk practitioner recommend?
+options:
+  A: Record the gap as a vendor risk in the bank's register
+  B: Agree extended log retention or export with the vendor
+  C: Ask the regulator whether vendor-held logs are enough
+  D: Plan to replace the tool at the next contract renewal
+answer: B
+explanation:
+  why_correct: The obligation falls on the bank as deployer, and today it is not met. Agreeing longer retention
+    or a regular export with the vendor closes the compliance gap now while keeping a tool that otherwise works.
+  why_not:
+    A: Recording the gap is useful, but it leaves the bank in breach of a legal requirement.
+    C: The question is not whether vendor-held logs count; the vendor keeps them only 30 days, which falls short
+      either way.
+    D: Waiting for renewal leaves the bank non-compliant in the meantime, when a contract change could fix the gap
+      sooner.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aair
+  check_verdict: pending

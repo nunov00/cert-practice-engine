@@ -1,0 +1,26 @@
+id: cissp-d8-8.1-0001
+subdomain: '8.1'
+difficulty: hard
+stem: A product group works in two-week sprints, and each team has a trained security champion. Champions are asked
+  only to review finished code, so design flaws found late need rework across several sprints. Which change BEST
+  integrates security into the SDLC?
+options:
+  A: Add a security sign-off gate before each production release
+  B: Commission a penetration test at the end of each quarter
+  C: Train more developers in each team as security champions
+  D: Add threat modelling and security criteria to backlog items
+answer: D
+explanation:
+  why_correct: The flaws are design flaws found late. Threat modelling stories and adding security acceptance criteria
+    to backlog items moves security to planning and design in each sprint, where fixing is cheapest.
+  why_not:
+    A: A release gate still finds problems at the end, after the design work is done.
+    B: Quarterly testing finds issues even later and on a slower cycle than the sprints.
+    C: Champions already exist. More of them reviewing finished code repeats the timing problem.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-cissp
+  check_verdict: pending

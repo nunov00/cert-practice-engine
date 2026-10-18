@@ -1,0 +1,28 @@
+id: aair-d1-1.3-0015
+subdomain: '1.3'
+difficulty: hard
+stem: IT deployed an enterprise AI assistant that each department uses for its own tasks. The collections team has
+  started using it to draft letters about payment plans to customers in arrears, a use IT never assessed. Who should
+  own the risk of this use?
+options:
+  A: The head of collections, as owner of that process
+  B: The head of IT, as owner of the deployed platform
+  C: The AI committee, as overseer of enterprise-wide tools
+  D: The chief risk officer, as head of the risk function
+answer: A
+explanation:
+  why_correct: Risk ownership sits with the person accountable for the business outcome. Customer letters on payment
+    plans are part of the collections process, so its head owns the risk of using AI there, while IT owns the platform's
+    own risks.
+  why_not:
+    B: IT owns platform risks such as availability and access, but cannot judge or accept the customer impact of
+      collections letters.
+    C: A committee oversees and challenges risk decisions; it is not the accountable owner of one department's use.
+    D: The risk function sets the framework and challenges owners. Making it the owner would remove its independence.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aair
+  check_verdict: pending

@@ -1,0 +1,28 @@
+id: aaism-d1-1.1-0016
+subdomain: '1.1'
+difficulty: medium
+stem: A SaaS company's largest customers now add AI security clauses to their contracts, each asking for different
+  evidence. Its AI management system is certified, but customers say the certificate does not show the specific
+  controls they ask about. What is the BEST approach?
+options:
+  A: Assign an account lead to answer each clause separately
+  B: Offer customers a standard AI security contract addendum
+  C: Map clauses to its controls and reuse one evidence set
+  D: Extend the certification scope to cover AI security
+answer: C
+explanation:
+  why_correct: Customers want control-level evidence and the requests overlap. Mapping each clause to the company's
+    own control framework lets one maintained evidence set answer them, which cuts effort and keeps answers consistent.
+  why_not:
+    A: Separate answers multiply the work and risk inconsistent statements about the same controls.
+    B: An addendum helps future contracts, but customers have already said what evidence they need; a new contract
+      text does not produce it.
+    D: Customers have said a certificate does not show the controls they ask about. A wider scope gives a broader
+      certificate, not control-level evidence.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  check_verdict: pending

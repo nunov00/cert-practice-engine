@@ -1,0 +1,29 @@
+id: aaism-d2-2.2-0016
+subdomain: '2.2'
+difficulty: medium
+stem: A retailer's bug bounty treats jailbreaks as model behaviour and out of scope. A researcher reports a jailbreak
+  that makes the retailer's shopping agent call its order tool and reveal other customers' addresses. What should
+  the security manager do?
+options:
+  A: Decline the report under the programme's scope rules
+  B: Forward the report to the hosted model's vendor
+  C: Triage it as a vulnerability by its data impact
+  D: Add the prompt to the model's refusal training set
+answer: C
+explanation:
+  why_correct: Whatever the technique, the result is unauthorised access to customer data through the retailer's
+    own tool integration. It should be triaged and fixed like any other vulnerability, by impact, and the scope
+    rules revisited.
+  why_not:
+    A: Scope rules exist to focus a programme, not to ignore a confirmed data exposure in the retailer's own system.
+    B: The vendor may need to know, but the data exposure comes from how the retailer's agent and order tool are
+      connected, which the retailer must fix.
+    D: Refusal training may block this one prompt, but the agent's access to other customers' data remains open
+      to the next variant.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  check_verdict: pending
