@@ -1153,3 +1153,26 @@ footer.site { line-height: 1.65; }
 @media (prefers-reduced-motion: reduce) {
   .chip { transition: none; }
 }
+
+/* Continue cards: a remove button sits over the card's top-right corner. */
+.continue-item { position: relative; flex: 0 0 auto; display: flex; }
+.continue-item .continue-card { padding-right: 46px; }
+.continue-hide {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 1.35rem;
+  line-height: 1;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.continue-hide:hover { color: var(--text); background: var(--bg); }

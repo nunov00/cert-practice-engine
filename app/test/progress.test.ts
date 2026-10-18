@@ -9,6 +9,7 @@ import {
   parseProgress,
   readiness,
   recentExams,
+  visibleRecent,
   recordAttempt,
 } from "../src/lib/progress.ts";
 
@@ -65,4 +66,15 @@ test("missedIds keeps questions whose latest answer was wrong", () => {
   p = recordAttempt(p, "b", false, 2);
   p = recordAttempt(p, "b", true, 3);
   assert.deepEqual(missedIds(["a", "b", "c"], p), ["a"]);
+});
+
+test("visibleRecent hides an exam until it is answered again", () => {
+  const recent = [
+    { exam: "aair", answered: 3, last_at: 100 },
+    { exam: "cissp", answered: 1, last_at: 200 },
+  ];
+  assert.deepEqual(visibleRecent(recent, {}).map((r) => r.exam), ["aair", "cissp"]);
+  assert.deepEqual(visibleRecent(recent, { aair: 150 }).map((r) => r.exam), ["cissp"]);
+  assert.deepEqual(visibleRecent(recent, { aair: 100 }).map((r) => r.exam), ["cissp"]);
+  assert.deepEqual(visibleRecent(recent, { aair: 50 }).map((r) => r.exam), ["aair", "cissp"]);
 });
