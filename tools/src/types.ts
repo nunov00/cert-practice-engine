@@ -30,6 +30,8 @@ export interface Recipe {
     id: string;
     name: string;
     issuer: string;
+    /** Subject area id from tools/src/topics.ts; groups exams on the home page. */
+    topic: string;
     disclaimer: string;
     outline: { source_url: string; version: string; last_checked: string; status?: OutlineStatus };
   };

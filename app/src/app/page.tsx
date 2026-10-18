@@ -1,10 +1,11 @@
 import { Catalogue } from "@/components/Catalogue";
 import { buildCatalogue } from "@/lib/catalogue";
-import { isOpenAccess, listExams, questionsFor } from "@/lib/content";
+import { isOpenAccess, listExams, listTopics, questionsFor } from "@/lib/content";
 
 export default function Home() {
   // Built at prerender time; the browser only filters it.
-  const entries = buildCatalogue(listExams(), (id) => questionsFor(id).length);
+  const topics = listTopics();
+  const entries = buildCatalogue(listExams(), topics, (id) => questionsFor(id).length);
   const total = entries.reduce((n, e) => n + e.questions, 0);
   return (
     <>
@@ -24,7 +25,7 @@ export default function Home() {
           <span>No account needed</span>
         </p>
       </section>
-      <Catalogue entries={entries} free={!isOpenAccess()} />
+      <Catalogue entries={entries} topics={topics} free={!isOpenAccess()} />
     </>
   );
 }

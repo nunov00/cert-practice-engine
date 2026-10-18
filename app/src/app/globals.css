@@ -1097,3 +1097,59 @@ footer.site { line-height: 1.65; }
   .exam-card, .button, .option { transition: none; }
   .exam-card:hover, .button:active:not(:disabled) { transform: none; }
 }
+
+/* Home page catalogue: issuer filter chips and subject-area sections. */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 8px 15px;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+}
+.chip:hover { border-color: var(--accent); }
+.chip-count { font-weight: 500; color: var(--muted); }
+.chip[aria-pressed="true"] { color: var(--accent-text); background: var(--accent); border-color: var(--accent); }
+.chip[aria-pressed="true"] .chip-count { color: inherit; }
+.topic-section + .topic-section { margin-top: 30px; }
+.topic-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 14px;
+  font-size: 1.12rem;
+  letter-spacing: -0.02em;
+}
+.topic-section h3::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.topic-count {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: normal;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 1px 9px;
+}
+.exam-card-topic { color: var(--muted); font-weight: 600; }
+@media (max-width: 640px) {
+  /* One scrollable row, so a long issuer list doesn't push the exams down. */
+  .chips { flex-wrap: nowrap; overflow-x: auto; margin-left: -4px; margin-right: -4px; padding: 0 4px 4px; scrollbar-width: none; }
+  .chip { flex: 0 0 auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chip { transition: none; }
+}

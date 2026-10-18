@@ -29,6 +29,7 @@ exam:
   id: aaism
   name: "AAISM"
   issuer: "ISACA"
+  topic: ai-governance
   disclaimer: "Independent practice material. Not affiliated with or endorsed by ISACA."
   outline:
     source_url: "https://www.isaca.org/credentialing/aaism/aaism-exam-content-outline"

@@ -4,6 +4,7 @@ import { Ajv2020 } from "ajv/dist/2020.js";
 import type { ErrorObject } from "ajv";
 import { isLoadError, loadQuestions, loadRecipes, type Loaded } from "./load.ts";
 import { changedQuestionFiles, checkCalibration, checkChangedBatch, loadCalibration } from "./calibration.ts";
+import { TOPICS } from "./topics.ts";
 import type { CalibrationProfile, Issue, Question, Recipe } from "./types.ts";
 
 const EPS = 1e-9;
@@ -44,6 +45,9 @@ export function checkRecipe(recipe: Recipe, file: string): Issue[] {
   const expectedDir = recipe.exam.id;
   if (basename(dirname(file)) !== expectedDir) {
     err(`recipe for exam "${recipe.exam.id}" must live in recipes/${expectedDir}/`);
+  }
+  if (!TOPICS.some((t) => t.id === recipe.exam.topic)) {
+    err(`exam.topic "${recipe.exam.topic}" is not one of ${TOPICS.map((t) => t.id).join(", ")} (tools/src/topics.ts)`);
   }
 
   if (isPreview(recipe)) {

@@ -125,6 +125,15 @@ test("a published recipe needs weights, length, delivery, scoring and the mock",
   }
 });
 
+test("every recipe names a known subject area", () => {
+  const missing = structuredClone(cissp) as Partial<Recipe["exam"]> & Recipe;
+  delete (missing.exam as Partial<Recipe["exam"]>).topic;
+  assert.ok(errors(fixture([], missing)).some((m) => m.includes("must have required property 'topic'")));
+  const unknown = structuredClone(cissp);
+  unknown.exam.topic = "underwater-basket-weaving";
+  assert.ok(errors(fixture([], unknown)).some((m) => m.startsWith('exam.topic "underwater-basket-weaving" is not one of')));
+});
+
 test("subdomain targets must add up to the bank target", () => {
   const bad = structuredClone(cissp);
   bad.domains[0]!.subdomains[0]!.target_questions += 1;

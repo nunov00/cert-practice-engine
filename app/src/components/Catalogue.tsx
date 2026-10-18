@@ -2,15 +2,18 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { issuers, searchCatalogue, type CatalogueEntry } from "@/lib/catalogue";
+import { groupByTopic, issuers, searchCatalogue, type CatalogueEntry, type SearchHit } from "@/lib/catalogue";
+import type { Topic } from "@/lib/content";
 import { formatDuration } from "@/lib/format";
 import { loadProgress, recentExams } from "@/lib/progress";
 
 // Search state survives going into an exam and back, for this tab only.
 const STATE_KEY = "cpe.catalogue.v1";
-const SHOWN_TOPICS = 3;
+const SHOWN_DOMAINS = 3;
 
-export function Catalogue({ entries, free }: { entries: CatalogueEntry[]; free: boolean }) {
+const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
+
+export function Catalogue({ entries, topics, free }: { entries: CatalogueEntry[]; topics: Topic[]; free: boolean }) {
   const [query, setQuery] = useState("");
   const [issuer, setIssuer] = useState("");
   const [recent, setRecent] = useState<{ entry: CatalogueEntry; answered: number }[]>([]);
@@ -42,7 +45,10 @@ export function Catalogue({ entries, free }: { entries: CatalogueEntry[]; free: 
 
   const issuerList = useMemo(() => issuers(entries), [entries]);
   const hits = useMemo(() => searchCatalogue(entries, query, issuer), [entries, query, issuer]);
-  const filtered = query.trim() !== "" || issuer !== "";
+  const searching = query.trim() !== "";
+  // A search lists hits by relevance; otherwise exams are grouped by subject area.
+  const sections = useMemo(() => (searching ? [] : groupByTopic(hits, topics)), [searching, hits, topics]);
+  const areas = useMemo(() => new Set(entries.map((e) => e.topic.id)).size, [entries]);
 
   return (
     <>
@@ -71,29 +77,37 @@ export function Catalogue({ entries, free }: { entries: CatalogueEntry[]; free: 
           <input
             id="exam-search"
             type="search"
-            placeholder="Search by exam, issuer or topic"
+            placeholder="Search by exam name, acronym or topic"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             autoComplete="off"
             enterKeyHint="search"
           />
-          <label className="visually-hidden" htmlFor="issuer-filter">
-            Issuer
-          </label>
-          <select id="issuer-filter" value={issuer} onChange={(e) => setIssuer(e.target.value)}>
-            <option value="">All issuers</option>
-            {issuerList.map((i) => (
-              <option key={i.name} value={i.name}>
-                {i.name} ({i.count})
-              </option>
-            ))}
-          </select>
         </div>
 
+        {issuerList.length > 1 && (
+          <div className="chips" role="group" aria-label="Filter by issuer">
+            <button type="button" className="chip" aria-pressed={issuer === ""} onClick={() => setIssuer("")}>
+              All <span className="chip-count">{entries.length}</span>
+            </button>
+            {issuerList.map((i) => (
+              <button
+                key={i.name}
+                type="button"
+                className="chip"
+                aria-pressed={issuer === i.name}
+                onClick={() => setIssuer(issuer === i.name ? "" : i.name)}
+              >
+                {i.name} <span className="chip-count">{i.count}</span>
+              </button>
+            ))}
+          </div>
+        )}
+
         <p className="muted small results" aria-live="polite">
-          {filtered
-            ? `${hits.length} of ${entries.length} exams`
-            : `${entries.length} ${entries.length === 1 ? "exam" : "exams"}`}
+          {searching || issuer !== ""
+            ? `${hits.length} of ${plural(entries.length, "exam", "exams")}`
+            : `${plural(entries.length, "exam", "exams")} in ${plural(areas, "subject area", "subject areas")}`}
         </p>
 
         {hits.length === 0 ? (
@@ -109,40 +123,56 @@ export function Catalogue({ entries, free }: { entries: CatalogueEntry[]; free: 
               Clear search
             </button>
           </div>
+        ) : searching ? (
+          <ExamGrid hits={hits} free={free} showTopic />
         ) : (
-          <ul className="exam-grid">
-            {hits.map(({ entry, topic }) => (
-              <li key={entry.id}>
-                <Link className="exam-card" href={`/exams/${entry.id}`}>
-                  <span className="exam-card-head">
-                    <span className="name">{entry.name}</span>
-                    <span className="pill">{entry.issuer}</span>
-                    {entry.preview && <span className="pill">Preview</span>}
-                  </span>
-                  <span className="muted small">
-                    {entry.topics.length} domains ·{" "}
-                    {entry.examQuestions === null ? "outline not yet published" : `${entry.examQuestions} questions`} ·{" "}
-                    {formatDuration(entry.minutes)}
-                  </span>
-                  {topic ? (
-                    <span className="small topics">Covers: {topic}</span>
-                  ) : (
-                    <span className="small topics muted">
-                      {entry.topics.slice(0, SHOWN_TOPICS).join(" · ")}
-                      {entry.topics.length > SHOWN_TOPICS ? ` · +${entry.topics.length - SHOWN_TOPICS} more` : ""}
-                    </span>
-                  )}
-                  <span className={entry.questions > 0 ? "exam-card-cta" : "exam-card-cta soon"}>
-                    {entry.questions > 0
-                      ? `${free ? "Try" : "Practise"} ${entry.questions} ${free ? "free " : ""}questions →`
-                      : "Coming soon"}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          sections.map(({ topic, hits }) => (
+            <section key={topic.id} className="topic-section" aria-labelledby={`topic-${topic.id}`}>
+              <h3 id={`topic-${topic.id}`}>
+                {topic.label} <span className="topic-count">{hits.length}</span>
+              </h3>
+              <ExamGrid hits={hits} free={free} />
+            </section>
+          ))
         )}
       </section>
     </>
+  );
+}
+
+function ExamGrid({ hits, free, showTopic = false }: { hits: SearchHit[]; free: boolean; showTopic?: boolean }) {
+  return (
+    <ul className="exam-grid">
+      {hits.map(({ entry, domain }) => (
+        <li key={entry.id}>
+          <Link className="exam-card" href={`/exams/${entry.id}`}>
+            <span className="exam-card-head">
+              <span className="name">{entry.name}</span>
+              <span className="pill">{entry.issuer}</span>
+              {entry.preview && <span className="pill">Preview</span>}
+            </span>
+            {showTopic && <span className="small exam-card-topic">{entry.topic.label}</span>}
+            <span className="muted small">
+              {entry.domains.length} domains ·{" "}
+              {entry.examQuestions === null ? "outline not yet published" : `${entry.examQuestions} questions`} ·{" "}
+              {formatDuration(entry.minutes)}
+            </span>
+            {domain ? (
+              <span className="small topics">Covers: {domain}</span>
+            ) : (
+              <span className="small topics muted">
+                {entry.domains.slice(0, SHOWN_DOMAINS).join(" · ")}
+                {entry.domains.length > SHOWN_DOMAINS ? ` · +${entry.domains.length - SHOWN_DOMAINS} more` : ""}
+              </span>
+            )}
+            <span className={entry.questions > 0 ? "exam-card-cta" : "exam-card-cta soon"}>
+              {entry.questions > 0
+                ? `${free ? "Try" : "Practise"} ${entry.questions} ${free ? "free " : ""}questions →`
+                : "Coming soon"}
+            </span>
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 }

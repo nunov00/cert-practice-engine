@@ -15,6 +15,11 @@
 #   - sum of subdomain target_questions equals bank.target_total
 #   - subdomain titles are the outline's short headings, used as labels only;
 #     no longer outline text is copied into the repo
+#   - exam.topic is one of the subject areas in tools/src/topics.ts
+#
+# exam.topic (added 2026-10-18): the subject area that groups the exam on the
+#   home page. Pick the closest existing topic; add one to tools/src/topics.ts
+#   only when a new exam fits none of them.
 #
 # Preview exams (added 2026-10-13, owner's choice for AAIG):
 #   An issuer may announce an exam before publishing its outline. Such a recipe
@@ -35,6 +40,7 @@ exam:
   id: cissp
   name: "CISSP"                     # display name only
   issuer: "ISC2"
+  topic: security-management        # subject area, from tools/src/topics.ts
   disclaimer: "Independent practice material. Not affiliated with or endorsed by ISC2."
   outline:
     source_url: "https://www.isc2.org/certifications/cissp/cissp-certification-exam-outline"
