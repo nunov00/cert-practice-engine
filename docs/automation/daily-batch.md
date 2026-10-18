@@ -70,14 +70,23 @@ after 06:30 Europe/Zurich.
    miss) on the PR branch, or drop the question; reply on each finding with what
    was done or why not. Re-run `pnpm check` and `pnpm validate --since
    origin/main` before pushing.
-4. **If Codex has not reviewed,** merge on the internal checker alone and add a
-   line to the PR description: "Merged without Codex review: none posted by
-   the merge run."
-5. When CI is green, squash-merge and run the `deploy` workflow on `main`
+4. **If Codex has not reviewed,** add a line to the PR description: "No Codex
+   review: none posted by the merge run."
+5. **Final independent Claude review** (owner, 2026-10-18), after Codex's
+   findings are handled. Start a fresh Agent worker that has not seen the
+   writer's, checker's or Codex's reasoning. It reviews every question the PR
+   adds or changes against the same list as [`codex-review.md`](codex-review.md)
+   (blind answer before the key, ambiguity, options-only difficulty, accuracy
+   and scope, explanations, originality, duplicates) and returns findings per
+   question ID. Fix or drop what is real, re-run the checks, and record a
+   one-line result in the PR description ("Final Claude review: N findings, M
+   fixed, K dropped"). A question with a disputed key that cannot be settled
+   is dropped from the batch, not merged.
+6. When CI is green, squash-merge and run the `deploy` workflow on `main`
    (standing delegation in `PROJECT.md`). If CI stays red after a fix attempt,
    leave the PR open and say why in the run summary.
-6. The run summary says what shipped: questions per exam, Codex findings
-   handled, and the new published totals.
+7. The run summary says what shipped: questions per exam, Codex and final
+   review findings handled, and the new published totals.
 
 ## Limits
 
