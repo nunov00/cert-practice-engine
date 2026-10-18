@@ -32,6 +32,11 @@ changes:
 7. **Duplicates** with existing questions of the same exam (overlap with other
    exams is fine).
 
+If the PR changes `docs/exam-candidates.md`, also check the changed rows: the
+exam facts match the issuer's official page, the demand evidence comes from
+public, non-braindump sources and supports the score, and the ranking follows
+the rules at the top of that file.
+
 ## How to report
 
 Post **one PR review** (comment, not approve or request changes) whose body

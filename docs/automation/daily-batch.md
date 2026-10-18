@@ -27,10 +27,11 @@ published questions than the target.
 2. Run `pnpm coverage -- <exam>` for every exam in `recipes/`.
 3. **If every exam is at its target**, write no questions. Open (or update, if
    one is already open) one GitHub issue labelled `new-exam-suggestion`
-   proposing one new security-related multiple-choice certification exam:
-   issuer, why it fits the platform, the official outline and public samples
+   proposing the top candidate in [`../exam-candidates.md`](../exam-candidates.md):
+   issuer, why it ranks first, the official outline and public samples
    available for calibration, and the expected bank target. Building it waits
-   for the owner. Stop.
+   for the owner. Go on to step 6 for the queue, then open the PR without
+   questions.
 4. **Otherwise, for each exam under its target, write 10 questions**, following
    [`generation.md`](generation.md), the writer brief and
    `recipes/<exam>/calibration.yaml`. Spread them over the domains furthest
@@ -42,13 +43,21 @@ published questions than the target.
    reasoning runs `pnpm calibration packets` and `pnpm calibration record`.
    Rewrite or drop what fails; 2-3 rounds are normal. A batch with fewer than 10
    survivors is fine; do not pad it.
-6. `pnpm check` and `pnpm validate --since origin/main` must pass.
-7. Open **one PR for the day**, labelled `daily-batch`, on the branch the
+6. **Refresh the exam candidate queue** (owner, 2026-10-18) in
+   [`../exam-candidates.md`](../exam-candidates.md), lightly: re-check the one
+   row with the oldest Checked date (or a *to verify* row first) against the
+   issuer's official page and public demand data, fix its format and scores,
+   drop the *to verify* mark once checked, re-rank, and log the change in the
+   Changes table with sources. Replace a row only when a new security exam
+   would outrank the bottom one; keep exactly 10. Public sources only, never
+   braindump sites.
+7. `pnpm check` and `pnpm validate --since origin/main` must pass.
+8. Open **one PR for the day**, labelled `daily-batch`, on the branch the
    session assigns (else `content/daily/<YYYY-MM-DD>`), titled
    `Content: daily batch <YYYY-MM-DD>`. Fill the template's content section per
    [`publishing.md`](publishing.md) for each exam, including the difficulty
-   calibration note, and end the description with the **Codex review** section
-   below. `Review class: routine`.
+   calibration note, plus one line on the queue change, and end the
+   description with the **Codex review** section below. `Review class: routine`.
 
 Codex review section to paste into the PR:
 
