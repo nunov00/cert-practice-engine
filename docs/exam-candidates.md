@@ -1,0 +1,78 @@
+# Exam candidates
+
+A ranked queue of the next 10 exams the platform could add, security-related
+only for now (owner, 2026-10-18). The daily batch keeps it current
+([`automation/daily-batch.md`](automation/daily-batch.md)) and Codex reviews the
+changes with each daily PR. When every live exam reaches its pool target, the
+top candidate is the one proposed to the owner. Adding an exam always waits for
+the owner's decision.
+
+## How candidates are ranked
+
+Score 1 to 5 on each, then rank by the total (demand counts double):
+
+- **Demand (x2):** how many people sit the exam and how often employers ask for
+  it. Evidence: issuer-published holder or candidate counts, public job-posting
+  data (CyberSeek, large job boards), government role requirements.
+- **Fit:** multiple choice and domain-based with published weights, as the
+  engine expects. Exams with performance-based or lab tasks score lower: the
+  site can only practise their multiple-choice part.
+- **Calibration:** official outline and public sample questions to calibrate on
+  (`docs/calibration/standard.md`).
+- **Willingness to pay:** paid exam, professional audience, few free official
+  practice options.
+- **Synergy:** shares ground with exams already live, so writers and checkers
+  start from known material.
+
+Only public sources count as evidence: issuer pages, official reports, public
+job-posting statistics. Never braindump or exam-dump sites. Each row says when
+it was last checked; facts marked *to verify* have not been checked against the
+issuer yet.
+
+## Queue
+
+Last full review: 2026-10-18 (initial ranking, from general knowledge of the
+market; every row is *to verify* until a daily run checks it).
+
+| Rank | Exam (issuer) | Format | Demand | Fit | Calib. | Pay | Synergy | Total | Checked |
+|---:|---|---|---:|---:|---:|---:|---:|---:|---|
+| 1 | CISM (ISACA) | 150 MCQ, 4 domains *to verify* | 5 | 5 | 5 | 5 | 5 | 30 | 2026-10-18 |
+| 2 | CISA (ISACA) | 150 MCQ, 5 domains *to verify* | 4 | 5 | 5 | 5 | 4 | 27 | 2026-10-18 |
+| 3 | CRISC (ISACA) | 150 MCQ, 4 domains *to verify* | 3 | 5 | 5 | 5 | 5 | 26 | 2026-10-18 |
+| 4 | CCSP (ISC2) | 125-150 MCQ, 6 domains *to verify* | 4 | 5 | 3 | 5 | 4 | 25 | 2026-10-18 |
+| 5 | Security+ (CompTIA) | up to 90, MCQ and performance-based *to verify* | 5 | 3 | 4 | 4 | 3 | 24 | 2026-10-18 |
+| 6 | CC (ISC2) | 100 MCQ, 5 domains *to verify* | 4 | 5 | 4 | 1 | 4 | 22 | 2026-10-18 |
+| 7 | CEH (EC-Council) | 125 MCQ *to verify* | 4 | 5 | 2 | 4 | 2 | 21 | 2026-10-18 |
+| 8 | CySA+ (CompTIA) | up to 85, MCQ and performance-based *to verify* | 3 | 3 | 4 | 4 | 3 | 20 | 2026-10-18 |
+| 9 | SSCP (ISC2) | 125 MCQ, 7 domains *to verify* | 2 | 5 | 3 | 4 | 4 | 20 | 2026-10-18 |
+| 10 | CGRC (ISC2) | 125 MCQ, 7 domains *to verify* | 2 | 5 | 3 | 4 | 4 | 20 | 2026-10-18 |
+
+Rank follows the total; ties go to the higher demand score, then to the
+older Checked date.
+
+## Notes per candidate
+
+- **CISM:** ISACA's management-level security exam; closest to AAISM and AAIR,
+  so the writer notes and calibration method carry over. ISACA publishes a free
+  practice quiz for calibration.
+- **CISA:** ISACA's audit exam, steady professional demand; overlaps AAIR on
+  risk and controls.
+- **CRISC:** ISACA's IT risk exam; smaller audience but strong overlap with AAIR.
+- **CCSP:** ISC2's cloud security exam, often taken after CISSP; shares
+  CISSP's style.
+- **Security+:** the most widely held entry security certification and a US
+  DoD 8140 baseline, so its demand is the highest on the list. It ranks lower
+  because its performance-based items cannot be practised here; a product note
+  would have to say so.
+- **CC:** very large candidate pool from ISC2's free-exam programmes, so
+  learners are less likely to pay.
+- **CEH:** high name recognition in job postings; EC-Council publishes fewer
+  official samples, so calibration is weaker.
+- **CySA+, SSCP, CGRC:** solid but smaller markets; kept as the tail of the
+  queue.
+
+## Changes
+
+| Date | Change | Why |
+|---|---|---|
+| 2026-10-18 | Queue created | Owner asked for a ranked queue of 10 candidates |
