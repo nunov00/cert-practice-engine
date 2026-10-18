@@ -6,6 +6,12 @@ question pool size, add 10 questions; if all exams already have the ideal pool
 size, suggest a new exam, at the moment only security related." The owner also
 agreed to an independent Codex review between opening and merging.
 
+**Batch size: 30 per exam, on trial from 2026-10-19** (owner, 2026-10-18). After
+the second night, the run summary reports the two nights' totals so the owner
+can check the cost against the weekly plan limits and keep 30 or scale back.
+**AAIG is paused** until ISACA publishes its outline, because its questions
+will need remapping to the real domains.
+
 Two Claude scheduled tasks and one Codex scheduled task run every day
 (times are Europe/Zurich):
 
@@ -32,16 +38,16 @@ published questions than the target.
    available for calibration, and the expected bank target. Building it waits
    for the owner. Go on to step 6 for the queue, then open the PR without
    questions.
-4. **Otherwise, for each exam under its target, write 10 questions**, following
+4. **Otherwise, for each exam under its target except AAIG, write 30 questions**, following
    [`generation.md`](generation.md), the writer brief and
    `recipes/<exam>/calibration.yaml`. Spread them over the domains furthest
    below their weighted share of the target (largest `gap` first), so empty
    domains (CISSP D2-D8 today) fill first. Run ID:
-   `<YYYY-MM-DD>-daily-<exam>`. Never more than 10 per exam per day.
+   `<YYYY-MM-DD>-daily-<exam>`. Never more than 30 per exam per day.
 5. **Check them independently** per [`quality-check.md`](quality-check.md) and
    the checker brief: a separate worker with no access to the writer's
    reasoning runs `pnpm calibration packets` and `pnpm calibration record`.
-   Rewrite or drop what fails; 2-3 rounds are normal. A batch with fewer than 10
+   Rewrite or drop what fails; 2-3 rounds are normal. A batch with fewer than 30
    survivors is fine; do not pad it.
 6. **Refresh the exam candidate queue** (owner, 2026-10-18) in
    [`../exam-candidates.md`](../exam-candidates.md), lightly: re-check the one
@@ -83,8 +89,9 @@ after 06:30 Europe/Zurich.
    review: none posted by the merge run."
 5. **Final independent Claude review** (owner, 2026-10-18), after Codex's
    findings are handled. Start a fresh Agent worker that has not seen the
-   writer's, checker's or Codex's reasoning. It reviews every question the PR
-   adds or changes against the same list as [`codex-review.md`](codex-review.md)
+   writer's, checker's or Codex's reasoning. To keep cost down it reviews the
+   questions Codex flagged plus a random sample of 5 more per exam (all of them
+   if Codex did not review), against the same list as [`codex-review.md`](codex-review.md)
    (blind answer before the key, ambiguity, options-only difficulty, accuracy
    and scope, explanations, originality, duplicates) and returns findings per
    question ID. Fix or drop what is real, re-run the checks, and record a
