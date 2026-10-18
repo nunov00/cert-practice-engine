@@ -1,0 +1,26 @@
+id: aair-d3-3.4-0018
+subdomain: '3.4'
+difficulty: medium
+stem: A model drift indicator has breached its threshold every week for six months, while validation shows the model
+  still performs within its approved limits. Teams now ignore the alerts. What should the risk practitioner do?
+options:
+  A: Retire the indicator and rely on quarterly validation
+  B: Escalate each weekly breach to the risk committee
+  C: Recalibrate the threshold to normal model variation
+  D: Add a second drift indicator to confirm the first one
+answer: C
+explanation:
+  why_correct: A threshold breached constantly while the model stays within limits is set too tight and has stopped
+    carrying information. Recalibrating it to normal variation, in line with appetite, makes breaches meaningful
+    again.
+  why_not:
+    A: Quarterly validation reacts slowly; the indicator is useful once its threshold is right.
+    B: Escalating false alarms would spread alert fatigue to the committee.
+    D: A second indicator adds complexity without fixing the badly set threshold.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aair
+  check_verdict: pending

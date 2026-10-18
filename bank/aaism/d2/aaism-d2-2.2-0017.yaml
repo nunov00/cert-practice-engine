@@ -1,0 +1,28 @@
+id: aaism-d2-2.2-0017
+subdomain: '2.2'
+difficulty: easy
+stem: A bank's SOC maps its detection rules to a general attack framework, and model API logs already reach the
+  SIEM. It still missed a model extraction campaign spread across many accounts. Which step BEST improves detection
+  coverage?
+options:
+  A: Lower the alert thresholds on the model API gateway
+  B: Map detections to an AI attack knowledge base
+  C: Lengthen the retention of model API logs in the SIEM
+  D: Schedule a yearly red team exercise on the model API
+answer: B
+explanation:
+  why_correct: The logs were available, but the SOC had no detections for AI-specific techniques such as distributed
+    extraction. Mapping coverage to an AI attack knowledge base shows which techniques lack rules so they can be
+    added.
+  why_not:
+    A: Lower thresholds on existing rules create more noise but add no rule for a technique the SOC never modelled.
+    C: Retention helps investigations later; the logs were already there and the problem was the missing detections.
+    D: A red team can test detection once a year, but it does not by itself add coverage for the techniques being
+      missed.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  check_verdict: pending

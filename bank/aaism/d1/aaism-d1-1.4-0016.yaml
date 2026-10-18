@@ -1,0 +1,28 @@
+id: aaism-d1-1.4-0016
+subdomain: '1.4'
+difficulty: hard
+stem: A three-person AI security team must support 60 AI projects, and there is no budget for new hires or outside
+  services this year. Most projects are low-risk internal tools built on the company's two approved AI platforms.
+  What is the BEST approach?
+options:
+  A: Train a security champion in each project team
+  B: Embed baseline controls in the approved platforms
+  C: Review projects in the order they are submitted
+  D: Shorten the security checklist for internal tools
+answer: B
+explanation:
+  why_correct: Because most projects run on two platforms, controls built into those platforms protect every low-risk
+    project at once, freeing the small team to review the few high-risk projects in depth.
+  why_not:
+    A: Champions can help, but training and supporting 60 of them is a large load for three people, and it still
+      leaves controls to each team.
+    C: First-come order ignores risk and lets high-risk projects wait behind low-risk ones.
+    D: A shorter checklist reduces effort per review but still spends the team's time on each low-risk project and
+      weakens coverage.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  check_verdict: pending

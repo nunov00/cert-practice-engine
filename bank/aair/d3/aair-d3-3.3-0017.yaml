@@ -1,0 +1,27 @@
+id: aair-d3-3.3-0017
+subdomain: '3.3'
+difficulty: hard
+stem: A lender's control requires quarterly bias testing of its credit model. Evidence shows the tests ran each
+  quarter as written, but always on a test set frozen two years ago, while the applicant population has since changed
+  a great deal. How should the risk practitioner rate the control?
+options:
+  A: 'Operating gap: testers did not follow the procedure'
+  B: 'Evidence gap: the test results were not kept properly'
+  C: 'Oversight gap: nobody reviews the test results'
+  D: 'Design gap: the test data no longer fits the population'
+answer: D
+explanation:
+  why_correct: The control ran as written, so it operated; the weakness is in how it was designed. A test set that
+    no longer reflects current applicants cannot detect bias against them.
+  why_not:
+    A: The evidence shows the tests ran as the procedure says, so there is no operating failure.
+    B: Evidence exists for each quarter; the problem is what the tests measured, not how results were kept.
+    C: Nothing in the stem says results go unreviewed, and better review would not fix an unrepresentative test
+      set.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aair
+  check_verdict: pending

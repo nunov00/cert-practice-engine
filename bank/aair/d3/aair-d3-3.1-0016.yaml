@@ -1,0 +1,27 @@
+id: aair-d3-3.1-0016
+subdomain: '3.1'
+difficulty: hard
+stem: Two AI risks at a retailer have the same rated impact and likelihood. In one, a forecasting model's drift
+  would build up errors over several months. In the other, an exploit of a refund agent could drain funds within
+  hours. Which factor should set them apart in the assessment?
+options:
+  A: How well current monitoring would detect each risk
+  B: How many customers each of the systems serves
+  C: How fast each risk's impact would build up
+  D: How much the planned controls would cost for each
+answer: C
+explanation:
+  why_correct: 'The stem separates the risks by speed of onset: months versus hours. Risk velocity affects how much
+    time there is to detect and respond, so it should differentiate risks with otherwise equal ratings.'
+  why_not:
+    A: Detectability matters, but the stem gives no difference in monitoring; the stated difference is how fast
+      the impact arrives.
+    B: Customer numbers feed into impact, which is already rated the same for both.
+    D: Control cost informs treatment choices after assessment; it does not describe the risk itself.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aair
+  check_verdict: pending

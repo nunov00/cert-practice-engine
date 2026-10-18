@@ -1,0 +1,25 @@
+id: aair-d3-3.4-0017
+subdomain: '3.4'
+difficulty: easy
+stem: A bank's customer chatbot answers questions about fees from retrieved documents. The risk team wants an indicator
+  that warns of rising wrong-answer risk BEFORE customers are harmed. Which indicator BEST fits?
+options:
+  A: Weekly share of answers with no supporting source
+  B: Weekly count of complaints about wrong chatbot answers
+  C: Monthly value of refunds paid for wrong chatbot answers
+  D: Quarterly count of incidents logged for wrong answers
+answer: A
+explanation:
+  why_correct: Answers given without a retrieved source are more likely to be wrong, and their share can rise before
+    any customer acts on a bad answer. That makes it a leading indicator.
+  why_not:
+    B: Complaints arrive after customers have been misled, so they lag the risk.
+    C: Refunds show losses that have already happened.
+    D: Incidents are recorded after harm, and a quarterly count reacts slowly.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aair
+  check_verdict: pending

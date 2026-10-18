@@ -1,0 +1,28 @@
+id: aaism-d3-3.2-0017
+subdomain: '3.2'
+difficulty: hard
+stem: A team fine-tuned a safety-aligned base model on 2,000 internal support transcripts, which were screened and
+  contain no harmful content. The base model passed the company's refusal tests. What should the security manager
+  require before release?
+options:
+  A: Re-run the refusal tests on the fine-tuned model
+  B: Review the transcripts again for harmful content
+  C: Add an output filter tuned for the support domain
+  D: Release on the base model's refusal test results
+answer: A
+explanation:
+  why_correct: Fine-tuning can weaken a model's safety behaviour even on harmless data, so the base model's results
+    do not carry over. The fine-tuned model is a new model and must pass the refusal tests itself.
+  why_not:
+    B: The transcripts were already screened, and harmful data is not the only way fine-tuning erodes safety; the
+      model's behaviour is what needs testing.
+    C: A filter is a useful extra layer, but adding it without testing the model leaves unknown how much the filter
+      must catch.
+    D: The base model's results describe a different model. Fine-tuning changes its weights and can change its refusals.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  check_verdict: pending

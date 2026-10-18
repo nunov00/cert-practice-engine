@@ -1,0 +1,25 @@
+id: cissp-d6-6.2-0001
+subdomain: '6.2'
+difficulty: medium
+stem: Before a major release, a team must check whether its web application's input handling stops injection. Testers
+  have two days, and the static analysis tool cannot parse the framework the application uses. Which test is BEST?
+options:
+  A: Static analysis of the source with default rules
+  B: Manual review of each module's source code
+  C: Authenticated dynamic scanning of the staging build
+  D: Fuzz testing of the public login form only
+answer: C
+explanation:
+  why_correct: Dynamic testing exercises the running application, so it works regardless of framework, and authenticated
+    scans reach the input points behind login within a two-day window.
+  why_not:
+    A: The tool cannot parse the framework, so its results would miss much of the code.
+    B: A full manual review is thorough but cannot cover every module in two days.
+    D: Fuzzing one form covers a single input point. Injection can occur in any input across the application.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-cissp
+  check_verdict: pending

@@ -1,0 +1,29 @@
+id: aaism-d1-1.2-0016
+subdomain: '1.2'
+difficulty: medium
+stem: An AI policy requires 'human review proportionate to risk' for AI outputs. Audits find teams apply it in very
+  different ways, from no review to full review of each output, for uses with similar risk. What should the security
+  manager do?
+options:
+  A: Issue a standard that sets review levels per risk tier
+  B: Retrain teams on the intent of the policy statement
+  C: Rewrite the policy to describe each review step
+  D: Have internal audit test review practice each quarter
+answer: A
+explanation:
+  why_correct: The policy states intent; teams lack a shared rule for applying it. A supporting standard that defines
+    the required review level for each risk tier makes practice consistent while keeping the policy itself short
+    and stable.
+  why_not:
+    B: Training on intent does not give teams a common measure of what 'proportionate' means, so interpretations
+      would still differ.
+    C: Putting detailed steps in the policy makes it harder to maintain and approve; detail belongs in standards
+      and procedures beneath it.
+    D: More audits would keep finding the same inconsistency without defining the expected practice.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  check_verdict: pending

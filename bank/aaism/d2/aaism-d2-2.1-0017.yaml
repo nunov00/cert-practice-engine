@@ -1,0 +1,27 @@
+id: aaism-d2-2.1-0017
+subdomain: '2.1'
+difficulty: medium
+stem: A firm's threshold says a chatbot harmful-reply rate above 0.1% triggers escalation. Compliance reviews a
+  random sample of 200 chats each week, out of about 50,000. What BEST improves the threshold's reliability?
+options:
+  A: Lower the threshold to 0.05% to escalate sooner
+  B: Escalate whenever one harmful reply is in the sample
+  C: Raise the weekly sample to 1,000 reviewed chats
+  D: Score the full chat volume with a harm classifier
+answer: D
+explanation:
+  why_correct: At 0.1%, a 200-chat sample would expect only 0.2 harmful replies a week, so it cannot tell whether
+    the rate is above or below the threshold. Scoring all chats with a classifier, with human review of what it
+    flags, measures the rate the threshold refers to.
+  why_not:
+    A: A lower threshold measured on the same small sample is no more reliable.
+    B: One hit in 200 chats would be noisy and would replace the agreed threshold with a different rule.
+    C: A larger sample helps but still expects only about one harmful reply a week, too few to measure a 0.1% rate
+      with confidence.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  check_verdict: pending

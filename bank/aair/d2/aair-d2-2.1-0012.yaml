@@ -1,0 +1,27 @@
+id: aair-d2-2.1-0012
+subdomain: '2.1'
+difficulty: medium
+stem: The design document for a model that reads supplier invoices sets an accuracy target of 97% and describes
+  the model and its training data. It does not say what happens to the invoices the model misreads. What should
+  the risk practitioner ask the team to add before approval?
+options:
+  A: A higher accuracy target of 99% for the model
+  B: A review of misread invoices after launch
+  C: A confidence threshold that routes cases to staff
+  D: A notice asking suppliers to check their payments
+answer: C
+explanation:
+  why_correct: Some misreads are certain at 97% accuracy. A design requirement that sends low-confidence cases to
+    staff handles the expected errors before payments go out, which is the gap in the design.
+  why_not:
+    A: A higher target reduces errors but does not remove them, and the design would still lack a way to handle
+      the cases it gets wrong.
+    B: A post-launch review finds errors after payments are made rather than preventing them.
+    D: Asking suppliers to spot errors shifts the control to outsiders and only catches the errors they notice.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aair
+  check_verdict: pending

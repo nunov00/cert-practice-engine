@@ -1,0 +1,27 @@
+id: aair-d2-2.4-0012
+subdomain: '2.4'
+difficulty: easy
+stem: Five teams at a bank reuse the same customer dataset. One team found, after deployment, that the dataset excludes
+  customers who opted out of marketing, which skewed its credit model. Which data management practice would BEST
+  prevent this?
+options:
+  A: Document each dataset's scope, exclusions and uses
+  B: Require each team to profile the data before each use
+  C: Restrict each dataset to the team that collected it
+  D: Re-collect the dataset with opted-out customers included
+answer: A
+explanation:
+  why_correct: Teams reusing a dataset need to know how it was built. Dataset documentation recording scope, exclusions
+    and permitted uses tells every team about limits such as missing opted-out customers before they rely on it.
+  why_not:
+    B: Profiling shows the data's distributions but may not reveal that a group of customers is missing entirely.
+    C: Restricting reuse avoids the problem by giving up the value of shared data rather than managing it.
+    D: Re-collecting may not be lawful for opted-out customers, and the next dataset would have the same documentation
+      gap.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aair
+  check_verdict: pending
