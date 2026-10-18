@@ -6,10 +6,12 @@ question pool size, add 10 questions; if all exams already have the ideal pool
 size, suggest a new exam, at the moment only security related." The owner also
 agreed to an independent Codex review between opening and merging.
 
-**Batch size: 30 per exam, on trial from 2026-10-19** (owner, 2026-10-18). The merge
-run on 2026-10-20 ends its summary with both trial nights' question counts and
-asks the owner to check the cost against the weekly plan limits and keep 30 or
-scale back. **AAIG is paused** until ISACA publishes its outline, because its
+**Batch size: 50 questions per night, split evenly across the active exams
+still under target** (owner, 2026-10-18), larger shares first to the exams
+furthest below target: with three exams that is 17, 17 and 16; with one, all
+50. The merge run on 2026-10-20 ends its summary with both nights' question
+counts and asks the owner to check the cost against the weekly plan limits and
+keep 50 or scale back. **AAIG is paused** until ISACA publishes its outline, because its
 questions will need remapping to the real domains; a paused exam counts as at
 target for step 3.
 
@@ -39,17 +41,17 @@ published questions than the target.
    available for calibration, and the expected bank target. Building it waits
    for the owner. Go on to step 6 for the queue, then open the PR without
    questions.
-4. **Otherwise, for each exam under its target except AAIG, write 30 questions**, following
+4. **Otherwise, split the night's 50 questions across the exams under target (AAIG excluded)** and write each exam's share, following
    [`generation.md`](generation.md), the writer brief and
    `recipes/<exam>/calibration.yaml`. Spread them over the domains furthest
    below their weighted share of the target (largest `gap` first), so empty
    domains (CISSP D2-D8 today) fill first. Run ID:
-   `<YYYY-MM-DD>-daily-<exam>`. Never more than 30 per exam per day.
+   `<YYYY-MM-DD>-daily-<exam>`. Never more than 50 in total per night.
 5. **Check them independently** per [`quality-check.md`](quality-check.md) and
    the checker brief: a separate worker with no access to the writer's
    reasoning runs `pnpm calibration packets` and `pnpm calibration record`.
-   Rewrite or drop what fails; 2-3 rounds are normal. A batch with fewer than 30
-   survivors is fine; do not pad it.
+   Rewrite or drop what fails; 2-3 rounds are normal. A batch with fewer
+   survivors than planned is fine; do not pad it.
 6. **Refresh the exam candidate queue** (owner, 2026-10-18) in
    [`../exam-candidates.md`](../exam-candidates.md), lightly: re-check the one
    row with the oldest Checked date (or a *to verify* row first) against the
