@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { groupByTopic, issuers, searchCatalogue, type CatalogueEntry, type SearchHit } from "@/lib/catalogue";
 import type { Topic } from "@/lib/content";
 import { formatDuration } from "@/lib/format";
-import { loadProgress, recentExams } from "@/lib/progress";
+import { hideRecent, loadHiddenRecent, loadProgress, recentExams, visibleRecent, type HiddenRecent } from "@/lib/progress";
 
 // Search state survives going into an exam and back, for this tab only.
 const STATE_KEY = "cpe.catalogue.v1";
@@ -17,6 +17,7 @@ export function Catalogue({ entries, topics, free }: { entries: CatalogueEntry[]
   const [query, setQuery] = useState("");
   const [issuer, setIssuer] = useState("");
   const [recent, setRecent] = useState<{ entry: CatalogueEntry; answered: number }[]>([]);
+  const [hidden, setHidden] = useState<HiddenRecent | null>(null);
 
   useEffect(() => {
     try {
@@ -26,14 +27,19 @@ export function Catalogue({ entries, topics, free }: { entries: CatalogueEntry[]
     } catch {
       // Storage blocked: start with an empty search.
     }
+    setHidden(loadHiddenRecent());
+  }, [entries]);
+
+  useEffect(() => {
+    if (hidden === null) return;
     const byId = new Map(entries.map((e) => [e.id, e]));
     setRecent(
-      recentExams(loadProgress())
+      visibleRecent(recentExams(loadProgress()), hidden)
         .filter((r) => byId.has(r.exam))
         .slice(0, 3)
         .map((r) => ({ entry: byId.get(r.exam)!, answered: r.answered })),
     );
-  }, [entries]);
+  }, [entries, hidden]);
 
   useEffect(() => {
     try {
@@ -57,12 +63,23 @@ export function Catalogue({ entries, topics, free }: { entries: CatalogueEntry[]
           <h2 id="continue">Continue</h2>
           <div className="continue-row">
             {recent.map(({ entry, answered }) => (
-              <Link key={entry.id} className="continue-card" href={`/exams/${entry.id}`}>
-                <span className="name">{entry.name}</span>
-                <span className="muted small">
-                  {answered} of {entry.questions} answered
-                </span>
-              </Link>
+              <div key={entry.id} className="continue-item">
+                <Link className="continue-card" href={`/exams/${entry.id}`}>
+                  <span className="name">{entry.name}</span>
+                  <span className="muted small">
+                    {answered} of {entry.questions} answered
+                  </span>
+                </Link>
+                <button
+                  type="button"
+                  className="continue-hide"
+                  aria-label={`Remove ${entry.name} from Continue`}
+                  title="Remove from Continue (your answers are kept)"
+                  onClick={() => setHidden(hideRecent(entry.id))}
+                >
+                  ×
+                </button>
+              </div>
             ))}
           </div>
         </section>

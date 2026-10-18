@@ -91,6 +91,13 @@ export function recentExams(progress: Progress): { exam: string; answered: numbe
   return [...byExam].map(([exam, v]) => ({ exam, ...v })).sort((a, b) => b.last_at - a.last_at);
 }
 
+/** Exams hidden from Continue, with when; an answer after that brings the exam back. */
+export type HiddenRecent = Record<string, number>;
+
+export function visibleRecent<T extends { exam: string; last_at: number }>(recent: T[], hidden: HiddenRecent): T[] {
+  return recent.filter((r) => !(hidden[r.exam]! >= r.last_at));
+}
+
 /** Drops every answer for one exam. */
 export function forgetExam(progress: Progress, examId: string): Progress {
   const attempts = Object.fromEntries(Object.entries(progress.attempts).filter(([id]) => !id.startsWith(`${examId}-`)));
@@ -145,4 +152,26 @@ export function saveProgress(progress: Progress): void {
   } catch {
     // Private mode or storage blocked: progress just isn't kept.
   }
+}
+
+const HIDDEN_KEY = "cpe.continue-hidden.v1";
+
+export function loadHiddenRecent(): HiddenRecent {
+  try {
+    const data = JSON.parse(window.localStorage.getItem(HIDDEN_KEY) ?? "{}") as unknown;
+    if (typeof data !== "object" || data === null || Array.isArray(data)) return {};
+    return Object.fromEntries(Object.entries(data).filter(([, v]) => typeof v === "number")) as HiddenRecent;
+  } catch {
+    return {};
+  }
+}
+
+export function hideRecent(examId: string, now = Date.now()): HiddenRecent {
+  const next = { ...loadHiddenRecent(), [examId]: now };
+  try {
+    window.localStorage.setItem(HIDDEN_KEY, JSON.stringify(next));
+  } catch {
+    // Storage blocked: the card is hidden for this visit only.
+  }
+  return next;
 }
