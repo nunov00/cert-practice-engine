@@ -16,7 +16,7 @@
 # announcement was checked, not an outline date. When the outline appears:
 # set the real facts, drop status: preview, and remap questions.
 # Subdomain targets are an internal bank goal split evenly; they are not exam
-# weights.
+# weights. Target 900 (10x the estimated 90-question length): owner, 2026-10-18.
 
 format_version: "0.2"
 
@@ -50,18 +50,18 @@ domains:
   - id: d1
     name: "AI Enterprise Governance"
     subdomains:
-      - { id: "1.1", title: "AI enterprise governance", target_questions: 100 }
+      - { id: "1.1", title: "AI enterprise governance", target_questions: 300 }
   - id: d2
     name: "Data and AI Architecture Principles"
     subdomains:
-      - { id: "2.1", title: "Data and AI architecture principles", target_questions: 100 }
+      - { id: "2.1", title: "Data and AI architecture principles", target_questions: 300 }
   - id: d3
     name: "AI Enterprise Integration and Performance Monitoring"
     subdomains:
-      - { id: "3.1", title: "AI enterprise integration and performance monitoring", target_questions: 100 }
+      - { id: "3.1", title: "AI enterprise integration and performance monitoring", target_questions: 300 }
 
 bank:
-  target_total: 300
+  target_total: 900
   difficulty_mix: { easy: 0.2, medium: 0.5, hard: 0.3 }
   review:
     independent_check: true
