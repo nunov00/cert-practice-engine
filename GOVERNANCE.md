@@ -1,4 +1,4 @@
-# Project governance — v0.2
+# Project governance — v0.3
 
 ## Principles
 The repository is the source of truth. The Owner decides product direction, material architecture, costs, privacy/security policy and governance. The Manager (normally ChatGPT) plans, coordinates and handles routine technical decisions. Workers implement; reviewers challenge changes. Roles are interchangeable, but self-review is not independent review.
@@ -7,6 +7,16 @@ Maximise progress within approved scope. During product development, prioritise 
 
 ## Shared resource stewardship
 GitHub and Cloudflare are used across multiple projects. Architecture and automation decisions should account for aggregate CI, build, deployment, storage, request and background-job consumption. Prefer efficient solutions without compromising product outcomes, security, reliability or maintainability. Verify current quota scope and usage; obtain Owner approval before adding paid capacity. See `PROJECT.md` for planning constraints.
+
+## Personal data and secrets
+Repositories, PRs, issues, CI logs and deployed sites can become public, and git history keeps everything. Applies in every profile:
+- Never commit or publish secrets: API keys, tokens, passwords, private keys, `.env` or `.dev.vars` files. Keep them in GitHub or hosting secrets.
+- Never put the Owner's or anyone else's personal data in a repository, PR, issue, log or deployed site: personal email addresses, phone numbers, home address, location, devices, identity or account numbers, real financial or health details. Refer to the Owner by their GitHub handle. Use placeholders such as `name@example.com` in examples and tests.
+- Commit with a GitHub noreply address (`<id>+<user>@users.noreply.github.com`). Agents commit under their own noreply identity.
+- Data a site publishes must not carry personal data even when the repository is private.
+- If personal data or a secret is found, tell the Owner at once. Rotate a leaked secret first. Removing data from history means rewriting it, which is a mandatory change.
+
+**Enforcement:** `.github/workflows/privacy.yml` runs on every PR and fails if a PR commit uses a non-noreply email, if the PR adds a real email address to a file, or if gitleaks finds a secret in the PR's commits. Its output masks what it finds. A repository-specific `.gitleaks.toml` may allowlist known false positives with a comment saying why. **Owner account settings** (once, in GitHub → Settings → Emails): "Keep my email address private" and "Block command line pushes that expose my email".
 
 ## Profiles and controls
 The active profile is recorded in `PROJECT.md`. A profile is a preset of the controls below, and this table is the single definition of what each profile requires.
@@ -26,7 +36,7 @@ The active profile is recorded in `PROJECT.md`. A profile is a preset of the con
 | Release | Flexible, verified | Green checks before production | Green checks and explicit Owner release approval |
 | Records | Brief PR notes | Significant decisions documented | Formal risk, decision and review trail |
 
-Critical safeguards apply in every profile, whatever the overrides: never commit secrets, and never run destructive or data-loss operations on shared or production data without explicit Owner approval.
+Critical safeguards apply in every profile, whatever the overrides: never commit secrets or personal data (see Personal data and secrets), and never run destructive or data-loss operations on shared or production data without explicit Owner approval.
 
 ## Change classification
 Every PR into `main` states its class in the description (`Review class: routine | material | mandatory`). Classify by highest risk, not diff size; splitting work cannot avoid a gate. When unsure, choose the higher class.
@@ -130,13 +140,13 @@ The Owner may change profile at any stage; it is an Owner decision, never an age
 If any step can't be completed (for example, the ruleset can't be changed), say so in the PR and to the Owner rather than reporting the transition as done.
 
 ## GitHub settings per profile
-Template files do not copy rulesets or enable Copilot; apply these in **Settings → Rules → Rulesets** for the default branch.
+Template files do not copy rulesets or enable Copilot (the `privacy` workflow in `.github/workflows/` is copied and runs on its own); apply these in **Settings → Rules → Rulesets** for the default branch.
 
 | Setting | Lightweight | Standard | Strict |
 |---|---|---|---|
 | Block force pushes and deletion | Yes | Yes | Yes |
 | Require a pull request | Optional | Yes (0 required GitHub approvals) | Yes (0 required GitHub approvals) |
-| Required status checks | — | CI jobs + `governance/approval` | CI jobs + `governance/approval` |
+| Required status checks | `privacy` recommended | CI jobs + `privacy` + `governance/approval` | CI jobs + `privacy` + `governance/approval` |
 | Require branches up to date | — | Optional | Yes |
 | Bypass list | — | Owner (repository admin) | Owner (repository admin) |
 | Automatic Copilot review | Optional | Recommended | Recommended |

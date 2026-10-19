@@ -1,0 +1,87 @@
+# Privacy check: keeps personal data and secrets out of the repository.
+# Runs on every PR in every profile (GOVERNANCE.md → Personal data and secrets).
+# Fails when a PR commit is authored or committed with a personal email, when the
+# PR adds a real email address to a file, or when gitleaks finds a secret in the
+# PR's commits. A few seconds of Actions time per PR; no third-party actions.
+name: Privacy check
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: privacy-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  # Commit emails allowed on PR commits (extended regex). Add an agent's noreply
+  # address here if it commits under its own identity.
+  ALLOWED_COMMIT_EMAILS: '@users\.noreply\.github\.com$|^noreply@github\.com$|^noreply@anthropic\.com$|^noreply@openai\.com$'
+  # Email domains allowed inside files: placeholders and noreply addresses.
+  ALLOWED_FILE_EMAILS: '@(example\.(com|org|net)|[a-z0-9.-]+\.(example|invalid|test|localhost)|users\.noreply\.github\.com|noreply\.github\.com)$|^noreply@'
+  # Generated files that carry third-party package metadata.
+  SKIP_FILES: '(^|/)(package-lock\.json|pnpm-lock\.yaml|yarn\.lock|uv\.lock|poetry\.lock)$'
+  GITLEAKS_VERSION: 8.21.2
+  GITLEAKS_SHA256: 5bc41815076e6ed6ef8fbecc9d9b75bcae31f39029ceb55da08086315316e3ba
+
+jobs:
+  privacy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Commit emails
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          bad=$(git log --format='%ae%n%ce' "$BASE..$HEAD" | sort -u | grep -Ev "$ALLOWED_COMMIT_EMAILS" || true)
+          if [ -n "$bad" ]; then
+            echo "::error::$(echo "$bad" | wc -l) commit email(s) in this PR are not a noreply address."
+            echo "Set your Git email to your GitHub noreply address (GitHub → Settings → Emails),"
+            echo "then rewrite this PR's commits, e.g. git rebase -r $BASE --exec 'git commit --amend --no-edit --reset-author'."
+            echo "The addresses are not printed here because this log may be public."
+            exit 1
+          fi
+          echo "All commit emails are noreply addresses."
+
+      - name: Email addresses added to files
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          found=$(git diff --unified=0 --no-color "$BASE...$HEAD" | awk '
+            /^\+\+\+ / { file = substr($0, 7); next }
+            /^\+/ && file !~ ENVIRON["SKIP_FILES"] {
+              line = substr($0, 2)
+              while (match(line, /[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z][A-Za-z]+/)) {
+                email = substr(line, RSTART, RLENGTH)
+                if (tolower(email) !~ ENVIRON["ALLOWED_FILE_EMAILS"]) print file "\t" email
+                line = substr(line, RSTART + RLENGTH)
+              }
+            }')
+          if [ -n "$found" ]; then
+            echo "::error::This PR adds email addresses to files. Remove them or use a placeholder (name@example.com)."
+            # Print only the files and a masked address, since this log may be public.
+            echo "$found" | awk -F'\t' '{ split($2, p, "@"); print $1 ": " substr(p[1], 1, 1) "***@" p[2] }' | sort -u
+            exit 1
+          fi
+          echo "No real email addresses added."
+
+      - name: Secrets (gitleaks)
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          curl -sSfL -o gitleaks.tgz "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          echo "${GITLEAKS_SHA256}  gitleaks.tgz" | sha256sum -c -
+          tar -xzf gitleaks.tgz -C "$RUNNER_TEMP" gitleaks
+          rm gitleaks.tgz
+          # --redact keeps any secret it finds out of this log.
+          "$RUNNER_TEMP/gitleaks" git . --log-opts="$BASE..$HEAD" --redact --no-banner

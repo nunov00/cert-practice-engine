@@ -4,7 +4,7 @@
 - **Purpose:** One engine serving self-study practice for many multiple-choice certification exams, each defined by a recipe, with original, independently checked questions.
 - **Owner:** Nuno Vitoria (`nunov00`)
 - **Manager:** Claude (the project's coordinator in Claude Projects); Codex also works in this repo under the same rules
-- **Governance template:** v0.2 (from `nunov00/project-governance` at f22bfe9, retrofitted 2026-10-17)
+- **Governance template:** v0.3 (from `nunov00/project-governance` at f22bfe9, retrofitted 2026-10-17)
 - **Stage:** Pilot
 - **Governance profile:** Lightweight
 - **Technology:** Next.js on Cloudflare Workers via `@opennextjs/cloudflare`, Cloudflare D1; TypeScript content CLI in `tools/`; YAML recipes and question bank (proposal 0001, decisions 0001–0004 in `docs/decisions/`)
