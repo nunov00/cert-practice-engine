@@ -70,6 +70,9 @@ jobs:
           # name list, so empty and binary files count) and the commit message. Merges with
           # more than two parents are refused, since --remerge-diff skips them. Prints
           # "<commit>: <where> (<count>)" only, with the commit taken from git rev-list.
+          # --no-renames everywhere: a renamed file is scanned as new content, so moving an
+          # address out of a skipped lockfile is caught. Any git error fails the check.
+          set -o pipefail
           scan='
             function scan(text, where,   e) {
               while (match(text, /[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z][A-Za-z]+/)) {
@@ -90,10 +93,10 @@ jobs:
           added_names() {
             c=$1; shift
             if [ $# = 0 ]; then
-              git diff-tree -r --root --no-commit-id --name-only --no-renames --diff-filter=A -z "$c" | tr '\0' '\n'
+              git diff-tree -r --root --no-commit-id --name-only --no-renames --diff-filter=A -z "$c" 2>/dev/null | tr '\0' '\n'
             else
               for p in "$@"; do
-                git diff-tree -r --name-only --no-renames --diff-filter=A -z "$p" "$c" | tr '\0' '\n' | sort -u
+                git diff-tree -r --name-only --no-renames --diff-filter=A -z "$p" "$c" 2>/dev/null | tr '\0' '\n' | sort -u || return 1
               done | sort | uniq -c | awk -v n=$# '{ c = $1; sub(/^ *[0-9]+ /, ""); if (c == n) print }'
             fi
           }
@@ -106,17 +109,22 @@ jobs:
             found=1
             echo "$2" | sed "s/^/$1: /"
           }
-          for c in $(git rev-list "$BASE..$HEAD"); do
+          commits=$(git rev-list "$BASE..$HEAD")
+          for c in $commits; do
             short=$(git rev-parse --short "$c")
-            set -- $(git rev-list --parents -n 1 "$c"); shift
+            parents=$(git rev-list --parents -n 1 "$c")
+            set -- $parents; shift
             if [ $# -gt 2 ]; then
               report "$short" "merge with more than two parents, not scanned (merge one branch at a time)"
               continue
             fi
-            for out in \
-              "$(git show --format= -p --unified=0 --remerge-diff --no-color --no-ext-diff "$c" | awk -v mode=diff "$scan")" \
-              "$(added_names "$c" "$@" | awk -v mode=names "$scan")" \
-              "$(git log -1 --format=%B "$c" | awk -v mode=message "$scan")"; do
+            # Each result is assigned on its own, so a failing git command fails the check. Git's
+            # own errors are silenced because they can name paths.
+            diff=$(git show --format= -p --unified=0 --remerge-diff --no-renames --no-color --no-ext-diff "$c" 2>/dev/null | awk -v mode=diff "$scan") \
+              && names=$(added_names "$c" "$@" | awk -v mode=names "$scan") \
+              && msg=$(git log -1 --format=%B "$c" 2>/dev/null | awk -v mode=message "$scan") \
+              || { report "$short" "git error, commit not scanned"; continue; }
+            for out in "$diff" "$names" "$msg"; do
               [ -z "$out" ] || report "$short" "$out"
             done
           done
