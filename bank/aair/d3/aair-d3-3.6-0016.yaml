@@ -7,7 +7,7 @@ stem: A bank's AI assistant answers from a vector index of product documents. In
 options:
   A: Rebuild the index at the recovery site after each failover
   B: Set a recovery point objective for the index
-  C: Keep the assistant switched off during any failover
+  C: Raise the recovery tier of the assistant's application servers
   D: Add the index to the scope of the annual recovery test
 answer: B
 explanation:
@@ -16,7 +16,7 @@ explanation:
   why_not:
     A: A rebuild after failover takes time, which can break the recovery time objective, and leaves the assistant
       stale until it finishes.
-    C: Switching it off avoids wrong answers but gives up availability the business expects.
+    C: A higher recovery tier speeds restart, but the recovery time was already met; the failure was stale data.
     D: The index was already tested, which is how the problem was found; testing again does not fix it.
 status: published
 outline_version: '2026-04-15'

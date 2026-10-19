@@ -1,6 +1,6 @@
 id: aaism-d2-2.3-0017
 subdomain: '2.3'
-difficulty: medium
+difficulty: easy
 stem: A firm is ending its contract with an AI transcription vendor. The contract requires deletion of 'customer
   data' at exit. The vendor fine-tuned a dedicated speech model on the firm's call recordings. What should the security
   manager do before exit?

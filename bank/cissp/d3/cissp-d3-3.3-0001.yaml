@@ -16,8 +16,8 @@ explanation:
   why_not:
     B: Antivirus is agent software on the device, which the vendor has said ends support. An exception does not
       change that consequence.
-    C: Allowlisting also needs software on the PLCs and is mainly preventive, so it fails both the vendor constraint
-      and the detection requirement.
+    C: Allowlisting also means installing software on the PLCs, which ends vendor support, and it mainly blocks unapproved
+      code rather than detecting malware already active on the network.
     D: Offline scans need the devices taken out of service, which a network with no maintenance windows cannot allow.
 status: published
 outline_version: '2024-04-15'

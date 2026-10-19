@@ -1,6 +1,6 @@
 id: cissp-d7-7.1-0001
 subdomain: '7.1'
-difficulty: hard
+difficulty: medium
 stem: During an internal fraud investigation, an investigator must collect evidence from a suspect's laptop, which
   is powered on. Its full-disk encryption keys are escrowed centrally and have been verified. What should the investigator
   do FIRST?
