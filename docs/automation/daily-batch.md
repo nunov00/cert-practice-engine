@@ -46,12 +46,22 @@ published questions than the target.
    `recipes/<exam>/calibration.yaml`. Spread them over the domains furthest
    below their weighted share of the target (largest `gap` first), so empty
    domains (CISSP D2-D8 today) fill first. Run ID:
-   `<YYYY-MM-DD>-daily-<exam>`. Never more than 50 in total per night.
+   `<YYYY-MM-DD>-daily-<exam>`. Never more than 50 in total per night,
+   top-ups in step 5 aside. **Aim for at least 40% hard** in each exam's
+   share, above the profile's `hard_share_min` (30%), because the checker
+   downgrades labels that turn out easier than written.
 5. **Check them independently** per [`quality-check.md`](quality-check.md) and
    the checker brief: a separate worker with no access to the writer's
    reasoning runs `pnpm calibration packets` and `pnpm calibration record`.
    Rewrite or drop what fails; 2-3 rounds are normal. A batch with fewer
    survivors than planned is fine; do not pad it.
+   **Hard top-up** (owner, 2026-10-19): if an exam's checked share of `hard`
+   questions is below its profile's `hard_share_min`, write new hard
+   questions for that exam to replace the downgraded ones (up to 10 extra per
+   night across all exams) and send them through the same independent check.
+   If the share is still short, drop that exam's easiest questions until it
+   meets the target. CI fails a batch of 10 or more changed questions per exam
+   below the target, so never relabel a question `hard` to pass it.
 6. **Refresh the exam candidate queue** (owner, 2026-10-18) in
    [`../exam-candidates.md`](../exam-candidates.md), lightly: re-check the one
    row with the oldest Checked date (or a *to verify* row first) against the
