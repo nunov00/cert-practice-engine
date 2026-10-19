@@ -1,6 +1,6 @@
 id: cissp-d3-3.3-0001
 subdomain: '3.3'
-difficulty: medium
+difficulty: easy
 stem: A factory's control network must run around the clock with no maintenance windows, and the PLC vendor withdraws
   support if any agent software is installed on its devices. The security requirement is to detect malware on that
   network. Which control BEST meets it?

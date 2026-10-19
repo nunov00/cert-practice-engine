@@ -11,8 +11,10 @@ options:
   D: Switch the second factor to SMS one-time codes
 answer: B
 explanation:
-  why_correct: Number matching makes the user type a code shown on the sign-in screen, so a person who is not signing
-    in cannot approve by tapping. It defeats push fatigue on the phones staff already have.
+  why_correct: 'Number matching makes the user type a code shown on the sign-in screen, so a person who is not signing
+    in can no longer approve with a blind tap. It sharply reduces push fatigue attacks on the phones staff already
+    have, though it is not phishing-resistant: an attacker who talks a user into entering their number can still
+    succeed.'
   why_not:
     A: A shorter timeout limits each request but attackers can simply send more. Staff can still approve with one
       tap.

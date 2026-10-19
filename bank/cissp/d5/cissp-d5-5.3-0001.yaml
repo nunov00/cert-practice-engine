@@ -12,8 +12,9 @@ options:
 answer: C
 explanation:
   why_correct: Disabling the IdP account stops new sign-ins, but the SaaS tool keeps its own account and session
-    alive. Automated deprovisioning (for example SCIM) removes the account and ends access in the service when the
-    person leaves.
+    alive. Automated deprovisioning (for example SCIM) deactivates the account in the service when the person leaves;
+    the team should also confirm that the service then revokes or rejects existing sessions, since that behaviour
+    depends on the provider and its settings.
   why_not:
     A: Assertion validity only covers the sign-in exchange. Once the service has created its own session, a shorter
       assertion lifetime does not end it.
