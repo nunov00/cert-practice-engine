@@ -132,9 +132,9 @@ export function checkChangedBatch(changed: Loaded<Question>[], profiles: Map<str
     }
     if (s.hardShare < t.hard_share_min) {
       issues.push({
-        level: "warning",
+        level: s.questions >= MIN_BATCH_FOR_RATE ? "error" : "warning",
         file,
-        message: `${pct(s.hardShare)} of changed questions are hard, profile asks for at least ${pct(t.hard_share_min)}; when unsure, make it harder`,
+        message: `${pct(s.hardShare)} of changed questions are hard, profile asks for at least ${pct(t.hard_share_min)}; write hard replacements for any the checker downgraded`,
       });
     }
   }
