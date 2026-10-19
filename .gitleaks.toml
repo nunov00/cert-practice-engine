@@ -2,8 +2,15 @@
 [extend]
 useDefault = true
 
-[allowlist]
-# localStorage key names in app/src/lib/progress.ts, e.g. "cpe.continue-hidden.v1";
-# gitleaks' generic-api-key rule mistakes them for keys.
-description = "localStorage key names"
-regexes = ['''^cpe\.[a-z0-9.-]+$''']
+# gitleaks' generic-api-key rule mistakes localStorage key names for keys. The exception
+# applies only to this one file AND to a `const ..._KEY = "cpe.<name>.v<n>";` line, so any
+# other secret, in this file or elsewhere, is still reported.
+[[rules]]
+id = "generic-api-key"
+
+[[rules.allowlists]]
+description = "localStorage key names in the progress store"
+condition = "AND"
+paths = ['''^app/src/lib/progress\.ts$''']
+regexTarget = "line"
+regexes = ['''^\s*const [A-Z_]*KEY = "cpe\.[a-z0-9-]+\.v[0-9]+";\s*$''']

@@ -1,8 +1,13 @@
 # Privacy check: keeps personal data and secrets out of the repository.
-# Runs on every PR in every profile (GOVERNANCE.md → Personal data and secrets).
-# Fails when a PR commit is authored or committed with a personal email, when the
-# PR adds a real email address to a file, or when gitleaks finds a secret in the
-# PR's commits. A few seconds of Actions time per PR; no third-party actions.
+# Runs on every PR in every profile (personal-data rule in AGENTS.md; GOVERNANCE.md →
+# Personal data and secrets where the repository has it). It fails when a PR commit is
+# authored or committed with a personal email, when any PR commit adds a real email
+# address to a file, a file name or a commit message, or when gitleaks finds a secret in
+# the PR's commits. It checks every commit, not just the final diff, because history
+# keeps what a later commit removes. Its log names commits and counts only, never paths
+# or addresses, because the log may be public. A heuristic, not proof: it does not cover
+# PR or issue text, binary files or every kind of personal data. A few seconds of Actions
+# time per PR; no third-party actions.
 name: Privacy check
 
 on:
@@ -19,7 +24,7 @@ env:
   # Commit emails allowed on PR commits (extended regex). Add an agent's noreply
   # address here if it commits under its own identity.
   ALLOWED_COMMIT_EMAILS: '@users\.noreply\.github\.com$|^noreply@github\.com$|^noreply@anthropic\.com$|^noreply@openai\.com$'
-  # Email domains allowed inside files: placeholders and noreply addresses.
+  # Email addresses allowed in files and commit messages: placeholders and noreply addresses.
   ALLOWED_FILE_EMAILS: '@(example\.(com|org|net)|[a-z0-9.-]+\.(example|invalid|test|localhost)|users\.noreply\.github\.com|noreply\.github\.com)$|^noreply@'
   # Generated files that carry third-party package metadata.
   SKIP_FILES: '(^|/)(package-lock\.json|pnpm-lock\.yaml|yarn\.lock|uv\.lock|poetry\.lock)$'
@@ -41,38 +46,52 @@ jobs:
           BASE: ${{ github.event.pull_request.base.sha }}
           HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
-          bad=$(git log --format='%ae%n%ce' "$BASE..$HEAD" | sort -u | grep -Ev "$ALLOWED_COMMIT_EMAILS" || true)
+          bad=$(git log --format='%h %ae %ce' "$BASE..$HEAD" \
+            | awk '$2 !~ ENVIRON["ALLOWED_COMMIT_EMAILS"] || $3 !~ ENVIRON["ALLOWED_COMMIT_EMAILS"] { print $1 }')
           if [ -n "$bad" ]; then
-            echo "::error::$(echo "$bad" | wc -l) commit email(s) in this PR are not a noreply address."
-            echo "Set your Git email to your GitHub noreply address (GitHub → Settings → Emails),"
-            echo "then rewrite this PR's commits, e.g. git rebase -r $BASE --exec 'git commit --amend --no-edit --reset-author'."
+            echo "::error::Commit(s) with an author or committer email that is not a noreply address: $(echo $bad)"
+            echo "Configure your GitHub noreply address (GitHub → Settings → Emails) before committing."
+            echo "To fix commits already pushed, recreate them with that address on a branch you own;"
+            echo "follow the repository's own rules where they restrict rewriting (for example automated lesson branches)."
             echo "The addresses are not printed here because this log may be public."
             exit 1
           fi
           echo "All commit emails are noreply addresses."
 
-      - name: Email addresses added to files
+      - name: Email addresses in PR commits
         env:
           BASE: ${{ github.event.pull_request.base.sha }}
           HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
-          found=$(git diff --unified=0 --no-color "$BASE...$HEAD" | awk '
-            /^\+\+\+ / { file = substr($0, 7); next }
-            /^\+/ && file !~ ENVIRON["SKIP_FILES"] {
-              line = substr($0, 2)
-              while (match(line, /[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z][A-Za-z]+/)) {
-                email = substr(line, RSTART, RLENGTH)
-                if (tolower(email) !~ ENVIRON["ALLOWED_FILE_EMAILS"]) print file "\t" email
-                line = substr(line, RSTART + RLENGTH)
+          # One diff per commit (an address added and later removed is still in history),
+          # plus file names and commit messages. Prints "<commit>: <count> in <where>" only.
+          { git log --no-merges --format='@@commit %h' -p --unified=0 --no-color --no-ext-diff "$BASE..$HEAD"
+            git log --no-merges --format='@@commit %h%n@@message%n%B' "$BASE..$HEAD"; } > "$RUNNER_TEMP/commits.txt"
+          awk '
+            function scan(text, where,   e) {
+              while (match(text, /[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z][A-Za-z]+/)) {
+                e = substr(text, RSTART, RLENGTH)
+                if (tolower(e) !~ ENVIRON["ALLOWED_FILE_EMAILS"]) bad[commit ": " where]++
+                text = substr(text, RSTART + RLENGTH)
               }
-            }')
-          if [ -n "$found" ]; then
-            echo "::error::This PR adds email addresses to files. Remove them or use a placeholder (name@example.com)."
-            # Print only the files and a masked address, since this log may be public.
-            echo "$found" | awk -F'\t' '{ split($2, p, "@"); print $1 ": " substr(p[1], 1, 1) "***@" p[2] }' | sort -u
+            }
+            /^@@commit / { commit = $2; mode = "diff"; next }
+            /^@@message$/ { mode = "message"; next }
+            mode == "message" { scan($0, "commit message"); next }
+            /^diff --git / { file = ""; next }
+            /^(rename to|copy to) / { scan($0, "file name"); next }
+            /^\+\+\+ / { file = substr($0, 5); sub(/^b\//, "", file); scan(file, "file name"); next }
+            /^\+/ && file != "" && file !~ ENVIRON["SKIP_FILES"] { scan(substr($0, 2), "added lines") }
+            END { for (k in bad) print k " (" bad[k] ")" }
+          ' "$RUNNER_TEMP/commits.txt" | sort > "$RUNNER_TEMP/found.txt"
+          rm "$RUNNER_TEMP/commits.txt"
+          if [ -s "$RUNNER_TEMP/found.txt" ]; then
+            echo "::error::PR commits add real email addresses. Remove them from every commit or use a placeholder (name@example.com)."
+            echo "Commit: where (count). Paths and addresses are not printed because this log may be public."
+            cat "$RUNNER_TEMP/found.txt"
             exit 1
           fi
-          echo "No real email addresses added."
+          echo "No real email addresses added in any PR commit."
 
       - name: Secrets (gitleaks)
         env:
