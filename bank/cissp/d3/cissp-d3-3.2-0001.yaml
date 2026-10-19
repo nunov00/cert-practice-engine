@@ -1,0 +1,31 @@
+id: cissp-d3-3.2-0001
+subdomain: '3.2'
+difficulty: easy
+stem: A defence contractor must stop analysts cleared for Secret from pasting Secret report content into Unclassified
+  documents, even though they are allowed to write Unclassified material. Which security model rule addresses this?
+options:
+  A: The simple security property
+  B: The simple integrity property
+  C: The star (*) property
+  D: The strong tranquility property
+answer: C
+explanation:
+  why_correct: 'In the Bell-LaPadula confidentiality model, the star property forbids a subject from writing to
+    a lower classification level (no write down). That is exactly the leak described: Secret content moving into
+    an Unclassified document.'
+  why_not:
+    A: The simple security property forbids reading up, to a higher level. These analysts are writing down, not
+      reading above their clearance.
+    B: The simple integrity property belongs to the Biba integrity model (no read down). It protects data integrity,
+      not confidentiality.
+    D: Strong tranquility means security labels do not change while the system runs. It does not by itself stop
+      writing to a lower level.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-cissp
+  checked_by: 2026-10-18-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

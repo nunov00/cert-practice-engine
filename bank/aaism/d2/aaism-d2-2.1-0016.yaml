@@ -1,0 +1,30 @@
+id: aaism-d2-2.1-0016
+subdomain: '2.1'
+difficulty: hard
+stem: Each of a firm's 25 AI writing tools has a residual risk within the threshold set for a single system. All
+  25 send drafts to the same external model provider, and a breach there would expose data from every tool. What
+  should the security manager do?
+options:
+  A: Assess the shared provider exposure as one risk
+  B: Re-rate each tool to reflect the shared provider
+  C: Lower the risk threshold that applies to writing tools
+  D: Require a second model provider for the writing tools
+answer: A
+explanation:
+  why_correct: Assessed one by one, each tool looks acceptable, but they share one point of failure. Assessing the
+    provider exposure as a single aggregated risk shows its true size, so it can be compared with appetite and treated
+    as a whole.
+  why_not:
+    B: Re-rating each tool still splits the same exposure into 25 pieces and can double count or understate it.
+    C: Changing the threshold for single systems does not capture the concentration across systems.
+    D: A second provider is one possible treatment, but choosing it before the combined risk is assessed skips the
+      decision on whether and how to treat it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  checked_by: 2026-10-18-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

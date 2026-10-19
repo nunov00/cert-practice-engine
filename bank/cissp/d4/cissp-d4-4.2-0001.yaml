@@ -1,0 +1,30 @@
+id: cissp-d4-4.2-0001
+subdomain: '4.2'
+difficulty: medium
+stem: A retailer's point-of-sale terminals in 200 stores connect to Wi-Fi using one WPA2-Personal passphrase. A
+  store manager who knew it has left the company. Which change BEST addresses the underlying weakness?
+options:
+  A: Rotate the shared passphrase across the stores each quarter
+  B: Give each store its own passphrase for its terminals
+  C: Move the terminals to WPA3-Personal with SAE
+  D: Use 802.1X with a certificate for each terminal
+answer: D
+explanation:
+  why_correct: The underlying weakness is a shared secret that many people know and that cannot be revoked for one
+    person or device. Enterprise (802.1X) authentication with per-terminal certificates removes the shared secret
+    and allows a single device to be revoked.
+  why_not:
+    A: Rotation shortens the exposure but keeps one secret known to many staff, so each departure recreates the
+      problem.
+    B: Per-store passphrases limit the blast radius but are still shared secrets known to store staff.
+    C: WPA3-Personal strengthens the handshake against offline guessing, but anyone who knows the passphrase can
+      still join.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-cissp
+  checked_by: 2026-10-18-daily-cissp-check
+  check_verdict: pass
+  options_only: obvious

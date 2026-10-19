@@ -1,0 +1,30 @@
+id: cissp-d2-2.2-0001
+subdomain: '2.2'
+difficulty: medium
+stem: A research lab ships encrypted backup drives to an offsite vault by courier, and delivery receipts always
+  match. An audit finds that one drive arrived with a broken tamper seal last month and nobody noticed. Which handling
+  requirement would BEST address this?
+options:
+  A: Record seal numbers at dispatch and verify them on receipt
+  B: Use a courier that offers live GPS tracking of each parcel
+  C: Move the drives to a stronger encryption algorithm
+  D: Have lab staff carry the drives to the vault in person
+answer: A
+explanation:
+  why_correct: 'The gap is in chain of custody: nobody checks the condition of the media when it changes hands.
+    Recording seal numbers at dispatch and checking them at the vault would have flagged the broken seal on arrival.'
+  why_not:
+    B: Tracking shows where a parcel is, not whether someone opened it. The receipts already showed the drive arrived.
+    C: The drives are already encrypted. Stronger encryption does not reveal that a drive was tampered with, which
+      is what went unnoticed.
+    D: Staff transport changes the carrier but adds no check of seal integrity, so the same tampering could still
+      go unnoticed.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-cissp
+  checked_by: 2026-10-18-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

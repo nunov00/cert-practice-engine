@@ -1,0 +1,30 @@
+id: aair-d1-1.4-0014
+subdomain: '1.4'
+difficulty: medium
+stem: A company's board will approve its first AI risk appetite statement next quarter. Several directors say they
+  lack the background to judge AI risks. What should the risk practitioner arrange FIRST?
+options:
+  A: Have the CRO present a draft appetite with proposed limits
+  B: Circulate a pre-read on general AI risk concepts and terms
+  C: Invite an external AI adviser to the approval meeting
+  D: Hold a briefing on the AI risks in the company's own uses
+answer: D
+explanation:
+  why_correct: Directors need to understand the risks they are setting appetite for before they decide. A briefing
+    on the risks in the company's actual AI uses builds that understanding in time and ties it to the decision.
+  why_not:
+    A: A draft appetite is a sound input to the approval, but directors who cannot judge AI risks would be approving
+      limits they cannot challenge.
+    B: A general pre-read helps with vocabulary but does not connect concepts to the company's own uses, which is
+      what the appetite must cover.
+    C: An adviser at the meeting helps on the day, but directors would meet the material for the first time when
+      they have to decide.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aair
+  checked_by: 2026-10-18-daily-aair-recheck
+  check_verdict: pass
+  options_only: not_obvious

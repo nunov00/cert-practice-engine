@@ -1,0 +1,33 @@
+id: cissp-d5-5.3-0001
+subdomain: '5.3'
+difficulty: hard
+stem: Employees sign in to a SaaS HR tool through SAML federation with the company's identity provider. Leavers'
+  IdP accounts are disabled on their last day, yet former staff can still reach the HR tool for days afterwards.
+  What is the BEST fix?
+options:
+  A: Shorten the assertion validity period at the IdP
+  B: Require MFA at the IdP for sign-in to the HR tool
+  C: Deprovision HR tool accounts through SCIM
+  D: Move the federation from SAML to OpenID Connect
+answer: C
+explanation:
+  why_correct: Disabling the IdP account stops new sign-ins, but the SaaS tool keeps its own account and session
+    alive. Automated deprovisioning (for example SCIM) deactivates the account in the service when the person leaves;
+    the team should also confirm that the service then revokes or rejects existing sessions, since that behaviour
+    depends on the provider and its settings.
+  why_not:
+    A: Assertion validity only covers the sign-in exchange. Once the service has created its own session, a shorter
+      assertion lifetime does not end it.
+    B: MFA strengthens sign-in, but the former staff are not signing in again; they are using sessions the service
+      already granted.
+    D: Changing the federation protocol does not change how the service handles its own accounts and sessions after
+      the IdP disables a user.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-cissp
+  checked_by: 2026-10-18-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious
