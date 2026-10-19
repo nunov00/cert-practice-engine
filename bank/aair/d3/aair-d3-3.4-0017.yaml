@@ -1,21 +1,24 @@
 id: aair-d3-3.4-0017
 subdomain: '3.4'
-difficulty: easy
-stem: A bank's customer chatbot answers questions about fees from retrieved documents. The risk team wants an indicator
-  that warns of rising wrong-answer risk BEFORE customers are harmed. Which indicator BEST fits?
+difficulty: medium
+stem: A bank's customer chatbot answers questions about fees from retrieved product documents. Fees change each
+  quarter, and last year's wrong answers all came from documents that product teams had not yet updated. Which leading
+  indicator BEST fits this risk?
 options:
-  A: Weekly share of answers with no supporting source
-  B: Weekly count of complaints about wrong chatbot answers
-  C: Monthly value of refunds paid for wrong chatbot answers
-  D: Quarterly count of incidents logged for wrong answers
-answer: A
+  A: Share of answers given with no retrieved source
+  B: Share of retrieved fee documents past review date
+  C: Share of questions users rephrase and ask again
+  D: Share of queries with low retrieval similarity scores
+answer: B
 explanation:
-  why_correct: Answers given without a retrieved source are more likely to be wrong, and their share can rise before
-    any customer acts on a bad answer. That makes it a leading indicator.
+  why_correct: The known cause of wrong answers is outdated fee documents. The share of retrieved documents past
+    their review date rises before customers act on wrong fees, and it measures that cause directly.
   why_not:
-    B: Complaints arrive after customers have been misled, so they lag the risk.
-    C: Refunds show losses that have already happened.
-    D: Incidents are recorded after harm, and a quarterly count reacts slowly.
+    A: Answers without a source signal a different failure; the bank's wrong answers came from sources that were
+      retrieved but out of date.
+    C: Rephrasing shows users are dissatisfied, but customers can accept a confident answer quoting an old fee without
+      asking again.
+    D: Low similarity flags poor matches, while an outdated fee document can match a question very well.
 status: draft
 outline_version: '2026-04-15'
 sample: false

@@ -1,24 +1,24 @@
 id: aair-d1-1.1-0014
 subdomain: '1.1'
 difficulty: medium
-stem: A logistics firm compares two designs for handling delivery exceptions. One AI assistant drafts rebookings
-  for staff to send; one AI agent rebooks directly. Both use the same model, accuracy and carrier APIs. Which factor
-  should MOST drive the difference in their risk ratings?
+stem: A logistics firm lets an AI agent rebook failed deliveries directly through carrier APIs, which cut handling
+  time from hours to minutes. Its errors are rare, but most of them move parcels to much costlier carriers. The
+  firm wants to keep the speed. Which control BEST fits?
 options:
-  A: The share of exceptions each design resolves without error
-  B: Whether a person reviews actions before they take effect
-  C: The volume of carrier data each design is able to read
-  D: The number of carrier systems each design connects to
-answer: B
+  A: Cap the cost of rebookings the agent makes alone
+  B: Have staff approve each rebooking before it is sent
+  C: Review a daily sample of the agent's rebookings
+  D: Retrain the agent on more past exception cases
+answer: A
 explanation:
-  why_correct: With the same model, accuracy and connections, the designs differ only in autonomy. The assistant's
-    errors can be caught before they reach carriers and customers; the agent's take effect at once, which raises
-    impact.
+  why_correct: The harm comes from a known kind of error with a measurable impact. A cost cap lets the agent act
+    alone on ordinary rebookings and sends only the expensive ones to a person, which limits impact while keeping
+    most of the speed.
   why_not:
-    A: Both designs use the same model with the same accuracy, so their error rates do not differ.
-    C: Both use the same carrier APIs, so the data they can read is the same.
-    D: The connections are identical. Their number matters for exposure in general, but it does not separate these
-      two designs.
+    B: Approving each rebooking would catch the errors but turns the agent back into an assistant and gives up the
+      speed the firm wants to keep.
+    C: Sampling finds costly rebookings after they have been made; it limits nothing in advance.
+    D: Retraining may reduce errors, but some will remain and nothing would limit their cost.
 status: draft
 outline_version: '2026-04-15'
 sample: false

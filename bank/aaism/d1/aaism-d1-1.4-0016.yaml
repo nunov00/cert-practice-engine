@@ -7,18 +7,18 @@ stem: A three-person AI security team must support 60 AI projects, and there is 
 options:
   A: Train a security champion in each project team
   B: Embed baseline controls in the approved platforms
-  C: Review projects in the order they are submitted
-  D: Shorten the security checklist for internal tools
+  C: Triage by risk and review only the high-risk tier
+  D: Use self-assessments for the low-risk projects
 answer: B
 explanation:
   why_correct: Because most projects run on two platforms, controls built into those platforms protect every low-risk
     project at once, freeing the small team to review the few high-risk projects in depth.
   why_not:
-    A: Champions can help, but training and supporting 60 of them is a large load for three people, and it still
-      leaves controls to each team.
-    C: First-come order ignores risk and lets high-risk projects wait behind low-risk ones.
-    D: A shorter checklist reduces effort per review but still spends the team's time on each low-risk project and
-      weakens coverage.
+    A: Champions can help, but training and supporting 60 of them is a large load for three people, and controls
+      would still vary by team.
+    C: Triage focuses the team well, but on its own it leaves the many low-risk projects with no controls at all.
+    D: Self-assessment gives some coverage, but it relies on each team's judgment and still needs the security team
+      to read and follow up the results.
 status: draft
 outline_version: '2025-08-19'
 sample: false

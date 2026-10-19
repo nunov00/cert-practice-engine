@@ -1,13 +1,13 @@
 id: aaism-d3-3.4-0016
 subdomain: '3.4'
-difficulty: hard
+difficulty: medium
 stem: Finance staff at a manufacturer have received calls using cloned executive voices to request urgent supplier
-  payments. A deepfake voice detector piloted last month flagged 30% of genuine calls. Which control BEST reduces
-  the fraud risk?
+  payments. In one case the clerk and the approving manager were both called by the same cloned voice. A deepfake
+  detector piloted last month flagged 30% of genuine calls. Which control BEST reduces the fraud risk?
 options:
   A: Deploy the voice detector on the finance phone lines
   B: Run awareness sessions on voice cloning for finance staff
-  C: Publish executive videos with signed content credentials
+  C: Require dual approval for urgent supplier payments
   D: Verify payment requests through a known callback number
 answer: D
 explanation:
@@ -18,8 +18,7 @@ explanation:
       as cloning improves.
     B: Awareness helps staff stay alert, but good clones are hard to recognise by ear, so it cannot be the main
       control.
-    C: Content credentials help prove which videos are authentic. They do not stop a phone call that imitates a
-      voice.
+    C: Dual approval is sound, but both approvers can be deceived by the same voice, as already happened here.
 status: draft
 outline_version: '2025-08-19'
 sample: false

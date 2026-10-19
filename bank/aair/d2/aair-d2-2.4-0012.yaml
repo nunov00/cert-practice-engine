@@ -1,23 +1,25 @@
 id: aair-d2-2.4-0012
 subdomain: '2.4'
-difficulty: easy
+difficulty: medium
 stem: Five teams at a bank reuse the same customer dataset. One team found, after deployment, that the dataset excludes
   customers who opted out of marketing, which skewed its credit model. Which data management practice would BEST
   prevent this?
 options:
   A: Document each dataset's scope, exclusions and uses
-  B: Require each team to profile the data before each use
-  C: Restrict each dataset to the team that collected it
-  D: Re-collect the dataset with opted-out customers included
+  B: Profile each dataset's distributions before reuse
+  C: Keep lineage records linking datasets to models
+  D: Set completeness rules for each field in the dataset
 answer: A
 explanation:
-  why_correct: Teams reusing a dataset need to know how it was built. Dataset documentation recording scope, exclusions
-    and permitted uses tells every team about limits such as missing opted-out customers before they rely on it.
+  why_correct: Teams reusing a dataset need to know how it was built. Documentation recording its scope, exclusions
+    and permitted uses tells each team about limits such as the missing opted-out customers before they rely on
+    it.
   why_not:
-    B: Profiling shows the data's distributions but may not reveal that a group of customers is missing entirely.
-    C: Restricting reuse avoids the problem by giving up the value of shared data rather than managing it.
-    D: Re-collecting may not be lawful for opted-out customers, and the next dataset would have the same documentation
-      gap.
+    B: Profiling shows the distributions of the records present; it does not reveal that a whole group of customers
+      was never included.
+    C: Lineage shows which models used the dataset, which helps after the fact, but not what the dataset leaves
+      out.
+    D: Field completeness rules check for missing values in records that exist, not for customers who are absent.
 status: draft
 outline_version: '2026-04-15'
 sample: false

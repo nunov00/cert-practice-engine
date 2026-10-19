@@ -1,6 +1,6 @@
 id: aaism-d2-2.1-0017
 subdomain: '2.1'
-difficulty: medium
+difficulty: hard
 stem: A firm's threshold says a chatbot harmful-reply rate above 0.1% triggers escalation. Compliance reviews a
   random sample of 200 chats each week, out of about 50,000. What BEST improves the threshold's reliability?
 options:
@@ -25,3 +25,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-aaism
   check_verdict: pending
+  options_only: not_obvious
