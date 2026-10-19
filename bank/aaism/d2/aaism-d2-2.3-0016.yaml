@@ -18,11 +18,12 @@ explanation:
     B: A contract clause limits permitted use, not what an attacker could do with a stolen token holding full mailbox
       rights.
     C: A pilot reduces how many mailboxes are exposed but still grants far more access than the tool needs.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-aaism
-  check_verdict: pending
+  checked_by: 2026-10-18-daily-aaism-check
+  check_verdict: pass
   options_only: not_obvious

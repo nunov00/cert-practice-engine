@@ -19,11 +19,12 @@ explanation:
       never checks who the server is.'
     D: Segmentation reduces who can attempt the attack but leaves the missing validation in place for anyone who
       gets onto that segment.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-10-18-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

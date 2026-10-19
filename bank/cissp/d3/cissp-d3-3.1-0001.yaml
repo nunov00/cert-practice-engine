@@ -20,11 +20,12 @@ explanation:
       behaviour of the services when a dependency fails.
     C: The fallback adds a little complexity, but complexity is not what creates the exposure; the permissive failure
       state is.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-10-18-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

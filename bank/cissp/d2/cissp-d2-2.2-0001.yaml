@@ -19,11 +19,12 @@ explanation:
       is what went unnoticed.
     D: Staff transport changes the carrier but adds no check of seal integrity, so the same tampering could still
       go unnoticed.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-10-18-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

@@ -6,22 +6,24 @@ stem: A regional AI regulation requires deployers of high-risk systems to hold t
   30 days, and the bank holds no copy. What should the risk practitioner recommend?
 options:
   A: Ask the vendor to keep the bank's logs for six months
-  B: Export the logs each month to the bank's own archive
+  B: Export the logs each week to the bank's own archive
   C: Record the gap as a vendor risk in the bank's register
   D: Plan to replace the tool at the next contract renewal
 answer: B
 explanation:
-  why_correct: The rule puts the duty on the bank as deployer to hold the logs itself. A regular export into the
-    bank's own archive meets that duty now, with the tool unchanged.
+  why_correct: The rule puts the duty on the bank as deployer to hold the logs itself. A weekly export, well inside
+    the vendor's 30-day window, into the bank's own archive meets that duty now, with the tool unchanged.
   why_not:
     A: Longer vendor retention keeps the logs available, but they would still be held by the vendor, not by the
       bank as the rule requires.
     C: Recording the gap is useful, but it leaves the bank in breach of a legal requirement.
     D: Waiting for renewal leaves the bank non-compliant in the meantime, when an export could close the gap sooner.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-aair
-  check_verdict: pending
+  checked_by: 2026-10-18-daily-aair-recheck
+  check_verdict: pass
+  options_only: not_obvious

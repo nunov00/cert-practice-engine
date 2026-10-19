@@ -18,11 +18,12 @@ explanation:
     B: One hit in 200 chats would be noisy and would replace the agreed threshold with a different rule.
     C: A larger sample helps but still expects only about one harmful reply a week, too few to measure a 0.1% rate
       with confidence.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-aaism
-  check_verdict: pending
+  checked_by: 2026-10-18-daily-aaism-check
+  check_verdict: pass
   options_only: not_obvious

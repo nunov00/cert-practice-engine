@@ -18,11 +18,12 @@ explanation:
     B: A higher threshold on a contaminated test set measures memory, not detection.
     C: Retraining fixes this version, but without a protected test set the next data collection could contaminate
       it again.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-aaism
-  check_verdict: pending
+  checked_by: 2026-10-18-daily-aaism-check
+  check_verdict: pass
   options_only: not_obvious

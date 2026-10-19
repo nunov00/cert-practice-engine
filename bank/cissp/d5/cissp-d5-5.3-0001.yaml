@@ -21,11 +21,12 @@ explanation:
       already granted.
     D: Changing the federation protocol does not change how the service handles its own accounts and sessions after
       the IdP disables a user.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-10-18-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

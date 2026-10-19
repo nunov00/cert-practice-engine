@@ -19,11 +19,12 @@ explanation:
       the bank decided it should.
     B: Encryption protects the data at rest but does not stop it being kept beyond its retention period.
     C: Access limits are good practice, but the data would still outlive the schedule that governs its source.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-aaism
-  check_verdict: pending
+  checked_by: 2026-10-18-daily-aaism-check
+  check_verdict: pass
   options_only: not_obvious
