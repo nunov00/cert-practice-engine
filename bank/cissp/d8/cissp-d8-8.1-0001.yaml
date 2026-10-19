@@ -18,10 +18,12 @@ explanation:
     B: Quarterly testing finds issues even later and on a slower cycle than the sprints.
     C: Earlier champion reviews help, but a champion with a few hours a week cannot review each design; making it
       part of the team's backlog work scales better.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-10-18-daily-cissp-recheck
+  check_verdict: pass
+  options_only: not_obvious

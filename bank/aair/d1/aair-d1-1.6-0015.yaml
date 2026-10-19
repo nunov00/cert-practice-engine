@@ -17,11 +17,12 @@ explanation:
     B: Rewriting removes much of the efficiency gain and still hides the AI's role in producing the content.
     C: A general page is useful, but most readers of a given report will never see it.
     D: Crediting the checking editor alone implies a person wrote the report, which deepens the transparency problem.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-aair
-  check_verdict: pending
+  checked_by: 2026-10-18-daily-aair-check
+  check_verdict: pass
   options_only: not_obvious

@@ -18,11 +18,12 @@ explanation:
     C: Team-run logging depends on each team doing it consistently and does nothing about the keys.
     D: Provider controls limit how providers use data but do not show the insurer what is being sent or protect
       the keys.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-aaism
-  check_verdict: pending
+  checked_by: 2026-10-18-daily-aaism-check
+  check_verdict: pass
   options_only: not_obvious

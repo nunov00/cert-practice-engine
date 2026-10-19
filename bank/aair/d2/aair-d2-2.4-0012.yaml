@@ -15,15 +15,17 @@ explanation:
     and permitted uses tells each team about limits such as the missing opted-out customers before they rely on
     it.
   why_not:
-    B: Profiling shows the distributions of the records present; it does not reveal that a whole group of customers
-      was never included.
+    B: Profiling shows the distributions of the records present; unless the team already knows to look for opted-out
+      customers, it will not reveal that the group was never included.
     C: Lineage shows which models used the dataset, which helps after the fact, but not what the dataset leaves
       out.
     D: Field completeness rules check for missing values in records that exist, not for customers who are absent.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-aair
-  check_verdict: pending
+  checked_by: 2026-10-18-daily-aair-recheck
+  check_verdict: pass
+  options_only: not_obvious

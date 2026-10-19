@@ -19,10 +19,12 @@ explanation:
     C: Triage focuses the team well, but on its own it leaves the many low-risk projects with no controls at all.
     D: Self-assessment gives some coverage, but it relies on each team's judgment and still needs the security team
       to read and follow up the results.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-aaism
-  check_verdict: pending
+  checked_by: 2026-10-18-daily-aaism-recheck
+  check_verdict: pass
+  options_only: not_obvious

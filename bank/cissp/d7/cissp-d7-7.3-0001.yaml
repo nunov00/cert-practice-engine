@@ -18,11 +18,12 @@ explanation:
     A: Scanning measures drift but does not stop it or carry fixes into the baseline.
     B: Fewer admins reduces who can change servers, but the lead would still change live servers outside the baseline.
     D: The tickets are already logged. More review of them does not move the fixes into the baseline.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-10-18-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

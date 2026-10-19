@@ -21,10 +21,12 @@ explanation:
       the impact for anyone who handles the data later.
     D: 'Removing names does not make this data anonymous: with dates and postcodes the records can still be linked
       to patients, so the lower rating understates the impact.'
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-10-18-daily-cissp-recheck
+  check_verdict: pass
+  options_only: not_obvious
