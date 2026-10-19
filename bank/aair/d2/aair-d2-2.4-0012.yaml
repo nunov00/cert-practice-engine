@@ -1,0 +1,31 @@
+id: aair-d2-2.4-0012
+subdomain: '2.4'
+difficulty: medium
+stem: Five teams at a bank reuse the same customer dataset. One team found, after deployment, that the dataset excludes
+  customers who opted out of marketing, which skewed its credit model. Which data management practice would BEST
+  prevent this?
+options:
+  A: Document each dataset's scope, exclusions and uses
+  B: Profile each dataset's distributions before reuse
+  C: Keep lineage records linking datasets to models
+  D: Set completeness rules for each field in the dataset
+answer: A
+explanation:
+  why_correct: Teams reusing a dataset need to know how it was built. Documentation recording its scope, exclusions
+    and permitted uses tells each team about limits such as the missing opted-out customers before they rely on
+    it.
+  why_not:
+    B: Profiling shows the distributions of the records present; unless the team already knows to look for opted-out
+      customers, it will not reveal that the group was never included.
+    C: Lineage can trace how a dataset was selected and filtered, but on its own it does not give each team reusing
+      the data a clear statement of which customers are excluded and what uses are permitted.
+    D: Field completeness rules check for missing values in records that exist, not for customers who are absent.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aair
+  checked_by: 2026-10-18-daily-aair-recheck
+  check_verdict: pass
+  options_only: not_obvious

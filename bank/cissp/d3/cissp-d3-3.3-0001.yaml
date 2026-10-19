@@ -1,0 +1,30 @@
+id: cissp-d3-3.3-0001
+subdomain: '3.3'
+difficulty: easy
+stem: A factory's control network must run around the clock with no maintenance windows, and the PLC vendor withdraws
+  support if any agent software is installed on its devices. The security requirement is to detect malware on that
+  network. Which control BEST meets it?
+options:
+  A: Passive monitoring from a mirrored switch port
+  B: Host antivirus approved as a one-off vendor exception
+  C: Application allowlisting installed on each PLC
+  D: Offline malware scans of the PLCs each month
+answer: A
+explanation:
+  why_correct: Passive monitoring sees traffic from a mirrored port without touching the devices or interrupting
+    operations, so it detects malware activity while respecting both constraints.
+  why_not:
+    B: Antivirus is agent software on the device, which the vendor has said ends support. An exception does not
+      change that consequence.
+    C: Allowlisting also means installing software on the PLCs, which ends vendor support, and it mainly blocks unapproved
+      code rather than detecting malware already active on the network.
+    D: Offline scans need the devices taken out of service, which a network with no maintenance windows cannot allow.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-cissp
+  checked_by: 2026-10-18-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

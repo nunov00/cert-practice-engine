@@ -1,0 +1,33 @@
+id: cissp-d2-2.1-0001
+subdomain: '2.1'
+difficulty: hard
+stem: A hospital's classification levels, in rising order, are Public, Internal, Confidential and Restricted. Researchers
+  build a dataset of visit dates, postcodes and diagnosis codes with names removed. Each field on its own is rated
+  Internal. Policy rates de-identified health data Confidential and re-identifiable health data Restricted. How
+  should the dataset be classified?
+options:
+  A: Internal, the highest rating of any field it contains
+  B: Restricted, the rating for re-identifiable health data
+  C: Internal, with access limited to the research team
+  D: Confidential, the rating for de-identified health data
+answer: B
+explanation:
+  why_correct: Classification follows the impact of disclosing the asset as it is. Dates, postcodes and diagnoses
+    together can re-identify patients, so the combined dataset carries the impact of a health record leak, far higher
+    than any field alone (aggregation).
+  why_not:
+    A: Taking the highest single-field rating ignores aggregation. The combination creates a disclosure impact that
+      no field has on its own.
+    C: Limiting access is a handling control. It does not change the classification, and the label would still understate
+      the impact for anyone who handles the data later.
+    D: 'Removing names does not make this data anonymous: with dates and postcodes the records can still be linked
+      to patients, so the lower rating understates the impact.'
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-cissp
+  checked_by: 2026-10-18-daily-cissp-recheck
+  check_verdict: pass
+  options_only: not_obvious
