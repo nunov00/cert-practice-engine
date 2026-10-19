@@ -64,10 +64,12 @@ jobs:
           HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           # Each commit is scanned on its own (an address added and later removed is still in
-          # history), merges included: --remerge-diff shows only what a merge itself added.
-          # Diffs and commit messages go through separate awk runs with no marker lines, so a
-          # message cannot pose as parser input. Prints "<commit>: <where> (<count>)" only,
-          # with the commit taken from git rev-list.
+          # history). Three separate awk runs with no marker lines, so no input can pose as
+          # parser input: added lines (--remerge-diff, so a merge shows only what it added
+          # itself), file names the commit adds (absent from every parent, taken from git's
+          # name list, so empty and binary files count) and the commit message. Merges with
+          # more than two parents are refused, since --remerge-diff skips them. Prints
+          # "<commit>: <where> (<count>)" only, with the commit taken from git rev-list.
           scan='
             function scan(text, where,   e) {
               while (match(text, /[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z][A-Za-z]+/)) {
@@ -76,28 +78,46 @@ jobs:
                 text = substr(text, RSTART + RLENGTH)
               }
             }
-            msg { scan($0, "commit message"); next }
+            mode == "message" { scan($0, "commit message"); next }
+            mode == "names" { scan($0, "file name"); next }
             /^diff / { hdr = 1; file = ""; next }
             hdr && /^@@/ { hdr = 0; next }
-            hdr && /^(rename to|copy to) / { scan($0, "file name"); next }
-            hdr && /^Binary files / { sub(/^.* and /, ""); scan($0, "file name"); next }
-            hdr && /^\+\+\+ / { file = substr($0, 5); sub(/^b\//, "", file); scan(file, "file name"); next }
+            hdr && /^\+\+\+ / { file = substr($0, 5); sub(/^b\//, "", file); next }
             hdr { next }
             /^\+/ && file != "" && file !~ ENVIRON["SKIP_FILES"] { scan(substr($0, 2), "added lines") }
             END { for (k in n) print k " (" n[k] ")" }'
+          # Names in commit $1 that none of its parents have.
+          added_names() {
+            c=$1; shift
+            if [ $# = 0 ]; then
+              git diff-tree -r --root --no-commit-id --name-only --no-renames --diff-filter=A -z "$c" | tr '\0' '\n'
+            else
+              for p in "$@"; do
+                git diff-tree -r --name-only --no-renames --diff-filter=A -z "$p" "$c" | tr '\0' '\n' | sort -u
+              done | sort | uniq -c | awk -v n=$# '{ c = $1; sub(/^ *[0-9]+ /, ""); if (c == n) print }'
+            fi
+          }
           found=0
+          report() {
+            [ "$found" = 1 ] || {
+              echo "::error::PR commits add real email addresses, or could not be scanned. Remove the addresses from every commit or use a placeholder (name@example.com)."
+              echo "Commit: where (count). Paths and addresses are not printed because this log may be public."
+            }
+            found=1
+            echo "$2" | sed "s/^/$1: /"
+          }
           for c in $(git rev-list "$BASE..$HEAD"); do
             short=$(git rev-parse --short "$c")
+            set -- $(git rev-list --parents -n 1 "$c"); shift
+            if [ $# -gt 2 ]; then
+              report "$short" "merge with more than two parents, not scanned (merge one branch at a time)"
+              continue
+            fi
             for out in \
-              "$(git show --format= -p --unified=0 --remerge-diff --no-color --no-ext-diff "$c" | awk -v msg=0 "$scan")" \
-              "$(git log -1 --format=%B "$c" | awk -v msg=1 "$scan")"; do
-              [ -n "$out" ] || continue
-              [ "$found" = 1 ] || {
-                echo "::error::PR commits add real email addresses. Remove them from every commit or use a placeholder (name@example.com)."
-                echo "Commit: where (count). Paths and addresses are not printed because this log may be public."
-              }
-              found=1
-              echo "$out" | sed "s/^/$short: /"
+              "$(git show --format= -p --unified=0 --remerge-diff --no-color --no-ext-diff "$c" | awk -v mode=diff "$scan")" \
+              "$(added_names "$c" "$@" | awk -v mode=names "$scan")" \
+              "$(git log -1 --format=%B "$c" | awk -v mode=message "$scan")"; do
+              [ -z "$out" ] || report "$short" "$out"
             done
           done
           [ "$found" = 0 ] || exit 1
