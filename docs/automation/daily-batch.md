@@ -6,12 +6,12 @@ question pool size, add 10 questions; if all exams already have the ideal pool
 size, suggest a new exam, at the moment only security related." The owner also
 agreed to an independent Codex review between opening and merging.
 
-**Batch size: 50 questions per night, split evenly across the active exams
-still under target** (owner, 2026-10-18), larger shares first to the exams
-furthest below target: with three exams that is 17, 17 and 16; with one, all
-50. The merge run on 2026-10-20 ends its summary with both nights' question
-counts and asks the owner to check the cost against the weekly plan limits and
-keep 50 or scale back. **AAIG is paused** until ISACA publishes its outline, because its
+**Batch size: 100 questions per night, split evenly across the active exams
+still under target** (owner: 50 on 2026-10-18, raised to 100 on 2026-10-19
+after the first night used about 3% of the plan allowance), larger shares
+first to the exams furthest below target: with three exams that is 34, 33 and
+33; with one, all 100. The owner watches usage and may change it.
+**AAIG is paused** until ISACA publishes its outline, because its
 questions will need remapping to the real domains; a paused exam counts as at
 target for step 3.
 
@@ -41,12 +41,12 @@ published questions than the target.
    available for calibration, and the expected bank target. Building it waits
    for the owner. Go on to step 6 for the queue, then open the PR without
    questions.
-4. **Otherwise, split the night's 50 questions across the exams under target (AAIG excluded)** and write each exam's share, following
+4. **Otherwise, split the night's 100 questions across the exams under target (AAIG excluded)** and write each exam's share, following
    [`generation.md`](generation.md), the writer brief and
    `recipes/<exam>/calibration.yaml`. Spread them over the domains furthest
    below their weighted share of the target (largest `gap` first), so empty
    domains (CISSP D2-D8 today) fill first. Run ID:
-   `<YYYY-MM-DD>-daily-<exam>`. Never more than 50 in total per night,
+   `<YYYY-MM-DD>-daily-<exam>`. Never more than 100 in total per night,
    top-ups in step 5 aside. **Aim for at least 40% hard** in each exam's
    share, above the profile's `hard_share_min` (30%), because the checker
    downgrades labels that turn out easier than written.
