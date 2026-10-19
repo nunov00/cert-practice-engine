@@ -1,4 +1,5 @@
-# Gitleaks settings for the privacy check (.github/workflows/privacy.yml).
+# Gitleaks settings for the privacy check (.github/workflows/privacy.yml). The lines in
+# .github/privacy-selftest-cases must pass or fail as listed there (privacy-check-selftest.sh).
 [extend]
 useDefault = true
 

@@ -1,10 +1,10 @@
 # Privacy check: keeps personal data and secrets out of the repository.
 # Runs on every PR in every profile (personal-data rule in AGENTS.md; GOVERNANCE.md →
 # Personal data and secrets where the repository has it). It fails when a PR commit is
-# authored or committed with a personal email, when any PR commit adds a real email
-# address to a file, a file name or a commit message, or when gitleaks finds a secret in
-# the PR's commits. It checks every commit, not just the final diff, because history
-# keeps what a later commit removes. Its log names commits and counts only, never paths
+# authored or committed with a personal email, when any PR commit (merges included) adds
+# a real email address to a file, a file name or a commit message, or when gitleaks finds
+# a secret in the PR's commits. It checks every commit, not just the final diff, because
+# history keeps what a later commit removes. Its log names commits and counts only, never paths
 # or addresses, because the log may be public. A heuristic, not proof: it does not cover
 # PR or issue text, binary files or every kind of personal data. A few seconds of Actions
 # time per PR; no third-party actions.
@@ -63,34 +63,44 @@ jobs:
           BASE: ${{ github.event.pull_request.base.sha }}
           HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
-          # One diff per commit (an address added and later removed is still in history),
-          # plus file names and commit messages. Prints "<commit>: <count> in <where>" only.
-          { git log --no-merges --format='@@commit %h' -p --unified=0 --no-color --no-ext-diff "$BASE..$HEAD"
-            git log --no-merges --format='@@commit %h%n@@message%n%B' "$BASE..$HEAD"; } > "$RUNNER_TEMP/commits.txt"
-          awk '
+          # Each commit is scanned on its own (an address added and later removed is still in
+          # history), merges included: --remerge-diff shows only what a merge itself added.
+          # Diffs and commit messages go through separate awk runs with no marker lines, so a
+          # message cannot pose as parser input. Prints "<commit>: <where> (<count>)" only,
+          # with the commit taken from git rev-list.
+          scan='
             function scan(text, where,   e) {
               while (match(text, /[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z][A-Za-z]+/)) {
                 e = substr(text, RSTART, RLENGTH)
-                if (tolower(e) !~ ENVIRON["ALLOWED_FILE_EMAILS"]) bad[commit ": " where]++
+                if (tolower(e) !~ ENVIRON["ALLOWED_FILE_EMAILS"]) n[where]++
                 text = substr(text, RSTART + RLENGTH)
               }
             }
-            /^@@commit / { commit = $2; mode = "diff"; next }
-            /^@@message$/ { mode = "message"; next }
-            mode == "message" { scan($0, "commit message"); next }
-            /^diff --git / { file = ""; next }
-            /^(rename to|copy to) / { scan($0, "file name"); next }
-            /^\+\+\+ / { file = substr($0, 5); sub(/^b\//, "", file); scan(file, "file name"); next }
+            msg { scan($0, "commit message"); next }
+            /^diff / { hdr = 1; file = ""; next }
+            hdr && /^@@/ { hdr = 0; next }
+            hdr && /^(rename to|copy to) / { scan($0, "file name"); next }
+            hdr && /^Binary files / { sub(/^.* and /, ""); scan($0, "file name"); next }
+            hdr && /^\+\+\+ / { file = substr($0, 5); sub(/^b\//, "", file); scan(file, "file name"); next }
+            hdr { next }
             /^\+/ && file != "" && file !~ ENVIRON["SKIP_FILES"] { scan(substr($0, 2), "added lines") }
-            END { for (k in bad) print k " (" bad[k] ")" }
-          ' "$RUNNER_TEMP/commits.txt" | sort > "$RUNNER_TEMP/found.txt"
-          rm "$RUNNER_TEMP/commits.txt"
-          if [ -s "$RUNNER_TEMP/found.txt" ]; then
-            echo "::error::PR commits add real email addresses. Remove them from every commit or use a placeholder (name@example.com)."
-            echo "Commit: where (count). Paths and addresses are not printed because this log may be public."
-            cat "$RUNNER_TEMP/found.txt"
-            exit 1
-          fi
+            END { for (k in n) print k " (" n[k] ")" }'
+          found=0
+          for c in $(git rev-list "$BASE..$HEAD"); do
+            short=$(git rev-parse --short "$c")
+            for out in \
+              "$(git show --format= -p --unified=0 --remerge-diff --no-color --no-ext-diff "$c" | awk -v msg=0 "$scan")" \
+              "$(git log -1 --format=%B "$c" | awk -v msg=1 "$scan")"; do
+              [ -n "$out" ] || continue
+              [ "$found" = 1 ] || {
+                echo "::error::PR commits add real email addresses. Remove them from every commit or use a placeholder (name@example.com)."
+                echo "Commit: where (count). Paths and addresses are not printed because this log may be public."
+              }
+              found=1
+              echo "$out" | sed "s/^/$short: /"
+            done
+          done
+          [ "$found" = 0 ] || exit 1
           echo "No real email addresses added in any PR commit."
 
       - name: Secrets (gitleaks)
