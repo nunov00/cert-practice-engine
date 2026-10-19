@@ -309,10 +309,21 @@ test("giveaway wording is an error on changed questions", () => {
   assert.ok(sinceErrors(gitFixture([], [q])).some((m) => m.includes("absolute words")));
 });
 
+const ten = (obvious: number, hard = 3) =>
+  Array.from({ length: 10 }, (_, i) => ({
+    ...checked(i + 1, i < obvious ? "obvious" : "not_obvious"),
+    difficulty: i >= 10 - hard ? ("hard" as const) : ("medium" as const),
+  }));
+
 test("a changed batch fails when too many keys are obvious from the options", () => {
-  const ten = (obvious: number) => Array.from({ length: 10 }, (_, i) => checked(i + 1, i < obvious ? "obvious" : "not_obvious"));
   assert.ok(sinceErrors(gitFixture([], ten(5))).some((m) => m.includes("obvious from the options alone")));
   assert.deepEqual(sinceErrors(gitFixture([], ten(4))), []);
+});
+
+test("a changed batch of 10 or more fails below the profile's hard share; smaller ones warn", () => {
+  assert.ok(sinceErrors(gitFixture([], ten(0, 2))).some((m) => m.includes("are hard")));
+  assert.deepEqual(sinceErrors(gitFixture([], ten(0, 3))), []);
+  assert.deepEqual(sinceErrors(gitFixture([], ten(0, 0).slice(0, 9))), []);
 });
 
 test("the options-only verdict is obvious only when sure and right", () => {

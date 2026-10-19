@@ -20,7 +20,7 @@ real exam so learners over-prepare. Say in each content PR how it was calibrated
 | Key more than 1.5x longer than every distractor | same | Same as above |
 | New or changed published question has `provenance.options_only` from the checker | same | Yes |
 | Share of new or changed questions obvious from the options alone, per exam | same | Yes, above the profile's `options_only_obvious_max` once 10 or more are checked; warning below 10 |
-| Share of new or changed questions labelled hard | same | Warning below `hard_share_min` |
+| Share of new or changed questions labelled hard, per exam | same | Yes, below the profile's `hard_share_min` once 10 or more changed questions of an exam are published (owner, 2026-10-19); warning below 10 |
 | Stem length outside the profile's `stem_words` range | same | Warning |
 | Whole-bank statistics against the profile | `pnpm calibration [exam]` | No, a report |
 
