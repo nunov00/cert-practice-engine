@@ -1,0 +1,29 @@
+id: cissp-d6-6.1-0001
+subdomain: '6.1'
+difficulty: easy
+stem: A SaaS provider gets about forty customer requests a year to audit its controls on site. Customers want evidence
+  that the controls worked throughout the past year. Which approach BEST meets their needs?
+options:
+  A: Provide an independent SOC 2 Type II report under NDA
+  B: Provide an independent SOC 2 Type I report under NDA
+  C: Answer each customer's security questionnaire in writing
+  D: Allow each customer one on-site audit per year
+answer: A
+explanation:
+  why_correct: A Type II report has an independent auditor test whether controls operated effectively over a period,
+    which is exactly the evidence asked for, and one report serves every customer.
+  why_not:
+    B: A Type I report covers control design at a single point in time. It does not show the controls worked over
+      the year.
+    C: Questionnaire answers are self-attested. They are not independent evidence of operation.
+    D: Forty separate audits are costly and disruptive, and each gives only one customer's view. A shared independent
+      report meets the need better.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-cissp
+  checked_by: 2026-10-18-daily-cissp-check
+  check_verdict: pass
+  options_only: obvious

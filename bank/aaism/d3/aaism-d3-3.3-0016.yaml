@@ -1,0 +1,30 @@
+id: aaism-d3-3.3-0016
+subdomain: '3.3'
+difficulty: easy
+stem: An AI assistant's prompts and replies are kept for one year in an observability tool that 200 engineers can
+  search for debugging. The logs contain customer account details that users typed into chats. Which control BEST
+  reduces the exposure?
+options:
+  A: Cut log retention to 30 days for debugging
+  B: Mask account details before logs are written
+  C: Encrypt the observability store with managed keys
+  D: Warn users in the chat not to share account details
+answer: B
+explanation:
+  why_correct: Masking sensitive fields before storage keeps debugging data useful while removing the account details
+    that 200 engineers could otherwise search.
+  why_not:
+    A: Shorter retention reduces the amount of exposed data, but every engineer could still search a month of account
+      details.
+    C: Encryption at rest does not stop authorised engineers from reading the data through the tool.
+    D: Warnings reduce how often users share details, but some will still do so, and those details would remain
+      searchable.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  checked_by: 2026-10-18-daily-aaism-check
+  check_verdict: pass
+  options_only: obvious

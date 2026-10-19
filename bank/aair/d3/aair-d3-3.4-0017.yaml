@@ -1,0 +1,30 @@
+id: aair-d3-3.4-0017
+subdomain: '3.4'
+difficulty: medium
+stem: A bank's customer chatbot answers questions about fees from retrieved product documents. Fees change each
+  quarter, and last year's wrong answers all came from documents that product teams had not yet updated. Which leading
+  indicator BEST fits this risk?
+options:
+  A: Share of answers given with no retrieved source
+  B: Share of retrieved fee documents past review date
+  C: Share of questions users rephrase and ask again
+  D: Share of queries with low retrieval similarity scores
+answer: B
+explanation:
+  why_correct: The known cause of wrong answers is outdated fee documents. The share of retrieved documents past
+    their review date rises before customers act on wrong fees, and it measures that cause directly.
+  why_not:
+    A: Answers without a source signal a different failure; the bank's wrong answers came from sources that were
+      retrieved but out of date.
+    C: Rephrasing shows users are dissatisfied, but customers can accept a confident answer quoting an old fee without
+      asking again.
+    D: Low similarity flags poor matches, while an outdated fee document can match a question very well.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aair
+  checked_by: 2026-10-18-daily-aair-recheck
+  check_verdict: pass
+  options_only: not_obvious

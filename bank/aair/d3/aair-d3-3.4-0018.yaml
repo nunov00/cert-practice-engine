@@ -1,0 +1,30 @@
+id: aair-d3-3.4-0018
+subdomain: '3.4'
+difficulty: hard
+stem: A model drift indicator has breached its threshold every week for six months. Analysis shows the drift comes
+  from a known seasonal shift in inputs that the model handles well, and validation shows it performs within its
+  approved limits. Teams now ignore the alerts. What should the risk practitioner do?
+options:
+  A: Switch to an indicator based on output drift
+  B: Have model owners sign off each weekly breach
+  C: Recalibrate the threshold to normal variation
+  D: Add a second drift indicator to confirm the first
+answer: C
+explanation:
+  why_correct: The cause of the breaches is known and harmless, so the threshold is set inside the model's normal
+    variation and has stopped carrying information. Recalibrating it, in line with appetite, makes breaches meaningful
+    again while keeping the input-drift warning.
+  why_not:
+    A: Output-based measures are useful, but dropping input drift loses an early warning that works once its threshold
+      is right.
+    B: Sign-offs on known false alarms add work and keep the alert fatigue in place.
+    D: A second indicator adds complexity without fixing the badly set threshold.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aair
+  checked_by: 2026-10-18-daily-aair-recheck
+  check_verdict: pass
+  options_only: not_obvious

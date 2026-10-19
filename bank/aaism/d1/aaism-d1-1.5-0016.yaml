@@ -1,0 +1,30 @@
+id: aaism-d1-1.5-0016
+subdomain: '1.5'
+difficulty: medium
+stem: A travel company's booking assistant depends on one hosted model. Its continuity plan names a second provider's
+  model as fallback, under a signed contract. In a switchover test, the assistant ran, but its guardrails, tuned
+  to the first model, let prohibited content through. What should the security manager do?
+options:
+  A: Fall back to human agents instead of a second model
+  B: Negotiate stronger availability terms with the first provider
+  C: Tune and test the guardrails on the fallback model
+  D: Run the fallback model with staff checking each reply
+answer: C
+explanation:
+  why_correct: The fallback works except for safety behaviour, which depends on the model. Tuning and testing the
+    guardrails against the fallback model makes the planned recovery option safe to use.
+  why_not:
+    A: Human agents may be part of the plan, but dropping a contracted fallback that only needs tuning gives up
+      capacity the company has already secured.
+    B: Better availability terms reduce the chance of an outage but do not make the fallback safe when one occurs.
+    D: Checking every reply would be very slow at booking volumes and treats the symptom rather than fixing the
+      guardrails.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  checked_by: 2026-10-18-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

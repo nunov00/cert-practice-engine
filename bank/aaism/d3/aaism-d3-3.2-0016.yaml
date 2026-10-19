@@ -1,0 +1,29 @@
+id: aaism-d3-3.2-0016
+subdomain: '3.2'
+difficulty: medium
+stem: A prompt injection detector scored 98% on its security test set but misses many attacks in production. The
+  team finds the test prompts had been posted on public forums and were scraped into its fine-tuning data. Which
+  life cycle control BEST prevents a repeat?
+options:
+  A: Expand the test set with more published attack prompts
+  B: Raise the release threshold on the test set to 99%
+  C: Retrain the detector without the scraped forum data
+  D: Keep a private test set isolated from training data
+answer: D
+explanation:
+  why_correct: The score was inflated because the test data leaked into training. A held-out test set that is kept
+    private and controlled separately from training data gives an honest measure at each release.
+  why_not:
+    A: More published prompts are just as likely to end up in training data, repeating the contamination.
+    B: A higher threshold on a contaminated test set measures memory, not detection.
+    C: Retraining fixes this version, but without a protected test set the next data collection could contaminate
+      it again.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  checked_by: 2026-10-18-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

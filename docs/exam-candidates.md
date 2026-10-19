@@ -36,7 +36,7 @@ market; every row is *to verify* until a daily run checks it).
 
 | Rank | Exam (issuer) | Format | Demand | Fit | Calib. | Pay | Synergy | Total | Checked |
 |---:|---|---|---:|---:|---:|---:|---:|---:|---|
-| 1 | CISM (ISACA) | 150 MCQ, 4 domains *to verify* | 5 | 5 | 5 | 5 | 5 | 30 | 2026-10-18 |
+| 1 | CISM (ISACA) | 150 MCQ, 4 domains (18/20/33/29% from 2026-11-03) | 5 | 5 | 5 | 5 | 5 | 30 | 2026-10-18 |
 | 2 | CISA (ISACA) | 150 MCQ, 5 domains *to verify* | 4 | 5 | 5 | 5 | 4 | 27 | 2026-10-18 |
 | 3 | CRISC (ISACA) | 150 MCQ, 4 domains *to verify* | 3 | 5 | 5 | 5 | 5 | 26 | 2026-10-18 |
 | 4 | CCSP (ISC2) | 125-150 MCQ, 6 domains *to verify* | 4 | 5 | 3 | 5 | 4 | 25 | 2026-10-18 |
@@ -54,7 +54,10 @@ older Checked date.
 
 - **CISM:** ISACA's management-level security exam; closest to AAISM and AAIR,
   so the writer notes and calibration method carry over. ISACA publishes a free
-  practice quiz for calibration.
+  practice quiz for calibration. Checked 2026-10-18: a new outline takes effect
+  on 2026-11-03 with the same four domains reweighted to 18/20/33/29% and new
+  enterprise and security architecture content; over 111,000 holders since 2002.
+  A recipe should be built on the new outline.
 - **CISA:** ISACA's audit exam, steady professional demand; overlaps AAIR on
   risk and controls.
 - **CRISC:** ISACA's IT risk exam; smaller audience but strong overlap with AAIR.
@@ -76,3 +79,4 @@ older Checked date.
 | Date | Change | Why |
 |---|---|---|
 | 2026-10-18 | Queue created | Owner asked for a ranked queue of 10 candidates |
+| 2026-10-18 | CISM row verified: format and weights confirmed, *to verify* dropped; scores and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/cism/cism-exam-content-outline), [2026 outline press release](https://www.isaca.org/about-us/newsroom/press-releases/2026/isaca-updates-cism-exam-content-outline-factoring-in-todays-technologies-security-responsibilities), [practice quiz](https://www.isaca.org/credentialing/cism/cism-practice-quiz) |

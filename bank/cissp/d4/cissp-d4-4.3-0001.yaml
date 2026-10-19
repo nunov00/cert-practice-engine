@@ -1,0 +1,30 @@
+id: cissp-d4-4.3-0001
+subdomain: '4.3'
+difficulty: hard
+stem: A company's web front end calls an internal API over TLS. A penetration test shows that an attacker on the
+  internal network could impersonate the API, because the front end accepts any certificate the API presents. Which
+  fix BEST addresses this?
+options:
+  A: Validate the API's certificate against the internal CA
+  B: Upgrade the connection from TLS 1.2 to TLS 1.3
+  C: Add mutual TLS so the API authenticates the front end
+  D: Move the API to a network segment of its own
+answer: A
+explanation:
+  why_correct: Impersonation works because the client skips server authentication. Validating the certificate chain
+    and name against the internal CA restores the check that TLS relies on to prove the server's identity.
+  why_not:
+    B: TLS 1.3 improves the protocol, but a client that accepts any certificate can still be fooled by a fake server.
+    C: 'Mutual TLS proves the client''s identity to the server. The flaw is the reverse direction: the front end
+      never checks who the server is.'
+    D: Segmentation reduces who can attempt the attack but leaves the missing validation in place for anyone who
+      gets onto that segment.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-cissp
+  checked_by: 2026-10-18-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

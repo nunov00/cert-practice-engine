@@ -1,0 +1,30 @@
+id: aaism-d1-1.3-0016
+subdomain: '1.3'
+difficulty: medium
+stem: A bank deletes customer chat transcripts after 90 days under its retention schedule. Its AI assistant's memory
+  feature stores summaries and embeddings of those chats in a vector store that has no expiry. Which action BEST
+  addresses this?
+options:
+  A: Extend the transcript schedule to match the vector store
+  B: Encrypt the vector store with keys the bank controls
+  C: Limit vector store access to the assistant's service
+  D: Apply the transcript schedule to the derived summaries
+answer: D
+explanation:
+  why_correct: Summaries and embeddings are derived from the transcripts and can reveal their content, so they are
+    part of the same data life cycle. Applying the same retention schedule to them closes the gap the memory feature
+    opened.
+  why_not:
+    A: Extending retention to fit a tool reverses the logic of the schedule and keeps personal data longer than
+      the bank decided it should.
+    B: Encryption protects the data at rest but does not stop it being kept beyond its retention period.
+    C: Access limits are good practice, but the data would still outlive the schedule that governs its source.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  checked_by: 2026-10-18-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

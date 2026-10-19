@@ -1,0 +1,29 @@
+id: aaism-d2-2.3-0016
+subdomain: '2.3'
+difficulty: medium
+stem: Sales wants to connect a vendor's AI meeting assistant to staff calendars and mailboxes. The vendor passed
+  due diligence, but its standard integration asks for read and write access to whole mailboxes, while it needs
+  only meeting invitations. What should the security manager require?
+options:
+  A: Accept the scope with logging of the vendor's access
+  B: Add a contract clause restricting use of mailbox data
+  C: Approve the scope for a pilot in the sales team first
+  D: Use an integration limited to calendar data
+answer: D
+explanation:
+  why_correct: The assistant needs only calendar data. Limiting the integration's permissions to that data applies
+    least privilege and removes the exposure of whole mailboxes if the vendor or its token is compromised.
+  why_not:
+    A: Logging records what the vendor accesses but leaves full mailbox access in place.
+    B: A contract clause limits permitted use, not what an attacker could do with a stolen token holding full mailbox
+      rights.
+    C: A pilot reduces how many mailboxes are exposed but still grants far more access than the tool needs.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  checked_by: 2026-10-18-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious
