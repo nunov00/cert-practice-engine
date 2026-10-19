@@ -1,23 +1,22 @@
 id: aair-d3-3.1-0016
 subdomain: '3.1'
-difficulty: hard
-stem: Two AI risks at a retailer have the same rated impact and likelihood. In one, a forecasting model's drift
-  would build up errors over several months. In the other, an exploit of a refund agent could drain funds within
-  hours. Which factor should set them apart in the assessment?
+difficulty: medium
+stem: Two AI risks at a retailer have the same rated impact and likelihood. A forecasting model's drift would build
+  up errors over several months, while an exploit of a refund agent could drain funds within hours. What does this
+  difference MOST imply for the refund agent?
 options:
-  A: How well current monitoring would detect each risk
-  B: How many customers each of the systems serves
-  C: How fast each risk's impact would build up
-  D: How much the planned controls would cost for each
-answer: C
+  A: It needs automated limits that act without people
+  B: It needs a higher likelihood rating in the risk register
+  C: It needs a monthly key risk indicator on refund losses
+  D: It needs a larger share of this year's treatment budget
+answer: A
 explanation:
-  why_correct: 'The stem separates the risks by speed of onset: months versus hours. Risk velocity affects how much
-    time there is to detect and respond, so it should differentiate risks with otherwise equal ratings.'
+  why_correct: Risk velocity is how fast impact arrives. A loss that builds within hours outruns human review cycles,
+    so the refund agent needs controls that stop payouts automatically as they happen.
   why_not:
-    A: Detectability matters, but the stem gives no difference in monitoring; the stated difference is how fast
-      the impact arrives.
-    B: Customer numbers feed into impact, which is already rated the same for both.
-    D: Control cost informs treatment choices after assessment; it does not describe the risk itself.
+    B: Velocity is a separate dimension from likelihood; raising likelihood would misstate the risk.
+    C: A monthly indicator reports losses long after an hours-long exploit has run its course.
+    D: Budget follows the treatment chosen; more money does not by itself respond to the speed of the risk.
 status: draft
 outline_version: '2026-04-15'
 sample: false

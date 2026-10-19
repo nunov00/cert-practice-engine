@@ -1,23 +1,26 @@
 id: aair-d2-2.1-0012
 subdomain: '2.1'
 difficulty: medium
-stem: The design document for a model that reads supplier invoices sets an accuracy target of 97% and describes
-  the model and its training data. It does not say what happens to the invoices the model misreads. What should
-  the risk practitioner ask the team to add before approval?
+stem: The design document for an invoice-reading model records its purpose, architecture and test results. The model
+  was trained and tested only on invoices from domestic suppliers, and the document does not say so. Procurement
+  plans to onboard foreign suppliers next year. What should the team add before approval?
 options:
-  A: A higher accuracy target of 99% for the model
-  B: A review of misread invoices after launch
-  C: A confidence threshold that routes cases to staff
-  D: A notice asking suppliers to check their payments
-answer: C
+  A: A plan to retrain the model on foreign invoices
+  B: The model's tested scope and known limits of use
+  C: Test results on a sample of foreign supplier invoices
+  D: An accuracy monitor that alerts on falling performance
+answer: B
 explanation:
-  why_correct: Some misreads are certain at 97% accuracy. A design requirement that sends low-confidence cases to
-    staff handles the expected errors before payments go out, which is the gap in the design.
+  why_correct: The model is being approved for domestic invoices. Recording what it was tested on and where it should
+    not be relied on lets anyone extending it to foreign suppliers see that it needs new testing first, instead
+    of assuming it works.
   why_not:
-    A: A higher target reduces errors but does not remove them, and the design would still lack a way to handle
-      the cases it gets wrong.
-    B: A post-launch review finds errors after payments are made rather than preventing them.
-    D: Asking suppliers to spot errors shifts the control to outsiders and only catches the errors they notice.
+    A: Retraining may be needed later, but planning it now does not record the limit that applies to the model being
+      approved.
+    C: Testing on foreign invoices belongs to the later decision to extend the model; the current approval is for
+      domestic use.
+    D: A monitor would detect falling accuracy after foreign invoices arrive, rather than preventing reliance on
+      an untested use.
 status: draft
 outline_version: '2026-04-15'
 sample: false

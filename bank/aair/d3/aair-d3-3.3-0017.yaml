@@ -1,6 +1,6 @@
 id: aair-d3-3.3-0017
 subdomain: '3.3'
-difficulty: hard
+difficulty: medium
 stem: A lender's control requires quarterly bias testing of its credit model. Evidence shows the tests ran each
   quarter as written, but always on a test set frozen two years ago, while the applicant population has since changed
   a great deal. How should the risk practitioner rate the control?
@@ -25,3 +25,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-18-daily-aair
   check_verdict: pending
+  options_only: not_obvious

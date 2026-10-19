@@ -1,25 +1,26 @@
 id: aaism-d2-2.2-0016
 subdomain: '2.2'
 difficulty: medium
-stem: A retailer's bug bounty treats jailbreaks as model behaviour and out of scope. A researcher reports a jailbreak
-  that makes the retailer's shopping agent call its order tool and reveal other customers' addresses. What should
-  the security manager do?
+stem: A retailer's bug bounty treats jailbreaks as model behaviour and out of scope. A researcher shows, using two
+  test accounts they own, a jailbreak that makes the retailer's shopping agent call its order tool and return the
+  other account's address. What should the security manager do?
 options:
-  A: Decline the report under the programme's scope rules
-  B: Forward the report to the hosted model's vendor
+  A: Fix it as a quality defect outside the bounty
+  B: Add an output filter that blocks addresses in replies
   C: Triage it as a vulnerability by its data impact
   D: Add the prompt to the model's refusal training set
 answer: C
 explanation:
-  why_correct: Whatever the technique, the result is unauthorised access to customer data through the retailer's
-    own tool integration. It should be triaged and fixed like any other vulnerability, by impact, and the scope
-    rules revisited.
+  why_correct: Whatever the technique, the result is access to another customer's data through the retailer's own
+    tool integration. Triaging it as a vulnerability by impact gets it the right priority and fix, starting with
+    how the order tool authorises lookups, and shows the scope rules need revisiting.
   why_not:
-    A: Scope rules exist to focus a programme, not to ignore a confirmed data exposure in the retailer's own system.
-    B: The vendor may need to know, but the data exposure comes from how the retailer's agent and order tool are
-      connected, which the retailer must fix.
-    D: Refusal training may block this one prompt, but the agent's access to other customers' data remains open
-      to the next variant.
+    A: Treating it as a quality defect gives a data access flaw the wrong priority and leaves the scope rule that
+      hid it unchanged.
+    B: A filter hides addresses in replies but leaves the agent able to fetch other customers' orders, and other
+      fields could still leak.
+    D: Refusal training may block this prompt, but the agent's access to other customers' data remains open to the
+      next variant.
 status: draft
 outline_version: '2025-08-19'
 sample: false

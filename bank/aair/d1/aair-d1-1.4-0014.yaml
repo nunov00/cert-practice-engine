@@ -1,23 +1,24 @@
 id: aair-d1-1.4-0014
 subdomain: '1.4'
-difficulty: easy
+difficulty: medium
 stem: A company's board will approve its first AI risk appetite statement next quarter. Several directors say they
   lack the background to judge AI risks. What should the risk practitioner arrange FIRST?
 options:
-  A: Enrol directors in a general online AI literacy course
-  B: Ask the risk committee to approve the appetite instead
-  C: Recruit a director with AI expertise at the next election
+  A: Have the CRO present a draft appetite with proposed limits
+  B: Circulate a pre-read on general AI risk concepts and terms
+  C: Invite an external AI adviser to the approval meeting
   D: Hold a briefing on the AI risks in the company's own uses
 answer: D
 explanation:
-  why_correct: Directors need enough understanding to set appetite before next quarter. A focused briefing on the
-    risks in the company's actual AI uses gives them that context in time and ties it to the decision they must
-    make.
+  why_correct: Directors need to understand the risks they are setting appetite for before they decide. A briefing
+    on the risks in the company's actual AI uses builds that understanding in time and ties it to the decision.
   why_not:
-    A: A general course takes longer and may not cover the risks specific to the company's AI uses.
-    B: Setting risk appetite is a board responsibility; handing it to a committee avoids the knowledge gap rather
-      than closing it.
-    C: An expert director may help in the longer term but will not arrive in time for next quarter's approval.
+    A: A draft appetite is a sound input to the approval, but directors who cannot judge AI risks would be approving
+      limits they cannot challenge.
+    B: A general pre-read helps with vocabulary but does not connect concepts to the company's own uses, which is
+      what the appetite must cover.
+    C: An adviser at the meeting helps on the day, but directors would meet the material for the first time when
+      they have to decide.
 status: draft
 outline_version: '2026-04-15'
 sample: false
