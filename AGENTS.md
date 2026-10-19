@@ -117,6 +117,7 @@ third-party analytics.
 - Never schedule or enable automation (cron, triggers, scheduled workflows)
   without the owner's explicit approval.
 - Never commit secrets, API keys or learner data.
+- Never commit or publish personal data: no personal emails, phone numbers, addresses, location, devices or real financial details in files, PRs, issues, logs or deployed sites. Refer to the owner by GitHub handle, use `name@example.com` placeholders, and commit with a noreply address (`GOVERNANCE.md` → Personal data and secrets; `.github/workflows/privacy.yml` checks every PR).
 - Never edit a recipe's weights or domains except in a PR that cites the
   issuer's official outline.
 - Never weaken or skip a validator rule or test to make CI pass.

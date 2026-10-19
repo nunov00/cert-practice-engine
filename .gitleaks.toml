@@ -1,0 +1,9 @@
+# Gitleaks settings for the privacy check (.github/workflows/privacy.yml).
+[extend]
+useDefault = true
+
+[allowlist]
+# localStorage key names in app/src/lib/progress.ts, e.g. "cpe.continue-hidden.v1";
+# gitleaks' generic-api-key rule mistakes them for keys.
+description = "localStorage key names"
+regexes = ['''^cpe\.[a-z0-9.-]+$''']
