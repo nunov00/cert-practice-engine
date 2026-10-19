@@ -1,0 +1,29 @@
+id: aair-d3-3.6-0016
+subdomain: '3.6'
+difficulty: medium
+stem: A bank's AI assistant answers from a vector index of product documents. In a disaster recovery test, the assistant
+  came up on time at the recovery site but answered from an index rebuilt weeks earlier, quoting outdated rates.
+  What should the risk practitioner recommend?
+options:
+  A: Rebuild the index at the recovery site after each failover
+  B: Set a recovery point objective for the index
+  C: Raise the recovery tier of the assistant's application servers
+  D: Add the index to the scope of the annual recovery test
+answer: B
+explanation:
+  why_correct: The recovery time was met, but the data was too old. Setting a recovery point objective for the index,
+    and replicating it often enough to meet it, ensures the recovered assistant answers from current documents.
+  why_not:
+    A: A rebuild after failover takes time, which can break the recovery time objective, and leaves the assistant
+      stale until it finishes.
+    C: A higher recovery tier speeds restart, but the recovery time was already met; the failure was stale data.
+    D: The index was already tested, which is how the problem was found; testing again does not fix it.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aair
+  checked_by: 2026-10-18-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

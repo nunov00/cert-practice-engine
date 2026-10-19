@@ -1,0 +1,30 @@
+id: aaism-d1-1.1-0016
+subdomain: '1.1'
+difficulty: easy
+stem: A SaaS company's largest customers now add AI security clauses to their contracts, each asking for different
+  evidence. Its AI management system is certified, but customers say the certificate does not show the controls
+  they ask about. They will accept the company's own control evidence. What is the BEST approach?
+options:
+  A: Commission an independent attestation of its AI controls
+  B: Publish a trust page summarising its AI security controls
+  C: Map clauses to its controls and reuse one evidence set
+  D: Offer customers a standard AI security contract addendum
+answer: C
+explanation:
+  why_correct: Customers want consistent control-level evidence and accept the company's own. Mapping each clause
+    to the control framework lets one maintained evidence set answer them all, cutting effort and keeping answers
+    consistent.
+  why_not:
+    A: An attestation gives strong independent evidence but takes time and money that customers have said is not
+      needed.
+    B: A trust page gives summaries, not the control-level evidence each clause asks for.
+    D: An addendum helps future contracts but does not produce the evidence customers are asking for now.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  checked_by: 2026-10-18-daily-aaism-recheck
+  check_verdict: pass
+  options_only: not_obvious

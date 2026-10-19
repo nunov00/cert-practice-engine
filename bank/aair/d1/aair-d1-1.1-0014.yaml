@@ -1,0 +1,30 @@
+id: aair-d1-1.1-0014
+subdomain: '1.1'
+difficulty: medium
+stem: A logistics firm lets an AI agent rebook failed deliveries directly through carrier APIs, which cut handling
+  time from hours to minutes. Its errors are rare, but most of them move parcels to much costlier carriers. The
+  firm wants to keep the speed. Which control BEST fits?
+options:
+  A: Cap the cost of rebookings the agent makes alone
+  B: Have staff approve each rebooking before it is sent
+  C: Review a daily sample of the agent's rebookings
+  D: Retrain the agent on more past exception cases
+answer: A
+explanation:
+  why_correct: The harm comes from a known kind of error with a measurable impact. A cost cap lets the agent act
+    alone on ordinary rebookings and sends only the expensive ones to a person, which limits impact while keeping
+    most of the speed.
+  why_not:
+    B: Approving each rebooking would catch the errors but turns the agent back into an assistant and gives up the
+      speed the firm wants to keep.
+    C: Sampling finds costly rebookings after they have been made; it limits nothing in advance.
+    D: Retraining may reduce errors, but some will remain and nothing would limit their cost.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aair
+  checked_by: 2026-10-18-daily-aair-recheck
+  check_verdict: pass
+  options_only: not_obvious

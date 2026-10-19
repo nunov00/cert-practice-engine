@@ -1,0 +1,32 @@
+id: cissp-d5-5.2-0001
+subdomain: '5.2'
+difficulty: medium
+stem: A bank's call-centre staff sign in with a password and a push approval on their personal phones. Attackers
+  now send repeated push requests until someone approves one. The bank will buy no new hardware this year. Which
+  change BEST addresses this?
+options:
+  A: Shorten the push approval timeout to 20 seconds
+  B: Require number matching in each push prompt
+  C: Issue FIDO2 security keys to call-centre staff
+  D: Switch the second factor to SMS one-time codes
+answer: B
+explanation:
+  why_correct: 'Number matching makes the user type a code shown on the sign-in screen, so a person who is not signing
+    in can no longer approve with a blind tap. It sharply reduces push fatigue attacks on the phones staff already
+    have, though it is not phishing-resistant: an attacker who talks a user into entering their number can still
+    succeed.'
+  why_not:
+    A: A shorter timeout limits each request but attackers can simply send more. Staff can still approve with one
+      tap.
+    C: Hardware keys are phishing-resistant and would be strong, but buying them breaks the stated constraint of
+      no new hardware this year.
+    D: 'SMS codes stop push bombing but are weaker overall: they can be phished or intercepted through SIM swapping.'
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-cissp
+  checked_by: 2026-10-18-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

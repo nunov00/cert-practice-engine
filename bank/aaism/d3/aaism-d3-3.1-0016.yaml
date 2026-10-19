@@ -1,0 +1,32 @@
+id: aaism-d3-3.1-0016
+subdomain: '3.1'
+difficulty: hard
+stem: A company's agent platform lets teams register third-party tool servers after a security review. Weeks after
+  approval, one tool's description was changed to include hidden instructions that make agents send file contents
+  to it. Which control BEST prevents this?
+options:
+  A: Screen tool descriptions with the prompt injection filter
+  B: Pin approved tool definitions and block changed versions
+  C: Run each tool server in its own network sandbox
+  D: Ask the user to confirm each tool call an agent makes
+answer: B
+explanation:
+  why_correct: The tool was safe when reviewed and changed afterwards. Pinning the approved definition and refusing
+    changed versions until they are reviewed again makes the security review stick, so a later change cannot reach
+    agents silently.
+  why_not:
+    A: Filters help but can be evaded by rephrased instructions; they also do not address the root cause, which
+      is unreviewed change.
+    C: Sandboxing the tool server limits what the server can reach, but the data leaves through the agent sending
+      file contents to it.
+    D: Confirmations add friction and users tend to approve routine calls without reading them, so poisoned calls
+      can still get through.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  checked_by: 2026-10-18-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

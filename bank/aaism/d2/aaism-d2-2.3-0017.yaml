@@ -1,0 +1,30 @@
+id: aaism-d2-2.3-0017
+subdomain: '2.3'
+difficulty: easy
+stem: A firm is ending its contract with an AI transcription vendor. The contract requires deletion of 'customer
+  data' at exit. The vendor fine-tuned a dedicated speech model on the firm's call recordings. What should the security
+  manager do before exit?
+options:
+  A: Get a deletion certificate covering the stored recordings
+  B: Require handover of the fine-tuned model at exit
+  C: Confirm deletion covers the fine-tuned model
+  D: Revoke the vendor's access to the firm's systems at exit
+answer: C
+explanation:
+  why_correct: A model fine-tuned on the recordings can retain and reveal their content, and 'customer data' may
+    not clearly include it. Confirming that deletion covers the derived model, including any copies the vendor keeps,
+    closes the gap the contract wording leaves.
+  why_not:
+    A: Deleting the recordings is required, but a certificate limited to them leaves the derived model, which holds
+      information from them, with the vendor.
+    B: A handover gives the firm a copy, but the vendor could still keep its own copy unless deletion is confirmed.
+    D: Revoking access is a normal exit step but does not remove data or models the vendor already holds.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  checked_by: 2026-10-18-daily-aaism-recheck
+  check_verdict: pass
+  options_only: obvious

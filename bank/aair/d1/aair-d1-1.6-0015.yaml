@@ -1,0 +1,28 @@
+id: aair-d1-1.6-0015
+subdomain: '1.6'
+difficulty: medium
+stem: A local newspaper uses AI to write routine match reports from scores and player statistics. Editors check
+  the facts before publication, but readers are not told the reports are AI-written. What BEST addresses the trust
+  risk?
+options:
+  A: Label each AI-written report as AI-generated
+  B: Have editors rewrite each report in their own style
+  C: Publish a page describing the paper's use of AI
+  D: Credit the checking editor in each report's byline
+answer: A
+explanation:
+  why_correct: The risk is readers being misled about how a report was made. A label on each AI-written report tells
+    readers at the point they read it, which is the transparency they need.
+  why_not:
+    B: Rewriting removes much of the efficiency gain and still hides the AI's role in producing the content.
+    C: A general page is useful, but most readers of a given report will never see it.
+    D: Crediting the checking editor alone implies a person wrote the report, which deepens the transparency problem.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aair
+  checked_by: 2026-10-18-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

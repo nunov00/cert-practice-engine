@@ -1,0 +1,29 @@
+id: aaism-d3-3.1-0017
+subdomain: '3.1'
+difficulty: easy
+stem: Teams at an insurer call three external model providers directly from their apps. Provider API keys have been
+  found in code repositories, and security cannot see what data is sent in prompts. Which design change BEST addresses
+  both problems?
+options:
+  A: Route model calls through a gateway that holds the keys
+  B: Store each team's provider keys in the secrets vault
+  C: Require each team to send its prompt logs to the SIEM
+  D: Turn on provider-side data controls for each account
+answer: A
+explanation:
+  why_correct: A central gateway keeps the keys out of applications and gives one place to log, inspect and filter
+    prompts, which addresses both the leaked keys and the lack of visibility.
+  why_not:
+    B: A vault fixes key storage but gives security no view of the data sent to providers.
+    C: Team-run logging depends on each team doing it consistently and does nothing about the keys.
+    D: Provider controls limit how providers use data but do not show the insurer what is being sent or protect
+      the keys.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-aaism
+  checked_by: 2026-10-18-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

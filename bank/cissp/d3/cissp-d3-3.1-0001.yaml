@@ -1,0 +1,31 @@
+id: cissp-d3-3.1-0001
+subdomain: '3.1'
+difficulty: medium
+stem: A payment app's services read their settings from a shared configuration service at startup. If that service
+  is unreachable, each service starts with permissive built-in settings so customers are not affected. Which design
+  principle does this violate MOST directly?
+options:
+  A: Least privilege
+  B: Zero trust
+  C: Keep it simple
+  D: Fail securely
+answer: D
+explanation:
+  why_correct: When a dependency fails, the system should fall back to a safe state. Starting with permissive settings
+    whenever the configuration service is down is a fail-open design, the opposite of failing securely.
+  why_not:
+    A: The permissive settings may grant more than needed, but the flaw lies in what happens on failure. With the
+      configuration service up, privileges could be minimal.
+    B: Zero trust concerns verifying every request rather than trusting network location. The issue here is the
+      behaviour of the services when a dependency fails.
+    C: The fallback adds a little complexity, but complexity is not what creates the exposure; the permissive failure
+      state is.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-18-daily-cissp
+  checked_by: 2026-10-18-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious
