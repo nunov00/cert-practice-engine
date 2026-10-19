@@ -17,8 +17,8 @@ explanation:
   why_not:
     B: Profiling shows the distributions of the records present; unless the team already knows to look for opted-out
       customers, it will not reveal that the group was never included.
-    C: Lineage shows which models used the dataset, which helps after the fact, but not what the dataset leaves
-      out.
+    C: Lineage can trace how a dataset was selected and filtered, but on its own it does not give each team reusing
+      the data a clear statement of which customers are excluded and what uses are permitted.
     D: Field completeness rules check for missing values in records that exist, not for customers who are absent.
 status: published
 outline_version: '2026-04-15'
