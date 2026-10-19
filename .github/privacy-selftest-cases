@@ -1,0 +1,6 @@
+# Cases for templates/github/privacy-check-selftest.sh in nunov00/project-governance.
+# <0 to pass | 1 to fail>|<path>|<line>; {UUID} becomes a synthetic UUID, {Q} a double quote.
+0|app/src/lib/progress.ts|const KEY = {Q}cpe.progress.v1{Q};
+0|app/src/lib/progress.ts|const HIDDEN_KEY = {Q}cpe.continue-hidden.v1{Q};
+1|app/src/lib/storage.ts|const HIDDEN_KEY = {Q}cpe.continue-hidden.v1{Q};
+1|app/src/lib/progress.ts|const API_KEY = {Q}{UUID}{Q};
