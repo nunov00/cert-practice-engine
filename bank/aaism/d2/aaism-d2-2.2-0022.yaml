@@ -1,0 +1,32 @@
+id: aaism-d2-2.2-0022
+subdomain: '2.2'
+difficulty: hard
+stem: An insurer will send embeddings of claim notes, not the text, to an analytics vendor for clustering. The contract
+  bars the vendor from training on them, and the team rated confidentiality risk low on the view that embeddings cannot
+  be read. What is the GREATEST concern?
+options:
+  A: The vendor's index may mix the insurer's data with other clients'
+  B: Embeddings can be inverted to recover much of the text
+  C: Clusters may expose patterns about groups of claimants
+  D: The vendor may keep the embeddings after the contract ends
+answer: B
+explanation:
+  why_correct: Inversion techniques can reconstruct much of the original text from embeddings, so they should be treated
+    as being as sensitive as the claim notes. The low rating rests on a false premise, so the data should be classified
+    and protected as personal claim data.
+  why_not:
+    A: Shared indexes are a real multi-tenancy risk to check in due diligence, but it matters mostly because the embeddings
+      themselves reveal the notes.
+    C: Group patterns can be sensitive, but they are the intended output of clustering and less serious than recovering
+      individual claim notes.
+    D: Retention at exit should be covered in the contract, but the deeper flaw is that the data was rated as harmless in
+      the first place.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  checked_by: 2026-10-19-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

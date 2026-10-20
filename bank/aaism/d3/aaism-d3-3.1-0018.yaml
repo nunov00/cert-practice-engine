@@ -1,0 +1,31 @@
+id: aaism-d3-3.1-0018
+subdomain: '3.1'
+difficulty: hard
+stem: A hospital's AI gateway sends prompts that a classifier marks as containing patient data to an in-house model, and
+  the rest to an external provider. Tests show the classifier misses 3% of patient-data prompts. Which design change BEST
+  reduces exposure?
+options:
+  A: Retrain the classifier on the prompts it missed
+  B: Allow external calls only from tasks cleared of patient data
+  C: Add pattern-based data loss checks on prompts leaving the gateway
+  D: Ask staff to tag prompts that contain patient data
+answer: B
+explanation:
+  why_correct: The design sends prompts out by default and relies on a probabilistic classifier to catch patient data. Defaulting
+    to the in-house model and allowing external calls only from tasks approved as free of patient data makes the safe path
+    the default, so a classifier miss no longer sends data out.
+  why_not:
+    A: Retraining may lower the miss rate, but a classifier will keep missing some prompts, and each miss still goes to
+      the external provider.
+    C: Pattern checks catch structured identifiers such as record numbers, but clinical narrative without them still passes,
+      and the default stays open.
+    D: Staff tagging adds a human check, but busy staff forget or mis-tag, and untagged prompts still go out by default.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  checked_by: 2026-10-19-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

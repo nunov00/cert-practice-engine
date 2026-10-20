@@ -1,0 +1,32 @@
+id: aair-d3-3.5-0018
+subdomain: '3.5'
+difficulty: hard
+stem: A start-up runs a retailer's demand forecasting service, using models trained on the retailer's sales data.
+  It has just been bought by one of the retailer's main competitors. What should the risk practitioner do FIRST?
+options:
+  A: Review the contract's data use and change of control terms
+  B: Start planning an exit to an alternative forecasting supplier
+  C: Ask the new owner for written assurance that data is kept separate
+  D: Assess how the retailer would forecast if the service were withdrawn
+answer: A
+explanation:
+  why_correct: 'The retailer''s sales data and the models trained on it are now held by a firm owned by a competitor.
+    The contract decides what the retailer can require and what it can do: limits on data use, separation duties,
+    and any change-of-control right to terminate or recover data and models. Reviewing those terms first shows which
+    of the other steps are needed and possible.'
+  why_not:
+    B: Exit planning may well follow, but before knowing its contractual rights the retailer cannot tell whether
+      it can leave, recover its data or require deletion.
+    C: Written assurance is worth having, but its value depends on what the contract already requires. The retailer
+      should know its rights before asking.
+    D: Continuity planning is sensible, but the urgent risk is misuse of commercially sensitive data, not loss of
+      the service.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

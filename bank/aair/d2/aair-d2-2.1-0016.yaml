@@ -1,0 +1,33 @@
+id: aair-d2-2.1-0016
+subdomain: '2.1'
+difficulty: easy
+stem: A bank is designing a customer chatbot that will look up balances and recent transactions. The architecture
+  is still being decided. Which design choice BEST addresses the risk that users manipulate the chatbot into revealing
+  other customers' data?
+options:
+  A: Run each lookup with the signed-in customer's own access rights
+  B: Red-team the chatbot with manipulation attempts before it launches
+  C: Add output filters that block other customers' account details
+  D: Instruct the model in its system prompt to refuse such requests
+answer: A
+explanation:
+  why_correct: Language models can be talked into ignoring instructions, so the safest design does not rely on the
+    model's behaviour. If every lookup runs with the signed-in customer's own access rights, the chatbot simply
+    cannot fetch another customer's data, however it is manipulated. With the architecture still open, this is the
+    point to build that in.
+  why_not:
+    B: Red-teaming is valuable before launch, but it tests the design rather than providing a control. It finds
+      weaknesses; it does not remove them.
+    C: Output filters are a useful extra layer, but they can be bypassed by rephrasing or encoding, and the data
+      would already have been retrieved.
+    D: System prompt instructions help, but prompt injection exists precisely because such instructions can be overridden
+      by crafted input.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: obvious

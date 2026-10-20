@@ -1,0 +1,31 @@
+id: aair-d2-2.4-0014
+subdomain: '2.4'
+difficulty: hard
+stem: A bank is combining two years of labelled customer complaint texts to retrain a classifier. Halfway through
+  that period, the labelling guide changed how complaints about fees on closed accounts are labelled. Those complaints
+  are among the most common. What should be done before training?
+options:
+  A: Relabel or map older records to the current guide
+  B: Drop the records that were labelled under the old guide
+  C: Give recent records more weight during training
+  D: Add the guide version to each record as an input
+answer: A
+explanation:
+  why_correct: Mixing records labelled under two different rules teaches the model conflicting answers for one of
+    the most common complaint types. Bringing the older labels into line with the current guide, by mapping where
+    the change is clear-cut and relabelling where it is not, gives consistent training data while keeping the full
+    history.
+  why_not:
+    B: Dropping the older records removes the conflict, but it throws away a year of data, including categories
+      the change did not touch.
+    C: Weighting recent records reduces the effect of old labels but still trains on two conflicting rules.
+    D: "A version input lets the model learn both schemes, but in production every complaint carries the current version, so the older records add little to learning the current rule for the changed category, and the conflict in the labels is left unresolved."
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

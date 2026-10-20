@@ -1,0 +1,29 @@
+id: cissp-d6-6.4-0001
+subdomain: '6.4'
+difficulty: medium
+stem: A penetration test found five critical flaws on an isolated lab server that holds no data. The testers also reached
+  the payment database by chaining three medium findings on internet-facing systems. The owner can fix only a few issues this
+  month. Which should be fixed FIRST?
+options:
+  A: The findings that have public exploit code
+  B: The five critical findings on the lab server
+  C: The three chained medium findings
+  D: The findings repeated from last year's test
+answer: C
+explanation:
+  why_correct: Severity scores rate findings one at a time. The report shows a demonstrated path from the internet to payment
+    data, so the chained findings carry the highest real risk, and fixing one link breaks the path.
+  why_not:
+    A: Public exploit code raises likelihood and is a good tiebreaker, but it says nothing about which findings lead to the
+      payment data.
+    B: The scores are critical, but the server is isolated and holds no data, so the business impact is low.
+    D: Repeated findings may point to process problems worth reporting, but repetition is not the measure of risk here.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

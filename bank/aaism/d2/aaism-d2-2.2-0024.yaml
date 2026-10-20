@@ -1,0 +1,31 @@
+id: aaism-d2-2.2-0024
+subdomain: '2.2'
+difficulty: hard
+stem: An external scan found two model-serving instances reachable from the internet with no authentication. They are not
+  in the AI inventory, and their logs show queries from unknown addresses this week. What should the security manager do
+  FIRST?
+options:
+  A: Block internet access to the two instances
+  B: Find the owners and the models they serve
+  C: Preserve the instances' logs for investigation
+  D: Add the instances to the AI inventory
+answer: A
+explanation:
+  why_correct: The instances are open to anyone and are already being queried by unknown parties, so the exposure is active.
+    Blocking inbound internet access contains it quickly, without deleting anything, while owners are found and the logs
+    examined.
+  why_not:
+    B: Owners are needed for the longer-term fix, but finding them can take days while the models stay open to anyone on
+      the internet.
+    C: The logs will be needed, but blocking inbound access does not destroy them, and preservation can follow within minutes.
+      Containment comes first while the exposure is active.
+    D: The inventory should be updated, but recording the instances does not reduce the exposure that is under way.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  checked_by: 2026-10-19-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

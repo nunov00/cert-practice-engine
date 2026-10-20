@@ -1,0 +1,30 @@
+id: aaism-d2-2.2-0018
+subdomain: '2.2'
+difficulty: medium
+stem: An outside researcher reports, through a bank's disclosure channel, a jailbreak that makes its public chatbot give
+  investment advice. The report includes working prompts. The model is hosted by a vendor. What should the security manager
+  do FIRST?
+options:
+  A: Report the jailbreak to the model vendor and ask for a fix
+  B: Add the reported prompts to the input blocklist
+  C: Agree a public disclosure date with the researcher
+  D: Reproduce it on the bank's chatbot and rate severity
+answer: D
+explanation:
+  why_correct: Reproducing the report on the bank's own deployment confirms that it is real and shows how severe it is with
+    the bank's prompts and filters in place. That rating decides how urgent the response is and whether the fix lies with
+    the bank, the vendor or both.
+  why_not:
+    A: The vendor may need to be told, but without reproducing the issue the bank cannot say whether its own configuration
+      is the cause or how urgent a fix is.
+    B: Blocking the exact prompts is a quick stopgap, but rewording gets around it, and it is chosen before anyone knows
+      how serious the issue is.
+    C: Coordinated disclosure terms matter, but the timeline depends on severity and the fix, which are not yet known.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: obvious

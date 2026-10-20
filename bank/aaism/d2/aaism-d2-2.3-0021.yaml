@@ -1,0 +1,30 @@
+id: aaism-d2-2.3-0021
+subdomain: '2.3'
+difficulty: medium
+stem: A marketing agency will publish client campaigns using images from a vendor's generative tool. The vendor will not
+  disclose how its training data was licensed. Which contract term MOST protects the agency?
+options:
+  A: A warranty that the vendor's training data was lawfully obtained
+  B: Indemnity against third-party claims over generated images
+  C: A right to audit the vendor's training data licences
+  D: A bar on the vendor training on the agency's prompts
+answer: B
+explanation:
+  why_correct: The agency cannot verify the training data, and its exposure is a rights holder's claim over a published
+    image. An indemnity for third-party claims about generated outputs puts that cost on the vendor, which is the party
+    able to manage the training data.
+  why_not:
+    A: A warranty gives a claim against the vendor, but the agency must prove the breach, and it does not cover defending
+      the third-party claim itself.
+    C: An audit right conflicts with the vendor's refusal to disclose licensing and would be hard to use in practice.
+    D: Protecting the agency's prompts is a sensible term, but it addresses the agency's own data, not claims over the images
+      it publishes.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  checked_by: 2026-10-19-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

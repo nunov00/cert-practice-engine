@@ -1,0 +1,33 @@
+id: aair-d1-1.1-0017
+subdomain: '1.1'
+difficulty: hard
+stem: A video streaming service's strategy is to grow long-term subscriber loyalty. Its new recommendation system
+  is a reinforcement learning model rewarded only for the minutes watched in each session. Which risk should the
+  risk practitioner MOST highlight?
+options:
+  A: Recommendations may narrow over time toward a small set of popular titles
+  B: New titles may get too few views for the model to learn about them
+  C: Viewing habits may shift faster than the model can adapt to them
+  D: The model may favour content that holds attention over what viewers value
+answer: D
+explanation:
+  why_correct: A reinforcement learning model optimises the reward it is given. Rewarding only minutes watched per
+    session can teach it to push whatever keeps people watching, even when viewers later feel worse about the service
+    and cancel. That gap between the reward and the strategy's real goal of long-term loyalty is the most significant
+    risk, and it calls for changing what the model is rewarded for, not just tuning it.
+  why_not:
+    A: Popularity feedback loops are a real risk for recommenders, but they are a side effect. The stem's key fact
+      is that the reward itself does not measure what the strategy is trying to achieve.
+    B: The cold-start problem for new titles is a known limitation, usually handled with exploration or content-based
+      features. It does not undermine the strategy as directly as a misaligned reward.
+    C: Changing habits matter, but a reinforcement learning system keeps learning from new sessions. The larger
+      problem is what it is learning to maximise.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

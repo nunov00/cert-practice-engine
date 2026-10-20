@@ -1,0 +1,30 @@
+id: cissp-d7-7.9-0001
+subdomain: '7.9'
+difficulty: hard
+stem: The change board at a university approved a firewall rule change for Saturday's maintenance window. On Friday the network
+  engineer finds that the change will not work unless a matching rule is also added on a second firewall, which the approved
+  request does not cover. What should the engineer do?
+options:
+  A: Add both rules on Saturday and note the extra one in the change record
+  B: Add the approved rule on Saturday and raise a new request for the other
+  C: Submit an amended request covering both firewalls before the window
+  D: Raise the second rule as an emergency change on Saturday
+answer: C
+explanation:
+  why_correct: The approval covers a defined scope. Amending the request lets the board, or its delegate, assess the impact
+    on the second firewall, keeps the whole change authorised, and can still meet Saturday's window if approved in time.
+  why_not:
+    A: Recording it afterwards is sensible, but the extra rule was never assessed or approved, so it is an unauthorised change.
+    B: Applying half a change that is known not to work uses the window for nothing and may leave the network in an untested
+      state.
+    D: Emergency changes are for urgent problems that cannot wait. This one is known a day ahead and can go through the normal
+      amendment path.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

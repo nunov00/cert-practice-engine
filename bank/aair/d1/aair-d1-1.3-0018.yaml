@@ -1,0 +1,32 @@
+id: aair-d1-1.3-0018
+subdomain: '1.3'
+difficulty: medium
+stem: An airport uses an AI system to set security lane staffing for each shift, with a duty manager named as the
+  human overseer. Duty managers rarely change the plans, even when queues build up. They say any change needs a
+  senior manager's sign-off, which can take hours. What is the MAIN oversight weakness?
+options:
+  A: Overseers cannot act on their own judgement when it matters
+  B: Overseers may defer to the system's plans out of habit
+  C: The system gives no reasons that would help overseers challenge it
+  D: Overrides are not logged, so their effect cannot be reviewed
+answer: A
+explanation:
+  why_correct: Human oversight only works if the overseer can intervene in time. Here the named overseer needs sign-off
+    that takes hours, so the oversight exists on paper but cannot act while queues build. Giving duty managers authority
+    to adjust the plan within set limits would fix this.
+  why_not:
+    B: 'Automation bias is a common reason oversight fails, but the stem gives a more direct cause: managers say
+      they are not allowed to change the plans quickly.'
+    C: Explanations help overseers judge a plan, but even a well-explained plan cannot be changed in time under
+      the current sign-off rule.
+    D: Logging overrides supports review, but the stem says overrides rarely happen. The issue is that overseers
+      cannot make them.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

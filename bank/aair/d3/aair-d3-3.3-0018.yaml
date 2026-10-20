@@ -1,0 +1,32 @@
+id: aair-d3-3.3-0018
+subdomain: '3.3'
+difficulty: easy
+stem: A software firm's AI coding agent drafts code changes and opens pull requests. To save set-up time, it runs
+  with a senior engineer's credentials, which can also merge to the main branch and change build pipeline settings.
+  Which control BEST reduces the risk while keeping the agent useful?
+options:
+  A: Require a human to approve each merge the agent requests
+  B: Give the agent its own identity that can only open pull requests
+  C: Log the agent's actions and review the logs each week
+  D: Scan the agent's code changes for security vulnerabilities before merge
+answer: B
+explanation:
+  why_correct: 'The agent needs only to open pull requests, yet it holds rights to merge and to change build pipelines.
+    A dedicated identity limited to what it needs applies least privilege: if the agent is misled or makes a mistake,
+    it cannot merge or alter pipelines, and its actions can be told apart from the engineer''s.'
+  why_not:
+    A: Human approval of merges is good practice, but with the engineer's credentials the agent could still merge
+      or change pipeline settings without asking.
+    C: Logging and review are detective. A harmful merge or pipeline change could be live for days before the weekly
+      review.
+    D: Scanning catches some insecure code, but it does not limit what the agent can do with the engineer's wider
+      rights.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: obvious

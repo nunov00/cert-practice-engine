@@ -1,0 +1,29 @@
+id: aaism-d2-2.2-0021
+subdomain: '2.2'
+difficulty: medium
+stem: A red team got a pharmacy's chatbot to give dosing advice it should refuse. The fix added the attack prompt to a blocklist,
+  and a retest with that prompt now fails. What should the security manager require before closing the finding?
+options:
+  A: A retest using reworded variants of the same technique
+  B: The original prompt added to the regression test suite
+  C: The risk owner's sign-off on the fix as delivered
+  D: Confirmation that the blocklist is live in production
+answer: A
+explanation:
+  why_correct: A blocklist entry stops one exact prompt, not the weakness behind it. Retesting with reworded variants of
+    the technique shows whether the chatbot still gives dosing advice when the attack is phrased differently, which is what
+    closing the finding should prove.
+  why_not:
+    B: Keeping the prompt in regression tests stops that exact attack returning, but it would keep passing while rephrased
+      versions still work.
+    C: Owner sign-off is part of closure, but the owner would be signing off on evidence that does not show the weakness
+      is fixed.
+    D: Checking deployment is sensible, but a blocklist that is live in production still stops only the one prompt.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: obvious

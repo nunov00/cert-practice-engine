@@ -1,0 +1,33 @@
+id: aair-d1-1.1-0020
+subdomain: '1.1'
+difficulty: hard
+stem: A city's transport authority proposes an AI system that watches station cameras and flags passengers likely
+  to commit an assault, so staff can step in early. Assaults happen on about one in 500,000 journeys. The supplier
+  quotes 99% accuracy. Which point should MOST shape the risk practitioner's advice?
+options:
+  A: Camera analysis of behaviour may count as biometric processing in law
+  B: Past assault footage may be too sparse to train a reliable model
+  C: Flags would be overwhelmingly false, given how rare assaults are
+  D: Staff stepping in on a flag could escalate situations with passengers
+answer: C
+explanation:
+  why_correct: With one assault per 500,000 journeys, even a 1% false alarm rate would flag about 5,000 innocent
+    passengers for each real case. Staff would mostly approach people who have done nothing, causing harm and wasting
+    effort, while gaining little. This base-rate problem decides whether the use case can work at all, so it should
+    shape the advice before anything else.
+  why_not:
+    A: The legal position must be checked, but it governs how the system may be run. The base-rate problem shows
+      the system would not achieve its purpose even if it were lawful.
+    B: Sparse training data is a real concern, but even a model as accurate as quoted would still produce mostly
+      false flags at this base rate.
+    D: Escalation is a valid operational risk, and false flags make it worse. It follows from the core problem rather
+      than being the main point.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

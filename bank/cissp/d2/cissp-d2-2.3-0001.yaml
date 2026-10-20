@@ -1,0 +1,32 @@
+id: cissp-d2-2.3-0001
+subdomain: '2.3'
+difficulty: medium
+stem: A company ships laptops for remote hires straight from the supplier to each employee's home. A laptop enters the asset
+  inventory only when it first signs in to the domain, and an audit found 14 shipped laptops that never signed in and cannot
+  be located. Which change BEST closes this gap?
+options:
+  A: Record each laptop's serial and owner when the supplier ships it
+  B: Ship laptops to a central office for setup before forwarding them
+  C: Require full-disk encryption before the supplier ships each laptop
+  D: Have each new hire sign a receipt when the laptop arrives
+answer: A
+explanation:
+  why_correct: 'The gap is that accountability starts too late: a laptop exists for the company only once it signs in. Recording
+    each asset with an owner at the point it is acquired and shipped means every device is tracked from the start, so a missing
+    one is noticed and can be chased with the supplier, the courier or the named owner.'
+  why_not:
+    B: Central setup adds a checkpoint, but it adds a second shipment and cost, and the inventory record can still be created
+      late unless the process changes.
+    C: Encryption protects data on a lost laptop, but these devices hold little data yet. It does nothing to show where they
+      are or who is accountable for them.
+    D: Receipts confirm the laptops that did arrive. Without an inventory record from shipment, nobody knows which receipts
+      are missing until an audit like this one.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

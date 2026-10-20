@@ -1,0 +1,30 @@
+id: cissp-d3-3.4-0001
+subdomain: '3.4'
+difficulty: medium
+stem: A plant runs a legacy control application with a known stack buffer overflow. The vendor has gone out of business and
+  no source code exists. Testers showed that an attacker can place shellcode in the overflowed buffer and jump to it. Which
+  operating system capability BEST blocks this technique?
+options:
+  A: Marking stack and heap memory as non-executable
+  B: Randomising where memory regions load at start
+  C: Running the application in its own virtual machine
+  D: Running the application under a low-privilege account
+answer: A
+explanation:
+  why_correct: The technique runs injected code from the stack. Data execution prevention marks stack and heap pages as non-executable,
+    so the processor refuses to run the shellcode, and it needs no change to the application's code.
+  why_not:
+    B: Address space layout randomisation makes the jump target harder to guess, but it does not stop injected code from running
+      once the attacker finds it.
+    C: A separate virtual machine contains the damage, but the shellcode still runs inside the guest that controls the plant
+      process.
+    D: Least privilege limits what the shellcode can do afterwards. It does not prevent it from running.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

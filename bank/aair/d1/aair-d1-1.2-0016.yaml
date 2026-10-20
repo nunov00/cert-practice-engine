@@ -1,0 +1,31 @@
+id: aair-d1-1.2-0016
+subdomain: '1.2'
+difficulty: medium
+stem: A telecom company's complaints process records each complaint by product and channel. Several customer decisions,
+  such as credit limits and fraud blocks, are now made by AI models. The AI risk team cannot tell which complaints
+  relate to those decisions. What should the risk practitioner recommend?
+options:
+  A: Review a sample of complaints each quarter to estimate AI involvement
+  B: Record the AI system involved in each complaint, for monitoring
+  C: Add the number of AI-related complaints to the AI risk dashboard
+  D: Survey customers after AI-made decisions about their experience
+answer: B
+explanation:
+  why_correct: The complaints process already captures what customers say; it just does not link complaints to the
+    AI systems involved. Adding that field to the process, and feeding the data into AI risk monitoring, aligns
+    an existing business process with AI risk needs and gives complete, ongoing data rather than estimates.
+  why_not:
+    A: Sampling gives an estimate a few times a year. It is slow, may miss emerging issues and works around the
+      process instead of fixing it.
+    C: A dashboard count is a sensible later step, but it needs the data that the process does not yet capture.
+    D: Surveys add customers' views, but they reach only those who respond and do not use the complaints the company
+      already receives.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

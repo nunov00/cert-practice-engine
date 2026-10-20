@@ -1,0 +1,30 @@
+id: aaism-d2-2.3-0020
+subdomain: '2.3'
+difficulty: medium
+stem: Due diligence on an AI note-taking vendor finds that its contract with its model provider has no security or breach
+  notice duties. The provider will not contract with the vendor's customers. What should the company require of the vendor?
+options:
+  A: A shorter breach notice period in its own contract
+  B: Annual assurance reports that cover the model provider
+  C: A right to audit the model provider directly
+  D: Flow-down of security and notice terms to the provider
+answer: D
+explanation:
+  why_correct: The vendor can only promise what its own supplier owes it. Requiring the vendor to flow security and breach
+    notice terms down to the model provider closes the gap in the chain, and the provider's refusal to contract with customers
+    leaves this as the route that binds it.
+  why_not:
+    A: A shorter notice period only helps if the vendor learns of a breach. Without duties on the provider, the vendor may
+      not be told in time.
+    B: Assurance reports give evidence about the provider's controls, but they create no duty to protect the data or to
+      report a breach.
+    C: The provider will not contract with the vendor's customers, so a direct audit right is unlikely to be agreed or enforceable.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  checked_by: 2026-10-19-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

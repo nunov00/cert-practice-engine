@@ -1,0 +1,27 @@
+id: cissp-d7-7.5-0001
+subdomain: '7.5'
+difficulty: easy
+stem: A courier lost a backup tape holding customer records on its way to the company's offsite storage provider. Which measure
+  BEST protects the data on any tapes lost in future?
+options:
+  A: Lock tapes in tamper-evident transport cases
+  B: Record chain-of-custody signatures at each handoff
+  C: Encrypt tapes when written, with keys kept apart
+  D: Switch to a bonded courier with tracked vehicles
+answer: C
+explanation:
+  why_correct: The goal is to protect the data when a tape is lost, not only to make loss less likely. Encrypting tapes when
+    they are written, with keys stored separately, keeps a lost tape unreadable.
+  why_not:
+    A: Locked, tamper-evident cases deter casual access and show interference, but a lost case can still be forced open.
+    B: Chain of custody shows where a tape went missing, but it does not protect the data on it.
+    D: A bonded, tracked courier lowers the chance of loss and adds recourse, but a tape that is still lost is readable.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

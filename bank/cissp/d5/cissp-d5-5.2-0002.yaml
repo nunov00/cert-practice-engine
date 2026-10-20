@@ -1,0 +1,32 @@
+id: cissp-d5-5.2-0002
+subdomain: '5.2'
+difficulty: hard
+stem: An online bank's web sessions end after 15 minutes of inactivity. Malware on customers' PCs steals session tokens, and
+  attackers keep each token alive with a request every few minutes, using it for days. Which change BEST limits how long a
+  stolen token stays usable?
+options:
+  A: Cut the inactivity timeout from 15 to 5 minutes
+  B: Issue a new session ID when the customer signs in
+  C: Set a maximum session lifetime that forces a fresh sign-in
+  D: Require step-up authentication before each payment or payee change
+answer: C
+explanation:
+  why_correct: The attacker defeats the inactivity timeout by keeping the session active. An absolute session lifetime ends
+    the session after a fixed time whatever the activity, so a stolen token expires and the attacker would need the customer's
+    credentials to continue.
+  why_not:
+    A: A shorter idle timeout still resets with each request, so an attacker who sends requests every few minutes keeps the
+      token alive.
+    B: Rotating the session ID at sign-in prevents session fixation. Malware that steals the token after sign-in gets the
+      new ID anyway.
+    D: Step-up authentication protects payments, but the token stays usable for days for everything else, such as reading
+      account details.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

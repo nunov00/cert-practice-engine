@@ -1,0 +1,27 @@
+id: cissp-d6-6.3-0001
+subdomain: '6.3'
+difficulty: medium
+stem: Operations reports that 99 percent of backup jobs succeed each month. The board now asks whether critical systems could
+  be brought back within their agreed recovery time objectives. Which data should the security manager collect to answer?
+options:
+  A: Backup job success rates for each critical system
+  B: Timed results of test restores of the critical systems
+  C: Age of the newest good backup copy for each critical system
+  D: Pass rates of restore tests for each critical system
+answer: B
+explanation:
+  why_correct: The question is about recovery time. Only timed test restores show whether a system can actually be rebuilt
+    from backup and how long it takes, which can be compared directly with each recovery time objective.
+  why_not:
+    A: A successful job shows a backup was written, not that it can be restored or how long a restore would take.
+    C: Backup age answers how much data could be lost, the recovery point, not how quickly the system comes back.
+    D: A pass rate shows whether restores work, but not how long they take, which is what the recovery time objectives measure.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

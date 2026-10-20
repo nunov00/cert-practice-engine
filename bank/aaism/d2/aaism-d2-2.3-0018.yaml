@@ -1,0 +1,28 @@
+id: aaism-d2-2.3-0018
+subdomain: '2.3'
+difficulty: medium
+stem: A manufacturer's SaaS vendors keep adding generative AI features between annual reviews. Some are on by default and
+  send company data to model providers the manufacturer has not assessed. Which standard contract term BEST controls this?
+options:
+  A: Thirty days' notice of any new subprocessor
+  B: Annual vendor reassessment that covers any new AI features
+  C: Opt-in approval before new AI features use its data
+  D: Audit rights over the vendor's AI development
+answer: C
+explanation:
+  why_correct: The problem is data flowing to new providers before anyone has assessed them. Requiring the manufacturer's
+    opt-in before a new AI feature can use its data stops that flow until the feature and its providers have been reviewed.
+  why_not:
+    A: Subprocessor notice is a standard term and helps, but a feature that is on by default may send data before the manufacturer
+      can object.
+    B: Annual reassessment would still leave a new feature running unassessed for up to a year.
+    D: Audit rights give evidence after the fact and are costly to use. They do not stop a default-on feature sharing data.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  checked_by: 2026-10-19-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

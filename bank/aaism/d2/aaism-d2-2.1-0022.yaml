@@ -1,0 +1,30 @@
+id: aaism-d2-2.1-0022
+subdomain: '2.1'
+difficulty: medium
+stem: A vendor will move an approved HR chatbot to a new base model. Its users, data sources and permissions stay the same.
+  The original risk assessment took three months. What is the BEST approach to reassessment?
+options:
+  A: Repeat the full risk assessment before the switch
+  B: Reassess the risks that depend on model behaviour
+  C: Review the vendor's release notes and test results
+  D: Handle it as a standard change with regression tests
+answer: B
+explanation:
+  why_correct: A new model can change how the chatbot handles harmful prompts, personal data and accuracy, while the data
+    flows, users and permissions are unchanged. A targeted reassessment of the behaviour-dependent risks, with testing,
+    keeps the assessment valid without repeating work that still holds.
+  why_not:
+    A: A full repeat would spend months re-examining data flows and permissions that have not changed, delaying the switch
+      for little added assurance.
+    C: Vendor results describe the model in general, not how it behaves with this chatbot's prompts and HR content. They
+      are an input, not a reassessment.
+    D: Regression tests confirm the chatbot still works, but functional tests may not cover safety, leakage and bias behaviour,
+      and they produce no updated risk rating for the owner.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: obvious

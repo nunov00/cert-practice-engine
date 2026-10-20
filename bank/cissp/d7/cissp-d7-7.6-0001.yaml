@@ -1,0 +1,31 @@
+id: cissp-d7-7.6-0001
+subdomain: '7.6'
+difficulty: hard
+stem: An online retailer's SOC confirms that an attacker has an interactive session on a web server and is copying the customer
+  database to an external host right now. The incident response plan has been activated. What should the team do FIRST?
+options:
+  A: Capture a memory image of the web server
+  B: Block the external host and the server's outbound traffic
+  C: Notify legal counsel and the company's data protection officer
+  D: Reset the passwords of the server's service accounts
+answer: B
+explanation:
+  why_correct: Customer data is leaving now, so containment comes first. Blocking the destination and the server's outbound
+    traffic stops the transfer while the server keeps running, so its memory and disk evidence are still there to capture
+    next.
+  why_not:
+    A: Volatile evidence matters, but imaging takes time while the database keeps leaving. A network block preserves the memory
+      anyway, so it can be imaged right after.
+    C: Legal and privacy notification should follow quickly, since reporting deadlines may apply, but it does not stop the
+      loss that is under way.
+    D: Resetting credentials is part of eradication. The attacker's live session and the transfer in progress can continue
+      regardless.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

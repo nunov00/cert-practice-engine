@@ -1,0 +1,29 @@
+id: cissp-d8-8.4-0001
+subdomain: '8.4'
+difficulty: medium
+stem: A hospital is buying a commercial imaging application. Last year, when a flaw was announced in a widely used open-source
+  library, it took the hospital weeks to learn which of its products contained it. Which contract requirement BEST helps with
+  this for the new product?
+options:
+  A: An independent penetration test report each year
+  B: Escrow of the source code with a third party
+  C: A right to audit the vendor's development process
+  D: A software bill of materials with each release
+answer: D
+explanation:
+  why_correct: The delay came from not knowing what components were inside each product. A software bill of materials lists
+    the components and versions in each release, so the hospital can check exposure to a newly announced flaw within hours.
+  why_not:
+    A: Penetration test reports show tested weaknesses at one point in time, not a component list to check against new announcements.
+    B: Escrow protects the hospital if the vendor fails. The code is released only on specific triggers, not when a library
+      flaw is announced.
+    C: An audit right helps judge the vendor's practices, but it is slow to use and does not give a quick component inventory.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

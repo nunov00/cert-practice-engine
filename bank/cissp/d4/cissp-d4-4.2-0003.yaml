@@ -1,0 +1,27 @@
+id: cissp-d4-4.2-0003
+subdomain: '4.2'
+difficulty: easy
+stem: A branch office's core switch has two power supplies, and both are plugged into the same UPS. When that UPS failed,
+  the branch lost its network for three hours. Which change BEST prevents a repeat?
+options:
+  A: Feed each power supply from a separate UPS and circuit
+  B: Replace the UPS with a larger model with longer runtime
+  C: Add a standby generator for the branch building
+  D: Buy a four-hour hardware replacement contract
+answer: A
+explanation:
+  why_correct: Two power supplies give redundancy only if they do not share a single point of failure. Feeding them from separate
+    UPS units on separate circuits means one UPS failing leaves the switch running.
+  why_not:
+    B: A larger UPS gives more runtime in a mains outage, but it is still a single point of failure for both supplies.
+    C: A generator covers long mains outages. It does not help when the UPS between the mains and the switch fails.
+    D: A faster replacement contract shortens recovery but still leaves the branch offline for hours when the shared UPS fails.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

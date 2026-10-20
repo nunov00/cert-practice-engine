@@ -1,0 +1,29 @@
+id: cissp-d2-2.4-0001
+subdomain: '2.4'
+difficulty: medium
+stem: A firm will sell its used laptops through a refurbisher at the end of their lease. The laptops have solid-state drives
+  that held customer records. Which sanitisation method BEST fits before the laptops leave the firm?
+options:
+  A: Overwrite each drive three times with random data
+  B: Degauss each drive with a rated degausser
+  C: Run each drive's built-in cryptographic erase
+  D: Shred each drive and keep destruction certificates
+answer: C
+explanation:
+  why_correct: 'Two facts decide it: the media are solid-state, and the drives must stay usable for resale. A cryptographic
+    erase destroys the drive''s internal media encryption key, which makes the stored data unreadable everywhere on the flash,
+    including spare and remapped blocks, and leaves the drive working.'
+  why_not:
+    A: Overwriting suits magnetic disks. On solid-state drives, wear levelling and spare blocks mean some old data may never
+      be overwritten.
+    B: Degaussing works on magnetic media. Flash memory does not store data magnetically, so the data can survive.
+    D: Shredding is effective but destroys the drives, so the laptops could not be sold as planned.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

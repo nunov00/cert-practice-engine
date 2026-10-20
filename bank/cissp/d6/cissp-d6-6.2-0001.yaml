@@ -1,0 +1,28 @@
+id: cissp-d6-6.2-0001
+subdomain: '6.2'
+difficulty: medium
+stem: An online retailer gets few visitors overnight. Last month the checkout broke at 02:00 and nobody knew until customers
+  complained at 08:00. The team wants to detect such failures within minutes at any hour. Which testing approach BEST fits?
+options:
+  A: Real user monitoring of errors in the checkout flow
+  B: Daily review of web server error logs
+  C: A weekly load test of the checkout flow
+  D: Scripted synthetic checkouts every few minutes
+answer: D
+explanation:
+  why_correct: Synthetic transactions run a scripted checkout on a schedule, so they test the flow whether or not real customers
+    are present. That gives detection within minutes even overnight.
+  why_not:
+    A: Real user monitoring depends on real traffic. With few overnight visitors there is little or no signal at the hours
+      that matter.
+    B: A daily log review finds the failure hours later, and there may be few log entries to show it overnight.
+    C: A load test checks capacity on a weekly cycle. It does not watch for breakage between runs.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

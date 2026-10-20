@@ -1,0 +1,31 @@
+id: cissp-d6-6.5-0001
+subdomain: '6.5'
+difficulty: hard
+stem: Customers of a logistics firm now require an ISO 27001 certificate within nine months. The firm has never worked to
+  the standard, and it also runs a separate software unit that these customers do not use. What should the security manager
+  do FIRST?
+options:
+  A: Run a gap assessment against each of the standard's controls
+  B: Select and book an accredited certification body
+  C: Run an internal audit of the current controls
+  D: Agree the scope of the management system with leadership
+answer: D
+explanation:
+  why_correct: Every later step depends on what is in scope. Agreeing with leadership whether the certificate covers the logistics
+    operations only, or the software unit too, sets the boundary for the gap assessment, the internal audit and the certification
+    audit, and the customers' requirement lets the scope be narrowed.
+  why_not:
+    A: A gap assessment is an early step, but without an agreed scope it may assess the software unit for no reason or miss
+      what customers need.
+    B: Booking an auditor early helps with timing, but the body needs a defined scope to plan and quote the audit.
+    C: An internal audit is required before certification, but it checks a management system that does not exist yet and needs
+      a scope to audit against.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

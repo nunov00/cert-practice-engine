@@ -1,0 +1,31 @@
+id: aair-d3-3.1-0019
+subdomain: '3.1'
+difficulty: easy
+stem: A company's treasury team releases urgent payments after a video call in which a senior executive confirms
+  the request. Which AI-related risk scenario should the risk practitioner MOST ensure is in the register for this
+  process?
+options:
+  A: Attackers fake an executive's face and voice to order a payment
+  B: A cash forecasting model under-predicts the payments that fall due
+  C: Staff paste payment details into a public AI chatbot
+  D: An AI invoice reader misreads a supplier's bank details
+answer: A
+explanation:
+  why_correct: The control in this process is a video call with an executive. AI tools can now fake a person's face
+    and voice convincingly in real time, so the control itself can be defeated, leading straight to a fraudulent
+    payment. That scenario attacks the process's key safeguard and should be in the register.
+  why_not:
+    B: Forecasting errors affect cash planning but not the release of urgent payments described in the stem.
+    C: Data leakage to public tools is a valid general risk, but it is not specific to this payment process or its
+      control.
+    D: Invoice-reading errors are a real treasury risk, but they relate to routine supplier payments, not to urgent
+      payments approved by video call.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

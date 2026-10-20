@@ -1,0 +1,28 @@
+id: cissp-d8-8.5-0001
+subdomain: '8.5'
+difficulty: easy
+stem: A retailer's mobile API returns order details at /orders/{id} to any signed-in customer. A tester changed the ID in
+  a request and received another customer's order. Order IDs are sequential numbers. Which fix BEST addresses the flaw?
+options:
+  A: Check that the requested order belongs to the caller
+  B: Replace the sequential order IDs with random UUIDs
+  C: Validate that the ID is a well-formed order number
+  D: Rate-limit order requests per access token
+answer: A
+explanation:
+  why_correct: 'This is broken object-level authorisation: the API checks that the caller is signed in but not that the order
+    is theirs. An ownership check on each request fixes the flaw whatever IDs an attacker tries.'
+  why_not:
+    B: Random IDs make guessing harder, but any leaked or shared ID still returns the order. It hides the flaw rather than
+      fixing it.
+    C: Input validation is good practice, but another customer's order number is perfectly well formed.
+    D: Rate limiting slows mass harvesting but still returns other customers' orders to anyone who asks.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: obvious

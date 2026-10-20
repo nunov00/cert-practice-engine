@@ -1,0 +1,31 @@
+id: aair-d2-2.2-0013
+subdomain: '2.2'
+difficulty: medium
+stem: A team validated a generative AI assistant by running each of 500 test questions once and scoring the answers,
+  and 97% passed. Since launch, users report that the same question sometimes gets a correct answer and sometimes
+  a wrong one. What should the validation have included?
+options:
+  A: A larger set of test questions drawn from real user queries
+  B: Expert review of the answers instead of automated scoring
+  C: Red-team questions designed to provoke wrong answers
+  D: Several runs of each test question to measure consistency
+answer: D
+explanation:
+  why_correct: Generative models can give different answers to the same input. Running each question once measures
+    one sample of the model's behaviour and can hide answers that are right only some of the time. Running each
+    test question several times shows how consistent the answers are, which is exactly the failure users are reporting.
+  why_not:
+    A: More realistic questions widen coverage, but if each is still run once, inconsistency on the same question
+      stays hidden.
+    B: Expert scoring may judge answers better, but it still scores one answer per question.
+    C: Red-teaming tests for deliberate attacks and harmful outputs. The issue here is ordinary questions getting
+      different answers on different runs.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

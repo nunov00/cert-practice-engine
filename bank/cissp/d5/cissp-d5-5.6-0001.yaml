@@ -1,0 +1,31 @@
+id: cissp-d5-5.6-0001
+subdomain: '5.6'
+difficulty: medium
+stem: A company is building a native mobile app and a single-page web app. Both must sign users in through the corporate identity
+  provider over the internet, then call the company's APIs on the signed-in user's behalf. Which approach BEST fits?
+options:
+  A: SAML 2.0 web single sign-on with assertions posted to each app
+  B: OpenID Connect with the authorization code flow
+  C: The OAuth 2.0 client credentials grant for each app
+  D: Kerberos tickets issued by the corporate domain
+answer: B
+explanation:
+  why_correct: 'OpenID Connect adds an identity layer to OAuth 2.0: the app gets an ID token that signs the user in and an
+    access token for calling APIs on that user''s behalf. The authorization code flow, with PKCE, is the recommended pattern
+    for both native and browser-based apps.'
+  why_not:
+    A: SAML suits browser-based single sign-on to web applications. It yields an assertion about the user but no access token
+      for API calls, and fits native mobile apps poorly.
+    C: The client credentials grant authenticates the application itself with no user involved, so API calls would not be
+      made on the signed-in user's behalf.
+    D: Kerberos needs reach to the domain's key distribution centre and suits internal networks. It is not designed for mobile
+      and browser apps over the internet.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

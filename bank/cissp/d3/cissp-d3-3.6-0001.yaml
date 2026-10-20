@@ -1,0 +1,32 @@
+id: cissp-d3-3.6-0001
+subdomain: '3.6'
+difficulty: hard
+stem: A defence contractor sends design data over VPN links. The data must stay confidential for 25 years, and the security
+  team assumes adversaries are recording the traffic now to decrypt it once large quantum computers exist. Which change should
+  it make FIRST?
+options:
+  A: Move code-signing certificates to post-quantum signatures
+  B: Move VPN key exchange to a hybrid post-quantum scheme
+  C: Replace AES-128 with AES-256 for bulk encryption
+  D: Shorten VPN certificate lifetimes to 90 days
+answer: B
+explanation:
+  why_correct: Recorded traffic can be decrypted later if the session keys can be recovered, and today's public-key key exchange
+    is the part a quantum computer breaks outright. A hybrid post-quantum key exchange protects the session keys of traffic
+    recorded from now on, which is the stated threat.
+  why_not:
+    A: Signatures matter at the moment they are checked; a future quantum computer cannot reach back and alter traffic already
+      recorded. It is a later migration step.
+    C: Quantum search weakens symmetric keys much less than it breaks public-key exchange. AES-256 is a sensible upgrade,
+      but the session keys stay exposed until key exchange changes.
+    D: Short certificate lifetimes limit the use of compromised certificates, but do not protect recorded sessions whose key
+      exchange can later be broken.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

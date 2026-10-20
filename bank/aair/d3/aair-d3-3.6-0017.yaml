@@ -1,0 +1,33 @@
+id: aair-d3-3.6-0017
+subdomain: '3.6'
+difficulty: medium
+stem: A lender finds that its credit model has misread income for self-employed applicants since a credit bureau
+  changed its file format last month. Every model version reads the new format the same way. Other applicants, most
+  of the volume, are unaffected and need fast decisions. What is the BEST containment step?
+options:
+  A: Roll the model back to the version used before last month
+  B: Suspend the model and decide each application manually
+  C: Flag self-employed decisions for underwriters to recheck later
+  D: Send self-employed applications to manual underwriting for now
+answer: D
+explanation:
+  why_correct: Containment should stop further harm where the fault lies while keeping the rest of the service running.
+    Routing self-employed applications to manual underwriting stops wrong decisions for the affected group, and
+    the model keeps serving the unaffected majority until the format handling is fixed. Past decisions still need
+    review as a separate step.
+  why_not:
+    A: Rollback is often the fastest containment, but every version reads the new format the same way, so an older
+      one would make the same errors.
+    B: Suspending the model stops the errors but halts fast decisions for the majority who are unaffected, causing
+      harm the fault does not require.
+    C: Rechecking later still issues wrong decisions to customers first. It detects harm after the fact instead
+      of preventing it.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

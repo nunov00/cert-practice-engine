@@ -1,0 +1,29 @@
+id: aair-d2-2.1-0014
+subdomain: '2.1'
+difficulty: medium
+stem: Validators at an insurer cannot reproduce the figures in a developer's report for a new claims model. They
+  use the same code, data snapshot and software container as the developer, yet each of their training runs gives
+  results a few points apart. Which practice would BEST let them reproduce the reported results?
+options:
+  A: Report results averaged over several runs, with their spread
+  B: Hand validators the trained model file to test directly
+  C: Record the random seeds and settings of each training run
+  D: Log each run's results in a shared experiment tracker
+answer: C
+explanation:
+  why_correct: "With code, data and software already the same, the remaining difference is randomness in training, such as starting weights, shuffling and sampling, plus any non-deterministic hardware settings. Recording the seeds and settings of each run lets validators recreate the exact model the developer reported, confirming that it really comes from the stated code and data."
+  why_not:
+    A: Averaging shows how much results vary, which is useful, but validators still cannot recreate the specific
+      model that will go live.
+    B: Testing the model file checks its performance but not how it was produced. Validators could not confirm the
+      reported training or rebuild the model later.
+    D: "Logging each run's results shows how they vary, but results alone do not record the seeds and settings needed to repeat a run."
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

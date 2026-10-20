@@ -1,0 +1,32 @@
+id: cissp-d5-5.5-0001
+subdomain: '5.5'
+difficulty: hard
+stem: At an insurer, staff who move between departments keep their old access, and the yearly access review finds that about
+  a fifth of users hold rights from earlier roles. Transfers are dated in the HR system, and moving staff usually spend two
+  to three weeks handing over their old work. Which change BEST addresses this?
+options:
+  A: Run the access review each quarter rather than once a year
+  B: Remove old-role rights automatically on the transfer date
+  C: Have the old manager confirm removals at each transfer
+  D: Expire old-role rights automatically 30 days after transfer
+answer: D
+explanation:
+  why_correct: Rights pile up because a transfer does not trigger their removal. Driving removal from the dated HR transfer
+    record makes it consistent, and a fixed expiry after the handover period lets staff finish their old work without keeping
+    old rights for good.
+  why_not:
+    A: More frequent reviews find leftover rights sooner, but they keep finding them; nothing stops the rights building up
+      between reviews.
+    B: Automatic removal is the right mechanism, but removing on the transfer date cuts off the handover work, which leads
+      to urgent re-grants that tend to stay.
+    C: Manager confirmation relies on a manual step at each transfer by people focused on other work, and manual steps like
+      this are what tend to slip.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

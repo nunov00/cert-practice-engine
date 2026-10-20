@@ -1,0 +1,31 @@
+id: aaism-d2-2.1-0023
+subdomain: '2.1'
+difficulty: hard
+stem: A treasury team's AI agent can send payments to approved counterparties. A time-boxed red team found no working injection,
+  but expert estimates of a successful attack range from once a decade to twice a year, and one success could move millions.
+  What is the BEST basis for the treatment decision?
+options:
+  A: The upper end of the range with the full impact
+  B: The midpoint of the experts' estimated likelihood range
+  C: The red team's finding of no working injection
+  D: Industry fraud rates for payment systems
+answer: A
+explanation:
+  why_correct: When estimates span a wide range and a single event would be severe, planning treatment around the plausible
+    upper end avoids understating the risk. The decision can be revisited as testing and operating data narrow the range.
+  why_not:
+    B: A midpoint hides how uncertain the estimate is. With a range this wide and an impact this large, it can understate
+      the exposure the owner is accepting.
+    C: A short red team that found nothing shows only that its testers did not succeed in the time they had. It does not
+      show that attacks are rare.
+    D: General payment fraud rates describe other attack paths and controls. They say little about injection against this
+      particular agent.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  checked_by: 2026-10-19-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious
