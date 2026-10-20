@@ -19,11 +19,12 @@ explanation:
     B: Full attribution scores give applicants more than they need and hand fraudsters a precise guide to the model.
     C: A generic statement protects the model but does not give applicants the reasons for their own decision, which the
       duty requires.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-19-daily-aaism
-  check_verdict: pending
+  checked_by: 2026-10-19-daily-aaism-check
+  check_verdict: pass
   options_only: not_obvious

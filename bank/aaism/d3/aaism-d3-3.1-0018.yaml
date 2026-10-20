@@ -20,11 +20,12 @@ explanation:
     C: Pattern checks catch structured identifiers such as record numbers, but clinical narrative without them still passes,
       and the default stays open.
     D: Staff tagging adds a human check, but busy staff forget or mis-tag, and untagged prompts still go out by default.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-19-daily-aaism
-  check_verdict: pending
+  checked_by: 2026-10-19-daily-aaism-check
+  check_verdict: pass
   options_only: not_obvious

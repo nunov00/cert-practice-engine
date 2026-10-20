@@ -18,11 +18,12 @@ explanation:
     B: The next report may cover the new platform, but waiting for it leaves the bank relying on stale evidence in the meantime.
     D: A questionnaire is self-reported and general. It gives weaker evidence than tested controls on the platform that
       actually changed.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-19-daily-aaism
-  check_verdict: pending
+  checked_by: 2026-10-19-daily-aaism-check
+  check_verdict: pass
   options_only: not_obvious

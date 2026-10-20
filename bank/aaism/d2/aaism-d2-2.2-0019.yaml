@@ -21,11 +21,12 @@ explanation:
       which points to transfer rather than tuning.
     D: Poisoning needs a path into training data. Nothing in the test touched training, and the attack worked at scoring
       time.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-19-daily-aaism
-  check_verdict: pending
+  checked_by: 2026-10-19-daily-aaism-check
+  check_verdict: pass
   options_only: not_obvious

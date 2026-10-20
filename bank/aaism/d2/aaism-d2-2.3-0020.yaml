@@ -1,6 +1,6 @@
 id: aaism-d2-2.3-0020
 subdomain: '2.3'
-difficulty: hard
+difficulty: medium
 stem: Due diligence on an AI note-taking vendor finds that its contract with its model provider has no security or breach
   notice duties. The provider will not contract with the vendor's customers. What should the company require of the vendor?
 options:
@@ -19,11 +19,12 @@ explanation:
     B: Assurance reports give evidence about the provider's controls, but they create no duty to protect the data or to
       report a breach.
     C: The provider will not contract with the vendor's customers, so a direct audit right is unlikely to be agreed or enforceable.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-19-daily-aaism
-  check_verdict: pending
+  checked_by: 2026-10-19-daily-aaism-check
+  check_verdict: pass
   options_only: not_obvious

@@ -19,11 +19,12 @@ explanation:
       reuse copies held in training sets.
     D: Privacy-preserving training would reduce what the model memorised, but confirming the method does not act on the
       request or remove the data from the training sets.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-19-daily-aaism
-  check_verdict: pending
+  checked_by: 2026-10-19-daily-aaism-check
+  check_verdict: pass
   options_only: not_obvious

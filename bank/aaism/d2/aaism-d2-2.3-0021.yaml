@@ -19,11 +19,12 @@ explanation:
     C: An audit right conflicts with the vendor's refusal to disclose licensing and would be hard to use in practice.
     D: Protecting the agency's prompts is a sensible term, but it addresses the agency's own data, not claims over the images
       it publishes.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-19-daily-aaism
-  check_verdict: pending
+  checked_by: 2026-10-19-daily-aaism-check
+  check_verdict: pass
   options_only: not_obvious

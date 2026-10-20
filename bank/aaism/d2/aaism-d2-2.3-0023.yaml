@@ -19,11 +19,12 @@ explanation:
     C: The vendor may not be free to comment on a pending deal, and its statement would not change the lender's rights.
     D: Service levels are unlikely to change before a deal closes, and monitoring them does not protect the data from the
       new owner.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-19-daily-aaism
-  check_verdict: pending
+  checked_by: 2026-10-19-daily-aaism-check
+  check_verdict: pass
   options_only: not_obvious
