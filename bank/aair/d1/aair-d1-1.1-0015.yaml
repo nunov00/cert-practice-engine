@@ -1,0 +1,33 @@
+id: aair-d1-1.1-0015
+subdomain: '1.1'
+difficulty: medium
+stem: A payments firm wants a model to spot new kinds of fraud that its analysts have not seen before. It has confirmed
+  labels for only a few hundred cases of known schemes, among millions of normal payments. Which modelling approach
+  BEST fits this aim?
+options:
+  A: A supervised classifier trained on the confirmed fraud cases
+  B: A supervised classifier with the rare fraud cases oversampled
+  C: An anomaly detection model trained on normal payments
+  D: A rules engine built from the analysts' known fraud patterns
+answer: C
+explanation:
+  why_correct: The aim is to find fraud that does not look like anything already labelled. An anomaly detection
+    model learns what normal payments look like and flags those that depart from it, so it can surface new schemes
+    without needing examples of them. Its flags still need analyst review, and the cases analysts confirm can later
+    be used to train supervised models for those schemes.
+  why_not:
+    A: A supervised classifier learns the patterns in its labels. It can be good at the known schemes, but it is
+      weak at fraud unlike the labelled cases, which is exactly what the firm wants to find.
+    B: Oversampling is a sound response to class imbalance, which is real here, but the model still learns only
+      from known schemes. It does not reach fraud that looks different from the labelled cases.
+    D: Rules built from known patterns catch known fraud cheaply and are easy to explain, but by design they miss
+      schemes the analysts have not seen yet.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

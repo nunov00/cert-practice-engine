@@ -1,0 +1,31 @@
+id: aaism-d2-2.1-0017
+subdomain: '2.1'
+difficulty: medium
+stem: A utility's AI assistant answers billing questions from a document index. The risk owner wants a key risk indicator
+  that gives warning before wrong answers reach customers in numbers that breach tolerance. Which indicator BEST serves
+  this purpose?
+options:
+  A: Monthly audited rate of wrong answers in a sample
+  B: Share of answers given without a matching source passage
+  C: Number of customer complaints about billing answers
+  D: Average confidence the model reports for its answers
+answer: B
+explanation:
+  why_correct: Answers produced without a supporting passage from the index are where fabricated billing details are most
+    likely. The share can be measured on each answer as it is given, so a rising trend warns the owner before wrong answers
+    build up to a breach.
+  why_not:
+    A: The audited error rate measures the risk itself and belongs on the dashboard, but a monthly sample reports after
+      the wrong answers have already gone out. It is a lagging measure.
+    C: Complaints confirm harm after customers are affected, and many affected customers never complain, so the signal is
+      late and incomplete.
+    D: 'A language model''s self-reported confidence is poorly calibrated: it can be confident and wrong. It is a weak early
+      signal of wrong answers.'
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

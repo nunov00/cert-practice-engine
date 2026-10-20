@@ -1,0 +1,30 @@
+id: aaism-d2-2.3-0019
+subdomain: '2.3'
+difficulty: medium
+stem: A hospital is buying an AI triage tool. The vendor reports 95% sensitivity on its own benchmark, drawn from three
+  urban hospitals, while this hospital serves a mostly rural and older population. What should the contract MOST importantly
+  include?
+options:
+  A: Acceptance testing on the hospital's own cases
+  B: A warranty that sensitivity stays at 95% or above
+  C: Access to the benchmark data and test method
+  D: Service credits when measured performance falls short
+answer: A
+explanation:
+  why_correct: The benchmark population differs from the hospital's patients, so the reported figure may not hold. Making
+    go-live conditional on acceptance testing with the hospital's own cases shows whether the tool performs safely here
+    before patients depend on it.
+  why_not:
+    B: A warranty gives a remedy after poor performance has been found, and it is tied to a benchmark that may not apply
+      to this population.
+    C: Seeing the benchmark data shows how the figure was produced, but it still describes urban hospitals, not this hospital's
+      patients.
+    D: Service credits compensate for shortfalls once they are measured. They do not prevent missed urgent cases.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

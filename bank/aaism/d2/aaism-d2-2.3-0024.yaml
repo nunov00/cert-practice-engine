@@ -1,0 +1,27 @@
+id: aaism-d2-2.3-0024
+subdomain: '2.3'
+difficulty: hard
+stem: An AI vendor offers, as security evidence, an independent red team report on the base model it licenses. Its product
+  adds the vendor's own fine-tuning and tools that update customer records. What is the GREATEST limitation of this evidence?
+options:
+  A: It may predate the latest base model version
+  B: It was commissioned by the base model's developer
+  C: Only an executive summary may be shared
+  D: It does not test the fine-tuned model or its tools
+answer: D
+explanation:
+  why_correct: Fine-tuning can weaken safety behaviour, and tools that update records create injection and misuse risks
+    that a base model test never exercises. The report says little about the product the company would actually use.
+  why_not:
+    A: Report age matters, but even a current report on the base model would not cover the vendor's fine-tuning or tools.
+    B: Who commissioned the test can affect its scope, but an independent tester is still credible for what was tested.
+      The bigger issue is what was not tested.
+    C: A summary limits detail, but a full report on the base model would still miss the product's own changes.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: obvious

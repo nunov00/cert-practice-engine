@@ -1,0 +1,32 @@
+id: cissp-d5-5.4-0001
+subdomain: '5.4'
+difficulty: medium
+stem: A hospital's nurse role lets nurses open any patient record in the hospital. A new policy limits access to patients
+  on the ward where a nurse is working. Nurses often move between wards within a shift, and patients change wards often. Which
+  approach BEST enforces the policy?
+options:
+  A: Attribute rules matching the nurse's and patient's current ward
+  B: One role per ward, granted to each nurse on that ward
+  C: Break-glass access to any patient record, with review afterwards
+  D: Discretionary sharing of records by the attending doctor
+answer: A
+explanation:
+  why_correct: The deciding fact is how fast both sides change. Attribute-based rules evaluate the nurse's current assignment
+    and the patient's current ward at each request, so access follows the policy without anyone editing role assignments during
+    the shift.
+  why_not:
+    B: Ward roles fit a stable workforce, but nurses moving mid-shift and patients changing wards would need constant role
+      changes, and stale grants would build up.
+    C: Break-glass access is a useful emergency path alongside the main control, but on its own it does not limit routine
+      access to the nurse's ward.
+    D: Discretionary sharing leaves access to individual doctors' choices, which is inconsistent and does not follow ward
+      assignments.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

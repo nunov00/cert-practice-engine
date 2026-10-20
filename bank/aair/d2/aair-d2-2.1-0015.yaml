@@ -1,0 +1,32 @@
+id: aair-d2-2.1-0015
+subdomain: '2.1'
+difficulty: hard
+stem: A dermatology clinic is designing how its AI tool will present results to doctors. In a trial, the tool showed
+  its suggested diagnosis with a confidence score, yet doctors' accuracy fell well below their usual level on the
+  cases the tool got wrong. Which design change BEST addresses this?
+options:
+  A: Show the three most likely diagnoses instead of a single one
+  B: Highlight the image regions that drove each suggestion
+  C: Hide the suggestion when the model's confidence is low
+  D: Ask doctors to record their own view before showing the AI's
+answer: D
+explanation:
+  why_correct: 'The trial shows anchoring: doctors followed the tool when it was wrong, even with its confidence
+    shown. Having doctors form and record their own judgement first keeps an independent view. The tool then works
+    as a second opinion, and a disagreement prompts a closer look instead of quiet acceptance.'
+  why_not:
+    A: A short list of possible diagnoses gives more information, but doctors still see the tool's framing before
+      forming their own view, so anchoring remains.
+    B: Highlighting regions can help doctors check a suggestion, but such maps are often hard to interpret and can
+      increase trust in wrong outputs.
+    C: Confidence was already shown and did not prevent over-reliance. Wrong suggestions are often made with high
+      confidence, so hiding low-confidence ones would not reach many of the errors.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

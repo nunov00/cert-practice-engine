@@ -1,0 +1,31 @@
+id: aaism-d2-2.1-0019
+subdomain: '2.1'
+difficulty: hard
+stem: An airline's AI agent issues refunds below a set value without staff review. The main concern is a manipulated agent
+  issuing many small refunds, and the board states its tolerance as a monthly loss amount. Which threshold BEST puts that
+  tolerance into practice?
+options:
+  A: A lower value cap on each single refund the agent issues
+  B: A limit on refund errors as a share of decisions
+  C: A cap on the total value the agent refunds each day
+  D: A limit on the share of refunds escalated to staff
+answer: C
+explanation:
+  why_correct: The tolerance is an amount of money over time, and the expected attack works through volume, not size. A
+    cap on the total value the agent can refund each day bounds the loss directly, whatever the size of each refund, and
+    keeps the monthly total within tolerance.
+  why_not:
+    A: A lower cap per refund limits large single losses, but many small refunds stay under it, which is the attack the
+      stem describes.
+    B: 'An error-rate limit measures decision quality, but a rate does not bound money lost: a busy period with a small
+      error share can still add up to a large loss.'
+    D: Escalation share shows how often staff are involved, but refunds below the review value are not escalated, so it
+      says little about the losses in question.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

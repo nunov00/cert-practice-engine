@@ -1,0 +1,33 @@
+id: aair-d2-2.2-0014
+subdomain: '2.2'
+difficulty: hard
+stem: A tax agency trained a model to find errors in tax returns, using as labels the returns its old rules engine
+  had flagged. On a held-out test set, the model agrees with the rules engine on 98% of returns. What is the MAIN
+  limitation of this result?
+options:
+  A: The 2% of returns where the two disagree have not been reviewed
+  B: It shows agreement with the old rules, not real errors found
+  C: It does not show performance on returns from new types of taxpayer
+  D: The test set was drawn from the same years as the training data
+answer: B
+explanation:
+  why_correct: The labels are the old engine's flags, not confirmed errors. A test against those labels shows only
+    that the model imitates the rules engine, including its misses and false flags. It says nothing direct about
+    how well the model finds real errors. Validation needs ground truth, such as a sample of returns whose errors
+    were confirmed by examiners.
+  why_not:
+    A: 'Reviewing the disagreements is useful, but it does not fix the main problem: the 98% agreement itself is
+      measured against labels that may be wrong.'
+    C: Coverage of new taxpayer types matters, but even for familiar types the result does not show real error-finding
+      ability.
+    D: A same-period test can overstate performance over time, but that is secondary to the test measuring the wrong
+      target.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

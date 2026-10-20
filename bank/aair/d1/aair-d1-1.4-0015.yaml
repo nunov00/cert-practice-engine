@@ -1,0 +1,32 @@
+id: aair-d1-1.4-0015
+subdomain: '1.4'
+difficulty: medium
+stem: A bank updated its AI policy six months ago to require bias testing before any customer-facing model is released.
+  A review finds that two business units still follow local procedures written for the old policy, and neither has
+  bias-tested its recent releases. Which control would BEST prevent this from recurring?
+options:
+  A: Yearly attestation by each unit head that procedures match the policy
+  B: An email summary of each policy change sent to affected staff
+  C: A map of procedures to policy clauses, reviewed on policy change
+  D: An internal audit of each unit's policy compliance each year
+answer: C
+explanation:
+  why_correct: The failure is that a policy change did not flow into the procedures people follow. Mapping each
+    local procedure to the policy clauses it implements, and reviewing the mapped procedures whenever the policy
+    changes, builds that link into the policy process so procedures are updated when it matters, not found out of
+    date later.
+  why_not:
+    A: Attestation relies on unit heads checking their own procedures and comes once a year, so a gap could last
+      for months, as it did here.
+    B: Telling staff about a change is useful, but staff follow their local procedures. Unless those are updated,
+      the old practice continues.
+    D: An annual audit is detective. It would find the gap, but only after releases had gone out without testing.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

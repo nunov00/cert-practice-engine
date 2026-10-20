@@ -1,0 +1,33 @@
+id: aair-d1-1.1-0016
+subdomain: '1.1'
+difficulty: medium
+stem: A software company sells AI triage tools to hospitals and manages AI risk using a voluntary AI risk management
+  framework. Hospital buyers now ask, in their tenders, for third-party certification of the company's AI management.
+  What should the risk practitioner recommend?
+options:
+  A: Implement a certifiable AI management system standard and seek audit
+  B: Commission an independent assessment against the voluntary framework
+  C: Publish a detailed self-assessment against the voluntary framework
+  D: Map the voluntary framework to each hospital's tender criteria
+answer: A
+explanation:
+  why_correct: 'The buyers want certification: an accredited third party auditing the company against a standard
+    that is designed to be certified against. A voluntary framework guides good practice but is not a certification
+    scheme. Implementing a certifiable AI management system standard, building on the work already done under the
+    framework, and then seeking audit is the way to meet the requirement.'
+  why_not:
+    B: An independent assessment adds real assurance, but it is not certification. Tenders that ask for certification
+      may not accept it, and each assessor may judge the framework differently.
+    C: A self-assessment is the company's own view. However detailed, it is not the third-party assurance the buyers
+      are asking for.
+    D: Mapping can help answer individual tenders, but it gives no certification, and the work would have to be
+      repeated for each buyer's criteria.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,31 @@
+id: cissp-d3-3.10-0001
+subdomain: '3.10'
+difficulty: hard
+stem: A city replaced its building permit system. The new system passed each acceptance test written from its requirements,
+  but in the first week clerks found it could not handle properties with several owners, which the old system did and nobody
+  had written down. Which lifecycle activity, done well, would MOST likely have caught this before go-live?
+options:
+  A: A traceability review linking each requirement to its tests
+  B: Validation by clerks working through real past permit cases
+  C: Integration testing with the city's property register
+  D: Independent code review of the permit-handling modules
+answer: B
+explanation:
+  why_correct: Verification asks whether the system was built to its specification; validation asks whether it meets users'
+    real needs. A need nobody wrote down is invisible to specification-based tests, but clerks running real past cases, some
+    with several owners, would have met it.
+  why_not:
+    A: Traceability confirms each written requirement is tested. It cannot reveal a requirement that was never written.
+    C: Integration tests check data exchange with the register against the interface specification, which shares the same
+      gap in the written requirements.
+    D: Code review checks the code against its design and for defects. It does not test whether the design covers what clerks
+      need.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

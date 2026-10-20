@@ -1,0 +1,28 @@
+id: aaism-d3-3.4-0018
+subdomain: '3.4'
+difficulty: hard
+stem: A call-centre operator wants AI to score agents' emotions from their voices. A privacy assessment found it lawful
+  with access controls, but employee representatives call it intrusive. What should the security manager do?
+options:
+  A: Approve it with access controls on the emotion scores
+  B: Refer the proportionality question to the AI ethics review
+  C: Run a second privacy assessment that includes employee input
+  D: Make the scoring depend on each agent's consent
+answer: B
+explanation:
+  why_correct: Being lawful does not settle whether a use is proportionate or acceptable to the people affected. The open
+    question is ethical, so it belongs with the AI ethics review, which can weigh the benefit against the intrusion with
+    employee views and decide on conditions or rejection.
+  why_not:
+    A: Access controls answer the privacy assessment's conditions, but approving now ignores the unresolved concern about
+      intrusiveness.
+    C: A second legal assessment would likely reach the same answer. The question raised is about acceptability, not lawfulness.
+    D: Consent at work is weak because staff may feel unable to refuse, so it does not resolve whether the use is proportionate.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

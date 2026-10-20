@@ -1,0 +1,31 @@
+id: aaism-d2-2.1-0024
+subdomain: '2.1'
+difficulty: hard
+stem: A key risk indicator on an AI translation tool's error rate has breached its threshold weekly for six months, and
+  owners now ignore it. The threshold came from the vendor's launch benchmark. Measured errors sit within the board's stated
+  tolerance. What should the risk manager do?
+options:
+  A: Escalate the repeated breaches to the risk committee
+  B: Agree a treatment plan to bring errors under the threshold
+  C: Reset the threshold from the board's stated tolerance
+  D: Add a complaints indicator alongside the error rate
+answer: C
+explanation:
+  why_correct: 'The indicator is miscalibrated: its threshold reflects a vendor benchmark, not the organisation''s tolerance,
+    and the actual error rate is acceptable. Resetting the threshold from the stated tolerance makes breaches meaningful
+    again, so owners respond when one occurs.'
+  why_not:
+    A: Escalation is the usual response to ignored breaches, but these breaches do not represent risk above tolerance. Escalating
+      them would spend the committee's attention on noise.
+    B: Treatment is for risk above tolerance. Spending effort to meet a benchmark-based threshold reduces a risk the board
+      has already said is acceptable.
+    D: A second indicator adds information, but the first would keep breaching and being ignored, which teaches owners to
+      disregard indicators.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

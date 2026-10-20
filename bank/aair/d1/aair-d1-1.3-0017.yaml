@@ -1,0 +1,31 @@
+id: aair-d1-1.3-0017
+subdomain: '1.3'
+difficulty: hard
+stem: A bank's AI policy lets business unit heads approve deployment of their own units' models. One head approved
+  a customer-facing model that the second-line risk team had rated above risk appetite, citing the revenue it would
+  bring. The policy was followed. What should the risk practitioner recommend?
+options:
+  A: Give the second-line risk team a veto over high-risk deployments
+  B: Require unit heads to record why they disagree with risk ratings
+  C: Have internal audit review a sample of deployment approvals yearly
+  D: Route deployments rated above appetite to a higher approval body
+answer: D
+explanation:
+  why_correct: 'The process worked as written, so the gap lies in decision rights: a person with a direct interest
+    in the model can accept risk beyond appetite. Tying approval authority to the risk rating, so that above-appetite
+    cases go to a body such as an executive risk committee, keeps the decision with management while matching the
+    level of authority to the size of the risk.'
+  why_not:
+    A: A veto would make the second line the decision-maker, blurring its role as independent challenge. Accepting
+      risk belongs with management at the right level.
+    B: Recording reasons adds transparency, but the person with the conflict can still accept the risk.
+    C: An audit would find issues after the fact, and in this case would only confirm that the policy was followed.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

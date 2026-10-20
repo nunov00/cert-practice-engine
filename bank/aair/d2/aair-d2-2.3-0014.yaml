@@ -1,0 +1,32 @@
+id: aair-d2-2.3-0014
+subdomain: '2.3'
+difficulty: hard
+stem: A retailer's pricing model retrains every week and goes live automatically if its average error on the past
+  month's sales is lower than the current version's. Which risk does this release rule leave MOST uncontrolled?
+options:
+  A: Retraining could pick up a sudden one-off change in demand
+  B: A version could cut average error yet fail for some products
+  C: The past month could be too short a window to judge a new version
+  D: Errors in live prices could go unnoticed between weekly retrains
+answer: B
+explanation:
+  why_correct: The release gate looks at one number, average error. A new version can improve that average while
+    getting much worse for particular product lines, stores or price bands, and the rule would still promote it
+    automatically with no human look. Adding segment-level checks, or limits on how much any segment may worsen,
+    closes that gap.
+  why_not:
+    A: A one-off change in demand could affect a retrain, but the comparison on a month of sales would usually show
+      if the new version is worse overall.
+    C: A month of retail sales is a large sample. The window matters less than the fact that only an overall average
+      is checked.
+    D: Live monitoring between retrains is a separate control, and the stem is about the release rule. The gate's
+      blind spot is the more direct gap.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

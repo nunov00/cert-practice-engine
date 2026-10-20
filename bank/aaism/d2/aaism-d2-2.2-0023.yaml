@@ -1,0 +1,30 @@
+id: aaism-d2-2.2-0023
+subdomain: '2.2'
+difficulty: medium
+stem: A retailer's shopping agent was threat modelled at design. The team now ships weekly. Most releases change prompts
+  or fix bugs, but some add tools or new data sources. What is the BEST way to keep the threat model current?
+options:
+  A: Review the threat model at a fixed quarterly interval
+  B: Re-run the full threat model for each weekly release
+  C: Commission an external red team twice a year
+  D: Update it when a release adds a tool or data source
+answer: D
+explanation:
+  why_correct: New tools and data sources change what the agent can do and which inputs an attacker can control, which is
+    what the threat model describes. Updating it when those change keeps it current without repeating the work for routine
+    releases.
+  why_not:
+    A: A quarterly review is better than none, but a tool added just after a review would run for months without its threats
+      being considered.
+    B: Re-running the full model weekly is costly for releases that change nothing structural, and the effort tends to become
+      a box-ticking exercise.
+    C: Red teaming tests the built system and is valuable, but it does not keep the design threat model current between
+      exercises.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: obvious

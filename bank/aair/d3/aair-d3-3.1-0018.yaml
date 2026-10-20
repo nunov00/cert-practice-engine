@@ -1,0 +1,33 @@
+id: aair-d3-3.1-0018
+subdomain: '3.1'
+difficulty: hard
+stem: A bank fine-tuned a language model on ten years of its replies to customer complaints, so that it can draft
+  new replies. Personal details were removed from the letters first. Fee rules and redress amounts have changed
+  twice in that period. Which risk scenario should the assessment MOST include?
+options:
+  A: Drafts reveal details from letters that were used in training
+  B: Drafts copy the tone of older letters that customers disliked
+  C: Drafts cite rules or regulations that do not exist
+  D: Drafts offer fees and redress that no longer apply
+answer: D
+explanation:
+  why_correct: Fine-tuning builds the content of the training letters into the model. With fee rules and redress
+    amounts changed twice over ten years, much of that content is out of date, and the model will tend to reproduce
+    it confidently. Customers could be told wrong fees or offered the wrong redress, a direct conduct risk that
+    follows from how the model was built.
+  why_not:
+    A: Memorisation of training data is a real risk, but personal details were removed first, which lowers it. It
+      still deserves a place in the assessment, but it is less pressing than the outdated content.
+    B: Tone matters to customers, but it is a lesser harm than giving wrong information about money owed or owed
+      back.
+    C: Invented rules are a general risk with language models, but this model's training data makes repeating real,
+      outdated rules the more likely and specific failure.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

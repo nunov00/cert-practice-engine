@@ -1,0 +1,29 @@
+id: aaism-d2-2.2-0020
+subdomain: '2.2'
+difficulty: medium
+stem: A software firm's public coding assistant saw its model bill triple in a month while request counts stayed level.
+  A few free accounts send prompts that fill the context window and ask for maximum-length output. Which control BEST addresses
+  this?
+options:
+  A: Per-account limits on requests per minute
+  B: Bot detection on the sign-up and login pages
+  C: Token caps per request and spend budgets per account
+  D: Caching of answers to frequently repeated prompts
+answer: C
+explanation:
+  why_correct: Cost is driven by tokens, not request counts. Capping the tokens each request can use and setting a spend
+    budget for each account limits this resource exhaustion directly, without affecting normal users.
+  why_not:
+    A: Request rate limits are the usual control for abuse, but request counts stayed level here. Each request is simply
+      very expensive.
+    B: Bot detection helps against automated sign-ups, but the abuse comes from a few accounts that already exist and may
+      be run by people.
+    D: Caching saves cost on repeated prompts, but these prompts are long and varied, so few would be served from a cache.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

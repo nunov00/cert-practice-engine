@@ -1,0 +1,30 @@
+id: aaism-d2-2.1-0020
+subdomain: '2.1'
+difficulty: medium
+stem: A retailer will pilot face matching at store entrances to spot known shoplifters. The risk assessment rated impact
+  low, based on the expected cost of false matches to the store, and took likelihood from the vendor's accuracy figures.
+  What is the GREATEST weakness of the assessment?
+options:
+  A: Impact leaves out harm to shoppers wrongly matched
+  B: Likelihood rests on the vendor's own accuracy figures
+  C: The ratings were set before any pilot data existed
+  D: The second line has not challenged the ratings
+answer: A
+explanation:
+  why_correct: A false match can mean a shopper being stopped, searched or barred in public, along with legal and reputational
+    consequences for the retailer. Rating impact only on the store's own cost leaves out the main harm, so the overall rating
+    is wrong however good the likelihood estimate is.
+  why_not:
+    B: Vendor figures may not reflect the retailer's stores and should be checked in the pilot, but even accurate figures
+      would leave the impact rating wrong.
+    C: Rating before pilot data exists is normal for a pre-pilot assessment. The pilot should then refine the ratings.
+    D: Second-line challenge is good practice and might catch the gap, but the weakness itself is in what the impact rating
+      counts.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

@@ -1,0 +1,31 @@
+id: aaism-d3-3.3-0018
+subdomain: '3.3'
+difficulty: medium
+stem: A telecom's feature store builds derived tables from customer datasets. Source tables carry classification labels
+  that drive access, but derived tables start unlabelled, and restricted fields have appeared in a low-tier marketing model.
+  Which control BEST prevents this?
+options:
+  A: Derived tables inherit the strictest label of their sources
+  B: Quarterly manual reclassification of the feature store
+  C: Data loss scanning of the marketing model's outputs
+  D: Access to the feature store limited to approved data teams only
+answer: A
+explanation:
+  why_correct: Access is driven by labels, and derived tables escape it because they start with none. Having each derived
+    table inherit the strictest label of its sources, through lineage, keeps restricted fields under the same access rules
+    wherever they flow.
+  why_not:
+    B: Manual reclassification catches some gaps, but derived tables created between reviews stay unlabelled and usable
+      for months.
+    C: Output scanning may detect restricted data after a model has already been trained on it. It does not prevent the
+      use.
+    D: Limiting the feature store to approved teams narrows who can reach it, but approved teams can still use restricted
+      fields in low-tier models when tables carry no label.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

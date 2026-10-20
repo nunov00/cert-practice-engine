@@ -1,0 +1,30 @@
+id: aaism-d3-3.2-0018
+subdomain: '3.2'
+difficulty: medium
+stem: A bank is retiring a credit model now that its replacement is live. Regulators may ask the bank to explain past credit
+  decisions made by the model for up to seven years. What should the retirement plan MAINLY ensure?
+options:
+  A: The model and its training data are deleted at retirement
+  B: The old endpoint and its credentials are removed
+  C: The model and its records are kept for that period
+  D: Users are told which model now makes the decisions
+answer: C
+explanation:
+  why_correct: Explaining past decisions needs the retired model version, its training and validation records and the decision
+    logs. Retiring the model from service while keeping these under controlled retention lets the bank answer regulators
+    for the full period.
+  why_not:
+    A: Deleting data no longer needed is good practice, but deleting the model and its data here would leave the bank unable
+      to explain past decisions.
+    B: Removing live access is a necessary retirement step, but it does not preserve what the bank needs to explain past
+      decisions.
+    D: Telling users about the change supports transparency, but it does nothing for the bank's duty to explain decisions
+      already made.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

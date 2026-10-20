@@ -1,0 +1,29 @@
+id: aaism-d3-3.4-0017
+subdomain: '3.4'
+difficulty: medium
+stem: A lender must give refused applicants the main reasons for each decision. Its fraud team worries that detailed reasons
+  would teach fraudsters how to pass the model. What should the security manager recommend?
+options:
+  A: Withhold reasons when refusals involve fraud scores
+  B: Give each applicant the model's full attribution scores
+  C: Send a standard statement of general refusal factors
+  D: Give the main reasons without exact weights or cut-offs
+answer: D
+explanation:
+  why_correct: Applicants need to know the main factors behind their refusal, but they do not need the exact weights or
+    thresholds. Stating reasons at that level meets the duty to explain while giving fraudsters little precise information
+    to tune applications against.
+  why_not:
+    A: Withholding reasons would breach the duty to explain, and fraud concerns do not remove it for the many genuine applicants
+      affected.
+    B: Full attribution scores give applicants more than they need and hand fraudsters a precise guide to the model.
+    C: A generic statement protects the model but does not give applicants the reasons for their own decision, which the
+      duty requires.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

@@ -1,0 +1,30 @@
+id: cissp-d4-4.1-0003
+subdomain: '4.1'
+difficulty: medium
+stem: A company's hypervisors reach their storage array using iSCSI over the general data network, and user subnets can route
+  to the storage ports. Which design change BEST reduces the risk to the storage traffic?
+options:
+  A: Turn on CHAP authentication between hypervisors and targets
+  B: Move iSCSI to a dedicated storage network that is not routed
+  C: Encrypt the iSCSI sessions with IPsec on each hypervisor host
+  D: Place an inline IPS between user subnets and the array
+answer: B
+explanation:
+  why_correct: Storage traffic is converged onto a network that users can reach. Isolating it on its own non-routed network
+    removes user subnets from the path entirely, which protects both the confidentiality of the traffic and access to the
+    targets, without the performance cost of encryption.
+  why_not:
+    A: CHAP authenticates initiators to targets, but the traffic stays readable and the storage ports stay reachable from
+      user subnets.
+    C: IPsec protects the traffic in transit but adds overhead to latency-sensitive storage traffic, and the ports remain
+      reachable from user networks.
+    D: An IPS can block known attack patterns, but it leaves the storage network reachable and in the same path as user traffic.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

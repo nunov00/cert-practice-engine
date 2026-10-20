@@ -1,0 +1,29 @@
+id: aaism-d2-2.2-0025
+subdomain: '2.2'
+difficulty: hard
+stem: A threat report says attackers are planting insecure code in public repositories that coding models learn from. A
+  software firm uses a vendor's coding assistant and trains no models of its own. What is the BEST response?
+options:
+  A: Ask the vendor how it screens code used for training
+  B: Scan the firm's own repositories for planted code
+  C: Check assistant-suggested code in review and scanning
+  D: Turn off the assistant for security-sensitive code
+answer: C
+explanation:
+  why_correct: The firm cannot control what the vendor's model learned. Its exposure is insecure suggestions entering its
+    code, and secure code review and automated scanning catch those whatever the cause, so they address the threat where
+    the firm has control.
+  why_not:
+    A: Vendor assurance is a useful input, but whatever the vendor's screening misses still reaches the firm's code with
+      no check.
+    B: The firm's repositories are not the source the attackers are poisoning. The risk is in what the assistant suggests.
+    D: Turning the assistant off for sensitive code reduces exposure there, but insecure suggestions in the rest of the
+      codebase are still unchecked.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

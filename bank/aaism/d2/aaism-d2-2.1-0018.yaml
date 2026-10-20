@@ -1,0 +1,30 @@
+id: aaism-d2-2.1-0018
+subdomain: '2.1'
+difficulty: medium
+stem: A risk committee can fund one of two AI risk treatments this year. Both risks are rated high on the company's three-by-three
+  matrix, and each owner argues theirs is worse. What would BEST support the decision?
+options:
+  A: Re-rate both risks on a finer five-by-five matrix
+  B: Ask internal audit for an independent rating of each
+  C: Rank the two by the maturity of each area's current controls
+  D: Estimate each risk's loss range and what each treatment cuts
+answer: D
+explanation:
+  why_correct: Two ordinal ratings that tie cannot show which treatment buys more risk reduction for the money. Estimating
+    a loss range for each risk, and how much each treatment would reduce it, lets the committee compare the two options
+    on the same scale.
+  why_not:
+    A: A finer matrix may break the tie, but it is still an ordinal scale and does not show how much each treatment would
+      reduce the risk.
+    B: Independent challenge improves the quality of ratings, but a further ordinal rating still does not compare the benefit
+      of the two treatments.
+    C: Control maturity hints at where weaknesses lie, but it does not measure the exposure or what the funded treatment
+      would achieve.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: obvious

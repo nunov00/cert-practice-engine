@@ -1,0 +1,29 @@
+id: aaism-d2-2.3-0023
+subdomain: '2.3'
+difficulty: hard
+stem: An online lender relies on a small vendor's fraud model, hosted in the vendor's cloud and trained partly on the lender's
+  data. Press reports say a competitor of the lender may acquire the vendor. What should the security manager do FIRST?
+options:
+  A: Review the contract's change-of-control and data terms
+  B: Test the exit plan for moving the service to another provider
+  C: Ask the vendor for a statement on the acquisition
+  D: Increase monitoring of the vendor's service levels
+answer: A
+explanation:
+  why_correct: The main risk is the lender's data and the model trained on it passing to a competitor. Knowing what the
+    contract says about change of control, termination, data return and deletion shows what the lender can do before any
+    deal closes, and shapes every other step.
+  why_not:
+    B: Exit readiness matters if the deal goes ahead, but testing it first, before knowing the lender's rights, may spend
+      effort on a move the contract would not support or require.
+    C: The vendor may not be free to comment on a pending deal, and its statement would not change the lender's rights.
+    D: Service levels are unlikely to change before a deal closes, and monitoring them does not protect the data from the
+      new owner.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

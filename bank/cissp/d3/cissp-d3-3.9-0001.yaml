@@ -1,0 +1,30 @@
+id: cissp-d3-3.9-0001
+subdomain: '3.9'
+difficulty: hard
+stem: A logistics firm is building a small server room inside a warehouse that is unheated and falls below freezing in winter.
+  Local code requires a water-based suppression system, and the firm wants to limit the chance of water being released when
+  a forklift knocks a sprinkler head. Which system BEST fits?
+options:
+  A: A wet-pipe sprinkler system
+  B: A dry-pipe sprinkler system
+  C: A double-interlock pre-action system
+  D: A deluge system with open sprinkler heads
+answer: C
+explanation:
+  why_correct: Pre-action pipes hold air until a detector trips, so they do not freeze, and a double-interlock design needs
+    both a detection signal and an opened head before water flows. A head knocked off by a forklift on its own releases nothing.
+  why_not:
+    A: Wet pipes are full of water, which can freeze in an unheated space, and a damaged head discharges straight away.
+    B: Dry-pipe systems cope with freezing, but a broken head lets the air out, which opens the valve and sends water to the
+      head.
+    D: Deluge systems open their heads together when detection trips and suit high-hazard areas. They release far more water
+      than a server room needs.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

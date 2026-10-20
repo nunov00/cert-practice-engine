@@ -1,0 +1,31 @@
+id: aaism-d2-2.2-0019
+subdomain: '2.2'
+difficulty: medium
+stem: A payments firm keeps its fraud model's design secret, and its API returns only approve or decline. Testers got fraudulent
+  payments approved within a few tries, using inputs first crafted against a public model trained on similar data. What
+  does this MOST clearly show?
+options:
+  A: The model was copied through many repeated scoring queries
+  B: Adversarial inputs can carry over between similar models
+  C: The approval threshold is set too permissively
+  D: The fraud model's training labels were poisoned
+answer: B
+explanation:
+  why_correct: Inputs crafted to fool one model often fool another trained on similar data. The testers needed no knowledge
+    of the secret model, which shows that keeping the design secret does not protect against evasion. Robustness has to
+    be built and tested in the model and the surrounding controls.
+  why_not:
+    A: Extraction needs many queries to approximate a model. A few tries with inputs shaped on a public model point to transfer,
+      not copying.
+    C: A loose threshold would let fraud through generally, but the testers succeeded with inputs shaped on another model,
+      which points to transfer rather than tuning.
+    D: Poisoning needs a path into training data. Nothing in the test touched training, and the attack worked at scoring
+      time.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

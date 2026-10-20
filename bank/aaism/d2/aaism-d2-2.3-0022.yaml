@@ -1,0 +1,28 @@
+id: aaism-d2-2.3-0022
+subdomain: '2.3'
+difficulty: hard
+stem: A bank's AI provider supplies an independent assurance report whose period ended eight months ago. Since then, the
+  provider has moved model hosting to a new platform. What should the bank request NEXT?
+options:
+  A: A bridge letter covering the months after the period
+  B: The provider's next report when it is issued
+  C: Evidence of controls on the new hosting platform
+  D: A completed security questionnaire for the service
+answer: C
+explanation:
+  why_correct: The report tested a platform that no longer hosts the models. The bank needs evidence about the controls
+    on the new platform, such as test results or a scoped assessment, to rely on the service now.
+  why_not:
+    A: A bridge letter is the usual way to cover a gap after the report period, but it is management's statement that nothing
+      material has changed. Here something material has changed.
+    B: The next report may cover the new platform, but waiting for it leaves the bank relying on stale evidence in the meantime.
+    D: A questionnaire is self-reported and general. It gives weaker evidence than tested controls on the platform that
+      actually changed.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

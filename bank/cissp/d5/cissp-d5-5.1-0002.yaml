@@ -1,0 +1,29 @@
+id: cissp-d5-5.1-0002
+subdomain: '5.1'
+difficulty: medium
+stem: Lab technicians run an analyser from a shared PC under one generic account, so audit records cannot show who changed
+  a calibration. Technicians swap at the PC every few minutes while wearing gloves. Which change BEST restores accountability?
+options:
+  A: Keep a paper log of who uses the PC for each run
+  B: Give each technician an account with badge-tap sign-in
+  C: Point a camera at the PC and keep the footage for a year
+  D: Give each technician an account with password sign-in
+answer: B
+explanation:
+  why_correct: Accountability needs each change tied to an individual identity in the system's own records. Individual accounts
+    with a quick badge tap make that practical for gloved staff who switch every few minutes.
+  why_not:
+    A: A paper log depends on people filling it in and cannot be matched reliably to the system's change records.
+    C: Footage may show who stood at the PC, but matching it to each change is slow and uncertain. It is detective, not identification
+      in the system.
+    D: Individual accounts are right, but typing passwords in gloves every few minutes invites shared or left-open sessions,
+      which defeats the purpose.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

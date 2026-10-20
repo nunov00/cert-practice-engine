@@ -1,0 +1,32 @@
+id: aair-d3-3.4-0019
+subdomain: '3.4'
+difficulty: hard
+stem: A lender's model reads income from uploaded documents, and monthly sampling shows its overall extraction accuracy
+  steady at 96%. Three months ago the lender began accepting gig-economy workers, whose earnings statements come
+  from many platforms. They now make up 12% of applications. What should the risk practitioner recommend?
+options:
+  A: Bring forward the model's next full revalidation
+  B: Report accuracy separately for gig workers' documents
+  C: Monitor input drift against the model's training documents
+  D: Increase the size of the monthly overall accuracy sample
+answer: B
+explanation:
+  why_correct: An overall figure can stay steady while a growing segment does badly, as long as the other 88% performs
+    well. Gig workers' statements are new document types the model may not have seen. Reporting accuracy for that
+    segment on its own shows directly whether those applicants' incomes are being read correctly, and keeps showing
+    it as the segment grows.
+  why_not:
+    A: A revalidation gives a point-in-time view and takes time. Ongoing segment reporting gives the answer sooner
+      and keeps watching.
+    C: Input drift monitoring would show that the documents have changed, but not whether incomes are being read
+      correctly from them.
+    D: A bigger overall sample makes the average more precise, but it still mixes gig workers in with everyone else.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

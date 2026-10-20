@@ -1,0 +1,33 @@
+id: aair-d1-1.2-0015
+subdomain: '1.2'
+difficulty: medium
+stem: At a bank, each production model has a business owner who must review monthly monitoring reports and act on
+  breaches. Owners' annual objectives cover only the revenue their models bring in. Reviews are often months late,
+  and breaches stay open. What should the risk practitioner recommend?
+options:
+  A: Escalate late reviews to each owner's line manager each month
+  B: Automate the monitoring reports and send breach alerts to owners
+  C: Train owners on their monitoring duties and the risks of delay
+  D: Add monitoring duties to owners' objectives and appraisals
+answer: D
+explanation:
+  why_correct: Owners are measured on revenue alone, so their risk duties compete with the work they are rewarded
+    for. Building monitoring duties into objectives and appraisals aligns the performance process with the risk
+    process and gives owners a lasting reason to act. Escalation and training can support this but do not change
+    the incentive.
+  why_not:
+    A: Escalation puts pressure on owners case by case, but managers whose own targets are about revenue may not
+      push hard, and the underlying incentive is unchanged.
+    B: The reports already reach owners. Automation speeds delivery, but the problem is that owners do not act on
+      what they receive.
+    C: Nothing in the stem suggests owners do not know their duties. Training does not change the priorities their
+      objectives set.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aair-d2-2.4-0013
+subdomain: '2.4'
+difficulty: medium
+stem: A law firm's AI research assistant uses an external language model, a set of system instructions and a search
+  index built from client files. The firm's AI asset inventory lists only the external model. Which missing asset
+  matters MOST from a risk point of view?
+options:
+  A: The system instructions that shape the assistant's answers
+  B: The evaluation questions used to test the assistant before launch
+  C: The search index holding content drawn from client files
+  D: The service accounts the assistant uses to call the model
+answer: C
+explanation:
+  why_correct: The search index holds content taken from client files, so it carries the same confidentiality duties
+    as the files themselves, including access limits between clients, retention and deletion. Leaving it out of
+    the inventory means none of those duties are tracked for a store of highly sensitive data.
+  why_not:
+    A: System instructions should be versioned and controlled, but they hold little sensitive data, and errors in
+      them are easier to find and fix.
+    B: Evaluation sets support testing and should be kept, but their absence from the inventory carries far less
+      risk than untracked client content.
+    D: Service accounts need managing, but they are usually covered by identity and access processes. The index
+      is a new store of client data that no process may yet cover.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

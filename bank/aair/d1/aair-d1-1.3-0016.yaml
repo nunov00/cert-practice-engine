@@ -1,0 +1,31 @@
+id: aair-d1-1.3-0016
+subdomain: '1.3'
+difficulty: medium
+stem: A retailer's data science team wants to use staff performance and absence records held by HR to train a model,
+  for the operations division, that predicts store staffing needs. Who should approve this use of the HR data?
+options:
+  A: The head of operations, as owner of the planned model
+  B: The HR director, as owner of the staff records
+  C: The data protection officer, who advises on personal data
+  D: The chief data officer, who sets the data governance policy
+answer: B
+explanation:
+  why_correct: The data owner is accountable for how a dataset is used, including new purposes such as training
+    a model. The HR director owns the staff records, so they should approve the use, taking advice from data protection
+    and following the data governance policy.
+  why_not:
+    A: The model owner is accountable for the model and its use, but cannot approve use of data owned by another
+      function. That would let the requester approve its own request.
+    C: The data protection officer should be consulted, as this is sensitive staff data, but their role is to advise
+      and monitor, not to take the business decision.
+    D: The chief data officer sets the rules for data use, but individual decisions about a dataset rest with its
+      owner under those rules.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

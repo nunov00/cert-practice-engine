@@ -1,0 +1,29 @@
+id: cissp-d4-4.2-0002
+subdomain: '4.2'
+difficulty: medium
+stem: A university's network access control checks each laptop's patch level and anti-malware status when it joins the campus
+  network. Laptops that turn off anti-malware after joining keep full access for days, until they next reconnect. Which change
+  BEST closes this gap?
+options:
+  A: Shorten DHCP lease times so laptops renew their addresses more often
+  B: Alert the service desk when anti-malware protection stops
+  C: Reassess posture periodically and quarantine failing laptops
+  D: Place student laptops on a separate VLAN from staff
+answer: C
+explanation:
+  why_correct: The weakness is that posture is checked only at admission. Continuous or periodic posture reassessment, with
+    automatic quarantine when a laptop falls out of compliance, applies the same rule throughout the connection.
+  why_not:
+    A: A DHCP renewal refreshes an address lease. It does not trigger a posture check, so a non-compliant laptop keeps its
+      access.
+    B: Alerts help, but they rely on staff to follow up, and the laptop keeps full access in the meantime.
+    D: Segmentation limits what student laptops can reach, but non-compliant laptops keep full access within their VLAN.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

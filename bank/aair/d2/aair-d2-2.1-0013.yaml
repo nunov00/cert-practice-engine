@@ -1,0 +1,32 @@
+id: aair-d2-2.1-0013
+subdomain: '2.1'
+difficulty: medium
+stem: An insurer removed ethnicity from the inputs of a new home insurance pricing model. Testing then showed prices
+  still differ by ethnic group, driven mainly by the customer's preferred language. Differences by postcode largely
+  track flood and theft risk. Which design change is BEST?
+options:
+  A: Drop both postcode and preferred language from the inputs
+  B: Drop preferred language and keep postcode as an input
+  C: Keep both inputs and coarsen postcode to a broad region
+  D: Keep both inputs and adjust prices to equal group averages
+answer: B
+explanation:
+  why_correct: The testing shows where the unfair difference comes from. Preferred language acts as a proxy for
+    ethnicity with no clear link to the risk being priced, so it should go. Postcode differences largely reflect
+    real flood and theft risk, so keeping it, with that basis documented and monitored, preserves legitimate pricing.
+  why_not:
+    A: Dropping postcode too would remove a genuine risk factor. Prices would then misprice flood and theft exposure,
+      harming other customers.
+    C: Coarsening postcode blurs the real risk signal, while leaving in place preferred language, the input that
+      drives the unfair difference.
+    D: Adjusting prices to equal group averages treats the symptom, keeps the proxy in the model, and overrides
+      real risk differences.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

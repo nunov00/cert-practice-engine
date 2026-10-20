@@ -1,0 +1,31 @@
+id: cissp-d6-6.2-0002
+subdomain: '6.2'
+difficulty: hard
+stem: Unit tests cover 92 percent of a payment module's lines. A penetration tester then refunded money to her own account
+  by submitting an order with a negative quantity, which the code accepted as valid. Which testing practice would MOST likely
+  have caught this before release?
+options:
+  A: Misuse case tests written from an attacker's goals
+  B: Raising unit test line coverage to 100 percent
+  C: Static analysis of the module on each commit
+  D: Fuzzing the order API with large volumes of malformed input
+answer: A
+explanation:
+  why_correct: 'The flaw is a business logic gap: the code behaves as written, but nobody asked what an attacker would try.
+    Misuse cases start from goals such as getting money back without paying and turn them into tests, such as negative quantities.'
+  why_not:
+    B: Line coverage measures which code ran, not whether the right cases were tested. The negative path may already run in
+      tests that never check the result.
+    C: Static analysis finds coding errors and unsafe patterns, but accepting a negative number is valid code; the flaw is
+      in the business rule.
+    D: Fuzzing finds crashes and parsing errors. A well-formed order with a negative quantity succeeds quietly, so a fuzzer
+      has nothing to flag.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

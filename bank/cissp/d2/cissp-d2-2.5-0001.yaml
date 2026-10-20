@@ -1,0 +1,32 @@
+id: cissp-d2-2.5-0001
+subdomain: '2.5'
+difficulty: hard
+stem: An engineering firm must keep project drawings for 30 years after each project closes. The drawings are in a proprietary
+  CAD format, the software version that created them is no longer sold or supported, and the archive server reaches end of
+  support next year. Which migration plan BEST keeps the drawings usable for the full retention period?
+options:
+  A: Move the files unchanged to a supported storage platform
+  B: Move the files to immutable cloud storage with versioning
+  C: Move the files and keep the old CAD software on a virtual machine
+  D: Move the files with open-format exports beside the originals
+answer: D
+explanation:
+  why_correct: Over 30 years the main risk is that nothing can read the files, not that the storage fails. Exporting each
+    drawing to an open, documented format alongside the original keeps it readable without the unsupported software, while
+    the original keeps full fidelity for anyone who can still open it.
+  why_not:
+    A: A supported platform solves the storage problem, but the files stay in a format that only unsupported software can
+      read, and that gets harder every year.
+    B: Immutability and versioning protect integrity and guard against deletion, but they do not make a proprietary format
+      readable decades from now.
+    C: Keeping the old application on a virtual machine can bridge a few years, but a 30-year dependency on unsupported software,
+      its operating system and its licensing is fragile.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

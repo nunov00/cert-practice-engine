@@ -1,0 +1,30 @@
+id: cissp-d8-8.2-0001
+subdomain: '8.2'
+difficulty: medium
+stem: A build pipeline resolves packages from both a private registry and the public registry. An attacker published a public
+  package with the same name as an internal one and a higher version number, and the next build pulled it. The project's dependency
+  file did not change. Which control BEST prevents this?
+options:
+  A: Software composition analysis of dependencies for known vulnerabilities
+  B: Code review of each change to dependency files
+  C: Resolve internal package names only from the private registry
+  D: Sign build artefacts before they are deployed
+answer: C
+explanation:
+  why_correct: 'This is dependency confusion: the resolver picked the higher version from the wrong source. Pinning internal
+    names or scopes to the private registry means the public package is never considered, whatever its version.'
+  why_not:
+    A: Composition analysis flags components with known vulnerabilities. A freshly published malicious package has no known
+      vulnerability record.
+    B: Reviewing dependency changes is good practice, but nothing changed in the file; the version range allowed the new package.
+    D: Signing proves artefacts came from the pipeline. The pipeline itself built the malicious code in, so the artefact is
+      signed anyway.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

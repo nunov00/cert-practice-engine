@@ -1,0 +1,29 @@
+id: cissp-d7-7.7-0001
+subdomain: '7.7'
+difficulty: medium
+stem: CAD workstations at an engineering firm run a fixed, approved set of applications. A contractor's USB drive carried
+  a new malware variant that the signature-based anti-malware missed. Which preventive measure BEST stops similar malware
+  from running?
+options:
+  A: Update anti-malware signatures hourly
+  B: Detonate email attachments in a sandbox first
+  C: Deploy EDR to flag suspicious behaviour
+  D: Allow only approved applications to run
+answer: D
+explanation:
+  why_correct: New variants have no signature yet, and these workstations need only a fixed set of applications. Application
+    allowlisting blocks anything not on the approved list, whatever its signature status.
+  why_not:
+    A: Faster updates help only once a signature exists, and a new variant may have none for days.
+    B: Sandboxing email attachments helps against email delivery, but this malware came on a USB drive.
+    C: EDR is valuable for detection and response, but it flags behaviour after the malware is running rather than preventing
+      it.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

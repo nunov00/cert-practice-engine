@@ -1,0 +1,30 @@
+id: cissp-d3-3.8-0001
+subdomain: '3.8'
+difficulty: medium
+stem: Neighbours often cut through a clinic's rear car park to reach a side street, and some say they did not realise it was
+  private. The clinic wants to reduce this through site design rather than guards or cameras. Which measure BEST fits?
+options:
+  A: Mark the boundary with low planting, paving changes and signs
+  B: Improve lighting and sight lines from the clinic's ground-floor windows
+  C: Route the footpath with planters to a single entrance
+  D: Keep the car park tidy and repair damage promptly
+answer: A
+explanation:
+  why_correct: People cut through partly because nothing tells them the space is private. Territorial reinforcement, the CPTED
+    strategy that marks ownership with boundaries, surface changes and signs, addresses exactly that, without guards or cameras.
+  why_not:
+    B: Natural surveillance makes misuse more visible, but passers-by who think the space is public are not deterred by being
+      seen.
+    C: Natural access control channels people who are meant to be there. It does not tell passers-by that the car park is
+      private, and a cut-through route remains.
+    D: Maintenance signals that a place is cared for and discourages disorder, but a tidy car park can still look like a public
+      shortcut.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-cissp
+  checked_by: 2026-10-19-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: aair-d1-1.2-0017
+subdomain: '1.2'
+difficulty: medium
+stem: An airline's IT incident team took six hours to trace a check-in outage to a failing AI model. The team works
+  from the IT configuration database, which lists applications but not the models they call. The data office's AI
+  inventory lists models but not the services that use them. Which change would BEST shorten diagnosis of similar
+  outages?
+options:
+  A: Record each model and the services using it in the config database
+  B: Record the services that use each model in the AI model inventory
+  C: Send model health alerts to the IT incident team's monitoring console
+  D: Add model owners to the IT incident team's on-call escalation rota
+answer: A
+explanation:
+  why_correct: The incident team diagnoses outages from the configuration database, so that is where the link between
+    services and models must be. Recording models and their dependent services there brings AI into the existing
+    IT process, and the team can see straight away which model a failing service relies on.
+  why_not:
+    B: The dependency data would then exist, but in a tool the incident team does not work from. Keeping AI data
+      in a separate system is the misalignment that caused the delay.
+    C: Health alerts show that a model is unhealthy, but not which services it affects. Many model faults, such
+      as wrong outputs, also do not trigger health alerts.
+    D: Model owners help once the model is suspected. The delay came from not knowing which model to suspect, and
+      the rota does not change that.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

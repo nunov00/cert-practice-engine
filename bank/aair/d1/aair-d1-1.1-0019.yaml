@@ -1,0 +1,33 @@
+id: aair-d1-1.1-0019
+subdomain: '1.1'
+difficulty: hard
+stem: An insurer receives about 50,000 customer emails a day and wants to route each one to one of twelve teams.
+  It has three years of past emails, each labelled with the team that handled it. Routing must be consistent and
+  cheap to run at this volume. Which approach BEST fits?
+options:
+  A: A text classifier trained on the labelled past emails
+  B: A general language model prompted with each team's remit
+  C: Keyword rules maintained by the routing team
+  D: A general language model given labelled examples in its prompt
+answer: A
+explanation:
+  why_correct: 'Several facts point the same way: a fixed set of twelve classes, years of labelled examples, very
+    high volume, and a need for consistent, low-cost results. A classifier trained on the labelled emails fits that
+    well. It gives the same answer for the same input, is cheap to run at scale, and its accuracy can be measured
+    directly against the history.'
+  why_not:
+    B: A prompted general model can work without training data, which helps when labels are scarce. Here labels
+      are plentiful, and a general model costs far more per email at this volume and can vary in its answers.
+    C: Keyword rules are cheap and consistent, but they are brittle with free-text emails and need constant upkeep.
+      They ignore the labelled history that could train a better model.
+    D: Adding examples to the prompt improves a general model, but it does not remove the cost and consistency problems
+      at 50,000 emails a day, and it uses only a tiny part of the labelled data.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aair
+  checked_by: 2026-10-19-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

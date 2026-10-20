@@ -1,0 +1,30 @@
+id: aaism-d2-2.1-0021
+subdomain: '2.1'
+difficulty: hard
+stem: A council's team has identified threats to its AI benefits triage tool, rated inherent likelihood and impact, and
+  listed the controls currently running. A risk owner has been named. What should the team do NEXT?
+options:
+  A: Compare the inherent ratings with the risk thresholds
+  B: Select treatments for the risks rated above threshold
+  C: Report the ratings to the AI governance committee
+  D: Test how well the listed controls work in practice
+answer: D
+explanation:
+  why_correct: Residual risk depends on whether the listed controls actually operate as intended. Testing them gives the
+    evidence to rate residual risk, which is what should be compared with the thresholds and reported, and what treatment
+    decisions rest on.
+  why_not:
+    A: Comparison with thresholds decides which risks need treatment, but it should use residual risk. Comparing inherent
+      ratings would call for treatment of risks that working controls may already handle.
+    B: Treatment selection follows once residual risk is known. Choosing treatments now could duplicate controls that already
+      work or miss ones that do not.
+    C: The committee does need the results, but ratings that ignore how well current controls work would give it a misleading
+      picture.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-19-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious
