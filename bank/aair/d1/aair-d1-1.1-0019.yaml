@@ -1,6 +1,6 @@
 id: aair-d1-1.1-0019
 subdomain: '1.1'
-difficulty: hard
+difficulty: medium
 stem: An insurer receives about 50,000 customer emails a day and wants to route each one to one of twelve teams.
   It has three years of past emails, each labelled with the team that handled it. Routing must be consistent and
   cheap to run at this volume. Which approach BEST fits?

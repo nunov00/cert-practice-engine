@@ -5,19 +5,15 @@ stem: A software company sells AI triage tools to hospitals and manages AI risk 
   framework. Hospital buyers now ask, in their tenders, for third-party certification of the company's AI management.
   What should the risk practitioner recommend?
 options:
-  A: Implement a certifiable AI management system standard and seek audit
-  B: Commission an independent assessment against the voluntary framework
+  A: "Implement an AI management system standard and seek accredited audit"
+  B: "Commission an independent audit against the voluntary framework"
   C: Publish a detailed self-assessment against the voluntary framework
   D: Map the voluntary framework to each hospital's tender criteria
 answer: A
 explanation:
-  why_correct: 'The buyers want certification: an accredited third party auditing the company against a standard
-    that is designed to be certified against. A voluntary framework guides good practice but is not a certification
-    scheme. Implementing a certifiable AI management system standard, building on the work already done under the
-    framework, and then seeking audit is the way to meet the requirement.'
+  why_correct: "The buyers want certification: an accredited third party auditing the company against a standard that is designed to be certified against. A voluntary framework guides good practice but is not a certification scheme. Implementing an AI management system standard, building on the work already done under the framework, and then seeking accredited audit is the way to meet the requirement."
   why_not:
-    B: An independent assessment adds real assurance, but it is not certification. Tenders that ask for certification
-      may not accept it, and each assessor may judge the framework differently.
+    B: "An independent audit adds real assurance, but against a voluntary framework it is not certification. Tenders that ask for certification may not accept it, and each auditor may judge the framework differently."
     C: A self-assessment is the company's own view. However detailed, it is not the third-party assurance the buyers
       are asking for.
     D: Mapping can help answer individual tenders, but it gives no certification, and the work would have to be

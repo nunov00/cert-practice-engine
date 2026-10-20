@@ -12,14 +12,14 @@ options:
 answer: A
 explanation:
   why_correct: 'With three people and rare, non-urgent grants, dual control is workable: no one person can grant rights alone,
-    and misuse would need two administrators to collude. It prevents the problem instead of finding it later.'
+    and misuse would need two administrators to collude. It prevents the problem instead of finding it later. This works only if the tooling enforces it, for example a privileged-access workflow that holds each grant until a second administrator approves it, rather than an informal sign-off.'
   why_not:
     B: Job rotation can reveal irregularities when someone new takes over a duty, but here each administrator already holds
       the same rights, so rotation changes little.
     C: Mandatory leave can expose concealed activity, but it is detective, works only during the leave, and lets a bad grant
       stand until then.
     D: An outside log review is a sound compensating control where dual control is impossible, but it detects excessive grants
-      weeks later rather than stopping them.
+      weeks later rather than stopping them. Its independence is a strength, and it is a good addition to dual control, not a replacement.
 status: published
 outline_version: '2024-04-15'
 sample: false

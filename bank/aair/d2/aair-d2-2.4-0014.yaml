@@ -19,8 +19,7 @@ explanation:
     B: Dropping the older records removes the conflict, but it throws away a year of data, including categories
       the change did not touch.
     C: Weighting recent records reduces the effect of old labels but still trains on two conflicting rules.
-    D: A version input lets the model keep the two schemes apart, but every new complaint is scored under the current
-      guide, so the older records still teach the current scheme less than relabelled records would.
+    D: "A version input lets the model learn both schemes, but in production every complaint carries the current version, so the older records add little to learning the current rule for the changed category, and the conflict in the labels is left unresolved."
 status: published
 outline_version: '2026-04-15'
 sample: false

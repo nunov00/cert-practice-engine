@@ -5,7 +5,7 @@ stem: A lender must give refused applicants the main reasons for each decision. 
   would teach fraudsters how to pass the model. What should the security manager recommend?
 options:
   A: Withhold reasons when refusals involve fraud scores
-  B: Give each applicant the model's full attribution scores
+  B: "Tell applicants they may request the reasons within 60 days"
   C: Send a standard statement of general refusal factors
   D: Give the main reasons without exact weights or cut-offs
 answer: D
@@ -16,7 +16,7 @@ explanation:
   why_not:
     A: Withholding reasons would breach the duty to explain, and fraud concerns do not remove it for the many genuine applicants
       affected.
-    B: Full attribution scores give applicants more than they need and hand fraudsters a precise guide to the model.
+    B: "Reasons on request suit some regimes, but the lender must give the main reasons for each decision, so leaving it to applicants to ask does not meet the duty."
     C: A generic statement protects the model but does not give applicants the reasons for their own decision, which the
       duty requires.
 status: published

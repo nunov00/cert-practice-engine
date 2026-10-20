@@ -1,6 +1,6 @@
 id: cissp-d8-8.5-0001
 subdomain: '8.5'
-difficulty: medium
+difficulty: easy
 stem: A retailer's mobile API returns order details at /orders/{id} to any signed-in customer. A tester changed the ID in
   a request and received another customer's order. Order IDs are sequential numbers. Which fix BEST addresses the flaw?
 options:
@@ -25,4 +25,4 @@ provenance:
   run_id: 2026-10-19-daily-cissp
   checked_by: 2026-10-19-daily-cissp-check
   check_verdict: pass
-  options_only: not_obvious
+  options_only: obvious

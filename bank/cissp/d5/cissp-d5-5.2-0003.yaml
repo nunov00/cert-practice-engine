@@ -1,5 +1,5 @@
-id: cissp-d5-5.1-0002
-subdomain: '5.1'
+id: cissp-d5-5.2-0003
+subdomain: '5.2'
 difficulty: medium
 stem: Lab technicians run an analyser from a shared PC under one generic account, so audit records cannot show who changed
   a calibration. Technicians swap at the PC every few minutes while wearing gloves. Which change BEST restores accountability?

@@ -5,14 +5,13 @@ stem: A software firm's public coding assistant saw its model bill triple in a m
   A few free accounts send prompts that fill the context window and ask for maximum-length output. Which control BEST addresses
   this?
 options:
-  A: Per-account limits on requests per minute
+  A: "Per-account limits on requests per minute and per day"
   B: Bot detection on the sign-up and login pages
   C: Token caps per request and spend budgets per account
   D: Caching of answers to frequently repeated prompts
 answer: C
 explanation:
-  why_correct: Cost is driven by tokens, not request counts. Capping the tokens each request can use and setting a spend
-    budget for each account limits this resource exhaustion directly, without affecting normal users.
+  why_correct: "Cost is driven by tokens, not request counts. Capping the tokens each request can use and setting a spend budget for each account limits this resource exhaustion directly, with little effect on typical use."
   why_not:
     A: Request rate limits are the usual control for abuse, but request counts stayed level here. Each request is simply
       very expensive.

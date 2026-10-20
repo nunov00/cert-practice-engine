@@ -7,7 +7,7 @@ stem: A water utility's debt collection model was built to maximise the amount r
 options:
   A: Maximise recovery, excluding customers flagged as vulnerable
   B: Minimise the number of complaints about collection contacts
-  C: Maximise the customers keeping to plans they can afford
+  C: "Maximise the number of customers keeping to affordable plans"
   D: Maximise recovery while keeping complaints under a set limit
 answer: C
 explanation:

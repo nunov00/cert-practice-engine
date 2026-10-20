@@ -1,9 +1,7 @@
 id: aaism-d2-2.2-0026
 subdomain: '2.2'
 difficulty: hard
-stem: A finding that an HR agent follows instructions hidden in uploaded CVs was rated medium, with a 90-day fix deadline,
-  as the agent could only summarise. A week later, a release let the agent email candidates. What should the security manager
-  do FIRST?
+stem: "A finding that an HR agent follows instructions hidden in uploaded CVs was rated medium, with a 90-day fix deadline, as the agent could only summarise. A week later, a release let the agent email candidates, and recruiters now schedule all interviews through it. What should the security manager do FIRST?"
 options:
   A: Keep the fix deadline set when the finding was rated
   B: Re-rate the finding with the email tool in scope
@@ -16,8 +14,7 @@ explanation:
     or the tool must be held back.
   why_not:
     A: The deadline was set for an agent that could only summarise. Keeping it ignores the new way the weakness can be exploited.
-    C: Disabling the tool may turn out to be the right treatment, but it removes a released feature before anyone knows
-      how severe the combined risk is. The re-rating informs that decision.
+    C: "Disabling the tool may turn out to be the right treatment, but it would halt interview scheduling before anyone knows how severe the combined risk is. The re-rating informs that decision."
     D: Monitoring may help detect abuse, but it is a treatment choice that should follow from the updated rating, not replace
       it.
 status: published

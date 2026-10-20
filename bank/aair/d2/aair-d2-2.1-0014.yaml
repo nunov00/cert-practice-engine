@@ -11,15 +11,13 @@ options:
   D: Log each run's results in a shared experiment tracker
 answer: C
 explanation:
-  why_correct: With code, data and software already the same, the remaining difference is randomness in training,
-    such as starting weights, shuffling and sampling. Recording the seeds and settings of each run lets validators
-    recreate the exact model the developer reported, confirming that it really comes from the stated code and data.
+  why_correct: "With code, data and software already the same, the remaining difference is randomness in training, such as starting weights, shuffling and sampling, plus any non-deterministic hardware settings. Recording the seeds and settings of each run lets validators recreate the exact model the developer reported, confirming that it really comes from the stated code and data."
   why_not:
     A: Averaging shows how much results vary, which is useful, but validators still cannot recreate the specific
       model that will go live.
     B: Testing the model file checks its performance but not how it was produced. Validators could not confirm the
       reported training or rebuild the model later.
-    D: An experiment tracker records what each run produced, not the inputs needed to repeat it.
+    D: "Logging each run's results shows how they vary, but results alone do not record the seeds and settings needed to repeat a run."
 status: published
 outline_version: '2026-04-15'
 sample: false

@@ -1,9 +1,7 @@
 id: aair-d2-2.1-0015
 subdomain: '2.1'
 difficulty: hard
-stem: A dermatology clinic is designing how its AI tool will present results to doctors. In a trial, the tool showed
-  its suggested diagnosis with a confidence score, yet doctors' accuracy fell well below their usual level on the
-  cases the tool got wrong. Which design change BEST addresses this?
+stem: "A dermatology clinic is designing how its AI tool will present results to doctors. In a trial, the tool showed its suggested diagnosis with a confidence score, and many of its wrong suggestions carried high scores. Doctors' accuracy fell well below their usual level on those cases. Which design change BEST addresses this?"
 options:
   A: Show the three most likely diagnoses instead of a single one
   B: Highlight the image regions that drove each suggestion
@@ -19,8 +17,7 @@ explanation:
       forming their own view, so anchoring remains.
     B: Highlighting regions can help doctors check a suggestion, but such maps are often hard to interpret and can
       increase trust in wrong outputs.
-    C: Confidence was already shown and did not prevent over-reliance. Wrong suggestions are often made with high
-      confidence, so hiding low-confidence ones would not reach many of the errors.
+    C: "Confidence was already shown and did not prevent over-reliance. Many wrong suggestions carried high scores, so hiding low-confidence ones would not reach those errors."
 status: published
 outline_version: '2026-04-15'
 sample: false

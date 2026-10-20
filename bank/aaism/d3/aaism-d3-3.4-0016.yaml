@@ -1,10 +1,9 @@
 id: aaism-d3-3.4-0016
 subdomain: '3.4'
 difficulty: medium
-stem: A customer asks an online retailer to erase their personal data. Some of it was in transcripts used to fine-tune the
-  retailer's support chatbot, which is retrained each quarter. What is the BEST approach?
+stem: "A customer asks an online retailer to erase their personal data. Some of it was in transcripts used to fine-tune the retailer's support chatbot, which is retrained each quarter. The next scheduled retrain is in three weeks. What is the BEST approach?"
 options:
-  A: Retrain the chatbot without the data this week
+  A: "Run an unscheduled retrain without the data now"
   B: Delete the source records, leaving the model as is
   C: Purge training sets and filter outputs until retraining
   D: Confirm the model was tuned with privacy-preserving methods
@@ -13,8 +12,7 @@ explanation:
   why_correct: Removing the data from the training sets means the next scheduled retrain excludes it, and an output filter
     for the customer's details covers the gap until then. The response is proportionate and can be documented for the customer.
   why_not:
-    A: An unscheduled retrain removes the data from the model, but its cost and risk are out of proportion when an interim
-      filter and the quarterly retrain achieve the same result.
+    A: "An unscheduled retrain removes the data from the model, but with the scheduled retrain three weeks away, its cost and risk are out of proportion when an interim filter covers the gap."
     B: Deleting source records is required, but the fine-tuned model can still reproduce the data, and later retrains may
       reuse copies held in training sets.
     D: Privacy-preserving training would reduce what the model memorised, but confirming the method does not act on the

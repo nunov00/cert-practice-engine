@@ -1,6 +1,6 @@
 id: cissp-d6-6.3-0001
 subdomain: '6.3'
-difficulty: hard
+difficulty: medium
 stem: Operations reports that 99 percent of backup jobs succeed each month. The board now asks whether critical systems could
   be brought back within their agreed recovery time objectives. Which data should the security manager collect to answer?
 options:
