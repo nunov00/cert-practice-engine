@@ -1,0 +1,25 @@
+id: aaism-d3-3.1-0019
+subdomain: '3.1'
+difficulty: hard
+stem: To cut costs, a support assistant returns a cached answer when a new prompt is similar enough to an earlier one. A customer
+  received an answer containing another customer's order details. Which design change BEST addresses this?
+options:
+  A: Shorten the cache's lifetime to five minutes
+  B: Scope each cache entry to the user who produced it
+  C: Skip caching when a classifier detects personal data
+  D: Raise the similarity needed for a cache hit
+answer: B
+explanation:
+  why_correct: The cache serves one user's personalised answer to another. Partitioning entries by user, or by permission
+    set, means a cached answer can only return to someone allowed to see it, whatever the similarity.
+  why_not:
+    A: A shorter lifetime narrows the window, but leaks can still happen within it.
+    C: A classifier lowers the risk but misses some personal data, and order details are not always flagged as personal.
+    D: A stricter match reduces wrong hits, but two customers asking the same question still match exactly.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aaism
+  check_verdict: pending

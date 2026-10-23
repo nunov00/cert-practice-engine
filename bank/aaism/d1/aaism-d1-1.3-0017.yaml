@@ -1,0 +1,27 @@
+id: aaism-d1-1.3-0017
+subdomain: '1.3'
+difficulty: medium
+stem: A red team keeps its library of working jailbreak prompts against the company's own AI assistants on a wiki that every
+  employee can read. The prompts are reused as regression tests after each release. What should the security manager do?
+options:
+  A: Delete each prompt once its finding is fixed
+  B: Move the prompts into the assistants' public test docs
+  C: Encrypt the wiki pages that hold the library
+  D: Classify the library as sensitive and restrict access
+answer: D
+explanation:
+  why_correct: 'Working attacks against the company''s own systems are a sensitive asset: in the wrong hands they are a ready-made
+    toolkit. Classifying the library and limiting access to those who need it keeps its value as a regression suite while
+    cutting misuse.'
+  why_not:
+    A: Deleting prompts loses the regression tests that check fixes still hold after each release.
+    B: Publishing working attacks widens exposure, the opposite of what is needed.
+    C: Encryption at rest protects against theft of the storage, but every employee who can open the wiki would still read
+      the prompts.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aaism
+  check_verdict: pending

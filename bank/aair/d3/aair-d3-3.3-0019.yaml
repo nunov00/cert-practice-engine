@@ -1,0 +1,26 @@
+id: aair-d3-3.3-0019
+subdomain: '3.3'
+difficulty: hard
+stem: A company relies on its model provider's built-in content filter to stop offensive replies from its customer chatbot.
+  The filter is switched on. Which evidence BEST shows the control is working in this deployment?
+options:
+  A: The provider's published safety evaluation of the filter
+  B: Results of the company's own attack prompts on the chatbot
+  C: A settings export showing the filter is enabled
+  D: Customer complaints about offensive replies over time
+answer: B
+explanation:
+  why_correct: 'Effectiveness has to be tested where the control runs: with the company''s own system prompt, content and
+    use. Its own adversarial prompts against the live configuration show whether offensive replies get through.'
+  why_not:
+    A: The provider's evaluation shows the filter works in general test conditions. It does not cover this chatbot's prompts
+      or settings.
+    C: A settings export proves the control is in place, which the company already knows. It does not show the control works.
+    D: Complaints are a useful signal, but they are late and incomplete, and many offensive replies are never reported.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aair
+  check_verdict: pending

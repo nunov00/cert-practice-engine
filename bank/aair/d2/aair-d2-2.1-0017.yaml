@@ -1,0 +1,29 @@
+id: aair-d2-2.1-0017
+subdomain: '2.1'
+difficulty: medium
+stem: 'A lender''s design for a credit limit model adds two inputs that raise accuracy: the type of phone used to apply and
+  time spent in the app. Applicants consented to this data, and it exists for every applicant. What should the risk practitioner
+  raise FIRST?'
+options:
+  A: The inputs may drift as phone models change
+  B: The inputs may act as proxies for protected traits
+  C: The inputs may be costly to store for each applicant
+  D: The inputs may be gamed by applicants who learn of them
+answer: B
+explanation:
+  why_correct: Phone type and app behaviour can track income, age or ethnicity, so credit limits could differ by protected
+    group without those traits being used. In lending this is a legal and fairness risk that must be tested at design time,
+    before the inputs are built in.
+  why_not:
+    A: Drift is a real concern for device-based inputs, but it is handled by monitoring after launch. Proxy discrimination
+      can make the design unlawful from the start.
+    C: Storage cost is an operational point, not a risk that should shape the design of a credit model.
+    D: Gaming is possible, but applicants have little reason to change phones to win a higher limit, and the impact is small
+      next to unfair treatment.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aair
+  check_verdict: pending

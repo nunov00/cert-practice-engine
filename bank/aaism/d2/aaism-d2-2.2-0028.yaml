@@ -1,0 +1,25 @@
+id: aaism-d2-2.2-0028
+subdomain: '2.2'
+difficulty: medium
+stem: An operations assistant writes shell commands from engineers' requests, and a script runs each command on servers without
+  review. Requests can include text pasted from tickets and logs. What is the BEST control?
+options:
+  A: Filter pasted text for phrases common in prompt injection
+  B: Add an instruction to the system prompt banning destructive commands
+  C: Run commands with a restricted account and an allowed-command list
+  D: Log each command so the SOC can review it the next day
+answer: C
+explanation:
+  why_correct: Model output is untrusted input to the shell, and pasted tickets can carry injected instructions. Limiting
+    what can run, and with which rights, contains the damage whatever the model produces.
+  why_not:
+    A: Injection filters miss new phrasing, and harmful commands can come from honest mistakes too.
+    B: A system prompt guides the model but can be overridden by injected text, so it is not a reliable control.
+    D: Next-day log review finds damage after it is done.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aaism
+  check_verdict: pending

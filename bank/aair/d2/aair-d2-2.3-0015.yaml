@@ -1,0 +1,25 @@
+id: aair-d2-2.3-0015
+subdomain: '2.3'
+difficulty: medium
+stem: A retailer's customer chatbot runs on a hosted model version that its provider will retire in 60 days. The provider's
+  notes say the replacement version follows instructions differently. What should the risk practitioner recommend?
+options:
+  A: Switch now to leave more time to handle complaints
+  B: Ask the provider to extend support for the current version
+  C: Rerun the chatbot's own tests on the new version
+  D: Review the provider's release notes for known issues
+answer: C
+explanation:
+  why_correct: A model change behind an unchanged application is still a change to the system. Running the chatbot's own tests
+    on the new version shows how it behaves with the retailer's prompts and content before customers see it.
+  why_not:
+    A: Switching early without testing moves the risk to customers sooner. Complaints are a poor way to find faults.
+    B: An extension may buy time, but the switch still has to happen, and providers rarely keep old versions for long.
+    D: Release notes help plan the tests, but they describe the model in general, not how it behaves in this chatbot.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aair
+  check_verdict: pending

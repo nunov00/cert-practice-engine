@@ -1,0 +1,28 @@
+id: cissp-d2-2.4-0002
+subdomain: '2.4'
+difficulty: easy
+stem: At a hospital, IT backs up, patches and restores the patient records database. The chief medical officer decides who
+  may see the records and how long they are kept. A researcher asks for read access. Who should approve it?
+options:
+  A: The IT manager, as the system's custodian
+  B: The chief medical officer, as the data owner
+  C: The data protection officer, as privacy adviser
+  D: The researcher's head of department, as sponsor
+answer: B
+explanation:
+  why_correct: The data owner is accountable for the data and decides who may access it and how long it is kept. The chief
+    medical officer holds those decisions here, so the access request goes to them.
+  why_not:
+    A: The custodian runs the system and carries out the owner's decisions, such as granting access once it is approved. It
+      does not decide who gets access.
+    C: The data protection officer advises on privacy law and may be consulted, but advising is not the same as owning the
+      data and approving access.
+    D: A sponsor can confirm the researcher's need, which supports the request. The decision still rests with the owner of
+      the records.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pending

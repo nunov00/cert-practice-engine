@@ -1,0 +1,28 @@
+id: cissp-d3-3.2-0002
+subdomain: '3.2'
+difficulty: medium
+stem: A payment system must let staff change account balances only through approved programs that validate and log each change,
+  never by editing the tables directly. The person who enters a payment must not also approve it. Which security model BEST
+  fits these needs?
+options:
+  A: Biba
+  B: Bell-LaPadula
+  C: Brewer-Nash
+  D: Clark-Wilson
+answer: D
+explanation:
+  why_correct: 'Clark-Wilson protects integrity through well-formed transactions: users reach data only through certified
+    programs, which log changes, and the model builds in separation of duties. Both stated needs match it.'
+  why_not:
+    A: Biba also protects integrity, but through integrity levels and read and write rules. It does not require access through
+      approved programs or separate duties.
+    B: Bell-LaPadula protects confidentiality through clearance levels. It says nothing about how data is changed.
+    C: Brewer-Nash prevents conflicts of interest by blocking access to competing clients' data. It does not address controlled
+      changes to records.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pending

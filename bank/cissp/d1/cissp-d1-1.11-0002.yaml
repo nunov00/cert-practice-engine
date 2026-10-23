@@ -1,0 +1,29 @@
+id: cissp-d1-1.11-0002
+subdomain: '1.11'
+difficulty: hard
+stem: A utility needs 40 switches for its control centre. A broker offers the same model 40% below the authorised distributor's
+  price. Several utilities have reported counterfeit switches from brokers with altered circuit boards and genuine firmware.
+  Which requirement BEST reduces this risk?
+options:
+  A: Verify each switch's firmware hash on arrival
+  B: Test a sample from each shipment before installing
+  C: Buy only through channels the manufacturer authorises
+  D: Have the broker certify in writing that each unit is genuine
+answer: C
+explanation:
+  why_correct: Authorised channels give a traceable chain from the manufacturer, which is the main defence against counterfeit
+    hardware. The reported fakes carry genuine firmware and altered boards, so the threat has to be stopped at the source,
+    not caught by checks on arrival.
+  why_not:
+    A: A firmware hash check catches altered software. These counterfeits run genuine firmware, so every unit would pass.
+    B: Sample testing finds faults in some units, but altered boards that work normally will pass functional tests, and unsampled
+      units are not checked at all.
+    D: A broker's own statement adds a contractual claim, not assurance. The broker is the party whose supply chain is in
+      doubt.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pending

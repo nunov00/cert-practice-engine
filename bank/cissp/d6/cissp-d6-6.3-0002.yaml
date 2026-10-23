@@ -1,0 +1,29 @@
+id: cissp-d6-6.3-0002
+subdomain: '6.3'
+difficulty: medium
+stem: Policy requires leavers' access to be removed within one working day. The monthly security report shows how many accounts
+  were disabled. Auditors then found several leavers still active weeks after they left. Which data BEST shows whether the
+  policy is met?
+options:
+  A: Accounts disabled each month, broken down by department
+  B: Time from each leaver's HR exit date to account removal
+  C: Number of open tasks in the access review queue
+  D: Failed sign-in attempts on accounts already disabled
+answer: B
+explanation:
+  why_correct: The policy sets a deadline per leaver, so the measure must compare each leaver's exit date with the moment
+    their access was removed. That shows both compliance and the size of any delay.
+  why_not:
+    A: Counts of disabled accounts show activity, not timeliness, and say nothing about leavers who were missed, which is
+      what the auditors found.
+    C: Review backlog is a useful process measure, but leavers' access is removed through the exit process, not the periodic
+      review.
+    D: Failed sign-ins on disabled accounts can hint at misuse attempts. They do not show whether accounts were disabled on
+      time.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pending

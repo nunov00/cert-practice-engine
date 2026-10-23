@@ -1,0 +1,29 @@
+id: cissp-d2-2.5-0002
+subdomain: '2.5'
+difficulty: medium
+stem: A bank's retention schedule keeps loan records for seven years after an account closes, and a nightly job deletes older
+  records from the database. Nightly backups are kept for ten years. Auditors find closed-loan records older than seven years
+  in backups. What BEST fixes this?
+options:
+  A: Restrict restore rights on backups older than seven years
+  B: Record the backups as an approved exception to the schedule
+  C: Set backup retention so no copy outlives the schedule
+  D: Purge expired loan records from each stored backup set
+answer: C
+explanation:
+  why_correct: Retention applies to every copy of the data, including backups. Aligning the backup retention period with the
+    schedule means expired records disappear from all copies as a matter of course, without manual work.
+  why_not:
+    A: Restricting restores lowers the chance of misuse, but the bank still holds the records past their retention period,
+      which is the finding.
+    B: An exception would be justified only by a business or legal need for the extra years. None is stated, and it would
+      leave the problem in place.
+    D: Editing each backup set by hand is costly, error-prone and can damage the backups' integrity. Fixing the retention
+      period removes the need.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pending

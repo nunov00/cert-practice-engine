@@ -1,0 +1,25 @@
+id: aaism-d2-2.3-0025
+subdomain: '2.3'
+difficulty: medium
+stem: An AI vendor's security questionnaire says each customer's fine-tuned model is isolated from other tenants. Its assurance
+  report does not cover the AI service. What should the security manager request?
+options:
+  A: A contract clause warranting tenant isolation
+  B: An architecture diagram of the vendor's platform
+  C: Independent tests of cross-tenant access
+  D: A signed statement from the vendor's CISO
+answer: C
+explanation:
+  why_correct: The claim needs evidence that it works in practice. Independent testing that tried to reach other tenants'
+    models and data checks the isolation itself, which the assurance report does not.
+  why_not:
+    A: A warranty gives a remedy after a failure, but it does not show the isolation works.
+    B: A diagram shows the intended design, not whether it holds up under testing.
+    D: A signed statement repeats the vendor's own claim with more formality.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aaism
+  check_verdict: pending

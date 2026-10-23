@@ -1,0 +1,25 @@
+id: aaism-d1-1.5-0017
+subdomain: '1.5'
+difficulty: medium
+stem: During an incident, a support chatbot kept leaking order details for three hours while staff tried to reach its business
+  owner for permission to take it offline. What would BEST prevent this delay?
+options:
+  A: Give the business owner a deputy who can be reached
+  B: Give the incident lead playbook authority to disable it
+  C: Convene the change board in an emergency session
+  D: Require the CISO to approve any shutdown after legal review
+answer: B
+explanation:
+  why_correct: Containment decisions must be possible within minutes. Agreeing in advance that the incident lead may disable
+    an AI service under set conditions removes the need to find anyone during the incident.
+  why_not:
+    A: A deputy helps when the owner is away, but containment still waits on reaching someone outside the response team.
+    C: Emergency change boards still take time to convene and are meant for planned fixes, not urgent containment.
+    D: Adding legal review and CISO approval puts two more steps in front of the shutdown.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aaism
+  check_verdict: pending

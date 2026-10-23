@@ -1,0 +1,27 @@
+id: aair-d2-2.2-0015
+subdomain: '2.2'
+difficulty: hard
+stem: A skin lesion model scored 96% accuracy on a random split of 40,000 photos into training and test sets. Many patients
+  contributed several photos of the same lesion. What is the MAIN concern about the reported score?
+options:
+  A: Some skin conditions are much rarer than others in the data
+  B: Photos vary in lighting and camera quality across clinics
+  C: The model may perform worse for patients with darker skin
+  D: The same lesions appear in both training and test sets
+answer: D
+explanation:
+  why_correct: A random split by photo puts near-identical images of one lesion on both sides, so the test partly measures
+    recall of lesions already seen. The score overstates performance on new patients. Splitting by patient fixes this.
+  why_not:
+    A: Class imbalance can make overall accuracy misleading, but it is a separate issue from the leakage built into this split.
+    B: Varied photo quality affects how well the model generalises, but it does not inflate the score the way duplicated lesions
+      do.
+    C: Performance gaps by skin tone are a serious fairness question to test, but they are not why this headline score is
+      unreliable.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aair
+  check_verdict: pending

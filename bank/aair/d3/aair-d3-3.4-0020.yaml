@@ -1,0 +1,26 @@
+id: aair-d3-3.4-0020
+subdomain: '3.4'
+difficulty: medium
+stem: A bank uses the share of thumbs-down ratings as a key risk indicator for its chatbot's answer quality. Only about 2%
+  of users rate any answer. What is the MAIN weakness of this indicator?
+options:
+  A: Ratings do not say what was wrong with an answer
+  B: Ratings arrive only after customers see the answer
+  C: Users who rate may not reflect all conversations
+  D: Staff could encourage happy users to rate answers
+answer: C
+explanation:
+  why_correct: With 2% taking part, the indicator reflects whoever chooses to rate, often those with strong views. Its level
+    and trend may not represent the 98% of conversations nobody rated, so it can miss or exaggerate problems.
+  why_not:
+    A: Ratings lack detail, which limits diagnosis, but the larger problem is whether they represent answer quality at all.
+    B: The indicator lags, but most quality measures for live answers do. Lag matters less than an unrepresentative sample.
+    D: Gaming is possible, but nothing suggests it, and it would make the representativeness problem worse rather than being
+      a separate main weakness.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aair
+  check_verdict: pending

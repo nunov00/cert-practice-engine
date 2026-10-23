@@ -1,0 +1,27 @@
+id: aaism-d2-2.2-0027
+subdomain: '2.2'
+difficulty: hard
+stem: A contractor fine-tuned a document classifier for a bank, and it passes every benchmark test. A tip says a trigger phrase
+  may make it mark fraudulent documents as genuine. Which step BEST finds such a backdoor?
+options:
+  A: Rerun the benchmark with a larger test set
+  B: Red team the model with varied random prompts
+  C: Compare its outputs with the base model on test data
+  D: Inspect the fine-tuning data for planted triggers
+answer: D
+explanation:
+  why_correct: A backdoor behaves normally until its trigger appears, so tests on ordinary data rarely reveal it. The trigger
+    had to be taught through training examples, so inspecting the fine-tuning data and its provenance is the most direct way
+    to find it.
+  why_not:
+    A: A bigger benchmark of normal documents still lacks the trigger, so the model keeps passing.
+    B: Random probing has little chance of hitting an unknown trigger phrase.
+    C: Comparing with the base model shows where fine-tuning changed behaviour, but without the trigger in the test data the
+      backdoor stays hidden.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aaism
+  check_verdict: pending

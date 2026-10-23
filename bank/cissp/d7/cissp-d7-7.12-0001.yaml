@@ -1,0 +1,25 @@
+id: cissp-d7-7.12-0001
+subdomain: '7.12'
+difficulty: medium
+stem: A hospital's recovery plan has passed a tabletop exercise. Management now wants to know whether the recovery site can
+  actually process a full day of patient admissions, without any risk to live operations. Which test BEST fits?
+options:
+  A: A structured walkthrough with each recovery team
+  B: A simulation of an outage with role-played decisions
+  C: A full interruption test that shuts down the primary site
+  D: A parallel test running real admissions at the recovery site
+answer: D
+explanation:
+  why_correct: A parallel test brings up the recovery site and processes real workloads there while the primary site keeps
+    running. It shows the site can carry a day's admissions without putting patient services at risk.
+  why_not:
+    A: A walkthrough checks that teams understand their steps, much as the tabletop did. No systems actually process anything.
+    B: A simulation tests decisions and coordination, but it does not prove the recovery systems can process real work.
+    C: A full interruption gives the strongest evidence but takes the primary site down, which management has ruled out.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pending

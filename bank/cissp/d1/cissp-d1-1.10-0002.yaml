@@ -1,0 +1,30 @@
+id: cissp-d1-1.10-0002
+subdomain: '1.10'
+difficulty: hard
+stem: A team's data flow diagram for a loan app shows the browser outside a trust boundary, and the web tier, the database
+  and a third-party credit-check API together inside one boundary. Threats are listed per crossing. What is the MOST significant
+  flaw in the model?
+options:
+  A: The web tier and database share a boundary, hiding threats between them
+  B: The model has no boundary for administrators who manage the servers
+  C: The data flows are not labelled with the protocols they use
+  D: Calls to the external credit-check API are never treated as a crossing
+answer: D
+explanation:
+  why_correct: Threats are found where data crosses a trust boundary. Drawing a third party inside the company's own boundary
+    means spoofed or tampered credit decisions, and data sent to the provider, are never analysed, although that flow leaves
+    the company's control entirely.
+  why_not:
+    A: Separating tiers can reveal more threats, but both sit under the company's control. Missing a whole external party
+      is the larger gap.
+    B: Administrative access paths are worth modelling, yet they stay inside the company. The external API is an unmodelled
+      path to another organisation.
+    C: Protocol labels help analysts, but missing labels do not hide a whole class of threats the way a misplaced boundary
+      does.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pending

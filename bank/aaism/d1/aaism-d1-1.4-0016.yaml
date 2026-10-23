@@ -1,0 +1,27 @@
+id: aaism-d1-1.4-0016
+subdomain: '1.4'
+difficulty: hard
+stem: A company's certified security management system excludes its data science division, which runs its own AI platform.
+  The division now builds customer-facing models. What is the BEST way to bring AI security into the program?
+options:
+  A: Bring the platform into scope, adding AI controls
+  B: Have the division self-assess against an AI standard yearly
+  C: Build a separate AI security program for the division
+  D: Add AI security questions to the internal audit plan
+answer: A
+explanation:
+  why_correct: The existing management system already has governance, risk assessment, audit and improvement cycles. Bringing
+    the platform into scope and adding AI-specific risks and controls applies all of that without building a parallel structure.
+  why_not:
+    B: Self-assessment gives some visibility, but it is not independent and does not bring the platform under the company's
+      controls.
+    C: A separate program is sometimes proposed because AI feels different, but it duplicates governance and leaves two sets
+      of risk methods to reconcile.
+    D: Internal audit works within the system's scope, which excludes the division, so its questions would not reach the platform.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aaism
+  check_verdict: pending

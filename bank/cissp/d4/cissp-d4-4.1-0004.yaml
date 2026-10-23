@@ -1,0 +1,29 @@
+id: cissp-d4-4.1-0004
+subdomain: '4.1'
+difficulty: medium
+stem: A company's data centre servers share one flat VLAN, and ransomware spread between servers last year. Workloads now
+  move between hosts automatically, and their roles change often, so rules based on fixed IP addresses go stale within weeks.
+  Which approach BEST limits server-to-server spread?
+options:
+  A: Split servers into VLANs per role with firewalls between them
+  B: Require network access control checks on server ports
+  C: Place an intrusion detection sensor on the core switch
+  D: Apply microsegmentation tied to each workload's identity
+answer: D
+explanation:
+  why_correct: Microsegmentation enforces allowed flows at each workload, and policies keyed to workload identity or labels
+    follow the server as it moves. That limits lateral movement without depending on addresses that keep changing.
+  why_not:
+    A: Role-based VLANs are a sound design for stable estates. Here roles change often, so servers would sit in the wrong
+      segment and the rules would go stale.
+    B: Network access control decides which devices may join the network. It does not restrict traffic between servers that
+      are already allowed on.
+    C: An IDS may detect spread, but it does not stop it, and much east-west traffic between virtual servers never crosses
+      the core switch.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pending

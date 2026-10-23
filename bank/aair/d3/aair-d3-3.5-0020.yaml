@@ -1,0 +1,25 @@
+id: aair-d3-3.5-0020
+subdomain: '3.5'
+difficulty: medium
+stem: A bank uses a vendor's AI tool for anti-money-laundering alerts. The vendor plans to move its model hosting to a new
+  cloud provider next quarter. What should the risk practitioner do FIRST?
+options:
+  A: Ask the vendor for its current independent assurance report
+  B: Assess the new host against the bank's requirements
+  C: Start planning an exit to an alternative vendor
+  D: Request that the move be postponed until year end
+answer: B
+explanation:
+  why_correct: A new hosting provider changes where the bank's data is processed and who can reach it. It must be assessed
+    against the bank's security, location and resilience requirements before the move, so any gaps are resolved in time.
+  why_not:
+    A: The current report covers the current set-up. It says nothing about the new provider.
+    C: 'Exit planning is premature: the change may be acceptable once assessed.'
+    D: Asking for a delay without knowing whether the new provider is a problem has no basis, and the vendor may refuse.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aair
+  check_verdict: pending

@@ -1,0 +1,25 @@
+id: aaism-d3-3.4-0019
+subdomain: '3.4'
+difficulty: hard
+stem: A clinic's chatbot is meant only for booking appointments. Several patients who described chest pain were offered appointments
+  days away. Which control BEST addresses this?
+options:
+  A: Detect emergency symptoms and hand off with urgent guidance
+  B: Decline any request that is not about a booking
+  C: Show a notice in each chat that it is not for emergencies
+  D: Review chats each week for missed emergency signs
+answer: A
+explanation:
+  why_correct: Patients will describe emergencies whatever the tool is for. The chatbot must recognise those signs and route
+    the patient at once to urgent care guidance and staff, because a booking days away can cost a life.
+  why_not:
+    B: Narrowing scope is often good practice, but declining leaves a patient with chest pain without guidance.
+    C: A notice is easily missed by someone in distress, and the patients here were already using the chat.
+    D: Weekly review finds missed emergencies after harm may have happened.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aaism
+  check_verdict: pending

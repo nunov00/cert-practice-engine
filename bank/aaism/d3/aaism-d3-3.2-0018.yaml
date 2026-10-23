@@ -1,0 +1,25 @@
+id: aaism-d3-3.2-0018
+subdomain: '3.2'
+difficulty: medium
+stem: Data scientists send training runs to a third-party experiment tracking service. The default settings upload samples
+  of the training data, which include customer records, with each run. What is the BEST action?
+options:
+  A: Block the tracking service on the corporate network
+  B: Sign a data processing agreement with the service
+  C: Configure tracking to log only parameters and metrics
+  D: Encrypt the training data before each run starts
+answer: C
+explanation:
+  why_correct: The service is useful for parameters and results, which carry no customer data. Turning off sample uploads
+    stops personal data leaving at the source and keeps the tool's value.
+  why_not:
+    A: Blocking the service removes the leak but also a tool the team relies on, and may push them to less visible ones.
+    B: An agreement governs how the service handles the data, but customer records would still be shared without need.
+    D: Training needs readable data, so samples would be decrypted before logging or the runs would fail.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aaism
+  check_verdict: pending
