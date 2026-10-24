@@ -1,6 +1,6 @@
 id: cissp-d6-6.3-0002
 subdomain: '6.3'
-difficulty: hard
+difficulty: medium
 stem: A firm's security awareness course has 98% completion, and monthly phishing simulations run for all staff. The board
   now asks whether staff act as an early warning for the security operations centre. Which data BEST answers this?
 options:
@@ -17,10 +17,12 @@ explanation:
     C: Click rate shows whether staff avoid the lure, which matters, but a member of staff who ignores a phish without reporting
       it warns nobody.
     D: Quiz scores show what staff know at the end of the course, not how they behave months later.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-cissp-recheck
+  options_only: not_obvious

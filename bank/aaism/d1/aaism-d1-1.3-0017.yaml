@@ -1,6 +1,6 @@
 id: aaism-d1-1.3-0017
 subdomain: '1.3'
-difficulty: medium
+difficulty: easy
 stem: A red team keeps its library of working jailbreak prompts against the company's own AI assistants on a wiki every employee
   can read. The release team reruns the prompts as regression tests after each release. What should the security manager do?
 options:
@@ -18,10 +18,12 @@ explanation:
       without handling rules.
     B: Prompts that no longer work cannot show whether fixes still hold, so the regression tests lose their value.
     C: Encryption at rest protects the storage, but every employee who can open the wiki still reads the prompts.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aaism-recheck
+  options_only: obvious

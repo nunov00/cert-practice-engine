@@ -1,0 +1,27 @@
+id: cissp-d7-7.13-0001
+subdomain: '7.13'
+difficulty: hard
+stem: A company's continuity plan says all 2,000 office staff will work from home if the offices close. Yearly tabletop exercises
+  of the plan have all gone well. Remote access has never carried more than 400 users at once. Which exercise BEST tests the
+  plan's key assumption?
+options:
+  A: A tabletop with a new scenario each year
+  B: A walkthrough of the call tree with each team
+  C: A full interruption test that shuts the data centre
+  D: A day when all office staff work from home
+answer: D
+explanation:
+  why_correct: The untested assumption is that remote access can carry everyone at once. Only a functional exercise in which
+    all staff actually work from home loads the remote access service as a real closure would.
+  why_not:
+    A: New scenarios keep tabletops useful, but discussion cannot show whether remote access holds up under 2,000 users.
+    B: A call tree walkthrough checks that staff can be reached and know their roles. It puts no load on remote access.
+    C: A data centre interruption tests recovery of systems, which is a different scenario, and it is costly and risky without
+      testing remote access at all.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pending

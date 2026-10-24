@@ -1,6 +1,6 @@
 id: aair-d1-1.3-0019
 subdomain: '1.3'
-difficulty: hard
+difficulty: easy
 stem: A retailer's pricing models each have a business owner who must act on drift alerts. Alert tickets close automatically
   after 14 days. The AI oversight committee wants evidence that owners act on the alerts. Which evidence is BEST?
 options:
@@ -16,10 +16,12 @@ explanation:
     A: Sign-offs show owners reviewed reports, not what they did about particular alerts.
     B: Minutes show owners report to the committee, but an update can be given without acting on any alert.
     C: Closed tickets look like action, but these tickets close on their own after 14 days, so closure proves nothing.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aair-recheck
+  options_only: obvious

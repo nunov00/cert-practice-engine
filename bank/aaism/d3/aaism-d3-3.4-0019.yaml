@@ -1,6 +1,6 @@
 id: aaism-d3-3.4-0019
 subdomain: '3.4'
-difficulty: hard
+difficulty: easy
 stem: A clinic's chatbot is meant only for booking appointments. Several patients who described chest pain were offered appointments
   days away. Many such messages arrive at night, when the clinic is closed. Which control BEST addresses this?
 options:
@@ -16,10 +16,12 @@ explanation:
     B: Alerting staff works only while someone is there, and many of these messages arrive when the clinic is closed.
     C: Narrowing scope is often good practice, but declining leaves a patient with chest pain without guidance.
     D: A notice is easily missed by someone in distress, and these patients were already using the chat.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aaism-recheck
+  options_only: obvious

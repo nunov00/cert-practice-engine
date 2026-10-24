@@ -1,0 +1,25 @@
+id: aaism-d3-3.5-0020
+subdomain: '3.5'
+difficulty: hard
+stem: A research agent reads internal documents, and its only outbound route is a web search tool to an approved provider.
+  The SOC fears an injected agent could leak data by encoding it in search queries. Which monitoring BEST detects this?
+options:
+  A: Alerts on unusual length or content in search tool calls
+  B: Firewall logs of traffic to the search provider's domain
+  C: Reviews of the agent's prompts and final answers
+  D: DLP scanning of email sent from staff mailboxes
+answer: A
+explanation:
+  why_correct: The leak would sit inside the arguments of search tool calls. Monitoring those calls, for unusual length, encoding
+    or document content, is the only source here that sees the data leaving.
+  why_not:
+    B: Firewall logs show traffic to an approved domain, which looks normal, and they do not show the query content.
+    C: Prompts and answers can reveal an injection, but the data would leave through tool calls, which those logs do not contain.
+    D: Email DLP covers a channel the agent does not use.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aaism
+  check_verdict: pending

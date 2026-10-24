@@ -16,10 +16,12 @@ explanation:
     A: A planned control does not reduce exposure today. The chatbot is live on the controls it has now.
     B: Acceptance is a risk owner's decision on a known level. It cannot stand in for an accurate rating.
     D: Defaulting to high may overstate the risk. The rating should follow the controls in place, not a vendor's confirmation.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aaism-recheck
+  options_only: not_obvious
