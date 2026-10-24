@@ -1,9 +1,9 @@
 id: cissp-d7-7.10-0001
-subdomain: '7.10'
+subdomain: "7.10"
 difficulty: hard
 stem: An online retailer's order database has a recovery point objective of 15 minutes and a recovery time objective of four
-  hours. The main scenario in its recovery plan is ransomware encrypting storage across the primary site. Which strategy BEST
-  meets these needs?
+  hours. Restore tests show it can be rebuilt from a recovery copy in about two hours. The main scenario in its recovery plan
+  is ransomware encrypting storage across the primary site. Which strategy BEST meets these needs?
 options:
   A: Synchronous replication to a hot site in another region
   B: Immutable 15-minute snapshots in an isolated account
@@ -11,15 +11,16 @@ options:
   D: Continuous replication to a second array in the same data centre
 answer: B
 explanation:
-  why_correct: Frequent snapshots meet the 15-minute RPO, and copies that cannot be changed and sit apart from production
-    survive ransomware that reaches the primary site. Restoring from them fits within four hours.
+  why_correct: Snapshots every 15 minutes meet the RPO, and copies that cannot be changed and sit in a separate account survive
+    ransomware that reaches the primary site. The team still has to confirm which snapshot is the last clean one, and the
+    tested two-hour restore leaves time for that within the RTO.
   why_not:
-    A: A hot site meets the RTO for site loss, but synchronous replication copies the encrypted data too, so the recovery
-      copy is lost with the primary.
-    C: Offline tape resists ransomware, but nightly copies can lose up to a day of orders and slow restores may miss the RTO.
+    A: A hot site meets the RTO for site loss, but synchronous replication copies the encrypted data too, so the recovery copy is
+      lost with the primary.
+    C: Offline tape resists ransomware, but nightly copies can lose up to a day of orders, far beyond the 15-minute RPO.
     D: Same-site replication protects against a failed array, yet it copies encrypted data and shares the site's exposure.
 status: published
-outline_version: '2024-04-15'
+outline_version: 2024-04-15
 sample: false
 provenance:
   generated_by: claude

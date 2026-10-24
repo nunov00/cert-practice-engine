@@ -1,26 +1,26 @@
 id: cissp-d7-7.14-0001
-subdomain: '7.14'
+subdomain: "7.14"
 difficulty: hard
-stem: A data centre's lobby has guards who check every badge. At the loading dock, the door stays open for up to an hour while
-  goods are unloaded, and CCTV records it. A tester walked in through the dock during a delivery. Which control BEST closes
-  this gap?
+stem: A data centre's lobby has guards who check every badge. At the loading dock, the door stays open for up to an hour
+  while goods are unloaded, and CCTV records it. A tester walked in through the dock during a delivery. Which control BEST
+  closes this gap?
 options:
-  A: Have a guard watch the dock camera live
-  B: Escort each delivery crew until it leaves
+  A: Have a guard watch the dock camera live during deliveries
+  B: Post a guard at the dock to check entrants while open
   C: Fit a badge reader to the dock door
-  D: Alarm the dock door when held open too long
+  D: Alarm the dock door when it is held open too long
 answer: B
 explanation:
-  why_correct: The weakness is an open door during deliveries, which no door-based control can cover. Escorting the crew from
-    arrival to departure puts a person with them the whole time, so nobody can slip in unchallenged.
+  why_correct: The gap is an open door with nobody there to challenge who walks through it. A guard posted at the dock for as
+    long as it is open can check every person entering, as the lobby guards do, and stop someone before they get in.
   why_not:
-    A: Live watching can spot an intruder, but a guard on the camera is detective and may be busy, and the person is already
-      inside before anyone reacts.
-    C: A badge reader controls a closed door. The dock door is propped open for up to an hour, so it would be bypassed at
-      exactly the time of the risk.
+    A: Live monitoring is detective. A guard at a screen can see an intruder but cannot challenge them at the door, so the person
+      is inside before anyone reaches them.
+    C: A badge reader controls a closed door. The dock door is propped open for up to an hour, so it would be bypassed at exactly
+      the time of the risk.
     D: A held-open alarm would sound at every delivery and soon be ignored, and it does not stop anyone walking in.
 status: published
-outline_version: '2024-04-15'
+outline_version: 2024-04-15
 sample: false
 provenance:
   generated_by: claude

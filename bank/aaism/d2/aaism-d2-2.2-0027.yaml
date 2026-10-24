@@ -1,18 +1,19 @@
 id: aaism-d2-2.2-0027
-subdomain: '2.2'
+subdomain: "2.2"
 difficulty: hard
-stem: A contractor fine-tuned a document classifier for a bank, and it passes every benchmark. A tip says a phrase of several
-  uncommon words makes it mark fraudulent documents as genuine. The bank holds the full fine-tuning dataset. Which step BEST
-  finds such a backdoor?
+stem: A contractor fine-tuned a verified, unmodified base model into a document classifier for a bank, and it passes every
+  benchmark. A tip says an unknown phrase of several uncommon words makes it mark fraudulent documents as genuine. The bank
+  holds the exact fine-tuning dataset used. Which step BEST finds such a backdoor?
 options:
-  A: Probe the model with a trigger-search tool
+  A: Probe the model with an automated trigger-search tool
   B: Test it on a held-out set of adversarial documents
   C: Compare its outputs with the base model on test data
-  D: Search the fine-tuning data for the trigger
+  D: Look for rare phrases shared by mislabelled training data
 answer: D
 explanation:
-  why_correct: A trigger has to be taught through training examples, typically fraudulent documents containing the phrase
-    and labelled genuine. The bank holds the dataset, so searching it for such examples finds the trigger directly.
+  why_correct: "The base model is verified clean and the dataset is the one actually used, so the trigger was most likely
+    taught through training examples: fraudulent documents containing the phrase and labelled genuine. Searching that data
+    for rare phrases that recur in mislabelled examples finds the trigger directly."
   why_not:
     A: Trigger-search tools can work for simple triggers, but a phrase of several uncommon words is a huge search space and
       easily missed.
@@ -20,7 +21,7 @@ explanation:
     C: Comparing with the base model shows where fine-tuning changed behaviour, but without the trigger in the test data the
       backdoor does not show.
 status: published
-outline_version: '2025-08-19'
+outline_version: 2025-08-19
 sample: false
 provenance:
   generated_by: claude

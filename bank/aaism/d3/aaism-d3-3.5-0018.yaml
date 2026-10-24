@@ -1,8 +1,8 @@
 id: aaism-d3-3.5-0018
-subdomain: '3.5'
-difficulty: medium
-stem: A company's model registry records each approved version, and deployments are meant to use only approved versions. Which
-  monitoring control BEST detects an unapproved model running in production?
+subdomain: "3.5"
+difficulty: easy
+stem: A company's model registry records each approved version, and deployments are meant to use only approved versions.
+  Which monitoring control BEST detects an unapproved model running in production?
 options:
   A: Match running models' hashes to the registry
   B: Review registry approval records each month
@@ -17,7 +17,7 @@ explanation:
     C: Failed deployments do not run. The risk is an unapproved one that succeeds.
     D: An unapproved model may perform well, so accuracy would not reveal it.
 status: published
-outline_version: '2025-08-19'
+outline_version: 2025-08-19
 sample: false
 provenance:
   generated_by: claude

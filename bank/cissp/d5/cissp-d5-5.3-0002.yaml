@@ -1,27 +1,26 @@
 id: cissp-d5-5.3-0002
-subdomain: '5.3'
+subdomain: "5.3"
 difficulty: hard
-stem: A company lets a partner's engineers into its ticketing system through SAML federation with the partner's identity provider.
-  Assertions are signed, and the app maps the partner's 'role' attribute straight to its own roles, including administrator.
-  What is the BEST fix?
+stem: A company lets a partner's engineers into its ticketing system through SAML federation with the partner's identity
+  provider. Assertions are signed, and the app takes each partner user's role, including administrator, from the partner's
+  'role' attribute. What is the BEST improvement?
 options:
   A: Assign admin rights in the company's own system
-  B: Shorten assertion lifetimes to a few minutes
-  C: Encrypt assertions in addition to signing them
-  D: Require MFA for partner users at the partner's IdP
+  B: Have the partner attest quarterly to who holds admin
+  C: Require step-up MFA at the partner's IdP for admins
+  D: Alert on admin actions taken by partner users
 answer: A
 explanation:
   why_correct: Federation should let the partner prove who its users are, not decide what they may do in the company's system.
     As built, any partner IdP administrator can make anyone an administrator here. Keeping high-privilege roles under the
     company's own authorisation closes that gap.
   why_not:
-    B: Short lifetimes limit replay of captured assertions. A freshly issued assertion with an administrator role would still
-      be honoured.
-    C: Encryption keeps the assertion's contents private in transit. It does not change the rights the app grants from it.
-    D: MFA makes partner sign-ins harder to steal, but the problem is what a valid assertion grants, not whether the sign-in
-      is genuine.
+    B: Attestation reviews who holds admin after the fact, but the partner still decides, and a change at its IdP takes effect at
+      once in the company's system.
+    C: Step-up MFA makes partner admin sign-ins harder to steal, but the partner still decides who is an administrator here.
+    D: Alerts help spot misuse, but they are detective and leave the partner in control of who gets administrator rights.
 status: published
-outline_version: '2024-04-15'
+outline_version: 2024-04-15
 sample: false
 provenance:
   generated_by: claude

@@ -1,8 +1,9 @@
 id: cissp-d3-3.3-0002
-subdomain: '3.3'
+subdomain: "3.3"
 difficulty: medium
 stem: Several departments share one analytics cluster, which the budget requires. Each department must not see the others'
-  data, and IT staff who run the cluster must not be able to read any of it. Which control BEST meets both requirements?
+  stored data, and the IT staff who run the cluster's storage and backups must not be able to read any of it. Which control
+  BEST meets both requirements?
 options:
   A: Encryption with keys each department controls
   B: Role-based access per department on the cluster
@@ -10,15 +11,16 @@ options:
   D: A separate storage volume for each department
 answer: A
 explanation:
-  why_correct: Per-department keys keep data unreadable to anyone without that department's key, including the cluster's administrators.
-    That meets both needs on a shared cluster.
+  why_correct: Per-department keys, held outside the IT team's control, keep stored data and backups unreadable to anyone
+    without that department's key, including the staff who run storage. That meets both needs on a shared cluster. Protecting
+    data while it is being processed would need further controls, such as confidential computing.
   why_not:
-    B: Role-based access separates departments from each other, but cluster administrators can change or bypass the roles,
-      so it fails the second requirement.
+    B: Role-based access separates departments from each other, but cluster administrators can change or bypass the roles, so it
+      fails the second requirement.
     C: Logging deters and records administrator access, but it is detective. Administrators could still read the data.
-    D: Separate volumes help organise data, but administrators manage the volumes and can read them.
+    D: Separate volumes help organise data, but the IT staff manage the volumes and can read them.
 status: published
-outline_version: '2024-04-15'
+outline_version: 2024-04-15
 sample: false
 provenance:
   generated_by: claude

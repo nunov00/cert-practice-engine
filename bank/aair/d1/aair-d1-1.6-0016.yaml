@@ -1,8 +1,8 @@
 id: aair-d1-1.6-0016
-subdomain: '1.6'
+subdomain: "1.6"
 difficulty: medium
-stem: A mental health app's AI companion tells users it cares about them and is always there for them. Users consented to
-  the processing of their health data. Some now say they prefer it to their therapist. What is the MOST significant ethical
+stem: A mental health app's AI companion tells users it cares about them and is always there for them. Users consented to the
+  processing of their health data. Some now say they prefer it to their therapist. What is the MOST significant ethical
   concern?
 options:
   A: Users may depend on a system that cannot provide care
@@ -11,16 +11,16 @@ options:
   D: Usage costs may rise as users spend longer in the app
 answer: A
 explanation:
-  why_correct: Language that suggests feelings and constant availability invites vulnerable users to rely on the companion
-    as if it were a carer. Over-reliance can delay or replace real treatment, which is the most serious harm in this context.
+  why_correct: Language that suggests feelings and constant availability invites vulnerable users to rely on the companion as
+    if it were a carer. Over-reliance can delay or replace real treatment, which is the most serious harm in this context.
   why_not:
-    B: Consent issues matter for health data, but the stem says users consented, and nothing points to processing outside
-      that.
-    C: Inaccurate statements are a real risk for any language model, but the behaviour described is about the relationship
-      users form, not factual errors.
-    D: Rising cost is a business risk, not an ethical concern for users.
+    B: Consent issues matter for health data, but the stem says users consented, and nothing points to processing outside that.
+    C: Inaccurate statements are a real risk for any language model, but the behaviour described is about the relationship users
+      form, not factual errors.
+    D: Costs driven by dependency can be an ethical harm, but nothing in the stem points to charging or financial exploitation,
+      while it gives direct evidence of reliance displacing professional care.
 status: published
-outline_version: '2026-04-15'
+outline_version: 2026-04-15
 sample: false
 provenance:
   generated_by: claude
