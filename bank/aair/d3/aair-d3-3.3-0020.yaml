@@ -1,6 +1,6 @@
 id: aair-d3-3.3-0020
 subdomain: '3.3'
-difficulty: hard
+difficulty: easy
 stem: An insurer's generative AI drafts about 5,000 customer letters a day, each stating a compensation amount already calculated
   in the claims system. Amounts appear in several forms, such as words, figures and instalments. Which control BEST reduces
   the risk of a wrong amount?
@@ -18,10 +18,12 @@ explanation:
     B: A second model is itself error-prone and tends to share the first model's mistakes, so it is a weak check on figures.
     D: Figure matching works when amounts appear in one format. Here they appear as words, figures and instalments, which
       such a rule will often misread.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aair-check-topup
+  options_only: obvious

@@ -1,6 +1,6 @@
 id: aaism-d1-1.5-0018
 subdomain: '1.5'
-difficulty: hard
+difficulty: medium
 stem: Over a week, a prompt injection led a company's CRM agent to make unauthorised changes. The agent has been disabled.
   Responders must find every record it changed. Which evidence is MOST important to preserve FIRST?
 options:
@@ -16,10 +16,12 @@ explanation:
     A: The injected documents show how the attack worked and are worth keeping, but they do not show which records were changed.
     B: The prompt version helps explain why the agent was open to injection, not what it did.
     D: An injection does not alter the model, so the weights tell responders nothing about the changes.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aaism-check-topup
+  options_only: not_obvious

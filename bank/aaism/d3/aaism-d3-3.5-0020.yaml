@@ -16,10 +16,12 @@ explanation:
     B: Firewall logs show traffic to an approved domain, which looks normal, and they do not show the query content.
     C: Prompts and answers can reveal an injection, but the data would leave through tool calls, which those logs do not contain.
     D: Email DLP covers a channel the agent does not use.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aaism-check-topup
+  options_only: not_obvious

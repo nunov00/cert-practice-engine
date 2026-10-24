@@ -1,6 +1,6 @@
 id: cissp-d3-3.3-0002
 subdomain: '3.3'
-difficulty: hard
+difficulty: medium
 stem: Several departments share one analytics cluster, which the budget requires. Each department must not see the others'
   data, and IT staff who run the cluster must not be able to read any of it. Which control BEST meets both requirements?
 options:
@@ -17,10 +17,12 @@ explanation:
       so it fails the second requirement.
     C: Logging deters and records administrator access, but it is detective. Administrators could still read the data.
     D: Separate volumes help organise data, but administrators manage the volumes and can read them.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-cissp-check-topup
+  options_only: not_obvious

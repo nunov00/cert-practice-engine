@@ -18,10 +18,12 @@ explanation:
       that hides wrong facts.
     C: Varied references add noise to the scores, but they do not explain why a high average could hide harmful errors.
     D: Coverage of rare claims is worth checking, but the method would still miss wrong facts on common claims.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aair-check-topup
+  options_only: not_obvious

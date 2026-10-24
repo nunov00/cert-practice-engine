@@ -1,6 +1,6 @@
 id: aaism-d3-3.3-0020
 subdomain: '3.3'
-difficulty: hard
+difficulty: medium
 stem: A hospital will send X-ray images to an annotation vendor for labelling. Many images have patient names burned into
   the pixels by older scanners. Labellers will work in a vendor virtual desktop with downloads blocked. Which control BEST
   protects patient identity?
@@ -17,10 +17,12 @@ explanation:
     A: Metadata stripping is the usual first step, but it leaves names that are drawn into the pixels.
     C: Contract terms set duties and remedies, but labellers would still see patient names.
     D: View logs support audit after the fact. They do not stop names being exposed.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aaism-check-topup
+  options_only: not_obvious
