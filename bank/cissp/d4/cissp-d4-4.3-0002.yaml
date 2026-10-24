@@ -19,10 +19,12 @@ explanation:
     C: Monitoring may spot an attack in progress, but it is detective. It leaves the permanent link in place.
     D: Individual accounts with MFA add accountability, but access would still be available at any time without approval,
       which the few monthly visits do not need.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-cissp-check
+  options_only: not_obvious

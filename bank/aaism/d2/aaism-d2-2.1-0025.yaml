@@ -18,10 +18,12 @@ explanation:
       cases.
     D: Tolerances for a single model are usually set by its owner within the board's appetite. Nothing suggests this one was
       set wrongly.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aaism-check
+  options_only: not_obvious

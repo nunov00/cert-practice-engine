@@ -18,10 +18,12 @@ explanation:
       copy is lost with the primary.
     C: Offline tape resists ransomware, but nightly copies can lose up to a day of orders and slow restores may miss the RTO.
     D: Same-site replication protects against a failed array, yet it copies encrypted data and shares the site's exposure.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-cissp-check
+  options_only: not_obvious

@@ -1,6 +1,6 @@
 id: aair-d1-1.5-0016
 subdomain: '1.5'
-difficulty: hard
+difficulty: easy
 stem: A city plans an AI model that scores welfare claims for fraud risk. Data protection law requires an impact assessment
   before high-risk processing begins. The project is in procurement, and no vendor has been chosen. When should the assessment
   start?
@@ -19,10 +19,12 @@ explanation:
       changes to the contract.
     C: Assessing just before go-live meets the letter of the law but leaves little room to change what has been built.
     D: A pilot that scores real claims is already processing personal data, so the assessment would come too late.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aair-check
+  options_only: obvious

@@ -1,6 +1,6 @@
 id: aair-d3-3.2-0018
 subdomain: '3.2'
-difficulty: medium
+difficulty: easy
 stem: 'A treatment plan for a fraud model''s rising miss rate names an owner, a budget and a due date. Its only action reads:
   improve monitoring. What is the plan MAINLY missing?'
 options:
@@ -16,10 +16,12 @@ explanation:
     A: Second-line review is useful oversight, but even a reviewed plan has nothing to judge success by without a target.
     B: The plan already has a budget. A more detailed cost does not say what the action should achieve.
     C: Root cause helps choose the right action, but the plan's main gap is that no outcome is defined.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aair-check
+  options_only: obvious

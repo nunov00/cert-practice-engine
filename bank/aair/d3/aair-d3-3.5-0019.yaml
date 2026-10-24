@@ -17,10 +17,12 @@ explanation:
       the harm lies.
     C: Vulnerability scans find known flaws in honest code. A deliberately malicious plug-in usually has no published vulnerability.
     D: Popularity lowers the odds of a bad plug-in, but attackers can inflate ratings, and popular packages have been compromised.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aair-check
+  options_only: not_obvious

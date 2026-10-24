@@ -16,10 +16,12 @@ explanation:
     B: Reviewing approvals shows what was approved, not what is deployed.
     C: Failed deployments do not run. The risk is an unapproved one that succeeds.
     D: An unapproved model may perform well, so accuracy would not reveal it.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aaism-check
+  options_only: not_obvious
