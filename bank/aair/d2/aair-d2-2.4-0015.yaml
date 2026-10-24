@@ -2,7 +2,7 @@ id: aair-d2-2.4-0015
 subdomain: '2.4'
 difficulty: medium
 stem: A bank is training a card fraud model whose labels come only from fraud that customers have disputed and the bank has
-  confirmed. Card data shows most fraud on its cards is under 20, amounts customers seldom notice. What is the MAIN data risk?
+  confirmed. Card data shows most fraud on its cards is under 20 euros, amounts customers seldom notice. What is the MAIN data risk?
 options:
   A: Fraud cases are a tiny share of transactions
   B: Some disputes are false claims by the cardholders

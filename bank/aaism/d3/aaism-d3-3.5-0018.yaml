@@ -16,7 +16,7 @@ explanation:
     B: Reviewing approvals shows what was approved, not what is deployed.
     C: Failed deployments do not run. The risk is an unapproved one that succeeds.
     D: An unapproved model may perform well, so accuracy would not reveal it.
-status: published
+status: draft
 outline_version: 2025-08-19
 sample: false
 provenance:

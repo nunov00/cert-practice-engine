@@ -1,6 +1,6 @@
 id: cissp-d7-7.14-0001
 subdomain: "7.14"
-difficulty: hard
+difficulty: medium
 stem: A data centre's lobby has guards who check every badge. At the loading dock, the door stays open for up to an hour
   while goods are unloaded, and CCTV records it. A tester walked in through the dock during a delivery. Which control BEST
   closes this gap?

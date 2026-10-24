@@ -16,7 +16,7 @@ explanation:
     A: The injected documents show how the attack worked and are worth keeping, but they do not show which records were changed.
     B: The prompt version helps explain why the agent was open to injection, not what it did.
     D: An injection does not alter the model, so the weights tell responders nothing about the changes.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

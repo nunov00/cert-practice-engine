@@ -8,7 +8,7 @@ options:
   A: Synchronous replication to a hot site in another region
   B: Immutable 15-minute snapshots in an isolated account
   C: Nightly backups to offline tape held at a secure vault
-  D: Continuous replication to a second array in the same data centre
+  D: Five-minute async replication to a warm site in another region
 answer: B
 explanation:
   why_correct: Snapshots every 15 minutes meet the RPO, and copies that cannot be changed and sit in a separate account survive
@@ -18,7 +18,8 @@ explanation:
     A: A hot site meets the RTO for site loss, but synchronous replication copies the encrypted data too, so the recovery copy is
       lost with the primary.
     C: Offline tape resists ransomware, but nightly copies can lose up to a day of orders, far beyond the 15-minute RPO.
-    D: Same-site replication protects against a failed array, yet it copies encrypted data and shares the site's exposure.
+    D: It meets the RPO and survives loss of the primary site, but replication copies the encrypted data within minutes, so
+      the warm site holds no clean copy unless it keeps its own point-in-time copies.
 status: published
 outline_version: 2024-04-15
 sample: false
