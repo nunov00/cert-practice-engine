@@ -1,0 +1,31 @@
+id: aair-d1-1.4-0016
+subdomain: "1.4"
+difficulty: medium
+stem: A company is rolling out an AI coding assistant to 300 developers. It runs in a private tenant approved for all
+  internal data, including source code, and secret scanning blocks credentials in prompts. Which training topic is MOST important?
+options:
+  A: Checking suggested code and packages before use
+  B: Which company data must not be entered in prompts
+  C: Writing prompts that produce more accurate code
+  D: The company's principles for responsible AI use
+answer: A
+explanation:
+  why_correct: "The tenant and secret scanning already address what goes into the tool. The remaining risk is what comes out:
+    insecure code, licensing problems and packages that do not exist or are malicious. Developers must know how to check
+    suggestions before they reach the codebase."
+  why_not:
+    B: Data-entry rules are often the top training topic, but here the tenant is approved for internal data, including source code, and credentials are
+      blocked technically.
+    C: Better prompts improve productivity, and may improve quality, but they do not teach developers to catch a flawed
+      suggestion.
+    D: Principles set the tone for AI use, but they are too general to change how developers handle the specific risks of
+      generated code.
+status: published
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aair-check
+  options_only: not_obvious

@@ -1,0 +1,28 @@
+id: cissp-d6-6.1-0002
+subdomain: '6.1'
+difficulty: medium
+stem: A bank's security team tests its own controls each quarter and reports that all passed. The audit committee wants assurance
+  that does not rest on the team testing itself. Which approach BEST meets this need?
+options:
+  A: Have a second security analyst repeat each test
+  B: Commission an external penetration test of key systems
+  C: Have internal audit re-perform a sample of tests
+  D: Have the CISO review and sign off each quarter's results
+answer: C
+explanation:
+  why_correct: The committee's concern is whether the self-testing can be trusted. Re-performance of a sample by internal
+    audit, which is independent of the security function, tests that directly.
+  why_not:
+    A: A second analyst adds a check, but from the same team whose testing is in question, so it is not independent.
+    B: A penetration test is independent, but it looks for exploitable weaknesses. It does not check whether the team's control
+      tests are reliable.
+    D: CISO sign-off is management review within the security function. It adds accountability but not independence.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-cissp-recheck
+  options_only: not_obvious

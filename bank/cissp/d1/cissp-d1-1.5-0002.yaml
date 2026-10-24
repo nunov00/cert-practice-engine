@@ -1,0 +1,32 @@
+id: cissp-d1-1.5-0002
+subdomain: "1.5"
+difficulty: medium
+stem: A help desk technician fixing a manager's company laptop sees file names suggesting it holds sexual images of children.
+  HR asks IT to copy the drive and open the files to confirm before anyone calls the police. What should IT do?
+options:
+  A: Secure the laptop unopened and call the police
+  B: Image the drive with a write blocker and review the copy
+  C: Have HR interview the manager before any further step
+  D: Suspend the manager's accounts and preserve the mailbox
+answer: A
+explanation:
+  why_correct: This is a likely criminal matter from the start. Opening or copying suspected child sexual abuse material can
+    itself be unlawful, and examining it is for the police or people acting under their direction, not a help desk technician
+    or HR. IT should stop, keep the laptop secure and unchanged, record who handled it, and escalate through the incident and
+    legal process so the police are called.
+  why_not:
+    B: Write-blocked imaging is sound practice for an internal or civil case. Here it means IT copying and viewing suspected
+      illegal material on its own initiative, which can itself be unlawful and is a decision for the authorities.
+    C: An interview may alert the manager and lead to evidence being destroyed elsewhere. It also treats a criminal matter as an
+      internal HR one.
+    D: Preserving other evidence can help later, but it does not deal with the laptop, which is the key evidence and must go to
+      the police.
+status: published
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-cissp-check
+  options_only: not_obvious

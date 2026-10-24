@@ -1,0 +1,28 @@
+id: aair-d2-2.4-0015
+subdomain: '2.4'
+difficulty: medium
+stem: A bank is training a card fraud model whose labels come only from fraud that customers have disputed and the bank has
+  confirmed. Card data shows most fraud on its cards is under 20 euros, amounts customers seldom notice. What is the MAIN data risk?
+options:
+  A: Fraud cases are a tiny share of transactions
+  B: Some disputes are false claims by the cardholders
+  C: Disputes are confirmed weeks after the transaction
+  D: Low-value fraud is mostly labelled as genuine
+answer: D
+explanation:
+  why_correct: Labels exist only where customers dispute. Small frauds that go unnoticed are recorded as genuine, so the model
+    learns that the most common kind of fraud is normal and will tend to miss it.
+  why_not:
+    A: Class imbalance is common in fraud data and has standard remedies. It does not hide a whole type of fraud the way missing
+      labels do.
+    B: False disputes add some noise, but the bank confirms each dispute, which removes most of them.
+    C: Label delay affects how fresh the training data is, not whether it is correct.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aair-check-topup
+  options_only: not_obvious

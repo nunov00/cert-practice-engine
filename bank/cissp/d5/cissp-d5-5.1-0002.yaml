@@ -1,0 +1,28 @@
+id: cissp-d5-5.1-0002
+subdomain: '5.1'
+difficulty: easy
+stem: Paper personnel files are kept in a room locked with a key, and four HR staff hold copies of the key. A file has gone
+  missing, and nobody can say who entered the room that week. Which control BEST addresses this?
+options:
+  A: Fit a badge reader that logs each entry
+  B: Install a camera covering the room's door
+  C: Reduce the number of key holders to two
+  D: Keep a paper sign-in sheet beside the door
+answer: A
+explanation:
+  why_correct: 'The gap is accountability: a shared key does not show who opened the door. A badge reader both controls entry
+    and records each person''s access automatically, so entries can be traced.'
+  why_not:
+    B: A camera can help identify people, but it records rather than controls entry, and footage must be reviewed and matched
+      to faces.
+    C: Fewer key holders narrows the list of suspects, but still cannot show who entered at a given time.
+    D: A sign-in sheet depends on each person choosing to sign, and the person who took a file is the least likely to.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-cissp-check
+  options_only: not_obvious

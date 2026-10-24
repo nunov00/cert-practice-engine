@@ -1,0 +1,28 @@
+id: cissp-d6-6.3-0002
+subdomain: '6.3'
+difficulty: medium
+stem: A firm's security awareness course has 98% completion, and monthly phishing simulations run for all staff. The board
+  now asks whether staff act as an early warning for the security operations centre. Which data BEST answers this?
+options:
+  A: Course completion rates for each department
+  B: Share of simulated phishing emails reported
+  C: Click rate on simulated phishing emails
+  D: Average scores on the end-of-course quiz
+answer: B
+explanation:
+  why_correct: An early warning means staff tell the SOC about suspicious messages. The share of simulated phishing emails
+    that staff report, and how quickly, measures that behaviour directly.
+  why_not:
+    A: Completion shows people took the course, not what they do when a suspicious email arrives.
+    C: Click rate shows whether staff avoid the lure, which matters, but a member of staff who ignores a phish without reporting
+      it warns nobody.
+    D: Quiz scores show what staff know at the end of the course, not how they behave months later.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-cissp-recheck
+  options_only: not_obvious

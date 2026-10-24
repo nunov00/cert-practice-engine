@@ -1,0 +1,30 @@
+id: aair-d3-3.5-0019
+subdomain: "3.5"
+difficulty: hard
+stem: Developers add community plug-ins from a public marketplace to the company's AI agent framework. Plug-ins run with the
+  agent's permissions, which include CRM access. Which control BEST addresses this supply chain risk?
+options:
+  A: Allow only plug-ins reviewed and approved by security
+  B: Run the agent in a container isolated from the host
+  C: Pin plug-in versions and verify publisher signatures
+  D: Scan each plug-in for known vulnerabilities on release
+answer: A
+explanation:
+  why_correct: Any plug-in can act with the agent's CRM rights, so the main risk is a malicious or careless plug-in. An
+    approved list, with security review before use, stops untrusted code from getting those rights at all.
+  why_not:
+    B: Isolation protects the host, but the plug-in still has the agent's CRM access inside the container, which is where the
+      harm lies.
+    C: Pinning and signatures prove you got the exact code the publisher released, but on a public marketplace anyone can be a
+      publisher, so a malicious plug-in arrives correctly signed.
+    D: Vulnerability scans find known flaws in honest code. A deliberately malicious plug-in usually has no published
+      vulnerability.
+status: published
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aair-check
+  options_only: not_obvious

@@ -1,0 +1,31 @@
+id: cissp-d7-7.10-0001
+subdomain: "7.10"
+difficulty: hard
+stem: An online retailer's order database has a recovery point objective of 15 minutes and a recovery time objective of four
+  hours. Restore tests show it can be rebuilt from a recovery copy in about two hours. The main scenario in its recovery plan
+  is ransomware encrypting storage across the primary site. Which strategy BEST meets these needs?
+options:
+  A: Synchronous replication to a hot site in another region
+  B: Immutable 15-minute snapshots in an isolated account
+  C: Nightly backups to offline tape held at a secure vault
+  D: Five-minute async replication to a warm site in another region
+answer: B
+explanation:
+  why_correct: Snapshots every 15 minutes meet the RPO, and copies that cannot be changed and sit in a separate account survive
+    ransomware that reaches the primary site. The team still has to confirm which snapshot is the last clean one, and the
+    tested two-hour restore leaves time for that within the RTO.
+  why_not:
+    A: A hot site meets the RTO for site loss, but synchronous replication copies the encrypted data too, so the recovery copy is
+      lost with the primary.
+    C: Offline tape resists ransomware, but nightly copies can lose up to a day of orders, far beyond the 15-minute RPO.
+    D: It meets the RPO and survives loss of the primary site, but replication copies the encrypted data within minutes, so
+      the warm site holds no clean copy unless it keeps its own point-in-time copies.
+status: published
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,28 @@
+id: aaism-d3-3.3-0019
+subdomain: '3.3'
+difficulty: medium
+stem: A company removed names and account numbers from support tickets before using them to train a model. Spot checks show
+  the free-text notes still contain names and phone numbers. The notes hold most of the detail the model learns from. What is
+  the BEST control?
+options:
+  A: Restrict access to the training data store
+  B: Encrypt the training data at rest and in transit
+  C: Drop the free-text fields from the training data
+  D: Redact identifiers found in the free text
+answer: D
+explanation:
+  why_correct: The identifiers are in the text itself, so field-level removal is not enough. Scanning and redacting the free
+    text before it enters the training store removes them while keeping the content the model needs.
+  why_not:
+    A: Restricted access protects the store, but the model can still learn and repeat the personal data.
+    B: Encryption protects data from outsiders, not from the training process that reads it.
+    C: Dropping the notes removes the identifiers but also the content that gives the model most of its value.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aaism-check
+  options_only: not_obvious

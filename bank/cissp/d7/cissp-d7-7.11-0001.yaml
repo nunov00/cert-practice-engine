@@ -1,0 +1,28 @@
+id: cissp-d7-7.11-0001
+subdomain: '7.11'
+difficulty: medium
+stem: After a fire, a company moved operations to its recovery site. The primary data centre has now been repaired and passed
+  safety inspection. How should the disaster recovery team move operations back?
+options:
+  A: Test the primary site, then move the least critical systems first
+  B: Test the primary site, then move the most critical systems first
+  C: Move the systems back together in one planned weekend
+  D: Move critical systems back as soon as power and cooling run
+answer: A
+explanation:
+  why_correct: Returning the least critical systems first proves the repaired site under real load while the critical systems
+    keep running safely at the recovery site. The disaster is over only when all operations are back and stable.
+  why_not:
+    B: Moving critical systems first exposes them to any fault left in the repaired site, before it has carried any real workload.
+    C: A single cutover puts everything at risk at once. If the primary site has a problem, every system fails together.
+    D: Power and cooling are only part of readiness. Moving critical systems without testing risks a second outage of the
+      most important services.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,29 @@
+id: aair-d3-3.3-0020
+subdomain: '3.3'
+difficulty: easy
+stem: An insurer's generative AI drafts about 5,000 customer letters a day, each stating a compensation amount already calculated
+  in the claims system. Amounts appear in several forms, such as words, figures and instalments. Which control BEST reduces
+  the risk of a wrong amount?
+options:
+  A: A reviewer checks a 2% sample of letters before sending
+  B: A second model checks each letter against the claim
+  C: Amounts are inserted from the claims system, not generated
+  D: An automated rule compares figures in each letter with the claim
+answer: C
+explanation:
+  why_correct: The correct amount already exists. Inserting it from the claims system into the letter removes the chance of
+    the model stating it wrongly, instead of trying to catch errors afterwards.
+  why_not:
+    A: Sampling finds error patterns but lets 98% of letters go out unchecked.
+    B: A second model is itself error-prone and tends to share the first model's mistakes, so it is a weak check on figures.
+    D: Figure matching works when amounts appear in one format. Here they appear as words, figures and instalments, which
+      such a rule will often misread.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aair-check-topup
+  options_only: obvious

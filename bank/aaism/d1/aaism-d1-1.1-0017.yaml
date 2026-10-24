@@ -1,0 +1,29 @@
+id: aaism-d1-1.1-0017
+subdomain: "1.1"
+difficulty: easy
+stem: A company with a certified information security management system wants an AI management system that can also be
+  independently certified. Which standard BEST fits this aim?
+options:
+  A: ISO/IEC 42001
+  B: NIST AI Risk Management Framework
+  C: ISO/IEC 23894
+  D: ISO/IEC 27701
+answer: A
+explanation:
+  why_correct: ISO/IEC 42001 sets requirements for an AI management system and is written to be certified by accredited bodies.
+    It follows the same management system structure as ISO/IEC 27001, so it fits beside the existing system.
+  why_not:
+    B: The NIST AI RMF is a widely used voluntary framework for managing AI risk, but it is not a certifiable management system
+      standard.
+    C: ISO/IEC 23894 gives guidance on AI risk management. It is guidance, not a set of requirements to certify against.
+    D: ISO/IEC 27701 sets requirements for a privacy information management system. It can be certified, but it does not cover AI
+      management.
+status: draft
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aaism-check
+  options_only: not_obvious

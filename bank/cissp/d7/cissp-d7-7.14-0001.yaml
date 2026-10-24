@@ -1,0 +1,30 @@
+id: cissp-d7-7.14-0001
+subdomain: "7.14"
+difficulty: medium
+stem: A data centre's lobby has guards who check every badge. At the loading dock, the door stays open for up to an hour
+  while goods are unloaded, and CCTV records it. A tester walked in through the dock during a delivery. Which control BEST
+  closes this gap?
+options:
+  A: Have a guard watch the dock camera live during deliveries
+  B: Post a guard at the dock to check entrants while open
+  C: Fit a badge reader to the dock door
+  D: Alarm the dock door when it is held open too long
+answer: B
+explanation:
+  why_correct: The gap is an open door with nobody there to challenge who walks through it. A guard posted at the dock for as
+    long as it is open can check every person entering, as the lobby guards do, and stop someone before they get in.
+  why_not:
+    A: Live monitoring is detective. A guard at a screen can see an intruder but cannot challenge them at the door, so the person
+      is inside before anyone reaches them.
+    C: A badge reader controls a closed door. The dock door is propped open for up to an hour, so it would be bypassed at exactly
+      the time of the risk.
+    D: A held-open alarm would sound at every delivery and soon be ignored, and it does not stop anyone walking in.
+status: published
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-cissp-check-topup
+  options_only: not_obvious

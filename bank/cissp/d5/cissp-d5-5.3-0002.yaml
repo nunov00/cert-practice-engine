@@ -1,0 +1,30 @@
+id: cissp-d5-5.3-0002
+subdomain: "5.3"
+difficulty: hard
+stem: A company lets a partner's engineers into its ticketing system through SAML federation with the partner's identity
+  provider. Assertions are signed, and the app takes each partner user's role, including administrator, from the partner's
+  'role' attribute. What is the BEST improvement?
+options:
+  A: Assign admin rights in the company's own system
+  B: Have the partner attest quarterly to who holds admin
+  C: Require step-up MFA at the partner's IdP for admins
+  D: Alert on admin actions taken by partner users
+answer: A
+explanation:
+  why_correct: Federation should let the partner prove who its users are, not decide what they may do in the company's system.
+    As built, any partner IdP administrator can make anyone an administrator here. Keeping high-privilege roles under the
+    company's own authorisation closes that gap.
+  why_not:
+    B: Attestation reviews who holds admin after the fact, but the partner still decides, and a change at its IdP takes effect at
+      once in the company's system.
+    C: Step-up MFA makes partner admin sign-ins harder to steal, but the partner still decides who is an administrator here.
+    D: Alerts help spot misuse, but they are detective and leave the partner in control of who gets administrator rights.
+status: published
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-cissp-check
+  options_only: not_obvious

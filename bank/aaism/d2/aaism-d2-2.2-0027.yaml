@@ -1,0 +1,31 @@
+id: aaism-d2-2.2-0027
+subdomain: "2.2"
+difficulty: hard
+stem: A contractor fine-tuned a verified, unmodified base model into a document classifier for a bank, and it passes every
+  benchmark. A tip says an unknown phrase of several uncommon words makes it mark fraudulent documents as genuine. The bank
+  holds the exact fine-tuning dataset used. Which step BEST finds such a backdoor?
+options:
+  A: Probe the model with an automated trigger-search tool
+  B: Test it on a held-out set of adversarial documents
+  C: Compare its outputs with the base model on test data
+  D: Look for rare phrases shared by mislabelled training data
+answer: D
+explanation:
+  why_correct: "The base model is verified clean and the dataset is the one actually used, so the trigger was most likely
+    taught through training examples: fraudulent documents containing the phrase and labelled genuine. Searching that data
+    for rare phrases that recur in mislabelled examples finds the trigger directly."
+  why_not:
+    A: Trigger-search tools can work for simple triggers, but a phrase of several uncommon words is a huge search space and
+      easily missed.
+    B: Adversarial test sets probe known evasion methods. Unless they happen to contain the phrase, the backdoor stays hidden.
+    C: Comparing with the base model shows where fine-tuning changed behaviour, but without the trigger in the test data the
+      backdoor does not show.
+status: published
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aaism-recheck
+  options_only: not_obvious

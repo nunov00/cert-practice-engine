@@ -1,0 +1,30 @@
+id: aair-d1-1.6-0016
+subdomain: "1.6"
+difficulty: medium
+stem: A mental health app's AI companion tells users it cares about them and is always there for them. Users consented to the
+  processing of their health data. Some now say they prefer it to their therapist. What is the MOST significant ethical
+  concern?
+options:
+  A: Users may depend on a system that cannot provide care
+  B: Health data may be processed beyond what users agreed
+  C: The companion may state wrong facts about treatments
+  D: Responses may suit some user groups less well than others
+answer: A
+explanation:
+  why_correct: Language that suggests feelings and constant availability invites vulnerable users to rely on the companion as
+    if it were a carer. Over-reliance can delay or replace real treatment, which is the most serious harm in this context.
+  why_not:
+    B: Consent issues matter for health data, but the stem says users consented, and nothing points to processing outside that.
+    C: Inaccurate statements are a real risk for any language model, but the behaviour described is about the relationship users
+      form, not factual errors.
+    D: Uneven quality across user groups is a fairness concern worth testing, but nothing in the stem points to it, while it
+      gives direct evidence of reliance displacing professional care.
+status: published
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aair-check
+  options_only: not_obvious

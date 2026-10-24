@@ -1,0 +1,31 @@
+id: cissp-d2-2.4-0002
+subdomain: '2.4'
+difficulty: easy
+stem: At a hospital, IT backs up, patches and restores the patient records database. The chief medical officer approved the
+  records' classification and retention period. The data protection officer advises on privacy law. A researcher, backed by
+  their head of department, asks for read access. Who should approve it?
+options:
+  A: The IT manager who runs the database
+  B: The chief medical officer
+  C: The data protection officer
+  D: The researcher's head of department
+answer: B
+explanation:
+  why_correct: The chief medical officer classified the records and set their retention, which makes them the data owner.
+    The owner is accountable for the data and decides who may access it.
+  why_not:
+    A: 'IT acts as custodian: it runs the system and carries out the owner''s decisions, such as granting access once approved.
+      It does not decide who gets access.'
+    C: The data protection officer advises on privacy law and may be consulted, but advising is not the same as owning the
+      data and approving access.
+    D: The head of department can confirm the researcher's need, which supports the request. The decision rests with the owner
+      of the records.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-cissp-recheck
+  options_only: not_obvious

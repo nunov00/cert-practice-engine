@@ -1,0 +1,30 @@
+id: aaism-d2-2.1-0025
+subdomain: "2.1"
+difficulty: hard
+stem: The tolerance for a claims triage model is at most 1% of urgent claims misrouted. About 5% of claims are urgent. Each
+  month, reviewers check 50 randomly chosen claims, and the last six checks found no urgent claim misrouted. What is the MAIN
+  concern?
+options:
+  A: The sample cannot show whether the rate is within 1%
+  B: Monthly checks are too infrequent for an urgent risk
+  C: Reviewers may tend to agree with the model's routing
+  D: The tolerance should be set by the board, not the owner
+answer: A
+explanation:
+  why_correct: At 5% urgent, a random 50 holds two or three urgent claims, about 15 in six months. Zero errors in 15 is very
+    likely at a 0.5% rate and still about even odds at 5%, so the check gives false comfort about a 1% tolerance.
+  why_not:
+    B: More frequent checks would help a little, but each would still be too small to measure a 1% rate.
+    C: Automation bias in reviewers is a real concern, but even perfect reviewers could not judge the rate from so few urgent
+      cases.
+    D: Tolerances for a single model are usually set by its owner within the board's appetite. Nothing suggests this one was set
+      wrongly.
+status: published
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aaism-check
+  options_only: not_obvious

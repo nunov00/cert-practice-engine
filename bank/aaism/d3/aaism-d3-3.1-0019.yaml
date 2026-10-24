@@ -1,0 +1,29 @@
+id: aaism-d3-3.1-0019
+subdomain: "3.1"
+difficulty: hard
+stem: A SaaS support assistant serves many retailers and returns a cached answer when a new prompt is similar enough to an
+  earlier one. A shopper received another shopper's order details in a cached answer. Which design change BEST addresses
+  this?
+options:
+  A: Partition the cache by retailer
+  B: Scope each cache entry to the user who produced it
+  C: Skip caching when a classifier detects personal data
+  D: Raise the similarity needed for a cache hit
+answer: B
+explanation:
+  why_correct: The cache served one shopper's personalised answer to another. Scoping entries to the user, or to a permission
+    set, means a cached answer only returns to someone allowed to see it, whatever the similarity, and it also stops leaks
+    across retailers.
+  why_not:
+    A: Partitioning by retailer stops leaks between retailers, but two shoppers at the same retailer would still share entries.
+    C: A classifier lowers the risk but misses some personal data, and order details are not always flagged as personal.
+    D: A stricter match reduces wrong hits, but two shoppers asking the same question still match exactly.
+status: published
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aaism-recheck
+  options_only: not_obvious

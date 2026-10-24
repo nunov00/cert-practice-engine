@@ -1,0 +1,31 @@
+id: aaism-d1-1.4-0016
+subdomain: '1.4'
+difficulty: medium
+stem: A company's certified security management system excludes its data science division, which runs its own AI platform.
+  The division's customer-facing models are trained on the platform's shared data and pipelines. What is the BEST way to bring
+  AI security into the program?
+options:
+  A: Bring the platform into scope, adding AI controls
+  B: Bring only the customer-facing models into scope
+  C: Certify the division under a separate AI management system
+  D: Have the division self-assess against an AI standard yearly
+answer: A
+explanation:
+  why_correct: The models depend on the platform's shared data and pipelines, so the platform is where most of their risk
+    sits. Extending the existing system to the platform, with AI-specific risks and controls, applies its governance, audit
+    and improvement cycles to all of it.
+  why_not:
+    B: Scoping the models alone leaves out the shared data and pipelines they are trained on, where poisoning or tampering
+      would start.
+    C: A separate certified system is possible, but it duplicates governance and leaves two sets of risk methods to reconcile.
+    D: Self-assessment gives some visibility, but it is not independent and does not bring the platform under the company's
+      controls.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aaism-recheck
+  options_only: not_obvious

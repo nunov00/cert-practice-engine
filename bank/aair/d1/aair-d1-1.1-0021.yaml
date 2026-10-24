@@ -1,0 +1,28 @@
+id: aair-d1-1.1-0021
+subdomain: '1.1'
+difficulty: easy
+stem: A retailer wants to group its customers into segments for marketing. It has no existing segment labels and does not
+  know in advance how many groups exist. Which type of model BEST fits?
+options:
+  A: A classifier trained on past campaign responses
+  B: A regression model that predicts annual spend
+  C: A clustering model trained on purchase behaviour
+  D: A reinforcement learning model that tests offers
+answer: C
+explanation:
+  why_correct: Grouping records without labels is unsupervised learning, and clustering finds groups of similar customers
+    from their behaviour. It does not need the segments to be defined first.
+  why_not:
+    A: A classifier needs labelled examples of each class. Campaign responses label a different question, whether a customer
+      responded, not which segment they are in.
+    B: Regression predicts a number for each customer. It does not divide customers into groups.
+    D: Reinforcement learning learns which actions earn rewards over time. It suits choosing offers, not discovering segments.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-23-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-23-daily-aair-check
+  options_only: not_obvious
