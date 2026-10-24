@@ -1,23 +1,24 @@
 id: aaism-d2-2.2-0027
 subdomain: '2.2'
 difficulty: hard
-stem: A contractor fine-tuned a document classifier for a bank, and it passes every benchmark test. A tip says a trigger phrase
-  may make it mark fraudulent documents as genuine. Which step BEST finds such a backdoor?
+stem: A contractor fine-tuned a document classifier for a bank, and it passes every benchmark. A tip says a phrase of several
+  uncommon words makes it mark fraudulent documents as genuine. The bank holds the full fine-tuning dataset. Which step BEST
+  finds such a backdoor?
 options:
-  A: Rerun the benchmark with a larger test set
-  B: Red team the model with varied random prompts
+  A: Probe the model with a trigger-search tool
+  B: Test it on a held-out set of adversarial documents
   C: Compare its outputs with the base model on test data
-  D: Inspect the fine-tuning data for planted triggers
+  D: Search the fine-tuning data for the trigger
 answer: D
 explanation:
-  why_correct: A backdoor behaves normally until its trigger appears, so tests on ordinary data rarely reveal it. The trigger
-    had to be taught through training examples, so inspecting the fine-tuning data and its provenance is the most direct way
-    to find it.
+  why_correct: A trigger has to be taught through training examples, typically fraudulent documents containing the phrase
+    and labelled genuine. The bank holds the dataset, so searching it for such examples finds the trigger directly.
   why_not:
-    A: A bigger benchmark of normal documents still lacks the trigger, so the model keeps passing.
-    B: Random probing has little chance of hitting an unknown trigger phrase.
+    A: Trigger-search tools can work for simple triggers, but a phrase of several uncommon words is a huge search space and
+      easily missed.
+    B: Adversarial test sets probe known evasion methods. Unless they happen to contain the phrase, the backdoor stays hidden.
     C: Comparing with the base model shows where fine-tuning changed behaviour, but without the trigger in the test data the
-      backdoor stays hidden.
+      backdoor does not show.
 status: draft
 outline_version: '2025-08-19'
 sample: false
@@ -25,4 +26,3 @@ provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aaism
   check_verdict: pending
-  options_only: obvious

@@ -1,21 +1,22 @@
 id: aaism-d3-3.2-0019
 subdomain: '3.2'
 difficulty: medium
-stem: A team runs a candidate model in shadow mode, feeding it live customer requests. It runs in the development account,
-  which has wider staff access and weaker logging than production. What is the MAIN concern?
+stem: A team runs a candidate fraud model in shadow mode, scoring copies of live card transactions. It runs in the development
+  account, where every engineer has access. The candidate returns scores only and calls no other systems. What is the MAIN
+  security concern?
 options:
-  A: The candidate could learn from the live requests it receives
-  B: Attackers could reach the candidate model through production
-  C: The candidate's outputs could be cached and shown to customers
-  D: Customer data reaches an account with weaker controls
+  A: Shadow scores may not show how fraudsters react to the new model
+  B: The candidate's tool calls could act on live accounts
+  C: Serving two models doubles the cost of scoring
+  D: Live card data leaves production's access controls
 answer: D
 explanation:
-  why_correct: Shadow mode is a sound way to test, but it copies production data to wherever the candidate runs. In the development
-    account that data meets wider access and weaker logging, so it needs production-grade controls or a production-grade home.
+  why_correct: Shadow mode is a sound way to test, but it copies production data to wherever the candidate runs. Here live
+    card data sits where every engineer can read it, so the candidate needs production-grade access controls.
   why_not:
-    A: A model in shadow mode only makes predictions. It does not train on the requests unless set up to.
-    B: Shadow traffic is copied out of production, so attackers do not gain a path in through it.
-    C: Shadow outputs are recorded for comparison, not served, so customers do not see them.
+    A: Shadow results do miss how fraudsters adapt, but that limits the test's value, not security.
+    B: Side effects are a real shadow-mode risk for models that call other systems, but this one returns scores only.
+    C: Extra cost is an operational concern, not a security one.
 status: draft
 outline_version: '2025-08-19'
 sample: false
@@ -23,4 +24,3 @@ provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aaism
   check_verdict: pending
-  options_only: not_obvious

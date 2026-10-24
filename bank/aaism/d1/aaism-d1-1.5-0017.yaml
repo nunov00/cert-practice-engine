@@ -1,21 +1,23 @@
 id: aaism-d1-1.5-0017
 subdomain: '1.5'
 difficulty: medium
-stem: During an incident, a support chatbot kept leaking order details for three hours while staff tried to reach its business
-  owner for permission to take it offline. What would BEST prevent this delay?
+stem: During a weekend incident, a hospital's appointment assistant kept showing patients other patients' details for two
+  hours while staff tried to reach the clinical director for permission to take it offline. What would BEST prevent this delay?
 options:
-  A: Give the business owner a deputy who can be reached
-  B: Give the incident lead playbook authority to disable it
-  C: Convene the change board in an emergency session
-  D: Require the CISO to approve any shutdown after legal review
+  A: Name a deputy for the clinical director who can approve shutdown
+  B: Let the incident lead disable it under playbook conditions
+  C: Let the data science lead roll the model back during incidents
+  D: Let the service desk switch it off on any patient complaint
 answer: B
 explanation:
-  why_correct: Containment decisions must be possible within minutes. Agreeing in advance that the incident lead may disable
-    an AI service under set conditions removes the need to find anyone during the incident.
+  why_correct: Containment must not wait on finding someone outside the response team. Pre-agreed conditions under which the
+    incident lead may disable the service let containment start within minutes, with the owner told afterwards.
   why_not:
-    A: A deputy helps when the owner is away, but containment still waits on reaching someone outside the response team.
-    C: Emergency change boards still take time to convene and are meant for planned fixes, not urgent containment.
-    D: Adding legal review and CISO approval puts two more steps in front of the shutdown.
+    A: A deputy helps when the director is away, but containment still depends on reaching someone outside the response team.
+    C: A rollback may not stop a leak whose cause is unknown, and it puts the decision with someone who is not leading the
+      response.
+    D: 'Any complaint is too broad a trigger: the service would be switched off for ordinary complaints, and the decision
+      sits outside incident handling.'
 status: draft
 outline_version: '2025-08-19'
 sample: false
@@ -23,4 +25,3 @@ provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aaism
   check_verdict: pending
-  options_only: obvious

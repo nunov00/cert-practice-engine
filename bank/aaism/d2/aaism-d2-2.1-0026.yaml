@@ -4,19 +4,18 @@ difficulty: medium
 stem: A risk register rates a chatbot's data leakage risk as low, counting an output filter that is still being procured.
   The chatbot is already live. How should the risk be recorded?
 options:
-  A: Low, as the filter is funded and due next quarter
-  B: As accepted, until the filter is in place
-  C: At the level set by the controls now operating
-  D: As high, until the vendor confirms the filter works
+  A: At the level expected once the filter runs
+  B: As an accepted risk until the filter runs
+  C: At the level the controls now running support
+  D: As high until the vendor confirms the filter works
 answer: C
 explanation:
-  why_correct: Residual risk reflects controls that are actually running. Rating it on the controls in place now shows the
-    true exposure, and the filter is tracked as a planned treatment that will lower the rating once it is working.
+  why_correct: Residual risk reflects controls that are actually running. Rating it on those shows the true exposure today,
+    and the filter is tracked as a planned treatment that lowers the rating once it works.
   why_not:
-    A: Funding and a due date do not reduce exposure today. The chatbot is leaking or not on the controls it has now.
-    B: Acceptance is a decision by the risk owner on a known level. It cannot stand in for an accurate rating.
-    D: Setting the rating to high by default may overstate it. The rating should follow the controls in place, not the vendor's
-      confirmation.
+    A: A planned control does not reduce exposure today. The chatbot is live on the controls it has now.
+    B: Acceptance is a risk owner's decision on a known level. It cannot stand in for an accurate rating.
+    D: Defaulting to high may overstate the risk. The rating should follow the controls in place, not a vendor's confirmation.
 status: draft
 outline_version: '2025-08-19'
 sample: false
@@ -24,4 +23,3 @@ provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aaism
   check_verdict: pending
-  options_only: obvious

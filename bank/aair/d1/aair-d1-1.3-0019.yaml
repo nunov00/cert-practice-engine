@@ -1,21 +1,21 @@
 id: aair-d1-1.3-0019
 subdomain: '1.3'
-difficulty: medium
-stem: Each of a bank's production models has a named owner who must review monthly monitoring reports. The AI oversight committee
-  wants to know whether owners actually do this. Which evidence BEST shows it?
+difficulty: hard
+stem: A retailer's pricing models each have a business owner who must act on drift alerts. Alert tickets close automatically
+  after 14 days. The AI oversight committee wants evidence that owners act on the alerts. Which evidence is BEST?
 options:
-  A: Owners' signed annual attestations that they read the reports
-  B: Distribution lists showing each report reached its owner
-  C: Training records showing owners completed the oversight course
-  D: Records of the decisions owners took on reported breaches
+  A: Owners' sign-off dates on a sample of monthly reports
+  B: Committee minutes recording owners' updates on their models
+  C: Ticket records showing each drift alert was closed
+  D: Owners' recorded decisions on each alert, with follow-up
 answer: D
 explanation:
-  why_correct: Oversight is shown by what owners do with the reports. Records of decisions on breaches, such as escalations,
-    retraining requests or accepted exceptions, show the review took place and had an effect.
+  why_correct: Acting on an alert means deciding something, such as retraining, adjusting prices or accepting the drift, and
+    following it through. A recorded decision per alert with its follow-up shows that happened.
   why_not:
-    A: An attestation is the owner's own claim. It does not show what they did when a report showed a problem.
-    B: Delivery shows the reports were sent, not that anyone read or acted on them.
-    C: Training shows owners should know how to review the reports. It does not show they do.
+    A: Sign-offs show owners reviewed reports, not what they did about particular alerts.
+    B: Minutes show owners report to the committee, but an update can be given without acting on any alert.
+    C: Closed tickets look like action, but these tickets close on their own after 14 days, so closure proves nothing.
 status: draft
 outline_version: '2026-04-15'
 sample: false
@@ -23,4 +23,3 @@ provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aair
   check_verdict: pending
-  options_only: obvious
