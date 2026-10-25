@@ -47,7 +47,9 @@ published questions than the target.
    `recipes/<exam>/calibration.yaml`. Spread them over the domains furthest
    below their weighted share of the target (largest `gap` first), so empty
    domains (CISSP D2-D8 today) fill first. Run ID:
-   `<YYYY-MM-DD>-daily-<exam>`. Never more than 50 in total per night,
+   `<YYYY-MM-DD>-daily-<exam>`. Number new questions above both the files in
+   `bank/` and `bank/_reserved-ids.yaml`; when a question is deleted before
+   merge, add its ID to that list in the same PR. Never more than 50 in total per night,
    top-ups in step 5 aside. **Aim for at least 40% hard** in each exam's
    share, above the profile's `hard_share_min` (30%), because the checker
    downgrades labels that turn out easier than written.

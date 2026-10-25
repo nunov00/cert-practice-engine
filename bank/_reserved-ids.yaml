@@ -1,0 +1,25 @@
+# Question IDs that were allocated to a question that never reached main
+# (dropped from a batch PR before merge). They stay used forever: a new
+# question must take the next number above both the files in bank/ and this
+# list. `pnpm validate` fails any question file whose id appears here.
+# Add every ID a PR drops, in the same PR. IDs held back as `status: draft`
+# keep their file, so they need no entry.
+ids:
+  # PR #51 (daily batch 2026-10-18)
+  - aair-d1-1.2-0014
+  - aair-d1-1.3-0015
+  - aair-d2-2.1-0012
+  - aair-d2-2.3-0012
+  - aair-d3-3.1-0016
+  - aaism-d2-2.2-0016
+  # PR #59 (daily batch 2026-10-19)
+  - aair-d2-2.1-0013
+  - aair-d3-3.1-0017
+  - cissp-d8-8.1-0002
+  # PR #61 (daily batch 2026-10-23)
+  - aair-d3-3.3-0019
+  - aaism-d1-1.5-0017
+  - cissp-d2-2.5-0002
+  - cissp-d3-3.1-0002
+  - cissp-d7-7.12-0001
+  - cissp-d7-7.15-0001

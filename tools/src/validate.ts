@@ -1,7 +1,8 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { basename, dirname, join, sep } from "node:path";
 import { Ajv2020 } from "ajv/dist/2020.js";
 import type { ErrorObject } from "ajv";
+import { parse } from "yaml";
 import { isLoadError, loadQuestions, loadRecipes, type Loaded } from "./load.ts";
 import { changedQuestionFiles, checkCalibration, checkChangedBatch, loadCalibration } from "./calibration.ts";
 import { TOPICS } from "./topics.ts";
@@ -296,6 +297,36 @@ export interface ValidationResult {
   questions: Loaded<Question>[];
 }
 
+export const RESERVED_IDS_FILE = "bank/_reserved-ids.yaml";
+const ID_PATTERN = /^[a-z0-9]+-d\d+-\d+\.\d+-\d{4}$/;
+
+/** IDs dropped before reaching main (bank/_reserved-ids.yaml); they may never be given to a new question. */
+export function loadReservedIds(root: string): { ids: Set<string>; issues: Issue[] } {
+  const ids = new Set<string>();
+  const issues: Issue[] = [];
+  const path = join(root, RESERVED_IDS_FILE);
+  if (!existsSync(path)) return { ids, issues };
+  const err = (message: string) => issues.push({ level: "error", file: RESERVED_IDS_FILE, message });
+  let data: unknown;
+  try {
+    data = parse(readFileSync(path, "utf8"));
+  } catch (e) {
+    err(`YAML parse error: ${(e as Error).message}`);
+    return { ids, issues };
+  }
+  const list = (data as { ids?: unknown } | null)?.ids;
+  if (!Array.isArray(list)) {
+    err("expected an `ids:` list");
+    return { ids, issues };
+  }
+  for (const id of list) {
+    if (typeof id !== "string" || !ID_PATTERN.test(id)) err(`not a question ID: ${JSON.stringify(id)}`);
+    else if (ids.has(id)) err(`${id} is listed twice`);
+    else ids.add(id);
+  }
+  return { ids, issues };
+}
+
 export interface ValidateOptions {
   /** Git ref (e.g. origin/main): questions changed since its merge base get the strict calibration checks. */
   since?: string;
@@ -311,6 +342,8 @@ export function validateRepo(root: string, opts: ValidateOptions = {}): Validati
   const profiles = new Map<string, CalibrationProfile>();
   const questions: Loaded<Question>[] = [];
   const changed = opts.since === undefined ? undefined : changedQuestionFiles(root, opts.since);
+  const reserved = loadReservedIds(root);
+  issues.push(...reserved.issues);
 
   for (const r of loadRecipes(root)) {
     if (isLoadError(r)) {
@@ -355,6 +388,13 @@ export function validateRepo(root: string, opts: ValidateOptions = {}): Validati
     }
     const question = q.data as Question;
     const exam = question.id.split("-")[0]!;
+    if (reserved.ids.has(question.id)) {
+      issues.push({
+        level: "error",
+        file: q.file,
+        message: `${question.id} was dropped earlier and is reserved (${RESERVED_IDS_FILE}); take the next free number above it`,
+      });
+    }
     const strict = changed?.has(q.file) ?? false;
     issues.push(...checkQuestion(question, q.file, recipes.get(exam), { strict, profile: profiles.get(exam) }));
     questions.push({ file: q.file, data: question });
