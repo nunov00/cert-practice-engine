@@ -1,23 +1,25 @@
 id: aaism-d2-2.2-0029
 subdomain: '2.2'
-difficulty: hard
-stem: A gym chain lets franchise partners query its churn model, which takes member details, including health conditions,
-  and returns a score. Partners already know each member's identity, visit history and whether they later cancelled, but not
+difficulty: medium
+stem: A gym chain lets franchise partners query its churn model by submitting member details, including a health-condition field they can set to any
+  value, and getting back a score. Partners already know each member's identity, visit history and whether they later cancelled, but not
   their health conditions. Which threat MOST needs testing?
 options:
   A: Membership inference on the model's training records
-  B: Extraction of the model through repeated scoring queries
+  B: Cloning of the model from partners' scoring results
   C: Inference of members' health conditions from scores
   D: Evasion by altering member details to change scores
 answer: C
 explanation:
-  why_correct: Partners hold every model input except the health condition, plus the real outcome. They can query the model
-    with each possible health value and see which one gives a score that fits what the member actually did. This attribute
-    inference, a form of model inversion, would reveal sensitive health data that the chain never meant partners to see, using
-    only ordinary queries.
+  why_correct: Partners supply the inputs and already hold everything except the health condition, plus the real outcome.
+    By scoring each member with each possible health value and seeing which scores best fit what members actually did,
+    they may infer likely health conditions. This attribute inference gives probabilities, not certainty, but it could
+    expose sensitive health data the chain never meant partners to see, using only ordinary queries, so it most needs
+    testing.
   why_not:
-    A: Membership inference tells an attacker whether a person's record was in the training data. Partners already know who
-      the members are, so confirming that a member was in training adds little compared with exposing health conditions.
+    A: Membership inference asks whether a given person's record was in the training data, which is not the same as
+      knowing who the members are. It is a real privacy risk, but here it would reveal only that a member's data was used,
+      a lesser exposure than the health conditions partners are missing.
     B: Extraction would copy the model and is worth controlling, but partners do not need a copy to reach the health data;
       ordinary scoring queries are enough, which makes attribute inference the sharper threat here.
     D: Evasion matters when the person being scored gains from changing the result. Partners gain little by steering churn

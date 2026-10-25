@@ -7,7 +7,7 @@ stem: A travel firm's pricing model retrains nightly on fare feeds from five par
 options:
   A: Range and schema checks on each feed at ingestion
   B: Accuracy comparison before each new version goes live
-  C: Signed uploads from each partner's own account
+  C: Statistical profile checks on each retraining dataset
   D: Drift alerts on the live model's price outputs
 answer: A
 explanation:
@@ -16,10 +16,10 @@ explanation:
   why_not:
     B: A promotion gate might notice worse accuracy, but only after the model has retrained on the bad data, which is later
       than ingestion.
-    C: Signed uploads prove the feed came from the partner. Here the partner itself sent the faulty data, so the signature
-      would be valid.
+    C: Profile checks on the assembled retraining dataset would also flag fares a hundred times larger, but only once the
+      nightly dataset is built from all five feeds, which is after ingestion.
     D: Output drift alerts work on the live model, after retraining and release, so they catch the problem last of these options.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

@@ -1,6 +1,6 @@
 id: aaism-d1-1.2-0017
 subdomain: '1.2'
-difficulty: hard
+difficulty: medium
 stem: Policy requires staff to use the company's tenant of an approved chatbot. Many still use personal accounts with the
   same vendor, saying the tenant lacks file analysis, which was switched off pending a review that has stalled. Earlier blocks
   of AI sites pushed staff onto their phones. What is the BEST response?
@@ -20,7 +20,7 @@ explanation:
     B: Manager follow-up works for a few individuals ignoring policy. Here many staff share a practical reason, so pressure
       alone is unlikely to change behaviour.
     C: Monitoring shows the scale of use, but it is detective; data keeps flowing into personal accounts while the cause remains.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

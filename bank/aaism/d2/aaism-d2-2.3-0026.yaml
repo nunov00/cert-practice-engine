@@ -1,6 +1,6 @@
 id: aaism-d2-2.3-0026
 subdomain: '2.3'
-difficulty: hard
+difficulty: medium
 stem: Data scientists want an open-weight model from a public hub. Its weight files use a format that cannot run code when
   loaded, but loading the model requires enabling custom model code stored in the same repository. What is the BEST control
   before use?
@@ -21,7 +21,7 @@ explanation:
       scan targets the wrong file.
     D: Trigger testing addresses behaviour learned in training, a real but separate risk. It does not stop code running on
       the data scientists' machines when the model is loaded.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

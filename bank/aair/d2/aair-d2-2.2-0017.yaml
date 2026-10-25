@@ -1,6 +1,6 @@
 id: aair-d2-2.2-0017
 subdomain: '2.2'
-difficulty: medium
+difficulty: easy
 stem: A law firm's chosen language model scored 92% on a popular public legal benchmark released three years ago. On
   600 new questions its lawyers wrote to match the benchmark's topics and difficulty, it scored 71%. What is the MOST
   likely explanation?
@@ -20,7 +20,7 @@ explanation:
     B: 600 questions give a score precise to within a few points. That cannot explain a gap of more than 20 points.
     D: Stricter marking can lower a score, but a gap this large would mean very different standards. Leakage of a
       long-public benchmark is the more likely cause.
-status: published
+status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:

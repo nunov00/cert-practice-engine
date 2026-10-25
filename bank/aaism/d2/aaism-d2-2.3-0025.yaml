@@ -21,7 +21,7 @@ explanation:
       useful once the data and requirements are known.
     C: A synthetic pilot is a sound way to test function without exposing real data, but it does not advance the security
       assessment; the question of what real data will flow remains open.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

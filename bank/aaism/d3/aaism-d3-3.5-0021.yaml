@@ -19,9 +19,9 @@ explanation:
       storage without the file ever touching a laptop.
     B: Failed attempts show someone probing without rights. The insiders in question already hold read rights, so their copying
       would succeed and raise no failure.
-    C: Access reviews confirm who should hold rights; they are preventive housekeeping and do not detect a holder of those
+    C: Access reviews confirm who should hold rights; they check entitlements periodically and do not detect a holder of those
       rights copying the weights.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

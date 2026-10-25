@@ -1,6 +1,6 @@
 id: aair-d2-2.3-0015
 subdomain: '2.3'
-difficulty: medium
+difficulty: easy
 stem: A support chatbot passed a three-week validation with a specific system prompt. Since go-live, support leads have
   edited the prompt about 30 times, often urgently, and several edits that fixed one answer broke answers on unrelated
   topics. Which control BEST manages this risk?

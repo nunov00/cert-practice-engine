@@ -11,8 +11,8 @@ options:
   D: Run the same WAF rule set on a reverse proxy in front of the origin
 answer: A
 explanation:
-  why_correct: Authenticated origin pulls let the origin accept only connections where the CDN presents a certificate issued
-    for the retailer's own configuration. Traffic sent directly, or through another tenant's CDN account, has no such certificate
+  why_correct: Mutual TLS from the CDN to the origin, with a client certificate unique to the retailer, lets the origin accept
+    only connections where the CDN presents the certificate issued for the retailer's own configuration. Traffic sent directly, or through another tenant's CDN account, has no such certificate
     and is refused, so every request must pass through the retailer's WAF.
   why_not:
     B: Allowing only the CDN's ranges is the usual first step, but those ranges are shared by every tenant. An attacker with

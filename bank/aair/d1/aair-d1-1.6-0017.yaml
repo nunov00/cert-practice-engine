@@ -6,13 +6,13 @@ stem: A screening model decides which patients get a follow-up scan. A missed di
 options:
   A: Equal rates of referral for a follow-up scan
   B: Equal accuracy of the model's decisions overall
-  C: Equal rates of missed disease among those who have it
+  C: Equal detection rates among patients who have the disease
   D: Equal share of referred patients who turn out to have disease
 answer: C
 explanation:
   why_correct: When the harm that matters is a missed disease, fairness means each group's sick patients have the same
-    chance of being caught. Comparing missed-disease rates, the false negative rate among those with the disease, tests
-    exactly that.
+    chance of being caught. Comparing detection rates (sensitivity), the mirror of the false negative rate among those with the
+    disease, tests exactly that.
   why_not:
     A: Equal referral rates ignore that disease rates may differ between groups. A group with more disease would need
       more referrals, so this check could hide the harm.

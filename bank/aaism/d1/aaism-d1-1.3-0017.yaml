@@ -4,7 +4,7 @@ difficulty: medium
 stem: Security found 300 fine-tuned adapter files on a data science shared drive that only that team can read. Many were trained
   on client data, but nobody knows which ones. What should the security manager do FIRST?
 options:
-  A: Classify each adapter by the data used to train it
+  A: Classify the adapters at the client data's sensitivity level
   B: Record each adapter's owner and training data source
   C: Move the adapters into the model registry with access control
   D: Delete adapters that no live system uses
@@ -14,7 +14,8 @@ explanation:
     an owner and the training data source for each adapter is the first step; classification, protection and disposal all
     depend on it.
   why_not:
-    A: Classification is the next step, but it needs to know what data trained each adapter, which is the missing fact.
+    A: Treating every adapter as client-sensitive is a cautious interim step, but access is already limited to the team,
+      and blanket classification over-protects some adapters while leaving owners and sources unknown.
     C: The registry is the right home for the adapters, but access rules there depend on classification, and the drive is
       already limited to the team.
     D: Disposal decisions need an owner and a known purpose; deleting now could remove assets a project needs or a client

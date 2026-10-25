@@ -1,6 +1,6 @@
 id: cissp-d5-5.1-0003
 subdomain: '5.1'
-difficulty: medium
+difficulty: easy
 stem: A company rents a rack in a shared colocation hall. The provider's badge system admits its own technicians and other
   tenants' staff to the hall. The company wants a record of exactly who opens its rack and when. Which control BEST meets
   this?
@@ -19,7 +19,7 @@ explanation:
     C: A camera records openings, but the footage must be reviewed and faces matched to people, and it does not stop anyone
       opening the rack.
     D: Seals show that someone opened the rack between visits, but not who did it or exactly when.
-status: published
+status: draft
 outline_version: '2024-04-15'
 sample: false
 provenance:

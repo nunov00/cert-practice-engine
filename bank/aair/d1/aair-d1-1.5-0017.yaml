@@ -1,6 +1,6 @@
 id: aair-d1-1.5-0017
 subdomain: '1.5'
-difficulty: medium
+difficulty: easy
 stem: A former applicant has sued a lender, claiming its AI credit model discriminated against her. Under the retention
   schedule, the model's decision logs and training data from that period are due for deletion next month. What should
   the risk practitioner advise?
@@ -21,7 +21,7 @@ explanation:
       it. Deleting them removes that evidence.
     C: Pseudonymising reduces privacy risk but alters the records. Linking them back to the claimant's decision, which
       the case needs, becomes harder or impossible.
-status: published
+status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:

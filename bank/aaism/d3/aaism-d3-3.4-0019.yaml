@@ -6,7 +6,7 @@ stem: A hospital's model picks patients for a free extra-care programme that imp
 options:
   A: Equal rates of selection for the programme across groups
   B: Equal precision of the selections across groups
-  C: Equal rates of selecting patients who would benefit
+  C: Equal true positive rates across groups
   D: Equal overall accuracy of the model across groups
 answer: C
 explanation:
@@ -20,7 +20,7 @@ explanation:
       patients left out.
     D: Overall accuracy mixes misses with wrong selections and can look equal while one group's eligible patients are missed
       more often.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

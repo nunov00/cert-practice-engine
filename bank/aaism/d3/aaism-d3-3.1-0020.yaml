@@ -1,6 +1,6 @@
 id: aaism-d3-3.1-0020
 subdomain: '3.1'
-difficulty: hard
+difficulty: medium
 stem: A bank will run its own model on a cloud provider's GPUs. Data is encrypted at rest and in transit, but the bank fears
   that provider administrators could read prompts, which hold customer account details, while they are in memory. Which control
   BEST addresses this?
@@ -21,7 +21,7 @@ explanation:
       and every reply would still be readable in memory.
     D: Contract terms set obligations and remedies, which matter, but they do not technically stop an administrator from reading
       memory, which is the fear stated.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

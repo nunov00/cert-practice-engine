@@ -1,6 +1,6 @@
 id: cissp-d4-4.2-0005
 subdomain: '4.2'
-difficulty: medium
+difficulty: easy
 stem: A company runs its perimeter firewalls as an active-passive pair. In a planned failover test the standby unit took over
   within a second, yet users' VPN sessions and long-running database connections dropped and had to reconnect. Which change
   BEST prevents this in a real failover?
@@ -21,7 +21,7 @@ explanation:
       the other unit picks them up.
     D: A shared virtual address lets clients reach whichever unit is active without relearning addresses. Traffic did reach
       the new unit, which rejected it because it held no session state.
-status: published
+status: draft
 outline_version: '2024-04-15'
 sample: false
 provenance:

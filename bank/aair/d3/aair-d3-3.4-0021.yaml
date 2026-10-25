@@ -12,7 +12,8 @@ options:
 answer: A
 explanation:
   why_correct: The concern is rising attempts at manipulation. Blocked attempts measure the pressure on the control
-    before any manipulation succeeds, so a rise in that count warns early, while the control is still holding.
+    before any manipulation succeeds, so a rise in that count warns early, while the control is still holding. It does not show
+    manipulation into refunds within the limit, so it is the earliest signal, not a complete one.
   why_not:
     B: A rising average value can show that manipulation is already succeeding within the limit. It is a useful measure but
       a later signal than attempts.

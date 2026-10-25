@@ -8,7 +8,7 @@ options:
   A: Have application owners review the entitlements instead of line managers
   B: Focus each review on high-risk rights, with last-use dates shown
   C: Run the reviews quarterly instead of twice a year
-  D: Require reviewers to record a reason for each approval
+  D: Require reviewers to record a reason for each high-risk approval
 answer: B
 explanation:
   why_correct: Managers rubber-stamp because the list is long and gives them nothing to judge by. Narrowing the review to
@@ -18,7 +18,8 @@ explanation:
     A: Application owners understand what each right allows, but they know less about what each person's job needs, and they
       would face the same long, undifferentiated lists.
     C: More frequent reviews of the same long lists add more rubber-stamping, not better decisions.
-    D: Written reasons add effort to each of hundreds of items, which tends to produce copied text rather than real review.
+    D: Reasons for high-risk items help, but reviewers still face the full list with no usage data, so unused rights are
+      still approved, and written reasons tend to become copied text.
 status: published
 outline_version: '2024-04-15'
 sample: false

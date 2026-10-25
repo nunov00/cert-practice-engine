@@ -1,6 +1,6 @@
 id: aair-d3-3.1-0021
 subdomain: '3.1'
-difficulty: hard
+difficulty: medium
 stem: An insurer rates its AI claims triage tool as low risk because handlers review every claim it marks as complex.
   Claims it marks as simple are paid automatically. Which risk scenario should the practitioner MOST ensure is assessed?
 options:

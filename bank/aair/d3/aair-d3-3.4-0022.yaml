@@ -3,20 +3,22 @@ subdomain: '3.4'
 difficulty: hard
 stem: A hospital's AI tool suggests which patients are ready for discharge. Over a year, the share of suggestions that
   clinicians override fell from 30% to 6%, while readmissions among patients discharged on the tool's suggestion rose.
-  What should the risk practitioner conclude?
+  Which explanation should the risk practitioner investigate FIRST?
 options:
-  A: The tool's suggestions have become less accurate over the year
-  B: The override field is no longer being recorded reliably
-  C: Clinicians are accepting suggestions they once would have challenged
-  D: The patient mix has shifted toward cases the tool handles well
+  A: The tool's suggestions may have become less accurate over the year
+  B: The override field may no longer be recorded reliably
+  C: Clinicians may be accepting suggestions they once would have challenged
+  D: The patient mix may have shifted toward cases the tool handles well
 answer: C
 explanation:
-  why_correct: Only growing over-reliance explains both trends together. Clinicians accept more suggestions, so
-    overrides fall, and some of the suggestions they now accept are wrong, so readmissions rise. The two indicators must
-    be read together, not one at a time.
+  why_correct: Growing over-reliance is the one explanation that fits both trends at once. If clinicians accept more
+    suggestions, overrides fall, and some of the suggestions they now accept are wrong, so readmissions rise. Two aggregate
+    trends do not prove it, and other causes may add to it, but it is the hypothesis to test first, for example by
+    reviewing accepted suggestions that led to readmission. The two indicators must be read together, not one at a time.
   why_not:
-    A: Weaker suggestions would explain more readmissions. But vigilant clinicians would then override more often, not
-      far less, so this does not fit the fall in overrides.
+    A: Weaker suggestions would explain more readmissions, but on their own they give no reason for overrides to fall so
+      far; clinicians who stayed as critical would be expected to override more. Accuracy should be checked, but alone it
+      leaves half the pattern unexplained.
     B: A recording fault could make overrides appear to fall. It would not cause the rise in readmissions among patients
       discharged on the tool's suggestion.
     D: Easier cases would explain fewer overrides, but they should also bring readmissions down. A rise points the other

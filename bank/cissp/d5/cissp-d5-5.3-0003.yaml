@@ -1,6 +1,6 @@
 id: cissp-d5-5.3-0003
 subdomain: '5.3'
-difficulty: hard
+difficulty: medium
 stem: A company federates its SaaS CRM with its identity provider, which enforces MFA and disables leavers' accounts. An audit
   finds that a third of CRM sign-ins still use local CRM passwords created before federation began. Which change BEST addresses
   this?
@@ -21,7 +21,7 @@ explanation:
       it.
     C: New, stronger passwords make the local accounts harder to guess, but the sign-ins still bypass the identity provider's
       MFA and leaver process.
-status: published
+status: draft
 outline_version: '2024-04-15'
 sample: false
 provenance:

@@ -1,6 +1,6 @@
 id: aaism-d1-1.5-0019
 subdomain: '1.5'
-difficulty: medium
+difficulty: easy
 stem: A bank's assistant answers from a vector index that is not backed up, because it can be rebuilt from the source documents,
   which are replicated to a second region. A rebuild takes three days, and the assistant's recovery time objective is eight
   hours. What should the security manager recommend?
@@ -19,7 +19,7 @@ explanation:
       it does not deliver the service the objective protects.
     B: Pinning the embedding model helps a rebuild produce a consistent index, but it does not shorten the three-day rebuild.
     D: Checking that a rebuild gives the same results is good practice, but a rebuild that works still takes three days.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

@@ -1,6 +1,6 @@
 id: aaism-d2-2.1-0028
 subdomain: '2.1'
-difficulty: medium
+difficulty: easy
 stem: 'A team rates a chatbot''s jailbreak risk as very low: an input screen and an output screen each stopped 95% of test
   attacks, so it estimates that only 1 in 400 attacks gets past both. Both screens are the same model with different prompts.
   What is the MAIN flaw?'
@@ -8,7 +8,7 @@ options:
   A: The test attacks may not reflect current techniques
   B: The rating covers likelihood but not impact
   C: The screens' false positive rates were not measured
-  D: The two screens are likely to fail on the same attacks
+  D: The estimate assumes the screens act independently
 answer: D
 explanation:
   why_correct: Multiplying the two miss rates (5% x 5%) assumes the screens fail independently. Because both are the same
@@ -21,7 +21,7 @@ explanation:
       which is the part shown to be unsound.
     C: False positives affect usability and need measuring, but they do not change how many attacks get through, which is
       what the jailbreak rating is about.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

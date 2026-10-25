@@ -1,19 +1,20 @@
 id: aaism-d2-2.2-0028
 subdomain: '2.2'
 difficulty: medium
-stem: Developers at a software firm add the packages its coding assistant suggests. Attackers now publish malicious packages
-  under names that coding models often invent. Installs go through a mirror that blocks packages with known malware. Which
+stem: Developers at a software firm add the packages its coding assistant suggests. Attackers now register malicious packages,
+  days before use, under names that coding models often invent. Installs go through a mirror that blocks packages with known malware. Which
   control BEST addresses this threat?
 options:
   A: Pin dependencies in lockfiles with verified hashes
-  B: Allow only packages that meet age and popularity criteria
+  B: Block packages under minimum age and popularity thresholds
   C: Scan assistant-suggested code during code review
-  D: Have the assistant confirm suggested packages exist
+  D: Have the assistant confirm each suggested package exists
 answer: B
 explanation:
-  why_correct: The invented names are registered by attackers shortly before use, so the packages are new and carry no known
-    malware signature for the mirror to block. Allowing only packages with a track record, such as a minimum age, download
-    count or an approved list, stops a freshly registered package before it is installed, whatever name the assistant invents.
+  why_correct: The packages are registered days before use, so they are new and carry no known malware signature for the
+    mirror to block. Blocking packages below a minimum age and download count stops such a freshly registered package before
+    it is installed, whatever name the assistant invents. It is a filter, not proof of safety, because attackers can age a
+    package or inflate its downloads, so it works best alongside provenance review of new dependencies.
   why_not:
     A: Lockfile hashes make sure the same package is installed every time. If the first install pulled the attacker's package,
       pinning reinstalls it faithfully; hashes do not decide whether a name is trustworthy.

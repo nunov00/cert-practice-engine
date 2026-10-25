@@ -1,6 +1,6 @@
 id: aair-d1-1.2-0020
 subdomain: '1.2'
-difficulty: medium
+difficulty: easy
 stem: A bank's AI risk assessment for its mortgage model relied on a manual affordability check by underwriters. An
   operations efficiency project removed the check on a planned date, through the bank's process change procedure,
   without knowing the assessment depended on it. Which change BEST prevents a repeat?
@@ -20,7 +20,7 @@ explanation:
     B: Annual reassessment would find the gap eventually, but the model could run without its assumed control for most
       of a year.
     D: Outcome monitoring can show that something has gone wrong, but only after unaffordable loans have been made.
-status: published
+status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:
