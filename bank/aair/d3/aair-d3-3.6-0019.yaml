@@ -1,0 +1,30 @@
+id: aair-d3-3.6-0019
+subdomain: '3.6'
+difficulty: medium
+stem: A retailer's AI agent runs inside its order service, under the same service account. In an exercise, it read a
+  corrupted supplier feed and cancelled valid orders, and only shutting down the whole service stopped it. Each
+  cancellation can hit a large trade order. Which capability should the response plan MOST require?
+options:
+  A: A tested rollback to the agent's previous version
+  B: A cap on how many orders the agent can cancel per hour
+  C: A switch that disables only the agent's actions
+  D: Revoking the agent's access to the order database
+answer: C
+explanation:
+  why_correct: Responders need to stop the agent fast without halting orders. A switch that turns off the agent's actions
+    on their own does that whatever the cause, and order processing keeps running.
+  why_not:
+    A: Rollback fixes faults brought in by a new version. Here the trigger was a corrupted feed, which the previous
+      version would read the same way.
+    B: A cap limits how fast harm builds up, but it does not stop it. When each cancellation can hit a large trade order,
+      even a few an hour is too many.
+    D: Cutting the agent's access is a normal containment step, but the agent shares the order service's account. Revoking
+      it would stop order processing too.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  check_verdict: pending
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aaism-d2-2.2-0030
+subdomain: '2.2'
+difficulty: medium
+stem: A bank's phone service verifies callers by voiceprint before payments. Its tests show clips from current real-time cloning
+  tools pass in 30% of attempts, and in recent fraud calls the callers quoted customers' recent transactions, taken from phished
+  online banking logins. The vendor's fix is four months away. What is the BEST interim treatment?
+options:
+  A: Send a one-time code to the registered phone for payments
+  B: Raise the voiceprint match threshold for payments
+  C: Ask security questions about recent account activity
+  D: Check the caller's number against the number on file
+answer: A
+explanation:
+  why_correct: 'The voiceprint is the control being defeated, and the vendor cannot fix it for months. A one-time code sent
+    to the customer''s registered phone is a factor the attackers do not hold: a cloned voice cannot supply it, and phished
+    online banking logins do not give access to the customer''s handset. A clone alone can then no longer move money while
+    the fix is pending.'
+  why_not:
+    B: A stricter threshold would reject some clones, but good clones sit close to the genuine voice. It also turns away more
+      genuine customers, and the remaining pass rate is unknown until retested.
+    C: Knowledge questions add a factor that does not rely on the voice, which is often a sound step-up. Here the attackers
+      have phished online banking logins and already quote recent transactions, so they can answer such questions.
+    D: Matching the calling number adds a non-voice check, but caller ID is easily spoofed, so it is a weak signal to rely
+      on for payments, while a code sent to the registered phone requires the handset itself.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aaism
+  check_verdict: pending
+  options_only: obvious

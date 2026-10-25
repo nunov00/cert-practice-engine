@@ -1,0 +1,32 @@
+id: cissp-d5-5.3-0003
+subdomain: '5.3'
+difficulty: medium
+stem: A company federates its SaaS CRM with its identity provider, which enforces MFA and disables leavers' accounts. An audit
+  finds that a third of CRM sign-ins still use local CRM passwords created before federation began. Which change BEST addresses
+  this?
+options:
+  A: Turn on the CRM's own MFA for users who sign in with local passwords
+  B: Add a conditional access policy for the CRM at the identity provider
+  C: Reset the local CRM passwords and enforce a stronger password policy
+  D: Allow only federated sign-in, keeping one break-glass admin account
+answer: D
+explanation:
+  why_correct: The local passwords are a second way in that bypasses the identity provider, so its MFA and leaver controls
+    never apply to those sign-ins. Enforcing federated sign-in closes that path, and a single, closely watched break-glass
+    account covers an identity provider outage.
+  why_not:
+    A: The CRM's own MFA strengthens local sign-ins, but leavers disabled at the identity provider keep their local CRM access,
+      and staff still have two sets of credentials to manage.
+    B: Conditional access applies only to sign-ins that pass through the identity provider. Local CRM sign-ins never reach
+      it.
+    C: New, stronger passwords make the local accounts harder to guess, but the sign-ins still bypass the identity provider's
+      MFA and leaver process.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-cissp
+  checked_by: 2026-10-24-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

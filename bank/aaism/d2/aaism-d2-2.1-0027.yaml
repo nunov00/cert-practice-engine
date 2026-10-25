@@ -1,0 +1,32 @@
+id: aaism-d2-2.1-0027
+subdomain: '2.1'
+difficulty: medium
+stem: An internal finance assistant can browse the web. Even with an injection filter on fetched pages, the risk that a page
+  steers it into leaking finance data stays above appetite. Logs show browsing in under 1% of chats, for varied general look-ups.
+  What is the BEST treatment?
+options:
+  A: Filter fetched pages with a second injection detector
+  B: Limit browsing to an allowlist of trusted sites
+  C: Remove the browsing tool from the assistant
+  D: Have the risk owner accept the residual risk
+answer: C
+explanation:
+  why_correct: 'The risk stays above appetite after mitigation, and the capability that creates it brings almost no value:
+    browsing is used in under 1% of chats. Avoiding the risk by removing the tool brings it within appetite at little cost,
+    where further mitigation would cost effort and still leave doubt.'
+  why_not:
+    A: A second detector may cut successful injections further, but detectors share blind spots and the residual risk would
+      still need proving. Spending more to keep a feature that is barely used is poor value.
+    B: An allowlist works when browsing serves a few known sites. Here the look-ups are varied, so a short list would break
+      most uses, and a long one would let much of the risk back in.
+    D: Acceptance is for residual risk within appetite. This risk is above appetite, so an owner accepting it would bypass
+      the board's limit rather than treat the risk.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-24-daily-aaism-check
+  options_only: not_obvious

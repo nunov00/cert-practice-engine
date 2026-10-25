@@ -1,0 +1,31 @@
+id: aair-d1-1.3-0020
+subdomain: '1.3'
+difficulty: hard
+stem: A water company's AI model adjusts chemical dosing at its treatment works around the clock. The risk practitioner
+  is deciding who may suspend it and switch to manual dosing when its outputs look unsafe. Harm could build within
+  minutes, at any hour. Who should hold this authority?
+options:
+  A: The model's business owner, who is accountable for its risk
+  B: The chief risk officer, who sets the AI risk appetite
+  C: The AI oversight committee, which approved its deployment
+  D: The on-shift control room lead, under delegated authority
+answer: D
+explanation:
+  why_correct: When harm can build in minutes at any hour, the authority to stop the model must sit with someone who is
+    always present and can see the outputs. Delegating it in advance to the on-shift lead lets the stop happen at once,
+    while accountability stays with the owner.
+  why_not:
+    A: The owner stays accountable for the model's risk, but is not on duty at every hour. Waiting to reach them could
+      let unsafe dosing continue.
+    B: The chief risk officer sets appetite and oversees risk, but is neither always available nor watching the dosing
+      outputs.
+    C: The committee approved the deployment and can withdraw it, but a committee cannot meet within minutes in the
+      middle of the night.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  check_verdict: pending
+  options_only: obvious

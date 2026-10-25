@@ -1,0 +1,32 @@
+id: aaism-d3-3.1-0020
+subdomain: '3.1'
+difficulty: medium
+stem: A bank will run its own model on a cloud provider's GPUs. Data is encrypted at rest and in transit, but the bank fears
+  that provider administrators could read prompts, which hold customer account details, while they are in memory. Which control
+  BEST addresses this?
+options:
+  A: Customer-managed keys for the encrypted storage
+  B: Attested confidential computing for inference
+  C: Tokenising account details before prompts are sent
+  D: Contract terms barring provider access to workloads
+answer: B
+explanation:
+  why_correct: The gap is data in use. Confidential computing runs inference in hardware-protected memory that the host and
+    its administrators cannot read, and attestation lets the bank verify that protection before sending prompts. It covers
+    the whole prompt, not just selected fields.
+  why_not:
+    A: Customer-managed keys strengthen control over stored data, but data must be decrypted to be processed, so they do not
+      protect prompts in memory.
+    C: Tokenising account details reduces what an administrator could see, but only for those fields; the rest of each prompt
+      and every reply would still be readable in memory.
+    D: Contract terms set obligations and remedies, which matter, but they do not technically stop an administrator from reading
+      memory, which is the fear stated.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-24-daily-aaism-check
+  options_only: not_obvious

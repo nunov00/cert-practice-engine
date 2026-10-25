@@ -1,0 +1,35 @@
+id: aaism-d2-2.2-0029
+subdomain: '2.2'
+difficulty: medium
+stem: A gym chain lets franchise partners query its churn model by submitting member details, including a health-condition field they can set to any
+  value, and getting back a score. Partners already know each member's identity, visit history and whether they later cancelled, but not
+  their health conditions. Which threat MOST needs testing?
+options:
+  A: Membership inference on the model's training records
+  B: Cloning of the model from partners' scoring results
+  C: Inference of members' health conditions from scores
+  D: Evasion by altering member details to change scores
+answer: C
+explanation:
+  why_correct: Partners supply the inputs and already hold everything except the health condition, plus the real outcome.
+    By scoring each member with each possible health value and seeing which scores best fit what members actually did,
+    they may infer likely health conditions. This attribute inference gives probabilities, not certainty, but it could
+    expose sensitive health data the chain never meant partners to see, using only ordinary queries, so it most needs
+    testing.
+  why_not:
+    A: Membership inference asks whether a given person's record was in the training data, which is not the same as
+      knowing who the members are. It is a real privacy risk, but here it would reveal only that a member's data was used,
+      a lesser exposure than the health conditions partners are missing.
+    B: Extraction would copy the model and is worth controlling, but partners do not need a copy to reach the health data;
+      ordinary scoring queries are enough, which makes attribute inference the sharper threat here.
+    D: Evasion matters when the person being scored gains from changing the result. Partners gain little by steering churn
+      scores, and evasion exposes no member data.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-24-daily-aaism-check
+  options_only: not_obvious

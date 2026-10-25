@@ -1,0 +1,31 @@
+id: aaism-d3-3.4-0019
+subdomain: '3.4'
+difficulty: medium
+stem: A hospital's model picks patients for a free extra-care programme that improves outcomes. Reviewers worry that patients
+  from one ethnic group who would benefit are missed more often than others. Which fairness measure BEST tracks this concern?
+options:
+  A: Equal rates of selection for the programme across groups
+  B: Equal precision of the selections across groups
+  C: Equal true positive rates across groups
+  D: Equal overall accuracy of the model across groups
+answer: C
+explanation:
+  why_correct: The concern is about patients who would benefit but are not selected, which is the true positive rate within
+    each group. Comparing that rate across groups (equal opportunity) directly measures whether eligible patients in one group
+    are missed more often.
+  why_not:
+    A: Equal selection rates (demographic parity) can hold even when groups differ in need, and can be met while eligible
+      patients in one group are still missed. It does not measure the stated concern.
+    B: Precision asks how many selected patients would benefit. It addresses wasted places in the programme, not eligible
+      patients left out.
+    D: Overall accuracy mixes misses with wrong selections and can look equal while one group's eligible patients are missed
+      more often.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-24-daily-aaism-check
+  options_only: not_obvious

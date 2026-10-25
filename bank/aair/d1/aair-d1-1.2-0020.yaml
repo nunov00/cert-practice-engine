@@ -1,0 +1,31 @@
+id: aair-d1-1.2-0020
+subdomain: '1.2'
+difficulty: easy
+stem: A bank's AI risk assessment for its mortgage model relied on a manual affordability check by underwriters. An
+  operations efficiency project removed the check on a planned date, through the bank's process change procedure,
+  without knowing the assessment depended on it. Which change BEST prevents a repeat?
+options:
+  A: Have model owners attest quarterly that relied-on controls still operate
+  B: Have the AI risk team reassess each high-risk model yearly
+  C: Add a check for AI-relied controls to the process change procedure
+  D: Monitor model outcomes for signs that a relied-on control has stopped
+answer: C
+explanation:
+  why_correct: The check was removed through a planned change that went through the bank's own procedure. Asking at that
+    point whether a control is one an AI assessment relies on stops the removal, or triggers a reassessment, before the
+    gap opens.
+  why_not:
+    A: Attestation would bring the gap to light, but up to a quarter after the change, and it relies on owners knowing
+      the process changed.
+    B: Annual reassessment would find the gap eventually, but the model could run without its assumed control for most
+      of a year.
+    D: Outcome monitoring can show that something has gone wrong, but only after unaffordable loans have been made.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  checked_by: 2026-10-24-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

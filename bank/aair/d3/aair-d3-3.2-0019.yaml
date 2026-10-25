@@ -1,0 +1,32 @@
+id: aair-d3-3.2-0019
+subdomain: '3.2'
+difficulty: medium
+stem: A retailer's risk owner accepts the risk that its demand model underperforms in newly entered countries, with a
+  recorded rationale and a six-month review date. Expansion could speed up sharply if a pending acquisition closes. What
+  would MOST strengthen the acceptance?
+options:
+  A: Second-line sign-off on the owner's recorded rationale
+  B: A fallback plan for manual forecasting in new countries
+  C: A risk indicator threshold that reopens the decision early
+  D: A shorter review cycle of three months instead of six
+answer: C
+explanation:
+  why_correct: The exposure could change suddenly, at a time nobody can predict, if the acquisition closes. An indicator
+    threshold, such as the share of sales from new countries or forecast error there, reopens the acceptance when the
+    risk actually grows, rather than waiting for a calendar date.
+  why_not:
+    A: Challenge of the rationale improves the quality of the decision as it stands today. It does nothing to bring the
+      decision back if conditions change before the review date.
+    B: A fallback limits the impact if forecasts fail, which is useful. But the acceptance itself would still not be
+      revisited when the accepted level of risk is exceeded.
+    D: A shorter cycle narrows the gap but is still tied to the calendar. A jump in expansion could happen the week after
+      a review and go unexamined for three months.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  checked_by: 2026-10-24-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

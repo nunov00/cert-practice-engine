@@ -1,0 +1,31 @@
+id: aair-d3-3.1-0021
+subdomain: '3.1'
+difficulty: medium
+stem: An insurer rates its AI claims triage tool as low risk because handlers review every claim it marks as complex.
+  Claims it marks as simple are paid automatically. Which risk scenario should the practitioner MOST ensure is assessed?
+options:
+  A: Claims that need review are marked simple by the tool
+  B: Claims marked complex wait too long for a handler
+  C: Handlers rely on the tool's notes for complex claims
+  D: Handlers stop challenging the tool's complexity labels
+answer: A
+explanation:
+  why_correct: The low rating rests on handler review, but that review covers only claims marked complex. A claim
+    wrongly marked simple is paid with no human ever seeing it, so this misclassification sits outside the control the
+    rating relies on.
+  why_not:
+    B: Delays on complex claims are a real service risk, but those claims still reach a handler. The harm is slower
+      payment, not a wrong one that nobody checks.
+    C: Over-reliance on the tool's notes can weaken review, but it applies only to claims a handler already sees. The
+      unreviewed path carries more exposure.
+    D: Handlers who never relabel claims add little challenge, but they can only relabel claims they are shown. Simple
+      claims bypass them entirely.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  checked_by: 2026-10-24-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

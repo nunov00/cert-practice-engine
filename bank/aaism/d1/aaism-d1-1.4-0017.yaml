@@ -1,0 +1,30 @@
+id: aaism-d1-1.4-0017
+subdomain: '1.4'
+difficulty: medium
+stem: An AI security review queue has grown to ten weeks. Most repeated findings are design choices, such as agents given
+  broader tool access than their task needs, which scanners cannot judge. What would BEST reduce the queue over time?
+options:
+  A: Automated pipeline checks for the repeated findings
+  B: Lighter reviews for projects rated low risk
+  C: A trained security champion per AI team
+  D: External reviewers to clear the review backlog
+answer: C
+explanation:
+  why_correct: The repeated findings are design judgments made inside the teams. A trained champion in each team can catch
+    them while the design is formed, so fewer projects arrive at review with the same problems, and the queue shrinks for
+    good.
+  why_not:
+    A: Pipeline automation suits findings that tools can detect, such as exposed secrets. The stem says scanners cannot judge
+      these design choices.
+    B: Risk-tiered review saves effort on low-risk work, but it does not stop the same design mistakes from reaching review,
+      and agent tool access is rarely low risk.
+    D: External reviewers clear today's backlog, but the same findings keep arriving, so the queue grows back once they leave.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-24-daily-aaism-check
+  options_only: not_obvious

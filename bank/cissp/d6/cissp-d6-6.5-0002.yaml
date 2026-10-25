@@ -1,0 +1,31 @@
+id: cissp-d6-6.5-0002
+subdomain: '6.5'
+difficulty: medium
+stem: An auditor testing access change control selects 25 change tickets at random from the ticketing system, and each ticket
+  shows an approval by a manager on the authorised-approver list. What should the auditor do NEXT before concluding that access changes are approved?
+options:
+  A: Extend the sample to 60 tickets to raise statistical confidence
+  B: Check that each approver held authority to approve
+  C: Trace changes in the system's access logs back to tickets
+  D: Interview system owners about how they review each request
+answer: C
+explanation:
+  why_correct: The sample shows only that ticketed changes were approved. Changes made directly in the system without a ticket
+    could never be selected, so the auditor must test completeness from the other direction, starting from the changes the
+    system itself recorded and tracing each one back to an approved ticket.
+  why_not:
+    A: A bigger sample raises confidence about ticketed changes, but it is drawn from the same population and still cannot
+      find changes that were never ticketed.
+    B: The stem already shows each approver is on the authorised list, and rechecking authority refines the evidence about
+      tickets without addressing changes outside the ticketing system.
+    D: Interviews help the auditor understand the review, but they are weaker evidence than records and say nothing about
+      changes made outside the process.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-cissp
+  checked_by: 2026-10-24-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

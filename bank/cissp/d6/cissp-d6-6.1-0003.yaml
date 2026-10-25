@@ -1,0 +1,32 @@
+id: cissp-d6-6.1-0003
+subdomain: '6.1'
+difficulty: hard
+stem: A company wants to measure how well its security operations centre detects and responds to a realistic intrusion on
+  an ordinary working day. SOC analysts usually learn of planned tests in advance from the change calendar. Which test design
+  BEST meets the aim?
+options:
+  A: A purple-team exercise with testers and analysts working side by side
+  B: A red-team test announced only to the SOC's shift managers
+  C: Breach-and-attack simulation running techniques at random times
+  D: A red-team test known only to a few leaders outside the SOC
+answer: D
+explanation:
+  why_correct: To measure normal performance, the people being measured must not know a test is under way, and the attack
+    must look like a real intrusion. A red-team test kept to a few leaders outside the SOC, and left off the change calendar,
+    does both, while those leaders can still stop the test if real harm looms.
+  why_not:
+    A: Purple teaming is an efficient way to improve detection, but analysts working alongside the testers are on alert, so
+      it shows best-case performance, not an ordinary day.
+    B: Telling shift managers lets them deconflict, but they run the team being measured. Knowing a test is live changes how
+      they staff, watch and escalate, so the result is no longer an ordinary day.
+    C: Unscheduled simulation is useful for checking that individual techniques raise alerts, but it runs known techniques
+      from known agents rather than a realistic intrusion, so it says little about how analysts investigate and respond.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-cissp
+  checked_by: 2026-10-24-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

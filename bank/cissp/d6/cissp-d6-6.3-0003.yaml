@@ -1,0 +1,32 @@
+id: cissp-d6-6.3-0003
+subdomain: '6.3'
+difficulty: medium
+stem: After a former employee used their still-active account two weeks after leaving, internal audit asks whether leavers
+  lose access promptly. The identity team reports that it closes leaver tickets in under a day on average. Which data BEST
+  answers the audit question?
+options:
+  A: Average days from each leaver ticket to account disablement
+  B: Average days from HR's leaver notice to account disablement
+  C: Days from each exit date to disablement, for each leaver
+  D: Share of leaver tickets closed within the one-day target
+answer: C
+explanation:
+  why_correct: Access is prompt only if it ends close to the day the person actually leaves. Measuring from the exit date
+    captures delays before anyone raises a ticket, such as late HR notices, and listing each leaver shows the outliers, like
+    the two-week case, that an average hides.
+  why_not:
+    A: Ticket-to-disablement time measures the identity team's own speed, which already looks good. It starts the clock only
+      when a ticket exists, so leavers reported late, or never, are missed.
+    B: Starting from HR's notice is closer, but notices often arrive days after the person has gone, and an average still
+      hides the few long delays that matter most.
+    D: A target-met share shows how reliably the team meets its service level, but it also starts at the ticket and says nothing
+      about delays before it.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-cissp
+  checked_by: 2026-10-24-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,30 @@
+id: aaism-d3-3.3-0021
+subdomain: '3.3'
+difficulty: medium
+stem: A travel firm's pricing model retrains nightly on fare feeds from five partners. Last month one partner switched a feed
+  from euros to cents without notice, and the model retrained on it before anyone noticed. Which control would have caught
+  this EARLIEST?
+options:
+  A: Range and schema checks on each feed at ingestion
+  B: Accuracy comparison before each new version goes live
+  C: Statistical profile checks on each retraining dataset
+  D: Drift alerts on the live model's price outputs
+answer: A
+explanation:
+  why_correct: Fares suddenly a hundred times larger fall outside expected ranges, so validation at ingestion would reject
+    or quarantine the feed before it reached training. It is the first point at which the bad data can be stopped.
+  why_not:
+    B: A promotion gate might notice worse accuracy, but only after the model has retrained on the bad data, which is later
+      than ingestion.
+    C: Profile checks on the assembled retraining dataset would also flag fares a hundred times larger, but only once the
+      nightly dataset is built from all five feeds, which is after ingestion.
+    D: Output drift alerts work on the live model, after retraining and release, so they catch the problem last of these options.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-24-daily-aaism-check
+  options_only: not_obvious

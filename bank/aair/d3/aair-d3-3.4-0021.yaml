@@ -1,0 +1,32 @@
+id: aair-d3-3.4-0021
+subdomain: '3.4'
+difficulty: medium
+stem: An online retailer's AI agent issues refunds up to a set limit, and a hard control blocks any refund above it. The
+  risk team fears that customers are increasingly trying to talk the agent into refunds it should not give. Which key
+  risk indicator gives the EARLIEST warning?
+options:
+  A: Weekly count of refund attempts that the limit control blocked
+  B: Average value of the refunds the agent issued each week
+  C: Share of refund chats that the agent passes to staff
+  D: Refunds reversed after a weekly staff spot check
+answer: A
+explanation:
+  why_correct: The concern is rising attempts at manipulation. Blocked attempts measure the pressure on the control
+    before any manipulation succeeds, so a rise in that count warns early, while the control is still holding. It does not show
+    manipulation into refunds within the limit, so it is the earliest signal, not a complete one.
+  why_not:
+    B: A rising average value can show that manipulation is already succeeding within the limit. It is a useful measure but
+      a later signal than attempts.
+    C: Handovers move with many things, such as complex cases and new products. A change in the share does not point
+      clearly to manipulation attempts.
+    D: Reversals found in spot checks confirm refunds that should not have been given. They come after the loss and cover
+      only the sample checked.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  checked_by: 2026-10-24-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,31 @@
+id: cissp-d5-5.5-0002
+subdomain: '5.5'
+difficulty: medium
+stem: Twice a year, managers are asked to confirm each of their staff's 150 to 300 entitlements. Managers approve nearly all
+  of them within minutes, and an audit found many rights that had not been used for over a year. Which change MOST improves
+  the reviews?
+options:
+  A: Have application owners review the entitlements instead of line managers
+  B: Focus each review on high-risk rights, with last-use dates shown
+  C: Run the reviews quarterly instead of twice a year
+  D: Require reviewers to record a reason for each high-risk approval
+answer: B
+explanation:
+  why_correct: Managers rubber-stamp because the list is long and gives them nothing to judge by. Narrowing the review to
+    rights that matter and showing when each was last used turns it into a decision they can make, and unused rights stand
+    out for removal.
+  why_not:
+    A: Application owners understand what each right allows, but they know less about what each person's job needs, and they
+      would face the same long, undifferentiated lists.
+    C: More frequent reviews of the same long lists add more rubber-stamping, not better decisions.
+    D: Reasons for high-risk items help, but reviewers still face the full list with no usage data, so unused rights are
+      still approved, and written reasons tend to become copied text.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-cissp
+  checked_by: 2026-10-24-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

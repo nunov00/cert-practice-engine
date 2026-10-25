@@ -1,0 +1,31 @@
+id: aair-d2-2.2-0017
+subdomain: '2.2'
+difficulty: easy
+stem: A law firm's chosen language model scored 92% on a popular public legal benchmark released three years ago. On
+  600 new questions its lawyers wrote to match the benchmark's topics and difficulty, it scored 71%. What is the MOST
+  likely explanation?
+options:
+  A: The new questions reflect the firm's own legal practice
+  B: The new set is too small to give a reliable score
+  C: The model probably saw benchmark items during training
+  D: Lawyers marked answers more strictly than the benchmark key
+answer: C
+explanation:
+  why_correct: A popular benchmark that has been public for years is very likely to appear in the web data used to train
+    the model. The model may then recall answers rather than reason, which inflates its score. Fresh questions of the same
+    kind expose the gap.
+  why_not:
+    A: A shift to the firm's own practice could lower the score, but the lawyers wrote the questions to match the
+      benchmark's topics and difficulty, which limits this effect.
+    B: 600 questions give a score precise to within a few points. That cannot explain a gap of more than 20 points.
+    D: Stricter marking can lower a score, but a gap this large would mean very different standards. Leakage of a
+      long-public benchmark is the more likely cause.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  checked_by: 2026-10-24-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

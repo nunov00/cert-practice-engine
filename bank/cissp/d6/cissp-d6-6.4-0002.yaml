@@ -1,0 +1,34 @@
+id: cissp-d6-6.4-0002
+subdomain: '6.4'
+difficulty: hard
+stem: This month's authenticated vulnerability scan of 600 servers reports 70 percent fewer findings than last month, and
+  the monthly patch cycle ran as usual. Open-port findings are almost unchanged, but missing-patch findings fell sharply on
+  nearly every host. What should the analyst do FIRST before reporting the result?
+options:
+  A: Check the scan logs for failed credentialed logins on the hosts
+  B: Confirm with the patch team which updates were deployed this month
+  C: Compare this month's scanned host list with the asset inventory
+  D: Rerun the scan on a sample of hosts and compare the results
+answer: A
+explanation:
+  why_correct: Network checks still worked while local checks almost vanished on nearly every host, which is the pattern
+    of a scan that reached the servers but could not log in to them. A routine patch cycle could remove some findings, but
+    a drop this large and this even is unusual, and a failed login would produce the same picture. Confirming that
+    credentialed access succeeded comes first; only then can the drop be read as remediation.
+  why_not:
+    B: Patch records can support a genuine drop and are worth checking next, but they show only what was deployed. They
+      cannot show whether this scan actually logged in and checked the hosts, so they do not rule out the failure that
+      would make the result meaningless.
+    C: Missing hosts would reduce every kind of finding, including open ports. The unchanged port results show the servers
+      were reached.
+    D: A rerun with the same configuration repeats the same login failure and gives the same result. It costs time without
+      showing the cause.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-cissp
+  checked_by: 2026-10-24-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

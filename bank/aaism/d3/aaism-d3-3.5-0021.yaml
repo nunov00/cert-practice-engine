@@ -1,0 +1,32 @@
+id: aaism-d3-3.5-0021
+subdomain: '3.5'
+difficulty: medium
+stem: A firm's proprietary model weights sit in a store read daily by pipeline service accounts. Three senior engineers also
+  hold direct read rights for emergencies and have used them twice this year. Which monitoring BEST detects an insider copying
+  the weights?
+options:
+  A: Alerts on large uploads from engineers' laptops
+  B: Alerts on failed access attempts on the store
+  C: Quarterly review of who holds direct read rights
+  D: Alerts on any weight read by a human account
+answer: D
+explanation:
+  why_correct: Normal reads come from pipeline service accounts, and human reads are rare emergencies. An alert on every human
+    read of the weights is therefore high in signal and low in noise, and it fires at the point of access, whatever route
+    the copy takes afterwards.
+  why_not:
+    A: Egress alerts on laptops catch one exfiltration route, but an engineer with direct rights can copy weights to cloud
+      storage without the file ever touching a laptop.
+    B: Failed attempts show someone probing without rights. The insiders in question already hold read rights, so their copying
+      would succeed and raise no failure.
+    C: Access reviews confirm who should hold rights; they check entitlements periodically and do not detect a holder of those
+      rights copying the weights.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-24-daily-aaism-check
+  options_only: not_obvious

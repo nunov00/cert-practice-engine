@@ -1,0 +1,33 @@
+id: aair-d3-3.1-0020
+subdomain: '3.1'
+difficulty: medium
+stem: A council's AI assistant will rank suppliers' bids, quoting the passage behind each score. Suppliers upload their
+  own documents, and evaluators read only the ranking, quotes, summaries and each bid's price form, where
+  all price conditions must be entered. Scoring instructions sit under two-person
+  change control. Which risk scenario is MOST important for the assessment to include?
+options:
+  A: Bidders copy the published criteria wording to lift their scores
+  B: Text hidden in a bid tells the assistant to rank that bid first
+  C: Summaries leave out conditions that bidders attached to prices
+  D: A staff member edits the scoring instructions to favour a bidder
+answer: B
+explanation:
+  why_correct: The inputs are written by the parties who gain from the ranking, and evaluators never see the bid text itself.
+    Hidden instructions are not quoted as evidence, so a bidder could steer the assistant and therefore the award
+    without anything showing in what evaluators read.
+  why_not:
+    A: Copying criteria wording is a real way to game a ranking model, but the assistant must quote the passage behind
+      each score. Boilerplate echoed from the criteria would show in those quotes for evaluators to challenge.
+    C: Omissions are a real accuracy risk when evaluators rely on summaries, but evaluators also read each bid's price form,
+      so price conditions are not lost. Deliberate steering by motivated authors is the larger exposure.
+    D: Insider tampering is a sound scenario to consider, but two-person change control on the scoring instructions
+      already makes a single staff member's edit unlikely.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  checked_by: 2026-10-24-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

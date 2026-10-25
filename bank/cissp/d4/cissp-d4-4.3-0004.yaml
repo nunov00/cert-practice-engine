@@ -1,0 +1,32 @@
+id: cissp-d4-4.3-0004
+subdomain: '4.3'
+difficulty: medium
+stem: A company's board meets on a cloud video service. A new rule says the provider must not be able to see or hear meeting
+  content, even if a court orders it to. Directors join only through the provider's desktop app. Which configuration BEST
+  meets the rule?
+options:
+  A: End-to-end encryption with keys generated on the directors' devices
+  B: Customer-managed keys for meeting media, held in the company's key vault
+  C: A dedicated single-tenant instance of the service in the company's region
+  D: TLS 1.3 with certificate pinning between the desktop app and the service
+answer: A
+explanation:
+  why_correct: Only keys created and held on the participants' devices leave the provider relaying media it cannot decrypt,
+    so it has nothing readable to hand over. Joining only through the desktop app matters, because end-to-end modes usually
+    exclude phone dial-in, browser clients and cloud recording.
+  why_not:
+    B: Customer-managed keys let the company revoke access, but the service's media servers still fetch the key to process
+      the live meeting. While a meeting runs the provider can decrypt it, and could be compelled to.
+    C: Single tenancy separates the company from other customers. The provider still runs the instance and handles the media
+      in the clear.
+    D: Pinning stops an attacker intercepting the link between the app and the service. The service itself ends the TLS session,
+      so the provider still sees the content.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-cissp
+  checked_by: 2026-10-24-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

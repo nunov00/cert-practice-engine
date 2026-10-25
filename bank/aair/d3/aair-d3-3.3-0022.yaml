@@ -1,0 +1,32 @@
+id: aair-d3-3.3-0022
+subdomain: '3.3'
+difficulty: hard
+stem: An internal AI assistant summarises emails and web pages for staff. Testers showed that hidden instructions on a
+  web page could make it write a staff member's data into an image address in its reply. Which control MOST reliably
+  stops the data leaving the organisation?
+options:
+  A: Scan the assistant's replies for personal data before display
+  B: Stop the chat window loading images from external addresses
+  C: Filter retrieved pages for hidden instructions before use
+  D: Limit retrieval to pages from approved internal sources
+answer: B
+explanation:
+  why_correct: The data leaves when the chat window renders the reply and fetches the image from the attacker's server,
+    because the address itself carries the data. Not
+    loading external images closes that channel completely, whatever the model was tricked into writing.
+  why_not:
+    A: Output scanning catches plain personal data, but data packed into an address can be encoded or split up and slip
+      past pattern checks. It reduces the leak rather than closing the path.
+    C: Injection filters are worth having, but hidden instructions can be phrased in endless ways and filters miss some.
+      Any that get through can still use the image channel.
+    D: Limiting sources would shrink exposure, but summarising web pages is part of the assistant's job, and injected text
+      can also arrive in emails, which this would not cover. It removes a core function rather than closing the leak path.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  checked_by: 2026-10-24-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

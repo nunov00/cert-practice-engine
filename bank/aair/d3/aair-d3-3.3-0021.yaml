@@ -1,0 +1,31 @@
+id: aair-d3-3.3-0021
+subdomain: '3.3'
+difficulty: medium
+stem: A retailer's mobile app screens prompts against the retailer's own banned-content list before sending them to a
+  vendor-hosted model endpoint, which the retailer cannot modify. Its website and partner systems call the same endpoint.
+  Testers bypassed the screen by calling the endpoint directly. Which control BEST closes the gap?
+options:
+  A: Add the screening to the endpoint's own application code
+  B: Turn on the vendor's built-in content filter at the endpoint
+  C: Require app attestation tokens on calls to the endpoint
+  D: Apply the screening at a gateway in front of the endpoint
+answer: D
+explanation:
+  why_correct: The check runs on the client, so any other route skips it. A retailer-controlled gateway in front of the
+    endpoint, with the endpoint reachable only through it, applies the retailer's own list to every caller whatever the
+    channel.
+  why_not:
+    A: Screening inside the service would cover every caller, but the endpoint is vendor-hosted and the retailer cannot
+      change its code.
+    B: The vendor's filter runs centrally, but it screens for the vendor's general harms. It does not know the retailer's
+      own banned-content list.
+    C: Attestation proves a call comes from the genuine app, but the website and partners must also reach the endpoint,
+      so it cannot demand app tokens from every caller.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  check_verdict: pending
+  options_only: not_obvious
