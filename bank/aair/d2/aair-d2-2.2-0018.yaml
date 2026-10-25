@@ -1,0 +1,29 @@
+id: aair-d2-2.2-0018
+subdomain: '2.2'
+difficulty: hard
+stem: A tax agency's model scores every return for fraud risk. Investigators can open only about 200 cases a week and
+  always take the highest scores. Which validation metric BEST shows whether the model will help them?
+options:
+  A: Area under the ROC curve across the scored returns
+  B: Share of the 200 top-scored returns that prove fraudulent
+  C: Recall of fraudulent returns at the default score threshold
+  D: Agreement of predicted fraud rates with observed rates
+answer: B
+explanation:
+  why_correct: Only the top 200 scores each week are ever acted on, so what matters is how many of those turn out to be
+    fraud. Precision at that cut-off measures exactly the cases investigators will open.
+  why_not:
+    A: AUC summarises ranking across all returns, including the vast majority nobody will look at. A model can score
+      well on AUC yet be weak at the very top.
+    C: Recall at a default threshold describes a cut-off the agency does not use. Investigators work a fixed 200 cases,
+      not everything above 0.5.
+    D: Calibration matters when scores are read as probabilities, for example to forecast fraud levels. It says little
+      about whether the top-ranked cases are the right ones.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  check_verdict: pending
+  options_only: obvious

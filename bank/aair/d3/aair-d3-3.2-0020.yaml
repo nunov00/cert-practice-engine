@@ -1,0 +1,31 @@
+id: aair-d3-3.2-0020
+subdomain: '3.2'
+difficulty: medium
+stem: A telecom's chatbot answers billing questions. Residual risk is above appetite because some of its early
+  cancellation fee quotes are wrong, and each wrong quote breaches consumer rules. Each fee depends on the customer's
+  own contract dates and current offers. Which treatment BEST reduces the risk?
+options:
+  A: Ground fee answers in the published fee schedule
+  B: Fine-tune the model on past correct fee quotes
+  C: Have staff review a sample of fee chats each week
+  D: Take each fee quote from the billing system's calculator
+answer: D
+explanation:
+  why_correct: A correct fee needs each customer's own contract dates and offers, which only the billing system holds.
+    Taking the figure from its calculator makes each quote right by construction, and the chatbot only presents it.
+  why_not:
+    A: Grounding in the fee schedule is the usual fix for invented policy answers. Here the schedule gives only the
+      rules, not this customer's dates, so the model would still have to work the figure out and could get it wrong.
+    B: Fine-tuning teaches the model how fee answers look, not each customer's contract. It cannot reliably produce a
+      figure that depends on data it never sees.
+    C: Sampling measures the error rate and finds patterns. But each wrong quote is already a breach once it is sent, so
+      a detective check does not bring the risk within appetite.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  checked_by: 2026-10-24-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious
