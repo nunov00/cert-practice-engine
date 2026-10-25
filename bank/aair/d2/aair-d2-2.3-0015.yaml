@@ -1,0 +1,31 @@
+id: aair-d2-2.3-0015
+subdomain: '2.3'
+difficulty: medium
+stem: A support chatbot passed a three-week validation with a specific system prompt. Since go-live, support leads have
+  edited the prompt about 30 times, often urgently, and several edits that fixed one answer broke answers on unrelated
+  topics. Which control BEST manages this risk?
+options:
+  A: A second support lead approves each edit before release
+  B: Each edit is trialled on a sample of live chats first
+  C: The validation team re-approves each edit before release
+  D: Each edit is run against a regression set before release
+answer: D
+explanation:
+  why_correct: The harm comes from side effects on topics nobody was looking at. A regression set covering the
+    chatbot's topics shows those side effects before an edit goes live, and it runs fast enough for urgent fixes.
+  why_not:
+    A: A second reviewer checks that the intended fix makes sense, but reading a prompt edit does not reveal how it will
+      change answers on unrelated topics.
+    B: A live trial exposes customers to broken answers, and a small sample may never touch the unrelated topics the
+      edit breaks.
+    C: Re-approval by validators would catch side effects, but a three-week validation cannot keep up with urgent fixes.
+      Teams would wait weeks or work around it.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  checked_by: 2026-10-24-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

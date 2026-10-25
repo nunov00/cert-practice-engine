@@ -1,0 +1,31 @@
+id: aair-d2-2.4-0016
+subdomain: '2.4'
+difficulty: hard
+stem: An insurer's scripts deploy the model tagged latest in its registry, and production once ran an unvalidated build a
+  developer had pushed. Registry tags can be reassigned by a nightly sync from the build system. Retraining on the same
+  data gives slightly different weights, and the unvalidated build had near-identical test scores. Which practice BEST
+  prevents a repeat?
+options:
+  A: Deploy only models that carry a validated tag in the registry
+  B: Deploy by an immutable version ID, checked against its hash
+  C: Rebuild the model from the validated training run at deploy
+  D: Rescore the model on the validation test set at deploy
+answer: B
+explanation:
+  why_correct: An immutable version ID and a hash check tie each deployment to the exact file that was validated. Tags,
+    rebuilds and test scores can all point to or produce a different model; the hash cannot.
+  why_not:
+    A: A validated tag is better than latest, but the nightly sync can reassign tags. The tag could end up on a build
+      nobody validated.
+    C: Rebuilding from the validated run sounds exact, but retraining gives slightly different weights. The deployed
+      model would not be the one that was validated.
+    D: A deploy-time test is a useful gate, but the unvalidated build scored almost the same. Similar scores do not
+      show that it is the same model.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  check_verdict: pending
+  options_only: obvious

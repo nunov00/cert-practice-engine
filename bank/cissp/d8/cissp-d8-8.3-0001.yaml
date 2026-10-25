@@ -1,0 +1,31 @@
+id: cissp-d8-8.3-0001
+subdomain: '8.3'
+difficulty: hard
+stem: A company added static analysis and dependency scanning to its build pipeline a year ago. The CISO wants evidence that
+  these tools catch flaws before release, not just create work for developers. Which metric BEST provides it?
+options:
+  A: Vulnerabilities reported in production per release, of any type
+  B: Trend in yearly penetration test findings over two years
+  C: Share of scanner findings that developers confirm as real
+  D: Flaws found after release of types the scanners should catch
+answer: D
+explanation:
+  why_correct: Effectiveness is shown by what gets past the tools. Tracking flaws found after release, limited to the categories
+    the scanners are meant to detect, measures how much they miss, and a falling rate is direct evidence that they catch flaws
+    before release.
+  why_not:
+    A: Production vulnerabilities are an outcome measure, but counting every type mixes in flaws the scanners were never meant
+      to find, such as business logic errors, so the trend cannot be credited to the tools.
+    B: Penetration test results are independent evidence, but one test a year is a small sample, and it covers many flaw types
+      outside the scanners' reach.
+    C: A confirmation rate shows how much of the tools' output is noise, which bears on the extra work, but it says nothing
+      about the flaws they fail to report.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-cissp
+  checked_by: 2026-10-24-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

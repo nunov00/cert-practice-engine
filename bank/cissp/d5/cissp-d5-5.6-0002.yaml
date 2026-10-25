@@ -1,0 +1,32 @@
+id: cissp-d5-5.6-0002
+subdomain: '5.6'
+difficulty: hard
+stem: Branch Wi-Fi access points send RADIUS requests across the internet to authentication servers at head office. Staff
+  sign in with PEAP. A review notes that usernames, assigned VLANs and accounting records cross the internet readable, protected
+  only by the RADIUS shared secret. Which change BEST addresses this?
+options:
+  A: Replace each site's RADIUS shared secret with a long random one
+  B: Carry the RADIUS traffic between sites inside TLS (RadSec)
+  C: Move Wi-Fi sign-in from PEAP to EAP-TLS with device certificates
+  D: Replace RADIUS with TACACS+ for the access points' sign-in
+answer: B
+explanation:
+  why_correct: Classic RADIUS hides only a few attributes, such as the user password, using the shared secret and MD5, and leaves the other attributes
+    and accounting data in the clear. Running RADIUS over TLS between the sites, or inside an IPsec tunnel, protects whole
+    exchanges across the internet and authenticates both ends with certificates.
+  why_not:
+    A: A long random secret makes the hidden attributes and message authenticators much harder to crack, but every other attribute
+      and the accounting records still travel readable.
+    C: EAP-TLS strengthens how users or devices prove who they are, and PEAP already tunnels the credentials. Neither changes
+      the RADIUS attributes and accounting data that the access points and servers exchange in the clear.
+    D: TACACS+ encrypts its whole packet body, but it is designed for device administration. Access points use RADIUS for
+      802.1X network sign-in, so this does not fit the Wi-Fi.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-cissp
+  checked_by: 2026-10-24-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

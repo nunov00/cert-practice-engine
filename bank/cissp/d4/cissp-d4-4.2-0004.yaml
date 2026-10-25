@@ -1,0 +1,31 @@
+id: cissp-d4-4.2-0004
+subdomain: '4.2'
+difficulty: hard
+stem: A plant links two buildings 80 metres apart with copper Ethernet. The cable runs past large motors, and switch ports
+  at both ends often fail after thunderstorms. Engineers trace the failures to surges from differences in electrical ground
+  between the buildings. The link must stay up in bad weather. Which medium BEST fits the replacement?
+options:
+  A: Shielded twisted pair, bonded to ground in both buildings
+  B: Armoured fibre with its steel sheath bonded at both ends
+  C: A free-space optical link between the two rooftops
+  D: Non-metallic fibre-optic cable in a buried duct
+answer: D
+explanation:
+  why_correct: The root cause is a conductive path between two buildings at different ground potentials. Fibre with no metal
+    parts carries light, not current, so it breaks that path completely, is immune to the motors' interference, and, buried
+    in a duct, is unaffected by weather.
+  why_not:
+    A: Shielding helps against the motors' interference, but bonding the shield in both buildings adds a conductor between
+      the two grounds, so surges still reach the equipment.
+    B: The fibres themselves carry no current, but a metal sheath bonded at both ends joins the two building grounds, so surge
+      current still flows along the cable and into the equipment rooms.
+    C: A free-space optical link has no conductor between the buildings, but heavy rain and fog interrupt the beam, and the
+      link has to stay up in bad weather.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-cissp
+  check_verdict: pending
+  options_only: obvious

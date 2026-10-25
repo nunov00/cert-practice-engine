@@ -1,0 +1,32 @@
+id: aair-d1-1.4-0017
+subdomain: '1.4'
+difficulty: medium
+stem: A firm's AI email assistant will soon be able to send routine client replies on its own once each user switches
+  the feature on. At rollout, staff accepted the AI policy, yet a review later found most misunderstood what the tool
+  did. Managers cannot see who has switched features on. What should the risk practitioner recommend?
+options:
+  A: Training on the new feature that users complete before enabling it
+  B: Acceptance of a policy update on the feature before enabling it
+  C: Training for team managers before the update, to coach their teams
+  D: Release notes on the new feature sent to users before the update
+answer: A
+explanation:
+  why_correct: Each user decides alone when to let the tool write to clients, so each user needs to understand the
+    feature before that moment. Linking the feature switch to completed training puts the knowledge exactly where and
+    when the risk begins.
+  why_not:
+    B: Gating on policy acceptance has the right timing, but the review showed that accepting the policy did not give
+      staff an understanding of the tool. Repeating it would not fix that.
+    C: Manager-led coaching works when managers can see and guide use. Here they cannot tell who has switched the feature
+      on, so they cannot target coaching to the people using it.
+    D: Release notes arrive before the change, but they are passive reading. Given how little staff understood the
+      existing tool, written notes alone are unlikely to prepare them to send client replies unreviewed.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  checked_by: 2026-10-24-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious
