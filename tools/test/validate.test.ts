@@ -338,3 +338,19 @@ test("recording the verdict keeps the file as written", () => {
   assert.equal(setOptionsOnly(text, "obvious"), "id: x\nprovenance:\n  run_id: r\n  check_verdict: pass\n  options_only: obvious\n");
   assert.equal(setOptionsOnly(setOptionsOnly(text, "obvious"), "not_obvious"), setOptionsOnly(text, "not_obvious"));
 });
+
+test("a reserved (previously dropped) ID cannot be given to a new question", () => {
+  const root = fixture([question()]);
+  writeFileSync(join(root, "bank/_reserved-ids.yaml"), stringify({ ids: ["cissp-d1-1.9-0001"] }));
+  assert.ok(errors(root).some((m) => m.includes("cissp-d1-1.9-0001 was dropped earlier and is reserved")));
+  writeFileSync(join(root, "bank/_reserved-ids.yaml"), stringify({ ids: ["cissp-d1-1.9-0002"] }));
+  assert.deepEqual(errors(root), []);
+});
+
+test("the reserved ID list must hold well-formed, unique IDs", () => {
+  const root = fixture([question()]);
+  writeFileSync(join(root, "bank/_reserved-ids.yaml"), stringify({ ids: ["cissp-d1-1.9-0002", "cissp-d1-1.9-0002", "bad id"] }));
+  const errs = errors(root);
+  assert.ok(errs.some((m) => m.includes("listed twice")));
+  assert.ok(errs.some((m) => m.includes("not a question ID")));
+});

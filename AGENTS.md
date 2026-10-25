@@ -62,7 +62,9 @@ question file or reuse an ID; retire it instead. Editing a published question
 means a PR whose description says what changed and why.
 
 IDs: `<exam>-<domain>-<subdomain>-<4 digits>`, e.g. `cissp-d1-1.9-0042`. Take the
-next free number in that subdomain.
+next free number in that subdomain, above both the files in `bank/` and the IDs in
+`bank/_reserved-ids.yaml`. A PR that drops a question before merge adds its ID to
+that list; `pnpm validate` fails any question that reuses one.
 
 ## Git and PRs
 
