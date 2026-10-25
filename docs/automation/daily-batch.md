@@ -60,9 +60,7 @@ published questions than the target.
    questions is below its profile's `hard_share_min`, write new hard
    questions for that exam to replace the downgraded ones (up to 10 extra per
    night across all exams) and send them through the same independent check.
-   If the share is still short, drop that exam's easiest questions until it
-   meets the target. CI fails a batch of 10 or more changed questions per exam
-   below the target, so never relabel a question `hard` to pass it.
+   If the share is still short, hold back that exam's easiest new questions until it meets the target: set them to `status: draft` (keep the file; never delete it or reuse its ID) and list the held IDs in the PR description. This is a standing owner delegation (`PROJECT.md`, 2026-10-25): do it without asking. It is the fix CI asks for, not a CI bypass. CI fails a batch of 10 or more changed questions per exam below the target, so never relabel a question `hard`, edit `calibration.yaml` targets or touch the validator to pass it.
 6. **Refresh the exam candidate queue** (owner, 2026-10-18) in
    [`../exam-candidates.md`](../exam-candidates.md), lightly: re-check the one
    row with the oldest Checked date (or a *to verify* row first) against the
@@ -96,7 +94,7 @@ after 06:30 Europe/Zurich.
    with `Codex review:` is the Codex review.
 3. **If Codex reviewed:** treat each finding as a claim to verify. Fix what is
    real (a wrong key, an ambiguous question, a giveaway distractor, a scope
-   miss) on the PR branch, or drop the question; reply on each finding with what
+   miss) on the PR branch, or drop the question (set it to `status: draft`); if downgraded labels push an exam below `hard_share_min`, hold back its easiest new questions as in batch step 5, without asking; reply on each finding with what
    was done or why not. Re-run `pnpm check` and `pnpm validate --since
    origin/main` before pushing.
 4. **If Codex has not reviewed,** add a line to the PR description: "No Codex
