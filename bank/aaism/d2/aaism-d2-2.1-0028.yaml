@@ -1,0 +1,32 @@
+id: aaism-d2-2.1-0028
+subdomain: '2.1'
+difficulty: medium
+stem: 'A team rates a chatbot''s jailbreak risk as very low: an input screen and an output screen each stopped 95% of test
+  attacks, so it estimates that only 1 in 400 attacks gets past both. Both screens are the same model with different prompts.
+  What is the MAIN flaw?'
+options:
+  A: The test attacks may not reflect current techniques
+  B: The rating covers likelihood but not impact
+  C: The screens' false positive rates were not measured
+  D: The two screens are likely to fail on the same attacks
+answer: D
+explanation:
+  why_correct: Multiplying the two miss rates (5% x 5%) assumes the screens fail independently. Because both are the same
+    model, an attack that fools one is likely to fool the other, so the combined miss rate may be close to 5%, not 0.25%.
+    The rating rests on that false independence.
+  why_not:
+    A: Stale test sets are a common weakness, but the stem's specific issue is the arithmetic that combines the results. Even
+      with current attacks, the estimate would still be wrong for the same reason.
+    B: A full rating needs impact, and the stem does not show it; but the claim of very low risk rests on the likelihood estimate,
+      which is the part shown to be unsound.
+    C: False positives affect usability and need measuring, but they do not change how many attacks get through, which is
+      what the jailbreak rating is about.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-24-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aair-d3-3.5-0021
+subdomain: '3.5'
+difficulty: hard
+stem: A bank wants to deploy a community fine-tuned version of an open-weight model from a public hub. It beats the
+  original model on the bank's tests, but its fine-tuning data is undisclosed. The concern is hidden behaviour that only
+  specific inputs trigger. Which control BEST addresses this?
+options:
+  A: Accept only weight file formats that cannot hold executable code
+  B: Verify the file's checksum against the hash published on the hub
+  C: Red-team the model with adversarial prompts before release
+  D: Fine-tune the original publisher's base model in-house instead
+answer: D
+explanation:
+  why_correct: A backdoor planted through undisclosed fine-tuning data can pass every normal test and appear only on a
+    trigger the bank does not know. Starting from the original publisher's base model and fine-tuning it on the bank's
+    own data removes the unknown party from the supply chain.
+  why_not:
+    A: Safe weight formats stop code running when the file is loaded. A backdoor learned in the weights is model
+      behaviour, not code, so it passes this control.
+    B: A checksum proves the file is the one the hub lists. It says nothing about what the unknown fine-tuner taught the
+      model.
+    C: Red-teaming is worthwhile, but finding an unknown trigger by testing is unreliable because the space of possible
+      inputs is vast. A clean test result gives weak assurance against a deliberate backdoor.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  checked_by: 2026-10-24-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

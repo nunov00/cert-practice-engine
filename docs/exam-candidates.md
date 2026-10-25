@@ -39,7 +39,7 @@ market; every row is *to verify* until a daily run checks it).
 | 1 | CISM (ISACA) | 150 MCQ, 4 domains (18/20/33/29% from 2026-11-03) | 5 | 5 | 5 | 5 | 5 | 30 | 2026-10-18 |
 | 2 | CISA (ISACA) | 150 MCQ, 5 domains (18/18/12/26/26%) | 5 | 5 | 5 | 5 | 4 | 29 | 2026-10-19 |
 | 3 | CRISC (ISACA) | 150 MCQ, 4 domains (26/22/32/20%) | 3 | 5 | 5 | 5 | 5 | 26 | 2026-10-24 |
-| 4 | CCSP (ISC2) | 125-150 MCQ, 6 domains *to verify* | 4 | 5 | 3 | 5 | 4 | 25 | 2026-10-18 |
+| 4 | CCSP (ISC2) | 100-150 CAT items (MCQ and advanced types), 6 domains (17/20/17/16/17/13%) | 4 | 5 | 3 | 5 | 4 | 25 | 2026-10-24 |
 | 5 | Security+ (CompTIA) | up to 90, MCQ and performance-based *to verify* | 5 | 3 | 4 | 4 | 3 | 24 | 2026-10-18 |
 | 6 | CC (ISC2) | 100 MCQ, 5 domains *to verify* | 4 | 5 | 4 | 1 | 4 | 22 | 2026-10-18 |
 | 7 | CEH (EC-Council) | 125 MCQ *to verify* | 4 | 5 | 2 | 4 | 2 | 21 | 2026-10-18 |
@@ -70,7 +70,12 @@ older Checked date.
   and kept the same four; more than 45,000 holders since inception, so demand
   stays at 3. ISACA publishes a free practice quiz for calibration.
 - **CCSP:** ISC2's cloud security exam, often taken after CISSP; shares
-  CISSP's style.
+  CISSP's style. Checked 2026-10-24: adaptive (CAT) since 2025-10-01, 100 to
+  150 items in 3 hours, pass mark 700/1000; outline in force since 2026-08-01
+  keeps six domains weighted 17/20/17/16/17/13%. Like CISSP it mixes multiple
+  choice with some advanced item types, so fit stays at 5. ISC2's pages list no
+  free official sample questions, so calibration stays at 3. Scores and rank
+  unchanged.
 - **Security+:** the most widely held entry security certification and a US
   DoD 8140 baseline, so its demand is the highest on the list. It ranks lower
   because its performance-based items cannot be practised here; a product note
@@ -90,3 +95,4 @@ older Checked date.
 | 2026-10-18 | CISM row verified: format and weights confirmed, *to verify* dropped; scores and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/cism/cism-exam-content-outline), [2026 outline press release](https://www.isaca.org/about-us/newsroom/press-releases/2026/isaca-updates-cism-exam-content-outline-factoring-in-todays-technologies-security-responsibilities), [practice quiz](https://www.isaca.org/credentialing/cism/cism-practice-quiz) |
 | 2026-10-19 | CISA row verified: format and weights confirmed, *to verify* dropped; demand 4 to 5 (total 27 to 29), rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/cisa/cisa-exam-content-outline), [2024 outline press release](https://www.isaca.org/about-us/newsroom/press-releases/2024/isacas-cisa-exam-updated-to-reflect-innovations-and-evolving-technologies-impacting-it-audit), [practice quiz](https://www.isaca.org/credentialing/cisa/cisa-practice-quiz) |
 | 2026-10-24 | CRISC row verified: format and weights confirmed, *to verify* dropped; scores, total and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/crisc/crisc-exam-content-outline), [2025 outline press release](https://www.isaca.org/about-us/newsroom/press-releases/2025/isaca-updates-cdpse-and-crisc-exams-to-reflect-latest-risk-and-privacy-priorities), [practice quiz](https://www.isaca.org/credentialing/crisc/crisc-practice-quiz) |
+| 2026-10-24 | CCSP row verified: format (CAT, 100-150 items) and weights confirmed, *to verify* dropped; scores, total and rank unchanged | ISC2 [exam outline (effective 2026-08-01)](https://edge.sitecorecloud.io/internationf173-xmc4e73-prodbc0f-9660/media/Project/ISC2/Main/Media/documents/exam-outlines/EXAMS-CCSP-Exam-Outline-English-01-2026-V2.pdf), [CCSP exam page](https://www.isc2.org/certifications/ccsp/ccsp-exam), [outline refresh notice](https://www.isc2.org/Insights/2026/06/isc2-ccsp-exam-outline-revised), [CAT notice](https://www.isc2.org/Insights/2025/07/ccsp-exam-going-cat) |

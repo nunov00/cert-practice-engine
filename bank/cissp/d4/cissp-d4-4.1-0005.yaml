@@ -1,0 +1,32 @@
+id: cissp-d4-4.1-0005
+subdomain: '4.1'
+difficulty: hard
+stem: A retailer's website sits behind a multi-tenant CDN that runs its web application firewall. Attackers found the origin
+  server's address and now send attacks straight to it, bypassing the WAF. Anyone can open an account with the same CDN. Which
+  change BEST closes the bypass?
+options:
+  A: Require the CDN to present a retailer-specific client certificate
+  B: Allow traffic to the origin only from the CDN's IP ranges
+  C: Move the origin to a new address kept out of public DNS
+  D: Run the same WAF rule set on a reverse proxy in front of the origin
+answer: A
+explanation:
+  why_correct: Authenticated origin pulls let the origin accept only connections where the CDN presents a certificate issued
+    for the retailer's own configuration. Traffic sent directly, or through another tenant's CDN account, has no such certificate
+    and is refused, so every request must pass through the retailer's WAF.
+  why_not:
+    B: Allowing only the CDN's ranges is the usual first step, but those ranges are shared by every tenant. An attacker with
+      their own account on the same CDN can reach the origin through it without the retailer's WAF rules.
+    C: A new address helps for a while, but origins are routinely found again through certificate transparency logs, old DNS
+      records or mail headers. It hides the path instead of closing it.
+    D: A second WAF at the origin adds depth, but the origin stays directly reachable for floods and probing, and two rule
+      sets must be kept in step.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-cissp
+  checked_by: 2026-10-24-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

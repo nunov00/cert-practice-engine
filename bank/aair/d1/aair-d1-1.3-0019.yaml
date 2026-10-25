@@ -1,0 +1,31 @@
+id: aair-d1-1.3-0019
+subdomain: '1.3'
+difficulty: medium
+stem: At an insurer, the model validation team reports to the head of data science, whose teams build the models.
+  Several validation findings were reworded by that head before they reached the model risk committee. Which change BEST
+  strengthens oversight?
+options:
+  A: Move the validators' reporting line to the chief risk officer
+  B: Have internal audit review a sample of validations each year
+  C: Send validation reports to the committee without any edits
+  D: Rotate validators between model teams on a set cycle
+answer: A
+explanation:
+  why_correct: The rewording is a symptom of validators being managed by the person whose models they challenge. Moving
+    their reporting line to the second line removes that influence over their findings, pay and priorities.
+  why_not:
+    B: Audit review would detect weakened findings after the event, once a year and on a sample. The conflict in the
+      reporting line would remain.
+    C: Unedited reports stop the visible rewording, but validators would still depend on the head of data science for
+      their careers. The pressure would move earlier, into what they choose to write.
+    D: Rotation stops validators growing close to one model team. It does not change who manages them, which is the
+      source of the problem here.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  checked_by: 2026-10-24-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

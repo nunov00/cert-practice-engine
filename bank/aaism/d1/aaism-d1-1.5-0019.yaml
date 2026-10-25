@@ -1,0 +1,30 @@
+id: aaism-d1-1.5-0019
+subdomain: '1.5'
+difficulty: medium
+stem: A bank's assistant answers from a vector index that is not backed up, because it can be rebuilt from the source documents,
+  which are replicated to a second region. A rebuild takes three days, and the assistant's recovery time objective is eight
+  hours. What should the security manager recommend?
+options:
+  A: Run the assistant without retrieval during outages
+  B: Pin the embedding model version used for the index
+  C: Back up the index itself for a faster restore
+  D: Test that a rebuilt index returns the same results
+answer: C
+explanation:
+  why_correct: The recovery plan relies on a rebuild that takes three days, far beyond the eight-hour recovery time objective.
+    Backing up the index itself, and testing its restore, lets it be recovered within the objective while the source documents
+    remain the fallback.
+  why_not:
+    A: A degraded mode can help continuity, but an assistant without retrieval cannot answer from the bank's documents, so
+      it does not deliver the service the objective protects.
+    B: Pinning the embedding model helps a rebuild produce a consistent index, but it does not shorten the three-day rebuild.
+    D: Checking that a rebuild gives the same results is good practice, but a rebuild that works still takes three days.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-24-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aaism-d2-2.2-0028
+subdomain: '2.2'
+difficulty: medium
+stem: Developers at a software firm add the packages its coding assistant suggests. Attackers now publish malicious packages
+  under names that coding models often invent. Installs go through a mirror that blocks packages with known malware. Which
+  control BEST addresses this threat?
+options:
+  A: Pin dependencies in lockfiles with verified hashes
+  B: Allow only packages that meet age and popularity criteria
+  C: Scan assistant-suggested code during code review
+  D: Have the assistant confirm suggested packages exist
+answer: B
+explanation:
+  why_correct: The invented names are registered by attackers shortly before use, so the packages are new and carry no known
+    malware signature for the mirror to block. Allowing only packages with a track record, such as a minimum age, download
+    count or an approved list, stops a freshly registered package before it is installed, whatever name the assistant invents.
+  why_not:
+    A: Lockfile hashes make sure the same package is installed every time. If the first install pulled the attacker's package,
+      pinning reinstalls it faithfully; hashes do not decide whether a name is trustworthy.
+    C: Review of the suggested code looks at the lines the assistant wrote. The payload sits in the installed dependency,
+      and an import of a plausible package name looks normal in review.
+    D: Attackers have already registered the names that models tend to invent, so the packages exist. An existence check catches
+      only invented names that nobody has claimed yet.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-24-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,31 @@
+id: aaism-d1-1.2-0017
+subdomain: '1.2'
+difficulty: hard
+stem: Policy requires staff to use the company's tenant of an approved chatbot. Many still use personal accounts with the
+  same vendor, saying the tenant lacks file analysis, which was switched off pending a review that has stalled. Earlier blocks
+  of AI sites pushed staff onto their phones. What is the BEST response?
+options:
+  A: Block personal-account sign-in to the vendor's service
+  B: Report repeat users to their line managers
+  C: Monitor uploads to personal accounts at the proxy
+  D: Complete the review of the disabled file feature
+answer: D
+explanation:
+  why_correct: 'Staff leave the approved tenant for one reason: a feature the company itself switched off and never finished
+    reviewing. Completing that review, and enabling the feature with suitable settings if it passes, removes the reason to
+    use personal accounts and brings the work back under the company''s controls.'
+  why_not:
+    A: Blocking personal sign-in is a sound control in many cases, but the stem shows that blocks here pushed staff onto phones,
+      where the company has no visibility at all.
+    B: Manager follow-up works for a few individuals ignoring policy. Here many staff share a practical reason, so pressure
+      alone is unlikely to change behaviour.
+    C: Monitoring shows the scale of use, but it is detective; data keeps flowing into personal accounts while the cause remains.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-24-daily-aaism-check
+  options_only: not_obvious

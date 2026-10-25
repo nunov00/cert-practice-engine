@@ -1,0 +1,30 @@
+id: cissp-d6-6.2-0003
+subdomain: '6.2'
+difficulty: medium
+stem: A SIEM rule should page the on-call analyst whenever anyone is added to the domain administrators group. It has not
+  fired in the year since it was written. Which test gives the MOST complete evidence that the alert works in production?
+options:
+  A: Replay saved group-change events through the rule engine
+  B: Confirm the SIEM is receiving events from the domain controllers
+  C: Have a second engineer review the rule's logic and field names
+  D: Add a test account to the group in a controlled change
+answer: D
+explanation:
+  why_correct: A controlled real change exercises the whole chain at once, from audit logging on the domain controllers and
+    log forwarding to parsing, the rule and the paging integration. If the analyst is paged, the alert works end to end in
+    production.
+  why_not:
+    A: Replaying stored events tests the rule's logic, but not whether the live domain controllers log and forward such changes
+      today, or whether the page is delivered.
+    B: Confirming ingestion checks one link in the chain. Events can arrive while the rule's fields fail to match or the paging
+      step is broken.
+    C: A logic review can find errors on paper, but it does not show the alert firing on real events or reaching anyone.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-cissp
+  checked_by: 2026-10-24-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

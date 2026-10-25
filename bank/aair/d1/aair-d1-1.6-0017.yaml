@@ -1,0 +1,31 @@
+id: aair-d1-1.6-0017
+subdomain: '1.6'
+difficulty: medium
+stem: A screening model decides which patients get a follow-up scan. A missed disease is the main harm, while an extra
+  scan costs little and carries little risk. Which fairness check across patient groups is MOST relevant?
+options:
+  A: Equal rates of referral for a follow-up scan
+  B: Equal accuracy of the model's decisions overall
+  C: Equal rates of missed disease among those who have it
+  D: Equal share of referred patients who turn out to have disease
+answer: C
+explanation:
+  why_correct: When the harm that matters is a missed disease, fairness means each group's sick patients have the same
+    chance of being caught. Comparing missed-disease rates, the false negative rate among those with the disease, tests
+    exactly that.
+  why_not:
+    A: Equal referral rates ignore that disease rates may differ between groups. A group with more disease would need
+      more referrals, so this check could hide the harm.
+    B: Overall accuracy mixes the costly error with the cheap one. A group could match on accuracy while far more of its
+      sick patients are missed.
+    D: Equal precision concerns wasted scans, which the stem says cost little. It does not show whether sick patients in
+      each group are being missed.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  checked_by: 2026-10-24-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

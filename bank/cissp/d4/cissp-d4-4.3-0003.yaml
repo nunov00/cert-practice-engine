@@ -1,0 +1,32 @@
+id: cissp-d4-4.3-0003
+subdomain: '4.3'
+difficulty: medium
+stem: A law firm emails case files to a client. Both mail servers support STARTTLS, but a test showed that an attacker on
+  the network path could strip the STARTTLS offer, and the firm's server then sent the messages in clear text. Which change
+  BEST stops this for mail the firm sends to the client?
+options:
+  A: Publish an MTA-STS policy and TLS reporting for the firm's own domain
+  B: Publish a DMARC policy of reject for the law firm's domain
+  C: Require TLS with certificate checks for mail to the client's domain
+  D: Sign the firm's outgoing messages to the client with DKIM
+answer: C
+explanation:
+  why_correct: Opportunistic STARTTLS falls back to clear text when the offer is missing, which is exactly what the attacker
+    forced. Configuring the firm's sending server to require TLS, with a valid certificate, for the client's domain makes
+    it refuse to send rather than downgrade, so the messages are never exposed on the path.
+  why_not:
+    A: MTA-STS is the right kind of control, but a policy for the firm's own domain tells other senders to require TLS when
+      they deliver to the firm. It protects mail coming in, not the mail the firm sends to the client.
+    B: DMARC tells receivers what to do with mail that fails sender authentication. It stops others spoofing the firm's domain
+      but does not encrypt anything in transit.
+    D: DKIM signatures prove the message came from the firm's domain and was not altered. The content still crosses the path
+      readable when TLS is stripped.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-cissp
+  checked_by: 2026-10-24-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aaism-d2-2.3-0025
+subdomain: '2.3'
+difficulty: medium
+stem: Procurement has shortlisted two vendors' AI tools for summarising customer complaints. Both vendors have supplied assurance
+  reports and completed security questionnaires, and the business wants a pilot next month. What should the security manager
+  do FIRST?
+options:
+  A: Set the security requirements the tools must meet
+  B: Review each vendor's assurance report and answers
+  C: Run a pilot using synthetic complaints first
+  D: Classify the data the tool will receive
+answer: D
+explanation:
+  why_correct: How deep the due diligence goes, which requirements apply and which contract terms matter all depend on how
+    sensitive the data is. Complaints can hold personal, financial or health details. Until the data the tool will receive
+    is classified, the manager cannot judge the vendors' evidence or set proportionate requirements.
+  why_not:
+    A: Requirements come next, but they are derived from the data's classification. Set before it, they may be too weak for
+      sensitive complaints or needlessly strict for routine ones.
+    B: Reviewing the vendors' evidence before knowing what it must show means judging it without criteria. The review is more
+      useful once the data and requirements are known.
+    C: A synthetic pilot is a sound way to test function without exposing real data, but it does not advance the security
+      assessment; the question of what real data will flow remains open.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-24-daily-aaism-check
+  options_only: not_obvious

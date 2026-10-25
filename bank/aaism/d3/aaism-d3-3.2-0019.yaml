@@ -1,0 +1,32 @@
+id: aaism-d3-3.2-0019
+subdomain: '3.2'
+difficulty: hard
+stem: A lender's new credit model passed offline validation and will replace the current one. Its approvals take effect at
+  once, and whether borrowers default shows only after months. Which release approach BEST limits harm from a flaw that testing
+  missed?
+options:
+  A: Run it in shadow beside the current model and compare decisions
+  B: Route 5% of applications to it with automatic rollback triggers
+  C: Switch traffic over with the current model on standby to roll back
+  D: Backtest it again on the latest quarter's applications
+answer: A
+explanation:
+  why_correct: Approvals cannot be undone and defaults show up months later, so any flaw in a live release harms real borrowers
+    before outcome checks can see it. In shadow mode the new model scores live applications without its decisions being used,
+    so differences from the current model can be investigated on real traffic with no customer impact.
+  why_not:
+    B: A canary limits exposure to 5%, but those approvals are real and irreversible, and rollback triggers based on defaults
+      cannot fire for months.
+    C: A standby model makes rollback fast, but the team only knows to roll back once harm is visible; approvals already made
+      stay made.
+    D: Another backtest repeats the kind of offline check the model already passed. It does not exercise live inputs and integrations,
+      where a missed flaw is most likely to appear.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-24-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: aaism-d2-2.2-0029
+subdomain: '2.2'
+difficulty: hard
+stem: A gym chain lets franchise partners query its churn model, which takes member details, including health conditions,
+  and returns a score. Partners already know each member's identity, visit history and whether they later cancelled, but not
+  their health conditions. Which threat MOST needs testing?
+options:
+  A: Membership inference on the model's training records
+  B: Extraction of the model through repeated scoring queries
+  C: Inference of members' health conditions from scores
+  D: Evasion by altering member details to change scores
+answer: C
+explanation:
+  why_correct: Partners hold every model input except the health condition, plus the real outcome. They can query the model
+    with each possible health value and see which one gives a score that fits what the member actually did. This attribute
+    inference, a form of model inversion, would reveal sensitive health data that the chain never meant partners to see, using
+    only ordinary queries.
+  why_not:
+    A: Membership inference tells an attacker whether a person's record was in the training data. Partners already know who
+      the members are, so confirming that a member was in training adds little compared with exposing health conditions.
+    B: Extraction would copy the model and is worth controlling, but partners do not need a copy to reach the health data;
+      ordinary scoring queries are enough, which makes attribute inference the sharper threat here.
+    D: Evasion matters when the person being scored gains from changing the result. Partners gain little by steering churn
+      scores, and evasion exposes no member data.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-24-daily-aaism-check
+  options_only: not_obvious

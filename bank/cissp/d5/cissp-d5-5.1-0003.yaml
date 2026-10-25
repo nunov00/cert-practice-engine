@@ -1,0 +1,30 @@
+id: cissp-d5-5.1-0003
+subdomain: '5.1'
+difficulty: medium
+stem: A company rents a rack in a shared colocation hall. The provider's badge system admits its own technicians and other
+  tenants' staff to the hall. The company wants a record of exactly who opens its rack and when. Which control BEST meets
+  this?
+options:
+  A: A company-managed electronic rack lock that logs each opening by badge
+  B: Monthly hall access logs from the provider for the company's staff
+  C: A camera inside the rack that records whenever the door opens
+  D: Numbered tamper-evident seals on the rack doors, checked at each visit
+answer: A
+explanation:
+  why_correct: The asset to control is the rack, not the hall. An electronic lock that the company manages both limits who
+    can open the rack and records each opening against an individual credential, which gives the who and when directly.
+  why_not:
+    B: Hall logs show who entered the room, not who opened the company's rack, and other tenants and technicians in the hall
+      would not appear as rack access at all.
+    C: A camera records openings, but the footage must be reviewed and faces matched to people, and it does not stop anyone
+      opening the rack.
+    D: Seals show that someone opened the rack between visits, but not who did it or exactly when.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-cissp
+  checked_by: 2026-10-24-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

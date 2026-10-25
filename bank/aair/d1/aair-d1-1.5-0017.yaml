@@ -1,0 +1,32 @@
+id: aair-d1-1.5-0017
+subdomain: '1.5'
+difficulty: medium
+stem: A former applicant has sued a lender, claiming its AI credit model discriminated against her. Under the retention
+  schedule, the model's decision logs and training data from that period are due for deletion next month. What should
+  the risk practitioner advise?
+options:
+  A: Delete the records on schedule and keep the deletion log
+  B: Keep aggregate statistics and delete the individual records
+  C: Pseudonymise the logs and training data, then keep them
+  D: Suspend deletion of the relevant records under a legal hold
+answer: D
+explanation:
+  why_correct: Once litigation has started, records relevant to the claim must be preserved, and that duty overrides
+    routine retention. A legal hold keeps the logs and training data intact, so the lender can show how the model
+    decided and avoids a finding that it destroyed evidence.
+  why_not:
+    A: Following the schedule is normally right and supports data minimisation. With a claim filed, deleting relevant
+      records could be treated as destroying evidence.
+    B: Aggregates may support a statistical defence, but the court may need the individual decision and the data behind
+      it. Deleting them removes that evidence.
+    C: Pseudonymising reduces privacy risk but alters the records. Linking them back to the claimant's decision, which
+      the case needs, becomes harder or impossible.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aair
+  checked_by: 2026-10-24-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

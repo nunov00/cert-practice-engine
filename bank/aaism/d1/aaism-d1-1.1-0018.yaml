@@ -1,0 +1,32 @@
+id: aaism-d1-1.1-0018
+subdomain: '1.1'
+difficulty: hard
+stem: A lender retrained a vendor's credit-scoring model, high-risk under an AI regulation, on its own loan data. It will
+  now license the result to partner banks under its own brand. The vendor's conformity assessment covered the original model.
+  What is the GREATEST compliance concern?
+options:
+  A: The lender may now hold provider duties for the system
+  B: Partner banks must meet their own deployer duties
+  C: The loan data may lack a lawful basis for retraining
+  D: Partners may use it beyond its stated intended purpose
+answer: A
+explanation:
+  why_correct: By substantially modifying a high-risk system and placing it on the market under its own name, the lender is
+    likely to take on provider obligations, including its own conformity assessment. The vendor's assessment covered a different
+    model, so the system partners will use may have no valid assessment at all.
+  why_not:
+    B: Partner banks do carry deployer duties, but those are theirs to meet; the lender's own larger gap is the missing provider-level
+      compliance for the system it supplies.
+    C: The lawful basis for using loan data matters and should be checked, but it is a data protection question, while the
+      unassessed high-risk system blocks lawful supply altogether.
+    D: Misuse by partners is a real concern that contracts and instructions address, but it follows from the lender first
+      meeting its provider duties, such as defining the intended purpose.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-24-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-24-daily-aaism-check
+  options_only: not_obvious
