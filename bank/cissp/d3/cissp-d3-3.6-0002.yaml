@@ -1,6 +1,6 @@
 id: cissp-d3-3.6-0002
 subdomain: '3.6'
-difficulty: hard
+difficulty: medium
 stem: An application encrypts customer records with AES in CBC mode, with a random IV stored beside each record. An audit
   finds that a database administrator could alter a record's ciphertext, or swap two customers' encrypted records, without
   the application noticing. Which change BEST addresses both findings?
@@ -27,3 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

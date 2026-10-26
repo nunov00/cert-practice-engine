@@ -19,10 +19,12 @@ explanation:
     C: Intake coverage tracks purchases, but tools used on free accounts are never bought, so this metric would stay high
       while the incidents continue.
     B: Unit confirmations rely on managers knowing what their staff use, which is exactly what free sign-ups bypass.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-26-daily-aaism-check
+  options_only: not_obvious

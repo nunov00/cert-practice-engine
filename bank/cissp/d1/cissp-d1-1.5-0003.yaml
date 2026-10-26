@@ -1,6 +1,6 @@
 id: cissp-d1-1.5-0003
 subdomain: '1.5'
-difficulty: hard
+difficulty: medium
 stem: After a breach of card data, a merchant's card brands require it, under its merchant agreement, to hire an approved
   forensic investigator. The investigator's report goes to the card brands and the acquiring bank, which may impose fines
   and conditions. Which type of investigation is this?
@@ -27,3 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

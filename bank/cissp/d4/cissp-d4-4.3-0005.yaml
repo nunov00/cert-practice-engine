@@ -7,7 +7,7 @@ stem: Thirty offices are fully meshed with site-to-site IPsec tunnels, all authe
 options:
   A: A unique pre-shared key for each tunnel
   B: Certificates from an internal CA, with revocation
-  C: A unique pre-shared key for each site, used on all its tunnels
+  C: A unique pre-shared key for each site, used on its tunnels
   D: One shared key, rotated monthly by an automated script
 answer: B
 explanation:
@@ -27,3 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-cissp
   check_verdict: pending
+  options_only: obvious

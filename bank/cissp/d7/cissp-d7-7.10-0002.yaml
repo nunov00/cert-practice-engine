@@ -1,0 +1,27 @@
+id: cissp-d7-7.10-0002
+subdomain: '7.10'
+difficulty: hard
+stem: A file server gets a full backup on Sunday at 01:00 and a differential backup at 01:00 on every other day. The server
+  fails on Thursday at 15:00. Which backups are needed to restore it, and how much data could be lost at most?
+options:
+  A: The Sunday full and Thursday differential; about 38 hours of data
+  B: The Sunday full and the Monday to Thursday differentials; about 14 hours of data
+  C: The Sunday full and Thursday differential; about 14 hours of data
+  D: The Thursday differential alone; about 14 hours of data
+answer: C
+explanation:
+  why_correct: A differential backup holds every change since the last full backup, so the full plus the latest differential
+    restores the server. That differential ran at 01:00 on Thursday, so changes from 01:00 to 15:00, about 14 hours, are lost.
+  why_not:
+    B: Restoring each day's backup in turn is how incremental backups work. Each differential already contains the earlier
+      ones' changes, so only the latest is needed.
+    D: A differential holds only changes since the full backup, so it cannot restore the server without the Sunday full backup.
+    A: The set is right, but 38 hours counts from Wednesday's backup. The Thursday differential ran at 01:00, so the gap is
+      about 14 hours.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pending

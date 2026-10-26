@@ -1,6 +1,6 @@
 id: cissp-d1-1.12-0002
 subdomain: '1.12'
-difficulty: hard
+difficulty: medium
 stem: Two payment clerks at a manufacturer changed a supplier's bank details after a plain-text email that appeared to come
   from the supplier, then paid fake invoices. Both clerks passed the annual awareness quiz, and both described the call-back
   procedure correctly afterwards. Which exercise would BEST target this failure?
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

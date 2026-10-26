@@ -7,7 +7,7 @@ stem: An IT helpdesk agent turns user requests into shell commands, which run on
 options:
   A: Run each command in a disposable sandbox container
   B: Expose predefined functions with typed parameters, not a shell
-  C: Parse each command and allow-list every token and operator
+  C: Parse each command and allow-list each token and operator
   D: Run the command process under a least-privilege account
 answer: B
 explanation:
@@ -27,3 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-aaism
   check_verdict: pending
+  options_only: obvious
