@@ -14,7 +14,7 @@ first to the exams furthest below target: with three exams that is 17, 17 and
 16; with one, all 50. The owner watches usage and may change it.
 **AAIG is paused** until ISACA publishes its outline, because its
 questions will need remapping to the real domains; a paused exam counts as at
-target for step 3.
+target for step 4.
 
 Two Claude scheduled tasks and one Codex scheduled task run every day
 (times are Europe/Zurich):
@@ -35,35 +35,79 @@ published questions than the target.
 1. Start from the latest `main`. If an open PR labelled `daily-batch` exists,
    stop and say so in the run summary: one batch at a time.
 2. Run `pnpm coverage -- <exam>` for every exam in `recipes/`.
-3. **If every exam is at its target**, write no questions. Open (or update, if
+3. **Re-check held drafts** (owner, 2026-10-26: "Sounds like a good plan, go
+   for it"). [`bank/_held-back.yaml`](../../bank/_held-back.yaml) lists
+   questions kept as `status: draft` only for the hard share, not for a fault.
+   Take up to 20 a night across the exams under target, oldest first and
+   `medium` before `easy`, and send them through step 6 with the night's new
+   questions: the same independent check (including the duplicate check
+   against today's bank) and the strict hard-label check where relevant. Fix
+   what the check finds as for a new question. Once step 6 is done, publish
+   them, `medium` first then `easy`, only while the exam's hard share of the
+   PR's new and changed published questions stays at or above its profile's
+   `hard_share_min` with them included. A released question gets
+   `status: published`, `check_verdict: pass` and `checked_by: <run-id>-check`,
+   and leaves the list. One that fails the recheck leaves the list too and
+   stays a draft; say why in the PR. The rest stay on the list for a later
+   night. Released drafts do not count toward the 50 new questions. Never
+   relabel one up to make room.
+4. **If every exam is at its target**, write no questions. Open (or update, if
    one is already open) one GitHub issue labelled `new-exam-suggestion`
    proposing the top candidate in [`../exam-candidates.md`](../exam-candidates.md):
    issuer, why it ranks first, the official outline and public samples
    available for calibration, and the expected bank target. Building it waits
-   for the owner. Go on to step 6 for the queue, then open the PR without
+   for the owner. Go on to step 7 for the queue, then open the PR without
    questions.
-4. **Otherwise, split the night's 50 questions across the exams under target (AAIG excluded)** and write each exam's share, following
+5. **Otherwise, split the night's 50 questions across the exams under target
+   (AAIG excluded)** and write each exam's share, following
    [`generation.md`](generation.md), the writer brief and
    `recipes/<exam>/calibration.yaml`. Spread them over the domains furthest
    below their weighted share of the target (largest `gap` first), so empty
-   domains (CISSP D2-D8 today) fill first. Run ID:
-   `<YYYY-MM-DD>-daily-<exam>`. Number new questions above both the files in
-   `bank/` and `bank/_reserved-ids.yaml`; when a question is deleted before
-   merge, add its ID to that list in the same PR. Never more than 50 in total per night,
-   top-ups in step 5 aside. **Aim for at least 40% hard** in each exam's
-   share, above the profile's `hard_share_min` (30%), because the checker
-   downgrades labels that turn out easier than written.
-5. **Check them independently** per [`quality-check.md`](quality-check.md) and
+   domains fill first. Run ID: `<YYYY-MM-DD>-daily-<exam>`. Number new
+   questions above both the files in `bank/` and `bank/_reserved-ids.yaml`;
+   when a question is deleted before merge, add its ID to that list in the same
+   PR. Never more than 50 in total per night, top-ups in step 6 aside.
+   - **Read the subdomain first** (owner, 2026-10-26). Before writing into a
+     subdomain, the writer reads every existing question in it in full (stem,
+     options, key and explanations, drafts included), not just the stems, and
+     does not test the same decision again with new wording. Duplicates were
+     the main reason rewrites failed on 2026-10-24 and 2026-10-26.
+   - **Aim for at least 40% hard** in each exam's share, above the profile's
+     `hard_share_min` (30%), because reviewers downgrade labels that turn out
+     easier than written. A question is `hard` only when at least two wrong
+     options stay plausible after reading the whole stem, and only a stem
+     detail separates them from the key. A question whose answer is a figure
+     to compute (a formula, plain arithmetic, a ratio or a date sum) is
+     `medium` at most, however long the working.
+6. **Check them independently** per [`quality-check.md`](quality-check.md) and
    the checker brief: a separate worker with no access to the writer's
    reasoning runs `pnpm calibration packets` and `pnpm calibration record`.
    Rewrite or drop what fails; 2-3 rounds are normal. A batch with fewer
    survivors than planned is fine; do not pad it.
-   **Hard top-up** (owner, 2026-10-19): if an exam's checked share of `hard`
-   questions is below its profile's `hard_share_min`, write new hard
-   questions for that exam to replace the downgraded ones (up to 10 extra per
-   night across all exams) and send them through the same independent check.
-   If the share is still short, hold back that exam's easiest new questions until it meets the target: set them to `status: draft` (keep the file; never delete it or reuse its ID) and list the held IDs in the PR description. This is a standing owner delegation (`PROJECT.md`, 2026-10-25): do it without asking. It is the fix CI asks for, not a CI bypass. CI fails a batch of 10 or more changed questions per exam below the target, so never relabel a question `hard`, edit `calibration.yaml` targets or touch the validator to pass it.
-6. **Refresh the exam candidate queue** (owner, 2026-10-18) in
+   - **Strict hard-label check** (owner, 2026-10-26). Before the PR, a second
+     fresh worker that has seen neither the writer's nor the checker's
+     reasoning reads every question still labelled `hard`, answers it blind,
+     and keeps the label only if at least two distractors stay plausible after
+     the stem, the answer is not a computed figure, and it is not the same idea
+     as another question in the subdomain. Otherwise it lowers the label to
+     `medium` or `easy` (lowering is always allowed; raising never is). This is
+     the same bar Codex and the final review apply in the morning, so the
+     labels that reach the PR should survive them.
+   - **Hard top-up** (owner, 2026-10-19 and 2026-10-26): for every hard label
+     lowered in this step, write a new hard question for that exam the same
+     night (up to 10 extra per night across all exams) and send it through the
+     same independent check and strict hard-label check.
+   - If an exam's share is still short, hold back that exam's easiest new
+     questions until it meets the target: set them to `status: draft` (keep the
+     file; never delete it or reuse its ID), add them to
+     `bank/_held-back.yaml`, and list the held IDs in the PR description. This
+     is a standing owner delegation (`PROJECT.md`, 2026-10-25): do it without
+     asking. It is the fix CI asks for, not a CI bypass. CI fails a batch of 10
+     or more changed questions per exam below the target, so never relabel a
+     question `hard`, edit `calibration.yaml` targets or touch the validator to
+     pass it. Questions dropped for a fault stay drafts but never go on the
+     held-back list.
+7. **Refresh the exam candidate queue** (owner, 2026-10-18) in
    [`../exam-candidates.md`](../exam-candidates.md), lightly: re-check the one
    row with the oldest Checked date (or a *to verify* row first) against the
    issuer's official page and public demand data, fix its format and scores,
@@ -71,12 +115,13 @@ published questions than the target.
    Changes table with sources. Replace a row only when a new security exam
    would outrank the bottom one; keep exactly 10. Public sources only, never
    braindump sites.
-7. `pnpm check` and `pnpm validate --since origin/main` must pass.
-8. Open **one PR for the day**, labelled `daily-batch`, on the branch the
+8. `pnpm check` and `pnpm validate --since origin/main` must pass.
+9. Open **one PR for the day**, labelled `daily-batch`, on the branch the
    session assigns (else `content/daily/<YYYY-MM-DD>`), titled
    `Content: daily batch <YYYY-MM-DD>`. Fill the template's content section per
    [`publishing.md`](publishing.md) for each exam, including the difficulty
-   calibration note, plus one line on the queue change, and end the
+   calibration note, the hard labels the strict check lowered, the held drafts
+   released and still held, plus one line on the queue change, and end the
    description with the **Codex review** section below. `Review class: routine`.
 
 Codex review section to paste into the PR:
@@ -96,8 +141,12 @@ after 06:30 Europe/Zurich.
    with `Codex review:` is the Codex review.
 3. **If Codex reviewed:** treat each finding as a claim to verify. Fix what is
    real (a wrong key, an ambiguous question, a giveaway distractor, a scope
-   miss) on the PR branch, or drop the question (set it to `status: draft`); if downgraded labels push an exam below `hard_share_min`, hold back its easiest new questions as in batch step 5, without asking; reply on each finding with what
-   was done or why not. Re-run `pnpm check` and `pnpm validate --since
+   miss) on the PR branch, or drop the question (set it to `status: draft`, not on the held-back
+   list). If downgraded labels push an exam below `hard_share_min`, hold back
+   its easiest new or released questions as in batch step 6, without asking,
+   and add them to `bank/_held-back.yaml`; a held draft released in this PR
+   goes back on the list. Reply on each finding with what was done or why
+   not. Re-run `pnpm check` and `pnpm validate --since
    origin/main` before pushing.
 4. **If Codex has not reviewed,** add a line to the PR description: "No Codex
    review: none posted by the merge run."
@@ -105,7 +154,7 @@ after 06:30 Europe/Zurich.
    findings are handled. Start a fresh Agent worker that has not seen the
    writer's, checker's or Codex's reasoning. To keep cost down it reviews the
    questions Codex flagged plus a random sample of 5 more per exam (all of them
-   if Codex did not review), against the same list as [`codex-review.md`](codex-review.md)
+   if Codex did not review; released held drafts count as new questions), against the same list as [`codex-review.md`](codex-review.md)
    (blind answer before the key, ambiguity, options-only difficulty, accuracy
    and scope, explanations, originality, duplicates) and returns findings per
    question ID. Fix or drop what is real, re-run the checks, and record a

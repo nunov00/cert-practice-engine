@@ -6,7 +6,9 @@ You write original multiple-choice questions for one exam. Read these first:
 2. `recipes/<exam>/calibration.yaml`: the exam's profile, targets and `writer_notes`.
 3. `docs/content-rules.md`, especially §2 "Distractors".
 4. [`standard.md`](standard.md), "What makes a question too easy".
-5. Stems of existing questions in the target subdomain, to avoid repeats.
+5. Every existing question in the target subdomain in full (stem, options,
+   key and explanations, drafts included), to avoid testing the same decision
+   again in new words.
 
 ## Rules
 
@@ -27,8 +29,10 @@ You write original multiple-choice questions for one exam. Read these first:
 - **Vary the form.** Mix short direct items and short scenarios as the profile
   says, and include FIRST/NEXT sequencing items where all four options are
   valid steps.
-- **Label honestly.** `hard` means two or more strong distractors that only a
-  stem detail separates. Stem length is not difficulty.
+- **Label honestly.** `hard` means two or more distractors that stay
+  plausible after reading the whole stem, separated from the key only by a stem
+  detail. Stem length is not difficulty, and a question answered by computing a
+  figure (a formula, plain arithmetic, a ratio) is `medium` at most.
 - **Explain every option.** `why_correct` says why it is best; each `why_not`
   says why that option loses here.
 

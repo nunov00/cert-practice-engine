@@ -1,0 +1,61 @@
+# Questions held back as `status: draft` only to keep an exam's hard share at
+# its calibration profile's `hard_share_min` (docs/automation/daily-batch.md,
+# batch step 5 and merge step 3). They are not rejects: each batch run
+# re-checks some of them and publishes them once the exam's hard share stays
+# at or above the minimum with them included (batch step 3). Questions dropped
+# for a real fault (wrong key, duplicate, ambiguity, failed check) never go on
+# this list.
+#
+# Add an entry in the same PR that holds a question back; remove it in the PR
+# that publishes it, or that finds a real fault in it on recheck. `pr` is the PR
+# that held it. `pending` means it was held before passing an independent check.
+held:
+  # PR #61 (daily batch 2026-10-23), merge run
+  - { id: cissp-d2-2.4-0002, pr: 61 }
+  - { id: cissp-d5-5.1-0002, pr: 61 }
+  - { id: cissp-d7-7.11-0001, pr: 61 }
+  - { id: aair-d1-1.5-0016, pr: 61 }
+  - { id: aair-d3-3.2-0018, pr: 61 }
+  - { id: aair-d3-3.3-0020, pr: 61 }
+  - { id: aaism-d1-1.1-0017, pr: 61 }
+  - { id: aaism-d1-1.5-0018, pr: 61 }
+  - { id: aaism-d3-3.5-0018, pr: 61 }
+  # PR #62 (daily batch 2026-10-24), batch run (owner's OK, held before checking)
+  - { id: aair-d1-1.1-0022, pr: 62, pending: true }
+  - { id: aair-d1-1.4-0017, pr: 62, pending: true }
+  - { id: aair-d3-3.2-0020, pr: 62, pending: true }
+  - { id: aair-d3-3.3-0021, pr: 62, pending: true }
+  - { id: aair-d3-3.6-0019, pr: 62, pending: true }
+  - { id: aair-d3-3.6-0020, pr: 62, pending: true }
+  # PR #62, merge run
+  - { id: cissp-d4-4.2-0005, pr: 62 }
+  - { id: cissp-d5-5.1-0003, pr: 62 }
+  - { id: cissp-d5-5.3-0003, pr: 62 }
+  - { id: aair-d1-1.2-0020, pr: 62 }
+  - { id: aair-d1-1.5-0017, pr: 62 }
+  - { id: aair-d2-2.2-0017, pr: 62 }
+  - { id: aaism-d1-1.2-0017, pr: 62 }
+  - { id: aaism-d1-1.4-0017, pr: 62 }
+  - { id: aaism-d1-1.5-0019, pr: 62 }
+  - { id: aaism-d2-2.1-0028, pr: 62 }
+  - { id: aaism-d2-2.3-0025, pr: 62 }
+  - { id: aaism-d2-2.3-0026, pr: 62 }
+  - { id: aaism-d3-3.1-0020, pr: 62 }
+  - { id: aaism-d3-3.3-0021, pr: 62 }
+  - { id: aaism-d3-3.4-0019, pr: 62 }
+  - { id: aaism-d3-3.5-0021, pr: 62 }
+  # PR #65 (daily batch 2026-10-26), batch run
+  - { id: cissp-d1-1.1-0002, pr: 65 }
+  - { id: cissp-d1-1.5-0003, pr: 65 }
+  - { id: cissp-d3-3.4-0002, pr: 65 }
+  - { id: cissp-d3-3.7-0002, pr: 65 }
+  - { id: cissp-d5-5.1-0004, pr: 65 }
+  - { id: cissp-d7-7.12-0002, pr: 65 }
+  # PR #65, hard top-ups that passed on content but were rated medium
+  - { id: cissp-d3-3.6-0003, pr: 65, pending: true }
+  - { id: cissp-d7-7.10-0002, pr: 65, pending: true }
+  # PR #65, merge run
+  - { id: cissp-d1-1.12-0002, pr: 65 }
+  - { id: cissp-d3-3.6-0002, pr: 65 }
+  - { id: aair-d2-2.2-0019, pr: 65 }
+  - { id: aair-d2-2.4-0017, pr: 65 }
