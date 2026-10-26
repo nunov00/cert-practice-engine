@@ -1,0 +1,28 @@
+id: aaism-d1-1.1-0019
+subdomain: '1.1'
+difficulty: medium
+stem: A company must meet a high-risk AI regulation and also wants certification to an AI management system standard. Separate
+  teams prepare for each, and both sets of auditors arrive this year. Which approach BEST reduces effort without weakening
+  evidence?
+options:
+  A: Keep separate control sets so each audit trail stays clean
+  B: Certify to the standard and present the certificate as proof of compliance
+  C: Map both to one control set, with evidence tagged to each requirement
+  D: Meet the regulation first and pause the certification until next year
+answer: C
+explanation:
+  why_correct: The two frameworks overlap heavily. One control set mapped to both, with evidence traced to each requirement,
+    avoids duplicate work while letting each auditor see exactly what covers their requirements.
+  why_not:
+    A: Separate sets duplicate controls and evidence, and they can drift apart, which creates more audit findings, not cleaner
+      trails.
+    B: A voluntary certificate does not demonstrate legal compliance. The regulation has specific obligations that the certificate
+      may not cover.
+    D: Pausing the certification gives up a business goal to save effort that integration would save anyway.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pending

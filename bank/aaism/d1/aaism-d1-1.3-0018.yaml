@@ -1,0 +1,26 @@
+id: aaism-d1-1.3-0018
+subdomain: '1.3'
+difficulty: medium
+stem: A customer-service model was retired and marked retired in the model registry. Six months later, a team is found still
+  calling it through an old endpoint on a test cluster that was never cleaned up. Which control would BEST have prevented
+  this?
+options:
+  A: Quarterly vulnerability scans of every cluster in the environment
+  B: A retention schedule for model weights that deletes them after retirement
+  C: Network rules that block test clusters from reaching production data
+  D: A decommissioning checklist that removes every deployment the registry recorded
+answer: D
+explanation:
+  why_correct: Retirement failed because one deployment was missed. A decommissioning step that works from the registry's
+    record of every deployment and access path, and confirms each one is removed, closes all of them.
+  why_not:
+    A: Scans may find an outdated service eventually, but they look for vulnerabilities, not for retired models still in use.
+    B: Deleting weights would break the endpoint eventually, but a schedule on its own does not track where copies are deployed.
+    C: Network rules limit what test clusters reach, but the retired model can still be called and used within the test environment.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pending

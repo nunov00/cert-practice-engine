@@ -1,0 +1,26 @@
+id: aair-d2-2.4-0017
+subdomain: '2.4'
+difficulty: hard
+stem: A bank's churn model degraded after a source system redefined active customer to include accounts dormant for up to
+  two years. The field's type and value range stayed the same. Which control would MOST likely have caught this before retraining?
+options:
+  A: Automated type and range checks on each field at load
+  B: Monthly drift monitoring on the model's input features
+  C: Versioned snapshots of each training dataset used
+  D: Recorded field definitions, with owners notified of changes
+answer: D
+explanation:
+  why_correct: The change was in meaning, not format. Documented definitions with named owners and change notification would
+    have flagged the redefinition to the model team before the data was used for retraining.
+  why_not:
+    A: Type and range checks pass, because the redefined field looks the same. They cannot detect a change in meaning.
+    B: Drift monitoring might show a shift eventually, but often only after the model is already affected, and it would not
+      explain the cause.
+    C: Snapshots make it possible to reproduce and compare datasets after the fact, but they do not warn anyone of the change.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aair
+  check_verdict: pending

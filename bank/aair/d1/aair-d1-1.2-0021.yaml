@@ -1,0 +1,26 @@
+id: aair-d1-1.2-0021
+subdomain: '1.2'
+difficulty: medium
+stem: An insurer's procurement process checks each supplier's finances and information security. Teams have bought several
+  products with AI features through it, and none had an AI risk review. Which change BEST aligns procurement with AI risk
+  management?
+options:
+  A: Add AI screening questions at intake that trigger an AI risk assessment
+  B: Require the AI committee to approve each purchase the insurer makes
+  C: Train procurement staff on the main AI ethics principles
+  D: Review the supplier list each year to find products with AI features
+answer: A
+explanation:
+  why_correct: Screening at intake catches AI features at the point of purchase and routes only those products into AI risk
+    assessment, so the existing process carries AI risk without slowing every purchase.
+  why_not:
+    B: Committee approval of every purchase overloads the committee with purchases that have no AI, and slows procurement.
+    C: Awareness helps staff spot issues, but without a defined trigger it does not ensure that AI products get a risk review.
+    D: An annual review finds AI products after they are already in use.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aair
+  check_verdict: pending

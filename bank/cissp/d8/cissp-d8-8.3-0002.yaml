@@ -1,0 +1,29 @@
+id: cissp-d8-8.3-0002
+subdomain: '8.3'
+difficulty: medium
+stem: Weekly dynamic scans of a single-page web application report no findings, yet a manual test found a serious access control
+  flaw in its JSON API. The scanner's coverage report shows that it crawled 12 URLs, while the API has 140 endpoints. Which
+  conclusion is BEST supported?
+options:
+  A: Access control flaws can be found only through manual testing
+  B: The application has few runtime flaws, and the manual find is an outlier
+  C: The clean scan results say little, because most of the API went untested
+  D: The scanner's severity threshold is set too high to report the flaw
+answer: C
+explanation:
+  why_correct: The scanner exercised less than a tenth of the attack surface, so a clean result is evidence of coverage failure,
+    not of security. Effectiveness has to be judged against what the tool actually tested.
+  why_not:
+    A: Automated scanners are weak at business logic and authorisation flaws, but the evidence here shows a coverage gap first.
+      The conclusion overstates what one manual finding proves.
+    B: A clean result on 12 of 140 endpoints cannot support a conclusion about the whole application, and the manual test
+      has already disproved it.
+    D: Nothing in the stem suggests a threshold problem. The coverage report explains the missed flaw, since the scanner never
+      reached most endpoints.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pending

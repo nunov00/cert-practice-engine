@@ -1,0 +1,28 @@
+id: aaism-d2-2.2-0032
+subdomain: '2.2'
+difficulty: hard
+stem: A construction firm's camera model checks that workers wear hard hats at site gates. Testers showed that a printed sticker
+  on a cap makes the model report a hard hat. Which response BEST reduces this weakness?
+options:
+  A: Add more varied photos of real hard hats to the training data
+  B: Raise the confidence the model needs before reporting a hard hat
+  C: Keep the model's architecture and weights confidential
+  D: Train on examples with printed patches and add periodic human checks
+answer: D
+explanation:
+  why_correct: The sticker is an adversarial patch. Training on such examples hardens the model against that class of input,
+    and human spot checks catch new patches the model still misses.
+  why_not:
+    A: More real photos improve normal accuracy but do not teach the model to reject crafted patches, which exploit features
+      unlike any real hat.
+    B: Adversarial patches often produce very high confidence, so a higher threshold may not stop them and would reject more
+      genuine hats.
+    C: Secrecy slows attackers, but patches often transfer between models and can be found by trial at the gate, so it is
+      not a dependable fix.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pending

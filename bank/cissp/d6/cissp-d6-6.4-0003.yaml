@@ -1,0 +1,29 @@
+id: cissp-d6-6.4-0003
+subdomain: '6.4'
+difficulty: medium
+stem: A penetration test report rates a finding critical using the published base score of 9.8 for the vulnerability. The
+  affected service is reachable only from a management network used by three administrators, all with multi-factor authentication.
+  The asset owner disputes the rating. How should the report handle it?
+options:
+  A: Keep the published base score as the objective measure of severity
+  B: Adjust the rating for the environment and record the factors used
+  C: Remove the finding, as the service cannot be reached from outside
+  D: Use the asset owner's rating, as the owner is the one accepting the risk
+answer: B
+explanation:
+  why_correct: Base scores describe the vulnerability in general. A report should rate risk in the client's environment, adjusting
+    for reachability and existing controls, and record the reasoning so readers can check and revisit it.
+  why_not:
+    A: The base score is a useful starting point, but using it unchanged ignores the facts that the testers found, which overstates
+      the risk in this environment.
+    C: Limited reachability lowers the risk but does not remove it. Insiders or an attacker on the management network could
+      still exploit it, so the finding should stay.
+    D: The owner decides how to treat the risk, but the tester's rating should be independent and evidence-based, not set
+      by the party being assessed.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pending

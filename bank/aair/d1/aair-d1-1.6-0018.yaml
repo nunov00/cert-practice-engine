@@ -1,0 +1,28 @@
+id: aair-d1-1.6-0018
+subdomain: '1.6'
+difficulty: hard
+stem: A lender must explain to each declined applicant why their loan was refused. Which explanation BEST serves the declined
+  applicant?
+options:
+  A: The factors that drive decisions most across the applicant population
+  B: The factors where the applicant scored worst against the average applicant
+  C: A summary of the model's validation and fairness test results
+  D: The factors that most affected this decision, and what would change it
+answer: D
+explanation:
+  why_correct: A useful explanation is specific to the person and actionable. It names the factors that actually drove this
+    outcome and what could alter it, so the applicant can understand, challenge or act on the decision.
+  why_not:
+    A: Global importance describes the model in general, but the factors that matter most overall may not be the ones that
+      decided this case.
+    B: Comparing with an average applicant can point to factors the model gives little weight to, so it may not explain why
+      this application was refused.
+    C: Validation and fairness results show that the model is sound overall, but they say nothing about why this applicant
+      was declined.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aair
+  check_verdict: pending

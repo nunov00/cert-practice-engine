@@ -1,0 +1,27 @@
+id: aaism-d1-1.5-0020
+subdomain: '1.5'
+difficulty: hard
+stem: A retailer's customer chatbot runs on a hosted model. Its business impact analysis allows four hours of outage, and
+  provider outages have lasted up to a day. The fallback is a smaller self-hosted model whose safety filtering tested weaker.
+  What should the continuity plan specify?
+options:
+  A: Serve only low-risk request types from the fallback and route the rest to staff
+  B: Serve the full service from the fallback model with the main system prompt
+  C: Keep the chatbot offline with a status message until the provider recovers
+  D: Serve the full service from the fallback and add a disclaimer to each reply
+answer: A
+explanation:
+  why_correct: A reduced-function mode keeps the service within its outage limit while limiting the weaker model to requests
+    where unsafe output would do little harm, and sends the rest to people.
+  why_not:
+    B: Reusing the system prompt does not make up for the weaker safety filtering, so the full service would run with more
+      harmful-output risk.
+    C: Waiting for the provider can exceed the four-hour limit, since outages have lasted up to a day.
+    D: A disclaimer shifts some responsibility, but it does not stop harmful replies on high-risk requests.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pending

@@ -1,0 +1,29 @@
+id: cissp-d7-7.12-0002
+subdomain: '7.12'
+difficulty: hard
+stem: A payments company has run tabletop exercises of its disaster recovery plan for two years. Its regulator now wants evidence
+  that the recovery site can process real transaction volume within the recovery time objective. Taking production down for
+  a test is not acceptable to the business. Which test BEST meets this need?
+options:
+  A: A parallel test that brings up the recovery site and processes live transactions alongside production
+  B: A full interruption test that moves production processing to the recovery site during a low-volume night
+  C: A simulation test in which teams respond to a scripted disaster scenario at the recovery site
+  D: A structured walkthrough in which each team steps through its recovery tasks with the others
+answer: A
+explanation:
+  why_correct: A parallel test proves that the recovery site can run real workloads at volume within the target time, while
+    production keeps running, so it gives the regulator the evidence without an outage.
+  why_not:
+    B: A full interruption test gives the strongest evidence, but it moves processing off production, which the business has
+      ruled out even at night.
+    C: A simulation exercises people and procedures against a scenario, but it does not show the site processing real transaction
+      volume.
+    D: A walkthrough checks that teams understand their steps and the plan's gaps, much like the tabletops already done, and
+      processes no transactions.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pending

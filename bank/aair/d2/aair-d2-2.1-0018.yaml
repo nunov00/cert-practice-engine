@@ -1,0 +1,26 @@
+id: aair-d2-2.1-0018
+subdomain: '2.1'
+difficulty: hard
+stem: A team designing a credit model finds that adding the applicant's postcode improves accuracy by two points. Postcode
+  is known to correlate with ethnicity in the bank's market. What should happen at the design stage?
+options:
+  A: Drop postcode from the design to remove the risk entirely
+  B: Keep postcode and leave ethnicity itself out of the inputs
+  C: Keep postcode and rely on fairness monitoring after launch
+  D: Test postcode as a proxy for protected traits and document the decision
+answer: D
+explanation:
+  why_correct: The design decision should rest on evidence. Testing whether postcode acts as a proxy, comparing options and
+    recording the outcome makes the trade-off explicit and defensible before the model is built around it.
+  why_not:
+    A: Dropping it may be the right outcome, but deciding without testing can lose legitimate value, and other features may
+      act as proxies too, so the risk is not removed entirely.
+    B: Leaving out a protected trait does not prevent discrimination when other inputs act as proxies for it.
+    C: Monitoring after launch finds harm only after customers are affected, when the issue could have been tested at design.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aair
+  check_verdict: pending

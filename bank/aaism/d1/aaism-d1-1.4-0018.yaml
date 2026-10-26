@@ -1,0 +1,25 @@
+id: aaism-d1-1.4-0018
+subdomain: '1.4'
+difficulty: hard
+stem: An AI security program reports that 95% of inventoried AI systems have a current threat model. Most recent incidents,
+  however, involved AI tools that were never in the inventory. Which metric would add the MOST value to the program's reporting?
+options:
+  A: Share of threat model findings closed by their due date
+  B: Share of inventoried systems re-threat-modelled after each major change
+  C: Share of staff who have completed AI security awareness training
+  D: Share of AI tools found by discovery scans that were missing from the inventory
+answer: D
+explanation:
+  why_correct: The current metric only describes systems already in the inventory, while the incidents come from outside it.
+    Measuring how many discovered tools were missing shows the coverage gap that the threat model figure hides.
+  why_not:
+    A: Closure rates show how well known findings are handled, but they still only cover inventoried systems.
+    B: Re-modelling after change is good practice, yet it again measures only systems the program already knows about.
+    C: Training may reduce unapproved use, but completion rates do not show how much AI sits outside the program.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pending

@@ -1,0 +1,26 @@
+id: aair-d1-1.5-0018
+subdomain: '1.5'
+difficulty: medium
+stem: A customer asks a bank for all the personal data it holds about them, including the risk score its AI model assigned.
+  The data protection law gives a right of access to personal data. How should the bank treat the score?
+options:
+  A: Leave it out, because it is the bank's own proprietary output
+  B: Provide only the data the customer originally supplied
+  C: Refer the customer to the model's published documentation
+  D: Include it, because inferred data about a person is personal data
+answer: D
+explanation:
+  why_correct: A score generated about an identifiable person is personal data about them, so it falls within the right of
+    access. Trade secrets may limit how much of the model's logic must be disclosed, but not the score itself.
+  why_not:
+    A: Proprietary concerns can protect the model's design, but they do not take the customer's own score out of the right
+      of access.
+    B: The right covers data the bank created about the customer, not just what the customer gave it.
+    C: Model documentation explains how scores are made in general. It does not provide the customer's own data.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aair
+  check_verdict: pending

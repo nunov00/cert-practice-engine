@@ -1,0 +1,30 @@
+id: cissp-d1-1.12-0002
+subdomain: '1.12'
+difficulty: hard
+stem: Finance staff at a manufacturer complete an annual awareness course that covers business email compromise, and they
+  average 95% on its quiz. Last quarter two staff, both with high quiz scores, changed a supplier's bank details after a convincing
+  email request and paid fake invoices. Which change to the program would MOST directly reduce this loss?
+options:
+  A: Add a longer business email compromise module to the annual course for everyone
+  B: Run monthly phishing simulations for everyone, with a short lesson after each click
+  C: Give payment staff hands-on drills on realistic bank-detail change requests in their workflow
+  D: Raise the quiz pass mark and require staff who fall below it to retake the course
+answer: C
+explanation:
+  why_correct: The staff already knew the material, as their quiz scores show, yet failed to apply it in their own task. Role-based
+    practice on the exact request they face, inside the workflow they use, builds the behaviour that knowledge-based training
+    did not.
+  why_not:
+    A: More content on the same topic adds knowledge the staff already showed they had, and spreading it to all staff dilutes
+      the focus on the people who make payments.
+    B: Simulated phishing trains people to spot malicious links and attachments. These attacks were plausible payment requests
+      with nothing to click, so the lesson does not match the failure.
+    D: A higher quiz score measures recall again. The two staff who paid would likely have passed a harder quiz too, since
+      the gap was in behaviour, not knowledge.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pending

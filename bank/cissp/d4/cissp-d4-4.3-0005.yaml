@@ -1,0 +1,29 @@
+id: cissp-d4-4.3-0005
+subdomain: '4.3'
+difficulty: hard
+stem: Thirty offices are fully meshed with site-to-site IPsec tunnels, all authenticated with one pre-shared key. When a firewall
+  was stolen from one office during a refit, engineers had to re-key every site over a weekend. Which change BEST prevents
+  a repeat as the network grows?
+options:
+  A: Rotate the shared key on a fixed schedule and store it in a vault
+  B: Authenticate each site with a certificate from an internal CA that can be revoked
+  C: Move the tunnels to IKEv2 while keeping a single pre-shared key
+  D: Give each tunnel its own pre-shared key and record them in a vault
+answer: B
+explanation:
+  why_correct: With certificates, each site has its own identity, and a lost firewall is cut off by revoking its certificate,
+    with no change at any other site. The approach scales because adding a site needs one new certificate, not new secrets
+    on every peer.
+  why_not:
+    A: Scheduled rotation limits how long a leaked key is useful, but a stolen firewall still forces an emergency re-key of
+      every site because they all share the key.
+    C: IKEv2 improves the key exchange protocol, but with one shared key, losing any firewall still compromises every tunnel.
+    D: Per-tunnel keys isolate a loss, but a full mesh of thirty sites needs 435 keys, each set by hand on two peers, and
+      this grows with every new site. It is workable, but does not scale as well as revocable certificates.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pending

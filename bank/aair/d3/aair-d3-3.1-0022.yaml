@@ -1,0 +1,27 @@
+id: aair-d3-3.1-0022
+subdomain: '3.1'
+difficulty: hard
+stem: An investment firm's AI tool recommends portfolio trades. Its risk assessment rates impact on the loss from a single
+  wrong recommendation. All recommendations draw on the same market data feed and are produced within minutes of each other.
+  What has the assessment MOST likely missed?
+options:
+  A: The chance that individual recommendations are wrong
+  B: The risk from the vendor that supplies the data feed
+  C: Losses when one fault affects many recommendations at once
+  D: How well advisers can explain recommendations to clients
+answer: C
+explanation:
+  why_correct: Because every recommendation shares one feed and runs at the same time, a single fault can make many of them
+    wrong together. Rating impact per recommendation understates this correlated, aggregated loss.
+  why_not:
+    A: Likelihood of individual errors is already part of the assessment. The gap is in how impact is estimated.
+    B: Supplier risk is relevant, but the shared feed matters here because of how one failure spreads, not because of the
+      supplier itself.
+    D: Explainability matters for client communication, but it does not affect the size of loss the assessment underestimates.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aair
+  check_verdict: pending

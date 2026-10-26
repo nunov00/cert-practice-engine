@@ -1,0 +1,29 @@
+id: cissp-d3-3.6-0002
+subdomain: '3.6'
+difficulty: hard
+stem: An application encrypts customer records with AES in CBC mode, using a random IV stored beside each record in a shared
+  database. An audit finds that a database administrator could alter a record's ciphertext so that it decrypts to changed
+  data without the application noticing. Which change BEST addresses this finding?
+options:
+  A: Store a hash of each plaintext record beside its ciphertext
+  B: Move each record's IV to a table that only the application can read
+  C: Increase the AES key length from 128 bits to 256 bits
+  D: Switch to an authenticated encryption mode such as AES-GCM
+answer: D
+explanation:
+  why_correct: CBC gives confidentiality but no integrity, so modified ciphertext still decrypts. An authenticated mode adds
+    a tag computed with the secret key, so any change to the ciphertext, or to its IV, makes decryption fail.
+  why_not:
+    A: An unkeyed hash stored with the data can be replaced by anyone who can write the row and knows or guesses the new plaintext,
+      and it also leaks information about guessable values. Integrity protection needs a secret key.
+    B: Keeping IVs out of the administrator's view does not stop ciphertext blocks being altered, and IVs are not meant to
+      be secret. It offers no real integrity check.
+    C: A longer key strengthens confidentiality against brute force, but CBC with any key length still lets altered ciphertext
+      decrypt without detection.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pending

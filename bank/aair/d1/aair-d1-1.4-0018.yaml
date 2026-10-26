@@ -1,0 +1,29 @@
+id: aair-d1-1.4-0018
+subdomain: '1.4'
+difficulty: hard
+stem: A company's AI policy requires human review of AI outputs before external use. Marketing reviews each AI-drafted post,
+  but the customer service team sends AI chat replies in real time with no chance to review them. What is the BEST way to
+  address this policy gap?
+options:
+  A: Grant customer service a time-limited exception while a review tool is built
+  B: Have customer service review a daily sample of sent replies
+  C: Move the requirement out of the policy into each team's procedures
+  D: Set review requirements by risk tier, with alternative controls for live use
+answer: D
+explanation:
+  why_correct: A single rule cannot fit every use case. Setting requirements by risk tier, and naming acceptable alternative
+    controls where live review is impossible, makes the policy workable and keeps its intent across teams.
+  why_not:
+    A: A temporary exception can cover the gap while it is fixed, but nothing in the plan would make the policy fit real-time
+      use when the exception ends.
+    B: Sample review is a sound control, but adding it without changing the policy leaves customer service in breach of the
+      requirement as written.
+    C: Moving the rule into procedures lets each team set its own standard, which weakens the policy instead of fixing its
+      fit.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aair
+  check_verdict: pending

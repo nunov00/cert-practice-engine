@@ -1,0 +1,28 @@
+id: aaism-d2-2.2-0031
+subdomain: '2.2'
+difficulty: hard
+stem: An email assistant saves memory notes from conversations to personalise later sessions. A tester planted a line in a
+  shared document that the assistant saved as a note, and later sessions kept forwarding summaries to an outside address.
+  Which control MOST directly addresses this weakness?
+options:
+  A: Require user confirmation before saving memory taken from external content
+  B: Screen shared documents with a prompt injection classifier before reading
+  C: Restrict the email tool so it can send only to internal domains
+  D: Delete memory notes automatically after thirty days
+answer: A
+explanation:
+  why_correct: The weakness is that injected content becomes persistent memory that steers every later session. Gating memory
+    writes that come from external content stops one injection from becoming a lasting instruction.
+  why_not:
+    B: Injection classifiers catch many attacks but miss novel phrasing, and anything they miss would still be saved and persist.
+      The memory write is the weak point.
+    C: Limiting recipients blocks this particular exfiltration, but the poisoned memory still steers sessions in other harmful
+      ways.
+    D: Expiry shortens how long a poisoned note lasts, but it still controls a month of sessions.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pending

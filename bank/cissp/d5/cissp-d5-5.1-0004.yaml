@@ -1,0 +1,28 @@
+id: cissp-d5-5.1-0004
+subdomain: '5.1'
+difficulty: easy
+stem: Nursing-station workstations in a hospital stay logged in to one shared account so nurses can check charts quickly.
+  An audit cannot tell which nurse viewed which patient record. Which control BEST restores accountability while keeping access
+  fast?
+options:
+  A: Badge tap-in that switches the session to each nurse's own account
+  B: A shorter screen-lock timeout on the shared account
+  C: A paper log at each workstation that nurses sign when they use it
+  D: A weekly review of the shared account's record access logs
+answer: A
+explanation:
+  why_correct: Accountability needs each access tied to an individual. Badge tap-in with fast session switching gives every
+    nurse their own logged identity in a second or two, so speed is kept.
+  why_not:
+    B: A shorter lock timeout reduces unattended sessions, but everyone still uses the same account, so access is still not
+      tied to a person.
+    C: A paper log relies on people signing in a busy ward and cannot be matched reliably to system records of which chart
+      was opened.
+    D: Reviewing logs of a shared account shows what was accessed but not by whom, so the review cannot restore accountability.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pending

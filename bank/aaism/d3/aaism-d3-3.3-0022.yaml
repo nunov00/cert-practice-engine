@@ -1,0 +1,26 @@
+id: aaism-d3-3.3-0022
+subdomain: '3.3'
+difficulty: medium
+stem: A company stores embeddings of its Confidential contracts in a vector database labelled Internal. The data team argues
+  that embeddings are just numbers, not readable text. What should the security manager require?
+options:
+  A: Keep it Internal but encrypt the stored vectors at rest
+  B: Keep it Internal but strip contract titles from the metadata
+  C: Classify the vector store at the contracts' Confidential level
+  D: Keep it Internal and log each similarity query against it
+answer: C
+explanation:
+  why_correct: Embeddings can be partly inverted to recover text, and they reveal what the contracts say through similarity
+    search. Derived data that can expose the source carries the source's classification, so the store needs Confidential controls.
+  why_not:
+    A: Encryption at rest protects against theft of the storage, but anyone with Internal access can still query the store
+      and learn about Confidential contracts.
+    B: Removing titles reduces obvious exposure, but the vectors and the passages they map to still carry the contracts' content.
+    D: Query logging helps detect misuse, but it leaves Confidential content open to everyone with Internal access.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pending

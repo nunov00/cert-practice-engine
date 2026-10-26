@@ -1,0 +1,27 @@
+id: aaism-d1-1.2-0018
+subdomain: '1.2'
+difficulty: medium
+stem: A company plans to automate 40% of back-office work with AI agents within two years. Its AI security strategy so far
+  focuses on protecting training data. What should the security manager do FIRST to align the strategy?
+options:
+  A: Draft an agent security policy covering permissions and approvals
+  B: Map the capabilities agents will need against today's capabilities
+  C: Run a red team exercise against the first pilot agent
+  D: Select an AI security platform that supports agent monitoring
+answer: B
+explanation:
+  why_correct: Aligning the strategy starts with knowing what the business plan requires, such as agent identity, permission
+    and monitoring capabilities, and how far today's capabilities fall short. The gap analysis then drives policy, tools and
+    testing.
+  why_not:
+    A: A policy will be needed, but writing it before understanding the required capabilities risks rules that do not fit
+      the plan.
+    C: Testing one pilot gives useful findings about that agent, but it does not shape a two-year strategy.
+    D: Choosing a tool before defining the gap commits budget to a solution that may not match the needs.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pending

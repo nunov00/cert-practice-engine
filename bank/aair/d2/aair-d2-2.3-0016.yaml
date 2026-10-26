@@ -1,0 +1,25 @@
+id: aair-d2-2.3-0016
+subdomain: '2.3'
+difficulty: hard
+stem: An updated fraud model passed offline validation. Errors would be costly, and the live customer mix differs from the
+  test data in ways the team cannot fully describe. Which deployment approach is BEST?
+options:
+  A: Switch fully to the new model, with a tested rollback plan ready
+  B: Switch fully to the new model and add extra performance monitoring
+  C: Run the new model in shadow alongside the current one before switching
+  D: Repeat offline validation on a larger sample of historical data
+answer: C
+explanation:
+  why_correct: Shadow running scores live traffic without acting on it, so the team can compare the new model's decisions
+    against the current one on the real customer mix before any customer is affected.
+  why_not:
+    A: Rollback limits how long a bad model runs, but customers are still exposed until the problems are noticed.
+    B: Extra monitoring detects problems after the new model is already making live decisions.
+    D: More historical data still does not represent the live mix, which is the gap the team cannot describe.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aair
+  check_verdict: pending

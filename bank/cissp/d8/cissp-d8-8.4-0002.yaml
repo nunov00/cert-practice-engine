@@ -1,0 +1,30 @@
+id: cissp-d8-8.4-0002
+subdomain: '8.4'
+difficulty: hard
+stem: A company is buying a SaaS human resources system. The vendor provides a penetration test summary letter from last year
+  and an ISO 27001 certificate whose scope covers its corporate offices but not its hosting platform. Which step BEST closes
+  the assurance gap?
+options:
+  A: Review the certificate's statement of applicability to see which controls it includes
+  B: Ask for an independent assurance report covering the hosting platform and the HR service
+  C: Add a right-to-audit clause to the contract and use it after go-live
+  D: Request the full penetration test report instead of the summary letter
+answer: B
+explanation:
+  why_correct: The gap is that nothing independent covers the platform that will hold the company's HR data. A report such
+    as a SOC 2 Type II, or a certificate whose scope includes the hosting platform and service, provides that assurance before
+    signing.
+  why_not:
+    A: The statement of applicability shows which controls apply within the certified scope, but the scope itself excludes
+      the hosting platform, so it cannot close the gap.
+    C: A right to audit is useful, but using it only after go-live means the company commits its HR data before it has any
+      assurance over the platform.
+    D: The full report gives more detail on one point-in-time test of unknown scope, but it is not ongoing, independent assurance
+      over the platform's controls.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pending
