@@ -1,0 +1,28 @@
+id: aaism-d2-2.1-0030
+subdomain: '2.1'
+difficulty: medium
+stem: A platform's moderation model removes posts it scores above a threshold. Missed harmful posts and wrongful removals
+  both carry costs that the business must weigh. Who should set the threshold?
+options:
+  A: The data science team, choosing the value that maximises the model's F1 score
+  B: The business risk owner, based on the tolerance set for each type of error
+  C: The security manager, based on the platform's abuse threat assessment
+  D: The model vendor, using its recommended default threshold
+answer: B
+explanation:
+  why_correct: The threshold trades one kind of error for the other, so it is a risk decision. The risk owner sets it from
+    the agreed tolerance for missed harm and wrongful removal, with data science showing the trade-off.
+  why_not:
+    A: F1 weights the two error types by a fixed formula that ignores their real costs. Data science informs the choice but
+      should not make a business trade-off by default.
+    C: The threat assessment informs how often harmful posts appear, but it does not decide how much wrongful removal the
+      business accepts.
+    D: A vendor default is tuned to the vendor's test data and someone else's priorities, not this platform's tolerance.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pending
+  options_only: obvious

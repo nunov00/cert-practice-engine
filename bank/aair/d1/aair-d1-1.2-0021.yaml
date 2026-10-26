@@ -1,0 +1,29 @@
+id: aair-d1-1.2-0021
+subdomain: '1.2'
+difficulty: medium
+stem: An insurer's procurement process checks each supplier's finances and information security. Teams have bought several
+  products with AI features through it, and none had an AI risk review. Which change BEST aligns procurement with AI risk
+  management?
+options:
+  A: Add AI screening questions at intake that route AI products to an AI risk assessment
+  B: Add a standard clause on AI use to the insurer's supplier contracts
+  C: Add AI questions to the security questionnaire, scored by the security team
+  D: Ask suppliers to declare any AI features in their products at onboarding
+answer: A
+explanation:
+  why_correct: Screening at intake catches AI features at the point of purchase and routes those products to the people who
+    assess AI risk, so procurement carries AI risk through its existing flow.
+  why_not:
+    B: A contract clause sets obligations once a supplier is chosen, but it does not trigger an assessment of the risk before
+      buying.
+    C: The security team can assess security, but AI risks such as bias, accuracy and misuse fall outside its scoring, so
+      the AI risk review still does not happen.
+    D: A declaration records AI features, but without a defined route to assessment, nobody is required to act on it.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aair
+  check_verdict: pending
+  options_only: obvious

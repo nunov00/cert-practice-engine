@@ -1,0 +1,27 @@
+id: aair-d2-2.1-0018
+subdomain: '2.1'
+difficulty: medium
+stem: A team designing a credit model finds that adding the applicant's postcode improves accuracy by two points. Postcode
+  is known to correlate with ethnicity in the bank's market, and legal has confirmed it is not a prohibited input. What should
+  the team do NEXT at the design stage?
+options:
+  A: Compare accuracy with and without postcode on a hold-out sample of applicants
+  B: Test whether postcode acts as a proxy for protected groups and record the decision
+  C: Replace postcode with a coarser region code to reduce its precision
+  D: Ask legal to confirm whether postcode needs consent from applicants
+answer: B
+explanation:
+  why_correct: Being lawful does not make the input fair. Testing whether postcode drives different outcomes for protected
+    groups, and recording the decision, gives evidence for keeping, changing or dropping it.
+  why_not:
+    C: A coarser code may still act as a proxy. Changing the input without testing it does not show the risk is reduced.
+    D: Legal has already reviewed the input. Consent is not the open question; potential proxy discrimination is.
+    A: The team already knows postcode improves accuracy. Another accuracy test says nothing about the fairness concern.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aair
+  check_verdict: pending
+  options_only: obvious

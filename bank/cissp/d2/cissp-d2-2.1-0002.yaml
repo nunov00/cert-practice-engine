@@ -1,0 +1,31 @@
+id: cissp-d2-2.1-0002
+subdomain: '2.1'
+difficulty: hard
+stem: A defence supplier labels each of its part drawings Internal. An engineer proposes one catalogue listing every part
+  with its drawing, sub-supplier and delivery schedule for a classified programme. The catalogue would be stored in the programme's
+  classified file area. Which classification decision is BEST?
+options:
+  A: Confidential, as the combined set exposes the programme's supply chain
+  B: Internal, as each drawing it contains is Internal
+  C: Internal, with access limited to the programme's engineers
+  D: Confidential, as it will sit with the programme's classified files
+answer: A
+explanation:
+  why_correct: Combining low-sensitivity items can reveal what none reveals alone, here the programme's suppliers and schedule.
+    Classification follows the impact of disclosing the asset itself, so the aggregated catalogue warrants a higher level
+    for that reason.
+  why_not:
+    C: Restricting access is a handling decision. It does not set the classification, which must reflect the aggregated harm
+      so that the right controls follow everywhere the catalogue goes.
+    D: The level is right but the reason is wrong. Storage location follows classification; a copy stored elsewhere would
+      lose its protection if the label rested on where it sits.
+    B: Taking the level of the parts works for mixed content, but every part is Internal, so the rule misses the extra sensitivity
+      that aggregation creates.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pending
+  options_only: obvious

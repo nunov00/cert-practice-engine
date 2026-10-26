@@ -1,0 +1,28 @@
+id: cissp-d5-5.2-0004
+subdomain: '5.2'
+difficulty: medium
+stem: A data centre's fingerprint readers run with a false acceptance rate of 0.5% and a false rejection rate of 4%. The vendor
+  states that the crossover error rate is 1.5%. Security wants even fewer impostors accepted. Which change achieves this,
+  and with what effect?
+options:
+  A: Raise sensitivity; both rates fall toward the crossover rate
+  B: Move the threshold to the crossover point; both rates become 1.5%
+  C: Lower sensitivity; false acceptances fall and false rejections rise
+  D: Raise sensitivity; false acceptances fall and false rejections rise
+answer: D
+explanation:
+  why_correct: Making the reader stricter rejects more borderline matches, so fewer impostors get in while more genuine staff
+    are turned away. The two error rates move in opposite directions as the threshold changes.
+  why_not:
+    B: At the crossover point both rates equal 1.5%, which would triple false acceptances from today's 0.5%. The crossover
+      rate compares systems; it is not the best setting for a high-security door.
+    C: Lowering sensitivity accepts more borderline matches, which raises false acceptances, the opposite of the goal.
+    A: Tuning the threshold trades one error for the other; it cannot lower both. Both fall only with a better sensor or algorithm.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

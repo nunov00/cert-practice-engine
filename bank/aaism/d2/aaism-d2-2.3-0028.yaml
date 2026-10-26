@@ -1,0 +1,27 @@
+id: aaism-d2-2.3-0028
+subdomain: '2.3'
+difficulty: medium
+stem: After a suspected prompt injection incident in a vendor-hosted AI agent, the company learns that the vendor keeps tool-call
+  logs for only 24 hours, and the contract says nothing about log access. Which clause is MOST important to add at renewal?
+options:
+  A: Notice of security incidents within 24 hours of detection
+  B: Retention of, and customer access to, logs needed for investigations
+  C: A right to commission an annual penetration test of the agent
+  D: Vendor indemnity for losses caused by the agent's actions
+answer: B
+explanation:
+  why_correct: The incident showed that the company cannot investigate what the agent did, because the evidence disappears
+    within a day and it has no right to it. A clause on log retention and access fixes that gap directly.
+  why_not:
+    A: Prompt notice is valuable, but notice of an incident without the logs still leaves the company unable to establish
+      what happened.
+    C: Penetration testing finds weaknesses before an incident, but it does not give the evidence needed to investigate one.
+    D: Indemnity shifts some financial loss, but it does not help the company determine scope, affected data or root cause.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

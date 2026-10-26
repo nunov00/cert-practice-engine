@@ -1,0 +1,27 @@
+id: cissp-d3-3.6-0003
+subdomain: '3.6'
+difficulty: medium
+stem: A 40-person research team wants every pair of members to be able to exchange files that no other member can read. How
+  many keys are needed with a symmetric key for each pair, compared with one asymmetric key pair per member?
+options:
+  A: 780 symmetric keys, or 80 asymmetric keys
+  B: 1,560 symmetric keys, or 40 asymmetric keys
+  C: 780 symmetric keys, or 40 asymmetric keys
+  D: 1,600 symmetric keys, or 80 asymmetric keys
+answer: A
+explanation:
+  why_correct: Each pair needs its own shared key, so n(n-1)/2 = 40 × 39 / 2 = 780. With asymmetric keys each member has one
+    public and one private key, so 40 pairs make 80 keys, and anyone can encrypt to a member with that member's public key.
+  why_not:
+    B: 1,560 counts each pair twice (40 × 39), and 40 counts key pairs rather than keys; each pair holds two keys.
+    C: The symmetric count is right, but 40 is the number of key pairs. Each member holds a public and a private key, so there
+      are 80 keys.
+    D: 1,600 is 40 × 40, which counts each pair twice and includes members pairing with themselves.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

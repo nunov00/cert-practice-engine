@@ -1,0 +1,29 @@
+id: aair-d3-3.3-0023
+subdomain: '3.3'
+difficulty: hard
+stem: A company's model registry blocks deployment until a fairness test result is recorded for the model. Control testing
+  finds a result recorded for every deployment, but several were copied from earlier versions of the same model, and no reviewer
+  is assigned to the results. What is the MAIN weakness?
+options:
+  A: The control operates as designed but staff are bypassing it
+  B: The control checks that a result exists, not that it fits the version
+  C: The control sits before deployment instead of after it
+  D: The control lacks a named reviewer for the recorded results
+answer: B
+explanation:
+  why_correct: The registry accepted copied results because it checks only that a field is filled. Even full compliance cannot
+    show that the deployed version was tested, so the design is the main weakness.
+  why_not:
+    C: A pre-deployment test is the right placement for a fairness gate. Monitoring after deployment would add to it, not
+      replace it.
+    D: A reviewer might spot copied results, but would be compensating for a control that accepts them. Fixing the check addresses
+      the cause.
+    A: Copying a result is allowed by the control as built, so this is not a bypass of the design but a gap in it.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aair
+  check_verdict: pending
+  options_only: not_obvious

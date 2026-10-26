@@ -1,0 +1,30 @@
+id: cissp-d2-2.3-0002
+subdomain: '2.3'
+difficulty: medium
+stem: Developers get cloud virtual machines built from a gold image. A review finds that the default image is eight months
+  old, so each new machine needs about two days of patching before it is compliant, and developers use the machines during
+  that time. Which change BEST fixes the underlying issue?
+options:
+  A: Keep new machines off the network until patching is complete
+  B: Scan each new machine for vulnerabilities when it first boots
+  C: Rebuild the gold image regularly and make the newest one the default
+  D: Require each developer to confirm patching before using a new machine
+answer: C
+explanation:
+  why_correct: The machines start insecure because the image they come from is stale. Rebuilding and promoting a current image
+    on a schedule means machines are compliant when provisioned, which removes the two-day window instead of managing it.
+  why_not:
+    A: Quarantining new machines reduces exposure during the window, but the window remains and developers lose two days of
+      work for every machine. It treats the symptom.
+    B: A first-boot scan detects the missing patches the team already knows about. It does not stop machines from being provisioned
+      out of date.
+    D: A developer sign-off adds a manual step that depends on each person, and it still leaves every machine to be patched
+      after it is built from the old image.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pending
+  options_only: obvious

@@ -1,0 +1,30 @@
+id: aaism-d3-3.1-0021
+subdomain: '3.1'
+difficulty: hard
+stem: An IT helpdesk agent turns user requests into shell commands, which run on a server after a check that the first word
+  is on an allow-list such as ping or ls. Testers ran a second command by adding a semicolon after an allowed one. Which design
+  change BEST fixes this weakness?
+options:
+  A: Run each command in a disposable sandbox container
+  B: Expose predefined functions with typed parameters, not a shell
+  C: Parse each command and allow-list each token and operator
+  D: Run the command process under a least-privilege account
+answer: B
+explanation:
+  why_correct: The weakness is that model output reaches a shell as free text. Fixed functions with validated parameters remove
+    command injection as a class, whatever the model is tricked into writing.
+  why_not:
+    A: A sandbox contains the damage, but injected commands still run, and anything the sandbox can reach, such as the network,
+      is still exposed.
+    C: Token-level checks are stronger than checking the first word, but shells offer many ways to build commands, such as
+      substitution and escaping, so filtering free text stays fragile.
+    D: Least privilege limits what an injected command can do, but injection still works with whatever rights the account
+      has.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pending
+  options_only: obvious

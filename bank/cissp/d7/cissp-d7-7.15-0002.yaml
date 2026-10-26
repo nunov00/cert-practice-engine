@@ -1,0 +1,30 @@
+id: cissp-d7-7.15-0002
+subdomain: '7.15'
+difficulty: medium
+stem: An engineer will travel for two weeks to a country whose border officers may demand to search and copy electronic devices.
+  The engineer needs access to client design files during the trip. Which approach BEST protects both the files and the engineer?
+options:
+  A: Encrypt the engineer's usual laptop fully and power it down before each border crossing
+  B: Carry the design files on an encrypted drive kept separately from the laptop
+  C: Wipe the usual laptop before departure and restore the files onto it after arriving
+  D: Issue a loaner laptop with no client data and reach the files remotely after arrival
+answer: D
+explanation:
+  why_correct: A clean device has nothing to disclose if officers demand access, so the engineer is not put in conflict with
+    local authorities, and the files stay protected on company systems, reached remotely over a secure connection only when
+    needed.
+  why_not:
+    A: Encryption with the device powered off protects against loss or theft, but if officers compel the engineer to unlock
+      it, the files are exposed, or the engineer faces detention for refusing.
+    B: An encrypted drive has the same weakness as an encrypted laptop under compelled disclosure, and a separately carried
+      drive is easier to lose.
+    C: Wiping before departure protects the outbound crossing, but restoring the files onto the laptop exposes them on the
+      return crossing.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pending
+  options_only: obvious

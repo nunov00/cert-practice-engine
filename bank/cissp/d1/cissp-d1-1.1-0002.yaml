@@ -1,0 +1,32 @@
+id: cissp-d1-1.1-0002
+subdomain: '1.1'
+difficulty: medium
+stem: A certified consultant walked away from a client engagement halfway through, without notice, leaving the client's file
+  servers half migrated. A complaint would cite the canon on providing diligent and competent service to principals. Under
+  the code of ethics complaint rules, who has standing to bring it?
+options:
+  A: Any member of the public who learns of the conduct
+  B: Any other certified member of the professional body
+  C: The ethics committee, acting on its own after press reports
+  D: The client organisation that engaged the consultant
+answer: D
+explanation:
+  why_correct: The code's complaint procedure ties standing to the canon cited. Complaints under the canon on service to principals
+    can be brought only by principals, meaning the employers or clients the professional served, because they are the parties
+    owed that duty.
+  why_not:
+    A: Members of the public may bring complaints under the canons on protecting society and acting honourably, not under
+      the canon about duties owed to principals.
+    B: Other certified professionals may bring complaints under the canon on advancing and protecting the profession, but
+      they were not the consultant's principal here.
+    C: The procedure works on complaints filed by parties with standing; a press report does not give the committee a complaint
+      under the principals canon.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-26-daily-cissp-check
+  options_only: not_obvious

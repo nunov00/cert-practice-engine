@@ -1,0 +1,28 @@
+id: aair-d1-1.3-0021
+subdomain: '1.3'
+difficulty: medium
+stem: A bank's board asks internal audit to approve each high-risk AI model before deployment, because audit is trusted and
+  independent. How should the chief audit executive respond?
+options:
+  A: Decline, and propose that the board approve each model directly
+  B: Accept, with a separate team within audit making the approvals
+  C: Decline, and offer to assess the approval process once it is running
+  D: Accept for one year while management builds its own approval process
+answer: C
+explanation:
+  why_correct: Approving models is a management decision. Audit keeps its independence by declining it and providing assurance
+    over how management, or the second line, approves models.
+  why_not:
+    B: A separate team is still part of internal audit, so audit would later be assuring decisions its own function made.
+    D: Even a temporary approval role impairs audit's independence over every model approved in that year, which audit would
+      later have to assure.
+    A: Declining is right, but the board's role is oversight. Approving individual models is a management task, usually with
+      second-line review.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aair
+  check_verdict: pending
+  options_only: obvious

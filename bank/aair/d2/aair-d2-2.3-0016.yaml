@@ -1,0 +1,27 @@
+id: aair-d2-2.3-0016
+subdomain: '2.3'
+difficulty: hard
+stem: An updated credit decision model passed offline validation. Every wrong decline harms a real applicant, and the live
+  applicant mix differs from the test data in ways the team cannot fully describe. Which release approach is BEST?
+options:
+  A: Release to 5% of live applicants first, then widen
+  B: Split live applicants evenly between the old and new model
+  C: Switch fully, with a tested rollback plan ready
+  D: Run the new model in shadow on live applicants first
+answer: D
+explanation:
+  why_correct: Shadow mode scores live applicants without acting on the scores, so the team can compare the new model with
+    the current one on the real mix before any applicant is affected.
+  why_not:
+    A: A canary limits exposure, but the applicants in that 5% still receive real decisions from an unproven model.
+    B: An even split widens exposure, with half of applicants decided by the new model before it is proven.
+    C: Rollback limits how long problems last, but applicants are harmed until the problems are noticed.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-26-daily-aair-check
+  options_only: not_obvious

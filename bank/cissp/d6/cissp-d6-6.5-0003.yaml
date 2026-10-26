@@ -1,0 +1,31 @@
+id: cissp-d6-6.5-0003
+subdomain: '6.5'
+difficulty: hard
+stem: A company relies on a cloud payroll provider. The provider's SOC 2 Type II report covers January to June with an unqualified
+  opinion, and a bridge letter for July to December states no material changes. The report lists controls the customer must
+  operate, including reviewing provider staff access to its tenant. What else must the company's auditor confirm before relying
+  on the report?
+options:
+  A: That the company actually operates the customer controls the report lists
+  B: That the provider has also published a SOC 3 report for the same period
+  C: That a sample of the service auditor's tests gives the same results again
+  D: That the provider's staff completed security training in the last year
+answer: A
+explanation:
+  why_correct: A service auditor's opinion assumes that customers operate the complementary user entity controls listed in
+    the report. If the company does not review provider access to its tenant, the controls the report relies on are incomplete,
+    so the auditor must test those customer controls.
+  why_not:
+    B: A SOC 3 is a shorter general-use summary of the same work. It adds no assurance beyond the SOC 2 already in hand.
+    C: A user auditor can evaluate the service auditor's work, but re-performing its tests is rarely needed when the report
+      is unqualified, and it would still miss the customer-side controls.
+    D: Training is one of many provider controls that the SOC 2 already covers. Checking it separately does not address the
+      dependency the report places on the customer.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pending
+  options_only: obvious

@@ -1,0 +1,32 @@
+id: cissp-d1-1.12-0002
+subdomain: '1.12'
+difficulty: medium
+stem: Two payment clerks at a manufacturer changed a supplier's bank details after a plain-text email that appeared to come
+  from the supplier, then paid fake invoices. Both clerks passed the annual awareness quiz, and both described the call-back
+  procedure correctly afterwards. Which exercise would BEST target this failure?
+options:
+  A: Monthly simulated phishing emails with links, sent to the whole workforce
+  B: Role-play of fraudulent supplier phone calls with the payment team
+  C: A tabletop exercise on an invoice fraud case for the finance managers
+  D: Simulated supplier bank-detail change emails sent to the payment clerks
+answer: D
+explanation:
+  why_correct: The clerks knew the procedure but did not apply it when the real request arrived in their workflow. Realistic
+    simulated change requests, sent to the people who process them, through the channel the attack used, build the habit of
+    stopping to call back.
+  why_not:
+    A: Link-based phishing tests train people to spot malicious links, but this attack had nothing to click, and it reached
+      the clerks, not the whole workforce.
+    C: A tabletop builds managers' understanding of the response, but it does not practise the clerks' own decision when a
+      request lands in their inbox.
+    B: Phone role-play practises a different channel. The attack came by email, so it does not rehearse the moment the clerks
+      failed.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-26-daily-cissp-check
+  options_only: not_obvious

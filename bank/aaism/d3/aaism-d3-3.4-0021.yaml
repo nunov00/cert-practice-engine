@@ -1,0 +1,28 @@
+id: aaism-d3-3.4-0021
+subdomain: '3.4'
+difficulty: medium
+stem: Users of an adults-only AI companion app sometimes disclose intent to harm themselves. Which control is MOST important
+  to put in place for these conversations?
+options:
+  A: Block any conversation that mentions self-harm and end the session
+  B: Show a mental health disclaimer to each user at sign-up
+  C: Detect such disclosures and route the user to crisis resources and human help
+  D: Verify each user's age at sign-up to keep minors out of the app
+answer: C
+explanation:
+  why_correct: The harm is a person at risk receiving no help. Detecting these disclosures and connecting the user to crisis
+    resources and trained people addresses that harm at the moment it arises.
+  why_not:
+    A: Ending the session abandons a person at risk at the worst moment, and it pushes users to hide their intent, which makes
+      later detection harder.
+    B: A sign-up disclaimer sets expectations, but it does nothing when a user later discloses risk in a conversation.
+    D: Age checks protect minors, which matters for this app, but adults also disclose self-harm intent, so the risk described
+      remains.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pending
+  options_only: obvious

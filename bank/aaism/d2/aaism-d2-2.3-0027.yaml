@@ -1,0 +1,28 @@
+id: aaism-d2-2.3-0027
+subdomain: '2.3'
+difficulty: medium
+stem: An AI service contract lets the vendor add subprocessors with 30 days' notice. The vendor gives notice that a new model
+  provider in another region will start receiving customer prompts. What should the security manager do FIRST?
+options:
+  A: Assess the new subprocessor against the company's data and location requirements
+  B: Ask the vendor to confirm that prompts are encrypted in transit to the new provider
+  C: Update the vendor's record in the third-party risk register with the change
+  D: Request the vendor's latest independent assurance report on its own controls
+answer: A
+explanation:
+  why_correct: The notice changes where customer data goes and who handles it. Assessing the new provider against data handling
+    and location requirements within the notice period lets the company object or plan an exit before data flows.
+  why_not:
+    B: Encryption in transit is one control, but it does not settle whether the new provider and region are acceptable for
+      the data.
+    C: Updating the register records the change, but it is not an assessment, and the notice period may lapse before anyone
+      decides.
+    D: The vendor's own report does not cover the new provider, which is the party whose handling of the data is now in question.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pending
+  options_only: obvious

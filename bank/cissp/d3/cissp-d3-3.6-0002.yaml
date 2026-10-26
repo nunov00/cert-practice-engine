@@ -1,0 +1,33 @@
+id: cissp-d3-3.6-0002
+subdomain: '3.6'
+difficulty: medium
+stem: An application encrypts customer records with AES in CBC mode, with a random IV stored beside each record. An audit
+  finds that a database administrator could alter a record's ciphertext, or swap two customers' encrypted records, without
+  the application noticing. Which change BEST addresses both findings?
+options:
+  A: Store an unkeyed SHA-256 hash of each plaintext record with it
+  B: Switch to AES-CTR with a unique nonce for each record
+  C: Switch to AES-GCM, with the record ID as associated data
+  D: Add an HMAC over each record's ciphertext, keyed separately
+answer: C
+explanation:
+  why_correct: GCM authenticates the ciphertext with the secret key, so altered data fails to decrypt. Binding the record
+    ID as associated data also makes a record fail to decrypt if it is moved to another customer's row, which stops the swap.
+    This holds when the application supplies the ID of the row it expects to read, not an ID stored with the ciphertext, uses
+    a unique IV for every encryption under a key, and rejects any record that fails authentication.
+  why_not:
+    A: An unkeyed hash can be recomputed by anyone who knows or guesses the plaintext, and a hash moves with its record when
+      rows are swapped, so neither finding is fixed.
+    B: CTR mode gives confidentiality only, and it is even easier to alter than CBC, since flipping a ciphertext bit flips
+      the same plaintext bit.
+    D: An HMAC over the ciphertext alone detects changes to the ciphertext, but not to the IV stored beside it, and it says
+      nothing about which row the record belongs in, so a swapped record still verifies.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-26-daily-cissp-check
+  options_only: not_obvious

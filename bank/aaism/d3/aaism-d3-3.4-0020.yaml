@@ -1,0 +1,30 @@
+id: aaism-d3-3.4-0020
+subdomain: '3.4'
+difficulty: hard
+stem: A health app trains its symptom model with differential privacy. It now retrains every month on largely the same users'
+  records, each time with the privacy budget approved for the first release. What is the MAIN privacy concern?
+options:
+  A: Added noise lowers accuracy most for small patient groups
+  B: Privacy loss adds up across releases beyond the approved budget
+  C: Monthly retraining makes consent records harder to keep current
+  D: Each new release may drift from the version that was assessed
+answer: B
+explanation:
+  why_correct: Differential privacy guarantees compose. Each release trained on the same people spends budget again, so after
+    several months the total privacy loss for those users is several times what was approved, unless the budget is managed
+    across releases.
+  why_not:
+    A: Noise can reduce accuracy for small groups, which is a real fairness trade-off, but it is not a privacy concern and
+      it does not grow with retraining.
+    C: Consent management matters for any reuse of data, but retraining for the same purpose does not by itself weaken the
+      privacy guarantee the way repeated budget use does.
+    D: Drift between versions is a model risk management issue. It does not describe the privacy loss that accumulates for
+      the same individuals.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

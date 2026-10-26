@@ -1,0 +1,26 @@
+id: aair-d3-3.5-0022
+subdomain: '3.5'
+difficulty: medium
+stem: A bank asks every AI vendor for a bill of materials listing the models, datasets and software libraries in its product.
+  Which use of these lists gives the MOST risk reduction?
+options:
+  A: Checking each list once at contract signature
+  B: Comparing the lists to choose between competing vendors
+  C: Matching listed components against new advisories as they appear
+  D: Attaching each list to the vendor's entry in the risk register
+answer: C
+explanation:
+  why_correct: Supply chain risk changes when a flaw or licence issue is found in a component. Matching the lists against
+    advisories as they are published tells the bank quickly which vendor products are affected.
+  why_not:
+    A: A one-time check reflects risk only on the day of signing, and most component flaws are found later.
+    B: Comparing lists can inform selection, but it gives no protection once a product is in use.
+    D: Recording the lists keeps them available, but storing them alone does not act on new risks.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aair
+  check_verdict: pending
+  options_only: obvious

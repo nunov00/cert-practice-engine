@@ -1,0 +1,31 @@
+id: cissp-d1-1.5-0003
+subdomain: '1.5'
+difficulty: medium
+stem: After a breach of card data, a merchant's card brands require it, under its merchant agreement, to hire an approved
+  forensic investigator. The investigator's report goes to the card brands and the acquiring bank, which may impose fines
+  and conditions. Which type of investigation is this?
+options:
+  A: Regulatory
+  B: Civil
+  C: Industry standards
+  D: Administrative
+answer: C
+explanation:
+  why_correct: The investigation is required by an industry body's standard that the merchant accepted by contract, and its
+    findings go to that industry's participants, who enforce through their own rules. That is an industry standards investigation.
+  why_not:
+    A: A regulatory investigation is run by, or for, a government body acting under law. The card brands are private parties
+      enforcing their own standard.
+    B: A civil investigation supports a legal dispute between parties in court. Here the brands enforce a standard through
+      contract terms, without a lawsuit.
+    D: An administrative investigation is internal, into operational issues or staff conduct. This one is required and received
+      by outside parties.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-26-daily-cissp-check
+  options_only: not_obvious

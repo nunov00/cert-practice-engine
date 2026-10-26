@@ -1,0 +1,31 @@
+id: cissp-d5-5.1-0004
+subdomain: '5.1'
+difficulty: medium
+stem: Nursing-station workstations in a hospital stay logged in to one shared account so nurses can check charts quickly,
+  usually while wearing gloves. An audit cannot tell which nurse viewed which record. Which control BEST restores accountability
+  while keeping access fast?
+options:
+  A: Badge tap that switches the session to each nurse's own account
+  B: Individual accounts with a full password sign-in at each use
+  C: A shared account plus a badge reader that logs who is at the station
+  D: Individual accounts with a fingerprint reader at each station
+answer: A
+explanation:
+  why_correct: A badge tap ties each session to one nurse in a second, works with gloves on, and keeps every record access
+    logged under that nurse's own account.
+  why_not:
+    B: Individual accounts fix accountability, but typing a full password at every use, in a busy ward, defeats the need for
+      speed and invites sharing.
+    C: Logging who stood at the station does not show who opened each record, since several nurses may be nearby while one
+      shared session is used.
+    D: Fingerprints would tie access to a person, but readers do not work through gloves, so nurses would have to remove them
+      each time.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-26-daily-cissp-check
+  options_only: not_obvious

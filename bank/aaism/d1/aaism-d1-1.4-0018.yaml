@@ -1,0 +1,30 @@
+id: aaism-d1-1.4-0018
+subdomain: '1.4'
+difficulty: hard
+stem: An AI security program reports that 95% of inventoried AI systems have a current threat model. Most recent incidents
+  involved AI tools that staff signed up for on their own, using free accounts. Which metric would add the MOST value to the
+  program's reporting?
+options:
+  A: Share of inventoried systems with a current threat model, by risk tier
+  B: Share of business units that confirmed their inventory this quarter
+  C: Share of new AI purchases that went through security intake
+  D: Share of AI tools seen in network discovery that the inventory lacks
+answer: D
+explanation:
+  why_correct: Tools adopted on free accounts never pass through purchasing or registration, so only discovery of actual use
+    reveals them. Measuring how many discovered tools are missing shows the coverage gap that the current figure hides.
+  why_not:
+    A: Splitting the threat model figure by tier adds detail, but it still describes only systems the program already knows
+      about.
+    C: Intake coverage tracks purchases, but tools used on free accounts are never bought, so this metric would stay high
+      while the incidents continue.
+    B: Unit confirmations rely on managers knowing what their staff use, which is exactly what free sign-ups bypass.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-26-daily-aaism-check
+  options_only: not_obvious
