@@ -118,7 +118,8 @@ in the project files) and the rework PRs #34 to #42:
   always being the "before approval" option) becomes a rule learners can apply
   without thinking. Vary it; the checker looks at the batch as well as each item.
 - **Labels that follow length:** hard means two or more strong distractors that
-  only a stem detail separates, not a long stem.
+  only a stem detail separates, not a long stem. A computed figure (a formula,
+  plain arithmetic, a ratio) is `medium` at most (owner, 2026-10-26).
 
 What works:
 

@@ -50,7 +50,10 @@ Send a question back to the writer when:
   giveaway the writer can fix;
 - a well-prepared candidate could defend a second option;
 - the key is wrong or an explanation is inaccurate;
-- its difficulty label does not match the standard's definition.
+- its difficulty label does not match the standard's definition: a `hard`
+  label needs at least two distractors that stay plausible after the stem, and
+  a computed-figure question is `medium` at most. Lower a label that is too
+  high; never raise one to meet a target.
 
 For each one, say why in one line (for example "key is the only
 governance-level option"). After the writer's next round, re-run phases 1 to 3
