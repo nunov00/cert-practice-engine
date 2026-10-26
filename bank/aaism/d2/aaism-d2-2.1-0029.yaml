@@ -1,8 +1,8 @@
 id: aaism-d2-2.1-0029
 subdomain: '2.1'
-difficulty: hard
+difficulty: medium
 stem: An AI risk is scored 20 (likelihood 4 × impact 5) against a tolerance of at most 10. Treatment X cuts likelihood to
-  2 for 50,000. Treatment Y cuts impact to 3 for 20,000. Treatment Z cuts likelihood to 3 for 10,000. The effects combine.
+  2 for USD 50,000. Treatment Y cuts impact to 3 for USD 20,000. Treatment Z cuts likelihood to 3 for USD 10,000. The effects combine.
   Which choice meets tolerance at the LOWEST cost?
 options:
   A: Treatment X alone

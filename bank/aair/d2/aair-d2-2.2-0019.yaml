@@ -2,7 +2,7 @@ id: aair-d2-2.2-0019
 subdomain: '2.2'
 difficulty: medium
 stem: A fraud model was validated on a test set in which half the cases were fraud, and it reached 90% precision. In production,
-  about 1% of transactions are fraud. What should the validators conclude?
+  about 1% of transactions are fraud. Assuming the same threshold and the same true and false positive rates, what should the validators conclude?
 options:
   A: Precision in production will be much lower than the reported figure
   B: Recall in production will be much lower than the reported figure
@@ -11,15 +11,15 @@ options:
 answer: A
 explanation:
   why_correct: Precision depends on how common fraud is. With fraud at 1% rather than 50%, the same false positive rate produces
-    far more false alarms per true fraud, so production precision will be much lower and should be re-estimated at realistic
-    prevalence.
+    far more false alarms per true fraud. With these rates, 90% precision on a balanced set falls to about 8% at 1% prevalence,
+    so precision should be re-estimated at realistic prevalence.
   why_not:
     B: Recall is the share of actual fraud caught, which does not depend on how common fraud is, so a change in prevalence
       alone does not lower it.
     C: Accuracy also depends on class balance, and nothing suggests the validation figures transfer unchanged to a 1% fraud
       rate.
     D: The issue is that the test set is unrepresentative, not that the model has fitted it too closely.
-status: published
+status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:

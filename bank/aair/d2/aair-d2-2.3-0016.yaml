@@ -16,7 +16,7 @@ explanation:
     A: A canary limits exposure, but the applicants in that 5% still receive real decisions from an unproven model.
     B: An even split widens exposure, with half of applicants decided by the new model before it is proven.
     C: Rollback limits how long problems last, but applicants are harmed until the problems are noticed.
-status: published
+status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:

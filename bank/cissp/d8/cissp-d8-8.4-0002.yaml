@@ -1,6 +1,6 @@
 id: cissp-d8-8.4-0002
 subdomain: '8.4'
-difficulty: hard
+difficulty: medium
 stem: A company is buying a SaaS human resources system. The vendor provides a penetration test summary letter from last year
   and an ISO 27001 certificate whose scope covers its corporate offices but not its hosting platform. Which step BEST closes
   the assurance gap?
@@ -21,7 +21,7 @@ explanation:
       assurance over the platform.
     D: The full report gives more detail on one point-in-time test of unknown scope, but it is not ongoing, independent assurance
       over the platform's controls.
-status: published
+status: draft
 outline_version: '2024-04-15'
 sample: false
 provenance:

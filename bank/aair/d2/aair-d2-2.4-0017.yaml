@@ -1,8 +1,9 @@
 id: aair-d2-2.4-0017
 subdomain: '2.4'
-difficulty: hard
-stem: A bank's churn model degraded after a source system redefined active customer to include accounts dormant for up to
-  two years. The field's type and value range stayed the same. Which control would MOST likely have caught this before retraining?
+difficulty: medium
+stem: A bank's churn model degraded after it was retrained on data from a source system that had redefined active customer
+  to include accounts dormant for up to two years. Retraining ran the week after the change. The field's type and value range
+  stayed the same. Which control would MOST likely have caught this before retraining?
 options:
   A: Automated type and range checks on each field at load
   B: Monthly drift monitoring on the model's input features
@@ -17,7 +18,7 @@ explanation:
     B: Drift monitoring might flag a shift once a monitoring cycle has run on the new data, but a shift alone does not show
       that the field's meaning changed, so the cause can be missed or misread before retraining.
     C: Snapshots make it possible to reproduce and compare datasets after the fact, but they do not warn anyone of the change.
-status: published
+status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:

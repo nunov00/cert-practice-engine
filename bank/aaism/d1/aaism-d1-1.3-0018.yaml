@@ -8,11 +8,12 @@ options:
   A: Quarterly vulnerability scans of every cluster in the environment
   B: A retention schedule for model weights that deletes them after retirement
   C: Network rules that block test clusters from reaching production data
-  D: A decommissioning checklist that removes every deployment the registry recorded
+  D: A decommissioning step that finds and shuts down every deployed endpoint of the model
 answer: D
 explanation:
-  why_correct: Retirement failed because one deployment was missed. A decommissioning step that works from the registry's
-    record of every deployment and access path, and confirms each one is removed, closes all of them.
+  why_correct: Retirement failed because one running deployment was missed. A decommissioning step that reconciles the
+    registry with the endpoints and credentials actually deployed, and confirms each one is shut down, closes all of them,
+    including any the registry never recorded.
   why_not:
     A: Scans may find an outdated service eventually, but they look for vulnerabilities, not for retired models still in use.
     B: Deleting weights would break the endpoint eventually, but a schedule on its own does not track where copies are deployed.
