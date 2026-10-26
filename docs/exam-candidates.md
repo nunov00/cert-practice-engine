@@ -40,7 +40,7 @@ market; every row is *to verify* until a daily run checks it).
 | 2 | CISA (ISACA) | 150 MCQ, 5 domains (18/18/12/26/26%) | 5 | 5 | 5 | 5 | 4 | 29 | 2026-10-19 |
 | 3 | CRISC (ISACA) | 150 MCQ, 4 domains (26/22/32/20%) | 3 | 5 | 5 | 5 | 5 | 26 | 2026-10-24 |
 | 4 | CCSP (ISC2) | 100-150 CAT items (MCQ and advanced types), 6 domains (17/20/17/16/17/13%) | 4 | 5 | 3 | 5 | 4 | 25 | 2026-10-24 |
-| 5 | Security+ (CompTIA) | up to 90, MCQ and performance-based *to verify* | 5 | 3 | 4 | 4 | 3 | 24 | 2026-10-18 |
+| 5 | Security+ (CompTIA) | up to 90, MCQ and performance-based, 5 domains (27/24/19/16/14% on V8 from 2026-11-17) | 5 | 3 | 3 | 4 | 3 | 23 | 2026-10-26 |
 | 6 | CC (ISC2) | 100 MCQ, 5 domains *to verify* | 4 | 5 | 4 | 1 | 4 | 22 | 2026-10-18 |
 | 7 | CEH (EC-Council) | 125 MCQ *to verify* | 4 | 5 | 2 | 4 | 2 | 21 | 2026-10-18 |
 | 8 | CySA+ (CompTIA) | up to 85, MCQ and performance-based *to verify* | 3 | 3 | 4 | 4 | 3 | 20 | 2026-10-18 |
@@ -84,7 +84,13 @@ older Checked date.
 - **Security+:** the most widely held entry security certification and a US
   DoD 8140 baseline, so its demand is the highest on the list. It ranks lower
   because its performance-based items cannot be practised here; a product note
-  would have to say so.
+  would have to say so. Checked 2026-10-26: up to 90 multiple-choice and
+  performance-based items in 90 minutes, pass mark 750/900. V8 (SY0-801)
+  launches around 2026-11-17 with five domains weighted 27/24/19/16/14%;
+  V7 (SY0-701, 28/22/20/18/12%) retires in English on 2027-06-11. A recipe
+  should be built on V8. CompTIA's exam pages list no free official sample
+  questions, only paid practice products, so calibration moves from 4 to 3
+  (total 24 to 23); rank unchanged.
 - **CC:** very large candidate pool from ISC2's free-exam programmes, so
   learners are less likely to pay.
 - **CEH:** high name recognition in job postings; EC-Council publishes fewer
@@ -101,3 +107,4 @@ older Checked date.
 | 2026-10-19 | CISA row verified: format and weights confirmed, *to verify* dropped; demand 4 to 5 (total 27 to 29), rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/cisa/cisa-exam-content-outline), [2024 outline press release](https://www.isaca.org/about-us/newsroom/press-releases/2024/isacas-cisa-exam-updated-to-reflect-innovations-and-evolving-technologies-impacting-it-audit), [practice quiz](https://www.isaca.org/credentialing/cisa/cisa-practice-quiz) |
 | 2026-10-24 | CRISC row verified: format and weights confirmed, *to verify* dropped; scores, total and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/crisc/crisc-exam-content-outline), [2025 outline press release](https://www.isaca.org/about-us/newsroom/press-releases/2025/isaca-updates-cdpse-and-crisc-exams-to-reflect-latest-risk-and-privacy-priorities), [practice quiz](https://www.isaca.org/credentialing/crisc/crisc-practice-quiz) |
 | 2026-10-24 | CCSP row verified: format (CAT, 100-150 items) and weights confirmed, *to verify* dropped; scores, total and rank unchanged | ISC2 [exam outline (effective 2026-08-01)](https://edge.sitecorecloud.io/internationf173-xmc4e73-prodbc0f-9660/media/Project/ISC2/Main/Media/documents/exam-outlines/EXAMS-CCSP-Exam-Outline-English-01-2026-V2.pdf), [CCSP exam page](https://www.isc2.org/certifications/ccsp/ccsp-exam), [outline refresh notice](https://www.isc2.org/Insights/2026/06/isc2-ccsp-exam-outline-revised), [CAT notice](https://www.isc2.org/Insights/2025/07/ccsp-exam-going-cat), [CCSP quiz](https://cloud.connect.isc2.org/ccsp-quiz) |
+| 2026-10-26 | Security+ row verified: format, V8 weights and launch date confirmed, *to verify* dropped; calibration 4 to 3 (no free official samples found; total 24 to 23), rank unchanged | CompTIA [Security+ V7 page](https://www.comptia.org/en-us/certifications/security/v7/), [Security+ V8 page](https://www.comptia.org/en-us/certifications/security/v8/) |

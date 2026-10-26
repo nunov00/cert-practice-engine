@@ -17,10 +17,12 @@ explanation:
     A: Scans may find an outdated service eventually, but they look for vulnerabilities, not for retired models still in use.
     B: Deleting weights would break the endpoint eventually, but a schedule on its own does not track where copies are deployed.
     C: Network rules limit what test clusters reach, but the retired model can still be called and used within the test environment.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-26-daily-aaism-check
+  options_only: not_obvious

@@ -19,10 +19,12 @@ explanation:
     C: Limiting recipients blocks this particular exfiltration, but the poisoned memory still steers sessions in other harmful
       ways.
     D: Expiry shortens how long a poisoned note lasts, but it still controls a month of sessions.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-26-daily-aaism-check
+  options_only: not_obvious

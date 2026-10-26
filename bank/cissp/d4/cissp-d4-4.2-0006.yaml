@@ -1,9 +1,9 @@
 id: cissp-d4-4.2-0006
 subdomain: '4.2'
-difficulty: hard
+difficulty: medium
 stem: A company's switches are managed over the same VLAN that carries user traffic. A penetration tester on a user port took
-  over a switch through a flaw in its web management interface. The vendor's patch is now installed, but the tester notes
-  that the next flaw in any management service would be reachable the same way. Which change BEST reduces this exposure?
+  over a switch through a flaw in its web management interface, and the vendor's patch is now installed. Which change BEST
+  reduces the risk of a similar compromise in future?
 options:
   A: Disable the web interface and manage the switches over SSH only
   B: Apply port security that limits each user port to one MAC address
@@ -27,3 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

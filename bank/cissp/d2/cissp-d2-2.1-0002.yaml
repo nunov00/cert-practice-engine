@@ -1,26 +1,26 @@
 id: cissp-d2-2.1-0002
 subdomain: '2.1'
-difficulty: medium
-stem: A defence supplier labels each of its part drawings Internal. An engineer proposes a single catalogue listing every
-  part with its drawing, its sub-supplier and its delivery schedule for a classified programme. Each item in it is already
-  labelled Internal. What should decide the catalogue's classification?
+difficulty: hard
+stem: A defence supplier labels each of its part drawings Internal. An engineer proposes one catalogue listing every part
+  with its drawing, sub-supplier and delivery schedule for a classified programme. The catalogue would be stored in the programme's
+  classified file area. Which classification decision is BEST?
 options:
-  A: The highest label carried by any single item it contains
-  B: The label of the system where the catalogue will be stored
-  C: The label that matches the catalogue's intended readers
-  D: The harm that disclosure of the combined set could cause
-answer: D
+  A: Confidential, as the combined set exposes the programme's supply chain
+  B: Internal, as each drawing it contains is Internal
+  C: Internal, with access limited to the programme's engineers
+  D: Confidential, as it will sit with the programme's classified files
+answer: A
 explanation:
-  why_correct: Combining many low-sensitivity items can reveal something none of them reveals alone, such as a programme's
-    suppliers and schedule. Classification follows the impact of disclosing the asset as it is, so the data owner should assess
-    the aggregated catalogue, which may warrant a higher level.
+  why_correct: Combining low-sensitivity items can reveal what none reveals alone, here the programme's suppliers and schedule.
+    Classification follows the impact of disclosing the asset itself, so the aggregated catalogue warrants a higher level
+    for that reason.
   why_not:
-    A: Taking the highest label of the parts is the usual rule for mixed content, but here every part is Internal, so the
-      rule would miss the extra sensitivity created by aggregation.
-    B: The storage system must be suitable for the data, but its label follows from the data's classification, not the other
-      way round.
-    C: The audience decides who may be given access once the level is set; it does not determine how sensitive the content
-      is.
+    C: Restricting access is a handling decision. It does not set the classification, which must reflect the aggregated harm
+      so that the right controls follow everywhere the catalogue goes.
+    D: The level is right but the reason is wrong. Storage location follows classification; a copy stored elsewhere would
+      lose its protection if the label rested on where it sits.
+    B: Taking the level of the parts works for mixed content, but every part is Internal, so the rule misses the extra sensitivity
+      that aggregation creates.
 status: draft
 outline_version: '2024-04-15'
 sample: false

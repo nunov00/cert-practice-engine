@@ -1,0 +1,27 @@
+id: aaism-d3-3.4-0022
+subdomain: '3.4'
+difficulty: hard
+stem: A hospital will give partner clinics a copy of its diagnosis model, trained on patient records, to download and run
+  on their own servers. Membership inference is the main privacy concern. Which control BEST addresses it?
+options:
+  A: Train the model with differential privacy
+  B: Pseudonymise the training records first
+  C: Return only the top label, without scores
+  D: Encrypt the model file for distribution
+answer: A
+explanation:
+  why_correct: Differential privacy limits how much any one patient's record can affect the model, which bounds membership
+    inference however the model is queried. It is the only option that still holds once partners run the model themselves.
+  why_not:
+    B: Pseudonymisation removes direct identifiers, but the model can still reveal whether a known patient's record was in
+      training.
+    C: Hiding scores helps when the hospital controls the interface, but partners running their own copy can read the model's
+      full outputs.
+    D: Encryption protects the file in transit, but partners decrypt it to run it, so it does nothing against inference.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pending

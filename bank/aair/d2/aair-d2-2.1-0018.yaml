@@ -1,22 +1,22 @@
 id: aair-d2-2.1-0018
 subdomain: '2.1'
-difficulty: hard
+difficulty: medium
 stem: A team designing a credit model finds that adding the applicant's postcode improves accuracy by two points. Postcode
-  is known to correlate with ethnicity in the bank's market. What should happen at the design stage?
+  is known to correlate with ethnicity in the bank's market, and legal has confirmed it is not a prohibited input. What should
+  the team do NEXT at the design stage?
 options:
-  A: Drop postcode from the design to remove the risk entirely
-  B: Keep postcode and leave ethnicity itself out of the inputs
-  C: Keep postcode and rely on fairness monitoring after launch
-  D: Test postcode as a proxy for protected traits and document the decision
-answer: D
+  A: Compare accuracy with and without postcode on a hold-out sample of applicants
+  B: Test whether postcode acts as a proxy for protected groups and record the decision
+  C: Replace postcode with a coarser region code to reduce its precision
+  D: Ask legal to confirm whether postcode needs consent from applicants
+answer: B
 explanation:
-  why_correct: The design decision should rest on evidence. Testing whether postcode acts as a proxy, comparing options and
-    recording the outcome makes the trade-off explicit and defensible before the model is built around it.
+  why_correct: Being lawful does not make the input fair. Testing whether postcode drives different outcomes for protected
+    groups, and recording the decision, gives evidence for keeping, changing or dropping it.
   why_not:
-    A: Dropping it may be the right outcome, but deciding without testing can lose legitimate value, and other features may
-      act as proxies too, so the risk is not removed entirely.
-    B: Leaving out a protected trait does not prevent discrimination when other inputs act as proxies for it.
-    C: Monitoring after launch finds harm only after customers are affected, when the issue could have been tested at design.
+    C: A coarser code may still act as a proxy. Changing the input without testing it does not show the risk is reduced.
+    D: Legal has already reviewed the input. Consent is not the open question; potential proxy discrimination is.
+    A: The team already knows postcode improves accuracy. Another accuracy test says nothing about the fairness concern.
 status: draft
 outline_version: '2026-04-15'
 sample: false

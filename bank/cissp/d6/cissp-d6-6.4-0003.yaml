@@ -1,25 +1,24 @@
 id: cissp-d6-6.4-0003
 subdomain: '6.4'
 difficulty: medium
-stem: A penetration test report rates a finding critical using the published base score of 9.8 for the vulnerability. The
-  affected service is reachable only from a management network used by three administrators, all with multi-factor authentication.
+stem: A penetration test report rates a finding critical using the published base score of 9.8. The testers confirmed that
+  the service is reachable only from a management network used by three administrators, all with multi-factor authentication.
   The asset owner disputes the rating. How should the report handle it?
 options:
-  A: Keep the published base score as the objective measure of severity
-  B: Adjust the rating for the environment and record the factors used
-  C: Remove the finding, as the service cannot be reached from outside
-  D: Use the asset owner's rating, as the owner is the one accepting the risk
-answer: B
+  A: Keep the base score and describe the reachability in the narrative
+  B: Rate it low and close it, given the compensating controls in place
+  C: Adjust the score for this environment and record the factors used
+  D: Keep it critical until the owner shows evidence of the controls
+answer: C
 explanation:
-  why_correct: Base scores describe the vulnerability in general. A report should rate risk in the client's environment, adjusting
-    for reachability and existing controls, and record the reasoning so readers can check and revisit it.
+  why_correct: A base score describes the vulnerability in general. The report should rate risk in this environment, using
+    the reachability and controls the testers verified, and record the reasoning so readers can check it later.
   why_not:
-    A: The base score is a useful starting point, but using it unchanged ignores the facts that the testers found, which overstates
-      the risk in this environment.
-    C: Limited reachability lowers the risk but does not remove it. Insiders or an attacker on the management network could
-      still exploit it, so the finding should stay.
-    D: The owner decides how to treat the risk, but the tester's rating should be independent and evidence-based, not set
-      by the party being assessed.
+    A: Narrative context helps, but a critical rating left unchanged still drives priority, so remediation effort goes to
+      the wrong place.
+    D: The testers already verified the controls themselves, so waiting for the owner's evidence keeps a rating that the testers
+      know is overstated.
+    B: Limited reachability lowers the risk but does not remove it, so the finding should stay open at an adjusted rating.
 status: draft
 outline_version: '2024-04-15'
 sample: false

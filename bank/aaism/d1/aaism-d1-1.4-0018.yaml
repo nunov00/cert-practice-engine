@@ -1,21 +1,24 @@
 id: aaism-d1-1.4-0018
 subdomain: '1.4'
 difficulty: hard
-stem: An AI security program reports that 95% of inventoried AI systems have a current threat model. Most recent incidents,
-  however, involved AI tools that were never in the inventory. Which metric would add the MOST value to the program's reporting?
+stem: An AI security program reports that 95% of inventoried AI systems have a current threat model. Most recent incidents
+  involved AI tools that staff signed up for on their own, using free accounts. Which metric would add the MOST value to the
+  program's reporting?
 options:
-  A: Share of threat model findings closed by their due date
-  B: Share of inventoried systems re-threat-modelled after each major change
-  C: Share of staff who have completed AI security awareness training
-  D: Share of AI tools found by discovery scans that were missing from the inventory
+  A: Share of inventoried systems with a current threat model, by risk tier
+  B: Share of business units that confirmed their inventory this quarter
+  C: Share of new AI purchases that went through security intake
+  D: Share of AI tools seen in network discovery that the inventory lacks
 answer: D
 explanation:
-  why_correct: The current metric only describes systems already in the inventory, while the incidents come from outside it.
-    Measuring how many discovered tools were missing shows the coverage gap that the threat model figure hides.
+  why_correct: Tools adopted on free accounts never pass through purchasing or registration, so only discovery of actual use
+    reveals them. Measuring how many discovered tools are missing shows the coverage gap that the current figure hides.
   why_not:
-    A: Closure rates show how well known findings are handled, but they still only cover inventoried systems.
-    B: Re-modelling after change is good practice, yet it again measures only systems the program already knows about.
-    C: Training may reduce unapproved use, but completion rates do not show how much AI sits outside the program.
+    A: Splitting the threat model figure by tier adds detail, but it still describes only systems the program already knows
+      about.
+    C: Intake coverage tracks purchases, but tools used on free accounts are never bought, so this metric would stay high
+      while the incidents continue.
+    B: Unit confirmations rely on managers knowing what their staff use, which is exactly what free sign-ups bypass.
 status: draft
 outline_version: '2025-08-19'
 sample: false

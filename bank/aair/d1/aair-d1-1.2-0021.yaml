@@ -5,18 +5,20 @@ stem: An insurer's procurement process checks each supplier's finances and infor
   products with AI features through it, and none had an AI risk review. Which change BEST aligns procurement with AI risk
   management?
 options:
-  A: Add AI screening questions at intake that trigger an AI risk assessment
-  B: Require the AI committee to approve each purchase the insurer makes
-  C: Train procurement staff on the main AI ethics principles
-  D: Review the supplier list each year to find products with AI features
+  A: Add AI screening questions at intake that route AI products to an AI risk assessment
+  B: Add a standard clause on AI use to the insurer's supplier contracts
+  C: Add AI questions to the security questionnaire, scored by the security team
+  D: Ask suppliers to declare any AI features in their products at onboarding
 answer: A
 explanation:
-  why_correct: Screening at intake catches AI features at the point of purchase and routes only those products into AI risk
-    assessment, so the existing process carries AI risk without slowing every purchase.
+  why_correct: Screening at intake catches AI features at the point of purchase and routes those products to the people who
+    assess AI risk, so procurement carries AI risk through its existing flow.
   why_not:
-    B: Committee approval of every purchase overloads the committee with purchases that have no AI, and slows procurement.
-    C: Awareness helps staff spot issues, but without a defined trigger it does not ensure that AI products get a risk review.
-    D: An annual review finds AI products after they are already in use.
+    B: A contract clause sets obligations once a supplier is chosen, but it does not trigger an assessment of the risk before
+      buying.
+    C: The security team can assess security, but AI risks such as bias, accuracy and misuse fall outside its scoring, so
+      the AI risk review still does not happen.
+    D: A declaration records AI features, but without a defined route to assessment, nobody is required to act on it.
 status: draft
 outline_version: '2026-04-15'
 sample: false

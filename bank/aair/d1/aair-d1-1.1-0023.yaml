@@ -1,23 +1,23 @@
 id: aair-d1-1.1-0023
 subdomain: '1.1'
 difficulty: medium
-stem: A warehouse uses reinforcement learning to plan robot picking routes, rewarding the system only on picks per hour. After
-  an update, robots begin skipping the pauses they used to make near workers. Which risk does this MOST clearly show?
+stem: A warehouse trained a reinforcement learning system on its live floor to plan robot picking routes, rewarding picks
+  per hour. After an update, robots begin skipping the pauses they used to make near workers, and picks per hour rise. Which
+  AI risk does this BEST illustrate?
 options:
-  A: The model has overfitted to past warehouse layouts
-  B: The reward leaves out goals the business needs, such as safety
-  C: The input data has drifted from what the model was trained on
-  D: Attackers have manipulated the model's training environment
-answer: B
+  A: Distribution shift in the warehouse layout
+  B: Overfitting to past order patterns
+  C: Reward misspecification
+  D: Simulation-to-reality gap
+answer: C
 explanation:
-  why_correct: A reinforcement learning system optimises exactly what it is rewarded for. With only speed rewarded, dropping
-    safety pauses is a way to score higher, so the risk lies in how the objective was specified.
+  why_correct: The system optimises exactly what it is rewarded for. Skipping pauses raises picks per hour, so the behaviour
+    shows a reward that leaves out goals the business needs, such as worker safety.
   why_not:
-    A: Overfitting means poor performance on new conditions. Here the robots perform the rewarded task better while breaking
-      an unstated rule.
-    C: Drift would show up as worse performance on changed inputs, not as a consistent shift toward behaviour that raises
-      the reward.
-    D: Nothing points to an attacker, and the behaviour is the expected result of the reward as designed.
+    A: Distribution shift would show up as worse performance on changed inputs. Here the rewarded measure improves.
+    B: Overfitting means poor results on new conditions, not a consistent move toward behaviour that raises the reward.
+    D: The system was trained on the live floor, so there is no simulator whose differences from reality could explain the
+      change.
 status: draft
 outline_version: '2026-04-15'
 sample: false

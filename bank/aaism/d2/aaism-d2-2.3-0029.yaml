@@ -1,0 +1,26 @@
+id: aaism-d2-2.3-0029
+subdomain: '2.3'
+difficulty: medium
+stem: A bank must decide whether a vendor's hosted model service keeps each customer's data separate from other customers'.
+  Which evidence gives the MOST assurance on this point?
+options:
+  A: An assurance report that tested tenant isolation over twelve months
+  B: The vendor's ISO 27001 certificate, whose scope covers the service
+  C: The vendor's security questionnaire answers and architecture diagrams
+  D: Last year's penetration test summary of the service's public API
+answer: A
+explanation:
+  why_correct: A period-of-time assurance report whose tests include tenant isolation gives independent evidence that this
+    specific control operated effectively over a year.
+  why_not:
+    C: Questionnaires and diagrams describe the design in the vendor's own words, with no independent testing.
+    D: An external API test is a point-in-time check of one surface, and may not test isolation between tenants at all.
+    B: The certificate shows that a management system covers the service, but it does not report testing of tenant isolation
+      itself.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-26-daily-aaism
+  check_verdict: pending

@@ -1,25 +1,25 @@
 id: cissp-d3-3.6-0002
 subdomain: '3.6'
 difficulty: hard
-stem: An application encrypts customer records with AES in CBC mode, using a random IV stored beside each record in a shared
-  database. An audit finds that a database administrator could alter a record's ciphertext so that it decrypts to changed
-  data without the application noticing. Which change BEST addresses this finding?
+stem: An application encrypts customer records with AES in CBC mode, with a random IV stored beside each record. An audit
+  finds that a database administrator could alter a record's ciphertext, or swap two customers' encrypted records, without
+  the application noticing. Which change BEST addresses both findings?
 options:
-  A: Store a hash of each plaintext record beside its ciphertext
-  B: Move each record's IV to a table that only the application can read
-  C: Increase the AES key length from 128 bits to 256 bits
-  D: Switch to an authenticated encryption mode such as AES-GCM
-answer: D
+  A: Store an unkeyed SHA-256 hash of each plaintext record with it
+  B: Switch to AES-CTR with a unique nonce for each record
+  C: Switch to AES-GCM, with the record ID as associated data
+  D: Add an HMAC over each record's ciphertext, keyed separately
+answer: C
 explanation:
-  why_correct: CBC gives confidentiality but no integrity, so modified ciphertext still decrypts. An authenticated mode adds
-    a tag computed with the secret key, so any change to the ciphertext, or to its IV, makes decryption fail.
+  why_correct: GCM authenticates the ciphertext with the secret key, so altered data fails to decrypt. Binding the record
+    ID as associated data also makes a record fail to decrypt if it is moved to another customer's row, which stops the swap.
   why_not:
-    A: An unkeyed hash stored with the data can be replaced by anyone who can write the row and knows or guesses the new plaintext,
-      and it also leaks information about guessable values. Integrity protection needs a secret key.
-    B: Keeping IVs out of the administrator's view does not stop ciphertext blocks being altered, and IVs are not meant to
-      be secret. It offers no real integrity check.
-    C: A longer key strengthens confidentiality against brute force, but CBC with any key length still lets altered ciphertext
-      decrypt without detection.
+    A: An unkeyed hash can be recomputed by anyone who knows or guesses the plaintext, and a hash moves with its record when
+      rows are swapped, so neither finding is fixed.
+    B: CTR mode gives confidentiality only, and it is even easier to alter than CBC, since flipping a ciphertext bit flips
+      the same plaintext bit.
+    D: An HMAC stops alteration, but because it covers only the ciphertext, a swapped record carries a valid HMAC to its new
+      row, so the swap goes undetected.
 status: draft
 outline_version: '2024-04-15'
 sample: false

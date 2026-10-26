@@ -1,6 +1,6 @@
 id: cissp-d7-7.12-0002
 subdomain: '7.12'
-difficulty: hard
+difficulty: medium
 stem: A payments company has run tabletop exercises of its disaster recovery plan for two years. Its regulator now wants evidence
   that the recovery site can process real transaction volume within the recovery time objective. Taking production down for
   a test is not acceptable to the business. Which test BEST meets this need?
@@ -27,3 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

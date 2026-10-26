@@ -1,25 +1,25 @@
 id: cissp-d4-4.3-0005
 subdomain: '4.3'
-difficulty: hard
+difficulty: medium
 stem: Thirty offices are fully meshed with site-to-site IPsec tunnels, all authenticated with one pre-shared key. When a firewall
   was stolen from one office during a refit, engineers had to re-key every site over a weekend. Which change BEST prevents
   a repeat as the network grows?
 options:
-  A: Rotate the shared key on a fixed schedule and store it in a vault
-  B: Authenticate each site with a certificate from an internal CA that can be revoked
-  C: Move the tunnels to IKEv2 while keeping a single pre-shared key
-  D: Give each tunnel its own pre-shared key and record them in a vault
+  A: A unique pre-shared key for each tunnel
+  B: Certificates from an internal CA, with revocation
+  C: A unique pre-shared key for each site, used on all its tunnels
+  D: One shared key, rotated monthly by an automated script
 answer: B
 explanation:
-  why_correct: With certificates, each site has its own identity, and a lost firewall is cut off by revoking its certificate,
-    with no change at any other site. The approach scales because adding a site needs one new certificate, not new secrets
-    on every peer.
+  why_correct: Each site gets its own identity, and a lost firewall is cut off by revoking its certificate, with no change
+    at other sites. Adding a site needs one new certificate, not new secrets on every peer, so it scales.
   why_not:
-    A: Scheduled rotation limits how long a leaked key is useful, but a stolen firewall still forces an emergency re-key of
-      every site because they all share the key.
-    C: IKEv2 improves the key exchange protocol, but with one shared key, losing any firewall still compromises every tunnel.
-    D: Per-tunnel keys isolate a loss, but a full mesh of thirty sites needs 435 keys, each set by hand on two peers, and
-      this grows with every new site. It is workable, but does not scale as well as revocable certificates.
+    A: Per-tunnel keys isolate a loss, but a mesh of thirty sites needs 435 keys, each set on two peers by hand, and the number
+      grows quickly with each site.
+    C: A site key has to be known by every peer that talks to that site, so a stolen firewall holds the keys of all its peers,
+      and they would all need re-keying.
+    D: Rotation limits how long a leaked key stays useful, but while it is valid a stolen firewall still exposes every tunnel,
+      so an emergency re-key of all sites is still needed.
 status: draft
 outline_version: '2024-04-15'
 sample: false

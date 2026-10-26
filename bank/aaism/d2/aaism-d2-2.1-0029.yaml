@@ -17,10 +17,12 @@ explanation:
     A: X alone reaches exactly 10, which meets tolerance, but at 50,000 it costs more than Y and Z combined.
     B: Y alone gives 4 × 3 = 12, still above the tolerance of 10.
     D: X and Y give 2 × 3 = 6, well within tolerance, but cost 70,000, far more than needed.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-26-daily-aaism-check
+  options_only: not_obvious

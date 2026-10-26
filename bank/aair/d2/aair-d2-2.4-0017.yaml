@@ -14,13 +14,15 @@ explanation:
     have flagged the redefinition to the model team before the data was used for retraining.
   why_not:
     A: Type and range checks pass, because the redefined field looks the same. They cannot detect a change in meaning.
-    B: Drift monitoring might show a shift eventually, but often only after the model is already affected, and it would not
-      explain the cause.
+    B: Drift monitoring might flag a shift once a monitoring cycle has run on the new data, but a shift alone does not show
+      that the field's meaning changed, so the cause can be missed or misread before retraining.
     C: Snapshots make it possible to reproduce and compare datasets after the fact, but they do not warn anyone of the change.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-26-daily-aair-check
+  options_only: not_obvious

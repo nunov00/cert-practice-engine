@@ -4,19 +4,20 @@ difficulty: medium
 stem: A bank's board asks internal audit to approve each high-risk AI model before deployment, because audit is trusted and
   independent. How should the chief audit executive respond?
 options:
-  A: Accept, and give the approvals to a separate team within internal audit
-  B: Accept for high-risk models only, and audit lower-risk models as usual
-  C: Decline the approval role and suggest it sits with management or the second line
-  D: Accept on condition that audit hires staff with machine learning skills
+  A: Decline, and propose that the board approve each model directly
+  B: Accept, with a separate team within audit making the approvals
+  C: Decline, and offer to assess the approval process once it is running
+  D: Accept for one year while management builds its own approval process
 answer: C
 explanation:
-  why_correct: Approving models is a management decision. If internal audit takes it on, it can no longer give independent
-    assurance over the same decisions, so the role belongs with the first or second line, with audit later assessing how well
-    it works.
+  why_correct: Approving models is a management decision. Audit keeps its independence by declining it and providing assurance
+    over how management, or the second line, approves models.
   why_not:
-    A: A separate team is still part of internal audit, so audit would be assuring decisions its own function made.
-    B: Limiting approvals to high-risk models puts the conflict exactly where independent assurance matters most.
-    D: More skills would improve audit's work, but they do not resolve the conflict between approving and assuring.
+    B: A separate team is still part of internal audit, so audit would later be assuring decisions its own function made.
+    D: Even a temporary approval role impairs audit's independence over every model approved in that year, which audit would
+      later have to assure.
+    A: Declining is right, but the board's role is oversight. Approving individual models is a management task, usually with
+      second-line review.
 status: draft
 outline_version: '2026-04-15'
 sample: false

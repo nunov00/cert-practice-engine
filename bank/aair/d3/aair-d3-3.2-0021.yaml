@@ -1,24 +1,24 @@
 id: aair-d3-3.2-0021
 subdomain: '3.2'
-difficulty: hard
+difficulty: medium
 stem: A lender's AI tool reads income from uploaded payslips and misreads about 3% of them, which leads to wrong loan amounts.
   The residual risk is above appetite. Analysis shows that 90% of the errors come from handwritten payslips, which are 5%
-  of volume. Which treatment is MOST appropriate now?
+  of volume and come mostly from casual workers. Which treatment is MOST appropriate now?
 options:
-  A: Retrain the model with many more handwritten payslip examples
-  B: Send handwritten payslips to manual review before a decision
-  C: Have staff review each extraction before the loan is offered
-  D: Accept the risk and add the errors to the lender's insurance cover
-answer: B
+  A: Cap the loan amount for applicants with handwritten payslips
+  B: Retrain the model on more handwritten payslips before relying on it
+  C: Accept only typed payslips and ask other applicants to resubmit
+  D: Route handwritten payslips to manual review before a decision
+answer: D
 explanation:
-  why_correct: The errors are concentrated in a small, identifiable segment. Routing that 5% to people removes about 90% of
-    the errors at once and at low cost, bringing the risk within appetite while the model is improved.
+  why_correct: The errors sit in a small, identifiable segment. Routing that 5% to people removes about 90% of the errors
+    at once and at low cost, bringing the risk within appetite without disadvantaging any group of applicants.
   why_not:
-    A: Retraining may help over time, but its effect is uncertain until it is validated, and the risk is above appetite now.
-    C: Reviewing every extraction removes the risk but at many times the cost, since 95% of volume causes only a tenth of
-      the errors.
-    D: Acceptance is not open to the lender while residual risk is above appetite, and insurance does not prevent harm to
-      customers from wrong loan amounts.
+    B: Retraining may help over time, but its effect is unknown until validated, and the risk is above appetite now.
+    C: Requiring typed payslips shifts the burden to casual workers who may not have them, creating a fairness and customer
+      harm issue.
+    A: A cap limits loss size but penalises applicants for the format of their payslip, and wrong amounts still occur under
+      the cap.
 status: draft
 outline_version: '2026-04-15'
 sample: false

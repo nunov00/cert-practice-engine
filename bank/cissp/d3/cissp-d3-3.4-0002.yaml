@@ -1,6 +1,6 @@
 id: cissp-d3-3.4-0002
 subdomain: '3.4'
-difficulty: hard
+difficulty: medium
 stem: A laptop fleet uses full-disk encryption whose key is sealed to the TPM's boot measurements and released at boot with
   no user input. Testers with a stolen laptop captured the key by probing the bus between the separate TPM chip and the processor
   during a normal boot. Which change BEST defends against this attack?
@@ -8,7 +8,7 @@ options:
   A: Turn on secure boot so that only signed boot loaders can start
   B: Require a pre-boot PIN in addition to the TPM before key release
   C: Seal the key to additional boot measurements in the TPM
-  D: Move to a longer key for the disk encryption algorithm
+  D: Turn on memory encryption to protect keys held in RAM
 answer: B
 explanation:
   why_correct: The attack works because the laptop boots its genuine software and the TPM releases the key on its own, where
@@ -19,8 +19,8 @@ explanation:
       and can still be read from the bus.
     C: Sealing to more measurements makes the TPM pickier about the boot state, yet a normal boot of the stolen laptop still
       matches, so the key is still released and exposed.
-    D: Key length protects against breaking the encryption mathematically. Here the attacker reads the key itself, so a longer
-      key gives no protection.
+    D: Memory encryption protects keys held in RAM against cold-boot or DMA attacks, but here the key is read off the bus
+      as the TPM sends it, before it reaches memory.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

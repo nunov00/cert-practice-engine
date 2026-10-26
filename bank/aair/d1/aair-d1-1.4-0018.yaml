@@ -27,3 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-aair
   check_verdict: pending
+  options_only: obvious

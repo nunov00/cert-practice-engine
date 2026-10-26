@@ -1,24 +1,25 @@
 id: cissp-d1-1.5-0003
 subdomain: '1.5'
-difficulty: medium
-stem: A former employee sues a company for wrongful dismissal. Counsel expects requests for the employee's and managers' email
-  during discovery. The email system purges messages automatically after 180 days. What should the company do FIRST?
+difficulty: hard
+stem: After a breach of card data, a merchant's card brands require it, under its merchant agreement, to hire an approved
+  forensic investigator. The investigator's report goes to the card brands and the acquiring bank, which may impose fines
+  and conditions. Which type of investigation is this?
 options:
-  A: Issue a legal hold that suspends purging for the people and mailboxes linked to the claim
-  B: Make forensic images of the linked mailboxes and record a hash of each image
-  C: Wait for the formal discovery request so the scope of preservation is clear
-  D: Turn off automatic purging across the whole email system until the case ends
-answer: A
+  A: Regulatory
+  B: Civil
+  C: Industry standards
+  D: Administrative
+answer: C
 explanation:
-  why_correct: Once litigation is reasonably anticipated, the company must preserve relevant information. A targeted legal
-    hold stops the purge from destroying relevant email now, which is the urgent risk, while keeping preservation proportionate.
+  why_correct: The investigation is required by an industry body's standard that the merchant accepted by contract, and its
+    findings go to that industry's participants, who enforce through their own rules. That is an industry standards investigation.
   why_not:
-    B: Forensic collection may come later, but it is a heavier step than needed first. The immediate need is to stop the routine
-      purge on the relevant accounts.
-    C: The duty to preserve starts when litigation is anticipated, not when a request arrives. Waiting lets the purge destroy
-      relevant email, which can be treated as spoliation.
-    D: Suspending purging for everyone preserves the right email but keeps far more data than the claim needs, adding cost
-      and exposure. A hold scoped to the claim meets the duty.
+    A: A regulatory investigation is run by, or for, a government body acting under law. The card brands are private parties
+      enforcing their own standard.
+    B: A civil investigation supports a legal dispute between parties in court. Here the brands enforce a standard through
+      contract terms, without a lawsuit.
+    D: An administrative investigation is internal, into operational issues or staff conduct. This one is required and received
+      by outside parties.
 status: draft
 outline_version: '2024-04-15'
 sample: false

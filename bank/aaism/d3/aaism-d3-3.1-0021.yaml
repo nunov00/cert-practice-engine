@@ -3,23 +3,23 @@ subdomain: '3.1'
 difficulty: hard
 stem: An IT helpdesk agent turns user requests into shell commands, which run on a server after a check that the first word
   is on an allow-list such as ping or ls. Testers ran a second command by adding a semicolon after an allowed one. Which design
-  change BEST fixes this?
+  change BEST fixes this weakness?
 options:
-  A: Run the server's command process under a low-privilege account
-  B: Expose only predefined functions with typed parameters, not a shell
-  C: Tell the model in its system prompt not to chain commands
-  D: Extend the allow-list check to each word in the command
+  A: Run each command in a disposable sandbox container
+  B: Expose predefined functions with typed parameters, not a shell
+  C: Parse each command and allow-list every token and operator
+  D: Run the command process under a least-privilege account
 answer: B
 explanation:
-  why_correct: The weakness is passing model output to a shell as free text. Replacing the shell with fixed functions that
-    take validated parameters removes command injection as a class, whatever the model is tricked into writing.
+  why_correct: The weakness is that model output reaches a shell as free text. Fixed functions with validated parameters remove
+    command injection as a class, whatever the model is tricked into writing.
   why_not:
-    A: Least privilege limits the damage of an injected command, which is worth doing, but injection still works and the attacker
-      gets whatever that account can do.
-    C: An instruction to the model is not a security control. Prompt injection or a crafted request can make the model ignore
-      it.
-    D: Checking every word is a stronger filter, but shells offer many ways to build commands, such as substitution and escaping,
-      so filtering free text stays fragile.
+    A: A sandbox contains the damage, but injected commands still run, and anything the sandbox can reach, such as the network,
+      is still exposed.
+    C: Token-level checks are stronger than checking the first word, but shells offer many ways to build commands, such as
+      substitution and escaping, so filtering free text stays fragile.
+    D: Least privilege limits what an injected command can do, but injection still works with whatever rights the account
+      has.
 status: draft
 outline_version: '2025-08-19'
 sample: false

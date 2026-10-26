@@ -1,24 +1,25 @@
 id: cissp-d5-5.1-0004
 subdomain: '5.1'
-difficulty: easy
-stem: Nursing-station workstations in a hospital stay logged in to one shared account so nurses can check charts quickly.
-  An audit cannot tell which nurse viewed which patient record. Which control BEST restores accountability while keeping access
-  fast?
+difficulty: medium
+stem: Nursing-station workstations in a hospital stay logged in to one shared account so nurses can check charts quickly,
+  usually while wearing gloves. An audit cannot tell which nurse viewed which record. Which control BEST restores accountability
+  while keeping access fast?
 options:
-  A: Badge tap-in that switches the session to each nurse's own account
-  B: A shorter screen-lock timeout on the shared account
-  C: A paper log at each workstation that nurses sign when they use it
-  D: A weekly review of the shared account's record access logs
+  A: Badge tap that switches the session to each nurse's own account
+  B: Individual accounts with a full password sign-in at each use
+  C: A shared account plus a badge reader that logs who is at the station
+  D: Individual accounts with a fingerprint reader at each station
 answer: A
 explanation:
-  why_correct: Accountability needs each access tied to an individual. Badge tap-in with fast session switching gives every
-    nurse their own logged identity in a second or two, so speed is kept.
+  why_correct: A badge tap ties each session to one nurse in a second, works with gloves on, and keeps every record access
+    logged under that nurse's own account.
   why_not:
-    B: A shorter lock timeout reduces unattended sessions, but everyone still uses the same account, so access is still not
-      tied to a person.
-    C: A paper log relies on people signing in a busy ward and cannot be matched reliably to system records of which chart
-      was opened.
-    D: Reviewing logs of a shared account shows what was accessed but not by whom, so the review cannot restore accountability.
+    B: Individual accounts fix accountability, but typing a full password at every use, in a busy ward, defeats the need for
+      speed and invites sharing.
+    C: Logging who stood at the station does not show who opened each record, since several nurses may be nearby while one
+      shared session is used.
+    D: Fingerprints would tie access to a person, but readers do not work through gloves, so nurses would have to remove them
+      each time.
 status: draft
 outline_version: '2024-04-15'
 sample: false
