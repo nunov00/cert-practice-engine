@@ -1,6 +1,6 @@
 id: cissp-d5-5.2-0004
 subdomain: '5.2'
-difficulty: hard
+difficulty: medium
 stem: A data centre's fingerprint readers run with a false acceptance rate of 0.5% and a false rejection rate of 4%. The vendor
   states that the crossover error rate is 1.5%. Security wants even fewer impostors accepted. Which change achieves this,
   and with what effect?
@@ -25,3 +25,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-cissp
   check_verdict: pending
+  options_only: not_obvious
