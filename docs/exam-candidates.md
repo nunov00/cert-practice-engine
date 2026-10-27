@@ -41,7 +41,7 @@ market; every row is *to verify* until a daily run checks it).
 | 3 | CRISC (ISACA) | 150 MCQ, 4 domains (26/22/32/20%) | 3 | 5 | 5 | 5 | 5 | 26 | 2026-10-24 |
 | 4 | CCSP (ISC2) | 100-150 CAT items (MCQ and advanced types), 6 domains (17/20/17/16/17/13%) | 4 | 5 | 3 | 5 | 4 | 25 | 2026-10-24 |
 | 5 | Security+ (CompTIA) | up to 90, MCQ and performance-based, 5 domains (27/24/19/16/14% on V8 from 2026-11-17) | 5 | 3 | 3 | 4 | 3 | 23 | 2026-10-26 |
-| 6 | CC (ISC2) | Adaptive (CAT) MCQ, 5 domains (outline from 2026-09-01; weights not published on the outline page) | 4 | 5 | 4 | 2 | 4 | 23 | 2026-10-27 |
+| 6 | CC (ISC2) | Adaptive (CAT), 5 domains (outline from 2026-09-01; weights to confirm from the outline) | 4 | 5 | 4 | 2 | 4 | 23 | 2026-10-27 |
 | 7 | CEH (EC-Council) | 125 MCQ *to verify* | 4 | 5 | 2 | 4 | 2 | 21 | 2026-10-18 |
 | 8 | CySA+ (CompTIA) | up to 85, MCQ and performance-based *to verify* | 3 | 3 | 4 | 4 | 3 | 20 | 2026-10-18 |
 | 9 | SSCP (ISC2) | 125 MCQ, 7 domains *to verify* | 2 | 5 | 3 | 4 | 4 | 20 | 2026-10-18 |
@@ -96,8 +96,10 @@ older Checked date.
   adaptive (CAT) exam, and a refreshed outline took effect on 2026-09-01 with
   five domains (Security Principles, Security Governance, IAM Concepts,
   Networking and Cloud Security Concepts, Security Operations and Incident
-  Response); the outline page gives no domain weights, so a recipe would need
-  them confirmed first. ISC2 links an official CC practice quiz for
+  Response); the outline page text we fetched shows no domain weights, while
+  Codex's review reads 24 / 17.3 / 20 / 21.3 / 17.3 percent on it, so a recipe
+  would need them confirmed from the official outline first. Item count and
+  item types (multiple choice plus any advanced items) also need confirming. ISC2 links an official CC practice quiz for
   calibration. ISC2 announced in April 2026 that its One Million Certified in
   Cybersecurity free course-and-exam programme is concluding, so more
   candidates will pay for the exam: willingness to pay moves from 1 to 2

@@ -12,8 +12,9 @@ options:
 answer: A
 explanation:
   why_correct: A banner shows the upstream version, which backported packages keep, so the finding may or may not be real.
-    Comparing the installed package release with the distribution's own advisory on a sample shows whether the fix is
-    present, which decides whether the 200 findings stand.
+    Comparing the installed package release with the distribution's own advisory on a sample shows whether the scanner is
+    misreading backports; the same package check, run on every affected host, then decides which of the 200 findings
+    stand.
   why_not:
     B: Emergency patching treats every finding as real. If the fix is already backported, the change brings risk and effort
       for no benefit, and the report would overstate exposure.

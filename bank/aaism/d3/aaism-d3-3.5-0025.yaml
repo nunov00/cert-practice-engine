@@ -1,6 +1,6 @@
 id: aaism-d3-3.5-0025
 subdomain: "3.5"
-difficulty: hard
+difficulty: medium
 stem: A procurement agent places orders around the clock. An alert on unusual order patterns has fired twice in six
   months, both times correctly, but the on-call engineer took about forty minutes to respond while the agent kept
   placing orders. Which change BEST limits harm in that gap?

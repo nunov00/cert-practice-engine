@@ -15,11 +15,12 @@ explanation:
     controls the rating assumed. Re-rating it now, weighing both the incident and the fixes made since, keeps the
     register an accurate basis for the decisions that rely on it.
   why_not:
-    A: The incident shows the rare rating was wrong, but rating from the incident alone ignores the causes found and the
-      fixes made since, which also bear on likelihood.
+    A: One occurrence does not by itself prove a rare rating wrong, and rating from the incident alone ignores the causes
+      found and the fixes made since, which also bear on likelihood.
     B: Logging the loss event is good practice, but deferring the rating leaves the register wrong for months after the
       evidence arrived.
-    D: Waiting for an indicator trend leaves a rating the incident has already disproven in place until more errors occur.
+    D: The incident is a trigger to reassess now; waiting for an indicator trend leaves an untested rating in place until
+      more errors occur.
 status: draft
 outline_version: 2026-04-15
 sample: false

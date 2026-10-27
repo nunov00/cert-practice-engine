@@ -64,7 +64,6 @@ held:
   - { id: cissp-d4-4.1-0009, pr: 67 }
   - { id: cissp-d4-4.1-0011, pr: 67 }
   - { id: cissp-d4-4.2-0007, pr: 67 }
-  - { id: cissp-d4-4.2-0008, pr: 67 }
   - { id: cissp-d4-4.2-0009, pr: 67 }
   - { id: cissp-d4-4.3-0006, pr: 67 }
   - { id: cissp-d4-4.3-0007, pr: 67 }
@@ -78,7 +77,6 @@ held:
   - { id: cissp-d6-6.4-0004, pr: 67 }
   - { id: cissp-d6-6.5-0004, pr: 67 }
   - { id: aaism-d2-2.1-0031, pr: 67 }
-  - { id: aaism-d2-2.1-0033, pr: 67 }
   - { id: aaism-d2-2.2-0033, pr: 67 }
   - { id: aaism-d2-2.2-0034, pr: 67 }
   - { id: aaism-d2-2.2-0035, pr: 67 }
@@ -94,9 +92,16 @@ held:
   - { id: aair-d1-1.4-0019, pr: 67 }
   - { id: aair-d1-1.5-0019, pr: 67 }
   - { id: aair-d3-3.1-0024, pr: 67 }
-  - { id: aair-d3-3.2-0023, pr: 67 }
   - { id: aair-d3-3.3-0024, pr: 67 }
   - { id: aair-d3-3.4-0024, pr: 67 }
   - { id: aair-d3-3.4-0025, pr: 67 }
   - { id: aair-d3-3.6-0023, pr: 67 }
   - { id: aair-d3-3.6-0024, pr: 67 }
+  # PR #67, merge run: hard share after Codex and the final review lowered or
+  # dropped labels (AAIR kept no hard question). aair-d3-3.1-0023,
+  # aair-d3-3.5-0023 and aaism-d2-2.2-0036 were rated obvious from the options
+  # by the final review; rework a distractor on recheck.
+  - { id: aair-d3-3.1-0023, pr: 67 }
+  - { id: aair-d3-3.4-0026, pr: 67 }
+  - { id: aair-d3-3.5-0023, pr: 67 }
+  - { id: aaism-d2-2.2-0036, pr: 67 }

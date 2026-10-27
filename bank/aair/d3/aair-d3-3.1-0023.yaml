@@ -20,12 +20,12 @@ explanation:
       growing.
     D: A corrupt feed is a plausible one-off event, but the stem describes a weakness that operates every week with correct
       data.
-status: published
+status: draft
 outline_version: 2026-04-15
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-aair
   check_verdict: pass
-  options_only: not_obvious
+  options_only: obvious
   checked_by: 2026-10-27-daily-aair-check

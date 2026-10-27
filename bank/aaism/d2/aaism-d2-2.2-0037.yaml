@@ -20,7 +20,7 @@ explanation:
       for the files it legitimately reads.
     D: Notice terms give a remedy and some warning, but a maintainer acting in bad faith or compromised will not give
       notice, and the change takes effect on the next start.
-status: published
+status: draft
 outline_version: 2025-08-19
 sample: false
 provenance:

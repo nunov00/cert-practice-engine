@@ -12,8 +12,8 @@ options:
 answer: B
 explanation:
   why_correct: The annotators need only the images. Stripping names and dates of birth from the headers before the files
-    leave the hospital removes the personal data from the supply chain altogether, so the later controls protect much
-    less.
+    leave the hospital keeps those direct identifiers out of the supply chain. The images still need safeguards and an
+    assessment for burned-in or linkable details, but the later controls then protect much less.
   why_not:
     A: A flowed-down confidentiality duty is worth having, but it is a promise from people the hospital cannot see, and the
       identifiers would still reach them.

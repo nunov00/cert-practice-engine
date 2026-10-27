@@ -20,12 +20,12 @@ explanation:
     C: Least privilege is already in place, so the research agent cannot reach payments directly. The risk is that it
       influences the agent that can.
     D: Exhausting the payments agent would delay payments, a lower impact than payments being made to an attacker.
-status: published
+status: draft
 outline_version: 2025-08-19
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-aaism
   check_verdict: pass
-  options_only: not_obvious
+  options_only: obvious
   checked_by: 2026-10-27-daily-aaism-check
