@@ -1,0 +1,30 @@
+id: cissp-d4-4.3-0006
+subdomain: "4.3"
+difficulty: medium
+stem: A company's IP phones register with the call server using SIP over TLS. A tester with a laptop on the voice VLAN
+  still recorded and replayed several calls between staff. Which change BEST protects the content of calls?
+options:
+  A: Mutual TLS between the phones and the call server
+  B: SRTP encryption of the calls' media streams
+  C: 802.1X authentication on the voice VLAN's switch ports
+  D: Access lists that limit the voice VLAN to call server traffic
+answer: B
+explanation:
+  why_correct: TLS protects the SIP signalling, but the voice itself travels in separate RTP media streams, which are
+    unencrypted by default. SRTP encrypts those streams, so captured packets cannot be played back as audio.
+  why_not:
+    A: Mutual TLS strengthens authentication of the signalling channel, which is already encrypted. The audio still flows in
+      clear RTP.
+    C: 802.1X limits which devices can join the VLAN, but a compromised phone or authorised device on it could still capture
+      clear media.
+    D: Media often flows directly between phones, so limiting the VLAN to call server traffic would break calls, and the
+      streams that remain stay unencrypted.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-10-27-daily-cissp-check

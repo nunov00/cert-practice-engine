@@ -1,0 +1,30 @@
+id: aair-d3-3.3-0025
+subdomain: "3.3"
+difficulty: hard
+stem: Product managers edit a customer chatbot's system prompt directly in production to reflect weekly offers. One edit
+  led the chatbot to promise refunds the company does not give. The edits need to keep happening weekly. Which control
+  BEST prevents a repeat?
+options:
+  A: Restrict prompt editing to members of the engineering team
+  B: Monitor live replies for refund promises and alert on them
+  C: Route prompt edits through change control with regression tests
+  D: Train product managers on how prompt wording affects replies
+answer: C
+explanation:
+  why_correct: A prompt edit changes the chatbot's behaviour as much as a code change does. Putting edits through change
+    control, with automated tests of key behaviours such as refund statements before release, catches a harmful edit
+    before customers see it while keeping weekly updates.
+  why_not:
+    A: Engineers can make the same wording mistake, and the change would still reach customers untested, while weekly offers
+      queue behind engineering work.
+    B: Monitoring detects wrong promises only after customers have received them.
+    D: Training helps people write better prompts, but nothing checks an edit before it goes live.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aair
+  check_verdict: fail
+  options_only: obvious
+  checked_by: 2026-10-27-daily-aair-check

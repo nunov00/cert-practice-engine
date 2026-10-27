@@ -1,0 +1,32 @@
+id: cissp-d4-4.1-0010
+subdomain: "4.1"
+difficulty: medium
+stem: In a company's cloud network, the database instance's security group allows port 5432 from the whole application
+  subnet, which also hosts a reporting server. An attacker who compromised the reporting server connected straight to
+  the database. Which change BEST stops this path while keeping the application working?
+options:
+  A: A network ACL on the application subnet that denies port 5432 between its hosts
+  B: A database security group rule that accepts only the application servers' security group
+  C: Moving the database into a private subnet with no route to the internet
+  D: TLS with server certificates on connections to the database
+answer: B
+explanation:
+  why_correct: Security groups can name another security group as the allowed source. Accepting connections only from the
+    application servers' group admits those instances wherever their addresses change, and refuses every other host on
+    the same subnet, including the reporting server.
+  why_not:
+    A: Network ACLs apply where traffic crosses the subnet boundary, and here the database sits in a separate subnet, so a
+      deny on port 5432 would block the application servers as well as the reporting server.
+    C: A private subnet keeps the database off the internet, but the attacker came from inside the network, which a private
+      subnet still allows.
+    D: TLS protects the connection's content and the server's identity, but the reporting server can still open an encrypted
+      connection and try to log in.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-cissp
+  check_verdict: fail
+  options_only: not_obvious
+  checked_by: 2026-10-27-daily-cissp-check

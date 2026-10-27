@@ -1,0 +1,31 @@
+id: aair-d1-1.3-0022
+subdomain: "1.3"
+difficulty: medium
+stem: An inventory check finds that 14 of a bank's 60 models list owners who have left or changed roles, and nobody is
+  reviewing those models' monitoring reports. In each case the HR leaver or mover process ran on time, but nothing in it
+  touched the model inventory. What should the risk practitioner recommend?
+options:
+  A: Require owners to re-attest ownership of their models each quarter
+  B: Assign the 14 models to the head of data science until owners are found
+  C: Link the leaver and mover process to the inventory so ownership is reassigned
+  D: Have the risk team check the inventory against the HR directory each month
+answer: C
+explanation:
+  why_correct: The gap opens at the moment someone leaves or moves, in a process that already runs reliably but ignores
+    the inventory. Linking that process to the inventory means a new owner is named at the point of change, before
+    monitoring goes unreviewed.
+  why_not:
+    A: Quarterly attestation surfaces lapsed ownership, but an owner who has left cannot attest, so models can go up to
+      three months without anyone reviewing them.
+    B: A temporary owner deals with the current 14, but the next owner who leaves causes the same gap.
+    D: A monthly comparison finds gaps sooner, but it still finds them after the fact, and it adds a manual check to a
+      process that could reassign ownership directly.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aair
+  check_verdict: pass
+  options_only: obvious
+  checked_by: 2026-10-27-daily-aair-check

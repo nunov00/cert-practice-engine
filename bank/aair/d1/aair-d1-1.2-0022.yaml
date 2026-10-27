@@ -1,0 +1,31 @@
+id: aair-d1-1.2-0022
+subdomain: "1.2"
+difficulty: medium
+stem: A board has approved a strategy to automate claims decisions end to end within two years. The board's own risk
+  appetite statement says no decision that affects a customer may be made without human review. The programme team plans
+  to start by fully automating small claims. What should the risk practitioner do?
+options:
+  A: Require human review of small claims and let the programme continue
+  B: Pilot full automation of small claims under close monitoring, then report to the board
+  C: Report the conflict to the audit committee as a control weakness
+  D: Raise the conflict with the board so it can align strategy and appetite
+answer: D
+explanation:
+  why_correct: The strategy and the appetite statement contradict each other, and both belong to the board. Only the board
+    can decide whether to adjust its appetite, with conditions, or limit the strategy, so the conflict goes to it before
+    the programme proceeds.
+  why_not:
+    A: Adding review keeps within appetite, but it quietly overrides the board's strategy without the board deciding.
+    B: A monitored pilot still makes customer decisions without human review, which breaches the appetite before the board
+      has chosen to change it.
+    C: The audit committee oversees assurance and controls. Reconciling strategy with appetite is a decision for the board
+      itself.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-10-27-daily-aair-check

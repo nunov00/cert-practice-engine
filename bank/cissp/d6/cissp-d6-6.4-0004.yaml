@@ -1,0 +1,31 @@
+id: cissp-d6-6.4-0004
+subdomain: "6.4"
+difficulty: easy
+stem: During a client engagement, a penetration tester finds an unpublished remote code execution flaw in a commercial
+  VPN appliance that thousands of organisations use. The engagement contract makes all findings confidential to the
+  client. What should the tester do FIRST?
+options:
+  A: Report the flaw directly to the appliance vendor's security team
+  B: Report it to the client and agree how the vendor will be told
+  C: Request a CVE identifier for the flaw from a numbering authority
+  D: Set a ninety-day disclosure deadline and send it to the vendor
+answer: B
+explanation:
+  why_correct: The contract makes the finding confidential to the client, so the client must hear of it first. The flaw
+    also puts other organisations at risk, so the tester should agree with the client how the vendor will be told
+    through coordinated disclosure.
+  why_not:
+    A: Telling the vendor is the right goal, but doing it directly breaches the confidentiality the client contracted for.
+    C: A CVE identifier is part of coordinated disclosure with the vendor, a later step that also needs the client's
+      agreement.
+    D: A disclosure deadline belongs in coordinated disclosure, but setting one with the vendor before telling the client
+      bypasses the contract.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-cissp
+  check_verdict: pass
+  options_only: obvious
+  checked_by: 2026-10-27-daily-cissp-check

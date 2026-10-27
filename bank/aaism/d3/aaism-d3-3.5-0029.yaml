@@ -1,0 +1,33 @@
+id: aaism-d3-3.5-0029
+subdomain: "3.5"
+difficulty: medium
+stem: After a vendor updated the model behind a public chatbot, the share of prompts the chatbot refuses as harmful fell
+  from 4% to 1%. Over the same weeks, a marketing campaign tripled ordinary product questions. What should the security
+  manager do FIRST?
+options:
+  A: Run the fixed library of harmful test prompts against the new model version
+  B: Recompute the refusal rate with product questions excluded
+  C: Raise the sensitivity of the chatbot's output filter for harmful content
+  D: Review a sample of recent unrefused chats for harmful content
+answer: A
+explanation:
+  why_correct: The refusal share can fall either because the model refuses less or because benign traffic grew, and
+    tripled product questions alone would cut the share sharply. Replaying the fixed harmful test set against the new
+    version measures refusal behaviour on the same inputs, which shows whether safety actually changed.
+  why_not:
+    B: Excluding product questions corrects for the traffic mix only roughly, because the split between product and other
+      questions is approximate and the other inputs still change from week to week, so the comparison is still not like
+      for like.
+    C: A more sensitive filter may block harmful outputs the model now lets through, but if the model has not changed, it
+      simply adds false refusals.
+    D: Harmful prompts are rare among the tripled ordinary traffic, so a sample of unrefused chats would find few of them,
+      slowly, and only after any harmful replies had already gone out.
+status: draft
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aaism
+  check_verdict: fail
+  options_only: not_obvious
+  checked_by: 2026-10-27-daily-aaism-check

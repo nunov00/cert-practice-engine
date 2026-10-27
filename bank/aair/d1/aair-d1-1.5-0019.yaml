@@ -1,0 +1,32 @@
+id: aair-d1-1.5-0019
+subdomain: "1.5"
+difficulty: medium
+stem: A media start-up scrapes public websites to train a text model. Copyright law in its market allows text and data
+  mining of lawfully accessible content unless the rights holder has reserved those rights in a machine-readable way.
+  Which control BEST addresses this legal consideration?
+options:
+  A: License major publishers' content and crawl only sites without paywalls
+  B: Honour robots.txt blocks aimed at the crawler's own named user agent
+  C: Filter model outputs for long passages copied word for word
+  D: Check each site's opt-out signals before collecting its content
+answer: D
+explanation:
+  why_correct: The exception holds only where rights have not been reserved in a machine-readable way, and a reservation
+    can take several forms, such as general crawler blocks or site terms in machine-readable metadata. Checking each
+    site's opt-out signals before collection keeps the crawl within the exception.
+  why_not:
+    A: Licensing from major publishers covers their content, but open sites without paywalls may still have reserved their
+      rights, which this approach never checks.
+    B: Honouring blocks aimed at the crawler by name is part of the answer, but reservations aimed at all crawlers or AI
+      training in general would be missed.
+    C: Output filtering deals with reproduction later, but it does not make the collection itself lawful where rights were
+      reserved.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-10-27-daily-aair-check

@@ -1,0 +1,31 @@
+id: cissp-d5-5.1-0005
+subdomain: "5.1"
+difficulty: medium
+stem: A university's residence halls use battery-powered door locks that receive the list of revoked badges only when
+  staff sync them with a maintenance device each week. A contractor whose contract ended on Monday used the badge to
+  enter a hall on Wednesday, although it was disabled in the central system on Monday. Which change BEST closes this
+  gap?
+options:
+  A: Collect badges at exit as a step in the offboarding checklist
+  B: Badges whose access expires daily unless renewed at an online reader
+  C: A PIN at each lock in addition to the badge for each entry
+  D: Cameras at hall entrances, with footage kept for ninety days
+answer: B
+explanation:
+  why_correct: The offline locks cannot learn of a revocation until the weekly sync. If each badge carries an access
+    expiry that is renewed only at an online reader, a revoked badge stops opening the offline locks within a day,
+    whatever happens to the physical card.
+  why_not:
+    A: Collecting badges helps, but it fails whenever a badge is not handed back, is lost or has been copied, and the locks
+      would still accept it.
+    C: The contractor knows their own PIN, and PIN changes reach the offline locks only at the same weekly sync.
+    D: Cameras record the entry for later review but do not stop a disabled badge from opening the door.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-10-27-daily-cissp-check

@@ -41,7 +41,7 @@ market; every row is *to verify* until a daily run checks it).
 | 3 | CRISC (ISACA) | 150 MCQ, 4 domains (26/22/32/20%) | 3 | 5 | 5 | 5 | 5 | 26 | 2026-10-24 |
 | 4 | CCSP (ISC2) | 100-150 CAT items (MCQ and advanced types), 6 domains (17/20/17/16/17/13%) | 4 | 5 | 3 | 5 | 4 | 25 | 2026-10-24 |
 | 5 | Security+ (CompTIA) | up to 90, MCQ and performance-based, 5 domains (27/24/19/16/14% on V8 from 2026-11-17) | 5 | 3 | 3 | 4 | 3 | 23 | 2026-10-26 |
-| 6 | CC (ISC2) | 100 MCQ, 5 domains *to verify* | 4 | 5 | 4 | 1 | 4 | 22 | 2026-10-18 |
+| 6 | CC (ISC2) | Adaptive (CAT), 5 domains (outline from 2026-09-01; weights to confirm from the outline) | 4 | 5 | 4 | 2 | 4 | 23 | 2026-10-27 |
 | 7 | CEH (EC-Council) | 125 MCQ *to verify* | 4 | 5 | 2 | 4 | 2 | 21 | 2026-10-18 |
 | 8 | CySA+ (CompTIA) | up to 85, MCQ and performance-based *to verify* | 3 | 3 | 4 | 4 | 3 | 20 | 2026-10-18 |
 | 9 | SSCP (ISC2) | 125 MCQ, 7 domains *to verify* | 2 | 5 | 3 | 4 | 4 | 20 | 2026-10-18 |
@@ -92,7 +92,19 @@ older Checked date.
   questions, only paid practice products, so calibration moves from 4 to 3
   (total 24 to 23); rank unchanged.
 - **CC:** very large candidate pool from ISC2's free-exam programmes, so
-  learners are less likely to pay.
+  learners are less likely to pay. Checked 2026-10-27: ISC2 delivers CC as an
+  adaptive (CAT) exam, and a refreshed outline took effect on 2026-09-01 with
+  five domains (Security Principles, Security Governance, IAM Concepts,
+  Networking and Cloud Security Concepts, Security Operations and Incident
+  Response); the outline page text we fetched shows no domain weights, while
+  Codex's review reads 24 / 17.3 / 20 / 21.3 / 17.3 percent on it, so a recipe
+  would need them confirmed from the official outline first. Item count and
+  item types (multiple choice plus any advanced items) also need confirming. ISC2 links an official CC practice quiz for
+  calibration. ISC2 announced in April 2026 that its One Million Certified in
+  Cybersecurity free course-and-exam programme is concluding, so more
+  candidates will pay for the exam: willingness to pay moves from 1 to 2
+  (total 22 to 23). It ties Security+ on 23 and stays below it on demand, so
+  the rank is unchanged.
 - **CEH:** high name recognition in job postings; EC-Council publishes fewer
   official samples, so calibration is weaker.
 - **CySA+, SSCP, CGRC:** solid but smaller markets; kept as the tail of the
@@ -108,3 +120,4 @@ older Checked date.
 | 2026-10-24 | CRISC row verified: format and weights confirmed, *to verify* dropped; scores, total and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/crisc/crisc-exam-content-outline), [2025 outline press release](https://www.isaca.org/about-us/newsroom/press-releases/2025/isaca-updates-cdpse-and-crisc-exams-to-reflect-latest-risk-and-privacy-priorities), [practice quiz](https://www.isaca.org/credentialing/crisc/crisc-practice-quiz) |
 | 2026-10-24 | CCSP row verified: format (CAT, 100-150 items) and weights confirmed, *to verify* dropped; scores, total and rank unchanged | ISC2 [exam outline (effective 2026-08-01)](https://edge.sitecorecloud.io/internationf173-xmc4e73-prodbc0f-9660/media/Project/ISC2/Main/Media/documents/exam-outlines/EXAMS-CCSP-Exam-Outline-English-01-2026-V2.pdf), [CCSP exam page](https://www.isc2.org/certifications/ccsp/ccsp-exam), [outline refresh notice](https://www.isc2.org/Insights/2026/06/isc2-ccsp-exam-outline-revised), [CAT notice](https://www.isc2.org/Insights/2025/07/ccsp-exam-going-cat), [CCSP quiz](https://cloud.connect.isc2.org/ccsp-quiz) |
 | 2026-10-26 | Security+ row verified: format, V8 weights and launch date confirmed, *to verify* dropped; calibration 4 to 3 (no free official samples found; total 24 to 23), rank unchanged | CompTIA [Security+ V7 page](https://www.comptia.org/en-us/certifications/security/v7/), [Security+ V8 page](https://www.comptia.org/en-us/certifications/security/v8/) |
+| 2026-10-27 | CC row verified: CAT format and the 2026-09-01 outline's five domains confirmed, *to verify* dropped; pay 1 to 2 as the free programme concludes (total 22 to 23), rank unchanged | ISC2 [CC exam outline](https://www.isc2.org/certifications/cc/cc-certification-exam-outline), [CC page and practice quiz](https://www.isc2.org/certifications/cc), [CAT page](https://www.isc2.org/certifications/computerized-adaptive-testing), [One Million Certified in Cybersecurity conclusion](https://www.isc2.org/Insights/2026/04/one-million-certified-cyber-conclusion) |

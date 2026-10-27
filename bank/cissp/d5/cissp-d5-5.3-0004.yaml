@@ -1,0 +1,32 @@
+id: cissp-d5-5.3-0004
+subdomain: "5.3"
+difficulty: medium
+stem: A company's mobile app signs users in through OpenID Connect using the implicit flow, so tokens arrive in the
+  redirect. Testers showed that a malicious app on the same phone registered the same custom URI scheme and captured
+  users' tokens. Which change BEST fixes this?
+options:
+  A: Authorization code flow with PKCE
+  B: Authorization code flow, redirecting to the same custom URI scheme
+  C: Implicit flow with a nonce checked in each ID token
+  D: Authorization code flow with the state parameter checked on return
+answer: A
+explanation:
+  why_correct: With the code flow, the redirect carries only a one-time code, and PKCE ties that code to a secret verifier
+    created by the genuine app for each sign-in. A malicious app that intercepts the redirect cannot exchange the code
+    without the verifier.
+  why_not:
+    B: Moving to the code flow keeps tokens out of the redirect, but without PKCE a malicious app that intercepts the
+      redirect can redeem the code itself, so the attack still works.
+    C: A nonce stops replay of an ID token into a different sign-in, but an app that intercepts the redirect still receives
+      usable tokens.
+    D: The state parameter protects against cross-site request forgery on the redirect. It does not stop another app
+      intercepting the code and redeeming it.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-cissp
+  check_verdict: pass
+  options_only: obvious
+  checked_by: 2026-10-27-daily-cissp-check

@@ -1,0 +1,32 @@
+id: cissp-d4-4.1-0007
+subdomain: "4.1"
+difficulty: medium
+stem: A managed service provider runs one edge router for two client companies. Both clients use the same private
+  address range, 10.20.0.0/16, and neither may be able to route to the other. Which design BEST meets this on the shared
+  router?
+options:
+  A: A separate VLAN for each client on the router's interfaces
+  B: A separate virtual routing and forwarding instance for each client
+  C: Access control lists that block traffic between the two clients
+  D: Network address translation of one client's range on the router
+answer: B
+explanation:
+  why_correct: Overlapping address ranges cannot coexist in one routing table. A VRF instance gives each client its own
+    routing table on the same router, so the identical ranges do not collide and no route exists between the clients
+    unless one is leaked on purpose.
+  why_not:
+    A: VLANs separate the clients at layer 2, but the router still holds one routing table, where two copies of 10.20.0.0/16
+      conflict and the clients' routes mix.
+    C: With both clients using the same addresses in one table, an access list cannot tell one client's 10.20.1.5 from the
+      other's, so it cannot enforce the separation reliably.
+    D: Translating one range at the router still leaves both clients' routes in one shared routing table, so the overlap and
+      the isolation both depend on extra rules rather than on the design.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-10-27-daily-cissp-check

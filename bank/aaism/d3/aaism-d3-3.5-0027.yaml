@@ -1,0 +1,31 @@
+id: aaism-d3-3.5-0027
+subdomain: "3.5"
+difficulty: medium
+stem: Developers use an approved enterprise coding assistant whose contract bars training on prompts. Reviews find that
+  developers sometimes paste configuration files containing live cloud credentials into prompts. Which control BEST
+  addresses this?
+options:
+  A: Secret scanning that redacts credentials from prompts at the gateway
+  B: Pre-commit secret scanning in the code repositories
+  C: Short-lived cloud credentials with automatic rotation
+  D: Gateway logging of prompts with daily alerts on credential patterns
+answer: A
+explanation:
+  why_correct: Scanning prompts for credential patterns at the gateway and redacting them stops live secrets leaving the
+    company, whether or not the developer notices, and matches can trigger rotation of the exposed credential.
+  why_not:
+    B: Repository scanning catches secrets committed to code, but pasting into the assistant happens outside the
+      repositories, so it never sees them.
+    C: Short-lived credentials shrink how long a leaked secret works, which helps, but the secrets still leave the company
+      in prompts.
+    D: Daily alerts find pasted credentials after they have already been sent, so the exposure has happened by the time
+      anyone acts.
+status: draft
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-10-27-daily-aaism-check

@@ -1,0 +1,30 @@
+id: aaism-d3-3.5-0025
+subdomain: "3.5"
+difficulty: medium
+stem: A procurement agent places orders around the clock. An alert on unusual order patterns has fired twice in six
+  months, both times correctly, but the on-call engineer took about forty minutes to respond while the agent kept
+  placing orders. Which change BEST limits harm in that gap?
+options:
+  A: Shorten the on-call response target to ten minutes
+  B: Send the alert to a 24-hour SOC instead of on-call engineers
+  C: Pause the agent's ordering automatically when the alert fires
+  D: Require staff approval for each order the agent places
+answer: C
+explanation:
+  why_correct: The alert is accurate, so acting on it automatically carries little risk of needless disruption. Pausing
+    ordering the moment it fires stops further orders during the response gap, and an engineer can resume the agent once
+    the cause is understood.
+  why_not:
+    A: A faster target narrows the gap but does not close it, and the agent can place many orders in ten minutes.
+    B: A 24-hour SOC may respond sooner, but analysts still take time to triage, and the agent keeps ordering meanwhile.
+    D: Approving each order would prevent bad orders, but it removes most of the agent's value to deal with an alert that
+      fires twice in six months.
+status: published
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-10-27-daily-aaism-check

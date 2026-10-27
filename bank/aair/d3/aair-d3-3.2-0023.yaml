@@ -1,0 +1,31 @@
+id: aair-d3-3.2-0023
+subdomain: "3.2"
+difficulty: medium
+stem: A telecom's AI agent handles about 2,000 account closures a week in chat. It reads back its understanding and the
+  customer confirms it, yet it occasionally takes a request to pause service as a request to close, and customers
+  confirm without noticing. A closure deletes the account and phone number, which cannot be restored. Residual risk is
+  above appetite. Which treatment BEST brings it within appetite?
+options:
+  A: Daily staff review of a sample of the closures the agent made
+  B: Retraining the agent's intent model on more pause requests
+  C: A staff call-back to the customer before each closure goes ahead
+  D: Closures held as reversible for thirty days before final deletion
+answer: D
+explanation:
+  why_correct: The harm is severe because a wrong closure cannot be undone, and confirmation is already in place without
+    stopping it. Holding closures in a reversible state for thirty days turns each misread into an error that can be
+    fixed when the customer notices, which cuts the impact of every misread.
+  why_not:
+    A: Sampling finds some wrong closures, but only after the account and number are already gone.
+    B: Retraining may reduce misreads, but some will remain, and each one still destroys the account for good.
+    C: A call-back would catch many misreads, but at 2,000 closures a week it adds a large staff workload and still relies
+      on customers noticing the mistake on the call.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-10-27-daily-aair-check

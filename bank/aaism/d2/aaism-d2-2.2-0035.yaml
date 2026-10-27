@@ -1,0 +1,31 @@
+id: aaism-d2-2.2-0035
+subdomain: "2.2"
+difficulty: medium
+stem: A retailer's support console shows staff AI-drafted replies to product reviews, rendered as HTML. A tester posted
+  a review whose text led the model to put a script tag in its draft, and the script ran in staff browsers. Which
+  control MOST directly fixes this weakness?
+options:
+  A: A prompt injection classifier on review text before the model reads it
+  B: Encoding model output as untrusted text before the console displays it
+  C: A system prompt instruction telling the model not to produce HTML
+  D: Limiting access to the console to staff on the corporate network
+answer: B
+explanation:
+  why_correct: The weakness is that the console trusts model output as markup. Treating the output like any other
+    untrusted input and encoding it before display means a script in a draft shows as text and does not run, however the
+    model was steered.
+  why_not:
+    A: A classifier may catch some crafted reviews, but those it misses still lead to script running, because the console
+      still trusts the output.
+    C: Instructions to the model can be overridden by injected text, which is how the script got into the draft.
+    D: Restricting who reaches the console does not help, because the attack runs in the browsers of the staff who are meant
+      to use it.
+status: draft
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-10-27-daily-aaism-check

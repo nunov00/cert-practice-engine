@@ -14,17 +14,18 @@ explanation:
   why_correct: A correct fee needs each customer's own contract dates and offers, which only the billing system holds.
     Taking the figure from its calculator makes each quote right by construction, and the chatbot only presents it.
   why_not:
-    A: Grounding in the fee schedule is the usual fix for invented policy answers. Here the schedule gives only the
-      rules, not this customer's dates, so the model would still have to work the figure out and could get it wrong.
-    B: Fine-tuning teaches the model how fee answers look, not each customer's contract. It cannot reliably produce a
-      figure that depends on data it never sees.
-    C: Sampling measures the error rate and finds patterns. But each wrong quote is already a breach once it is sent, so
-      a detective check does not bring the risk within appetite.
+    A: Grounding in the fee schedule is the usual fix for invented policy answers. Here the schedule gives only the rules,
+      not this customer's dates, so the model would still have to work the figure out and could get it wrong.
+    B: Fine-tuning teaches the model how fee answers look, not each customer's contract. It cannot reliably produce a figure
+      that depends on data it never sees.
+    C: Sampling measures the error rate and finds patterns. But each wrong quote is already a breach once it is sent, so a
+      detective check does not bring the risk within appetite.
 status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-24-daily-aair
-  check_verdict: pending
+  check_verdict: fail
   options_only: not_obvious
+  checked_by: 2026-10-27-daily-aair-check
