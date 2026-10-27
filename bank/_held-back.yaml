@@ -21,10 +21,8 @@ held:
   - { id: aaism-d1-1.5-0018, pr: 61 }
   - { id: aaism-d3-3.5-0018, pr: 61 }
   # PR #62 (daily batch 2026-10-24), batch run (owner's OK, held before checking)
-  - { id: aair-d1-1.1-0022, pr: 62, pending: true }
-  - { id: aair-d1-1.4-0017, pr: 62, pending: true }
-  - { id: aair-d3-3.2-0020, pr: 62, pending: true }
-  - { id: aair-d3-3.3-0021, pr: 62, pending: true }
+  - { id: aair-d1-1.1-0022, pr: 62 }
+  - { id: aair-d3-3.3-0021, pr: 62 }
   - { id: aair-d3-3.6-0019, pr: 62, pending: true }
   - { id: aair-d3-3.6-0020, pr: 62, pending: true }
   # PR #62, merge run
@@ -59,3 +57,46 @@ held:
   - { id: cissp-d3-3.6-0002, pr: 65 }
   - { id: aair-d2-2.2-0019, pr: 65 }
   - { id: aair-d2-2.4-0017, pr: 65 }
+  # PR #67 (daily batch 2026-10-27), batch run: passed the independent check,
+  # held because too few hard labels survived the strict hard-label check
+  - { id: cissp-d4-4.1-0007, pr: 67 }
+  - { id: cissp-d4-4.1-0008, pr: 67 }
+  - { id: cissp-d4-4.1-0009, pr: 67 }
+  - { id: cissp-d4-4.1-0011, pr: 67 }
+  - { id: cissp-d4-4.2-0007, pr: 67 }
+  - { id: cissp-d4-4.2-0008, pr: 67 }
+  - { id: cissp-d4-4.2-0009, pr: 67 }
+  - { id: cissp-d4-4.3-0006, pr: 67 }
+  - { id: cissp-d4-4.3-0007, pr: 67 }
+  - { id: cissp-d4-4.3-0008, pr: 67 }
+  - { id: cissp-d5-5.1-0005, pr: 67 }
+  - { id: cissp-d5-5.2-0005, pr: 67 }
+  - { id: cissp-d5-5.3-0004, pr: 67 }
+  - { id: cissp-d6-6.1-0004, pr: 67 }
+  - { id: cissp-d6-6.2-0004, pr: 67 }
+  - { id: cissp-d6-6.3-0004, pr: 67 }
+  - { id: cissp-d6-6.4-0004, pr: 67 }
+  - { id: cissp-d6-6.5-0004, pr: 67 }
+  - { id: aaism-d2-2.1-0031, pr: 67 }
+  - { id: aaism-d2-2.1-0033, pr: 67 }
+  - { id: aaism-d2-2.2-0033, pr: 67 }
+  - { id: aaism-d2-2.2-0034, pr: 67 }
+  - { id: aaism-d2-2.2-0035, pr: 67 }
+  - { id: aaism-d2-2.3-0031, pr: 67 }
+  - { id: aaism-d2-2.3-0032, pr: 67 }
+  - { id: aaism-d3-3.4-0023, pr: 67 }
+  - { id: aaism-d3-3.4-0025, pr: 67 }
+  - { id: aaism-d3-3.5-0026, pr: 67 }
+  - { id: aaism-d3-3.5-0027, pr: 67 }
+  - { id: aaism-d3-3.5-0028, pr: 67 }
+  - { id: aair-d1-1.2-0022, pr: 67 }
+  - { id: aair-d1-1.3-0022, pr: 67 }
+  - { id: aair-d1-1.4-0019, pr: 67 }
+  - { id: aair-d1-1.5-0019, pr: 67 }
+  - { id: aair-d3-3.1-0024, pr: 67 }
+  - { id: aair-d3-3.2-0023, pr: 67 }
+  - { id: aair-d3-3.3-0024, pr: 67 }
+  - { id: aair-d3-3.4-0024, pr: 67 }
+  - { id: aair-d3-3.4-0025, pr: 67 }
+  - { id: aair-d3-3.6-0023, pr: 67 }
+  - { id: aair-d3-3.6-0024, pr: 67 }

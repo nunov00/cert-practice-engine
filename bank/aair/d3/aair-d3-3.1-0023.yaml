@@ -1,6 +1,6 @@
 id: aair-d3-3.1-0023
 subdomain: "3.1"
-difficulty: hard
+difficulty: medium
 stem: A grocery chain's model forecasts demand for each product in each store, and stock orders follow the forecast. The
   model retrains weekly on recorded sales. When an item sells out, the records show only the units sold. Which risk
   scenario should the assessment MOST include?
@@ -20,11 +20,12 @@ explanation:
       growing.
     D: A corrupt feed is a plausible one-off event, but the stem describes a weakness that operates every week with correct
       data.
-status: draft
+status: published
 outline_version: 2026-04-15
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-aair
-  check_verdict: pending
+  check_verdict: pass
   options_only: not_obvious
+  checked_by: 2026-10-27-daily-aair-check

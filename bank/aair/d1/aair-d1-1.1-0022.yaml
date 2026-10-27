@@ -12,8 +12,8 @@ options:
 answer: B
 explanation:
   why_correct: The order of checks is fixed by the regulator and each decision belongs to a named officer, so the only
-    task that needs AI is reading documents with no common layout. Coding the steps guarantees the sequence, and limiting
-    the model to extraction leaves every check decision with the officer.
+    task that needs AI is reading documents with no common layout. Coding the steps guarantees the sequence, and
+    limiting the model to extraction leaves every check decision with the officer.
   why_not:
     A: An agent chooses its own steps and can skip or reorder them, even when the procedure is in its instructions. That
       leaves the regulator's fixed sequence to chance.
@@ -27,5 +27,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-24-daily-aair
-  check_verdict: pending
+  check_verdict: pass
   options_only: not_obvious
+  checked_by: 2026-10-27-daily-aair-check
