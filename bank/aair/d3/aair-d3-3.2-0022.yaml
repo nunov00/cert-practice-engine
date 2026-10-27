@@ -1,0 +1,28 @@
+id: aair-d3-3.2-0022
+subdomain: "3.2"
+difficulty: hard
+stem: An airline's AI agent will rebook passengers during disruptions without staff review. Testing went well, but the
+  residual risk of costly wrong rebookings cannot be estimated reliably until the agent handles real disruptions, and
+  appetite for such errors is low. Which treatment is MOST appropriate?
+options:
+  A: Delay launch for six more months of simulated testing
+  B: Launch to a small share of passengers with caps and stop criteria
+  C: Launch fully and accept the risk, with a review after three months
+  D: Launch fully with insurance against the cost of rebooking errors
+answer: B
+explanation:
+  why_correct: The missing evidence can only come from real disruptions, and appetite is low. A limited launch, with caps
+    on what the agent can do and agreed criteria for stopping, gathers that evidence while keeping any losses small, and
+    the rollout grows only as the results support it.
+  why_not:
+    A: More simulation cannot reproduce real disruptions, which is the evidence the stem says is missing, so the uncertainty
+      would remain after six months.
+    C: Accepting a risk that cannot be estimated, under a low appetite, gives the owner nothing to judge it against.
+    D: Insurance may cover some costs, but stranded passengers and the reputational harm stay with the airline.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aair
+  check_verdict: pending

@@ -1,0 +1,28 @@
+id: aair-d3-3.4-0025
+subdomain: "3.4"
+difficulty: medium
+stem: A bank's key risk indicator for its chatbot's wrong-answer rate has a single threshold, set at the board's
+  tolerance, and a breach goes straight to the board. Last quarter the rate rose steadily for two months and breached in
+  the third, and the board learned of it only then. What should the risk practitioner recommend?
+options:
+  A: Lower the single threshold so the board hears of breaches sooner
+  B: Add an earlier warning threshold that triggers action by the owner
+  C: Report the indicator to the board monthly rather than quarterly
+  D: Replace the indicator with a monthly audited sample of answers
+answer: B
+explanation:
+  why_correct: A single threshold at tolerance warns only when the limit is already reached. A lower warning level tied to
+    action by the model owner lets the rise be dealt with in the first two months, while the board level still marks the
+    tolerance.
+  why_not:
+    A: Moving the board threshold below tolerance sends the board alerts that do not mean tolerance is breached, and still
+      gives no one earlier responsibility to act.
+    C: More frequent board reporting shows the trend sooner, but the board is the wrong place to manage an early rise.
+    D: An audited sample measures accuracy well, but on its own it adds no earlier trigger for action.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aair
+  check_verdict: pending

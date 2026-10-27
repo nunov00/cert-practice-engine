@@ -1,0 +1,28 @@
+id: aair-d2-2.1-0019
+subdomain: "2.1"
+difficulty: medium
+stem: An insurer is designing an assistant to answer staff questions from policy wordings. The wordings change each
+  month, and auditors must be able to see which wording each answer relied on. Which design BEST meets these needs?
+options:
+  A: Retrieve from a governed library of current wordings and cite each source
+  B: Fine-tune a model on the wordings each month and log the model version
+  C: Use a large general model with the wordings summarised in its prompt
+  D: Fine-tune once on the current wordings and add a disclaimer to answers
+answer: A
+explanation:
+  why_correct: Retrieval from a governed library picks up wording changes as soon as the library is updated, and citing
+    the retrieved passage shows auditors exactly which wording each answer used.
+  why_not:
+    B: Monthly fine-tuning tracks changes with a lag and at a cost, and the model version does not show which wording an
+      answer relied on.
+    C: A summary in the prompt loses detail that matters in policy wording, and answers cannot be traced to a specific
+      clause.
+    D: A one-off fine-tune goes out of date within a month, and a disclaimer does not give auditors the traceability they
+      need.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aair
+  check_verdict: pending

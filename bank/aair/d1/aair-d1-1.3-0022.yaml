@@ -1,0 +1,25 @@
+id: aair-d1-1.3-0022
+subdomain: "1.3"
+difficulty: medium
+stem: An inventory check finds that 14 of a bank's 60 models list owners who have left or changed roles, and nobody is
+  reviewing those models' monitoring reports. What should the risk practitioner recommend to stop this recurring?
+options:
+  A: Add model ownership handover to the leaver and mover process
+  B: Assign the 14 models to the head of data science for now
+  C: Check the whole inventory monthly instead of yearly
+  D: Send monitoring reports to a shared mailbox the risk team watches
+answer: A
+explanation:
+  why_correct: Ownership lapses whenever an owner leaves or moves and nothing hands it on. Building the handover into the
+    leaver and mover process means a new owner is named at the point of change, before monitoring goes unreviewed.
+  why_not:
+    B: A temporary owner deals with the current 14, but the next owner who leaves causes the same gap.
+    C: Monthly checks find gaps sooner, but they still find them after the fact rather than preventing them.
+    D: A shared mailbox gives the reports a reader but no accountable owner who can act on what they show.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aair
+  check_verdict: pending

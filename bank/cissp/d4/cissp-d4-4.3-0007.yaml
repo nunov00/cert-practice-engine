@@ -1,0 +1,30 @@
+id: cissp-d4-4.3-0007
+subdomain: "4.3"
+difficulty: hard
+stem: A law firm emails merger documents to a client's legal team. The client's mail passes through several internal
+  relays and a cloud mail archive run by the client's IT contractor. The firm wants the content readable only by the
+  named lawyers, who must receive it as ordinary email in their usual mail client. Which control BEST meets this?
+options:
+  A: Enforced TLS with certificate checks for mail sent to the client's domain
+  B: S/MIME encryption of each message to the named lawyers' certificates
+  C: A secure portal where the lawyers download the documents after signing in
+  D: Encryption at rest of the client's mail archive with client-held keys
+answer: B
+explanation:
+  why_correct: S/MIME encrypts the message itself to each recipient's public key, so it stays unreadable on every relay
+    and in the archive, and only the named lawyers' private keys can open it. It arrives as an ordinary email in their
+    mail client.
+  why_not:
+    A: TLS protects each hop between servers, but each relay and the archive receives the message in clear text, so the
+      contractor's systems can read it.
+    C: A portal keeps the content off the client's mail systems, but the lawyers would not receive the documents as ordinary
+      email, which the stem requires.
+    D: Archive encryption protects stored copies against theft, but the archive service decrypts them for use, and the
+      relays still handle the content in clear.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-cissp
+  check_verdict: pending

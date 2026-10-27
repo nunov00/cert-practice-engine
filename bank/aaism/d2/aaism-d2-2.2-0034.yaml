@@ -1,0 +1,27 @@
+id: aaism-d2-2.2-0034
+subdomain: "2.2"
+difficulty: medium
+stem: A team trains an image model on a public dataset published as a list of image URLs with captions. Researchers
+  report that attackers have bought expired domains in the list and now serve altered images at those URLs. The team
+  downloads the images afresh for each training run. Which control BEST addresses this?
+options:
+  A: Keep only URLs on domains with a good reputation score
+  B: Scan downloaded images with current malware signatures
+  C: Check each image against the hash published with the list
+  D: Remove duplicate and near-duplicate images before training
+answer: C
+explanation:
+  why_correct: The attack swaps the content behind a URL after the list was compiled. Checking each downloaded image
+    against the hash recorded when the list was published, and dropping any that differ, rejects altered images whoever
+    now controls the domain.
+  why_not:
+    A: A bought domain keeps its history, so it can still score well on reputation while serving altered images.
+    B: Poisoned images are ordinary image files with changed content. Malware signatures do not detect them.
+    D: Deduplication improves data quality, but altered images are not duplicates and would pass.
+status: draft
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aaism
+  check_verdict: pending

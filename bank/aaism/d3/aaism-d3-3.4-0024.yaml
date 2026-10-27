@@ -1,0 +1,29 @@
+id: aaism-d3-3.4-0024
+subdomain: "3.4"
+difficulty: hard
+stem: A bank will share a synthetic version of its customer transaction data with university researchers. Direct
+  identifiers were removed before the generator was trained. A test finds that some synthetic records closely match real
+  customers' transaction sequences. What should the security manager require before release?
+options:
+  A: A sharing agreement that bars researchers from re-identifying anyone
+  B: Removal of the matching records from the synthetic set before release
+  C: Regeneration with a differentially private generator, then a new test
+  D: Aggregation of the synthetic transactions into monthly totals
+answer: C
+explanation:
+  why_correct: Near-copies show that the generator memorised real customers, so the leak lies in the generator, not in a
+    few records. Training it with differential privacy bounds how much any one customer can influence the output, and a
+    fresh privacy test confirms the result before release.
+  why_not:
+    A: An agreement deters misuse, but it does not stop the data itself revealing real customers to anyone who obtains it.
+    B: Removing the obvious matches leaves other records produced by the same memorising generator, which may still leak in
+      less visible ways.
+    D: Monthly totals reduce detail, but they may still reflect memorised patterns and remove much of the value the
+      researchers need.
+status: draft
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aaism
+  check_verdict: pending

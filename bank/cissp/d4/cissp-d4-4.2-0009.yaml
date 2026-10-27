@@ -1,0 +1,29 @@
+id: cissp-d4-4.2-0009
+subdomain: "4.2"
+difficulty: medium
+stem: An intrusion detection sensor receives a copy of data centre traffic from a switch SPAN port. During peak hours it
+  misses sessions that the firewall logs show, while the sensor's CPU stays near 30%. The team needs a complete copy of
+  the traffic for detection and evidence. Which change BEST meets this need?
+options:
+  A: Replace the sensor with a model rated for twice the throughput
+  B: Feed the sensor from passive network taps on the monitored links
+  C: Send the mirrored traffic to the sensor through remote SPAN
+  D: Collect flow records from the switches in place of packet copies
+answer: B
+explanation:
+  why_correct: Switches treat SPAN copies as low priority and drop them when busy, which matches losses only at peak. A
+    passive tap copies every frame on the link at the physical layer, independent of switch load, so the sensor sees
+    complete traffic.
+  why_not:
+    A: The sensor's CPU sits near 30%, so it is not the bottleneck. A bigger sensor still receives the same incomplete copy.
+    C: Remote SPAN still relies on the switch's mirroring, which drops copies under load, and adds transport across the
+      network.
+    D: Flow records summarise sessions without their content, so they cannot support content inspection or serve as packet
+      evidence.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-cissp
+  check_verdict: pending

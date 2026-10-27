@@ -1,0 +1,30 @@
+id: aaism-d3-3.4-0023
+subdomain: "3.4"
+difficulty: hard
+stem: Three hospitals will train a shared model with federated learning, so patient records never leave each site. A
+  coordinator at one hospital combines the sites' model updates. The privacy officer warns that a single site's updates
+  can reveal details about its patients. Which control BEST addresses this concern?
+options:
+  A: Encryption of the updates in transit between sites and the coordinator
+  B: Pseudonymisation of patient records at each site before local training
+  C: Secure aggregation, so the coordinator sees only the combined update
+  D: A contract that bars the coordinator from inspecting single updates
+answer: C
+explanation:
+  why_correct: The risk is the coordinator, or anyone with its access, analysing one site's update to infer details of
+    that site's patients. Secure aggregation combines the updates cryptographically so that only their sum is revealed,
+    and no single site's update can be read.
+  why_not:
+    A: Encryption in transit stops eavesdroppers, but the coordinator decrypts each update to combine it, so it still sees
+      each site's update.
+    B: Pseudonymisation removes direct identifiers, but updates can still reveal attributes of patients whose records shaped
+      them.
+    D: A contract limits what the coordinator may do, but it still receives each update and could be compromised or breach
+      the terms.
+status: draft
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aaism
+  check_verdict: pending

@@ -1,0 +1,27 @@
+id: aaism-d2-2.2-0033
+subdomain: "2.2"
+difficulty: hard
+stem: Testers gave a support chatbot, fine-tuned on past support tickets, the opening line of a real ticket. It
+  completed the ticket word for word, including the customer's phone number. Which threat does this test demonstrate?
+options:
+  A: Membership inference against the fine-tuning data
+  B: Extraction of memorised training data
+  C: Model inversion that rebuilds typical customer records
+  D: Indirect prompt injection through stored tickets
+answer: B
+explanation:
+  why_correct: The model reproduced a specific training record verbatim from a short prefix. That is training data
+    extraction, which happens when a model memorises records during fine-tuning, and it exposes personal data directly.
+  why_not:
+    A: Membership inference reveals only whether a given record was in the training data. Here the model produced the
+      record's full content.
+    C: Model inversion reconstructs representative features of a class or group, not one customer's ticket word for word.
+    D: Indirect injection means hidden instructions in content steer the model. The testers gave no instruction; the model
+      recalled data it had learned.
+status: draft
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aaism
+  check_verdict: pending

@@ -1,0 +1,29 @@
+id: cissp-d6-6.1-0004
+subdomain: "6.1"
+difficulty: medium
+stem: A retailer has agreed the scope of its annual penetration test with the CIO. It covers the retailer's web shop on
+  a public cloud's virtual machines and the login pages and API of the SaaS CRM it subscribes to. Testing starts in
+  three weeks. What should the security manager do FIRST?
+options:
+  A: Confirm that the CRM provider permits testing and obtain written authorisation
+  B: Decide whether the SOC will be told the dates of the test in advance
+  C: Choose between black-box and grey-box testing for the web shop
+  D: Agree a test window outside the retailer's peak trading hours
+answer: A
+explanation:
+  why_correct: The retailer does not own the SaaS CRM, so its CIO cannot authorise attacks on it. Testing without the
+    provider's permission may be unlawful and breach its terms, so authorisation from the provider, and a check of the
+    cloud provider's testing policy, must come before the other planning choices.
+  why_not:
+    B: Deciding whether to tell the SOC shapes what the test measures, but it is a planning choice that matters only once
+      the test is lawful to run.
+    C: The testing approach is part of planning the web shop work. It does not settle whether the CRM may be tested at all.
+    D: Scheduling around peak hours limits business disruption, but the CRM part of the test cannot go ahead without the
+      provider's permission.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-cissp
+  check_verdict: pending

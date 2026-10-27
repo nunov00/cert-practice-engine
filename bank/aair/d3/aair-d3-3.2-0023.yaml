@@ -1,0 +1,28 @@
+id: aair-d3-3.2-0023
+subdomain: "3.2"
+difficulty: hard
+stem: A telecom's AI agent closes customer accounts on request in chat. Testing shows it occasionally misreads a request
+  to pause service as a request to close, and a closure deletes the account and phone number, which cannot be restored.
+  The residual risk is above appetite. Which treatment BEST brings it within appetite?
+options:
+  A: Daily staff review of a sample of the closures the agent made
+  B: Closures held as reversible for thirty days before final deletion
+  C: Retraining the agent's intent model on more pause requests
+  D: A confirmation message the customer must answer before closure
+answer: B
+explanation:
+  why_correct: The harm is severe because a wrong closure cannot be undone. Holding closures in a reversible state for
+    thirty days turns an irreversible error into one that can be fixed when the customer notices, which cuts the impact
+    of every misread request.
+  why_not:
+    A: Sampling finds some wrong closures, but only after the account and number are already gone.
+    C: Retraining may reduce misreads, but some will remain, and each still destroys the account.
+    D: A confirmation step helps, but a customer who believes they asked for a pause may confirm the agent's wording without
+      noticing, and the closure is still final.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aair
+  check_verdict: pending

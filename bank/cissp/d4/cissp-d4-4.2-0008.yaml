@@ -1,0 +1,29 @@
+id: cissp-d4-4.2-0008
+subdomain: "4.2"
+difficulty: hard
+stem: Company laptops use full-disk encryption that the TPM unlocks automatically at boot, followed by an operating
+  system sign-in with a strong password. Given a stolen laptop that was powered off, a tester captured the disk key from
+  the motherboard bus during a normal boot. Which change BEST stops this attack?
+options:
+  A: A longer and more complex operating system sign-in password
+  B: A firmware password that stops the laptop booting from external media
+  C: A pre-boot PIN that the TPM requires before it releases the disk key
+  D: A remote wipe that runs when the laptop next connects to the internet
+answer: C
+explanation:
+  why_correct: With TPM-only unlock, the key leaves the TPM on every boot whoever is holding the laptop, so it can be read
+    off the bus. Requiring a pre-boot PIN means the TPM releases the key only after the PIN is entered, which the thief
+    does not know.
+  why_not:
+    A: The sign-in password is checked after the disk is already unlocked, so the key has crossed the bus before the
+      password matters.
+    B: Blocking external boot stops attacks that boot another operating system, but this attack used the laptop's own normal
+      boot.
+    D: A remote wipe needs the laptop to come online, and an attacker reading the disk offline never lets it connect.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-cissp
+  check_verdict: pending

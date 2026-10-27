@@ -1,0 +1,30 @@
+id: cissp-d4-4.2-0007
+subdomain: "4.2"
+difficulty: hard
+stem: Laptops join the network through 802.1X. Printers cannot run 802.1X, so their switch ports admit them by MAC
+  address alone, with full access to the internal network. A tester unplugged a printer, set a laptop to the printer's
+  MAC address and reached the finance servers. Which change BEST reduces this risk?
+options:
+  A: Sticky port security that binds each printer port to its learned MAC address
+  B: An alert to the network team whenever a printer port loses its link
+  C: A restricted role for MAC-authenticated devices that permits print traffic only
+  D: A DHCP reservation that gives each printer's MAC address a fixed IP address
+answer: C
+explanation:
+  why_correct: MAC addresses are easy to copy, so any device admitted on MAC alone should be treated as weakly
+    authenticated. Placing such devices in a role that allows only print traffic to the print servers means a spoofed
+    laptop gains nothing beyond what a printer needs.
+  why_not:
+    A: Sticky port security accepts the MAC address it learned, which is exactly the address the tester copied, so the
+      laptop is still admitted.
+    B: A link-down alert may flag the swap, but printers lose link for many ordinary reasons, and the laptop keeps full
+      access while someone investigates.
+    D: A reservation keyed on the MAC address hands the spoofed laptop the printer's address. It changes nothing about what
+      the device can reach.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-cissp
+  check_verdict: pending

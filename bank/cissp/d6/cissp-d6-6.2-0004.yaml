@@ -1,0 +1,28 @@
+id: cissp-d6-6.2-0004
+subdomain: "6.2"
+difficulty: medium
+stem: A medical imaging company's file-parsing library crashed when a hospital sent it a corrupted scan file. The team
+  fixed that bug and wants to find other malformed files that could crash the parser or corrupt memory before the next
+  release. Which testing approach BEST fits?
+options:
+  A: Static analysis of the parser's source code on each commit
+  B: Coverage-guided fuzzing of the parser with mutated scan files
+  C: Unit tests for each field defined in the file format specification
+  D: A dynamic web scanner run against the hospital upload portal
+answer: B
+explanation:
+  why_correct: The goal is to find unknown inputs that break the parser. Coverage-guided fuzzing feeds it large numbers of
+    mutated files, steering towards new code paths, and reports the inputs that crash it or corrupt memory.
+  why_not:
+    A: Static analysis can flag risky code patterns, but it does not run the parser on real inputs and misses many
+      input-dependent memory faults.
+    C: Unit tests written from the specification check the cases the team thought of, which is the gap that let the first
+      crash through.
+    D: A web scanner tests the portal's web interface, not the parsing library's handling of malformed file contents.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-cissp
+  check_verdict: pending

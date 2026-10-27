@@ -1,0 +1,27 @@
+id: aair-d3-3.5-0023
+subdomain: "3.5"
+difficulty: hard
+stem: A retailer plans to train a marketing model on consumer profiles bought from a data broker. The broker states that
+  each consumer consented to this use, but declines to say how consent was collected. What should the risk practitioner
+  require BEFORE the data is used?
+options:
+  A: A contract warranty that the data was collected lawfully
+  B: An indemnity from the broker covering regulatory fines
+  C: Evidence of consent records for a sample of the profiles
+  D: Pseudonymisation of the profiles before training starts
+answer: C
+explanation:
+  why_correct: The retailer needs its own lawful basis for using the data, and it cannot rely on consent it cannot show.
+    Checking real consent records for a sample tests the broker's claim before the retailer takes on the risk.
+  why_not:
+    A: A warranty gives a claim against the broker afterwards, but the retailer would still be processing data without a
+      basis it can show.
+    B: An indemnity may not cover fines, which are often uninsurable, and it does not make the processing lawful.
+    D: Pseudonymised data is still personal data, so the need for a lawful basis remains.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aair
+  check_verdict: pending

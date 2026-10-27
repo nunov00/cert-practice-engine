@@ -1,0 +1,30 @@
+id: cissp-d4-4.1-0009
+subdomain: "4.1"
+difficulty: hard
+stem: A company's border routers dropped their BGP sessions for an hour. Traffic passing through the routers was light,
+  but a low-rate flood of packets addressed to the routers' own interfaces drove their CPUs to full load. The packets
+  came from real, unspoofed hosts on botnet networks. Which control BEST prevents a repeat?
+options:
+  A: Unicast reverse path forwarding checks on the internet-facing interfaces
+  B: Policing of traffic sent to the routers' control plane
+  C: An upstream DDoS scrubbing service triggered by traffic volume
+  D: Generalised TTL security checks on the BGP sessions
+answer: B
+explanation:
+  why_correct: The flood targeted the routers themselves, so the CPU that runs routing protocols was overwhelmed. Control
+    plane policing filters and rate-limits traffic addressed to the router, giving priority to routing peers and
+    management sources, so a low-rate flood cannot starve BGP.
+  why_not:
+    A: Reverse path checks drop packets with spoofed source addresses. These sources were real hosts with valid return
+      routes, so the packets pass.
+    C: Volume-triggered scrubbing reacts to large floods. A low-rate flood aimed at the router's CPU stays below the trigger
+      and never reaches the scrubbing centre.
+    D: TTL security protects the BGP sessions from spoofed packets sent from far away, but the flood hit every address on
+      the routers, not only the BGP port, so the CPU is still swamped.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-cissp
+  check_verdict: pending
