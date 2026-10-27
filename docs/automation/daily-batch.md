@@ -72,13 +72,31 @@ published questions than the target.
      options, key and explanations, drafts included), not just the stems, and
      does not test the same decision again with new wording. Duplicates were
      the main reason rewrites failed on 2026-10-24 and 2026-10-26.
-   - **Aim for at least 40% hard** in each exam's share, above the profile's
-     `hard_share_min` (30%), because reviewers downgrade labels that turn out
-     easier than written. A question is `hard` only when at least two wrong
-     options stay plausible after reading the whole stem, and only a stem
-     detail separates them from the key. A question whose answer is a figure
-     to compute (a formula, plain arithmetic, a ratio or a date sum) is
-     `medium` at most, however long the working.
+   - **Hard pass first** (owner, 2026-10-27: "the idea is to keep the overall
+     pool of questions over a certain difficulty. Therefore adding more hard
+     questions would help"). Since 2026-10-24 reviewers have lowered most
+     `hard` labels, so CISSP and AAIR nights published almost nothing and
+     their drafts piled up on the held-back list. So each exam's share is
+     written in two passes:
+     1. **Hard pass.** Write 60% of the exam's share (rounded up; 11 of 17,
+        10 of 16) as `hard` questions only, using the "Writing hard questions
+        that stay hard" section of the writer brief, and send them through
+        step 6 at once: the independent check, the strict hard-label check and
+        the hard top-ups.
+     2. **Fill pass.** Count the hard questions that survived (`H`). At the
+        profile's `hard_share_min` (`s`, 30%), the PR can carry at most
+        `H × (1 − s) / s` non-hard questions for the exam (7 for every 3
+        hard). Fill that room in this order: the hard pass's questions whose
+        label was lowered, then held drafts from step 3, then new `easy` or
+        `medium` questions. Write the rest of the share as `hard` questions
+        (a second hard round, through step 6 like the first), never as
+        questions the share cannot carry. A night with spare hard share
+        therefore releases held drafts instead of adding to them.
+   - A question is `hard` only when at least two wrong options stay plausible
+     after reading the whole stem, and only a stem detail separates them from
+     the key. A question whose answer is a figure to compute (a formula, plain
+     arithmetic, a ratio or a date sum) is `medium` at most, however long the
+     working.
 6. **Check them independently** per [`quality-check.md`](quality-check.md) and
    the checker brief: a separate worker with no access to the writer's
    reasoning runs `pnpm calibration packets` and `pnpm calibration record`.
@@ -95,8 +113,10 @@ published questions than the target.
      labels that reach the PR should survive them.
    - **Hard top-up** (owner, 2026-10-19 and 2026-10-26): for every hard label
      lowered in this step, write a new hard question for that exam the same
-     night (up to 10 extra per night across all exams) and send it through the
-     same independent check and strict hard-label check.
+     night (up to 10 extra per night across all exams), or rewrite the lowered
+     one so a second distractor survives the stem, and send it through the
+     same independent check and strict hard-label check. Spend the top-ups on
+     the exams with the most questions on the held-back list first.
    - If an exam's share is still short, hold back that exam's easiest new
      questions until it meets the target: set them to `status: draft` (keep the
      file; never delete it or reuse its ID), add them to

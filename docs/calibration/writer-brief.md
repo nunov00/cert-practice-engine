@@ -36,6 +36,44 @@ You write original multiple-choice questions for one exam. Read these first:
 - **Explain every option.** `why_correct` says why it is best; each `why_not`
   says why that option loses here.
 
+## Writing hard questions that stay hard
+
+From the reviews of the 2026-10-23 to 2026-10-27 batches, where checkers,
+Codex and the final review lowered most `hard` labels. Before a hard pass,
+read the exam's published `hard` questions in the target domain as models of
+the bar (for form only; test a different decision).
+
+What survives review:
+
+- **A real tradeoff.** The scenario sets two goals or constraints against each
+  other, and two or more distractors are what a good professional would do in
+  a slightly different situation (best practice elsewhere, wrong here).
+- **One deciding detail.** A single stem fact (a requirement, a constraint, who
+  owns what, what has already failed) decides between the key and its closest
+  rivals. It must not name the gap or point at the key.
+- **Fix the cause, not the symptom.** Strong distractors treat the visible
+  symptom, add a contract or policy, or reduce data in a way the stem's purpose
+  cannot accept; the key addresses where the problem actually sits.
+- **Same-form options.** All four are concrete actions (or all four are
+  controls, roles or documents) of similar length and specificity.
+
+What gets a `hard` label lowered:
+
+- Only one distractor is plausible after the stem (the others are straw men,
+  "review later", "accept the risk" or an irrelevant role).
+- The stem states the gap or the missing control, or lists "X is already in
+  place" facts that cross options off one by one.
+- The key is the lone umbrella or principle option among concrete steps, or the
+  only "before approval" option, or wins by majority vote across "part 1;
+  part 2" options.
+- The answer is a computed figure, a definition or a recall fact (`medium` at
+  most).
+- It tests a decision already tested in the subdomain, drafts included.
+
+Self-test before handing over a hard question: name the two distractors that
+survive the stem, and the stem detail that beats each. If you cannot, it is
+`medium`; label it so, and write another hard question instead.
+
 ## Before you hand over
 
 1. Cover each stem and read only the options. If you can pick the key, rewrite
