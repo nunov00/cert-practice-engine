@@ -1,0 +1,30 @@
+id: aair-d3-3.4-0026
+subdomain: "3.4"
+difficulty: hard
+stem: A lender's model sends borderline applications to underwriters. Any case not reviewed within four hours is
+  released with the model's own decision, so applicants are not kept waiting. Which key risk indicator BEST shows
+  whether this human oversight is working?
+options:
+  A: Underwriters' override rate on the cases they reviewed
+  B: Average time borderline cases wait in the review queue
+  C: Share of borderline cases released by the four-hour timeout
+  D: Model accuracy on borderline cases, measured against outcomes
+answer: C
+explanation:
+  why_correct: Every case released by the timeout is a borderline decision that no person looked at, which is the
+    oversight failing silently. Tracking that share shows directly how much of the intended review is actually
+    happening.
+  why_not:
+    A: The override rate shows what reviewers do with the cases they see, but it says nothing about the cases that time out
+      unreviewed.
+    B: Average queue time hints at pressure on the team, but an average can look acceptable while many cases still pass the
+      four-hour limit.
+    D: Outcome accuracy measures the model, arrives months later, and does not show whether people are reviewing the cases
+      they are meant to.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aair
+  check_verdict: pending

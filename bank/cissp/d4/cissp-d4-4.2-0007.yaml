@@ -1,6 +1,6 @@
 id: cissp-d4-4.2-0007
 subdomain: "4.2"
-difficulty: hard
+difficulty: medium
 stem: Laptops join the network through 802.1X. Printers cannot run 802.1X, so their switch ports admit them by MAC
   address alone, with full access to the internal network. A tester unplugged a printer, set a laptop to the printer's
   MAC address and reached the finance servers. Which change BEST reduces this risk?
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

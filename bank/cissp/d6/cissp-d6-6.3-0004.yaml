@@ -1,25 +1,23 @@
 id: cissp-d6-6.3-0004
 subdomain: "6.3"
 difficulty: medium
-stem: Managers completed all of last quarter's access recertifications on time. A later audit found many leavers' and
-  movers' rights still active in the systems that were reviewed. Which data would BEST show whether the reviews are
-  effective?
+stem: Owners of a finance system completed the quarterly review of its 4,000 user entitlements on time and confirmed
+  99.8% of them as still needed. Internal audit asks whether the owners actually examine each entitlement. Which data
+  would BEST answer this?
 options:
-  A: On-time completion rate of the reviews
-  B: Revocation rate and time spent per reviewer
-  C: Number of systems in the review campaign
-  D: Number of access requests approved
-answer: B
+  A: Median time each reviewer spent per entitlement
+  B: Share of entitlements reviewed by a delegate
+  C: Number of entitlements assigned to each reviewer
+  D: Share of reviews completed by the deadline
+answer: A
 explanation:
-  why_correct: Completion is already full, yet stale rights survived, which suggests rubber-stamping. A reviewer who
-    revokes nothing across hundreds of entitlements, in a few minutes, is not really reviewing; these figures show which
-    reviews are working.
+  why_correct: The question is whether each item gets real attention. Time spent per entitlement, shown for each reviewer,
+    reveals reviewers who confirm hundreds of rights in seconds, which a near-total confirmation rate already hints at.
   why_not:
-    A: Completion is already at its maximum and the audit still found stale rights, so it cannot tell effective reviews from
-      rubber stamps.
-    C: The number of systems shows the campaign's scope, not whether managers actually remove rights that are no longer
-      needed.
-    D: Approved requests measure access being granted, not whether reviews remove access that should end.
+    B: Delegation shows who did the review, which matters for accountability, but a delegate can examine items carefully and
+      an owner can rubber-stamp them.
+    C: Workload per reviewer helps explain why reviews might be rushed, but it does not show whether they were.
+    D: Timeliness is already confirmed and says nothing about how carefully each entitlement was examined.
 status: draft
 outline_version: 2024-04-15
 sample: false
@@ -27,3 +25,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

@@ -5,20 +5,22 @@ stem: Six months after an incident in which a bank's chatbot gave wrong mortgage
   review actions are closed. The risk register still rates that scenario's likelihood as rare, the rating set before
   launch. What should the risk practitioner do?
 options:
-  A: Re-rate the scenario using the incident and its causes as evidence
-  B: Close the scenario, as the review's actions are complete
-  C: Add the incident to the register as a separate new scenario
-  D: Keep the rating, as one incident does not change the long-run rate
-answer: A
+  A: Add a key risk indicator for wrong rates and keep the rating until the annual review
+  B: Log the incident as a loss event and revisit the rating at the next review cycle
+  C: Re-rate the scenario now, using the incident and its causes as evidence
+  D: Keep the rare rating and mark the scenario's controls as strengthened
+answer: C
 explanation:
   why_correct: A scenario rated rare has just happened, which is direct evidence about its likelihood and about the
-    controls the rating assumed. Re-rating it, taking account of the fixes made, keeps the register a true picture for
-    the decisions that rely on it.
+    controls the rating assumed. Re-rating it now, taking account of the fixes made, keeps the register an accurate
+    basis for the decisions that rely on it.
   why_not:
-    B: Closing the actions fixes known causes, but the scenario can still occur, and its rating should reflect what the
-      incident showed.
-    C: A separate entry splits one risk in two and leaves the original rating unchallenged.
-    D: The rating was a pre-launch estimate. Real experience with the system should update it, not be set aside.
+    A: A new indicator helps monitor the risk, but leaving a disproven rating in place until the annual review misleads
+      decisions in the meantime.
+    B: Logging the loss event is good practice, but deferring the rating leaves the register wrong for months after the
+      evidence arrived.
+    D: The fixes may justify a lower rating than the incident suggests, but that judgement needs a fresh assessment, not a
+      pre-launch rating kept as it was.
 status: draft
 outline_version: 2026-04-15
 sample: false
@@ -26,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-aair
   check_verdict: pending
+  options_only: obvious

@@ -1,6 +1,6 @@
 id: aaism-d2-2.3-0030
 subdomain: "2.3"
-difficulty: hard
+difficulty: medium
 stem: A bank will fine-tune a model on customer transaction data using a cloud provider's GPU service. Its board
   requires that the provider's administrators cannot read the data or the model weights, even while training runs. Which
   control BEST provides this assurance?
@@ -27,3 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-aaism
   check_verdict: pending
+  options_only: not_obvious

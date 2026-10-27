@@ -1,6 +1,6 @@
 id: aaism-d3-3.4-0023
 subdomain: "3.4"
-difficulty: hard
+difficulty: medium
 stem: Three hospitals will train a shared model with federated learning, so patient records never leave each site. A
   coordinator at one hospital combines the sites' model updates. The privacy officer warns that a single site's updates
   can reveal details about its patients. Which control BEST addresses this concern?
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-aaism
   check_verdict: pending
+  options_only: not_obvious

@@ -5,19 +5,22 @@ stem: A pharmacy's health chatbot serves customers in English, Spanish and Tagal
   refusal of dangerous dosing questions, was done in English. Which risk scenario is MOST important to add to the
   assessment?
 options:
-  A: Unsafe dosing replies in the two languages that were not tested
-  B: Translation errors that make correct English answers confusing
-  C: Customers asking questions outside the chatbot's intended scope
-  D: Slower replies in Spanish and Tagalog during busy periods
-answer: A
+  A: Refusals failing on rephrased English dosing questions
+  B: Dosing questions about children that the tests did not include
+  C: Dangerous dosing replies to questions asked in Spanish or Tagalog
+  D: Correct English answers losing accuracy once translated
+answer: C
 explanation:
-  why_correct: Safety behaviour learned and tested in one language often holds less well in others. Dangerous dosing
-    advice in an untested language is the highest-impact scenario, and the testing gives no evidence about it.
+  why_correct: Safety behaviour tested in one language often holds less well in others, and two of the chatbot's three
+    languages had no safety testing at all. Dangerous dosing advice in those languages is a high-impact scenario for
+    which the testing gives no evidence.
   why_not:
-    B: Translation quality affects clarity, which matters, but confusing wording is a lesser harm than unsafe dosing advice.
-    C: Out-of-scope questions arise in every language, and nothing in the stem suggests they were missed in the English
-      testing.
-    D: Response time is a service issue, not a safety risk to customers.
+    A: Rephrasing attacks are a real risk, but English refusals were tested, so the evidence there is at least partial,
+      unlike the untested languages.
+    B: Children's dosing may be a gap, but the stem gives no sign the tests left it out, while it states plainly that two
+      languages were never tested.
+    D: Translation quality matters for clarity, but a less accurate translation of a correct answer is a lesser harm than
+      unchecked dangerous advice.
 status: draft
 outline_version: 2026-04-15
 sample: false
@@ -25,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-aair
   check_verdict: pending
+  options_only: obvious

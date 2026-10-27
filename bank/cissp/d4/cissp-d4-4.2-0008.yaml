@@ -1,6 +1,6 @@
 id: cissp-d4-4.2-0008
 subdomain: "4.2"
-difficulty: hard
+difficulty: medium
 stem: Company laptops use full-disk encryption that the TPM unlocks automatically at boot, followed by an operating
   system sign-in with a strong password. Given a stolen laptop that was powered off, a tester captured the disk key from
   the motherboard bus during a normal boot. Which change BEST stops this attack?
@@ -27,3 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

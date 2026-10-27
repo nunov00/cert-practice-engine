@@ -1,6 +1,6 @@
 id: aaism-d2-2.2-0036
 subdomain: "2.2"
-difficulty: hard
+difficulty: medium
 stem: An orchestrator passes the output of a web research agent to a payments agent that can pay invoices. The agents
   authenticate to each other with mutual TLS, and each holds only the permissions its task needs. In threat modelling,
   which threat should the team stress MOST?
@@ -15,8 +15,8 @@ explanation:
     picked up from the web can carry instructions that reach the payments agent as trusted input, which could lead to
     fraudulent payments without breaking any authentication or permission.
   why_not:
-    A: Certificate theft is possible, but mutual TLS and certificate protection address it, while injected content passes
-      through those controls untouched.
+    A: Certificate theft is possible, but protected keys and short-lived certificates address it, while injected content
+      passes through mutual TLS untouched.
     C: Least privilege is already in place, so the research agent cannot reach payments directly. The risk is that it
       influences the agent that can.
     D: Exhausting the payments agent would delay payments, a lower impact than payments being made to an attacker.
@@ -27,3 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-aaism
   check_verdict: pending
+  options_only: not_obvious

@@ -5,9 +5,9 @@ stem: A utility's billing chatbot gives wrong answers in 1.2% of chats, within t
   breakdown shows that chats in Polish, 5% of volume, are wrong 9% of the time, mostly about payment plans for customers
   in arrears. What should the risk manager do?
 options:
-  A: Record the risk as within tolerance, as the overall rate is under 2%
+  A: Keep it recorded as within tolerance and add a Polish-language KRI
   B: Report the Polish-language risk to the owner as above tolerance
-  C: Lower the overall tolerance to 1% to reflect the breakdown
+  C: Retrain the model on Polish payment-plan chats
   D: Sample more Polish chats over the next quarter before acting
 answer: B
 explanation:
@@ -15,9 +15,10 @@ explanation:
     speakers, many in arrears, the wrong-answer rate is well above tolerance on high-impact topics, so the owner must
     decide how to treat it.
   why_not:
-    A: The average hides a group for whom the risk is far above tolerance, and on advice that matters most to them.
-    C: Tightening the overall tolerance changes the target, not the exposure. The average could still pass while the Polish
-      chats stay wrong.
+    A: A new indicator would track the problem, but the Polish chats are already far above tolerance, so recording the risk
+      as within tolerance misstates it and leaves no one deciding how to treat it.
+    C: Retraining may be the right treatment, but choosing it before the owner has been told the risk is above tolerance
+      skips the owner's decision on how to treat it.
     D: A segment that is 5% of all chats already gives a sizeable sample, and waiting a quarter leaves customers in arrears
       receiving wrong advice.
 status: draft
@@ -27,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-aaism
   check_verdict: pending
+  options_only: obvious

@@ -1,14 +1,14 @@
 id: cissp-d5-5.2-0005
 subdomain: "5.2"
-difficulty: hard
+difficulty: medium
 stem: Staff sign in to the company's cloud email with a password and a push prompt that uses number matching. Attackers
   now send phishing links to a proxy that relays the real sign-in page, so staff complete MFA themselves while the
   attackers capture the session cookie. Which change BEST stops this attack?
 options:
   A: One-time codes from an authenticator app in place of push prompts
-  B: Phishing-resistant FIDO2 security keys or platform passkeys
+  B: FIDO2 security keys or platform passkeys
   C: Shorter sessions that require a fresh sign-in after four hours
-  D: Push prompts that also show the sign-in location and application
+  D: Risk-based detection that revokes sessions from unfamiliar locations
 answer: B
 explanation:
   why_correct: The proxy works because the victim's MFA answer is valid wherever it is relayed. FIDO2 credentials sign a
@@ -18,8 +18,8 @@ explanation:
     A: The proxy relays one-time codes as easily as push approvals, so staff still complete MFA for the attacker.
     C: Shorter sessions limit how long a stolen cookie works, but the attacker still gets hours of access each time a user
       is phished.
-    D: Extra context can warn an alert user, but the location shown may be near the user, and staff who believe they are
-      signing in will usually approve.
+    D: "Revoking sessions that appear from unfamiliar places can cut an attack short, but it is detective: the attacker
+      already holds a valid session, and a proxy close to the user's location may not look unfamiliar."
 status: draft
 outline_version: 2024-04-15
 sample: false
@@ -27,3 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-cissp
   check_verdict: pending
+  options_only: obvious

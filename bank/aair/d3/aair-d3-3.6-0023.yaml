@@ -1,0 +1,29 @@
+id: aair-d3-3.6-0023
+subdomain: "3.6"
+difficulty: hard
+stem: A bank uses a vendor's hosted credit scoring service, which it validated before use. A disaster recovery test
+  shows that the vendor's failover region runs a model version two releases older than production, which the bank has
+  never validated. The vendor meets its recovery time objective. What should the risk practitioner recommend?
+options:
+  A: Request the vendor's latest disaster recovery test report
+  B: Have the vendor run the validated version in its failover region
+  C: Plan to suspend credit decisions for as long as a failover lasts
+  D: Accept the risk, as the vendor meets the recovery time objective
+answer: B
+explanation:
+  why_correct: During a failover the bank would make credit decisions with a model it has never validated, which its own
+    controls do not allow. Requiring the vendor to keep the validated version in the failover region closes that gap,
+    and the bank can confirm it in the next recovery test.
+  why_not:
+    A: The test report would describe recovery speed and steps, which already meet the objective. It does not change which
+      model version decides credit after failover.
+    C: Suspending decisions avoids using the unvalidated model, but it gives up the recovery the service is meant to
+      provide, when the version gap can be fixed.
+    D: Meeting the recovery time says the service comes back quickly, not that the decisions it makes are sound.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-27-daily-aair
+  check_verdict: pending

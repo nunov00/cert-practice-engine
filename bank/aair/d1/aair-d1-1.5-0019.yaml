@@ -5,21 +5,22 @@ stem: A media start-up scrapes public websites to train a text model. Copyright 
   mining of lawfully accessible content unless the rights holder has reserved those rights in a machine-readable way.
   Which control BEST addresses this legal consideration?
 options:
-  A: Honour machine-readable opt-outs when crawling, and keep records
-  B: Collect only from websites that show no copyright notice
-  C: Remove scraped text that later appears word for word in outputs
-  D: Rely on the fair use defence if a rights holder complains
-answer: A
+  A: License content from major publishers and crawl the rest freely
+  B: Honour opt-out requests that rights holders send by email
+  C: Filter model outputs for long passages copied word for word
+  D: Check each site's reservation signals before collecting, and record the check
+answer: D
 explanation:
-  why_correct: The exception holds only where rights have not been reserved. Checking for and honouring machine-readable
-    reservations at collection time, and recording what was checked, keeps the crawl within the exception and provides
-    evidence if challenged.
+  why_correct: The exception holds only where rights have not been reserved in a machine-readable way. Checking each
+    site's reservation signals at collection time, and recording the result, keeps the crawl within the exception and
+    gives evidence if it is challenged.
   why_not:
-    B: A copyright notice is not the legal test, as content is protected without one, and the reservation that matters is
-      the machine-readable one.
-    C: Filtering outputs deals with reproduction later, but the collection itself may already have been unlawful.
-    D: The stem's law sets a specific exception with an opt-out, and relying on a defence after a complaint leaves the
-      start-up exposed.
+    A: Licensing from major publishers covers their content, but crawling everyone else freely ignores the reservations that
+      smaller sites may have made.
+    B: Email requests are worth honouring, but the law turns on machine-readable reservations, which the crawler must check
+      whether or not anyone writes in.
+    C: Output filtering deals with reproduction later, but it does not make the collection itself lawful where rights were
+      reserved.
 status: draft
 outline_version: 2026-04-15
 sample: false
@@ -27,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-aair
   check_verdict: pending
+  options_only: obvious

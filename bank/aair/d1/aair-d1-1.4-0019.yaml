@@ -5,18 +5,21 @@ stem: A retailer's AI policy lets risk owners approve exceptions to it. A review
   end date, and several cover uses that have grown well beyond what was approved. What should the risk practitioner
   recommend?
 options:
-  A: Give each exception an expiry and scope, with re-approval to extend it
-  B: Stop granting exceptions to the AI policy from now on
-  C: Move approval of exceptions to the board risk committee
-  D: Close the 40 open exceptions and ask teams to reapply
-answer: A
+  A: Review the open exceptions with their owners each quarter
+  B: Give each exception a set scope and expiry, renewable only by re-approval
+  C: Record each exception in the risk register with a named owner
+  D: Require second-line sign-off before any new exception is granted
+answer: B
 explanation:
-  why_correct: Exceptions are meant to be temporary and specific. A defined scope and expiry, with re-approval needed to
-    extend, brings each one back for a decision before it can drift or become permanent.
+  why_correct: Exceptions are meant to be temporary and specific, and these drifted because nothing ended them. A defined
+    scope and expiry, with re-approval needed to extend, brings each one back for a decision before it can grow or
+    become permanent.
   why_not:
-    B: Exceptions handle cases the policy did not foresee. Removing them pushes teams to work around the policy unseen.
-    C: Board approval adds weight, but exceptions approved by the board could still run on without limit.
-    D: Closing all forty at once disrupts work, and the reapplications would face the same open-ended terms.
+    A: Quarterly reviews would catch drift, but without an expiry an exception still runs on by default unless someone acts
+      to end it.
+    C: Registering exceptions with owners improves visibility, but owners already approve them, and nothing in the register
+      makes an exception end.
+    D: Second-line sign-off strengthens the approval, but approved exceptions could still run on without limit.
 status: draft
 outline_version: 2026-04-15
 sample: false
@@ -24,3 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-aair
   check_verdict: pending
+  options_only: obvious

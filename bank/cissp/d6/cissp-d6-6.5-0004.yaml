@@ -1,22 +1,22 @@
 id: cissp-d6-6.5-0004
 subdomain: "6.5"
-difficulty: hard
+difficulty: medium
 stem: A company's contract gives it the right to audit its hosting provider. The provider offers instead its current ISO
   27001 certificate, issued by an accredited body. The certificate's scope lists the head office and the software
   development unit, while the company's data sits in the provider's data centre. What should the company's auditor do?
 options:
-  A: Rely on the certificate, as an accredited body issued it
+  A: Review the certificate's Statement of Applicability for data centre controls
   B: Obtain the latest surveillance audit report for the certificate
-  C: Seek assurance that covers the data centre, using the audit right if needed
+  C: Use the audit right to assess the data centre's controls
   D: Ask the provider to complete a questionnaire on data centre controls
 answer: C
 explanation:
   why_correct: A certificate gives assurance only for what is in its scope, and the data centre holding the company's data
-    is outside it. The auditor needs independent evidence for that site, from a report that covers it or by using the
-    contract's audit right.
+    is outside it. The contract's audit right lets the auditor obtain independent evidence about the controls at that
+    site.
   why_not:
-    A: Accreditation makes the certificate credible for its scope, but the scope does not include the site that holds the
-      company's data.
+    A: The Statement of Applicability lists the controls the certified system applies, but only within its scope, which does
+      not include the data centre.
     B: Surveillance audits cover the same certified scope, so the report would still say nothing about the data centre.
     D: A questionnaire is the provider's own description of its controls, not independent evidence that they work.
 status: draft
@@ -26,3 +26,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-cissp
   check_verdict: pending
+  options_only: obvious

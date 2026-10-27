@@ -4,17 +4,18 @@ difficulty: medium
 stem: A photo editing app lets users upload a photo and describe the changes they want. Abuse reports show users turning
   photos of real people, often colleagues and classmates, into sexual images. Which control BEST reduces this harm?
 options:
-  A: Visible and invisible watermarks on each edited image
+  A: Blocking prompts that contain sexual terms
   B: Blocking sexual edits of uploaded photos showing a real person
-  C: Terms of service that prohibit sexual images of real people
+  C: Verified identity for each account so abusers can be traced
   D: A report-and-takedown process for images shared in the app
 answer: B
 explanation:
   why_correct: The harm is created at the moment of editing. Detecting real people in uploaded photos and refusing sexual
     edits of them prevents the images being made, rather than dealing with them once they exist.
   why_not:
-    A: Watermarks help show an image is synthetic, but the victim is harmed by the image whether or not it is labelled.
-    C: Terms set expectations and allow enforcement, but they do not stop a user who ignores them.
+    A: Keyword blocking on prompts is easily reworded around, and it does not look at whose photo is being edited.
+    C: Traceable accounts may deter some abusers and support enforcement, but the images are still created and the harm
+      done.
     D: Takedown limits spread within the app after harm is done, and images saved and shared elsewhere are untouched.
 status: draft
 outline_version: 2025-08-19
@@ -23,3 +24,4 @@ provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-aaism
   check_verdict: pending
+  options_only: obvious
