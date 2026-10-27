@@ -5,22 +5,21 @@ stem: Six months after an incident in which a bank's chatbot gave wrong mortgage
   review actions are closed. The risk register still rates that scenario's likelihood as rare, the rating set before
   launch. What should the risk practitioner do?
 options:
-  A: Add a key risk indicator for wrong rates and keep the rating until the annual review
+  A: Re-rate the likelihood as likely, based on the incident alone
   B: Log the incident as a loss event and revisit the rating at the next review cycle
   C: Re-rate the scenario now, using the incident and its causes as evidence
-  D: Keep the rare rating and mark the scenario's controls as strengthened
+  D: Re-rate the scenario once an indicator for wrong rates shows a trend
 answer: C
 explanation:
   why_correct: A scenario rated rare has just happened, which is direct evidence about its likelihood and about the
-    controls the rating assumed. Re-rating it now, taking account of the fixes made, keeps the register an accurate
-    basis for the decisions that rely on it.
+    controls the rating assumed. Re-rating it now, weighing both the incident and the fixes made since, keeps the
+    register an accurate basis for the decisions that rely on it.
   why_not:
-    A: A new indicator helps monitor the risk, but leaving a disproven rating in place until the annual review misleads
-      decisions in the meantime.
+    A: The incident shows the rare rating was wrong, but rating from the incident alone ignores the causes found and the
+      fixes made since, which also bear on likelihood.
     B: Logging the loss event is good practice, but deferring the rating leaves the register wrong for months after the
       evidence arrived.
-    D: The fixes may justify a lower rating than the incident suggests, but that judgement needs a fresh assessment, not a
-      pre-launch rating kept as it was.
+    D: Waiting for an indicator trend leaves a rating the incident has already disproven in place until more errors occur.
 status: draft
 outline_version: 2026-04-15
 sample: false
