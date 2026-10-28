@@ -1,0 +1,32 @@
+id: aaism-d3-3.1-0023
+subdomain: '3.1'
+difficulty: hard
+stem: A consultancy's research assistant has a tool that fetches whatever web page a user names, so staff can summarise
+  public sources on any topic. The fetcher runs on a server in the corporate data centre. Testers made it retrieve
+  and summarise an internal admin page. Which design change BEST closes this route?
+options:
+  A: Block internal hostnames and private address ranges in the tool code
+  B: Screen user requests with a classifier that spots internal targets
+  C: Let the tool fetch only from an approved list of public domains
+  D: Run the fetcher in a network zone with no route to internal systems
+answer: D
+explanation:
+  why_correct: The fetcher can reach internal systems because of where it runs. Placing it in a zone that can reach
+    only the internet removes the route at the network layer, so neither a crafted URL nor injected instructions
+    can make it fetch an internal page, while staff can still summarise any public source.
+  why_not:
+    A: Deny-lists are a common first fix, but redirects, alternative address formats and DNS answers that change
+      after the check can bypass them, and the server would still sit next to internal systems.
+    B: A classifier sees only the request text. A public URL that redirects inward, or an instruction planted in
+      a fetched page, would not look like an internal target.
+    C: An allowlist is strong when the tool needs a few known sites. Staff need pages on any topic, so a short list
+      would break the tool and a long one would not be maintained.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aaism
+  checked_by: 2026-10-28-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

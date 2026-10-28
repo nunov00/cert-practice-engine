@@ -20,7 +20,7 @@ explanation:
     B: Manager follow-up works for a few individuals ignoring policy. Here many staff share a practical reason, so pressure
       alone is unlikely to change behaviour.
     C: Monitoring shows the scale of use, but it is detective; data keeps flowing into personal accounts while the cause remains.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
@@ -28,4 +28,4 @@ provenance:
   run_id: 2026-10-24-daily-aaism
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-10-24-daily-aaism-check
+  checked_by: 2026-10-28-daily-aaism-check

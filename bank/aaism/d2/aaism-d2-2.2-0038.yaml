@@ -1,0 +1,34 @@
+id: aaism-d2-2.2-0038
+subdomain: '2.2'
+difficulty: medium
+stem: A lender's scan of its AI stack reports four flaws. Customers chat through the lender's app with a model-serving
+  framework, which passes the text of each question to a vector database whose query parser
+  processes it for search. Administration interfaces
+  sit on a management network, and training runs on an internal GPU cluster. Which flaw should be fixed FIRST?
+options:
+  A: A critical flaw in the GPU driver on the training cluster
+  B: A high flaw in the vector database's query parser
+  C: A high flaw in the serving framework's admin interface
+  D: A medium flaw in the serving framework's request parser
+answer: B
+explanation:
+  why_correct: The vector database is not exposed to the internet, but it parses query text built from each customer's
+    question, so any customer can send it crafted input through the chatbot. That makes a high-severity flaw in
+    its query parser both reachable from outside and serious, which outranks flaws that need internal access or
+    do less damage.
+  why_not:
+    A: A critical score usually puts a flaw first, but the training cluster runs internal jobs and is not reachable
+      from customer input, so an outsider needs a foothold first.
+    C: This sits on the internet-facing framework, but the admin interface is on the management network, so customers
+      cannot reach it through the app.
+    D: The request parser takes customer input directly and should be fixed soon, but it is rated lower than an equally
+      reachable flaw in the vector database's parser.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aaism
+  checked_by: 2026-10-28-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

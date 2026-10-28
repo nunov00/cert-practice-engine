@@ -1,0 +1,32 @@
+id: cissp-d7-7.12-0003
+subdomain: '7.12'
+difficulty: hard
+stem: A clothing retailer has run three parallel tests of its order platform's disaster recovery plan, each finishing well
+  inside the four-hour recovery time objective. The two engineers who built the recovery environment led every test, and both
+  work at head office next to the primary data centre. The recovery site is 300 km away. How should the next test change?
+options:
+  A: Run it unannounced, at a time the risk team chooses without warning IT
+  B: Move from a parallel test to a full interruption test of the order platform
+  C: Have the recovery site's own staff run it, working only from the written plan
+  D: Widen its scope to include the main suppliers' recovery teams and contacts
+answer: C
+explanation:
+  why_correct: Every test so far proved the plan works when its authors carry it out. A disaster at the primary site could
+    take out head office and both engineers with it, so the plan has to work in the hands of the people at the recovery site.
+    Having them run the test from the written plan alone shows whether it does and exposes knowledge that only the authors hold.
+  why_not:
+    A: An unannounced test checks readiness at short notice, which is valuable, but the same engineers would answer the call
+      and the dependence on them would stay hidden.
+    B: A full interruption test gives stronger evidence about the systems, but the same two engineers would still lead it,
+      so it would not show whether anyone else can recover the platform.
+    D: Supplier dependencies are a common gap worth testing, but nothing in these results points to them, and the test would
+      still rest on the two engineers.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-cissp
+  checked_by: 2026-10-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

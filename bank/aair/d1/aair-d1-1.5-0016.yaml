@@ -26,5 +26,5 @@ provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aair
   check_verdict: pass
-  checked_by: 2026-10-23-daily-aair-check
   options_only: obvious
+  checked_by: 2026-10-23-daily-aair-check

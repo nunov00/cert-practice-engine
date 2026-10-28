@@ -1,0 +1,33 @@
+id: cissp-d7-7.11-0002
+subdomain: '7.11'
+difficulty: hard
+stem: Ransomware has encrypted a logistics firm's primary servers. Forensics shows the attackers held domain administrator
+  rights for three weeks before encrypting. The disaster recovery site replicates every 15 minutes and could take over within
+  an hour, and the executives want operations back today. Which recovery approach should the DR team follow?
+options:
+  A: Fail over to the DR site, then reset the privileged and service account passwords
+  B: Fail over to the DR site with internet access blocked until a forensic sweep ends
+  C: Rebuild the directory from clean media, then restore data from offline backups
+  D: Restore last night's backups into an isolated network after a full malware scan
+answer: C
+explanation:
+  why_correct: Three weeks of domain administrator access means the attackers could have planted accounts, group policies,
+    scheduled tasks and other persistence that the replica and recent backups now contain. Rebuilding the identity layer from
+    known-good media and restoring data, not whole systems, into it is slower, but it is the only option here that does not
+    restore the attackers' foothold along with the business.
+  why_not:
+    A: A fast failover with credential resets is a sound plan when the intrusion was brief. After three weeks of domain
+      control, the replica carries whatever the attackers added, and new passwords do not remove rogue accounts or policies.
+    B: Cutting internet access limits command and control while the team investigates, but the systems brought online still
+      contain the attackers' changes, which wait for the block to lift.
+    D: Isolating and scanning restored systems is good practice, but malware scans do not detect attacker-made accounts,
+      policies or scheduled tasks, and last night's backup falls well inside the three weeks.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-cissp
+  checked_by: 2026-10-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

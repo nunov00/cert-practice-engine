@@ -1,0 +1,32 @@
+id: aair-d1-1.1-0024
+subdomain: '1.1'
+difficulty: medium
+stem: A charity uses a model to set the order in which volunteers phone past donors. Callers can skip anyone, and nobody
+  is excluded from contact. A black-box model raises donations notably more than an interpretable one in trials. A trustee
+  insists on the interpretable model. What should the risk practitioner advise?
+options:
+  A: Use the interpretable model, so the ranking can be explained
+  B: Use the black-box model, with routine monitoring of its results
+  C: Use the black-box model, with explanations generated for each score
+  D: Run both models side by side for a year before choosing
+answer: B
+explanation:
+  why_correct: The model only orders phone calls. Nobody is refused anything or excluded, and callers can skip anyone,
+    so a wrong ranking does little harm and needs little explanation. Choosing the more effective model, with normal
+    monitoring of results, matches the controls to the low impact of the use.
+  why_not:
+    A: Interpretability matters where decisions affect people's rights or need justifying to them. Here it gives up a
+      notable benefit to explain a call order that affects nobody's access to anything.
+    C: Per-score explanations are the usual way to make a black-box model reviewable, but they add cost and approximate
+      reasoning for a use where nobody needs a decision explained.
+    D: A long parallel run suits high-stakes changes, but trials have already shown the difference, and a year of
+      lower donations is a real cost for a low-risk choice.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aair
+  checked_by: 2026-10-28-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

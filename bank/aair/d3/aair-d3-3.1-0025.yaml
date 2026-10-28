@@ -1,0 +1,32 @@
+id: aair-d3-3.1-0025
+subdomain: '3.1'
+difficulty: hard
+stem: A wholesaler will let its AI purchasing agent negotiate orders by message with suppliers' AI sales agents and sign
+  them, which binds the wholesaler. The ordering system rejects any order priced above the limit set for the agent.
+  Which risk scenario should the assessment MOST include?
+options:
+  A: Our agent is talked into paying more than its price limit
+  B: Our agent reveals the wholesaler's price limit to supplier agents
+  C: Our agent commits to delivery and liability terms nobody reviews
+  D: The two agents trade counteroffers in a loop without closing
+answer: C
+explanation:
+  why_correct: The hard limit covers price only. Delivery dates, penalties and liability clauses are also part of a signed
+    order, and a supplier's agent can push for terms that favour the supplier. Because orders bind the wholesaler once
+    signed, unreviewed terms can create losses with no upper bound.
+  why_not:
+    A: Persuasion beyond the limit is the obvious worry with negotiating agents, but the ordering system rejects any order
+      above the limit, so this scenario is already controlled outside the agent.
+    B: Leaking the limit is a real weakness, as suppliers could then price at it, but the cost is capped at a price the
+      wholesaler has already agreed to pay.
+    D: A negotiation loop wastes time and computing cost, but no order is signed, so it creates no commitment for the
+      wholesaler.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aair
+  checked_by: 2026-10-28-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

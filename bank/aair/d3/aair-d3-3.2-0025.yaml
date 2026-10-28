@@ -1,0 +1,33 @@
+id: aair-d3-3.2-0025
+subdomain: '3.2'
+difficulty: medium
+stem: A lender's credit model approves one applicant group noticeably less often than others, and the gap is above appetite.
+  Analysis traces most of it to one input, years at current address. The model replaced underwriters, whose decisions
+  an audit had found to show a wider gap for the same group. Which treatment is MOST appropriate?
+options:
+  A: Route the group's declined applications to underwriters for a fresh decision
+  B: Suspend the model and return to underwriters until it is fixed
+  C: Retrain the model without the years-at-address input
+  D: Accept the gap, as it is narrower than the underwriters' past gap
+answer: C
+explanation:
+  why_correct: The cause is known and sits in one input, so treating it there reduces the gap at its source without
+    giving up the model's benefits. The retrained model's gap is then tested against appetite before release, and if
+    it is still too wide, further treatment follows.
+  why_not:
+    A: Human review of adverse decisions is a common treatment for model bias, but the audit showed underwriters treated
+      this group worse. Sending their cases back to underwriters could widen the gap, and routing by group raises its
+      own fairness questions.
+    B: Suspension is sound when a model's harm cannot be contained, but here it returns decisions to a process with a
+      wider gap, so the group would be treated worse while the fix is made.
+    D: Being better than the old process does not bring the risk within appetite. The gap is still above it and has
+      a clear, treatable cause.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aair
+  checked_by: 2026-10-28-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

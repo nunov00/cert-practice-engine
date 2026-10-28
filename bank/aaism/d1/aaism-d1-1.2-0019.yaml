@@ -1,0 +1,32 @@
+id: aaism-d1-1.2-0019
+subdomain: '1.2'
+difficulty: hard
+stem: Policy bars AI services hosted in one country, to keep company data out of its jurisdiction. Researchers want
+  a specialist provider there, which no approved provider matches, to summarise published scientific papers. Three
+  other teams have asked for similar uses of public material this quarter. What should the security manager propose?
+options:
+  A: Scope the hosting rule to uses involving company data
+  B: Grant the research team a time-limited exception
+  C: Approve the provider after a vendor security assessment
+  D: Refuse the request and offer an approved provider instead
+answer: A
+explanation:
+  why_correct: The rule exists to keep company data out of one jurisdiction, and these uses involve only published
+    material. With the same need arising across teams, scoping the rule to uses that involve company data keeps
+    its protection while ending a stream of exceptions.
+  why_not:
+    B: An exception suits a one-off justified deviation, but four teams asking in one quarter shows the rule itself
+      catches uses it was not meant for, and exceptions would keep piling up.
+    C: A vendor assessment is the normal route to approval, but it cannot override a policy that bars the country
+      outright.
+    D: Applying the policy as written is safe, but no approved provider offers the needed capability, so refusal blocks
+      work that poses none of the risk the rule addresses.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aaism
+  checked_by: 2026-10-28-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: aaism-d3-3.2-0021
+subdomain: '3.2'
+difficulty: hard
+stem: A hospital fine-tuned a model on identifiable patient notes. Before release, an outside firm will test it for
+  jailbreaks, memorised notes and gradient-based adversarial attacks. The firm asks for a copy of the weights, saying
+  white-box testing finds more. Which arrangement is BEST?
+options:
+  A: Ship the weights to the firm's lab under a confidentiality agreement
+  B: Give the firm full model access on a copy hosted by the hospital
+  C: Give the firm query access to a test deployment of the model
+  D: Give the firm the weights of a twin fine-tuned on synthetic notes
+answer: B
+explanation:
+  why_correct: The weights may hold memorised patient notes, so they should stay in the hospital's custody, yet gradient-based
+    attacks need white-box access. A hospital-hosted copy that the testers use with full model access, under the
+    hospital's logging and controls, covers the whole scope without the weights leaving the hospital.
+  why_not:
+    A: White-box testing in the testers' own lab is common for models without sensitive training data. Here the
+      weights can disclose patient notes, and a confidentiality agreement is a promise, not a control, once a copy
+      has left the hospital.
+    C: Query access keeps the weights safe and suits jailbreak and memorisation tests, but gradient-based attacks
+      need access to the model's internals, so part of the agreed scope could not be tested.
+    D: A synthetic twin allows white-box testing with no patient data, but it cannot show whether the released model
+      memorised real notes, and its behaviour may differ from the model being released.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aaism
+  checked_by: 2026-10-28-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

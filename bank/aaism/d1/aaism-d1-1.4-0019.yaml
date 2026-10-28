@@ -1,0 +1,32 @@
+id: aaism-d1-1.4-0019
+subdomain: '1.4'
+difficulty: hard
+stem: Staff outside IT have published 2,000 agents on a company's low-code platform, many running unattended on schedules,
+  and makers often add connectors after an agent is published. The main problem found is agents sending company data
+  to personal or unapproved external services. Few company files carry sensitivity labels. Which measure would MOST
+  reduce this risk?
+options:
+  A: Platform data loss rules that block labelled data leaving agents
+  B: Platform alerts on agent traffic to unapproved services
+  C: Platform rules that let agents use approved connectors only
+  D: Manager approval in the platform before an agent is published
+answer: C
+explanation:
+  why_correct: The risk is data leaving through connectors to services nobody approved. A platform rule that allows
+    only approved connectors is enforced every time an agent runs, whatever the data is and however the agent was
+    changed after publishing, so data cannot reach an unapproved service.
+  why_not:
+    A: Data loss rules prevent leaks at the platform without reviewing each agent, but they key on sensitivity labels,
+      and few company files carry one, so most company data would pass.
+    B: Alerts give the SOC platform-wide visibility, but scheduled agents run unattended, so the data has already
+      gone by the time anyone responds.
+    D: An approval gate stops a risky agent going live, but makers often add connectors after publication, which the
+      gate never sees.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

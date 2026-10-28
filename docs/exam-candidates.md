@@ -42,7 +42,7 @@ market; every row is *to verify* until a daily run checks it).
 | 4 | CCSP (ISC2) | 100-150 CAT items (MCQ and advanced types), 6 domains (17/20/17/16/17/13%) | 4 | 5 | 3 | 5 | 4 | 25 | 2026-10-24 |
 | 5 | Security+ (CompTIA) | up to 90, MCQ and performance-based, 5 domains (27/24/19/16/14% on V8 from 2026-11-17) | 5 | 3 | 3 | 4 | 3 | 23 | 2026-10-26 |
 | 6 | CC (ISC2) | Adaptive (CAT), 5 domains (outline from 2026-09-01; weights to confirm from the outline) | 4 | 5 | 4 | 2 | 4 | 23 | 2026-10-27 |
-| 7 | CEH (EC-Council) | 125 MCQ *to verify* | 4 | 5 | 2 | 4 | 2 | 21 | 2026-10-18 |
+| 7 | CEH (EC-Council) | 125 MCQ in 4 hours, v13; no domain weights on the issuer's page | 4 | 5 | 2 | 4 | 2 | 21 | 2026-10-28 |
 | 8 | CySA+ (CompTIA) | up to 85, MCQ and performance-based *to verify* | 3 | 3 | 4 | 4 | 3 | 20 | 2026-10-18 |
 | 9 | SSCP (ISC2) | 125 MCQ, 7 domains *to verify* | 2 | 5 | 3 | 4 | 4 | 20 | 2026-10-18 |
 | 10 | CGRC (ISC2) | 125 MCQ, 7 domains *to verify* | 2 | 5 | 3 | 4 | 4 | 20 | 2026-10-18 |
@@ -106,7 +106,16 @@ older Checked date.
   (total 22 to 23). It ties Security+ on 23 and stays below it on demand, so
   the rank is unchanged.
 - **CEH:** high name recognition in job postings; EC-Council publishes fewer
-  official samples, so calibration is weaker.
+  official samples, so calibration is weaker. Checked 2026-10-28: the current
+  version is CEH v13 ("CEH AI"); the knowledge exam is 125 multiple-choice
+  questions in 4 hours, with a pass mark set per form between 60% and 85%. An
+  optional 6-hour practical (20 challenges) leads to CEH Master and is not
+  needed for CEH itself, so fit stays at 5. The issuer's page lists the exam's
+  topic areas but no domain weights (third-party guides list nine domains; a
+  recipe would need the official blueprint first). It offers no free official
+  sample questions, only mock exams inside paid training, so calibration stays
+  at 2. It cites over 22,000 LinkedIn job listings (September 2024) and mapping
+  to 45+ job roles, so demand stays at 4. Scores, total and rank unchanged.
 - **CySA+, SSCP, CGRC:** solid but smaller markets; kept as the tail of the
   queue.
 
@@ -121,3 +130,4 @@ older Checked date.
 | 2026-10-24 | CCSP row verified: format (CAT, 100-150 items) and weights confirmed, *to verify* dropped; scores, total and rank unchanged | ISC2 [exam outline (effective 2026-08-01)](https://edge.sitecorecloud.io/internationf173-xmc4e73-prodbc0f-9660/media/Project/ISC2/Main/Media/documents/exam-outlines/EXAMS-CCSP-Exam-Outline-English-01-2026-V2.pdf), [CCSP exam page](https://www.isc2.org/certifications/ccsp/ccsp-exam), [outline refresh notice](https://www.isc2.org/Insights/2026/06/isc2-ccsp-exam-outline-revised), [CAT notice](https://www.isc2.org/Insights/2025/07/ccsp-exam-going-cat), [CCSP quiz](https://cloud.connect.isc2.org/ccsp-quiz) |
 | 2026-10-26 | Security+ row verified: format, V8 weights and launch date confirmed, *to verify* dropped; calibration 4 to 3 (no free official samples found; total 24 to 23), rank unchanged | CompTIA [Security+ V7 page](https://www.comptia.org/en-us/certifications/security/v7/), [Security+ V8 page](https://www.comptia.org/en-us/certifications/security/v8/) |
 | 2026-10-27 | CC row verified: CAT format and the 2026-09-01 outline's five domains confirmed, *to verify* dropped; pay 1 to 2 as the free programme concludes (total 22 to 23), rank unchanged | ISC2 [CC exam outline](https://www.isc2.org/certifications/cc/cc-certification-exam-outline), [CC page and practice quiz](https://www.isc2.org/certifications/cc), [CAT page](https://www.isc2.org/certifications/computerized-adaptive-testing), [One Million Certified in Cybersecurity conclusion](https://www.isc2.org/Insights/2026/04/one-million-certified-cyber-conclusion) |
+| 2026-10-28 | CEH row verified: v13 format (125 MCQ, 4 hours, 60-85% pass mark) confirmed, *to verify* dropped; no official domain weights or free samples found; scores, total and rank unchanged | EC-Council [CEH page](https://www.eccouncil.org/train-certify/certified-ethical-hacker-ceh/) |

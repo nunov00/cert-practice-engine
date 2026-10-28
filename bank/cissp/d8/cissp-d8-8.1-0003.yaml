@@ -1,0 +1,32 @@
+id: cissp-d8-8.1-0003
+subdomain: '8.1'
+difficulty: hard
+stem: A retailer's 12 product teams deploy to production about 40 times a day. Policy requires its two-person application
+  security team to review each release, so teams have begun to skip the review. Last month a broken access check in the checkout
+  API went live unreviewed. Which change BEST builds security review into this delivery process?
+options:
+  A: A pipeline gate that blocks each deployment until a security reviewer approves it
+  B: Security review for each change that touches code designated as sensitive
+  C: Security review of a random sample of releases, sized to the team's capacity
+  D: Automated security tests in the pipeline that block deployments when they fail
+answer: B
+explanation:
+  why_correct: Two specialists cannot review 40 releases a day, so their time has to go where a missed flaw costs most. Routing
+    every change to sensitive code, such as checkout and access control, to them means the kind of change that slipped through
+    last month is always reviewed, while routine changes flow.
+  why_not:
+    A: Enforcing the gate is the usual answer to a bypassed control, but two reviewers facing 40 releases a day become a queue
+      that halts delivery or turns review into a rubber stamp.
+    C: Sampling fits the review load to capacity and keeps teams honest, but it leaves the choice to chance, so a change to
+      checkout logic is still more likely to go unreviewed than reviewed.
+    D: Automated tests scale with the pipeline and catch many common flaws, but a broken access check is business logic that
+      scanners and generic tests rarely recognise.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-cissp
+  checked_by: 2026-10-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

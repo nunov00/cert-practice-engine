@@ -19,7 +19,7 @@ explanation:
     B: Risk-tiered review saves effort on low-risk work, but it does not stop the same design mistakes from reaching review,
       and agent tool access is rarely low risk.
     D: External reviewers clear today's backlog, but the same findings keep arriving, so the queue grows back once they leave.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
@@ -27,4 +27,4 @@ provenance:
   run_id: 2026-10-24-daily-aaism
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-10-24-daily-aaism-check
+  checked_by: 2026-10-28-daily-aaism-check

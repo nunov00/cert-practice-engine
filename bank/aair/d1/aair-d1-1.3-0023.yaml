@@ -1,0 +1,32 @@
+id: aair-d1-1.3-0023
+subdomain: '1.3'
+difficulty: hard
+stem: An online insurer's quote model retrains and goes live each night when it passes an automated gate that the data
+  science team designed. One release passed the gate but raised quotes sharply for older drivers, and the head of motor,
+  the model's business owner, learned of it from complaints. What should the risk practitioner recommend?
+options:
+  A: Have the head of motor approve the criteria the release gate applies
+  B: Have the model validation team approve the release gate's criteria
+  C: Have the head of motor set tolerances for monitoring live quotes
+  D: Have the risk committee set customer impact criteria for the gate
+answer: A
+explanation:
+  why_correct: With a release each night, the gate is where the go-live decision is actually made, so the owner's accountability
+    has to reach it. Approving its criteria, such as limits on quote changes for customer groups, puts the business
+    tolerances the owner answers for into every automatic release before any customer is quoted.
+  why_not:
+    B: Validators should challenge the gate's design, but approving its criteria would put the second line in charge
+      of business tolerances that the owner is accountable for.
+    C: Owner-set tolerances on live monitoring put the owner's view in the right place, but monitoring acts after release,
+      when customers have already received the quotes, as the complaints show.
+    D: The risk committee sets appetite and oversees, but setting model-level release criteria draws it into a management
+      decision for one model and leaves the owner without a say.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aair
+  checked_by: 2026-10-28-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

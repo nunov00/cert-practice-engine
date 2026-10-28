@@ -1,0 +1,32 @@
+id: cissp-d7-7.15-0003
+subdomain: '7.15'
+difficulty: medium
+stem: A water utility's meter technicians visit customers' homes alone. Two were assaulted last year, and one was knocked
+  unconscious and lay undiscovered for three hours. The utility wants a measure that protects technicians on any visit.
+  Which measure BEST improves their safety?
+options:
+  A: A personal alarm that sounds a loud siren to deter an attacker
+  B: Live GPS tracking of technicians' vans on a map watched by dispatch
+  C: A panic button in the work phone app that alerts dispatch with location
+  D: A lone-worker app that alerts dispatch when a timed check-in is missed
+answer: D
+explanation:
+  why_correct: The worst outcome came from a technician who could do nothing and was not missed for hours. A timed check-in
+    raises the alarm without any action from the worker, so help is sent when a technician fails to check in, whether or not
+    they could call for it.
+  why_not:
+    A: A loud alarm can deter an attack and draw neighbours' attention, but it alerts nobody at the utility and does nothing
+      if the technician is already incapacitated.
+    B: Live tracking shows where each van is, but a van parked outside a house looks the same during a normal visit as during
+      an assault, so dispatch would see nothing wrong.
+    C: A panic button gets help quickly to a technician who can press it, and many lone-worker schemes rely on one. An
+      unconscious technician cannot press it, which is the case that went worst.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-cissp
+  checked_by: 2026-10-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

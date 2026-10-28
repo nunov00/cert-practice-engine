@@ -18,12 +18,12 @@ explanation:
     C: ISO/IEC 23894 gives guidance on AI risk management. It is guidance, not a set of requirements to certify against.
     D: ISO/IEC 27701 sets requirements for a privacy information management system. It can be certified, but it does not cover AI
       management.
-status: draft
+status: published
 outline_version: 2025-08-19
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-23-daily-aaism
   check_verdict: pass
-  checked_by: 2026-10-23-daily-aaism-check
   options_only: not_obvious
+  checked_by: 2026-10-28-daily-aaism-check

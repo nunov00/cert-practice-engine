@@ -1,0 +1,32 @@
+id: aaism-d1-1.1-0020
+subdomain: '1.1'
+difficulty: medium
+stem: A SaaS company wants to fine-tune one shared model on usage data from its customers. Most customers accepted
+  standard terms that allow use for product improvement, but enterprise customers signed negotiated contracts limiting
+  use of their data to providing the service. What should the security manager require?
+options:
+  A: Update the terms so each customer permits training use
+  B: Anonymise each customer's data before it enters training
+  C: Train only on data from customers whose contracts allow it
+  D: Confirm with privacy counsel that the training is lawful
+answer: C
+explanation:
+  why_correct: The negotiated contracts are binding requirements from key stakeholders, and they restrict any use
+    of the data beyond providing the service, whether or not it identifies anyone. Excluding those customers' data,
+    unless they agree otherwise, meets those terms while the standard-terms data can still be used.
+  why_not:
+    A: Updating standard terms works for customers on those terms, but a negotiated contract cannot be changed by
+      one side, so the enterprise restriction stays until each customer agrees.
+    B: Anonymisation is the usual answer to privacy concerns, but these contracts limit the purpose for which the
+      data may be used, and enterprise usage data can hold business secrets that anonymisation does not remove.
+    D: Data protection law is one source of requirements, but training could be lawful and still breach the negotiated
+      contracts.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aaism
+  checked_by: 2026-10-28-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

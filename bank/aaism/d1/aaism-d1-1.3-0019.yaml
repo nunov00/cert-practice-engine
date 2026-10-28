@@ -1,0 +1,33 @@
+id: aaism-d1-1.3-0019
+subdomain: '1.3'
+difficulty: medium
+stem: A data science team's training datasets are copied by storage versioning, cross-region replication and a backup
+  service. Backups go to an immutable vault, shared with other systems, that keeps every snapshot for seven years.
+  Datasets must be disposed of when their retention period ends. Which approach BEST makes disposal reliable?
+options:
+  A: A per-dataset encryption key, destroyed when retention ends
+  B: Lifecycle expiry rules for the dataset on each storage tier
+  C: Tags set at creation so that copies carry their deletion date
+  D: A register of the dataset's copies, each deleted at expiry
+answer: A
+explanation:
+  why_correct: The immutable vault cannot delete one dataset's data from a snapshot before seven years, whatever the
+    team wants. If each dataset is encrypted under its own key before it is stored, the copies in the vault, the
+    replicas and the versions hold only ciphertext, and destroying the key at the end of retention makes all of
+    them unreadable at once.
+  why_not:
+    B: Lifecycle rules work well on versioned and replicated storage, but the immutable vault keeps its snapshots for
+      seven years regardless, so the dataset survives there.
+    C: Tags let each tier find and expire copies automatically, but a tag cannot make an immutable vault release one
+      dataset from a shared snapshot early.
+    D: A register shows where every copy sits, which helps the other tiers, but the copies in the immutable vault
+      cannot be deleted when retention ends.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aaism
+  checked_by: 2026-10-28-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

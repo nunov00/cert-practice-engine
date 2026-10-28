@@ -19,12 +19,12 @@ explanation:
     C: Profile checks on the assembled retraining dataset would also flag fares a hundred times larger, but only once the
       nightly dataset is built from all five feeds, which is after ingestion.
     D: Output drift alerts work on the live model, after retraining and release, so they catch the problem last of these options.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-24-daily-aaism
   check_verdict: pass
-  checked_by: 2026-10-24-daily-aaism-check
   options_only: not_obvious
+  checked_by: 2026-10-28-daily-aaism-check

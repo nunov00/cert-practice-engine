@@ -1,0 +1,32 @@
+id: cissp-d2-2.2-0002
+subdomain: '2.2'
+difficulty: medium
+stem: A defence supplier sends design files labelled Confidential to a machining subcontractor that works for many customers.
+  One design turned up at a rival, sent by a subcontractor employee who works only on other customers' jobs and had opened
+  it while the supplier's job was still running. Which handling requirement should the supplier add to future contracts?
+options:
+  A: Encrypt the design files at rest on the subcontractor's storage and backups
+  B: Return or destroy the design files and any copies when each job ends
+  C: Mark each page of the design files with the supplier's Confidential label
+  D: Limit access to the design files to staff assigned to the supplier's jobs
+answer: D
+explanation:
+  why_correct: The leak came from someone with no part in the supplier's work who could still open the files. Restricting access
+    to the people assigned to the supplier's jobs applies need to know at the subcontractor, which is the handling rule that
+    would have kept the file from that employee.
+  why_not:
+    A: Encryption at rest protects against theft of disks or backups, but staff opening files through the subcontractor's
+      own systems see them decrypted, so it would not have stopped this employee.
+    B: Returning or destroying files at the end of a job shortens their life at the subcontractor, which is good practice,
+      but this file was opened while the job was still running.
+    C: Clear labels tell staff how sensitive a file is and support discipline afterwards, but they do not prevent someone
+      who chooses to misuse a file from opening it.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-cissp
+  checked_by: 2026-10-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: cissp-d2-2.6-0002
+subdomain: '2.6'
+difficulty: medium
+stem: An insurer's developers test claims changes against copies of production data. Many defects appear only with real-world
+  quirks such as unusual name formats and long claim histories, and test cases join records across the policy, claims and payments
+  systems by customer number. Privacy rules bar real personal data from test environments. Which approach BEST fits?
+options:
+  A: Random masking of the personal fields, applied separately to each system's own copy
+  B: Synthetic records generated from statistical profiles of the production data
+  C: Format-preserving masking that swaps each personal value the same way in each system
+  D: Production copies kept encrypted, with access limited to named developers
+answer: C
+explanation:
+  why_correct: Format-preserving masking that maps each real value to the same realistic substitute everywhere removes the personal data while keeping
+    the real records' shapes and histories, and it keeps the customer numbers that join the three systems consistent, so the
+    tests still exercise the quirks that cause defects.
+  why_not:
+    A: Random masking removes personal data, but each system gets different substitutes, so records no longer join across the
+      three systems and the cross-system tests break.
+    B: Synthetic data is the strongest privacy option and suits many test needs, but records generated from statistical profiles
+      tend to lose the rare, odd cases that produce these defects.
+    D: Encryption and access limits protect the copies, but developers still work with real personal data, which the privacy
+      rules forbid in test.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-cissp
+  checked_by: 2026-10-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

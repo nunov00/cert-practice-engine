@@ -1,0 +1,31 @@
+id: cissp-d5-5.1-0006
+subdomain: '5.1'
+difficulty: hard
+stem: A payments company's data centre is unstaffed at night. When a storage array fails at 2 a.m., the vendor dispatches a
+  field engineer from its pool of several hundred, who can be on site in 20 minutes; the company's nearest on-call engineer
+  is 90 minutes away. The outage stops card processing. How should the company admit the vendor's engineer?
+options:
+  A: Read him the code for a lockbox at the door that holds a temporary badge
+  B: Have the on-call engineer drive in and escort him for the whole of the visit
+  C: Release the doors remotely after checking his ID on camera against the vendor's dispatch
+  D: Let him in on the badge the vendor's engineers hold under the vendor access agreement
+answer: C
+explanation:
+  why_correct: Card processing is down, so waiting 90 minutes has a real cost, but the site has no one to check who arrives.
+    A remote release after the operations centre matches the engineer's photo ID on camera to the vendor's dispatch record verifies
+    the person and the job before entry, and the cameras let the centre watch the visit until staff arrive.
+  why_not:
+    A: A lockbox code read over the phone admits whoever holds it, with no check that the person at the door is the engineer
+      the vendor sent.
+    B: A full escort is the normal rule for vendors, and it would apply if staff were nearby. Here it adds over an hour to
+      an outage that stops card processing, when identity can be verified remotely.
+    D: Standing vendor badges suit a small named team, but with a pool of several hundred engineers the company cannot know
+      who holds a badge tonight, and the access is not tied to this job.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

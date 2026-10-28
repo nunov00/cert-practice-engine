@@ -21,12 +21,12 @@ explanation:
       scan targets the wrong file.
     D: Trigger testing addresses behaviour learned in training, a real but separate risk. It does not stop code running on
       the data scientists' machines when the model is loaded.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-24-daily-aaism
   check_verdict: pass
-  checked_by: 2026-10-24-daily-aaism-check
   options_only: not_obvious
+  checked_by: 2026-10-28-daily-aaism-check

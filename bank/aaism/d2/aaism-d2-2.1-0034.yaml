@@ -1,0 +1,32 @@
+id: aaism-d2-2.1-0034
+subdomain: '2.1'
+difficulty: hard
+stem: A board's risk appetite statement says it has no appetite for AI errors that affect customers. Its strategy,
+  approved the same day, calls for customer-facing AI assistants in every business line within a year. Business units
+  now treat any chance of error as above appetite. What should the security manager do?
+options:
+  A: Have the AI committee approve exceptions for low-impact uses
+  B: Translate the statement into impact tiers for units to apply
+  C: Propose measurable error tolerances for the board to approve
+  D: Apply the statement as written and hold customer-facing AI
+answer: C
+explanation:
+  why_correct: Some error is unavoidable in any AI system, so a zero appetite contradicts the board's own strategy.
+    Only the body that set the appetite can resolve that. Proposing measurable tolerances, for example error rates
+    by type of customer harm, gives the board a workable statement to approve, which management can then apply.
+  why_not:
+    A: Exceptions suit occasional departures from a workable limit. A committee granting them against a board appetite
+      would override the board, and here nearly every use would need one.
+    B: Turning an appetite into tiers is management's job when the appetite allows some risk. Tiers built on a
+      zero appetite would either block everything or quietly allow risk the board said it would not accept.
+    D: This respects the wording, but it defeats the strategy the board approved the same day, so the conflict stays
+      unresolved.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aaism
+  checked_by: 2026-10-28-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

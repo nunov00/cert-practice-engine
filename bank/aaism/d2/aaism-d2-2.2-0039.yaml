@@ -1,0 +1,32 @@
+id: aaism-d2-2.2-0039
+subdomain: '2.2'
+difficulty: hard
+stem: A research lab's GPU cluster runs training jobs from teams with different data sensitivity. Jobs from different
+  teams share each GPU at the same time through time-slicing. Researchers publish a flaw on this GPU model that lets
+  one process read another's data from GPU memory. Which control BEST addresses the exposure?
+options:
+  A: Apply the vendor's driver patch when it is released
+  B: Run a memory-wipe job on each GPU between workloads
+  C: Schedule jobs of different sensitivity on separate GPUs
+  D: Run each job in its own container with no network access
+answer: C
+explanation:
+  why_correct: The flaw lets one process read GPU memory used by another, and time-slicing puts jobs from different
+    teams on the same GPU at once. Scheduling jobs of different sensitivity on separate GPUs removes the shared
+    memory between them, so the flaw has nothing sensitive to expose.
+  why_not:
+    A: Patching is the lasting fix, but jobs keep sharing GPUs until a patch is released, tested and rolled out,
+      so it leaves the exposure open now, when a control is needed.
+    B: Wiping memory between workloads stops data being left for the next job, but with time-slicing the jobs run
+      at the same time, so there is no gap in which to wipe.
+    D: Containers separate processes at the operating system level, but they share the same GPU and its memory, which
+      is where the flaw sits.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aaism
+  checked_by: 2026-10-28-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

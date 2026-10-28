@@ -1,0 +1,32 @@
+id: aair-d3-3.6-0026
+subdomain: '3.6'
+difficulty: medium
+stem: A retailer's incident plan for its AI pricing and recommendation services is exercised each year with a restore
+  test and a tabletop session, and both went well. Its last two AI incidents were not outages but weeks of wrong outputs,
+  each first reported by customers. Which change to the exercise programme is MOST valuable?
+options:
+  A: Run the restore test twice a year instead of once
+  B: Add a wrong-output scenario to the yearly tabletop session
+  C: Feed corrupted inputs in a controlled exercise to see if they are caught
+  D: Bring the model owners into the yearly tabletop session
+answer: C
+explanation:
+  why_correct: Both incidents ran for weeks because nobody inside the retailer noticed. Feeding deliberately corrupted
+    inputs in a controlled exercise tests the step that failed, whether monitoring and staff detect wrong outputs and
+    raise an incident, and shows how long that takes.
+  why_not:
+    A: More frequent restore tests prepare for outages, which the plan already handles well. They do not test detection
+      of outputs that are wrong while the service is running.
+    B: A wrong-output tabletop improves how the team responds, but a tabletop starts from the point where the problem
+      is known. Detection, the step that failed twice, is assumed rather than tested.
+    D: Model owners add expertise once an incident is declared, but the incidents were found by customers, so the gap
+      lies before anyone is called in.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aair
+  checked_by: 2026-10-28-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious
