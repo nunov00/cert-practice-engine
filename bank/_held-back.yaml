@@ -83,3 +83,7 @@ held:
   - { id: aair-d3-3.4-0026, pr: 67 }
   - { id: aair-d3-3.5-0023, pr: 67 }
   - { id: aaism-d2-2.2-0036, pr: 67 }
+  # PR #69 (daily batch 2026-10-28), merge run: released by the batch run, put
+  # back after review lowered hard labels below the minimum
+  - { id: aair-d3-3.6-0019, pr: 69 }
+  - { id: aaism-d1-1.1-0017, pr: 69 }

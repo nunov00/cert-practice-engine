@@ -1,6 +1,6 @@
 id: cissp-d3-3.1-0003
 subdomain: '3.1'
-difficulty: hard
+difficulty: medium
 stem: A fitness app is adding a feature that shows users the running groups meeting within about 5 km of them. The app looks
   for nearby groups each time it opens, often several times a day. The design team has agreed that precise GPS positions must
   not reach its servers. Which design BEST protects users' location privacy?

@@ -8,7 +8,7 @@ options:
   A: A pipeline gate that blocks each deployment until a security reviewer approves it
   B: Security review for each change that touches code designated as sensitive
   C: Security review of a random sample of releases, sized to the team's capacity
-  D: Automated security tests in the pipeline that block deployments when they fail
+  D: Automated SAST and DAST scans in the pipeline that block deployments on failure
 answer: B
 explanation:
   why_correct: Two specialists cannot review 40 releases a day, so their time has to go where a missed flaw costs most. Routing
@@ -19,8 +19,9 @@ explanation:
       that halts delivery or turns review into a rubber stamp.
     C: Sampling fits the review load to capacity and keeps teams honest, but it leaves the choice to chance, so a change to
       checkout logic is still more likely to go unreviewed than reviewed.
-    D: Automated tests scale with the pipeline and catch many common flaws, but a broken access check is business logic that
-      scanners and generic tests rarely recognise.
+    D: Pipeline scanners scale with deployments and catch many common flaws, but a broken access check is business logic that
+      generic scanners rarely recognise. Catching it automatically takes authorisation tests written for the application's
+      own rules, which these scans are not.
 status: published
 outline_version: '2024-04-15'
 sample: false

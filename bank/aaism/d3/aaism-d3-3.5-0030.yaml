@@ -1,6 +1,6 @@
 id: aaism-d3-3.5-0030
 subdomain: '3.5'
-difficulty: hard
+difficulty: medium
 stem: Sales staff use an AI agent that updates CRM records with each user's own token, so the CRM audit trail shows
   only the user. Each user may edit only their own accounts. The SOC must detect changes made by an agent that injected
   content has manipulated. Which change BEST supports this?

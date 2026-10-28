@@ -17,12 +17,12 @@ explanation:
     tooling pick the most recent safe version, here the one before the jailbreak was introduced, within the 15-minute
     recovery target.
   why_not:
-    A: The runbook already did this. The vulnerable release was approved and immutable; its approval simply did not
+    A: The runbook already did this. The vulnerable release was an approved version, recalled by its ID; its approval simply did not
       reflect the flaw found afterwards.
     B: A sign-off adds a check, but finding and briefing an approver at night will not fit a 15-minute recovery,
       and the approver would still need a record of which versions are flawed.
-    C: A regression suite that includes the jailbreak would catch it, but running a full suite before every rollback
-      does not fit a 15-minute recovery target.
+    C: A regression suite catches the jailbreak only if it already tests for it, and it adds a run to every rollback.
+      Recording known flaws against versions uses what is already known and adds no delay to recovery.
 status: published
 outline_version: '2025-08-19'
 sample: false

@@ -3,24 +3,26 @@ subdomain: '2.6'
 difficulty: medium
 stem: An insurer's developers test claims changes against copies of production data. Many defects appear only with real-world
   quirks such as unusual name formats and long claim histories, and test cases join records across the policy, claims and payments
-  systems by customer number. Privacy rules bar real personal data from test environments. Which approach BEST fits?
+  systems by customer number. The privacy office allows production-derived test data only once every name, contact detail and customer number has been replaced. Which approach BEST fits?
 options:
   A: Random masking of the personal fields, applied separately to each system's own copy
   B: Synthetic records generated from statistical profiles of the production data
-  C: Format-preserving masking that swaps each personal value the same way in each system
+  C: Format-preserving masking that swaps each value the same way in every system
   D: Production copies kept encrypted, with access limited to named developers
 answer: C
 explanation:
-  why_correct: Format-preserving masking that maps each real value to the same realistic substitute everywhere removes the personal data while keeping
-    the real records' shapes and histories, and it keeps the customer numbers that join the three systems consistent, so the
-    tests still exercise the quirks that cause defects.
+  why_correct: Format-preserving masking that maps each real value to the same realistic substitute everywhere replaces
+    the identifiers the privacy office lists, keeps the real records' shapes and histories, and keeps the substitute customer
+    numbers consistent across the three systems, so the joins work and the tests still exercise the quirks that cause defects.
+    The masked data is still pseudonymised rather than anonymous, which is why the privacy office's rule, not the masking,
+    decides that it may be used.
   why_not:
-    A: Random masking removes personal data, but each system gets different substitutes, so records no longer join across the
+    A: Random masking also meets the privacy office's rule, but each system gets different substitutes, so records no longer join across the
       three systems and the cross-system tests break.
     B: Synthetic data is the strongest privacy option and suits many test needs, but records generated from statistical profiles
       tend to lose the rare, odd cases that produce these defects.
-    D: Encryption and access limits protect the copies, but developers still work with real personal data, which the privacy
-      rules forbid in test.
+    D: Encryption and access limits protect the copies, but developers still work with the real names and customer numbers, which
+      the privacy office does not allow in test.
 status: published
 outline_version: '2024-04-15'
 sample: false

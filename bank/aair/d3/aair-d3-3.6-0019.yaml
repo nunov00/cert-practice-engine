@@ -20,7 +20,7 @@ explanation:
       even a few an hour is too many.
     D: Cutting the agent's access is a normal containment step, but the agent shares the order service's account. Revoking
       it would stop order processing too.
-status: published
+status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:

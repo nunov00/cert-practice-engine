@@ -1,6 +1,6 @@
 id: cissp-d1-1.1-0003
 subdomain: '1.1'
-difficulty: hard
+difficulty: medium
 stem: A certified penetration tester is midway through an authorised test of a retailer's own servers. The retailer's IT manager
   asks her to add its customer loyalty app, which runs on a SaaS vendor's shared platform, and gives written approval. The vendor's
   terms of service say nothing about security testing. What should the tester do?

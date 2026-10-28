@@ -1,6 +1,6 @@
 id: aair-d1-1.4-0020
 subdomain: '1.4'
-difficulty: hard
+difficulty: medium
 stem: A bank's second-line AI risk team wrote step-by-step procedures for how each business team monitors its models. A
   year later, most teams work differently from the procedures, which describe screens and reports that their monitoring
   tools do not have. What should the risk practitioner recommend?

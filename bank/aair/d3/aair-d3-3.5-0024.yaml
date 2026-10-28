@@ -1,6 +1,6 @@
 id: aair-d3-3.5-0024
 subdomain: '3.5'
-difficulty: hard
+difficulty: medium
 stem: An insurer's claims system uses a vendor's AI model to read medical invoices. A press report reveals that the vendor
   found, weeks earlier, that the model misread one invoice layout, and fixed it in a routine update without telling
   customers. The insurer had paid some claims on wrong amounts. Which contract change BEST addresses this risk?
@@ -20,8 +20,8 @@ explanation:
       the faulty version running.
     C: Service credits compensate for poor accuracy in general, but they do not tell the insurer that a defect exists
       or which claims it affected, so the wrong payments stay uncorrected.
-    D: Assurance over the change process checks that updates are controlled, and the update itself was handled. The
-      failure was in disclosure to customers, which such assurance does not cover.
+    D: Assurance over the change process could include how defects are communicated, but it is periodic and indirect;
+      a yearly report would not have told the insurer about this defect in time. A direct duty to notify does.
 status: published
 outline_version: '2026-04-15'
 sample: false

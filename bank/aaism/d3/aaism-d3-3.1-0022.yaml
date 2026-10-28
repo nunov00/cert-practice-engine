@@ -1,6 +1,6 @@
 id: aaism-d3-3.1-0022
 subdomain: '3.1'
-difficulty: hard
+difficulty: medium
 stem: A finance team's analysis agent writes and runs Python to answer questions about spreadsheets that suppliers send.
   The code runs inside the agent's own container, which holds the agent's API keys for the ledger and payment systems
   as environment variables. Which design change BEST protects those keys?

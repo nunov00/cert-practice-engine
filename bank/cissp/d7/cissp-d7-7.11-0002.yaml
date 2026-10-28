@@ -8,7 +8,7 @@ options:
   A: Fail over to the DR site, then reset the privileged and service account passwords
   B: Fail over to the DR site with internet access blocked until a forensic sweep ends
   C: Rebuild the directory from clean media, then restore data from offline backups
-  D: Restore last night's backups into an isolated network after a full malware scan
+  D: Restore last night's offline backups into an isolated network after a full malware scan
 answer: C
 explanation:
   why_correct: Three weeks of domain administrator access means the attackers could have planted accounts, group policies,
@@ -21,7 +21,7 @@ explanation:
     B: Cutting internet access limits command and control while the team investigates, but the systems brought online still
       contain the attackers' changes, which wait for the block to lift.
     D: Isolating and scanning restored systems is good practice, but malware scans do not detect attacker-made accounts,
-      policies or scheduled tasks, and last night's backup falls well inside the three weeks.
+      policies or scheduled tasks, and last night's offline backup falls well inside the three weeks.
 status: published
 outline_version: '2024-04-15'
 sample: false

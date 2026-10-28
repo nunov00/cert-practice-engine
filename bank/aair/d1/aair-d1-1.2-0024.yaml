@@ -1,6 +1,6 @@
 id: aair-d1-1.2-0024
 subdomain: '1.2'
-difficulty: hard
+difficulty: medium
 stem: A logistics firm's developers give its AI agents new tools and system permissions by editing each agent's configuration
   in code, often several times a month. The security team wants agent permissions checked by an existing company process
   rather than a new one. Which process should the risk practitioner recommend?

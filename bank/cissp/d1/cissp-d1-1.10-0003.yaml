@@ -16,8 +16,9 @@ explanation:
     used exactly such a route. An attack tree starts from that outcome and works back through every way to reach it, so phone
     calls, desk procedures and the override sit alongside technical paths as branches to analyse and mitigate.
   why_not:
-    A: PASTA ties threats to business impact, which suits a payments system, but scoped to the application it still models
-      the software. The frauds ran through a phone call and a staff decision outside it.
+    A: PASTA ties threats to business impact and can include people and process attack paths, but a full seven-stage exercise
+      scoped to the application is far broader than the CISO's question and centres on the software's attack surface. An
+      attack tree goes straight at every route to that one loss, people and procedures included.
     C: Misuse cases are a good way to think like an abuser of a function. Written against customer-facing use cases, they
       miss a route that runs through internal staff at the operations desk.
     D: Mapping the two frauds as a kill chain shows where they could have been detected, which is useful. It describes only

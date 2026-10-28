@@ -1,6 +1,6 @@
 id: aaism-d1-1.4-0019
 subdomain: '1.4'
-difficulty: hard
+difficulty: medium
 stem: Staff outside IT have published 2,000 agents on a company's low-code platform, many running unattended on schedules,
   and makers often add connectors after an agent is published. The main problem found is agents sending company data
   to personal or unapproved external services. Few company files carry sensitivity labels. Which measure would MOST

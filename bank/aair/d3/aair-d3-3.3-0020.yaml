@@ -11,8 +11,9 @@ options:
   D: An automated rule compares figures in each letter with the claim
 answer: C
 explanation:
-  why_correct: The correct amount already exists. Inserting it from the claims system into the letter removes the chance of
-    the model stating it wrongly, instead of trying to catch errors afterwards.
+  why_correct: The correct amount already exists. Rendering every amount-bearing field (words, figures, instalments) from
+    the claims system, with the model barred from restating amounts in its own text, removes most chances of a wrong amount
+    at the source instead of trying to catch errors afterwards.
   why_not:
     A: Sampling finds error patterns but lets 98% of letters go out unchecked.
     B: A second model is itself error-prone and tends to share the first model's mistakes, so it is a weak check on figures.

@@ -1,6 +1,6 @@
 id: cissp-d7-7.12-0003
 subdomain: '7.12'
-difficulty: hard
+difficulty: medium
 stem: A clothing retailer has run three parallel tests of its order platform's disaster recovery plan, each finishing well
   inside the four-hour recovery time objective. The two engineers who built the recovery environment led every test, and both
   work at head office next to the primary data centre. The recovery site is 300 km away. How should the next test change?

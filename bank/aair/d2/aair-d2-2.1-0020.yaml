@@ -1,6 +1,6 @@
 id: aair-d2-2.1-0020
 subdomain: '2.1'
-difficulty: hard
+difficulty: medium
 stem: Five regional hospitals want to build a model that detects a rare heart condition from ECGs. Each hospital's rules
   bar patient records from leaving its site, and no single hospital has enough cases to train a reliable model. Which
   design should the risk practitioner MOST support?
