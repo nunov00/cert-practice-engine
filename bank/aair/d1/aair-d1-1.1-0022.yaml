@@ -21,7 +21,7 @@ explanation:
       officer the regulator requires.
     D: Templates work when documents share a layout. With documents from many countries and no common format, most would
       fall to the exceptions queue and staff would still be overwhelmed.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
@@ -29,4 +29,4 @@ provenance:
   run_id: 2026-10-24-daily-aair
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-10-27-daily-aair-check
+  checked_by: 2026-10-28-daily-aair-check

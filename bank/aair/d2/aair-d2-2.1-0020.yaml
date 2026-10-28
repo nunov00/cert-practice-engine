@@ -1,0 +1,31 @@
+id: aair-d2-2.1-0020
+subdomain: '2.1'
+difficulty: medium
+stem: Five regional hospitals want to build a model that detects a rare heart condition from ECGs. Each hospital's rules
+  bar patient records from leaving its site, and no single hospital has enough cases to train a reliable model. Which
+  design should the risk practitioner MOST support?
+options:
+  A: Pool de-identified ECGs from the five hospitals in one secure store
+  B: Train at each site and combine only the model updates centrally
+  C: Share synthetic ECGs generated at each site to train one model
+  D: Train a separate model at each hospital on its own cases
+answer: B
+explanation:
+  why_correct: Federated training keeps every record at its own hospital and shares only model updates, so the model learns
+    from all five hospitals' cases without breaking the rule on records leaving a site. The updates still need protecting,
+    for example by secure aggregation, because they can reveal some information about the data.
+  why_not:
+    A: Pooling de-identified data is a common way to build a larger training set, but the records would still leave each
+      site, and ECGs of a rare condition can be hard to de-identify reliably.
+    C: Synthetic data can stand in for real records, but a generator trained on a handful of rare cases tends either to copy
+      them closely or to lose the very patterns the model needs to learn.
+    D: Separate models keep the data on site, but each hospital alone has too few cases, so none of the models would be
+      reliable.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aair
+  check_verdict: pending
+  options_only: obvious

@@ -1,0 +1,32 @@
+id: aair-d2-2.3-0017
+subdomain: '2.3'
+difficulty: medium
+stem: A bank retrains its card fraud model each quarter and releases it with the same alert threshold, a score of 0.8,
+  set when the model was first built so that the fraud team receives about 2,000 alerts a day. Which pre-release check
+  is MOST important for the next retrained version?
+options:
+  A: Check the input features against the training feature definitions
+  B: Confirm the new version's AUC is at least the previous version's
+  C: Rerun the original validation suite and compare the results
+  D: Check how many alerts a day the 0.8 threshold gives on recent payments
+answer: D
+explanation:
+  why_correct: Retraining can shift the whole spread of scores, so the same cut-off can produce far more or far fewer
+    alerts even when the model ranks payments just as well. Checking the alert volume at 0.8 on recent payments shows
+    whether the team would be flooded or fraud would go unreviewed, so the threshold can be reset before release.
+  why_not:
+    A: Feature checks catch mismatches between training and live data, which is good practice, but they say nothing about
+      what the unchanged threshold now produces.
+    B: AUC is a standard release check, but it measures how well the model ranks payments, not where a fixed score falls.
+      A version with the same AUC can still send twice the alerts at 0.8.
+    C: The original suite confirms the model's quality, but it was built around the first version. Unless it tests alert
+      volume at the carried-over threshold, it can pass while the cut-off no longer fits.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aair
+  checked_by: 2026-10-28-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

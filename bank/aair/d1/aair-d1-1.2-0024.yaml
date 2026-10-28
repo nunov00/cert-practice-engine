@@ -1,0 +1,31 @@
+id: aair-d1-1.2-0024
+subdomain: '1.2'
+difficulty: medium
+stem: A logistics firm's developers give its AI agents new tools and system permissions by editing each agent's configuration
+  in code, often several times a month. The security team wants agent permissions checked by an existing company process
+  rather than a new one. Which process should the risk practitioner recommend?
+options:
+  A: The quarterly access review that managers complete for their staff
+  B: The change approval for releases that alter an agent's configuration
+  C: The yearly validation that each AI system goes through
+  D: The service account review that IT security runs twice a year
+answer: B
+explanation:
+  why_correct: Agent permissions change through code releases, several times a month. Adding a permission check to the
+    approval of those releases puts it at the point where access is granted, so each new tool or permission is challenged
+    before it is live, using a process the developers already follow.
+  why_not:
+    A: The quarterly access review is the standard check on staff access, but it is built around managers confirming
+      their people's accounts, and quarterly checks would find new agent permissions weeks after they went live.
+    C: Validation covers each AI system in depth, but once a year is far slower than the rate at which agents gain
+      new tools and permissions.
+    D: A service account review is the natural home for non-human accounts, but twice a year it would find excess
+      permissions months after they were granted, and it reviews accounts, not the tools each agent can call.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aair
+  check_verdict: pending
+  options_only: not_obvious

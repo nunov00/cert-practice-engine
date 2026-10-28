@@ -1,0 +1,31 @@
+id: aair-d1-1.4-0020
+subdomain: '1.4'
+difficulty: medium
+stem: A bank's second-line AI risk team wrote step-by-step procedures for how each business team monitors its models. A
+  year later, most teams work differently from the procedures, which describe screens and reports that their monitoring
+  tools do not have. What should the risk practitioner recommend?
+options:
+  A: Have each team write its own procedure to meet a second-line monitoring standard
+  B: Have the second line retrain the teams on the existing procedures
+  C: Have the second line update the procedures after visiting each team
+  D: Have internal audit test the teams' compliance with the procedures
+answer: A
+explanation:
+  why_correct: Procedures work when the people who run a process write them for the tools they actually use. A second-line
+    standard sets what monitoring must achieve, and each team writes and keeps its own procedure to meet it, so the
+    procedures change when the tools do and the second line stays free to challenge them.
+  why_not:
+    B: Training helps when people do not know a procedure, but these procedures describe screens the teams do not have.
+      Teaching them would not make them possible to follow.
+    C: Visiting teams would make the procedures fit today's tools, but the second line would still own first-line operating
+      steps, and the procedures would drift again each time a team changes its tools.
+    D: An audit would confirm that teams do not follow the procedures, which is already known. It does not make the procedures
+      workable.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aair
+  check_verdict: pending
+  options_only: obvious

@@ -1,0 +1,32 @@
+id: aaism-d2-2.3-0033
+subdomain: '2.3'
+difficulty: medium
+stem: To avoid depending on one supplier, a retailer contracted a second chatbot vendor as a backup. During a later
+  outage, both vendors' services failed within minutes of each other, from the same cause. Which due diligence step
+  would BEST have revealed this risk beforehand?
+options:
+  A: Comparing the two vendors' availability commitments
+  B: Testing failover from the primary vendor to the backup
+  C: Reviewing each vendor's continuity plan and test results
+  D: Mapping the third parties each vendor relies on
+answer: D
+explanation:
+  why_correct: Two vendors failing together from one cause points to a shared dependency further down the chain,
+    such as the same model provider or hosting platform. Mapping each vendor's own suppliers would have shown that
+    the backup was not independent of the primary, so the retailer could choose a backup that is.
+  why_not:
+    A: Availability commitments describe each vendor's target and remedies, but both vendors can meet them on paper
+      while relying on the same upstream service.
+    B: A failover test is the usual proof that a backup works, but it runs while the shared upstream service is up,
+      so it passes and says nothing about a common failure.
+    C: Each continuity plan covers that vendor's own systems and may look sound, but reviewing them one at a time
+      does not reveal that both depend on the same third party.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aaism
+  checked_by: 2026-10-28-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aair-d3-3.3-0026
+subdomain: '3.3'
+difficulty: hard
+stem: A city council runs a free public chatbot on a commercial language model that charges per token. Its gateway
+  caps prompt size and requests for each address. One night, traffic from thousands of addresses, each within the caps,
+  used up the month's model budget in six hours, and the chatbot stopped. Which control BEST limits the harm of a repeat?
+options:
+  A: Alert the service team when hourly model spending passes a set level
+  B: Require a bot check that visitors pass before starting a chat
+  C: Split the monthly budget into daily caps that pause the chatbot
+  D: Lower the per-address caps on prompt size and request rate
+answer: C
+explanation:
+  why_correct: However the traffic is spread, a daily cap bounds what one bad night can cost. The chatbot pauses for
+    the rest of that day at worst, instead of for the rest of the month, and the cap works without anyone having to
+    spot the attack or tell genuine visitors from scripts.
+  why_not:
+    A: A spending alert is a useful detective control, but the budget went in six hours overnight. Unless someone responds
+      in time, the money is gone before anyone acts.
+    B: A bot check raises the cost of scripted traffic, but traffic from thousands of addresses suggests an operation
+      that can pay services to solve such checks, and the check does not bound spending once passed.
+    D: Tighter per-address caps make each address cost less, but the traffic already stayed under the caps by spreading
+      across thousands of addresses. Lower caps would mainly restrict genuine residents.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aair
+  checked_by: 2026-10-28-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,30 @@
+id: aaism-d1-1.5-0021
+subdomain: '1.5'
+difficulty: hard
+stem: Content from staff mailboxes is appearing in replies a SaaS AI assistant gives to outside parties. All leaked
+  content so far came through the assistant's mailbox connector. The vendor cannot yet explain how. About 3,000 staff
+  rely on the assistant for drafting. What should the security manager do FIRST?
+options:
+  A: Notify staff that their mail may have been exposed
+  B: Disable the assistant for the whole staff tenant
+  C: Obtain the vendor's logs of the affected sessions
+  D: Revoke the assistant's mailbox connector tokens
+answer: D
+explanation:
+  why_correct: The leak is ongoing and has one known route, the mailbox connector, which the company controls. Revoking
+    the connector's tokens stops mailbox content reaching the assistant at once, without waiting for the vendor,
+    and staff keep the drafting features they rely on.
+  why_not:
+    A: Notification may be required once the scope is known, but it does not stop the leak and comes after containment.
+    B: Taking the whole service offline is the right containment when the source is unknown, but here the route is
+      known, and this removes a tool 3,000 staff depend on.
+    C: Vendor logs are needed to scope the incident, but collecting them while the connector stays live lets more
+      mail leak.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aaism
+  check_verdict: pending
+  options_only: obvious

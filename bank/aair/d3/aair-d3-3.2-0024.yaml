@@ -1,0 +1,33 @@
+id: aair-d3-3.2-0024
+subdomain: '3.2'
+difficulty: hard
+stem: A children's hospital fine-tuned a language model on its clinical notes so that it drafts letters about rare
+  genetic conditions. Partner hospitals want a copy to run on their own servers. Testing shows that, given a few details,
+  the model can repeat passages from real patients' notes. Which treatment BEST lets the hospital share the model?
+options:
+  A: Offer the model only through a hosted service that filters patient details
+  B: Share the weights after removing the memorised passages found in testing
+  C: Remove names and identifiers from the notes and retrain the model
+  D: Retrain the model on the clinical notes with differential privacy
+answer: D
+explanation:
+  why_correct: Once a copy runs on partners' servers, the hospital cannot control how it is queried, so the treatment
+    has to sit in the model itself. Training with differential privacy limits how much any one patient's notes can
+    shape the model, which reduces memorisation across the whole training set, not only the passages a test happened
+    to find. The privacy level is then set and tested against letter quality.
+  why_not:
+    A: A hosted service with output filtering is a sound treatment when the hospital keeps the model. The partners want
+      to run their own copy, which a hosted service does not give them.
+    B: Removing what testing found treats the known cases, but a test probes only some inputs. Other memorised passages
+      would remain in the weights the partners receive.
+    C: Removing identifiers is the usual first step, but notes about rare genetic conditions describe very few children,
+      so repeated passages can still identify them without a name.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aair
+  checked_by: 2026-10-28-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

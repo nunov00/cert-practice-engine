@@ -1,0 +1,32 @@
+id: aair-d2-2.4-0018
+subdomain: '2.4'
+difficulty: medium
+stem: An insurer's staff assistant answers from a vector index built from customer correspondence, which the index stores
+  as chunks of text. When a customer's records are erased on request, the source documents are deleted at once, but
+  the index is rebuilt only each quarter. Which practice BEST handles erasure in the index?
+options:
+  A: Rebuild the index each month instead of each quarter
+  B: Delete a customer's chunks from the index when their records are erased
+  C: Filter erased customers' chunks out of search results at query time
+  D: Keep personal data out of the documents that are indexed
+answer: B
+explanation:
+  why_correct: The index holds copies of the erased content, so it is personal data that must be erased too. Tracing
+    each chunk to its source record lets the insurer remove that customer's chunks as part of the same erasure, so
+    nothing erased stays in use or in storage.
+  why_not:
+    A: More frequent rebuilds shorten the gap, but erased content still sits in the index and can be used for up to
+      a month after each request.
+    C: A query-time filter stops erased content appearing in answers, which is a useful extra safeguard, but the text
+      is still stored in the index, so it has not been erased.
+    D: Keeping personal data out removes the problem, but customer correspondence is the content the assistant needs
+      to answer from.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aair
+  checked_by: 2026-10-28-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

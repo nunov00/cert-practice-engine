@@ -1,0 +1,32 @@
+id: cissp-d5-5.3-0005
+subdomain: '5.3'
+difficulty: hard
+stem: Staff at a design agency received an email asking them to approve a file-sharing helper app. They signed in on the
+  agency's genuine identity provider page, completed MFA and accepted the app's request to read their mail. The app's
+  publisher then downloaded months of client email. Which change BEST prevents a repeat?
+options:
+  A: Move staff from push-based MFA to phishing-resistant security keys for sign-in
+  B: Require admin approval before users grant third-party apps access to mail or files
+  C: Block this app and revoke the mail permissions that users granted to it
+  D: Require MFA again whenever a user grants a new third-party app access to their data
+answer: B
+explanation:
+  why_correct: The attack never needed stolen credentials. Users authenticated properly and then delegated mail access to
+    the attacker's app through OAuth consent. Moving that decision for sensitive permissions from each user to an admin
+    review stops the next malicious app getting the grant, whatever name it uses.
+  why_not:
+    A: Phishing-resistant keys are the right answer when a fake page steals credentials. Here staff used the genuine page and
+      completed MFA, so a stronger factor would have changed nothing about the consent they gave.
+    C: Blocking the app and revoking its grants is the right incident response step, but it stops only this app. The publisher
+      can register another and send the same email.
+    D: Asking for MFA again at consent confirms who is granting access, which was never in doubt. Users who already completed
+      MFA would complete it again and still accept the request.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-cissp
+  checked_by: 2026-10-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: aair-d3-3.6-0025
+subdomain: '3.6'
+difficulty: medium
+stem: A travel firm's customer assistant runs on a vendor's language model. Its continuity plan says to switch to a
+  staffed fallback if the assistant goes down. Last month the vendor's service degraded for a full day, with many slow
+  or cut-off replies, but it stayed up, so the assistant remained in use while complaints grew. What should the risk
+  practitioner recommend?
+options:
+  A: Exercise the staffed fallback with contact centre staff each quarter
+  B: Add automatic failover to a second model provider
+  C: Define the error and delay levels that trigger the fallback
+  D: Agree response-time and error-rate commitments with the vendor
+answer: C
+explanation:
+  why_correct: The fallback existed but was never triggered, because the plan only covered a full outage. Measurable
+    levels of errors and delay at which the fallback is invoked let staff act on a degraded service as well as a failed
+    one, instead of waiting for it to go down.
+  why_not:
+    A: Exercises make sure staff can run the fallback, but the fallback was never invoked. Practice does not change
+      when the plan says to use it.
+    B: A second provider adds resilience, but failover still needs conditions to fire. Set on availability, as is usual,
+      it would not have switched during a day when the service stayed up.
+    D: Vendor commitments give the firm remedies and a basis for complaint, but they do not tell the firm when to stop
+      relying on the degraded service.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aair
+  checked_by: 2026-10-28-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

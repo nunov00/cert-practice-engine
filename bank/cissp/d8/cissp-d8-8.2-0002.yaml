@@ -1,0 +1,31 @@
+id: cissp-d8-8.2-0002
+subdomain: '8.2'
+difficulty: hard
+stem: An open-source project's maintainers found that a pull request from a contributor of two years had made the CI pipeline
+  sign a build containing his own code. Pipelines run automatically on pull requests from branches in the project's main
+  repository, and any pipeline job can use the signing key. Which change BEST stops this?
+options:
+  A: Withhold CI secrets from pipelines triggered by pull requests from forks
+  B: Sign only in a release pipeline run from protected tags, never on pull requests
+  C: Require maintainer approval before pipelines run for first-time contributors
+  D: Move the signing key into an HSM that pipeline jobs call to sign builds
+answer: B
+explanation:
+  why_correct: The problem is that code nobody has reviewed can reach the signing step. Signing only in a release pipeline that
+    runs from protected tags means a build is signed after its code has been merged and tagged by maintainers, so a pull
+    request alone can never produce a signed build, whoever opens it.
+  why_not:
+    A: Withholding secrets from fork pull requests is a standard safeguard, but this pull request came from a branch in the
+      main repository, where the rule would not apply.
+    C: Approval for first-time contributors stops strangers' code running, but this contributor had two years of history
+      and would not be held for approval.
+    D: An HSM stops the key being copied, but any job that can call it can still get a build signed, which is what happened.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-cissp
+  checked_by: 2026-10-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

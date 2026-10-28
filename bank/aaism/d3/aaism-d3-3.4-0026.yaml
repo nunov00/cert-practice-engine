@@ -1,0 +1,32 @@
+id: aaism-d3-3.4-0026
+subdomain: '3.4'
+difficulty: medium
+stem: A lender asks applicants to state their ethnicity voluntarily, and its credit model does not use the field. The
+  privacy team proposes removing it under data minimisation. The lender re-tests each new model version for fair outcomes
+  using past applicants' individual records. What should the security manager recommend?
+options:
+  A: Delete the field from stored records under data minimisation
+  B: Store the field apart, released only for fairness testing
+  C: Pseudonymise the field and keep it in the applicant records
+  D: Keep group-level counts and delete the individual values
+answer: B
+explanation:
+  why_correct: Re-testing new versions on past applicants needs each applicant's stated group linked to that applicant,
+    so the data has a real purpose. Storing it apart from the records that feed modelling, and releasing it only
+    to the fairness tests, serves that purpose while keeping it away from model development and credit decisions.
+  why_not:
+    A: Minimisation is the right instinct for data a process does not use, but the fairness re-tests do use it, so
+      deleting it would leave new versions untestable.
+    C: Pseudonymising reduces who can identify applicants, but keeping the field in the records used for modelling
+      makes it available to model builders and pipelines that have no need for it.
+    D: Aggregates support a one-off outcome report, but re-testing a new model version means scoring individual past
+      applicants and comparing outcomes by group, which counts cannot support.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aaism
+  checked_by: 2026-10-28-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

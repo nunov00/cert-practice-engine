@@ -1,0 +1,31 @@
+id: cissp-d1-1.12-0003
+subdomain: '1.12'
+difficulty: medium
+stem: After an audit found member files left out overnight in several branches, a credit union hired a training firm to run
+  clean-desk sessions for branch staff. The firm's contract is up for renewal, and the audit committee wants evidence that
+  staff in trained branches now keep their desks clear before deciding. Which evidence BEST answers the committee?
+options:
+  A: After-hours desk checks by the training firm in the branches it trained
+  B: After-hours desk checks by each branch manager in their own branch, reported monthly
+  C: After-hours desk checks by internal audit in five trained branches chosen at random
+  D: Daytime walk-throughs by internal audit in each of the trained branches
+answer: C
+explanation:
+  why_correct: The problem showed up after hours, and the decision is whether to renew the firm. Internal audit is independent
+    of both the firm and the branches, and checking after closing looks at the condition the original audit found. A random
+    sample is smaller but avoids picking branches that look good.
+  why_not:
+    A: The firm knows clean-desk practice well and can check thoroughly, but its contract renewal depends on the result, so
+      the committee cannot treat its findings as independent.
+    B: Manager checks give frequent data and build ownership, but each manager is rating their own branch, and the result
+      reflects on them, so the evidence is not independent.
+    D: Audit is independent and covers every trained branch, but in the daytime desks are in use, so it cannot show whether
+      files are left out overnight, which was the finding.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-cissp
+  check_verdict: pending
+  options_only: obvious

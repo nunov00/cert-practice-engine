@@ -1,0 +1,33 @@
+id: cissp-d7-7.1-0002
+subdomain: '7.1'
+difficulty: medium
+stem: An insurer suspects a claims handler of tipping off a fraud ring through the company's managed messaging platform, which
+  he uses on his company laptop and his personal phone. Two years ago the compliance team turned on retention for the platform
+  to meet financial record-keeping rules. He says he has deleted the conversations. Investigators need the messages as evidence
+  for a dismissal hearing and possibly a prosecution. Where should they collect them FIRST?
+options:
+  A: Image his personal phone with a forensic tool under the BYOD clause, hashing the image
+  B: Image his company laptop with a forensic tool, hashing the image and the client's cache
+  C: Request the conversations from the platform vendor's support team, with a custody form
+  D: Export the conversations through the platform's compliance search, hashing the export
+answer: D
+explanation:
+  why_correct: With retention on, a user deleting messages in the app removes them from his view, not from the platform's
+    retained store. The compliance search reaches that complete record on a system the company controls, and a hashed export
+    gives a clean chain of custody without touching a personal device.
+  why_not:
+    A: Phone forensics can recover deleted data, and the BYOD clause may allow it, but imaging a personal device is intrusive
+      and open to challenge when the full record is already held centrally.
+    B: The laptop is company property and safe to image, but the client cache may hold only part of the history and reflects
+      his deletions, unlike the retained store.
+    C: Vendors can help when the customer has no access of its own, but the company's administrators can search the retained
+      messages directly, and routing it through support adds delay and another custodian.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-cissp
+  checked_by: 2026-10-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

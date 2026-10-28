@@ -1,0 +1,31 @@
+id: cissp-d1-1.1-0003
+subdomain: '1.1'
+difficulty: medium
+stem: A certified penetration tester is midway through an authorised test of a retailer's own servers. The retailer's IT manager
+  asks her to add its customer loyalty app, which runs on a SaaS vendor's shared platform, and gives written approval. The vendor's
+  terms of service say nothing about security testing. What should the tester do?
+options:
+  A: Pause the extension until the retailer's legal team confirms the tests are lawful
+  B: Pause the extension until the SaaS vendor gives written permission for the test
+  C: Proceed once the retailer's CISO has signed an amended scope letter covering the app
+  D: Proceed once the retailer has notified the SaaS vendor of the planned test dates
+answer: B
+explanation:
+  why_correct: Acting legally means testing only systems whose owner has authorised it. The app runs on infrastructure the
+    vendor owns and shares with other customers, so no one at the retailer can authorise attacks on it, however senior. Only
+    the vendor's written permission makes the extension lawful and keeps other tenants out of harm's way.
+  why_not:
+    A: Legal advice is sensible before an unusual test, but the retailer's lawyers cannot grant rights over a platform the retailer
+      does not own. Their confirmation would still leave the test unauthorised by the owner.
+    C: An amended scope signed by the right executive is the normal fix for scope creep on the client's own systems. Here
+      the client does not own the platform, so a better signature does not supply the missing authority.
+    D: Notifying a provider is enough for some cloud services whose published policies allow customer testing. These terms
+      grant nothing, so a notice is not permission and the vendor may treat the test as an attack.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-cissp
+  check_verdict: pending
+  options_only: obvious

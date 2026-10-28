@@ -1,6 +1,6 @@
 id: cissp-d7-7.11-0001
 subdomain: '7.11'
-difficulty: medium
+difficulty: easy
 stem: After a fire, a company moved operations to its recovery site. The primary data centre has now been repaired and passed
   safety inspection. How should the disaster recovery team move operations back?
 options:

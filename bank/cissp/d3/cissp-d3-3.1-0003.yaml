@@ -1,0 +1,31 @@
+id: cissp-d3-3.1-0003
+subdomain: '3.1'
+difficulty: medium
+stem: A fitness app is adding a feature that shows users the running groups meeting within about 5 km of them. The app looks
+  for nearby groups each time it opens, often several times a day. The design team has agreed that precise GPS positions must
+  not reach its servers. Which design BEST protects users' location privacy?
+options:
+  A: Send the server the user's 5 km grid cell, and filter groups on the server
+  B: Download groups for the user's whole region and match them on the phone
+  C: Send the server a position rounded to 1 km, kept only for the session
+  D: Send the server the user's position with random noise of up to 2 km added
+answer: B
+explanation:
+  why_correct: Because the app checks so often, every request adds a point to a trail. Downloading the groups for a whole
+    region and matching on the phone sends the server nothing more specific than the region, however many times the app opens,
+    so no movement history can build up on the server side.
+  why_not:
+    A: Grid cells are a sound way to coarsen one lookup, but several lookups a day build a cell-by-cell record of where the
+      user lives, works and runs.
+    C: Rounding and short retention reduce what each request reveals, but the server still receives a 1 km trail of each
+      day's movements as the requests arrive.
+    D: Adding noise hides a single position, but many noisy reports of the same places average out, so frequent lookups let
+      the server estimate the true locations.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-cissp
+  check_verdict: pending
+  options_only: obvious

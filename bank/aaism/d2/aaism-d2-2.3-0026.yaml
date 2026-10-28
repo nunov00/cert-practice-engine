@@ -12,21 +12,22 @@ options:
 answer: B
 explanation:
   why_correct: The custom model code runs with the user's rights as soon as the model loads, so it is the executable path
-    in this supply chain. Reviewing it and loading only the reviewed commit stops both malicious code today and a later change
-    pushed to the repository.
+    in this supply chain. Reviewing it and loading only the reviewed commit makes malicious code there likely to be caught,
+    and stops a later change pushed to the repository from being picked up. Review cannot guarantee it finds everything,
+    but it targets the path that actually executes.
   why_not:
     A: A signature shows the weights came from the publisher, but the weights cannot run code here. The code that does run
       is outside that check, and a compromised account could change it alongside signed weights.
-    C: Model-aware scanners look for code hidden in serialised weights. The stem says the format cannot carry code, so the
-      scan targets the wrong file.
+    C: Model-aware scanners mainly look for code hidden in serialised weights. Here the weights cannot carry code, and
+      scanning them does not cover the separate custom-code path that runs on load.
     D: Trigger testing addresses behaviour learned in training, a real but separate risk. It does not stop code running on
       the data scientists' machines when the model is loaded.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-24-daily-aaism
   check_verdict: pass
-  checked_by: 2026-10-24-daily-aaism-check
   options_only: not_obvious
+  checked_by: 2026-10-28-daily-aaism-check

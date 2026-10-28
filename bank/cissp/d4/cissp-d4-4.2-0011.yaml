@@ -1,0 +1,32 @@
+id: cissp-d4-4.2-0011
+subdomain: '4.2'
+difficulty: hard
+stem: Each desk in a company's offices has one network wall port, shared by an IP phone and the user's laptop, which connects
+  through the phone's built-in switch port. The access switches authenticate the phone with 802.1X. In a test, a visitor's
+  laptop plugged into a phone's PC port reached the internal file servers. Which change BEST addresses this?
+options:
+  A: Put the phones on a voice VLAN separate from the laptops' data VLAN
+  B: Disable the phones' PC ports so that only the phone can use each wall port
+  C: Limit each switch port to two learned MAC addresses with port security
+  D: Run 802.1X in a mode that authenticates the phone and the laptop separately
+answer: D
+explanation:
+  why_correct: The switch authenticated the phone and then admitted whatever sat behind it. A multi-domain mode makes the
+    phone and the device behind it authenticate on their own, so a visitor's laptop without valid credentials gets no access,
+    while staff laptops keep using the single wall port.
+  why_not:
+    A: A voice VLAN keeps phone traffic apart and is standard practice, but the visitor's laptop still lands on the data VLAN,
+      where the file servers are reachable.
+    B: Disabling PC ports is a sound hardening step where desks have spare ports. With one wall port per desk, it cuts off
+      the staff laptops' wired connection along with the visitor's.
+    C: Limiting MAC addresses stops a port from becoming a hub for many devices, but the phone plus one laptop is exactly two,
+      so the visitor's laptop is still admitted.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-cissp
+  checked_by: 2026-10-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

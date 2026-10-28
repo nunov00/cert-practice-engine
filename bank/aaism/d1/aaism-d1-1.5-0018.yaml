@@ -10,13 +10,14 @@ options:
   D: A snapshot of the model weights in production
 answer: C
 explanation:
-  why_correct: Tool call logs show each action the agent took and on which record, which is what responders need to find every
-    change. They are also the logs most likely to roll over, so they come first.
+  why_correct: Tool call logs record each action the agent requested, with its arguments and the record it targeted.
+    Checked against the CRM's own audit trail, they show which changes were made, which is the responders' question. Without
+    them responders cannot tell which records to check, so they are preserved first.
   why_not:
     A: The injected documents show how the attack worked and are worth keeping, but they do not show which records were changed.
     B: The prompt version helps explain why the agent was open to injection, not what it did.
     D: An injection does not alter the model, so the weights tell responders nothing about the changes.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
@@ -24,4 +25,4 @@ provenance:
   run_id: 2026-10-23-daily-aaism
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-10-23-daily-aaism-check-topup
+  checked_by: 2026-10-28-daily-aaism-check

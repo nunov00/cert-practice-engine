@@ -1,0 +1,33 @@
+id: aair-d1-1.5-0020
+subdomain: '1.5'
+difficulty: medium
+stem: A savings app adds a generative AI chat that answers questions about investing, and its terms describe the chat
+  as general information only. In testing, when users describe their goals, it often names specific funds on the app
+  as suitable for them. The firm is not authorised to give personal investment advice. What should the risk practitioner
+  advise?
+options:
+  A: Show a clearer notice at the start of each chat that it is not advice
+  B: Run the firm's suitability checks before the chat names any fund
+  C: Stop the chat from recommending specific funds to individual users
+  D: Have compliance review a weekly sample of chats against advice rules
+answer: C
+explanation:
+  why_correct: Naming a particular fund as suitable for a user's own goals is likely to count as personal advice, whatever
+    the terms say. The firm has no authorisation for that activity, so the chat must be designed not to do it, keeping
+    to general information that the firm may lawfully give.
+  why_not:
+    A: Regulators judge advice by what is said to the person, not by its label. A clearer notice does not change the
+      fact that the chat recommends funds to individuals.
+    B: Suitability checks are what an authorised adviser must do, and they would be the right control for a firm with
+      that permission. Here they would make the advice better, but it would still be advice the firm may not give.
+    D: Sampling helps find problems, but it would only confirm, after the event, that users are being given advice the
+      firm is not authorised to give.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aair
+  checked_by: 2026-10-28-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

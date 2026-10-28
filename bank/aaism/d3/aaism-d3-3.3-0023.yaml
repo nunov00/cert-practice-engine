@@ -1,0 +1,33 @@
+id: aaism-d3-3.3-0023
+subdomain: '3.3'
+difficulty: medium
+stem: A pharmacy chain will train an offers model on named loyalty members' baskets, labelled Internal, joined with
+  a public product catalogue that tags each medicine with the condition it treats. Policy says derived data inherits
+  the strictest label of its sources, and the scheme reserves Restricted for health data. How should the joined training set be handled?
+options:
+  A: Relabel it Restricted as health data about named members
+  B: Keep it Internal, the strictest label of its two sources
+  C: Replace member names with pseudonyms and keep it Internal
+  D: Relabel it Confidential as a combined personal dataset
+answer: A
+explanation:
+  why_correct: The join turns purchase records into statements about which members likely have which conditions.
+    That is health data about identifiable people, whatever the sources were labelled, so the set needs the Restricted
+    handling the scheme gives health data, and the policy's inheritance rule should be applied together with an assessment
+    of what a join reveals.
+  why_not:
+    B: Inheritance is the usual rule for derived data, but here neither source is sensitive on its own, so the rule
+      cannot see the health information the join creates.
+    C: Pseudonyms remove names, but the loyalty IDs still link each row to a member, and the offers are meant to reach
+      those members, so the inferred conditions stay personal.
+    D: Treating it as ordinary personal data is a step up from Internal, but inferred medical conditions are health
+      data, which carries stricter rules than other personal data.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aaism
+  checked_by: 2026-10-28-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,34 @@
+id: cissp-d1-1.10-0003
+subdomain: '1.10'
+difficulty: medium
+stem: A bank's payments team finished a STRIDE threat model of its payment application last quarter, and each high threat
+  it found now has a mitigation. Two recent frauds succeeded when callers posing as relationship managers phoned the operations
+  desk and had staff use the manual override to release payments. The CISO wants to know what other routes could lead to the
+  same loss. Which modelling approach should the security manager use?
+options:
+  A: A PASTA analysis of the payment application, from business objectives to attack simulation
+  B: An attack tree rooted at a payment released without genuine approval
+  C: Misuse cases written against each customer-facing use case of the payment application
+  D: A kill chain built from the two frauds, mapping each stage to a detection point
+answer: B
+explanation:
+  why_correct: The loss the CISO cares about can be reached through people and procedures as well as software, and the frauds
+    used exactly such a route. An attack tree starts from that outcome and works back through every way to reach it, so phone
+    calls, desk procedures and the override sit alongside technical paths as branches to analyse and mitigate.
+  why_not:
+    A: PASTA ties threats to business impact and can include people and process attack paths, but a full seven-stage exercise
+      scoped to the application is far broader than the CISO's question and centres on the software's attack surface. An
+      attack tree goes straight at every route to that one loss, people and procedures included.
+    C: Misuse cases are a good way to think like an abuser of a function. Written against customer-facing use cases, they
+      miss a route that runs through internal staff at the operations desk.
+    D: Mapping the two frauds as a kill chain shows where they could have been detected, which is useful. It describes only
+      the routes already used, not the other routes the CISO asked about.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-cissp
+  checked_by: 2026-10-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

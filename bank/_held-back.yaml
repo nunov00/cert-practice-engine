@@ -10,36 +10,14 @@
 # that publishes it, or that finds a real fault in it on recheck. `pr` is the PR
 # that held it. `pending` means it was held before passing an independent check.
 held:
-  # PR #61 (daily batch 2026-10-23), merge run
-  - { id: cissp-d2-2.4-0002, pr: 61 }
-  - { id: cissp-d5-5.1-0002, pr: 61 }
-  - { id: cissp-d7-7.11-0001, pr: 61 }
-  - { id: aair-d1-1.5-0016, pr: 61 }
-  - { id: aair-d3-3.2-0018, pr: 61 }
-  - { id: aair-d3-3.3-0020, pr: 61 }
-  - { id: aaism-d1-1.1-0017, pr: 61 }
-  - { id: aaism-d1-1.5-0018, pr: 61 }
-  - { id: aaism-d3-3.5-0018, pr: 61 }
-  # PR #62 (daily batch 2026-10-24), batch run (owner's OK, held before checking)
-  - { id: aair-d1-1.1-0022, pr: 62 }
-  - { id: aair-d3-3.3-0021, pr: 62 }
-  - { id: aair-d3-3.6-0019, pr: 62, pending: true }
-  - { id: aair-d3-3.6-0020, pr: 62, pending: true }
   # PR #62, merge run
   - { id: cissp-d4-4.2-0005, pr: 62 }
   - { id: cissp-d5-5.1-0003, pr: 62 }
-  - { id: cissp-d5-5.3-0003, pr: 62 }
   - { id: aair-d1-1.2-0020, pr: 62 }
   - { id: aair-d1-1.5-0017, pr: 62 }
   - { id: aair-d2-2.2-0017, pr: 62 }
-  - { id: aaism-d1-1.2-0017, pr: 62 }
-  - { id: aaism-d1-1.4-0017, pr: 62 }
   - { id: aaism-d1-1.5-0019, pr: 62 }
   - { id: aaism-d2-2.1-0028, pr: 62 }
-  - { id: aaism-d2-2.3-0025, pr: 62 }
-  - { id: aaism-d2-2.3-0026, pr: 62 }
-  - { id: aaism-d3-3.1-0020, pr: 62 }
-  - { id: aaism-d3-3.3-0021, pr: 62 }
   - { id: aaism-d3-3.4-0019, pr: 62 }
   - { id: aaism-d3-3.5-0021, pr: 62 }
   # PR #65 (daily batch 2026-10-26), batch run
@@ -105,3 +83,7 @@ held:
   - { id: aair-d3-3.4-0026, pr: 67 }
   - { id: aair-d3-3.5-0023, pr: 67 }
   - { id: aaism-d2-2.2-0036, pr: 67 }
+  # PR #69 (daily batch 2026-10-28), merge run: released by the batch run, put
+  # back after review lowered hard labels below the minimum
+  - { id: aair-d3-3.6-0019, pr: 69 }
+  - { id: aaism-d1-1.1-0017, pr: 69 }

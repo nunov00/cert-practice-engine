@@ -1,0 +1,33 @@
+id: cissp-d6-6.4-0006
+subdomain: '6.4'
+difficulty: hard
+stem: A penetration test found SQL injection in an insurer's quote API. The developers cannot change the code until next
+  quarter, so the team added a web application firewall rule, and the retest's injection attempts through the public endpoint
+  were blocked. Partner insurers call the same code through a private link that connects directly to the application servers.
+  How should the retest report record the finding?
+options:
+  A: Closed, verified by a retest of the original attack
+  B: Mitigated, with the code flaw tracked as a residual risk
+  C: Open, with the firewall rule noted as partial mitigation
+  D: Risk accepted until the code is fixed next quarter
+answer: C
+explanation:
+  why_correct: The firewall rule protects only traffic that passes through it. The partner link reaches the same vulnerable
+    code without it, so the flaw is still exploitable. The report should keep the finding open and record the rule as a partial
+    mitigation, so nobody reads the passed retest as fixed.
+  why_not:
+    A: The retest did block the original attack, but only on the public path. Closing the finding would hide a working path
+      to the same flaw.
+    B: Recording a virtual patch as a mitigation with the code flaw as residual risk is right when the firewall covers every
+      path to the code. Here one path skips it, so the finding is not mitigated.
+    D: Risk acceptance is the asset owner's decision, made on accurate findings. The report should state the exposure, not
+      record an acceptance nobody has made.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-cissp
+  checked_by: 2026-10-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

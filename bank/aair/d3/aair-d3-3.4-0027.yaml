@@ -1,0 +1,33 @@
+id: aair-d3-3.4-0027
+subdomain: '3.4'
+difficulty: hard
+stem: A telecom's churn model flags customers likely to leave, and the retention team calls each flagged customer
+  with an offer. Monitoring now shows that flagged customers leave at almost the same rate as unflagged ones. The
+  model team says precision has collapsed and wants to retrain. What should the risk practitioner recommend?
+options:
+  A: Check live input data against the training data for drift
+  B: Retrain the model on the most recent year of churn outcomes
+  C: Hold back calls to a random sample of flagged customers
+  D: Bring forward an independent revalidation on recent outcome data
+answer: C
+explanation:
+  why_correct: The calls are meant to stop flagged customers leaving, so a low churn rate among them is what a working
+    model plus a working offer would produce. The outcomes cannot show whether the model picks the right customers.
+    A small random group of flagged customers who are not called shows how many would really have left, which measures
+    the model's precision and the effect of the offers separately.
+  why_not:
+    A: A drift check is the usual first step when performance seems to fall, but even with no drift the measured precision
+      would look low, because the calls change the outcome being measured. It cannot answer whether the model still works.
+    B: Retraining on these outcomes would teach the model that the customers it flagged, and who were then kept by the
+      offers, were not at risk. It could degrade a model that may be working well.
+    D: Revalidation on recent outcomes uses the same outcomes the calls have changed, so it would repeat the misleading
+      result with more authority.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aair
+  checked_by: 2026-10-28-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

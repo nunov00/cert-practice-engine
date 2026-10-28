@@ -1,0 +1,33 @@
+id: aaism-d2-2.1-0035
+subdomain: '2.1'
+difficulty: hard
+stem: A hospital rated an AI sepsis alert tool's residual risk above appetite because it misses about 8% of early
+  cases. The tool would alert nurses in addition to the four-hourly observation checks they already make, which
+  stay unchanged. Before deciding, the risk owner asks for the rating to be redone. What should the new rating MAINLY
+  rest on?
+options:
+  A: The change the tool makes to detection against current practice
+  B: The tool's miss rate measured on the hospital's own past patients
+  C: The worst plausible outcome of a single missed sepsis case
+  D: The vendor's published miss rate, with a margin for uncertainty
+answer: A
+explanation:
+  why_correct: A case the tool misses is still caught, or missed, by the nurse checks exactly as today, so the tool's
+    misses are not new harm. The risk the tool brings is the difference it makes, such as earlier detection set
+    against alert fatigue from false alarms, compared with current practice. That is what the owner's decision needs.
+  why_not:
+    B: Local validation is better evidence than a vendor figure, but it still measures misses as if each one were
+      harm, which they are not while nurse checks continue unchanged.
+    C: Worst-case impact matters for severe outcomes, but a missed alert does not cause the missed case; the nurses'
+      checks carry on as before, so this overstates the tool's risk.
+    D: An uncertainty margin is sound practice for vendor figures, but it refines the same flawed measure, the tool's
+      misses, rather than its effect on current detection.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-28-daily-aaism
+  checked_by: 2026-10-28-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious
