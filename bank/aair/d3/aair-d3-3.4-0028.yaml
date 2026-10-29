@@ -13,13 +13,14 @@ answer: C
 explanation:
   why_correct: 'With about 40 applicants, one month''s approval rate has a margin of error of roughly fifteen points, so no
     single-month method can reliably detect a five-point gap: it either raises false alarms or misses real gaps. Pooling twelve
-    months gives each group around 480 decisions, which narrows the margin to about four or five points, in line with the
-    committee''s aim, while each group is still tracked on its own. The price is slower detection.'
+    months gives each group around 480 decisions, which narrows the margin to about four or five points and makes a
+    five-point gap far more detectable, while each group is still tracked on its own. The price is slower detection,
+    and a power check should confirm the window meets the committee''s aim.'
   why_not:
     A: A significance test stops chance swings from turning red, but with 40 applicants a month it has little power. A real
       five-point gap would rarely reach significance, so the indicator would stay green when it should not.
     B: Confidence-interval thresholds are sound practice for small samples, but at 40 a month the interval spans roughly fifteen
-      points either side, so a five-point gap would sit well inside it and never trigger.
+      points either side, so a five-point gap would sit well inside it and would trigger only by chance.
     D: Combining the groups gives more data, but a gap affecting one of them can be diluted or cancelled in the combined figure,
       and the committee wants each group's gap detected.
 status: published

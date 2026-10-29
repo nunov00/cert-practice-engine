@@ -43,9 +43,9 @@ market; every row is *to verify* until a daily run checks it).
 | 5 | Security+ (CompTIA) | up to 90, MCQ and performance-based, 5 domains (27/24/19/16/14% on V8 from 2026-11-17) | 5 | 3 | 3 | 4 | 3 | 23 | 2026-10-26 |
 | 6 | CC (ISC2) | Adaptive (CAT), 5 domains (outline from 2026-09-01; weights to confirm from the outline) | 4 | 5 | 4 | 2 | 4 | 23 | 2026-10-27 |
 | 7 | CEH (EC-Council) | 125 MCQ in 4 hours, v13; official blueprint v5 lists 9 domains (6/17/15/24/14/5/10/5/5%), applicability to v13 to confirm | 4 | 5 | 2 | 4 | 2 | 21 | 2026-10-28 |
-| 8 | SSCP (ISC2) | 125 MCQ, 7 domains *to verify* | 2 | 5 | 3 | 4 | 4 | 20 | 2026-10-18 |
-| 9 | CGRC (ISC2) | 125 MCQ, 7 domains *to verify* | 2 | 5 | 3 | 4 | 4 | 20 | 2026-10-18 |
-| 10 | CySA+ (CompTIA) | up to 85 in 165 min, MCQ and performance-based, 4 domains (34/26/24/16% on V4 from 2026-06-23) | 3 | 3 | 3 | 4 | 3 | 19 | 2026-10-29 |
+| 8 | CySA+ (CompTIA) | up to 85 in 165 min, MCQ and performance-based, 4 domains (34/26/24/16% on V4 from 2026-06-23) | 3 | 3 | 4 | 4 | 3 | 20 | 2026-10-29 |
+| 9 | SSCP (ISC2) | 125 MCQ, 7 domains *to verify* | 2 | 5 | 3 | 4 | 4 | 20 | 2026-10-18 |
+| 10 | CGRC (ISC2) | 125 MCQ, 7 domains *to verify* | 2 | 5 | 3 | 4 | 4 | 20 | 2026-10-18 |
 
 Rank follows the total; ties go to the higher demand score, then to the
 older Checked date.
@@ -128,10 +128,11 @@ older Checked date.
   Management 24%, Reporting and Communication 16%); V3 (CS0-003,
   33/30/20/17%) retires in English on 2026-12-22, so a recipe should be built
   on V4. Its performance-based items (SIEM alerts, logs, indicators of
-  compromise) cannot be practised here, so fit stays at 3. As for Security+,
-  CompTIA's pages offer no free official sample questions, only the paid
-  CertMaster Practice, so calibration moves from 4 to 3 (total 20 to 19) and
-  it drops from 8th to 10th, below SSCP and CGRC.
+  compromise) cannot be practised here, so fit stays at 3. CompTIA publishes a
+  free official set of 10 V4 practice questions with answers on its
+  practice-questions page, so calibration stays at 4 (merge run, after Codex's
+  review). Scores, total (20) and rank (8th, ahead of SSCP and CGRC on the
+  higher demand score) unchanged.
 - **SSCP, CGRC:** solid but smaller markets; kept as the tail of the queue.
 
 ## Changes
@@ -147,4 +148,4 @@ older Checked date.
 | 2026-10-27 | CC row verified: CAT format and the 2026-09-01 outline's five domains confirmed, *to verify* dropped; pay 1 to 2 as the free programme concludes (total 22 to 23), rank unchanged | ISC2 [CC exam outline](https://www.isc2.org/certifications/cc/cc-certification-exam-outline), [CC page and practice quiz](https://www.isc2.org/certifications/cc), [CAT page](https://www.isc2.org/certifications/computerized-adaptive-testing), [One Million Certified in Cybersecurity conclusion](https://www.isc2.org/Insights/2026/04/one-million-certified-cyber-conclusion) |
 | 2026-10-28 | CEH row verified: v13 format (125 MCQ, 4 hours, 60-85% pass mark) confirmed, *to verify* dropped; no official domain weights or free samples found; scores, total and rank unchanged | EC-Council [CEH page](https://www.eccouncil.org/train-certify/certified-ethical-hacker-ceh/) |
 | 2026-10-28 | Merge run (Codex review): CEH row corrected to cite the official blueprint v5 weights and the form-gated 50-question assessment; scores unchanged | EC-Council [blueprint v5](https://cert.eccouncil.org/wp-content/uploads/2024/04/CEH-Exam-Blueprint-v5.pdf), [CEH assessment](https://www.eccouncil.org/train-certify/ceh-assessment/) |
-| 2026-10-29 | CySA+ row verified: V4 format, weights and launch date confirmed, *to verify* dropped; calibration 4 to 3 (no free official samples found; total 20 to 19), rank 8 to 10 | CompTIA [CySA+ V4 page](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v4/), [CySA+ V3 page](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v3/), [CySA+ V4 FAQ](https://www.comptia.org/en-eu/blog/the-new-comptia-cybersecurity-analyst-cysa-your-questions-answered/) |
+| 2026-10-29 | CySA+ row verified: V4 format, weights and launch date confirmed, *to verify* dropped; free official V4 practice questions found, so calibration stays at 4; scores, total and rank unchanged | CompTIA [CySA+ V4 practice questions](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v4/practice-questions/), [CySA+ V4 page](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v4/), [CySA+ V3 page](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v3/), [CySA+ V4 FAQ](https://www.comptia.org/en-eu/blog/the-new-comptia-cybersecurity-analyst-cysa-your-questions-answered/) |

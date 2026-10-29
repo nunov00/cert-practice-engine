@@ -14,14 +14,15 @@ answer: B
 explanation:
   why_correct: An update poisoned inside the vendor's build arrives looking entirely genuine, so the manufacturer has to limit
     how far and how fast any update spreads. Holding updates internally and releasing them in stages, after testing, means
-    a bad update reaches a few servers first and can be stopped before it reaches all 3,000 at once.
+    a bad update reaches a few servers first, giving testing and monitoring a chance to catch it before it reaches all
+    3,000, instead of every server receiving it overnight.
   why_not:
     A: An assurance report over the build process is reasonable due diligence, but it describes controls over a past period
       and would not stop a compromise like the peer's from reaching every agent overnight.
     C: Signature checks stop tampered or unofficial updates, but the peer's malicious update was signed with the vendor's
       own key, so it would pass.
-    D: A bill of materials lists the components in each update, which helps with known vulnerable libraries, but code inserted
-      in the vendor's build would not appear in it.
+    D: A bill of materials lists the components in each update, which helps with known vulnerable libraries, but a list
+      produced by a compromised build is no assurance that the code in it is authorised and benign.
 status: published
 outline_version: '2024-04-15'
 sample: false

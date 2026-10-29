@@ -12,13 +12,14 @@ options:
 answer: B
 explanation:
   why_correct: The gap exists because anyone can mint a key and call the provider from anywhere. Restricting key creation
-    in the company's provider account so that only the gateway's identity holds keys means every call must pass through
-    the gateway, where the SOC can see it, wherever the calling code runs.
+    in the company's provider account to the gateway's identity removes the cause, as no one else can mint a direct key. The keys
+    already found still need revoking as clean-up, after which every call must pass through the gateway, where the SOC
+    can see it, wherever the code runs.
   why_not:
     A: Egress control at the proxy is the usual way to force traffic through a gateway. These calls come from teams'
       own cloud accounts outside the corporate network, so the proxy never sees them.
-    C: Revoking the keys found stops today's direct calls, but any employee can create a new key the same day. It treats
-      the instances, not the cause.
+    C: Revoking the keys found stops today's direct calls and belongs in the clean-up, but on its own any employee can
+      create a new key the same day. It treats the instances, not the cause.
     D: Repository scanning finds keys committed to code. Keys stored in function settings never reach a repository, and
       finding a key after the fact does not stop it being created.
 status: published

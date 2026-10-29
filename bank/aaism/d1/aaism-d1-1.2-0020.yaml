@@ -24,12 +24,12 @@ explanation:
     D: Isolation is the right control for untrusted code, but these models are useful only because the coding tools
       give them the engineer's files and terminal. A sandbox that removes that access ends the use, and one that keeps
       it isolates little.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-29-daily-aaism
-  check_verdict: pass
+  check_verdict: fail
   checked_by: 2026-10-29-daily-aaism-check
   options_only: not_obvious

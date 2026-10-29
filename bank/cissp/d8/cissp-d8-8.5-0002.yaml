@@ -1,6 +1,6 @@
 id: cissp-d8-8.5-0002
 subdomain: '8.5'
-difficulty: hard
+difficulty: medium
 stem: A support portal lets customers format ticket replies with bold text, lists and links; replies are stored as HTML and
   shown in the agents' console. A tester's reply ran script in agents' browsers through an image tag's error handler. The
   console's older pages rely on inline scripts that cannot be removed this year. Which rule should the secure coding standard

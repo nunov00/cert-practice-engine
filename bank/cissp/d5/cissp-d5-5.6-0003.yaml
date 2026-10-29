@@ -1,6 +1,6 @@
 id: cissp-d5-5.6-0003
 subdomain: '5.6'
-difficulty: hard
+difficulty: medium
 stem: In a test, an ordinary domain user requested a Kerberos service ticket for a database service account, cracked the account's
   password offline within hours, and then signed in to the database server. The password, a dictionary word followed by four
   digits, was set by an administrator in 2017 and never changed. Which change BEST prevents a repeat?

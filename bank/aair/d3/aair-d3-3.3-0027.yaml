@@ -1,8 +1,9 @@
 id: aair-d3-3.3-0027
 subdomain: '3.3'
-difficulty: hard
+difficulty: medium
 stem: A social platform's model removes about 200,000 posts a day that it rates as illegal hate speech. The law requires
-  illegal posts to come down within an hour of detection. Users report that some lawful posts are being removed. Which
+  illegal posts to come down within an hour of detection, and the platform's moderators can review only a few
+  thousand posts a day. Users report that some lawful posts are being removed. Which
   control BEST reduces the harm from wrongful removals?
 options:
   A: Raise the confidence the model needs before it removes a post
@@ -12,14 +13,14 @@ options:
 answer: B
 explanation:
   why_correct: A wrongful removal is a harm that can be reversed. With a one-hour legal deadline at this volume,
-    removal has to stay automatic, so the best control limits how long a lawful post stays down. A fast appeal decided
+    and moderators able to review only a few thousand posts a day, removal has to stay automatic, so the best control limits how long a lawful post stays down. A fast appeal decided
     by a person restores the post, and each upheld appeal also gives labelled errors for improving the model.
   why_not:
     A: A higher threshold would cut wrongful removals, but more illegal posts would stay up past the hour. It trades
       one harm for a breach of the law.
     C: Human confirmation before acting is the usual preventive control for harmful automated decisions, but
-      moderators could not confirm 200,000 removals a day within an hour of each detection, so illegal posts would stay
-      up past the deadline.
+      a team that can review a few thousand posts a day could not confirm 200,000 removals within an hour of each
+      detection, so most illegal posts would stay up past the deadline.
     D: Sampling and retraining may lower the error rate over time, but users whose lawful posts are removed get no
       remedy.
 status: published

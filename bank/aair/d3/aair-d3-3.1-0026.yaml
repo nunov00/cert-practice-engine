@@ -3,7 +3,7 @@ subdomain: '3.1'
 difficulty: medium
 stem: A bank's assessment of a new card fraud model takes the likelihood of each kind of error from validation on a
   test set that held equal numbers of fraudulent and genuine payments. In live use, about one payment in 500 is fraud.
-  Which scenario's rating should the risk practitioner challenge FIRST?
+  Which scenario's rating is MOST likely understated?
 options:
   A: Genuine customers' cards blocked by false fraud alerts
   B: Fraudulent payments that the model fails to flag
@@ -11,13 +11,14 @@ options:
   D: Some customer groups being scored less accurately than others
 answer: A
 explanation:
-  why_correct: In the test set half the payments were fraud, so most alerts were right. In live use genuine payments
-    outnumber fraud about 500 to 1, so even a small false alarm rate on genuine payments produces far more false
-    alerts than true ones. The share of alerts that block a genuine customer will be much higher than validation
-    suggested, so this rating rests on evidence the test design distorts.
+  why_correct: The false alarm rate per genuine payment carries over, but in a balanced test set false alerts look rare
+    next to true ones. Live, genuine payments outnumber fraud about 500 to 1, so the same rate yields many false alerts
+    for each true one, and per payment genuine customers are blocked about twice as often as the test mix implies. The
+    burden of blocked customers is understated by the test design.
   why_not:
-    B: The share of fraud the model misses is measured on fraudulent payments alone, so it does not depend on how
-      common fraud is. The balanced test set estimates it fairly, and its rating is not distorted by the test design.
+    B: The miss rate is measured on fraudulent payments only, so the test estimates it fairly. Because fraud is far rarer
+      live, the test mix if anything overstates how often missed fraud occurs per payment, which errs on the cautious
+      side rather than understating it.
     C: Adaptive fraudsters are a real scenario for any fraud model and belong in the register, but nothing in the
       validation method biases that rating in a known direction. It is not the rating the evidence shows to be wrong.
     D: Uneven accuracy across groups is a real concern worth testing, but the balanced mix of fraud and genuine

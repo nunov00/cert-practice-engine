@@ -19,8 +19,8 @@ explanation:
       conflict and the clients' routes mix.
     C: With both clients using the same addresses in one table, an access list cannot tell one client's 10.20.1.5 from the
       other's, so it cannot enforce the separation reliably.
-    D: Translating one range at the router still leaves both clients' routes in one shared routing table, so the overlap and
-      the isolation both depend on extra rules rather than on the design.
+    D: NAT can hide one client's range from the other, but both clients' interfaces still sit in one routing table with the
+      same 10.20.0.0/16 prefix, which it cannot hold twice, and NAT on its own does not stop traffic between them.
 status: published
 outline_version: 2024-04-15
 sample: false

@@ -72,3 +72,8 @@ held:
   # back after review lowered hard labels below the minimum
   - { id: aair-d3-3.6-0019, pr: 69 }
   - { id: aaism-d1-1.1-0017, pr: 69 }
+  # PR #70 (daily batch 2026-10-29), merge run: AAISM hard share after Codex
+  # dropped hard aaism-d1-1.4-0021 (duplicate). The final review rated
+  # aaism-d3-3.5-0032 close to obvious from the options; rework distractor D
+  # on recheck.
+  - { id: aaism-d3-3.5-0032, pr: 70 }

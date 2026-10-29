@@ -8,7 +8,7 @@ options:
   A: Opportunistic Wireless Encryption on the guest network
   B: Client isolation on the access points for the guest network
   C: Private VLAN settings on the switch ports serving the access points
-  D: A captive portal where each guest accepts the terms of use
+  D: A firewall rule denying traffic between addresses on the guest VLAN
 answer: B
 explanation:
   why_correct: Traffic between two guests on the same access point is bridged by the access point itself. Client isolation
@@ -18,7 +18,8 @@ explanation:
       the access point still forwards traffic from one guest to another.
     C: Private VLANs isolate switch ports, but two guests on the same access point share one port, and their traffic is
       bridged inside the access point without crossing the switch.
-    D: Accepting terms of use sets rules and may deter misuse, but it does not stop one laptop sending traffic to another.
+    D: The firewall sees traffic only when it leaves the guest VLAN. Guests on the same access point and VLAN are bridged at
+      layer 2, so their traffic to each other never reaches it.
 status: published
 outline_version: 2024-04-15
 sample: false

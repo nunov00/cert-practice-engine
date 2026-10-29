@@ -12,9 +12,10 @@ options:
 answer: B
 explanation:
   why_correct: The weakness is that the model holding the tools also reads attacker-controlled text. Having a separate
-    model with no tools read the invoices and pass back only typed fields, such as supplier ID, amount and due date,
-    means hidden instructions never reach the agent that acts. Those fields can then be validated, and the agent's payments,
-    record updates and emails are all protected.
+    model with no tools read the invoices and pass back only tightly constrained typed fields, such as supplier ID, amount
+    and due date, keeps free-form attacker text away from the agent that acts. Those fields can then be checked
+    deterministically against supplier and order records before any payment, record update or email, which cuts the
+    exposure across all three actions instead of one.
   why_not:
     A: Screening untrusted content is a common layer, but classifiers are probabilistic and hidden text in varied PDF
       layouts will sometimes pass. The agent with tools would still read whatever gets through.

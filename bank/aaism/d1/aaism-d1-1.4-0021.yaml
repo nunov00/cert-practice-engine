@@ -22,12 +22,12 @@ explanation:
       set conflicting requirements for the same models and leave the platform team to reconcile them.
     C: Central exceptions keep a baseline flexible, but here the stricter law binds the shared models, so the group would
       be approving exceptions to rules it cannot avoid meeting.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-29-daily-aaism
-  check_verdict: pass
+  check_verdict: fail
   checked_by: 2026-10-29-daily-aaism-check
   options_only: not_obvious

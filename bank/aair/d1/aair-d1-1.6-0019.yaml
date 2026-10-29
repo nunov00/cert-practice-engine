@@ -6,7 +6,7 @@ stem: A welfare agency uses a model to flag benefit claims for fraud investigati
   report about themselves and could change. Which response BEST builds justified trust?
 options:
   A: Publish the model's inputs and weights in full for public scrutiny
-  B: Give an independent auditor full access and publish its findings
+  B: Publish an independent audit of the model's flag rates by group
   C: Publish a plain-language account of the factors the model uses
   D: Give each flagged claimant the main reasons their claim was flagged
 answer: B

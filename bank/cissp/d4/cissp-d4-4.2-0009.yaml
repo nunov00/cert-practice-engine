@@ -12,8 +12,8 @@ options:
 answer: B
 explanation:
   why_correct: Switches treat SPAN copies as low priority and drop them when busy, which matches losses only at peak. A
-    passive tap copies every frame on the link at the physical layer, independent of switch load, so the sensor sees
-    complete traffic.
+    passive tap copies every frame on the link at the physical layer, independent of switch load, which removes the SPAN
+    loss. The sensor then receives the full copy, provided its capture path is sized for the tapped links.
   why_not:
     A: The sensor's CPU sits near 30%, so it is not the bottleneck. A bigger sensor still receives the same incomplete copy.
     C: Remote SPAN still relies on the switch's mirroring, which drops copies under load, and adds transport across the

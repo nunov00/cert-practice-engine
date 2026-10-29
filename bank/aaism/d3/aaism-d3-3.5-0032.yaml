@@ -21,7 +21,7 @@ explanation:
       time anyone responds.
     D: Testing detection on long prompts checks how well the guardrail judges them, but the replies at issue are never
       judged at all because the guardrail times out.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:
