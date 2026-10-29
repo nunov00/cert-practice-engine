@@ -1,0 +1,32 @@
+id: cissp-d8-8.3-0003
+subdomain: '8.3'
+difficulty: easy
+stem: A software company started a security champions programme last year. Eight of its 30 teams volunteered, and these had
+  the lowest finding rates in earlier penetration tests. In the same year a new dependency scanner was rolled out to every
+  team. The board asks whether the programme reduced the flaws that reach testing. Which evidence BEST answers this?
+options:
+  A: This year's test finding rates of the eight champion teams against the other 22
+  B: Each champion team's finding rate this year against its own rate before joining
+  C: The change in champion teams' rates since joining, against the change in other teams
+  D: The number of security defects that champions caught in code review this year
+answer: C
+explanation:
+  why_correct: Two things besides the programme move the numbers. The volunteers were already the best teams, and every team
+    got the new scanner the same year. Comparing each group's change over the same period cancels both, so what remains can
+    be credited to the programme.
+  why_not:
+    A: Comparing champion teams with the rest is the obvious test, but the volunteers already had the lowest rates, so a gap
+      this year shows who volunteered rather than what the programme did.
+    B: A before-and-after comparison controls for each team's starting point, but the new scanner reached every team in the
+      same year, so any improvement could be the scanner's.
+    D: Defects caught in review show champions are active, but they count work done, not flaws that stopped reaching testing,
+      and teams without champions also catch defects in review.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-cissp-check
+  options_only: obvious

@@ -1,0 +1,33 @@
+id: cissp-d4-4.3-0009
+subdomain: '4.3'
+difficulty: hard
+stem: A bank links its two data centres, 30 km apart, over a leased optical wavelength carrying 100 Gbps of synchronous storage
+  replication, which fails if encryption adds more than a few microseconds of delay. A new rule requires encryption of all data
+  leaving the bank's buildings, under keys that only the bank controls. Which approach BEST fits?
+options:
+  A: IPsec tunnels between the core routers in the two data centres
+  B: TLS proxies at each end that wrap the storage replication sessions
+  C: Encryption of the wavelength, run by the carrier as an added service
+  D: MACsec on the switch ports at each end of the wavelength link
+answer: D
+explanation:
+  why_correct: The wavelength is a point-to-point layer 2 link between the bank's own switches, which is what MACsec is built
+    for. Switch hardware encrypts at line rate with almost no added delay, and the bank sets and holds the keys on its own
+    equipment.
+  why_not:
+    A: IPsec is the usual way to encrypt traffic between sites, and it keeps keys with the bank. At 100 Gbps, though, it needs
+      routers with large crypto offload, and routing and tunnel processing typically add more delay than line-rate MACsec
+      on a direct layer 2 link, leaving little margin for synchronous replication.
+    B: TLS protects traffic between applications, but proxies that terminate and re-wrap 100 Gbps of replication add delay,
+      and they become new points where the data sits in clear.
+    C: Carrier-run optical encryption is fast enough, but the carrier operates it and holds the keys, which breaks the rule
+      that only the bank controls them.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-cissp-check
+  options_only: not_obvious

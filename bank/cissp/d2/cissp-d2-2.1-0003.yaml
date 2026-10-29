@@ -1,0 +1,33 @@
+id: cissp-d2-2.1-0003
+subdomain: '2.1'
+difficulty: easy
+stem: After a merger, an insurer is moving the acquired firm's two million documents into its own document system, which needs
+  one of the insurer's labels on each. Both firms have a level called Confidential, but the acquired firm's requires encryption
+  and named-recipient sharing, which the insurer reserves for its higher Restricted level. How should the acquired firm's
+  levels be mapped?
+options:
+  A: To the insurer's level with the same name, so staff keep familiar labels
+  B: To the insurer's highest level for each document until its owner reviews it
+  C: By each document's owner, who chooses a level as the document is migrated
+  D: To the insurer's lowest level whose handling is at least as strict as the original
+answer: D
+explanation:
+  why_correct: A label matters for the handling it triggers. Mapping each level to the lowest insurer level whose rules are
+    at least as strict keeps every document's protection, so the acquired Confidential becomes Restricted, without labelling
+    everything at the top.
+  why_not:
+    A: Matching names keeps staff comfortable, but the acquired firm's Confidential documents would lose the encryption and
+      named-recipient sharing their owners chose for them.
+    B: Starting high is a safe default for a small set, but with two million documents the owner reviews would take years,
+      and in the meantime everyday documents would carry the strictest handling and the label would lose its meaning.
+    C: Owners are the right people to classify, but asking them to choose for two million documents during migration would
+      stall it and give inconsistent results.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-cissp-check
+  options_only: obvious

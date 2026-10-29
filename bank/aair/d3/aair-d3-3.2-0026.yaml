@@ -1,0 +1,33 @@
+id: aair-d3-3.2-0026
+subdomain: '3.2'
+difficulty: hard
+stem: A hospital's model predicts which patients will miss outpatient appointments, and schedulers double-book those
+  slots. Testing shows the predictions are equally accurate across home areas, but patients from poorer areas are
+  predicted to miss more often, so they now face longer waits when they do attend. Which treatment is MOST appropriate?
+options:
+  A: Remove home area and its proxies from the model's inputs
+  B: Constrain the model so predicted rates are equal across areas
+  C: Stop double-booking and take the model out of scheduling
+  D: Use the predictions to target reminders, not double-booking
+answer: D
+explanation:
+  why_correct: The model is accurate, so the harm comes from what the hospital does with its predictions. Patients
+    flagged as likely to miss lose their protected slot and wait longer when they come. Using the same predictions to
+    send reminders or offer transport help aims at the reason appointments are missed, still fills more slots, and
+    stops penalising the patients who are flagged.
+  why_not:
+    A: Removing area inputs is a common bias treatment, but the predictions are accurate. Other inputs, such as past
+      attendance, would still flag the same patients, and double-booking would still lengthen their waits.
+    B: Forcing equal predicted rates would make the model less accurate, and the patients it still flags would be
+      double-booked as before. It changes the numbers, not the action that causes the harm.
+    C: Withdrawing the model removes the harm, but it also gives up the benefit of fewer empty slots, when a different
+      use of the same accurate predictions treats the risk and keeps that benefit.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aair-check
+  options_only: not_obvious

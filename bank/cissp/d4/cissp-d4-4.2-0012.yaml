@@ -1,0 +1,35 @@
+id: cissp-d4-4.2-0012
+subdomain: '4.2'
+difficulty: hard
+stem: Company-managed laptops join staff Wi-Fi with WPA2-Enterprise and PEAP, using domain passwords, and staff often work
+  from hotels and cafés. In a test, an access point in the car park broadcasting the staff network name collected password
+  hashes from laptops that joined it. The RADIUS server's certificate comes from a public CA, and the company has no internal
+  CA that can issue device certificates this year. Which change BEST stops the attack?
+options:
+  A: Push a Wi-Fi profile that trusts only the RADIUS server's issuing CA and name
+  B: Upgrade the staff network from WPA2-Enterprise to WPA3-Enterprise
+  C: Deploy wireless intrusion prevention to detect and contain rogue access points
+  D: Move staff sign-in from PEAP to EAP-TLS with a certificate on each laptop
+answer: A
+explanation:
+  why_correct: 'The laptops gave their password hashes to a fake network because they did not check which server they were
+    talking to. A managed profile that pins the issuing CA and the exact server name makes each laptop refuse any other server,
+    wherever it is. Pinning the name matters here: with a public CA, trusting the CA alone would accept any certificate an
+    attacker buys from it.'
+  why_not:
+    B: WPA3-Enterprise strengthens the link and requires clients to validate the server certificate, but validation against
+      a public CA without a pinned server name still accepts any certificate an attacker buys from that CA, so a fake network
+      can still collect PEAP credentials.
+    C: Wireless intrusion prevention can find and contain rogue access points near the offices, but staff laptops also connect
+      from hotels and cafés, where it gives no protection.
+    D: EAP-TLS removes passwords from Wi-Fi sign-in and would be the stronger design, but it needs a certificate on every
+      laptop, and the company has no CA that can issue them this year.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-cissp-check
+  options_only: not_obvious

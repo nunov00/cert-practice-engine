@@ -1,0 +1,33 @@
+id: aaism-d3-3.2-0023
+subdomain: '3.2'
+difficulty: medium
+stem: A payments firm's fraud model needs a week of independent validation per version. A pilot found that retraining
+  daily on the latest transactions cut losses sharply, and that the gain fades within days. Between daily versions only
+  the data window changes; code, features and settings stay fixed. How should releases be governed?
+options:
+  A: Pre-approve daily versions passing automated checks in set limits
+  B: Retrain weekly so that each version gets a full independent validation
+  C: Release daily versions and validate a sample of them after release
+  D: Have the model owner sign off each daily version before it goes live
+answer: A
+explanation:
+  why_correct: Validation can approve the retraining process once, with its fixed code, features and settings, and set
+    the automated checks and limits each daily version must pass, such as performance and score shifts. Versions inside
+    those limits ship the same day; any that fall outside go back for full validation. That keeps independent assurance
+    and the daily gain.
+  why_not:
+    B: Full validation of every version is the normal rule for a significant model, but the pilot showed the gain fades
+      within days, so a weekly cycle gives up most of the benefit.
+    C: Sampling after release still validates some versions, but a faulty version would already be scoring payments
+      before anyone checks it.
+    D: Owner sign-off makes someone accountable for each release, but the owner cannot validate a model in a day, so it
+      adds a signature without independent assurance.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aaism-check
+  options_only: obvious

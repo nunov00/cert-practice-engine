@@ -1,0 +1,34 @@
+id: cissp-d8-8.4-0003
+subdomain: '8.4'
+difficulty: medium
+stem: A manufacturer is buying monitoring software whose agents will run with root rights on 3,000 servers and install the
+  vendor's updates automatically each night. At a peer company, a similar agent installed an update that attackers had inserted
+  in the vendor's build system and signed with the vendor's own key. Which purchase requirement BEST limits the impact of such
+  an attack?
+options:
+  A: A current SOC 2 Type II report covering the vendor's build and release process
+  B: Updates held in an internal repository and released in stages after testing
+  C: Agents that verify the vendor's code signature on each update before installing
+  D: A software bill of materials delivered with each update the vendor releases
+answer: B
+explanation:
+  why_correct: An update poisoned inside the vendor's build arrives looking entirely genuine, so the manufacturer has to limit
+    how far and how fast any update spreads. Holding updates internally and releasing them in stages, after testing, means
+    a bad update reaches a few servers first, giving testing and monitoring a chance to catch it before it reaches all
+    3,000, instead of every server receiving it overnight.
+  why_not:
+    A: An assurance report over the build process is reasonable due diligence, but it describes controls over a past period
+      and would not stop a compromise like the peer's from reaching every agent overnight.
+    C: Signature checks stop tampered or unofficial updates, but the peer's malicious update was signed with the vendor's
+      own key, so it would pass.
+    D: A bill of materials lists the components in each update, which helps with known vulnerable libraries, but a list
+      produced by a compromised build is no assurance that the code in it is authorised and benign.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-cissp-check
+  options_only: not_obvious

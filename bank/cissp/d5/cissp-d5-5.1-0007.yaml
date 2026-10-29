@@ -1,0 +1,33 @@
+id: cissp-d5-5.1-0007
+subdomain: '5.1'
+difficulty: hard
+stem: A SaaS provider's support engineers can open any customer's tenant to troubleshoot. Its bank customers must show regulators
+  that each bank controls who reaches its data. Cases go to whichever of about 400 engineers in three regions is on shift,
+  and most fixes need back-end logs and records that the customer's own console cannot show. Which access model BEST fits?
+options:
+  A: Time-limited access to the tenant for each case, granted once that bank approves it
+  B: Access for a named support team that each bank vets and approves each quarter
+  C: Engineer accounts in each bank's own identity system, with the bank's MFA at sign-in
+  D: Screen-sharing sessions in which the bank's own administrator drives the console
+answer: A
+explanation:
+  why_correct: With cases spread across a large, changing rota, a bank cannot meaningfully vet engineers in advance; what
+    it can judge is each case. Per-case approval by the bank, with access that expires on its own, lets the bank decide who
+    reaches its data and when, and still gives the engineer the back-end access the fix needs.
+  why_not:
+    B: A bank-approved named team suits a dedicated support desk. Here cases go to whoever of 400 engineers is on shift, so
+      the list would cover nearly everyone, and each listed engineer holds access between cases that the bank never sees.
+    C: Accounts in the bank's own directory give the bank strong control over credentials, but with 400 rotating engineers
+      each bank would provision almost the whole support staff in advance, and those accounts stay usable whether or not
+      there is a case.
+    D: Customer-driven screen sharing keeps the bank fully in control, but most fixes need back-end logs and records that
+      the customer's console cannot display, so the engineer could not do the work.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-cissp-check
+  options_only: not_obvious

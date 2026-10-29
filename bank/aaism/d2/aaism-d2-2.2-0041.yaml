@@ -1,0 +1,32 @@
+id: aaism-d2-2.2-0041
+subdomain: '2.2'
+difficulty: medium
+stem: A logistics firm's staff assistant answers from the company wiki, which any of its 6,000 employees can edit.
+  In a test, a red teamer changed the supplier payments page to show a new bank account for a major supplier, and the
+  assistant gave that account to finance staff, citing the page. Which control BEST addresses this weakness?
+options:
+  A: Screen wiki pages with an injection classifier before indexing
+  B: Show the page's last editor and edit date with each answer
+  C: Alert the page owner when someone edits a finance page
+  D: Answer finance questions from owner-approved versions only
+answer: D
+explanation:
+  why_correct: The assistant treats every wiki edit as trusted fact, and anyone can edit. For content that drives payments,
+    answering only from versions the page owner has approved means a single unreviewed edit cannot reach finance staff
+    through the assistant, while the wiki stays open for everything else.
+  why_not:
+    A: Injection classifiers look for instructions aimed at the model. A changed bank account is an ordinary statement
+      of fact, so the classifier has nothing to find.
+    B: Showing who edited a page helps users judge a source, but finance staff expect to follow the payments page, and
+      a recent edit by a colleague does not look suspicious.
+    C: Edit alerts help owners spot vandalism, but the assistant serves the new text at once, so finance may act on it
+      before an owner reads the alert.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aaism-check
+  options_only: not_obvious

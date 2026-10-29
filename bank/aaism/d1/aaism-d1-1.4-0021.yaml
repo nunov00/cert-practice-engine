@@ -1,0 +1,33 @@
+id: aaism-d1-1.4-0021
+subdomain: '1.4'
+difficulty: hard
+stem: A retail group is building its AI security program. All its AI models run on one central platform, and each
+  model serves customers in all eight countries where it trades. Country units have their own security teams, and one
+  country has passed an AI law with stricter security duties than the rest. How should the program set control requirements?
+options:
+  A: A group baseline that each country extends with its local rules
+  B: Separate country standards mapped to one control framework
+  C: A group baseline with country exceptions approved centrally
+  D: One group standard set to the strictest country's rules
+answer: D
+explanation:
+  why_correct: Every model runs on one platform and serves every country, so there is no country-only system to which
+    stricter local rules could apply. A model that meets one country's duties meets them for all, which makes the strictest
+    country's rules the practical floor for the whole group.
+  why_not:
+    A: A baseline with local additions is the usual design for groups whose countries run their own systems. Here the
+      local additions would have to be built into shared models anyway, so the baseline would describe controls the
+      platform does not run.
+    B: Country standards suit units that own and operate their own AI. With one shared platform, separate standards would
+      set conflicting requirements for the same models and leave the platform team to reconcile them.
+    C: Central exceptions keep a baseline flexible, but here the stricter law binds the shared models, so the group would
+      be approving exceptions to rules it cannot avoid meeting.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aaism
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-aaism-check
+  options_only: not_obvious

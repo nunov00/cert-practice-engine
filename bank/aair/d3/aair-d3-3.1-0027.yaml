@@ -1,0 +1,32 @@
+id: aair-d3-3.1-0027
+subdomain: '3.1'
+difficulty: easy
+stem: A card issuer has rated the risk scenarios for its fraud model on its standard five-by-five heat map. The board must
+  now choose between two controls for missed fraud, one costing three times as much as the other. The issuer holds five years
+  of fraud loss records by fraud type. How should the risk practitioner assess these scenarios for the board?
+options:
+  A: Hold an expert workshop to re-rate the scenarios on the heat map
+  B: Compare the scenarios against industry fraud loss benchmarks
+  C: Estimate each scenario's yearly loss under each control
+  D: Rate residual risk on the heat map with each control in place
+answer: C
+explanation:
+  why_correct: The board's decision is whether the dearer control cuts losses by enough to justify three times the cost, which
+    needs both sides in money. With five years of loss records by fraud type, the issuer can estimate each scenario's yearly
+    loss under each control and set the reduction against the cost. Ordinal heat-map ratings cannot be weighed against a price.
+  why_not:
+    A: Expert workshops suit scenarios with little data. Here loss data exists, and re-rating on the heat map would still
+      give ordinal scores that cannot be weighed against control costs.
+    B: Industry benchmarks help when an organisation's own data is scarce, but they reflect other issuers' portfolios and
+      controls, while this issuer holds better data of its own.
+    D: Comparing residual ratings shows which control lowers risk more, but a move from one heat-map cell to another does
+      not show whether the reduction is worth three times the cost.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-aair-check
+  options_only: obvious

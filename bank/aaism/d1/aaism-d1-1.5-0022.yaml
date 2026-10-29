@@ -1,0 +1,32 @@
+id: aaism-d1-1.5-0022
+subdomain: '1.5'
+difficulty: medium
+stem: After a prompt injection, an insurer's claims agent is approving fraudulent payouts every few seconds. Its injected
+  instructions and working plan exist only in the memory of its running container, and responders need them to trace
+  where the injection came from. What should the responders do FIRST?
+options:
+  A: Stop the agent's container to halt the payouts
+  B: Cut the container off from payments but leave it running
+  C: Capture the container's full memory, then stop the container
+  D: Redeploy the agent from its last approved image
+answer: B
+explanation:
+  why_correct: Two needs pull against each other, stopping the payouts and keeping evidence that exists only in memory.
+    Cutting the agent off from the payment system ends the loss at once while the container, and the injected instructions
+    in it, stay intact for capture and analysis.
+  why_not:
+    A: Stopping the container is the usual quick containment, and it does end the payouts, but it also erases the
+      only copy of the injected instructions responders need to find the source.
+    C: Capturing memory before shutdown is sound forensic practice, but a capture takes minutes, and payouts continue
+      every few seconds while it runs.
+    D: Redeploying from a clean image restores a known state, but it destroys the running container and its evidence,
+      and the new agent can be injected again from the same unknown source.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aaism-check
+  options_only: obvious

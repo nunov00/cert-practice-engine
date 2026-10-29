@@ -1,0 +1,33 @@
+id: aair-d1-1.3-0024
+subdomain: '1.3'
+difficulty: medium
+stem: An insurer's IT department licenses and runs a general-purpose AI assistant for staff. Claims handlers use it to
+  draft decline letters, HR uses it to shortlist job applicants, and marketing uses it to write campaign copy. How
+  should accountability for its risks BEST be assigned?
+options:
+  A: The CIO owns its risks, as owner of the licensed tool
+  B: One business head owns it and consults the other units
+  C: The AI oversight committee owns it, as it approved the rollout
+  D: IT owns platform risks, and each unit head owns its own uses
+answer: D
+explanation:
+  why_correct: The uses have little in common. A wrong decline, unfair shortlisting and misleading copy are different
+    risks, decided and borne by different units. IT can own the risks of the platform itself, such as data handling,
+    access and availability, while each unit head owns the risk of how the unit uses it, as only they control that use
+    and live with its consequences.
+  why_not:
+    A: The CIO controls the platform, but does not decide how claims or HR use its outputs and cannot weigh the risks
+      of decline letters or hiring decisions.
+    B: A single owner who consults the other users is sound for one model serving one shared purpose. Here the uses
+      differ so much that no one head could judge the others' risks.
+    C: The committee oversees and challenges. Owning the risks would have it judge its own decisions and would blur who
+      is accountable in each unit.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-aair-check
+  options_only: not_obvious

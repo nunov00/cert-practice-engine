@@ -1,0 +1,33 @@
+id: cissp-d6-6.5-0005
+subdomain: '6.5'
+difficulty: medium
+stem: A hospital uses 60 cloud suppliers and has staff for six supplier audits this year. Fourteen of the suppliers hold patient
+  records, and most of these send current SOC 2 Type II reports covering the hospital's services, which its supplier policy
+  accepts as audit evidence. Where those reports list exceptions, all are rated low risk and the hospital holds evidence
+  that they have been fixed. Which suppliers should the hospital audit FIRST?
+options:
+  A: Patient-record holders that hold the largest volumes of records
+  B: Patient-record holders that provide no independent assurance report
+  C: Patient-record holders whose SOC 2 reports list control exceptions
+  D: Patient-record holders that support the most critical clinical services
+answer: B
+explanation:
+  why_correct: All fourteen hold patient records, so the question is where an audit adds assurance the hospital does not already
+    have. Most send reports the policy accepts as evidence; the holders that send none are the ones whose controls the hospital
+    knows nothing about, so the six audits do most there.
+  why_not:
+    A: Ranking by data volume is the usual way to aim audits, but most of the high-risk holders already provide reports the
+      policy accepts, so auditing the largest ones would mostly repeat evidence the hospital holds.
+    C: Exceptions are a real signal of weakness, but these are low risk and the hospital already holds evidence that they
+      were fixed. Auditing those suppliers would re-test known, closed issues, while suppliers with no report remain unknown.
+    D: Clinical criticality matters for availability risk, but those suppliers may well be covered by accepted reports too,
+      and ranking on criticality alone ignores which suppliers the hospital already has assurance over.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-cissp-check
+  options_only: not_obvious

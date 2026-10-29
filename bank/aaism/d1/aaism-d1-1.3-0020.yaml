@@ -1,0 +1,32 @@
+id: aaism-d1-1.3-0020
+subdomain: '1.3'
+difficulty: medium
+stem: A lender's retention policy keeps the inputs its credit model scores, including income, address and employer,
+  for 30 days. Data scientists ask to keep a year of inputs so they can check for seasonal drift against the same month
+  last year. Their drift monitor works on per-feature histograms. What should the security manager advise?
+options:
+  A: Keep a year of monthly per-feature histograms instead of inputs
+  B: Keep a year of inputs with direct identifiers replaced by tokens
+  C: Keep a random 1% sample of the raw inputs for a full year
+  D: Keep a year of inputs in a restricted archive under an exception
+answer: A
+explanation:
+  why_correct: The stated purpose, comparing feature distributions across seasons, needs only the histograms the monitor
+    already uses. Keeping those for a year serves the purpose in full, while the personal inputs still leave on the
+    30-day schedule.
+  why_not:
+    B: Tokenising identifiers is the usual way to keep useful records with less exposure, but income, address and employer
+      still identify people, and the drift check does not need records at all.
+    C: Sampling cuts volume and still lets analysts look at real cases, but it keeps personal records for a year that
+      the histogram-based monitor does not use.
+    D: A recorded exception fits when the exact records are required, for example to reproduce decisions. Drift checks
+      on histograms do not need them, so an exception keeps personal data without need.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aaism-check
+  options_only: not_obvious

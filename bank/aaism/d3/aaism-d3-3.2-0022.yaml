@@ -1,0 +1,33 @@
+id: aaism-d3-3.2-0022
+subdomain: '3.2'
+difficulty: hard
+stem: An insurer has switched off a retired claims model's endpoint. Its weights, logs of each decision's inputs and
+  a training set copied from claimants' medical reports remain. The claims system keeps the original reports for the
+  six years in which disputed claims can be reopened, and a dispute may require re-running the original decision. What
+  should the retirement plan do with these?
+options:
+  A: Keep the weights and decision logs, delete the training set
+  B: Keep the training set and logs, delete the weights
+  C: Keep the three, under restricted access, for six years
+  D: Keep the decision logs, delete the weights and training set
+answer: A
+explanation:
+  why_correct: Re-running a disputed decision needs the exact model and the inputs it saw, so the weights and decision
+    logs must be kept for the dispute period. The training set is a copy of medical reports that the claims system keeps
+    for the same six years, so keeping it adds a second store of sensitive data with no purpose the originals do not serve.
+  why_not:
+    B: Keeping the training data seems to allow the model to be rebuilt, but retraining does not reproduce identical
+      weights, so the original decision could not be re-run exactly.
+    C: Keeping everything is a cautious default for disputes, but the training set duplicates reports the claims system
+      keeps for the whole period. Retaining it for six years keeps a needless copy of medical data.
+    D: Logs show what went in and came out, which suits minimisation, but a dispute may need the decision re-run. Without
+      the weights that cannot be done.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aaism-check
+  options_only: not_obvious

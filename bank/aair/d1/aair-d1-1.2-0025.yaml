@@ -1,0 +1,32 @@
+id: aair-d1-1.2-0025
+subdomain: '1.2'
+difficulty: medium
+stem: A utility's billing, website and mobile app teams each run a customer chatbot. Each chatbot answers from its own
+  copy of the tariff and policy documents, which that team updates. Customers get different answers to the same
+  question depending on the channel. Which change BEST aligns the chatbots?
+options:
+  A: Merge them into one chatbot owned by a central team
+  B: Have the three answer from one governed document source
+  C: Test the three chatbots monthly with one shared question set
+  D: Agree one risk assessment method for the three chatbots
+answer: B
+explanation:
+  why_correct: The answers differ because the content behind them differs, with each team updating its own copy on
+    its own schedule. One governed source, with a named owner and a single update process, makes every channel answer
+    from the same current documents, while each team keeps a chatbot designed for its own channel.
+  why_not:
+    A: Merging would also remove the inconsistency, but it is a much larger change that gives up channel-specific
+      design and team ownership, when the cause sits in the documents rather than in having three chatbots.
+    C: Common testing would show where answers differ, but each copy would keep drifting between tests, so the
+      differences would return.
+    D: A shared method makes the risk ratings consistent, not the content. The three chatbots could be assessed alike
+      and still answer differently.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aair-check
+  options_only: not_obvious

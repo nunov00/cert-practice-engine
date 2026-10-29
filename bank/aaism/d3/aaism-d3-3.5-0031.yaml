@@ -1,0 +1,33 @@
+id: aaism-d3-3.5-0031
+subdomain: '3.5'
+difficulty: medium
+stem: A company's SOC monitors model use through its AI gateway, which holds the provider keys. A review found teams
+  calling the provider directly from serverless functions in their own cloud accounts, outside the corporate network,
+  using keys any employee can create in the provider's console. Which control BEST closes this monitoring gap?
+options:
+  A: Allow provider traffic only from the gateway at the corporate proxy
+  B: Restrict key creation in the provider account to the gateway
+  C: Revoke the direct keys the review found and notify their teams
+  D: Scan code repositories for provider keys and alert on finds
+answer: B
+explanation:
+  why_correct: The gap exists because anyone can mint a key and call the provider from anywhere. Restricting key creation
+    in the company's provider account to the gateway's identity removes the cause, as no one else can mint a direct key. The keys
+    already found still need revoking as clean-up, after which every call must pass through the gateway, where the SOC
+    can see it, wherever the code runs.
+  why_not:
+    A: Egress control at the proxy is the usual way to force traffic through a gateway. These calls come from teams'
+      own cloud accounts outside the corporate network, so the proxy never sees them.
+    C: Revoking the keys found stops today's direct calls and belongs in the clean-up, but on its own any employee can
+      create a new key the same day. It treats the instances, not the cause.
+    D: Repository scanning finds keys committed to code. Keys stored in function settings never reach a repository, and
+      finding a key after the fact does not stop it being created.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aaism-check
+  options_only: not_obvious

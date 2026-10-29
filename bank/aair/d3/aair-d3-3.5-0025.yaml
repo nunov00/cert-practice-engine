@@ -1,0 +1,33 @@
+id: aair-d3-3.5-0025
+subdomain: '3.5'
+difficulty: hard
+stem: A company plans to let its AI agents use third-party connectors that act in outside services, such as booking
+  travel. Each connector's tool descriptions, which tell the agent what each tool does and when to use it, are loaded
+  from the provider's server at the start of every session. Which control BEST addresses this supply chain risk?
+options:
+  A: Pin each connector's reviewed descriptions; block any change
+  B: Allow only connectors that security has reviewed and approved
+  C: Reassess each connector's provider in the yearly supplier review
+  D: Log the agent's tool calls and alert on unusual actions
+answer: A
+explanation:
+  why_correct: The descriptions come live from the provider each session, so the provider, or an attacker who
+    compromises it, can change what the agent is told after any review, for example by adding hidden instructions to
+    send data elsewhere. Pinning the reviewed version and blocking any change until it is reviewed again keeps the
+    agent working from what was approved.
+  why_not:
+    B: Approval before use is the standard control for third-party plug-ins, but it reviews one version. A connector
+      approved today can serve different descriptions tomorrow without any review.
+    C: Yearly supplier reviews suit stable services, but a description can change between sessions, so a review from
+      months ago says little about what the agent loads today.
+    D: Logging and alerts help detect misuse, but they act after the agent has followed a changed description, and a
+      quiet data leak may not look unusual.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aair-check
+  options_only: not_obvious

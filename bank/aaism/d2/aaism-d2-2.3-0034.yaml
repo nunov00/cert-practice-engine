@@ -1,0 +1,32 @@
+id: aaism-d2-2.3-0034
+subdomain: '2.3'
+difficulty: hard
+stem: A logistics firm depends on a start-up's route model, fine-tuned over 18 months on the firm's delivery data with
+  labels the start-up produced. The firm keeps a full copy of that delivery data. The start-up's app is a thin layer
+  over the model, and its funding runs out next year. Which contract provision MOST protects the firm?
+options:
+  A: Return of the firm's delivery data in a usable format
+  B: Escrow of the application source code, released on insolvency
+  C: Transition support to a successor vendor at exit
+  D: Escrow of the tuned model and labels, released on insolvency
+answer: D
+explanation:
+  why_correct: The asset the firm cannot rebuild quickly is the tuned model and the 18 months of labelling behind it.
+    Escrow of the weights and labels, with release triggered by insolvency, lets the firm or a successor keep the service
+    running if the start-up fails, which is the likely exit here.
+  why_not:
+    A: Data return is a standard exit term and often the most important one. This firm already holds a full copy of its
+      delivery data, so the clause adds little.
+    B: Source code escrow is the classic protection against a supplier failing. Here the app is a thin layer that could
+      be rebuilt; the value sits in the model, which code escrow does not cover.
+    C: Transition support helps in an orderly exit. A start-up that has run out of money is unlikely to have staff left
+      to provide it, so the clause may be worth nothing when it is needed.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aaism
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-aaism-check
+  options_only: obvious

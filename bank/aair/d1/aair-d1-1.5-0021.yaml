@@ -1,0 +1,34 @@
+id: aair-d1-1.5-0021
+subdomain: '1.5'
+difficulty: hard
+stem: Data protection law in a lender's market bars solely automated decisions with significant effects unless the applicant
+  consents. The lender does not seek consent, so a credit officer confirms each loan rejection the model makes. Officers work
+  from a screen that shows the model's score and its top reason codes, and they overturn fewer than one rejection in a thousand.
+  What should the risk practitioner advise?
+options:
+  A: Have officers assess the applicant's file before confirming
+  B: Let rejected applicants obtain human review and contest it
+  C: Train officers to challenge the model's reasons when in doubt
+  D: Track each officer's override rate and review those near zero
+answer: A
+explanation:
+  why_correct: Human involvement takes a decision out of the solely automated category only if the person weighs the case
+    and could reach a different outcome. Officers who see only the model's score and its own reason codes can check the model
+    only against itself, so their confirmation is a formality. Assessing the applicant's actual file gives them an independent
+    basis for judgement, which is what makes the involvement meaningful.
+  why_not:
+    B: A right to contest is a core safeguard where solely automated decisions are allowed, for example with consent. Here
+      they are barred without consent, so a later appeal does not make the original rejection lawful.
+    C: Training against automation bias helps reviewers who have the facts but defer to the model. These officers see only
+      the model's own output, so training gives them nothing independent to challenge it with.
+    D: A very low override rate is a useful sign of rubber-stamping, and tracking it is good oversight. It detects token review
+      rather than fixing it, and officers would still be confirming on the model's output alone.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aair-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aair-d2-2.1-0021
+subdomain: '2.1'
+difficulty: hard
+stem: A health insurer is choosing among three vendors' claim-coding models. Each vendor tuned its model on 5,000 labelled
+  past claims and could submit predictions on a further 1,000 claims as often as it liked, seeing its score each time. The
+  three scores are within a point of each other. What should the insurer do NEXT?
+options:
+  A: Score each model once on new claims the vendors have not seen
+  B: Pilot the top-scoring model on live claims before signing
+  C: Have an independent firm review each vendor's tuning method
+  D: Compare the three models' scores by claim type, not overall
+answer: A
+explanation:
+  why_correct: Vendors could submit to the 1,000-claim set as often as they liked, so each could tune to it, and the scores
+    overstate real performance and cannot rank the vendors. A single scoring on fresh claims that none of them has seen gives
+    a fair, comparable measure. A pilot and a breakdown by claim type are then worth doing on that sound basis.
+  why_not:
+    B: A live pilot is a strong check before signing, but it would test only the vendor picked on inflated scores, so the
+      choice among the three would still rest on unreliable figures.
+    C: A review of tuning methods may reveal overfitting, but it gives no reliable performance figure to compare, which scoring
+      on unseen claims provides directly.
+    D: A breakdown by claim type is good practice, but it would come from the same over-tuned set, so it would carry the same
+      bias.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-aair-check
+  options_only: not_obvious

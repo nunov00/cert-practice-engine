@@ -1,0 +1,36 @@
+id: cissp-d6-6.4-0007
+subdomain: '6.4'
+difficulty: hard
+stem: An internal test of 20 business applications found SQL injection in nine, although all 20 pass the static analysis
+  in the shared build pipeline. The five teams that wrote the nine also wrote most of the eleven clean ones. The nine still
+  use a 2014 in-house data-access library whose query call takes one finished SQL string; the rest use the current data layer.
+  Which recommendation should the report lead with?
+options:
+  A: Fix the nine findings in order of each one's exploitability and data exposure
+  B: Add a blocking static-analysis rule for string-built SQL to the shared pipeline
+  C: Change the old library so that it escapes quote characters in each query it runs
+  D: Move the nine applications off the old library onto the current data layer
+answer: D
+explanation:
+  why_correct: 'The same teams wrote clean code on the current data layer, so the findings follow the library, not the
+    people. A query call that takes only a finished string gives developers no way to pass user input as a parameter, so
+    every query on it is built by hand. Moving the nine onto the data layer gives them parameter binding, which closes the
+    findings and stops new ones in later changes.'
+  why_not:
+    A: Working through findings by risk is the normal way to handle a report, but each fix would still go through a call
+      that accepts only a finished string, so it relies on hand escaping, and the other screens built the same way stay
+      exposed.
+    B: A blocking rule is a sound systemic guardrail, but on the old library there is no parameterised way to write a query,
+      so the flagged code could only be fixed by moving off it. It stops recurrence elsewhere rather than fixing the nine.
+    C: Fixing a shared library is attractive because one change reaches all nine, but by the time the library receives a
+      finished SQL string it cannot tell the query's own quotes from those in user input, so escaping either breaks valid
+      queries or misses the attack.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-cissp-check
+  options_only: not_obvious

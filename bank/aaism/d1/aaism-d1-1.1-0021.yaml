@@ -1,0 +1,32 @@
+id: aaism-d1-1.1-0021
+subdomain: '1.1'
+difficulty: medium
+stem: A city police force will use an AI tool that ranks neighbourhoods for extra patrols. Its impact assessment was
+  written by the project team, with input from the officers who will act on the rankings and the vendor that built the
+  model. Whose input is MOST needed before the assessment is finalised?
+options:
+  A: Residents of the neighbourhoods the tool will rank
+  B: The data protection authority, through prior consultation
+  C: An independent auditor of the model's accuracy and bias
+  D: The city council committee that oversees policing
+answer: A
+explanation:
+  why_correct: An impact assessment should reflect the people who bear the impact. Residents of ranked neighbourhoods
+    face more stops, stigma and possible feedback loops, and none of the current contributors speaks for them. Their
+    input shows harms the team, officers and vendor are unlikely to see, before the assessment is used to decide.
+  why_not:
+    B: Prior consultation with a regulator is required where high risk remains after the assessment. It comes after the
+      assessment is complete and relies on that assessment having identified the harms.
+    C: Independent testing of accuracy and bias is valuable evidence for the assessment. It measures the model, not how
+      patrols guided by it affect the people living in those areas.
+    D: The oversight committee should scrutinise the decision, and it usually reviews the finished assessment. Its role
+      is to judge the assessment, not to supply the affected community's view of the harms.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: cissp-d5-5.2-0006
+subdomain: '5.2'
+difficulty: easy
+stem: A fully remote software firm hires contractors after video interviews and a background check on the identity documents
+  they submit, then mails each one a laptop and sign-in details. It found two contractors whose documents and checks were
+  genuine but who were not the people now doing the work. Which change BEST closes this gap?
+options:
+  A: Use a screening agency that also verifies references and past employment
+  B: Match each hire's face to the checked ID in a live session before issuing credentials
+  C: Ship each laptop only to the home address shown on the hire's checked ID
+  D: Hold each video interview with both a recruiter and the hiring manager present
+answer: B
+explanation:
+  why_correct: The identities were real; what failed was the link between the verified identity and the person who received
+    the credentials. A live session that matches the person in front of the camera to the checked document, at the moment
+    credentials are issued, binds the account to that person rather than to whoever ends up holding the laptop.
+  why_not:
+    A: Deeper screening is the right answer when documents or histories are fake. Here the documents and checks were genuine,
+      so more checks on the same identity would pass again.
+    C: Shipping to the verified address is a common control against laptops sent to drop addresses, but the genuine contractor
+      can receive the laptop at home and hand it, with the sign-in details, to someone else.
+    D: A second interviewer makes a stand-in at interview harder to miss, but the interviews here were with the real people;
+      the switch happened after hiring, when the credentials changed hands.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-cissp-check
+  options_only: obvious

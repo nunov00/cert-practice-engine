@@ -1,0 +1,32 @@
+id: cissp-d2-2.3-0003
+subdomain: '2.3'
+difficulty: hard
+stem: A retailer's teams create cloud resources through deployment pipelines, often dozens a day, and many last only a few
+  hours. The asset inventory is fed by a weekly discovery scan. During an incident, responders lost two days finding which
+  team was responsible for a compromised storage bucket. Which change BEST addresses this?
+options:
+  A: Run the discovery scan daily and match new resources to teams by their names
+  B: Block creation of resources that lack an owner tag, through cloud policy
+  C: Require a change ticket naming an owner before each new resource is created
+  D: Have each team confirm its resources in the inventory each month
+answer: B
+explanation:
+  why_correct: Ownership has to be recorded when the resource is created, because many resources live for hours. A cloud
+    policy that refuses creation without an owner tag puts the owner on every resource, including short-lived ones, and works
+    inside the pipelines without slowing them.
+  why_not:
+    A: Daily discovery narrows the gap, but resources that live a few hours can still come and go between scans, and matching
+      teams by resource names is guesswork.
+    C: A ticket that names an owner fixes accountability up front, but pipelines create dozens of resources a day, and a manual
+      ticket for each would stall them or be skipped.
+    D: Monthly confirmation keeps long-lived records tidy, but most of these resources are gone well before any review, and
+      it would not have helped during this incident.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-cissp-check
+  options_only: not_obvious

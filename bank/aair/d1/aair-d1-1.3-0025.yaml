@@ -1,0 +1,32 @@
+id: aair-d1-1.3-0025
+subdomain: '1.3'
+difficulty: medium
+stem: At an insurer, a data scientist told her manager she believed a claims model treated some claimants unfairly. The manager,
+  who leads the project and whose bonus depends on its launch date, judged the issue minor. It came to light months later
+  through complaints. Which change would BEST help such concerns reach oversight in time?
+options:
+  A: Add a fairness question to each stage-gate review the lead presents
+  B: Let staff raise AI concerns directly with the second-line risk team
+  C: Require project leads to log staff concerns in the risk register
+  D: Train project leads to recognise and escalate fairness concerns
+answer: B
+explanation:
+  why_correct: The other options still pass the concern through the project lead, whose bonus depends on launching on time.
+    A direct route to the second-line risk team lets staff bypass that conflict, so the concern reaches someone independent
+    who can assess it and take it to oversight before launch.
+  why_not:
+    A: A stage-gate question builds fairness into delivery, but the lead answers it and decides how the concern is presented,
+      so a lead who judges it minor can still play it down.
+    C: Logging concerns makes them visible, but the lead still describes and rates them, so the same conflict shapes how serious
+      they look to the committee.
+    D: Training helps leads who miss concerns through lack of knowledge. This lead heard the concern and judged it minor while
+      having an incentive to launch, which training does not remove.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aair-check
+  options_only: not_obvious

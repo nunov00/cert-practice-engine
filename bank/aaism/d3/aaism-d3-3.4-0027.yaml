@@ -1,0 +1,33 @@
+id: aaism-d3-3.4-0027
+subdomain: '3.4'
+difficulty: medium
+stem: A smart speaker maker sends audio after each wake word to its cloud, and staff review a sample of clips to improve
+  recognition. About one clip in ten follows a false wake and captures private conversation. Users were told that audio
+  helps improve the service. Which control BEST addresses the privacy concern?
+options:
+  A: Remove account identifiers from clips before staff review them
+  B: Retrain the wake word model to cut the false wake rate
+  C: Use clips in staff review only for users who opt in to it
+  D: Encrypt clips in transit and limit review to named staff
+answer: C
+explanation:
+  why_correct: The harm is people overhearing private conversations that users never expected anyone to hear; a vague
+    'improve the service' notice does not set that expectation. Limiting human review to users who have clearly agreed
+    to it, and keeping other clips out of review, puts the practice in line with what users accept, while recognition
+    can still improve from those who opt in.
+  why_not:
+    A: De-identifying clips is a common safeguard, but private conversation often names people, places and matters that
+      identify the household. Reviewers would still hear it without users' agreement.
+    B: Fewer false wakes reduce how often private speech is captured, which is worth doing. Some will always remain,
+      and those clips would still go to human reviewers that users did not expect.
+    D: Encryption and access limits protect clips from outsiders. The concern is the authorised reviewers listening,
+      which these controls do not change.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aaism-check
+  options_only: not_obvious
