@@ -1,0 +1,33 @@
+id: aair-d1-1.5-0021
+subdomain: '1.5'
+difficulty: easy
+stem: Data protection law in a lender's market bars solely automated decisions with significant effects unless the
+  applicant consents. The lender does not seek consent, so a staff member now confirms each automated loan rejection.
+  Reviewers see only the model's decision and score, and each confirms about 300 a day. What should the risk
+  practitioner advise?
+options:
+  A: Give reviewers the file, time and authority to change outcomes
+  B: Let rejected applicants ask for human review and contest the result
+  C: Have reviewers confirm only the rejections the model scores as borderline
+  D: Log each reviewer's name and confirmation time as evidence
+answer: A
+explanation:
+  why_correct: Human involvement takes a decision out of the solely automated category only if it is meaningful. The
+    reviewer must be able to weigh the relevant information and have the authority, and in practice the time, to reach
+    a different outcome. Reviewers who see only a score and confirm hundreds a day add a token step, so the rejections
+    are likely still solely automated and barred.
+  why_not:
+    B: A right to contest is a key safeguard where solely automated decisions are allowed. Here they are barred without
+      consent, so a later appeal does not make the original decision lawful.
+    C: Focusing review on borderline cases is efficient, but the other rejections would then be made with no human
+      involvement at all, which the law bars.
+    D: A log shows that someone clicked confirm, not that they could weigh the case. It documents token involvement
+      instead of fixing it.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: pending
+  options_only: obvious

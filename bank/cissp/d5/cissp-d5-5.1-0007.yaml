@@ -1,0 +1,31 @@
+id: cissp-d5-5.1-0007
+subdomain: '5.1'
+difficulty: easy
+stem: A SaaS provider's support engineers can open any customer's tenant to troubleshoot. Its bank customers' regulators expect
+  each bank to know and control who touches its data. Most fixes need engineers to read back-end logs and records that the
+  customer's own console cannot show. Which access model BEST fits?
+options:
+  A: Time-limited access to a tenant, granted per case once that customer approves
+  B: Standing access for a small vetted support team, with each session video-recorded
+  C: Just-in-time access per case, approved by the support duty manager
+  D: Screen-sharing sessions in which the customer's administrator drives
+answer: A
+explanation:
+  why_correct: The regulators want each bank, not the provider, to control who touches its data. Access that the customer
+    approves for each case, and that expires on its own, gives the bank that control and still lets engineers reach the back-end
+    data they need.
+  why_not:
+    B: A small vetted team with recorded sessions is a common model for privileged support, but the access stays open and
+      the bank has no say in who uses it or when.
+    C: Just-in-time access is good practice inside a provider, but here the provider's own manager approves it, while the
+      regulators expect the bank to decide.
+    D: Customer-driven screen sharing keeps the bank in control, but the fixes need back-end logs and records that the customer's
+      console cannot display.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pending
+  options_only: obvious

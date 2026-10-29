@@ -1,0 +1,31 @@
+id: cissp-d6-6.1-0005
+subdomain: '6.1'
+difficulty: medium
+stem: A software company's board asks whether an attacker holding one employee's stolen laptop and password could reach the
+  customer database. Yearly external penetration tests have found little for several years. The budget covers a single engagement
+  of two weeks. Which assessment BEST answers the board's question?
+options:
+  A: A full-scope red-team exercise that starts from the internet
+  B: An assumed-breach test starting from a standard user's laptop and account
+  C: A configuration review of the database servers against hardening benchmarks
+  D: A credentialed vulnerability scan of the internal servers and workstations
+answer: B
+explanation:
+  why_correct: 'The board''s question starts after the attacker already has a laptop and a password. An assumed-breach test
+    begins from exactly that position and spends the two weeks on what matters: privilege paths, lateral movement and whether
+    the database can be reached.'
+  why_not:
+    A: A full-scope red team tests the whole chain realistically, but in two weeks it may spend most of its time on getting
+      in from the internet, which the board's question takes as given.
+    C: A hardening review checks the destination, not the path to it. Weak group rights or reused admin credentials along
+      the way would not show up.
+    D: A credentialed scan lists missing patches and misconfigurations, but it does not show whether they chain together into
+      a route from a user's laptop to the database.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

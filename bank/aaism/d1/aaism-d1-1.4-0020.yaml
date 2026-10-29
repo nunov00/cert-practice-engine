@@ -1,0 +1,31 @@
+id: aaism-d1-1.4-0020
+subdomain: '1.4'
+difficulty: hard
+stem: An AI security program reports reviews completed, staff trained and policies issued, all on target. This year two
+  AI incidents came from design flaws present at launch, in systems that had passed review. The board asks whether reviews
+  actually reduce risk. Which metric BEST answers this?
+options:
+  A: Share of high-risk AI systems reviewed before their launch
+  B: Average number of findings raised per review
+  C: Share of review findings closed by the agreed date
+  D: Share of serious flaws found after launch that review missed
+answer: D
+explanation:
+  why_correct: The board's question is about effectiveness, and the incidents show reviews passing systems with flaws.
+    Tracking serious flaws found after launch, from incidents, testing or audits, that a review should have caught measures
+    how well reviews work and shows whether changes to them help.
+  why_not:
+    A: Coverage matters, but the systems behind the incidents were reviewed. A high coverage figure would not show that
+      reviews miss flaws.
+    B: Findings per review is often used as a proxy for rigour. It counts what reviews find, not what they miss, and
+      can rise without any change in the flaws that get through.
+    C: Closure rates show whether findings get fixed. The flaws behind the incidents were never found, so they never
+      appeared in this measure.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aaism
+  check_verdict: pending
+  options_only: obvious

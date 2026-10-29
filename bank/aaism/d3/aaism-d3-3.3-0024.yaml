@@ -1,0 +1,32 @@
+id: aaism-d3-3.3-0024
+subdomain: '3.3'
+difficulty: hard
+stem: A card issuer retrains its fraud model on cases investigators confirm, and investigators see only transactions
+  the model flags. Chargebacks also become labels, but most fraud now hits prepaid cards whose holders rarely dispute.
+  Measured precision keeps rising while losses grow, and the missed fraud scores far below the threshold. Which control
+  BEST corrects the training labels?
+options:
+  A: Weight chargeback labels more heavily in retraining
+  B: Lower the flag threshold so that investigators label more cases
+  C: Have a second investigator confirm each fraud label
+  D: Have investigators label a random sample of unflagged cases
+answer: D
+explanation:
+  why_correct: The labels come almost entirely from what the model already flags, so fraud it misses is never labelled
+    and each retrain learns to miss it again. Labelling a random sample of unflagged transactions gives the training
+    data examples of the missed fraud, wherever it scores, and also an honest measure of the miss rate.
+  why_not:
+    A: Chargebacks are the usual source of labels for missed fraud. Here most fraud is on prepaid cards whose holders
+      rarely dispute, so there are few chargebacks to weight.
+    B: A lower threshold widens what investigators see, but the missed fraud scores far below it. A modest change would
+      still not reach it, and a large one would swamp investigators.
+    C: Double confirmation improves the accuracy of the labels that exist. The problem is the fraud that never gets a
+      label at all.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aaism
+  check_verdict: pending
+  options_only: obvious

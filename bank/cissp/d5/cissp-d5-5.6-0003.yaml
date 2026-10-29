@@ -1,0 +1,31 @@
+id: cissp-d5-5.6-0003
+subdomain: '5.6'
+difficulty: hard
+stem: In a test, an ordinary domain user requested a Kerberos service ticket for a database service account, cracked the account's
+  password offline within hours, and then signed in to the database server. The password, a dictionary word followed by four
+  digits, was set by an administrator in 2017 and never changed. Which change BEST prevents a repeat?
+options:
+  A: Allow only AES encryption for service tickets across the domain
+  B: Run the service under a managed account with a long rotated password
+  C: Require Kerberos pre-authentication on the database service account
+  D: Shorten the lifetime of service tickets the domain controllers issue
+answer: B
+explanation:
+  why_correct: Any domain user can request a service ticket, and part of it is encrypted with a key derived from the service
+    account's password, so the real weakness is a guessable password. A managed service account has a long random password
+    that the domain rotates automatically, which puts offline cracking out of reach.
+  why_not:
+    A: AES-only tickets make cracking slower than the older RC4 type and are worth enforcing, but a dictionary word with four
+      digits can still be guessed offline.
+    C: Pre-authentication stops attackers from requesting authentication replies for an account without knowing its password.
+      This attack used a service ticket requested by a signed-in user, which pre-authentication does not affect.
+    D: Shorter ticket lifetimes limit how long a stolen ticket can be reused, but cracking the password offline does not depend
+      on the ticket staying valid.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

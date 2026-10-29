@@ -1,0 +1,31 @@
+id: cissp-d6-6.2-0006
+subdomain: '6.2'
+difficulty: hard
+stem: An online retailer added a bot-defence control to its login page after a credential-stuffing attack that came from about
+  40,000 residential addresses, each trying a few logins. The control decides by challenging each client's browser in real
+  time. Before the holiday season, the team wants evidence that the control would stop a repeat. Which test BEST provides
+  it?
+options:
+  A: A high-rate stuffing run with test accounts from the team's own test servers
+  B: A replay of last month's attack traffic logs through the control in detection mode
+  C: A low-rate run with test accounts spread across many addresses by a test service
+  D: A load test showing the control holds up at ten times the peak login volume
+answer: C
+explanation:
+  why_correct: A test is good evidence only if it looks like the attack it must stop. A low-rate run from many addresses mirrors
+    last month's attack, and because it uses live clients, the control's browser challenges are actually exercised.
+  why_not:
+    A: A high-rate run from a few servers is the usual first test, and the control would probably block it, but that says
+      little about traffic spread thinly over tens of thousands of addresses.
+    B: Replaying real attack data is a strong test for rule-based controls. This control decides by challenging the client
+      in real time, and logged requests cannot answer a challenge.
+    D: A load test shows the control will not fail under holiday volume, which is worth knowing, but it does not show whether
+      the control tells bots from customers.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

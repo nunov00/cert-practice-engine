@@ -1,0 +1,32 @@
+id: aair-d1-1.4-0021
+subdomain: '1.4'
+difficulty: medium
+stem: A bank's model standard requires validators to test each model's training data for bias. Most new models are now
+  bought from vendors that do not share their training data, and 11 of the last 14 models went live under exceptions
+  to this rule. What should the risk practitioner recommend?
+options:
+  A: Grant time-limited exceptions with compensating controls
+  B: Require second-line sign-off for each of these exceptions
+  C: Revise the standard so bought models face a test they can meet
+  D: Make vendors share their training data as a condition of purchase
+answer: C
+explanation:
+  why_correct: Exceptions are meant for occasional departures. When most models cannot meet a requirement, the standard
+    no longer fits how the bank acquires models, and exceptions have become the real process with no common bar.
+    Revising the standard, for example to require outcome testing of bought models on the bank's own data, sets a
+    requirement that vendor models can meet and that validators apply consistently.
+  why_not:
+    A: Time limits and compensating controls are good exception practice, but they keep handling a routine case one
+      model at a time, with controls that vary from model to model.
+    B: Stronger sign-off tightens each decision, but the requirement would still be impossible for most models, so
+      exceptions would remain the norm.
+    D: Asking vendors for their data is reasonable, but most do not share it, so making it a condition would shut the
+      bank out of much of the market rather than fix the standard.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: pending
+  options_only: not_obvious

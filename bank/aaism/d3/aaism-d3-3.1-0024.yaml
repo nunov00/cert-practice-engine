@@ -1,0 +1,32 @@
+id: aaism-d3-3.1-0024
+subdomain: '3.1'
+difficulty: hard
+stem: An accounts team wants an agent that reads emailed supplier invoices and then pays them, updates supplier records
+  or emails suppliers, ending the clerk approval each payment now needs. In tests, text hidden in invoice PDFs steered
+  the agent's next tool calls. Which design BEST limits this risk?
+options:
+  A: An injection classifier that screens each invoice before the agent reads it
+  B: A tool-less model that extracts typed invoice fields for the agent
+  C: Clerk approval of each payment before the agent releases it
+  D: Checks of each payment amount against the purchase order
+answer: B
+explanation:
+  why_correct: The weakness is that the model holding the tools also reads attacker-controlled text. Having a separate
+    model with no tools read the invoices and pass back only typed fields, such as supplier ID, amount and due date,
+    means hidden instructions never reach the agent that acts. Those fields can then be validated, and the agent's payments,
+    record updates and emails are all protected.
+  why_not:
+    A: Screening untrusted content is a common layer, but classifiers are probabilistic and hidden text in varied PDF
+      layouts will sometimes pass. The agent with tools would still read whatever gets through.
+    C: Per-payment approval is a strong control where people have the time. The stated goal is to remove that step, and
+      approval of payments would not cover the record updates and emails the hidden text could also trigger.
+    D: A purchase-order match is a sound deterministic check on amounts. It protects payments only, while the injected
+      text can also change supplier records or send emails.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

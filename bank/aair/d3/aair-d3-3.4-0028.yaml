@@ -1,0 +1,31 @@
+id: aair-d3-3.4-0028
+subdomain: '3.4'
+difficulty: easy
+stem: A lender tracks the monthly gap in approval rates between applicant groups. For two groups of about 40 applicants a
+  month, the indicator swings between red and green from month to month, while larger groups stay stable. Reviews of
+  past red months found no change in the model or its inputs. What should the risk practitioner recommend?
+options:
+  A: Widen the indicator's thresholds for the two smaller groups
+  B: Investigate each red month with the model owner as it happens
+  C: Measure the gap over a rolling window with its error margin
+  D: Combine the smaller groups into one group for monitoring
+answer: C
+explanation:
+  why_correct: With about 40 applicants a month, a few decisions move a group's approval rate by several points, so
+    the swings are mostly chance. Pooling several months and showing the margin of error gives enough data to tell a
+    real gap from noise. A red result then means something, and each small group is still monitored on its own.
+  why_not:
+    A: Wider bands would stop the false alarms, but they would also let a real, sizeable gap stay green. They hide
+      the noise instead of reducing it.
+    B: Investigating breaches is the normal response, but past reviews found nothing. Chasing chance swings wastes
+      effort and teaches teams to ignore the indicator.
+    D: Combining groups gives more data, but a gap that affects one group can disappear in the combined figure, which
+      defeats the purpose of monitoring each group.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: pending
+  options_only: obvious

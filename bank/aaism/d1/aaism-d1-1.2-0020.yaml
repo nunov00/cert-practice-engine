@@ -1,0 +1,32 @@
+id: aaism-d1-1.2-0020
+subdomain: '1.2'
+difficulty: hard
+stem: A company's AI policy requires approval for external AI services and bars confidential data in them. Engineers
+  now run open-weight models from public hubs on workstations with confidential code, saying the policy does not apply
+  as no data leaves. Leadership wants this to continue. Last month a downloaded model file ran a script when loaded.
+  What policy change is BEST?
+options:
+  A: Bar downloads of model files from public hubs to company devices
+  B: Allow local models to process public data and no other
+  C: Require local models to come from a vetted internal catalogue
+  D: Require confidential code to be used with approved hosted services
+answer: C
+explanation:
+  why_correct: 'Keeping the code in house removes the data-leak risk the policy was written for, but the incident shows
+    a new one: the model files themselves. Requiring local models to come from an internal catalogue, where files are
+    checked, converted to safe formats and recorded, covers that risk while keeping the local use leadership wants.'
+  why_not:
+    A: Blocking hub downloads stops the route the script came in by, but with nothing in its place engineers lose the
+      local models leadership wants to keep, or find other ways to get them.
+    B: Limiting data class is the usual lever in AI use policy. Here the data never leaves the company, so restricting
+      it to public data removes the benefit without addressing the unsafe model files.
+    D: Moving the work to approved hosted services fits the existing policy, but it sends confidential code out of the
+      company, the opposite of what leadership wants, and ignores the model-file risk for other local use.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aaism
+  check_verdict: pending
+  options_only: obvious

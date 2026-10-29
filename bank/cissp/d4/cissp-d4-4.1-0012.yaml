@@ -1,0 +1,32 @@
+id: cissp-d4-4.1-0012
+subdomain: '4.1'
+difficulty: hard
+stem: A company's workstations reach the web only through an explicit proxy, and the firewall lets only the internal DNS resolvers
+  send queries to the internet. Malware on a workstation leaked data for weeks at a few queries a minute, using subdomains
+  of a domain the attacker had registered years earlier and never used before. The queries went out through the internal resolvers.
+  Which change BEST closes this channel?
+options:
+  A: Point the resolvers at a protective DNS service that blocks malicious domains
+  B: Alert on long, high-entropy query names sent by any workstation
+  C: Resolve only internal zones for workstations, leaving web names to the proxy
+  D: Rate-limit DNS queries from each workstation at the internal resolvers
+answer: C
+explanation:
+  why_correct: With an explicit proxy, the proxy looks up web names itself, so workstations have no need to resolve internet
+    names at all. Answering only internal zones for workstations removes the path the tunnel used, whatever domain the attacker
+    picks and however slowly the data leaves.
+  why_not:
+    A: Protective DNS blocks domains with a bad reputation or a recent registration, and it is a sound layer for most networks.
+      A domain held quietly for years has no bad record, so these queries would still pass.
+    B: Entropy alerts are good monitoring, but they detect rather than close the channel, and a few queries a minute over
+      weeks is easy to miss among normal lookups.
+    D: Rate limits stop bulk tunnelling, but this leak ran at a few queries a minute, below any limit that would leave normal
+      use working.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

@@ -1,0 +1,31 @@
+id: cissp-d6-6.5-0005
+subdomain: '6.5'
+difficulty: easy
+stem: A hospital uses 60 cloud suppliers and has staff for six supplier audits this year. The twelve suppliers that hold the
+  most patient records each give it a current SOC 2 Type II report covering the services it uses. Which suppliers should the
+  hospital audit FIRST?
+options:
+  A: Those that hold the largest volumes of patient records
+  B: Those holding patient records but no independent audit report
+  C: Those that reported the most security incidents over the last year
+  D: Those whose contracts come up for renewal later this year
+answer: B
+explanation:
+  why_correct: Scarce audit effort should go where risk is high and assurance is missing. Suppliers that hold patient data
+    but offer no independent report are the ones the hospital knows least about, while the largest holders are already covered
+    by recent SOC 2 Type II reports.
+  why_not:
+    A: Auditing by data volume is a sound default, but the largest holders already provide independent reports covering the
+      hospital's services, so auditing them adds little assurance.
+    C: Incident history is a useful signal, but it depends on what suppliers choose to report, and it can point at suppliers
+      that are open about problems rather than those with the weakest controls.
+    D: Auditing before renewal gives leverage over contract terms, but renewal dates follow the commercial calendar, not the
+      risk to patient data.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pending
+  options_only: obvious

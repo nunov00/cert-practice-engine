@@ -1,0 +1,33 @@
+id: aair-d3-3.1-0026
+subdomain: '3.1'
+difficulty: medium
+stem: A bank's assessment of a new card fraud model takes the likelihood of each kind of error from validation on a
+  test set that held equal numbers of fraudulent and genuine payments. In live use, about one payment in 500 is fraud.
+  Which scenario's rating should the risk practitioner challenge FIRST?
+options:
+  A: Genuine customers' cards blocked by false fraud alerts
+  B: Fraudulent payments that the model fails to flag
+  C: Fraudsters changing tactics to avoid the model's patterns
+  D: Some customer groups being scored less accurately than others
+answer: A
+explanation:
+  why_correct: In the test set half the payments were fraud, so most alerts were right. In live use genuine payments
+    outnumber fraud about 500 to 1, so even a small false alarm rate on genuine payments produces far more false
+    alerts than true ones. The share of alerts that block a genuine customer will be much higher than validation
+    suggested, so this rating rests on evidence the test design distorts.
+  why_not:
+    B: The share of fraud the model misses is measured on fraudulent payments alone, so it does not depend on how
+      common fraud is. The balanced test set estimates it fairly, and its rating is not distorted by the test design.
+    C: Adaptive fraudsters are a real scenario for any fraud model and belong in the register, but nothing in the
+      validation method biases that rating in a known direction. It is not the rating the evidence shows to be wrong.
+    D: Uneven accuracy across groups is a real concern worth testing, but the balanced mix of fraud and genuine
+      payments does not by itself understate it. The test design misleads most on how often genuine customers are
+      blocked.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: pending
+  options_only: not_obvious

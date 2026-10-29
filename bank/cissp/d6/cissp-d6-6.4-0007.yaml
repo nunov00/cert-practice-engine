@@ -1,0 +1,31 @@
+id: cissp-d6-6.4-0007
+subdomain: '6.4'
+difficulty: easy
+stem: An internal test of 20 business applications found SQL injection in nine. The nine come from five development teams,
+  which also wrote most of the eleven clean applications. Each of the nine still builds its queries through an old in-house
+  data-access library that newer applications no longer use. Which recommendation should the report lead with?
+options:
+  A: Fix the nine findings in order of each one's exploitability and data exposure
+  B: Give the five teams targeted training on writing parameterised queries
+  C: Add input validation for SQL metacharacters at each application's entry points
+  D: Move the nine applications off the old library onto the current data layer
+answer: D
+explanation:
+  why_correct: 'The findings follow the library, not the people: the same teams wrote clean code where they used the newer
+    data layer. Leading with the move off the library fixes the common cause, so the nine findings close and future changes
+    to these applications do not bring the flaw back.'
+  why_not:
+    A: Fixing each finding by risk is the normal way to work through a test report, but it patches nine symptoms one by one
+      and leaves the library that keeps producing them.
+    B: Training is a common response to injection findings, but the same five teams wrote most of the clean applications,
+      so their skills are not what separates the clean code from the flawed.
+    C: Input validation is a useful extra layer, but filtering metacharacters is easy to bypass and does nothing about the
+      library that builds queries unsafely.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pending
+  options_only: obvious
