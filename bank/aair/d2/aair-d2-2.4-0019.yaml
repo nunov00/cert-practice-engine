@@ -1,0 +1,32 @@
+id: aair-d2-2.4-0019
+subdomain: '2.4'
+difficulty: easy
+stem: A telecom company will fine-tune a language model on two years of support chat transcripts, then hand the model to an
+  outsourcing partner, who will host it and run the support desk. Customers often typed card and account numbers into the
+  chats. Which control BEST protects that data?
+options:
+  A: Filter the model's replies for card and account number patterns
+  B: Limit access to the model at the partner to named support staff
+  C: Encrypt the model files in transit and at rest at the partner
+  D: Strip card and account numbers from transcripts before training
+answer: D
+explanation:
+  why_correct: A model can memorise and repeat rare strings such as card numbers from its training data. Once the partner
+    holds the model, that data travels inside its weights, beyond the company's own controls. Removing the numbers from the
+    transcripts before training means the model never learns them, so there is nothing to leak wherever it runs.
+  why_not:
+    A: Output filtering is a sound layer for a model you operate yourself, but the partner hosts this one, so the company
+      cannot ensure the filter stays in place, and the numbers would remain in the weights.
+    B: Limiting access reduces who can query the model, but authorised staff could still draw out memorised numbers, and the
+      data stays inside a model held by a third party.
+    C: Encryption protects the files from outsiders, but the partner must decrypt the model to run it, so the memorised numbers
+      are exposed wherever it is used.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-aair-check
+  options_only: obvious

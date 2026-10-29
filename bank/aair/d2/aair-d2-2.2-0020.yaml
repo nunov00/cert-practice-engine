@@ -1,0 +1,33 @@
+id: aair-d2-2.2-0020
+subdomain: '2.2'
+difficulty: easy
+stem: A model detects pneumonia on chest X-rays. It was trained and tested on images from two hospitals, one of them a specialist
+  chest unit that supplied most of the positive cases. It scores an AUC of 0.95 on held-out images from the same two hospitals
+  and will be used in district hospitals. Which validation step is MOST important before use?
+options:
+  A: Saliency maps showing which image regions drive its predictions
+  B: Testing on images from hospitals that supplied no training data
+  C: Reporting performance separately for each of the two hospitals
+  D: Five-fold cross-validation across the existing images
+answer: B
+explanation:
+  why_correct: Because most positive cases came from one hospital, the model may have learned features of that hospital's
+    images, such as scanner marks or patient positioning, rather than signs of pneumonia. A held-out set from the same hospitals
+    shares those features, so the 0.95 may be inflated. Testing on images from hospitals that supplied no training data shows
+    how it performs on the kind of images it will meet in use.
+  why_not:
+    A: Saliency maps can hint that the model looks at scanner marks or image edges, but they are hard to read reliably and
+      do not measure how accurate it will be in district hospitals.
+    C: Per-hospital results can expose differences between the two sites, but both sites are in the training data, so neither
+      shows performance on the unfamiliar images district hospitals will produce.
+    D: Cross-validation gives a more stable estimate, but every fold still comes from the same two hospitals, so it repeats
+      the same possible bias.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-aair-check
+  options_only: obvious

@@ -1,0 +1,33 @@
+id: cissp-d5-5.4-0004
+subdomain: '5.4'
+difficulty: hard
+stem: A SaaS bookkeeping platform's reporting service fetches ledgers from the ledger service with its own account, which
+  can read every ledger. A tester obtained another company's ledger by editing a report request. Company owners share ledgers
+  with outside accountants through rules in the ledger service, which another team maintains and changes most weeks. Which
+  change BEST fixes this?
+options:
+  A: Pass each user's token to the ledger service so it applies its own sharing rules
+  B: Reject report requests for any ledger outside the requesting user's own company
+  C: Copy the ledger service's sharing rules into checks in the reporting service
+  D: Scope the reporting service's access per tenant, using the company in each request
+answer: A
+explanation:
+  why_correct: The reporting service acts with more authority than the user it serves, so the ledger service cannot apply
+    its rules (a confused deputy). Passing the user's identity through, for example by token exchange, lets the ledger service
+    make each decision with the current sharing rules, kept in the one place the owning team maintains them.
+  why_not:
+    B: An own-company check is the usual fix for this kind of object access flaw, but outside accountants legitimately read
+      other companies' ledgers through sharing, so this rule would block them.
+    C: Checks in the reporting service would enforce sharing correctly on day one, but they duplicate rules that another team
+      changes most weeks, so the copy drifts and the gap reopens.
+    D: Per-tenant credentials limit what one call can reach, but the tenant is chosen from the request, which is exactly the
+      part the tester edited.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-cissp-check
+  options_only: not_obvious

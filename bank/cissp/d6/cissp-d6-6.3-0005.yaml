@@ -22,11 +22,12 @@ explanation:
       the estate's size, and it also misses medium-rated flaws with public exploits.
     D: Mean time to fix covers every rating, but with about 30,000 findings a month it is dominated by low-risk items and
       can improve while exploited flaws stay open.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-29-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-cissp-check
   options_only: not_obvious

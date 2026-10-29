@@ -22,11 +22,12 @@ explanation:
       exceptions would remain the norm.
     D: Asking vendors for their data is reasonable, but most do not share it, so making it a condition would shut the
       bank out of much of the market rather than fix the standard.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-29-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aair-check
   options_only: not_obvious

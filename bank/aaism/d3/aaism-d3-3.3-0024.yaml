@@ -1,32 +1,34 @@
 id: aaism-d3-3.3-0024
 subdomain: '3.3'
 difficulty: hard
-stem: A card issuer retrains its fraud model on cases investigators confirm, and investigators see only transactions
-  the model flags. Chargebacks also become labels, but most fraud now hits prepaid cards whose holders rarely dispute.
-  Measured precision keeps rising while losses grow, and the missed fraud scores far below the threshold. Which control
-  BEST corrects the training labels?
+stem: A card issuer retrains its fraud model weekly on two label sources, cases investigators confirm after the model
+  flags them and chargebacks. Precision on flagged cases keeps rising, yet fraud losses grow, mostly from a new scheme
+  of prepaid cards emptied within hours, which no cardholder or merchant reports. Which change to labelling BEST addresses
+  this?
 options:
-  A: Weight chargeback labels more heavily in retraining
-  B: Lower the flag threshold so that investigators label more cases
-  C: Have a second investigator confirm each fraud label
-  D: Have investigators label a random sample of unflagged cases
+  A: Add fraud reports from merchants and the card network as labels
+  B: Have investigators review cases scoring just below the flag threshold
+  C: Give chargeback labels more weight in each retraining
+  D: Have investigators review a random sample of low-scoring transactions
 answer: D
 explanation:
-  why_correct: The labels come almost entirely from what the model already flags, so fraud it misses is never labelled
-    and each retrain learns to miss it again. Labelling a random sample of unflagged transactions gives the training
-    data examples of the missed fraud, wherever it scores, and also an honest measure of the miss rate.
+  why_correct: Every label comes from something already flagged or reported, and the new scheme is neither, so it never
+    becomes a training example and each retrain learns to ignore it. A random sample of low-scoring transactions, reviewed
+    by investigators, finds fraud wherever the model scored it, gives the model labelled examples of the scheme, and shows
+    how much fraud the model is missing.
   why_not:
-    A: Chargebacks are the usual source of labels for missed fraud. Here most fraud is on prepaid cards whose holders
-      rarely dispute, so there are few chargebacks to weight.
-    B: A lower threshold widens what investigators see, but the missed fraud scores far below it. A modest change would
-      still not reach it, and a large one would swamp investigators.
-    C: Double confirmation improves the accuracy of the labels that exist. The problem is the fraud that never gets a
-      label at all.
-status: draft
+    A: Merchant and network reports are a good source of labels for fraud the model missed. This scheme is not reported
+      by merchants or cardholders, so these reports would not contain it.
+    B: Reviewing cases near the threshold is a common way to gather useful labels. A scheme the model has never been trained
+      on has no reason to score near the threshold, so this review would mostly see cases the model already half recognises.
+    C: Chargebacks capture fraud the model let through, which is why issuers use them as labels. With no cardholder disputing
+      this scheme, there are no chargebacks for it to weight.
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-29-daily-aaism
-  check_verdict: pending
-  options_only: obvious
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aaism-check
+  options_only: not_obvious

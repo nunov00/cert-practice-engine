@@ -22,11 +22,12 @@ explanation:
       double-booked as before. It changes the numbers, not the action that causes the harm.
     C: Withdrawing the model removes the harm, but it also gives up the benefit of fewer empty slots, when a different
       use of the same accurate predictions treats the risk and keeps that benefit.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-29-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aair-check
   options_only: not_obvious

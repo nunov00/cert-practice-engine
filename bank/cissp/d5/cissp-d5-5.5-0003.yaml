@@ -1,31 +1,34 @@
 id: cissp-d5-5.5-0003
 subdomain: '5.5'
-difficulty: easy
-stem: At a call-centre company, new hires get their access by copying the account of a colleague named by their manager, who
-  approves the request. An audit found new hires holding rights left over from the colleague's earlier projects, including
-  refund approval. The 1,200 agents fall into twelve job codes, and staff within a code do nearly the same work. Which change
-  BEST addresses this?
+difficulty: medium
+stem: At a call-centre company, new hires get their access by copying the account of a colleague their manager names. An audit
+  found new hires holding rights left over from the colleague's earlier projects, including refund approval. The 1,200 agents
+  are hired into twelve job codes, and the rights each code needs change several times a year as products launch and retire.
+  Which change BEST addresses this?
 options:
-  A: Have managers approve each copied right line by line before it is granted
-  B: Review each new hire's access with their manager after the first 30 days
-  C: Grant new hires a standard role set defined for each of the job codes
-  D: Remove any right a user has not exercised in the previous 90 days
+  A: Copy each new hire from a curated template account kept for their job code
+  B: Copy the named colleague, then strip any right not on the job code's list
+  C: Grant each job code's rights through a role that all agents in the code hold
+  D: Have managers check each new hire's rights against the job code after 30 days
 answer: C
 explanation:
-  why_correct: Copying a person copies that person's history. Because staff within a job code do nearly the same work, a role
-    set defined for each code gives every new hire what the job needs and nothing inherited, and the excess never gets granted.
+  why_correct: The rights a job code needs keep changing. A role held by everyone in the code is the one place those rights
+    are defined, so a change to the role reaches every current holder at once, and new hires receive only what the code needs
+    today. Nothing is copied from anyone, so nothing is inherited.
   why_not:
-    A: Line-by-line approval improves on approving a whole copy, but managers would still be judging long lists of rights
-      inherited from someone else, which is how the excess got through.
-    B: An early review catches excess rights, but only after a month in which the new hire holds them, including refund approval.
-      It cleans up the copy instead of stopping it.
-    D: Removing unused rights is a good control against slow creep, but a copied right such as refund approval stays for up
-      to 90 days, and a right used rarely but legitimately would be cut.
-status: draft
+    A: A curated template stops new hires inheriting a colleague's history, but the template only shapes accounts as they
+      are created. Each time a code's rights change, agents copied earlier keep rights the code no longer needs, which rebuilds
+      the same leftovers.
+    B: Filtering the copy against the job code's list prevents excess at hire, but it too acts only at grant time. When the
+      list changes, agents already in post keep the old rights until someone reworks each account.
+    D: A check after 30 days finds excess rights, but only after the new hire has held them, refund approval included, for
+      a month. It detects the problem rather than preventing it.
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-29-daily-cissp
-  check_verdict: pending
-  options_only: obvious
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-cissp-check
+  options_only: not_obvious

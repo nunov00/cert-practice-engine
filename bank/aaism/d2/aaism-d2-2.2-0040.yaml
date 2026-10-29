@@ -1,32 +1,36 @@
 id: aaism-d2-2.2-0040
 subdomain: '2.2'
 difficulty: hard
-stem: A retailer's bug bounty now covers its shopping assistant, which runs on a vendor-hosted model. Triage is swamped
-  by jailbreak reports. Most show only rude or off-brand replies, but two showed prompts that made the assistant call
-  the retailer's refund tool. What should the security manager do?
+stem: A retailer's bug bounty now covers its shopping assistant, built on a vendor-hosted model. Triage is swamped
+  by jailbreak reports. Each reply is shown only to the person who typed the prompt. Most reports show rude or off-brand
+  replies; two got the assistant to call the refund tool, each in a few of many tries. What should triage MAINLY rate
+  severity on?
 options:
-  A: Rate AI reports by what the assistant can be made to do
-  B: Remove jailbreak reports from the bounty's scope
-  C: Pass jailbreak reports to the model vendor to fix
-  D: Pre-screen reports with a classifier to remove duplicates
+  A: The action or data the exploit reaches in the retailer's systems
+  B: How reliably the exploit reproduces on the live version
+  C: Whether the exploit gets past the vendor model's safety training
+  D: The category of harmful content that the reply contains
 answer: A
 explanation:
-  why_correct: The same technique can be trivial or serious depending on what it unlocks. Severity criteria based on
-    impact, such as triggering tools, moving money or exposing data, let triage close the off-brand replies quickly as
-    low and pay and fix the refund-tool findings first, which is where the retailer's real exposure lies.
+  why_correct: The replies reach only the person who wrote the prompt, so offensive text mostly harms its own author
+    and differs little from one report to the next. What separates a trivial report from a serious one is what the
+    exploit unlocks, such as a refund, a record or another customer's data. Rating on that puts the two refund-tool
+    findings first and lets the rest be closed quickly as low.
   why_not:
-    B: Many programmes exclude pure jailbreaks to cut noise. Here two jailbreaks reached the refund tool, so excluding
-      the category would also drop the findings that matter most.
-    C: Model behaviour is partly the vendor's to fix, but the refund tool and the permission to call it belong to the
-      retailer's integration. Handing the reports over would leave the serious findings with a party that cannot fix
-      them.
-    D: De-duplication reduces volume, but it does not tell the remaining reports apart by impact. Triage would still
-      face hundreds of distinct low-impact reports with no rule for ranking them.
+    B: Reproducibility is part of many bounty scales and helps weed out noise. Here the refund-tool exploits work only
+      in a few tries, but retries cost an attacker nothing, so rating them low for that would bury the findings that
+      matter most.
+    C: Bypassing the model's safety training is what makes a report a jailbreak at all, so nearly every report meets
+      it. It does not tell triage which ones carry real impact for the retailer.
+    D: Content category is the usual severity basis for public-facing AI output. Here each reply is seen only by the
+      person who asked for it, so content harm is low and similar across reports, while the refund calls cause direct
+      loss.
 status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-29-daily-aaism
-  check_verdict: pending
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-aaism-check
   options_only: obvious

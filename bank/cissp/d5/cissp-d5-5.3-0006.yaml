@@ -1,0 +1,34 @@
+id: cissp-d5-5.3-0006
+subdomain: '5.3'
+difficulty: hard
+stem: A hospital's referral portal lets doctors from 40 partner clinics sign in through SAML federation with each clinic's
+  identity provider. Partner agreements require MFA, and the hospital holds no phone numbers or devices for clinic staff.
+  A review found that one clinic had turned MFA off months earlier without telling anyone. Which change BEST enforces the
+  requirement at the portal?
+options:
+  A: Add a hospital-run second factor for clinic users at each portal sign-in
+  B: Request a fresh sign-in at the clinic's identity provider for each session
+  C: Have each clinic confirm its MFA settings in a signed yearly attestation
+  D: Accept only assertions that state an MFA method, and reject the others
+answer: D
+explanation:
+  why_correct: The portal can check, on every sign-in, how the clinic's identity provider says the user authenticated. Requiring
+    an MFA authentication context in each assertion turns the agreement into a technical check, so a clinic that switches
+    MFA off is refused at once, and the hospital needs no factors of its own for clinic staff. It relies on each clinic's
+    identity provider reporting the method accurately, which the agreements can require.
+  why_not:
+    A: A second factor run by the portal would not depend on the clinics, but the hospital would have to enrol and recover
+      factors for thousands of external doctors it holds no phones or devices for.
+    B: Forcing re-authentication makes the clinic check the user again, but at a clinic that has turned MFA off the fresh
+      sign-in is still password only, and the portal cannot tell.
+    C: Attestation records what each clinic says, but the clinic in the review would have attested to MFA it later switched
+      off, and nothing at the portal would notice the change.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-cissp-check
+  options_only: not_obvious

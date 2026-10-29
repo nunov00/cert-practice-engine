@@ -22,11 +22,12 @@ explanation:
       and those clips would still go to human reviewers that users did not expect.
     D: Encryption and access limits protect clips from outsiders. The concern is the authorised reviewers listening,
       which these controls do not change.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-29-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aaism-check
   options_only: not_obvious

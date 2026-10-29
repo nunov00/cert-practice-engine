@@ -1,0 +1,32 @@
+id: aaism-d2-2.3-0035
+subdomain: '2.3'
+difficulty: hard
+stem: A lender will train a credit model on rent and utility payment histories bought from a data broker, which compiles
+  them from hundreds of landlords and utilities. Its regulator can order a model trained on data collected without valid
+  consent to be withdrawn. What should the lender require of the broker?
+options:
+  A: Indemnity for any claims and fines arising from the data
+  B: An independent assurance report on its data protection
+  C: Consent evidence for sampled records, traced to source
+  D: A warranty of lawful collection with a right to terminate
+answer: C
+explanation:
+  why_correct: The lender's largest exposure is losing the model itself, which money cannot restore. Checking consent
+    evidence for a sample of records, traced back to the landlords and utilities that collected them, tests whether
+    the consent actually exists before the model is built on the data.
+  why_not:
+    A: Indemnity is the usual protection when a supplier's data may infringe others' rights. It pays for claims and
+      fines, but it cannot undo an order to withdraw the model.
+    B: An assurance report shows how the broker protects the data it holds. It does not show whether hundreds of landlords
+      and utilities obtained valid consent when they collected it.
+    D: A warranty with termination gives remedies and a way out, but both act after a problem is found, by which time
+      the model may already have to be withdrawn.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aaism
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-aaism-check
+  options_only: obvious

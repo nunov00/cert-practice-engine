@@ -1,0 +1,32 @@
+id: cissp-d2-2.5-0003
+subdomain: '2.5'
+difficulty: hard
+stem: Counsel tells a logistics firm to preserve the email of 40 named staff for a dispute that has just been filed. The firm's
+  mail system automatically deletes messages older than two years, in a job that runs each night. What should the records
+  manager do FIRST?
+options:
+  A: Confirm with counsel the date range and systems the hold must cover
+  B: Send each of the 40 staff a written hold notice explaining their duties
+  C: Suspend the nightly deletion job for the 40 staff's mailboxes
+  D: Export the 40 mailboxes to a secure store for counsel's review
+answer: C
+explanation:
+  why_correct: The retention schedule is still destroying relevant email every night, and nothing else stops it. Suspending
+    automatic deletion for the named mailboxes preserves what exists today at almost no cost, and the scoping, notices and
+    collection can follow without further loss.
+  why_not:
+    A: Scoping a hold is normally an early step, but the 40 people are already named, and every night spent on scope loses
+      another day of messages to the deletion job.
+    B: Hold notices are a required part of a legal hold, but they govern what people do; they do not stop the automatic job
+      that is deleting messages each night.
+    D: Collecting the mailboxes preserves their contents, but exporting 40 mailboxes takes time while the deletion keeps running,
+      and collection follows preservation once the scope is confirmed.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-cissp-check
+  options_only: not_obvious

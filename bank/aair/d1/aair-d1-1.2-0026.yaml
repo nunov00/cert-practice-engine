@@ -1,0 +1,32 @@
+id: aair-d1-1.2-0026
+subdomain: '1.2'
+difficulty: hard
+stem: A council assesses AI risk when it buys software. Its approved office and case-management products now gain AI features
+  through vendor updates, such as drafting replies to residents. IT reads each vendor's release notes before applying the
+  monthly updates. Which change BEST aligns these processes with AI risk management?
+options:
+  A: Add AI questions to each software supplier's annual review
+  B: Require suppliers by contract to give notice of new AI features
+  C: Ask staff to report new AI features to the AI risk team
+  D: Have IT's update review send new AI features for assessment
+answer: D
+explanation:
+  why_correct: The new features already appear in the release notes IT reads before each update, so that existing step is
+    the earliest and cheapest place to catch them. An AI check there sends each new feature to assessment before staff start
+    using it, which ties the update process to the council's AI risk process instead of relying on the purchase alone.
+  why_not:
+    A: An annual supplier review is a sound place to cover AI, but features arrive with monthly updates, so many would be
+      in use for months before a review saw them.
+    B: Contractual notice helps where vendors give no warning. These vendors already describe new features in their release
+      notes, so the information is there; what is missing is a step that acts on it.
+    C: Staff reports can surface AI use nobody knew about, but they depend on people noticing and choosing to report, and
+      they come after the feature is in use.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-aair-check
+  options_only: not_obvious

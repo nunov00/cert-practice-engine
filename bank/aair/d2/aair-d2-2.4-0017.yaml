@@ -18,11 +18,12 @@ explanation:
     B: Drift monitoring might flag a shift once a monitoring cycle has run on the new data, but a shift alone does not show
       that the field's meaning changed, so the cause can be missed or misread before retraining.
     C: Snapshots make it possible to reproduce and compare datasets after the fact, but they do not warn anyone of the change.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aair-check
   options_only: not_obvious

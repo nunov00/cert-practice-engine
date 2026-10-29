@@ -1,0 +1,33 @@
+id: cissp-d3-3.1-0004
+subdomain: '3.1'
+difficulty: hard
+stem: A legal-services web app converts uploaded client documents to PDF with an open-source library that parses dozens of
+  formats. The library runs inside the web app's own process, which holds the database credentials. Last year the library
+  had five memory-corruption flaws, two of them exploited before fixes shipped. Which design change BEST limits the damage
+  from the next such flaw?
+options:
+  A: Run conversion in a separate sandboxed worker with no network or database access
+  B: Accept only uploads whose file signatures match an allowed list of formats
+  C: Apply library updates within 48 hours of each release through the pipeline
+  D: Run the web application's process under a low-privilege operating system account
+answer: A
+explanation:
+  why_correct: Flaws in a complex parser will keep coming, some before any fix exists, so the design should assume the converter
+    will be compromised. Moving it into an isolated worker that holds no credentials and cannot reach the network or database
+    means a successful exploit gains almost nothing (compartmentalisation and least privilege).
+  why_not:
+    B: Checking file signatures stops wrong file types, but the exploits arrive inside valid documents of allowed formats,
+      which pass the check.
+    C: Fast patching is essential, but two of last year's flaws were exploited before fixes shipped, so patching alone leaves
+      that window open.
+    D: A low-privilege OS account limits damage to the server, but the process still holds the database credentials, so
+      an exploit in the converter still reaches client data.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-cissp-check
+  options_only: not_obvious

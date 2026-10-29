@@ -1,0 +1,33 @@
+id: aair-d1-1.6-0019
+subdomain: '1.6'
+difficulty: hard
+stem: A welfare agency uses a model to flag benefit claims for fraud investigation. Advocacy groups suspect it flags disabled
+  claimants more often than others, and they ask the agency to publish the model. Most of its inputs are details that claimants
+  report about themselves and could change. Which response BEST builds justified trust?
+options:
+  A: Publish the model's inputs and weights in full for public scrutiny
+  B: Give an independent auditor full access and publish its findings
+  C: Publish a plain-language account of the factors the model uses
+  D: Give each flagged claimant the main reasons their claim was flagged
+answer: B
+explanation:
+  why_correct: The concern is a pattern across a group, which only analysis of the model and its outcomes can confirm or rule
+    out. An independent auditor with full access can test whether disabled claimants are flagged more often and why, and publishing
+    the findings answers the groups without exposing the model itself. Because claimants report most inputs and could change
+    them, keeping the full model out of public view stops people shaping their claims to avoid a flag.
+  why_not:
+    A: Full publication gives the most transparency and suits models whose inputs people cannot easily change. Here claimants
+      could adjust self-reported details to avoid a flag, which would weaken fraud detection.
+    C: A plain account of the factors helps people understand the model, but it does not show whether disabled claimants are
+      flagged more often, so it cannot settle the groups' concern.
+    D: Individual reasons serve each claimant's right to understand a decision, but they do not reveal a pattern across a
+      group, so the suspected bias would stay untested.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aair-check
+  options_only: not_obvious

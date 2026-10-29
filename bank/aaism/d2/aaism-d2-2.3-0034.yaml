@@ -27,5 +27,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-29-daily-aaism
-  check_verdict: pending
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-aaism-check
   options_only: obvious

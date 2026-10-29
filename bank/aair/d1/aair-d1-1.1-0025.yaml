@@ -1,0 +1,33 @@
+id: aair-d1-1.1-0025
+subdomain: '1.1'
+difficulty: medium
+stem: An insurer's strategy is for its underwriting model to decide small business policies on its own within three years,
+  phasing out the junior underwriters who now handle them. The model is retrained each year on those underwriters' accept,
+  decline and pricing decisions. Which risk should MOST shape the risk practitioner's advice on the strategy?
+options:
+  A: The model would lose its source of new, independent training labels
+  B: The firm would lose the pipeline that trains future senior underwriters
+  C: Customers may object to having no human underwriter to talk to
+  D: Market conditions may shift faster than annual retraining can follow
+answer: A
+explanation:
+  why_correct: The model learns from the junior underwriters' decisions. Once they are gone, the only new decisions to learn
+    from are the model's own, so retraining would reinforce its existing errors and nobody would produce the independent judgements
+    needed to correct or check it. The strategy removes the input that keeps the model sound, so it needs another source of
+    labels, such as a retained review team or outcome data, before the phase-out.
+  why_not:
+    B: Losing the training ground for future senior underwriters is a real workforce risk of automation, but it is a slower,
+      people-related issue. The label problem undermines the model itself as soon as the juniors leave.
+    C: Some customers may want a human contact, but that is a service design issue a contact channel can solve. It does not
+      threaten the soundness of the decisions.
+    D: Drift is a normal concern for a model retrained yearly, but it can be managed by monitoring and more frequent retraining,
+      which itself needs the independent labels the strategy would remove.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aair-check
+  options_only: not_obvious

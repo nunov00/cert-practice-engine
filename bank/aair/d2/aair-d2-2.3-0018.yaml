@@ -1,0 +1,33 @@
+id: aair-d2-2.3-0018
+subdomain: '2.3'
+difficulty: medium
+stem: A bank's staff assistant retrieves policy passages by comparing the embedding of each question with the embeddings of
+  documents stored in an index. The team will switch to a newer embedding model from the same provider. Its vectors have the
+  same length, so the index accepts them without error. What should the upgrade plan do FIRST?
+options:
+  A: Run the regression question set using the new embedding model
+  B: Send a small share of live questions to the new setup at first
+  C: Re-embed the whole document index with the new embedding model
+  D: Monitor answer-quality complaints closely after the switch
+answer: C
+explanation:
+  why_correct: Embeddings from different models sit in different vector spaces, even when the vectors are the same length.
+    Questions embedded with the new model cannot be meaningfully compared with documents embedded with the old one, so retrieval
+    would quietly return poor matches. The index has to be rebuilt with the new model first; regression testing and a gradual
+    rollout then check the rebuilt setup.
+  why_not:
+    A: A regression run is the right gate before release, but run first it would test new-model questions against an old-model
+      index, a pairing that should never go live. It belongs after the index is rebuilt.
+    B: A gradual rollout limits exposure, but sending live questions to a setup whose index still holds old-model embeddings
+      would give those users poor answers. It comes after rebuilding and testing.
+    D: Watching complaints is a useful later check, but it finds failures only once users are affected, and complaints lag
+      the problem.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aair-check
+  options_only: not_obvious

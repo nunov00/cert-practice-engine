@@ -22,11 +22,12 @@ explanation:
       approval of payments would not cover the record updates and emails the hidden text could also trigger.
     D: A purchase-order match is a sound deterministic check on amounts. It protects payments only, while the injected
       text can also change supplier records or send emails.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-29-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-aaism-check
   options_only: not_obvious

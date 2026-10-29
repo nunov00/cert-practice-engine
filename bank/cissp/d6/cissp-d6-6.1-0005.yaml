@@ -21,11 +21,12 @@ explanation:
       the way would not show up.
     D: A credentialed scan lists missing patches and misconfigurations, but it does not show whether they chain together into
       a route from a user's laptop to the database.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-29-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-cissp-check
   options_only: not_obvious

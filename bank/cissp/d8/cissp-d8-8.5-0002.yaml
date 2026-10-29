@@ -1,0 +1,33 @@
+id: cissp-d8-8.5-0002
+subdomain: '8.5'
+difficulty: hard
+stem: A support portal lets customers format ticket replies with bold text, lists and links; replies are stored as HTML and
+  shown in the agents' console. A tester's reply ran script in agents' browsers through an image tag's error handler. The
+  console's older pages rely on inline scripts that cannot be removed this year. Which rule should the secure coding standard
+  set for this kind of content?
+options:
+  A: Clean stored HTML with an allow-list sanitiser before it is rendered
+  B: HTML-encode each user-supplied value wherever a page renders it
+  C: Reject replies that contain script tags or event-handler attributes
+  D: Serve a Content Security Policy that blocks inline script on the pages
+answer: A
+explanation:
+  why_correct: The content has to stay HTML, so the rule must keep the formatting while removing anything that can run. An
+    allow-list sanitiser keeps known-safe tags and attributes, such as bold, lists and links with safe URL schemes, and drops
+    everything else, including event handlers and script URLs.
+  why_not:
+    B: Output encoding is the standard defence for plain text, but here it would show customers' formatting as raw tags,
+      which the portal must keep.
+    C: Blocking script tags and handlers catches this payload, but block lists miss other routes, such as script URLs in
+      links and unusual tags or encodings, so the next variant gets through.
+    D: A strict policy is a strong second layer against injected script, but the console's older pages need inline scripts,
+      so a policy that blocks them cannot be deployed this year.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-29-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-29-daily-cissp-check
+  options_only: not_obvious

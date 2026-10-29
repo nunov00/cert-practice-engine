@@ -28,5 +28,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-29-daily-aair
-  check_verdict: pending
+  check_verdict: fail
+  checked_by: 2026-10-29-daily-aair-check
   options_only: not_obvious
