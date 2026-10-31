@@ -1,0 +1,31 @@
+id: cissp-d8-8.2-0003
+subdomain: '8.2'
+difficulty: medium
+stem: A web application's pipeline runs an automated functional test suite that exercises nearly every workflow, including
+  multi-step checkouts behind sign-in. The security team wants to find injection flaws that real requests can reach, with
+  each finding traced to the line of code involved. Which testing approach BEST fits?
+options:
+  A: Dynamic scans of the staging site by a crawler after each deployment
+  B: Interactive testing agents in the app while the functional suite runs
+  C: Static analysis of each pull request with the full injection rule set
+  D: Fuzzing of the application's public endpoints in each nightly build
+answer: B
+explanation:
+  why_correct: Interactive testing agents watch the running application from inside while the suite drives it, so they see
+    which requests reach a query or command unsafely and point to the code involved. Because the suite already reaches nearly
+    every workflow, the agents cover the multi-step paths with no extra test effort.
+  why_not:
+    A: A crawler-driven dynamic scan is the usual way to test reachable flaws when no full test suite exists, but crawlers often
+      fail to complete multi-step, signed-in workflows, and their findings do not point to code.
+    C: Static analysis points to the code and catches flaws early, but it reports many paths that no real request can reach,
+      so it cannot show which flaws are reachable.
+    D: Fuzzing exposes crashes and parsing flaws through unexpected input, but it hits endpoints one at a time and seldom gets
+      through multi-step workflows, so much of the reachable code goes untested.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

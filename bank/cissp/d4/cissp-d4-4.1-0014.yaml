@@ -1,0 +1,31 @@
+id: cissp-d4-4.1-0014
+subdomain: '4.1'
+difficulty: hard
+stem: An online game studio hosts its match servers in its own data centre. Floods far larger than its internet uplink have
+  taken matches offline several times this year. Players are dropped from a match when the game stalls for more than a few
+  seconds. Which design BEST protects the matches?
+options:
+  A: Standby match servers in a cloud region, with traffic failed over when a flood starts
+  B: Always-on cloud scrubbing that carries the game traffic through its network
+  C: On-demand cloud scrubbing that traffic is diverted to once a flood is detected
+  D: Remote-triggered blackholing of the attacked addresses at the upstream provider
+answer: B
+explanation:
+  why_correct: Only a provider with far more capacity than the uplink can absorb floods this size, and with always-on scrubbing
+    the traffic already flows through it, so a flood is filtered from the first second and matches do not stall. The cost is
+    a little added latency, kept low by choosing scrubbing centres near the players.
+  why_not:
+    A: Failing over to standby servers keeps the service available, and it suits services whose users can reconnect, but
+      players in a match are dropped during the switch, and the standby addresses can be flooded next.
+    C: On-demand scrubbing costs less and suits most services, but detection and rerouting take minutes, during which the flood
+      reaches the uplink and matches stall long enough to drop players.
+    D: Blackholing protects the rest of the network and the provider's links, but it drops all traffic to the attacked addresses,
+      so it completes the attacker's goal of taking the matches offline.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

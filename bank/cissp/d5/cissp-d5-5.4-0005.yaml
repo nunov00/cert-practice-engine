@@ -1,0 +1,31 @@
+id: cissp-d5-5.4-0005
+subdomain: '5.4'
+difficulty: hard
+stem: A company runs about 80 cloud accounts under one organisation. Each business unit holds full administrator rights in
+  its own accounts so that it can build freely. The security team must make sure that audit logging cannot be turned off in
+  any account by anyone working in it. Which control BEST meets this?
+options:
+  A: Remove the permission to stop logging from the administrator roles in each account
+  B: A rule that detects logging being turned off and turns it back on within minutes
+  C: A permissions boundary on each account's administrator roles that excludes logging changes
+  D: An organisation-level policy that denies logging changes to principals in member accounts
+answer: D
+explanation:
+  why_correct: Business unit administrators control the roles and policies inside their accounts, so any limit set inside an
+    account is one they can change. A deny policy set at the organisation level sits above the accounts, applies to every
+    principal in them, administrators included, and cannot be changed from within an account.
+  why_not:
+    A: Trimming administrator roles is the normal way to apply least privilege, and it would work if the security team controlled
+      the roles. Here the business units hold full administrator rights and can put the permission back.
+    B: Automatic re-enabling limits how long logging stays off, but it is corrective. Anyone working in the account can still
+      turn logging off and act during the gap before it returns.
+    C: Permissions boundaries cap what roles can do when a central team manages them, but full administrators in the account
+      can edit or remove the boundary itself.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

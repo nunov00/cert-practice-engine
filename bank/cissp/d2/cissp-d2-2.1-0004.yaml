@@ -1,0 +1,31 @@
+id: cissp-d2-2.1-0004
+subdomain: '2.1'
+difficulty: hard
+stem: A company fine-tuned a text-generating model on three years of support tickets, which contain customers' names, addresses
+  and account details and are classified Restricted. The model will answer staff questions in an internal assistant. How should
+  the fine-tuned model itself be classified?
+options:
+  A: Restricted, the level of the support tickets it was trained on
+  B: Confidential, as its weights hold no customer records as stored data
+  C: Internal, with a filter that removes customer details from its answers
+  D: Restricted at first, then Internal once a sample of answers shows no customer details
+answer: A
+explanation:
+  why_correct: A text-generating model fine-tuned on raw records can reproduce parts of them when prompted, so disclosing the
+    model can disclose the data it learned from. Its classification has to reflect that impact, which is the impact of the
+    Restricted tickets, until it is shown otherwise by stronger means than its normal use.
+  why_not:
+    B: The weights are not a store of records, and a model that only output categories, such as a ticket router, could fairly
+      be rated below the data. A model that writes free text can reproduce details it was trained on.
+    C: Filtering answers is a sound handling control for the assistant, but it does not change what the model itself can disclose
+      if it is copied or used another way, which is what the classification must reflect.
+    D: Testing for leaked details is good practice, but a sample of ordinary answers shows only that normal use rarely reproduces
+      them, not that targeted prompts cannot extract them.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious
