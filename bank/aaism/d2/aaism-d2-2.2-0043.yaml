@@ -1,0 +1,31 @@
+id: aaism-d2-2.2-0043
+subdomain: '2.2'
+difficulty: hard
+stem: A biotech firm plans to publish the weights of its protein design model so researchers can run it on their own
+  hardware. Its safety testing found that the model refuses requests to design known toxins. Which gap in this testing
+  matters MOST for the release decision?
+options:
+  A: It relied on refusals that fine-tuning the weights can remove
+  B: It used known toxins rather than novel harmful protein designs
+  C: It did not test prompts that build a request over many turns
+  D: It did not test the output filter on the firm's hosted demo
+answer: A
+explanation:
+  why_correct: Once the weights are public, anyone can fine-tune the refusals away cheaply, so refusal results say little
+    about what the released model can be made to do. The release decision needs testing of the model's underlying capability
+    with its safeguards removed, which is what a determined user will have.
+  why_not:
+    B: Testing novel designs would widen the refusal tests and is worth doing for a hosted model. With public weights, broader
+      refusal tests are still tests of a safeguard that can be stripped.
+    C: Multi-turn attacks are a real gap in refusal testing, but they too measure a safeguard that users who hold the weights
+      can simply remove.
+    D: The demo's filter protects only the firm's own hosted service. Researchers running the published weights on their
+      own hardware never pass through it.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

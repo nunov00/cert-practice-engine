@@ -1,0 +1,32 @@
+id: aaism-d3-3.2-0024
+subdomain: '3.2'
+difficulty: hard
+stem: A bank's latest chatbot release fixed a flaw, exploited last month, through which crafted questions returned other
+  customers' balances. Since the release, it misreads some card dispute questions and sends customers to the wrong page,
+  and disputes have strict filing deadlines. Disputes are a small share of chats. The product owner wants to roll back
+  while a fix is built. What should the security manager advise?
+options:
+  A: Roll back, adding an output filter that blocks balances in replies
+  B: Roll back for dispute questions only, keeping the release for the rest
+  C: Keep the release, and pass dispute questions to staff until the fix
+  D: Keep the release, and ship the dispute fix as a standard change
+answer: C
+explanation:
+  why_correct: Rolling back would reopen a flaw that attackers have already used. Keeping the release and handing the
+    small share of dispute questions to staff protects customers from missed deadlines while the fix is built, without
+    giving the exploited flaw back.
+  why_not:
+    A: An output filter cannot tell whose balance a reply shows, so it either blocks customers' own balances or lets other
+      customers' balances through. The exploited flaw would be live again behind a weak control.
+    B: Routing only dispute questions to the old version seems to limit exposure, but the attacker writes the questions
+      and can phrase a crafted request as a dispute to reach the flawed version.
+    D: Fixing forward keeps the security fix, but until the fix ships, customers keep being sent to the wrong page and
+      may miss their filing deadlines.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

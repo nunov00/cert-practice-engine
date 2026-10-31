@@ -1,0 +1,31 @@
+id: aaism-d3-3.5-0033
+subdomain: '3.5'
+difficulty: medium
+stem: HR partners at a retailer may see the records of every employee in their region, and an HR assistant answers their
+  questions from those records, often summarising whole teams in one answer. The SOC wants to detect a partner using the
+  assistant to gather records for a purpose other than casework. Which monitoring BEST supports this?
+options:
+  A: Data loss alerts on answers that contain employee personal data
+  B: Alerts when a partner's daily question count rises well above their norm
+  C: Alerts when a partner's answers cover far more employees than peers'
+  D: Quarterly certification of each partner's regional access rights
+answer: C
+explanation:
+  why_correct: Every record a partner sees is within their rights, so access checks cannot flag the misuse. What changes
+    when someone gathers records is how many different employees their answers draw on. Comparing that breadth with peers
+    in the same role spots collection however few questions it takes.
+  why_not:
+    A: Data loss rules suit data leaving where it should not, but nearly every legitimate answer here contains employee
+      personal data, so the alert would fire constantly and say nothing about intent.
+    B: Question volume is the usual baseline for misuse, but one question can summarise a whole team, so a partner can
+      gather many records within a normal day's count.
+    D: Certification confirms each partner should have regional access, which they should. It does not show how they use
+      it.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

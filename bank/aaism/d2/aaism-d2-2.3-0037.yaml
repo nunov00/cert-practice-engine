@@ -1,0 +1,31 @@
+id: aaism-d2-2.3-0037
+subdomain: '2.3'
+difficulty: medium
+stem: A retailer will use a vendor's hosted procurement agent, which submits orders through the API of the retailer's
+  own purchasing system. The vendor's platform offers per-agent spending limits that customers set. The retailer's main
+  worry is a fault or compromise inside the vendor's platform. Which control BEST bounds the retailer's loss?
+options:
+  A: Spending limits for the agent set in the vendor's platform
+  B: Order limits on the agent's account in the purchasing system
+  C: Contract terms making the vendor liable for erroneous orders
+  D: Daily reconciliation of the agent's orders against budgets
+answer: B
+explanation:
+  why_correct: Every order the agent places passes through the retailer's purchasing system. Limits enforced on the agent's
+    account there sit outside the vendor's platform, so a fault or an attacker inside that platform cannot lift them, and
+    they stop excess orders before they are placed.
+  why_not:
+    A: Platform limits are the obvious setting and work well against the agent's own mistakes. They run on the same platform
+      the retailer is worried about, so a fault or compromise there can bypass them along with the agent.
+    C: Liability terms shift some of the cost afterwards, are often capped and depend on the vendor being able to pay. They
+      do not limit what is ordered.
+    D: Reconciliation finds unwanted orders, but only after they have been placed with suppliers, and a full day of them
+      may already be committed.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious
