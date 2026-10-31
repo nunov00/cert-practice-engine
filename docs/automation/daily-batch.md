@@ -25,9 +25,11 @@ Two Claude scheduled tasks and one Codex scheduled task run every day
 | 05:00 | Codex (owner's schedule) | **Review run**: [`codex-review.md`](codex-review.md) |
 | 07:52 | Claude | **Merge run**: act on the review, merge, deploy (below) |
 
-The ideal pool size of an exam is its recipe's `bank.target_total` (10 times
-the exam's maximum length: 900 for AAIR, AAISM and AAIG, 1500 for CISSP; owner,
-2026-10-18). An exam is under it when `pnpm coverage -- <exam>` shows fewer
+The ideal pool size of an exam is its recipe's `bank.target_total`: 6 times
+the exam's maximum length, so 540 for AAIR, AAISM and AAIG and 900 for CISSP
+(owner, 2026-10-31: "Yes please, make it 6x"; it was 10 times, set on
+2026-10-18). Each domain gets its weight's share of the total, split evenly
+across its subdomains. An exam is under it when `pnpm coverage -- <exam>` shows fewer
 published questions than the target.
 
 ## Batch run
