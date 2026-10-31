@@ -67,3 +67,8 @@ held:
   # computed answer), so they stay held until a distractor is reworked:
   # cissp-d5-5.2-0005, cissp-d3-3.6-0003, cissp-d7-7.10-0002,
   # aair-d1-1.2-0022, aair-d1-1.3-0022 (entries above).
+  # PR #71, merge run: Codex lowered two AAISM hard labels, so the easiest
+  # AAISM questions go back to keep the hard share at 30%
+  - { id: aaism-d1-1.5-0019, pr: 71 }
+  - { id: aaism-d2-2.1-0028, pr: 71 }
+  - { id: aaism-d3-3.4-0030, pr: 71 }

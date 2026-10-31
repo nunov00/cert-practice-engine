@@ -21,7 +21,7 @@ explanation:
       which is the part shown to be unsound.
     C: False positives affect usability and need measuring, but they do not change how many attacks get through, which is
       what the jailbreak rating is about.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

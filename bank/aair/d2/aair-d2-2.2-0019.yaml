@@ -1,6 +1,6 @@
 id: aair-d2-2.2-0019
 subdomain: '2.2'
-difficulty: medium
+difficulty: easy
 stem: A fraud model was validated on a test set in which half the cases were fraud, and it reached 90% precision. In production,
   about 1% of transactions are fraud. Assuming the same threshold and the same true and false positive rates, what should the validators conclude?
 options:

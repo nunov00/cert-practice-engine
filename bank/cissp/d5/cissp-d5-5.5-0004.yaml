@@ -1,13 +1,13 @@
 id: cissp-d5-5.5-0004
 subdomain: '5.5'
-difficulty: hard
+difficulty: medium
 stem: A company's engineering SaaS app signs staff in through the corporate identity provider, and engineers create personal
   API tokens in the app for the scripts their teams rely on. The app revokes a user's tokens when that user's account in it
   is deactivated. A developer was disabled in the identity provider on his last day, yet three weeks later his personal token
   pulled data from the app. Which change BEST prevents this?
 options:
   A: Expire personal API tokens after 30 days unless their owner renews them
-  B: Deactivate app accounts automatically through provisioning from the identity provider
+  B: Deactivate app accounts through automated provisioning from the IdP
   C: Review the app's accounts against the HR list of leavers each month
   D: Allow API tokens only on shared service accounts that teams manage
 answer: B
