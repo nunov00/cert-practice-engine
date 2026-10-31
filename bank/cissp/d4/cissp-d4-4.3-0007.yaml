@@ -21,7 +21,7 @@ explanation:
       email, which the stem requires.
     D: Archive encryption protects stored copies against theft, but the archive service decrypts them for use, and the
       relays still handle the content in clear.
-status: draft
+status: published
 outline_version: 2024-04-15
 sample: false
 provenance:
@@ -29,4 +29,4 @@ provenance:
   run_id: 2026-10-27-daily-cissp
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-10-27-daily-cissp-check
+  checked_by: 2026-10-31-daily-cissp-check

@@ -1,0 +1,32 @@
+id: cissp-d4-4.2-0014
+subdomain: '4.2'
+difficulty: medium
+stem: A company wants to stop staff copying customer files to personal cloud storage and personal webmail. Most staff work
+  from home four days a week on company-managed laptops, and the VPN is used only for a few internal systems. Which control
+  BEST meets this?
+options:
+  A: Data loss prevention on the head office web proxy, with TLS inspection
+  B: Category blocking of personal storage and webmail at the head office firewall
+  C: API-based scanning of files held in the company's sanctioned cloud apps
+  D: Endpoint data loss prevention that inspects uploads on each laptop
+answer: D
+explanation:
+  why_correct: With the VPN carrying only a few internal systems, laptops at home reach the web over the home connection, so
+    nothing at head office sees most uploads. An endpoint agent inspects files as they leave the laptop, wherever it is, and
+    works on TLS traffic because it acts before encryption.
+  why_not:
+    A: A proxy with TLS inspection is the usual way to apply data loss prevention to web traffic, and it would fit if web traffic
+      went through head office. Here most uploads leave from home and never pass the proxy.
+    B: Category blocking at the firewall is a quick, cheap control for office networks, but the laptops' web traffic from home
+      does not cross the head office firewall.
+    C: API scanning finds sensitive files in the company's own cloud tenants, but personal storage and webmail accounts are
+      outside them, so uploads there are not seen.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-10-31-merge-review
+  options_only: not_obvious

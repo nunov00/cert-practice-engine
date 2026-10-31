@@ -1,0 +1,33 @@
+id: aaism-d1-1.2-0021
+subdomain: '1.2'
+difficulty: medium
+stem: A consultancy's approved AI note-taker records and transcribes client meetings, and staff value it highly. Clients
+  are not told about it, and several clients work in places where recording a call needs the participants' consent.
+  Which policy provision BEST addresses this?
+options:
+  A: Use the note-taker in internal meetings only, not client meetings
+  B: Keep client transcripts only for the period that the records schedule sets
+  C: Get a manager's approval before the note-taker joins a client meeting
+  D: Ask participants at the start and record only if each of them consents
+answer: D
+explanation:
+  why_correct: The gap is that participants do not know they are being recorded, which some clients' laws require them
+    to consent to. Asking at the start and recording only once every participant has given informed consent, leaving the
+    meeting unrecorded otherwise, meets that duty and keeps the tool in use for client work. Silence after an announcement
+    would not be enough where the law asks for consent.
+  why_not:
+    A: Barring client meetings removes the problem, but it also gives up most of the tool's value when a notice and
+      consent step would make its use lawful.
+    B: A retention limit controls how long transcripts are kept, but the recording was still made without the participants'
+      knowledge.
+    C: Manager approval adds an internal check, but the manager cannot give consent for the client, who still does not know
+      the meeting is recorded.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aaism-check
+  options_only: not_obvious

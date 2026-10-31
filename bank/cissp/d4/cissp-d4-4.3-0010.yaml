@@ -1,0 +1,33 @@
+id: cissp-d4-4.3-0010
+subdomain: '4.3'
+difficulty: medium
+stem: A company's laptops send their DNS lookups to its filtering resolvers, which are reachable from the internet and block
+  malware and phishing domains. Staff work mostly from hotel and customer networks, and the VPN gateway is sized for a fifth
+  of them at once. A test showed that a hostile hotel network could read and alter the laptops' lookups. The filtering must
+  apply to every lookup. Which change BEST fits?
+options:
+  A: Turn on the browsers' built-in DNS over HTTPS with its default provider
+  B: Send all laptop lookups over encrypted DNS to the company's own resolvers
+  C: Enable DNSSEC validation on the company's filtering resolvers
+  D: Require an always-on VPN tunnel before the laptop can reach any network
+answer: B
+explanation:
+  why_correct: The exposed part is the hop from the laptop to the resolver, across the hotel's network. Encrypted DNS (over
+    HTTPS or TLS) to the company's own resolvers protects that hop from reading and tampering, and every lookup still reaches
+    the resolvers that apply the filtering. It adds almost no load, since only DNS is carried.
+  why_not:
+    A: Browser DNS over HTTPS does encrypt the lookups, but it sends them to the browser's default provider, which bypasses
+      the company's filtering, and it covers only the browser, not the rest of the laptop.
+    C: DNSSEC validation lets the resolver reject forged answers from the internet. The tampering here happens between the
+      laptop and the resolver, a hop that validation at the resolver does not protect, and it hides nothing from the hotel.
+    D: An always-on tunnel would carry the lookups safely to the company, and it is the usual answer for managed laptops, but
+      a gateway sized for a fifth of staff cannot carry everyone's traffic at once.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-cissp-check
+  options_only: not_obvious

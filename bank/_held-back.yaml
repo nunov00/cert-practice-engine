@@ -11,27 +11,15 @@
 # that held it. `pending` means it was held before passing an independent check.
 held:
   # PR #62, merge run
-  - { id: cissp-d4-4.2-0005, pr: 62 }
-  - { id: cissp-d5-5.1-0003, pr: 62 }
-  - { id: aair-d1-1.2-0020, pr: 62 }
-  - { id: aair-d1-1.5-0017, pr: 62 }
-  - { id: aair-d2-2.2-0017, pr: 62 }
-  - { id: aaism-d1-1.5-0019, pr: 62 }
-  - { id: aaism-d2-2.1-0028, pr: 62 }
-  - { id: aaism-d3-3.4-0019, pr: 62 }
-  - { id: aaism-d3-3.5-0021, pr: 62 }
   # PR #65 (daily batch 2026-10-26), batch run
   # PR #65, hard top-ups that passed on content but were rated medium
   - { id: cissp-d3-3.6-0003, pr: 65, pending: true }
   - { id: cissp-d7-7.10-0002, pr: 65, pending: true }
   # PR #65, merge run
-  - { id: aair-d2-2.2-0019, pr: 65 }
   # PR #67 (daily batch 2026-10-27), batch run: passed the independent check,
   # held because too few hard labels survived the strict hard-label check
   - { id: cissp-d4-4.1-0008, pr: 67 }
-  - { id: cissp-d4-4.3-0007, pr: 67 }
   - { id: cissp-d4-4.3-0008, pr: 67 }
-  - { id: cissp-d5-5.1-0005, pr: 67 }
   - { id: cissp-d5-5.2-0005, pr: 67 }
   - { id: cissp-d5-5.3-0004, pr: 67 }
   - { id: cissp-d6-6.1-0004, pr: 67 }
@@ -39,9 +27,6 @@ held:
   - { id: cissp-d6-6.3-0004, pr: 67 }
   - { id: cissp-d6-6.4-0004, pr: 67 }
   - { id: cissp-d6-6.5-0004, pr: 67 }
-  - { id: aaism-d2-2.1-0031, pr: 67 }
-  - { id: aaism-d2-2.2-0033, pr: 67 }
-  - { id: aaism-d2-2.2-0034, pr: 67 }
   - { id: aaism-d2-2.2-0035, pr: 67 }
   - { id: aaism-d2-2.3-0031, pr: 67 }
   - { id: aaism-d2-2.3-0032, pr: 67 }
@@ -77,3 +62,13 @@ held:
   # aaism-d3-3.5-0032 close to obvious from the options; rework distractor D
   # on recheck.
   - { id: aaism-d3-3.5-0032, pr: 70 }
+  # PR for daily batch 2026-10-31, batch run: re-checked and passed, but the
+  # check rated these obvious from the options (cissp-d3-3.6-0003 is also a
+  # computed answer), so they stay held until a distractor is reworked:
+  # cissp-d5-5.2-0005, cissp-d3-3.6-0003, cissp-d7-7.10-0002,
+  # aair-d1-1.2-0022, aair-d1-1.3-0022 (entries above).
+  # PR #71, merge run: Codex lowered two AAISM hard labels, so the easiest
+  # AAISM questions go back to keep the hard share at 30%
+  - { id: aaism-d1-1.5-0019, pr: 71 }
+  - { id: aaism-d2-2.1-0028, pr: 71 }
+  - { id: aaism-d3-3.4-0030, pr: 71 }

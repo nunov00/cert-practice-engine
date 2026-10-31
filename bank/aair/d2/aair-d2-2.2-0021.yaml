@@ -1,0 +1,33 @@
+id: aair-d2-2.2-0021
+subdomain: '2.2'
+difficulty: medium
+stem: A research hospital's team ranked 20,000 genetic markers by how well each predicted the outcome across its 500
+  patients and kept the top 40. It then split the patients into training and test sets and built a model on those 40
+  markers. The test AUC is 0.91. What is the MAIN concern with this result?
+options:
+  A: The test patients' outcomes helped choose the markers being tested
+  B: 500 patients are too few for 20,000 candidate markers
+  C: The patients came from one hospital, so results may not carry over
+  D: AUC does not show whether the predicted risks are well calibrated
+answer: A
+explanation:
+  why_correct: The markers were chosen for how well they predicted outcomes across the patients, including those later
+    used for testing. The test set therefore helped build the model, and among 20,000 candidates some markers will look
+    predictive by chance in exactly these patients. The AUC is inflated; selection has to happen within the training data
+    only, with the test patients kept apart.
+  why_not:
+    B: Few patients for many markers makes chance findings likely, which is a real risk. A clean split would expose them,
+      though. It is the selection on the test patients that hides them and inflates this score.
+    C: A single-site cohort limits how far results carry over, and external validation is needed later, but the score is
+      not a fair estimate even for this hospital's own patients.
+    D: Calibration matters if predicted risks are used as probabilities, but the ranking performance reported is itself
+      inflated, which is the more basic problem.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: fail
+  checked_by: 2026-10-31-daily-aair-check
+  options_only: not_obvious

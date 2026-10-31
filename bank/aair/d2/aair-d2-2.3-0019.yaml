@@ -1,0 +1,32 @@
+id: aair-d2-2.3-0019
+subdomain: '2.3'
+difficulty: easy
+stem: An energy retailer is retiring a model that predicted which customers would struggle to pay. Its training data, built
+  only for that model, holds customers' payment histories and vulnerability flags. The replacement uses different data, and
+  no record of this data is needed for appeals or other duties. What should happen to the training data?
+options:
+  A: Archive it with the model in case the model is restarted
+  B: Delete or anonymise it under the retention schedule
+  C: Pass it to the replacement team for possible future use
+  D: Keep it in restricted storage for future retraining
+answer: B
+explanation:
+  why_correct: The data was built for one model, and that purpose has ended with no duty to keep it. Personal data such as
+    payment histories and vulnerability flags should then be deleted or anonymised, which removes the exposure of holding
+    sensitive data with no use.
+  why_not:
+    A: Archiving a model with its data suits cases where it may need to be rerun, for example for appeals. Here no such
+      need exists, so a restart that may never happen is not a purpose for keeping the data.
+    C: The replacement uses different data, so passing the dataset on creates a new use with no defined purpose, and
+      spreads sensitive data to another team.
+    D: Restricted storage lowers the risk of keeping the data, but retraining a retired model is not a planned purpose, so
+      the data would be held without need.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aair-check
+  options_only: obvious

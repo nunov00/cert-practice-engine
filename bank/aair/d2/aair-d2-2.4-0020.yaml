@@ -1,0 +1,33 @@
+id: aair-d2-2.4-0020
+subdomain: '2.4'
+difficulty: easy
+stem: A bank must test its credit models for bias by ethnicity, using the ethnicity that applicants declare on a voluntary
+  form. The models must not use ethnicity, and data scientists build them from a shared training table. How should the bank
+  hold the declared ethnicity?
+options:
+  A: In a separate restricted store, joined only for bias tests
+  B: In the shared training table, excluded from model features
+  C: Not held, with ethnicity estimated from names when tests run
+  D: Deleted once each applicant's credit decision has been made
+answer: A
+explanation:
+  why_correct: The bank needs the declared data for bias testing but nowhere else. Keeping it in a separate store with
+    access limited to the people who run the tests, and joining it to model outputs only for those tests, meets the testing
+    duty while keeping a sensitive attribute away from model building.
+  why_not:
+    B: Excluding a field from the features is enough where only the model's inputs matter. Here every data scientist using
+      the shared table could see and use ethnicity, for example when choosing or checking other inputs, which is wider
+      access than the purpose needs.
+    C: Estimating ethnicity is a fallback when no declared data exists. The bank holds what applicants declared, and an
+      estimate is less accurate while still processing sensitive data.
+    D: Deleting the data at decision time suits data with no further purpose, but bias testing needs it after decisions
+      are made, so the bank could not meet its duty.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aair-check
+  options_only: obvious

@@ -1,0 +1,33 @@
+id: aair-d1-1.2-0027
+subdomain: '1.2'
+difficulty: hard
+stem: A utility's continuity team runs a yearly business impact analysis with each process owner. Process owners now often
+  buy cloud software for their own teams that comes with built-in AI features, and the AI inventory kept by the data
+  office lists only models built in-house. Which change would BEST make continuity plans account for AI dependencies?
+options:
+  A: Extend the data office's AI inventory to cover bought software
+  B: Add AI dependency questions to the analysis process owners complete
+  C: Require a recovery plan with set recovery times for each in-house model
+  D: Have IT list the cloud services with AI features for the continuity team
+answer: B
+explanation:
+  why_correct: The business impact analysis is the step that already asks each process owner what the process depends on
+    and how fast harm builds if it stops. The owners bought these services themselves, so they know where an AI feature
+    sits in their process and what happens without it. Adding AI dependency questions there brings AI into continuity
+    planning through the people who hold that knowledge, every year.
+  why_not:
+    A: A wider inventory improves visibility, but the data office would learn of these purchases late or not at all, and
+      an inventory entry does not say how long a process can run without the feature.
+    C: Recovery plans for in-house models are sound, but the gap lies in the AI that comes inside bought software, which
+      plans for in-house models do not reach.
+    D: An IT list helps where IT buys and runs the software, but these services are bought by process owners, and a list
+      of services does not show which processes depend on their AI or how badly.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aair-check
+  options_only: not_obvious

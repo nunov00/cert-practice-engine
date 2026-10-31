@@ -1,0 +1,32 @@
+id: aaism-d1-1.1-0022
+subdomain: '1.1'
+difficulty: medium
+stem: A wealth manager's AI assistant chats with clients and sometimes gives investment advice. A client asks for their
+  conversations to be erased. Financial rules require records of advice given to clients to be kept for seven years,
+  and the rest of each chat falls outside those rules. What should the security manager advise?
+options:
+  A: Erase the client's conversations in full, as the client requested
+  B: Keep the client's conversations in full for seven years as records
+  C: Keep the advice parts under restricted access and erase the rest
+  D: Pseudonymise the client's conversations and keep them seven years
+answer: C
+explanation:
+  why_correct: A legal duty to keep records overrides an erasure request only for the data the duty covers. Keeping the
+    advice records, limited to that purpose and restricted in access, meets the financial rules, and erasing the rest of
+    the conversations honours the request for everything the rules do not require.
+  why_not:
+    A: Full erasure would be right if no retention duty applied. Here it would destroy advice records the financial rules
+      require the firm to keep.
+    B: Keeping everything would be right if whole conversations counted as advice records. The rest of each chat is outside
+      the rules, so keeping it ignores the erasure request without a legal basis.
+    D: Pseudonymisation reduces exposure, but the data stays personal, and it keeps the parts the client asked to have erased
+      for no required purpose.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aaism-check
+  options_only: not_obvious

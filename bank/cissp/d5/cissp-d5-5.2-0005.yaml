@@ -1,6 +1,6 @@
 id: cissp-d5-5.2-0005
 subdomain: "5.2"
-difficulty: medium
+difficulty: easy
 stem: Staff sign in to the company's cloud email with a password and a push prompt that uses number matching. Attackers
   now send phishing links to a proxy that relays the real sign-in page, so staff complete MFA themselves while the
   attackers capture the session cookie. Which change BEST stops this attack?
@@ -28,4 +28,4 @@ provenance:
   run_id: 2026-10-27-daily-cissp
   check_verdict: pass
   options_only: obvious
-  checked_by: 2026-10-27-daily-cissp-check
+  checked_by: 2026-10-31-daily-cissp-check

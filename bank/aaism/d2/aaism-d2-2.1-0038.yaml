@@ -1,0 +1,34 @@
+id: aaism-d2-2.1-0038
+subdomain: '2.1'
+difficulty: hard
+stem: An IT operations agent restarts, resizes and deletes cloud resources from tickets. In red team tests, text planted
+  in tickets made it act outside the ticket in a few of many attempts, and the risk is above appetite. All resources are
+  snapshotted hourly, and the production databases take thousands of writes a minute. Which treatment BEST brings the
+  risk within appetite while keeping the agent useful?
+options:
+  A: Screen ticket text with an injection classifier before the agent reads it
+  B: Require human approval before the agent changes production databases
+  C: Alert on actions outside the ticket and restore from the last snapshot
+  D: Limit the agent to resources tagged with the ticket's application
+answer: B
+explanation:
+  why_correct: Most of what the agent can damage is restored from an hourly snapshot with little loss. A production database
+    is different, because restoring it discards up to an hour of thousands of writes a minute, so that harm cannot really
+    be undone. Approval only for database changes removes the severe, lasting outcome while the agent keeps working alone
+    on everything else.
+  why_not:
+    A: A classifier lowers how often planted text gets through, but it is probabilistic, and a single miss could still
+      wipe a database.
+    C: Detection with snapshot restore suits resources that come back intact, which is most of them. For the databases,
+      restoring the last snapshot still loses the writes made since.
+    D: Scoping by tag stops the agent straying into other applications, but text planted in a ticket for an application
+      can still steer it against that application's own database.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aaism-check
+  options_only: not_obvious

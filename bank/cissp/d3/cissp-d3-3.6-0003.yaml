@@ -1,6 +1,6 @@
 id: cissp-d3-3.6-0003
 subdomain: '3.6'
-difficulty: medium
+difficulty: easy
 stem: A 40-person research team wants every pair of members to be able to exchange files that no other member can read. How
   many keys are needed with a symmetric key for each pair, compared with one asymmetric key pair per member?
 options:
@@ -23,5 +23,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-cissp
-  check_verdict: pending
-  options_only: not_obvious
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-cissp-check
+  options_only: obvious

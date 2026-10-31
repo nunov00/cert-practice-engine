@@ -1,0 +1,33 @@
+id: cissp-d2-2.3-0004
+subdomain: '2.3'
+difficulty: medium
+stem: A company's data lake holds 40 datasets from six departments, and most carry the same Confidential label. The platform
+  team approves access requests, but it cannot judge what each analyst needs, so it grants what is asked, and an audit found
+  marketing analysts reading payroll data. Requests arrive daily. Which change BEST addresses this?
+options:
+  A: A named manager in each source department approves requests for that department's datasets
+  B: The platform team approves requests against an access matrix based on each dataset's label
+  C: A data governance committee approves requests for the lake's datasets at its monthly meeting
+  D: Each requester's line manager approves the request before the platform team grants it
+answer: A
+explanation:
+  why_correct: Access decisions belong with someone accountable for the data who knows its permitted uses. Naming an owner in
+    each source department, who approves requests for that department's datasets, puts each decision with the person who knows
+    that payroll data, for example, is limited to a few roles, while the platform team stays the custodian that carries out
+    the grants.
+  why_not:
+    B: A label-based matrix makes the platform team consistent, but most datasets carry the same label, so it would treat payroll
+      and campaign data alike.
+    C: A committee brings the right people together and suits setting policy, but no single member answers for each dataset,
+      and requests that arrive daily would wait up to a month.
+    D: Line managers can confirm what the requester's job involves, but not the limits that apply to another department's data,
+      so a marketing manager could still approve payroll access.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: cissp-d5-5.6-0004
+subdomain: '5.6'
+difficulty: medium
+stem: A company is designing how its internal APIs check the OAuth access tokens that its authorization server issues. The
+  APIs and the authorization server run in the same data centre. Security requires that a disabled account, for example at
+  a dismissal, loses API access within a minute, and the authorization server reports a disabled account's tokens as inactive. Which design BEST meets this?
+options:
+  A: Signed tokens checked locally by each API, valid for one hour, with revocable refresh tokens
+  B: Signed tokens checked locally against a revocation list each API downloads hourly
+  C: Opaque tokens checked by introspection at the authorization server, cached for 30 seconds
+  D: Signed tokens bound to each client's TLS certificate and valid for one hour
+answer: C
+explanation:
+  why_correct: Introspection asks the authorization server whether a token is still active. Because the server reports a disabled
+    account's tokens as inactive and the APIs reject inactive tokens, disabling an account takes effect as soon as any cached
+    answer expires, well within a minute. With the APIs and the server in one data centre, the extra call
+    adds little delay, and the short cache keeps the load reasonable.
+  why_not:
+    A: Local checks of signed tokens are fast and scale well, and revoking the refresh token stops new tokens, but an access
+      token already issued keeps working for up to an hour.
+    B: A revocation list lets local checks reject disabled accounts, which suits a revocation window of an hour or more, but
+      an hourly download leaves a dismissed user up to an hour of access.
+    D: Binding tokens to a client certificate stops a stolen token being used elsewhere, but it does nothing about a disabled
+      account whose own token stays valid for the rest of the hour.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-cissp-check
+  options_only: not_obvious

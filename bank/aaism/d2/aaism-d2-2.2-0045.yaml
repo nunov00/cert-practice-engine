@@ -1,0 +1,31 @@
+id: aaism-d2-2.2-0045
+subdomain: '2.2'
+difficulty: medium
+stem: A bank's remote onboarding checks a photo of an ID document and a live selfie video, using a liveness model that
+  detects masks and screens held up to the camera. Fraudsters now open accounts with stolen genuine ID documents and
+  deepfake videos fed in through virtual camera software. Which control BEST addresses this?
+options:
+  A: A stronger liveness model for masks, screens and printed photos
+  B: Checks of each ID document against the issuing authority's records
+  C: Matching the face in the selfie video against the ID document photo
+  D: Detection of virtual cameras and injected video streams in the app
+answer: D
+explanation:
+  why_correct: The fake never passes in front of a camera. Virtual camera software injects it straight into the video
+    feed, so the liveness model sees a clean, lifelike face. Detecting virtual cameras and injected streams on the device
+    stops the attack at the point where it enters, whatever the deepfake looks like.
+  why_not:
+    A: A better presentation attack model is the answer when fraudsters hold masks or screens up to a real camera. An injected
+      stream contains none of the artefacts it looks for.
+    B: Issuer checks stop forged or altered documents. These documents are genuine and stolen, so they pass.
+    C: Face matching links the person to the document, but the deepfake is built from the victim's face, often from the
+      very ID photo, so the match succeeds.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aaism-check
+  options_only: not_obvious

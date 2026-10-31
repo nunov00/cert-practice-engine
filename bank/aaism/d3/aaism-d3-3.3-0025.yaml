@@ -1,0 +1,33 @@
+id: aaism-d3-3.3-0025
+subdomain: '3.3'
+difficulty: hard
+stem: A support model fine-tuned on past tickets reproduces, word for word, an internal note on how fraud cases are
+  handled, which agents had pasted into several hundred tickets. Testers could not get it to reproduce other ticket
+  text. What BEST prevents this in the next fine-tuning run?
+options:
+  A: Train with differential privacy at a per-ticket privacy budget
+  B: Remove passages repeated across many tickets before training
+  C: Redact text that a personal data scanner flags in each ticket
+  D: Cut the number of training passes over the ticket data
+answer: B
+explanation:
+  why_correct: Models memorise most readily what they see many times. The note appears in several hundred tickets, while
+    other ticket text, seen once, was not reproduced. Removing every occurrence of passages repeated across many tickets
+    before training takes the note out of the training data and with it the repetition that made it memorable. Ordinary
+    deduplication that keeps one copy would only reduce the risk.
+  why_not:
+    A: Differential privacy limits what any one ticket can teach the model, which protects text found in a single ticket.
+      Text repeated across hundreds of tickets is far outside that per-ticket bound and can still be learned.
+    C: Redacting personal data is a sound step for support tickets, but an internal procedure note holds no personal data,
+      so the scanner would leave it in place.
+    D: Fewer passes reduce memorisation in general, but a passage met hundreds of times in each pass is still learned, and
+      the model learns less of everything else.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aaism-check
+  options_only: not_obvious

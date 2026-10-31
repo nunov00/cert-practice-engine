@@ -1,6 +1,6 @@
 id: aair-d1-1.3-0022
 subdomain: "1.3"
-difficulty: medium
+difficulty: easy
 stem: An inventory check finds that 14 of a bank's 60 models list owners who have left or changed roles, and nobody is
   reviewing those models' monitoring reports. In each case the HR leaver or mover process ran on time, but nothing in it
   touched the model inventory. What should the risk practitioner recommend?
@@ -28,4 +28,4 @@ provenance:
   run_id: 2026-10-27-daily-aair
   check_verdict: pass
   options_only: obvious
-  checked_by: 2026-10-27-daily-aair-check
+  checked_by: 2026-10-31-daily-aair-check

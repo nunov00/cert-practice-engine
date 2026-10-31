@@ -7,7 +7,7 @@ stem: A former applicant has sued a lender, claiming its AI credit model discrim
 options:
   A: Delete the records on schedule and keep the deletion log
   B: Keep aggregate statistics and delete the individual records
-  C: Pseudonymise the logs and training data, then keep them
+  C: Copy the records to the legal team, then delete them on schedule
   D: Suspend deletion of the relevant records under a legal hold
 answer: D
 explanation:
@@ -19,14 +19,14 @@ explanation:
       records could be treated as destroying evidence.
     B: Aggregates may support a statistical defence, but the court may need the individual decision and the data behind
       it. Deleting them removes that evidence.
-    C: Pseudonymising reduces privacy risk but alters the records. Linking them back to the claimant's decision, which
-      the case needs, becomes harder or impossible.
-status: draft
+    C: A copy with the legal team preserves the content, but deleting the originals on schedule destroys the source
+      records and their system history, which the court may need to trust the copy. A legal hold keeps the originals.
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-24-daily-aair
-  checked_by: 2026-10-24-daily-aair-check
+  checked_by: 2026-10-31-daily-aair-check
   check_verdict: pass
   options_only: not_obvious

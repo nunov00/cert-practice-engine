@@ -1,6 +1,6 @@
 id: cissp-d7-7.10-0002
 subdomain: '7.10'
-difficulty: medium
+difficulty: easy
 stem: A file server gets a full backup on Sunday at 01:00 and a differential backup at 01:00 on every other day. The server
   fails on Thursday at 15:00. Which backups are needed to restore it, and how much data could be lost at most?
 options:
@@ -24,5 +24,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-cissp
-  check_verdict: pending
-  options_only: not_obvious
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-cissp-check
+  options_only: obvious

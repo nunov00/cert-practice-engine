@@ -1,0 +1,32 @@
+id: aair-d3-3.2-0027
+subdomain: '3.2'
+difficulty: hard
+stem: A photo app plans a feature that edits users' uploaded photos from text instructions. The top risk scenario is users
+  creating fake sexual images of real people, such as classmates or colleagues, and sharing them. Residual risk is above
+  appetite. Which treatment BEST reduces this risk?
+options:
+  A: Watermark each edited image as AI-generated
+  B: Verify each user's identity before enabling the feature
+  C: Refuse edits that sexualise people shown in uploaded photos
+  D: Bar such use in the terms and remove reported images fast
+answer: C
+explanation:
+  why_correct: The harm falls on the person shown as soon as the image is made and shared, whether or not viewers believe
+    it is real. Refusing such edits at the point of generation stops most of these images being made at all. Such filters
+    can be bypassed, so they need testing and updating, but this treatment acts before the harm rather than after it.
+  why_not:
+    A: Labelling AI images is the usual treatment where the harm is deception, such as a fake news photo. Here the person
+      shown is humiliated even when everyone knows the image is fake, so a watermark does little to reduce the harm.
+    B: Identity checks deter some misuse and help enforcement, but a verified user can still make and share the image,
+      and the harm is done before any action follows.
+    D: Terms and fast removal are needed, but they act after the image has been made and shared, and copies spread beyond
+      the app.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aair-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aaism-d1-1.4-0022
+subdomain: '1.4'
+difficulty: medium
+stem: Every AI team at a bank deploys on one central ML platform run by a platform team. Security reviews of new AI systems
+  take six weeks, and about half of each review covers the platform's access, logging and encryption, which teams describe
+  differently and sometimes wrongly. What would MOST shorten reviews without lowering their quality?
+options:
+  A: Assess the platform's controls once and let each review inherit them
+  B: Apply lighter reviews to AI systems rated low risk at intake
+  C: Give teams a template with model answers for the platform controls
+  D: Train a security champion in each team to write the platform sections
+answer: A
+explanation:
+  why_correct: The platform controls are the same for every system and are run by the platform team, not the AI teams.
+    Assessing them once, with the platform team, and letting each review rely on that result removes half of every review
+    and replaces many second-hand descriptions with one checked one. Reviews then focus on what each system adds.
+  why_not:
+    B: Risk tiering saves effort on low-risk systems, but the reviews that remain still spend half their time on the
+      shared platform, and the descriptions are still unreliable.
+    C: A template makes answers more consistent, but each team is still restating controls it does not run, and reviewers
+      still have to check every copy.
+    D: Champions improve teams' security work, but describing the platform is not a team's design judgement. It repeats
+      the same work in every team, from people who do not operate the platform.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aaism-check
+  options_only: not_obvious

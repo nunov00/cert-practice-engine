@@ -1,0 +1,32 @@
+id: aair-d1-1.3-0026
+subdomain: '1.3'
+difficulty: medium
+stem: A retailer's AI agent approves customer refunds up to 500. Under the delegation-of-authority schedule, frontline staff
+  may approve up to 200 and team leaders up to 1,000, and holders may delegate within their own limits. The developers set the agent's limit at 500 to shorten queues. What
+  should the risk practitioner recommend?
+options:
+  A: A team leader formally delegates the agent its limit
+  B: The limit is cut to 200, the frontline staff limit
+  C: Finance samples the agent's refunds each month
+  D: Developers record the limit's rationale in the design
+answer: A
+explanation:
+  why_correct: The agent spends the company's money, so its limit is a delegation of authority like any other, and only
+    someone who holds that authority can grant it and answer for it. Having a team leader, whose own limit of 1,000
+    covers 500 and who may delegate within it, formally delegate the agent's limit places the decision with an accountable person, who may keep it at 500 or change it.
+  why_not:
+    B: Matching frontline staff is a cautious reflex, but the developers would still be setting the agent's authority,
+      and the business may well want a higher limit. The question is who decides, not which number.
+    C: Sampling refunds gives oversight after the event, but it leaves the agent spending under a limit that nobody with
+      the authority granted.
+    D: Documenting the rationale makes the choice traceable, but it records a developer's decision about spending authority
+      instead of placing it with someone who holds that authority.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aair-check
+  options_only: not_obvious

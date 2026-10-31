@@ -1,0 +1,33 @@
+id: aaism-d2-2.2-0042
+subdomain: '2.2'
+difficulty: easy
+stem: A bank is choosing a prompt injection filter for its public chatbot, where anyone can send as many prompts as they
+  like. The leading product's vendor reports that it blocks 99% of a widely used public attack benchmark. Which evidence
+  BEST shows how the filter will hold up once the chatbot is live?
+options:
+  A: Its block rate on a larger benchmark with this year's techniques
+  B: An independent lab's reproduction of the 99% benchmark result
+  C: Block rates reported by other banks running it in production
+  D: Results from testers who adapt attacks to the filter's responses
+answer: D
+explanation:
+  why_correct: Attackers can retry without limit, so what matters is how quickly someone who learns from each blocked
+    attempt finds a way through. Testers who refine their attacks against this filter measure exactly that. Benchmark
+    scores, however large or well verified, measure a fixed set of prompts that a vendor may even have tuned the filter
+    on.
+  why_not:
+    A: A newer, larger benchmark gives broader coverage, but it is still a fixed list. An attacker who adapts to the filter
+      goes beyond any list, and public sets can end up in the filter's training data.
+    B: Reproduction shows the vendor's figure is honest, but an honest score on fixed prompts still does not predict how
+      the filter fares against attackers who adapt.
+    C: Field reports count the attacks that were blocked. They cannot count the ones that got through unnoticed, and other
+      banks' traffic and attackers differ from this chatbot's.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: fail
+  checked_by: 2026-10-31-daily-aaism-check
+  options_only: obvious

@@ -1,0 +1,33 @@
+id: aaism-d3-3.4-0029
+subdomain: '3.4'
+difficulty: hard
+stem: A telecom lets customers create a synthetic copy of their own voice from a short recording, for voicemail greetings
+  and voice messages. Abuse reports show accounts cloning other people's voices from clips posted online, then sending
+  messages to the victims' relatives asking for money. Which control BEST reduces this harm?
+options:
+  A: A live spoken consent phrase, matched to the voice, before cloning
+  B: An inaudible watermark in the audio that voice copies produce
+  C: Identity checks on account holders before cloning is enabled
+  D: Blocking voice samples that match a library of public figures' voices
+answer: A
+explanation:
+  why_correct: The harm starts when someone clones a voice that is not theirs. Requiring the person whose voice is being
+    copied to speak a fresh consent phrase, checked against the sample, means a clip taken from social media is not enough on
+    its own, which stops the casual cloning in these reports. The check needs liveness and capture-integrity controls,
+    since synthetic or injected audio could still fool it, so some spoofing risk remains.
+  why_not:
+    B: Watermarks help platforms and investigators recognise synthetic audio, but relatives listening to a voice message
+      have no detector, so the scam works the same.
+    C: Identity checks confirm who holds the account, not whose voice is being cloned. A verified customer can still clone
+      a stranger, and tracing them comes after the money is lost.
+    D: Screening for public figures protects well-known voices. The victims here are private people whose clips came from
+      social media, so they would not be in the library.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aaism-check
+  options_only: not_obvious

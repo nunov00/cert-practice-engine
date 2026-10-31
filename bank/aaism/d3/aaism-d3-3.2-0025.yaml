@@ -1,0 +1,32 @@
+id: aaism-d3-3.2-0025
+subdomain: '3.2'
+difficulty: easy
+stem: A law firm is designing an assistant that answers lawyers' questions from its matter files. Each lawyer may see
+  only the matters they are staffed on, and staffing differs from one lawyer to the next. At the design stage, which
+  approach BEST fits?
+options:
+  A: Retrieve passages at query time, filtered to each lawyer's matters
+  B: Fine-tune one model per practice group on that group's matter files
+  C: Fine-tune one model on the firm's matter files and filter its answers
+  D: Fine-tune on public legal sources and keep matter files out of it
+answer: A
+explanation:
+  why_correct: Access is decided person by person. A fine-tuned model holds what it learned for everyone who queries it,
+    so it cannot respect per-lawyer staffing. Retrieving passages at query time and filtering them against each lawyer's
+    current matters enforces access on every answer and follows staffing as it changes.
+  why_not:
+    B: A model per practice group would fit if access followed practice groups. Here lawyers in the same group are staffed
+      on different matters, so each group model would expose matters to colleagues who may not see them.
+    C: One model trained on everything would suit a firm where every lawyer may see every matter. With per-lawyer access,
+      an answer filter has to guess what the model drew on, and learned content can surface in paraphrase.
+    D: Keeping matter files out removes the access problem, but the assistant could then not answer questions about the
+      firm's own matters, which is its purpose.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: fail
+  checked_by: 2026-10-31-daily-aaism-check
+  options_only: obvious

@@ -1,0 +1,32 @@
+id: cissp-d8-8.1-0004
+subdomain: '8.1'
+difficulty: hard
+stem: An insurer's web platform reaches production through a pipeline that takes about six hours, mostly a full regression suite,
+  and a release built from the main branch goes out every day. During incidents, operations engineers patch the production servers by hand. Twice this year
+  a routine release overwrote such a patch and reopened a vulnerability. Which change BEST addresses this?
+options:
+  A: Remove manual access to production so changes go only through the full pipeline
+  B: Alert on any difference between production and the last released build
+  C: Add an emergency pipeline path from the main branch with fewer tests
+  D: Require each manual patch to be added to source within five working days
+answer: C
+explanation:
+  why_correct: Hand patches never reach source control, so the next build from source does not contain them. An emergency path
+    that starts from a commit on the main branch puts the fix in the source routine releases are built from before it is
+    deployed, so every later release carries it. Running fewer tests on that path keeps incident fixes fast.
+  why_not:
+    A: Forcing every change through the pipeline keeps source and production in step, which is the normal rule, but a six-hour
+      pipeline is too slow for fixes made during an incident.
+    B: Drift alerts show that production differs from source, which is useful, but someone must still copy the patch into source
+      before the next daily release, and the alert does not do that.
+    D: A deadline for adding patches to source is the usual follow-up step, but with a release every day, the next routine release
+      can overwrite the patch long before five working days pass.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-cissp-check
+  options_only: not_obvious

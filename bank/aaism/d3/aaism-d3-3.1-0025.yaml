@@ -1,0 +1,32 @@
+id: aaism-d3-3.1-0025
+subdomain: '3.1'
+difficulty: hard
+stem: To cut costs, a company's assistant routes prompts it judges simple to a small open-weight model and the rest to a
+  safety-tuned commercial model. Testers got harmful answers by phrasing jailbreaks as short, simple questions. The small
+  model is replaced with a newer release every few months. Which design change BEST addresses this?
+options:
+  A: Train the router to send suspected jailbreaks to the commercial model
+  B: Safety fine-tune each small model release before it goes live
+  C: Route prompts on any sensitive topic to the commercial model
+  D: Apply one output guardrail to the replies from both models
+answer: D
+explanation:
+  why_correct: The routing decision rests on how a prompt looks, which the attacker controls, so some harmful requests will
+    always reach the weaker model. One guardrail on the replies of both models checks what is actually produced, whichever
+    path a prompt takes, and it stays in place when the small model is swapped.
+  why_not:
+    A: A better router catches more jailbreaks, but it is a classifier working on attacker-controlled text, and anything
+      it misses still reaches the small model unchecked.
+    B: Safety tuning strengthens the small model, but it has to be redone for every release every few months, and a tuned
+      small model can still be jailbroken with no check on its output.
+    C: Topic routing protects obvious sensitive requests, but deciding the topic is again a judgement on text the attacker
+      writes, and a harmful request can be phrased to look harmless.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aaism-check
+  options_only: not_obvious

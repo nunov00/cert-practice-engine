@@ -1,0 +1,31 @@
+id: aaism-d2-2.3-0038
+subdomain: '2.3'
+difficulty: medium
+stem: A retailer's customer chatbot runs on a vendor's hosted model. The contract requires notice of data breaches within
+  24 hours and 30 days' notice before the model version changes. The retailer learned from the press that a jailbreak
+  in its current version had been known to the vendor for weeks. Which clause should it add?
+options:
+  A: Notice when the vendor learns of a safety flaw in the version in use
+  B: Notice of a model version change shortened from 30 days to 7 days
+  C: Access to the vendor's red team report for each new model version
+  D: Notice of data security incidents shortened from 24 hours to 12 hours
+answer: A
+explanation:
+  why_correct: The flaw was not a data breach and no version changed, so neither existing notice applied, and the retailer
+    ran an exposed chatbot without knowing. A duty to report safety flaws found in the version the retailer uses lets it
+    add its own controls while the vendor works on a fix.
+  why_not:
+    B: Shorter change notice helps the retailer prepare for new versions, but the flaw sat in an unchanged version, so
+      no change notice would have been sent.
+    C: Red team reports describe a version when it is released. A flaw found weeks after release would not appear in them.
+    D: A faster breach notice helps when data is exposed. A jailbreak in the model is not a data breach, so it would still
+      go unreported.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aaism-check
+  options_only: not_obvious

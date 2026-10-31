@@ -1,0 +1,32 @@
+id: aaism-d3-3.5-0035
+subdomain: '3.5'
+difficulty: hard
+stem: A health insurer must report to its regulator each quarter the share of replies from its member chatbot that gave
+  members unsafe medical guidance. An output guardrail blocks replies it judges unsafe, and members can flag replies.
+  Which monitoring BEST produces this figure?
+options:
+  A: The share of replies the output guardrail blocks each quarter
+  B: Clinician review of a random sample of the replies members received
+  C: Weekly replay of a fixed set of unsafe-advice prompts in production
+  D: The share of replies that members flag as unsafe or wrong
+answer: B
+explanation:
+  why_correct: The figure is about replies that actually reached members, including unsafe ones the guardrail missed.
+    Clinicians judging a random sample of delivered replies give an unbiased estimate of that share, with a margin that
+    shrinks as the sample grows.
+  why_not:
+    A: Block counts show how much unsafe output the guardrail stopped, which suits tracking attack pressure. Blocked replies
+      never reached members, and the misses are exactly what the count cannot see.
+    C: Replaying fixed prompts is a good way to catch a regression after a change. It measures behaviour on chosen test
+      prompts, not the share of unsafe replies in what members actually asked and received.
+    D: Member flags are a useful signal, but most members cannot tell that medical guidance is unsafe and few report, so
+      the share would understate the problem.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aaism-check
+  options_only: not_obvious

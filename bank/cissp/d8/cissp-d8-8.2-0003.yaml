@@ -1,0 +1,33 @@
+id: cissp-d8-8.2-0003
+subdomain: '8.2'
+difficulty: medium
+stem: A web application's pipeline runs an automated functional test suite that exercises nearly every workflow, including
+  multi-step checkouts behind sign-in. The security team wants to find injection flaws that real requests can reach, with
+  each finding traced to the line of code involved. Which testing approach BEST fits?
+options:
+  A: Dynamic scans of the staging site by a crawler after each deployment
+  B: Interactive testing agents in the app while the functional suite runs
+  C: Static analysis of each pull request with the full injection rule set
+  D: Fuzzing of the application's public endpoints in each nightly build
+answer: B
+explanation:
+  why_correct: Interactive testing agents watch the running application from inside while the suite drives it, so they see
+    which requests reach a query or command unsafely and point to the code involved. Because this suite already reaches nearly
+    every workflow, the agents reuse its traffic to cover the multi-step paths without new test cases, though they only see the
+    paths the suite exercises.
+  why_not:
+    A: A crawler-driven dynamic scan is the usual way to test reachable flaws when no full test suite exists, but crawlers often
+      fail to complete multi-step, signed-in workflows, and most scanners report a URL and payload rather than the line of code.
+    C: Static analysis points to the code and catches flaws early, but its reachability reasoning is approximate and it
+      tends to report paths that no real request takes, so it shows less reliably which flaws are reachable.
+    D: Fuzzing exposes crashes and parsing flaws through unexpected input, and stateful fuzzers can follow some sequences, but
+      without the suite's knowledge of the workflows it reaches less of the signed-in code, and its findings do not point to code.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aair-d2-2.3-0020
+subdomain: '2.3'
+difficulty: hard
+stem: A card issuer retrains its fraud model each week on transactions up to the day before, to keep up with new schemes.
+  Fraud labels come from chargebacks, which customers can raise up to 90 days after a payment. Since weekly retraining
+  began, detection of new schemes has fallen. What should the risk practitioner recommend?
+options:
+  A: Retrain only on payments old enough for chargebacks to arrive
+  B: Retrain each day so the model keeps up with new fraud patterns sooner
+  C: Give the most recent weeks more weight when the model is retrained
+  D: Gate each retrained version on its accuracy over the latest week
+answer: A
+explanation:
+  why_correct: Recent transactions look genuine because their chargebacks have not yet arrived, so each weekly retrain
+    teaches the model that the newest fraud patterns are normal. Training only on transactions whose labels have had time
+    to mature, and handling the latest weeks in other ways, stops the model learning from wrong labels.
+  why_not:
+    B: Retraining more often helps when labels arrive quickly. Here it would add even more unlabelled recent fraud to each
+      run, labelled as genuine.
+    C: Weighting recent data suits fast-changing patterns with reliable labels. Here the recent weeks hold the least
+      mature labels, so weighting them up strengthens the error.
+    D: A release gate is sound practice, but measured on the latest week, whose fraud is mostly not yet labelled, it would
+      reward versions that call new fraud genuine.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aair-check
+  options_only: not_obvious

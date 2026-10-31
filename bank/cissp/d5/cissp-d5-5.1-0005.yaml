@@ -7,7 +7,7 @@ stem: A university's residence halls use battery-powered door locks that receive
   gap?
 options:
   A: Collect badges at exit as a step in the offboarding checklist
-  B: Badges whose access expires daily unless renewed at an online reader
+  B: Badge access that expires daily unless renewed online
   C: A PIN at each lock in addition to the badge for each entry
   D: Cameras at hall entrances, with footage kept for ninety days
 answer: B
@@ -20,7 +20,7 @@ explanation:
       would still accept it.
     C: The contractor knows their own PIN, and PIN changes reach the offline locks only at the same weekly sync.
     D: Cameras record the entry for later review but do not stop a disabled badge from opening the door.
-status: draft
+status: published
 outline_version: 2024-04-15
 sample: false
 provenance:
@@ -28,4 +28,4 @@ provenance:
   run_id: 2026-10-27-daily-cissp
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-10-27-daily-cissp-check
+  checked_by: 2026-10-31-daily-cissp-check
