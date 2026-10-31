@@ -1,0 +1,32 @@
+id: aair-d1-1.4-0022
+subdomain: '1.4'
+difficulty: easy
+stem: An engineering firm's AI policy bans generative AI tools. A staff survey finds that most engineers use public
+  generative AI tools on their personal phones for work tasks, pasting in project details, because it saves them hours.
+  What should the risk practitioner recommend?
+options:
+  A: Replace the ban with approved tools and rules on data use
+  B: Keep the ban, with exceptions for teams that show a business need
+  C: Allow public tools for work that involves no project data
+  D: Keep the ban and enforce it with blocking and spot checks
+answer: A
+explanation:
+  why_correct: The ban is not changing behaviour, and the use has moved to personal phones where the firm cannot see or
+    control it, with project data going into consumer tools. Approved tools with clear rules on data give engineers a
+    sanctioned way to get the same benefit, which brings the use back where the firm's controls and monitoring can reach it.
+  why_not:
+    B: Exceptions suit an occasional need. Here most engineers share the same need, so exceptions would become the norm,
+      decided one team at a time, while use on personal phones carried on until each was granted.
+    C: Splitting permitted work from restricted work is sound where tasks separate cleanly, but the hours engineers save
+      come from work on project details, so they would keep pasting those into public tools.
+    D: Blocking and checks can back a rule that most people follow, but the use happens on personal phones the firm does
+      not control, so enforcement would find little while the use went on.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aair-check
+  options_only: obvious

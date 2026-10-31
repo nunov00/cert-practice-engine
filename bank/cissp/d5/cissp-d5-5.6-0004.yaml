@@ -21,11 +21,12 @@ explanation:
       an hourly download leaves a dismissed user up to an hour of access.
     D: Binding tokens to a client certificate stops a stolen token being used elsewhere, but it does nothing about a disabled
       account whose own token stays valid for the rest of the hour.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-31-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-cissp-check
   options_only: not_obvious

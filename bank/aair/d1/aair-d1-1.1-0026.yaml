@@ -1,0 +1,32 @@
+id: aair-d1-1.1-0026
+subdomain: '1.1'
+difficulty: medium
+stem: A breast screening programme has each mammogram read by two radiologists, with a third settling disagreements. Its
+  AI strategy aims to cut radiologist reading time by about half without lowering cancer detection. Which use of AI BEST
+  fits this aim?
+options:
+  A: AI added as a third reader alongside both radiologists
+  B: AI clears scans it rates normal; radiologists read the rest
+  C: AI marks suspicious areas for both radiologists as they read
+  D: AI replaces the second reader; disagreements go to a human
+answer: D
+explanation:
+  why_correct: With double reading, letting the AI take one of the two reads removes about half of the reading time,
+    while each scan is still read by a radiologist and every disagreement goes to a person. Screening studies suggest
+    detection can be kept at the same level this way, which fits both parts of the aim.
+  why_not:
+    A: An extra AI reader can raise detection, which would suit a strategy aimed at finding more cancers, but it adds
+      review work instead of halving it.
+    B: Clearing normal scans can cut workload sharply and suits programmes where capacity matters most, but scans it clears
+      get no human read at all, so cancers it misses there go unchecked, which puts detection at risk.
+    C: Marking suspicious areas can help readers and may raise detection, but both radiologists still read every scan, so
+      reading time falls far less than half, and readers may come to follow the marks.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aair-check
+  options_only: not_obvious

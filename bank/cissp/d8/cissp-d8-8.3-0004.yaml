@@ -22,11 +22,12 @@ explanation:
       or not those closures are correct.
     D: A penetration test is independent, but one test a year samples a small part of the code, covers flaw types the scanner
       does not, and gives no answer for months.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-31-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-cissp-check
   options_only: not_obvious

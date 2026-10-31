@@ -22,11 +22,12 @@ explanation:
       and requests that arrive daily would wait up to a month.
     D: Line managers can confirm what the requester's job involves, but not the limits that apply to another department's data,
       so a marketing manager could still approve payroll access.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-31-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-cissp-check
   options_only: not_obvious

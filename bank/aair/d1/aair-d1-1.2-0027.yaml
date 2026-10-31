@@ -22,11 +22,12 @@ explanation:
       plans for in-house models do not reach.
     D: An IT list helps where IT buys and runs the software, but these services are bought by process owners, and a list
       of services does not show which processes depend on their AI or how badly.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-31-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aair-check
   options_only: not_obvious

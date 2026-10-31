@@ -1,0 +1,32 @@
+id: aair-d3-3.2-0028
+subdomain: '3.2'
+difficulty: hard
+stem: A company's model ranks internal candidates for promotion and scores women lower than men with similar records.
+  Analysis traces the gap to the training labels, which record which staff past managers chose to promote. Residual risk
+  is above appetite. Which treatment is MOST appropriate?
+options:
+  A: Remove inputs that correlate with gender and retrain the model
+  B: Reweight the training data so women and men count equally
+  C: Retrain the model to predict agreed measures of success in role
+  D: Have HR review each candidate the model ranks in its lowest band
+answer: C
+explanation:
+  why_correct: The model has learned to imitate past managers' choices, including any bias in them, so the cause sits in
+    what it is trained to predict. Changing the target to agreed measures of success in role, which past promotion choices
+    did not shape, treats that cause. The new target must itself be checked for bias before the model is retrained on it.
+  why_not:
+    A: Removing proxy inputs is the right treatment when a gap is traced to an input. Here the labels carry the bias, so
+      the model would go on learning to imitate those choices from whatever inputs remain.
+    B: Reweighting is the right treatment when a group is under-represented in the data. Here it would still teach the
+      model the same biased choices, only with different weights.
+    D: Review limits harm for the candidates it reaches, but women ranked just above the lowest band would still be
+      held back, and the model would keep reproducing the past choices.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aair-check
+  options_only: not_obvious

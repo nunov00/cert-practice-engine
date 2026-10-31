@@ -1,0 +1,31 @@
+id: aaism-d3-3.4-0030
+subdomain: '3.4'
+difficulty: medium
+stem: A company promises staff that its engagement survey is anonymous. HR now uses an AI tool to summarise the free-text
+  comments for each team, and some team summaries quote distinctive phrases. Several teams have three or four members.
+  Which control BEST keeps the promise?
+options:
+  A: Remove names and job titles from comments before summarising
+  B: Limit access to the team summaries to the HR leadership team
+  C: Summarise only groups above a minimum size, without quotes
+  D: Tell staff in the survey invitation that AI summarises comments
+answer: C
+explanation:
+  why_correct: In a team of three, a quoted phrase or a summary of a few comments can point straight at its author, even
+    with names removed. Reporting only for groups large enough to hide individuals, and paraphrasing rather than quoting,
+    keeps what the summaries reveal in line with the anonymity promise.
+  why_not:
+    A: Removing names and titles is a sound first step, but writing style and details still identify authors in a very
+      small team.
+    B: Narrower access reduces who sees the summaries, but HR leaders can still recognise individuals, which the promise
+      rules out.
+    D: Telling staff about the AI tool improves transparency, but it does not stop comments being traced to their authors.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aaism-check
+  options_only: not_obvious

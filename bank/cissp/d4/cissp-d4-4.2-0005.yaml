@@ -21,12 +21,12 @@ explanation:
       the other unit picks them up.
     D: A shared virtual address lets clients reach whichever unit is active without relearning addresses. Traffic did reach
       the new unit, which rejected it because it held no session state.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-24-daily-cissp
-  checked_by: 2026-10-24-daily-cissp-check
-  check_verdict: pending
+  checked_by: 2026-10-31-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

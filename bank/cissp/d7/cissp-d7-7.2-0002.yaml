@@ -21,11 +21,12 @@ explanation:
       around the clock, sign-ins at every hour are normal.
     D: Signatures catch known attack tools, but these tools are the ones staff use every day, so a signature would either fire
       constantly on normal work or be tuned out.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-31-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-cissp-check
   options_only: not_obvious

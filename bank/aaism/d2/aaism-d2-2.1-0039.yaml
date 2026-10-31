@@ -1,0 +1,32 @@
+id: aaism-d2-2.1-0039
+subdomain: '2.1'
+difficulty: medium
+stem: A risk assessment of a procurement agent rated impact as moderate, based on the cost of wrong answers the model
+  might give buyers. The agent can call twelve internal APIs, including supplier payments and contract records. What
+  is the GREATEST weakness of the assessment?
+options:
+  A: Likelihood was taken from the model vendor's benchmark results
+  B: The ratings were not challenged by the second line before approval
+  C: Impact was rated per error rather than for errors over a year
+  D: Impact leaves out what the agent can do through its APIs
+answer: D
+explanation:
+  why_correct: The assessment treats the agent like a chatbot whose worst output is a wrong answer. Through its APIs it
+    can pay suppliers and change contracts, so a manipulated or faulty agent can cause direct financial loss. Leaving
+    out what the tools can reach understates impact, whatever the likelihood.
+  why_not:
+    A: Vendor benchmarks may not fit this agent and should be checked, but a sound likelihood would still be paired with
+      an impact that misses the agent's actions.
+    B: Second-line challenge is good practice and might catch the gap, but the weakness lies in what the impact rating
+      counts.
+    C: Annual aggregation helps compare risks, but scaling up the cost of wrong answers still ignores payments and contract
+      changes the agent can make.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: fail
+  checked_by: 2026-10-31-daily-aaism-check
+  options_only: not_obvious

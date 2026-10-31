@@ -1,0 +1,31 @@
+id: aaism-d2-2.2-0044
+subdomain: '2.2'
+difficulty: medium
+stem: A home security firm's voice assistant can unlock front doors on a spoken command, without checking who is
+  speaking. Units sit in living rooms, usually near a television or smart speaker. Which threat should the threat model
+  stress MOST?
+options:
+  A: Extraction of the speech model through many repeated voice queries
+  B: Membership inference on recordings used to train the model
+  C: Commands hidden in audio played near the unit by other devices
+  D: Poisoning through corrections users make to misheard commands
+answer: C
+explanation:
+  why_correct: The assistant acts on any voice that says the command, and it sits next to devices that play audio from
+    outside sources. A broadcast, video or stream can carry a command, hidden or plain, that unlocks the door, so the
+    attacker never needs to be in the house.
+  why_not:
+    A: Extraction would copy the speech model, a loss of intellectual property, but it does not open anyone's door.
+    B: Membership inference is a privacy risk for training recordings, but it needs detailed outputs and leads to no
+      physical harm here.
+    D: Poisoning through user corrections needs a path from those corrections into training and slowly shifts accuracy.
+      It is far less direct than an outside audio source issuing the unlock command.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aaism-check
+  options_only: not_obvious

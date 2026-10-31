@@ -19,12 +19,12 @@ explanation:
       it does not deliver the service the objective protects.
     B: Pinning the embedding model helps a rebuild produce a consistent index, but it does not shorten the three-day rebuild.
     D: Checking that a rebuild gives the same results is good practice, but a rebuild that works still takes three days.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-24-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-10-24-daily-aaism-check
+  checked_by: 2026-10-31-daily-aaism-check

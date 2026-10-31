@@ -1,6 +1,6 @@
 id: aaism-d3-3.2-0024
 subdomain: '3.2'
-difficulty: hard
+difficulty: medium
 stem: A bank's latest chatbot release fixed a flaw, exploited last month, through which crafted questions returned other
   customers' balances. Since the release, it misreads some card dispute questions and sends customers to the wrong page,
   and disputes have strict filing deadlines. Disputes are a small share of chats. The product owner wants to roll back
@@ -28,5 +28,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-31-daily-aaism
-  check_verdict: pending
+  check_verdict: fail
+  checked_by: 2026-10-31-daily-aaism-check
   options_only: not_obvious

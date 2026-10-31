@@ -24,5 +24,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-26-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-cissp-check
   options_only: obvious

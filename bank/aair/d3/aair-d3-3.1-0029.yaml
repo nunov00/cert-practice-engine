@@ -1,0 +1,33 @@
+id: aair-d3-3.1-0029
+subdomain: '3.1'
+difficulty: medium
+stem: A retailer's customer chatbot can issue refunds within set limits. Its main safeguard against misuse is a filter that
+  screens customers' typed messages before the model sees them. A vendor update now lets customers upload photos, for
+  example of damaged goods. Which new risk scenario should the assessment MOST include?
+options:
+  A: Customers upload faked or reused photos of damage to claim refunds
+  B: Text written inside a photo instructs the chatbot to issue refunds
+  C: Uploaded photos show other people or customers' personal documents
+  D: The chatbot misjudges the damage shown in poor-quality photos
+answer: B
+explanation:
+  why_correct: The safeguard screens typed text, but text inside an image reaches the model without passing through it.
+    The new photo channel therefore bypasses the chatbot's main control, and an instruction carried in a photo can steer
+    any action the chatbot can take, not just one claim.
+  why_not:
+    A: Faked damage photos are a real fraud route for any refund process, and would be the leading scenario if photos
+      passed through the same screening as text. Each one wins a single refund within the limit, while an unscreened
+      instruction channel exposes the whole chatbot.
+    C: Photos of other people or documents raise privacy duties, which retention and redaction rules can handle, but they
+      do not let anyone direct the chatbot's actions.
+    D: Misjudging poor photos is an accuracy issue that limits and human review of disputes can contain. It does not
+      defeat the chatbot's main safeguard.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: fail
+  checked_by: 2026-10-31-daily-aair-check
+  options_only: not_obvious

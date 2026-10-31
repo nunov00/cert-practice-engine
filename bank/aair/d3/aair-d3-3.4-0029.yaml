@@ -1,0 +1,32 @@
+id: aair-d3-3.4-0029
+subdomain: '3.4'
+difficulty: medium
+stem: A lender's new credit model went live six months ago. Defaults on its loans take about two years to show in full,
+  and the risk committee wants an early read on whether the model still ranks applicants by risk as it did in validation.
+  Which indicator BEST gives this?
+options:
+  A: Drift in applicants' input data against the training data
+  B: Monthly approval rate compared with the validation forecast
+  C: Early arrears rates on recent loans, by model score band
+  D: Final default rate on loans approved after go-live
+answer: C
+explanation:
+  why_correct: Early arrears appear within months and are a reasonable early sign of later default. Comparing them across
+    score bands shows whether loans the model rated riskier are in fact falling behind more often, which tests the ranking
+    itself long before final defaults are known.
+  why_not:
+    A: Input drift is a useful leading indicator that the applicant population has changed, but it does not show whether
+      the model still ranks those applicants correctly.
+    B: The approval rate shows how many applicants the model accepts, not whether the ones it rates riskier really are
+      riskier.
+    D: Final defaults measure the ranking most directly, but they take about two years to show in full, which is too late
+      for the early read the committee wants.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aair-check
+  options_only: not_obvious

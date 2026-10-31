@@ -22,11 +22,12 @@ explanation:
       in through the identity provider, so it cannot grant anything during this outage.
     C: Vault check-out with rotation is the usual control for local admin passwords, but staff sign in to the vault through
       the identity provider, so in this outage nobody could get the password out.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-31-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-cissp-check
   options_only: not_obvious

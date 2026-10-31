@@ -22,11 +22,12 @@ explanation:
       laptop and the resolver, a hop that validation at the resolver does not protect, and it hides nothing from the hotel.
     D: An always-on tunnel would carry the lookups safely to the company, and it is the usual answer for managed laptops, but
       a gateway sized for a fifth of staff cannot carry everyone's traffic at once.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-31-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-cissp-check
   options_only: not_obvious

@@ -20,12 +20,12 @@ explanation:
     B: Annual reassessment would find the gap eventually, but the model could run without its assumed control for most
       of a year.
     D: Outcome monitoring can show that something has gone wrong, but only after unaffordable loans have been made.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-24-daily-aair
-  checked_by: 2026-10-24-daily-aair-check
-  check_verdict: pending
+  checked_by: 2026-10-31-daily-aair-check
+  check_verdict: pass
   options_only: not_obvious

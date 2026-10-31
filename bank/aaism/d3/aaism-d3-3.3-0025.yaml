@@ -21,11 +21,12 @@ explanation:
       so the scanner would leave it in place.
     D: Fewer passes reduce memorisation in general, but a passage met hundreds of times in each pass is still learned, and
       the model learns less of everything else.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-31-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aaism-check
   options_only: not_obvious

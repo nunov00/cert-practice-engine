@@ -21,11 +21,12 @@ explanation:
       a stranger, and tracing them comes after the money is lost.
     D: Screening for public figures protects well-known voices. The victims here are private people whose clips came from
       social media, so they would not be in the library.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-31-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aaism-check
   options_only: not_obvious

@@ -21,11 +21,12 @@ explanation:
       can simply remove.
     D: The demo's filter protects only the firm's own hosted service. Researchers running the published weights on their
       own hardware never pass through it.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-31-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-10-31-daily-aaism-check
   options_only: not_obvious
