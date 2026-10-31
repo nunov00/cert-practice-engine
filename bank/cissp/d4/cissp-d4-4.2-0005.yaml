@@ -28,5 +28,5 @@ provenance:
   generated_by: claude
   run_id: 2026-10-24-daily-cissp
   checked_by: 2026-10-24-daily-cissp-check
-  check_verdict: pass
+  check_verdict: pending
   options_only: not_obvious
