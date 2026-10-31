@@ -1,0 +1,31 @@
+id: aair-d2-2.1-0022
+subdomain: '2.1'
+difficulty: medium
+stem: A bank is designing an assistant built on a language model to draft credit memos for its lending officers. The bank's
+  model risk rules require that any past memo can be re-run with the same model for seven years. Which design BEST meets
+  this requirement?
+options:
+  A: Call a vendor's hosted model pinned to a dated version
+  B: Call a vendor's hosted model and log each prompt and reply
+  C: Fine-tune a vendor's hosted model and keep the training data
+  D: Run an open-weight model version the bank hosts itself
+answer: D
+explanation:
+  why_correct: Re-running a past memo with the same model for seven years needs the bank to keep that model and be able
+    to run it. An open-weight model version hosted by the bank, with its weights, code and generation settings kept under
+    version control, stays available for as long as the bank needs, whatever any vendor decides.
+  why_not:
+    A: Pinning a dated version is the right practice for stable behaviour on a hosted model, but vendors retire hosted
+      versions, often within a year or two, so the model could disappear long before seven years have passed.
+    B: Logging each prompt and reply shows what was produced and supports traceability, but the rule asks for a re-run,
+      which a log cannot give once the model is gone.
+    C: A fine-tuned hosted model still runs on the vendor's platform and base model, so it can be retired like any other
+      hosted version. Keeping the training data does not let the bank rebuild it exactly.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: pending
+  options_only: not_obvious

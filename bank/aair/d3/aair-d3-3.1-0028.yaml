@@ -1,0 +1,34 @@
+id: aair-d3-3.1-0028
+subdomain: '3.1'
+difficulty: hard
+stem: An electronics retailer will let an AI agent set its online prices, and the agent is rewarded on profit margin. Its
+  two main rivals also reprice automatically within minutes, and each can see the others' prices. Which risk scenario
+  should the assessment MOST include?
+options:
+  A: The agents undercut each other until prices fall below cost
+  B: Rivals post brief decoy prices to steer the agent's pricing
+  C: The agents learn to follow each other's rises and hold prices high
+  D: The agent charges more to shoppers it predicts will pay more
+answer: C
+explanation:
+  why_correct: Each agent sees the others' prices within minutes, and this one is rewarded on margin. Pricing agents in
+    such a market can learn that a cut is matched at once and gains nothing, while a rise is followed, so prices settle
+    above the competitive level without anyone agreeing to it. Competition authorities treat this outcome seriously, and
+    the retailer could face an investigation over prices its own agent set.
+  why_not:
+    A: A price war is a known risk of automated repricing, mainly where agents chase sales volume. Here a cut is matched
+      within minutes, so it wins no sales and lowers the margin the agent is rewarded on, which teaches the agent to
+      avoid it.
+    B: Manipulated inputs are worth assessing for any agent, but a rival's posted price is a live offer its own customers
+      can buy at, so decoys cost the rival money. The exposure is smaller than a pattern the agents fall into in normal
+      operation.
+    D: Personalised pricing raises fairness and consumer-law questions, but the design described reacts to rivals' prices.
+      Nothing in it uses data on individual shoppers.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: pending
+  options_only: not_obvious

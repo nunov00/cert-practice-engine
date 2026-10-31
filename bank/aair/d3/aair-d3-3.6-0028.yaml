@@ -1,0 +1,30 @@
+id: aair-d3-3.6-0028
+subdomain: '3.6'
+difficulty: hard
+stem: During trading hours, a convincing fake video of a listed retailer's chief executive announcing a profit warning
+  spreads on social media, and the share price is falling. What should the incident team do FIRST?
+options:
+  A: Ask the platforms hosting the video to remove it
+  B: Deny the video through the official market announcement channel
+  C: Commission forensic analysis to prove the video is synthetic
+  D: Report the video to the police and the market regulator
+answer: B
+explanation:
+  why_correct: The harm is investors trading on false information right now. A denial through the official market
+    announcement channel reaches the exchange and every investor at once, from the source they rely on, and the chief
+    executive's own knowledge is enough to issue it. Takedowns, forensic work and reports to the authorities follow.
+  why_not:
+    A: Takedown requests are the usual first move against fake media, but platforms take time to act and copies spread
+      faster than they come down. Meanwhile the market keeps trading on the fake.
+    C: Forensic proof helps where authenticity is in doubt and for later legal action, but the company already knows
+      whether its chief executive made the statement. Waiting for proof lets the price keep falling.
+    D: Reporting to the police and the regulator is needed, and the regulator may act on trading, but it does not put
+      correct information in front of investors as quickly as an official announcement.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: pending
+  options_only: not_obvious

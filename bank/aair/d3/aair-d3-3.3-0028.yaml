@@ -1,0 +1,31 @@
+id: aair-d3-3.3-0028
+subdomain: '3.3'
+difficulty: hard
+stem: A bank's AI model releases payments held by its sanctions screening, and an analyst must confirm each release. The
+  model now errs on fewer than one release in a thousand. The risk practitioner is testing whether the analyst check
+  operates effectively. Which evidence would BEST support a conclusion?
+options:
+  A: The analysts' confirm rate compared with the model's error rate
+  B: An independent re-review of a random sample of confirmed releases
+  C: Time analysts spend per release against a set minimum
+  D: Analysts' catch rate on test releases with known errors added
+answer: D
+explanation:
+  why_correct: With fewer than one error per thousand releases, analysts rarely meet a real error, so their normal work
+    cannot show whether they would catch one. Adding test releases with known errors to their queue, without saying which,
+    measures how often the check catches an error, which is what the control exists to do.
+  why_not:
+    A: Comparing confirm rates with the model's error rate is a useful sign of rubber-stamping when errors are common. At
+      under one in a thousand, a confirm rate near 100% is what an alert analyst and an inattentive one would both produce.
+    B: Re-performing a sample is a standard test of operating effectiveness, but a random sample would almost never contain
+      a real error, so it cannot show whether analysts catch them.
+    C: Time per case shows effort and can hint at rubber-stamping, but an analyst can spend the set time and still miss
+      the error. It does not measure detection.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: pending
+  options_only: not_obvious

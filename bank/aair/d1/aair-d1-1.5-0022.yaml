@@ -1,0 +1,32 @@
+id: aair-d1-1.5-0022
+subdomain: '1.5'
+difficulty: medium
+stem: A tenant screening firm's model rejects applicants from one ethnic group noticeably more often than others. Discrimination
+  law in its market lets a practice with unequal outcomes stand only if it serves a legitimate aim and is proportionate. The
+  team has built a second model that predicts rent arrears just as well, with a smaller gap. What should the risk practitioner
+  advise?
+options:
+  A: Keep the current model and record the legitimate aim it serves
+  B: Replace the current model with the second model
+  C: Set separate pass thresholds so each group passes at the same rate
+  D: Remove inputs that correlate with ethnicity and retrain the current model
+answer: B
+explanation:
+  why_correct: Under such a test, unequal outcomes are lawful only if the practice is proportionate to its aim. A second
+    model that predicts arrears just as well with a smaller gap shows the aim can be met with less disadvantage, so keeping
+    the current model would be hard to defend. Switching to it, and recording the comparison, meets the aim lawfully.
+  why_not:
+    A: Recording a legitimate aim is part of the defence where no better option exists. Here a model with a smaller gap
+      meets the same aim equally well, so the current one is unlikely to count as proportionate.
+    C: Separate thresholds would equalise pass rates by treating applicants differently because of their ethnic group,
+      which discrimination laws generally treat as direct discrimination.
+    D: Removing correlated inputs is a common bias treatment, but it may cut accuracy and leave a gap through other inputs,
+      when a model that predicts as well with a smaller gap already exists.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-aair
+  check_verdict: pending
+  options_only: not_obvious
