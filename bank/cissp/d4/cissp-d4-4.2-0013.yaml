@@ -1,0 +1,33 @@
+id: cissp-d4-4.2-0013
+subdomain: '4.2'
+difficulty: medium
+stem: A rail operator's 600 ticket machines run one vendor application on a desktop operating system, and the vendor ships
+  an update each quarter. Machines at rural stations reach the network over cellular links that are often down for days,
+  and no staff work there. An attacker who opened a machine's service panel ran a tool from a USB stick that no anti-malware
+  product recognised at the time. Which endpoint control BEST reduces this risk?
+options:
+  A: Application allowlisting that lets only the vendor's signed software run
+  B: An EDR agent that blocks suspicious behaviour and reports to the SOC
+  C: Anti-malware whose signatures are updated whenever the link is up
+  D: A host firewall that blocks inbound connections except vendor management
+answer: A
+explanation:
+  why_correct: The machines run one known application that changes only at quarterly releases, so the list of allowed software
+    is short and stable. Allowlisting refuses anything else, however new the tool, and it is enforced on the machine itself,
+    so it works while the link is down.
+  why_not:
+    B: EDR suits general-purpose endpoints, and its behaviour rules work offline, but they block only behaviour they recognise.
+      The response that catches the rest depends on analysts reaching the machine over links that are often down for days, at
+      stations with no staff.
+    C: Signature updates keep anti-malware current, but a tool that no product recognised has no signature to match, and machines
+      offline for days fall further behind.
+    D: Blocking inbound connections stops attacks over the network, but this attacker worked at the machine itself, running
+      a tool from a local USB stick.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

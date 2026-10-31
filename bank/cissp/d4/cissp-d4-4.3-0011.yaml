@@ -1,0 +1,32 @@
+id: cissp-d4-4.3-0011
+subdomain: '4.3'
+difficulty: hard
+stem: Staff in 30 countries use a full-tunnel VPN, so all their traffic passes through proxies at the head office, which filter
+  and inspect web traffic. Video calls on the company's cloud conferencing service now stutter for staff far from the head office,
+  and the calls must improve within a month. Moving web filtering to another platform is a project of several quarters. Which
+  change BEST fits?
+options:
+  A: Upgrade the head office VPN concentrators and internet links to double capacity
+  B: Split the tunnel so that internet traffic leaves directly from each laptop
+  C: Move web filtering to a cloud security service and split the tunnel for the web
+  D: Exclude only the conferencing service's media traffic from the VPN tunnel
+answer: D
+explanation:
+  why_correct: The stutter comes from sending real-time media on a long detour through the head office. Sending only the conferencing
+    media straight to the service removes that detour, while all web traffic still goes through the head office proxies. The media
+    is encrypted and carries nothing the web proxies inspect, so little is lost, and it can be done within weeks.
+  why_not:
+    A: More capacity helps if the links are full, but staff far from the head office still send every call on a detour across
+      the world, and that delay remains.
+    B: A full split tunnel removes the detour for everything, but web traffic would then leave without the filtering and inspection
+      that the head office proxies apply.
+    C: Cloud-delivered filtering with a split tunnel is the long-term design many firms adopt, but it is a project of several
+      quarters, and the calls must improve within a month.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

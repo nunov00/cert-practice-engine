@@ -1,0 +1,32 @@
+id: cissp-d8-8.3-0004
+subdomain: '8.3'
+difficulty: hard
+stem: Over six months a company's development teams cut the open backlog of static analysis findings by 80%, and the CISO presents
+  this as proof that the secure coding programme works. Developers close findings themselves as fixed, false positive or mitigated
+  elsewhere, and a finding closed as a false positive or as mitigated is not reported again in later scans. Which evidence BEST
+  tests the claim?
+options:
+  A: A fresh scan of the current code, counting the findings that remain open
+  B: A retest by the security team of a sample of closed findings, by closure reason
+  C: The mean time to close findings by severity, compared with six months ago
+  D: The next yearly penetration test's results, compared with last year's
+answer: B
+explanation:
+  why_correct: The backlog fell through closures that developers made themselves, so the question is whether those closures
+    are true. Having the security team retest a random sample of each closure type shows how many fixes are real and how many false positive or
+    mitigated labels hold up, which tells whether the 80% reflects fewer flaws or only fewer reported findings.
+  why_not:
+    A: A fresh scan is the usual way to confirm a backlog, but findings closed as false positive or mitigated are suppressed
+      in later scans, so it repeats the developers' own judgement instead of testing it.
+    C: Closing times show how fast the teams work through findings, but they are measured from the same closures, whether
+      or not those closures are correct.
+    D: A penetration test is independent, but one test a year samples a small part of the code, covers flaw types the scanner
+      does not, and gives no answer for months.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

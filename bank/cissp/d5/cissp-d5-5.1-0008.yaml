@@ -1,0 +1,32 @@
+id: cissp-d5-5.1-0008
+subdomain: '5.1'
+difficulty: medium
+stem: A company's database administrators receive admin rights on production databases through a privileged access system,
+  one approved task at a time, and they sign in to it through the corporate identity provider. The continuity plan's worst
+  case is a regional outage that also takes the identity provider down, and recovery then needs database admin access within
+  15 minutes. Which arrangement BEST covers that case?
+options:
+  A: Standing admin rights for the on-call administrator, reviewed each quarter
+  B: Elevation in the privileged access system, approved by any on-call manager
+  C: A local admin account whose password the access system's vault releases per use, then rotates
+  D: Local emergency accounts with sealed passwords, alerted on use and reset after
+answer: D
+explanation:
+  why_correct: In the worst case the identity provider, and everything that signs in through it, is unavailable. Local emergency
+    accounts work without it, while sealed credentials, an alert on each use and a reset afterwards keep their use rare, visible
+    and traceable to the person who opened the seal.
+  why_not:
+    A: Standing rights remove the approval step, but the administrator still signs in through the identity provider, which
+      is down in this case, and the rights stay open the rest of the year.
+    B: Wider approval is a sound way to keep the normal process fast at night, but the privileged access system signs users
+      in through the identity provider, so it cannot grant anything during this outage.
+    C: Vault check-out with rotation is the usual control for local admin passwords, but staff sign in to the vault through
+      the identity provider, so in this outage nobody could get the password out.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious
