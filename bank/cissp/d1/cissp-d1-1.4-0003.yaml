@@ -1,0 +1,30 @@
+id: cissp-d1-1.4-0003
+subdomain: '1.4'
+difficulty: medium
+stem: A company serves customers in many countries from one cloud region abroad. A new law in one of its markets requires
+  that a complete, current copy of residents' personal data be held on servers inside that country. Which response BEST
+  meets the law with the least disruption to the global service?
+options:
+  A: Move the processing of that market's residents to a cloud region inside the country
+  B: Pseudonymise residents' data before it leaves the country, keeping the key there
+  C: Adopt standard contractual clauses for transfers from that country to the region
+  D: Replicate residents' data continuously to in-country storage, keeping processing abroad
+answer: D
+explanation:
+  why_correct: The law sets a local storage requirement, not a ban on transfer or processing abroad. A continuously updated
+    in-country copy meets it directly, while the global service keeps running from its current region.
+  why_not:
+    A: Moving processing into the country is the right response to a law that forbids processing abroad. This law asks only
+      for a local copy, so a full move adds cost and disruption it does not require.
+    B: Pseudonymising before export suits laws that restrict sending identifiable data abroad, but this law requires a complete
+      copy in the country, which pseudonymised exports do not provide, and it changes the global service's data.
+    C: Contractual clauses are a common safeguard for transfers abroad, but they govern how data is protected after transfer.
+      They do not put a copy of the data on servers inside the country.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

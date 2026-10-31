@@ -1,0 +1,31 @@
+id: cissp-d7-7.2-0002
+subdomain: '7.2'
+difficulty: medium
+stem: In red-team exercises, testers moved between a company's servers using the same remote administration tools and kinds
+  of account that its staff use, and nothing alerted. Server administration is spread across about 300 staff and contractors
+  in several time zones, plus hundreds of scheduled scripts, and the mix changes from week to week. Which detection BEST fits?
+options:
+  A: Behaviour analytics that alert when an account departs from its usual sign-in pattern
+  B: Alerts on administrator sign-ins to servers outside each team's working hours
+  C: Decoy admin credentials and servers planted where intruders look for them
+  D: Network IDS signatures for lateral movement tools, placed on the core switches
+answer: C
+explanation:
+  why_correct: When intruders use the same tools and accounts as staff, detection has to rely on something that legitimate
+    work never does. Decoy credentials and servers have no business use, so any attempt to use them is a strong signal, however
+    irregular normal administration is.
+  why_not:
+    A: Behaviour analytics work well where each account has a stable pattern to learn. Here administration shifts week to
+      week across many people, contractors and scripts, so baselines stay noisy and an intruder's activity blends in.
+    B: Out-of-hours rules are cheap and effective where admins keep fixed hours. With teams across time zones and scripts running
+      around the clock, sign-ins at every hour are normal.
+    D: Signatures catch known attack tools, but these tools are the ones staff use every day, so a signature would either fire
+      constantly on normal work or be tuned out.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-10-31-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious
