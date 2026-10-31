@@ -5,7 +5,7 @@ stem: A company promises staff that its engagement survey is anonymous. HR now u
   comments for each team, and some team summaries quote distinctive phrases. Several teams have three or four members.
   Which control BEST keeps the promise?
 options:
-  A: Remove names and job titles from comments before summarising
+  A: Strip names, job titles and direct quotes from comments before summarising
   B: Limit access to the team summaries to the HR leadership team
   C: Summarise only groups above a minimum size, without quotes
   D: Tell staff in the survey invitation that AI summarises comments
@@ -13,10 +13,11 @@ answer: C
 explanation:
   why_correct: In a team of three, a quoted phrase or a summary of a few comments can point straight at its author, even
     with names removed. Reporting only for groups large enough to hide individuals, and paraphrasing rather than quoting,
-    keeps what the summaries reveal in line with the anonymity promise.
+    greatly lowers the chance that a summary points to one person. Distinctive facts can still identify someone, so
+    the summaries should also leave those out.
   why_not:
-    A: Removing names and titles is a sound first step, but writing style and details still identify authors in a very
-      small team.
+    A: Stripping identifiers and quotes removes the most obvious pointers, but a summary of three or four people's comments
+      still carries details that let colleagues tell who said what.
     B: Narrower access reduces who sees the summaries, but HR leaders can still recognise individuals, which the promise
       rules out.
     D: Telling staff about the AI tool improves transparency, but it does not stop comments being traced to their authors.

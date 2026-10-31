@@ -1,6 +1,6 @@
 id: aaism-d1-1.4-0022
 subdomain: '1.4'
-difficulty: hard
+difficulty: medium
 stem: Every AI team at a bank deploys on one central ML platform run by a platform team. Security reviews of new AI systems
   take six weeks, and about half of each review covers the platform's access, logging and encryption, which teams describe
   differently and sometimes wrongly. What would MOST shorten reviews without lowering their quality?

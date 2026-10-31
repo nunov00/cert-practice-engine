@@ -16,8 +16,8 @@ explanation:
     attacker never needs to be in the house.
   why_not:
     A: Extraction would copy the speech model, a loss of intellectual property, but it does not open anyone's door.
-    B: Membership inference is a privacy risk for training recordings, but it needs detailed outputs and leads to no
-      physical harm here.
+    B: Membership inference is a real privacy risk for the people in the training recordings, but it is indirect and
+      leads to no physical harm here, while an unauthenticated unlock command opens the door at once.
     D: Poisoning through user corrections needs a path from those corrections into training and slowly shifts accuracy.
       It is far less direct than an outside audio source issuing the unlock command.
 status: published

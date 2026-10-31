@@ -1,9 +1,9 @@
 id: aaism-d2-2.3-0036
 subdomain: '2.3'
-difficulty: hard
+difficulty: medium
 stem: A law firm chose an AI document-review service because the firm holds the keys to its uploaded files and can
   revoke them to cut off the vendor at once in an incident. To speed up review, the service also builds a search index
-  and a summary of each file in its own storage. What is the GREATEST limitation of this arrangement?
+  and a summary of each file in its own storage, encrypted under the vendor's keys. What is the GREATEST limitation of this arrangement?
 options:
   A: The service reads each file in plain form while processing it
   B: The firm's key service becomes a dependency for each review
@@ -12,8 +12,8 @@ options:
 answer: C
 explanation:
   why_correct: The firm chose the service for its kill switch. The keys cover the uploaded files, but the index and
-    summaries are built from those files, carry much of their content and sit in the vendor's storage outside the firm's
-    keys. Revoking the keys leaves those copies readable, so the switch does not cut the vendor off. The firm should require
+    summaries are built from those files, carry much of their content and sit in the vendor's storage under the vendor's
+    own keys, not the firm's. Revoking the keys leaves those copies readable, so the switch does not cut the vendor off. The firm should require
     derived data under its keys too, or its deletion on revocation.
   why_not:
     A: Any hosted service has to decrypt data to work on it, which the firm accepted when it chose one. It does not stop

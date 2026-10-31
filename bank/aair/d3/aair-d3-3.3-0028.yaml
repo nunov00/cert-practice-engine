@@ -13,12 +13,14 @@ answer: D
 explanation:
   why_correct: With fewer than one error per thousand releases, analysts rarely meet a real error, so their normal work
     cannot show whether they would catch one. Adding test releases with known errors to their queue, without saying which,
-    measures how often the check catches an error, which is what the control exists to do.
+    measures how often the check catches an error, which is what the control exists to do, at a small testing cost. The
+    test releases are built so that they can never pay out, even if an analyst confirms one.
   why_not:
     A: Comparing confirm rates with the model's error rate is a useful sign of rubber-stamping when errors are common. At
       under one in a thousand, a confirm rate near 100% is what an alert analyst and an inattentive one would both produce.
-    B: Re-performing a sample is a standard test of operating effectiveness, but a random sample would almost never contain
-      a real error, so it cannot show whether analysts catch them.
+    B: Re-performing a sample is a standard test of operating effectiveness, but at under one error in a thousand a sample
+      of practical size holds few or no real errors; finding them would take thousands of re-reviews, and still says little
+      about how often analysts catch one.
     C: Time per case shows effort and can hint at rubber-stamping, but an analyst can spend the set time and still miss
       the error. It does not measure detection.
 status: published

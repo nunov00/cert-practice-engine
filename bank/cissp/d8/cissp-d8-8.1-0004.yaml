@@ -7,13 +7,14 @@ stem: An insurer's web platform reaches production through a pipeline that takes
 options:
   A: Remove manual access to production so changes go only through the full pipeline
   B: Alert on any difference between production and the last released build
-  C: Add an emergency pipeline path that deploys from source and tests afterwards
+  C: Add an emergency pipeline path from the release branch with fewer tests
   D: Require each manual patch to be added to source within five working days
 answer: C
 explanation:
   why_correct: Hand patches never reach source control, so the next build from source does not contain them. An emergency path
-    that starts from a commit puts the fix in source before it is deployed, so every later release carries it, and running the
-    long suite afterwards keeps incident fixes fast.
+    that starts from a commit on the branch routine releases are built from puts the fix in that source before it is deployed,
+    so every later release carries it. The path keeps the essential pre-deployment checks and runs the full regression suite
+    after deployment, which keeps incident fixes fast.
   why_not:
     A: Forcing every change through the pipeline keeps source and production in step, which is the normal rule, but a six-hour
       pipeline is too slow for fixes made during an incident.

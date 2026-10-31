@@ -6,14 +6,15 @@ stem: A support model fine-tuned on past tickets reproduces, word for word, an i
   text. What BEST prevents this in the next fine-tuning run?
 options:
   A: Train with differential privacy at a per-ticket privacy budget
-  B: Remove repeated passages from the tickets before training
+  B: Remove passages repeated across many tickets before training
   C: Redact text that a personal data scanner flags in each ticket
   D: Cut the number of training passes over the ticket data
 answer: B
 explanation:
   why_correct: Models memorise most readily what they see many times. The note appears in several hundred tickets, while
-    other ticket text, seen once, was not reproduced. Removing repeated passages before training takes away the repetition
-    that made the note memorable, along with the note itself.
+    other ticket text, seen once, was not reproduced. Removing every occurrence of passages repeated across many tickets
+    before training takes the note out of the training data and with it the repetition that made it memorable. Ordinary
+    deduplication that keeps one copy would only reduce the risk.
   why_not:
     A: Differential privacy limits what any one ticket can teach the model, which protects text found in a single ticket.
       Text repeated across hundreds of tickets is far outside that per-ticket bound and can still be learned.

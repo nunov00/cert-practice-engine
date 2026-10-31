@@ -8,12 +8,13 @@ options:
   A: Use the note-taker in internal meetings only, not client meetings
   B: Keep client transcripts only for the period that the records schedule sets
   C: Get a manager's approval before the note-taker joins a client meeting
-  D: Tell participants at the start and record only if none of them objects
+  D: Ask participants at the start and record only if each of them consents
 answer: D
 explanation:
   why_correct: The gap is that participants do not know they are being recorded, which some clients' laws require them
-    to agree to. Announcing the note-taker and recording only with participants' agreement meets that duty and keeps the
-    tool in use for client work.
+    to consent to. Asking at the start and recording only once every participant has given informed consent, leaving the
+    meeting unrecorded otherwise, meets that duty and keeps the tool in use for client work. Silence after an announcement
+    would not be enough where the law asks for consent.
   why_not:
     A: Barring client meetings removes the problem, but it also gives up most of the tool's value when a notice and
       consent step would make its use lawful.

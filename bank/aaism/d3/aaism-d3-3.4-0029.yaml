@@ -12,8 +12,9 @@ options:
 answer: A
 explanation:
   why_correct: The harm starts when someone clones a voice that is not theirs. Requiring the person whose voice is being
-    copied to speak a fresh consent phrase, checked against the sample, means a clip taken from social media is not enough,
-    so the clone is never made.
+    copied to speak a fresh consent phrase, checked against the sample, means a clip taken from social media is not enough on
+    its own, which stops the casual cloning in these reports. The check needs liveness and capture-integrity controls,
+    since synthetic or injected audio could still fool it, so some spoofing risk remains.
   why_not:
     B: Watermarks help platforms and investigators recognise synthetic audio, but relatives listening to a voice message
       have no detector, so the scam works the same.
