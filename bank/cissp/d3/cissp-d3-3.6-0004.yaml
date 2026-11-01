@@ -1,0 +1,30 @@
+id: cissp-d3-3.6-0004
+subdomain: '3.6'
+difficulty: hard
+stem: A utility will send firmware updates to two million smart meters by broadcasting each image once over a one-way radio
+  network. Each meter must reject any image the utility did not issue. The meters have no tamper-resistant storage, and researchers
+  have already extracted stored keys from a captured meter. Which design BEST fits?
+options:
+  A: An HMAC over each image, checked with one fleet key stored in each meter
+  B: An HMAC over each image per meter, checked with a key unique to that meter
+  C: AES-256 encryption of each image under a fleet key stored in each meter
+  D: A digital signature over each image, checked with a public key in each meter
+answer: D
+explanation:
+  why_correct: With a signature, the meters hold only the utility's public key, which gives an attacker nothing useful when
+    extracted; the private key stays with the utility, ideally in a hardware security module. One signed image also suits
+    a single broadcast to the whole fleet.
+  why_not:
+    A: A fleet-wide HMAC is light enough for constrained devices, but the same key verifies and creates tags. Extracting it
+      from one captured meter lets an attacker forge updates that every meter accepts.
+    B: Per-meter keys limit a stolen key to one meter, but each meter would need its own tag, and a single broadcast of one
+      image cannot carry two million separate tags in practice.
+    C: Encryption gives confidentiality, not proof of origin, and the fleet key extracted from one meter would let an attacker
+      encrypt an image of their own that every meter decrypts.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-cissp
+  check_verdict: pending

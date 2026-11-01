@@ -5,19 +5,19 @@ stem: A medical imaging company's file-parsing library crashed when a hospital s
   fixed that bug and wants to find other malformed files that could crash the parser or corrupt memory before the next
   release. Which testing approach BEST fits?
 options:
-  A: Static analysis of the parser's source code on each commit
-  B: Coverage-guided fuzzing of the parser
-  C: Unit tests for each field defined in the file format specification
-  D: Builds with memory sanitisers running the existing regression file corpus
+  A: Taint-tracking static analysis from file input to memory writes
+  B: Coverage-guided fuzzing seeded with the regression file corpus
+  C: Property-based tests generating files valid under the format grammar
+  D: Memory-sanitiser builds running the existing regression file corpus
 answer: B
 explanation:
-  why_correct: The goal is to find unknown inputs that break the parser. Coverage-guided fuzzing feeds it large numbers of
-    mutated files, steering towards new code paths, and reports the inputs that crash it or corrupt memory.
+  why_correct: The goal is to find unknown inputs that break the parser. Coverage-guided fuzzing, seeded with known
+    files, feeds it large numbers of mutated files, steering towards new code paths, and reports the inputs that crash it or corrupt memory.
   why_not:
-    A: Static analysis can flag risky code patterns, but it does not run the parser on real inputs and misses many
-      input-dependent memory faults.
-    C: Unit tests written from the specification check the cases the team thought of, which is the gap that let the first
-      crash through.
+    A: Taint tracking can flag paths where file data reaches memory writes unchecked, but it does not run the parser, reports
+      many paths that cannot be reached, and misses faults that depend on the exact input.
+    C: Property-based tests generate many inputs automatically, but files that are valid under the format grammar are not the
+      malformed files the team needs, and the crash came from a corrupted one.
     D: Sanitisers make memory corruption visible when it happens, but running them on the existing corpus tests only inputs
       the team already has, not the unknown malformed files it wants to find.
 status: draft
@@ -26,6 +26,5 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-cissp
-  check_verdict: pass
-  options_only: obvious
+  check_verdict: pending
   checked_by: 2026-10-27-daily-cissp-check
