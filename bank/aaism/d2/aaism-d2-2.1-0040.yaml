@@ -1,0 +1,32 @@
+id: aaism-d2-2.1-0040
+subdomain: '2.1'
+difficulty: hard
+stem: A firm will roll out an assistant, on a model hosted in its own cloud tenant, that searches all its file shares and
+  returns only files the user can already open, so the assessment rates data exposure risk as low. Teams have set permissions
+  on their own shares for fifteen years, with no central review. The assistant answers questions and has no tools. What is
+  the GREATEST weakness of the rating?
+options:
+  A: It assumes current file permissions match each user's need to know
+  B: It does not cover prompt injection through documents in the shares
+  C: It leaves out wrong answers drawn from outdated files in the shares
+  D: It does not consider the model host retaining prompts and files
+answer: A
+explanation:
+  why_correct: Returning only what users can open is safe only if the permissions are right. Permissions set team by team
+    over fifteen years, never reviewed centrally, are likely far broader than intended, but until now few people stumbled
+    on such files. An assistant that searches everything makes them easy to find, so the likelihood of exposure rises sharply
+    and the low rating rests on an unchecked assumption.
+  why_not:
+    B: Injection through documents is a real risk for retrieval systems, but this assistant has no tools, so a planted instruction
+      can at most distort an answer to the person asking, a limited impact next to wide exposure of sensitive files.
+    C: Outdated files can produce wrong answers, a quality risk worth managing, but the rating in question is about data exposure,
+      which stale content does not change.
+    D: Retention by a model host matters for external services, but the model runs in the firm's own cloud tenant, so prompts
+      and files stay under its control.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aaism
+  check_verdict: pending

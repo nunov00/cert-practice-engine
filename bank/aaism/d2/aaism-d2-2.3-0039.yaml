@@ -1,0 +1,30 @@
+id: aaism-d2-2.3-0039
+subdomain: '2.3'
+difficulty: hard
+stem: Staff at a consultancy keep connecting third-party AI note and summary apps to their work cloud drives, granting each
+  read access to their files on the sign-in consent screen. Dozens of new apps appear each month, and the vendor risk team
+  can assess about four a month. Which control BEST addresses this?
+options:
+  A: Block each app's sign-in once it is discovered in sign-in logs
+  B: Run vendor due diligence on each newly discovered app
+  C: Remind staff in annual training to use approved AI apps
+  D: Require admin approval before an app gets access to files
+answer: D
+explanation:
+  why_correct: Files are exposed the moment a member of staff consents, long before anyone can review the app. Requiring admin
+    approval for apps that request file access moves the decision ahead of access, so the team's limited capacity decides
+    which apps get data, and the requests show which apps are worth assessing first.
+  why_not:
+    A: Blocking a discovered app stops further use, but by the time it shows up in the logs it has already read staff files,
+      and new apps keep arriving.
+    B: Due diligence is the right way to decide on a vendor, but with dozens of new apps a month and capacity for about four,
+      most would keep reading files while they wait.
+    C: Training raises awareness, but the consent screen still lets anyone grant access in one click, so protection depends
+      on each person choosing correctly each time.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aaism
+  check_verdict: pending
