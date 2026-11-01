@@ -1,0 +1,32 @@
+id: cissp-d1-1.11-0003
+subdomain: '1.11'
+difficulty: hard
+stem: A hospital's surgeons want a theatre-scheduling SaaS from a 20-person start-up. It is the only product that works with
+  the hospital's theatre system, and it will hold patient names and procedures. The start-up has no independent assurance
+  report and says that getting any such report would take about a year. The service is due to go live in three months. What
+  should the hospital do?
+options:
+  A: Require a SOC 2 Type I report on the start-up's controls before go-live
+  B: Commission a penetration test of the service and go live once findings are fixed
+  C: Put the software and data in escrow and add a right to audit the start-up
+  D: Assess the start-up against the hospital's requirements and contract fixes by set dates
+answer: D
+explanation:
+  why_correct: With no report available in time, the hospital has to gather its own evidence. A direct assessment against
+    its requirements, covering access, data handling, backups and incident response, shows where the start-up stands, and
+    contract terms with dated fixes turn the gaps into obligations the hospital can track before and after go-live.
+  why_not:
+    A: A Type I report is quicker than a Type II and is a common ask of small suppliers, but the start-up says any independent
+      report would take about a year, so it cannot arrive before go-live.
+    B: A penetration test gives real evidence about the application, but it says nothing about how the start-up runs its staff
+      access, backups, vetting or incident handling, which matter as much for patient data.
+    C: Escrow protects the hospital if the start-up fails, and a right to audit enables checks later, but neither gives any
+      assurance about the start-up's security before patient data goes in.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-cissp
+  check_verdict: pending
+  options_only: obvious

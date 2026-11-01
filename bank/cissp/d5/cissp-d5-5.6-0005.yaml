@@ -1,0 +1,32 @@
+id: cissp-d5-5.6-0005
+subdomain: '5.6'
+difficulty: hard
+stem: A company's intranet reporting site uses Kerberos and queries the reporting database as each signed-in user, whose
+  row permissions and audit trail in the database work per user. Testers who compromised the web server found it trusted
+  for delegation to any service, and used users' cached tickets to reach file servers as those users. Which change BEST fixes
+  this?
+options:
+  A: Mark privileged accounts as sensitive so that they cannot be delegated
+  B: Remove delegation and have the site query the database as a service account
+  C: Limit the site's delegation to the reporting database service alone
+  D: Firewall the web server so that it can reach only the reporting database
+answer: C
+explanation:
+  why_correct: Constrained delegation lets the web server act as a user only towards the services named, here the reporting
+    database. Per-user queries keep working, while a compromised server can no longer present users' identities to file servers
+    or any other service.
+  why_not:
+    A: Marking privileged accounts as sensitive is good practice and protects administrators, but every other user's identity
+      could still be delegated to any service from the compromised server.
+    B: A service account removes delegation entirely, a common fix when the back end does not need the user's identity, but
+      here the database's row permissions and audit trail depend on it.
+    D: Filtering the server's traffic blocks the path the testers used, but tickets taken from the server can be used from
+      another machine, so the unrestricted delegation remains exploitable.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

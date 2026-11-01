@@ -1,25 +1,27 @@
 id: cissp-d2-2.4-0003
 subdomain: '2.4'
-difficulty: hard
-stem: A fitness app must, by law, refuse accounts to children under 16. The product team plans to collect each user's date
-  of birth at sign-up and keep it in the profile. No other feature of the app uses age. Which approach BEST fits the data
-  lifecycle?
+difficulty: medium
+stem: A fitness app must, by law, refuse accounts to children under 16, and the law accepts the date of birth that a user
+  enters. The product team plans to collect each user's date of birth at sign-up and keep it in the profile. No other feature
+  of the app uses age. Which approach BEST fits the data lifecycle?
 options:
   A: Store the date of birth encrypted, with the key held apart from the profiles
-  B: Collect only the birth year, and refuse sign-up when it is too recent
-  C: Check the full date at sign-up, then keep a flag that the user is 16 or over
-  D: Store a salted hash of the date of birth in place of the date itself
+  B: Send users to an ID-document age-check service and keep only its pass result
+  C: Check the entered date at sign-up, then keep a flag that the user is 16 or over
+  D: Collect only the birth year, and refuse sign-up when it is too recent
 answer: C
 explanation:
-  why_correct: The only purpose for the date of birth is the check at sign-up. Using the full date for that check and then
-    keeping just its result meets the legal duty while the app holds no birth dates to protect, lose or answer for later.
+  why_correct: The date of birth serves one purpose, the check at sign-up, and the law accepts the date the user enters. Using
+    that date for the check and keeping just the result meets the legal duty while the app collects nothing extra and holds
+    no birth dates to protect, lose or answer for later.
   why_not:
-    A: Encryption protects the stored dates, but the app keeps personal data that no feature needs, which minimisation rules
-      out when the purpose is already met.
-    B: A birth year is less data, but it cannot show whether a user born in the borderline year has turned 16 yet, so the legal
+    A: Encryption protects the stored dates, but the app would keep personal data that no feature needs once the check is
+      done, which minimisation rules out.
+    B: An age-check service also leaves no birth date in the app, and it suits laws that demand verified age. Here the law accepts
+      the user's own entry, so sending ID documents to a new third party collects far more personal data than the purpose
+      needs.
+    D: A birth year is less data, but it cannot show whether a user born in the borderline year has turned 16 yet, so the legal
       check cannot be done reliably.
-    D: Hashing looks like it removes the date, but there are only a few tens of thousands of plausible birth dates, so each
-      hash can be reversed by trying them all, and the stored value still serves no purpose.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -27,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

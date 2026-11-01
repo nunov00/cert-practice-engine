@@ -1,0 +1,31 @@
+id: cissp-d6-6.1-0006
+subdomain: '6.1'
+difficulty: hard
+stem: A bank's internal audit tests privileged-access approvals once a year by sampling 25 of about 40,000 grants. The regulator
+  later found two grants made without approval that the sample had missed, and wants such exceptions found within the year
+  they happen. Grants and approvals are recorded in two separate systems. Which change to the test strategy BEST meets this?
+options:
+  A: Raise the yearly sample to a statistically sized one of about 400 grants
+  B: Sample 25 grants each quarter rather than once a year
+  C: Match each grant to its approval record by script each month, following up gaps
+  D: Have system owners attest each quarter that grants followed the approval policy
+answer: C
+explanation:
+  why_correct: Exceptions as rare as two in 40,000 are unlikely to appear in any practical sample. Testing the whole population
+    by matching each grant to its approval record finds every unapproved grant, and a monthly run reports them well within
+    the year.
+  why_not:
+    A: A statistically sized sample supports a conclusion about the overall error rate, but with exceptions this rare, 400 grants
+      would most likely contain none of them.
+    B: Quarterly sampling spreads the testing through the year, but 100 grants in total is still far too few to catch exceptions
+      this rare.
+    D: Owner attestation gives quick coverage of every system, but it is the owners' own statement, not independent testing,
+      and an owner who missed an unapproved grant would attest anyway.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-cissp
+  check_verdict: pending
+  options_only: obvious

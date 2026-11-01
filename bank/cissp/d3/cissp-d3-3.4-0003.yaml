@@ -1,0 +1,31 @@
+id: cissp-d3-3.4-0003
+subdomain: '3.4'
+difficulty: medium
+stem: A bank wants to run its fraud models in a public cloud on transaction data that a partner bank supplies. The partner
+  requires that neither the cloud operator nor the bank's own administrators can read its data while it is being processed.
+  The models must score several million transactions an hour. Which capability BEST meets this?
+options:
+  A: Hardware-based trusted execution environments, with attestation checked by the partner
+  B: Encryption at rest and in transit, with keys that the partner holds and controls
+  C: Fully homomorphic encryption, so that the models compute on encrypted data
+  D: Dedicated hosts that run only the bank's virtual machines, with no other tenants
+answer: A
+explanation:
+  why_correct: A trusted execution environment keeps data encrypted in memory and isolated from the host operating system,
+    the hypervisor and administrators, so it stays protected while in use. Attestation lets the partner verify the code running
+    inside before releasing keys to it, and the processing runs at close to normal speed.
+  why_not:
+    B: Partner-held keys protect the data in storage and on the network, but the data must be decrypted in memory to be scored,
+      where administrators of the platform could read it.
+    C: Homomorphic encryption protects data in use without trusting the hardware, but it is still orders of magnitude slower
+      than normal processing, far too slow for several million transactions an hour.
+    D: Dedicated hosts remove other tenants, but the cloud operator still runs the hosts and the bank's administrators still
+      control the machines, so either could read the data in memory.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

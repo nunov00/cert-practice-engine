@@ -1,26 +1,26 @@
 id: cissp-d7-7.9-0002
 subdomain: '7.9'
 difficulty: hard
-stem: At a hosting company, 40% of last quarter's changes were raised as emergency changes, which skip the weekly change board
-  and are reviewed afterwards. Most were certificate renewals and patch roll-outs that follow the same tested steps each time,
-  and teams said waiting up to a week for the board was not workable. Which change BEST addresses this?
+stem: At a hosting company, 40% of last quarter's changes were raised as emergencies, which skip the weekly change board and
+  are reviewed afterwards. Most were certificate renewals and patch roll-outs that come up through the month, often at a
+  day's notice. Each kind has been done hundreds of times, with no incident in two years. Which change BEST addresses this?
 options:
-  A: Require the CISO's approval before a change can be classed as an emergency
-  B: Hold the change board daily so that routine work is approved within a day
-  C: Pre-approve the repeatable renewals and roll-outs as standard changes
-  D: Review each emergency change at the next board and report misuse to managers
+  A: Let the change manager approve low-risk changes between board meetings
+  B: Add a short daily board meeting to approve low-risk changes
+  C: Pre-approve renewals and roll-outs as standard changes with set procedures
+  D: Have teams forecast each month's renewals and roll-outs for the weekly board
 answer: C
 explanation:
-  why_correct: The emergency route is being used for low-risk work that repeats the same tested steps. Assessing those change
-    types once and pre-approving them as standard changes lets teams do them promptly under a known procedure, frees the board
-    for changes that need judgment, and leaves the emergency route for real emergencies.
+  why_correct: These changes recur, come at short notice and have a long safe record. Assessing each kind once and pre-approving
+    it as a standard change, done to a set procedure, lets teams act at a day's notice without a fresh approval, keeps the
+    board in control of what qualifies, and leaves the emergency route for real emergencies.
   why_not:
-    A: A stricter gate on emergencies would cut the misuse, but the renewals and roll-outs would then wait up to a week for
-      the board, the delay that drove teams to the emergency route.
-    B: A daily board shortens the wait, but it spends board time approving identical, low-risk changes one by one, which adds
-      little assurance for the effort.
-    D: Changes are already reviewed after the fact. Reporting misuse addresses the symptom, while routine work still has no
-      workable route other than the emergency one.
+    A: Delegated approval suits low-risk changes that vary from one to the next. Here the same kinds recur hundreds of times,
+      so approving each one adds a queue behind one person without adding any assessment the record has not already given.
+    B: A daily board shortens the wait, but it spends senior time approving the same kinds of change one at a time, and a
+      day's notice can still miss the meeting.
+    D: Forecasting suits planned work, but many renewals and roll-outs arise at a day's notice, so a monthly forecast would
+      miss them and they would still go through as emergencies.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
   check_verdict: pending
+  options_only: obvious

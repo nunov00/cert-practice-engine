@@ -2,27 +2,28 @@ id: cissp-d1-1.6-0003
 subdomain: '1.6'
 difficulty: hard
 stem: A global company's password standard requires rotation every 90 days. The security team wants to drop rotation, in
-  line with current guidance, and rely on MFA and breached-password checks instead. One country's banking regulator requires
-  the company's bank subsidiary there to rotate passwords periodically, under a rule the regulator has no plans to change.
-  How should the company handle this in its standards?
+  line with current guidance, and rely on MFA and breached-password checks instead. In one of its 30 countries, a standing
+  banking rule requires the local bank subsidiary to rotate passwords on payment-system accounts at least every 180 days.
+  How should the company's standards handle this?
 options:
-  A: Keep 90-day rotation in the global standard so the rule stays uniform
-  B: Drop rotation globally and issue a local supplement for the bank subsidiary
+  A: Set rotation at 180 days in the global standard so one rule covers each unit
+  B: Drop rotation globally and add a local supplement for the bank subsidiary
   C: Drop rotation globally and grant the bank subsidiary a yearly exception
-  D: Move rotation into a guideline that each subsidiary applies as it sees fit
+  D: Drop rotation globally and rely on the policy's clause to obey local law
 answer: B
 explanation:
-  why_correct: The regulator's rule is a lasting legal requirement for one entity, not a temporary gap. A local supplement
-    to the standard, approved through the same governance, keeps the global baseline in line with current practice and makes
-    the stricter rule mandatory and auditable where the law requires it.
+  why_correct: The banking rule is a lasting, specific legal requirement for one entity. A local supplement to the standard,
+    approved through the same governance, keeps the global baseline in line with current practice and states the interval
+    and the accounts in scope, so the subsidiary's systems can be configured and audited against it.
   why_not:
-    A: A single rule is simpler to run, but it would hold every other unit to a practice the company has decided is weaker,
-      to satisfy one regulator in one country.
+    A: A 180-day rule would satisfy the regulator with one standard for the whole group, but it would hold the other 29 countries
+      to a practice the company has decided is weaker, to meet one country's rule.
     C: Exceptions suit a unit that cannot yet meet the standard and has a plan to close the gap. Here the subsidiary must follow
-      a different rule for the foreseeable future, so a yearly exception records a legal obligation as an accepted risk and
-      can lapse at renewal.
-    D: Guidelines are discretionary. Rotation is a legal obligation for the bank subsidiary, so it has to be a mandatory requirement
-      there, not a recommendation.
+      a stricter rule for as long as the banking rule stands, so a yearly exception records a legal duty as an accepted risk
+      and can lapse at renewal.
+    D: A general duty to obey local law belongs in the policy, but it leaves administrators to find and read the banking rule
+      themselves. The interval and the accounts it covers are specific enough to be set out as a requirement that systems
+      and audits can be checked against.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -30,3 +31,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
   check_verdict: pending
+  options_only: obvious

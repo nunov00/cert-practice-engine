@@ -1,27 +1,26 @@
 id: cissp-d7-7.8-0002
 subdomain: '7.8'
 difficulty: hard
-stem: A factory's line-control PCs run a desktop operating system, and the line vendor's support lapses if an OS patch is
-  installed before the vendor certifies it, which takes about six weeks. A wormable flaw in the OS's remote desktop service
-  is being exploited widely. Engineers maintain the PCs at their consoles, and the PCs receive each shift's orders from the
-  plant's office systems. What should the team do while certification is pending?
+stem: A company patches 8,000 laptops across 12 hardware models each month, and policy requires critical patches within 14
+  days. Last month a routine operating system update left 300 laptops of one model unable to boot, and fixing them took a
+  week. Management wants to avoid a repeat without missing the patch deadline. How should the patching process change?
 options:
-  A: Install the OS patch now and ask the vendor to restore support afterwards
-  B: Wait for certification and watch the line network for exploit traffic
-  C: Disconnect the line network from the office network until certification
-  D: Block the remote desktop port to the PCs at the line network's firewall
+  A: Test each month's patches in a lab on the standard image before release
+  B: Hold patches for 30 days so that problems found elsewhere can be avoided
+  C: Remove the affected model from automatic patching and patch it by hand
+  D: Release patches in rings, starting with a sample of each laptop model
 answer: D
 explanation:
-  why_correct: The flaw is reachable only through the remote desktop service, which the PCs do not need. Blocking that port
-    at the network removes the exposure without touching the certified PCs or stopping production, and the vendor-certified
-    patch can follow in the normal way.
+  why_correct: The failure came from one update meeting one hardware model. Releasing first to a small group that includes
+    each model shows such a clash on a few machines, where it can be stopped, and the remaining rings still finish within
+    the 14-day deadline.
   why_not:
-    A: Patching an exploited flaw quickly is usually right, but here it voids support for the line, and a safe compensating
-      control is available until the certified patch arrives.
-    B: Waiting for certification respects the support terms, but watching for exploit traffic only detects a worm once it is
-      spreading, for six weeks of exposure.
-    C: Isolation would block the worm, but the PCs need each shift's orders from the office systems, so cutting the link stops
-      production when a narrower block would do.
+    A: Lab testing on the standard image catches problems with the build and its applications, but a clash with one model's
+      hardware or firmware shows only on that model, which a lab image does not reproduce.
+    B: Deferring patches lets other organisations find bad ones first, a common practice where deadlines allow, but 30 days
+      breaks the 14-day rule for critical patches.
+    C: Patching the failed model by hand guards against a repeat on that model, but the next bad update may hit another model,
+      and manual patching slows that model's critical fixes.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -29,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
   check_verdict: pending
+  options_only: obvious

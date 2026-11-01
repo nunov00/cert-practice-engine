@@ -6,8 +6,8 @@ stem: A company's mobile app signs users in through OpenID Connect using the imp
   users' tokens. Which change BEST fixes this?
 options:
   A: Authorization code flow with PKCE
-  B: Authorization code flow with a client secret stored in the app
-  C: Implicit flow with a nonce checked in each ID token
+  B: Authorization code flow with pushed authorization requests
+  C: Authorization code flow with a signed (JARM) authorization response
   D: Authorization code flow with DPoP-bound access tokens
 answer: A
 explanation:
@@ -15,10 +15,10 @@ explanation:
     created by the genuine app for each sign-in. A malicious app that intercepts the redirect cannot exchange the code
     without the verifier.
   why_not:
-    B: A client secret authenticates a server-side client, but a secret shipped inside a mobile app can be extracted from
-      the app package by anyone, so a malicious app's author can redeem an intercepted code with it.
-    C: A nonce stops replay of an ID token into a different sign-in, but an app that intercepts the redirect still receives
-      usable tokens.
+    B: Pushed authorization requests send the request parameters straight to the server, so they cannot be read or altered
+      in the browser. The code still comes back in the redirect, and an app that intercepts it can redeem it.
+    C: A signed authorization response proves that the code came from the real server and was not altered, but an app that
+      intercepts the redirect receives that genuine, signed code and can redeem it.
     D: DPoP binds tokens to a key held by the client that redeems the code, which stops stolen tokens being replayed elsewhere.
       A malicious app that intercepts the code redeems it with its own key, so the tokens it gets are bound to that app.
 status: draft
@@ -28,4 +28,5 @@ provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-cissp
   check_verdict: pending
+  options_only: not_obvious
   checked_by: 2026-10-27-daily-cissp-check

@@ -1,0 +1,31 @@
+id: cissp-d7-7.4-0002
+subdomain: '7.4'
+difficulty: hard
+stem: A company's managed security provider must acknowledge alerts within 15 minutes, and it met that target 99% of the time
+  last year. Yet two intrusions ran for weeks, as analysts had closed their alerts as benign after a short look. The contract
+  is up for renewal. Which change to the service levels BEST addresses this?
+options:
+  A: A target for the time from confirming an incident to escalating it to the company
+  B: Monthly company review of sampled closed alerts, with credits for misclassified ones
+  C: A five-minute acknowledgement target for alerts rated high or critical
+  D: A yearly independent assurance report on the provider's monitoring controls
+answer: B
+explanation:
+  why_correct: The failure was in the quality of triage, which a speed target cannot see. Reviewing a sample of closed alerts
+    each month measures how often the provider gets the call wrong, and tying credits to misclassification gives it a reason
+    to look properly before closing.
+  why_not:
+    A: An escalation target is a sound service level, but it starts only once an incident is confirmed. These alerts were closed
+      as benign, so the clock never started.
+    C: A faster acknowledgement target tightens the measure the provider already meets, while the problem lay in what analysts
+      decided after acknowledging.
+    D: An assurance report shows that the provider's monitoring controls are designed and operating, but it does not test whether
+      individual alerts are judged correctly.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

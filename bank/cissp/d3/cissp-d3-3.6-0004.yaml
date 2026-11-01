@@ -1,26 +1,26 @@
 id: cissp-d3-3.6-0004
 subdomain: '3.6'
 difficulty: hard
-stem: A utility will send firmware updates to two million smart meters by broadcasting each image once over a one-way radio
-  network. Each meter must reject any image the utility did not issue. The meters have no tamper-resistant storage, and researchers
-  have already extracted stored keys from a captured meter. Which design BEST fits?
+stem: An insurer's customers sign policy contracts electronically. For 30 years after signing, the insurer must be able to
+  prove who signed each contract and that the signature was valid when it was made. Signing certificates last two years,
+  and the algorithms in use today are expected to weaken well within 30 years. Which approach BEST meets the need?
 options:
-  A: An HMAC over each image, checked with one fleet key stored in each meter
-  B: An HMAC over each image per meter, checked with a key unique to that meter
-  C: AES-256 encryption of each image under a fleet key stored in each meter
-  D: A digital signature over each image, checked with a public key in each meter
+  A: Sign with 4096-bit RSA keys under certificates valid for 30 years
+  B: Store each signer's certificate and its revocation status with the contract
+  C: Re-sign the contract archive with the insurer's current key at regular intervals
+  D: Add a trusted timestamp at signing and renew the archive's timestamps over time
 answer: D
 explanation:
-  why_correct: With a signature, the meters hold only the utility's public key, which gives an attacker nothing useful when
-    extracted; the private key stays with the utility, ideally in a hardware security module. One signed image also suits
-    a single broadcast to the whole fleet.
+  why_correct: A trusted timestamp proves the signature existed at a time when the certificate was valid and unrevoked. Renewing
+    timestamps over the archive with current algorithms, before the old ones weaken, carries that proof forward, so the original
+    signer's signature can still be relied on decades later.
   why_not:
-    A: A fleet-wide HMAC is light enough for constrained devices, but the same key verifies and creates tags. Extracting it
-      from one captured meter lets an attacker forge updates that every meter accepts.
-    B: Per-meter keys limit a stolen key to one meter, but each meter would need its own tag, and a single broadcast of one
-      image cannot carry two million separate tags in practice.
-    C: Encryption gives confidentiality, not proof of origin, and the fleet key extracted from one meter would let an attacker
-      encrypt an image of their own that every meter decrypts.
+    A: Longer keys delay the day the algorithm can be broken, but no key size is a safe bet for 30 years, and a certificate
+      that long-lived is a long-lived target that would need revoking if its key were exposed.
+    B: Keeping the certificate and its status is part of long-term validation, but without a trusted time there is no proof
+      the signature was made before the certificate expired or was revoked, and nothing protects it once the algorithm weakens.
+    C: Re-signing protects the archive's integrity with fresh algorithms, but the new signature is the insurer's, so it proves
+      what the insurer holds, not who signed each contract.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
   check_verdict: pending
+  options_only: obvious
