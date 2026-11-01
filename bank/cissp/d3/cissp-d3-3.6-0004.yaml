@@ -2,9 +2,9 @@ id: cissp-d3-3.6-0004
 subdomain: '3.6'
 difficulty: hard
 stem: A retailer wants to recognise when the same payment card is used again, to spot repeat customers and refund abuse. Refunds
-  go through its payment processor, which needs only the processor's own payment reference. The retailer must not keep
-  card numbers in any form that it, or a thief who steals its database, could turn back into the numbers. Which method BEST
-  fits?
+  go through its payment processor, which needs only the processor's own payment reference. Its policy forbids storing
+  card numbers in any decryptable form, and a thief who steals its database must not be able to recover them. Which method
+  BEST fits?
 options:
   A: AES-256 encryption of each card number, with the key held in an HSM
   B: A SHA-256 hash of each card number, stored in place of the number
@@ -16,8 +16,8 @@ explanation:
     can be matched, and without the secret key, which stays in the HSM, a thief cannot test candidate card numbers against
     the stolen values.
   why_not:
-    A: Encryption with an HSM-held key protects stolen data well, but anyone who can use the key can decrypt the numbers, so
-      the retailer still holds card numbers in a recoverable form, which the requirement rules out.
+    A: Encryption with an HSM-held key protects stolen data well, but the stored values can be decrypted by anyone who can
+      use the key, which is exactly the decryptable form the policy forbids.
     B: A plain hash allows matching, but card numbers come from a small, structured space, so a thief can hash every plausible
       number and recover the cards from the stolen database.
     C: A random salt per record defeats precomputed guessing, but the same card then hashes differently each time, so the retailer
