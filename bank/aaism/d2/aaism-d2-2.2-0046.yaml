@@ -1,26 +1,26 @@
 id: aaism-d2-2.2-0046
 subdomain: '2.2'
-difficulty: hard
-stem: A manufacturer's finance staff approve urgent supplier payments after a video call with the CFO. At a peer firm, attackers
-  used a live deepfake of the CFO on such a call, and both required approvers joined it and released the payment. The treasurer
-  wants a control that keeps working as deepfakes improve. Which control BEST fits?
+difficulty: medium
+stem: A company's email agent drafts and sends replies to supplier emails without review. A supplier set up its own AI agent,
+  and overnight the two exchanged thousands of short, polite replies, running up model costs and flooding the supplier's inbox.
+  Which control BEST prevents a repeat?
 options:
-  A: Deepfake detection on the company's video-conferencing platform
-  B: A call-back to the CFO on a number from the internal directory
-  C: Training for finance staff to spot flaws in synthetic video
-  D: A second finance approver for each urgent payment request
-answer: B
+  A: Token caps on each request the agent makes to the model
+  B: A spend alert when the agent's daily model costs spike
+  C: An injection classifier on inbound supplier emails
+  D: A cap on replies per email thread before staff review
+answer: D
 explanation:
-  why_correct: The attack works because the request and the proof of who is asking arrive on a channel the attacker set up.
-    A call-back on a number taken from the company's own directory reaches the real CFO through a channel the attacker does
-    not control, and it works however convincing the fake becomes.
+  why_correct: Each reply was harmless; the harm came from the loop itself, two automated senders answering each other without
+    end. Capping how many replies the agent sends in one thread before a person looks at it stops a loop with any counterpart,
+    another bot or an attacker deliberately provoking one, while normal correspondence stays automatic.
   why_not:
-    A: Detection tools catch some fakes, but they are in a race with generation tools, so their protection weakens as deepfakes
-      improve, which is what the treasurer wants to avoid.
-    C: Training helps against today's fakes, but the visible flaws it teaches are disappearing as tools improve, so it does
-      not meet the treasurer's requirement.
-    D: Dual approval is a sound payment control, but at the peer firm both approvers joined the faked call and were deceived
-      together. A second person watching the same video adds little.
+    A: Token caps limit what a single request can cost, which suits long prompts or outputs. These replies were short, so
+      each stayed within any sensible cap.
+    B: A spend alert tells someone that costs are rising, but overnight thousands of emails can go out before anyone acts,
+      and it does nothing about the flooding.
+    C: An injection classifier looks for hostile instructions. The supplier's agent sent ordinary polite emails, so the classifier
+      would have nothing to flag.
 status: draft
 outline_version: '2025-08-19'
 sample: false
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
   check_verdict: pending
+  options_only: not_obvious

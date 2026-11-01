@@ -11,15 +11,15 @@ options:
   D: Help shortlist and interview candidates for the role
 answer: B
 explanation:
-  why_correct: The gap after the specialist leaves lasts at least six months, longer than the consultancy can cover, and what
-    leaves with the specialist is knowledge of how the firm's reviews are done. Recording the methods and coaching two staff
-    keeps that knowledge in the firm, lets reviews continue through the gap, and gives the consultants and the eventual hire
-    something to work from.
+  why_correct: Even if hiring starts at the resignation, a replacement arrives about four months after the specialist leaves,
+    longer than the three months the consultancy can cover, and what leaves with the specialist is knowledge of how the firm's
+    reviews are done. Recording the methods and coaching two staff keeps that knowledge in the firm, lets reviews continue
+    through the gap, and gives the consultants and the eventual hire something to work from.
   why_not:
     A: Clearing the backlog helps for the next two months, but new reviews keep arriving after the specialist has left, with
       nothing left behind to handle them.
-    C: Briefing the consultants covers up to three months, but the gap lasts at least six, and what they learn leaves with
-      them.
+    C: Briefing the consultants covers up to three months, but the gap before a new hire arrives is about four, and what the
+      consultants learn leaves with them.
     D: Helping recruit is useful, but a six-month hiring process will not finish within eight weeks, and the new hire would
       still start without the specialist's knowledge.
 status: draft
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
   check_verdict: pending
+  options_only: obvious

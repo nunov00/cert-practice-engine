@@ -1,0 +1,28 @@
+id: aaism-d2-2.3-0041
+subdomain: '2.3'
+difficulty: hard
+stem: An HR team's AI writing service contract bars the vendor from training on customer inputs. The vendor's documentation
+  says that when a user rates a reply, the reply and its prompt join a dataset used to improve its models, under a tenant
+  setting that is on by default. HR prompts hold employee case details. What should the security manager do FIRST?
+options:
+  A: Ask the vendor to extend the no-training clause to rated content
+  B: Ask the vendor to delete the rated content collected so far
+  C: Tell HR staff not to rate replies that contain case details
+  D: Switch off the rating data setting in the HR team's tenant
+answer: D
+explanation:
+  why_correct: Rated prompts with case details are leaving for model improvement now, through a path the no-training clause
+    may not cover. The tenant setting is under the company's control and stops that flow at once. Closing the contract gap
+    and having what was already shared deleted should follow.
+  why_not:
+    A: Closing the gap in the contract matters, but negotiation takes time while each new rating keeps sending case details.
+    B: Deletion deals with what has already been shared, but new ratings would keep adding to it until the flow is stopped.
+    C: Guidance relies on each user judging every rating, and the setting would keep sharing whatever they do rate.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

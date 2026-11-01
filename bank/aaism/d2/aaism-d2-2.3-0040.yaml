@@ -1,26 +1,26 @@
 id: aaism-d2-2.3-0040
 subdomain: '2.3'
 difficulty: hard
-stem: An insurer's model-serving stack depends on a small open-source tokeniser library. Its long-time maintainer has handed
-  the project to a contributor with no track record, whose first release adds precompiled binary files. The insurer's pipeline
-  takes new versions automatically once a vulnerability scan passes. What should the security manager do FIRST?
+stem: A bank is assessing an AI summarisation vendor. The vendor's assurance report covers its application and staff but carves
+  out the cloud provider that hosts the models and stores customer prompts, listing controls it expects that provider to run.
+  What should the bank review NEXT?
 options:
-  A: Plan a move to a commercially supported tokeniser library
-  B: Scan the new release for known vulnerabilities before use
-  C: Pin the current version until the new release is reviewed
-  D: Ask the new maintainer to sign each release with a key
-answer: C
+  A: The hosting provider's own report, against the listed controls
+  B: The controls the report expects the bank itself to operate
+  C: A bridge letter from the vendor that covers the hosting controls
+  D: The vendor's plan to bring hosting into next year's report
+answer: A
 explanation:
-  why_correct: 'The risk is a takeover: an unknown party now controls what the insurer will install, and opaque binaries are
-    a common place to hide a payload. Pinning the known version stops the automatic update pulling the new release into production,
-    and gives time to review the change and decide whether the new maintainer can be trusted.'
+  why_correct: The carved-out provider runs the systems where the models sit and prompts are stored, and the vendor's report
+    does not test them; it only lists what the provider is expected to do. The provider's own report, checked for scope and
+    against those listed controls, is the evidence that they operate.
   why_not:
-    A: A supported library may be the right long-term answer, but a migration takes months, while the pipeline would take
-      the new release now.
-    B: A vulnerability scan looks for published flaws in known versions. A payload planted in a brand-new release has no published
-      entry, and the pipeline already runs this scan.
-    D: Signing proves a release came from whoever holds the key. The open question is whether the new maintainer, who would
-      hold that key, can be trusted, so a signature does not answer it.
+    B: The controls a report expects customers to run are a standard review item, and the bank must operate them, but they
+      cover the bank's own side, not the hosting where its prompts are stored.
+    C: A bridge letter covers the gap between a report's period end and today. It is the vendor's own statement, and the vendor
+      cannot vouch for controls it does not run.
+    D: Bringing the provider into the vendor's scope would help next year, but the bank needs evidence about the hosting before
+      it relies on the service now.
 status: draft
 outline_version: '2025-08-19'
 sample: false
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
   check_verdict: pending
+  options_only: not_obvious

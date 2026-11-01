@@ -1,28 +1,27 @@
 id: aaism-d2-2.1-0040
 subdomain: '2.1'
-difficulty: hard
-stem: A firm will roll out an assistant, on a model hosted in its own cloud tenant, that searches all its file shares and
-  returns only files the user can already open, so the assessment rates data exposure risk as low. Teams have set permissions
-  on their own shares for fifteen years, with no central review. The assistant answers questions and has no tools. What is
-  the GREATEST weakness of the rating?
+difficulty: medium
+stem: A firm will roll out an assistant that searches its file shares and shows each user only files they can already open,
+  so the risk assessment rates data exposure as low. The shares date back fifteen years, and each team has managed access
+  to its own folders throughout. What is the GREATEST weakness of this rating?
 options:
-  A: It assumes current file permissions match each user's need to know
-  B: It does not cover prompt injection through documents in the shares
-  C: It leaves out wrong answers drawn from outdated files in the shares
-  D: It does not consider the model host retaining prompts and files
-answer: A
+  A: It does not cover instructions planted in documents on the shares
+  B: It takes no account of the model provider storing prompts and files
+  C: It assumes current folder access matches each user's need to know
+  D: It does not limit how many files a single answer can draw on
+answer: C
 explanation:
-  why_correct: Returning only what users can open is safe only if the permissions are right. Permissions set team by team
-    over fifteen years, never reviewed centrally, are likely far broader than intended, but until now few people stumbled
-    on such files. An assistant that searches everything makes them easy to find, so the likelihood of exposure rises sharply
-    and the low rating rests on an unchecked assumption.
+  why_correct: Showing users only what they can open is safe only if that access is right. Access managed team by team for
+    fifteen years, with no central review, is likely far broader than intended, but until now few people stumbled on such
+    files. An assistant that searches everything makes them easy to find, so the likelihood of exposure rises sharply and
+    the low rating rests on an unchecked assumption.
   why_not:
-    B: Injection through documents is a real risk for retrieval systems, but this assistant has no tools, so a planted instruction
-      can at most distort an answer to the person asking, a limited impact next to wide exposure of sensitive files.
-    C: Outdated files can produce wrong answers, a quality risk worth managing, but the rating in question is about data exposure,
-      which stale content does not change.
-    D: Retention by a model host matters for external services, but the model runs in the firm's own cloud tenant, so prompts
-      and files stay under its control.
+    A: Planted instructions are a real risk for retrieval systems, but they distort answers rather than widen what each user
+      can reach. The rating's premise about access is the larger gap, given how the shares have been run.
+    B: Provider storage is worth confirming in due diligence for any hosted assistant, but it does not depend on the shares'
+      history, which is where this rating's premise is weakest.
+    D: Drawing on many files lets one answer combine more content, but each file it draws on is one the user can open, so
+      the size of the exposure still depends on whether that access is right.
 status: draft
 outline_version: '2025-08-19'
 sample: false
@@ -30,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
   check_verdict: pending
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aaism-d3-3.2-0026
+subdomain: '3.2'
+difficulty: hard
+stem: A news app's recommendation model updates itself continuously from users' clicks, so trending stories reach feeds within
+  minutes. Coordinated accounts pushed a fringe outlet's stories into many users' feeds within hours, before anyone noticed.
+  Which life cycle change BEST limits this?
+options:
+  A: Rate limits on clicks per account across the whole app
+  B: Hourly update batches that must pass an evaluation gate
+  C: Anomaly alerts on sudden shifts in clicks per outlet
+  D: Editorial review of the most recommended stories each day
+answer: B
+explanation:
+  why_correct: With continuous learning, each click changes the live model at once, so manipulation reaches users before any
+    check runs. Collecting clicks into hourly batches and releasing the updated model only after an automated evaluation,
+    for example against trusted engagement signals and limits on how far one outlet can rise, puts a gate between the data
+    and users while keeping feeds current within the hour.
+  why_not:
+    A: Per-account limits stop single accounts clicking in bulk, but a coordinated campaign spreads its clicks across many
+      accounts that each look normal.
+    C: Alerts on click shifts help spot campaigns, but the live model has already learned from the clicks by the time anyone
+      responds.
+    D: Daily editorial review catches what reached the top lists, but the campaign shaped feeds within hours, long before
+      the review.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

@@ -1,0 +1,31 @@
+id: aaism-d2-2.1-0041
+subdomain: '2.1'
+difficulty: medium
+stem: Red teamers got a bank's public chatbot to reveal another customer's balance in 2 of 1,000 attempts, so the risk team
+  rated likelihood as rare. Anyone can open an account online and chat with the bot without limit. What is the MAIN flaw in
+  this rating?
+options:
+  A: It rates a single attempt, not an attacker who keeps trying
+  B: It rests on red team techniques rather than real attackers'
+  C: It uses too few attempts to estimate so low a rate reliably
+  D: It ignores that the leak could reach any customer's balance
+answer: A
+explanation:
+  why_correct: Two in a thousand is the chance per attempt. An attacker who can chat without limit simply repeats the attack,
+    and at that rate a few hundred tries make success more likely than not. Likelihood should be judged for an attacker over
+    the attempts they can make, which puts this leak close to certain for anyone who tries.
+  why_not:
+    B: Real attackers may use other techniques, which adds uncertainty, but the measured rate already shows a working attack;
+      the error lies in how that rate was turned into a likelihood.
+    C: A thousand attempts gives only a rough estimate of a small rate, but even a precise per-attempt figure would mislead
+      when attempts are unlimited.
+    D: How many customers the leak can reach is part of impact, which should be rated too, but the rating in question is the
+      likelihood.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

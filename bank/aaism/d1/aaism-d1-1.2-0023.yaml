@@ -1,0 +1,31 @@
+id: aaism-d1-1.2-0023
+subdomain: '1.2'
+difficulty: medium
+stem: Clients' and suppliers' AI note-takers increasingly join a law firm's video calls, sending recordings and transcripts
+  to their own vendors. Most of these calls are hosted by the other party on its own platform, and lawyers often discuss privileged
+  matters on them. Which policy provision BEST addresses this?
+options:
+  A: Lawyers have external note-takers removed before privileged topics
+  B: Meeting settings block external bots from calls the firm hosts
+  C: Engagement letters set rules for clients' use of AI note-takers
+  D: Lawyers state on each call that the firm objects to being recorded
+answer: A
+explanation:
+  why_correct: The exposure is privileged material reaching outside vendors through another party's tool, on calls the firm
+    does not control. A rule that lawyers get the note-taker removed, or hold the privileged part back until it is, works
+    on any platform and at the point where the material would be shared.
+  why_not:
+    B: Blocking bots works on the firm's own platform, but most of these calls are hosted by the other party, where the firm's
+      settings do not apply.
+    C: Engagement terms can shape clients' practice over time, but they do not cover suppliers and leave each call relying
+      on the client remembering them.
+    D: An objection puts the firm's position on record, but the note-taker keeps recording and sends the transcript to its
+      vendor all the same.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious
