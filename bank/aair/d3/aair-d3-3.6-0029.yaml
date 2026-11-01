@@ -20,8 +20,8 @@ explanation:
       a fine-tuned replacement to validate.
     B: Prompts may need tuning on a new model, but that is routine adjustment, much smaller than losing the fine-tuned behaviour
       itself.
-    C: Changing vendor is one option, but the vendor offers a replacement base model, so a new vendor is not required, and
-      it would face the same missing examples.
+    C: Moving to another vendor may be slow, but it is one of several routes the insurer could plan for, and any new model
+      would still need the same examples to recreate the fine-tuned behaviour.
 status: draft
 outline_version: '2026-04-15'
 sample: false
