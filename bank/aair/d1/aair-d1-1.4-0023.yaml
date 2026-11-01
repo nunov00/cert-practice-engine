@@ -1,26 +1,26 @@
 id: aair-d1-1.4-0023
 subdomain: '1.4'
 difficulty: hard
-stem: A hospital's pathologists check the grades an AI tool suggests for tissue slides. All of them attended a workshop on
-  over-reliance on AI and can describe the problem accurately. Audits since then show they accept the tool's wrong grades
-  as often as before. Which training change is MOST likely to help?
+stem: An insurer's handlers settle routine claims from AI-drafted decisions, each linking to the policy clause it relies on.
+  Audits find wrong settlements that handlers approved, many after several minutes on the draft. Each team leader oversees
+  30 handlers, who each settle about 40 claims a day. Which procedure BEST addresses this?
 options:
-  A: Refresher workshops on over-reliance, with a short test at the end
-  B: Case studies of incidents where over-reliance on AI harmed patients
-  C: Practice on slides with planted wrong grades, with feedback on misses
-  D: An e-learning module on how the tool works and where it fails
-answer: C
+  A: Handlers open the linked clause and confirm it supports the decision
+  B: Team leaders approve each settlement before the claim is paid
+  C: Handlers spend a set minimum time on each draft before approving
+  D: Handlers rate each draft so the AI team can retrain on poor ones
+answer: A
 explanation:
-  why_correct: The pathologists already understand over-reliance, yet their behaviour has not changed, so the gap is habit
-    and skill rather than knowledge. Practice on realistic slides with planted wrong grades, and feedback on each one missed,
-    trains the act of challenging a suggestion under working conditions and shows each person their own miss rate.
+  why_correct: Time spent reading the draft did not stop the errors, so the step that is missing is a check against something
+    outside the draft. Opening the clause the draft relies on and confirming it supports the decision gives the handler an
+    independent reference on every claim, at the point of approval, and fits within the existing workload.
   why_not:
-    A: A refresher with a test would confirm what they know, but the audits show that knowing about over-reliance has not
-      changed how they review the tool's grades.
-    B: Case studies make the stakes vivid and suit staff who doubt the risk, but these pathologists already accept and can
-      explain it. More awareness does not build the habit of challenge.
-    D: Knowing how the tool works and fails is useful background, but it is more knowledge for people whose problem is not
-      a lack of knowledge.
+    B: Leader approval adds a second person, but each leader would face about 1,200 settlements a day, so approvals would
+      become a formality or a bottleneck.
+    C: A minimum time works where errors come from haste, but many of the wrong settlements were approved after several minutes
+      on the draft, so more time on the same text does not catch them.
+    D: Ratings help improve the model over time, but they do not stop a wrong settlement being paid, and handlers can only
+      rate down drafts they recognise as poor.
 status: draft
 outline_version: '2026-04-15'
 sample: false

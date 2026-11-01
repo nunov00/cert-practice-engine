@@ -1,26 +1,26 @@
 id: aair-d2-2.1-0023
 subdomain: '2.1'
-difficulty: hard
-stem: A lender is developing a gradient-boosted credit model. Testing shows that, within some narrow income bands, a higher
-  income gives a slightly worse score, although overall accuracy is high. The lender's credit policy requires that a higher
-  income can never worsen an applicant's score. What should the development team do?
+difficulty: medium
+stem: A hospital is designing a model to warn of patient deterioration on its wards. Shorter horizons are predicted more accurately.
+  Arranging the specialist response takes about four hours, and each ward can act on about five alerts per shift. Which prediction
+  target should the risk practitioner MOST support?
 options:
-  A: Group income into broad bands before it enters the model
-  B: Add training data from the income bands where scores dip
-  C: Give underwriters an explanation of each input's effect on the score
-  D: Constrain the model in training so higher income cannot lower a score
-answer: D
+  A: Deterioration within the next hour
+  B: Deterioration within the next six hours
+  C: Deterioration at any point within the next 48 hours
+  D: A once-daily risk score reviewed at the morning ward round
+answer: B
 explanation:
-  why_correct: The policy sets a guarantee, not a tendency. Tree-based models such as gradient boosting can be trained with
-    a monotonic constraint on chosen inputs, so the learned relationship with income can only rise or stay flat. That meets
-    the policy by construction, at little cost to accuracy, and the property can be tested before release.
+  why_correct: The target has to fit how the warning will be used. A six-hour horizon gives staff time to arrange the four-hour
+    specialist response, while staying short enough to keep accuracy high and limit alerts to the patients most likely to
+    need help soon.
   why_not:
-    A: Broad bands smooth out some small dips, but the score can still fall from one band to the next, and grouping throws
-      away information. It reduces the problem without guaranteeing what the policy requires.
-    B: Sparse data often causes such dips, and more data may shrink them, but nothing makes the learned pattern rise with
-      income in every band.
-    C: Explanations would let underwriters see the dips, but they leave the scores as they are, so applicants could still
-      be scored against the policy.
+    A: A one-hour horizon gives the most accurate predictions, but the warning would arrive after it is too late to arrange
+      the four-hour response.
+    C: A 48-hour horizon gives plenty of notice, but many more patients cross it, so wards able to act on about five alerts
+      a shift would face far more alerts than they can handle.
+    D: A daily score fits ward-round routines, but a patient can deteriorate between rounds, and a score made once a day may
+      be many hours old when it matters.
 status: draft
 outline_version: '2026-04-15'
 sample: false
