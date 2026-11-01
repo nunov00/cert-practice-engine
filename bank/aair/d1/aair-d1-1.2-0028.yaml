@@ -1,0 +1,31 @@
+id: aair-d1-1.2-0028
+subdomain: '1.2'
+difficulty: hard
+stem: An insurer's underwriting model now decides 95% of applications, and underwriters handle the rest. When a fault in its
+  data feed stopped every model for a week, underwriters took three times their former time per routine case, though they
+  followed the current manual procedures. Which change BEST prepares the process for the next outage?
+options:
+  A: Have underwriters handle a set share of routine cases by hand each month
+  B: Contract a second vendor's model to take over during outages
+  C: Rewrite the manual procedures as step-by-step guides with examples
+  D: Arrange agency underwriters to call on during long outages
+answer: A
+explanation:
+  why_correct: 'The slowdown came from lost practice: underwriters had current procedures but rarely handled routine cases
+    once the model took them over. Keeping a regular share of routine work with underwriters keeps their speed and judgement
+    on those cases, so the manual fallback works when it is needed. This builds the cost of resilience into the redesigned
+    process.'
+  why_not:
+    B: A standby model helps when one model fails, but the outage came from the data feed and stopped every model. A second
+      model on the same feed would have stopped too.
+    C: Better guides help new staff, but the underwriters already followed current procedures and were still slow. Written
+      steps do not restore practised speed.
+    D: Agency staff add capacity, but they would know the insurer's products and procedures even less than its own underwriters,
+      who were already slow.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aair
+  check_verdict: pending

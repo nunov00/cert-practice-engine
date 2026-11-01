@@ -1,0 +1,31 @@
+id: aair-d3-3.1-0030
+subdomain: '3.1'
+difficulty: hard
+stem: A clinic will use an AI tool that turns recorded consultations into draft notes, which doctors check from memory before
+  signing. Testing on clear recordings found a low word error rate. In many consultations the doctor examines the patient
+  for several minutes without speaking. Which risk scenario should the assessment MOST include?
+options:
+  A: Drug names misheard by the tool and missed by the doctor at signing
+  B: Strongly accented speech transcribed less accurately than in testing
+  C: Background noise in busy rooms raising the tool's word error rate
+  D: Fluent statements in the note that no one in the room made
+answer: D
+explanation:
+  why_correct: Speech-to-text tools built on generative models are known to produce fluent text during long stretches with
+    no speech, and the stem says many consultations contain several silent minutes. Such inserted statements read naturally,
+    so a doctor checking from memory is unlikely to notice them, and a word error rate measured on clear recordings does not
+    capture them. A fabricated symptom or history item in a signed note can drive later clinical decisions.
+  why_not:
+    A: Misheard drug names are a real transcription risk, but testing showed a low error rate on speech, and a wrong drug
+      name stands out to the doctor who just prescribed it. The silent stretches are the condition testing did not cover.
+    B: Accuracy across accents is worth testing, but nothing in the stem points to accent as this clinic's gap. The untested
+      condition here is the long periods with no speech at all.
+    C: Noise raises error rates and is worth checking, but noisy speech still produces recognisable mistakes. The silent periods
+      described create errors of a different kind that look like real content.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aair
+  check_verdict: pending

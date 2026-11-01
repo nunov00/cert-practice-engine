@@ -1,0 +1,30 @@
+id: aair-d1-1.3-0027
+subdomain: '1.3'
+difficulty: hard
+stem: A bank issues a co-branded credit card with a retailer. The retailer's AI model sets each cardholder's credit limit,
+  and the retailer changes the model most weeks. The bank lends the money and answers to its regulator for the credit decisions.
+  Which oversight arrangement BEST fits the bank's accountability?
+options:
+  A: The bank's validators revalidate the retailer's model once a year
+  B: A joint steering group reviews the model's results each quarter
+  C: The contract makes the retailer liable for losses from model errors
+  D: The bank approves each model change before the retailer releases it
+answer: D
+explanation:
+  why_correct: 'The bank stays accountable for credit decisions made with its money, even though the retailer builds and runs
+    the model. With changes most weeks, oversight has to sit at the point of change: approving each change, for example against
+    agreed criteria, keeps the bank in control of what decides its cardholders'' limits.'
+  why_not:
+    A: Annual validation is a sound control for a stable model, but with changes most weeks, nearly every version in use would
+      never have been reviewed by the bank.
+    B: A joint forum supports the partnership, but quarterly review of results comes after many weekly changes have already
+      affected cardholders, and it leaves no clear approver.
+    C: Liability terms can recover some losses, but they do not move the bank's accountability to its regulator and customers,
+      and they give the bank no say over the model.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aair
+  check_verdict: pending

@@ -1,0 +1,31 @@
+id: aair-d3-3.2-0029
+subdomain: '3.2'
+difficulty: hard
+stem: A motor insurer pays small claims automatically when its AI model assesses car damage from photos the customer uploads.
+  Fraudsters now send photos altered with free AI editing tools, which improve every few months. Residual risk is above appetite.
+  Which treatment BEST reduces the risk?
+options:
+  A: Accept only photos taken in the insurer's app during the claim
+  B: Train a detector for AI-edited photos and update it each quarter
+  C: Send claims above a set value to an assessor before payment
+  D: Check each photo's file data for traces of editing software
+answer: A
+explanation:
+  why_correct: The risk enters where customers can submit any image file they like. Requiring photos to be taken live in the
+    insurer's app during the claim removes the step where an edited file is uploaded, so the treatment does not depend on
+    keeping up with editing tools that improve every few months. It reduces likelihood at the source while keeping automatic
+    payment for small claims.
+  why_not:
+    B: A detector is a common response, but the editing tools improve every few months, so a detector refreshed each quarter
+      keeps falling behind the latest edits it has never seen.
+    C: Assessor review suits large claims, but the fraud described targets small claims that are paid automatically, which
+      a value threshold leaves untouched.
+    D: File data such as editing traces is easy to strip or rewrite, and free tools increasingly do so. It catches careless
+      fraud, not the altered photos described.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aair
+  check_verdict: pending
