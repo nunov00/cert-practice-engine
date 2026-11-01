@@ -1,19 +1,18 @@
 id: aaism-d2-2.3-0032
-subdomain: "2.3"
+subdomain: '2.3'
 difficulty: medium
-stem: A bank's on-premises fraud appliance downloads model updates from its vendor's server and installs them
-  automatically. The vendor publishes a SHA-256 hash of each update on the same server. What is the MAIN weakness in how
-  updates are verified?
+stem: A bank's on-premises fraud appliance downloads model updates from its vendor's server and installs them automatically.
+  The vendor publishes a SHA-256 hash of each update on the same server. What is the MAIN weakness in how updates are verified?
 options:
   A: The hash is not rechecked after the update is installed
-  B: Someone who controls the server can replace the update and its hash
+  B: A server compromise can swap both the update and its hash
   C: Automatic installation skips the bank's change approval
-  D: A hash cannot reveal a model poisoned before release
+  D: A hash cannot reveal a model that was poisoned before release
 answer: B
 explanation:
   why_correct: A hash fetched from the same place as the file proves only that the two match. An attacker who compromises
-    the vendor's server can publish a malicious update with a matching hash. A signature checked against a vendor key
-    held separately would detect the swap.
+    the vendor's server can publish a malicious update with a matching hash. A signature checked against a vendor key held
+    separately would detect the swap.
   why_not:
     A: Rechecking after installation would confirm the installed file matches the hash, but if the attacker supplied both,
       the check passes either way.
@@ -21,11 +20,11 @@ explanation:
     D: Poisoning before release is a real risk that no integrity check catches, but it is not a flaw in how this appliance
       verifies updates.
 status: draft
-outline_version: 2025-08-19
+outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-aaism
   check_verdict: pass
+  checked_by: 2026-11-01-daily-aaism-check
   options_only: not_obvious
-  checked_by: 2026-10-27-daily-aaism-check

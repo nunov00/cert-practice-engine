@@ -1,0 +1,33 @@
+id: cissp-d1-1.6-0003
+subdomain: '1.6'
+difficulty: hard
+stem: A company's data handling standard requires staff to label each document with one of five classification levels. A
+  year on, an audit found labels on about 10% of documents, and half of the labelled contracts and HR files in its sample
+  were marked Internal or Public. Staff said choosing a label slowed their work. Which change BEST improves how the standard
+  is implemented?
+options:
+  A: Require a label before any document can be saved or sent
+  B: Cut the scheme from five levels to three, with examples of each
+  C: Apply Confidential by default, letting staff lower it with a stated reason
+  D: Run classification training for staff who handle contracts and HR files
+answer: C
+explanation:
+  why_correct: The audit shows two problems, missing labels and labels set too low. A Confidential default labels every document
+    with no effort, and lowering it takes a deliberate step with a reason on record, so the easy path now errs towards protection
+    and the downgrades can be reviewed.
+  why_not:
+    A: A mandatory prompt fixes coverage, but staff who find labelling slow and already pick low labels will choose whatever
+      gets them past the prompt fastest, so most documents would be labelled, often wrongly.
+    B: Fewer levels make the choice easier, and five is often too many, but labelling stays an optional extra step, so coverage
+      and the low labels on sensitive files would change little.
+    D: Training helps staff judge sensitivity, but it leaves labelling as slow and optional as before, which is what staff said
+      kept them from doing it.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-01-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: cissp-d5-5.2-0008
+subdomain: '5.2'
+difficulty: medium
+stem: A company's 25 network administrators, many of them contractors who change every few months, sign in to 600 routers
+  and switches with one shared local admin account. Auditors now require a record naming the administrator behind each
+  command run on a device, and a leaver's access to end in one step. Which approach BEST fits?
+options:
+  A: RADIUS sign-in against the directory, with session accounting
+  B: TACACS+ sign-in against the directory, with command accounting
+  C: A vault that releases the shared password per session and logs who took it
+  D: Named local accounts for each administrator on each device, logged to syslog
+answer: B
+explanation:
+  why_correct: TACACS+ authenticates each administrator against the directory, so disabling one directory account ends access
+    to all 600 devices, and it can authorize and record each command against the named user. That meets both audit
+    requirements with one central service.
+  why_not:
+    A: RADIUS also centralises sign-in against the directory and ends access in one step, but its accounting records sessions,
+      not the individual commands run during them.
+    C: A vault check-out shows who held the password and when, but commands still run under the shared account, so the device
+      records do not name the administrator; linking a command to a person rests on matching check-out times to device logs.
+    D: Named local accounts would let syslog name the person behind each command, but each leaver would have to be removed from
+      600 devices, and contractors change every few months.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-cissp-check
+  options_only: not_obvious

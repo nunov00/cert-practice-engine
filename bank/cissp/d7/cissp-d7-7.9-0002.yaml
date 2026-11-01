@@ -1,0 +1,31 @@
+id: cissp-d7-7.9-0002
+subdomain: '7.9'
+difficulty: medium
+stem: A product team deploys to production about 40 times a day through its pipeline. Any engineer can merge to the main branch,
+  which deploys automatically. The regulator expects each production change to be authorised by someone other than its author,
+  with evidence. Which change BEST meets this while keeping the deployment pace?
+options:
+  A: A deployment gate that requires automated tests and security scans to pass
+  B: Branch protection that requires another engineer's approving review to merge
+  C: Feature flags so that new code ships dark until the product owner turns it on
+  D: A daily change board that reviews and signs off the previous day's deployments
+answer: B
+explanation:
+  why_correct: A required approving review by a second engineer means no change reaches the main branch, and so production,
+    without another person authorising it, and the platform records who approved what. It adds minutes per change, not days.
+  why_not:
+    A: Automated gates are strong quality controls and fit the pace, but tests and scans are not a person authorising the change,
+      so the author could still put any change into production alone.
+    C: Feature flags give the product owner control over when a feature is used, but the code itself reaches production unreviewed,
+      and changes that are not behind a flag are not covered.
+    D: A daily board keeps the pace, but it signs off changes after they are live, which records them rather than authorising
+      them beforehand.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-cissp-check
+  options_only: not_obvious

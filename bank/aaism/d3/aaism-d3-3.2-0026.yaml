@@ -1,0 +1,33 @@
+id: aaism-d3-3.2-0026
+subdomain: '3.2'
+difficulty: easy
+stem: A bank's release pipeline runs a jailbreak test suite against each new chatbot version. Several attack prompts succeed
+  on some runs and fail on others, so the same version can pass one day and fail the next. In production the chatbot
+  generates replies with sampling switched on. Which change BEST makes the gate reliable?
+options:
+  A: Run the suite with sampling switched off so results repeat
+  B: Re-run each failed attack once and pass if the retry is blocked
+  C: Fix the random seed so each run draws the same samples
+  D: Run each attack many times and gate on its success rate
+answer: D
+explanation:
+  why_correct: With sampling on, whether an attack works is a matter of probability, so a single run per prompt gives a
+    near-random verdict for any attack that works only part of the time. Running each attack enough times to estimate its
+    success rate with a confidence bound, and gating on a defined acceptance limit, measures what attackers in production
+    face, since they can simply try again, and makes the verdict far more consistent from one run to the next.
+  why_not:
+    A: Switching sampling off makes results repeat, but the gate then tests a configuration customers never meet, and an attack
+      that works one time in ten in production may never work in the test.
+    B: Retrying failures is a common fix for flaky tests, but here a failure means an attack got through, and passing on a
+      blocked retry hides attacks that work only part of the time.
+    C: A fixed seed makes results repeat, but it tests one sample path out of the many that production users meet, so an attack
+      that works one time in ten may still pass.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aaism-check
+  options_only: obvious

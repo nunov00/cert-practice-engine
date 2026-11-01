@@ -1,0 +1,32 @@
+id: aair-d3-3.4-0030
+subdomain: '3.4'
+difficulty: medium
+stem: A news app's recommendation model is rewarded for reading time. The board has set a limit on the app steering readers
+  toward ever narrower political content. The app's readers span the whole political range, and most read only from the home
+  feed without following any outlet. Which key risk indicator BEST tracks this risk?
+options:
+  A: Share of readers who follow outlets from more than one side
+  B: Range of viewpoints in each reader's feed, tracked over time
+  C: Range of viewpoints in the app's recommendations each day
+  D: Share of each reader's time spent on their single most-read outlet
+answer: B
+explanation:
+  why_correct: The risk is that individual readers are shown a narrowing range of viewpoints. Measuring the range in each
+    reader's own feed over time tracks that directly, from what the app chooses to show, and can be set against the board's
+    limit.
+  why_not:
+    A: Outlet follows are a fair sign of breadth for readers who use them, but most readers here never follow an outlet and
+      read only the home feed, so the measure misses them.
+    C: A daily range across all recommendations is a genuine exposure measure, but with readers across the whole political
+      range the total can stay broad while each reader's feed narrows.
+    D: Concentration on one outlet captures narrowing reading habits, but a reader can spread time across many outlets that
+      share one political leaning, so this can stay low while viewpoints narrow.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aair-check
+  options_only: not_obvious

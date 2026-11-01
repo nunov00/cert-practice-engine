@@ -1,0 +1,32 @@
+id: aair-d1-1.4-0023
+subdomain: '1.4'
+difficulty: hard
+stem: An insurer's handlers settle routine claims from AI-drafted decisions, each linking to the policy clause it relies on.
+  Audits find wrong settlements that handlers approved, many after several minutes on the draft. Each team leader oversees
+  30 handlers, who each settle about 40 claims a day. Which procedure BEST addresses this?
+options:
+  A: Handlers open the linked clause and confirm it supports the decision
+  B: Team leaders approve each settlement before the claim is paid
+  C: Handlers spend a set minimum time on each draft before approving
+  D: Handlers rate each draft so the AI team can retrain on poor ones
+answer: A
+explanation:
+  why_correct: Time spent reading the draft did not stop the errors, so the step that is missing is a check against something
+    outside the draft. Opening the clause the draft relies on and confirming it supports the decision gives the handler an
+    independent reference on every claim, at the point of approval, and fits within the existing workload.
+  why_not:
+    B: Leader approval adds a second person, but each leader would face about 1,200 settlements a day, so approvals would
+      become a formality or a bottleneck.
+    C: A minimum time works where errors come from haste, but many of the wrong settlements were approved after several minutes
+      on the draft, so more time on the same text does not catch them.
+    D: Ratings help improve the model over time, but they do not stop a wrong settlement being paid, and handlers can only
+      rate down drafts they recognise as poor.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aair
+  check_verdict: fail
+  checked_by: 2026-11-01-daily-aair-check
+  options_only: obvious

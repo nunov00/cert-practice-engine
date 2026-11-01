@@ -1,0 +1,33 @@
+id: aaism-d1-1.4-0024
+subdomain: '1.4'
+difficulty: medium
+stem: At a bank, each new AI system goes through separate security, privacy and model risk assessments, run one after another
+  by three teams. Most of the questions in the three forms overlap, and project teams now often start building before the
+  assessments finish. What would MOST improve this?
+options:
+  A: Run the three assessments in parallel rather than one by one
+  B: Set a two-week service level for each team's assessment
+  C: One shared intake, each team adding only its own questions
+  D: Hold building until the three assessments are approved
+answer: C
+explanation:
+  why_correct: Because the forms overlap, project teams answer the same questions three times and wait on three teams chasing
+    the same facts, which is what pushes them to start early. One shared intake gathers the common facts once and routes them
+    to each function, which then adds only what its own judgement needs. Effort and elapsed time both fall, and each function
+    still decides on its own risks.
+  why_not:
+    A: Parallel assessments cut the elapsed time to that of the slowest team, but project teams still answer the same questions
+      three times and three teams still chase the same facts.
+    B: A service level makes each team quicker, but it keeps three rounds of duplicated questions, and meeting it may lead
+      reviewers to cut depth rather than duplication.
+    D: Enforcing the wait deals with teams starting early, but it lengthens the delay that drives them to do so and leaves
+      the duplicated work in place.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aaism-check
+  options_only: not_obvious

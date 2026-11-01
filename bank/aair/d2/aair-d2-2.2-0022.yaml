@@ -1,0 +1,33 @@
+id: aair-d2-2.2-0022
+subdomain: '2.2'
+difficulty: hard
+stem: A bank built a new credit model on loans it approved three to five years ago and tested it on a holdout of those loans,
+  using their full repayment record. It beats the current scorecard. The bank plans to use the model to approve some applicants
+  the current policy declines. What is the MAIN limitation of the test?
+options:
+  A: Holdout loans come from the same years as the training loans
+  B: The test has no outcomes for the applicants the model will newly approve
+  C: Defaults may be too rare in the holdout to give a stable result
+  D: Repayment from three to five years ago may not reflect today's economy
+answer: B
+explanation:
+  why_correct: Outcomes exist only for applicants the bank approved, so the test says nothing about how the model ranks the
+    applicants the current policy declines. Those are exactly the people the bank now plans to approve, so the model's performance
+    on that group is unknown. Validation needs evidence for that population, for example a controlled trial on a limited number
+    of such applicants.
+  why_not:
+    A: Testing on the same years can overstate performance, and an out-of-time test is good practice. It does not, though,
+      address the group the model will newly be used on.
+    C: Few defaults would make the result less stable, but the stem gives no sign of this, and more defaults among approved
+      loans would still not cover declined applicants.
+    D: Changes in the economy matter for any credit model, but they affect every applicant group. The larger gap is a group
+      the test never covered at all.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aair
+  check_verdict: fail
+  checked_by: 2026-11-01-daily-aair-check
+  options_only: not_obvious

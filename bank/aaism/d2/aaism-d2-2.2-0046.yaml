@@ -1,0 +1,32 @@
+id: aaism-d2-2.2-0046
+subdomain: '2.2'
+difficulty: medium
+stem: A company's email agent drafts and sends replies to supplier emails without review. A supplier set up its own AI
+  agent, and overnight the two exchanged thousands of short, polite replies, running up model costs and flooding the
+  supplier's inbox. Which control BEST prevents a repeat?
+options:
+  A: Token caps on each request the agent makes to the model
+  B: A spend alert when the agent's daily model costs spike
+  C: An injection classifier on inbound supplier emails
+  D: A cap on replies per email thread before staff review
+answer: D
+explanation:
+  why_correct: Each reply was harmless; the harm came from the loop itself, two automated senders answering each other without
+    end. Capping how many replies the agent sends in one thread before a person looks at it stops a loop with any
+    counterpart, another bot or an attacker deliberately provoking one, while normal correspondence stays automatic.
+  why_not:
+    A: Token caps limit what a single request can cost, which suits long prompts or outputs. These replies were short, so each
+      stayed within any sensible cap.
+    B: A spend alert tells someone that costs are rising, but overnight thousands of emails can go out before anyone acts, and
+      it does nothing about the flooding.
+    C: An injection classifier looks for hostile instructions. The supplier's agent sent ordinary polite emails, so the
+      classifier would have nothing to flag.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aaism-check
+  options_only: not_obvious

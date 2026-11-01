@@ -1,0 +1,35 @@
+id: aaism-d3-3.4-0031
+subdomain: '3.4'
+difficulty: hard
+stem: A lender must give each refused applicant the main reasons for refusal and show its regulator that those reasons
+  reflect how each decision was made. Post-hoc attributions from its boosted-tree credit model give different main reasons
+  for near-identical applicants. A scorecard the team built as a benchmark has an AUC 0.4 percentage points lower. What
+  should the security manager recommend?
+options:
+  A: Average the attributions over repeated runs to stabilise them
+  B: Map each attribution to a reviewed plain-language reason
+  C: Give counterfactual statements of what would change the outcome
+  D: Use the benchmark scorecard as the production credit model
+answer: D
+explanation:
+  why_correct: "The duty has two parts: reasons for each refusal, and evidence that those reasons are what drove it.
+    Attributions that change between near-identical applicants are approximations laid over a complex model, so neither part
+    can be shown reliably. A scorecard's points are the decision itself, so its reasons are faithful by construction, and an
+    AUC 0.4 percentage points lower is a small cost. Where a complex model performed much better, the trade-off would need a
+    fuller analysis."
+  why_not:
+    A: Averaging can make attributions steadier, but they remain an approximation of the model. Steady reasons are not evidence
+      that they reflect how the model decided, which is what the regulator asks for.
+    B: A plain-language mapping makes reasons readable, but it translates whatever the attributions say. If those shift between
+      near-identical applicants, the reasons in the letters shift too.
+    C: Counterfactuals tell applicants what would change the outcome, which is useful, but they are also computed after the fact
+      from the complex model and do not show the regulator what drove each decision.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aaism
+  check_verdict: fail
+  checked_by: 2026-11-01-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,35 @@
+id: cissp-d3-3.6-0004
+subdomain: '3.6'
+difficulty: hard
+stem: A retailer wants to recognise when the same payment card is used again, to spot repeat customers and refund abuse.
+  Refunds go through its payment processor, which needs only the processor's own payment reference. Its policy forbids
+  storing card numbers in any decryptable form, and a thief who steals its database must not be able to recover them. Which
+  method BEST fits?
+options:
+  A: AES-256 encryption of each card number, with the key held in an HSM
+  B: A SHA-256 hash of each card number, stored in place of the number
+  C: A SHA-256 hash of each card number, with a random salt stored per record
+  D: An HMAC of each card number, with its secret key held in an HSM
+answer: D
+explanation:
+  why_correct: The retailer needs to match cards, not read them. An HMAC gives the same value for the same card, so repeats
+    can be matched, and without the secret key, which stays in the HSM, a thief cannot test candidate card numbers against
+    the stolen values.
+  why_not:
+    A: Encryption with an HSM-held key protects stolen data well, but the stored values can be decrypted by anyone who can use
+      the key, which is exactly the decryptable form the policy forbids.
+    B: A plain hash allows matching, but card numbers come from a small, structured space, so a thief can hash every plausible
+      number and recover the cards from the stolen database.
+    C: A random salt per record defeats precomputed tables, but the same card then hashes differently each time, so the retailer
+      cannot look a card up directly and must re-hash it with every stored salt to find a repeat. The salts sit beside the
+      hashes, so a thief can still guess the small, structured card-number space for each record offline, which the secret
+      key in D prevents.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-cissp-check
+  options_only: not_obvious

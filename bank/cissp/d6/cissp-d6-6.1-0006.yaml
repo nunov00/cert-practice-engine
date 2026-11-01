@@ -1,0 +1,33 @@
+id: cissp-d6-6.1-0006
+subdomain: '6.1'
+difficulty: hard
+stem: Before each monthly rule release, a bank's fraud team must show that its transaction-monitoring rules still catch 30
+  known money-mule patterns. The rules score each payment using the account's live history and device signals, and several
+  of the patterns have not appeared in the bank's own traffic for a year. Production alerts go to investigators and can freeze
+  customers' accounts. Which test approach BEST fits?
+options:
+  A: Run the patterns in staging, loaded with masked copies of production data
+  B: Replay last month's flagged payments through the new rules in an offline copy
+  C: Have analysts walk each rule through the 30 patterns in a structured review
+  D: Run synthetic payments from test accounts in production, alerting a test queue
+answer: D
+explanation:
+  why_correct: The rules depend on live account history and device signals that exist only in production. Synthetic payments
+    from dedicated test accounts exercise all 30 patterns against the real scoring, and routing their alerts to a test queue
+    keeps investigators and real customers out of it.
+  why_not:
+    A: Staging with masked data is the usual safe place to test, but it lacks the live device signals and current account history
+      that the rules score on, so results there may not match production.
+    B: Replaying recent flagged payments is a good regression check, but several of the patterns have not occurred in a year,
+      so last month's traffic cannot show whether the rules still catch them.
+    C: A structured review checks the logic on paper, but it does not run the rules, so it cannot show how they actually score
+      the patterns.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-01-daily-cissp-check
+  options_only: not_obvious

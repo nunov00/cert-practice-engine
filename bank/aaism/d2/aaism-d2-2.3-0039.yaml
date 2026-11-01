@@ -1,0 +1,32 @@
+id: aaism-d2-2.3-0039
+subdomain: '2.3'
+difficulty: medium
+stem: Staff at a consultancy keep connecting third-party AI note and summary apps to their work cloud drives, granting each
+  app read access to their files on the sign-in consent screen. Several of these apps' terms let the publisher use customer
+  files to train its models. Which control BEST addresses this?
+options:
+  A: Let staff consent only to apps from verified publishers
+  B: Require admin approval before an app can get file access
+  C: Warn staff on the consent screen about granting file access
+  D: Block apps' sign-in once they appear in the sign-in logs
+answer: B
+explanation:
+  why_correct: The exposure is what each publisher may do with the files, which only a review of the app and its terms can
+    judge. Admin approval for file access puts that review before any file is shared, so apps whose terms allow training on
+    customer files can be refused while vetted ones stay available.
+  why_not:
+    A: Verification confirms who the publisher is, which keeps out impostor apps. A verified publisher can still have terms that
+      let it train on customer files.
+    C: A warning makes staff pause, but it leaves the decision with people who have not read the app's terms and want the tool,
+      so many will still consent.
+    D: Blocking discovered apps ends further access, but by then each app has already read files under terms that allow training
+      on them.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aaism-check
+  options_only: not_obvious

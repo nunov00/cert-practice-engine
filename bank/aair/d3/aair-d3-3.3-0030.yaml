@@ -1,0 +1,32 @@
+id: aair-d3-3.3-0030
+subdomain: '3.3'
+difficulty: medium
+stem: A children's homework chatbot screens each request with an input filter before the model sees it. Testers got harmful
+  answers by writing requests in a simple cipher and by asking the model to role-play a character without rules. Which
+  control BEST reduces the risk?
+options:
+  A: Check the model's replies with a harmful-content classifier before display
+  B: Add the cipher and role-play patterns to the input filter's rules
+  C: Strengthen the system prompt's instructions to refuse harmful requests
+  D: Suspend users whose requests the input filter blocks repeatedly
+answer: A
+explanation:
+  why_correct: The two bypasses show that harmful intent can be hidden from a filter that reads requests, in an endless number
+    of ways. A classifier on the replies judges what the child would actually see, however the request was disguised, so it
+    does not depend on listing each bypass in advance (replies in an encoding still need decoding or blocking).
+  why_not:
+    B: Adding known patterns closes these two routes, but a cipher shows the filter cannot read the meaning of disguised text,
+      and new disguises will follow. It treats each bypass after it is found.
+    C: Firmer instructions help at the margin, but role-play requests are a technique for getting the model to set its
+      instructions aside, which is how one of the tests succeeded.
+    D: Suspending repeat offenders deters some users, but successful bypasses are the requests the filter did not block, so this
+      does not reach them.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aair-check
+  options_only: not_obvious

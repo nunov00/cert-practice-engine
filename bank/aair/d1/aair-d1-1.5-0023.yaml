@@ -1,0 +1,33 @@
+id: aair-d1-1.5-0023
+subdomain: '1.5'
+difficulty: medium
+stem: A lender uses a vendor's credit model that returns only a score, and the vendor will not reveal how the model works,
+  citing trade secrets. Consumer credit law in the lender's market requires telling declined applicants the main factors
+  that actually drove their decision. What should the risk practitioner advise?
+options:
+  A: Explain declines with a simple model the lender fits to the vendor's scores
+  B: Give declined applicants the main factors from the lender's credit policy
+  C: Require the vendor to return the main reason codes with each score
+  D: Have a credit officer review each decline and record the main reasons
+answer: C
+explanation:
+  why_correct: The law asks for the factors that actually drove each decision, which the lender cannot work out from a bare
+    score. Requiring the vendor to return specific reason codes with each score gives the lender per-applicant factors while
+    the model stays confidential. The lender should still ask for evidence that the codes reflect the model's real drivers
+    and map them to its own decline decisions, but without codes from the vendor it has nothing faithful to start from.
+  why_not:
+    A: A surrogate model is a common explanation technique, but it only approximates the vendor's model, so its factors may not
+      be the ones that actually drove a given decline.
+    B: Policy-based reasons are easy to give, but they describe the lender's general criteria rather than what drove the model's
+      score for this applicant.
+    D: An officer review adds human judgement, but the officer sees only the score and cannot know which factors drove it, so
+      the reasons recorded would be the officer's own.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aair-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: cissp-d3-3.5-0003
+subdomain: '3.5'
+difficulty: medium
+stem: A web app on cloud virtual machines builds thumbnails from images at any URL that users paste. Testers pasted a link
+  to their own site, which redirected the app's fetcher to the cloud's instance metadata address, and the app returned the
+  machine's temporary credentials. Which change BEST closes this path?
+options:
+  A: Require a session token from a separate request on metadata calls
+  B: Allow-list the external image hosts that the fetcher may contact
+  C: Reject pasted URLs that point at the metadata address or private ranges
+  D: Run the fetcher in its own container on the same virtual machine
+answer: A
+explanation:
+  why_correct: If the metadata service answers only requests that carry a session token, obtained through a separate request
+    the fetcher never makes, a plain image fetch cannot read credentials wherever a redirect sends it. The path is closed at
+    the metadata service itself, whatever URL tricks are used.
+  why_not:
+    B: An allow-list is the strongest fix for server-side request forgery when the destinations are known, but the app's purpose
+      is to fetch from any URL users paste, so a list would break the feature.
+    C: Checking the pasted URL is the usual first defence, but the testers' URL pointed at their own site. The redirect to the
+      metadata address happened after the check, so it would still have worked.
+    D: A separate container limits what a compromised fetcher can reach on the host's file system, but its traffic still leaves
+      through the machine's network, so it can still reach the metadata address.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-cissp-check
+  options_only: not_obvious

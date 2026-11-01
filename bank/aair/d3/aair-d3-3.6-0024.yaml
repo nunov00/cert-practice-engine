@@ -20,11 +20,11 @@ explanation:
       used to reach it.
     C: Hardening the agent prevents a repeat, but the agent is already stopped, and the leaked keys still work.
 status: draft
-outline_version: 2026-04-15
+outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-aair
-  check_verdict: pass
+  check_verdict: fail
   options_only: not_obvious
-  checked_by: 2026-10-27-daily-aair-check
+  checked_by: 2026-11-01-daily-aair-check

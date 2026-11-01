@@ -1,0 +1,34 @@
+id: aair-d3-3.3-0029
+subdomain: '3.3'
+difficulty: medium
+stem: A bank's model registry records each validated version of its credit model with a hash of the file. The serving platform
+  loads whatever file the deployment job copies to it. Last month a data scientist deployed an unvalidated retrain through
+  the job. Data scientists use the job out of hours to roll back to earlier versions when a release misbehaves. Which control
+  BEST prevents a repeat?
+options:
+  A: Remove data scientists' rights to run the deployment job
+  B: Have the platform load only files matching a validated hash
+  C: Compare deployed files with the registry weekly and alert on gaps
+  D: Require model risk approval before each run of the job
+answer: B
+explanation:
+  why_correct: 'Checking each file against the registry''s validated hashes at load time stops an unvalidated model from going
+    live, whoever runs the job. Rollbacks to earlier versions still work out of hours, because those versions were validated
+    and their hashes are in the registry. The control sits where the gap is: the platform currently trusts any file it is
+    given.'
+  why_not:
+    A: Removing the rights would prevent the deployment, but data scientists need the job out of hours to roll back a misbehaving
+      release. Taking it away trades one risk for slower recovery.
+    C: A weekly comparison would find the mismatch, but only after the unvalidated model had been making credit decisions
+      for up to a week. It detects rather than prevents.
+    D: Prior approval is a sound preventive step for releases, but it would delay the out-of-hours rollbacks the stem describes,
+      when an approver may not be available.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aair-check
+  options_only: not_obvious

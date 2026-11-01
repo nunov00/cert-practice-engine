@@ -1,0 +1,32 @@
+id: cissp-d6-6.2-0007
+subdomain: '6.2'
+difficulty: medium
+stem: A fintech's new lending app launches in six weeks, and its code has had no security review. The owner can fund one
+  two-week penetration test and wants it to find as many exploitable flaws as possible before launch. The development team
+  can share anything the testers ask for. Which test design BEST fits?
+options:
+  A: A black-box test from the internet, with no information about the app
+  B: A gray-box test with a customer account and the API documentation
+  C: A double-blind test that the operations team is not told about
+  D: A white-box test with the source code and an account for each role
+answer: D
+explanation:
+  why_correct: With a fixed two weeks and the aim of finding as many flaws as possible, testers get the most coverage when
+    they can read the code and use every role. They spend the time confirming flaws rather than discovering how the app
+    works, and code that has never been reviewed is likely to hold flaws that only show from the inside.
+  why_not:
+    A: A black-box test shows what an outside attacker could find without inside knowledge, but much of the two weeks goes on
+      discovery, so it finds fewer flaws in the time available.
+    B: A gray-box test is a common balance of realism and efficiency, but with a single customer account and no code, flaws in
+      other roles and in logic hidden behind the API stay hard to reach in two weeks.
+    C: A double-blind test measures how operations detect and respond to an attack. The owner wants flaws found before launch,
+      not a test of the response.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-cissp-check
+  options_only: not_obvious

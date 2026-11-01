@@ -1,0 +1,31 @@
+id: aaism-d1-1.2-0022
+subdomain: '1.2'
+difficulty: medium
+stem: A company's procurement agent buys one-off parts from many small supplier websites, within set spending limits. Some
+  sites require buyers to accept their terms at checkout, and the agent has accepted terms containing liability and
+  data-sharing clauses. Which policy provision BEST addresses this?
+options:
+  A: Agents may buy only from suppliers with a signed framework agreement
+  B: Agents must log the terms they accept for monthly legal review
+  C: Agents' spending limits are lowered for first-time suppliers
+  D: Agents may not accept contract terms; a person must accept them
+answer: D
+explanation:
+  why_correct: Accepting terms binds the company to obligations such as liability and data sharing, a decision the spending
+    limits were never designed to control. Reserving acceptance of terms for a person keeps that decision with someone who
+    can judge it, while the agent still finds parts and prepares orders across many small suppliers.
+  why_not:
+    A: Framework agreements replace checkout terms with negotiated ones, which suits regular suppliers. The agent's value lies
+      in one-off purchases from many small suppliers, so limiting it to framework suppliers would end most of its use.
+    B: Logging gives legal sight of what was accepted, but only afterwards, when the company is already bound by the terms.
+    C: Lower limits reduce the money at risk per order, but liability and data-sharing clauses bind the company whatever the
+      order value.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aair-d1-1.6-0021
+subdomain: '1.6'
+difficulty: easy
+stem: A retailer's model infers which customers are probably pregnant from their purchases and mails them baby product
+  offers. Some customers complain that family members learned of a pregnancy from the mailings before they had chosen to
+  tell anyone. What should the risk practitioner recommend?
+options:
+  A: Send baby offers only to customers who asked for them
+  B: Let customers opt out of personalised offers in their account settings
+  C: Describe pregnancy-based offers clearly in the privacy notice
+  D: Mix unrelated products into the mailings so the targeting is less obvious
+answer: A
+explanation:
+  why_correct: The harm comes from acting on a sensitive fact the customer has not chosen to share, and it lands before the
+    customer knows the inference exists. Sending such offers only to customers who have explicitly asked for them keeps the
+    decision to disclose with the customer while still serving those who want the offers.
+  why_not:
+    B: An opt-out respects choice in general, but customers learn they are profiled only when the mailing arrives, which is when
+      the disclosure to family has already happened.
+    C: Clearer notice improves transparency, but few customers read it before the offers arrive, and it does not stop the
+      mailing from revealing the pregnancy at home.
+    D: Disguising the targeting may make mailings less revealing, but it keeps acting on the inference and hides that from
+      customers, which harms trust if it comes to light.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aair-check
+  options_only: obvious
