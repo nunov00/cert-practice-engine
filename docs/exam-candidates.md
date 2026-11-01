@@ -44,8 +44,8 @@ market; every row is *to verify* until a daily run checks it).
 | 6 | CC (ISC2) | Adaptive (CAT), 5 domains (outline from 2026-09-01; weights to confirm from the outline) | 4 | 5 | 4 | 2 | 4 | 23 | 2026-10-27 |
 | 7 | CEH (EC-Council) | 125 MCQ in 4 hours, v13; official blueprint v5 lists 9 domains (6/17/15/24/14/5/10/5/5%), applicability to v13 to confirm | 4 | 5 | 2 | 4 | 2 | 21 | 2026-10-28 |
 | 8 | CySA+ (CompTIA) | up to 85 in 165 min, MCQ and performance-based, 4 domains (34/26/24/16% on V4 from 2026-06-23) | 3 | 3 | 4 | 4 | 3 | 20 | 2026-10-29 |
-| 9 | CGRC (ISC2) | 125 MCQ, 7 domains *to verify* | 2 | 5 | 3 | 4 | 4 | 20 | 2026-10-18 |
-| 10 | SSCP (ISC2) | 100-125 CAT items (MCQ and advanced types) in 2 hours, 7 domains (16/15/15/14/9/16/15%) | 2 | 5 | 3 | 4 | 4 | 20 | 2026-10-31 |
+| 9 | SSCP (ISC2) | 100-125 CAT items (MCQ and advanced types) in 2 hours, 7 domains (16/15/15/14/9/16/15%) | 2 | 5 | 3 | 4 | 4 | 20 | 2026-10-31 |
+| 10 | CGRC (ISC2) | 125 items (MCQ and advanced types) in 3 hours, 7 domains (16/10/14/17/16/14/13%) | 2 | 5 | 3 | 4 | 4 | 20 | 2026-11-01 |
 
 Rank follows the total; ties go to the higher demand score, then to the
 older Checked date.
@@ -133,7 +133,21 @@ older Checked date.
   practice-questions page, so calibration stays at 4 (merge run, after Codex's
   review). Scores, total (20) and rank (8th, ahead of SSCP and CGRC on the
   higher demand score) unchanged.
-- **CGRC:** solid but smaller market; kept as the tail of the queue.
+- **CGRC:** solid but smaller market; kept as the tail of the queue. Checked
+  2026-11-01: 125 items in 3 hours, multiple choice and advanced item types,
+  pass mark 700/1000, on the outline in force since 2024-06-15 with seven
+  domains (Security and Privacy Governance, Risk Management, and Compliance
+  Program 16%, Scope of the System 10%, Selection and Approval of Framework,
+  Security, and Privacy Controls 14%, Implementation of Security and Privacy
+  Controls 17%, Assessment/Audit of Security and Privacy Controls 16%, System
+  Compliance 14%, Compliance Maintenance 13%). The outline does not say whether
+  delivery is adaptive or linear. The CGRC page lists U.S. DoDM 8140.03 approval
+  and links an official
+  [CGRC knowledge check](https://cloud.connect.isc2.org/cgrc-quiz), which, like
+  the CCSP and SSCP quizzes, was not read through a page fetch, so calibration
+  stays at 3. ISC2 publishes no CGRC holder count, so demand stays at 2. Scores
+  and total (20) unchanged; it ranks 10th, below SSCP, which ties on total and
+  demand and now has the older Checked date.
 - **SSCP:** ISC2's practitioner-level operations exam; shares ground with
   CISSP and CCSP. Checked 2026-10-31: adaptive (CAT) since 2025-10-01, 100 to
   125 items in 2 hours, multiple choice and advanced item types, pass mark
@@ -149,9 +163,8 @@ older Checked date.
   at 3, as for CCSP. The SSCP page says it meets DoDM 8140.03 and, paired with
   Security+, gives full DoD 8140 operational qualification; ISC2 publishes no
   SSCP holder count (its member counts page gives only the total of more than
-  270,000), so demand stays at 2. Scores and total (20) unchanged; it now
-  ranks 10th, below CGRC, which ties on total and demand but has the older
-  Checked date.
+  270,000), so demand stays at 2. Scores and total (20) unchanged; it ranked
+  10th until CGRC was checked on 2026-11-01; it is now 9th.
 
 ## Changes
 
@@ -168,3 +181,4 @@ older Checked date.
 | 2026-10-28 | Merge run (Codex review): CEH row corrected to cite the official blueprint v5 weights and the form-gated 50-question assessment; scores unchanged | EC-Council [blueprint v5](https://cert.eccouncil.org/wp-content/uploads/2024/04/CEH-Exam-Blueprint-v5.pdf), [CEH assessment](https://www.eccouncil.org/train-certify/ceh-assessment/) |
 | 2026-10-29 | CySA+ row verified: V4 format, weights and launch date confirmed, *to verify* dropped; free official V4 practice questions found, so calibration stays at 4; scores, total and rank unchanged | CompTIA [CySA+ V4 practice questions](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v4/practice-questions/), [CySA+ V4 page](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v4/), [CySA+ V3 page](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v3/), [CySA+ V4 FAQ](https://www.comptia.org/en-eu/blog/the-new-comptia-cybersecurity-analyst-cysa-your-questions-answered/) |
 | 2026-10-31 | SSCP row verified: CAT format (100-125 items, 2 hours, MCQ and advanced types), seven domains and weights of the 2025-10-01 outline confirmed, *to verify* dropped; official quiz found but not readable, so calibration stays at 3; no SSCP holder count published, so demand stays at 2; scores and total unchanged, rank 9 to 10 (CGRC has the older Checked date) | ISC2 [exam outline (effective 2025-10-01)](https://edge.sitecorecloud.io/internationf173-xmc4e73-prodbc0f-9660/media/Project/ISC2/Main/Media/documents/exam-outlines/MAR-EXAMS-SSCP-Exam_Outline-English---10012025---FINAL.pdf), [outline page](https://www.isc2.org/certifications/sscp/sscp-certification-exam-outline), [SSCP page](https://www.isc2.org/certifications/sscp), [CAT notice](https://www.isc2.org/Insights/2025/05/computerized-adaptive-testing-examination-format-updates), [SSCP quiz](https://cloud.connect.isc2.org/sscp-quiz), [member counts](https://www.isc2.org/About/Member-Counts) |
+| 2026-11-01 | CGRC row verified: format (125 items, 3 hours, MCQ and advanced types, 700/1000) and the 2024-06-15 outline's seven domains and weights confirmed, *to verify* dropped; official knowledge check found but not readable, so calibration stays at 3; no holder count published, so demand stays at 2; scores and total unchanged, rank 9 to 10 (SSCP now has the older Checked date) | ISC2 [exam outline PDF (effective 2024-06-15)](https://edge.sitecorecloud.io/internationf173-xmc4e73-prodbc0f-9660/media/Project/ISC2/Main/Media/documents/exam-outlines/CGRC-Exam_Outline-English.pdf), [outline page](https://www.isc2.org/certifications/cgrc/cgrc-certification-exam-outline), [CGRC page](https://www.isc2.org/certifications/cgrc), [CGRC knowledge check](https://cloud.connect.isc2.org/cgrc-quiz) |
