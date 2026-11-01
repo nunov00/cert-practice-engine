@@ -1,24 +1,24 @@
 id: cissp-d7-7.4-0002
 subdomain: '7.4'
-difficulty: hard
-stem: A company's managed security provider must acknowledge alerts within 15 minutes, and it met that target 99% of the time
-  last year. Yet two intrusions ran for weeks, as analysts had closed their alerts as benign after a short look. The contract
-  is up for renewal. Which change to the service levels BEST addresses this?
+difficulty: medium
+stem: A company's managed security provider must acknowledge each alert within 15 minutes. Two intrusions last year went unnoticed
+  for weeks, although the provider's analysts had looked at the first alerts each one produced and recorded them as false
+  positives. The contract is up for renewal. Which change to the service levels BEST addresses this?
 options:
-  A: A target for the time from confirming an incident to escalating it to the company
-  B: Monthly company review of sampled closed alerts, with credits for misclassified ones
+  A: A target time from confirming an incident to escalating it to the company
+  B: A monthly company review of sampled resolved alerts, with credits for wrong outcomes
   C: A five-minute acknowledgement target for alerts rated high or critical
   D: A yearly independent assurance report on the provider's monitoring controls
 answer: B
 explanation:
-  why_correct: The failure was in the quality of triage, which a speed target cannot see. Reviewing a sample of closed alerts
-    each month measures how often the provider gets the call wrong, and tying credits to misclassification gives it a reason
-    to look properly before closing.
+  why_correct: The analysts saw the alerts in time but judged them wrongly. Reviewing a sample of resolved alerts each month
+    measures how often the provider's judgment is wrong, and tying credits to wrong outcomes gives it a reason to investigate
+    properly before resolving.
   why_not:
-    A: An escalation target is a sound service level, but it starts only once an incident is confirmed. These alerts were closed
-      as benign, so the clock never started.
-    C: A faster acknowledgement target tightens the measure the provider already meets, while the problem lay in what analysts
-      decided after acknowledging.
+    A: An escalation target is a sound service level, but its clock starts only once an incident is confirmed. These alerts
+      were recorded as false positives, so it never started.
+    C: A faster acknowledgement target tightens the speed of the first look, but the analysts did look at the alerts; the failure
+      was in what they decided.
     D: An assurance report shows that the provider's monitoring controls are designed and operating, but it does not test whether
       individual alerts are judged correctly.
 status: draft

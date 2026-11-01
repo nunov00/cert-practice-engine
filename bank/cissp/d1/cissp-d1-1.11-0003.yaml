@@ -1,27 +1,26 @@
 id: cissp-d1-1.11-0003
 subdomain: '1.11'
-difficulty: hard
-stem: A hospital's surgeons want a theatre-scheduling SaaS from a 20-person start-up. It is the only product that works with
-  the hospital's theatre system, and it will hold patient names and procedures. The start-up has no independent assurance
-  report and says that getting any such report would take about a year. The service is due to go live in three months. What
-  should the hospital do?
+difficulty: medium
+stem: A company's products bundle an open-source compression library. At another open-source project, a long-trusted co-maintainer
+  recently hid a new backdoor in the downloadable release packages, which he signed as usual; the code in the project's public
+  repository did not contain it. Which supplier control BEST protects the company against the same tactic?
 options:
-  A: Require a SOC 2 Type I report on the start-up's controls before go-live
-  B: Commission a penetration test of the service and go live once findings are fixed
-  C: Put the software and data in escrow and add a right to audit the start-up
-  D: Assess the start-up against the hospital's requirements and contract fixes by set dates
-answer: D
+  A: Build the library in-house from the tagged commit instead of using release packages
+  B: Verify each release package's signature against the maintainers' published keys
+  C: Scan each new version with software composition analysis before adopting it
+  D: Record the library and its exact version in an SBOM for each product release
+answer: A
 explanation:
-  why_correct: With no report available in time, the hospital has to gather its own evidence. A direct assessment against
-    its requirements, covering access, data handling, backups and incident response, shows where the start-up stands, and
-    contract terms with dated fixes turn the gaps into obligations the hospital can track before and after go-live.
+  why_correct: The tactic relies on a gap between the code people can review and the package people install. Building from
+    the tagged commit in the company's own pipeline means the company ships only code that is visible in the repository,
+    so changes slipped into release packages never reach its products.
   why_not:
-    A: A Type I report is quicker than a Type II and is a common ask of small suppliers, but the start-up says any independent
-      report would take about a year, so it cannot arrive before go-live.
-    B: A penetration test gives real evidence about the application, but it says nothing about how the start-up runs its staff
-      access, backups, vetting or incident handling, which matter as much for patient data.
-    C: Escrow protects the hospital if the start-up fails, and a right to audit enables checks later, but neither gives any
-      assurance about the start-up's security before patient data goes in.
+    B: Signature checks prove a package came from a maintainer's key and was not altered afterwards. Here the maintainer signed
+      the backdoored package himself, so it would verify.
+    C: Composition analysis matches components against known vulnerabilities. A new backdoor has no advisory yet, so the scan
+      would pass it.
+    D: An SBOM shows quickly which products contain an affected version once a backdoor is public, which speeds the response,
+      but it does nothing to keep the backdoor out.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -29,4 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
   check_verdict: pending
-  options_only: obvious
+  options_only: not_obvious

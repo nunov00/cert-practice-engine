@@ -1,26 +1,27 @@
 id: cissp-d7-7.8-0002
 subdomain: '7.8'
-difficulty: hard
-stem: A company patches 8,000 laptops across 12 hardware models each month, and policy requires critical patches within 14
-  days. Last month a routine operating system update left 300 laptops of one model unable to boot, and fixing them took a
-  week. Management wants to avoid a repeat without missing the patch deadline. How should the patching process change?
+difficulty: medium
+stem: A company's 300 container images are built on a full general-purpose Linux base. Scans report about 4,000 known vulnerabilities
+  in running containers, most in base-image packages such as shells and network tools that the applications do not call.
+  The security team's concern is what an attacker who gains code execution in a container could use. Which change BEST addresses
+  this?
 options:
-  A: Test each month's patches in a lab on the standard image before release
-  B: Hold patches for 30 days so that problems found elsewhere can be avoided
-  C: Remove the affected model from automatic patching and patch it by hand
-  D: Release patches in rings, starting with a sample of each laptop model
-answer: D
+  A: Automated pull requests that move each image to the latest patched base tag
+  B: Admission control that blocks deploying images with critical vulnerabilities
+  C: Rebuild the images on minimal bases holding just the application's runtime
+  D: Reachability analysis that ranks findings by whether the application loads them
+answer: C
 explanation:
-  why_correct: The failure came from one update meeting one hardware model. Releasing first to a small group that includes
-    each model shows such a clash on a few machines, where it can be stopped, and the remaining rings still finish within
-    the 14-day deadline.
+  why_correct: An attacker inside a container uses whatever the image contains, called by the application or not. Minimal
+    bases remove the shells, network tools and other packages the applications do not need, which takes away both the attacker's
+    tools and the vulnerabilities in them.
   why_not:
-    A: Lab testing on the standard image catches problems with the build and its applications, but a clash with one model's
-      hardware or firmware shows only on that model, which a lab image does not reproduce.
-    B: Deferring patches lets other organisations find bad ones first, a common practice where deadlines allow, but 30 days
-      breaks the 14-day rule for critical patches.
-    C: Patching the failed model by hand guards against a repeat on that model, but the next bad update may hit another model,
-      and manual patching slows that model's critical fixes.
+    A: Automated base updates keep packages patched and cut the count for a while, but the shells and tools stay in every image
+      for an attacker to use, and new flaws in them keep appearing.
+    B: Admission control stops the worst images reaching production, but it acts only on critical findings and leaves the unused
+      tools in every image that passes.
+    D: Reachability analysis is a good way to rank fixes by what the application can trigger, but an attacker with code execution
+      is not limited to what the application loads, so it would push down exactly the packages of concern.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -28,4 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
   check_verdict: pending
-  options_only: obvious
+  options_only: not_obvious

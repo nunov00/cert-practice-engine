@@ -1,26 +1,25 @@
 id: cissp-d7-7.9-0002
 subdomain: '7.9'
-difficulty: hard
-stem: At a hosting company, 40% of last quarter's changes were raised as emergencies, which skip the weekly change board and
-  are reviewed afterwards. Most were certificate renewals and patch roll-outs that come up through the month, often at a
-  day's notice. Each kind has been done hundreds of times, with no incident in two years. Which change BEST addresses this?
+difficulty: medium
+stem: A product team deploys to production about 40 times a day through its pipeline. Any engineer can merge to the main branch,
+  which deploys automatically. The regulator expects each production change to be authorised by someone other than its author,
+  with evidence. Which change BEST meets this while keeping the deployment pace?
 options:
-  A: Let the change manager approve low-risk changes between board meetings
-  B: Add a short daily board meeting to approve low-risk changes
-  C: Pre-approve renewals and roll-outs as standard changes with set procedures
-  D: Have teams forecast each month's renewals and roll-outs for the weekly board
-answer: C
+  A: A deployment gate that requires automated tests and security scans to pass
+  B: Branch protection that requires another engineer's approving review to merge
+  C: Feature flags so that new code ships dark until the product owner turns it on
+  D: A daily change board that reviews and signs off the previous day's deployments
+answer: B
 explanation:
-  why_correct: These changes recur, come at short notice and have a long safe record. Assessing each kind once and pre-approving
-    it as a standard change, done to a set procedure, lets teams act at a day's notice without a fresh approval, keeps the
-    board in control of what qualifies, and leaves the emergency route for real emergencies.
+  why_correct: A required approving review by a second engineer means no change reaches the main branch, and so production,
+    without another person authorising it, and the platform records who approved what. It adds minutes per change, not days.
   why_not:
-    A: Delegated approval suits low-risk changes that vary from one to the next. Here the same kinds recur hundreds of times,
-      so approving each one adds a queue behind one person without adding any assessment the record has not already given.
-    B: A daily board shortens the wait, but it spends senior time approving the same kinds of change one at a time, and a
-      day's notice can still miss the meeting.
-    D: Forecasting suits planned work, but many renewals and roll-outs arise at a day's notice, so a monthly forecast would
-      miss them and they would still go through as emergencies.
+    A: Automated gates are strong quality controls and fit the pace, but tests and scans are not a person authorising the change,
+      so the author could still put any change into production alone.
+    C: Feature flags give the product owner control over when a feature is used, but the code itself reaches production unreviewed,
+      and changes that are not behind a flag are not covered.
+    D: A daily board keeps the pace, but it signs off changes after they are live, which records them rather than authorising
+      them beforehand.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -28,4 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
   check_verdict: pending
-  options_only: obvious
+  options_only: not_obvious

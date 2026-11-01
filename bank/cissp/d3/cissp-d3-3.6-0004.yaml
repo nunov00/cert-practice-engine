@@ -1,26 +1,27 @@
 id: cissp-d3-3.6-0004
 subdomain: '3.6'
 difficulty: hard
-stem: An insurer's customers sign policy contracts electronically. For 30 years after signing, the insurer must be able to
-  prove who signed each contract and that the signature was valid when it was made. Signing certificates last two years,
-  and the algorithms in use today are expected to weaken well within 30 years. Which approach BEST meets the need?
+stem: A retailer wants to recognise when the same payment card is used again, to spot repeat customers and refund abuse. Refunds
+  go through its payment processor, which needs only the processor's own payment reference. The retailer must not keep
+  card numbers in any form that it, or a thief who steals its database, could turn back into the numbers. Which method BEST
+  fits?
 options:
-  A: Sign with 4096-bit RSA keys under certificates valid for 30 years
-  B: Store each signer's certificate and its revocation status with the contract
-  C: Re-sign the contract archive with the insurer's current key at regular intervals
-  D: Add a trusted timestamp at signing and renew the archive's timestamps over time
+  A: AES-256 encryption of each card number, with the key held in an HSM
+  B: A SHA-256 hash of each card number, stored in place of the number
+  C: A SHA-256 hash of each card number, with a random salt stored per record
+  D: An HMAC of each card number, with its secret key held in an HSM
 answer: D
 explanation:
-  why_correct: A trusted timestamp proves the signature existed at a time when the certificate was valid and unrevoked. Renewing
-    timestamps over the archive with current algorithms, before the old ones weaken, carries that proof forward, so the original
-    signer's signature can still be relied on decades later.
+  why_correct: The retailer needs to match cards, not read them. An HMAC gives the same value for the same card, so repeats
+    can be matched, and without the secret key, which stays in the HSM, a thief cannot test candidate card numbers against
+    the stolen values.
   why_not:
-    A: Longer keys delay the day the algorithm can be broken, but no key size is a safe bet for 30 years, and a certificate
-      that long-lived is a long-lived target that would need revoking if its key were exposed.
-    B: Keeping the certificate and its status is part of long-term validation, but without a trusted time there is no proof
-      the signature was made before the certificate expired or was revoked, and nothing protects it once the algorithm weakens.
-    C: Re-signing protects the archive's integrity with fresh algorithms, but the new signature is the insurer's, so it proves
-      what the insurer holds, not who signed each contract.
+    A: Encryption with an HSM-held key protects stolen data well, but anyone who can use the key can decrypt the numbers, so
+      the retailer still holds card numbers in a recoverable form, which the requirement rules out.
+    B: A plain hash allows matching, but card numbers come from a small, structured space, so a thief can hash every plausible
+      number and recover the cards from the stolen database.
+    C: A random salt per record defeats precomputed guessing, but the same card then hashes differently each time, so the retailer
+      could no longer recognise a repeat card.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -28,4 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
   check_verdict: pending
-  options_only: obvious
+  options_only: not_obvious
