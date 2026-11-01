@@ -22,11 +22,12 @@ explanation:
       tools in every image that passes.
     D: Reachability analysis is a good way to rank fixes by what the application can trigger, but an attacker with code execution
       is not limited to what the application loads, so it would push down exactly the packages of concern.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-cissp-check
   options_only: not_obvious

@@ -22,11 +22,12 @@ explanation:
       condition here is the long periods with no speech at all.
     C: Noise raises error rates and is worth checking, but noisy speech still produces recognisable mistakes. The silent periods
       described create errors of a different kind that look like real content.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aair-check
   options_only: not_obvious

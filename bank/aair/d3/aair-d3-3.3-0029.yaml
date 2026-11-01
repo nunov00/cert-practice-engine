@@ -23,11 +23,12 @@ explanation:
       for up to a week. It detects rather than prevents.
     D: Prior approval is a sound preventive step for releases, but it would delay the out-of-hours rollbacks the stem describes,
       when an approver may not be available.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aair-check
   options_only: not_obvious

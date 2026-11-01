@@ -21,11 +21,12 @@ explanation:
       the metadata address happened after the check, so it would still have worked.
     D: A separate container limits what a compromised fetcher can reach on the host's file system, but its traffic still leaves
       through the machine's network, so it can still reach the metadata address.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-cissp-check
   options_only: not_obvious

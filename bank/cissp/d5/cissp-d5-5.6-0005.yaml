@@ -22,11 +22,12 @@ explanation:
       here the database's row permissions and audit trail depend on it.
     D: Filtering the server's traffic blocks the path the testers used, but tickets taken from the server can be used from
       another machine, so the unrestricted delegation remains exploitable.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-cissp-check
   options_only: not_obvious

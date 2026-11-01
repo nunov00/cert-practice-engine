@@ -22,11 +22,12 @@ explanation:
       needs.
     D: A birth year is less data, but it cannot show whether a user born in the borderline year has turned 16 yet, so the legal
       check cannot be done reliably.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-cissp-check
   options_only: not_obvious

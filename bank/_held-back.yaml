@@ -21,7 +21,6 @@ held:
   - { id: cissp-d4-4.1-0008, pr: 67 }
   - { id: cissp-d4-4.3-0008, pr: 67 }
   - { id: cissp-d5-5.2-0005, pr: 67 }
-  - { id: cissp-d5-5.3-0004, pr: 67 }
   - { id: cissp-d6-6.1-0004, pr: 67 }
   - { id: cissp-d6-6.2-0004, pr: 67 }
   - { id: cissp-d6-6.3-0004, pr: 67 }
@@ -44,7 +43,6 @@ held:
   - { id: aair-d3-3.4-0024, pr: 67 }
   - { id: aair-d3-3.4-0025, pr: 67 }
   - { id: aair-d3-3.6-0023, pr: 67 }
-  - { id: aair-d3-3.6-0024, pr: 67 }
   # PR #67, merge run: hard share after Codex and the final review lowered or
   # dropped labels (AAIR kept no hard question). aair-d3-3.1-0023,
   # aair-d3-3.5-0023 and aaism-d2-2.2-0036 were rated obvious from the options
@@ -72,3 +70,7 @@ held:
   - { id: aaism-d1-1.5-0019, pr: 71 }
   - { id: aaism-d2-2.1-0028, pr: 71 }
   - { id: aaism-d3-3.4-0030, pr: 71 }
+  # PR for daily batch 2026-11-01, batch run: passed the independent check, held
+  # because too few hard labels survived the strict hard-label check
+  - { id: cissp-d1-1.11-0003, pr: 0 }
+  - { id: cissp-d7-7.9-0002, pr: 0 }

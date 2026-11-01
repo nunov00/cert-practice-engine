@@ -21,11 +21,12 @@ explanation:
       languages across eight teams, which the rule's deadline excludes.
     D: Network policies restrict which services may talk, which is good practice, but they do not encrypt the traffic or record
       the calls.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-cissp-check
   options_only: not_obvious
