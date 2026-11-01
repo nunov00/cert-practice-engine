@@ -1,9 +1,9 @@
 id: aair-d2-2.1-0023
 subdomain: '2.1'
 difficulty: medium
-stem: A hospital is designing a model to warn of patient deterioration on its wards. Shorter horizons are predicted more accurately.
-  Arranging the specialist response takes about four hours, and each ward can act on about five alerts per shift. Which prediction
-  target should the risk practitioner MOST support?
+stem: A hospital is designing a model to warn of patient deterioration on its wards. Shorter horizons are predicted more
+  accurately. Arranging the specialist response takes about four hours, and each ward can act on about five alerts per
+  shift. Which prediction target should the risk practitioner MOST support?
 options:
   A: Deterioration within the next hour
   B: Deterioration within the next six hours
@@ -11,18 +11,19 @@ options:
   D: A once-daily risk score reviewed at the morning ward round
 answer: B
 explanation:
-  why_correct: The target has to fit how the warning will be used. A six-hour horizon gives staff time to arrange the four-hour
-    specialist response, while staying short enough to keep accuracy high and limit alerts to the patients most likely to
-    need help soon.
+  why_correct: 'The target has to fit how the warning will be used. Of the options, only a six-hour horizon can leave room for
+    the four-hour specialist response while staying short enough for good accuracy and a manageable number of alerts. It is
+    a candidate to validate rather than a guarantee: the team should check on past data how much lead time the alerts
+    actually give, how precise they are, and whether their volume fits about five per ward per shift.'
   why_not:
-    A: A one-hour horizon gives the most accurate predictions, but the warning would arrive after it is too late to arrange
-      the four-hour response.
-    C: A 48-hour horizon gives plenty of notice, but many more patients cross it, so wards able to act on about five alerts
-      a shift would face far more alerts than they can handle.
-    D: A daily score fits ward-round routines, but a patient can deteriorate between rounds, and a score made once a day may
-      be many hours old when it matters.
+    A: A one-hour horizon gives the most accurate predictions, but the warning would arrive after it is too late to arrange the
+      four-hour response.
+    C: A 48-hour horizon gives plenty of notice, but many more patients cross it, so wards able to act on about five alerts a
+      shift would face far more alerts than they can handle.
+    D: A daily score fits ward-round routines, but a patient can deteriorate between rounds, and a score made once a day may be
+      many hours old when it matters.
 status: published
-outline_version: '2026-04-15'
+outline_version: 2026-04-15
 sample: false
 provenance:
   generated_by: claude

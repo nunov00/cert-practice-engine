@@ -1,9 +1,9 @@
 id: aaism-d2-2.3-0040
 subdomain: '2.3'
 difficulty: easy
-stem: A company pays a reseller for access to a named premium model at that model's price. Quality on its own regression prompts
-  drops at irregular times, and it suspects the reseller sometimes routes requests to a cheaper model under the same name.
-  Which evidence would BEST settle this?
+stem: A company pays a reseller for access to a named premium model at that model's price. Quality on its own regression
+  prompts drops at irregular times, and it suspects the reseller sometimes routes requests to a cheaper model under the same
+  name. Which evidence would BEST settle this?
 options:
   A: The reseller's request routing logs for the affected periods
   B: Latency and token counts recorded for each request it sends
@@ -13,21 +13,21 @@ answer: C
 explanation:
   why_correct: The question is which model answered particular requests, and the party under suspicion controls the routing.
     Prompts chosen because the premium model handles them and the cheaper one does not, sent through the reseller at random
-    times, test the answering model directly and independently, and repeated over time they catch switching that happens only
-    now and then.
+    times, test the answering model directly and independently, and repeated over time they catch switching that happens
+    only now and then.
   why_not:
-    A: Routing logs would show a switch directly, but they are produced by the party under suspicion, which could edit them
-      or leave out the periods in question.
-    B: Latency and token counts do not depend on the reseller's word, but they also vary with load, prompt length and configuration,
-      so they hint at a switch rather than settle which model answered.
+    A: Routing logs would show a switch directly, but they are produced by the party under suspicion, which could edit them or
+      leave out the periods in question.
+    B: Latency and token counts do not depend on the reseller's word, but they also vary with load, prompt length and
+      configuration, so they hint at a switch rather than settle which model answered.
     D: An assurance report gives independent evidence about the reseller's controls over a period, but it rarely tests which
       model served individual requests, and switching at irregular times may not appear in its samples.
 status: draft
-outline_version: '2025-08-19'
+outline_version: 2025-08-19
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
-  check_verdict: pass
+  check_verdict: fail
   checked_by: 2026-11-01-daily-aaism-check
   options_only: obvious

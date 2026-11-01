@@ -74,7 +74,5 @@ held:
   # because too few hard labels survived the strict hard-label check
   - { id: cissp-d1-1.11-0003, pr: 73 }
   - { id: cissp-d7-7.9-0002, pr: 73 }
-  - { id: aaism-d2-2.3-0040, pr: 73 }
   - { id: aaism-d3-3.2-0026, pr: 73 }
-  - { id: aaism-d2-2.3-0041, pr: 73 }
   - { id: aaism-d1-1.4-0024, pr: 73 }

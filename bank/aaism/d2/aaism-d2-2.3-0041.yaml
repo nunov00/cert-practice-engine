@@ -1,9 +1,9 @@
 id: aaism-d2-2.3-0041
 subdomain: '2.3'
 difficulty: medium
-stem: During due diligence, an AI transcription vendor's signed questionnaire says call audio is deleted straight after processing.
-  The vendor's public help pages say audio is kept for 30 days to improve accuracy. The calls include customers' card details.
-  What should the security manager do NEXT?
+stem: During due diligence, an AI transcription vendor's signed questionnaire says call audio is deleted straight after
+  processing. The vendor's public help pages say audio is kept for 30 days to improve accuracy. The calls include customers'
+  card details. What should the security manager do NEXT?
 options:
   A: Get the vendor to state the retention that applies in the contract
   B: Accept the signed questionnaire as the vendor's commitment
@@ -11,23 +11,22 @@ options:
   D: Upload test audio, request deletion and check the vendor's reply
 answer: A
 explanation:
-  why_correct: Two vendor statements conflict on a point that decides whether card data sits with the vendor for a month.
-    A questionnaire is a pre-sale answer, not usually a binding term. Having the vendor resolve the conflict and commit in
-    the contract to the retention that applies settles which practice holds and makes it enforceable before any calls are
-    sent.
+  why_correct: Two vendor statements conflict on a point that decides whether card data sits with the vendor for a month. A
+    questionnaire is a pre-sale answer, not usually a binding term. Having the vendor resolve the conflict and commit in the
+    contract to the retention that applies settles which practice holds and makes it enforceable before any calls are sent.
   why_not:
     B: A signed questionnaire carries weight, but it is not usually part of the contract, and the vendor's own documentation
       says otherwise, so relying on it leaves the conflict open.
-    C: An assurance report gives independent evidence of how controls operate, but it may not test retention of this data,
-      and it cannot say which of the two stated practices the vendor has agreed to.
+    C: An assurance report gives independent evidence of how controls operate, but it may not test retention of this data, and
+      it cannot say which of the two stated practices the vendor has agreed to.
     D: A test shows how the vendor answers a deletion request, but not what it keeps internally for accuracy work, which is
       where the 30-day retention would sit.
 status: draft
-outline_version: '2025-08-19'
+outline_version: 2025-08-19
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
-  check_verdict: pass
+  check_verdict: fail
   checked_by: 2026-11-01-daily-aaism-check
   options_only: not_obvious

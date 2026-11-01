@@ -6,14 +6,14 @@ stem: A payments platform runs 60 microservices on one container cluster, writte
   meet it within a quarter without changes to the services' code. Which approach BEST fits?
 options:
   A: IPsec tunnels between the cluster's nodes, run by the platform team
-  B: A service mesh whose sidecars use mutual TLS with a certificate per service
+  B: Service mesh sidecars using mutual TLS with a certificate per service
   C: TLS in each service's code, with certificates from an internal CA
   D: Network policies that permit only the approved service-to-service flows
 answer: B
 explanation:
   why_correct: Mesh sidecars sit beside each service and handle the connection for it, so traffic is encrypted without code
-    changes. Because each service has its own certificate, every connection is authenticated and logged with the identity
-    of the calling and called service.
+    changes. Because each service has its own certificate, every connection is authenticated and logged with the identity of
+    the calling and called service.
   why_not:
     A: Node-to-node IPsec encrypts traffic between machines without code changes, but its identity is the node, not the service,
       so it cannot show which service called which, and traffic between services on the same node is not covered.
@@ -22,7 +22,7 @@ explanation:
     D: Network policies restrict which services may talk, which is good practice, but they do not encrypt the traffic or record
       the calls.
 status: published
-outline_version: '2024-04-15'
+outline_version: 2024-04-15
 sample: false
 provenance:
   generated_by: claude

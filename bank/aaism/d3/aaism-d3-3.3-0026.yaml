@@ -1,10 +1,10 @@
 id: aaism-d3-3.3-0026
 subdomain: '3.3'
-difficulty: hard
-stem: A SaaS firm lets customers opt out of having their data used for model training, a setting they can change at any time,
-  and most opt-outs come from long-standing customers. The setting is held in the CRM. Training sets are built each quarter
-  from the data lake, which also feeds billing and support analytics. Opted-out customers' data was found in the last training
-  set. Which control BEST prevents this?
+difficulty: medium
+stem: A SaaS firm lets customers opt out of having their data used for model training, a setting they can change at any
+  time, and most opt-outs come from long-standing customers. The setting is held in the CRM. Training sets are built each
+  quarter from the data lake, which also feeds billing and support analytics. Opted-out customers' data was found in the
+  last training set. Which control BEST prevents this?
 options:
   A: Move opted-out customers' data to a separate area at ingestion
   B: Check each record's current opt-out status when sets are built
@@ -18,12 +18,12 @@ explanation:
   why_not:
     A: Separating data at ingestion works for customers who had opted out when their data arrived. Most opt-outs come from
       long-standing customers whose data already sits in the main area, so it keeps reaching training sets.
-    C: Comparing each set with the list after the run finds the problem, but only once the model has been trained on data
-      it should not have used.
+    C: Comparing each set with the list after the run finds the problem, but only once the model has been trained on data it
+      should not have used.
     D: Deletion keeps the data out of training, but the lake also feeds billing and support analytics, which still need it.
       Opting out of training does not end those uses.
 status: published
-outline_version: '2025-08-19'
+outline_version: 2025-08-19
 sample: false
 provenance:
   generated_by: claude

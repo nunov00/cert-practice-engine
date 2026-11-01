@@ -1,10 +1,10 @@
 id: cissp-d3-3.6-0004
 subdomain: '3.6'
 difficulty: hard
-stem: A retailer wants to recognise when the same payment card is used again, to spot repeat customers and refund abuse. Refunds
-  go through its payment processor, which needs only the processor's own payment reference. Its policy forbids storing
-  card numbers in any decryptable form, and a thief who steals its database must not be able to recover them. Which method
-  BEST fits?
+stem: A retailer wants to recognise when the same payment card is used again, to spot repeat customers and refund abuse.
+  Refunds go through its payment processor, which needs only the processor's own payment reference. Its policy forbids
+  storing card numbers in any decryptable form, and a thief who steals its database must not be able to recover them. Which
+  method BEST fits?
 options:
   A: AES-256 encryption of each card number, with the key held in an HSM
   B: A SHA-256 hash of each card number, stored in place of the number
@@ -16,14 +16,16 @@ explanation:
     can be matched, and without the secret key, which stays in the HSM, a thief cannot test candidate card numbers against
     the stolen values.
   why_not:
-    A: Encryption with an HSM-held key protects stolen data well, but the stored values can be decrypted by anyone who can
-      use the key, which is exactly the decryptable form the policy forbids.
+    A: Encryption with an HSM-held key protects stolen data well, but the stored values can be decrypted by anyone who can use
+      the key, which is exactly the decryptable form the policy forbids.
     B: A plain hash allows matching, but card numbers come from a small, structured space, so a thief can hash every plausible
       number and recover the cards from the stolen database.
-    C: A random salt per record defeats precomputed guessing, but the same card then hashes differently each time, so the retailer
-      could no longer recognise a repeat card.
+    C: A random salt per record defeats precomputed tables, but the same card then hashes differently each time, so the retailer
+      cannot look a card up directly and must re-hash it with every stored salt to find a repeat. The salts sit beside the
+      hashes, so a thief can still guess the small, structured card-number space for each record offline, which the secret
+      key in D prevents.
 status: published
-outline_version: '2024-04-15'
+outline_version: 2024-04-15
 sample: false
 provenance:
   generated_by: claude

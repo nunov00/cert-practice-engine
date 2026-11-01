@@ -2,10 +2,11 @@ id: cissp-d4-4.2-0015
 subdomain: '4.2'
 difficulty: medium
 stem: An inline intrusion prevention system protects a company's internet-facing payment API. Twice this year, a signature
-  update from the vendor blocked genuine payment traffic for hours before engineers found the cause; both times the signature
-  had been released that day. The company wants to keep blocking attacks without such outages. Which change BEST fits?
+  update from the vendor blocked genuine payment traffic for hours before engineers found the cause; both times the
+  signature had been released that day. The company wants to keep blocking attacks without such outages. Which change BEST
+  fits?
 options:
-  A: Run newly released signatures in alert-only mode for a few days before blocking
+  A: Run new signatures in alert-only mode for a few days before blocking
   B: Move the system to passive monitoring of a traffic copy, alerting only
   C: Exclude the payment API's traffic from inspection, keeping the rest inline
   D: Turn off automatic updates and apply signatures monthly after lab testing
@@ -17,12 +18,12 @@ explanation:
   why_not:
     B: Passive monitoring removes the outage risk entirely, but it also stops the system blocking anything, which the company
       wants to keep.
-    C: Excluding the payment traffic stops the false blocks, but it leaves uninspected the very service the system was placed
-      to protect.
+    C: Excluding the payment traffic stops the false blocks, but it leaves uninspected the very service the system was placed to
+      protect.
     D: Lab testing before release is a common control on updates, but holding signatures for up to a month leaves new attacks
       unblocked for weeks, when a few days of alert-only running would catch the same faults.
 status: published
-outline_version: '2024-04-15'
+outline_version: 2024-04-15
 sample: false
 provenance:
   generated_by: claude

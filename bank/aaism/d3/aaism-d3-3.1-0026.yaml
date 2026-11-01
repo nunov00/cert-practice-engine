@@ -1,9 +1,9 @@
 id: aaism-d3-3.1-0026
 subdomain: '3.1'
-difficulty: hard
+difficulty: medium
 stem: A bank's mobile app runs a fraud model on the phone that decides whether a transfer needs a one-time code. Fraudsters
-  have used modified copies of the app to send large transfers with no code. Every transfer is executed by the bank's servers.
-  Which design change BEST closes this gap?
+  have used modified copies of the app to send large transfers with no code. Every transfer is executed by the bank's
+  servers. Which design change BEST closes this gap?
 options:
   A: Score each transfer on the bank's servers before executing it
   B: Check an app integrity attestation on the server for each transfer
@@ -16,14 +16,14 @@ explanation:
     the server's score calls for it puts the decision where the attacker cannot alter it. The phone can still run a model
     for quick feedback, but the server's decision is the one that counts.
   why_not:
-    B: Attestation is a useful signal that a request comes from a genuine app on an intact device, and is worth adding. It
-      can be evaded on compromised devices, and the decision to skip the code would still be made by code on the phone.
+    B: Attestation is a useful signal that a request comes from a genuine app on an intact device, and is worth adding. It can
+      be evaded on compromised devices, and the decision to skip the code would still be made by code on the phone.
     C: Obfuscation and root checks raise the cost of modifying the app, but they run on the attacker's device and can be patched
       out, as the modified copies already show.
     D: A signed model stops a swapped model file, but the attacker can change the app code that checks the signature or that
       acts on the model's decision.
 status: published
-outline_version: '2025-08-19'
+outline_version: 2025-08-19
 sample: false
 provenance:
   generated_by: claude
