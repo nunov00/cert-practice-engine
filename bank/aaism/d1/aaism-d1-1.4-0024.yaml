@@ -1,32 +1,33 @@
 id: aaism-d1-1.4-0024
 subdomain: '1.4'
-difficulty: hard
-stem: A logistics firm's AI security reviews depend on one specialist, who has resigned and leaves in eight weeks. Hiring
-  a replacement usually takes six months, and a consultancy can lend reviewers for up to three months. What is the BEST use
-  of the specialist's remaining time?
+difficulty: medium
+stem: At a bank, each new AI system goes through separate security, privacy and model risk assessments, run one after another
+  by three teams. Most of the questions in the three forms overlap, and project teams now often start building before the
+  assessments finish. What would MOST improve this?
 options:
-  A: Clear the current review backlog before leaving the firm
-  B: Write down review methods and coach two internal staff
-  C: Brief the consultancy's reviewers on the firm's platforms
-  D: Help shortlist and interview candidates for the role
-answer: B
+  A: Run the three assessments in parallel rather than one by one
+  B: Set a two-week service level for each team's assessment
+  C: One shared intake, each team adding only its own questions
+  D: Hold building until the three assessments are approved
+answer: C
 explanation:
-  why_correct: Even if hiring starts at the resignation, a replacement arrives about four months after the specialist leaves,
-    longer than the three months the consultancy can cover, and what leaves with the specialist is knowledge of how the firm's
-    reviews are done. Recording the methods and coaching two staff keeps that knowledge in the firm, lets reviews continue
-    through the gap, and gives the consultants and the eventual hire something to work from.
+  why_correct: Because the forms overlap, project teams answer the same questions three times and wait on three teams chasing
+    the same facts, which is what pushes them to start early. One shared intake gathers the common facts once and routes them
+    to each function, which then adds only what its own judgement needs. Effort and elapsed time both fall, and each function
+    still decides on its own risks.
   why_not:
-    A: Clearing the backlog helps for the next two months, but new reviews keep arriving after the specialist has left, with
-      nothing left behind to handle them.
-    C: Briefing the consultants covers up to three months, but the gap before a new hire arrives is about four, and what the
-      consultants learn leaves with them.
-    D: Helping recruit is useful, but a six-month hiring process will not finish within eight weeks, and the new hire would
-      still start without the specialist's knowledge.
+    A: Parallel assessments cut the elapsed time to that of the slowest team, but project teams still answer the same questions
+      three times and three teams still chase the same facts.
+    B: A service level makes each team quicker, but it keeps three rounds of duplicated questions, and meeting it may lead
+      reviewers to cut depth rather than duplication.
+    D: Enforcing the wait deals with teams starting early, but it lengthens the delay that drives them to do so and leaves
+      the duplicated work in place.
 status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
-  check_verdict: pending
-  options_only: obvious
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aaism-check
+  options_only: not_obvious

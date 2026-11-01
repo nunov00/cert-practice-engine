@@ -24,11 +24,12 @@ explanation:
       history, which is where this rating's premise is weakest.
     D: Drawing on many files lets one answer combine more content, but each file it draws on is one the user can open, so
       the size of the exposure still depends on whether that access is right.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aaism-check
   options_only: not_obvious

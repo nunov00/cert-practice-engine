@@ -22,11 +22,12 @@ explanation:
       also get the overdose information the filter is meant to withhold.
     D: A pharmacist gives nurses a safe answer, but at the bedside they need it in moments, and one on-call pharmacist cannot
       answer each blocked question at that speed.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aaism-check
   options_only: not_obvious

@@ -21,11 +21,12 @@ explanation:
       candidates for each change.
     D: Alerts flag agent changes for review, but they do not say which conversation produced each change, which is what the
       investigators lacked.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aaism-check
   options_only: not_obvious

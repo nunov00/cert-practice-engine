@@ -1,32 +1,32 @@
 id: aaism-d3-3.2-0026
 subdomain: '3.2'
-difficulty: hard
-stem: A news app's recommendation model updates itself continuously from users' clicks, so trending stories reach feeds within
-  minutes. Coordinated accounts pushed a fringe outlet's stories into many users' feeds within hours, before anyone noticed.
-  Which life cycle change BEST limits this?
+difficulty: easy
+stem: A bank's release pipeline runs a jailbreak test suite against each new chatbot version. Several attack prompts succeed
+  on some runs and fail on others, so the same version can pass one day and fail the next. In production the chatbot generates
+  replies with sampling switched on. Which change BEST makes the gate reliable?
 options:
-  A: Rate limits on clicks per account across the whole app
-  B: Hourly update batches that must pass an evaluation gate
-  C: Anomaly alerts on sudden shifts in clicks per outlet
-  D: Editorial review of the most recommended stories each day
-answer: B
+  A: Run the suite with sampling switched off so results repeat
+  B: Re-run each failed attack once and pass if the retry is blocked
+  C: Move attack prompts with varying results out of the gate
+  D: Run each attack many times and gate on its success rate
+answer: D
 explanation:
-  why_correct: With continuous learning, each click changes the live model at once, so manipulation reaches users before any
-    check runs. Collecting clicks into hourly batches and releasing the updated model only after an automated evaluation,
-    for example against trusted engagement signals and limits on how far one outlet can rise, puts a gate between the data
-    and users while keeping feeds current within the hour.
+  why_correct: With sampling on, whether an attack works is a matter of probability, so a single run per prompt gives a coin-toss
+    verdict. Running each attack many times and setting a limit on its success rate measures what attackers in production
+    face, since they can simply try again, and gives the same verdict for the same version.
   why_not:
-    A: Per-account limits stop single accounts clicking in bulk, but a coordinated campaign spreads its clicks across many
-      accounts that each look normal.
-    C: Alerts on click shifts help spot campaigns, but the live model has already learned from the clicks by the time anyone
-      responds.
-    D: Daily editorial review catches what reached the top lists, but the campaign shaped feeds within hours, long before
-      the review.
+    A: Switching sampling off makes results repeat, but the gate then tests a configuration customers never meet, and an attack
+      that works one time in ten in production may never work in the test.
+    B: Retrying failures is a common fix for flaky tests, but here a failure means an attack got through, and passing on a
+      blocked retry hides attacks that work only part of the time.
+    C: Removing unstable tests steadies the gate, but the unstable prompts are attacks that sometimes work, which is exactly
+      the weakness the gate should catch.
 status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
-  check_verdict: pending
-  options_only: not_obvious
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aaism-check
+  options_only: obvious

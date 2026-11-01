@@ -2,30 +2,31 @@ id: aaism-d1-1.5-0023
 subdomain: '1.5'
 difficulty: hard
 stem: Investigators found that an attacker held write access to a bank's shared feature store for three weeks before it was
-  revoked. Five fraud and credit models retrain from the store on different schedules, and one of them now flags far fewer
-  fraud cases. Which models should responders treat as possibly poisoned?
+  revoked. Five fraud and credit models retrain from the store each month on its latest twelve months of data, and one of
+  them now flags far fewer fraud cases. Which models should responders treat as possibly poisoned?
 options:
-  A: The model whose fraud flag rate has dropped after the breach
-  B: Models that trained on store data from the three weeks
-  C: Models whose accuracy has fallen after the access began
-  D: The five models, each rebuilt from scratch on clean data
+  A: Models that retrained during the three weeks of access
+  B: Models trained on store rows written or changed during those weeks
+  C: Models using the same feature tables as the affected one
+  D: Models whose outputs shifted after the access began
 answer: B
 explanation:
-  why_correct: 'Poisoned data reaches a model only if the model trains on it. Using lineage to find each model whose training
-    runs drew on store data written during the three weeks gives the scope: those models are suspect even if they look normal,
-    and models that did not train on that window are not.'
+  why_correct: Rows written during the three weeks stay in the store after access is revoked, and each model trains on a rolling
+    twelve months, so retraining for the next year can pick them up. The scope is any model whose training data includes those
+    rows, found through lineage, including models retrained after revocation and models that still look normal.
   why_not:
-    A: The falling flag rate points to one affected model, but poisoning can leave other models looking normal, for example
-      by planting a trigger that fires only later.
-    C: Accuracy checks catch crude poisoning, but targeted poisoning is designed to keep overall accuracy steady, so a stable
-      figure does not clear a model.
-    D: Rebuilding the five models is the cautious choice, but models that did not train on the window hold no poisoned data,
-      and rebuilding them diverts effort from the ones that did.
-status: draft
+    A: Retraining during the window is the obvious test, but the rows written then stay in the twelve-month window, so a model
+      retrained the week after revocation trains on them too.
+    C: The affected model's tables are a natural place to start, but the attacker could write to any part of the shared store,
+      and poisoning aimed at another model would leave this one's tables untouched.
+    D: Shifted outputs reveal crude poisoning, but targeted poisoning is designed to leave normal behaviour unchanged until
+      a trigger appears, so steady outputs do not clear a model.
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
-  check_verdict: pending
-  options_only: obvious
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aaism-check
+  options_only: not_obvious

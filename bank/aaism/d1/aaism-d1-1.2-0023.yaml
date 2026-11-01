@@ -21,11 +21,12 @@ explanation:
       on the client remembering them.
     D: An objection puts the firm's position on record, but the note-taker keeps recording and sends the transcript to its
       vendor all the same.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-01-daily-aaism-check
   options_only: not_obvious
