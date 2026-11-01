@@ -1,6 +1,6 @@
 id: cissp-d5-5.2-0008
 subdomain: '5.2'
-difficulty: hard
+difficulty: medium
 stem: A company's 25 network administrators, many of them contractors who change every few months, sign in to 600 routers
   and switches with one shared local admin account. Auditors now require a record naming the administrator behind each command
   run on a device, and a leaver's access to end in one step. Which approach BEST fits?
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

@@ -1,6 +1,6 @@
 id: cissp-d5-5.1-0009
 subdomain: '5.1'
-difficulty: hard
+difficulty: medium
 stem: A bank hires an agency's analysts, who work on the agency's own laptops, to label documents in an internal web application.
   The agency will not let the bank install software on those laptops or manage them. The bank must keep copies of the documents
   off the laptops. Which access method BEST fits?
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

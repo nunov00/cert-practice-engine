@@ -1,6 +1,6 @@
 id: cissp-d6-6.2-0007
 subdomain: '6.2'
-difficulty: hard
+difficulty: medium
 stem: A fintech's new lending app launches in six weeks, and its code has had no security review. The owner can fund one
   two-week penetration test and wants it to find as many exploitable flaws as possible before launch. The development team
   can share anything the testers ask for. Which test design BEST fits?
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-cissp
   check_verdict: pending
+  options_only: not_obvious
