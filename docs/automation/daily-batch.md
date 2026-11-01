@@ -78,22 +78,27 @@ published questions than the target.
      pool of questions over a certain difficulty. Therefore adding more hard
      questions would help"). Since 2026-10-24 reviewers have lowered most
      `hard` labels, so CISSP and AAIR nights published almost nothing and
-     their drafts piled up on the held-back list. So each exam's share is
-     written in two passes:
-     1. **Hard pass.** Write 60% of the exam's share (rounded up; 11 of 17,
-        10 of 16) as `hard` questions only, using the "Writing hard questions
-        that stay hard" section of the writer brief, and send them through
-        step 6 at once: the independent check, the strict hard-label check and
-        the hard top-ups.
-     2. **Fill pass.** Count the hard questions that survived (`H`). At the
+     their drafts piled up on the held-back list. Even with 60% of each share
+     written as `hard`, the 2026-11-01 batch kept only 4 hard per exam and the
+     merge run shipped 3 of 13 AAISM questions (owner, 2026-11-01: "As there
+     are always downgrades, maybe aim for a larger percentage of hard?"). So
+     every new question is first written as `hard`, and the questions whose
+     label is lowered become the night's easy and medium ones:
+     1. **Hard pass.** Write the exam's whole share (17 of 17, 16 of 16) as
+        `hard` questions only, using the "Writing hard questions that stay
+        hard" section of the writer brief, and send them through step 6 at
+        once: the independent check, the strict hard-label check and the hard
+        top-ups. Do not write new `easy` or `medium` questions.
+     2. **Fill.** Count the hard questions that survived (`H`). At the
         profile's `hard_share_min` (`s`, 30%), the PR can carry at most
         `H × (1 − s) / s` non-hard questions for the exam (7 for every 3
         hard). Fill that room in this order: the hard pass's questions whose
-        label was lowered, then held drafts from step 3, then new `easy` or
-        `medium` questions. Write the rest of the share as `hard` questions
-        (a second hard round, through step 6 like the first), never as
-        questions the share cannot carry. A night with spare hard share
-        therefore releases held drafts instead of adding to them.
+        label was lowered, then held drafts from step 3. Hold back the
+        lowered questions the share cannot carry, as in step 6. A night with
+        spare hard share therefore releases held drafts instead of adding to
+        them.
+     The published floor stays at `hard_share_min` (30%); this changes only
+     what is drafted.
    - A question is `hard` only when at least two wrong options stay plausible
      after reading the whole stem, and only a stem detail separates them from
      the key. A question whose answer is a figure to compute (a formula, plain
