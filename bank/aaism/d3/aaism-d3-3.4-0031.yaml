@@ -25,7 +25,7 @@ explanation:
     C: Counterfactuals tell applicants what would change the outcome, which is useful, but they are also computed after the fact
       from the complex model and do not show the regulator what drove each decision.
 status: draft
-outline_version: 2025-08-19
+outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude

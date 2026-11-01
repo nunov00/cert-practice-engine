@@ -22,7 +22,7 @@ explanation:
     C: Limiting re-testing to high-risk reviews still repeats the same tests many times, while lower-risk reviews rely on no
       evidence at all.
 status: draft
-outline_version: 2026-04-15
+outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude

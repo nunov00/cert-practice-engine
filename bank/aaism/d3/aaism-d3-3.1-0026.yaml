@@ -22,8 +22,8 @@ explanation:
       out, as the modified copies already show.
     D: A signed model stops a swapped model file, but the attacker can change the app code that checks the signature or that
       acts on the model's decision.
-status: published
-outline_version: 2025-08-19
+status: draft
+outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude

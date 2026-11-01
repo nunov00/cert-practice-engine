@@ -1,6 +1,6 @@
 id: aair-d1-1.5-0023
 subdomain: '1.5'
-difficulty: hard
+difficulty: medium
 stem: A lender uses a vendor's credit model that returns only a score, and the vendor will not reveal how the model works,
   citing trade secrets. Consumer credit law in the lender's market requires telling declined applicants the main factors
   that actually drove their decision. What should the risk practitioner advise?
@@ -23,7 +23,7 @@ explanation:
     D: An officer review adds human judgement, but the officer sees only the score and cannot know which factors drove it, so
       the reasons recorded would be the officer's own.
 status: published
-outline_version: 2026-04-15
+outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude

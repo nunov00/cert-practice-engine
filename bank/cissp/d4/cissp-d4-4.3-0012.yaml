@@ -21,8 +21,8 @@ explanation:
       languages across eight teams, which the rule's deadline excludes.
     D: Network policies restrict which services may talk, which is good practice, but they do not encrypt the traffic or record
       the calls.
-status: published
-outline_version: 2024-04-15
+status: draft
+outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude

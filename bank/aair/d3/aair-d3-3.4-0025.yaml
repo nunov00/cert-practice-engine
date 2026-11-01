@@ -22,7 +22,7 @@ explanation:
     D: A monthly owner review puts the right person on the indicator, but with no defined level the decision to act is
       left to judgement each month, which is how a steady two-month rise can pass without action.
 status: draft
-outline_version: 2026-04-15
+outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude

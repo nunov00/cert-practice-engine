@@ -23,7 +23,7 @@ explanation:
     C: Moving to another vendor may be slow, but it is one of several routes the insurer could plan for, and any new model would
       still face the same missing examples.
 status: published
-outline_version: 2026-04-15
+outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude

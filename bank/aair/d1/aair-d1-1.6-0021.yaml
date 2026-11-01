@@ -12,8 +12,8 @@ options:
 answer: A
 explanation:
   why_correct: The harm comes from acting on a sensitive fact the customer has not chosen to share, and it lands before the
-    customer knows the inference exists. Sending such offers only to customers who have explicitly asked for them, through a
-    channel they chose, keeps the decision to disclose with the customer while still serving those who want the offers.
+    customer knows the inference exists. Sending such offers only to customers who have explicitly asked for them keeps the
+    decision to disclose with the customer while still serving those who want the offers.
   why_not:
     B: An opt-out respects choice in general, but customers learn they are profiled only when the mailing arrives, which is when
       the disclosure to family has already happened.
@@ -21,8 +21,8 @@ explanation:
       mailing from revealing the pregnancy at home.
     D: Disguising the targeting may make mailings less revealing, but it keeps acting on the inference and hides that from
       customers, which harms trust if it comes to light.
-status: published
-outline_version: 2026-04-15
+status: draft
+outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude

@@ -12,16 +12,16 @@ options:
 answer: D
 explanation:
   why_correct: With a fixed two weeks and the aim of finding as many flaws as possible, testers get the most coverage when
-    they can read the code and use every role. They spend the time confirming flaws rather than discovering how the app works,
-    and code that has never been reviewed is likely to hold flaws that only show from the inside.
+    they can read the code and use every role. They spend the time confirming flaws rather than discovering how the app
+    works, and code that has never been reviewed is likely to hold flaws that only show from the inside.
   why_not:
-    A: A black-box test shows what an outside attacker could find without inside knowledge, but much of the two weeks goes
-      on discovery, so it finds fewer flaws in the time available.
-    B: A gray-box test is a common balance of realism and efficiency, but with a single customer account and no code, flaws
-      in other roles and in logic hidden behind the API stay hard to reach in two weeks.
+    A: A black-box test shows what an outside attacker could find without inside knowledge, but much of the two weeks goes on
+      discovery, so it finds fewer flaws in the time available.
+    B: A gray-box test is a common balance of realism and efficiency, but with a single customer account and no code, flaws in
+      other roles and in logic hidden behind the API stay hard to reach in two weeks.
     C: A double-blind test measures how operations detect and respond to an attack. The owner wants flaws found before launch,
       not a test of the response.
-status: published
+status: draft
 outline_version: '2024-04-15'
 sample: false
 provenance:

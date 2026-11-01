@@ -21,7 +21,7 @@ explanation:
       provide, when the version gap can be fixed.
     D: Meeting the recovery time says the service comes back quickly, not that the decisions it makes are sound.
 status: draft
-outline_version: 2026-04-15
+outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude

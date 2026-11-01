@@ -22,7 +22,7 @@ explanation:
     D: A test shows how the vendor answers a deletion request, but not what it keeps internally for accuracy work, which is
       where the 30-day retention would sit.
 status: draft
-outline_version: 2025-08-19
+outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude

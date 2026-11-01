@@ -23,7 +23,7 @@ explanation:
     D: An assurance report gives independent evidence about the reseller's controls over a period, but it rarely tests which
       model served individual requests, and switching at irregular times may not appear in its samples.
 status: draft
-outline_version: 2025-08-19
+outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude

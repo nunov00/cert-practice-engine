@@ -23,7 +23,7 @@ explanation:
     D: A daily score fits ward-round routines, but a patient can deteriorate between rounds, and a score made once a day may be
       many hours old when it matters.
 status: published
-outline_version: 2026-04-15
+outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude

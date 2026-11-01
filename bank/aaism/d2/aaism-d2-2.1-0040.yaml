@@ -2,8 +2,8 @@ id: aaism-d2-2.1-0040
 subdomain: '2.1'
 difficulty: medium
 stem: A firm will roll out an assistant that searches its file shares and shows each user only files they can already open,
-  so the risk assessment rates data exposure as low. The shares date back fifteen years, and each team has managed access
-  to its own folders throughout. What is the GREATEST weakness of this rating?
+  so the risk assessment rates data exposure as low. The shares date back fifteen years, and each team has managed access to
+  its own folders throughout. What is the GREATEST weakness of this rating?
 options:
   A: It does not cover instructions planted in documents on the shares
   B: It takes no account of the model provider storing prompts and files
@@ -16,15 +16,14 @@ explanation:
     files. An assistant that searches everything makes them easy to find, so the likelihood of exposure rises sharply and
     the low rating rests on an unchecked assumption.
   why_not:
-    A: Planted instructions are a real risk for retrieval systems, but they distort answers rather than widen what each user
-      can reach. The rating's premise about access is the larger gap, given how the shares have been run. Injection can also
-      be used to send data out to an attacker, but it acts with the asking user's access, so what it can leak is still bounded
-      by what that user can reach.
+    A: Planted instructions are a real risk for retrieval systems, but they act with the asking user's own access, so what they
+      can expose is still bounded by that access. The rating's premise about access is the larger gap, given how the shares
+      have been run.
     B: Provider storage is worth confirming in due diligence for any hosted assistant, but it does not depend on the shares'
       history, which is where this rating's premise is weakest.
-    D: Drawing on many files lets one answer combine more content, but each file it draws on is one the user can open, so
-      the size of the exposure still depends on whether that access is right.
-status: published
+    D: Drawing on many files lets one answer combine more content, but each file it draws on is one the user can open, so the
+      size of the exposure still depends on whether that access is right.
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

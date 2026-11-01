@@ -20,7 +20,7 @@ explanation:
       used to reach it.
     C: Hardening the agent prevents a repeat, but the agent is already stopped, and the leaked keys still work.
 status: draft
-outline_version: 2026-04-15
+outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude

@@ -23,7 +23,7 @@ explanation:
     D: Lab testing before release is a common control on updates, but holding signatures for up to a month leaves new attacks
       unblocked for weeks, when a few days of alert-only running would catch the same faults.
 status: published
-outline_version: 2024-04-15
+outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude

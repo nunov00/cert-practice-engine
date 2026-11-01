@@ -7,7 +7,7 @@ stem: A bank's release pipeline runs a jailbreak test suite against each new cha
 options:
   A: Run the suite with sampling switched off so results repeat
   B: Re-run each failed attack once and pass if the retry is blocked
-  C: Move attack prompts with varying results out of the gate
+  C: Fix the random seed so each run draws the same samples
   D: Run each attack many times and gate on its success rate
 answer: D
 explanation:
@@ -20,10 +20,10 @@ explanation:
       that works one time in ten in production may never work in the test.
     B: Retrying failures is a common fix for flaky tests, but here a failure means an attack got through, and passing on a
       blocked retry hides attacks that work only part of the time.
-    C: Removing unstable tests steadies the gate, but the unstable prompts are attacks that sometimes work, which is exactly the
-      weakness the gate should catch.
+    C: A fixed seed makes results repeat, but it tests one sample path out of the many that production users meet, so an attack
+      that works one time in ten may still pass.
 status: draft
-outline_version: 2025-08-19
+outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude

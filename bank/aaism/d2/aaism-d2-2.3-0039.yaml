@@ -15,13 +15,13 @@ explanation:
     judge. Admin approval for file access puts that review before any file is shared, so apps whose terms allow training on
     customer files can be refused while vetted ones stay available.
   why_not:
-    A: Verification confirms who the publisher is, which keeps out impostor apps. A verified publisher can still have terms
-      that let it train on customer files.
-    C: A warning makes staff pause, but it leaves the decision with people who have not read the app's terms and want the
-      tool, so many will still consent.
+    A: Verification confirms who the publisher is, which keeps out impostor apps. A verified publisher can still have terms that
+      let it train on customer files.
+    C: A warning makes staff pause, but it leaves the decision with people who have not read the app's terms and want the tool,
+      so many will still consent.
     D: Blocking discovered apps ends further access, but by then each app has already read files under terms that allow training
       on them.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

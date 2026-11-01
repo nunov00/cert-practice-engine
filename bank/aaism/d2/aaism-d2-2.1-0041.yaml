@@ -23,7 +23,7 @@ explanation:
     D: How many customers the leak can reach is part of impact, which should be rated too, but the rating in question is the
       likelihood.
 status: published
-outline_version: 2025-08-19
+outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude

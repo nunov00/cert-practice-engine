@@ -24,7 +24,7 @@ explanation:
     C: Noise raises error rates and is worth checking, but it degrades speech that was actually spoken. The silent stretches
       described are a separate untested condition in which the tool can produce content nobody said.
 status: published
-outline_version: 2026-04-15
+outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude

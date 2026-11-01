@@ -23,7 +23,7 @@ explanation:
     D: A birth year is less data, but it cannot show whether a user born in the borderline year has turned 16 yet, so the legal
       check cannot be done reliably.
 status: published
-outline_version: 2024-04-15
+outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude

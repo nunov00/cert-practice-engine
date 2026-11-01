@@ -21,7 +21,7 @@ explanation:
     D: Sanitisers make memory corruption visible when it happens, but running them on the existing corpus tests only inputs
       the team already has, not the unknown malformed files it wants to find.
 status: draft
-outline_version: 2024-04-15
+outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude

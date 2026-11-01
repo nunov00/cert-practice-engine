@@ -12,17 +12,16 @@ options:
 answer: C
 explanation:
   why_correct: The filter does what it was designed to do; the problem is that one policy serves two audiences with different
-    needs. Nurses sign in, so their role is known. Applying a clinical policy to those accounts gives them dosing limits while
-    the public keeps the protective one. Answers under the clinical policy should still be logged and drawn from the hospital's
-    own formulary.
+    needs. Nurses sign in, so their role is known. Applying a clinical policy to those accounts gives them dosing limits
+    while the public keeps the protective one. Answers under the clinical policy should still be logged for review.
   why_not:
-    A: Retraining fixes a filter that misjudges questions. This one judges them correctly, since overdose questions are what
-      it should block for the public, so better labels would not change the outcome for nurses.
+    A: Retraining fixes a filter that misjudges questions. This one judges them correctly, since overdose questions are what it
+      should block for the public, so better labels would not change the outcome for nurses.
     B: A looser threshold would let some nurse questions through, but it applies to every user, so members of the public would
       also get the overdose information the filter is meant to withhold.
     D: A pharmacist gives nurses a safe answer, but at the bedside they need it in moments, and one on-call pharmacist cannot
       answer each blocked question at that speed.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

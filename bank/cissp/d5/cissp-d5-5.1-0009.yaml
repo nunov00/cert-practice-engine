@@ -23,7 +23,7 @@ explanation:
     D: Removing download buttons and adding MFA protects the sign-in, but the documents still reach the laptop's browser, which
       can save, print or cache them.
 status: published
-outline_version: 2024-04-15
+outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude

@@ -1,9 +1,9 @@
 id: aair-d1-1.1-0027
 subdomain: '1.1'
 difficulty: medium
-stem: An airline wants an AI assistant that finds the right maintenance manual passage for its engineers, where a wrong passage
-  could lead to an unsafe repair. Most queries are part numbers and fault codes. The team proposes retrieval by the semantic
-  similarity of text embeddings. What should the risk practitioner recommend?
+stem: An airline wants an AI assistant that finds the right maintenance manual passage for its engineers, where a wrong
+  passage could lead to an unsafe repair. Most queries are part numbers and fault codes. The team proposes retrieval by the
+  semantic similarity of text embeddings. What should the risk practitioner recommend?
 options:
   A: Use a larger embedding model to capture finer differences in meaning
   B: Fine-tune the embedding model on the airline's maintenance manuals
@@ -11,18 +11,18 @@ options:
   D: Have a language model rewrite each query before it is embedded
 answer: C
 explanation:
-  why_correct: Embeddings capture similarity of meaning, and codes that differ by one character can look almost identical
-    to them, so a search for one part number can return the passage for a neighbouring part. Exact keyword matching finds
-    the identifier itself, while semantic retrieval still helps with questions in plain words. Combining the two fits a query
+  why_correct: Embeddings capture similarity of meaning, and codes that differ by one character can look almost identical to
+    them, so a search for one part number can return the passage for a neighbouring part. Exact keyword matching finds the
+    identifier itself, while semantic retrieval still helps with questions in plain words. Combining the two fits a query
     mix dominated by part numbers and fault codes.
   why_not:
     A: A larger embedding model represents meaning better, but a part number has little meaning to represent, so near-identical
       codes still sit close together.
-    B: Fine-tuning on the manuals improves understanding of the airline's terms, but it still matches by similarity, which
-      does not guarantee the exact code is found.
+    B: Fine-tuning on the manuals improves understanding of the airline's terms, but it still matches by similarity, which does
+      not guarantee the exact code is found.
     D: Query rewriting helps vague questions, but rewriting a part number adds nothing and can introduce errors into the one
       string that must match exactly.
-status: published
+status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:

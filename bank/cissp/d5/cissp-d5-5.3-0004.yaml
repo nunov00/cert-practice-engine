@@ -22,7 +22,7 @@ explanation:
     D: DPoP binds tokens to a key held by the client that redeems the code, which stops stolen tokens being replayed elsewhere.
       A malicious app that intercepts the code redeems it with its own key, so the tokens it gets are bound to that app.
 status: draft
-outline_version: 2024-04-15
+outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude

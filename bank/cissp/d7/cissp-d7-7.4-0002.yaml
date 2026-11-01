@@ -22,7 +22,7 @@ explanation:
     D: An assurance report shows that the provider's monitoring controls are designed and operating, but it does not test
       whether individual alerts are judged correctly.
 status: published
-outline_version: 2024-04-15
+outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude

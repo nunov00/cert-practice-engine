@@ -22,7 +22,7 @@ explanation:
     D: A recency filter keeps content current, but recent articles are mostly model drafts, so it raises the share of the
       model's own output in training.
 status: published
-outline_version: 2026-04-15
+outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude

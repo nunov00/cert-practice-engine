@@ -2,8 +2,8 @@ id: aaism-d3-3.5-0036
 subdomain: '3.5'
 difficulty: medium
 stem: A company's SOC receives model gateway logs of each conversation with its finance agent and, separately, the ERP audit
-  log of changes the agent makes. The agent runs hundreds of conversations at once, many for the same users. An investigation
-  took days to tie each suspicious change to the conversation behind it. Which logging change BEST fixes this?
+  log of changes the agent makes. The agent runs hundreds of conversations at once, many for the same users. An
+  investigation took days to tie each suspicious change to the conversation behind it. Which logging change BEST fixes this?
 options:
   A: Synchronised clocks across the gateway and the ERP logs
   B: The requesting user's name in each ERP change record
@@ -21,7 +21,7 @@ explanation:
       candidates for each change.
     D: Alerts flag agent changes for review, but they do not say which conversation produced each change, which is what the
       investigators lacked.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

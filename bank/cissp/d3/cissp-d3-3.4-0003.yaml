@@ -24,7 +24,7 @@ explanation:
     D: Dedicated hosts remove other tenants, but the cloud operator still runs the hosts and the bank's administrators still
       control the machines, so either could read the data in memory.
 status: published
-outline_version: 2024-04-15
+outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude

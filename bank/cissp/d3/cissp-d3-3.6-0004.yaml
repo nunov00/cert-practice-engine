@@ -25,7 +25,7 @@ explanation:
       hashes, so a thief can still guess the small, structured card-number space for each record offline, which the secret
       key in D prevents.
 status: published
-outline_version: 2024-04-15
+outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude

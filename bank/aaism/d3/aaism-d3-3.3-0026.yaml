@@ -22,8 +22,8 @@ explanation:
       should not have used.
     D: Deletion keeps the data out of training, but the lake also feeds billing and support analytics, which still need it.
       Opting out of training does not end those uses.
-status: published
-outline_version: 2025-08-19
+status: draft
+outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude

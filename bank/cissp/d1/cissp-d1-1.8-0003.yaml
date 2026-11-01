@@ -1,8 +1,8 @@
 id: cissp-d1-1.8-0003
 subdomain: '1.8'
 difficulty: hard
-stem: A senior engineer with access to a product's full source code resigns to join a direct competitor. His contract sets
-  a four-week notice period, and he leads two customer projects whose handover, mostly customer plans and contacts, will take
+stem: A senior engineer with access to a product's full source code resigns to join a direct competitor. His contract sets a
+  four-week notice period, and he leads two customer projects whose handover, mostly customer plans and contacts, will take
   most of that time. What should the company do with his access?
 options:
   A: Put him on garden leave and remove his access for the notice period
@@ -12,11 +12,12 @@ options:
 answer: C
 explanation:
   why_correct: The main exposure is the source code, which a direct competitor would value, while the handover needs project
-    material rather than code. Removing code access now and keeping what the handover needs cuts the main risk without losing
-    four weeks of knowledge transfer on two customer projects.
+    material rather than code. Removing code access now and keeping what the handover needs cuts the main risk without
+    losing four weeks of knowledge transfer on two customer projects.
   why_not:
-    A: Garden leave is a common choice for leavers going to a competitor, but here it would leave two customer projects without
-      the handover that only he can give.
+    A: Garden leave removes the exposure at once, but a handover of two live customer projects needs him working with the team
+      for most of the notice period; the code, which the competitor would value most and the handover does not need, can be
+      cut off without losing that.
     B: Monitoring is detective. It may record a copy after it has been made, and an insider who knows the tools can avoid them;
       with the whole code base and a direct competitor, the access itself should go.
     D: Read-only rights stop him changing the code, but not copying it, and copying is the risk when he is joining a competitor.

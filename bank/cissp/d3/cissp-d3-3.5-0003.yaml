@@ -5,7 +5,7 @@ stem: A web app on cloud virtual machines builds thumbnails from images at any U
   to their own site, which redirected the app's fetcher to the cloud's instance metadata address, and the app returned the
   machine's temporary credentials. Which change BEST closes this path?
 options:
-  A: Require a session token on metadata calls that the fetcher cannot set
+  A: Require a session token from a separate request on metadata calls
   B: Allow-list the external image hosts that the fetcher may contact
   C: Reject pasted URLs that point at the metadata address or private ranges
   D: Run the fetcher in its own container on the same virtual machine
@@ -22,7 +22,7 @@ explanation:
     D: A separate container limits what a compromised fetcher can reach on the host's file system, but its traffic still leaves
       through the machine's network, so it can still reach the metadata address.
 status: published
-outline_version: 2024-04-15
+outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude

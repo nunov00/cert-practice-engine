@@ -18,11 +18,11 @@ explanation:
   why_not:
     A: An escalation right protects findings that management overrules. Here nothing was overruled; the team rated the findings
       low itself, so the right would not have been used.
-    B: Audit sampling may detect softened ratings, but once a year and after launches, and the team keeps working under the
-      same pressure.
-    D: A target for high-rated findings answers one incentive with an opposite one, which can inflate ratings rather than
-      make them accurate.
-status: published
+    B: Audit sampling may detect softened ratings, but once a year and after launches, and the team keeps working under the same
+      pressure.
+    D: A target for high-rated findings answers one incentive with an opposite one, which can inflate ratings rather than make
+      them accurate.
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:
