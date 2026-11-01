@@ -1,6 +1,6 @@
 id: aaism-d1-1.2-0022
 subdomain: '1.2'
-difficulty: hard
+difficulty: medium
 stem: A company's procurement agent buys one-off parts from many small supplier websites, within set spending limits. Some
   sites require buyers to accept their terms at checkout, and the agent has accepted terms containing liability and data-sharing
   clauses. Which policy provision BEST addresses this?
@@ -27,3 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
   check_verdict: pending
+  options_only: not_obvious

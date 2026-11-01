@@ -1,6 +1,6 @@
 id: aaism-d3-3.4-0032
 subdomain: '3.4'
-difficulty: hard
+difficulty: medium
 stem: A hospital's medication chatbot serves the public on its website and, after sign-in, its own ward nurses. Its safety
   filter blocks questions about overdose thresholds, which works as intended for the public. Nurses on shift are now blocked
   from dosing limits they need at the bedside. What should the security manager recommend?
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
   check_verdict: pending
+  options_only: not_obvious

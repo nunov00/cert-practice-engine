@@ -1,6 +1,6 @@
 id: aaism-d1-1.4-0023
 subdomain: '1.4'
-difficulty: hard
+difficulty: medium
 stem: A retailer's AI security team reports to the chief data officer, who leads AI delivery and sets the team's budget and
   objectives, including on-time launches. Twice this year, findings the team rated low just before a fixed launch date later
   caused incidents. Nobody had overruled the team's ratings. What should the security manager propose?
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
   check_verdict: pending
+  options_only: not_obvious
