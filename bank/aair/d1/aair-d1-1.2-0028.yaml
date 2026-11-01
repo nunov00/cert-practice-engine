@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aair
   check_verdict: pending
+  options_only: not_obvious

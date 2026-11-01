@@ -1,6 +1,6 @@
 id: aair-d3-3.3-0029
 subdomain: '3.3'
-difficulty: hard
+difficulty: medium
 stem: A bank's model registry records each validated version of its credit model with a hash of the file. The serving platform
   loads whatever file the deployment job copies to it. Last month a data scientist deployed an unvalidated retrain through
   the job. Data scientists use the job out of hours to roll back to earlier versions when a release misbehaves. Which control
@@ -30,3 +30,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aair
   check_verdict: pending
+  options_only: not_obvious

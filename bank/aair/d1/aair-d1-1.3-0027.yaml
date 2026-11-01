@@ -1,6 +1,6 @@
 id: aair-d1-1.3-0027
 subdomain: '1.3'
-difficulty: hard
+difficulty: medium
 stem: A bank issues a co-branded credit card with a retailer. The retailer's AI model sets each cardholder's credit limit,
   and the retailer changes the model most weeks. The bank lends the money and answers to its regulator for the credit decisions.
   Which oversight arrangement BEST fits the bank's accountability?
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aair
   check_verdict: pending
+  options_only: not_obvious
