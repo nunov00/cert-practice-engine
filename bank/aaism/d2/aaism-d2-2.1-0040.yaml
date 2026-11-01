@@ -17,7 +17,9 @@ explanation:
     the low rating rests on an unchecked assumption.
   why_not:
     A: Planted instructions are a real risk for retrieval systems, but they distort answers rather than widen what each user
-      can reach. The rating's premise about access is the larger gap, given how the shares have been run.
+      can reach. The rating's premise about access is the larger gap, given how the shares have been run. Injection can also
+      be used to send data out to an attacker, but it acts with the asking user's access, so what it can leak is still bounded
+      by what that user can reach.
     B: Provider storage is worth confirming in due diligence for any hosted assistant, but it does not depend on the shares'
       history, which is where this rating's premise is weakest.
     D: Drawing on many files lets one answer combine more content, but each file it draws on is one the user can open, so
