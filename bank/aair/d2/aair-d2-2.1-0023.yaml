@@ -1,27 +1,26 @@
 id: aair-d2-2.1-0023
 subdomain: '2.1'
 difficulty: hard
-stem: A benefits agency is designing a system to decide whether applicants are eligible, under criteria set out exactly in
-  law, and to pick applications for fraud checks. The team proposes one machine learning model trained on ten years of past
-  decisions for both tasks. What should the risk practitioner recommend?
+stem: A lender is developing a gradient-boosted credit model. Testing shows that, within some narrow income bands, a higher
+  income gives a slightly worse score, although overall accuracy is high. The lender's credit policy requires that a higher
+  income can never worsen an applicant's score. What should the development team do?
 options:
-  A: Encode eligibility as rules and use a model only to select fraud checks
-  B: Use the one model, with officers reviewing each refusal before it is sent
-  C: Use the one model, with an explanation tool giving reasons for each refusal
-  D: Train separate models for eligibility and for selecting fraud checks
-answer: A
+  A: Group income into broad bands before it enters the model
+  B: Add training data from the income bands where scores dip
+  C: Give underwriters an explanation of each input's effect on the score
+  D: Constrain the model in training so higher income cannot lower a score
+answer: D
 explanation:
-  why_correct: Where eligibility criteria are set out exactly in law, they can be applied as rules that give the legally correct
-    result and can be traced to the law. A model trained on past decisions would only approximate them and would learn past
-    officers' errors. Machine learning still adds value where judgement is needed, in choosing which applications to check
-    for fraud.
+  why_correct: The policy sets a guarantee, not a tendency. Tree-based models such as gradient boosting can be trained with
+    a monotonic constraint on chosen inputs, so the learned relationship with income can only rise or stay flat. That meets
+    the policy by construction, at little cost to accuracy, and the property can be tested before release.
   why_not:
-    B: Reviewing refusals catches some wrong refusals, but leaves wrong approvals unchecked, and reviewers would be checking
-      a model's approximation of rules that could be applied exactly.
-    C: Explanations help applicants and reviewers, but they explain a learned approximation of the law. They do not make the
-      eligibility result correct.
-    D: Separating the tasks is a step forward, but a model for eligibility still learns from past decisions, errors included,
-      where exact legal criteria can be applied directly.
+    A: Broad bands smooth out some small dips, but the score can still fall from one band to the next, and grouping throws
+      away information. It reduces the problem without guaranteeing what the policy requires.
+    B: Sparse data often causes such dips, and more data may shrink them, but nothing makes the learned pattern rise with
+      income in every band.
+    C: Explanations would let underwriters see the dips, but they leave the scores as they are, so applicants could still
+      be scored against the policy.
 status: draft
 outline_version: '2026-04-15'
 sample: false
@@ -29,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aair
   check_verdict: pending
+  options_only: not_obvious

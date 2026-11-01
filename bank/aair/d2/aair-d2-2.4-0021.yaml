@@ -1,0 +1,30 @@
+id: aair-d2-2.4-0021
+subdomain: '2.4'
+difficulty: hard
+stem: A software company fine-tunes its support model each quarter on its own knowledge base. Staff now publish most new articles
+  by lightly editing drafts from that same model. Which data management practice BEST protects future fine-tuning?
+options:
+  A: Fine-tune only on articles that customers rated as helpful
+  B: Record for each article whether the model drafted it
+  C: Have experts review a sample of articles before each fine-tune
+  D: Fine-tune only on articles updated within the past year
+answer: B
+explanation:
+  why_correct: Training a model on its own lightly edited output reinforces its existing errors and habits and narrows its
+    range over successive rounds. Recording which articles the model drafted makes that share visible, so the team can limit
+    or weight such articles in each training set and keep enough human-written material.
+  why_not:
+    A: Ratings filter out poor articles, but model-drafted articles can be rated helpful while still repeating the model's
+      own patterns and subtle errors back into training.
+    C: Expert sampling checks quality, but the drafts are fluent and mostly correct, so a sample passes while the training
+      set still fills with the model's own output.
+    D: A recency filter keeps content current, but recent articles are mostly model drafts, so it raises the share of the
+      model's own output in training.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aair
+  check_verdict: pending
+  options_only: not_obvious

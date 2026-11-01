@@ -1,27 +1,26 @@
 id: aair-d1-1.4-0023
 subdomain: '1.4'
 difficulty: hard
-stem: An insurer is training claims handlers to use an AI tool that turns claim files, often 40 pages long, into summaries
-  of at most 150 words. Handlers decide routine claims from the summary and open the full file only when something in it looks
-  wrong. Which training topic is MOST important?
+stem: A hospital's pathologists check the grades an AI tool suggests for tissue slides. All of them attended a workshop on
+  over-reliance on AI and can describe the problem accurately. Audits since then show they accept the tool's wrong grades
+  as often as before. Which training change is MOST likely to help?
 options:
-  A: Spotting facts and figures that the tool may have invented
-  B: Checking the file for conditions the summary may have left out
-  C: Recognising wording that signals the tool was unsure of an answer
-  D: Knowing which claim types the tool is approved to summarise
-answer: B
+  A: Refresher workshops on over-reliance, with a short test at the end
+  B: Case studies of incidents where over-reliance on AI harmed patients
+  C: Practice on slides with planted wrong grades, with feedback on misses
+  D: An e-learning module on how the tool works and where it fails
+answer: C
 explanation:
-  why_correct: Squeezing 40 pages into 150 words means the tool must drop content, and a missing exclusion or condition leaves
-    nothing in the summary that looks wrong. Since handlers open the file only when something looks wrong, omissions pass
-    straight into decisions. Training them on where key conditions sit in a file, and to check for them, targets the error
-    their way of working will not catch.
+  why_correct: The pathologists already understand over-reliance, yet their behaviour has not changed, so the gap is habit
+    and skill rather than knowledge. Practice on realistic slides with planted wrong grades, and feedback on each one missed,
+    trains the act of challenging a suggestion under working conditions and shows each person their own miss rate.
   why_not:
-    A: Invented content is a known risk of generative tools and worth covering, but an invented fact can look odd and prompt
-      a check. Omissions leave no such signal under this way of working.
-    C: Hedged wording can hint at weak output, but summarisers often state uncertain or incomplete content confidently, so
-      this signal is unreliable.
-    D: Knowing the approved scope matters, but the handlers already work on routine claims, and the risk described arises
-      inside that scope.
+    A: A refresher with a test would confirm what they know, but the audits show that knowing about over-reliance has not
+      changed how they review the tool's grades.
+    B: Case studies make the stakes vivid and suit staff who doubt the risk, but these pathologists already accept and can
+      explain it. More awareness does not build the habit of challenge.
+    D: Knowing how the tool works and fails is useful background, but it is more knowledge for people whose problem is not
+      a lack of knowledge.
 status: draft
 outline_version: '2026-04-15'
 sample: false
@@ -29,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aair
   check_verdict: pending
+  options_only: obvious

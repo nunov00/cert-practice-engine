@@ -1,0 +1,32 @@
+id: aair-d3-3.6-0029
+subdomain: '3.6'
+difficulty: medium
+stem: An insurer's claims assistant runs on a vendor's base model that the insurer fine-tuned through the vendor's service.
+  The vendor will retire that base model in 90 days. Under the insurer's retention schedule, the fine-tuning examples were
+  deleted once training finished. What is the MOST significant continuity issue?
+options:
+  A: The replacement base model may answer differently and need revalidation
+  B: Prompts tuned for the current model may work less well on its successor
+  C: Ninety days may be too short to procure and onboard another vendor
+  D: The insurer cannot repeat the fine-tuning on the replacement model
+answer: D
+explanation:
+  why_correct: A fine-tuned model depends on its base model, so when the base is retired the fine-tuned version goes with
+    it, and the usual recovery is to fine-tune the replacement on the same examples. With the examples deleted, that route
+    is closed, and the behaviour the insurer validated cannot be rebuilt in the time left. The other issues are work to plan;
+    this one removes the recovery path.
+  why_not:
+    A: Revalidation will be needed for any replacement, but it is planned work that can fit in 90 days. It assumes there is
+      a fine-tuned replacement to validate.
+    B: Prompts may need tuning on a new model, but that is routine adjustment, much smaller than losing the fine-tuned behaviour
+      itself.
+    C: Changing vendor is one option, but the vendor offers a replacement base model, so a new vendor is not required, and
+      it would face the same missing examples.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-01-daily-aair
+  check_verdict: pending
+  options_only: not_obvious
