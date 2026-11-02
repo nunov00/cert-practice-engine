@@ -1,0 +1,33 @@
+id: aaism-d1-1.5-0024
+subdomain: '1.5'
+difficulty: hard
+stem: Ransomware encrypted a lender's machine learning platform. Investigators found the attacker had write access to the
+  model registry for five weeks beforehand. The credit model is backed up daily to an immutable vault; retraining it takes
+  ten days, and its recovery time objective is two days. Which version should be restored?
+options:
+  A: The last daily backup from before the attacker's access
+  B: The latest daily backup, from the day before encryption
+  C: The latest daily backup, once it passes the release tests
+  D: A new model retrained on pre-intrusion training data
+answer: A
+explanation:
+  why_correct: For five weeks the attacker could replace or alter registered models, so any backup from that window may hold
+    a tampered model; an immutable vault only protects what was put into it. The last backup from before the access began
+    is the newest version known to be clean, and it can be restored within the two-day objective. It may be somewhat out of
+    date, which a later, controlled retraining can fix.
+  why_not:
+    B: The newest backup loses the least and is the usual choice after ransomware, but here it falls inside the five weeks
+      in which the attacker could write to the registry.
+    C: Release tests check expected behaviour. A deliberately altered model, for example one with a hidden trigger, can pass
+      them, so passing does not show the backup is clean.
+    D: Retraining from clean data would give a trustworthy model, but at ten days it misses the two-day recovery objective,
+      and a clean backup already exists.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: not_obvious

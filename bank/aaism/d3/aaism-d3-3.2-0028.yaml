@@ -1,0 +1,33 @@
+id: aaism-d3-3.2-0028
+subdomain: '3.2'
+difficulty: medium
+stem: A bank's chatbot releases bundle a model version and a system prompt, while the content team updates the retrieval index
+  on its own schedule. The day after a release, the bot began quoting internal memos. The team rolled the release back within
+  minutes, but the quoting went on for two days while the cause was traced. Which change BEST lets the team restore a known-good
+  state quickly?
+options:
+  A: Snapshot the retrieval index and version it with each release
+  B: Keep the previous release running warm for faster rollback
+  C: Let the content team pull documents from the index on request
+  D: Run the release tests against the live index each hour
+answer: A
+explanation:
+  why_correct: The rollback restored the model and prompt, but the leak came from what the bot retrieved, which sat outside
+    the release. Versioning index snapshots with each release, and with each content change, gives one known-good state of
+    model, prompt and data that can be restored together in minutes.
+  why_not:
+    B: A warm standby speeds up rollback, but rollback already took minutes; the problem was that it rolled back the wrong
+      things.
+    C: Pulling documents works once the culprit is known, but tracing it took two days; it does not restore a good state while
+      the cause is found.
+    D: Hourly tests might spot a leak sooner, but detection does not restore a good state, and the bot kept leaking while
+      the source was traced.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: not_obvious

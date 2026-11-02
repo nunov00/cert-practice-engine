@@ -1,0 +1,31 @@
+id: aaism-d1-1.3-0021
+subdomain: '1.3'
+difficulty: medium
+stem: A company builds its AI inventory from procurement records and its production model registry. Engineers now run free
+  open-weight models offline on their managed laptops, on source code and customer data, and usually copy the model files
+  from colleagues' shared folders rather than downloading them. Which addition would MOST improve the inventory's coverage?
+options:
+  A: Proxy alerts on model downloads from public model hubs
+  B: Network detection of laptop traffic to AI service endpoints
+  C: Yearly attestation by engineers of the AI tools they use
+  D: Endpoint scans for model runtimes and files on laptops
+answer: D
+explanation:
+  why_correct: The models run on managed laptops, so the endpoint is the one place every copy can be seen, however it arrived.
+    Endpoint management can find local model runtimes and model files by name, format and size, and feed them into the inventory
+    with the device and user.
+  why_not:
+    A: Download alerts catch models fetched from the hubs, but most copies here come from colleagues' shared folders, which
+      the proxy does not see as model downloads.
+    B: The models run offline, so they create no traffic to AI services for network detection to find.
+    C: Attestations depend on engineers recognising and remembering each model they run, and a yearly cycle leaves long gaps.
+      They can add to technical discovery but cannot replace it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: not_obvious

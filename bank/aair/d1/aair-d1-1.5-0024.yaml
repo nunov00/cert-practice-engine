@@ -1,0 +1,33 @@
+id: aair-d1-1.5-0024
+subdomain: '1.5'
+difficulty: medium
+stem: A property manager plans to use a rent-pricing tool from a vendor that trains one model on non-public lease data from
+  many competing landlords in the same city, then recommends a rent for each landlord's units. Which legal consideration should
+  the risk practitioner MOST raise?
+options:
+  A: Whether tenants' lease data has a lawful basis for this reuse
+  B: Whether recommended rents could breach local rent control caps
+  C: Whether the tool could amount to unlawful coordination between rivals
+  D: Whether the rents could fall unequally on protected groups of tenants
+answer: C
+explanation:
+  why_correct: Pooling rivals' non-public prices in one model and returning recommended prices to each can act as a channel
+    for sharing competitively sensitive information. Competition authorities treat this kind of shared pricing tool as a possible
+    route to unlawful coordination, even without any direct contact between the landlords. The firm should get competition
+    law advice before joining.
+  why_not:
+    A: Lease data can include personal data, so a lawful basis matters, but it is a narrower issue. The feature that most
+      sets this tool apart is that it pools competitors' private prices.
+    B: Rent control caps are worth checking, but they apply to any way of setting rents. They are not the legal exposure created
+      by this vendor's design.
+    D: Unequal effects on protected groups are a real concern for pricing models, but nothing in the stem points to it. The
+      pooled competitor data is the specific legal issue here.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

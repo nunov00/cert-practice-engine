@@ -1,0 +1,32 @@
+id: aair-d2-2.1-0024
+subdomain: '2.1'
+difficulty: medium
+stem: A law firm is designing an assistant that answers questions about long contracts by placing each whole contract in the
+  model's context window, which it fits within. In testing, answers often miss relevant clauses that sit in the middle of
+  long contracts. Which design change BEST addresses this?
+options:
+  A: Move to a model with a larger context window for long contracts
+  B: Summarise each contract first and answer from the summary
+  C: Fine-tune the model on the firm's past contracts and answers
+  D: Retrieve the relevant clauses and give the model only those
+answer: D
+explanation:
+  why_correct: Language models often use information at the start and end of a long input better than material in the middle,
+    even when the whole document fits. Retrieving the clauses relevant to each question and passing only those puts the needed
+    text in a short context the model handles well, and lets each answer cite the clause it used.
+  why_not:
+    A: The contracts already fit in the current context window, so more room does not help. The problem is how well the model
+      attends to material in the middle of a long input.
+    B: A summary is produced by reading the same long input, so it suffers from the same weakness, and it also drops clause-level
+      detail that questions about contracts often need.
+    C: Fine-tuning can shape style and familiarity with contract language, but it does not fix how the model attends across
+      a long input. It is also costly to keep current.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

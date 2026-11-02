@@ -20,7 +20,7 @@ explanation:
     C: Instructions to the model can be overridden by injected text, which is how the script got into the draft.
     D: Restricting who reaches the console does not help, because the attack runs in the browsers of the staff who are meant
       to use it.
-status: draft
+status: published
 outline_version: 2025-08-19
 sample: false
 provenance:
@@ -28,4 +28,4 @@ provenance:
   run_id: 2026-10-27-daily-aaism
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-10-27-daily-aaism-check
+  checked_by: 2026-11-02-daily-aaism-check

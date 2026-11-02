@@ -1,0 +1,33 @@
+id: aaism-d2-2.3-0042
+subdomain: '2.3'
+difficulty: medium
+stem: A hospital's labelling vendor must use trained clinicians and keep the hospital's scans inside its own environment.
+  This month its output tripled, and many new labels match the typical wording of a public AI service. What should the security
+  manager do FIRST?
+options:
+  A: Sample-check the new labels against expert annotations
+  B: Establish whether scans went to the outside AI service
+  C: Suspend use of this month's labels in model training
+  D: Invoke the contract's right to audit the vendor's process
+answer: B
+explanation:
+  why_correct: 'If the vendor has been passing scans to a public AI service, patient data has left the agreed environment
+    for an unvetted processor: a possible breach, with notification deadlines, that may still be going on. Finding out whether
+    this happened, so it can be stopped and reported, comes before label quality, which does no further harm while the labels
+    are unused.'
+  why_not:
+    A: The labels may well be poor, but checking them deals with quality; the more urgent risk is patient scans leaving the
+      vendor's environment.
+    C: Holding back the labels protects the model and is a sensible step, but it neither stops nor establishes any outflow
+      of patient data, which carries legal deadlines.
+    D: An audit could uncover the same facts, but arranging one takes weeks; a direct demand, backed by the contract, for
+      how the labels were produced gets the answer faster.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: not_obvious

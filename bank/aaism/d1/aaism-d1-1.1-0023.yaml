@@ -1,0 +1,33 @@
+id: aaism-d1-1.1-0023
+subdomain: '1.1'
+difficulty: medium
+stem: A lender is preparing the first conformity assessment of a high-risk credit-screening model under an AI regulation.
+  To track shifting applicant behaviour, the model must be retrained on new data every two weeks. Which approach BEST keeps
+  these retrainings compliant?
+options:
+  A: Repeat the conformity assessment before each retrained version's release
+  B: Define the retraining scope and limits in the assessed documentation
+  C: Record each retraining in the change log for the next audit
+  D: Release only versions that pass the assessment's regression tests
+answer: B
+explanation:
+  why_correct: Regulations of this kind treat a significant change to an assessed high-risk system as needing a fresh assessment,
+    but changes the provider fixed in advance in the technical documentation at the first assessment can be made without one.
+    As that first assessment is still ahead, the lender can set out what retraining may change, the data it uses, the tests
+    each version must pass and the limits it must stay within, so two-weekly retraining stays inside what was assessed.
+  why_not:
+    A: Reassessing every two weeks would be compliant but unworkable, and it is not needed when the changes can be defined
+      in advance in the first assessment, which has not yet taken place.
+    C: A change log records what happened, but it does not decide whether a retraining took the system beyond what was assessed;
+      an unplanned change may still count as substantial and need a new assessment.
+    D: Passing regression tests shows a version still performs, but tests alone do not make a retrained version part of what
+      was assessed. The scope and limits of change have to be set in the assessed documentation.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: not_obvious

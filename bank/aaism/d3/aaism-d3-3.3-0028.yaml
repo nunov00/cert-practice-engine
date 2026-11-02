@@ -1,0 +1,31 @@
+id: aaism-d3-3.3-0028
+subdomain: '3.3'
+difficulty: hard
+stem: A team trains a model on a public wiki's twice-monthly data dumps, which include each page's revision history. Researchers
+  report that attackers time malicious edits for just before a dump is taken. Moderators usually revert such edits within
+  hours. Which control BEST protects the training data?
+options:
+  A: Use each page's last revision that stayed unchanged for some days
+  B: Check each dump's published hash after downloading it
+  C: Screen the dump with a classifier for known poisoning patterns
+  D: Crawl the pages directly at random times instead of using the dumps
+answer: A
+explanation:
+  why_correct: The attack relies on poisoned text being in the dump during the brief time before moderators revert it. As
+    the dump carries revision history, the team can take each page's latest version that stayed unchanged for, say, several
+    days, which drops short-lived edits while keeping nearly all legitimate content.
+  why_not:
+    B: A hash proves the dump arrived as the wiki published it, but the poisoned edits are inside the published dump itself.
+    C: A classifier can catch crude vandalism, but targeted poisoning is written to look like normal content and is unlikely
+      to match known patterns.
+    D: Random timing makes the attack harder, but a crawl still captures any edit that is live at that moment, puts load on
+      the wiki, and throws away the history the dumps already provide.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: not_obvious

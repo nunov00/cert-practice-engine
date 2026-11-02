@@ -1,0 +1,32 @@
+id: cissp-d6-6.5-0006
+subdomain: '6.5'
+difficulty: hard
+stem: An internal audit team of three is due to audit the company's privileged access process. Its most experienced identity
+  auditor designed that process eight months ago while seconded to IT. The other two auditors have never worked on it. How
+  should the chief audit executive staff the audit?
+options:
+  A: Have the designer lead it, disclosing the earlier role in the audit report
+  B: Have one of the other two lead it, consulting the designer on how it works
+  C: Have the designer lead it, with the chief audit executive reviewing each working paper
+  D: Engage an external firm to perform the audit in place of the in-house team
+answer: B
+explanation:
+  why_correct: An auditor who designed a process within the past year would be assessing their own work, which impairs objectivity
+    whatever the safeguards. Two auditors with no involvement are available, so one of them should lead, and the designer
+    can still explain how the process works without making audit judgements.
+  why_not:
+    A: Disclosure is how auditors handle many potential impairments, but the design work was only eight months ago, so the
+      designer would be judging their own recent work, and disclosure does not remove that.
+    C: Close supervision is a real safeguard for less experienced staff, but reviewing the papers does not change who makes
+      the judgements in the fieldwork, and here that is the person who designed the process.
+    D: Outsourcing is the right answer when no in-house auditor is independent, but two of the three have never worked on
+      the process, so it adds cost and loses in-house knowledge for no gain in objectivity.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-02-daily-cissp-check
+  options_only: obvious

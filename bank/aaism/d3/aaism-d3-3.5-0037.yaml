@@ -1,0 +1,32 @@
+id: aaism-d3-3.5-0037
+subdomain: '3.5'
+difficulty: medium
+stem: Staff use an AI agent that operates a web browser for them. Its logs record each action, such as typing text into a
+  field, with the text but not the page it acted on. In an incident, investigators could not reconstruct where customer data
+  had been entered. Screens often display full card numbers. Which logging addition BEST supports such investigations?
+options:
+  A: Screen recordings of each browsing session the agent runs
+  B: The page address and target field for each action logged
+  C: Web proxy logs of the agent browser's outbound traffic
+  D: The model's stated reasoning before each action it takes
+answer: B
+explanation:
+  why_correct: The action log already holds what was typed; what it lacks is where it went. Adding the page address and target
+    field to each action ties every entry to its destination, so investigators can see which site received customer data,
+    with no need to store screen images.
+  why_not:
+    A: Recordings would show the pages, but they would also capture and keep the full card numbers on screen, creating a new
+      store of card data to protect.
+    C: Proxy logs show which sites the browser contacted, but each page makes many background requests, so they cannot tie
+      a given typed entry to the site that received it.
+    D: The reasoning shows what the model meant to do, and a manipulated agent may describe its actions wrongly; it does not
+      record where data actually went.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: not_obvious

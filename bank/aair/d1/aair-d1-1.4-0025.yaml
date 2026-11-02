@@ -1,0 +1,32 @@
+id: aair-d1-1.4-0025
+subdomain: '1.4'
+difficulty: medium
+stem: A firm's operators supervise a fleet of AI agents that place orders with suppliers. In an exercise, they took 40 minutes
+  to stop an agent that was sending odd but plausible messages to suppliers, though they had practised using the stop control.
+  In the debrief, they said stopping an agent halts orders worth thousands an hour. What should the risk practitioner recommend?
+options:
+  A: Monthly stop drills so that operators act faster under pressure
+  B: Automatic stops when an agent passes set error-rate thresholds
+  C: Criteria in the procedure for when operators must stop an agent
+  D: A rule that the duty operations manager approves each stop
+answer: C
+explanation:
+  why_correct: The operators knew how to use the control but hesitated over whether the situation justified the cost of stopping.
+    Stated criteria in the procedure, with examples, turn that judgement into a rule they can act on, and make clear that
+    stopping under the criteria is expected rather than a personal risk.
+  why_not:
+    A: Drills build speed with the control itself, but the operators had already practised it. Their delay came from deciding
+      whether to stop, not from how to stop.
+    B: Automatic stops suit failures a metric can catch, but the agent's messages were odd yet plausible. No error-rate threshold
+      would have tripped.
+    D: Moving the decision to a manager adds a step and a person who faces the same cost question. It is likely to slow stopping
+      further, not speed it up.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

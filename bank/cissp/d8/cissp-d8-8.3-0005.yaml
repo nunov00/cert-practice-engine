@@ -1,0 +1,33 @@
+id: cissp-d8-8.3-0005
+subdomain: '8.3'
+difficulty: medium
+stem: A tester reported stored cross-site scripting through the display-name field of a customer portal. Developers fixed
+  it by filtering script tags from that field and want to close the finding. Display names also appear in staff-facing admin
+  pages and in exported reports, which the tester's customer account could not reach. Which verification BEST shows that the
+  risk is addressed?
+options:
+  A: Re-run the tester's original proof-of-concept payload against the fixed field
+  B: Review where user input, the reported field included, reaches pages unencoded
+  C: Retest each customer-facing field with a set of known filter-bypass payloads
+  D: Have a second developer review the code change that added the filter
+answer: B
+explanation:
+  why_correct: A tag filter treats one payload, while the cause is input written to pages without output encoding. Reviewing
+    each place user input reaches a page, the display-name field included, covers the admin pages and reports a customer account
+    cannot reach, and shows whether the fix is the right kind of defence.
+  why_not:
+    A: Retesting the original proof of concept is the normal first check of a fix, but it shows only that one payload no longer
+      works, and tag filters are often bypassed with other payloads.
+    C: Bypass payloads across every customer-facing field test the whole class from the attacker's side, but a customer account
+      cannot see the admin pages and exported reports where display names are also rendered.
+    D: Peer review can confirm the filter is written as intended, but it looks only at the change, not at whether filtering
+      is the right defence or where else input reaches pages unencoded.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-cissp-check
+  options_only: not_obvious

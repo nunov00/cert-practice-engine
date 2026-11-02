@@ -1,0 +1,32 @@
+id: aaism-d2-2.2-0047
+subdomain: '2.2'
+difficulty: medium
+stem: A bank's customer chatbot serves English and Spanish, the two languages its vendor's safety filter is certified for,
+  and a year of logs shows no genuine customer writing in any other language. A red team got harmful replies by writing requests
+  in a language with few speakers, which the filter cannot interpret. Which control BEST addresses this weakness?
+options:
+  A: Machine-translate each prompt into English before the filter checks it
+  B: Detect each prompt's language and refuse unsupported languages
+  C: Add the red team's translated prompts to the filter's blocklist
+  D: Instruct the model in its system prompt to refuse harmful requests
+answer: B
+explanation:
+  why_correct: The chatbot has no business need for languages other than English and Spanish, which are also the only ones
+    its filter is certified to judge. As the logs show no genuine customers using other languages, declining them removes
+    the unscreened path itself, costs no real service, and keeps the filter working where it is reliable.
+  why_not:
+    A: Translation looks like a way to reuse the filter, but machine translation is weakest in exactly the rare languages
+      the attack uses, and attackers can write text that translates into something harmless while the model reads the original.
+    C: A blocklist stops the red team's exact prompts, but rewording them, or switching to another rare language, gets past
+      it.
+    D: System prompt instructions are easily overridden by jailbreaks and give none of the independent checking the filter
+      is meant to provide; the gap is that the filter cannot read these prompts.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: not_obvious

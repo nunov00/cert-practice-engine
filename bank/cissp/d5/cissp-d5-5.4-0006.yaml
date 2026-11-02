@@ -1,0 +1,33 @@
+id: cissp-d5-5.4-0006
+subdomain: '5.4'
+difficulty: hard
+stem: Staff call internal APIs with access tokens that list their roles and stay valid for eight hours. Each API checks a
+  token's signature and roles locally. An audit found that a trader kept payment approval rights for most of a day after losing
+  the role. Policy now requires role removals to take effect within 15 minutes, and the role directory cannot handle a query
+  on each API call at peak. Which change BEST meets this?
+options:
+  A: Have each API query the role directory on each request instead of the token
+  B: Revoke the user's sessions and refresh tokens whenever one of their roles is removed
+  C: Issue access tokens that expire after 10 minutes, with roles reread at each refresh
+  D: Recheck payment approvals against the directory, trusting the token for other calls
+answer: C
+explanation:
+  why_correct: Self-contained tokens carry their authorisation until they expire, so the token lifetime sets how long a removed
+    role survives. Ten-minute tokens refreshed against current roles bring every role change into force within the 15-minute
+    limit, with directory lookups only at refresh rather than on each call.
+  why_not:
+    A: Checking the directory on each request gives the most current decision and is right where load allows, but the directory
+      cannot handle that volume at peak.
+    B: Revoking sessions and refresh tokens stops new tokens being issued, but the APIs check tokens locally, so an access
+      token already issued stays valid for up to eight hours.
+    D: Rechecking approvals covers the right that caused the audit finding, but the policy applies to every role removal,
+      and other roles would still last up to eight hours in existing tokens.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-cissp-check
+  options_only: not_obvious

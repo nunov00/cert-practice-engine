@@ -1,0 +1,33 @@
+id: cissp-d5-5.5-0005
+subdomain: '5.5'
+difficulty: medium
+stem: At a utility, about 900 contractors come through agencies, which rarely report when one finishes. Each works under a
+  purchase order with an end date that procurement extends when work continues. IT creates contractor accounts when a sponsoring
+  manager asks. An audit found 300 accounts of finished contractors, several used weeks after the work ended. Which change
+  BEST addresses this?
+options:
+  A: Disable contractor accounts automatically when their purchase order ends
+  B: Have sponsors enter an end date on each account when they request it
+  C: Record contractors in the HR system so that the leaver process covers them
+  D: Disable contractor accounts that have not signed in for 30 days
+answer: A
+explanation:
+  why_correct: Accounts outlive the work because nothing authoritative ends them. The purchase order is the one record that
+    is already kept in step with each contractor's engagement, so driving account end dates from it ends access when the work
+    ends and keeps it going when procurement extends the order.
+  why_not:
+    B: A sponsor-entered end date adds a time limit, but it is a second, manual record set once at request time, so it drifts
+      from the extensions procurement makes, causing either early cut-offs or dates set far out to avoid them.
+    C: Bringing contractors into HR's leaver process works where HR learns of departures, but the agencies rarely report when
+      a contractor finishes, so HR would not know to start it.
+    D: An inactivity rule removes forgotten accounts, but several of these accounts were used weeks after the work ended,
+      so they would never have looked inactive.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-02-daily-cissp-check
+  options_only: not_obvious
