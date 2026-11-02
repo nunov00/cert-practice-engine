@@ -84,7 +84,7 @@ held:
   - { id: aaism-d2-2.1-0040, pr: 73 }
   - { id: aaism-d1-1.2-0022, pr: 73 }
   - { id: aaism-d3-3.1-0026, pr: 73 }
-  # PR for daily batch 2026-11-02, batch run: passed both checks, held because
+  # PR #75 (daily batch 2026-11-02), batch run: passed both checks, held because
   # the night's hard share could not carry it (aaism-d1-1.4-0024 left the list
   # on recheck: obvious from the options alone)
-  - { id: aair-d1-1.1-0028, pr: 0 }
+  - { id: aair-d1-1.1-0028, pr: 75 }
