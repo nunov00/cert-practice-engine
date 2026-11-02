@@ -1,0 +1,33 @@
+id: aair-d1-1.3-0028
+subdomain: '1.3'
+difficulty: medium
+stem: A bank's second-line model risk team, built up over years to review statistical credit models, now also reviews the
+  bank's generative AI assistants before launch. It has approved each assistant without findings. Two later incidents were
+  traced to prompt injection and to an assistant retrieving documents its users were not allowed to see. What is the MAIN
+  oversight weakness?
+options:
+  A: Reviews take place only before each assistant goes into use
+  B: Reviewers lack expertise in how generative AI systems fail
+  C: Reviews rely on test evidence that the developers supply
+  D: Findings go to a committee with no generative AI expert
+answer: B
+explanation:
+  why_correct: Independent challenge works only if the reviewers can recognise what can go wrong. A team built for statistical
+    credit models passed assistants that had prompt injection and access-control flaws, both typical generative AI failures
+    present at launch. The independence is in place; the competence to challenge this kind of system is not.
+  why_not:
+    A: Post-launch review matters for issues that arise later, but both flaws existed when the assistants were reviewed. A
+      competent pre-launch review should have found them.
+    C: Reliance on developers' tests would weaken any review, but nothing in the stem says the team relied on them. The pattern
+      points to reviewers who did not know which failures to look for.
+    D: An expert on the committee could improve its challenge, but the reviews raised no findings for the committee to judge.
+      The gap sits in the reviews themselves.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

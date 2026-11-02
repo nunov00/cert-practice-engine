@@ -1,0 +1,33 @@
+id: cissp-d1-1.7-0003
+subdomain: '1.7'
+difficulty: medium
+stem: A toy retailer ran its business impact analysis in March, and interviews about typical weeks set a maximum tolerable
+  downtime of 48 hours for online ordering. About 40% of yearly revenue arrives in the six weeks before December, last year's
+  daily sales figures are on hand, and the call centre can take about a tenth of peak online order volume by phone. How should
+  the continuity manager revise the downtime limit?
+options:
+  A: Base it on the average impact of an outage across the whole trading year
+  B: Base it on the peak impact, extended for the call centre taking orders by phone
+  C: Base it on the ordering director's own estimate for an outage at the peak
+  D: Base it on the modelled impact of an outage during the peak weeks
+answer: D
+explanation:
+  why_correct: A disruption can strike at any time, so the limit must reflect the worst credible timing, and here that is
+    the peak, when an outage costs several times what one in March does. The daily sales figures let that impact be modelled
+    from evidence, and recovery strategies are then chosen to meet the resulting limit.
+  why_not:
+    A: Averaging smooths out seasonal swings and is a common shortcut, but with 40% of revenue in six weeks it hides the very
+      period when an outage would hurt most.
+    B: Workarounds can legitimately extend how long a process can be down, but the call centre takes only about a tenth of
+      peak volume, so it barely changes the impact of losing online ordering at the peak.
+    C: Owner interviews are a normal BIA input, but the figures already on hand allow the peak impact to be measured, and
+      an estimate is what produced the understated 48 hours in the first place.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-cissp-check
+  options_only: not_obvious

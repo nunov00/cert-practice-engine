@@ -1,0 +1,32 @@
+id: aair-d3-3.2-0030
+subdomain: '3.2'
+difficulty: medium
+stem: A mobile operator's model suspends SIM cards it suspects have been hijacked, since fraud on a hijacked number can empty
+  a bank account within minutes. Some suspensions hit genuine customers. The board's appetite states that no genuine customer
+  should lose service for more than four hours. Residual risk is above appetite. Which treatment is MOST appropriate?
+options:
+  A: Retrain the model to halve its rate of wrong suspensions
+  B: Have a fraud analyst approve each suspension before it applies
+  C: Let suspended customers appeal online to have service restored
+  D: Restore any suspension not confirmed as fraud in four hours
+answer: D
+explanation:
+  why_correct: The appetite is set on how long a genuine customer is cut off, not on how often it happens. Restoring every
+    suspension that is not confirmed within four hours puts a hard limit on that duration while keeping the fast suspension
+    that stops fraud. It treats the risk in the terms the board used to define it.
+  why_not:
+    A: Fewer wrong suspensions lowers the number of customers affected, but each one could still be cut off for days. The
+      appetite is breached by the length of an outage, which retraining does not bound.
+    B: Approval before each suspension would cut wrong suspensions, but it delays the block on hijacked numbers, where losses
+      build within minutes. It trades one harm for a larger one.
+    C: An appeal route helps, but it depends on the customer noticing and acting, and sets no time limit on restoring service.
+      A cut-off phone may also stop the customer from using the route at all.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

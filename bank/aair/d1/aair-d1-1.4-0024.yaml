@@ -1,0 +1,34 @@
+id: aair-d1-1.4-0024
+subdomain: '1.4'
+difficulty: medium
+stem: A retailer gives AI training to every employee with an account on its AI tools. Head office analysts use a forecasting
+  tool to produce weekly staffing plans, which store managers receive as spreadsheets and may adjust. Each spreadsheet states
+  that the model does not know about local events. Audits find that managers rarely adjust plans, even for local events. What
+  should the risk practitioner recommend?
+options:
+  A: Train store managers on the plans' limits and when to adjust them
+  B: Train analysts to adjust each plan for local events before sending
+  C: Have area managers check each store's plan for local events weekly
+  D: Require managers to confirm each week that they reviewed the plan
+answer: A
+explanation:
+  why_correct: Training reaches only people with tool accounts, so the store managers who act on the model's output have had
+    none. They already see a note on its limits and still do not adjust, which points to missing judgement and confidence
+    rather than missing information. Training aimed at their role closes that gap, and they are the people who know about
+    local events.
+  why_not:
+    B: Analysts at head office are trained, but they are the people least likely to know about local events at each store.
+      Store managers are placed to make these adjustments.
+    C: Area managers would add a review layer, but they are also outside the training and further from each store's events.
+      The gap would move up a level rather than close.
+    D: A weekly confirmation records that managers looked, but they already see the note on local events and do not act on
+      it. Signing off does not build the skill to adjust the plan.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: fail
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aaism-d3-3.2-0027
+subdomain: '3.2'
+difficulty: hard
+stem: A bank must show auditors that its production credit model was trained from the approved code, data and settings. Data
+  scientists launch training jobs from their own workstations and record the input hashes in the model registry. Training
+  on the bank's GPUs is not bit-for-bit repeatable. Which control BEST provides this assurance?
+options:
+  A: Retraining from the recorded inputs and comparing model file hashes
+  B: Training only in a locked service that signs a record of its inputs
+  C: Retraining from the recorded inputs and comparing results on test data
+  D: A second data scientist countersigning the recorded input hashes
+answer: B
+explanation:
+  why_correct: Today the evidence comes from the people being checked, recorded on machines they control. A locked training
+    service that fetches the approved inputs itself and signs a record of exactly what it used gives provenance that no data
+    scientist can forge, and that record can be checked against the registry for each production model.
+  why_not:
+    A: A rebuild with matching hashes would be strong proof, but training on these GPUs is not bit-for-bit repeatable, so
+      even an honest rebuild will not match.
+    C: Similar test results show the two models behave alike on that data, but a model trained on altered inputs, such as
+      a few poisoned records, can score the same; it does not show what the production model was built from.
+    D: A countersignature adds a second person, but they check hashes recorded on a workstation where the job's real inputs
+      cannot be seen; it does not tie the model to what was actually used.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: not_obvious

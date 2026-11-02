@@ -1,0 +1,33 @@
+id: cissp-d2-2.2-0003
+subdomain: '2.2'
+difficulty: hard
+stem: A bank labels documents in its office suite, and its data loss prevention tool enforces handling rules by label. Reports
+  exported from the data warehouse as CSV files carry no label, and several customer lists, holding names, segments and balances
+  but no account numbers, were emailed to personal addresses. Analysts produce thousands of exports a week. Which handling
+  requirement BEST addresses this?
+options:
+  A: Have the DLP tool match customer data patterns in unlabelled files
+  B: Have the warehouse label each export from the classification of its data
+  C: Have analysts apply a label to each export before saving or sharing it
+  D: Have the mail gateway block CSV attachments sent to addresses outside the bank
+answer: B
+explanation:
+  why_correct: The handling rules already work for labelled files; the gap is that exports leave the warehouse without the
+    label their data deserves. The warehouse knows how its tables and columns are classified, so labelling each export automatically
+    at creation lets the existing DLP rules apply to every file without relying on people.
+  why_not:
+    A: Pattern matching is the usual fallback for unlabelled files, but these lists hold names, segments and balances with
+      no account numbers, which look like many ordinary spreadsheets and are hard to match reliably.
+    C: User labelling is how the office documents get their labels, but across thousands of exports a week a manual step will
+      be skipped or mislabelled, and one missed label is enough for a list to leave.
+    D: Blocking CSV attachments stops this one format by email, but the same data can be saved in another format or sent another
+      way, and the files would still carry no label for any other handling rule.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-cissp-check
+  options_only: not_obvious

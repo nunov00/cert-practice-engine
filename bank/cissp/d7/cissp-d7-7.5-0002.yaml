@@ -1,0 +1,32 @@
+id: cissp-d7-7.5-0002
+subdomain: '7.5'
+difficulty: medium
+stem: A firm's auditors carry client data between sites on USB drives. Client audit networks are often air-gapped, client
+  staff must open the files on their own machines, which do not run the firm's software, and last quarter an auditor lost
+  a personal drive holding a client's payroll extract. Which control BEST protects data on removable media?
+options:
+  A: Block USB storage on laptops and move files by secure file transfer instead
+  B: Issue keypad drives that encrypt in hardware, and block other drives
+  C: Have the DLP agent encrypt any file copied to removable media with a firm key
+  D: Allow any drive, and log each file copied to removable media for later review
+answer: B
+explanation:
+  why_correct: The media has to keep moving, so the protection must travel with it. Drives that encrypt in hardware and unlock
+    with a PIN on the keypad work on any machine without software, a lost one stays unreadable, and device control stops staff
+    copying data to personal drives.
+  why_not:
+    A: Replacing removable media with managed transfer is often the best option, but client audit networks are often air-gapped,
+      so files cannot reach them over a network.
+    C: Agent-based encryption of removable media protects lost drives within the firm, but client staff open the files on
+      machines that do not run the firm's software, so they could not decrypt them.
+    D: Logging copies to removable media gives an audit trail, but a lost drive, like last quarter's, stays readable to whoever
+      finds it.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-cissp-check
+  options_only: not_obvious

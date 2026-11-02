@@ -1,0 +1,33 @@
+id: aair-d3-3.1-0032
+subdomain: '3.1'
+difficulty: medium
+stem: A sexual health clinic plans a chatbot that answers patients' questions from the clinic's approved leaflets, retrieved
+  for each question. It runs on a cloud provider's model with the provider's standard safety filter, built for general consumer
+  apps. Which risk scenario should the assessment MOST include?
+options:
+  A: Explicit sexual content shown to users who are under age
+  B: Patients' frank questions blocked or refused by the filter
+  C: Wrong treatment advice drawn from the model's general knowledge
+  D: Patients delaying care after answers seem to rule symptoms out
+answer: B
+explanation:
+  why_correct: A filter built for general consumer apps is tuned to block sexual content, and a sexual health service depends
+    on frank questions about sex, bodies and infections. Wrongly refused questions leave patients without safe information
+    and may push them to worse sources. This over-blocking is the scenario that the setup makes likely and that an assessment
+    focused on harmful output tends to miss.
+  why_not:
+    A: Exposure of minors to explicit content is a real concern for many chatbots, but the standard filter is designed to
+      block exactly that. Its likely failure here runs the other way.
+    C: Advice from the model's general knowledge is a common chatbot risk, but this chatbot answers from the clinic's approved
+      leaflets retrieved for each question, which limits it.
+    D: False reassurance is a real clinical risk worth assessing, but the answers come from approved leaflets. The setup points
+      more strongly to patients getting no answer at all.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: fail
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: cissp-d6-6.3-0006
+subdomain: '6.3'
+difficulty: medium
+stem: A company wants to cut its 60 domain administrator accounts to those whose holders really need the rights. Each administrator
+  uses one account for both routine work and administration, so every account signs in daily. Which data BEST supports the
+  decision?
+options:
+  A: Last sign-in date of each administrator account in the past 90 days
+  B: Each manager's statement of whether the administrator needs the rights
+  C: The job role of each administrator, mapped to the access that role needs
+  D: Domain-level changes each account actually made over the past 90 days
+answer: D
+explanation:
+  why_correct: Need is shown by use of the privilege itself. Because each account is also used for routine work, only a record
+    of the domain-level actions each one performed separates administrators who exercise the rights from those who merely
+    hold them.
+  why_not:
+    A: Last-use data is the standard input for removing unused rights, but these accounts sign in daily for routine work,
+      so every one looks active whether or not its domain rights are ever used.
+    B: Manager attestation is a normal part of access reviews, but managers tend to confirm what their staff already hold,
+      and a statement says nothing about whether the rights are used.
+    C: Mapping roles to required access is how role-based provisioning starts, but it shows what a role is meant to need,
+      not what each person does, and administrators in the same role often do different work.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-cissp-check
+  options_only: not_obvious

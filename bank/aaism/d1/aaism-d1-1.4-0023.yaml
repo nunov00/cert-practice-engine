@@ -22,12 +22,12 @@ explanation:
       pressure.
     D: A target for high-rated findings answers one incentive with an opposite one, which can inflate ratings rather than make
       them accurate.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
   check_verdict: pass
-  checked_by: 2026-11-01-daily-aaism-check
   options_only: not_obvious
+  checked_by: 2026-11-02-daily-aaism-check

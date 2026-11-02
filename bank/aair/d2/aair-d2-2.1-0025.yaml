@@ -1,0 +1,32 @@
+id: aair-d2-2.1-0025
+subdomain: '2.1'
+difficulty: hard
+stem: A software firm is designing a feature that drafts documents in each client's house style, learned from that client's
+  past documents. Clients hold up to 50,000 documents each, and their contracts bar their data from improving the service
+  for other clients. Which design BEST meets these needs?
+options:
+  A: One shared model trained on the clients' documents with names removed
+  B: A shared model shown a few of each client's documents in its prompt
+  C: A shared model trained across the clients with differential privacy
+  D: A separate adapter for each client, trained only on its documents
+answer: D
+explanation:
+  why_correct: A small adapter per client, trained only on that client's documents and used only for its requests, learns
+    each house style from the full document set while keeping every client's data out of what other clients use. It meets
+    the style goal and the contract terms together.
+  why_not:
+    A: Removing names lowers privacy risk, but each client's documents would still improve a model that serves everyone, which
+      the contracts bar.
+    B: Prompt examples keep data separate and suit clients with small sets, but a few documents cannot capture a style held
+      across tens of thousands. The feature would learn little of what the client holds.
+    C: Differential privacy limits what can be learned about any single document, but every client's data would still improve
+      the shared model. The contracts bar that use, however well protected.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

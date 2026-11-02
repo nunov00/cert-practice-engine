@@ -21,12 +21,12 @@ explanation:
     B: Narrower access reduces who sees the summaries, but HR leaders can still recognise individuals, which the promise
       rules out.
     D: Telling staff about the AI tool improves transparency, but it does not stop comments being traced to their authors.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-31-daily-aaism
   check_verdict: pass
-  checked_by: 2026-10-31-daily-aaism-check
   options_only: not_obvious
+  checked_by: 2026-11-02-daily-aaism-check

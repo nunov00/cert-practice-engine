@@ -1,0 +1,34 @@
+id: aair-d3-3.6-0030
+subdomain: '3.6'
+difficulty: hard
+stem: A hospital laboratory's cloud AI service flags abnormal blood results for urgent review. If it fails, the lab switches
+  to a smaller model on its own servers, which misses more abnormal results, until the provider restores service; the contract
+  allows up to five days. The business impact analysis sets a recovery time objective for the cloud service. What should the
+  analysis MOST also establish?
+options:
+  A: The lowest detection rate at which the local model may be used
+  B: The cost to the lab of each day that the cloud service is down
+  C: Which results staff must recheck by hand on the local model
+  D: A recovery point objective for the cloud model and its data
+answer: A
+explanation:
+  why_correct: The contract already fixes how long the lab may depend on the fallback, so the open question is whether running
+    on it is acceptable at all. The local model keeps the process going but misses more abnormal results, and the analysis
+    needs the minimum detection level the process can tolerate. That level decides whether the fallback is valid for five
+    days and what extra measures it needs.
+  why_not:
+    B: 'Cost over time is standard content for a business impact analysis, but the main impact here is clinical: abnormal
+      results missed while the lab runs on the fallback. A daily cost does not show whether that is acceptable.'
+    C: Which results to recheck is a plan detail that follows from the analysis. Without a minimum acceptable detection level
+      there is no basis for choosing which or how many results need checking.
+    D: A recovery point objective matters when restoring the cloud service, but the gap is the quality of the fallback while
+      it runs, which a recovery point does not address.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

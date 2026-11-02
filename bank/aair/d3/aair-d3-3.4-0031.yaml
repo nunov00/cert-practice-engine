@@ -1,0 +1,32 @@
+id: aair-d3-3.4-0031
+subdomain: '3.4'
+difficulty: medium
+stem: A bank monitors its customer chatbot's answer quality with a language model that scores a daily sample of answers against
+  a rubric. Over one week the average score rose from 81% to 90%. Reviewers who grade a smaller sample of the same answers
+  by hand saw no change. What should the risk practitioner check FIRST?
+options:
+  A: Whether the vendor updated the model behind the chatbot that week
+  B: Whether customers asked a different mix of questions that week
+  C: Whether the model or prompt used for scoring changed that week
+  D: Whether product teams improved the documents the chatbot retrieves
+answer: C
+explanation:
+  why_correct: 'The human reviewers grade the same answers and saw no change, so the answers themselves probably did not get
+    better. When only the automated score moves, the likeliest cause is a change in the measuring tool: a new version of the
+    scoring model or an edited scoring prompt. Until that is ruled out, the indicator cannot be trusted.'
+  why_not:
+    A: A silent vendor update can change a chatbot's answers, but a real change large enough to lift scores by nine points
+      would also show in the hand-graded sample of the same answers.
+    B: A shift in question mix can move quality scores, but it would change the answers both graders see. The reviewers saw
+      no change on the same answers.
+    D: Better documents can improve answers, but that is a real quality change, and the hand graders would have seen it too.
+      Only the automated score moved.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

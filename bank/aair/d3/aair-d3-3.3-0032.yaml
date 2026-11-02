@@ -1,0 +1,32 @@
+id: aair-d3-3.3-0032
+subdomain: '3.3'
+difficulty: hard
+stem: A bank's fraud model retrains each week on case labels set by its analysts. Analysts make about 5,000 label changes
+  a week, almost all marking confirmed cases as fraud. The risk team fears an insider could help a fraud ring by tampering
+  with labels, and a few dozen changes would be enough to hide the ring. Which control BEST addresses this?
+options:
+  A: Second approval before any fraud label is reversed
+  B: Second approval for each label change before training
+  C: Alerts when an analyst's weekly changes exceed their norm
+  D: A quarterly review of a random sample of label changes
+answer: A
+explanation:
+  why_correct: Hiding a fraud ring means turning fraud labels into genuine ones, which is the rare direction among the bank's
+    label changes. A second approval on reversals puts a preventive check on the changes that matter, at a volume the team
+    can handle, before they reach the weekly retrain.
+  why_not:
+    B: Checking every change is strong where volumes are low, but about 5,000 changes a week would swamp reviewers and turn
+      the check into a formality.
+    C: Volume alerts catch unusual bursts of activity, but a few dozen changes fit easily within an analyst's normal weekly
+      volume and would not stand out.
+    D: Sampling gives useful assurance over time, but the model retrains each week, so tampered labels would be in use for
+      months before a quarterly review.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

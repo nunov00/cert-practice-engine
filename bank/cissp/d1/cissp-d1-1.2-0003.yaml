@@ -1,0 +1,33 @@
+id: cissp-d1-1.2-0003
+subdomain: '1.2'
+difficulty: medium
+stem: A fleet operator's 4,000 delivery vans send fuel and mileage readings to its billing system through a telecom partner's
+  message broker, which decrypts and re-queues each message. The operator must be able to tell which van sent each reading
+  and that it was not altered, and no outside party ever checks the readings. Each van unit's secure chip stores one secret
+  key and cannot do public-key operations. Which control BEST meets this need?
+options:
+  A: A digital signature on each reading, with a key pair held in each van
+  B: TLS from each van to the broker, using a pre-shared key for each van
+  C: A message authentication code on each reading, with a key for each van
+  D: A message authentication code on each reading, with one key for the fleet
+answer: C
+explanation:
+  why_correct: The need is integrity and origin authentication for each reading, checked only by the operator, so non-repudiation
+    towards a third party is not required. A keyed MAC on the reading itself survives the broker, needs only symmetric operations
+    the chip supports, and a key unique to each van shows which van produced it.
+  why_not:
+    A: A signature would give origin, integrity and even non-repudiation, which is why it is the usual choice for proof of
+      origin, but the chips cannot do public-key operations, and nobody outside the operator needs that proof.
+    B: TLS with a per-van pre-shared key authenticates each van and protects the data on the link, but the broker decrypts
+      and re-queues each message, so nothing protects the reading between the broker and the billing system.
+    D: A fleet-wide MAC key proves a reading came from some van and was not altered, but any van, or anyone who extracts that
+      one key, could produce readings in another van's name, so the operator cannot tell which van sent each one.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-cissp-check
+  options_only: not_obvious

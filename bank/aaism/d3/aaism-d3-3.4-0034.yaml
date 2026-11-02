@@ -1,0 +1,33 @@
+id: aaism-d3-3.4-0034
+subdomain: '3.4'
+difficulty: medium
+stem: A benefits agency's model recommends which claims to stop. Caseworkers who override a recommendation must write a justification,
+  and each caseworker's override rate is reported in their performance review. Overrides have fallen to 0.5%, while appeals
+  against stopped claims succeed more often each quarter. Which change BEST restores meaningful human review?
+options:
+  A: Retrain caseworkers on the model's known failure modes
+  B: Seed known wrong recommendations to test reviewers' catch rate
+  C: Show the model's confidence score with each recommendation
+  D: Drop override rates from caseworkers' performance reviews
+answer: D
+explanation:
+  why_correct: Caseworkers are being judged on how rarely they disagree with the model, and disagreeing also costs them extra
+    writing, so the process rewards rubber-stamping. Taking override rates out of performance reviews removes the pressure
+    against overriding, so their judgment can act as the check the review is meant to be; justification can then be asked
+    for agreeing as well as for overriding on sampled cases.
+  why_not:
+    A: Knowing the model's weak spots is useful, but caseworkers who are judged on agreeing with it will still hesitate to
+      act on what they know.
+    B: Seeding known errors measures whether reviewers catch them, which is valuable evidence, but it does not change the
+      incentive that makes them agree.
+    C: Confidence scores can point reviewers at doubtful cases, but overriding would still count against them, so low-confidence
+      recommendations would still be accepted.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: not_obvious

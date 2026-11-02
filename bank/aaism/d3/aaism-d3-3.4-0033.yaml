@@ -1,0 +1,30 @@
+id: aaism-d3-3.4-0033
+subdomain: '3.4'
+difficulty: hard
+stem: A betting firm's AI model chooses which customers get bonus offers and learns from who responds. A review finds it targets
+  the customers who chase their losses most, as they respond best, inferring this from many signals such as bet timing and
+  deposit patterns. Which control BEST reduces the harm?
+options:
+  A: A weekly cap on AI-targeted offers to each customer
+  B: An opt-out from personalised offers in account settings
+  C: Retraining with the loss-chasing measures removed as features
+  D: Excluding customers with harm markers from targeted offers
+answer: D
+explanation:
+  why_correct: The model optimises for response, and the customers most at risk of gambling harm respond most, so it will
+    keep finding them. Screening customers through a separate harm-detection process and keeping those who show markers of
+    harm out of targeted offers takes them out of the loop, whatever signals the offer model uses.
+  why_not:
+    A: A cap limits volume for each customer but still sends the capped offers to the most vulnerable customers first.
+    B: An opt-out helps customers who want fewer offers, but those chasing their losses are the least likely to use it.
+    C: Removing named features looks like fixing the cause, but the model infers loss-chasing from many signals such as bet
+      timing and deposits, so it would find the same customers through proxies.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: not_obvious

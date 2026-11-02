@@ -1,0 +1,33 @@
+id: aair-d3-3.3-0031
+subdomain: '3.3'
+difficulty: hard
+stem: A retailer's AI purchasing agent cannot place orders above a limit that its ordering platform enforces, and the retailer's
+  buyers can change the limit in the platform's settings. The risk practitioner tested the limit last week, and it blocked
+  an order above it. The conclusion must cover the whole past year, and the platform keeps order logs for 30 days. Which further
+  evidence BEST supports the conclusion?
+options:
+  A: The year's change records for the limit, with their approvals
+  B: An analysis of the last 30 days of orders for any above the limit
+  C: A sample of the year's supplier invoices checked against the limit
+  D: The platform vendor's assurance report on its change controls
+answer: A
+explanation:
+  why_correct: An automated control behaves the same way until its configuration changes. A test showing it works now, plus
+    the record of every change to its setting during the year, supports a conclusion for the whole period. Because buyers
+    can change the limit at any time, the change history is the evidence that shows what the setting was across the year.
+  why_not:
+    B: Checking the logged orders is useful, but it covers only the last month. It says nothing about the eleven months before,
+      when the limit could have been raised.
+    C: Checking invoices is real evidence of outcomes, but buyers can change the limit at any time, so a sample can miss a
+      period when it was raised. The change records cover every point in the year.
+    D: The vendor's report covers the vendor's own change process, but the limit is changed by the retailer's buyers in its
+      own settings. That report does not test those changes.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

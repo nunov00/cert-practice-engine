@@ -1,0 +1,33 @@
+id: cissp-d4-4.3-0013
+subdomain: '4.3'
+difficulty: medium
+stem: During a ransomware incident, attackers with domain administrator rights read the response team's messages on the company's
+  chat service, then encrypted its on-premises virtual servers. Most staff laptops were also encrypted and took a week to
+  rebuild. Company cloud services sign in through an identity provider synchronised from the domain. Which channel BEST fits
+  the response plan for next time?
+options:
+  A: A chat server on the company's own virtual servers, with local accounts and MFA
+  B: A cloud chat service with its own accounts and MFA, used through its phone app
+  C: A cloud chat tenant set aside for the team, with sign-in federated to the company IdP
+  D: A cloud chat service with its own accounts and MFA, used through a laptop desktop app
+answer: B
+explanation:
+  why_correct: The channel has to survive both what the attackers controlled and what they destroyed. A cloud service with
+    its own accounts and MFA cannot be reached through the domain or the identity provider synchronised from it, and using
+    it from phones keeps it working while laptops and on-premises servers are being rebuilt.
+  why_not:
+    A: Local accounts keep the server out of the domain's control, which is why self-hosting is often chosen, but it runs
+      on the on-premises virtual servers, which this kind of attack encrypted.
+    C: A dedicated tenant separates the team's data and settings from the main chat, but its sign-in still runs through an
+      identity provider synchronised from the compromised domain, so the attackers could sign in as responders.
+    D: This service is independent of the domain, but reaching it through a laptop app leaves the team without it while most
+      laptops are encrypted and rebuilt over a week.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-cissp-check
+  options_only: not_obvious

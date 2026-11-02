@@ -1,0 +1,32 @@
+id: aair-d2-2.3-0021
+subdomain: '2.3'
+difficulty: medium
+stem: A lender retrains its credit model each month on recent applicants and releases each version after automated checks.
+  Over a year, its applicant mix shifted steadily, month by month, toward younger, self-employed applicants. Which trigger
+  for revalidating the model BEST fits this risk?
+options:
+  A: A retrained version scoring lower than the one before it on test data
+  B: An input drift alert comparing each month's applicants with the last
+  C: Input drift beyond set limits from the population last validated on
+  D: A retrain that adds, removes or redefines any of the model's inputs
+answer: C
+explanation:
+  why_correct: A steady shift is made of small monthly steps, so any trigger that compares one month with the one before sees
+    only a small change. Measuring drift from the population the model was last validated on adds the steps up, so revalidation
+    starts once the model is being used well outside the conditions its validation covered.
+  why_not:
+    A: Comparing each version with the last suits sudden failures, but each version is tested on recent data like the one
+      before. A gradual move away from the validated population would pass this check month after month.
+    B: Month-on-month drift alerts catch sudden changes, but a steady shift shows only one month's small step at a time. The
+      total change since validation never appears.
+    D: A change to the inputs is a sound revalidation trigger, but here the inputs stayed the same while the applicants changed.
+      This trigger would not fire.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

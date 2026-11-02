@@ -1,0 +1,33 @@
+id: aair-d1-1.2-0030
+subdomain: '1.2'
+difficulty: medium
+stem: A wealth manager's AI tool recommends suitable funds for each client, and advisers may override it with a written reason.
+  Advisers' bonuses are based on the fee revenue from the funds they sell. A review finds that most overrides move clients
+  into higher-fee funds, and the pattern is much the same for every adviser. Which change BEST aligns the advice process with
+  the tool's purpose?
+options:
+  A: Base advisers' pay on outcomes that do not vary with fund fees
+  B: Have a second adviser approve each override before the sale
+  C: Flag advisers whose override rate is above the team's average
+  D: Train advisers on when overriding the tool is justified
+answer: A
+explanation:
+  why_correct: The overrides follow the bonus scheme, and they do so across the whole team, so the process rewards the very
+    behaviour the tool is meant to prevent. Changing what advisers are paid for removes the pull toward higher-fee funds,
+    so overrides happen for client reasons. Controls on top of an unchanged incentive keep fighting it.
+  why_not:
+    B: A second approval suits a few careless overrides, but the second adviser is paid under the same scheme. Every adviser
+      shows the same pattern, so the check would tend to pass the overrides.
+    C: Flagging outliers works when a few people stand out, but the pattern is much the same for every adviser. Almost nobody
+      would be above the average.
+    D: Training helps when people do not know the rules, but advisers already write reasons for each override. Knowing how
+      to justify an override does not change the incentive behind it.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: fail
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious
