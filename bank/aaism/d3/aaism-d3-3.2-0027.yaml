@@ -11,9 +11,10 @@ options:
   D: A second data scientist countersigning the recorded input hashes
 answer: B
 explanation:
-  why_correct: Today the evidence comes from the people being checked, recorded on machines they control. A locked training
-    service that fetches the approved inputs itself and signs a record of exactly what it used gives provenance that no data
-    scientist can forge, and that record can be checked against the registry for each production model.
+  why_correct: Today the evidence comes from the people being checked, recorded on machines they control. A locked training service that
+    fetches the approved inputs itself and signs a record binding exactly what it used to the digest of the model file it
+    produced gives provenance that no data scientist can forge. The registry and deployment checks then verify that
+    signature against the digest of each production model.
   why_not:
     A: A rebuild with matching hashes would be strong proof, but training on these GPUs is not bit-for-bit repeatable, so
       even an honest rebuild will not match.

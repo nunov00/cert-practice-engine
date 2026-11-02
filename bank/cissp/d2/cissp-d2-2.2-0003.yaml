@@ -1,6 +1,6 @@
 id: cissp-d2-2.2-0003
 subdomain: '2.2'
-difficulty: hard
+difficulty: medium
 stem: A bank labels documents in its office suite, and its data loss prevention tool enforces handling rules by label. Reports
   exported from the data warehouse as CSV files carry no label, and several customer lists, holding names, segments and balances
   but no account numbers, were emailed to personal addresses. Analysts produce thousands of exports a week. Which handling
@@ -22,7 +22,7 @@ explanation:
       be skipped or mislabelled, and one missed label is enough for a list to leave.
     D: Blocking CSV attachments stops this one format by email, but the same data can be saved in another format or sent another
       way, and the files would still carry no label for any other handling rule.
-status: published
+status: draft
 outline_version: '2024-04-15'
 sample: false
 provenance:

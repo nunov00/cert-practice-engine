@@ -2,9 +2,9 @@ id: cissp-d7-7.3-0002
 subdomain: '7.3'
 difficulty: medium
 stem: A brokerage enforces one hardened baseline on 900 Linux servers with a tool that reverts drift every 30 minutes. Its
-  vendor's trading software, on 40 of those servers, requires one kernel setting at a non-baseline value, so each revert stalls
-  trading until an engineer sets the value by hand. The baseline value blocks a network attack aimed at the internet-facing
-  servers. Last year a mistyped value for this setting halted trading for a morning. What should the operations manager do?
+  vendor's trading software, on 40 of those servers, needs one kernel setting at a non-baseline value, so each revert stalls
+  trading until an engineer resets it by hand. The baseline value blocks an attack on internet-facing servers; no trading
+  server faces the internet. Last year a mistyped value halted trading for a morning. What should the operations manager do?
 options:
   A: Change the setting in the single baseline to the value the trading software needs
   B: Remove the setting from the baseline, leaving each server's value to its owners
@@ -22,7 +22,7 @@ explanation:
       a mistyped value has already halted trading once.
     D: An approved, reported deviation is a recognised way to handle a justified exception, but the value would still be set
       by hand on each server, and a report of deviation cannot tell a correct value from a mistyped one.
-status: published
+status: draft
 outline_version: '2024-04-15'
 sample: false
 provenance:

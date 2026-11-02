@@ -1,6 +1,6 @@
 id: aaism-d3-3.5-0028
 subdomain: "3.5"
-difficulty: medium
+difficulty: easy
 stem: A model-serving cluster loads third-party models and can reach the internet freely. Model files are scanned on
   intake, but the team worries that a payload the scanner missed could send data out. Which control BEST limits this?
 options:
@@ -10,14 +10,15 @@ options:
   D: Run the serving processes under a non-administrator account
 answer: A
 explanation:
-  why_correct: The concern is a payload that has already evaded detection. Default-deny egress removes the path out, so
-    even code that runs cannot reach an attacker's server, whatever it is.
+  why_correct: The concern is a payload that has already evaded detection. Default-deny egress removes most paths out, so code that runs
+    cannot reach an arbitrary attacker server. Allowed destinations can still carry data, so this is one layer, alongside
+    controls and monitoring on the channels that stay open.
   why_not:
     B: A second scan uses the same detection methods, so a payload the scanner missed once is likely to be missed again.
     C: DNS alerts detect some exfiltration, but a payload can use established domains or direct addresses, and data may
       leave before anyone responds.
     D: A non-administrator account limits damage on the host, but an ordinary process can still open outbound connections.
-status: published
+status: draft
 outline_version: 2025-08-19
 sample: false
 provenance:

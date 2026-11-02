@@ -88,3 +88,23 @@ held:
   # the night's hard share could not carry it (aaism-d1-1.4-0024 left the list
   # on recheck: obvious from the options alone)
   - { id: aair-d1-1.1-0028, pr: 75 }
+  # PR #75, merge run: Codex and the final Claude review lowered hard labels and
+  # dropped hard aair-d2-2.1-0025 and aair-d3-3.3-0032 (disputed keys), so the easiest
+  # new or released questions go back to keep each exam's hard share at 30%
+  - { id: aaism-d3-3.5-0038, pr: 75 }
+  - { id: aaism-d3-3.4-0025, pr: 75 }
+  - { id: aaism-d3-3.5-0028, pr: 75 }
+  - { id: aaism-d2-2.3-0043, pr: 75 }
+  - { id: aaism-d3-3.3-0027, pr: 75 }
+  - { id: aair-d1-1.3-0028, pr: 75 }
+  - { id: aair-d2-2.4-0022, pr: 75 }
+  - { id: aair-d2-2.2-0023, pr: 75 }
+  - { id: aair-d2-2.3-0021, pr: 75 }
+  - { id: cissp-d2-2.2-0003, pr: 75 }
+  - { id: cissp-d4-4.2-0016, pr: 75 }
+  - { id: cissp-d8-8.4-0004, pr: 75 }
+  - { id: cissp-d7-7.3-0002, pr: 75 }
+  - { id: cissp-d7-7.5-0002, pr: 75 }
+  - { id: cissp-d7-7.7-0002, pr: 75 }
+  - { id: cissp-d1-1.2-0003, pr: 75 }
+  - { id: cissp-d1-1.7-0003, pr: 75 }

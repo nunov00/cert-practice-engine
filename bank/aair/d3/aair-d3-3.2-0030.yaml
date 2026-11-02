@@ -11,9 +11,11 @@ options:
   D: Restore any suspension not confirmed as fraud in four hours
 answer: D
 explanation:
-  why_correct: The appetite is set on how long a genuine customer is cut off, not on how often it happens. Restoring every
-    suspension that is not confirmed within four hours puts a hard limit on that duration while keeping the fast suspension
-    that stops fraud. It treats the risk in the terms the board used to define it.
+  why_correct: The appetite is set on how long a genuine customer is cut off, not on how often it happens. Restoring every suspension
+    that is not confirmed within four hours puts a hard limit on that duration while keeping the fast suspension that stops
+    fraud. The four hours are the window for the fraud team to confirm or clear each case; only a suspension still
+    unconfirmed at the limit is restored, which accepts a small fraud risk within the appetite the board set. It treats the
+    risk in the terms the board used to define it.
   why_not:
     A: Fewer wrong suspensions lowers the number of customers affected, but each one could still be cut off for days. The
       appetite is breached by the length of an outage, which retraining does not bound.

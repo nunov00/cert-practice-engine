@@ -21,7 +21,7 @@ explanation:
       total change since validation never appears.
     D: A change to the inputs is a sound revalidation trigger, but here the inputs stayed the same while the applicants changed.
       This trigger would not fire.
-status: published
+status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:

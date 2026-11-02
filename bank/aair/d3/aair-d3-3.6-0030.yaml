@@ -12,10 +12,10 @@ options:
   D: A recovery point objective for the cloud model and its data
 answer: A
 explanation:
-  why_correct: The contract already fixes how long the lab may depend on the fallback, so the open question is whether running
-    on it is acceptable at all. The local model keeps the process going but misses more abnormal results, and the analysis
-    needs the minimum detection level the process can tolerate. That level decides whether the fallback is valid for five
-    days and what extra measures it needs.
+  why_correct: The local model keeps the process going but misses more abnormal results, so the open question is whether running on it is
+    acceptable, and for how long. The analysis needs the minimum detection level the process can tolerate, set from clinical
+    risk tolerance. That level decides how long the fallback can safely be used and what extra measures it needs; the
+    supplier's five-day restoration allowance is then judged against it, not taken as the answer.
   why_not:
     B: 'Cost over time is standard content for a business impact analysis, but the main impact here is clinical: abnormal
       results missed while the lab runs on the fallback. A daily cost does not show whether that is acceptable.'

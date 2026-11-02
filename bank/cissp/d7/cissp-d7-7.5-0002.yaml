@@ -21,7 +21,7 @@ explanation:
       machines that do not run the firm's software, so they could not decrypt them.
     D: Logging copies to removable media gives an audit trail, but a lost drive, like last quarter's, stays readable to whoever
       finds it.
-status: published
+status: draft
 outline_version: '2024-04-15'
 sample: false
 provenance:

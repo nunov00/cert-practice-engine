@@ -22,7 +22,7 @@ explanation:
       and re-queues each message, so nothing protects the reading between the broker and the billing system.
     D: A fleet-wide MAC key proves a reading came from some van and was not altered, but any van, or anyone who extracts that
       one key, could produce readings in another van's name, so the operator cannot tell which van sent each one.
-status: published
+status: draft
 outline_version: '2024-04-15'
 sample: false
 provenance:

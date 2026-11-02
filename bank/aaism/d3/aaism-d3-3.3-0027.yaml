@@ -1,6 +1,6 @@
 id: aaism-d3-3.3-0027
 subdomain: '3.3'
-difficulty: hard
+difficulty: medium
 stem: A delivery firm's support agent answers only delivery questions, but its customer-record tool returns whole records,
   including birth dates, card details and free-text notes in which customers mention health and family matters. Prompts go
   to a hosted model whose provider keeps them for 30 days for abuse review. Which control BEST reduces exposure?
@@ -19,7 +19,7 @@ explanation:
     B: Pattern redaction can catch card numbers and dates, but not the health and family details in free-text notes, and the
       agent still fetches data the task never needed.
     D: Restricting log access protects the firm's own copy, not the copy the provider holds, and leaves the data in each prompt.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

@@ -1,6 +1,6 @@
 id: aair-d1-1.3-0028
 subdomain: '1.3'
-difficulty: medium
+difficulty: easy
 stem: A bank's second-line model risk team, built up over years to review statistical credit models, now also reviews the
   bank's generative AI assistants before launch. It has approved each assistant without findings. Two later incidents were
   traced to prompt injection and to an assistant retrieving documents its users were not allowed to see. What is the MAIN
@@ -22,7 +22,7 @@ explanation:
       points to reviewers who did not know which failures to look for.
     D: An expert on the committee could improve its challenge, but the reviews raised no findings for the committee to judge.
       The gap sits in the reviews themselves.
-status: published
+status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:

@@ -1,6 +1,6 @@
 id: cissp-d8-8.4-0004
 subdomain: '8.4'
-difficulty: hard
+difficulty: medium
 stem: Two years ago a company assessed a SaaS case-management service before buying it. Last month it learned from a news
   article that the provider had switched on, by default and for every customer, a feature that sends case text to a third-party
   AI processor. Which measure BEST prevents a repeat?
@@ -21,7 +21,7 @@ explanation:
       the company's network never sees.
     D: Restricting who can enable features controls changes made by the company's own users, but this feature was switched
       on by the provider by default, with no admin action.
-status: published
+status: draft
 outline_version: '2024-04-15'
 sample: false
 provenance:

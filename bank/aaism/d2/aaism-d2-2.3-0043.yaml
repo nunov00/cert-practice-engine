@@ -1,6 +1,6 @@
 id: aaism-d2-2.3-0043
 subdomain: '2.3'
-difficulty: hard
+difficulty: medium
 stem: A bank's regulator requires customer data to stay in the country. Its chosen hosted model provider has one region there,
   and due diligence shows its continuity plan fails over automatically to the nearest healthy region, with twice-yearly tests
   whose results it shares. What should the bank require?
@@ -20,7 +20,7 @@ explanation:
     B: Notice would tell the bank that data had left the country, but only after the requirement had been broken.
     D: Bank-held keys protect stored data, but the model must read prompts in clear to process them, so customer data would
       still be processed abroad.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

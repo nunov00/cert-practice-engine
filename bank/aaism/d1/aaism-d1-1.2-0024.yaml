@@ -5,7 +5,7 @@ stem: Fraudsters used live deepfakes of a manufacturer's CFO and financial contr
   on a video call held on the company's own meeting platform through a guest link. The finance clerk on the call released
   an urgent transfer to a new supplier. Which policy provision BEST prevents a repeat?
 options:
-  A: Large payments need separate approval from two senior managers
+  A: Large payments need a third approver from senior management
   B: Payment approvals count only from calls on the company's own platform
   C: Payments to new payees need a callback to approvers' numbers on file
   D: Urgent payments are held for 24 hours before they are released
@@ -15,8 +15,8 @@ explanation:
     to the approvers on numbers already held on file uses a channel the fraudster does not control, and applying it to new
     payees covers the payments fraudsters aim for.
   why_not:
-    A: Two approvers were already required, and both were faked on the same call, so a two-approver rule would not have stopped
-      it.
+    A: A third approver joining the same kind of call can be faked as easily as the first two; adding people does not verify
+      who they are.
     B: The call already ran on the company's own platform, joined through a guest link; the platform does not prove who is
       behind each camera.
     D: A hold gives time to check, but it verifies nothing by itself; with no independent confirmation, the transfer would

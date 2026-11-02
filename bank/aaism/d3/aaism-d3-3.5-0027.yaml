@@ -11,8 +11,9 @@ options:
   D: Gateway logging of prompts with daily alerts on credential patterns
 answer: A
 explanation:
-  why_correct: Scanning prompts for credential patterns at the gateway and redacting them stops live secrets leaving the
-    company, whether or not the developer notices, and matches can trigger rotation of the exposed credential.
+  why_correct: Scanning prompts for credential patterns at the gateway and redacting them blocks the detected secrets before they leave
+    the company, whether or not the developer notices. It will not recognise every format or cover other routes out, so
+    matches should also trigger rotation of the exposed credential.
   why_not:
     B: Repository scanning catches secrets committed to code, but pasting into the assistant happens outside the
       repositories, so it never sees them.

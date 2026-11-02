@@ -21,7 +21,7 @@ explanation:
       toward the model being retrained.
     D: Limiting the personal data annotators see is good practice, but the change in method does not alter it. The new risk
       is in the quality of the labels.
-status: published
+status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:

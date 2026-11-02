@@ -1,9 +1,10 @@
 id: aaism-d3-3.4-0034
 subdomain: '3.4'
 difficulty: medium
-stem: A benefits agency's model recommends which claims to stop. Caseworkers who override a recommendation must write a justification,
-  and each caseworker's override rate is reported in their performance review. Overrides have fallen to 0.5%, while appeals
-  against stopped claims succeed more often each quarter. Which change BEST restores meaningful human review?
+stem: A benefits agency's model recommends which claims to stop. Caseworkers who override a recommendation must write a
+  justification, and each caseworker's override rate is reported in their performance review, where higher rates count
+  against them. Overrides have fallen to 0.5%, while appeals against stopped claims succeed more often each quarter. Which
+  change BEST restores meaningful human review?
 options:
   A: Retrain caseworkers on the model's known failure modes
   B: Seed known wrong recommendations to test reviewers' catch rate

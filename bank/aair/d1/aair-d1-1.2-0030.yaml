@@ -18,8 +18,8 @@ explanation:
   why_not:
     B: A second approval suits a few careless overrides, but the second adviser is paid under the same scheme. Every adviser
       shows the same pattern, so the check would tend to pass the overrides.
-    C: Flagging outliers works when a few people stand out, but the pattern is much the same for every adviser. Almost nobody
-      would be above the average.
+    C: Flagging outliers works when a few people stand out, but the pattern is much the same for every adviser. Comparing each
+      adviser with a team average that shares the same bias misses a problem built into the whole team's incentive.
     D: Training helps when people do not know the rules, but advisers already write reasons for each override. Knowing how
       to justify an override does not change the incentive behind it.
 status: draft
