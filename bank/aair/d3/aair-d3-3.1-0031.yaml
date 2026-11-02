@@ -1,0 +1,35 @@
+id: aair-d3-3.1-0031
+subdomain: '3.1'
+difficulty: medium
+stem: An insurer fine-tuned a vendor's chat model on 20,000 past customer chats, with personal details removed, so that its
+  claims chatbot writes in the insurer's tone. The chatbot answers cover questions from policy documents it retrieves. The
+  risk assessment took its safety ratings from the vendor's published tests of the original model. Which risk scenario should
+  the assessment MOST add?
+options:
+  A: Instructions hidden in uploaded claim documents steer its replies
+  B: Harmful requests the vendor's model refused now get full answers
+  C: Personal details missed by the removal step appear in its replies
+  D: Replies quote cover terms that changed after the chats took place
+answer: B
+explanation:
+  why_correct: Fine-tuning changes the model's weights, and research and vendor guidance both show it can weaken the refusal
+    behaviour the vendor trained in, even when the fine-tuning data is harmless. The assessment's safety ratings rest on tests
+    of a model the insurer no longer runs, so the scenario of harmful requests now being answered is unrated and needs its
+    own testing on the fine-tuned model.
+  why_not:
+    A: Hidden instructions in uploaded documents are a real chatbot risk, but they come from how the chatbot takes in content,
+      not from the fine-tuning. Nothing in the stem suggests the assessment's evidence on this point is borrowed from a different
+      model.
+    C: Leftover personal details are worth checking, but they concern the training data, which the insurer itself cleaned
+      and can sample. The safety ratings are the part of the assessment that rests on tests that no longer apply.
+    D: Old chats can teach outdated wording, but the chatbot answers cover questions from documents it retrieves at the time.
+      The larger unassessed change is what fine-tuning did to the model's safety behaviour.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: fail
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

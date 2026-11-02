@@ -1,0 +1,32 @@
+id: aair-d1-1.6-0022
+subdomain: '1.6'
+difficulty: medium
+stem: A recruiter's screening model is tested each quarter for gaps in shortlisting rates by sex, by age band and by ethnicity,
+  and every gap is within the agreed tolerance. Most complaints of unfair rejection come from women over 50. What should the
+  risk practitioner recommend?
+options:
+  A: Tighten the tolerance for the gaps by sex and by age band
+  B: Test shortlisting rates for groups that combine age and sex
+  C: Have reviewers re-examine rejected applications from women over 50
+  D: Survey complainants on why they believe they were treated unfairly
+answer: B
+explanation:
+  why_correct: 'Testing one characteristic at a time can hide a gap that affects people with a combination of them: older
+    women can fare badly while women overall and older people overall stay within tolerance. Testing combined groups shows
+    whether the pattern in the complaints is real and fixes the blind spot in the quarterly tests.'
+  why_not:
+    A: A tighter tolerance makes the existing tests stricter, but they still look at sex and age separately. A gap that only
+      shows when the two are combined would stay hidden.
+    C: Reviewing rejected applications helps the individuals and may find errors, but case review cannot show a rate gap.
+      The testing method would still miss the same pattern next quarter.
+    D: A survey shows what complainants believe, which is useful context, but it does not measure whether the model treats
+      the group differently. The data to test that already exists.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

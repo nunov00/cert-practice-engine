@@ -17,7 +17,7 @@ explanation:
     C: DNS alerts detect some exfiltration, but a payload can use established domains or direct addresses, and data may
       leave before anyone responds.
     D: A non-administrator account limits damage on the host, but an ordinary process can still open outbound connections.
-status: draft
+status: published
 outline_version: 2025-08-19
 sample: false
 provenance:
@@ -25,4 +25,4 @@ provenance:
   run_id: 2026-10-27-daily-aaism
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-10-27-daily-aaism-check
+  checked_by: 2026-11-02-daily-aaism-check

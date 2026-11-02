@@ -1,0 +1,32 @@
+id: cissp-d3-3.10-0002
+subdomain: '3.10'
+difficulty: medium
+stem: A council is retiring its old housing benefits system after moving active cases to a new one. Closed cases must be kept
+  for seven years in case of appeals, which come up about ten times a year. The old system runs on an operating system that
+  is out of support, and the new system's licence is priced per case record held. Which approach BEST fits the retirement?
+options:
+  A: Keep the old system running read-only on an isolated network segment
+  B: Migrate the closed cases into the new system along with the active ones
+  C: Export the closed cases to an archive readable without the old system
+  D: Keep full backups of the old system to restore if an appeal needs it
+answer: C
+explanation:
+  why_correct: 'Disposal is part of the lifecycle: the retention duty belongs to the data, not to the system. Exporting closed
+    cases to an archive format that can be searched without the old software meets the seven-year duty and the rare appeals,
+    and lets the unsupported platform be shut down and sanitised.'
+  why_not:
+    A: Keeping a legacy system read-only and isolated is a common interim step, but here it means running an unsupported operating
+      system for seven years for about ten lookups a year.
+    B: Migrating everything to one system is tidy and keeps one place to search, but the new licence is priced per record,
+      so seven years of closed cases would add cost every year for data that is rarely read.
+    D: Backups keep the data, but restoring them needs the old, unsupported platform to be rebuilt each time an appeal comes
+      up, and that restore path is rarely tested over seven years.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-cissp-check
+  options_only: not_obvious

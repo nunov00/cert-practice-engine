@@ -1,0 +1,32 @@
+id: aair-d2-2.2-0023
+subdomain: '2.2'
+difficulty: medium
+stem: An insurer is validating an AI agent that settles small claims. To reach a decision it looks up the policy, updates
+  the claim record and can issue a payment. An automated check scored the decision letter the agent produced for each of 300
+  test claims, and 96% were correct. What should the validation MOST add?
+options:
+  A: Checks of the actions the agent took on each test claim
+  B: More test claims, including rare and complex claim types
+  C: Several runs of each test claim to check decisions are consistent
+  D: Expert review of the letters in place of automated scoring
+answer: A
+explanation:
+  why_correct: The agent changes records and can pay money on the way to its letter, and a correct letter does not show that
+    those steps were right. It could update the wrong record or issue a wrong or duplicate payment and still write a correct
+    decision. Validation of an agent needs to check the actions it took, not only its final output.
+  why_not:
+    B: A wider set of claims would strengthen the test, but it would still judge only the letters. Wrong actions behind correct
+      letters would be missed on every claim.
+    C: Repeat runs show whether decisions are stable, which matters for language models, but they still look only at the letters.
+      The actions taken along the way stay untested.
+    D: Expert review may judge letters more accurately than a script, but it still looks only at the final output. The record
+      changes and payments are where the larger harm could sit.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

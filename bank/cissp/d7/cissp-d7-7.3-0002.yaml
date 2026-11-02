@@ -1,0 +1,33 @@
+id: cissp-d7-7.3-0002
+subdomain: '7.3'
+difficulty: medium
+stem: A brokerage enforces one hardened baseline on 900 Linux servers with a tool that reverts drift every 30 minutes. Its
+  vendor's trading software, on 40 of those servers, requires one kernel setting at a non-baseline value, so each revert stalls
+  trading until an engineer sets the value by hand. The baseline value blocks a network attack aimed at the internet-facing
+  servers. Last year a mistyped value for this setting halted trading for a morning. What should the operations manager do?
+options:
+  A: Change the setting in the single baseline to the value the trading software needs
+  B: Remove the setting from the baseline, leaving each server's value to its owners
+  C: Add a baseline for the trading server group that sets the trading software's value
+  D: Record the trading servers' value as a deviation the tool reports but does not revert
+answer: C
+explanation:
+  why_correct: The trading servers have a lasting, legitimate need for a different value, while the rest of the estate needs
+    the hardened one. A baseline for the trading group lets the tool enforce the right value on each group, so trading stops
+    stalling, the other servers keep their protection, and nobody sets the value by hand.
+  why_not:
+    A: One baseline is simpler to run, and changing it would end the stalls, but it would move the internet-facing servers
+      off the value that blocks an attack aimed at them.
+    B: Dropping the setting from enforcement ends the conflict, but each value would then be set by hand and unchecked, and
+      a mistyped value has already halted trading once.
+    D: An approved, reported deviation is a recognised way to handle a justified exception, but the value would still be set
+      by hand on each server, and a report of deviation cannot tell a correct value from a mistyped one.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-cissp-check
+  options_only: not_obvious

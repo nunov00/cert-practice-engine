@@ -1,0 +1,34 @@
+id: cissp-d1-1.3-0003
+subdomain: '1.3'
+difficulty: hard
+stem: A group's board-approved security policy sets specific password lengths, encryption algorithms and patch deadlines.
+  The board meets twice a year. Over 200 exceptions are now open, most for the same few settings on systems that cannot yet
+  meet them, and the group's regulator expects one consistent control set across its countries. What should the CISO do?
+options:
+  A: Keep the policy's principles and move the settings into standards the CISO maintains
+  B: Route each exception through the risk committee with an expiry and compensating controls
+  C: Let each country adopt its own policy that implements the group policy locally
+  D: Ask the board to approve revised settings that the affected systems can meet now
+answer: A
+explanation:
+  why_correct: Technical settings change faster than a board that meets twice a year can approve them, and hundreds of exceptions
+    to the same few settings show the document is pitched at the wrong level. A board-approved policy of principles, with
+    standards the CISO keeps current under it, gives one group-wide control set that can be adjusted, with variants for the
+    systems that need them, without waiting for the board.
+  why_not:
+    B: Time-limited exceptions with compensating controls are the right tool for an individual system, but 200 open exceptions
+      for the same settings show the rule itself is mis-set, and managing them one by one leaves an unrealistic policy in
+      place.
+    C: Local policies suit countries with differing law, but the regulator expects one consistent control set, which country-by-country
+      policies make harder to show.
+    D: Revising the settings would cut today's exceptions, but it lowers the bar for systems that could meet it, and every
+      later change would again wait up to six months for a board meeting.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-cissp-check
+  options_only: not_obvious

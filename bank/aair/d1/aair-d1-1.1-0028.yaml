@@ -1,0 +1,32 @@
+id: aair-d1-1.1-0028
+subdomain: '1.1'
+difficulty: medium
+stem: A grid operator wants a model to set how much reserve generation to hold each day. It must hold enough reserve to cover
+  demand on all but one day in a hundred. The shortlisted model predicts each day's peak demand as a single figure and has
+  the lowest average error. What should the risk practitioner recommend?
+options:
+  A: Choose the model with the lowest error on past high-demand days
+  B: Average the forecasts of several models to steady the estimate
+  C: Use a model that forecasts a range for each day's peak demand
+  D: Retrain the shortlisted model daily on the latest demand data
+answer: C
+explanation:
+  why_correct: 'The requirement is about the tail: reserve must cover the peak on 99 days in 100. A single best-guess figure
+    says nothing about how far demand could exceed it. A model that forecasts a range, such as quantiles of the peak, lets
+    the operator set reserve at the level the requirement needs, which is the real use case.'
+  why_not:
+    A: Lower error on high-demand days is a better point forecast for the cases that matter, but it is still one figure. It
+      does not tell the operator how much margin covers 99 days in 100.
+    B: Averaging several models can reduce error, but the output is still a single estimate with no measure of how uncertain
+      it is. The reserve decision needs that uncertainty.
+    D: Daily retraining may keep the model current, but it does not change what the model produces. A more up-to-date single
+      figure still does not show the margin needed.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

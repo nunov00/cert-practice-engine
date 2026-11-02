@@ -1,0 +1,32 @@
+id: aair-d1-1.6-0023
+subdomain: '1.6'
+difficulty: medium
+stem: A utility's AI voice agent phones customers in arrears and agrees payment plans with them. It is patient and persuasive,
+  and most plans are kept. Relatives later found that some customers with dementia or in mental health crisis had agreed plans
+  they could not afford and did not remember. What should the risk practitioner recommend?
+options:
+  A: Send each plan in writing for the customer to confirm before it starts
+  B: Let customers cancel any plan agreed with the agent within 14 days
+  C: Cap the monthly amount the agent may agree in any payment plan
+  D: Pass calls to trained staff when signs of vulnerability appear
+answer: D
+explanation:
+  why_correct: The harm falls on people who could not engage with the call on equal terms, and a persuasive automated caller
+    makes that worse. Recognising signs of vulnerability and passing those calls to trained staff protects the people at risk
+    while keeping the agent for the many customers it serves well.
+  why_not:
+    A: Written confirmation adds a second chance for most customers, but people who do not remember the call are poorly placed
+      to weigh a letter about it.
+    B: A cooling-off right suits customers who change their minds, but it relies on the customer recalling the plan and acting.
+      Those harmed here did not remember agreeing.
+    C: A cap limits the worst plans, but affordability depends on each person's means. A uniform cap would still allow plans
+      that vulnerable customers cannot pay.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: fail
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

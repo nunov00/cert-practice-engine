@@ -1,0 +1,31 @@
+id: aaism-d2-2.3-0043
+subdomain: '2.3'
+difficulty: hard
+stem: A bank's regulator requires customer data to stay in the country. Its chosen hosted model provider has one region there,
+  and due diligence shows its continuity plan fails over automatically to the nearest healthy region, with twice-yearly tests
+  whose results it shares. What should the bank require?
+options:
+  A: Annual evidence that the provider's failover tests succeed
+  B: Notice from the provider whenever failover moves processing
+  C: Opt-out from cross-border failover, with a local fallback
+  D: Encryption under bank-held keys for data in failover regions
+answer: C
+explanation:
+  why_correct: With only one region in the country, automatic failover would move customer prompts abroad, which the regulator
+    forbids whatever the reason. The bank needs that failover switched off for its tenant and its own in-country fallback,
+    such as a reduced service or another provider's local region, so an outage does not turn into a breach.
+  why_not:
+    A: Test evidence shows failover works, and the provider already shares it; the problem is where it fails over to, not
+      whether it works.
+    B: Notice would tell the bank that data had left the country, but only after the requirement had been broken.
+    D: Bank-held keys protect stored data, but the model must read prompts in clear to process them, so customer data would
+      still be processed abroad.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: not_obvious

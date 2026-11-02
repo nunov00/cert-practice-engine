@@ -1,0 +1,32 @@
+id: aaism-d2-2.1-0043
+subdomain: '2.1'
+difficulty: hard
+stem: A law firm's research assistant, which can read client matter files and draft emails, fabricates case citations above
+  tolerance. The team proposes letting it check each citation against a public case-law website through a browsing tool, and
+  tests show fabrications then fall well below tolerance. What should the risk manager do BEFORE recording the risk as treated?
+options:
+  A: Re-rate the fabrication risk using the test results
+  B: Keep lawyers checking citations until live data confirms the rate
+  C: Set a key risk indicator on live fabricated-citation rates
+  D: Rate the risk of instructions planted in fetched web pages
+answer: D
+explanation:
+  why_correct: A treatment can bring in new risks. Browsing feeds outside web content into an assistant that can read client
+    files and draft emails, so a page with hidden instructions could steer it to send client data out. That secondary risk
+    has to be assessed, and treated if needed, before the original risk is recorded as treated, or the change may swap a quality
+    risk for a confidentiality one.
+  why_not:
+    A: Re-rating the citation risk is part of the job, and the tests already put it within tolerance; it says nothing about
+      the new exposure the browsing tool creates.
+    B: Keeping lawyer checks for a while is a sensible transition, but it covers citation accuracy only, not what fetched
+      pages could make the assistant do with client files.
+    C: A key risk indicator tracks the treated risk over time, but it does not cover the new risk the browsing tool brings.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: not_obvious

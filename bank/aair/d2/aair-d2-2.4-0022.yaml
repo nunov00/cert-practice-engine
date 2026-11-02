@@ -1,0 +1,32 @@
+id: aair-d2-2.4-0022
+subdomain: '2.4'
+difficulty: medium
+stem: To speed up labelling for its document classifier, a bank now has annotators correct the label the current model proposes
+  for each document, instead of labelling from scratch. Throughput doubled, and agreement between annotators rose. The labels
+  will be used to retrain the model. What is the MAIN data risk?
+options:
+  A: Annotators may apply the guidelines less carefully as they speed up
+  B: Labels may carry the model's own mistakes into its retraining
+  C: Old and new labels may follow different standards in one dataset
+  D: Annotators may see personal data that the task does not need
+answer: B
+explanation:
+  why_correct: When people correct a proposed label, they tend to accept it unless it is clearly wrong, so the model's plausible
+    errors pass into the labels. Rising agreement is expected when every annotator starts from the same suggestion, so it
+    does not show better quality. Retraining on these labels teaches the model its own mistakes and makes them harder to find.
+  why_not:
+    A: 'Speed can reduce care, but the larger effect here is the starting point: annotators now anchor on the model''s answer.
+      That bias would remain even if they worked slowly.'
+    C: Mixing labels made under two methods is worth recording, but it is a secondary issue. The new method itself skews labels
+      toward the model being retrained.
+    D: Limiting the personal data annotators see is good practice, but the change in method does not alter it. The new risk
+      is in the quality of the labels.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

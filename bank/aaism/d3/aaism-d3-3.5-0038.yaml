@@ -1,0 +1,31 @@
+id: aaism-d3-3.5-0038
+subdomain: '3.5'
+difficulty: easy
+stem: An IT helpdesk agent acts on ticket text that anyone in the company can write. It holds standing domain administrator
+  rights so that it can reset executives' passwords, a task it performs about twice a month. Which control BEST reduces the
+  risk from these rights?
+options:
+  A: SOC alerts on each administrator action the agent takes
+  B: Admin rights granted per task after approval, then removed
+  C: Admin rights scoped to the executives' accounts alone
+  D: A quarterly review confirming the agent still needs the rights
+answer: B
+explanation:
+  why_correct: The agent needs administrator power for a few minutes twice a month but holds it permanently, while taking
+    instructions from text anyone can write. Granting the rights only for an approved reset and removing them afterwards means
+    a manipulated agent has no administrator power the rest of the time, and each use is tied to a human decision.
+  why_not:
+    A: Alerts help investigation, but an administrator action such as a reset takes effect before analysts can respond, so
+      they detect misuse rather than prevent it.
+    C: Scoping to executives narrows the rights, but leaves standing control over the most valuable accounts in the company,
+      open to anyone who can write a ticket.
+    D: A review would confirm the agent still needs the rights for its resets, so it would keep them standing between uses.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: obvious

@@ -1,0 +1,32 @@
+id: cissp-d4-4.2-0016
+subdomain: '4.2'
+difficulty: hard
+stem: Developers at a software company need local administrator rights on their laptops for their build tools, and the laptops
+  are often offline or asleep for hours. In a red-team test, a tester who phished a developer used those rights to stop the
+  EDR agent, then worked unseen for two days. Which change BEST addresses this?
+options:
+  A: Give developers a separate admin account used only through elevation prompts
+  B: Alert the SOC whenever a laptop's EDR agent stops reporting for an hour
+  C: Remove local administrator rights from developers and package their tools
+  D: Turn on EDR tamper protection so stopping the agent needs a console code
+answer: D
+explanation:
+  why_correct: The developers keep admin rights for a business reason, so the endpoint control itself has to resist a local
+    administrator. Tamper protection stops the agent being disabled or uninstalled without an authorisation code issued from
+    the central console, so a phished admin session can no longer blind the EDR.
+  why_not:
+    A: A separate elevation account is good practice and narrows when admin rights are active, but the attacker controls the
+      developer's session and can use or wait for an elevation, after which the agent can still be stopped.
+    B: Heartbeat alerts are a sensible detective control, but these laptops are often offline or asleep for hours, so an hour
+      without reports is normal and the alert would bury the real case in noise.
+    C: Removing local admin is the usual first step against this kind of abuse, but the developers need it for their build
+      tools, so the change would break their work or end in widespread exceptions.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-cissp-check
+  options_only: not_obvious

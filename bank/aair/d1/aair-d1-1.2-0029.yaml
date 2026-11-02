@@ -1,0 +1,33 @@
+id: aair-d1-1.2-0029
+subdomain: '1.2'
+difficulty: medium
+stem: A manufacturer's finance team uses a machine learning model to estimate the warranty provision in its published accounts.
+  The model is in the AI inventory and gets a yearly accuracy and fairness review from the AI risk team. Which change BEST
+  aligns the model with the company's existing processes?
+options:
+  A: Share the AI risk team's yearly review with the external auditors
+  B: Add the model to the scope of financial reporting control testing
+  C: Have the finance director approve each retrain of the model
+  D: Add a check of the provision against claims paid to month-end close
+answer: B
+explanation:
+  why_correct: The model's output goes straight into published accounts, so it belongs in the company's financial reporting
+    control framework, where key controls are scoped, designed and tested on a set cycle. Bringing it into that scope means
+    the controls around its data, changes and outputs are tested to the standard the accounts require, alongside the AI risk
+    team's own review.
+  why_not:
+    A: Sharing the review may help the auditors, but it does not bring the model into the company's own control framework.
+      A yearly accuracy review is also not a test of the controls over the reported figure.
+    C: Approving retrains is one sensible control, but it is a single control chosen outside the process that decides which
+      controls the accounts need and tests them.
+    D: A reasonableness check at close is a useful detective control, but adding it alone leaves the model outside the scoping
+      and testing that the rest of the accounts go through.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aair-check
+  options_only: not_obvious

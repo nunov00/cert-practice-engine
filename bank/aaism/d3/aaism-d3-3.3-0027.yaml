@@ -1,0 +1,30 @@
+id: aaism-d3-3.3-0027
+subdomain: '3.3'
+difficulty: hard
+stem: A delivery firm's support agent answers only delivery questions, but its customer-record tool returns whole records,
+  including birth dates, card details and free-text notes in which customers mention health and family matters. Prompts go
+  to a hosted model whose provider keeps them for 30 days for abuse review. Which control BEST reduces exposure?
+options:
+  A: Masking of card numbers and birth dates in the agent's replies
+  B: Gateway redaction of card numbers and dates from outgoing prompts
+  C: A tool response limited to the fields delivery questions need
+  D: Access limits on who can read the agent's conversation logs
+answer: C
+explanation:
+  why_correct: 'The exposure starts at the tool: it hands the model far more personal data than a delivery answer needs, and
+    everything in the prompt reaches the provider and stays there for 30 days. Returning only delivery fields, such as address,
+    order status and tracking number, keeps the rest out of the prompt, the provider''s retention and any reply.'
+  why_not:
+    A: Masking replies protects what customers see, but by then the data has been sent to the provider and kept with the prompt.
+    B: Pattern redaction can catch card numbers and dates, but not the health and family details in free-text notes, and the
+      agent still fetches data the task never needed.
+    D: Restricting log access protects the firm's own copy, not the copy the provider holds, and leaves the data in each prompt.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: not_obvious

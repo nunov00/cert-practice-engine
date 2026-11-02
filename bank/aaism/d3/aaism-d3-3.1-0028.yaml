@@ -1,0 +1,33 @@
+id: aaism-d3-3.1-0028
+subdomain: '3.1'
+difficulty: hard
+stem: A software firm's AI review bot reads each pull request and can approve it, and branch rules count its approval as one
+  of the two reviews needed to merge. A tester got a backdoor in an ordinary utility file merged by adding a code comment
+  telling the bot the change was pre-approved; a busy colleague gave the second approval. Which design change BEST addresses
+  this?
+options:
+  A: Let the bot comment on changes without counting as a review
+  B: Strip comments from the code before the bot reviews it
+  C: Screen each change with a prompt injection classifier
+  D: Require two human approvals for changes to any sensitive paths
+answer: A
+explanation:
+  why_correct: The bot reads text written by the person whose change it judges, so its verdict can be steered by that author.
+    Keeping it as an adviser whose findings humans read, rather than one of the approvals that let code merge, means a manipulated
+    bot can no longer stand in for a reviewer, while the firm keeps the benefit of its comments.
+  why_not:
+    B: Stripping comments removes the route the tester used, but instructions can also sit in strings, names, commit messages
+      or documentation, and comments are part of what a reviewer should judge.
+    C: A classifier catches known injection patterns, but an author can keep rewording instructions until one passes, and
+      the bot's approval would still count when it does.
+    D: Extra human review on sensitive paths helps there, but the backdoor was in an ordinary utility file, where the bot's
+      approval would still count as one of the two.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: not_obvious

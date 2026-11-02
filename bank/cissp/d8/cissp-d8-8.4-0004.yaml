@@ -1,0 +1,32 @@
+id: cissp-d8-8.4-0004
+subdomain: '8.4'
+difficulty: hard
+stem: Two years ago a company assessed a SaaS case-management service before buying it. Last month it learned from a news
+  article that the provider had switched on, by default and for every customer, a feature that sends case text to a third-party
+  AI processor. Which measure BEST prevents a repeat?
+options:
+  A: Reassess the service in full each year, including its data flows
+  B: Monitor traffic to the service with a cloud access security broker
+  C: Contract for advance notice of new sub-processors, with a right to object
+  D: Let only the IT team enable new features in the service's admin console
+answer: C
+explanation:
+  why_correct: The change happened on the provider's side, between assessments, and reached the company only through the press.
+    A contractual duty to give notice before adding a sub-processor, with a right to object or exit, puts such changes in
+    front of the company before its data moves.
+  why_not:
+    A: Periodic reassessment is standard for acquired services and would catch the change eventually, but a yearly cycle can
+      leave a provider-side change running for months before the next review.
+    B: A CASB shows how staff use cloud services, but the case text flows from the provider's platform to its processor, traffic
+      the company's network never sees.
+    D: Restricting who can enable features controls changes made by the company's own users, but this feature was switched
+      on by the provider by default, with no admin action.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-cissp-check
+  options_only: not_obvious

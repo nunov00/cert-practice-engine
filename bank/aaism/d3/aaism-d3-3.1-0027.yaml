@@ -1,0 +1,31 @@
+id: aaism-d3-3.1-0027
+subdomain: '3.1'
+difficulty: medium
+stem: A consumer chatbot streams each reply to the screen word by word as it is generated. Its output safety check runs on
+  the finished reply and removes it if flagged. Testers captured harmful text in screenshots before it was removed. The product
+  team will keep streaming, as users leave when replies appear slowly. Which design change BEST addresses this?
+options:
+  A: Stricter screening of prompts before generation starts
+  B: Faster removal of flagged replies, with each removal logged
+  C: Whole replies held for checking before any text is shown
+  D: Replies streamed in segments the safety check has cleared
+answer: D
+explanation:
+  why_correct: The weakness is that text reaches the screen before it is checked. Checking each segment, such as a sentence,
+    before releasing it keeps the reply streaming while ensuring nothing unchecked is shown, so it meets both the safety need
+    and the product constraint.
+  why_not:
+    A: Better input screening helps, but harmful replies can still come from prompts that look harmless, and it leaves the
+      gap between display and check open.
+    B: Faster removal shortens the window but does not close it; users have already seen, and can capture, the text.
+    C: Holding the whole reply would close the gap, but it ends streaming, which the product team is keeping because slow
+      replies drive users away.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-aaism-check
+  options_only: not_obvious

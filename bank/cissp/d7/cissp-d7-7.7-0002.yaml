@@ -1,0 +1,32 @@
+id: cissp-d7-7.7-0002
+subdomain: '7.7'
+difficulty: medium
+stem: In a recent breach at a design firm, intruders moved between workstations with administrator credentials taken from
+  memory and used the same remote admin tools as IT staff. The firm's two SOC analysts already leave most alerts unread. It
+  wants earlier warning of such movement without adding to the noise. Which measure BEST fits?
+options:
+  A: Behaviour analytics that score unusual sign-ins against each user's baseline
+  B: Signature-based intrusion detection sensors on internal network segments
+  C: A decoy server in the DMZ that mimics the company's public web applications
+  D: Decoy admin credentials planted on workstations, alerting on any use of them
+answer: D
+explanation:
+  why_correct: Credentials that no legitimate person or process uses produce an alert only when someone harvests and tries
+    them, which is exactly how these intruders moved. Planted on workstations where theft from memory happens, they give early
+    warning with almost no false positives for a small team.
+  why_not:
+    A: Behaviour analytics can spot unusual sign-ins that use real tools, but it raises many alerts while it learns and tunes,
+      which a team that already leaves most alerts unread cannot absorb.
+    B: Internal IDS sensors are a standard way to watch lateral traffic, but these intruders used the same admin tools as
+      IT staff, so signatures see normal-looking traffic.
+    C: A decoy server attracts attackers probing from outside, but it sits in the DMZ, away from the internal workstations
+      where these intruders moved.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-02-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-02-daily-cissp-check
+  options_only: not_obvious
