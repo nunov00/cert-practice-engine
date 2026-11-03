@@ -2,8 +2,8 @@ id: aair-d2-2.1-0026
 subdomain: "2.1"
 difficulty: hard
 stem: A retailer is designing a model that chooses which customers receive a discount offer each month. It
-  will be retrained each month on whether the customers who were offered the discount went on to buy. What
-  should the design include?
+  will be retrained each month on whether the customers who were offered the discount went on to buy. Customers
+  the model scores low are never offered the discount. What should the design include?
 options:
   A: A holdout group who receive no offers, to measure the offers' uplift
   B: A small random share offered the discount whatever their score

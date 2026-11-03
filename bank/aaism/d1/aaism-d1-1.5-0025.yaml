@@ -1,8 +1,8 @@
 id: aaism-d1-1.5-0025
 subdomain: '1.5'
 difficulty: hard
-stem: For two days, the public package index served a tampered release of a model-serving library. Once, at install time,
-  it sent the build's environment variables to an attacker. Every build at the firm runs on one CI system holding the same
+stem: For two days, the public package index served a tampered release of a model-serving library. At install time, it ran
+  once and sent the build's environment variables to an attacker. Every build at the firm runs on one CI system holding the same
   cloud deployment credentials, and several builds pulled the release. What should responders do FIRST?
 options:
   A: Identify which builds and deployments installed the release

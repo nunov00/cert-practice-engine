@@ -100,3 +100,7 @@ held:
   - { id: aaism-d2-2.2-0050, pr: 76 }
   - { id: aaism-d3-3.1-0029, pr: 76 }
   - { id: aaism-d3-3.4-0036, pr: 76 }
+  # PR #76, merge run: final review lowered cissp-d2-2.2-0004 and
+  # cissp-d4-4.1-0015 to medium, so CISSP's 7 hard can carry only 16 non-hard
+  - { id: cissp-d7-7.10-0003, pr: 76 }
+  - { id: cissp-d6-6.5-0004, pr: 76 }

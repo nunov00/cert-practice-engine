@@ -1,6 +1,6 @@
 id: aair-d3-3.6-0031
 subdomain: "3.6"
-difficulty: hard
+difficulty: medium
 stem: A firm's AI agents onboard new suppliers end to end, creating supplier records, setting bank details and
   scheduling first payments. In an exercise, operators stopped the agents within a minute, then took two days
   to work out which suppliers could safely be paid. What should the response plan MOST add?

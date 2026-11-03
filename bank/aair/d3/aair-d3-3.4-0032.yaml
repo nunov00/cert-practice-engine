@@ -1,13 +1,13 @@
 id: aair-d3-3.4-0032
 subdomain: "3.4"
 difficulty: medium
-stem: A travel firm's assistant runs on a hosted model that the provider has updated without notice before.
+stem: An energy supplier's assistant runs on a hosted model that the provider has updated without notice before.
   The firm wants a key risk indicator that shows quickly when the model's behaviour changes. Customer
   questions vary widely from week to week. Which indicator BEST fits?
 options:
   A: Weekly grading of a sample of live answers against a rubric
   B: Daily runs of a fixed probe set, compared with past answers
-  C: Weekly rate of customer complaints about wrong travel advice
+  C: Weekly rate of customer complaints about wrong tariff advice
   D: Daily check of the provider's release notes and status page
 answer: B
 explanation:

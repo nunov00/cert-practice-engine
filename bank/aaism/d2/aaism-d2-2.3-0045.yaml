@@ -8,7 +8,7 @@ options:
   A: Admin access only after approval for each update window
   B: A standing admin role with its sessions recorded
   C: Signed releases that the insurer's own pipeline deploys
-  D: Contract terms making the vendor liable for misuse
+  D: Phishing-resistant MFA on the vendor's support accounts
 answer: C
 explanation:
   why_correct: If the vendor's support accounts are compromised, any access they hold into the insurer's account goes to the
@@ -19,8 +19,8 @@ explanation:
       During each window a compromised support account would still have admin rights.
     B: Session recording helps investigation, but it only shows what a compromised account did after the fact. The standing
       admin role remains open to the attacker.
-    D: Liability terms may help recover losses, but they do not reduce the chance or impact of a compromise. The insurer's
-      data and systems would still be exposed.
+    D: MFA cuts one route to account takeover, but session theft, insider misuse or a breach at the vendor would still reach
+      a standing admin role. Signed releases remove the vendor's access altogether.
 status: published
 outline_version: '2025-08-19'
 sample: false

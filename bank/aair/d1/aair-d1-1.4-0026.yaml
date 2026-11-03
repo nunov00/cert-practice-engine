@@ -3,7 +3,7 @@ subdomain: "1.4"
 difficulty: medium
 stem: A finance clerk at a manufacturer paid a large sum to a new account after a video call in which the
   chief financial officer gave the instruction. The CFO on the call was a deepfake, convincing enough that two
-  other colleagues on the call noticed nothing. Which procedure BEST prevents a repeat?
+  other colleagues on the call noticed nothing. Which control BEST prevents a repeat?
 options:
   A: Confirm payment instructions by calling back a number on file
   B: Train finance staff to spot the signs of synthetic video and voice
@@ -17,7 +17,7 @@ explanation:
     little and does not depend on anyone noticing anything odd.
   why_not:
     B: Awareness training is worthwhile, but the fake was good enough that three people on the call saw nothing
-      wrong. A procedure that relies on staff spotting fakes will fail as the fakes improve.
+      wrong. A control that relies on staff spotting fakes will fail as the fakes improve.
     C: Dual approval checks that one clerk is not acting alone. The second approver would see the same convincing
       instruction from the apparent CFO, so it does not verify where the instruction came from.
     D: Detection tools can catch some synthetic media, but they lag behind the generators and give no assurance

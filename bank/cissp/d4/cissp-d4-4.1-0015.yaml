@@ -1,12 +1,12 @@
 id: cissp-d4-4.1-0015
 subdomain: '4.1'
-difficulty: hard
+difficulty: medium
 stem: A company's cloud workloads run in private subnets, and its egress firewall allows outbound traffic only to approved
   services, including the provider's object storage service, which its backup servers write to each night. Malware on one
   backup server uploaded customer data to a storage bucket in an attacker's account with the same provider. Which design
   change BEST closes this path?
 options:
-  A: A private storage endpoint whose policy admits only the company's own buckets
+  A: A private storage endpoint, as the only route, whose policy admits only the company's buckets
   B: Egress rules that allow the storage service only from the backup servers' subnet
   C: TLS inspection with data loss prevention on traffic to the storage service
   D: Alerts on unusually large uploads from any server to the storage service
@@ -14,7 +14,7 @@ answer: A
 explanation:
   why_correct: The firewall sees only that traffic is going to the storage service, not whose bucket it reaches, and the
     attacker's bucket sits behind the same service names. A private endpoint for the storage service, with a policy that admits
-    only the company's buckets, enforces the destination at the resource level. With the firewall's route to the public storage service removed, storage
+    only the company's buckets, enforces the destination at the resource level. With the endpoint as the only route to the storage service, storage
     traffic can only take the endpoint and its policy, so backups keep working while uploads to
     another account's bucket are refused.
   why_not:

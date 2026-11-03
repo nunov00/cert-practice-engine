@@ -1,6 +1,6 @@
 id: cissp-d2-2.2-0004
 subdomain: '2.2'
-difficulty: hard
+difficulty: medium
 stem: Executives of an engineering firm are travelling to a trade fair in a country whose border officers have powers to
   inspect and image travellers' devices and to require their passwords. They need to work on Restricted bid documents during the week. Which handling
   requirement BEST protects those documents on the trip?

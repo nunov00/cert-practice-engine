@@ -6,7 +6,7 @@ stem: At an insurer, the data science team builds each model and drafts its AI r
   the technical sections are beyond them. Which change to the procedure BEST addresses this?
 options:
   A: Train risk owners in core AI concepts before they sign any assessment
-  B: Have the second line review each assessment before the owner signs it
+  B: Have the second line review a sample of signed assessments each year
   C: Have owners judge business impact, with independent validators rating the rest
   D: Have the head of data science sign off the technical ratings in each assessment
 answer: C
@@ -19,8 +19,8 @@ explanation:
   why_not:
     A: Training helps owners follow the discussion, but training in core concepts will not make them able to judge model
       design and testing. They would still be signing technical ratings they cannot assess.
-    B: Second-line review adds challenge to the ratings, which is valuable. The owner still signs the whole
-      assessment without being able to judge most of it, so the sign-off stays hollow.
+    B: Second-line sampling adds some challenge after the fact, which is valuable. But most assessments would
+      still pass on the builders' own ratings, and the owner would still sign technical ratings they cannot judge.
     D: Moving technical sign-off to the head of data science does give it to someone who can judge it, and it
       relieves owners of what they cannot assess. But the data science team builds the models and drafts the
       assessments, so its head would be signing off the team's own work, with no independent challenge.

@@ -3,7 +3,7 @@ subdomain: '1.2'
 difficulty: medium
 stem: A company's payroll system writes each month's payment file to an outbox folder on a transfer server, which sends it
   to the bank by SFTP a few hours later. A transfer-server administrator recently edited the bank account numbers in a waiting
-  file. The bank's gateway accepts files in OpenPGP format. Which control BEST stops this kind of fraud?
+  file. The bank's gateway accepts OpenPGP files and verifies signatures against keys its customers register. Which control BEST stops this kind of fraud?
 options:
   A: Encrypt each file to the bank's public key as the payroll system writes it
   B: Limit write access on the outbox folder to the transfer service's account

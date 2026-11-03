@@ -8,7 +8,7 @@ options:
   A: A tested rollback to the agent's previous version
   B: A cap on how many orders the agent can cancel per hour
   C: A switch that disables only the agent's actions
-  D: Revoking the agent's access to the order database
+  D: Giving the agent its own service account so its access can be revoked
 answer: C
 explanation:
   why_correct: Responders need to stop the agent fast without halting orders. A switch that turns off the agent's actions
@@ -18,8 +18,8 @@ explanation:
       version would read the same way.
     B: A cap limits how fast harm builds up, but it does not stop it. When each cancellation can hit a large trade order,
       even a few an hour is too many.
-    D: Cutting the agent's access is a normal containment step, but the agent shares the order service's account. Revoking
-      it would stop order processing too.
+    D: A separate account is the right long-term fix, but on its own it only makes revocation possible. It does not give
+      responders a tested, fast way to stop the agent's actions without halting orders.
 status: published
 outline_version: '2026-04-15'
 sample: false

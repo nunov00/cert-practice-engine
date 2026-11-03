@@ -5,7 +5,7 @@ stem: A mental health app streams each chatbot reply token by token over TLS, as
   show that someone on the same network can infer reply topics from the sizes of the encrypted packets. Which control BEST
   addresses this?
 options:
-  A: Pad or batch streamed tokens to hide their sizes
+  A: Pad or batch the streamed tokens before sending
   B: Move the connection to the newest TLS version and ciphers
   C: Encrypt each reply in the app layer before TLS carries it
   D: Send each reply whole once it is fully generated

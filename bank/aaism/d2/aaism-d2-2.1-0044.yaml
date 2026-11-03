@@ -8,7 +8,7 @@ options:
   A: One cut-off set by the risk committee across both tolerances
   B: One cut-off set by the model owner to balance both units
   C: Loans reviewing a random sample of cases above the cut-off
-  D: A cut-off per unit, set by its owner against its tolerance
+  D: A cut-off per unit, set by each unit's risk owner against its tolerance
 answer: D
 explanation:
   why_correct: The two units take different actions on the score and carry different risks with different tolerances. A cut-off
