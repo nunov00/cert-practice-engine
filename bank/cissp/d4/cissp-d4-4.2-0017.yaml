@@ -1,0 +1,32 @@
+id: cissp-d4-4.2-0017
+subdomain: '4.2'
+difficulty: medium
+stem: A plant's historian polls 60 PLCs over Modbus/TCP every second for process readings. A risk review found that malware
+  on the historian could send write commands to the PLCs and change their setpoints. The historian must keep polling the PLCs
+  directly, and engineers program them only from one workstation in the control room. Which control BEST addresses the risk?
+options:
+  A: A stateful firewall that lets only the historian reach the PLCs on the Modbus port
+  B: A unidirectional gateway that carries data only from the PLCs toward the historian
+  C: An industrial firewall that passes only Modbus read requests from the historian
+  D: Port-based access lists that admit only the historian and the engineering workstation
+answer: C
+explanation:
+  why_correct: Reads and writes use the same port, so the control has to look inside the protocol. An industrial firewall
+    that understands Modbus can pass the historian's read function codes and drop write codes, so polling continues while
+    malware on the historian cannot change setpoints. The engineering workstation keeps its own rule for programming.
+  why_not:
+    A: Limiting the PLCs to the historian on the Modbus port is good segmentation, but write commands use that same port from
+      that same host, so the malware's writes still pass.
+    B: A unidirectional gateway enforces one-way flow and is the strongest choice where data can be pushed out, but polling
+      needs requests to reach the PLCs, so the historian could no longer poll them directly.
+    D: Access lists by address and port admit the right hosts, but they cannot tell a read from a write, so the historian's
+      malware is still let through.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

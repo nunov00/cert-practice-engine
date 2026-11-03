@@ -1,0 +1,32 @@
+id: cissp-d6-6.2-0008
+subdomain: '6.2'
+difficulty: hard
+stem: An order system sends shipment requests to a warehouse system through a message queue. After a network fault, the
+  queue delivered one request twice and the warehouse shipped that order twice. The teams want a test, run on each release,
+  that would catch this class of fault. Which test addition BEST fits?
+options:
+  A: Contract tests checking that each message matches the schema the warehouse expects
+  B: End-to-end regression tests that run sample orders through both systems each release
+  C: More unit tests on the warehouse's order handler, raising its branch coverage
+  D: Interface tests that feed the warehouse duplicated, reordered and malformed messages
+answer: D
+explanation:
+  why_correct: The fault lives at the boundary between the systems. A queue may deliver a message more than once or out of
+    order, and the warehouse has to cope with that. Interface tests that inject duplicate, reordered and malformed messages
+    exercise exactly those conditions and would show the warehouse acting twice on one request.
+  why_not:
+    A: Contract tests catch format changes between the systems, a common interface fault, but the duplicated request was
+      perfectly well formed, so it would pass.
+    B: End-to-end regression tests prove that normal orders flow through both systems, but in a healthy test run the queue
+      delivers each message once, so the duplicate case never arises.
+    C: More unit tests raise coverage of the handler's own branches, but they use the inputs its authors expected, and coverage
+      measures which code ran, not whether repeated delivery was considered.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

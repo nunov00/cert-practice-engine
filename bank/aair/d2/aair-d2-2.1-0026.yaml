@@ -1,0 +1,34 @@
+id: aair-d2-2.1-0026
+subdomain: "2.1"
+difficulty: hard
+stem: A retailer is designing a model that chooses which customers receive a discount offer each month. It
+  will be retrained each month on whether the customers who were offered the discount went on to buy. Customers
+  the model scores low are never offered the discount. What should the design include?
+options:
+  A: A holdout group who receive no offers, to measure the offers' uplift
+  B: A small random share offered the discount whatever their score
+  C: Monitoring of drift in the model's input data between retraining runs
+  D: A check of offer rates across customer groups before each monthly send
+answer: B
+explanation:
+  why_correct: The model learns only from customers it chose to make offers to, so it never sees how the others
+    would have responded. Customers it wrongly ranks low stay low for good, and its view narrows each month.
+    Offering the discount to a small random share keeps outcome data flowing for the whole customer base, so
+    later retraining can correct the model's mistakes.
+  why_not:
+    A: A no-offer holdout is good practice for measuring whether offers change buying. It tells the retailer
+      nothing about how customers the model never selects would respond to an offer, so the model's blind spot
+      remains.
+    C: Input drift monitoring catches changes in the customer base, but the problem here is created by the model's
+      own choices about whom to offer. Drift checks would not reveal the missing outcomes.
+    D: Checking offer rates across groups can expose unfair targeting, but it does not create outcome data for
+      customers the model leaves out. The feedback loop that narrows the model would continue.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: not_obvious

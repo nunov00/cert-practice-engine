@@ -1,0 +1,32 @@
+id: aaism-d2-2.1-0044
+subdomain: '2.1'
+difficulty: medium
+stem: Two units act on one fraud model's score. Cards declines payments above a cut-off; Loans sends applications above it
+  to manual review. The model owner set one cut-off for both. Cards is within its fraud-loss tolerance, but Loans' review
+  queue now breaches its tolerance for decision delays. What should the risk manager propose?
+options:
+  A: One cut-off set by the risk committee across both tolerances
+  B: One cut-off set by the model owner to balance both units
+  C: Loans reviewing a random sample of cases above the cut-off
+  D: A cut-off per unit, set by each unit's risk owner against its tolerance
+answer: D
+explanation:
+  why_correct: The two units take different actions on the score and carry different risks with different tolerances. A cut-off
+    per unit, owned by that unit's risk owner, lets Loans trade review volume against fraud risk within its own tolerance
+    without changing the declines that keep Cards within its fraud-loss tolerance.
+  why_not:
+    A: Committee oversight is useful when risks are shared, but one cut-off still forces a single number onto two different
+      actions. Moving it to fit Loans would push Cards' fraud losses up, or the reverse.
+    B: The model owner is accountable for the score's quality, not for each unit's risk. A balanced single cut-off would leave
+      each unit partly outside what it can accept.
+    C: Sampling cuts the queue, but it lets high-scoring applications through at random. A higher cut-off for Loans alone
+      would cut the same volume while still reviewing the riskiest cases first.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aaism-check
+  options_only: not_obvious

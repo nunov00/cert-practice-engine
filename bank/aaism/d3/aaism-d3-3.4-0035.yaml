@@ -1,0 +1,35 @@
+id: aaism-d3-3.4-0035
+subdomain: '3.4'
+difficulty: medium
+stem: A regulator expects an insurer to show this quarter whether its pricing model charges customers of different ethnic groups differently once other rating factors are allowed for. The insurer
+  holds no ethnicity data, renewals are yearly, and postcode is the model's strongest rating factor. Which approach BEST supports
+  the test?
+options:
+  A: Ask customers to state their ethnicity at their next renewal
+  B: Compare prices across postcodes by their census make-up
+  C: Estimate each customer's likely group, kept for testing only
+  D: Test each rating factor's correlation with area ethnic make-up
+answer: C
+explanation:
+  why_correct: Statistical estimates of each customer's likely group, built from data such as name and address and held apart
+    from pricing, allow an individual-level comparison of prices between groups that controls for the other rating factors,
+    so any unexplained gap can be measured now. Keeping the estimates for testing only limits the privacy impact and stops
+    them feeding back into prices. Inferring ethnicity is itself processing of special-category data, so it still needs a lawful
+    basis and a privacy assessment.
+  why_not:
+    A: Voluntary collection is a sound long-term source, but renewals are yearly, so most customers would not be asked this
+      quarter, and many would decline.
+    B: Area comparisons are a common first look, but they are ecological. Most postcodes hold a mix of groups, so area averages
+      give outcome rates for areas, not for groups of customers, and cannot show how customers of each group within the same
+      area are priced.
+    D: Correlation tests can flag factors that may act as proxies, but they do not measure the prices customers of each group
+      actually pay, so the regulator's question would stay unanswered.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aaism-check
+  options_only: not_obvious

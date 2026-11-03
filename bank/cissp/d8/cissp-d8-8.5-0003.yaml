@@ -1,0 +1,32 @@
+id: cissp-d8-8.5-0003
+subdomain: '8.5'
+difficulty: hard
+stem: An API lets customers sort their order history by naming a column in a sort parameter, which the code appends to an
+  ORDER BY clause. The team uses parameterised queries for the filter values. A tester read other customers' orders through
+  the sort parameter. Which rule should the secure coding standard add?
+options:
+  A: Pass the sort column to the query as a bound parameter like other values
+  B: Escape quotes and comment markers in the sort value before appending it
+  C: Map each allowed sort choice to a fixed column name defined in the code
+  D: Run order queries under a database account limited to reading orders
+answer: C
+explanation:
+  why_correct: Column names are part of the query's structure, not data, so they cannot be bound as parameters. The safe pattern
+    is to accept only a choice from a fixed list and look up the column name in code, so nothing the client sends becomes
+    SQL.
+  why_not:
+    A: Binding is the right defence for values, but drivers generally do not accept identifiers such as column names as parameters,
+      and binding the input as a string value would sort by a constant rather than by a column.
+    B: Escaping protects quoted string values, but an identifier in ORDER BY is not quoted, so an injected expression needs
+      no quotes or comment markers to run.
+    D: Least privilege limits what injected SQL can change, but the tester read other customers' orders, and a read-only account
+      on the orders table still allows that.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

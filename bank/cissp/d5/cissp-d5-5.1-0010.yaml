@@ -1,0 +1,32 @@
+id: cissp-d5-5.1-0010
+subdomain: '5.1'
+difficulty: medium
+stem: Engineers share design files with about 200 supplier contacts through cloud storage links that anyone holding them can
+  open, and that expire after 30 days. A supplier's manager forwarded one link to a contractor who also worked for a competitor,
+  and the files were opened the next day. Which change BEST reduces this risk?
+options:
+  A: Links that expire after seven days, with downloads turned off
+  B: Links protected by a password sent to the supplier separately
+  C: Links that open only for named supplier contacts once signed in
+  D: Watermarks naming the intended recipient on each page the link shows
+answer: C
+explanation:
+  why_correct: The weakness is that the link itself is the credential, so anyone it reaches gets in. Tying each share to named
+    supplier identities that must sign in means a forwarded link opens nothing for the contractor, while the suppliers keep
+    access through their own accounts.
+  why_not:
+    A: Shorter expiry and view-only access narrow the window and limit copies, but the files were opened the next day, well
+      inside seven days, and viewing alone exposes the designs.
+    B: A separate password adds a second thing to know, but it is as easy to pass on as the link, and the manager who forwarded
+      the link could forward the password with it.
+    D: Watermarks deter leaks and help trace them afterwards, but the contractor could still open and read the designs, so
+      they do not control access.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

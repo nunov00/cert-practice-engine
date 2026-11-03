@@ -1,0 +1,34 @@
+id: aair-d1-1.2-0032
+subdomain: "1.2"
+difficulty: hard
+stem: At a retailer, each business unit's annual budget includes the savings expected from the AI projects it
+  approved that year. Twice this year, units pressed hard to launch models that had failed validation, citing
+  their annual targets. Which change BEST aligns these processes?
+options:
+  A: Escalate disputed validation results to the risk committee to decide
+  B: Give the validation team formal power to block a failed model's launch
+  C: Require each business case to state the savings at risk if validation fails
+  D: Count AI savings in unit budgets only once the model has passed validation
+answer: D
+explanation:
+  why_correct: "The pressure to launch failed models comes from the budget process: savings are booked as soon
+    as a project is approved, so a failed validation becomes a missed target for the unit. Booking the savings
+    only after validation removes that pressure at its source and aligns the budgeting cycle with model
+    approval. Validation results then stop being something units have a financial reason to fight."
+  why_not:
+    A: Escalation gives disputes a clear route and a senior decision, which is useful. Each case is still fought
+      under budget pressure, and the stem shows the pressure recurring, so the conflict is managed rather than
+      removed.
+    B: A formal block holds the line on failed models, but units would still miss targets they were set before
+      validation. The pressure would shift to challenging the validators or the standard itself.
+    C: Showing the savings at risk improves transparency at approval. The savings still enter the budget at
+      approval, so a failed validation still costs the unit its target.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: fail
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: not_obvious

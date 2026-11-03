@@ -1,0 +1,35 @@
+id: aaism-d1-1.1-0024
+subdomain: '1.1'
+difficulty: hard
+stem: 'A bank runs one fine-tuned language model behind two products: a credit-limit tool that an AI regulation classes as
+  high-risk, and a staff search tool that it does not. The high-risk duties cover data governance, logging and human oversight.
+  How should the bank scope its compliance work?'
+options:
+  A: Apply the duties to both products and the model they share
+  B: Apply the duties to the credit tool and the model it relies on
+  C: Apply the duties to the credit tool's decision logic and interface
+  D: Split the shared model into two before scoping the duties
+answer: B
+explanation:
+  why_correct: The duties attach to the high-risk system, and that system includes the model that produces its outputs. Data
+    governance reaches the data the model was tuned on, and logging and oversight need the model's versions and behaviour
+    in scope. Because the model itself is covered, any change made for the search tool still passes through the credit tool's
+    controls, while the search tool, which the regulation does not class as high-risk, is not loaded with duties it does not
+    carry.
+  why_not:
+    A: Applying the strictest rules everywhere is sensible when the extra duties are light or the uses overlap. Here the search
+      tool is outside the high-risk classes and the duties are heavy, so extending logging and oversight to it adds cost without
+      reducing the credit risk.
+    C: This is too narrow. Data governance covers the data the model learned from, and the model's behaviour decides the credit
+      outputs, so leaving the model out leaves the core duties unmet.
+    D: Separate models may be a later design choice, but splitting is not needed to scope compliance and doubles build and
+      run costs. Bringing the shared model into scope with the credit tool already covers it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aaism-check
+  options_only: not_obvious

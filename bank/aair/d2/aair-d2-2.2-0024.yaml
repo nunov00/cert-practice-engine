@@ -1,0 +1,33 @@
+id: aair-d2-2.2-0024
+subdomain: "2.2"
+difficulty: medium
+stem: An insurer's document classifier sends a document to staff when its confidence is below 0.7 and handles
+  the rest alone. Validation on last year's documents found 98% accuracy above that level. The insurer
+  launches several new products a year, each with its own claim forms. Which further test is MOST important?
+options:
+  A: Accuracy above 0.7 on documents from the most recent month
+  B: The share of live documents expected to fall below 0.7
+  C: Accuracy on the documents below 0.7 that are sent to staff
+  D: Confidence and accuracy on form types absent from training
+answer: D
+explanation:
+  why_correct: The design assumes low confidence will catch the cases the model gets wrong. Models are often
+    confidently wrong on inputs unlike anything they were trained on, and new claim forms arrive several times
+    a year. Testing on unseen form types shows whether those documents are routed to staff or handled wrongly
+    with high confidence, which last year's validation could not show.
+  why_not:
+    A: A recent test checks for drift, which is useful. A month of recent documents may contain none of the new
+      forms, and the risk is not gradual change but form types the model has never seen.
+    B: The share below 0.7 shows how much work goes to staff, which matters for the business case. It says nothing
+      about whether the documents the model keeps are being classified correctly.
+    C: Documents below 0.7 already go to a person, so errors there are caught. The untested risk lies in documents
+      the model handles alone.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: not_obvious

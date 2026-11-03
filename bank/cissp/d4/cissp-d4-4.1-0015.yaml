@@ -1,0 +1,35 @@
+id: cissp-d4-4.1-0015
+subdomain: '4.1'
+difficulty: medium
+stem: A company's cloud workloads run in private subnets, and its egress firewall allows outbound traffic only to approved
+  services, including the provider's object storage service, which its backup servers write to each night. Malware on one
+  backup server uploaded customer data to a storage bucket in an attacker's account with the same provider. Which design
+  change BEST closes this path?
+options:
+  A: A private storage endpoint, as the only route, whose policy admits only the company's buckets
+  B: Egress rules that allow the storage service only from the backup servers' subnet
+  C: TLS inspection with data loss prevention on traffic to the storage service
+  D: Alerts on unusually large uploads from any server to the storage service
+answer: A
+explanation:
+  why_correct: The firewall sees only that traffic is going to the storage service, not whose bucket it reaches, and the
+    attacker's bucket sits behind the same service names. A private endpoint for the storage service, with a policy that admits
+    only the company's buckets, enforces the destination at the resource level. With the endpoint as the only route to the storage service, storage
+    traffic can only take the endpoint and its policy, so backups keep working while uploads to
+    another account's bucket are refused.
+  why_not:
+    B: Restricting the storage service to the backup subnet is sound least privilege for the other servers, but the malware
+      ran on a backup server, which keeps that access.
+    C: TLS inspection can look inside uploads, but backup traffic is large and usually encrypted by the backup software, so
+      inspection learns little from it, and stolen data packaged the same way blends in.
+    D: Volume alerts can flag unusual uploads, but they are detective, and a backup server sends large uploads to this service
+      each night by design, so a theft sized like a backup looks normal.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

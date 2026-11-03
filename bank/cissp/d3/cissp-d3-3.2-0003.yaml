@@ -1,0 +1,34 @@
+id: cissp-d3-3.2-0003
+subdomain: '3.2'
+difficulty: hard
+stem: A defence ministry's system enforces Bell-LaPadula labels. Analysts work at Secret and must publish short Unclassified
+  digests of Secret reports to a portal for uncleared staff. Last year one analyst's digest named a Secret source. How should
+  the system let the digests reach the portal?
+options:
+  A: A release officer reviews each digest and downgrades it through a trusted function
+  B: Analysts open a second session at Unclassified and type each digest there
+  C: Analysts' accounts become trusted subjects allowed to write down when publishing
+  D: A guard filters each digest for classified terms, then writes it down to the portal
+answer: A
+explanation:
+  why_correct: Under Bell-LaPadula a digest written at Secret stays Secret, and only a trusted subject can move it down. Content
+    derived from Secret reports needs a human check before release, as last year's leak shows. Routing each digest through
+    a trusted downgrade function run by a release officer keeps the star property in force for analysts, puts the exemption
+    in one controlled and audited place, and adds the independent review.
+  why_not:
+    B: The model lets a cleared user work in a lower-level session, and anything written there carries the lower label. But
+      the analyst carries the Secret content across in their head, so the label check is bypassed and nobody reviews the digest,
+      which is how last year's source name got out.
+    C: Trusted subjects are how the model allows writing down, but making every analyst one hands the exemption to the people
+      whose digest leaked last time, with no independent check before release.
+    D: An automated guard is a real cross-domain control and catches marked terms, but a source's name is ordinary text that
+      no term list will reliably flag, so it adds no judgment about what a digest reveals.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

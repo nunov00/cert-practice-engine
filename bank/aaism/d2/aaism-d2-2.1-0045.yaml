@@ -1,0 +1,33 @@
+id: aaism-d2-2.1-0045
+subdomain: '2.1'
+difficulty: medium
+stem: An insurer auto-pays claims its model scores above 0.95 confidence and sends the rest to adjusters. The risk owner's
+  tolerance is at most 1% wrong auto-payments. An audit of recent auto-paid claims found 6% were wrong. What should the risk
+  manager recommend?
+options:
+  A: Raise the auto-pay cut-off to 0.99 confidence
+  B: Send a random sample of auto-paid claims to adjusters each week
+  C: Set the cut-off from measured error rates on labelled claims
+  D: Retrain the model to improve its overall accuracy
+answer: C
+explanation:
+  why_correct: 'The audit shows the model''s confidence scores are not calibrated: a 0.95 score did not mean a 5% or smaller
+    chance of error. The cut-off should be chosen from the error rate actually observed at each score level on labelled claims,
+    so that auto-payments above it stay within the 1% tolerance.'
+  why_not:
+    A: A higher cut-off is the instinctive fix, but the scores have already proved unreliable as probabilities. Nobody knows
+      what error rate 0.99 gives until it is measured, so this could still breach tolerance or send far more claims to adjusters
+      than needed.
+    B: Sampling is good monitoring and would keep confirming the problem, but it does not change which claims are auto-paid.
+      Wrong payments would continue above tolerance.
+    D: Better accuracy may help, but it does not tie the cut-off to the tolerance. A retrained model's scores would also need
+      calibrating before its cut-off could be trusted.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aaism-check
+  options_only: obvious

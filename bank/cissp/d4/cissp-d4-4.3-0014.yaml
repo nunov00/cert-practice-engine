@@ -1,0 +1,33 @@
+id: cissp-d4-4.3-0014
+subdomain: '4.3'
+difficulty: medium
+stem: Administrators reach 800 Linux servers through a bastion host, using SSH agent forwarding so that their private keys
+  never sit on the bastion. Attackers who took over the bastion used the forwarded agents of administrators signed in at the
+  time to open sessions to other servers. Which change BEST closes this path?
+options:
+  A: SSH certificates for administrators that expire eight hours after issue
+  B: Multi-factor authentication for each administrator sign-in to the bastion
+  C: Recording of bastion sessions, alerting on connections to unusual servers
+  D: Jump connections that use the bastion only to relay sessions end to end
+answer: D
+explanation:
+  why_correct: Agent forwarding lets the bastion ask the administrator's agent for signatures, so whoever controls the bastion
+    can use the keys while the session lasts. A jump connection, such as SSH's ProxyJump, uses the bastion only to relay an
+    encrypted session from the administrator's machine to the target, so no agent is exposed on the bastion and it never sees
+    the keys or the session contents.
+  why_not:
+    A: Short-lived certificates limit how long a stolen credential works, but the attackers used the agents of administrators
+      who were signed in at the time, well inside any validity period.
+    B: MFA protects sign-in to the bastion, but the attackers already controlled it and rode on sessions that administrators
+      had authenticated properly.
+    C: Recording and alerting help detect misuse and are worth having on a bastion, but they are detective, and the attackers
+      controlled the host doing the recording.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

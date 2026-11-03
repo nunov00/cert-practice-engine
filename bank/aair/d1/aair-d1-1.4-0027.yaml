@@ -1,0 +1,35 @@
+id: aair-d1-1.4-0027
+subdomain: "1.4"
+difficulty: hard
+stem: At an insurer, the data science team builds each model and drafts its AI risk assessment, which the
+  business risk owner then signs off. A review finds that owners have never changed a rating, and several say
+  the technical sections are beyond them. Which change to the procedure BEST addresses this?
+options:
+  A: Train risk owners in core AI concepts before they sign any assessment
+  B: Have the second line review a sample of signed assessments each year
+  C: Have owners judge business impact, with independent validators rating the rest
+  D: Have the head of data science sign off the technical ratings in each assessment
+answer: C
+explanation:
+  why_correct: Risk owners are accountable for the business consequences of their models, and that is what they
+    are equipped to judge. Asking them to sign technical ratings produces sign-offs that carry no real judgement,
+    so the builders' own ratings pass unchallenged. Having owners decide on business impact and appetite, while
+    independent model validators rate the technical parts, gives each part of the assessment a signer who can
+    judge it and keeps the technical ratings separate from the team that built the model.
+  why_not:
+    A: Training helps owners follow the discussion, but training in core concepts will not make them able to judge model
+      design and testing. They would still be signing technical ratings they cannot assess.
+    B: Second-line sampling adds some challenge after the fact, which is valuable. But most assessments would
+      still pass on the builders' own ratings, and the owner would still sign technical ratings they cannot judge.
+    D: Moving technical sign-off to the head of data science does give it to someone who can judge it, and it
+      relieves owners of what they cannot assess. But the data science team builds the models and drafts the
+      assessments, so its head would be signing off the team's own work, with no independent challenge.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: not_obvious

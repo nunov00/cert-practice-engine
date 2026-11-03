@@ -1,0 +1,32 @@
+id: cissp-d1-1.11-0004
+subdomain: '1.11'
+difficulty: hard
+stem: A company's developers publish internal libraries to a private package registry. While resolving dependencies for a
+  new service, one of its build servers installed a public package with the same name as an internal library and a higher
+  version number, and the package's install script ran on the server. Which change BEST prevents a repeat?
+options:
+  A: Pin each dependency to an exact version and hash in a committed lockfile
+  B: Give internal libraries a namespace resolved only from the private registry
+  C: Fetch public packages only through an internal caching proxy of the registry
+  D: Require a reviewer to approve each new dependency added in a pull request
+answer: B
+explanation:
+  why_correct: The build chose the public package because the internal name was not tied to the private registry, so whoever
+    published that name publicly at a higher version won. Putting internal libraries under a reserved namespace or scope that
+    builds resolve only from the private registry means a public package cannot stand in for one, whatever its version.
+  why_not:
+    A: Lockfiles with hashes stop an existing build from silently picking up a different package, and they are good practice,
+      but a new service has no lockfile yet, so its first resolution can still choose the public package and lock it in.
+    C: A caching proxy gives the company one controlled source and a record of downloads, but it still serves public packages
+      on request, so the build would receive the attacker's package through the proxy.
+    D: Review of new dependencies catches unfamiliar or suspicious additions, but the pull request would name the genuine
+      internal library; the substitution happens later, when the build resolves that name.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

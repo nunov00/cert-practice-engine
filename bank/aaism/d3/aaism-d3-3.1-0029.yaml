@@ -1,0 +1,31 @@
+id: aaism-d3-3.1-0029
+subdomain: '3.1'
+difficulty: medium
+stem: An email agent asks users to confirm every action it takes, from labelling messages to sending replies and forwarding
+  attachments. Logs show users confirm 99.8% of requests, most within a second. In a test, users confirmed an injected forward
+  of a contract to an outside address. Which design change BEST addresses this?
+options:
+  A: Confirm only external sends and forwards, showing full details
+  B: Seed fake risky actions to test whether users are paying attention
+  C: Hold each confirm button for three seconds before it can be used
+  D: Ask users to type a short reason for each action they confirm
+answer: A
+explanation:
+  why_correct: Users confirm by habit because most requests are routine filing. Keeping confirmations for the few actions
+    that can send data outside, and showing exactly what goes where, makes each prompt rare enough to read and puts the details
+    needed to spot a bad forward in front of the user.
+  why_not:
+    B: Seeded tests measure attention and can support training, but they add yet more prompts and do not change the flood
+      of routine confirmations that causes the habit.
+    C: A delay adds friction, but users can wait out three seconds as automatically as they click. Every routine action would
+      also become slower.
+    D: Typed reasons force a pause, but applied to every action they make the fatigue worse, and users soon reuse stock reasons.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aaism-check
+  options_only: obvious

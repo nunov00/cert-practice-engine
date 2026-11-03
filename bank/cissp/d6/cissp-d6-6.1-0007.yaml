@@ -1,0 +1,32 @@
+id: cissp-d6-6.1-0007
+subdomain: '6.1'
+difficulty: hard
+stem: A SOC tunes its 200 detection rules each month. Last quarter two intrusions went unseen; the rules were correct, but
+  an endpoint agent update had stopped collecting the events those rules match on. The CISO wants a monthly check that each
+  rule still fires against the estate as it now runs. Which approach BEST fits?
+options:
+  A: Replay stored attack logs through the SIEM after each month's changes to rules
+  B: Run a purple-team exercise each month on the rules changed that month
+  C: Commission an annual red-team test of the SOC's detection and response
+  D: Run breach-and-attack simulation of each rule's techniques on live endpoints
+answer: D
+explanation:
+  why_correct: The failure was in collection, not in the rules, so the check has to start where events are produced. Simulating
+    each rule's techniques on live endpoints running the current agent exercises the whole chain from agent to SIEM rule,
+    and it is automated enough to cover 200 rules every month.
+  why_not:
+    A: Replaying stored logs is a quick regression test of rule logic, but the stored events were collected before the agent
+      update, so the replay would show the rules firing while the live estate sent nothing.
+    B: Purple teaming tests the full chain on live systems, but limiting it to changed rules misses what actually happened,
+      where unchanged rules broke after an agent update, and covering 200 rules by hand each month is impractical.
+    C: A red-team test measures realistic detection and response, but once a year cannot catch a break that follows a monthly
+      agent update, and it exercises only the techniques it happens to use.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

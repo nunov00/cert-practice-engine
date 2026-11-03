@@ -1,0 +1,33 @@
+id: aair-d2-2.3-0022
+subdomain: "2.3"
+difficulty: hard
+stem: A claims model went live with handlers approving each decision it proposes, and the proposal is on
+  screen when they open the claim. The plan is to remove the approval step after three months if handlers
+  agree with at least 95% of decisions. What is the MAIN weakness of this plan?
+options:
+  A: Three months may not cover seasonal claim types the model has not met
+  B: A 95% overall rate could hide much higher error on high-value claims
+  C: Agreement may show handlers deferring to the proposal, not its accuracy
+  D: Removing approval in one step leaves no stage to catch a fall in accuracy
+answer: C
+explanation:
+  why_correct: Handlers see the model's proposal before they form their own view, so agreement is shaped by the
+    proposal itself. A high agreement rate could mean the model is right or that handlers accept what they are
+    shown, and the plan cannot tell which. The evidence used to remove oversight is weakest exactly where it
+    most needs to be sound.
+  why_not:
+    A: Seasonal coverage is a fair concern for any short trial period. Even a full year of agreement data would
+      carry the same flaw, because the measure itself may reflect deference rather than accuracy.
+    B: Looking at agreement by claim value is a sensible refinement. It splits a measure that may be inflated by
+      deference into smaller pieces, each of which carries the same doubt.
+    D: Phasing out approval is good practice, but it decides how to remove oversight, not whether the evidence
+      supports removing it. A phased plan based on deferential agreement still rests on weak evidence.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: not_obvious

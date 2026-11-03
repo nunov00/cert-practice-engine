@@ -37,7 +37,7 @@ market; every row is *to verify* until a daily run checks it).
 | Rank | Exam (issuer) | Format | Demand | Fit | Calib. | Pay | Synergy | Total | Checked |
 |---:|---|---|---:|---:|---:|---:|---:|---:|---|
 | 1 | CISM (ISACA) | 150 MCQ, 4 domains (18/20/33/29% from 2026-11-03; 17/20/33/30% until then) | 5 | 5 | 5 | 5 | 5 | 30 | 2026-11-02 |
-| 2 | CISA (ISACA) | 150 MCQ, 5 domains (18/18/12/26/26%) | 5 | 5 | 5 | 5 | 4 | 29 | 2026-10-19 |
+| 2 | CISA (ISACA) | 150 MCQ, 5 domains (18/18/12/26/26%) | 5 | 5 | 5 | 5 | 4 | 29 | 2026-11-03 |
 | 3 | CRISC (ISACA) | 150 MCQ, 4 domains (26/22/32/20%) | 3 | 5 | 5 | 5 | 5 | 26 | 2026-10-24 |
 | 4 | CCSP (ISC2) | 100-150 CAT items (MCQ and advanced types), 6 domains (17/20/17/16/17/13%) | 4 | 5 | 3 | 5 | 4 | 25 | 2026-10-24 |
 | 5 | Security+ (CompTIA) | up to 90, MCQ and performance-based, 5 domains (27/24/19/16/14% on V8 from 2026-11-17) | 5 | 3 | 3 | 4 | 3 | 23 | 2026-10-26 |
@@ -69,7 +69,12 @@ older Checked date.
   2026-10-19: 150 questions over five domains weighted 18/18/12/26/26%, on the
   outline in force since 2024-08-01; more than 207,000 holders since 1978, the
   largest ISACA audience, so demand moves from 4 to 5. ISACA publishes a free
-  10-question practice quiz for calibration.
+  10-question practice quiz for calibration. Re-checked 2026-11-03: the outline
+  page still lists 150 questions and the same five domains and weights, with no
+  outline change announced; it now gives "more than 200,000" holders since
+  1978. The free 10-question practice quiz is still listed, at exam difficulty
+  per ISACA, with results shown after a form, so calibration stays at 5.
+  Scores, total and rank unchanged.
 - **CRISC:** ISACA's IT risk exam; smaller audience but strong overlap with AAIR.
   Checked 2026-10-24: 150 questions over four domains (Governance 26%, Risk
   Assessment 22%, Risk Response and Reporting 32%, Technology and Security
@@ -190,3 +195,4 @@ older Checked date.
 | 2026-10-31 | SSCP row verified: CAT format (100-125 items, 2 hours, MCQ and advanced types), seven domains and weights of the 2025-10-01 outline confirmed, *to verify* dropped; official quiz found but not readable, so calibration stays at 3; no SSCP holder count published, so demand stays at 2; scores and total unchanged, rank 9 to 10 (CGRC has the older Checked date) | ISC2 [exam outline (effective 2025-10-01)](https://edge.sitecorecloud.io/internationf173-xmc4e73-prodbc0f-9660/media/Project/ISC2/Main/Media/documents/exam-outlines/MAR-EXAMS-SSCP-Exam_Outline-English---10012025---FINAL.pdf), [outline page](https://www.isc2.org/certifications/sscp/sscp-certification-exam-outline), [SSCP page](https://www.isc2.org/certifications/sscp), [CAT notice](https://www.isc2.org/Insights/2025/05/computerized-adaptive-testing-examination-format-updates), [SSCP quiz](https://cloud.connect.isc2.org/sscp-quiz), [member counts](https://www.isc2.org/About/Member-Counts) |
 | 2026-11-01 | CGRC row verified: format (125 items, 3 hours, MCQ and advanced types, 700/1000) and the 2024-06-15 outline's seven domains and weights confirmed, *to verify* dropped; official knowledge check found but not readable, so calibration stays at 3; no holder count published, so demand stays at 2; scores and total unchanged, rank 9 to 10 (SSCP now has the older Checked date) | ISC2 [exam outline PDF (effective 2024-06-15)](https://edge.sitecorecloud.io/internationf173-xmc4e73-prodbc0f-9660/media/Project/ISC2/Main/Media/documents/exam-outlines/CGRC-Exam_Outline-English.pdf), [outline page](https://www.isc2.org/certifications/cgrc/cgrc-certification-exam-outline), [CGRC page](https://www.isc2.org/certifications/cgrc), [CGRC knowledge check](https://cloud.connect.isc2.org/cgrc-quiz) |
 | 2026-11-02 | CISM row re-checked on the eve of the 2026-11-03 outline: current 17/20/33/30% and new 18/20/33/29% weights, 150 questions and the free practice quiz confirmed; scores, total and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/cism/cism-exam-content-outline), [2026 outline press release](https://www.isaca.org/about-us/newsroom/press-releases/2026/isaca-updates-cism-exam-content-outline-factoring-in-todays-technologies-security-responsibilities), [practice quiz](https://www.isaca.org/credentialing/cism/cism-practice-quiz) |
+| 2026-11-03 | CISA row re-checked: 150 questions, five domains at 18/18/12/26/26% and the free 10-question practice quiz confirmed, no outline change announced; holder figure now "more than 200,000"; scores, total and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/cisa/cisa-exam-content-outline), [practice quiz](https://www.isaca.org/credentialing/cisa/cisa-practice-quiz) |

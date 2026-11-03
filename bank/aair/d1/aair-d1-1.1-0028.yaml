@@ -21,12 +21,12 @@ explanation:
       it is. The reserve decision needs that uncertainty.
     D: Daily retraining may keep the model current, but it does not change what the model produces. A more up-to-date single
       figure still does not show the margin needed.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-02-daily-aair
   check_verdict: pass
-  checked_by: 2026-11-02-daily-aair-check
+  checked_by: 2026-11-03-daily-aair-check
   options_only: not_obvious

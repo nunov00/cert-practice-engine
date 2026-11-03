@@ -1,0 +1,33 @@
+id: cissp-d7-7.3-0003
+subdomain: '7.3'
+difficulty: medium
+stem: A web service scales out by launching servers from a hardened image built eight months ago. On first boot, the configuration
+  tool spends about 40 minutes installing the updates released since then, and attackers compromised one new server during
+  that window. Scale-out happens during traffic peaks, when new servers must serve within five minutes. What should the team
+  change?
+options:
+  A: Hold new servers in a quarantine subnet until the tool reports them compliant
+  B: Run the tool's patching step first, ahead of the rest of first-boot setup
+  C: Rebuild the image from the baseline at each patch release, retiring old ones
+  D: Scan each new server at launch and terminate any with a critical vulnerability
+answer: C
+explanation:
+  why_correct: The exposure exists because the image falls months behind the patched baseline, and each new server inherits
+    that gap. Rebuilding the image whenever patches are released means servers launch already patched, so there is no window
+    to exploit and they can serve within minutes.
+  why_not:
+    A: Holding servers until they are compliant is a sound control for long-lived servers, but these are launched for traffic
+      peaks and must serve within five minutes, not after 40 minutes of updates.
+    B: Patching first narrows the window slightly, but most of the 40 minutes is the patching itself, so each server is still
+      exposed for most of that time.
+    D: Scanning at launch would flag nearly every new server, since each starts eight months out of date, and terminating
+      them leaves the service short of capacity during the peak.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

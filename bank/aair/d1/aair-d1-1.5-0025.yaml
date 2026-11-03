@@ -1,0 +1,33 @@
+id: aair-d1-1.5-0025
+subdomain: "1.5"
+difficulty: hard
+stem: A games studio plans to have staff create all its character art by typing short prompts into an image
+  generator. Its business plan relies on stopping rivals that copy its characters. Which legal consideration
+  should the risk practitioner MOST raise?
+options:
+  A: Whether the tool's terms grant the studio ownership of the images
+  B: Whether the tool was trained on artists' work without a licence
+  C: Whether images made with little human input can be protected
+  D: Whether the images could closely resemble characters others own
+answer: C
+explanation:
+  why_correct: The plan depends on the studio holding rights it can enforce against copiers. In many
+    jurisdictions copyright protects only works with enough human creative input, and art produced from short
+    prompts may fall short of that. If so, the studio would have nothing to enforce, which undermines the
+    business plan directly. This is the consideration that goes to the plan's core.
+  why_not:
+    A: The tool's terms matter, but a vendor can only pass on rights that exist. Terms that assign the studio all
+      rights in the outputs do not create copyright where the law gives none.
+    B: Training data disputes are a real legal risk for AI image tools. It concerns
+      claims against the tool or its users, not whether the studio can stop rivals copying its own characters.
+    D: Resemblance to others' characters is an infringement risk worth checking, but it is about claims against
+      the studio. The stated plan turns on the studio's own ability to enforce, which this does not address.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: not_obvious

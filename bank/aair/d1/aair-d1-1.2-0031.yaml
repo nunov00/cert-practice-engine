@@ -1,0 +1,38 @@
+id: aair-d1-1.2-0031
+subdomain: "1.2"
+difficulty: medium
+stem: A firm's AI meeting assistant records and transcribes internal meetings, and the vendor deletes
+  transcripts after 30 days by default. The firm's records management covers email, chat
+  and documents. Legal could not produce a transcript sought in a dispute that arose five months after the
+  meeting. Which change BEST aligns the assistant with the firm's processes?
+options:
+  A: Bring transcripts into the retention schedule and legal hold process
+  B: Change the vendor setting so that transcripts are kept for seven years
+  C: Have legal ask the vendor to preserve transcripts once a dispute arises
+  D: Record transcripts in the records inventory, with meeting owners as custodians
+answer: A
+explanation:
+  why_correct: The transcripts are business records that the firm's existing records processes do not know
+    about, so the vendor's default decides their fate. Adding them to the retention schedule sets how long
+    each kind of transcript is kept for its purpose, and adding them to the legal hold process means holds
+    reach them like any other record. The fix sits in the processes the firm already runs, not in a one-off
+    setting.
+  why_not:
+    B: A seven-year setting would have kept this transcript, but it keeps every transcript for every meeting
+      regardless of purpose. That over-retains personal and sensitive content, and holds still would not reach
+      the transcripts through the firm's own process.
+    C: Asking the vendor to preserve transcripts is a normal step once a dispute is known. Here the dispute arose
+      five months after the meeting, so under the 30-day default the transcript was already gone before anyone
+      could ask.
+    D: Listing transcripts in the records inventory with a named custodian is a real records-management step,
+      and it makes them visible to the records team. It sets no retention period and does not bring them under
+      the legal hold process, so the vendor's 30-day default still deletes them before a later dispute arises.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: not_obvious

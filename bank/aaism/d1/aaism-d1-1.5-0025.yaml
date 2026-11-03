@@ -1,0 +1,32 @@
+id: aaism-d1-1.5-0025
+subdomain: '1.5'
+difficulty: hard
+stem: For two days, the public package index served a tampered release of a model-serving library. At install time, it ran
+  once and sent the build's environment variables to an attacker. Every build at the firm runs on one CI system holding the same
+  cloud deployment credentials, and several builds pulled the release. What should responders do FIRST?
+options:
+  A: Identify which builds and deployments installed the release
+  B: Rotate the cloud credentials that the CI system holds
+  C: Pin the library to the last good release across builds
+  D: Scan running containers for the tampered library code
+answer: B
+explanation:
+  why_correct: The payload's harm was to send the credentials in the build environment to the attacker. Since every build
+    uses the same CI credentials and several builds ran the payload, those credentials must be treated as stolen. Rotating
+    them first cuts off the attacker's access to deploy into the firm's cloud; scoping and clean-up can follow.
+  why_not:
+    A: Scoping is a normal early step, but here it would not change the first action. Every build shares the same credentials
+      and several are known to have installed the release, so the credentials are exposed whatever the full list shows.
+    C: Pinning stops a further bad install, but the payload already ran. The attacker holds working credentials, which pinning
+      does not revoke.
+    D: Scanning finds code that persists, but this payload acted once at install time. A clean scan would not mean the credentials
+      are safe, and the scan does not revoke them.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aaism-check
+  options_only: not_obvious

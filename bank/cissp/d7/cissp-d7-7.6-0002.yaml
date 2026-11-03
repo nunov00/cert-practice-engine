@@ -1,0 +1,33 @@
+id: cissp-d7-7.6-0002
+subdomain: '7.6'
+difficulty: hard
+stem: Responders have found three hosts carrying an attacker's implants, and the attacker holds a domain administrator account.
+  Logs show no data leaving so far. After two earlier cleanups, the attacker returned within days through a host nobody had
+  flagged. The CIO wants the implants removed today. What should the incident lead recommend?
+options:
+  A: Remove the three implants today and reset the affected accounts' passwords
+  B: Rebuild the three hosts from clean images today and isolate them from the domain
+  C: Reset the domain's Kerberos ticket key twice, and the admin accounts' passwords
+  D: Monitor quietly to map the whole foothold, then remove it in one planned action
+answer: D
+explanation:
+  why_correct: Two partial cleanups have failed because the attacker kept footholds the team had not found, and each cleanup
+    told them they had been discovered. With no data leaving, the team has time to map the implants, accounts and paths while
+    watching closely, then remove them together, including the domain credentials, so the attacker has no way back. The monitoring
+    needs a trigger to contain at once if data starts to leave.
+  why_not:
+    A: Removing the known implants is the natural move, but it is what failed twice; the attacker learns they were found and
+      returns through a host nobody has flagged yet.
+    B: Rebuilding is more thorough than cleaning those hosts, but it still covers only the three known ones and alerts an
+      attacker who holds domain admin rights elsewhere.
+    C: Resetting the Kerberos key and admin passwords is an essential part of final eradication, but done on its own today
+      it warns the attacker, whose undiscovered implants can capture new credentials or reopen access.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

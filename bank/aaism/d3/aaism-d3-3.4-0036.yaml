@@ -1,0 +1,32 @@
+id: aaism-d3-3.4-0036
+subdomain: '3.4'
+difficulty: medium
+stem: A child-welfare agency's screeners review an AI risk score for every referral before deciding whether to investigate.
+  An evaluation found that screeners' decisions track the score closely, even in cases where the case details point the other
+  way. Which change BEST restores independent human judgment?
+options:
+  A: Show the model's main reasons alongside each score
+  B: Have screeners record their view before seeing the score
+  C: Seed referrals with known wrong scores to test screeners
+  D: Train screeners on the cases where the model is weakest
+answer: B
+explanation:
+  why_correct: Decisions that follow the score against the evidence show anchoring on the model. Asking screeners to record
+    their own assessment from the case details first, and only then showing the score, gives the agency a judgment formed
+    without the anchor and makes disagreement visible, so the human review adds an independent check.
+  why_not:
+    A: Explanations help reviewers question an output, but they are still the model's account of the case. Shown with the
+      score, they tend to reinforce reliance on it and are read before the screener has formed a view.
+    C: Seeding known errors is a sound way to measure whether reviewers catch mistakes, and it would confirm the problem.
+      It does not change how screeners form their decisions.
+    D: Knowing the model's weak spots helps, but screeners still see the score first, and anchoring persists in cases that
+      do not match the taught patterns.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aaism-check
+  options_only: not_obvious

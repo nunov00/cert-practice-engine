@@ -1,0 +1,33 @@
+id: aaism-d2-2.3-0046
+subdomain: '2.3'
+difficulty: medium
+stem: A hospital runs a vendor's AI imaging appliance on site. Vendor releases arrive each quarter, each one combining operating
+  system patches with a retrained model, and the hospital revalidates every release clinically, which takes four weeks. A
+  scan has found the appliance missing a critical patch issued two weeks ago. Which requirement on the vendor BEST closes
+  this gap?
+options:
+  A: Security patches delivered on their own, apart from model changes
+  B: Release candidates shared four weeks before each general release
+  C: Monthly releases instead of quarterly, each with patches and a model
+  D: Compensating network controls supplied for each unpatched flaw
+answer: A
+explanation:
+  why_correct: The patch is late because it can only arrive inside a quarterly release that also changes the model, and a
+    model change needs four weeks of clinical revalidation. Patches shipped on their own leave the validated model untouched,
+    so they can go through normal, faster change testing as soon as the vendor issues them.
+  why_not:
+    B: Early access removes the validation wait for planned releases, but critical patches answer flaws disclosed at short
+      notice. They cannot be known four weeks ahead, so they would still wait for the next bundled release.
+    C: More frequent releases shorten the wait, but each one still carries a model change. Patches would wait for the monthly
+      release plus four weeks of revalidation, and the hospital would be revalidating almost continuously.
+    D: Vendor mitigation guidance is useful while a fix is pending, but it is meant to cover short gaps. Here the bundling
+      makes every critical patch late by design, so the appliance would routinely run on workarounds.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aaism-check
+  options_only: not_obvious

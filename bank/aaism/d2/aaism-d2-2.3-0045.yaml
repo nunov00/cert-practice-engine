@@ -1,0 +1,32 @@
+id: aaism-d2-2.3-0045
+subdomain: '2.3'
+difficulty: hard
+stem: A vendor's document AI will run in an insurer's own cloud account. The vendor proposes a standing admin role there so
+  it can push weekly model and container updates. The insurer's main worry is a compromise of the vendor's own support accounts,
+  which has hit other clients. What should the insurer require?
+options:
+  A: Admin access only after approval for each update window
+  B: A standing admin role with its sessions recorded
+  C: Signed releases that the insurer's own pipeline deploys
+  D: Phishing-resistant MFA on the vendor's support accounts
+answer: C
+explanation:
+  why_correct: If the vendor's support accounts are compromised, any access they hold into the insurer's account goes to the
+    attacker. Having the vendor publish signed releases, which the insurer's own pipeline checks and deploys, removes the
+    vendor's access into the account altogether while keeping weekly updates.
+  why_not:
+    A: Just-in-time approval is a strong control for occasional access, but weekly windows soon become routine approvals.
+      During each window a compromised support account would still have admin rights.
+    B: Session recording helps investigation, but it only shows what a compromised account did after the fact. The standing
+      admin role remains open to the attacker.
+    D: MFA cuts one route to account takeover, but session theft, insider misuse or a breach at the vendor would still reach
+      a standing admin role. Signed releases remove the vendor's access altogether.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aaism-check
+  options_only: not_obvious

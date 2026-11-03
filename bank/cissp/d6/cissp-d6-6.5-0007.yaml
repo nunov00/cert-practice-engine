@@ -1,0 +1,32 @@
+id: cissp-d6-6.5-0007
+subdomain: '6.5'
+difficulty: hard
+stem: An auditor must conclude whether, across a twelve-month audit period, the HR system's configuration blocked payroll
+  changes approved by the same user who entered them. The setting was turned on before the period began, and the system logs
+  each change to its configuration. Which test BEST supports a conclusion for the whole period?
+options:
+  A: Inspect the setting at period end and try a self-approved test change
+  B: Test the setting once with a self-approved change, and test each change made to it
+  C: Sample 25 payroll changes across the period and check their approvers
+  D: Interview the system administrator and walk through the setting's design
+answer: B
+explanation:
+  why_correct: For an automated control, one test with a self-approved change shows the system blocks it, and the open
+    question is whether the setting stayed in place. Testing each logged change to the setting during the period shows whether
+    it was ever switched off or altered, which extends the single test across the full twelve months.
+  why_not:
+    A: Inspecting the setting and trying a self-approved change proves the control works today, but it says nothing about
+      whether the setting was off for part of the period.
+    C: Sampling transactions is the usual test for a manual control. For an automated one, 25 compliant changes show only
+      those days; the setting could have been off on others without the sample revealing it.
+    D: Inquiry and walkthroughs help the auditor understand the control's design, but they are weak evidence on their own
+      and do not show how it operated over the period.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

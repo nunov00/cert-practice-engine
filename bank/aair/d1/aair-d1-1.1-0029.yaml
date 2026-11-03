@@ -1,0 +1,35 @@
+id: aair-d1-1.1-0029
+subdomain: "1.1"
+difficulty: hard
+stem: An IT team wants an AI agent to handle overnight infrastructure alerts on its own by restarting
+  services, adding capacity, rotating logs and deleting unused storage volumes. One engineer is on call and is
+  often busy with other incidents. Which rule for when the agent may act without approval BEST fits?
+options:
+  A: When its confidence in the diagnosis is above a set level
+  B: When the same fix has resolved the same alert before
+  C: When the on-call engineer has not replied within ten minutes
+  D: When the action can be fully undone if it proves wrong
+answer: D
+explanation:
+  why_correct: "The agent's actions differ in one way that matters more than any other: a wrongly restarted
+    service or added server can be put back, but a deleted storage volume cannot. Tying autonomy to
+    reversibility lets the agent clear most overnight alerts alone, while the one kind of action whose
+    mistakes are permanent waits for a person. It keeps the speed the team wants and caps the worst outcome."
+  why_not:
+    A: A confidence threshold is a common gate, but model confidence is often high when the model is wrong, and it
+      says nothing about how bad a mistake would be. A confident but wrong deletion still destroys data.
+    B: Letting the agent repeat fixes that worked before is a sensible runbook approach, but a deletion that was
+      right last time can be wrong this time, for example when a volume only looks unused. Past success does
+      not make an irreversible action safe.
+    C: A timeout keeps alerts moving when the engineer is busy, which the stem says is often. It turns the
+      engineer's silence into approval, so irreversible actions would go ahead unreviewed on exactly the
+      nights when nobody can look.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: not_obvious

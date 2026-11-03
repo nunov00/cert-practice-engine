@@ -1,0 +1,32 @@
+id: cissp-d3-3.3-0003
+subdomain: '3.3'
+difficulty: medium
+stem: A utility's 2,000 field controllers sit in roadside cabinets and reach the control centre over radio links that are
+  often down for weeks. The security requirement is that a controller must not run firmware the utility has not approved,
+  even after an intruder at the cabinet reflashes it. Which control BEST meets this requirement?
+options:
+  A: Measured boot, with the control centre checking each controller's attestation report
+  B: Secure boot, with the boot ROM checking the firmware's signature before it runs
+  C: Firmware hashes compared by the management server at each controller check-in
+  D: Keys sealed in each controller's TPM to the approved firmware's measurements
+answer: B
+explanation:
+  why_correct: Only a check enforced on the device before code runs can stop unapproved firmware, whether or not the controller
+    can reach the centre. Secure boot anchored in the boot ROM refuses any image not signed with the utility's key, so a reflashed
+    controller does not start the intruder's firmware.
+  why_not:
+    A: Measured boot records what ran, and attestation lets the centre see it, but it reports after the code is already running
+      and only when the link is up, so a reflashed controller could run for weeks before anyone knew.
+    C: Hash checks at check-in detect changed firmware, but they are detective, they depend on a radio link that is often
+      down for weeks, and modified firmware can report a false hash for itself.
+    D: Sealing keys to the approved measurements stops modified firmware unsealing the controller's secrets, which is valuable,
+      but the controller still boots and runs that firmware, which the requirement forbids.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aaism-d1-1.2-0025
+subdomain: '1.2'
+difficulty: hard
+stem: Staff at an insurer want AI browser agents that read web pages and act on them, to gather material from regulators'
+  sites, news and industry forums. Staff use one browser for everything, including webmail and the claims system, and a research
+  task can take hundreds of page actions. Which policy provision BEST addresses the main risk?
+options:
+  A: Agents may visit only an approved list of research websites
+  B: Staff confirm each action the agent takes before it proceeds
+  C: Agents run only in a browser profile with no company sign-ins
+  D: Agents may not type company data into any web form
+answer: C
+explanation:
+  why_correct: The main risk is a page the agent reads planting instructions that the agent then carries out in the same browser,
+    where it is already signed in to webmail and the claims system. Running agents in a separate profile with no company sessions
+    means an injected instruction has no company account to act through, while the agent can still roam the open web for research.
+  why_not:
+    A: An allowlist narrows exposure to untrusted pages, but the research needs news and forums across the open web, and forums
+      carry content anyone can post. The list would either break the use or still admit injected pages.
+    B: Per-action confirmation works for a few high-impact steps. With hundreds of page actions per task, staff would approve
+      by habit, so an injected step into webmail or claims would be confirmed like the rest.
+    D: This limits one leak path, typing data into outside forms. It does not stop an injected agent from reading mail, forwarding
+      it or changing claims inside the company apps it is signed in to.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aaism-check
+  options_only: not_obvious

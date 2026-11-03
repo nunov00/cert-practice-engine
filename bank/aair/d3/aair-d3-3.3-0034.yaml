@@ -1,0 +1,32 @@
+id: aair-d3-3.3-0034
+subdomain: "3.3"
+difficulty: medium
+stem: Any employee can add documents to the shared knowledge base that an insurer's staff assistant answers
+  from. Before leaving, an employee added a convincing but false 'updated refund policy', which the assistant
+  quoted to claims staff for two weeks. Which control BEST prevents a repeat?
+options:
+  A: Publish to the knowledge base only through named owners who review additions
+  B: Filter retrieved passages for instruction-like text before the model reads them
+  C: Show the source document and its author beside each answer the assistant gives
+  D: Scan each uploaded document for malicious code before it is indexed
+answer: A
+explanation:
+  why_correct: "The assistant did exactly what it was built to do: it answered from the knowledge base. The
+    failure was that anyone could put content there with no check. Routing additions through named owners who
+    review them stops false content entering the source the assistant trusts, whatever form it takes."
+  why_not:
+    B: Filtering for injected instructions is a sound defence against prompt injection. The false policy contained
+      no instructions, only plausible content, so the filter would pass it.
+    C: Showing sources lets staff check where an answer came from. The document looked like a genuine policy from
+      a real employee, so staff had no reason to doubt it.
+    D: Malware scanning protects the systems that store and index documents. A false policy is ordinary text, so
+      it passes the scan untouched.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: not_obvious
