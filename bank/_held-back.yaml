@@ -94,3 +94,9 @@ held:
   - { id: cissp-d7-7.7-0002, pr: 75 }
   - { id: cissp-d1-1.2-0003, pr: 75 }
   - { id: cissp-d1-1.7-0003, pr: 75 }
+  # PR #76 (daily batch 2026-11-03), batch run: passed the independent check,
+  # held because AAISM's 4 surviving hard labels can carry only 9 non-hard
+  - { id: aaism-d2-2.1-0045, pr: 76 }
+  - { id: aaism-d2-2.2-0050, pr: 76 }
+  - { id: aaism-d3-3.1-0029, pr: 76 }
+  - { id: aaism-d3-3.4-0036, pr: 76 }
