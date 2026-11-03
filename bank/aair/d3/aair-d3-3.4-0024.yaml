@@ -17,12 +17,12 @@ explanation:
     B: Graded samples give a reliable accuracy figure, but monthly results arrive weeks after a rise begins.
     C: Complaints arrive after deliveries have gone wrong, and many affected customers never complain.
     D: A model's confidence can stay high while it is wrong, so it is a weak signal of rising errors.
-status: draft
+status: published
 outline_version: 2026-04-15
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-aair
   check_verdict: pass
+  checked_by: 2026-11-03-daily-aair-check
   options_only: not_obvious
-  checked_by: 2026-10-27-daily-aair-check

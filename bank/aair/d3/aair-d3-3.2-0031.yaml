@@ -1,0 +1,33 @@
+id: aair-d3-3.2-0031
+subdomain: "3.2"
+difficulty: hard
+stem: A GP practice's AI triage tool sorts online requests into urgent, routine and self-care. Audits show
+  that it under-triages chest pain described in everyday words, such as 'a tight feeling'. A retrained model
+  would need four months of clinical validation. Which treatment is MOST appropriate now?
+options:
+  A: Route requests mentioning chest symptoms straight to urgent
+  B: Retrain the model on more everyday descriptions of chest pain
+  C: Lower the tool's threshold for marking any request as urgent
+  D: Have a nurse review each request the tool marks as self-care
+answer: A
+explanation:
+  why_correct: The failure is specific and the harm is severe. A fixed rule that sends any mention of chest
+    symptoms to urgent closes that gap today, does not depend on the model reading everyday wording correctly,
+    and leaves the rest of the tool's sorting untouched. It holds the risk while the longer fix is built and
+    validated.
+  why_not:
+    B: Retraining addresses the cause and should follow, but it needs four months of validation before use. The
+      practice needs a treatment that works now.
+    C: A lower urgent threshold would catch more chest pain, but it raises urgent referrals for every kind of
+      request and swamps urgent slots. It also still depends on the model scoring everyday wording as risky.
+    D: Nurse review of self-care requests adds a human check, but under-triaged chest pain can land in routine as
+      well as self-care. It also spends nurse time across a whole category instead of on the known failure.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: fail
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: not_obvious

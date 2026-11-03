@@ -1,0 +1,32 @@
+id: aaism-d2-2.3-0044
+subdomain: '2.3'
+difficulty: medium
+stem: An outsourced firm develops a bank's mobile app. The bank learns that the firm's developers paste the bank's source
+  code, including its fraud rules, into whatever AI coding assistants they choose. The firm's schedule and price assume these
+  tools. Which contract requirement BEST addresses this?
+options:
+  A: A bar on any AI tool use with the bank's code
+  B: Use of AI tools the bank approves, under its terms
+  C: Disclosure of AI-generated code in each delivery
+  D: Security scanning of each delivery before acceptance
+answer: B
+explanation:
+  why_correct: 'The risk is confidentiality: the bank''s code and fraud rules go to tool providers the bank has never assessed,
+    under terms that may allow retention or training. Requiring tools the bank has approved, on terms it accepts, keeps the
+    code within assessed providers while letting the firm keep the productivity its schedule and price rely on.'
+  why_not:
+    A: A ban is a real option for very sensitive code, but the firm's schedule and price assume these tools. A ban would force
+      a renegotiation and invite hidden use, while approved tools manage the risk.
+    C: Disclosure helps the bank review generated code, but it addresses the quality of what comes back, not the code and
+      fraud rules already sent to unknown providers.
+    D: Scanning deliveries is good practice for any outsourced code, but it tests what is delivered. It does nothing about
+      the bank's code being pasted into unvetted tools.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aaism-check
+  options_only: not_obvious

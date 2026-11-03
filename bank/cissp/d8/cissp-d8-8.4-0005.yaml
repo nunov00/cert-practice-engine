@@ -1,0 +1,31 @@
+id: cissp-d8-8.4-0005
+subdomain: '8.4'
+difficulty: medium
+stem: A hospital is buying a cloud rota-scheduling service from a two-year-old startup. If the startup fails, the hospital's
+  continuity plan is to move to a competing product within a month. Which contract term BEST supports that plan?
+options:
+  A: Escrow of the service's source code with an agent, released if the startup fails
+  B: Weekly exports of the hospital's data in a documented format it can reuse
+  C: Twelve months' notice before the startup may end the service for any reason
+  D: A guarantee from the startup's main investor covering its service obligations
+answer: B
+explanation:
+  why_correct: The plan is to move to another product, so what the hospital needs on the day is its own data, current and
+    in a form the new product can import. Regular exports in a documented format give it that, whatever happens to the startup.
+  why_not:
+    A: Source code escrow suits installed software that the customer can rebuild and run. For a hosted service it releases
+      code that needs the startup's infrastructure and staff to run, and it does nothing to move the hospital's data to the
+      competing product.
+    C: A notice period gives time to plan an exit when the provider chooses to stop, but an insolvent startup can stop without
+      honouring notice, and that is the failure the plan covers.
+    D: An investor guarantee may pay damages, but money does not deliver the hospital's data or keep rotas running while it
+      moves.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aaism-d3-3.2-0029
+subdomain: '3.2'
+difficulty: medium
+stem: A bank releases each chatbot version to 5% of users first, with automatic rollback if error rates or latency rise. A
+  release that quoted internal notes passed this stage and reached all users. The leak occurred only with live retrieval data,
+  which staging does not hold. Which change BEST closes this gap?
+options:
+  A: Run the full security test suite in staging before the canary
+  B: Keep each release at 5% of users for a longer period
+  C: Raise the canary share to 20% of users for faster signal
+  D: Roll back on safety signals such as leak-filter hits
+answer: D
+explanation:
+  why_correct: The canary stage is the only point where a release meets live retrieval data, but it watches only error rates
+    and latency, which a leaking release does not change. Adding safety signals, such as hits from a filter for internal content,
+    to the rollback triggers lets the canary catch this kind of fault before full release.
+  why_not:
+    A: Pre-release security testing is essential, but the leak appeared only with live retrieval data that staging does not
+      hold. A fuller suite in staging would still pass.
+    B: A longer canary gives more time to observe, but the triggers would still look only at errors and latency, so the leak
+      would still go unnoticed.
+    C: A larger canary share exposes more users sooner without adding a signal that detects leaks. It increases the harm from
+      a bad release instead of catching it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: cissp-d1-1.2-0004
+subdomain: '1.2'
+difficulty: medium
+stem: A company's payroll system writes each month's payment file to an outbox folder on a transfer server, which sends it
+  to the bank by SFTP a few hours later. A transfer-server administrator recently edited the bank account numbers in a waiting
+  file. The bank's gateway accepts files in OpenPGP format. Which control BEST stops this kind of fraud?
+options:
+  A: Encrypt each file to the bank's public key as the payroll system writes it
+  B: Limit write access on the outbox folder to the transfer service's account
+  C: Sign each file with the payroll system's private key as it is written
+  D: Check each file against a hash the payroll system stores on the transfer server
+answer: C
+explanation:
+  why_correct: The threat is an insider who controls the server where the file waits, so the protection has to travel with
+    the file and be checked by the bank. A signature made by the payroll system, with a key the administrator cannot reach,
+    lets the bank's gateway reject any file changed after signing, whoever changed it.
+  why_not:
+    A: Encryption keeps the contents confidential, but the bank's public key is public. The administrator can write a new
+      file with his own account numbers and encrypt it to the same key, and the bank cannot tell it from the real one. Encryption
+      alone proves neither origin nor integrity.
+    B: Tighter folder permissions are sound hardening, but the person who altered the file administers the transfer server,
+      so he can change the permissions or act as the service account.
+    D: A hash detects accidental corruption, but this one sits on the server the administrator controls, so he can recompute
+      it after editing the file. An unkeyed hash checked where the attacker has control proves nothing against him.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

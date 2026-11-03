@@ -1,0 +1,33 @@
+id: cissp-d2-2.5-0004
+subdomain: '2.5'
+difficulty: medium
+stem: A retailer keeps nightly backups for seven years on immutable storage to meet a financial record-keeping rule. Privacy
+  law requires it to erase a customer's personal data on a valid request, and about 300 requests arrive each month. The backup
+  sets cannot be altered before their retention ends, and restores are run a few times a year. What should the retailer do
+  about erased customers' data in the backups it already holds?
+options:
+  A: Rewrite the affected backup sets each quarter without the erased customers' records
+  B: Encrypt each customer's records under their own key, and destroy it on erasure
+  C: Cut backup retention to 90 days and keep financial records in a separate archive
+  D: Keep a register of erasures and re-apply it to any data restored from backup
+answer: D
+explanation:
+  why_correct: 'The existing backups cannot be changed, so erasure inside them is impossible until they expire. The accepted
+    approach is to put that data beyond use: the backups are not used for normal processing, and the register of erasures
+    is applied to anything restored, so an erased customer never returns to live systems while the backups expire on schedule.'
+  why_not:
+    A: Rewriting backups would remove the data, but immutable sets cannot be altered before their retention ends, and rewriting
+      seven years of record-keeping copies each quarter would also undermine the rule they serve.
+    B: Per-customer keys, or crypto-shredding, are a strong design for new data, but they do nothing for the seven years of
+      backups already written, which still hold the records in readable form.
+    C: Shorter backup retention with a separate archive may be a better design for the future, but the existing immutable
+      sets stay in place for years, and the archive would still need its own way to handle erasure.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

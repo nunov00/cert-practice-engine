@@ -1,0 +1,34 @@
+id: aair-d1-1.4-0026
+subdomain: "1.4"
+difficulty: medium
+stem: A finance clerk at a manufacturer paid a large sum to a new account after a video call in which the
+  chief financial officer gave the instruction. The CFO on the call was a deepfake, convincing enough that two
+  other colleagues on the call noticed nothing. Which procedure BEST prevents a repeat?
+options:
+  A: Confirm payment instructions by calling back a number on file
+  B: Train finance staff to spot the signs of synthetic video and voice
+  C: Require a second approver for any payment above a set amount
+  D: Use detection software that flags synthetic faces on video calls
+answer: A
+explanation:
+  why_correct: The attack worked because the instruction and its proof of identity arrived on the same channel,
+    which the attacker controlled. A call-back on a number the firm already holds checks the instruction
+    through a channel the attacker does not control, so it works however good the fake is. It also costs
+    little and does not depend on anyone noticing anything odd.
+  why_not:
+    B: Awareness training is worthwhile, but the fake was good enough that three people on the call saw nothing
+      wrong. A procedure that relies on staff spotting fakes will fail as the fakes improve.
+    C: Dual approval checks that one clerk is not acting alone. The second approver would see the same convincing
+      instruction from the apparent CFO, so it does not verify where the instruction came from.
+    D: Detection tools can catch some synthetic media, but they lag behind the generators and give no assurance
+      against a fake this convincing. They also cover only the video platform, not instructions by phone or
+      voice note.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: obvious

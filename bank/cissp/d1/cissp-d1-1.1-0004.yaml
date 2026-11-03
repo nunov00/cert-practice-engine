@@ -1,0 +1,36 @@
+id: cissp-d1-1.1-0004
+subdomain: '1.1'
+difficulty: hard
+stem: A certified consultant hired to assess a vendor's product for a client finds a remotely exploitable flaw that also affects
+  the vendor's other customers. The engagement letter makes every finding the client's confidential property. Nothing suggests
+  anyone else knows of the flaw or is exploiting it, and the engagement runs for four more weeks. What should the consultant
+  do FIRST?
+options:
+  A: Report the flaw to the vendor through its published disclosure process
+  B: Tell the client now and ask it to approve reporting the flaw to the vendor
+  C: Put the flaw in the final report, with advice that the client inform the vendor
+  D: Report the flaw to the national CERT without naming the client
+answer: B
+explanation:
+  why_correct: 'The consultant owes the client confidentiality under the engagement and owes the vendor''s other customers
+    protection from harm. With no sign of exploitation, both duties can be met: raising the flaw with the client now, and
+    asking its consent to coordinated disclosure, starts the fix weeks earlier without breaking the confidentiality the consultant
+    agreed to. If the client refused while customers stayed at risk, the duty to protect society would then weigh more heavily.'
+  why_not:
+    A: Coordinated disclosure to the vendor is the right end point, and the canon on protecting society comes first. But nothing
+      is being exploited and the client can be asked today, so going around the principal breaks an agreed duty when an honourable
+      route that also protects the customers is open.
+    C: Reporting through the deliverable respects the client's ownership of the findings, but it leaves the vendor's other
+      customers exposed for four more weeks, plus however long the client then takes to act, when the client could be asked
+      now.
+    D: An anonymous report to a CERT keeps the client's name out, but it still hands a finding the client owns to an outside
+      body without consent, which the engagement letter forbids, and the client has not even been asked.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

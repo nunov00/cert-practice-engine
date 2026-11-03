@@ -1,0 +1,33 @@
+id: aair-d3-3.4-0032
+subdomain: "3.4"
+difficulty: medium
+stem: A travel firm's assistant runs on a hosted model that the provider has updated without notice before.
+  The firm wants a key risk indicator that shows quickly when the model's behaviour changes. Customer
+  questions vary widely from week to week. Which indicator BEST fits?
+options:
+  A: Weekly grading of a sample of live answers against a rubric
+  B: Daily runs of a fixed probe set, compared with past answers
+  C: Weekly rate of customer complaints about wrong travel advice
+  D: Daily check of the provider's release notes and status page
+answer: B
+explanation:
+  why_correct: Running the same fixed questions every day holds the input constant, so any change in the answers
+    points to a change in the model or its settings. It works without the provider's notice and shows a change
+    within a day. That is what the firm needs from an indicator of silent model updates.
+  why_not:
+    A: Grading live answers tracks quality and is worth doing. Because the questions vary widely each week, a
+      shift in scores cannot be told apart from a shift in what customers asked, and a weekly sample is
+      slower.
+    C: Complaints show harm that has already reached customers and lag well behind the change. Many affected
+      customers never complain.
+    D: Watching release notes costs little, but this provider has changed the model without notice before. An
+      indicator that depends on the provider's notices misses exactly the changes the firm is worried about.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: not_obvious

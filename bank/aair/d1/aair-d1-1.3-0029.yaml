@@ -1,0 +1,36 @@
+id: aair-d1-1.3-0029
+subdomain: "1.3"
+difficulty: medium
+stem: A banking group's central data science team builds a credit model that its subsidiaries in four
+  countries use for lending decisions. The group's validation team, independent of the builders, validates it.
+  One subsidiary's regulator holds that subsidiary's board accountable for its credit decisions. Which
+  arrangement BEST fits this accountability?
+options:
+  A: The group model risk committee approves the model once for the four subsidiaries
+  B: The subsidiary revalidates the model in full before it is used locally
+  C: The subsidiary approves local use, drawing on the group's validation
+  D: The subsidiary relies on group validation and monitors local outcomes
+answer: C
+explanation:
+  why_correct: Accountability for the subsidiary's credit decisions sits with its own board, so the decision to
+    use the model locally must be taken there. The subsidiary does not need to repeat the group's independent
+    validation; it can use that work as evidence and add its own judgement on local fit. That gives the
+    accountable board a real decision without duplicating effort.
+  why_not:
+    A: One group approval is efficient and common in groups, but it puts the decision with a body that the local
+      regulator does not hold accountable. The subsidiary board would answer for a choice it never made.
+    B: A full local revalidation would give the board strong evidence, but it repeats independent work the group
+      has already done. Accountability requires the board to decide on sound evidence, not to rebuild that
+      evidence itself.
+    D: Monitoring local outcomes is useful after go-live, but in this arrangement the subsidiary never decides
+      whether the model should be used for its lending at all. The board holds accountability without having
+      taken the decision.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: not_obvious

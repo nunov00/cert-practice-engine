@@ -1,0 +1,36 @@
+id: aair-d3-3.3-0033
+subdomain: "3.3"
+difficulty: hard
+stem: An insurer's AI agent reads customers' claim emails and replies with claim updates, which include
+  personal and policy details. Testers showed that an instruction hidden in an email could make it send a
+  customer's details to an outside address. The agent handles about 6,000 emails a day. Which control BEST
+  addresses this?
+options:
+  A: Scan outgoing replies for personal data and block any that contain it
+  B: Have staff approve each reply before the agent sends it out
+  C: Let the agent send only to addresses recorded on the claim it handles
+  D: Instruct the agent in its system prompt to ignore instructions in emails
+answer: C
+explanation:
+  why_correct: The harm happens when details go to someone outside the claim. Limiting the agent to the
+    addresses recorded on the claim, enforced outside the model, means an injected instruction cannot send
+    data elsewhere even if it succeeds. Legitimate replies, which are meant to carry personal details, still
+    go out without delay.
+  why_not:
+    A: Data loss scanning is a sound control in many settings, but every legitimate reply here contains personal
+      and policy details. It would block normal work or need so many exceptions that it no longer stops the
+      leak.
+    B: Approving each reply would stop the leak, but at 6,000 emails a day reviewers would soon approve on habit.
+      It also gives up the speed the agent was built for.
+    D: Telling the model to ignore embedded instructions lowers the success rate of attacks, but testers have
+      already shown such instructions can work. A prompt is guidance to the model, not a limit it cannot
+      cross.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: fail
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: not_obvious

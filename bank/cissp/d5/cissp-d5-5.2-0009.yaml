@@ -1,0 +1,33 @@
+id: cissp-d5-5.2-0009
+subdomain: '5.2'
+difficulty: medium
+stem: An online bank locks a customer's account for 24 hours after five failed passwords. Attackers with lists of customer
+  usernames now trip the lockout for thousands of customers each week, from botnet addresses that change with each attempt,
+  and locked-out customers flood the call centre. Which change BEST addresses this while still resisting password guessing?
+options:
+  A: After five failures, block the account only on devices not seen with it
+  B: Raise the threshold to twenty failures, with lockout cut to one hour
+  C: Keep the lockout, and let customers unlock their own accounts by SMS code
+  D: Lock out the source address after five failures on any account
+answer: A
+explanation:
+  why_correct: The attackers turn the lockout into a denial of service because it locks the account everywhere, including
+    on the customer's own device. Blocking the account after five failures only on devices never seen with it stops guessing
+    from the botnet's new devices, however often they change, while the customer's recognised device keeps signing in, so
+    guessing stays throttled and genuine customers are no longer locked out.
+  why_not:
+    B: A higher threshold and shorter lockout shrink the outage, but a botnet trips twenty failures as easily as five, and
+      guessers get four times as many tries.
+    C: Self-service unlock eases the call centre, but customers are locked out again minutes later while the attack continues,
+      so they still cannot use the service.
+    D: Blocking a source after repeated failures works against a single attacker, but these attempts come from botnet addresses
+      that change with each try, so no address reaches the limit.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aaism-d2-2.2-0049
+subdomain: '2.2'
+difficulty: medium
+stem: A mental health app streams each chatbot reply token by token over TLS, as users leave when replies appear slowly. Researchers
+  show that someone on the same network can infer reply topics from the sizes of the encrypted packets. Which control BEST
+  addresses this?
+options:
+  A: Pad or batch streamed tokens to hide their sizes
+  B: Move the connection to the newest TLS version and ciphers
+  C: Encrypt each reply in the app layer before TLS carries it
+  D: Send each reply whole once it is fully generated
+answer: A
+explanation:
+  why_correct: 'This is a side channel: encryption hides content but not length, and sending one token per packet lets packet
+    sizes track the tokens. Padding tokens to fixed sizes or grouping several per packet breaks that link while keeping replies
+    streaming, which users need.'
+  why_not:
+    B: Newer TLS versions are good practice, but they still preserve the length of what they encrypt. The packet sizes would
+      leak just as before.
+    C: A second layer of encryption also preserves length, so each token's size would still show through. It adds cost without
+      closing the channel.
+    D: Sending whole replies would remove the per-token pattern, but the stem says users leave when replies appear slowly.
+      The fix has to keep streaming.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aaism-check
+  options_only: not_obvious

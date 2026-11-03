@@ -1,0 +1,32 @@
+id: cissp-d7-7.10-0003
+subdomain: '7.10'
+difficulty: medium
+stem: A company runs its main systems in one public cloud and keeps immutable backups in a separate account there, under different
+  credentials. Its recovery plan now adds a scenario in which the company loses access to that provider entirely, for example
+  through an organisation-wide suspension, and core services must return within five days. Which strategy BEST covers it?
+options:
+  A: Copy backups to a second provider in a format restorable without the first
+  B: Replicate the backup account to a distant region of the same provider
+  C: Agree contract terms for exit assistance and return of data within 30 days
+  D: Lengthen immutability on the backup account from 35 days to one year
+answer: A
+explanation:
+  why_correct: The scenario removes the provider itself, so any copy that depends on it, in any account or region, is out
+    of reach. A copy at a second provider, in a format that can be restored with tools that do not need the first provider's
+    services, gives the company something to rebuild from within five days.
+  why_not:
+    B: Cross-region copies protect against a regional outage, the most common cloud failure, but an organisation-wide suspension
+      reaches each region and account the company holds with that provider.
+    C: Exit terms are worth having for an orderly move, but data returned within 30 days misses the five-day target, and a
+      provider that has suspended the company may not cooperate quickly.
+    D: Longer immutability protects backups from deletion for longer, which helps against ransomware, but they stay inside
+      the provider the company can no longer reach.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

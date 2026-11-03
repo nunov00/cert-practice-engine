@@ -1,0 +1,34 @@
+id: aair-d1-1.6-0024
+subdomain: "1.6"
+difficulty: hard
+stem: A delivery platform automatically deactivates drivers whose average customer rating falls below 4.2. An
+  analysis finds that drivers with a foreign accent receive lower ratings than other drivers for deliveries of
+  the same speed and accuracy. What should the risk practitioner recommend?
+options:
+  A: Have a manager review each deactivation before it takes effect
+  B: Let deactivated drivers appeal to a human panel within 14 days
+  C: Adjust each driver's average for customers who rate harshly overall
+  D: Base deactivation on delivery records, not on customer ratings
+answer: D
+explanation:
+  why_correct: "The unfairness sits in the ratings themselves: customers rate accented drivers lower for the
+    same work. As long as ratings decide deactivation, that bias carries straight into the outcome. Basing the
+    decision on delivery records, which measure the work done, removes the biased input at its source rather
+    than reviewing its results."
+  why_not:
+    A: Manager review adds a human check, but the manager would look at the same biased ratings and has no clear
+      reason to overrule them. The process becomes slower without becoming fairer.
+    B: An appeal route matters for any automated decision, but it acts only after drivers have lost work, and the
+      panel would weigh the same ratings. It treats the harm case by case instead of removing its cause.
+    C: Correcting for harsh raters is a real technique, but the bias here is not a few harsh customers. Customers
+      who rate other drivers normally rate accented drivers lower, so a per-customer correction leaves the gap
+      in place.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: not_obvious

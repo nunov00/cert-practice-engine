@@ -1,0 +1,34 @@
+id: cissp-d1-1.6-0004
+subdomain: '1.6'
+difficulty: hard
+stem: A group security standard requires security logs, including those recording staff activity, to be kept for one year.
+  One country where the group operates has a law, not expected to change, that limits retention of staff monitoring data to
+  six months. Incident investigations elsewhere in the group often rely on logs from nine to twelve months back. What should
+  the standard's owner do?
+options:
+  A: Add a country annex to the standard setting six months there, approved as part of it
+  B: Grant that country an exception to the standard, approved by the CISO and renewed yearly
+  C: Lower the group standard to six months so that a single rule applies in each country
+  D: Leave the standard unchanged and let the local procedure set six months for that country
+answer: A
+explanation:
+  why_correct: The conflict is permanent and comes from law, so the standard itself should say what applies in that country.
+    A country annex, approved with the standard, makes six months the mandatory local requirement, keeps one year everywhere
+    else, and lets compliance checks measure the country against the right rule.
+  why_not:
+    B: Exceptions suit temporary or risk-accepted deviations, such as a legacy system awaiting replacement. A law that will
+      not change is not a risk to accept again each year, and renewing an exception indefinitely hides a permanent requirement
+      in the exception register and makes the country look non-compliant.
+    C: One rule everywhere is simpler, but it throws away the older logs that investigations elsewhere rely on, weakening
+      the whole group to solve one country's problem.
+    D: Procedures say how to meet a standard; they cannot override it. A procedure that sets six months contradicts the standard,
+      so the country would breach one document whichever it followed.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-cissp-check
+  options_only: not_obvious

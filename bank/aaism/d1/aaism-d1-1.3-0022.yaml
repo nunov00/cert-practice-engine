@@ -1,0 +1,32 @@
+id: aaism-d1-1.3-0022
+subdomain: '1.3'
+difficulty: medium
+stem: A firm will return a leased GPU cluster when its term ends next month. For speed, training jobs copied decrypted dataset
+  shards, some holding customer data, to each node's local disks. The datasets move to a new cluster and stay in use. What
+  should the security manager require BEFORE the hardware goes back?
+options:
+  A: Destroy the encryption keys that protect the datasets
+  B: Have the lessor wipe the disks after return and certify it
+  C: Revoke the cluster's access to the data lake and key service
+  D: Sanitise each node's local disks and keep a record of it
+answer: D
+explanation:
+  why_correct: The customer data that will leave the firm's custody sits in decrypted shards on the nodes' local disks. Sanitising
+    those disks before return, and keeping evidence that it was done, is the only option that removes that data while the
+    firm still controls the hardware.
+  why_not:
+    A: Destroying keys is a strong way to dispose of encrypted data, but the shards on the local disks were decrypted, so
+      the keys no longer protect them. The datasets are also still in use, so destroying their keys would lose them.
+    B: Lessor sanitisation certificates are common at the end of a lease, but the wipe would happen after customer data had
+      passed into the lessor's hands. The firm should remove it while it still holds the hardware.
+    C: Revoking access is a necessary step when decommissioning, but it only stops new reads. The copies already on the local
+      disks would leave with the hardware.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aaism-check
+  options_only: not_obvious

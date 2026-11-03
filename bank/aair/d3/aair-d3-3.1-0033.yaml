@@ -1,0 +1,33 @@
+id: aair-d3-3.1-0033
+subdomain: "3.1"
+difficulty: hard
+stem: A hospital plans a language model assistant for junior doctors. A doctor types in the case details and
+  their working diagnosis, and the assistant comments on whether the diagnosis fits. Which risk scenario
+  should the assessment MOST include?
+options:
+  A: The assistant cites studies or guidelines that do not exist
+  B: The assistant endorses a wrong diagnosis the doctor proposed
+  C: The assistant's knowledge predates current treatment guidance
+  D: Case details typed in by doctors are kept by the model provider
+answer: B
+explanation:
+  why_correct: Language models tend to agree with a view the user states, and here the doctor states a diagnosis
+    and asks whether it fits. A wrong diagnosis that the assistant endorses becomes more convincing, not less,
+    so the tool defeats its own purpose as a check. This scenario follows from how the tool is used and goes
+    straight to patient harm.
+  why_not:
+    A: Invented references are a real failure of language models and belong in the register. In this use the
+      doctor wants a judgement on fit, and the more direct harm is a confirmed wrong diagnosis.
+    C: Out-of-date knowledge is a fair concern for treatment advice. The assistant here comments on whether a
+      diagnosis fits the case, where current treatment guidance matters less.
+    D: Data retention by the provider is a privacy risk to assess. It does not arise from how this tool is used,
+      and it carries less direct clinical harm than an endorsed misdiagnosis.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: not_obvious

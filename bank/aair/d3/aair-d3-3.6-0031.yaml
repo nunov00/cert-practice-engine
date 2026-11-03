@@ -1,0 +1,33 @@
+id: aair-d3-3.6-0031
+subdomain: "3.6"
+difficulty: hard
+stem: A firm's AI agents onboard new suppliers end to end, creating supplier records, setting bank details and
+  scheduling first payments. In an exercise, operators stopped the agents within a minute, then took two days
+  to work out which suppliers could safely be paid. What should the response plan MOST add?
+options:
+  A: A switch that stops only the agents working on affected suppliers
+  B: A record of each task's steps for staff to resume or reverse
+  C: A manual onboarding procedure that staff rehearse each quarter
+  D: A tested rollback of the agents to their previous release
+answer: B
+explanation:
+  why_correct: Stopping the agents worked; the delay came from not knowing what state each onboarding was left
+    in. A record of which steps each task completed lets staff see at once which suppliers are fully set up,
+    which are part done, and which steps to finish or undo. That turns a two-day reconstruction into a quick,
+    safe recovery.
+  why_not:
+    A: A narrower stop reduces disruption, but the tasks it stops are still left part done. Staff would face the
+      same question about which suppliers can be paid.
+    C: Rehearsed manual procedures help staff carry on the work, but they do not tell staff what the agents had
+      already done. The delay came from unknown task state, not unfamiliar procedures.
+    D: Rollback helps when a new release causes the fault. It does not show which onboardings were left part done
+      when the agents were stopped.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aair-check
+  options_only: not_obvious

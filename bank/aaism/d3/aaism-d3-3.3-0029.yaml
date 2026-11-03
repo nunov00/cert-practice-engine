@@ -1,0 +1,31 @@
+id: aaism-d3-3.3-0029
+subdomain: '3.3'
+difficulty: medium
+stem: A firm will fine-tune a coding model on its internal repositories so it suggests code in house style. A scan finds hundreds
+  of live credentials in the repositories' history, some issued by partners that cannot reissue them for months. Which control
+  BEST keeps the model from suggesting them?
+options:
+  A: Rotate the credentials the scan finds in the repositories
+  B: Remove credentials from the training copy before tuning
+  C: Filter the model's suggestions for credential patterns
+  D: Limit the fine-tuned model to the firm's own developers
+answer: B
+explanation:
+  why_correct: A model can memorise and repeat secrets it is trained on. Removing the credentials from the training copy means
+    the model never learns them, which matters most for the partner credentials that will stay live for months.
+  why_not:
+    A: Rotation is needed anyway, since the credentials are exposed in the repositories, but the partner credentials cannot
+      be reissued for months. Until then a model trained on them could suggest working keys.
+    C: An output filter is a useful second layer, but pattern matching misses credentials in unusual formats, and the model
+      would still hold them.
+    D: Limiting access reduces who could see a suggested secret, but developers who should not hold partner credentials would
+      still be shown them.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-03-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-03-daily-aaism-check
+  options_only: not_obvious
