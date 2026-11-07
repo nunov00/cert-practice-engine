@@ -1,0 +1,33 @@
+id: aaism-d1-1.1-0025
+subdomain: '1.1'
+difficulty: medium
+stem: A bank runs one AI advice assistant for customers in two countries. Country X's regulator requires advice conversations
+  with its residents to be kept for five years, linked to the customer. Country Y's regulator caps retention of its residents'
+  chats at 90 days. All conversations are stored in a data centre in Country X. How should retention be set?
+options:
+  A: Delete both countries' conversations after 90 days
+  B: Apply the rule of each customer's country of residence
+  C: Apply the rule of the country each customer chats from
+  D: Keep both countries' conversations five years, IDs tokenised
+answer: B
+explanation:
+  why_correct: The two rules conflict, so no single setting meets both. Each rule covers its own country's residents, so recording
+    each customer's country of residence, and applying that country's rule to their conversations, lets the shared platform
+    keep Country X residents' chats for five years and delete Country Y residents' chats after 90 days.
+  why_not:
+    A: The shorter limit protects privacy, but deleting Country X's conversations would breach its regulator's five-year record-keeping
+      rule.
+    C: This also sets retention customer by customer, but on where the customer happens to be. A Country Y resident chatting
+      while visiting Country X is still covered by Country Y's cap, and a visitor from elsewhere is not covered by Country
+      X's rule.
+    D: Tokenised chats are still these customers' chats and stay linkable, so keeping Country Y's for five years still breaches
+      its 90-day cap.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aaism-check
+  options_only: not_obvious

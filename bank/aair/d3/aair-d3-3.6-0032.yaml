@@ -1,0 +1,33 @@
+id: aair-d3-3.6-0032
+subdomain: '3.6'
+difficulty: medium
+stem: A card issuer's disaster recovery plan restores its fraud scoring service within two hours at a second site.
+  Because fraud patterns shift fast, the model is retrained each week, on a training platform that runs only at
+  the main site. What should the business impact analysis MOST also establish?
+options:
+  A: The fraud losses expected for each hour the scoring service is down
+  B: How long the model can run unretrained before it falls below tolerance
+  C: Whether the second site can score the full daily volume of payments
+  D: A recovery point objective for the payment data the scoring service uses
+answer: B
+explanation:
+  why_correct: Restoring scoring is not enough if the model goes stale while the training platform is unavailable.
+    How fast performance decays without retraining sets the recovery time the training capability needs, and shows
+    whether it must join the recovery plan or be covered by a fallback such as tighter rules. Without it, the plan
+    could restore a service that quietly stops catching new fraud.
+  why_not:
+    A: Impact over time is central to any analysis, but for scoring the plan already sets the two-hour objective it supports.
+      It says nothing about the asset the plan leaves out.
+    C: Capacity at the recovery site is a sound check, but it concerns the service already in scope, not the retraining
+      that keeps it effective.
+    D: A recovery point for input data matters for scoring, but the gap here is the ability to keep the model current,
+      not the data the service reads.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aair-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: cissp-d1-1.5-0004
+subdomain: '1.5'
+difficulty: hard
+stem: A sales director has resigned to join a competitor, and IT logs show large downloads from the customer database to her
+  company laptop last week. HR wants to settle the matter at an exit meeting tomorrow, and legal expects to seek a court order
+  against the competitor if the customer list turns up there. What should the security manager do FIRST?
+options:
+  A: Have IT review the laptop's files with HR and note what it finds for the HR file
+  B: Image the laptop and her mailbox under documented chain of custody before review
+  C: Report the downloads to the police as suspected data theft before touching the laptop
+  D: Ask her at the exit meeting to return her devices and sign that she kept no data
+answer: B
+explanation:
+  why_correct: The matter starts as an internal one but may end in a civil case, so evidence must be collected to the standard
+    a court would accept. Forensic images taken under chain of custody preserve the laptop and mailbox unchanged, and every
+    later step, whether HR's meeting, a court application or a police report, can rely on them.
+  why_not:
+    A: An internal review is enough for an administrative decision, but browsing the live laptop changes its data and leaves
+      no defensible record, which weakens any later court application.
+    C: A police report may follow, but taking customer data to a competitor is often pursued as a civil matter, police may
+      not act quickly, and the evidence still needs preserving now.
+    D: Collecting devices and a signed statement is normal exit practice, but it alerts her before evidence is secured, and
+      a signed denial proves little if copies already exist elsewhere.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: obvious

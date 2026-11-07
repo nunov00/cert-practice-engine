@@ -1,0 +1,34 @@
+id: aair-d3-3.1-0035
+subdomain: '3.1'
+difficulty: medium
+stem: A bank's online loan process calls a vendor's fraud model for each application. So that applicants are not kept
+  waiting, any call that takes longer than two seconds is skipped and the application continues to the credit decision.
+  Which risk scenario should the assessment MOST include?
+options:
+  A: Slow vendor responses let applications reach credit decisions unscored
+  B: A vendor outage holds up credit decisions for large numbers of applicants
+  C: The vendor retrains its model, shifting fraud scores without notice
+  D: Fraudsters adapt their applications to the patterns the vendor detects
+answer: A
+explanation:
+  why_correct: The design fails open. When the vendor is slow or down, applications go on to a decision with no fraud
+    check, and nothing visible breaks, so losses can build up unnoticed. Fraudsters who apply at busy times, or
+    learn that some applications pass unscored, would benefit. The assessment should rate this scenario and the
+    share of applications that are skipped.
+  why_not:
+    B: An outage is the usual concern with a vendor dependency, but this process does not wait for the vendor. A
+      slow or failed call lets the application through unscored, which is quieter and potentially costlier than
+      a delay.
+    C: Unannounced model changes are a real supply chain risk, but the bank would still receive scores and could
+      see the shift in monitoring. Nothing in the design makes this scenario stand out.
+    D: Fraudsters adapting is a standing risk for any fraud model, so it belongs in the register already. It does
+      not arise from the design choice described here.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aair
+  check_verdict: fail
+  checked_by: 2026-11-07-daily-aair-check
+  options_only: not_obvious

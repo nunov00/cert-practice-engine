@@ -1,0 +1,35 @@
+id: aair-d1-1.5-0026
+subdomain: '1.5'
+difficulty: medium
+stem: A supermarket subject to the EU GDPR runs a loyalty scheme whose terms allow personalised offers based on purchases. Its new model infers from
+  shopping baskets which members are probably managing diabetes, so that it can send them offers on suitable products.
+  Which legal consideration should the risk practitioner MOST raise?
+options:
+  A: Whether the loyalty terms cover profiling members' baskets for offers
+  B: Whether members can object to profiling used for direct marketing
+  C: Whether baskets shared by households make the inferences inaccurate
+  D: Whether inferring a health condition needs members' explicit consent
+answer: D
+explanation:
+  why_correct: The GDPR treats health data as a special category, and an inference that a named member probably
+    has diabetes is health data about that person, even though it comes from ordinary purchases. Processing it needs
+    one of the conditions the GDPR lists, and for marketing the only realistic one is explicit consent, which general
+    loyalty terms do not provide. Without that
+    condition the processing is unlawful from the start, whatever other safeguards are added.
+  why_not:
+    A: Purpose and transparency matter, and the terms already allow personalised offers. The issue is not whether
+      profiling for offers is covered, but whether creating health data needs more than those terms give.
+    B: The right to object to direct marketing applies and must be honoured, but it is an opt-out once processing
+      is under way. It does not make creating health inferences lawful in the first place.
+    C: Accuracy is a data protection principle, and shared baskets will cause some wrong inferences. That affects
+      the quality of the data, but the more basic question is whether the supermarket may create and hold it at
+      all.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aair-check
+  options_only: not_obvious

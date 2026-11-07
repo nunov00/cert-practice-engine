@@ -1,0 +1,31 @@
+id: aaism-d2-2.3-0048
+subdomain: '2.3'
+difficulty: hard
+stem: A team uses a model aggregator that sends each prompt to whichever of about 30 model providers is cheapest at that moment.
+  Prompts include draft contract text. The aggregator's own terms bar retention, but each provider applies its own terms on
+  retention and training. What should the security manager require?
+options:
+  A: Routing only to providers with an independent security certification
+  B: Notice from the aggregator before it adds a new provider
+  C: Routing restricted to providers whose terms the firm accepts
+  D: Zero-retention terms agreed with the five most used providers
+answer: C
+explanation:
+  why_correct: Each prompt may land with any of 30 providers, each under its own terms, so the aggregator's promises do not
+    reach where the data goes. Restricting routing to providers the firm has assessed and whose terms it accepts puts every
+    destination under known conditions while keeping the aggregator's convenience.
+  why_not:
+    A: A security certification shows that a provider protects data well, but not what its terms allow it to keep or
+      train on.
+    B: Notice of new providers helps track change, but prompts already go to about 30 providers with varied terms.
+    D: Covering the most used providers protects most prompts, but cheapest-route switching still sends some prompts to
+      the other providers under their own terms.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aaism-check
+  options_only: not_obvious

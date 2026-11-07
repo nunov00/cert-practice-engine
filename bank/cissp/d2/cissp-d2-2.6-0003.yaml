@@ -1,0 +1,33 @@
+id: cissp-d2-2.6-0003
+subdomain: '2.6'
+difficulty: medium
+stem: A retailer's call-centre agents take card numbers by phone and type them into the order system, so its 400 desktops,
+  call recordings and network fall in scope for the card industry's data security standard. The retailer wants to shrink that
+  scope, while customers keep paying by phone. Which approach BEST does this?
+options:
+  A: Have customers key card numbers on their phone keypads, sent masked to the payment provider
+  B: Pause call recording while agents take card details, and resume it once they are done
+  C: Encrypt the call recordings, and limit access to them to the quality assurance team
+  D: Segment the call centre's network, and apply the standard's controls inside that segment
+answer: A
+explanation:
+  why_correct: Scope follows wherever card data is stored, processed or transmitted. Keypad entry with tone masking sends
+    the digits to the payment provider and hides them from the agent, the desktop and the recording. Provided the card data
+    path separates before the call-centre systems and those systems cannot affect it, most of the call centre drops out
+    of scope.
+  why_not:
+    B: Pausing the recording keeps card numbers out of the recordings, but agents still hear and type them, so the desktops
+      and network stay in scope.
+    C: Encryption protects the recordings, but they still hold card data and stay in scope, as do the desktops agents type
+      the numbers into.
+    D: Segmentation stops scope spreading to the rest of the network, but the call centre's 400 desktops and network stay
+      in scope, which is the part the retailer wants to shrink.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: cissp-d4-4.2-0018
+subdomain: '4.2'
+difficulty: medium
+stem: A company's internet-facing firewalls reach the vendor's end of support in three months, after which it publishes no
+  more security fixes for them. Their replacement is funded but will take nine months to deploy and test. The vendor offers
+  a paid one-year extension of security fixes at a high price. Which approach BEST manages the gap?
+options:
+  A: Contract a third-party maintainer for hardware repair and configuration support
+  B: Place an intrusion prevention system in front of the firewalls to block exploits
+  C: Bring the replacement forward by cutting its testing so it fits in three months
+  D: Buy the vendor's extension of security fixes until the replacement is live
+answer: D
+explanation:
+  why_correct: Internet-facing firewalls are among the most attacked devices, flaws in them are exploited quickly, and only
+    the vendor can produce firmware fixes. Paying for six months of fixes is proportionate to the risk of running the perimeter
+    unpatched, and it lets the replacement be tested properly.
+  why_not:
+    A: A third-party maintainer keeps the hardware running at lower cost, but it cannot produce firmware security fixes, so
+      new flaws in the firewalls would stay open.
+    B: An IPS can block some known exploits, but protection for new firewall flaws depends on signatures that may lag, and
+      flaws reachable through the firewalls' own management or VPN services may not pass through it.
+    C: An earlier cut-over removes the gap on paper, but rushing tests on the perimeter risks outages and rule errors that
+      open the network another way.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: not_obvious

@@ -29,5 +29,5 @@ provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
   check_verdict: pass
-  checked_by: 2026-11-01-daily-aaism-check
+  checked_by: 2026-11-07-daily-aaism-check
   options_only: not_obvious

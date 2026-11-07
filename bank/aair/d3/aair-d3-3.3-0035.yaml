@@ -1,0 +1,34 @@
+id: aair-d3-3.3-0035
+subdomain: '3.3'
+difficulty: medium
+stem: An insurer's language model extracts totals and line items from supplier invoices, and the figures feed payments
+  directly. Its rare errors are well-formed, plausible amounts. Which
+  control BEST prevents wrong payments?
+options:
+  A: Check each extracted total against its line items and the purchase order
+  B: Route invoices to staff when the model reports low confidence in a figure
+  C: Use a structured output mode so each field matches the expected schema
+  D: Have a second model extract each invoice, paying only when both agree
+answer: A
+explanation:
+  why_correct: The errors look right, so a control that relies on format or on the model's own view can miss them.
+    Adding up the line items checks that the extracted figures are consistent with each other, and matching the total
+    to the purchase order brings in an independent record of what was agreed. Together they catch most misread figures
+    whatever the model believed, and run automatically on each invoice before payment. They cannot settle everything,
+    such as what is payable on a partial delivery, so any mismatch goes to staff before payment.
+  why_not:
+    B: Routing low-confidence cases is a common design, but a language model's stated confidence is often a poor
+      guide to its accuracy, and plausible misreadings are just the kind it states confidently.
+    C: Structured output makes fields well-formed, but the errors are already well-formed. A wrong amount in the
+      right format passes.
+    D: A second extraction adds a check, but two models reading the same document can make the same misreading,
+      and their agreement would then approve the wrong payment.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aair-check
+  options_only: not_obvious

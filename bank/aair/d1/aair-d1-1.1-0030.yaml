@@ -1,0 +1,34 @@
+id: aair-d1-1.1-0030
+subdomain: '1.1'
+difficulty: medium
+stem: A mobile operator wants AI to choose which customers its retention team calls each month, within a fixed call
+  budget. In a pilot, calls to the customers its current model rated most likely to leave kept very few of them.
+  Which modelling approach BEST fits the aim?
+options:
+  A: Rank customers by their predicted chance of leaving and call the top of the list
+  B: Rank customers by how much a call is predicted to change their chance of leaving
+  C: Rank customers by their predicted chance of leaving, weighted by yearly revenue
+  D: Rank customers by how they responded to past retention campaigns
+answer: B
+explanation:
+  why_correct: The aim is the most customers kept per call, which depends on how much a call changes a customer's
+    behaviour, not on how likely they are to leave. The pilot shows that many of the highest-risk customers leave
+    whatever is said to them, so calling them wastes the budget. An uplift model, trained on outcomes for called
+    and uncalled customers, ranks people by the difference a call makes, which is what the budget should buy.
+  why_not:
+    A: This is the usual churn approach and the current design. The pilot shows that the top of a risk ranking is
+      full of customers a call does not save, so it spends the budget where calls have least effect.
+    C: Weighting risk by revenue is a sound refinement when calls work equally well on everyone, but it still ranks
+      by the chance of leaving. Valuable customers who will leave anyway still get calls that change nothing.
+    D: Past campaign response looks like a measure of a call's effect, but many customers who took an offer would have
+      stayed anyway. Ranking by past response spends the budget on discounts for loyal customers, not on changing who
+      leaves.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aair-check
+  options_only: not_obvious

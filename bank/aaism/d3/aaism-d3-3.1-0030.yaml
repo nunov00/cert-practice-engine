@@ -1,0 +1,31 @@
+id: aaism-d3-3.1-0030
+subdomain: '3.1'
+difficulty: hard
+stem: A bank's assistant redacts card numbers from each user message before passing it to an orchestrator. The orchestrator
+  then adds retrieved case documents and results from about 30 internal APIs, and sends the prompt to an external model. Tests
+  found card numbers in prompts the provider received. Which design change BEST closes this gap?
+options:
+  A: Trim each internal API's response to the fields the assistant needs
+  B: Redact card numbers in case documents as they are indexed
+  C: Redact the fully assembled prompt at the gateway to the provider
+  D: Extend the redaction patterns to more card number formats
+answer: C
+explanation:
+  why_correct: Redaction runs on the user's message, but the prompt that leaves the bank is built later from several sources.
+    Placing redaction at the egress gateway, on the prompt exactly as it will be sent, covers documents, API results and anything
+    added in future, at the one point every prompt must pass.
+  why_not:
+    A: Trimming API responses is good minimisation and would cut much of the exposure, but it needs changes to about 30 APIs
+      and leaves card numbers in the retrieved case documents.
+    B: Redacting documents at indexing covers one source, but card numbers in API results would still reach the provider.
+    D: Better patterns help only where redaction already runs, which is the user's message. The card numbers reaching the
+      provider come from parts of the prompt that are never checked.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aaism-check
+  options_only: not_obvious

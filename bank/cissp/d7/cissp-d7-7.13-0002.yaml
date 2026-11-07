@@ -1,0 +1,33 @@
+id: cissp-d7-7.13-0002
+subdomain: '7.13'
+difficulty: medium
+stem: A finance team's continuity plan says that while the payment system is down, any finance manager may phone payment instructions
+  to the bank. In last month's exercise, the backlog made manual payments far larger than usual, and a facilitator posing
+  as a director talked one manager into an urgent transfer. As the security member of the planning group, which change should
+  you push for?
+options:
+  A: Cap each manual payment at the size of a normal day's largest payment
+  B: Require a second manager to approve each manual payment before it is phoned
+  C: Reconcile manual payments against approved invoices once the system is back
+  D: Have the bank confirm each phoned payment by calling the manager back
+answer: B
+explanation:
+  why_correct: Continuity workarounds often drop the controls the normal system enforces, and here the payment system's dual
+    control disappeared. The exercise showed that one manager can be talked into a payment, so a second approver restores
+    that check without limiting the size of payments the backlog needs.
+  why_not:
+    A: A cap limits the loss from one bad payment, but the exercise showed that backlog payments are larger than usual, so
+      a cap would stall recovery or push staff to split payments.
+    C: Reconciliation finds wrong payments, but only after the system is back, by which time a fraudulent transfer has usually
+      left the bank.
+    D: A call-back proves the instruction came from a real manager, which stops a fake caller reaching the bank, but in the
+      exercise the genuine manager was the one deceived.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: not_obvious

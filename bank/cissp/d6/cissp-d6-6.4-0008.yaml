@@ -1,0 +1,32 @@
+id: cissp-d6-6.4-0008
+subdomain: '6.4'
+difficulty: hard
+stem: A two-week penetration test of a new customer API found no critical or high issues. The testers covered 50 of its 120
+  endpoints in the time available, choosing those they judged riskiest. The board will use the report next week to decide
+  whether the API launches. How should the report present the result?
+options:
+  A: Report no critical or high findings, and list the endpoints tested in an appendix
+  B: Hold the report until the other 70 endpoints have been tested by the same team
+  C: State the coverage in the summary, listing the 70 untested endpoints as open risk
+  D: Estimate likely issues in the untested endpoints from the rate found in the 50
+answer: C
+explanation:
+  why_correct: A report must let its readers judge what the result means. The board is deciding a launch, and a clean result
+    on 50 of 120 endpoints says little about the rest, so the coverage limit and the untested endpoints belong in the summary,
+    where the decision is made, as risk the board can weigh.
+  why_not:
+    A: The appendix makes the report technically complete, but board members read the summary, which would suggest the whole
+      API was found clean.
+    B: Further testing may be the right outcome, but holding the report leaves the board without the results it needs next
+      week, and that choice is the board's.
+    D: An estimate gives a number, but the 50 were chosen as the riskiest, so their rate cannot stand for the others, and
+      an estimate is not a finding.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: obvious

@@ -1,0 +1,32 @@
+id: cissp-d3-3.8-0003
+subdomain: '3.8'
+difficulty: medium
+stem: A biotech firm is designing its new building. Researchers meet outside visitors several times a day, and in the current
+  building hosts escort visitors along the lab corridors to meeting rooms between the labs. Audits keep finding visitors left
+  alone there. Which design choice BEST addresses this?
+options:
+  A: Put the meeting rooms in a zone between reception and the labs, outside the lab doors
+  B: Issue visitor badges that open no doors, so that a host must badge them through each one
+  C: Cover the lab corridors with cameras that are watched from the reception desk
+  D: Give the lab corridors glass walls so that staff in the labs can see visitors
+answer: A
+explanation:
+  why_correct: Escorting keeps failing in practice, so the design should remove the need for it. Placing meeting rooms in
+    a zone between reception and the labs means visitors' business never takes them through a lab door, so a lapse by a host
+    no longer leaves a visitor alone among the labs.
+  why_not:
+    B: Host badge-through controls who enters, but once a visitor is inside the lab zone the host can still walk away, which
+      is the lapse the audits keep finding.
+    C: Cameras can show a visitor alone, but they detect rather than prevent, and reception staff have other work, so a lone
+      visitor may go unnoticed.
+    D: Glass walls add natural surveillance, but visitors still walk among the labs, and the control relies on busy researchers
+      noticing and acting.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: cissp-d1-1.12-0004
+subdomain: '1.12'
+difficulty: medium
+stem: A company began giving written warnings to staff who click a second simulated phishing email in a year. Since then the
+  simulation click rate has halved, but reports of real phishing to the security team have fallen by two thirds, and staff
+  say they now delete suspect mail, even after clicking, rather than draw attention. Which change BEST improves the programme?
+options:
+  A: Keep the warnings, and add a one-click report button to the mail client
+  B: Keep the warnings, but only for staff who click three times in a year
+  C: Suspend the warnings for six months, then review the click rate
+  D: End the warnings, and recognise staff who report suspect mail promptly
+answer: D
+explanation:
+  why_correct: The programme exists to cut successful attacks, and a quick report of a real phish, above all after a click,
+    is worth more than a lower simulation click rate. The warnings taught staff to hide mistakes. Ending them and rewarding
+    reports makes reporting, including owning up to a click, the safe choice, so the security team hears about attacks while
+    it can still act.
+  why_not:
+    A: A report button removes friction, but friction is not what keeps staff quiet. They fear being recorded, and the warnings
+      that cause that fear stay in place.
+    B: A higher threshold spares occasional clickers, but every click still moves staff closer to a warning, so the reason
+      to hide a click remains.
+    C: A suspension removes the penalty for now, but staff know the warnings may return after the review, so a recorded
+      click is still something to hide, and nothing encourages prompt reporting.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: not_obvious

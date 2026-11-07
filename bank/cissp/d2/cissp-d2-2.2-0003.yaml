@@ -22,12 +22,12 @@ explanation:
       be skipped or mislabelled, and one missed label is enough for a list to leave.
     D: Blocking CSV attachments stops this one format by email, but the same data can be saved in another format or sent another
       way, and the files would still carry no label for any other handling rule.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-02-daily-cissp
   check_verdict: pass
-  checked_by: 2026-11-02-daily-cissp-check
+  checked_by: 2026-11-07-daily-cissp-check
   options_only: not_obvious

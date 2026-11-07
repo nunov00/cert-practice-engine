@@ -1,0 +1,33 @@
+id: aair-d3-3.1-0034
+subdomain: '3.1'
+difficulty: medium
+stem: A lender's new small business loan model relies mainly on details applicants state, such as loan purpose,
+  term and years trading. Most applications come through brokers, who see each decision within seconds and can withdraw
+  and resubmit an application. Which risk scenario should the assessment MOST include?
+options:
+  A: Stated details are entered inconsistently, lowering the model's accuracy
+  B: The applicant mix shifts as the lender's marketing reaches new sectors
+  C: Brokers learn which stated details pass and adjust applications to fit
+  D: Declined applicants cannot be given the main reasons for each decision
+answer: C
+explanation:
+  why_correct: Inputs that applicants control, combined with instant decisions and free resubmission, let brokers
+    probe the model and learn which answers win approval. Over time the stated details stop describing the businesses
+    behind them, and approvals rise among applicants the model would have declined. This gaming risk follows directly
+    from the design described and needs its own likelihood and impact rating.
+  why_not:
+    A: Inconsistent entry is a normal data quality risk for self-reported fields, but it is random noise. What stands
+      out in this design is a party with both a motive and the means to shape inputs on purpose.
+    B: Population drift is a standard scenario for any credit model, but nothing in the design points to it, while
+      the broker channel, where most applications come from, does point to deliberate shaping of inputs.
+    D: Explaining declines is a legal duty, but a model built on stated details can usually give clear reasons.
+      It is not where this design's main risk lies.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aair-check
+  options_only: not_obvious

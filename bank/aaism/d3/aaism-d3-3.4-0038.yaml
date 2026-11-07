@@ -1,0 +1,31 @@
+id: aaism-d3-3.4-0038
+subdomain: '3.4'
+difficulty: medium
+stem: An AI companion app is for adults only, but reviews and chat content show many teenage users, who sign up by typing
+  a birth date. A new law requires effective age checks. The app promises users that it collects as little identity data as
+  it can. Which approach BEST fits?
+options:
+  A: An ID document check for every account, kept on file as proof
+  B: A clearer birth date prompt that warns about false answers
+  C: Selfie age estimation, deleted at once, ID for close cases
+  D: A classifier that flags likely minors from what they write in chats
+answer: C
+explanation:
+  why_correct: Age estimation from a live selfie that is deleted straight after the check can stop most under-age sign-ups without
+    storing identity data, provided its tested error rates and anti-spoofing controls meet what the law requires. Sending only borderline results to a document check keeps the strongest, most intrusive method
+    for the cases estimation cannot settle, which is the approach most likely to meet the legal duty while honouring the minimisation promise.
+  why_not:
+    A: Document checks for everyone are effective, but storing every user's ID breaks the promise to collect as little identity
+      data as possible, and it puts a store of identity documents at risk.
+    B: Self-declaration is what teenagers already get past, so better wording would not amount to an effective check.
+    D: Content classifiers can catch some minors, but only after they have been chatting, and they require analysing every
+      user's private conversations, which is more intrusive than a one-time check.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aaism
+  check_verdict: fail
+  checked_by: 2026-11-07-daily-aaism-check
+  options_only: obvious

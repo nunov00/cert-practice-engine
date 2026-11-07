@@ -1,0 +1,31 @@
+id: cissp-d6-6.3-0007
+subdomain: '6.3'
+difficulty: medium
+stem: Policy says security exceptions expire within 12 months unless renewed. The risk committee sees a monthly count of open
+  exceptions, steady at about 80, and concludes that exceptions are ending as the policy intends. Internal audit doubts this, as many of
+  the systems involved have not changed in years. Which data BEST answers the question?
+options:
+  A: Months since each open exception was first approved, counting renewals
+  B: Share of open exceptions that are past their current expiry date
+  C: Number of exceptions opened and closed in each of the past 12 months
+  D: Share of open exceptions that have compensating controls on record
+answer: A
+explanation:
+  why_correct: A steady count could mean healthy turnover or the same exceptions renewed year after year. The age of each
+    open exception since it was first approved, across renewals, shows directly which ones have become permanent in practice.
+  why_not:
+    B: The overdue share is the usual compliance check, but each renewal resets the expiry date, so an exception renewed for
+      years still shows as current.
+    C: Opened and closed counts show activity, but a stream of short-lived new exceptions can balance the numbers while the
+      old ones stay open, and the counts do not show which is which.
+    D: Compensating controls show how the risk is handled while an exception is open, not whether exceptions are ending as
+      the policy intends.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: not_obvious

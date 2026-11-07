@@ -1,0 +1,33 @@
+id: aaism-d1-1.4-0028
+subdomain: '1.4'
+difficulty: medium
+stem: A bank's AI security program tells the board that 92% of production models have signed artefacts and a current threat
+  model. The figures come from quarterly spreadsheets that 120 teams fill in, and an audit sample found a third of the claimed
+  items missing. Every production model is deployed through one pipeline and registry, which record signatures and attached
+  reviews. What should the security manager do?
+options:
+  A: Have internal audit test a sample of each quarter's returns
+  B: Have each team lead sign off the team's quarterly return
+  C: Require each return to attach evidence for each item claimed
+  D: Generate the figures from the pipeline and registry records
+answer: D
+explanation:
+  why_correct: The facts the board needs are already recorded by the systems every production model passes through. Drawing
+    the figures from those records makes them complete and consistent, removes the quarterly manual effort, and leaves no
+    room for optimistic self-reporting.
+  why_not:
+    A: Audit sampling would show how far each quarter's figures can be trusted, but the board would still receive self-reported
+      numbers known to be unreliable.
+    B: Sign-off adds accountability, but the audit already shows that team claims are often wrong, and a signature does not
+      make them right.
+    C: Attached evidence would make claims checkable, but 120 teams would still compile it by hand each quarter, and someone
+      would have to check it, while the registry already holds the facts.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aaism-check
+  options_only: not_obvious

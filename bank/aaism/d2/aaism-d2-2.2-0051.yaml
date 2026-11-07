@@ -1,0 +1,32 @@
+id: aaism-d2-2.2-0051
+subdomain: '2.2'
+difficulty: medium
+stem: To cut cost and latency, a SaaS AI platform reuses cached prompt prefixes across all its tenants. Researchers show that
+  by timing responses, one tenant can tell whether another recently sent a given prefix, such as a document opening or a system
+  prompt. Customers chose the platform for its fast responses. Which control BEST addresses this?
+options:
+  A: Keep a separate prefix cache for each tenant
+  B: Add a random delay to each response returned
+  C: Encrypt the prefix cache in memory and at rest
+  D: Limit each tenant's requests to a set rate
+answer: A
+explanation:
+  why_correct: The timing difference exists because one tenant's request can hit a prefix that another tenant placed in the
+    cache. Scoping the cache to each tenant keeps most of the speed and cost benefit, since tenants mostly repeat their own
+    prompts, and leaves no shared entry for a probe to detect.
+  why_not:
+    B: Random delays blur single measurements, but an attacker can average many probes to recover the difference, and every
+      customer pays in speed for a platform chosen for fast replies.
+    C: Encryption protects the cache's contents from being read, but the leak comes from how fast a cache hit is answered,
+      which encryption does not change.
+    D: Rate limits slow large-scale probing, but each guess needs only a few requests, so targeted checks on specific prefixes
+      still work.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aaism-check
+  options_only: not_obvious

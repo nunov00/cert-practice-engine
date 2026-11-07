@@ -1,0 +1,32 @@
+id: cissp-d7-7.10-0004
+subdomain: '7.10'
+difficulty: hard
+stem: A company's sales records live in a SaaS CRM whose provider replicates them across three data centres and keeps deleted
+  records for 14 days. A faulty integration overwrote the account owner and status fields on 30,000 records, and the error
+  was noticed three weeks later. Which strategy BEST prepares the company for a repeat?
+options:
+  A: Extend the CRM's deleted-record retention from 14 days to 90 days
+  B: Turn on field history tracking for the fields the integration writes
+  C: Buy the provider's service that restores the whole tenant to a chosen date
+  D: Take daily backups of CRM records to company-held storage, kept 90 days
+answer: D
+explanation:
+  why_correct: Provider replication protects against the provider's failures, not against bad data written by the customer,
+    which is replicated faithfully. Daily backups held by the company, kept longer than the time such errors take to surface,
+    let it restore just the affected records and fields to their state before the fault.
+  why_not:
+    A: Longer retention helps with deleted records, but these records were overwritten, not deleted, so the bin holds nothing
+      to restore.
+    B: Field history records old values for the tracked fields, which would have helped this time, but the next faulty integration
+      may write other fields, and it is not a restorable copy of the data.
+    C: A tenant restore returns good data, but rolling the whole tenant back three weeks also discards three weeks of legitimate
+      sales work across every record.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: not_obvious

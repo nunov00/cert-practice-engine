@@ -1,0 +1,33 @@
+id: aaism-d2-2.1-0048
+subdomain: '2.1'
+difficulty: hard
+stem: A card issuer's fraud model misses more fraud than the risk owner's tolerance allows. Lowering the decline threshold
+  would bring misses within tolerance but triple false declines, which fall mostly on recent immigrants with thin credit files.
+  The board's appetite for this kind of customer harm is low. Which treatment should the risk owner BEST pilot and measure against both limits?
+options:
+  A: Lower the decline threshold and accept the extra false declines
+  B: Lower the threshold, sending the extra flags to customer confirmation
+  C: Lower the threshold only for customers with longer credit histories
+  D: Lower the threshold and compensate customers wrongly declined
+answer: B
+explanation:
+  why_correct: The threshold sets which payments are flagged; the harm comes from what is done with a flag. Sending the extra
+    flags to a quick customer confirmation, such as an in-app check, rather than a decline, should catch the additional fraud
+    while genuine customers complete their payments. It is the treatment most likely to keep both the fraud tolerance and
+    the conduct appetite, and the pilot then confirms that the step stops the extra fraud and that few genuine customers abandon it.
+  why_not:
+    A: This meets the fraud tolerance by shifting harm onto a group the board has little appetite to harm, so it breaches
+      the conduct limit instead.
+    C: Separate thresholds would spare thin-file customers, but fraud through their accounts would stay above tolerance, and
+      credit-history length acting as a proxy for immigration status raises its own fairness concerns.
+    D: Compensation reduces the money lost, but the declined payments, failed purchases and the unfair pattern remain, which
+      is the harm the board's appetite is about.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aaism-check
+  options_only: not_obvious

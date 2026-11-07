@@ -1,0 +1,32 @@
+id: aaism-d3-3.4-0037
+subdomain: '3.4'
+difficulty: medium
+stem: An HR analytics assistant answers managers' questions about pay and absence with figures, and refuses any group of fewer
+  than ten employees. A tester learned one person's salary by asking for a team's average pay with and without staff hired
+  in a given month. Managers need to ask new questions freely. Which control BEST addresses this?
+options:
+  A: Raise the minimum group size to twenty-five employees
+  B: Add calibrated noise under a per-user privacy budget
+  C: Limit the assistant to a library of approved questions
+  D: Log each query and review managers' patterns monthly
+answer: B
+explanation:
+  why_correct: 'This is a differencing attack: two answers about large groups that differ by one person reveal that person.
+    Adding calibrated noise, as in differential privacy, bounds how much any pair of answers can reveal about one
+    individual while keeping figures for large groups useful. The budget must cover repeated and coordinated queries,
+    as many answers could otherwise be averaged to remove the noise.'
+  why_not:
+    A: A larger minimum group stops small groups, but differencing works with groups of any size, as long as two of them differ
+      by one person.
+    C: A fixed question library can block differencing, but managers need to ask new questions freely, which a library would
+      prevent.
+    D: Monthly review may spot suspicious pairs of queries, but only after the salaries have been revealed.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aaism-check
+  options_only: not_obvious
