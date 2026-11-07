@@ -1,0 +1,33 @@
+id: aair-d1-1.4-0028
+subdomain: '1.4'
+difficulty: hard
+stem: A company trains staff to treat unexpected video or voice instructions from executives as unverified, after
+  attackers used a cloned voice of its finance director to request an urgent transfer. Its communications team now
+  plans weekly AI avatar videos of the chief executive for staff updates. Which policy rule BEST manages the risk?
+options:
+  A: The chief executive approves each avatar script before it is released
+  B: Each avatar video is labelled as AI-generated in its opening frame
+  C: Avatar videos contain no requests for staff to take any action
+  D: Staff complete refreshed deepfake training before the videos start
+answer: C
+explanation:
+  why_correct: The danger is that staff get used to synthetic executive videos and stop doubting them, which is
+    what an attacker relies on. A rule that official avatar videos never ask anyone to act keeps a clear signal for
+    staff, since any executive video or voice message that asks for action is then suspect and must be verified.
+    The communications benefit stays, and the verification habit is not undone.
+  why_not:
+    A: Script approval makes sure the content is accurate and authorised, which matters, but it does nothing about
+      staff learning to accept executive avatars as normal. A fake video would look just like an approved one.
+    B: Labelling is a common transparency measure, but an attacker can label a fake in the same way, and staff would
+      see a label they have learned to trust. It does not help them tell an official avatar from a malicious one.
+    D: Refreshed training helps, but the programme itself would teach the opposite lesson every week. Training cannot
+      outweigh a policy that makes synthetic executive video routine for any purpose.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aair-check
+  options_only: not_obvious

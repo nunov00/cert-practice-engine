@@ -1,0 +1,32 @@
+id: cissp-d1-1.3-0004
+subdomain: '1.3'
+difficulty: hard
+stem: A retailer has bought a smaller rival. The board wants the rival's staff working in the retailer's ERP within 30 days
+  to start capturing savings. Due diligence found that the rival runs a flat network, shares administrator passwords and keeps
+  unsupported servers, and fixing these will take about a year. What should the CISO recommend?
+options:
+  A: Keep the two networks apart until the rival passes the group's baseline audit
+  B: Connect the rival's users to the ERP through a segregated path limited to it
+  C: Connect the two networks once the rival's endpoints run the group's EDR agent
+  D: Connect the two networks under a dated remediation plan approved by the board
+answer: B
+explanation:
+  why_correct: Security governance supports the business decision while keeping the risk within what the board would accept.
+    A segregated connection that reaches only the ERP lets the acquisition deliver its savings on time, while the rival's
+    flat network, shared passwords and old servers cannot become a path into the rest of the retailer during the year of fixes.
+  why_not:
+    A: Holding back integration until the rival meets the baseline protects the retailer, but it blocks the board's goal for
+      about a year when a narrower connection could meet it safely.
+    C: EDR improves detection on the rival's machines, but it does nothing about shared administrator passwords, a flat network
+      or unsupported servers, which a full connection would make reachable.
+    D: A dated, board-approved plan is good governance for the fixes, but connecting fully in the meantime exposes the whole
+      retailer to the rival's weaknesses for a year.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: not_obvious

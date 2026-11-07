@@ -1,0 +1,31 @@
+id: aaism-d3-3.2-0031
+subdomain: '3.2'
+difficulty: hard
+stem: A retailer's experimentation platform lets data scientists send a share of live chat traffic to any model variant they
+  build and compare customer responses. Dozens of variants run each week. One, live for 1% of users over three days, leaked
+  internal discount codes before anyone noticed. Which life cycle control BEST prevents a repeat?
+options:
+  A: Run new variants only in shadow mode, unseen by users
+  B: Gate each variant on automated security tests before live traffic
+  C: Give each variant the full release review before it goes live
+  D: Cap each experiment at a smaller share of users and fewer days
+answer: B
+explanation:
+  why_correct: Variants reach real customers without any security check, which is how the leaking one got through. An automated
+    security test suite, including checks for leaks of internal data, run before a variant receives live traffic, catches
+    such faults at the speed experiments need, while the full review stays for versions chosen for release.
+  why_not:
+    A: Shadow mode is safe, but experiments exist to measure how customers respond, which needs users to see the replies.
+    C: Full review would catch the fault, but with dozens of variants a week it would stall experimentation or be rushed,
+      and most variants never reach release.
+    D: Smaller caps reduce how many customers see a faulty variant, but a leak to even a few users still exposes the codes,
+      and nothing stops the fault before it goes live.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aaism-check
+  options_only: not_obvious

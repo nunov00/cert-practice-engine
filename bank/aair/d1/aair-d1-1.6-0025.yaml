@@ -1,0 +1,33 @@
+id: aair-d1-1.6-0025
+subdomain: '1.6'
+difficulty: medium
+stem: A public health agency's chatbot answers vaccine questions in twelve languages. Testing shows wrong answers
+  four times as often in three minority languages, whose speakers have the least access to reliable health information.
+  The agency publishes vetted, translated guidance in all twelve. Which approach should the risk practitioner MOST recommend?
+options:
+  A: Launch in all twelve, with the three answering only from the vetted guidance
+  B: Launch in the nine languages that meet the quality bar, adding the rest later
+  C: Launch in all twelve, telling users of the three that answers are less reliable
+  D: Delay the launch until all twelve languages meet the same quality bar
+answer: A
+explanation:
+  why_correct: Holding the chatbot back in the three languages leaves the least-served groups further behind, while
+    launching them as tested exposes those groups to four times the error rate on health advice. Restricting those
+    languages to answers drawn from guidance already vetted in that language keeps them included and gives them
+    reliable content, at the cost of narrower answers until quality improves.
+  why_not:
+    B: A quality bar for each language is a normal release rule, but here it withholds the service from the groups
+      with least access to health information, widening the gap the agency exists to close.
+    C: Telling users about lower reliability is honest, but a warning does not make wrong vaccine advice safe, and
+      the people affected have the fewest other sources to check it against.
+    D: Waiting for equal quality treats every group the same, but it denies the benefit to all twelve groups for
+      an unknown time when a safe option exists for the three weaker languages.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aair-check
+  options_only: not_obvious

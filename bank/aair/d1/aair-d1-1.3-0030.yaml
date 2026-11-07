@@ -1,0 +1,34 @@
+id: aair-d1-1.3-0030
+subdomain: '1.3'
+difficulty: medium
+stem: A small insurer's four-person data science team, led by one manager, has built a pricing model rated high
+  risk. The insurer has no model validation function and cannot justify setting one up. Its actuarial function sets
+  prices from the model's outputs and is measured on pricing margin. Who should BEST validate the model?
+options:
+  A: An external firm engaged by the chief risk officer for this model
+  B: A data scientist in the team who took no part in building the model
+  C: Internal audit, which is independent of the model's development work
+  D: The actuarial function, which has the expertise to judge pricing models
+answer: A
+explanation:
+  why_correct: A high-risk model needs validation by people who neither built it nor depend on its results, and
+    who have the skill to challenge it. With no in-house validation function, an external firm engaged by the second
+    line gives that independence and expertise in proportion to the need, and its findings report outside both the
+    builders and the model's users.
+  why_not:
+    B: Review by an uninvolved team member is a proportionate choice for lower-risk models in small firms. Here
+      the reviewer reports to the same manager as the builders, which is not enough independence for a model rated
+      high risk.
+    C: Internal audit is independent, but doing the validation would make it part of a control it must later give
+      assurance over. Audit should check that validation happens and works, not carry it out.
+    D: The actuaries have the expertise, but they rely on the model's outputs and are measured on the margin it
+      helps to produce. As its main user, they are not independent of the result.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aair-check
+  options_only: not_obvious

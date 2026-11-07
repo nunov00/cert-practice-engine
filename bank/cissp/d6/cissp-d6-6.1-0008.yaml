@@ -1,0 +1,32 @@
+id: cissp-d6-6.1-0008
+subdomain: '6.1'
+difficulty: hard
+stem: A software company releases weekly and commissions one external penetration test each January. In March it redesigned
+  how customers recover their accounts, and in October a researcher showed that the new flow let anyone take over an account.
+  The board asks how security testing should change. Which strategy BEST fits?
+options:
+  A: Move the external penetration test from once a year to once a quarter
+  B: Run automated dynamic scans in the release pipeline on each weekly build
+  C: Test each security-relevant design change before it is released
+  D: Open a public bug bounty programme covering the production application
+answer: C
+explanation:
+  why_correct: The flaw was a logic error in a redesigned security function, and it was live for seven months because testing
+    followed the calendar rather than change. Testing each change to authentication, recovery or access control before release
+    puts the effort where new risk appears, while the yearly test still covers the whole estate.
+  why_not:
+    A: Quarterly tests shorten the gap, but they are still set by the calendar, so a redesign can be live for up to three
+      months before testers look at it, if they look at it at all.
+    B: Pipeline scanners catch many common technical flaws on every build, but they do not understand business logic such
+      as an account recovery flow.
+    D: A bug bounty adds many testers, but they test production, so flaws are found after customers are exposed, which is
+      how this one came to light.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: not_obvious

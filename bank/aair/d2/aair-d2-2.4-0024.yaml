@@ -1,0 +1,33 @@
+id: aair-d2-2.4-0024
+subdomain: '2.4'
+difficulty: medium
+stem: An insurer's AI team keeps its evaluation questions in the same document repository that feeds its assistant's
+  retrieval index and fine-tuning data. After the last two fine-tunes, evaluation scores rose sharply, while complaints
+  about wrong answers did not change. Which data management practice BEST addresses this?
+options:
+  A: Store evaluation data apart from training sources and check for overlap
+  B: Replace the evaluation questions with newly written ones each quarter
+  C: Add the live complaint rate to the release criteria for each version
+  D: Have a team independent of the developers run each evaluation
+answer: A
+explanation:
+  why_correct: Evaluation questions held in the training and retrieval sources end up in what the model learns from
+    and retrieves, so it is tested on material it has already seen. That explains rising scores with no change in
+    real quality. Keeping evaluation data in a separate, controlled store and checking training data for overlap
+    before each fine-tune protects the test itself.
+  why_not:
+    B: New questions give a clean test for a while, but stored in the same repository they leak in the same way
+      at the next fine-tune. It treats the symptom, not where the data is kept.
+    C: Complaints are a useful real-world signal, but they lag, are sparse and do not repair the contaminated test,
+      which stays misleading.
+    D: Independence guards against biased judgement, but an independent team using contaminated questions still
+      gets inflated scores.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aair-check
+  options_only: not_obvious

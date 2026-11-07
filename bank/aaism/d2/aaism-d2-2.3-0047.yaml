@@ -1,0 +1,31 @@
+id: aaism-d2-2.3-0047
+subdomain: '2.3'
+difficulty: hard
+stem: A CRM vendor's contract bars training its models on 'Customer Content' but lets it use 'Service Data', meaning data
+  generated through use of the service, to improve its products. Its AI drafts sales emails from customer records, and the
+  versions users edit and send are logged as Service Data. What should the security manager require?
+options:
+  A: Pseudonymisation of Service Data before the vendor uses it
+  B: An audit right over the vendor's use of Service Data
+  C: Encryption of logged drafts under keys the firm holds
+  D: Service Data defined to exclude anything with Customer Content
+answer: D
+explanation:
+  why_correct: The edited drafts are customer content under another label, so the training bar can be bypassed through the
+    definitions. Narrowing Service Data to exclude anything containing or derived from Customer Content closes that route
+    in the contract itself, while the vendor keeps genuine usage data.
+  why_not:
+    A: Pseudonymisation removes identities, but the drafts also hold prices, deal terms and plans, which stay usable for training.
+    B: An audit right helps check compliance, but the contract as written allows this use, so an audit would find nothing
+      to object to.
+    C: The vendor must read the drafts to provide the service, so it would hold access under any key arrangement, and its
+      permitted uses would be unchanged.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aaism-check
+  options_only: not_obvious

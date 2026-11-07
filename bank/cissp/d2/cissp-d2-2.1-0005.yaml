@@ -1,0 +1,32 @@
+id: cissp-d2-2.1-0005
+subdomain: '2.1'
+difficulty: hard
+stem: A listed company labels draft quarterly results Restricted until they are announced. After each announcement the figures
+  are public, yet copies of the drafts stay labelled Restricted, and staff now say that most Restricted files are harmless
+  and handle them loosely. Which change BEST fixes the classification process?
+options:
+  A: Have owners review their Restricted documents yearly and relabel them as needed
+  B: Label draft results Confidential from the start, to cut the Restricted volume
+  C: Set a downgrade date when labelling information that has a known release event
+  D: Let the DLP tool relabel files whose text matches a published announcement
+answer: C
+explanation:
+  why_correct: The drafts' sensitivity ends at a known event. Recording that event or date when the label is applied lets
+    the label drop on time, routinely or automatically, so Restricted keeps meaning information that is still sensitive and
+    staff have reason to respect it.
+  why_not:
+    A: Periodic owner review is a normal part of classification, but files stay over-labelled for up to a year, and owners
+      facing large volumes tend to confirm the existing label.
+    B: Until announcement, draft results are highly sensitive inside information, so labelling them lower understates the
+      impact during the period when it matters most.
+    D: Content matching is clever, but drafts often differ from the final figures, and relabelling by similarity could downgrade
+      a file that still holds unpublished material.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: not_obvious

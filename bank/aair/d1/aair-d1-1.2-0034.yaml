@@ -1,0 +1,34 @@
+id: aair-d1-1.2-0034
+subdomain: '1.2'
+difficulty: hard
+stem: An insurer cut its claims staff in line with the 70% of claims its AI model settled without review. The model
+  team then retrained the model with a stricter confidence threshold to reduce wrong settlements, and the share fell
+  to 50% on the day it went live. Backlogs breached service standards for six weeks. Which change BEST aligns these
+  processes?
+options:
+  A: Base staffing plans on the settlement share seen in live monitoring
+  B: Keep a pool of trained agency staff to call on when backlogs grow
+  C: Have operations assess each release's effect on staffing before launch
+  D: Require each retrained version to settle at least the current share of claims
+answer: C
+explanation:
+  why_correct: The retrain was a reasonable risk decision, but it changed how much work reached people, and the team
+    that plans staff found out only when backlogs grew. Making the effect on staffing part of each release decision
+    lets operations prepare, or agree a phased release, before the share falls. It joins the model change process
+    to capacity planning, so accuracy and service can be traded off knowingly instead of by surprise.
+  why_not:
+    A: Planning on observed performance is better than planning on a forecast, but monitoring shows a fall only after
+      it has happened. A release can change the share overnight, faster than staffing can follow.
+    B: A reserve pool is useful contingency for any backlog, but it is costly to keep, takes time to bring in, and
+      treats each future release as a surprise instead of preventing the surprise.
+    D: A floor on the settlement share protects capacity, but it would have blocked a change made to cut wrong settlements.
+      Tying model releases to staffing levels in this way puts customer outcomes below workload.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aair-check
+  options_only: not_obvious

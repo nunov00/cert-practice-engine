@@ -1,0 +1,33 @@
+id: aair-d2-2.1-0027
+subdomain: '2.1'
+difficulty: medium
+stem: An insurer is designing an AI assistant that reads customer emails and updates policy records, including address
+  and bank detail changes. Bank detail changes are the most common request and the main time saving. Fraudsters
+  already send forged change requests by email. Which design choice BEST addresses the risk?
+options:
+  A: Instruct the model in its system prompt to ignore instructions inside emails
+  B: Screen incoming emails for known injection phrases before the model reads them
+  C: Have code apply bank detail changes only once the registered contact confirms
+  D: Limit the assistant's write access to address fields, excluding bank details
+answer: C
+explanation:
+  why_correct: The main threat is a request that looks genuine, whether a forged email or one carrying hidden instructions.
+    A confirmation through contact details already on record, enforced by code rather than by the model, stops a
+    fraudulent change whatever the email says or however the model reads it, while the assistant still handles the
+    most common request.
+  why_not:
+    A: Prompt instructions make injection harder but cannot be relied on, and they do nothing about a plainly forged
+      request, which contains no injected instructions at all.
+    B: Screening for injection phrases catches known attacks only, and a forged change request is an ordinary-looking
+      email that would pass any such screen.
+    D: Least privilege is sound design, but taking away bank detail changes removes the main time saving the assistant
+      is being built for. It avoids the risk by giving up the use case.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aair-check
+  options_only: not_obvious

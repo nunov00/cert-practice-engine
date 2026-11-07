@@ -1,0 +1,34 @@
+id: cissp-d1-1.7-0004
+subdomain: '1.7'
+difficulty: hard
+stem: A distributor's board-approved business impact analysis gives order dispatch a 6-hour maximum tolerable downtime, a
+  figure set after dispatchers showed they could keep going for a few hours on fixed weekly routes. IT's recovery plan gives
+  the route-planning engine a 48-hour recovery time objective, as only four planners use it directly. What should the continuity
+  manager do?
+options:
+  A: Document fixed weekly routes as dispatch's workaround for a route-planning outage
+  B: Ask the dispatch owner whether fixed weekly routes could cover a 48-hour outage
+  C: Set the route-planning engine's recovery objective from dispatch's 6-hour limit
+  D: Re-run the impact analysis for the route-planning engine with its four planners
+answer: C
+explanation:
+  why_correct: A supporting system's recovery objective comes from the business processes that depend on it, not from how
+    many people use it directly. Dispatch cannot be down for more than 6 hours, and the fixed-route fallback was weighed when
+    that limit was set, so the route-planning engine must be recoverable inside it, leaving time for dispatch to resume on
+    it.
+  why_not:
+    A: Documenting the workaround is useful, but it was already counted in the 6-hour limit. It carries dispatch for a few
+      hours, not for the two days the engine's current objective allows.
+    B: Asking whether a workaround can stretch the tolerance is sound when it has not been assessed, but the approved analysis
+      assessed it and still set 6 hours. Reopening that to fit IT's tier reverses the analysis.
+    D: The engine's impact comes from the process it supports. Interviewing its four direct users rates it by its own use,
+      the same mistake that produced the 48-hour tier.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: not_obvious

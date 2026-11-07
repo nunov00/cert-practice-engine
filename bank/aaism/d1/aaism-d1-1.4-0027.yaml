@@ -1,0 +1,33 @@
+id: aaism-d1-1.4-0027
+subdomain: '1.4'
+difficulty: medium
+stem: A company uses rented GPUs for its own models, hosted model APIs and SaaS tools with built-in AI, all on providers'
+  standard terms. Post-incident reviews keep finding a control, such as abuse monitoring or output filtering, that each team
+  assumed the provider ran but the service's documentation leaves to the customer. What should the AI security program put
+  in place?
+options:
+  A: Vendor assessments of each provider before a new service is used
+  B: Contract terms requiring each provider to run the missed controls
+  C: A responsibility matrix per service type, checked in each review
+  D: Training for teams on the documentation of each AI service
+answer: C
+explanation:
+  why_correct: The providers do what their documentation says; the gaps are duties the customer never picked up. A matrix
+    setting out, for each type of AI service, which controls the provider runs and which the company must run, checked in
+    each system's security review, turns that split into requirements that teams must meet before launch.
+  why_not:
+    A: Vendor assessments test the provider's own controls, which are working. They do not assign the customer-side duties
+      to anyone in the company.
+    B: The services are bought on standard terms, and providers rarely take on controls that depend on each customer's use,
+      such as filtering its outputs.
+    D: Training helps teams read the documentation, but nothing would check that each new system actually covers its side
+      of the split.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aaism-check
+  options_only: not_obvious

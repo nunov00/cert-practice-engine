@@ -1,0 +1,31 @@
+id: aaism-d2-2.2-0053
+subdomain: '2.2'
+difficulty: medium
+stem: A bank shares a fine-tuned classifier that spots fraudulent payment instructions with twelve partner banks, each running
+  its own copy. Its red team has found a short phrase that makes the model pass fraudulent text. A retrained version will
+  take about three weeks to build and validate. What should the bank do FIRST?
+options:
+  A: Tell partners privately about the phrase and an interim filter
+  B: Retrain the model and send partners the fixed version
+  C: Add the phrase to the input filter on the bank's own copy
+  D: Publish an advisory so other users of the method are warned
+answer: A
+explanation:
+  why_correct: Every partner runs a vulnerable copy now, and the bank alone knows the flaw. Telling partners privately, with
+    a mitigation they can apply at once, such as filtering for the phrase and its variants, closes their exposure during the
+    weeks a proper fix needs, without revealing the bypass to attackers.
+  why_not:
+    B: A retrained model is the lasting fix, but partners would stay exposed and unaware for weeks while it is built and validated.
+    C: Filtering its own copy protects the bank, but the twelve partners running the same model would remain open to the same
+      bypass.
+    D: Public warning can be right once fixes exist, but publishing now would tell attackers how to evade the classifier before
+      users can protect themselves.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aaism-check
+  options_only: not_obvious

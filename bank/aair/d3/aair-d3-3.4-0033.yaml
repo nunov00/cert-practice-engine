@@ -1,0 +1,32 @@
+id: aair-d3-3.4-0033
+subdomain: '3.4'
+difficulty: medium
+stem: A video platform's moderation model sorts flagged content into twelve categories. The risk committee wants
+  a monthly error rate for each category, including three rare ones that carry most of the legal risk. Reviewers
+  can grade about 2,000 decisions a month. How should the graded sample BEST be drawn?
+options:
+  A: Mostly from decisions the model made with low confidence
+  B: At random from the month's decisions, with each rate's margin of error
+  C: From decisions that users appealed, grouped by category
+  D: A set number from each category, weighted back for the overall rate
+answer: D
+explanation:
+  why_correct: A random sample of 2,000 would hold only a handful of items from the rare categories, so their error
+    rates would be too uncertain to act on. Drawing a set number from each category gives each rare one enough graded
+    items for a usable rate, and weighting the results by each category's share still gives a correct overall figure.
+  why_not:
+    A: Low-confidence decisions are where errors cluster, which makes them good for finding mistakes to fix, but
+      a sample chosen that way overstates error rates and misses confident errors.
+    B: Random sampling gives unbiased estimates, and margins of error show their limits honestly, but for the rare
+      categories the margins would be so wide that the committee could not tell a good month from a bad one.
+    C: Appeals show where users disagree, but only some decisions are appealed, so the set is not representative,
+      and errors that favour the user are seldom appealed.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aair-check
+  options_only: not_obvious

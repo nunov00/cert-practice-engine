@@ -1,0 +1,32 @@
+id: cissp-d3-3.7-0003
+subdomain: '3.7'
+difficulty: medium
+stem: A web app keeps session state in tokens encrypted with AES in CBC mode. Testers recovered the contents of several tokens
+  by sending the server thousands of slightly altered copies and recording how its responses differed between them. Which
+  change BEST stops this class of attack?
+options:
+  A: Return one generic error, after a fixed delay, for each rejected token
+  B: Limit each client address to a set number of rejected tokens per hour
+  C: Encrypt tokens with an authenticated mode, checking the tag before decrypting
+  D: Add an HMAC of the plaintext to each token, checking it after decrypting
+answer: C
+explanation:
+  why_correct: 'This is a padding oracle, a chosen-ciphertext attack: how the server reacts to altered ciphertext reveals
+    whether the padding was valid, and that leaks the plaintext byte by byte. An authenticated mode such as AES-GCM, or encrypt-then-MAC,
+    checks integrity over the ciphertext first, so every altered token is rejected before any decryption or padding check
+    runs, and the oracle disappears.'
+  why_not:
+    A: Uniform errors and timing close the obvious channels, but the server still decrypts and checks padding before deciding,
+      and any remaining difference in work done can still be measured, so the root cause stays.
+    B: Rate limiting slows collection, but it does not remove the leak, and an attacker can spread requests across many addresses.
+    D: A MAC protects integrity, but checking it over the plaintext means the server must decrypt and strip padding first,
+      so padding errors and MAC errors can still be told apart. This MAC-then-encrypt order is the one padding oracles exploit.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: not_obvious

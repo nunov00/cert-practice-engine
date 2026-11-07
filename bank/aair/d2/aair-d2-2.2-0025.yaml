@@ -1,0 +1,33 @@
+id: aair-d2-2.2-0025
+subdomain: '2.2'
+difficulty: medium
+stem: A bank validates its customer assistant by having a second language model grade 5,000 answers against a rubric,
+  and 94% pass. The grading model comes from the same provider and model family as the assistant. What should the
+  validation MOST add?
+options:
+  A: Grading of 20,000 answers drawn from recent live customer questions
+  B: Expert grading of a sample to measure agreement with the grading model
+  C: Grading by a larger and more capable model from the same provider
+  D: Expert review of each answer the grading model marked as a fail
+answer: B
+explanation:
+  why_correct: The 94% is only as good as the grader, and nothing yet shows that the grader judges answers the way
+    the bank's experts would. Models from the same family also tend to favour their own style of answer and share
+    blind spots. Having experts grade a sample and measuring their agreement with the model shows whether the automated
+    score can be trusted, and where it cannot.
+  why_not:
+    A: A larger, more realistic sample is valuable, but grading more answers with an unchecked grader multiplies
+      an unknown error instead of removing it.
+    C: A stronger grader may judge better, but one from the same provider and family can share the same biases,
+      and its accuracy would still be unmeasured.
+    D: Expert review of failed answers brings in human judgement, but only on one side. It can show the grader is
+      too strict, yet never sees false passes, the errors that would inflate the 94%.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aair
+  check_verdict: fail
+  checked_by: 2026-11-07-daily-aair-check
+  options_only: obvious

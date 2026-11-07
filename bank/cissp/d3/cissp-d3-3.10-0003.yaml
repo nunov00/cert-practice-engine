@@ -1,0 +1,32 @@
+id: cissp-d3-3.10-0003
+subdomain: '3.10'
+difficulty: hard
+stem: A bank's project team built a loan-origination system over two years and will disband at go-live next month, with the
+  developers moving to other projects. The system's open-source components are current today, and it passed its security tests.
+  Operations will run the servers. Which item is MOST important to add to the transition plan?
+options:
+  A: A named team funded to maintain the application code and its components
+  B: A yearly penetration test of the system, beginning a year after go-live
+  C: A software composition scan in the build pipeline that flags weak components
+  D: Monthly patching by operations of the servers' operating systems and databases
+answer: A
+explanation:
+  why_correct: Security at go-live decays as flaws are found in the code and its components. The plan covers the platform
+    but leaves no one responsible for the application once the developers leave, so a team named and funded to maintain it
+    is what keeps every later fix, scan result or test finding from going unaddressed.
+  why_not:
+    B: Periodic testing is part of operating a system, but findings from it need people who can change the code, and the developers
+      will have moved on.
+    C: A composition scan reports vulnerable components as they are disclosed, but someone must update and rebuild the application,
+      and with the project team gone the alerts would have no owner.
+    D: Operating system and database patching is needed, but it covers the platform, not the application's own code and bundled
+      open-source components.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: obvious

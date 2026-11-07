@@ -1,0 +1,32 @@
+id: aair-d2-2.3-0023
+subdomain: '2.3'
+difficulty: medium
+stem: A bank's change procedure lets model teams release urgent fixes without validation during incidents. Most
+  incidents come from upstream data format changes that older model versions cannot process. A fix released at night
+  stayed live, unvalidated, for eight months and later mis-scored some applicants. Which change BEST addresses this?
+options:
+  A: Allow emergency changes only as rollbacks to the last validated version
+  B: Require the chief risk officer to approve each emergency change in advance
+  C: Record each emergency change in the inventory for the next yearly review
+  D: Require full validation of each emergency change within a set period
+answer: D
+explanation:
+  why_correct: "The emergency route is needed: incidents happen at any hour, and older versions cannot read the\
+    \ new data formats. What failed is that an unvalidated fix could stay live with no limit. Requiring full validation\
+    \ within a set time after release keeps the fast route while capping how long an untested model can make decisions."
+  why_not:
+    A: Rolling back to a validated version is the safest emergency action where it works, but here older versions
+      cannot process the changed data formats, so rollback is often not available.
+    B: Senior approval adds a check before release, but it does not test the fix, and needing the chief risk officer
+      at night during an incident slows the response without validating anything.
+    C: Recording the change leaves a trail, but a yearly review would still let an unvalidated fix decide applications
+      for up to a year, as happened here.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aair-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aaism-d3-3.2-0030
+subdomain: '3.2'
+difficulty: hard
+stem: A content moderation model catches abusive posts written with look-alike characters in offline evaluation, but such
+  posts pass in production. When the model was deployed, the serving team rebuilt the text preprocessing in a faster language.
+  Which life cycle control BEST prevents this class of problem?
+options:
+  A: Adversarial training on posts written with look-alike characters
+  B: A serving filter that maps look-alike characters to plain ones
+  C: Pre-release tests of the serving system with evasion examples
+  D: One versioned preprocessing component used in training and serving
+answer: D
+explanation:
+  why_correct: The model handles these posts when it receives text prepared as in training, so the fault is that production
+    prepares text differently. Using one versioned preprocessing component in both training and serving removes the mismatch
+    at its cause, for look-alike characters and for any other step that would otherwise drift apart.
+  why_not:
+    A: The model already catches these posts offline, so more adversarial training does not touch the difference between how
+      training and serving prepare text.
+    B: A serving filter fixes this one gap, but the rebuilt preprocessing can differ in other steps, which would only surface
+      as new evasions.
+    C: End-to-end tests would catch mismatches for the cases they include, so they are a good release check, but they detect
+      differences one case at a time rather than preventing them.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aaism-check
+  options_only: not_obvious

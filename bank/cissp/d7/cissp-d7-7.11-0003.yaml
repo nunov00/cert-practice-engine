@@ -1,0 +1,32 @@
+id: cissp-d7-7.11-0003
+subdomain: '7.11'
+difficulty: hard
+stem: After a flood, a manufacturer moved its systems to its recovery site and will run there for at least five months while
+  the primary data centre is rebuilt. The recovery site, a colocation suite 20 km away built to the primary's security baseline,
+  is the company's only other facility. What should the DR manager do NEXT?
+options:
+  A: Fast-track the primary rebuild so that the stay at the recovery site is shorter
+  B: Test the failback procedure now so the return can begin when the rebuild ends
+  C: Hold the post-incident review now, while the flood response is fresh in mind
+  D: Arrange an alternate site that could take over if the recovery site fails
+answer: D
+explanation:
+  why_correct: 'While production runs at the recovery site, the company has no recovery capability left: one more event at
+    that suite would leave it with nowhere to go, and the exposure lasts at least five months. Restoring a fallback, such
+    as a contracted alternate site or cloud capacity, is the most important gap to close during an extended stay.'
+  why_not:
+    A: A shorter stay reduces the exposure, but a rebuild has its own limits and rushing it adds risk. Even a faster rebuild
+      leaves months with no fallback.
+    B: Failback must be tested before the return, but the return is months away. Testing it now does nothing for the exposure
+      the company carries until then.
+    C: A prompt review captures lessons while memories are fresh, but it improves future plans rather than the company's current
+      position with no second site.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: not_obvious

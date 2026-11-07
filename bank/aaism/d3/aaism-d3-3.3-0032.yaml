@@ -1,0 +1,33 @@
+id: aaism-d3-3.3-0032
+subdomain: '3.3'
+difficulty: medium
+stem: A telecom's support assistant drafts replies that agents may send unchanged, and it is retrained each quarter on resolved
+  tickets. Its billing errors grow with each retrain, and reviewers say its wrong answers read as well as its right ones.
+  Most current products launched after the assistant went live. Which control BEST protects the training data?
+options:
+  A: Train only on tickets resolved before the assistant went live
+  B: Tag drafted text when created so unedited drafts can be left out
+  C: Screen ticket replies with a quality classifier before training
+  D: Have billing experts review a random sample of training tickets
+answer: B
+explanation:
+  why_correct: Drafts sent unchanged return to the training data as if agents had written them, so each retrain learns the
+    assistant's own mistakes more firmly. Recording at creation which text came from the assistant, and whether an agent edited
+    it, lets the training set leave out or down-weight unedited drafts while keeping every ticket agents actually wrote, including
+    those about new products.
+  why_not:
+    A: Older tickets are free of drafts, but most current products launched later, so the model would lose the examples it
+      needs for the questions customers now ask.
+    C: A quality classifier judges how an answer reads, and the wrong drafts read as well as the right ones, so it would pass
+      most of them.
+    D: Expert sampling measures the error rate and corrects the tickets it covers, but it cannot find and remove the bulk
+      of assistant text across a quarter's tickets.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aaism-check
+  options_only: not_obvious

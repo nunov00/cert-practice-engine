@@ -1,0 +1,32 @@
+id: cissp-d7-7.5-0003
+subdomain: '7.5'
+difficulty: medium
+stem: A company encrypts its backup tapes and sends them weekly to a third-party vault 50 km away. The encryption keys are
+  held in the backup server's own key store, in the head office data centre. In a recovery exercise that assumed the loss
+  of that data centre, the team could not read any tape. Which change BEST fixes this?
+options:
+  A: Replicate the tape keys to a key manager at the company's recovery site
+  B: Copy the key store to an encrypted USB drive kept in the head office safe
+  C: Add the key store to the weekly backup job so a copy reaches the vault
+  D: Escrow the tape keys with the vault provider under a separate contract
+answer: A
+explanation:
+  why_correct: Encrypted media can be recovered only if its keys survive the same disaster, without ending up with whoever
+    holds the tapes. A key manager at the recovery site is outside the lost data centre, is under the company's own control,
+    and does not depend on the tapes it unlocks.
+  why_not:
+    B: An offline copy in a safe is a common escrow step, but the safe is in the head office building, which is the site the
+      exercise assumed was lost.
+    C: Backing up the key store sends a copy off site, but the copy is written to tapes encrypted with those same keys, so
+      it cannot be read without the keys it contains.
+    D: Escrow with a third party survives the loss of head office, but the vault provider would then hold both the tapes and
+      their keys, so one custodian, or one breach there, could read every tape.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-cissp-check
+  options_only: not_obvious

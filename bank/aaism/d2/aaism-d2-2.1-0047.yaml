@@ -1,0 +1,33 @@
+id: aaism-d2-2.1-0047
+subdomain: '2.1'
+difficulty: medium
+stem: 'A lender''s risk register rates two AI risks the same on likelihood and impact: its fee chatbot quoting wrong charges,
+  and its payslip-reading model misstating income in loan files. Customers usually query a wrong fee within days. Loans approved
+  on misstated income would show up mainly as defaults a year or more later. Which risk should be treated FIRST, and why?'
+options:
+  A: The fee risk, as each error reaches a customer directly
+  B: The fee risk, as more customers use the chatbot than apply for loans
+  C: The income risk, as lending decisions carry more regulatory weight
+  D: The income risk, as its errors would build up before anyone sees them
+answer: D
+explanation:
+  why_correct: Equal ratings hide how long each failure runs before it is noticed. Wrong fees are caught by customers within
+    days, which limits how much harm builds up. Misstated income goes unnoticed until defaults appear, so every loan approved
+    in the meantime adds to the loss. That longer exposure makes the income risk larger than the matrix shows, and it should
+    be treated first, for example with checks against source documents.
+  why_not:
+    A: Direct customer contact is why fee errors are noticed quickly. It shortens how long each error runs, which argues for
+      less urgency, not more.
+    B: Chatbot volume is already part of the likelihood rating. Wrong fees are spotted and corrected within days, so their
+      harm stays limited however many customers chat.
+    C: Regulatory weight is part of impact, which the register already rated equal. Re-arguing impact misses the factor the
+      rating leaves out, how long errors go unseen.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aaism-check
+  options_only: not_obvious

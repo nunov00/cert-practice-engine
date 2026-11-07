@@ -1,0 +1,34 @@
+id: aair-d3-3.2-0032
+subdomain: '3.2'
+difficulty: medium
+stem: A lender's model for expected credit losses, which feed its provisions, underestimated losses after a sharp
+  rise in interest rates. Its ten years of training data contain no comparable period, and enough new loss data
+  will take over a year to build up. Which treatment is MOST appropriate now?
+options:
+  A: Retrain the model now on the losses seen after rates began to rise
+  B: Apply a documented, approved adjustment to its outputs until rebuilt
+  C: Return to the previous, simpler model that the current one replaced
+  D: Accept the limitation with board approval and disclose it in the accounts
+answer: B
+explanation:
+  why_correct: The model cannot reflect conditions it has never seen, and the data to fix it does not exist yet.
+    A documented, approved adjustment on top of its outputs, based on expert judgement and stress analysis, corrects
+    the known understatement now, keeps the provisions defensible, and is removed once the model can be rebuilt
+    on new data.
+  why_not:
+    A: Retraining is the long-term fix, but a few months of losses are too little data, and losses from rate rises
+      take time to appear. A model retrained now would still understate them.
+    C: Going back to the older model adds no knowledge of a rate shock unless it was built on such a period, which
+      nothing suggests, and it gives up whatever the replacement improved. It swaps a known understatement for an
+      unmeasured one.
+    D: Disclosure is part of good reporting, but accepting a known understatement leaves the provisions wrong. It
+      is not a reasonable treatment when a correction is available.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-07-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-07-daily-aair-check
+  options_only: not_obvious
