@@ -1,6 +1,6 @@
 id: aair-d3-3.1-0035
 subdomain: '3.1'
-difficulty: hard
+difficulty: medium
 stem: A bank's online loan process calls a vendor's fraud model for each application. So that applicants are not kept
   waiting, any call that takes longer than two seconds is skipped and the application continues to the credit decision.
   Which risk scenario should the assessment MOST include?

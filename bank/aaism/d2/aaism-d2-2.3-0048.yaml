@@ -5,21 +5,21 @@ stem: A team uses a model aggregator that sends each prompt to whichever of abou
   Prompts include draft contract text. The aggregator's own terms bar retention, but each provider applies its own terms on
   retention and training. What should the security manager require?
 options:
-  A: A security assessment of the aggregator and its terms
+  A: Routing only to providers with an independent security certification
   B: Notice from the aggregator before it adds a new provider
   C: Routing restricted to providers whose terms the firm accepts
-  D: Removal of personal data from prompts before they are sent
+  D: Zero-retention terms agreed with the five most used providers
 answer: C
 explanation:
   why_correct: Each prompt may land with any of 30 providers, each under its own terms, so the aggregator's promises do not
     reach where the data goes. Restricting routing to providers the firm has assessed and whose terms it accepts puts every
     destination under known conditions while keeping the aggregator's convenience.
   why_not:
-    A: Assessing the aggregator is a sensible step, but its terms do not bind the providers that actually receive and may
-      keep the prompts.
+    A: A security certification shows that a provider protects data well, but not what its terms allow it to keep or
+      train on.
     B: Notice of new providers helps track change, but prompts already go to about 30 providers with varied terms.
-    D: Removing personal data lowers privacy risk, but draft contract text is confidential business content and would still
-      reach providers that may train on it.
+    D: Covering the most used providers protects most prompts, but cheapest-route switching still sends some prompts to
+      the other providers under their own terms.
 status: published
 outline_version: '2025-08-19'
 sample: false

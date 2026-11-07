@@ -21,7 +21,7 @@ explanation:
       candidates for each change.
     D: Alerts flag agent changes for review, but they do not say which conversation produced each change, which is what the
       investigators lacked.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

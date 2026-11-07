@@ -7,13 +7,14 @@ stem: Two years ago a company assessed a SaaS case-management service before buy
 options:
   A: Reassess the service in full each year, including its data flows
   B: Monitor traffic to the service with a cloud access security broker
-  C: Contract for advance notice of new sub-processors, with a right to object
+  C: Contract that no new sub-processor gets data until the customer approves
   D: Let only the IT team enable new features in the service's admin console
 answer: C
 explanation:
   why_correct: The change happened on the provider's side, between assessments, and reached the company only through the press.
-    A contractual duty to give notice before adding a sub-processor, with a right to object or exit, puts such changes in
-    front of the company before its data moves.
+    A contract term that no new sub-processor receives customer data until the customer approves, with an enforceable
+    right to refuse and new data-sharing features kept off until then, means such changes need the company's agreement
+    before its data moves.
   why_not:
     A: Periodic reassessment is standard for acquired services and would catch the change eventually, but a yearly cycle can
       leave a provider-side change running for months before the next review.

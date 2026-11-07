@@ -12,9 +12,9 @@ options:
 answer: A
 explanation:
   why_correct: Evaluation questions held in the training and retrieval sources end up in what the model learns from
-    and retrieves, so it is tested on material it has already seen. That explains rising scores with no change in
-    real quality. Keeping evaluation data in a separate, controlled store and checking training data for overlap
-    before each fine-tune protects the test itself.
+    and retrieves, so it is likely tested on material it has already seen, which would explain rising scores with no change in
+    real quality. Keeping evaluation data in a separate, controlled store and checking training and retrieval data for overlap
+    before each fine-tune confirms the cause and protects the test itself.
   why_not:
     B: New questions give a clean test for a while, but stored in the same repository they leak in the same way
       at the next fine-tune. It treats the symptom, not where the data is kept.
@@ -22,7 +22,7 @@ explanation:
       which stays misleading.
     D: Independence guards against biased judgement, but an independent team using contaminated questions still
       gets inflated scores.
-status: published
+status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:

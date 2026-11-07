@@ -12,8 +12,9 @@ options:
 answer: A
 explanation:
   why_correct: Scope follows wherever card data is stored, processed or transmitted. Keypad entry with tone masking sends
-    the digits straight to the payment provider and hides them from the agent, the desktop and the recording, so card data
-    never enters the call centre and most of it drops out of scope.
+    the digits to the payment provider and hides them from the agent, the desktop and the recording. Provided the card data
+    path separates before the call-centre systems and those systems cannot affect it, most of the call centre drops out
+    of scope.
   why_not:
     B: Pausing the recording keeps card numbers out of the recordings, but agents still hear and type them, so the desktops
       and network stay in scope.

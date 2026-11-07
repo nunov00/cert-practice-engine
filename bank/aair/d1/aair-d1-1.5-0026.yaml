@@ -1,7 +1,7 @@
 id: aair-d1-1.5-0026
 subdomain: '1.5'
 difficulty: medium
-stem: A supermarket's loyalty scheme terms allow personalised offers based on purchases. Its new model infers from
+stem: A supermarket subject to the EU GDPR runs a loyalty scheme whose terms allow personalised offers based on purchases. Its new model infers from
   shopping baskets which members are probably managing diabetes, so that it can send them offers on suitable products.
   Which legal consideration should the risk practitioner MOST raise?
 options:
@@ -11,9 +11,10 @@ options:
   D: Whether inferring a health condition needs members' explicit consent
 answer: D
 explanation:
-  why_correct: Data protection laws give health data special protection, and an inference that a named member probably
-    has diabetes is health data about that person, even though it comes from ordinary purchases. Processing it generally
-    needs a specific condition, such as explicit consent, which general loyalty terms do not provide. Without that
+  why_correct: The GDPR treats health data as a special category, and an inference that a named member probably
+    has diabetes is health data about that person, even though it comes from ordinary purchases. Processing it needs
+    one of the conditions the GDPR lists, and for marketing the only realistic one is explicit consent, which general
+    loyalty terms do not provide. Without that
     condition the processing is unlawful from the start, whatever other safeguards are added.
   why_not:
     A: Purpose and transparency matter, and the terms already allow personalised offers. The issue is not whether

@@ -17,7 +17,8 @@ explanation:
   why_not:
     B: An offline copy in a safe is a common escrow step, but the safe is in the head office building, which is the site the
       exercise assumed was lost.
-    C: Backing up the key store sends a copy off site, but the copy is written to tapes encrypted with those same keys, so
+    C: Backing up the key store sends a copy off site, but the normal tape job encrypts everything it writes, the key-store copy included,
+      with those same keys, so
       it cannot be read without the keys it contains.
     D: Escrow with a third party survives the loss of head office, but the vault provider would then hold both the tapes and
       their keys, so one custodian, or one breach there, could read every tape.

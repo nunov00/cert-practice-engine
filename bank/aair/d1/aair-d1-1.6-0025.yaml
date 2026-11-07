@@ -14,7 +14,8 @@ explanation:
   why_correct: Holding the chatbot back in the three languages leaves the least-served groups further behind, while
     launching them as tested exposes those groups to four times the error rate on health advice. Restricting those
     languages to answers drawn from guidance already vetted in that language keeps them included and gives them
-    reliable content, at the cost of narrower answers until quality improves.
+    reliable content, at the cost of narrower answers until quality improves. The restricted mode
+    must itself be re-tested in those languages before launch.
   why_not:
     B: A quality bar for each language is a normal release rule, but here it withholds the service from the groups
       with least access to health information, widening the gap the agency exists to close.
@@ -22,7 +23,7 @@ explanation:
       the people affected have the fewest other sources to check it against.
     D: Waiting for equal quality treats every group the same, but it denies the benefit to all twelve groups for
       an unknown time when a safe option exists for the three weaker languages.
-status: published
+status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:

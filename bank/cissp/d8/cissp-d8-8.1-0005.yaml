@@ -1,6 +1,6 @@
 id: cissp-d8-8.1-0005
 subdomain: '8.1'
-difficulty: hard
+difficulty: medium
 stem: Three times this year, after a team retired a web app and deleted its cloud resources, an attacker claimed the freed
   cloud hostname that the company's DNS record still pointed to, and served pages under the company's domain within hours.
   Teams retire about ten apps a month. Which change BEST addresses this in the development life cycle?
@@ -12,8 +12,9 @@ options:
 answer: C
 explanation:
   why_correct: The takeovers come from the retirement phase of the life cycle, where the DNS record outlives the resource
-    it points to. Making DNS removal a step of decommissioning, ordered before the resources are deleted, means no record
-    is left dangling for anyone to claim, for every app a team retires.
+    it points to. Making DNS removal a step of decommissioning, ordered before the resources are deleted, and letting cached
+    DNS answers expire before the hostname is released, means no record is left dangling for anyone to claim, for every
+    app a team retires.
   why_not:
     A: A dangling-record scan is a useful safety net, but the attackers claimed the names within hours, and a weekly scan
       finds them days later.

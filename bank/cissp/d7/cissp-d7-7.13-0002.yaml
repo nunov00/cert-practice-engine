@@ -1,6 +1,6 @@
 id: cissp-d7-7.13-0002
 subdomain: '7.13'
-difficulty: hard
+difficulty: medium
 stem: A finance team's continuity plan says that while the payment system is down, any finance manager may phone payment instructions
   to the bank. In last month's exercise, the backlog made manual payments far larger than usual, and a facilitator posing
   as a director talked one manager into an urgent transfer. As the security member of the planning group, which change should

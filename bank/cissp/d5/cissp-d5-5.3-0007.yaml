@@ -1,6 +1,6 @@
 id: cissp-d5-5.3-0007
 subdomain: '5.3'
-difficulty: hard
+difficulty: medium
 stem: A company's expense app signs staff in through a cloud identity platform. Developers registered it as multi-tenant to
   ease a planned partner rollout, and the app checks each token's expiry and audience. A tester signed in with an account
   from her own organisation's tenant on the same platform and filed expenses. Which check BEST closes this?
@@ -12,14 +12,15 @@ options:
 answer: B
 explanation:
   why_correct: With a multi-tenant registration the platform issues tokens for the app to users of any tenant, and those tokens
-    carry the right audience. The issuer, or tenant, claim says which organisation vouched for the user, so checking it against
-    the company's own tenant and approved partner tenants is what limits sign-in to the intended organisations.
+    carry the right audience. The issuer, or tenant, claim says which organisation vouched for the user, so validating it against
+    the tenants configured as trusted, the company's own and approved partners', is what limits sign-in to the intended organisations.
   why_not:
-    A: Checking the email domain looks like a natural filter, but the email claim is set by the user's own tenant, whose administrators
-      can give an account an address in the company's domain.
+    A: Checking the email domain looks like a natural filter, but the email claim is set by the user's own tenant, and on many platforms
+      its administrators can set an address in the company's domain, so the claim does not prove membership.
     C: An MFA claim shows how the user signed in at her own tenant. The tester's organisation can satisfy it, and she would
       still be from the wrong organisation.
-    D: Signature checks are essential, but the platform signs every tenant's tokens with the same published keys, so the tester's
+    D: Signature checks are essential, but on a multi-tenant platform of this kind every tenant's tokens are typically signed
+      with the same published keys, so the tester's
       genuine token would pass.
 status: published
 outline_version: '2024-04-15'

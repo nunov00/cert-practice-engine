@@ -3,7 +3,7 @@ subdomain: '2.1'
 difficulty: hard
 stem: A card issuer's fraud model misses more fraud than the risk owner's tolerance allows. Lowering the decline threshold
   would bring misses within tolerance but triple false declines, which fall mostly on recent immigrants with thin credit files.
-  The board's appetite for this kind of customer harm is low. Which treatment BEST fits both limits?
+  The board's appetite for this kind of customer harm is low. Which treatment should the risk owner BEST pilot and measure against both limits?
 options:
   A: Lower the decline threshold and accept the extra false declines
   B: Lower the threshold, sending the extra flags to customer confirmation
@@ -12,8 +12,9 @@ options:
 answer: B
 explanation:
   why_correct: The threshold sets which payments are flagged; the harm comes from what is done with a flag. Sending the extra
-    flags to a quick customer confirmation, such as an in-app check, rather than a decline, catches the additional fraud while
-    genuine customers complete their payments, keeping both the fraud tolerance and the conduct appetite.
+    flags to a quick customer confirmation, such as an in-app check, rather than a decline, should catch the additional fraud
+    while genuine customers complete their payments. It is the treatment most likely to keep both the fraud tolerance and
+    the conduct appetite, and the pilot then confirms that the step stops the extra fraud and that few genuine customers abandon it.
   why_not:
     A: This meets the fraud tolerance by shifting harm onto a group the board has little appetite to harm, so it breaches
       the conduct limit instead.

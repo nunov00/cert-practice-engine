@@ -1,6 +1,6 @@
 id: aaism-d3-3.3-0031
 subdomain: '3.3'
-difficulty: hard
+difficulty: medium
 stem: A bank and a retailer want a joint credit model for the customers they share. The bank holds repayment histories, the
   retailer holds purchase patterns, and the model's value comes from combining both for each person. Neither firm may see
   the other's customer-level records. Which approach BEST meets this?
@@ -23,7 +23,7 @@ explanation:
       the rows and read the other firm's records for every shared customer.
     D: Synthetic copies made separately by each firm cannot be joined person by person, so the link between a customer's repayments
       and purchases, which is the point of the model, is lost.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

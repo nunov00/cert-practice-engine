@@ -79,7 +79,7 @@ older Checked date.
   Checked 2026-10-24: 150 questions over four domains (Governance 26%, Risk
   Assessment 22%, Risk Response and Reporting 32%, Technology and Security
   20%), on the outline in force since 2025-11-03, which reweighted two domains
-  and kept the same four; more than 45,000 holders since inception, so demand
+  and kept the same four; more than 46,000 holders (ISACA's CRISC page, 2026-11-07), so demand
   stays at 3. ISACA publishes a free practice quiz for calibration.
   Re-checked 2026-11-07: the same 150 questions and four weights, the free
   10-question practice quiz, and no outline change announced.

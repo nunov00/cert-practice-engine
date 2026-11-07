@@ -6,15 +6,15 @@ stem: An HR analytics assistant answers managers' questions about pay and absenc
   in a given month. Managers need to ask new questions freely. Which control BEST addresses this?
 options:
   A: Raise the minimum group size to twenty-five employees
-  B: Add calibrated random noise to each figure returned
+  B: Add calibrated noise under a per-user privacy budget
   C: Limit the assistant to a library of approved questions
   D: Log each query and review managers' patterns monthly
 answer: B
 explanation:
   why_correct: 'This is a differencing attack: two answers about large groups that differ by one person reveal that person.
-    Adding calibrated noise, as in differential privacy, makes the gap between two such answers too uncertain to reveal any
-    individual while keeping figures for large groups useful. The noise needs a budget per user, as repeated questions would
-    otherwise average it out.'
+    Adding calibrated noise, as in differential privacy, bounds how much any pair of answers can reveal about one
+    individual while keeping figures for large groups useful. The budget must cover repeated and coordinated queries,
+    as many answers could otherwise be averaged to remove the noise.'
   why_not:
     A: A larger minimum group stops small groups, but differencing works with groups of any size, as long as two of them differ
       by one person.

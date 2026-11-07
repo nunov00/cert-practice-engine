@@ -13,8 +13,9 @@ answer: A
 explanation:
   why_correct: The errors look right, so a control that relies on format or on the model's own view can miss them.
     Adding up the line items checks that the extracted figures are consistent with each other, and matching the total
-    to the purchase order brings in an independent record of what was agreed. Together they catch a misread figure
-    whatever the model believed, and run automatically on each invoice before payment.
+    to the purchase order brings in an independent record of what was agreed. Together they catch most misread figures
+    whatever the model believed, and run automatically on each invoice before payment. They cannot settle everything,
+    such as what is payable on a partial delivery, so any mismatch goes to staff before payment.
   why_not:
     B: Routing low-confidence cases is a common design, but a language model's stated confidence is often a poor
       guide to its accuracy, and plausible misreadings are just the kind it states confidently.

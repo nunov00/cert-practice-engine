@@ -7,7 +7,7 @@ stem: A company began giving written warnings to staff who click a second simula
 options:
   A: Keep the warnings, and add a one-click report button to the mail client
   B: Keep the warnings, but only for staff who click three times in a year
-  C: Replace the warnings with retraining after a second click in a year
+  C: Suspend the warnings for six months, then review the click rate
   D: End the warnings, and recognise staff who report suspect mail promptly
 answer: D
 explanation:
@@ -20,8 +20,8 @@ explanation:
       that cause that fear stay in place.
     B: A higher threshold spares occasional clickers, but every click still moves staff closer to a warning, so the reason
       to hide a click remains.
-    C: Retraining is a milder and common consequence, but it is still a penalty triggered by being recorded, so staff who
-      clicked a real phish still have a reason to say nothing.
+    C: A suspension removes the penalty for now, but staff know the warnings may return after the review, so a recorded
+      click is still something to hide, and nothing encourages prompt reporting.
 status: published
 outline_version: '2024-04-15'
 sample: false

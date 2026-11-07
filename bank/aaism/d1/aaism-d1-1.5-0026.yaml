@@ -3,7 +3,7 @@ subdomain: '1.5'
 difficulty: medium
 stem: A support agent read a poisoned web page and began sending customer data to an outside address. Responders blocked the
   page and restored service. Two days later the agent again sent data to the same address, and its logs show no outside pages
-  fetched since. Which eradication step was MOST likely missed?
+  fetched since. The agent reloads its saved notes at the start of each session. Which eradication step was MOST likely missed?
 options:
   A: Updating injection filter rules for fetched web pages
   B: Replacing the model version deployed when it began

@@ -7,14 +7,15 @@ stem: A web app keeps session state in tokens encrypted with AES in CBC mode. Te
 options:
   A: Return one generic error, after a fixed delay, for each rejected token
   B: Limit each client address to a set number of rejected tokens per hour
-  C: Encrypt tokens with an authenticated mode, checking the tag before decrypting
+  C: Encrypt tokens with an AEAD mode, rejecting any that fail authentication
   D: Add an HMAC of the plaintext to each token, checking it after decrypting
 answer: C
 explanation:
   why_correct: 'This is a padding oracle, a chosen-ciphertext attack: how the server reacts to altered ciphertext reveals
-    whether the padding was valid, and that leaks the plaintext byte by byte. An authenticated mode such as AES-GCM, or encrypt-then-MAC,
-    checks integrity over the ciphertext first, so every altered token is rejected before any decryption or padding check
-    runs, and the oracle disappears.'
+    whether the padding was valid, and that leaks the plaintext byte by byte. An AEAD mode such as AES-GCM has no padding and returns
+    either verified plaintext or one uniform failure, so every altered token fails the same way before any plaintext is
+    used, and the oracle disappears. Encrypt-then-MAC with CBC gets the same result by checking a MAC over the ciphertext
+    before decrypting.'
   why_not:
     A: Uniform errors and timing close the obvious channels, but the server still decrypts and checks padding before deciding,
       and any remaining difference in work done can still be measured, so the root cause stays.

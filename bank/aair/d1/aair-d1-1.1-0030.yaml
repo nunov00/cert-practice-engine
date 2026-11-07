@@ -8,7 +8,7 @@ options:
   A: Rank customers by their predicted chance of leaving and call the top of the list
   B: Rank customers by how much a call is predicted to change their chance of leaving
   C: Rank customers by their predicted chance of leaving, weighted by yearly revenue
-  D: Rank customers by their predicted chance of accepting the retention offer
+  D: Rank customers by how they responded to past retention campaigns
 answer: B
 explanation:
   why_correct: The aim is the most customers kept per call, which depends on how much a call changes a customer's
@@ -20,10 +20,10 @@ explanation:
       full of customers a call does not save, so it spends the budget where calls have least effect.
     C: Weighting risk by revenue is a sound refinement when calls work equally well on everyone, but it still ranks
       by the chance of leaving. Valuable customers who will leave anyway still get calls that change nothing.
-    D: Likely acceptance looks like a measure of a call's effect, but many customers who take an offer would have
-      stayed anyway. Ranking by acceptance spends the budget on discounts for loyal customers, not on changing who
+    D: Past campaign response looks like a measure of a call's effect, but many customers who took an offer would have
+      stayed anyway. Ranking by past response spends the budget on discounts for loyal customers, not on changing who
       leaves.
-status: published
+status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:

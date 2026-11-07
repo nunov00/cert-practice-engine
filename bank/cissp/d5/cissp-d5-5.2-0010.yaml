@@ -8,20 +8,21 @@ stem: A company requires 12-character passwords with mixed character types, chan
 options:
   A: Lock each account for 30 minutes after five failed sign-in attempts
   B: Raise the minimum length to 16, keeping the complexity rules
-  C: Block new passwords that resemble the user's last ten passwords
-  D: Screen each new password against published compromised-password sets
+  C: Block new passwords containing dictionary words or the current year
+  D: Screen new passwords against compromised and commonly used password lists
 answer: D
 explanation:
   why_correct: The rules failed because they test a password's form, not whether attackers already know it. Screening new
     passwords against published sets of compromised and frequently used passwords rejects exactly the kinds used here, including
-    season-and-year patterns, which appear in such sets. Current guidance, such as NIST SP 800-63B, recommends this screening.
+    season-and-year patterns, which appear in such sets. Current guidance, such as NIST SP 800-63B, recommends this screening. It applies as passwords are set, so accounts
+    whose current passwords are already exposed also need a reset.
   why_not:
     A: Lockout throttles guessing, but these attackers already had working passwords and got in at the first or second try,
       well under any lockout threshold.
     B: A longer minimum makes brute force harder, but a leaked or patterned password can be 16 characters long, so the passwords
       used in these takeovers could still pass.
-    C: Blocking resemblance to past passwords stops staff stepping their own passwords, but most takeovers used passwords
-      leaked by other websites, which this check does not see.
+    C: Blocking dictionary words and the year catches some patterns, but most takeovers used passwords leaked by other
+      websites, which this check does not see, and patterns such as a season and last year still pass.
 status: published
 outline_version: '2024-04-15'
 sample: false

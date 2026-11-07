@@ -1,8 +1,8 @@
 id: cissp-d6-6.3-0007
 subdomain: '6.3'
-difficulty: hard
+difficulty: medium
 stem: Policy says security exceptions expire within 12 months unless renewed. The risk committee sees a monthly count of open
-  exceptions, steady at about 80, and concludes that they are being closed on time. Internal audit doubts this, as many of
+  exceptions, steady at about 80, and concludes that exceptions are ending as the policy intends. Internal audit doubts this, as many of
   the systems involved have not changed in years. Which data BEST answers the question?
 options:
   A: Months since each open exception was first approved, counting renewals

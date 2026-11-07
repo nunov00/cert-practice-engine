@@ -5,21 +5,22 @@ stem: A CRM vendor's contract bars training its models on 'Customer Content' but
   generated through use of the service, to improve its products. Its AI drafts sales emails from customer records, and the
   versions users edit and send are logged as Service Data. What should the security manager require?
 options:
-  A: Pseudonymisation of Service Data before the vendor uses it
-  B: An audit right over the vendor's use of Service Data
-  C: Encryption of logged drafts under keys the firm holds
-  D: Service Data defined to exclude anything with Customer Content
+  A: Service Data used only in aggregated, de-identified form
+  B: Logged drafts purged from Service Data after 30 days
+  C: Notice before Service Data is used to train a new model
+  D: Service Data narrowed to exclude Customer Content in any form
 answer: D
 explanation:
   why_correct: The edited drafts are customer content under another label, so the training bar can be bypassed through the
     definitions. Narrowing Service Data to exclude anything containing or derived from Customer Content closes that route
     in the contract itself, while the vendor keeps genuine usage data.
   why_not:
-    A: Pseudonymisation removes identities, but the drafts also hold prices, deal terms and plans, which stay usable for training.
-    B: An audit right helps check compliance, but the contract as written allows this use, so an audit would find nothing
-      to object to.
-    C: The vendor must read the drafts to provide the service, so it would hold access under any key arrangement, and its
-      permitted uses would be unchanged.
+    A: De-identified aggregation removes identities, but the drafts also hold prices, deal terms and plans, which stay
+      usable for training in aggregate form.
+    B: A short retention period limits how long drafts are kept, but the vendor can train on them within 30 days, and
+      a trained model keeps what it learned.
+    C: Notice tells the firm when training happens, but the contract as written allows this use, so the firm would have
+      no grounds to stop it.
 status: published
 outline_version: '2025-08-19'
 sample: false

@@ -95,3 +95,19 @@ held:
   # cissp-d4-4.1-0015 to medium, so CISSP's 7 hard can carry only 16 non-hard
   - { id: cissp-d7-7.10-0003, pr: 76 }
   - { id: cissp-d6-6.5-0004, pr: 76 }
+  # PR #77 (daily batch 2026-11-07), merge run: Codex and the final Claude review
+  # lowered hard labels (AAIR 1.2-0033, 3.6-0032; AAISM 3.2-0031, 3.3-0031), so the
+  # easiest new or released questions go back to keep each exam's hard share at 30%
+  - { id: aair-d1-1.1-0030, pr: 77 }
+  - { id: aair-d2-2.4-0024, pr: 77 }
+  - { id: aair-d3-3.6-0032, pr: 77 }
+  - { id: aair-d1-1.2-0033, pr: 77 }
+  - { id: aair-d3-3.2-0032, pr: 77 }
+  - { id: aair-d1-1.6-0025, pr: 77 }
+  - { id: aaism-d2-2.3-0039, pr: 77 }
+  - { id: aaism-d3-3.3-0026, pr: 77 }
+  - { id: aaism-d3-3.4-0032, pr: 77 }
+  - { id: aaism-d3-3.5-0036, pr: 77 }
+  - { id: aaism-d3-3.3-0031, pr: 77 }
+  - { id: aaism-d3-3.2-0031, pr: 77 }
+  - { id: aaism-d2-2.2-0052, pr: 77 }

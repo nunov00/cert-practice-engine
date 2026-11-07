@@ -1,6 +1,6 @@
 id: aair-d3-3.6-0032
 subdomain: '3.6'
-difficulty: hard
+difficulty: medium
 stem: A card issuer's disaster recovery plan restores its fraud scoring service within two hours at a second site.
   Because fraud patterns shift fast, the model is retrained each week, on a training platform that runs only at
   the main site. What should the business impact analysis MOST also establish?
@@ -16,13 +16,13 @@ explanation:
     whether it must join the recovery plan or be covered by a fallback such as tighter rules. Without it, the plan
     could restore a service that quietly stops catching new fraud.
   why_not:
-    A: Impact over time is central to any analysis, but for scoring it is already reflected in the two-hour objective.
+    A: Impact over time is central to any analysis, but for scoring the plan already sets the two-hour objective it supports.
       It says nothing about the asset the plan leaves out.
     C: Capacity at the recovery site is a sound check, but it concerns the service already in scope, not the retraining
       that keeps it effective.
     D: A recovery point for input data matters for scoring, but the gap here is the ability to keep the model current,
       not the data the service reads.
-status: published
+status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:

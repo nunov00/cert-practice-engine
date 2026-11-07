@@ -21,7 +21,7 @@ explanation:
       so many will still consent.
     D: Blocking discovered apps ends further access, but by then each app has already read files under terms that allow training
       on them.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

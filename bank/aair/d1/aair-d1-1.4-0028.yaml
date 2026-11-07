@@ -3,7 +3,7 @@ subdomain: '1.4'
 difficulty: hard
 stem: A company trains staff to treat unexpected video or voice instructions from executives as unverified, after
   attackers used a cloned voice of its finance director to request an urgent transfer. Its communications team now
-  plans weekly AI avatar videos of the chief executive for staff updates. Which policy rule BEST manages the risk?
+  plans weekly AI avatar videos of the chief executive for staff updates. Which rule for the avatar videos BEST preserves staff's habit of doubting unexpected executive video or voice messages?
 options:
   A: The chief executive approves each avatar script before it is released
   B: Each avatar video is labelled as AI-generated in its opening frame

@@ -6,7 +6,7 @@ stem: A lender's model for expected credit losses, which feed its provisions, un
   will take over a year to build up. Which treatment is MOST appropriate now?
 options:
   A: Retrain the model now on the losses seen after rates began to rise
-  B: Apply a documented, approved adjustment to its outputs until rebuilt
+  B: Apply an expert adjustment to its outputs until it is rebuilt
   C: Return to the previous, simpler model that the current one replaced
   D: Accept the limitation with board approval and disclose it in the accounts
 answer: B
@@ -23,7 +23,7 @@ explanation:
       unmeasured one.
     D: Disclosure is part of good reporting, but accepting a known understatement leaves the provisions wrong. It
       is not a reasonable treatment when a correction is available.
-status: published
+status: draft
 outline_version: '2026-04-15'
 sample: false
 provenance:

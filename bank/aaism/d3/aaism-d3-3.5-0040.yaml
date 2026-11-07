@@ -5,14 +5,14 @@ stem: A routing change to one region's gateway sent chatbot replies around the o
   were raised, and the region's block count, normally a handful a week, fell to zero unnoticed. The guardrail's rules are
   updated weekly. Which monitoring BEST detects a repeat?
 options:
-  A: Alerts on any reply sent without a guardrail verdict attached
+  A: Alerts on replies sent without their own guardrail verdict
   B: Alerts when a region's daily block count drops below its norm
   C: Weekly replay of harmful test prompts against each region
   D: Alerts on each change to the guardrail's configuration
 answer: A
 explanation:
-  why_correct: The failure was not the guardrail judging badly but replies never reaching it. Checking that every reply carries
-    a guardrail verdict measures coverage directly, so a bypass from any cause raises an alert within minutes, whatever the
+  why_correct: The failure was not the guardrail judging badly but replies never reaching it. Checking at egress that every reply
+    actually sent carries its own guardrail verdict measures coverage directly, so a bypass from any cause raises an alert within minutes, whatever the
     traffic volume or the content of the replies.
   why_not:
     B: Block counts are a useful signal on busy services, but at a handful a week a drop to zero looks like an ordinary quiet

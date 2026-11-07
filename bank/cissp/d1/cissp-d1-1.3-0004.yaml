@@ -13,7 +13,9 @@ answer: B
 explanation:
   why_correct: Security governance supports the business decision while keeping the risk within what the board would accept.
     A segregated connection that reaches only the ERP lets the acquisition deliver its savings on time, while the rival's
-    flat network, shared passwords and old servers cannot become a path into the rest of the retailer during the year of fixes.
+    flat network, shared passwords and old servers are far less able to become a path into the rest of the retailer during the year of fixes.
+    The path should give named, least-privilege ERP access through a controlled gateway, and the ERP itself stays exposed
+    to compromised rival endpoints or accounts, a residual risk to monitor.
   why_not:
     A: Holding back integration until the rival meets the baseline protects the retailer, but it blocks the board's goal for
       about a year when a narrower connection could meet it safely.

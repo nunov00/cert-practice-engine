@@ -11,9 +11,9 @@ options:
   D: Let the DLP tool relabel files whose text matches a published announcement
 answer: C
 explanation:
-  why_correct: The drafts' sensitivity ends at a known event. Recording that event or date when the label is applied lets
-    the label drop on time, routinely or automatically, so Restricted keeps meaning information that is still sensitive and
-    staff have reason to respect it.
+  why_correct: The drafts' sensitivity ends at a known event. Recording that event or date when the label is applied triggers
+    a review at the release, so the label drops on time for what the announcement made public.
+    Restricted then keeps meaning information that is still sensitive, and staff have reason to respect it.
   why_not:
     A: Periodic owner review is a normal part of classification, but files stay over-labelled for up to a year, and owners
       facing large volumes tend to confirm the existing label.
