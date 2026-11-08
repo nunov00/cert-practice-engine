@@ -94,13 +94,17 @@ export function Catalogue({ entries, topics, free }: { entries: CatalogueEntry[]
           <input
             id="exam-search"
             type="search"
-            placeholder="Search by exam name, acronym or topic"
+            placeholder="Find an exam by name, acronym or topic"
+            aria-describedby="exam-search-hint"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             autoComplete="off"
             enterKeyHint="search"
           />
         </div>
+        <p id="exam-search-hint" className="muted small search-hint">
+          Search finds exams, not individual questions. Open an exam to practise its questions by domain.
+        </p>
 
         {issuerList.length > 1 && (
           <div className="chips" role="group" aria-label="Filter by issuer">
@@ -129,7 +133,7 @@ export function Catalogue({ entries, topics, free }: { entries: CatalogueEntry[]
 
         {hits.length === 0 ? (
           <div className="card empty">
-            <p>No exams match your search.</p>
+            <p>No exams match your search. It looks at exam names, issuers and topics, not the text of questions.</p>
             <button
               className="button secondary"
               onClick={() => {
