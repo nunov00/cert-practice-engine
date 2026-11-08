@@ -1,0 +1,32 @@
+id: cissp-d2-2.3-0005
+subdomain: '2.3'
+difficulty: hard
+stem: Offshore contract developers must reproduce a production fault in an insurer's claims system that occurs only for about
+  300 claims with a rare mix of policy riders. Their test environment has weaker access controls than production. Synthetic
+  claims generated so far have not triggered the fault. Which way of providing data BEST fits?
+options:
+  A: Extract the 300 claims, tokenising identifying fields and keeping riders intact
+  B: Refresh the test environment with a masked copy of the whole claims database
+  C: Generate more synthetic claims, modelled on the riders in the affected records
+  D: Give the developers monitored read access to a production replica for the fix
+answer: A
+explanation:
+  why_correct: The fault needs the real rider combinations, but nothing else about the claimants. Extracting only the affected
+    claims, with identifying fields tokenised consistently so links between records still hold, gives the developers what
+    reproduces the fault while putting the least personal data into the weaker environment.
+  why_not:
+    B: A masked full copy keeps identities out, but it moves the whole claims book into the weaker environment, far more than
+      reproducing 300 claims needs, and masked records can sometimes be re-identified.
+    C: Better-modelled synthetic data avoids real data altogether, but the attempts so far have failed to trigger the fault,
+      and there is no sign that copying the riders alone captures what causes it.
+    D: Monitored replica access gives real data without copying it, but it exposes every claim, identities included, to offshore
+      contractors, while the fix needs only 300 records.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-cissp-check

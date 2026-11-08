@@ -1,0 +1,32 @@
+id: cissp-d6-6.5-0008
+subdomain: '6.5'
+difficulty: hard
+stem: An auditor is testing whether a bank's quarterly privileged-access reviews were completed on time by the designated
+  reviewers. The IAM team, which runs the reviews, emails the auditor spreadsheets exported from its review tool, showing
+  each reviewer's decisions and sign-off dates. What should the auditor do to obtain reliable evidence?
+options:
+  A: Obtain a signed statement from the IAM manager that the exports are complete
+  B: Re-perform a sample of the reviews and compare the decisions with the reviewers'
+  C: Extract the campaign and sign-off records from the tool, observing the extraction
+  D: Trace a sample of the spreadsheets' removal decisions to changes in the directory
+answer: C
+explanation:
+  why_correct: The spreadsheets were prepared and sent by the team whose work is being tested, and a spreadsheet can be edited
+    after export. Evidence the auditor obtains directly from the system is more reliable, and the tool's own records show
+    who signed off each review and when, which is the assertion being tested.
+  why_not:
+    A: A management representation adds little, because it comes from the party whose work is under test and does not replace
+      evidence the auditor obtains independently.
+    B: Re-performance tests whether the reviewers' decisions were right, which is a different question, and it still takes
+      who signed off and when from the emailed spreadsheets.
+    D: Tracing removals to the directory shows that decisions were carried out, a different assertion, and it starts from
+      the same spreadsheets whose reliability is in doubt.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-cissp-check

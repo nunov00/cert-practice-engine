@@ -1,0 +1,37 @@
+id: cissp-d1-1.8-0004
+subdomain: '1.8'
+difficulty: medium
+stem: A payments team is two operators short in its busiest quarter and has hired an experienced operator who is needed
+  to release payments from her second week. Her criminal record check covers a country where she lived until last year
+  and will take about eight weeks. Policy requires a cleared check before anyone holds sole authority to release
+  payments, and lets the security officer approve a time-limited exception with compensating controls. What should the
+  hiring manager do?
+options:
+  A: Delay her start date until the overseas check has come back clear
+  B: Let her release payments, each approved by a second operator, until it clears
+  C: Let her start on a signed declaration of no convictions, checked when it clears
+  D: Replace the overseas check with a local record check and two references
+answer: B
+explanation:
+  why_correct: The check is missing for a known, limited period, the team needs her work now, and policy allows an
+    approved exception with compensating controls. Because a second operator approves each payment she releases, she
+    never holds sole authority, and the security officer should record the arrangement as a time-limited exception until
+    the check clears. Dual control addresses the fraud risk of sole release; it does not cover other screening concerns,
+    such as her access to payment data, so that access should also be kept to what the role needs until the check
+    clears.
+  why_not:
+    A: Policy allows an approved, time-limited exception, so a delay is not required, and it leaves the team short for eight
+      weeks of its busiest quarter when dual approval can cover the gap.
+    C: Policy bars sole release authority before the check clears, and a declaration gives her exactly that. If it is false
+      she will have released payments alone for eight weeks before anyone finds out.
+    D: A local check and references are quick, but she lived abroad until last year, so a local check misses the period the
+      overseas check is meant to cover.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-cissp-check

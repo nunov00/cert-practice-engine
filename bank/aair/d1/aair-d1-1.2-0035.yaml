@@ -1,0 +1,32 @@
+id: aair-d1-1.2-0035
+subdomain: '1.2'
+difficulty: medium
+stem: An insurer promises to pay small claims on the day they are made, and handlers approve most of them within
+  hours. Its fraud model runs as an overnight batch on all claims opened that day. Fraud losses on small claims
+  are rising. Which change BEST aligns the model with the claims process?
+options:
+  A: Hold small-claim payments until the overnight fraud scores are ready
+  B: Train handlers to spot signs of fraud in claims they pay the same day
+  C: Pursue recovery on paid claims that the overnight batch later flags
+  D: Score each claim when it is opened, before payment is approved
+answer: D
+explanation:
+  why_correct: The model scores claims only after most small claims have been paid, so its output arrives too late
+    to affect the decision it is meant to inform. Scoring at the point a claim is opened puts the score in front
+    of the handler before approval, keeping the same-day promise while letting the model do its job.
+  why_not:
+    A: Holding payments would let the scores be used, but it breaks the same-day payment promise the process is
+      built around. It changes the process to suit the model instead of aligning the two.
+    B: Handler training may help at the margin, but it leaves the model's output unused for the claims it was meant
+      to protect, and manual spotting is what the model was meant to improve on.
+    C: Recovery after payment is a real fallback, but fraud money is often hard to get back. It treats losses after
+      the fact rather than putting the score where the decision is made.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aair-check

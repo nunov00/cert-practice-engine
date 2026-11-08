@@ -1,0 +1,34 @@
+id: cissp-d7-7.7-0003
+subdomain: '7.7'
+difficulty: medium
+stem: Staff at an accountancy firm keep receiving emails with links to documents on a widely used file-sharing service,
+  which many of the firm's clients also use to send it their records. The linked pages are harmless when the emails
+  arrive and are swapped for credential-harvesting pages a few hours later. Which control BEST reduces successful
+  phishing through these emails?
+options:
+  A: Detonate each linked page in a sandbox as the message arrives at the gateway
+  B: Block the file-sharing service for staff at the firm's web proxy
+  C: Pull delivered emails from inboxes once their linked pages are flagged
+  D: Re-check each link's destination page at the moment the user clicks it
+answer: D
+explanation:
+  why_correct: The pages turn malicious only after delivery, on a service the firm cannot block. Checking the destination
+    at the moment of the click looks at the page as it is when the user would see it, so a page swapped after delivery
+    can be caught before credentials are entered. It reduces exposure rather than guaranteeing detection, as pages can
+    be cloaked from scanners.
+  why_not:
+    A: Sandboxing links on arrival catches pages that are malicious at delivery, but these pages are harmless then, so they
+      pass and are swapped later.
+    B: Blocking the service would stop these links outright, but clients use it to send the firm their records, so blocking
+      it cuts off normal client work.
+    C: Pulling emails after delivery removes them once someone flags the page, but staff can click in the hours between the
+      swap and the flag, which is exactly when the harvesting page is live.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-cissp-check

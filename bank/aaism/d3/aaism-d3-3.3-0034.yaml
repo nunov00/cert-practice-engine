@@ -1,0 +1,32 @@
+id: aaism-d3-3.3-0034
+subdomain: '3.3'
+difficulty: medium
+stem: A lender's model team curates the benchmark set that each new credit model version must pass, and can add, relabel or
+  remove cases. A review found that cases a new version failed had been relabelled as ambiguous and dropped just before release.
+  Which control BEST protects the benchmark?
+options:
+  A: Changes approved by a validation team outside the model team
+  B: A hash of the benchmark recorded and checked at each release
+  C: A change log of benchmark edits reviewed by internal audit yearly
+  D: Relabelling of disputed cases by two members of the model team
+answer: A
+explanation:
+  why_correct: The people whose versions the benchmark judges can also change it, so they can quietly remove the cases their
+    model fails. Requiring a validation team outside the model team to approve changes separates curation from the pressure
+    to pass, while still letting genuine label errors be fixed.
+  why_not:
+    B: A hash proves the benchmark has not changed since it was recorded, but the edits were made before release, so the altered
+      set would simply be hashed and pass the check.
+    C: A change log creates a trail, but a yearly review finds a manipulated benchmark long after the versions it approved
+      have gone live.
+    D: A second reviewer helps with honest mistakes, but both reviewers come from the team whose release depends on passing,
+      so the same pressure applies to both.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check

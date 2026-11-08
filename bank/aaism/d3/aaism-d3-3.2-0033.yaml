@@ -1,0 +1,32 @@
+id: aaism-d3-3.2-0033
+subdomain: '3.2'
+difficulty: hard
+stem: A game studio's chat filter learns online from player reports, updating its weights every few minutes. Versions the
+  team releases manually must pass a regression suite that includes slurs and threats. A group of players taught the live
+  filter to allow several slurs. Which change BEST prevents a repeat?
+options:
+  A: Cap the weight each player's reports carry in learning
+  B: Release learned updates only after the regression suite
+  C: Screen player reports for coordinated campaigns first
+  D: Alert when the live filter starts allowing listed slurs
+answer: B
+explanation:
+  why_correct: With online learning, each update reaches players without the release suite that would have caught slurs being
+    allowed. Releasing what the filter learns only in versions that pass that suite keeps the value of player reports while
+    ensuring no untested version goes live, however the manipulation was done.
+  why_not:
+    A: Per-player caps blunt a single heavy reporter, but a group spreads its reports across many accounts, so each one stays
+      under the cap.
+    C: Campaign screening catches obvious bursts, but a patient group can pace and vary its reports, and whatever it misses
+      still reaches production untested.
+    D: An alert detects the failure once the weakened filter is already live and letting slurs through. It does not stop an
+      untested version reaching players.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check

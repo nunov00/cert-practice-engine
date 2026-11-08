@@ -1,0 +1,33 @@
+id: aair-d1-1.6-0026
+subdomain: '1.6'
+difficulty: hard
+stem: A chemicals company has built a model that designs new molecules, and it wants outside researchers to be able
+  to use it. Red-team tests show that, when asked, the model proposes known nerve agents and close variants of them.
+  How should the company BEST make the model available?
+options:
+  A: Release the weights under a licence that forbids harmful uses
+  B: Fine-tune it to refuse toxic designs, then release the weights
+  C: Offer it only through an API with vetted users and screening
+  D: Publish the method in a paper and keep the model in-house
+answer: C
+explanation:
+  why_correct: 'Hosted access keeps the safeguards under the company''s control: users are vetted, requests and
+    outputs are screened and logged, and access can be withdrawn. Researchers still get the benefit, while the serious
+    dual-use harm stays managed rather than handed over with the weights.'
+  why_not:
+    A: Once weights are released, a licence cannot stop a determined misuser who simply ignores it. It gives a legal
+      remedy after the harm, not protection.
+    B: Refusal training on open weights can be removed with modest further fine-tuning, and the underlying capability
+      stays in the model. It looks safe but does not hold once others have the weights.
+    D: Withholding the model avoids the risk but denies outside researchers the access the company wants, and a
+      published method may still let capable groups rebuild it. It gives up the benefit without fully removing the
+      harm.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aair-check

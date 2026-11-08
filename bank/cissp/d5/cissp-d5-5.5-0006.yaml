@@ -1,0 +1,33 @@
+id: cissp-d5-5.5-0006
+subdomain: '5.5'
+difficulty: medium
+stem: Thirty cloud engineers sign in to the production cloud console daily for monitoring, and every session carries the
+  administrator role they hold, although each needs it only a few times a month for ticketed changes. Last month malware
+  on an engineer's laptop took over his live console session and used its administrator rights. Which change BEST
+  reduces this exposure?
+options:
+  A: Shorten console sessions to 15 minutes, with MFA required to renew each one
+  B: Grant the administrator role per ticketed change, expiring after four hours
+  C: Review membership of the administrator role each month with the engineering lead
+  D: Route administrator sessions through a gateway that records and monitors them
+answer: B
+explanation:
+  why_correct: 'The exposure is standing privilege: every daily session is an administrator session. Granting the role
+    only for ticketed changes, with a fixed expiry, means the everyday monitoring sessions malware is most likely to
+    find carry no administrator rights at all.'
+  why_not:
+    A: Short sessions limit how long one stolen session lasts, but malware on the laptop rides along as the engineer renews,
+      and every renewed session still carries administrator rights.
+    C: A monthly review removes people who no longer need the role, but all thirty engineers do need it now and then, so the
+      review keeps them, and their daily sessions stay privileged.
+    D: Recording administrator sessions shows afterwards what the malware did, and may raise an alert, but it does not
+      reduce the rights a stolen session carries.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-cissp-check

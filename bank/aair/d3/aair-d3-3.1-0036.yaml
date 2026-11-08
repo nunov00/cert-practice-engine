@@ -1,0 +1,34 @@
+id: aair-d3-3.1-0036
+subdomain: '3.1'
+difficulty: hard
+stem: A digital bank opens accounts online. A vendor's AI matches a live selfie video with the photo on the applicant's
+  ID document, and its liveness check is certified against presentation attacks, such as masks or screens held up
+  to the camera. Applicants can apply from a web browser on any computer. Which fraud scenario should the assessment
+  MOST include?
+options:
+  A: Lookalikes passing the face match with stolen genuine ID documents
+  B: AI-generated video fed to the browser in place of the camera stream
+  C: Mules opening genuine accounts in their own names for fraudsters
+  D: Recordings of a real customer's face replayed on a screen to the camera
+answer: B
+explanation:
+  why_correct: Presentation-attack certification covers things shown to the camera, not a fake video stream injected
+    through a virtual camera or browser tools, which bypasses the camera entirely. Browser access from any computer
+    makes such injection easy, and generated faces can match stolen ID photos, so this is the scenario the certification
+    leaves open.
+  why_not:
+    A: Lookalike fraud is real, but face matching is reasonably good at separating similar faces, and it is a much
+      smaller, slower threat than automated video injection.
+    C: Money mules are a serious fraud risk, but they pass any identity check honestly. The scenario is not created
+      by this AI system and needs other controls.
+    D: Replaying a recording on a screen held to the camera is a presentation attack, which the liveness check is
+      certified to resist.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aair-check

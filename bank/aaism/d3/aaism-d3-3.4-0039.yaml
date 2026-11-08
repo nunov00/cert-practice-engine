@@ -1,0 +1,32 @@
+id: aaism-d3-3.4-0039
+subdomain: '3.4'
+difficulty: medium
+stem: A sleep app uploads 30-second bedroom audio clips to its cloud, where a model scores snoring; the clips serve only to
+  score that night. Users' partners complain that their conversations are captured. A compact version of the model runs on
+  current phones. Which control BEST addresses the privacy concern?
+options:
+  A: Filter speech frequencies out of clips before upload
+  B: Upload clips only for users who opt in to cloud scoring
+  C: Encrypt clips end to end and delete them after scoring
+  D: Score clips on the phone and upload only the scores
+answer: D
+explanation:
+  why_correct: 'The clips exist only to produce a score, so the audio does not need to leave the phone. Scoring on the device
+    and sending only the results keeps recordings of partners'' conversations out of the company''s systems: data minimisation
+    at the source rather than protection of data that need not be collected.'
+  why_not:
+    A: Removing speech frequencies makes speech harder to understand, but snoring and speech overlap in frequency, so it degrades
+      scoring and still uploads bedroom audio.
+    B: Opt-in records the user's choice, but the partners who are recorded are not the ones opting in, and their conversations
+      would still be uploaded.
+    C: Encryption and prompt deletion protect the clips in transit and storage, but the company still receives and processes
+      partners' conversations that it does not need.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check

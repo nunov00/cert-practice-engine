@@ -1,0 +1,32 @@
+id: aair-d2-2.2-0027
+subdomain: '2.2'
+difficulty: hard
+stem: A hospital will use an AI tool that marks suspected fractures on X-rays for emergency doctors, who make the final
+  call. The tool was trained and tested on this hospital's own past X-rays, where it outperformed the average doctor
+  working alone. Which further validation is MOST important before use?
+options:
+  A: Doctors' accuracy with and without the tool on the same set of cases
+  B: The tool's accuracy on X-rays from other hospitals and scanners
+  C: How often doctors overrode the tool's marks in a pilot on live cases
+  D: The tool's accuracy against a consensus reading by senior radiologists
+answer: A
+explanation:
+  why_correct: The tool will not decide alone; doctors will act on its marks. Beating doctors in isolation does not show
+    that doctors using it do better, because they may follow its errors or ignore its correct marks. A reader study
+    comparing doctors with and without the tool tests the system that will actually be used.
+  why_not:
+    B: External validation matters for tools moved between sites, but this tool was built and tested on the hospital's own
+      X-rays, where it will be used.
+    C: Override rates show how often doctors disagree with the tool, but not whether their final calls became more accurate.
+      A high or a low rate can be good or bad depending on who was right.
+    D: A stronger reference standard improves the accuracy estimate, but it is still a standalone figure for a tool that
+      only advises.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aair-check

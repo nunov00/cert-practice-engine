@@ -1,0 +1,32 @@
+id: cissp-d7-7.1-0003
+subdomain: '7.1'
+difficulty: hard
+stem: A manufacturer's lawyers tell the security manager that a former distributor has sued over a contract dispute going
+  back two years. The email system deletes messages older than 18 months each night, and the six staff involved still exchange
+  emails with the distributor about open orders. What should the security manager do FIRST?
+options:
+  A: Place the six mailboxes on hold, suspending deletion while the case runs
+  B: Collect the six staff's mailboxes by forensic export, hashing each export
+  C: Send the six staff written notice to keep their emails about the distributor
+  D: Restore the six staff's older mail from backups into a searchable archive
+answer: A
+explanation:
+  why_correct: Relevant mail is being destroyed every night and new relevant mail keeps arriving. A hold on the mailboxes
+    stops the automated deletion at once and keeps whatever the staff delete or receive later, for as long as the case runs.
+    Collection and restoring older mail can follow once nothing more is being lost.
+  why_not:
+    B: Forensic collection is a later step in the case, but an export captures the mailboxes only as they stand when it runs.
+      Messages exchanged or deleted afterwards are not covered, and the nightly deletion keeps running.
+    C: A written notice is part of a legal hold, but staff cannot stop the system's own nightly deletion, so relevant mail
+      would still be lost however careful they are.
+    D: Mail more than 18 months old may only survive on backups, so restoring it may well be needed, but it is slow, and until
+      deletion is stopped more mail is lost every night.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-cissp-check

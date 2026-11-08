@@ -6,14 +6,15 @@ stem: Forty models run on one machine learning platform that provides access con
   changes its controls only through a governed release. What should the risk practitioner recommend?
 options:
   A: Test platform controls in a rotating sample of model reviews
-  B: Have internal audit test the platform controls every three years
+  B: Have internal audit test the platform controls on a three-year cycle
   C: Re-test platform controls only in reviews of high-risk models
-  D: Test platform controls once per cycle and after releases, for all reviews to use
+  D: Test platform controls centrally each cycle and after releases
 answer: D
 explanation:
   why_correct: The controls are shared by all forty models and change only through governed releases. Testing them once
     per review cycle, and again after a release, gives every model review current evidence, so reviews can focus on
-    model-specific controls.
+    model-specific controls. Each review still confirms that the platform controls apply to its model, for example that
+    it is deployed through the governed path.
   why_not:
     A: A rotating sample cuts the repetition, but evidence then depends on which review happened to test the controls, and a
       release can change them between samples.
@@ -21,12 +22,12 @@ explanation:
       platform releases.
     C: Limiting re-testing to high-risk reviews still repeats the same tests many times, while lower-risk reviews rely on no
       evidence at all.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-aair
   check_verdict: pass
-  options_only: obvious
-  checked_by: 2026-10-27-daily-aair-check
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aair-check

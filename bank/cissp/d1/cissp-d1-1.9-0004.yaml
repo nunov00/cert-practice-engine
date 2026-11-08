@@ -1,0 +1,32 @@
+id: cissp-d1-1.9-0004
+subdomain: '1.9'
+difficulty: hard
+stem: A payments company's board has set a risk appetite that customers must not be unable to pay for more than four hours
+  in a row. It wants one key risk indicator that warns it while the company is drifting towards that limit, before any outage
+  breaches it. Which indicator BEST serves this purpose?
+options:
+  A: Share of payment servers patched within the policy window each month
+  B: Average length of payment service outages over the past twelve months
+  C: Recovery time reached in each quarterly payment failover test
+  D: Number of high-severity incidents affecting payment systems each month
+answer: C
+explanation:
+  why_correct: The appetite limits how long an outage lasts, not how often incidents happen. Failover test results measure
+    the company's ability to restore payments, and a rising recovery time shows the drift towards four hours before a real
+    outage proves it.
+  why_not:
+    A: Patch compliance is a common leading indicator, but it tracks the likelihood of some incidents. It says nothing about
+      how long payments would be down once an outage happens, which is what the appetite limits.
+    B: Outage length measures the appetite directly, but it moves only after outages have happened, and the board wants warning
+      before one breaches the limit.
+    D: An incident count is a lagging measure of frequency. Many short incidents and one long outage can give the same count,
+      so it does not show drift towards the four-hour limit.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-cissp-check

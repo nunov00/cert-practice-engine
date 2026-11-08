@@ -15,18 +15,18 @@ explanation:
     replies makes a timeout cost the user a retry rather than an unchecked answer, which suits a service for children,
     whatever the cause of the delay.
   why_not:
-    A: More capacity fixes timeouts caused by load, but here users control prompt length and can keep pushing processing
-      time past any limit.
-    B: Alerting on unchecked replies shows the problem to the SOC, but the replies have already reached children by the
-      time anyone responds.
+    A: More capacity fixes timeouts caused by load, but users control prompt length, so extra capacity does not remove the
+      fail-open path that a timeout opens.
+    B: Alerting on unchecked replies shows the problem to the SOC, but the replies have already reached children by the time
+      anyone responds.
     D: Testing detection on long prompts checks how well the guardrail judges them, but the replies at issue are never
       judged at all because the guardrail times out.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-29-daily-aaism
   check_verdict: pass
-  checked_by: 2026-10-29-daily-aaism-check
-  options_only: obvious
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check

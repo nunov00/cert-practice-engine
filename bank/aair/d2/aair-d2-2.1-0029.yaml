@@ -1,0 +1,33 @@
+id: aair-d2-2.1-0029
+subdomain: '2.1'
+difficulty: hard
+stem: A lender's new gradient-boosted credit model is more accurate than the scorecard it replaces. In testing, a few
+  applicants got lower scores when only their income was raised, so reason codes told some declined applicants that
+  their income was too high. Which development change BEST addresses this?
+options:
+  A: Increase regularisation so the model learns smoother patterns
+  B: Group income into bands before it enters the model
+  C: Cap how far income alone can move any applicant's score
+  D: Set a monotonic constraint on income in the model's training
+answer: D
+explanation:
+  why_correct: Tree ensembles can learn illogical bumps from sparse or noisy data. A monotonic constraint makes the model
+    respect a direction the lender knows should hold, so a higher income can never lower the score. That removes the
+    wrong-direction effect behind the reason codes, usually at little cost in accuracy; the reason-code method and the
+    accuracy should still be re-validated after the change.
+  why_not:
+    A: Stronger regularisation reduces overfitting in general and may shrink the bumps, but it does not guarantee the score
+      never falls as income rises, and it can cost accuracy elsewhere.
+    B: Banding income smooths the input, but the model can still learn a lower score for a higher band. It changes the shape
+      of the problem without guaranteeing the right direction.
+    C: Capping income's effect limits how large an illogical drop can be, but a smaller drop in the wrong direction would
+      still produce the same wrong reason codes.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aair-check

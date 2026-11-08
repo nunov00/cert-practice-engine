@@ -19,12 +19,12 @@ explanation:
     B: Pattern redaction can catch card numbers and dates, but not the health and family details in free-text notes, and the
       agent still fetches data the task never needed.
     D: Restricting log access protects the firm's own copy, not the copy the provider holds, and leaves the data in each prompt.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-02-daily-aaism
   check_verdict: pass
-  checked_by: 2026-11-02-daily-aaism-check
   options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check

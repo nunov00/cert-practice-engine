@@ -1,0 +1,32 @@
+id: aaism-d2-2.3-0049
+subdomain: '2.3'
+difficulty: hard
+stem: A legal team wants its contract agent to call a PDF conversion tool that a third party hosts and runs, through a
+  standard tool protocol. The agent would send each client contract to the tool for conversion. Which control is MOST
+  needed before connecting it?
+options:
+  A: Pinning of the tool definition to block later changes
+  B: Business owner approval of the tool in the AI inventory
+  C: A network sandbox around the agent's tool connections
+  D: Due diligence and processing terms for the tool's operator
+answer: D
+explanation:
+  why_correct: Each client contract would go to an outside party that processes it on its own systems, making the tool's
+    operator a processor of confidential client material. Assessing that operator and agreeing processing terms
+    addresses this confidentiality exposure, which no control on the agent's side can.
+  why_not:
+    A: Pinning protects against a tool definition being changed to carry hidden instructions, an integrity risk, but does
+      nothing about the operator receiving each contract.
+    B: Recording the tool and its owner's approval gives internal accountability, but an internal sign-off says nothing
+      about how the outside operator handles each contract it receives.
+    C: A sandbox limits what the agent's connections can reach, but the tool is a deliberately allowed destination, so the
+      contracts still flow to its operator.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check
