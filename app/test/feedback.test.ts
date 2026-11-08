@@ -5,9 +5,6 @@ import {
   DAILY_CAP,
   VISITOR_DAILY_LIMIT,
   cleanPage,
-  feedbackFile,
-  feedbackPath,
-  flushOutbox,
   parseFeedback,
   resetSchemaCache,
   saveFeedback,
@@ -101,51 +98,31 @@ test("the whole site stops at the daily cap", async () => {
   assert.equal(await saveFeedback(db, { category: "idea", message: "one too many", page: null }, now, "10.9.9.9"), "daily-cap");
 });
 
-test("messages are filed into the private repo and leave the outbox; failures are kept for later", async () => {
+test("messages stay in D1, newest readable first, until an agent deletes them", async () => {
   resetSchemaCache();
   const { db, sqlite } = sqliteDb();
   const now = new Date("2026-10-13T10:15:00.123Z");
   await saveFeedback(db, { category: "idea", message: "first one", page: "/exams/cissp" }, now, "1.1.1.1");
   await saveFeedback(db, { category: "problem", message: "second one", page: null }, now, "1.1.1.2");
-
-  const files = new Map<string, string>();
-  let up = false;
-  const write = async (path: string, content: string) => {
-    if (!up) return false;
-    files.set(path, content);
-    return true;
-  };
-  assert.equal(await flushOutbox(db, write), 0, "nothing filed while the repo is unreachable");
-  assert.equal((sqlite.prepare("SELECT COUNT(*) AS n FROM feedback").get() as { n: number }).n, 2);
-
-  up = true;
-  assert.equal(await flushOutbox(db, write), 2);
-  assert.equal((sqlite.prepare("SELECT COUNT(*) AS n FROM feedback").get() as { n: number }).n, 0);
-  assert.deepEqual([...files.keys()], [
-    "inbox/2026-10-13/20261013T101500Z-1.md",
-    "inbox/2026-10-13/20261013T101500Z-2.md",
+  // The review query in docs/feedback.md.
+  const rows = sqlite
+    .prepare("SELECT id, created_at, category, page, message FROM feedback WHERE status = 'new' ORDER BY id DESC")
+    .all()
+    .map((r) => ({ ...r }));
+  assert.deepEqual(rows, [
+    { id: 2, created_at: "2026-10-13T10:15:00.123Z", category: "problem", page: null, message: "second one" },
+    { id: 1, created_at: "2026-10-13T10:15:00.123Z", category: "idea", page: "/exams/cissp", message: "first one" },
   ]);
-  assert.equal(
-    files.get("inbox/2026-10-13/20261013T101500Z-1.md"),
-    "---\nreceived: 2026-10-13T10:15:00.123Z\ncategory: idea # Idea or suggestion\npage: /exams/cissp\n---\n\nfirst one\n",
-  );
-  assert.ok(![...files.values()].some((f) => f.includes("1.1.1.")), "no IP in any file");
 });
 
-test("the site-wide cap still counts messages already filed", async () => {
+test("the site-wide cap still counts messages already deleted after review", async () => {
   resetSchemaCache();
-  const { db } = sqliteDb();
+  const { db, sqlite } = sqliteDb();
   const now = new Date("2026-10-13T10:00:00Z");
-  for (let i = 0; i < 200; i++) {
+  for (let i = 0; i < DAILY_CAP; i++) {
     await saveFeedback(db, { category: "idea", message: `idea ${i}`, page: null }, now, `10.0.${i >> 8}.${i & 255}`);
-    if (i % 50 === 0) await flushOutbox(db, async () => true, 1000);
+    if (i % 50 === 0) sqlite.exec("DELETE FROM feedback");
   }
-  await flushOutbox(db, async () => true, 1000);
+  sqlite.exec("DELETE FROM feedback");
   assert.equal(await saveFeedback(db, { category: "idea", message: "one too many", page: null }, now, "10.9.9.9"), "daily-cap");
-});
-
-test("feedbackPath and feedbackFile", () => {
-  const row = { id: 7, created_at: "2026-01-02T03:04:05.000Z", category: "other" as const, message: "hi there", page: null };
-  assert.equal(feedbackPath(row), "inbox/2026-01-02/20260102T030405Z-7.md");
-  assert.match(feedbackFile(row), /page: none/);
 });

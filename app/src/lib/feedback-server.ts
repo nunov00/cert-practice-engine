@@ -1,49 +1,17 @@
 // Server-only helpers for the feedback API routes: Cloudflare bindings and responses.
 import { getCloudflareContext } from "@opennextjs/cloudflare";
-import type { Db, FileWriter } from "./feedback";
+import type { Db } from "./feedback";
 
 interface RateLimiter {
   limit(options: { key: string }): Promise<{ success: boolean }>;
 }
 
-/** Bindings and vars from app/wrangler.jsonc, plus the owner's secret (docs/feedback.md). */
+/** Bindings from app/wrangler.jsonc (docs/feedback.md). No secrets. */
 export interface FeedbackEnv {
   FEEDBACK_DB?: Db;
   FEEDBACK_LIMITER?: RateLimiter;
-  /** Private repo that receives the messages, e.g. "nunov00/knowmark-feedback". */
-  FEEDBACK_REPO?: string;
-  /** Fine-grained GitHub token: that repo only, Contents read and write. */
-  FEEDBACK_GITHUB_TOKEN?: string;
   /** Per-visitor burst limit for anonymous usage counts (docs/analytics.md). */
   STATS_LIMITER?: RateLimiter;
-}
-
-/** Writes files into the private feedback repo, or null until the owner has set it up. */
-export function githubWriter(env: FeedbackEnv): FileWriter | null {
-  const repo = env.FEEDBACK_REPO;
-  const token = env.FEEDBACK_GITHUB_TOKEN;
-  if (!repo || !token || !/^[\w.-]+\/[\w.-]+$/.test(repo)) return null;
-  return async (path, content, message) => {
-    const res = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
-      method: "PUT",
-      headers: {
-        authorization: `Bearer ${token}`,
-        accept: "application/vnd.github+json",
-        "x-github-api-version": "2022-11-28",
-        "user-agent": "knowmark-feedback",
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ message, content: base64Utf8(content) }),
-    });
-    // 422: the file already exists (another request filed it first), so it is stored.
-    return res.ok || res.status === 422;
-  };
-}
-
-function base64Utf8(text: string): string {
-  let bin = "";
-  for (const byte of new TextEncoder().encode(text)) bin += String.fromCharCode(byte);
-  return btoa(bin);
 }
 
 export async function feedbackContext(): Promise<{ env: FeedbackEnv; waitUntil: (p: Promise<unknown>) => void }> {
