@@ -6,7 +6,7 @@ stem: Forty models run on one machine learning platform that provides access con
   changes its controls only through a governed release. What should the risk practitioner recommend?
 options:
   A: Test platform controls in a rotating sample of model reviews
-  B: Have internal audit test the platform controls every three years
+  B: Have internal audit test the platform controls on a three-year cycle
   C: Re-test platform controls only in reviews of high-risk models
   D: Test platform controls centrally each cycle and after releases
 answer: D
