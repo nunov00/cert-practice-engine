@@ -2,8 +2,8 @@ id: aair-d1-1.1-0031
 subdomain: '1.1'
 difficulty: medium
 stem: A rail operator wants to forecast when each wheelset on its trains will need replacing, so that it can book
-  workshop slots months ahead. It has ten years of wear records, but most wheelsets in the records have not yet
-  been replaced. Which modelling approach BEST fits?
+  workshop slots months ahead. It has ten years of wear records, but most wheelsets in the records have not yet been
+  replaced. Which modelling approach BEST fits?
 options:
   A: A regression of time to replacement, fitted to wheelsets already replaced
   B: A classifier of whether each wheelset needs replacing within six months
@@ -11,14 +11,16 @@ options:
   D: A regression of time to replacement, taking in-service ages as that time
 answer: C
 explanation:
-  why_correct: Survival analysis is built for time-to-event data where many units have not yet had the event. It
-    treats a wheelset still running as having lasted at least its current age, without pretending it was replaced
-    then, so it uses all the records without bias and gives replacement probabilities over time for planning.
+  why_correct: Survival analysis is built for time-to-event data where many units have not yet had the event. It treats a
+    wheelset still running as having lasted at least its current age (right censoring) rather than as replaced then, so
+    under its assumptions, such as censoring that is unrelated to wear, it uses all the records and gives replacement
+    probabilities over time for planning. Here the event is replacement under the operator's wear limits, not physical
+    failure.
   why_not:
-    A: Fitting only to wheelsets already replaced keeps the ones that wore out early and drops the longer-lasting
-      ones still running. Predicted lifetimes come out biased short, and most of the data is wasted.
-    B: A fixed-window classifier is a common maintenance approach, but it says only whether replacement falls inside
-      six months, not when, and wheelsets with less than six months of follow-up have no clean label.
+    A: Fitting only to wheelsets already replaced keeps the ones that wore out early and drops the longer-lasting ones still
+      running. Predicted lifetimes come out biased short, and most of the data is wasted.
+    B: A fixed-window classifier is a common maintenance approach, but it says only whether replacement falls inside six
+      months, not when, and wheelsets with less than six months of follow-up have no clean label.
     D: This uses the in-service records, but it treats each running wheelset's current age as if it were its replacement
       age. Those wheelsets will last longer, so predicted lifetimes are again biased short.
 status: published

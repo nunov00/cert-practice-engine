@@ -1,10 +1,10 @@
 id: cissp-d3-3.1-0005
 subdomain: '3.1'
 difficulty: hard
-stem: A SaaS firm keeps its 6,000 small-business tenants in one shared database, and each team's code adds a tenant filter
-  to its own queries. Last month a report query from the analytics team, which writes raw SQL for speed, omitted the filter
-  and showed one tenant's invoices to another. The firm's pricing depends on shared infrastructure. Which design change BEST
-  prevents a repeat?
+stem: A SaaS firm keeps its 6,000 small-business tenants in one shared database, and each team's code adds a tenant
+  filter to its own queries. Last month a report query from the analytics team, which writes raw SQL for speed, omitted
+  the filter and showed one tenant's invoices to another. The firm's pricing depends on shared infrastructure. Which
+  design change BEST prevents a repeat?
 options:
   A: Give each tenant its own database, provisioned automatically at sign-up
   B: Enforce row-level security in the database, keyed to each session's tenant
@@ -12,12 +12,13 @@ options:
   D: Route queries through a shared data-access library that adds the tenant filter
 answer: B
 explanation:
-  why_correct: Isolation currently depends on every query author remembering the filter. Row-level security enforces it at
-    the one point every query passes through, whoever wrote it and however it was built, raw SQL included (complete mediation),
-    while the tenants keep sharing one database.
+  why_correct: Isolation currently depends on every query author remembering the filter. Row-level security enforces it in
+    the database every query passes through, whoever wrote it, raw SQL included (complete mediation), while the tenants
+    keep sharing one database. It holds provided queries run under roles subject to the policy, not owners or roles that
+    bypass it, and the session's tenant is set by trusted application code rather than by the query.
   why_not:
-    A: A database per tenant gives the strongest isolation, but 6,000 small tenants on separate databases breaks the shared-infrastructure
-      model the firm's pricing depends on.
+    A: A database per tenant gives the strongest isolation, but 6,000 small tenants on separate databases breaks the
+      shared-infrastructure model the firm's pricing depends on.
     C: Static analysis can flag some missing filters, but it cannot reliably tell whether dynamically built raw SQL filters
       by tenant, so it misses cases and raises false alarms. It checks code, not what runs.
     D: A shared library helps the teams that use it, but the analytics team writes raw SQL for speed and would bypass it,

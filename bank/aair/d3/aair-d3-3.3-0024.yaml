@@ -13,7 +13,8 @@ answer: D
 explanation:
   why_correct: The controls are shared by all forty models and change only through governed releases. Testing them once
     per review cycle, and again after a release, gives every model review current evidence, so reviews can focus on
-    model-specific controls.
+    model-specific controls. Each review still confirms that the platform controls apply to its model, for example that
+    it is deployed through the governed path.
   why_not:
     A: A rotating sample cuts the repetition, but evidence then depends on which review happened to test the controls, and a
       release can change them between samples.

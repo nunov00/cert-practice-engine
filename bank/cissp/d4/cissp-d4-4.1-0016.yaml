@@ -1,8 +1,9 @@
 id: cissp-d4-4.1-0016
 subdomain: '4.1'
 difficulty: hard
-stem: For two hours a network on another continent announced more-specific /24 routes inside a payment company's /22 prefix,
-  and much of the internet sent the company's customer traffic there. Which change BEST reduces the chance of a repeat?
+stem: For two hours a network on another continent announced more-specific /24 routes inside a payment company's /22
+  prefix, and much of the internet sent the company's customer traffic there. Which change BEST reduces the chance of a
+  repeat?
 options:
   A: Register route objects for the /22 in an internet routing registry
   B: Publish route origin authorizations for the /22, with a maximum length of /22
@@ -11,15 +12,16 @@ options:
 answer: B
 explanation:
   why_correct: The hijack happened in other networks' routing decisions, so the fix has to be something those networks can
-    check. A route origin authorization names the company's AS as the only valid origin, and the maximum length makes any
-    /24 inside the /22 invalid. Networks that perform origin validation, which include many large transit providers, then
-    drop such announcements.
+    check. A route origin authorization names the company's AS as the only valid origin, and the maximum length makes
+    any /24 inside the /22 invalid, as no other authorization covers it. Networks that perform origin validation and
+    drop invalid routes, which include many large transit providers, then reject such announcements.
   why_not:
-    A: Registry route objects help networks that build filters from them, but many registries accept entries with little proof
-      of ownership, and a hijacker can register conflicting objects, so they give much weaker grounds for rejecting routes
-      than signed origin authorizations.
+    A: Registry route objects help networks that build filters from them, but many registries accept entries with little
+      proof of ownership, and a hijacker can register conflicting objects, so they give much weaker grounds for
+      rejecting routes than signed origin authorizations.
     C: Announcing /24s removes the more-specific advantage, but a hijacker can still announce the same /24s, and then path
-      length decides, so much of the internet may still choose the false route.
+      length and each network's other route preferences decide, so much of the internet may still choose the false
+      route.
     D: Monitoring tells the company quickly that its prefix is being hijacked, which shortens the response, but it does not
       stop other networks accepting the false routes in the first place.
 status: published

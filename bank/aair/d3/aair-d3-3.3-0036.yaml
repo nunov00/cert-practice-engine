@@ -1,9 +1,9 @@
 id: aair-d3-3.3-0036
 subdomain: '3.3'
-difficulty: hard
-stem: A software firm will fine-tune a code model on its internal repositories so that developers get better suggestions.
-  Over the years, some commits added API keys and samples of customer data that were later deleted, but they remain
-  in the repositories' history. Which control BEST addresses the risk this creates?
+difficulty: medium
+stem: A software firm will fine-tune a code model on its internal repositories so that developers get better
+  suggestions. Over the years, some commits added API keys and samples of customer data that were later deleted, but
+  they remain in the repositories' history. Which control BEST addresses the risk this creates?
 options:
   A: Filter the model's suggestions for strings that look like keys
   B: Limit the model to developers with access to the full codebase
@@ -11,16 +11,17 @@ options:
   D: Scrub keys and personal data from the history before training
 answer: D
 explanation:
-  why_correct: Fine-tuned models can memorise and repeat training text, so anything in the training set can resurface
-    in suggestions. Removing secrets and customer data from the training data, history included, stops both from
-    entering the model at all.
+  why_correct: Fine-tuned models can memorise and repeat training text, so anything in the training set can resurface in
+    suggestions. Removing secrets and customer data from the training data, history included, stops both from entering
+    the model at all. Scrubbing does not undo past exposure, so keys that were committed should still be revoked and
+    replaced.
   why_not:
-    A: An output filter may catch key-shaped strings, but it misses customer names, addresses and other personal
-      data, and pattern filters can be evaded.
-    B: Restricting users reduces who could see leaked content, but customer data should not be spread through suggestions
-      to anyone, and the model would still hold it.
-    C: Rotating exposed keys is good hygiene and stops them working, but the customer data would still be learned
-      and could be reproduced.
+    A: An output filter may catch key-shaped strings, but it misses customer names, addresses and other personal data, and
+      pattern filters can be evaded.
+    B: Restricting users reduces who could see leaked content, but customer data should not be spread through suggestions to
+      anyone, and the model would still hold it.
+    C: Rotating exposed keys is good hygiene and stops them working, but the customer data would still be learned and could
+      be reproduced.
 status: published
 outline_version: '2026-04-15'
 sample: false

@@ -2,25 +2,28 @@ id: aair-d1-1.5-0027
 subdomain: '1.5'
 difficulty: hard
 stem: A wellness app company adds an AI feature that assesses a photo of a user's mole and says whether it may be
-  cancerous and should be shown to a doctor. The company markets the app as a lifestyle product, not a medical service.
-  Which legal consideration should the risk practitioner MOST raise?
+  cancerous and should be shown to a doctor. Users already give explicit consent to processing of their photos as health
+  data. The company markets the app as a lifestyle product, not a medical service. Which legal consideration should the
+  risk practitioner MOST raise before launch?
 options:
-  A: Whether users have given explicit consent to processing of their health data
+  A: Whether the photos may be kept to retrain the model under that consent
   B: Whether the feature's purpose makes the app a regulated medical device
   C: Whether the company is liable to users for cancers the feature misses
   D: Whether the app's marketing overstates what the feature can detect
 answer: B
 explanation:
-  why_correct: Software intended to detect or assess disease is typically regulated as a medical device, whatever
-    the marketing label. If the feature falls in scope, it cannot lawfully be offered without the required conformity
-    assessment and clinical evidence, so this question decides whether the feature can launch at all.
+  why_correct: In major markets such as the EU and the US, software intended to detect or assess disease is regulated as a
+    medical device, whatever the marketing label. If the feature falls in scope, it cannot lawfully be offered without
+    the required conformity assessment and clinical evidence, so this question decides whether the feature can launch at
+    all. Health-data compliance remains a separate launch condition, but the stem says its consent basis is already in
+    place.
   why_not:
-    A: Lawful processing of health data is a real requirement, but it can be met through consent and notices. It
-      does not decide whether the product may be sold.
+    A: Keeping photos for retraining is a real data protection question about a later use. It does not decide whether the
+      feature may be offered in the first place.
     C: Liability for missed cancers matters, but it follows from how the product is regulated and built. Device
       classification comes first and shapes the safety evidence that would limit liability.
-    D: 'Marketing claims can breach consumer law, but here the issue runs the other way: calling the app a lifestyle
-      product does not take a diagnostic feature out of device rules.'
+    D: 'Marketing claims can breach consumer law, but here the issue runs the other way: calling the app a lifestyle product
+      does not take a diagnostic feature out of device rules.'
 status: published
 outline_version: '2026-04-15'
 sample: false

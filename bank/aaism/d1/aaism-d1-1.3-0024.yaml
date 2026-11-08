@@ -1,9 +1,9 @@
 id: aaism-d1-1.3-0024
 subdomain: '1.3'
-difficulty: hard
-stem: Staff at a company build scheduled AI agents on a platform that runs each one under a platform-issued service identity,
-  with its creator recorded as owner. When creators leave, their agents keep running. An audit found 300 such agents, some
-  sending reports to external addresses. Which control BEST addresses this?
+difficulty: medium
+stem: Staff at a company build scheduled AI agents on a platform that runs each one under a platform-issued service
+  identity, with its creator recorded as owner. When creators leave, their agents keep running. An audit found 300 such
+  agents, some sending reports to external addresses. Which control BEST addresses this?
 options:
   A: Review the whole agent inventory each quarter
   B: Run each agent under its creator's own account
@@ -11,14 +11,14 @@ options:
   D: Reassign or disable a leaver's agents on exit
 answer: D
 explanation:
-  why_correct: The gap is that ownership ends when people leave while their agents carry on. Adding agents to the leaver process,
-    so that each is handed to a new owner or switched off at exit, keeps every running agent accountable without breaking
-    agents the business still needs.
+  why_correct: The gap is that ownership ends when people leave while their agents carry on. Adding agents to the leaver
+    process, so that each is handed to a new owner or switched off at exit, keeps every running agent accountable
+    without breaking agents the business still needs.
   why_not:
-    A: A quarterly review finds orphaned agents, but up to three months after the owner left, while those agents keep sending
-      data out.
-    B: Tying agents to personal accounts makes them stop when the creator leaves, but it also breaks agents the business relies
-      on without warning, and moves agents onto broader personal access.
+    A: A quarterly review finds orphaned agents, but up to three months after the owner left, while those agents keep
+      sending data out.
+    B: Tying agents to personal accounts makes them stop when the creator leaves, but it also breaks agents the business
+      relies on without warning, and moves agents onto broader personal access.
     C: Yearly expiry eventually stops unowned agents, but they could run for most of a year with no owner, and active agents
       need renewal work whether or not their owner left.
 status: published

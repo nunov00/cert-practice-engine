@@ -1,10 +1,10 @@
 id: cissp-d7-7.7-0003
 subdomain: '7.7'
-difficulty: hard
-stem: Staff at an accountancy firm keep receiving emails with links to documents on a widely used file-sharing service, which
-  many of the firm's clients also use to send it their records. The linked pages are harmless when the emails arrive and are
-  swapped for credential-harvesting pages a few hours later. Which control BEST reduces successful phishing through these
-  emails?
+difficulty: medium
+stem: Staff at an accountancy firm keep receiving emails with links to documents on a widely used file-sharing service,
+  which many of the firm's clients also use to send it their records. The linked pages are harmless when the emails
+  arrive and are swapped for credential-harvesting pages a few hours later. Which control BEST reduces successful
+  phishing through these emails?
 options:
   A: Detonate each linked page in a sandbox as the message arrives at the gateway
   B: Block the file-sharing service for staff at the firm's web proxy
@@ -13,8 +13,9 @@ options:
 answer: D
 explanation:
   why_correct: The pages turn malicious only after delivery, on a service the firm cannot block. Checking the destination
-    at the moment of the click looks at the page as it is when the user would see it, so a page swapped after delivery is
-    caught before credentials are entered.
+    at the moment of the click looks at the page as it is when the user would see it, so a page swapped after delivery
+    can be caught before credentials are entered. It reduces exposure rather than guaranteeing detection, as pages can
+    be cloaked from scanners.
   why_not:
     A: Sandboxing links on arrival catches pages that are malicious at delivery, but these pages are harmless then, so they
       pass and are swapped later.

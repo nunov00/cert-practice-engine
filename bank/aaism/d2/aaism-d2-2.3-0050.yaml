@@ -1,26 +1,26 @@
 id: aaism-d2-2.3-0050
 subdomain: '2.3'
 difficulty: hard
-stem: A crisis helpline's text triage runs on a hosted model. The provider's standard terms let it suspend an account automatically
-  when its classifiers flag repeated self-harm content, which the helpline's chats routinely contain. The service must stay
-  available around the clock. Which contract provision MOST reduces this risk?
+stem: A crisis helpline's text triage runs on a hosted model. The provider's standard terms let it suspend an account
+  automatically when its classifiers flag repeated self-harm content, which the helpline's chats routinely contain. The
+  service must stay available around the clock. Which contract provision MOST reduces this risk?
 options:
   A: Service credits for each period the service is unavailable
-  B: Approved use terms, with notice before any suspension
+  B: An agreed exemption from automatic suspension for this use
   C: A standby second provider under contract for failover
   D: Priority support targets for restoring suspended accounts
 answer: B
 explanation:
-  why_correct: The risk is that the helpline's normal, legitimate traffic triggers the provider's own suspension rule. Agreeing
-    terms that recognise this use, with notice and a chance to respond before any suspension, removes the trigger at its source
-    instead of handling the outage after it happens.
+  why_correct: The risk is that the helpline's normal, legitimate traffic triggers the provider's own automatic suspension
+    rule. Agreeing terms that recognise this use and exempt it from automatic suspension, with any concern escalated to
+    people at both firms instead, removes the trigger at its source instead of handling the outage after it happens.
   why_not:
-    A: Service credits compensate for downtime, but they do not keep a crisis line running, and suspensions under the provider's
-      own terms are often excluded from credits anyway.
-    C: A second provider helps continuity in general, but its standard terms may carry the same suspension rule, and failing
-      over after a suspension still interrupts live crisis chats.
-    D: Faster restoration shortens an outage, but the routine content would trigger suspension again and again, so the helpline
-      would keep going down.
+    A: Service credits compensate for downtime, but they do not keep a crisis line running, and suspensions under the
+      provider's own terms are often excluded from credits anyway.
+    C: A second provider helps continuity in general, but unless its terms are negotiated too it may carry a similar
+      suspension rule, and failing over after a suspension still interrupts live crisis chats.
+    D: Faster restoration shortens an outage, but the routine content would trigger suspension again and again, so the
+      helpline would keep going down.
 status: published
 outline_version: '2025-08-19'
 sample: false

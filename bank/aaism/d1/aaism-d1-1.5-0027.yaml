@@ -1,26 +1,28 @@
 id: aaism-d1-1.5-0027
 subdomain: '1.5'
 difficulty: hard
-stem: A contractor's account copied a support model's weights to an outside host before it was disabled. Its activity logs
-  are already preserved as evidence and show nothing else was taken. The model was fine-tuned on chats containing customers'
-  account details. Personal data breaches must be reported to the regulator within 72 hours. What should responders do NEXT?
+stem: A contractor's account copied a support model's weights to an outside host before it was disabled. Its activity
+  logs are already preserved as evidence and show nothing else was taken. The model was fine-tuned on chats containing
+  customers' account details. Personal data breaches must be reported to the regulator within 72 hours. What should
+  responders do NEXT?
 options:
-  A: Retrain the model on chats with account details removed
-  B: Test the model for recall of customers' account details
+  A: Retrain the model on the chats with the account details removed
+  B: Assess with privacy counsel what customer data the weights could expose
   C: Ask the outside host's provider to remove the copied weights
-  D: Review the contractor's other access for signs of misuse
+  D: Review the contractor's other access for signs of further misuse
 answer: B
 explanation:
-  why_correct: Whether the theft is a personal data breach depends on whether the weights can give up customers' details.
-    Testing the model for that recall within the 72-hour window tells responders whether, and about whom, to notify, and shapes
-    the rest of the response.
+  why_correct: Whether the theft is a notifiable personal data breach turns on whether customers' details can be recovered
+    from the weights. An assessment led with privacy counsel, using recall and extraction tests as one input, decides
+    within the 72-hour window whether and whom to notify. A failed extraction test cannot prove the details are
+    unrecoverable, so where doubt remains the assessment should lean toward notifying rather than miss the deadline.
   why_not:
     A: Retraining without the details protects future versions, but it does nothing about the copy already taken and does
       not answer the notification question.
-    C: A takedown request is reasonable, but copied weights may already be elsewhere, and it does not settle whether customers'
-      data was exposed, which the 72-hour deadline makes the pressing question.
-    D: Scoping the account's activity matters, but the preserved logs already show only the weights were taken. The time-critical
-      question now is whether personal data left with them.
+    C: A takedown request is reasonable, but copied weights may already be elsewhere, and it does not settle whether
+      customers' data was exposed, which the 72-hour deadline makes the pressing question.
+    D: Scoping the account's activity matters, but the preserved logs already show only the weights were taken. The
+      time-critical question now is whether personal data left with them.
 status: published
 outline_version: '2025-08-19'
 sample: false

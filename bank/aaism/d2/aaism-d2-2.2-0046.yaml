@@ -11,14 +11,15 @@ options:
   D: A cap on replies per email thread before staff review
 answer: D
 explanation:
-  why_correct: Each reply was harmless; the harm came from the loop itself, two automated senders answering each other without
-    end. Capping how many replies the agent sends in one thread before a person looks at it stops a loop with any
-    counterpart, another bot or an attacker deliberately provoking one, while normal correspondence stays automatic.
+  why_correct: Each reply was harmless; the harm came from the loop itself, two automated senders answering each other
+    without end. Capping how many replies the agent sends in one thread before a person looks at it stops this kind of
+    same-thread loop whatever the counterpart, while normal correspondence stays automatic. A daily send budget per
+    counterpart would also catch loops spread across new threads.
   why_not:
-    A: Token caps limit what a single request can cost, which suits long prompts or outputs. These replies were short, so each
-      stayed within any sensible cap.
-    B: A spend alert tells someone that costs are rising, but overnight thousands of emails can go out before anyone acts, and
-      it does nothing about the flooding.
+    A: Token caps limit what a single request can cost, which suits long prompts or outputs. These replies were short, so
+      each stayed within any sensible cap.
+    B: A spend alert tells someone that costs are rising, but overnight thousands of emails can go out before anyone acts,
+      and it does nothing about the flooding.
     C: An injection classifier looks for hostile instructions. The supplier's agent sent ordinary polite emails, so the
       classifier would have nothing to flag.
 status: published
