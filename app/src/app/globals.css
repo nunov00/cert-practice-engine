@@ -346,6 +346,10 @@ header.site a.brand {
   gap: 8px;
   flex-wrap: wrap;
 }
+
+.search-hint {
+  margin: 6px 0 0;
+}
 .search input,
 .search select {
   font: inherit;
