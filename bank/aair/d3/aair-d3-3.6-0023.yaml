@@ -8,7 +8,7 @@ options:
   A: Request the vendor's latest disaster recovery test report
   B: Have the vendor run the validated version in its failover region
   C: Plan to suspend credit decisions for as long as a failover lasts
-  D: Accept the risk, as the vendor meets the recovery time objective
+  D: Add a model version check to the next recovery test
 answer: B
 explanation:
   why_correct: During a failover the bank would make credit decisions with a model it has never validated, which its own
@@ -19,7 +19,8 @@ explanation:
       model version decides credit after failover.
     C: Suspending decisions avoids using the unvalidated model, but it gives up the recovery the service is meant to
       provide, when the version gap can be fixed.
-    D: Meeting the recovery time says the service comes back quickly, not that the decisions it makes are sound.
+    D: A version check in the next test would confirm the gap again but not close it. Until the vendor changes the failover
+      model, a failover would still make credit decisions with the unvalidated version.
 status: published
 outline_version: '2026-04-15'
 sample: false

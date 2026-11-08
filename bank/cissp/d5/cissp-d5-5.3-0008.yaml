@@ -1,6 +1,6 @@
 id: cissp-d5-5.3-0008
 subdomain: '5.3'
-difficulty: hard
+difficulty: medium
 stem: A consumer app lets users sign in with a password or through three OpenID Connect providers, and it links a
   provider sign-in to an existing account whenever the email claims match. At one provider, a tester who administers his
   own organisation there gave a test user a victim's address; the provider's token marked it as verified, and the tester

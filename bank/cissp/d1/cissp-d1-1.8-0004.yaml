@@ -14,10 +14,11 @@ options:
 answer: B
 explanation:
   why_correct: The check is missing for a known, limited period, the team needs her work now, and policy allows an
-    approved exception with compensating controls. Requiring a second operator to approve each payment she releases
-    means she cannot move money alone while her background is unconfirmed. Dual control addresses the fraud risk of sole
-    release; it does not cover other screening concerns, such as her access to payment data, so that access should also
-    be kept to what the role needs until the check clears.
+    approved exception with compensating controls. Because a second operator approves each payment she releases, she
+    never holds sole authority, and the security officer should record the arrangement as a time-limited exception until
+    the check clears. Dual control addresses the fraud risk of sole release; it does not cover other screening concerns,
+    such as her access to payment data, so that access should also be kept to what the role needs until the check
+    clears.
   why_not:
     A: Policy allows an approved, time-limited exception, so a delay is not required, and it leaves the team short for eight
       weeks of its busiest quarter when dual approval can cover the gap.

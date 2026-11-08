@@ -8,7 +8,7 @@ options:
   A: Test platform controls in a rotating sample of model reviews
   B: Have internal audit test the platform controls every three years
   C: Re-test platform controls only in reviews of high-risk models
-  D: Test platform controls once per cycle and after releases, for all reviews to use
+  D: Test platform controls centrally each cycle and after releases
 answer: D
 explanation:
   why_correct: The controls are shared by all forty models and change only through governed releases. Testing them once

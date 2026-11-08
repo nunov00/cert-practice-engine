@@ -3,7 +3,7 @@ subdomain: '2.1'
 difficulty: medium
 stem: A bank trained a fraud model on features that its data team computes overnight in the data warehouse. In
   production, the payments team will compute the same features in real time with its own code. Both teams change their
-  code several times a year. What should the design require?
+  code several times a year. What should the design MOST require?
 options:
   A: A parallel run comparing live and warehouse feature values before go-live
   B: One feature definition that serves both model training and live scoring

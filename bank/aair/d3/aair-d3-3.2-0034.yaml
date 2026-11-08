@@ -1,10 +1,10 @@
 id: aair-d3-3.2-0034
 subdomain: '3.2'
-difficulty: hard
-stem: A city's AI cameras photograph about 400,000 vehicles a day to detect drivers using phones, and flag under
-  1% as possible offences. Traffic law requires every image to be available for 30 days so that drivers can challenge
-  the camera's records. All images are kept for two years, the period flagged images may be needed in court. The
-  privacy risk is above appetite. Which treatment BEST reduces it?
+difficulty: medium
+stem: A city's AI cameras photograph about 400,000 vehicles a day to detect drivers using phones, and flag under 1% as
+  possible offences. Traffic law requires every image to be available for 30 days so that drivers can challenge the
+  camera's records. All images are kept for two years, the period flagged images may be needed in court. The privacy
+  risk is above appetite. Which treatment BEST reduces it?
 options:
   A: Encrypt the stored images and restrict who can view them
   B: Blur passengers' faces in each image the cameras store
@@ -12,16 +12,16 @@ options:
   D: Store only flagged images and discard the rest at capture
 answer: C
 explanation:
-  why_correct: Unflagged images are kept for two years only because flagged ones need that long. Deleting them once
-    the law no longer requires them cuts the stored personal data by more than 95% while still meeting the legal
-    duty to keep them for challenges.
+  why_correct: Unflagged images are kept for two years only because flagged ones need that long. Deleting them once the
+    law no longer requires them cuts the stored personal data by about 95% while still meeting the legal duty to keep
+    them for challenges.
   why_not:
-    A: Encryption and access limits protect the images, but the city would still hold two years of images of hundreds
-      of thousands of uninvolved drivers and passengers.
-    B: Blurring passengers reduces what each image shows, but every driver's face and number plate would still be
-      kept for two years.
-    D: Discarding unflagged images at once is the usual minimisation step, but the law requires every image to be
-      available for 30 days. This would break that duty.
+    A: Encryption and access limits protect the images, but the city would still hold two years of images of hundreds of
+      thousands of uninvolved drivers and passengers.
+    B: Blurring passengers reduces what each image shows, but every driver's face and number plate would still be kept for
+      two years.
+    D: Discarding unflagged images at once is the usual minimisation step, but the law requires every image to be available
+      for 30 days. This would break that duty.
 status: published
 outline_version: '2026-04-15'
 sample: false

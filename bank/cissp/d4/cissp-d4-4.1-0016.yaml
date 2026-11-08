@@ -12,9 +12,10 @@ options:
 answer: B
 explanation:
   why_correct: The hijack happened in other networks' routing decisions, so the fix has to be something those networks can
-    check. A route origin authorization names the company's AS as the only valid origin, and the maximum length makes
-    any /24 inside the /22 invalid, as no other authorization covers it. Networks that perform origin validation and
-    drop invalid routes, which include many large transit providers, then reject such announcements.
+    check. A route origin authorization names the company's AS as the only valid origin, and together the origin check
+    and the maximum length make any /24 inside the /22 invalid, as no other authorization covers it. Networks that
+    perform origin validation and drop invalid routes, which include many large transit providers, then reject such
+    announcements.
   why_not:
     A: Registry route objects help networks that build filters from them, but many registries accept entries with little
       proof of ownership, and a hijacker can register conflicting objects, so they give much weaker grounds for
