@@ -1,0 +1,32 @@
+id: aair-d2-2.1-0028
+subdomain: '2.1'
+difficulty: hard
+stem: A bank trained a fraud model on features that its data team computes overnight in the data warehouse. In production,
+  the payments team will compute the same features in real time with its own code. Both teams change their code
+  several times a year. What should the design require?
+options:
+  A: A parallel run comparing live and warehouse feature values before go-live
+  B: One feature definition that serves both model training and live scoring
+  C: Drift alerts on live feature values, sent to the model's owner
+  D: A data contract in which each team logs its code changes for the other
+answer: B
+explanation:
+  why_correct: Two separate implementations of the same features will drift apart, so the model sees inputs in production
+    that differ from those it learned on. A single shared definition used for training and live scoring removes
+    that training-serving gap at its source, including after future code changes.
+  why_not:
+    A: A parallel run is a good one-off check, but both teams keep changing their code. Any later change can reopen
+      the gap after go-live.
+    C: Drift alerts detect shifts in live values, but they cannot tell a genuine change in payments from a computation
+      mismatch, and they fire only after scoring has already gone wrong.
+    D: Logging changes helps coordination, but it still relies on people spotting that a change alters a feature's
+      meaning. Two code bases remain to keep in step by hand.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aair-check

@@ -1,0 +1,33 @@
+id: cissp-d8-8.2-0004
+subdomain: '8.2'
+difficulty: hard
+stem: A company's self-hosted build runners are shared by 80 repositories and reused from job to job. A job in an intern's
+  experimental repository replaced a compiler in a runner's tool cache, and the next release build on that runner shipped
+  with a backdoor. Every repository, the intern's included, has its own release pipeline. Which change BEST prevents this
+  kind of compromise?
+options:
+  A: Give release pipelines their own runner pool, apart from other pipelines' jobs
+  B: Require review of changes to pipeline definitions across the repositories
+  C: Run each job on a fresh runner that is destroyed when the job ends
+  D: Verify checksums of the runner's tool cache at the start of each job
+answer: C
+explanation:
+  why_correct: The compromise travelled through state one job left on a runner for the next. A fresh runner for every job
+    starts from a known image and is destroyed afterwards, so nothing one job changes can reach another, whichever repository
+    it comes from.
+  why_not:
+    A: A separate release pool keeps pull-request and test jobs away from release builds, but every repository, the intern's
+      included, runs release pipelines, so one of them can still poison the shared pool.
+    B: Reviewing pipeline definitions catches some malicious jobs, but build scripts and dependencies can change a runner
+      without any change to the pipeline file, and an experimental repository is unlikely to get close review.
+    D: Checksums would catch a changed compiler, but only for the files listed. A job can leave other state, such as container
+      images, environment settings or other tools, that the check does not cover.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-cissp-check

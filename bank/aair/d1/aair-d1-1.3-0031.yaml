@@ -1,0 +1,32 @@
+id: aair-d1-1.3-0031
+subdomain: '1.3'
+difficulty: medium
+stem: A bank's AI committee of six executives approves high-risk models by majority vote and is chaired by the chief
+  risk officer. The chief commercial officer, a voting member, is the sponsor of a pricing model that comes before
+  the committee next month. Which change BEST protects the committee's decisions?
+options:
+  A: Members stand aside from votes on models they sponsor
+  B: Approval of high-risk models needs a unanimous vote of members
+  C: An independent non-executive joins the committee as a voter
+  D: The chair, as chief risk officer, holds a casting vote on ties
+answer: A
+explanation:
+  why_correct: 'The weakness is a conflict of interest: a member would vote on their own model. Having sponsors
+    stand aside removes that conflicted vote from this and future decisions while keeping the committee''s make-up
+    and voting rule, which are otherwise sound.'
+  why_not:
+    B: Unanimity gives each member a veto, so others could still block a weak model, but the sponsor still votes
+      on their own model. The conflict remains, and every decision becomes harder to reach.
+    C: An independent member adds challenge, which is useful, but the sponsor still votes on their own model. It dilutes
+      the conflict rather than removing it.
+    D: A casting vote only matters when votes are tied. It does not stop the sponsor's own vote from counting toward
+      approval.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aair-check

@@ -1,0 +1,33 @@
+id: cissp-d3-3.9-0003
+subdomain: '3.9'
+difficulty: medium
+stem: A company leases four floors of a multi-tenant office tower, with its network switches in a wiring closet on each floor.
+  The building's risers run through the same closets, and the landlord's engineers, their contractors and the fire service
+  must be able to enter at any hour without the company's involvement. Which control BEST protects the switches?
+options:
+  A: A logging badge reader on each closet door, with cards issued to landlord staff
+  B: Door alarms that alert the company's SOC whenever a closet is opened
+  C: Cameras recording each closet door, with footage reviewed after network faults
+  D: Locked network cabinets in each closet, keyed only to the company's IT staff
+answer: D
+explanation:
+  why_correct: The closet itself cannot be restricted to the company, because others must enter it freely. The protection
+    therefore has to sit around the switches. Locked cabinets inside the closet leave the risers open to the landlord and
+    the fire service while keeping the network equipment to the company's own staff.
+  why_not:
+    A: A logging reader records who enters, but it still lets in everyone the landlord sends, and contractors and the fire
+      service at night would need an override, so anyone in the closet can still reach the switches.
+    B: Door alarms keep the closets open to the landlord and the fire service while telling the company of each entry, but
+      those entries are frequent and legitimate, so the alerts become routine, and an alarm does not stop anyone in the closet
+      reaching the switches.
+    C: Cameras identify who touched the switches after the event. They do not stop tampering, and reviewing footage only after
+      faults misses quiet changes such as an added tap.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-cissp-check

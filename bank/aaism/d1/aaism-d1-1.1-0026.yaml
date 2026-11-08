@@ -1,0 +1,32 @@
+id: aaism-d1-1.1-0026
+subdomain: '1.1'
+difficulty: hard
+stem: A regulator asks a bank for the training data sources and design of a vendor credit model the bank uses. The vendor
+  refuses to give these to the bank, citing trade secrets, as the bank is building its own credit model in-house. What is
+  the BEST way to meet the request?
+options:
+  A: Send the bank's own validation and monitoring results instead
+  B: Ask the vendor to submit the details directly to the regulator
+  C: Obtain the details from the vendor under a non-disclosure agreement
+  D: Offer the vendor's independent assurance report in their place
+answer: B
+explanation:
+  why_correct: The vendor's concern is the bank, a future competitor, seeing its design, not the regulator. Asking the vendor
+    to submit the details directly, with the bank coordinating the response, gives the regulator exactly what it asked for
+    without exposing the vendor's trade secrets to the bank.
+  why_not:
+    A: The bank's own validation evidence matters for its role as user of the model and may be requested too, but it does
+      not describe the training data sources and design the regulator asked for.
+    C: A non-disclosure agreement often resolves confidentiality concerns, but here the worry is the bank's own in-house model
+      team, which an agreement with the bank does not remove, so the vendor is likely to refuse again.
+    D: An assurance report covers the vendor's controls, not the model's training data sources and design, so it offers different
+      evidence from what was requested.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check

@@ -1,0 +1,32 @@
+id: cissp-d1-1.10-0004
+subdomain: '1.10'
+difficulty: hard
+stem: A water utility is threat modelling the new remote access path to its treatment plant controllers. A STRIDE pass produced
+  140 threats, most rated alike, and the team cannot tell which to address first. National advisories describe two groups
+  that have recently attacked utilities in the region. Which step BEST focuses the model?
+options:
+  A: Map the two groups' known techniques onto the model's paths and controls
+  B: Score each of the 140 threats with DREAD and address those above a threshold
+  C: Build an attack tree rooted at an unauthorised change to treatment set points
+  D: Commission a penetration test of the remote access path to rank the threats
+answer: A
+explanation:
+  why_correct: The threats are rated alike because the team has no evidence of which are likely. The advisories supply that
+    evidence. Mapping the techniques the active groups use onto the model shows which paths real adversaries take and which
+    controls on those paths are missing, so the 140 threats can be ranked by what is actually being attempted.
+  why_not:
+    B: DREAD gives a finer score, but the same team applies the same judgement to it, so it adds no new evidence about likelihood
+      and tends to reproduce the same flat ranking.
+    C: An attack tree rooted at the worst outcome is a strong way to enumerate routes, but every one of these threats already
+      leads to the plant. It re-expresses the routes without saying which ones attackers actually use.
+    D: A penetration test shows what one team finds in a fixed window, and it needs the path built and running. It does not
+      reflect how the groups targeting the region operate, which the advisories already describe.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-cissp-check

@@ -1,0 +1,32 @@
+id: aaism-d3-3.3-0033
+subdomain: '3.3'
+difficulty: hard
+stem: A rail operator retrains a track-fault model monthly on vibration readings that trackside sensors send over a shared
+  radio network to gateways. The sensors sit in public places. Testers injected plausible fake readings over the radio link,
+  and they passed the ingestion outlier checks. Which control BEST protects the training data?
+options:
+  A: Encrypt the radio link under one network-wide key
+  B: Cross-check each reading against neighbouring sensors
+  C: Sign each reading at the sensor with a per-sensor key
+  D: Train only on periods confirmed by track inspections
+answer: C
+explanation:
+  why_correct: The weak point is that nothing proves a reading came from a genuine sensor. A per-sensor key that signs each
+    reading lets the platform reject injected data, and because the sensors are in public places, a captured sensor exposes
+    only its own key, which can be revoked.
+  why_not:
+    A: Link encryption keeps out outsiders without the key, but with sensors in public places one stolen unit yields the shared
+      key, and the attacker can again inject readings that appear to come from any sensor.
+    B: Neighbour cross-checks catch crude fakes, but an attacker on the radio link can inject consistent readings for several
+      neighbouring sensors at once, as the plausible fakes suggest.
+    D: Inspections confirm the state of the track, not each reading, and they are infrequent. This discards most of the data
+      and still accepts fakes injected within confirmed periods.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check

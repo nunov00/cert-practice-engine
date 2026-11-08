@@ -1,0 +1,33 @@
+id: aair-d3-3.2-0033
+subdomain: '3.2'
+difficulty: hard
+stem: A logistics firm advertises driver jobs on a social platform, targeting all adults in each area. The platform's
+  delivery system decides who sees each advert, and about 85% of those reached are men. The skewed reach is above
+  the firm's appetite for discrimination risk. Which treatment is MOST appropriate?
+options:
+  A: Switch the adverts from click-optimised delivery to even reach
+  B: Rewrite the adverts with images and wording that appeal more to women
+  C: Target part of the budget at women only to even out overall reach
+  D: Track each month the share of applicants for the jobs who are women
+answer: A
+explanation:
+  why_correct: The firm's targeting is neutral, so the skew comes mainly from the platform's delivery, which optimises
+    for predicted clicks and learns from past engagement patterns. Moving to even-reach delivery removes the main
+    driver of the skew. Auction costs can still tilt reach between groups, so the firm should check the reach it
+    gets, but this is the treatment that acts where the skew arises.
+  why_not:
+    B: Creative content does influence delivery, so this may narrow the gap, but the optimiser still steers reach
+      by predicted engagement. It adjusts an input to the cause rather than the cause.
+    C: Targeting job adverts by sex can itself breach employment and equality law in many markets. It swaps one
+      discrimination risk for another.
+    D: Monitoring applicants is useful evidence, but it does not change who sees the adverts. The risk stays above
+      appetite.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aair-check

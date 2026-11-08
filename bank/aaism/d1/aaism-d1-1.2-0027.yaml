@@ -1,0 +1,32 @@
+id: aaism-d1-1.2-0027
+subdomain: '1.2'
+difficulty: medium
+stem: A retailer's marketing team used an AI tool to build a synthetic face and voice of a former store manager from training
+  videos the company owns, and used them in new ads. She left last year and has objected publicly. Which policy provision
+  BEST prevents a repeat?
+options:
+  A: Synthetic people in ads are disclosed as AI-generated
+  B: Synthetic media draws only on footage held with full rights
+  C: A real person's likeness is synthesised only with consent
+  D: AI-generated people in ads need legal and brand approval
+answer: C
+explanation:
+  why_correct: The harm is using a real, identifiable person's face and voice to say things she never said, without her agreement.
+    Requiring that person's consent before their likeness is synthesised addresses this directly, whoever owns the source
+    footage and however the result is labelled.
+  why_not:
+    A: Disclosure tells viewers the ad is synthetic, but the former manager is still shown endorsing products she never agreed
+      to, so her objection stands.
+    B: The company already owned the footage, so this rule was met. Owning a recording does not give a right to make the person
+      in it say new things.
+    D: Legal and brand review adds a check, but without a consent rule reviewers have no standard to apply, and with the footage
+      owned by the company they could well approve the same ads.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check

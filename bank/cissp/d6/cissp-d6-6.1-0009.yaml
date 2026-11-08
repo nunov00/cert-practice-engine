@@ -1,0 +1,32 @@
+id: cissp-d6-6.1-0009
+subdomain: '6.1'
+difficulty: hard
+stem: A bank's yearly security test plan covers external penetration tests, phishing simulations and monthly vulnerability
+  scans. The risk register's highest-rated risk is a payments clerk working with an outside accomplice to send fraudulent
+  payments. The board asks whether the plan tests what matters most. Which addition BEST aligns the plan with that risk?
+options:
+  A: An assumed-breach penetration test starting from a payments clerk's workstation
+  B: A red-team exercise with social engineering aimed at payments staff
+  C: Data loss prevention tests on the channels payments staff use to send files out
+  D: Tests of payment approval rules and of conflicting rights among payments users
+answer: D
+explanation:
+  why_correct: 'The risk is a trusted insider misusing legitimate access, so what limits it is the business controls in the
+    payments system: approvals that one clerk cannot complete alone and users who do not hold conflicting rights. None of
+    the current tests look at those, so testing them closes the gap between the plan and the top risk.'
+  why_not:
+    A: An assumed-breach test shows how far an attacker could get from a clerk's machine, but it tests technical escalation.
+      A colluding clerk needs no escalation, only the rights the job already gives.
+    B: A red team aimed at payments staff tests whether outsiders can deceive them, but in this risk the clerk is a willing
+      participant, so deception is not the route.
+    C: DLP tests cover data leaving the bank, but this fraud moves money through the payments system itself, not files through
+      outbound channels.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-cissp-check

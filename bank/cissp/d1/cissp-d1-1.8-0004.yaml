@@ -1,0 +1,32 @@
+id: cissp-d1-1.8-0004
+subdomain: '1.8'
+difficulty: hard
+stem: A payments team is two operators short in its busiest quarter and has hired an experienced operator who is needed to
+  release payments from her second week. Her criminal record check covers a country where she lived until last year and will
+  take about eight weeks. What should the hiring manager do?
+options:
+  A: Delay her start date until the overseas check has come back clear
+  B: Let her release payments, each approved by a second operator, until it clears
+  C: Let her start on a signed declaration of no convictions, checked when it clears
+  D: Replace the overseas check with a local record check and two references
+answer: B
+explanation:
+  why_correct: The check is missing for a known, limited period, and the team needs her work now. Requiring a second operator
+    to approve each payment she releases means she cannot move money alone while her background is unconfirmed, and the control
+    is removed once the check clears. It meets the staffing need without giving sole release rights to an unchecked person.
+  why_not:
+    A: Delaying the start is the safest course where no compensating control exists, but it leaves the team short for eight
+      weeks of its busiest quarter when dual approval can cover the gap.
+    C: A declaration deters some applicants, but if it is false she will have held sole release rights for eight weeks before
+      anyone finds out. It detects the problem after the exposure, rather than limiting it.
+    D: A local check and references are quick, but she lived abroad until last year, so a local check misses the period the
+      overseas check is meant to cover.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-cissp-check

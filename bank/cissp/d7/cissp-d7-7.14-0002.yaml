@@ -1,0 +1,33 @@
+id: cissp-d7-7.14-0002
+subdomain: '7.14'
+difficulty: hard
+stem: A tester cloned an engineer's 125 kHz proximity badge from two metres away in a cafe and used the copy to enter the
+  company's data hall. Replacing badges and readers across all 30 sites is planned and will take two years. The data hall
+  has 40 authorised staff and is entered about 200 times a day, around the clock. Which interim control BEST addresses the
+  risk?
+options:
+  A: Issue RF-shielding sleeves for the badges of the 40 data-hall staff
+  B: Post a guard at the data-hall door to compare each badge photo with its holder
+  C: Add a PIN keypad to the data-hall readers, requiring a badge and PIN to enter
+  D: Link the data-hall readers to cameras, flagging entries whose face does not match
+answer: C
+explanation:
+  why_correct: The badge alone can be copied without the holder knowing. Requiring a PIN as well at the data hall means a
+    cloned badge is not enough to enter, at every hour, for a modest cost and only at the door that matters, until the new
+    badges arrive.
+  why_not:
+    A: Shielding sleeves make skimming harder while badges are in them, but badges come out of them to be used, and a badge
+      already copied still opens the door.
+    B: A guard checking photos would stop most cloned badges, but covering one door around the clock takes several full-time
+      posts for two years, and a quick photo check at 200 entries a day tends to become a glance.
+    D: Face matching flags a mismatch after the reader has already opened the door, so it detects the entry instead of preventing
+      it.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-cissp-check

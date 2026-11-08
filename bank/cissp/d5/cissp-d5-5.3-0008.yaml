@@ -1,0 +1,33 @@
+id: cissp-d5-5.3-0008
+subdomain: '5.3'
+difficulty: hard
+stem: A consumer app lets users sign in with a password or through three OpenID Connect providers, and it links a provider
+  sign-in to an existing account whenever the email claims match. At one provider, a tester who administers his own organisation
+  there gave a test user a victim's address; the provider's token marked it as verified, and the tester was signed in to the
+  victim's app account. Which change BEST fixes this?
+options:
+  A: Link a provider sign-in only once the user signs in to the existing account
+  B: Link by email only when the provider's token marks the address as verified
+  C: Email the account's address a notice whenever a new sign-in method is linked
+  D: Link by email only for providers that confirm each address with a code sent to it
+answer: A
+explanation:
+  why_correct: A matching email claim shows only what a provider says about an address, not that the person signing in owns
+    the app account. Linking a provider identity, by its issuer and subject, only after the user has signed in to the existing
+    account in the usual way means no provider's claims can take over an account on their own.
+  why_not:
+    B: The token in this case already marked the tester's address as verified, because the provider trusts what an organisation's
+      administrator sets. A verified flag records the provider's own process, not that the user owns the app account.
+    C: A notice lets the real owner notice a takeover, but the tester is already inside the account by the time it is read,
+      so it detects rather than prevents.
+    D: Limiting linking to providers that confirm addresses by code narrows the risk, but the app still hands account ownership
+      to each provider's process and its exceptions, such as administrator-set addresses, rather than to the account holder.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-cissp-check

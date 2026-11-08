@@ -1,0 +1,32 @@
+id: aair-d1-1.5-0027
+subdomain: '1.5'
+difficulty: hard
+stem: A wellness app company adds an AI feature that assesses a photo of a user's mole and says whether it may be
+  cancerous and should be shown to a doctor. The company markets the app as a lifestyle product, not a medical service.
+  Which legal consideration should the risk practitioner MOST raise?
+options:
+  A: Whether users have given explicit consent to processing of their health data
+  B: Whether the feature's purpose makes the app a regulated medical device
+  C: Whether the company is liable to users for cancers the feature misses
+  D: Whether the app's marketing overstates what the feature can detect
+answer: B
+explanation:
+  why_correct: Software intended to detect or assess disease is typically regulated as a medical device, whatever
+    the marketing label. If the feature falls in scope, it cannot lawfully be offered without the required conformity
+    assessment and clinical evidence, so this question decides whether the feature can launch at all.
+  why_not:
+    A: Lawful processing of health data is a real requirement, but it can be met through consent and notices. It
+      does not decide whether the product may be sold.
+    C: Liability for missed cancers matters, but it follows from how the product is regulated and built. Device
+      classification comes first and shapes the safety evidence that would limit liability.
+    D: 'Marketing claims can breach consumer law, but here the issue runs the other way: calling the app a lifestyle
+      product does not take a diagnostic feature out of device rules.'
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aair-check

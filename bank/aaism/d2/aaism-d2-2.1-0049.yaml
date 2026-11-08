@@ -1,0 +1,31 @@
+id: aaism-d2-2.1-0049
+subdomain: '2.1'
+difficulty: medium
+stem: An insurer's AI risk register has one entry, 'AI model compromise', rated high and owned by the CIO, covering 40 systems.
+  A year on, no treatment has started, as no one can say which actions would lower the rating. What should the risk manager
+  do?
+options:
+  A: Set treatment deadlines for the CIO in the register
+  B: Express the entry's possible loss in money terms
+  C: Split it into specific scenarios with their own owners
+  D: Re-rate the entry against current threat intelligence
+answer: C
+explanation:
+  why_correct: A single broad entry across 40 systems cannot be linked to concrete controls, so nobody can treat it. Breaking
+    it into specific scenarios, such as poisoning of one model or injection into one agent, each owned by someone who controls
+    that system, makes treatments identifiable and progress measurable.
+  why_not:
+    A: Deadlines add pressure, but the CIO still cannot tell which actions reduce such a broad risk, so they would be missed
+      or met with token steps.
+    B: Quantifying helps prioritise, but a money figure for an undefined risk does not show which controls to apply, and would
+      itself be hard to estimate.
+    D: A fresh rating may be more accurate, but the entry would remain too broad to treat, whatever its level.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check

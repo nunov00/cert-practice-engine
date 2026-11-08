@@ -21,7 +21,7 @@ explanation:
       it does nothing about the flooding.
     C: An injection classifier looks for hostile instructions. The supplier's agent sent ordinary polite emails, so the
       classifier would have nothing to flag.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
@@ -29,4 +29,4 @@ provenance:
   run_id: 2026-11-01-daily-aaism
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-11-01-daily-aaism-check
+  checked_by: 2026-11-08-daily-aaism-check

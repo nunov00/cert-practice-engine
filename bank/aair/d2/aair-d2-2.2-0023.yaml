@@ -21,7 +21,7 @@ explanation:
       The actions taken along the way stay untested.
     D: Expert review may judge letters more accurately than a script, but it still looks only at the final output. The record
       changes and payments are where the larger harm could sit.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
@@ -29,4 +29,4 @@ provenance:
   run_id: 2026-11-02-daily-aair
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-11-02-daily-aair-check
+  checked_by: 2026-11-08-daily-aair-check

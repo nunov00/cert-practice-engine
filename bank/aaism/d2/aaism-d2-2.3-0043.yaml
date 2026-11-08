@@ -20,12 +20,12 @@ explanation:
     B: Notice would tell the bank that data had left the country, but only after the requirement had been broken.
     D: Bank-held keys protect stored data, but the model must read prompts in clear to process them, so customer data would
       still be processed abroad.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-02-daily-aaism
   check_verdict: pass
-  checked_by: 2026-11-02-daily-aaism-check
   options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check

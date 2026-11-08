@@ -1,0 +1,32 @@
+id: aaism-d3-3.1-0031
+subdomain: '3.1'
+difficulty: hard
+stem: Five banks train a shared fraud model by federated learning. They require secure aggregation, so the coordinator sees
+  only each round's combined update. A compromised node at one bank could send crafted updates to plant a backdoor. Which
+  design control BEST limits this?
+options:
+  A: Screen each bank's update for anomalies before combining
+  B: Test each round's combined model for backdoor triggers
+  C: Bound each update's size inside the secure aggregation
+  D: Sign each bank's updates and verify them before combining
+answer: C
+explanation:
+  why_correct: Secure aggregation hides each bank's update, so the defence has to work without the coordinator seeing them.
+    Enforcing a bound on each update's size within the protocol (for example with proofs the aggregation checks) limits how
+    far any one node can pull the shared model, which a backdoor needs, while keeping updates private.
+  why_not:
+    A: Screening individual updates is a standard poisoning defence, but it needs the coordinator to see each bank's update,
+      which the secure aggregation the banks require prevents.
+    B: Testing the combined model is worthwhile, but the attacker chooses the trigger and testing rarely finds it. At best
+      it detects a backdoor after it is in the model, and it does not limit the update.
+    D: Signing proves which node sent an update, but a compromised node signs its crafted updates with its own valid key,
+      so they pass verification.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check

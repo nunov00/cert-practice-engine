@@ -1,0 +1,32 @@
+id: aaism-d2-2.1-0050
+subdomain: '2.1'
+difficulty: hard
+stem: Threat reports show attackers using cloned voices of executives to get finance staff to make urgent payments. A manufacturer
+  uses no AI in finance, and its AI risk register covers only its own AI systems. Its enterprise register holds payment fraud
+  risks owned by the CFO. How should the new threat be reflected?
+options:
+  A: Add an AI-enabled fraud risk to the AI risk register
+  B: Raise the impact of the existing payment fraud risks
+  C: Log it as an emerging risk for next year's review
+  D: Re-rate the likelihood of existing payment fraud risks
+answer: D
+explanation:
+  why_correct: Voice cloning is a new way to carry out an existing risk, payment fraud, which already has an owner and controls.
+    Raising the likelihood of those risks puts the threat where the CFO decides on treatment, such as call-back checks, without
+    creating a duplicate entry whose owner does not control payments.
+  why_not:
+    A: The AI register covers the company's own AI systems. An entry there would duplicate the fraud risk and sit with owners
+      who have no say over the payment process.
+    B: The loss from a fraudulent payment is much the same however the fraud is carried out. What has changed is how often
+      attackers can succeed.
+    C: The technique is already in use against firms like this one, so deferring it to next year leaves the current payment
+      fraud risks understated.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check

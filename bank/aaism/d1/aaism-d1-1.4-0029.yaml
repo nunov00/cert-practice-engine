@@ -1,0 +1,32 @@
+id: aaism-d1-1.4-0029
+subdomain: '1.4'
+difficulty: medium
+stem: A mid-sized insurer cannot hire AI security specialists, so it will outsource AI threat monitoring and annual red teaming
+  to a managed provider. Only the insurer's product teams may change its AI systems, through their own release process. What
+  is MOST important for the program to set up?
+options:
+  A: A named internal owner to route findings to product teams
+  B: Service levels for how quickly the provider reports findings
+  C: Provider rights to change the insurer's guardrail settings
+  D: Provider certification to a recognised security standard
+answer: A
+explanation:
+  why_correct: Outsourcing the specialist work does not outsource accountability. Since only product teams can change the
+    systems, someone inside the insurer must own the provider's findings, decide priority and get them into those teams' work;
+    otherwise alerts and test results arrive on time and are never acted on.
+  why_not:
+    B: Reporting service levels make findings arrive quickly, but speed of delivery does not ensure anyone inside the insurer
+      takes them up and gets them fixed.
+    C: Letting the provider change settings itself would bypass the product teams' release process, which is the only permitted
+      route for changes, and would hand control of production systems to a third party.
+    D: Certification gives some assurance about the provider's own security, but it does not address how the insurer turns
+      the provider's findings into fixes.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check

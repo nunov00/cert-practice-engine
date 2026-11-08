@@ -1,0 +1,32 @@
+id: aair-d3-3.5-0032
+subdomain: '3.5'
+difficulty: hard
+stem: A bank's relationship managers use a vendor's AI writing service to draft client letters. To cut costs, the
+  vendor will start returning a stored answer whenever any customer of the service sends a prompt very similar to
+  an earlier one. Which requirement should the bank BEST place on the vendor?
+options:
+  A: Answers are reused only for the bank's own prompts
+  B: Client names are removed from prompts before they are sent
+  C: The vendor may not train its models on the bank's prompts
+  D: The vendor's assurance report covers the new answer store
+answer: A
+explanation:
+  why_correct: A cache shared across all customers can hand one customer's stored answer, containing its clients'
+    details, to another customer with a similar prompt. Keeping the cache within the bank's own tenant removes that
+    cross-customer leak while letting the vendor keep its cost saving.
+  why_not:
+    B: Removing names helps, but letters also hold account details, amounts and circumstances that identify clients,
+      and the bank's confidential wording could still reach other customers.
+    C: A no-training clause is the usual data-use protection, but caching is not training. Answers could still pass
+      to other customers without the vendor training on anything.
+    D: Assurance over the answer store may confirm that it is secure, but a well-secured shared cache still serves
+      one customer's answers to another by design.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aair-check

@@ -1,0 +1,33 @@
+id: cissp-d1-1.4-0004
+subdomain: '1.4'
+difficulty: hard
+stem: A payroll bureau processes employee data for 30 client companies under GDPR. On Monday it confirmed that an attacker
+  copied files from the databases of four clients; which fields were taken is still being worked out. What should the bureau's
+  privacy lead do FIRST?
+options:
+  A: Notify the supervisory authority within 72 hours, naming the four affected clients
+  B: Notify the affected employees directly, as their payroll records were copied
+  C: Confirm exactly which fields were taken, then notify the four clients in full
+  D: Notify the four clients now with what is known, updating them as work goes on
+answer: D
+explanation:
+  why_correct: The bureau processes the data on its clients' behalf, so it is the processor and the four clients are the controllers.
+    A processor must tell its controllers without undue delay once it becomes aware of a breach, and the information may follow
+    in phases. The clients then need the time to decide on notifying the authority within their own 72 hours and on telling
+    their staff.
+  why_not:
+    A: The 72-hour notice to the supervisory authority is the controller's duty. The bureau acting for its clients would take
+      a decision that is theirs, and the clients would still not know of the breach.
+    B: Deciding whether the risk to employees calls for telling them, and what to say, rests with each employer as controller.
+      A processor contacting its clients' staff directly takes that decision out of their hands.
+    C: Knowing which fields were taken matters, but waiting for a complete picture eats into the clients' own 72 hours. The
+      duty is to tell them without undue delay and send details as they become known.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-cissp-check

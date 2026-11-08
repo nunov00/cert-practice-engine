@@ -1,0 +1,32 @@
+id: aaism-d2-2.2-0054
+subdomain: '2.2'
+difficulty: hard
+stem: A penetration test of a bank's support agent found that when a tool call fails, the full database error, including a
+  connection string with a password, is passed back to the model. Testers then got the agent to repeat its last error. Which
+  fix BEST addresses the weakness?
+options:
+  A: Return only generic error codes from tools to the agent
+  B: Filter agent replies for passwords and connection strings
+  C: Move the database password into a vault and rotate it
+  D: Tell the agent in its system prompt not to reveal errors
+answer: A
+explanation:
+  why_correct: The secret leaks because tools hand raw internals to the model, after which any prompt that steers the model
+    can extract them. Returning generic error codes keeps secrets out of the model's context entirely, so no wording or encoding
+    trick can make it repeat them.
+  why_not:
+    B: Output filtering catches the obvious pattern, but testers can ask for the error spelled out, translated or encoded,
+      and the secret is still in the model's context.
+    C: Vaulting and rotation are good practice, but if failed calls still return the connection string, the new password leaks
+      the same way.
+    D: System prompt instructions can be overridden by persistent or crafted prompts, so they do not reliably stop the model
+      revealing what is in its context.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check

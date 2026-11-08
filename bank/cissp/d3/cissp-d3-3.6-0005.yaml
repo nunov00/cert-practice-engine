@@ -1,0 +1,32 @@
+id: cissp-d3-3.6-0005
+subdomain: '3.6'
+difficulty: hard
+stem: A consultancy runs about 3,000 internal services whose host names include client project names, which its client contracts
+  require it to keep confidential. It wants every service to use TLS certificates that renew automatically every few days.
+  All the clients of these services are company-managed devices. Which certificate approach BEST fits?
+options:
+  A: Certificates from a public CA, issued and renewed automatically through ACME
+  B: One wildcard certificate from a public CA, deployed to the internal services
+  C: Certificates from a private CA, issued and renewed through automated enrolment
+  D: Self-signed certificates for each service, pinned by each client application
+answer: C
+explanation:
+  why_correct: Certificates from a private CA are not written to public Certificate Transparency logs, so the host names stay
+    private. Managed devices can be given the private root, and automated enrolment supports lifetimes of a few days across
+    thousands of services.
+  why_not:
+    A: ACME automates short-lived certificates well, but public CAs log every certificate they issue in Certificate Transparency
+      logs, which anyone can search, so the client project names would be published.
+    B: A wildcard keeps individual names out of the public logs, but one private key would sit on 3,000 services, so a compromise
+      of any one exposes all of them, and renewing every few days means redistributing that key each time.
+    D: Pinning avoids any CA, but with thousands of services and new keys every few days, every client would have to update
+      its pins constantly, and a missed update breaks the connection.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-cissp-check

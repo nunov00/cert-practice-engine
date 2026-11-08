@@ -1,0 +1,32 @@
+id: aaism-d3-3.1-0032
+subdomain: '3.1'
+difficulty: medium
+stem: A workplace chat assistant answers in team channels and in direct messages, keeping one memory per user. A manager discussed
+  a staff member's health in a direct message, and the assistant later drew on it when answering the manager in a team channel.
+  Which design change BEST prevents this?
+options:
+  A: Scope each memory to the audience it was shared with
+  B: Screen channel replies for health and other personal data
+  C: Expire each user's memory entries after seven days
+  D: Ask users to confirm each memory before it is saved
+answer: A
+explanation:
+  why_correct: The leak happened because memory followed the user into a setting with a wider audience. Tying each memory
+    to the audience of the conversation where it was shared lets the assistant use direct-message context in that conversation
+    and keeps it out of channels whose members never had access to it, whatever the topic.
+  why_not:
+    B: A personal data screen catches some health details, but misses context that is sensitive without matching a pattern,
+      such as performance or disciplinary matters. It treats a design flaw as a filtering problem.
+    C: Short expiry narrows the window, but a direct message from yesterday could still surface in a channel today. It limits
+      how long memory lasts, not who can see it.
+    D: Confirmation stops unwanted saves, but the manager would rightly confirm a useful note. The problem is where a legitimate
+      memory is used later, not whether it is saved.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check

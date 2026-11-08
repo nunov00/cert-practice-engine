@@ -1,0 +1,32 @@
+id: aaism-d3-3.2-0032
+subdomain: '3.2'
+difficulty: hard
+stem: A security vendor's malware classifier scored 99% on a test set drawn at random from its sample library, which holds
+  many near-identical samples of each malware family. In the field it misses much malware first seen after release. Which
+  change to pre-release testing BEST predicts field results?
+options:
+  A: Keep a private test set hidden from the training team
+  B: Test on recent evasive variants of known samples
+  C: Test on the latest months of samples, split by date
+  D: Test on families and months kept out of training
+answer: D
+explanation:
+  why_correct: With many near-identical samples per family, any split that lets a family appear in both training and test
+    data mostly measures recognition of known families. Holding out whole families as well as the latest months makes the
+    test resemble what the model meets after release, including malware unlike anything it was trained on.
+  why_not:
+    A: A private test set stops the team tuning to the test data, but drawn at random from the same library it still shares
+      near-identical samples with training and would score just as high.
+    B: Recent evasive variants test robustness on new samples, a real concern, but they come from known families, so the model
+      has already seen close relatives of them.
+    C: A date split tests on newer samples, but most of them belong to families already in training, so near-identical relatives
+      keep the score high and hide misses on new families.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-08-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-08-daily-aaism-check
