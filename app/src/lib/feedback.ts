@@ -1,12 +1,11 @@
 // Anonymous feedback (docs/feedback.md). Pure logic, so it is testable without
-// Cloudflare: the API route passes in the D1 binding, the GitHub writer and the
-// request data.
+// Cloudflare: the API route passes in the D1 binding and the request data.
 //
 // Privacy: we keep the message, a category, the page it was sent from (path
 // only) and the time. Never a name, email, IP address, user agent or cookie.
-// Each message becomes one file in the owner's PRIVATE repo (FEEDBACK_REPO);
-// D1 only holds it briefly as an outbox until that write succeeds, plus the
-// anonymous daily counters. Nothing goes to the public repo.
+// Messages stay in the private D1 database (table `feedback`) until an agent
+// deletes them with the owner's OK; there is no token and no copy elsewhere.
+// Nothing goes to the public repo.
 
 export const CATEGORIES = [
   { id: "idea", label: "Idea or suggestion" },
@@ -23,19 +22,8 @@ const MAX_PAGE = 200;
 export const DAILY_CAP = 200;
 /** Messages one visitor can send per UTC day (owner's choice, 2026-10-13). */
 export const VISITOR_DAILY_LIMIT = 5;
-/** Outbox rows pushed to the private repo per request. */
-export const FLUSH_BATCH = 10;
 
 export interface FeedbackInput {
-  category: Category;
-  message: string;
-  page: string | null;
-}
-
-/** A message waiting in the D1 outbox. */
-export interface FeedbackRow {
-  id: number;
-  created_at: string;
   category: Category;
   message: string;
   page: string | null;
@@ -147,7 +135,7 @@ export async function saveFeedback(db: Db, input: FeedbackInput, now: Date, ip: 
   const iso = now.toISOString();
   const day = iso.slice(0, 10);
   const visitor = await visitorId(db, day, ip);
-  // Outbox rows leave once filed, so the site-wide count comes from today's counters.
+  // The site-wide count comes from today's counters, so deleting reviewed rows can't reopen the cap.
   const count = await db
     .prepare("SELECT COALESCE(SUM(n), 0) AS n FROM feedback_quota WHERE day = ?")
     .bind(day)
@@ -167,54 +155,4 @@ export async function saveFeedback(db: Db, input: FeedbackInput, now: Date, ip: 
     .bind(iso, day, input.category, input.message, input.page)
     .run();
   return "saved";
-}
-
-// ---- Filing into the private repo ----
-
-/** Writes one file; resolves true once it is stored. */
-export type FileWriter = (path: string, content: string, commitMessage: string) => Promise<boolean>;
-
-/** `inbox/2026-10-13/20261013T100000Z-<id>.md`: sorts by time, unique per message. */
-export function feedbackPath(row: Pick<FeedbackRow, "id" | "created_at">): string {
-  const stamp = row.created_at.replace(/[-:]/g, "").replace(/\.\d+Z$/, "Z");
-  return `inbox/${row.created_at.slice(0, 10)}/${stamp}-${row.id}.md`;
-}
-
-export function feedbackFile(row: FeedbackRow): string {
-  const label = CATEGORIES.find((c) => c.id === row.category)?.label ?? row.category;
-  return [
-    "---",
-    `received: ${row.created_at}`,
-    `category: ${row.category} # ${label}`,
-    `page: ${row.page ?? "none"}`,
-    "---",
-    "",
-    row.message,
-    "",
-  ].join("\n");
-}
-
-/**
- * Files the oldest outbox messages into the private repo and removes each from
- * D1 once stored. Failures stay in the outbox and are retried on the next send.
- */
-export async function flushOutbox(db: Db, write: FileWriter, limit = FLUSH_BATCH): Promise<number> {
-  await ensureSchema(db);
-  const { results } = await db
-    .prepare("SELECT id, created_at, category, message, page FROM feedback ORDER BY id LIMIT ?")
-    .bind(limit)
-    .all<FeedbackRow>();
-  let filed = 0;
-  for (const row of results) {
-    let ok = false;
-    try {
-      ok = await write(feedbackPath(row), feedbackFile(row), `Feedback: ${row.category}`);
-    } catch {
-      ok = false;
-    }
-    if (!ok) break;
-    await db.prepare("DELETE FROM feedback WHERE id = ?").bind(row.id).run();
-    filed++;
-  }
-  return filed;
 }

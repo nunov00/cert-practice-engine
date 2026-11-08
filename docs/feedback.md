@@ -17,27 +17,16 @@ and approved by the owner the same day.
 
 ## Where it goes
 
-Each message becomes **one Markdown file in the private repo
-`nunov00/knowmark-feedback`**:
+Each message is **one row in the `feedback` table of the Cloudflare D1 database
+`knowmark-feedback`** (binding `FEEDBACK_DB` in `app/wrangler.jsonc`):
+`id`, `created_at`, `day`, `category`, `message`, `page`, `status` (`new` until
+an agent marks it `reviewed`).
 
-```
-inbox/2026-10-13/20261013T101500Z-42.md
----
-received: 2026-10-13T10:15:00.123Z
-category: idea # Idea or suggestion
-page: /exams/cissp
----
-
-The message text.
-```
-
-The Worker writes it with the GitHub contents API using the Worker secret
-`FEEDBACK_GITHUB_TOKEN` (repo set by `FEEDBACK_REPO` in `app/wrangler.jsonc`).
-Messages first go into a small D1 outbox (`knowmark-feedback`, table
-`feedback`) and are filed into the repo right after the visitor gets their
-"thanks"; any that can't be filed yet (for example before the token exists)
-stay in the outbox and are filed on a later send. Re-filing is safe: a file that
-already exists counts as done.
+The site needs **no token or secret** for this, so nothing expires. Until
+2026-11-08 the Worker filed each message as a Markdown file in the private repo
+`nunov00/knowmark-feedback` with a fine-grained GitHub token; GitHub tokens
+expire, so the owner asked for a mechanism with no recurring work. That repo is
+kept as a read-only archive of the older messages (`inbox/<date>/*.md`).
 
 Nothing goes to this public repo, a public page or GitHub Actions. There is no
 admin page.
@@ -64,14 +53,20 @@ fragments.
 
 ## Reviewing feedback (any agent)
 
-When the owner asks:
+Agents read D1 through Cloudflare (the Claude project's Cloudflare connector:
+`d1_database_query` on `knowmark-feedback`; or `wrangler d1 execute
+knowmark-feedback --remote` with an account token). When the owner asks:
 
-1. Read the files under `inbox/` in `nunov00/knowmark-feedback` (newest
-   folders first).
+1. Read new messages:
+   `SELECT id, created_at, category, page, message FROM feedback WHERE status = 'new' ORDER BY id DESC`
+   (drop the `WHERE` to see reviewed ones too). Check the archive repo's
+   `inbox/` as well while it still has files.
 2. Summarise and classify them for the owner (themes, bugs, wrong questions,
-   ideas worth doing), with file names so the owner can refer to them.
-3. Delete files the owner agrees are old or useless, in that repo, with a
-   commit message naming the files only.
+   ideas worth doing), with message ids so the owner can refer to them.
+3. Mark what you summarised: `UPDATE feedback SET status = 'reviewed' WHERE id IN (...)`.
+4. Delete messages the owner agrees are old or useless:
+   `DELETE FROM feedback WHERE id IN (...)` (archive files: delete them in that
+   repo with a commit message naming the files only).
 
 Keep what you read private: don't copy feedback into this repo, its PRs,
 issues, Actions logs or any public place. Turning feedback into work means
@@ -81,22 +76,11 @@ not quoting the visitor.
 Nothing is scheduled (AGENTS.md: no automation without the owner's approval). A
 weekly summary routine is easy to add if the owner wants one.
 
-## One-time setup (owner)
+## Setup
 
-1. **Private repo:** create `nunov00/knowmark-feedback` on GitHub, **Private**,
-   with a README.
-2. **Token for the site:** GitHub, Settings, Developer settings, Personal access
-   tokens, **Fine-grained tokens**, Generate new token. Repository access: *Only
-   select repositories*, `knowmark-feedback`. Permissions: **Contents: Read and
-   write** (nothing else). Pick the longest expiry you're comfortable with and
-   note the date: when it expires, messages wait in the outbox until a new
-   token is added.
-3. **Give it to the site:** Cloudflare, Workers & Pages, `cert-practice-engine`,
-   Settings, Variables and Secrets, Add, type **Secret**, name
-   `FEEDBACK_GITHUB_TOKEN`, value the token. Never put it in a repo or chat.
-4. **Give agents access:** add `knowmark-feedback` to the Claude project's
-   repositories; give Codex (or another worker) access to it the same way you
-   give it this repo. Remove a repo from an agent to revoke its access.
-
-The D1 database and its permission on the deploy token were set up on
-2026-10-13.
+Nothing for the owner to do. The D1 database and its permission on the deploy
+token were set up on 2026-10-13. The old Worker secret `FEEDBACK_GITHUB_TOKEN`
+and its GitHub token are no longer used; the owner can delete both (Cloudflare:
+Workers & Pages, `cert-practice-engine`, Settings, Variables and Secrets;
+GitHub: Settings, Developer settings, Personal access tokens) or let the token
+expire.

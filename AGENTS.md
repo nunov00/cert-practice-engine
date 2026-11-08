@@ -95,11 +95,13 @@ PR description declares `Review class: routine | material | mandatory` and
 
 ## Learner feedback
 
-Anonymous, private to the owner (`docs/feedback.md`). Each message is a file
-under `inbox/` in the PRIVATE repo `nunov00/knowmark-feedback`. When the owner
-asks for a review, read the files there, summarise and classify them, and
-delete old or useless ones there when the owner agrees. Never copy feedback
-into this public repo, its PRs, issues or Actions logs.
+Anonymous, private to the owner (`docs/feedback.md`). Each message is a row in
+the `feedback` table of the Cloudflare D1 database `knowmark-feedback` (no token,
+nothing to renew). When the owner asks for a review, query it (and the older
+files under `inbox/` in the PRIVATE repo `nunov00/knowmark-feedback`, an archive
+from before 2026-11-08), summarise and classify them, mark reviewed rows, and
+delete old or useless ones when the owner agrees. Never copy feedback into this
+public repo, its PRs, issues or Actions logs.
 
 ## Usage stats
 
