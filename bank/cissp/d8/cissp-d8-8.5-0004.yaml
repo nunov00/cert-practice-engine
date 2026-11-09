@@ -1,9 +1,9 @@
 id: cissp-d8-8.5-0004
 subdomain: '8.5'
-difficulty: hard
-stem: A tester made his own account an administrator by adding a role field to a profile update request. The web framework binds each
-  request's JSON body straight onto the user model, which gains new fields most sprints, such as credit limits and verification flags.
-  Which rule should the secure coding standard add?
+difficulty: medium
+stem: A tester made his own account an administrator by adding a role field to a profile update request. The web
+  framework binds each request's JSON body straight onto the user model, which gains new fields most sprints, such as
+  credit limits and verification flags. Which rule should the secure coding standard add?
 options:
   A: Bind each request only to the fields declared for that endpoint, and ignore the rest
   B: Remove fields on a maintained list of sensitive names, such as role, before each binding
@@ -11,15 +11,16 @@ options:
   D: Validate each bound field against its declared type and range of allowed values
 answer: A
 explanation:
-  why_correct: Mass assignment happens because the client decides which fields are written. Binding each request to a model that declares
-    only the fields that endpoint may change means anything else is ignored, including fields added to the user model in later sprints.
+  why_correct: Mass assignment happens because the client decides which fields are written. Binding each request to a
+    model that declares only the fields that endpoint may change means anything else is ignored, including fields added
+    to the user model in later sprints.
   why_not:
-    B: A deny-list blocks the fields on it, but the user model gains fields most sprints, and each new sensitive field stays writable
-      until someone remembers to add it.
-    C: Checking who may change roles closes this instance, but credit limits, verification flags and future fields stay writable through
-      the same binding.
-    D: Type and range checks catch malformed values, but an administrator role is a valid value for the role field, so the request would
-      still be accepted.
+    B: A deny-list blocks the fields on it, but the user model gains fields most sprints, and each new sensitive field stays
+      writable until someone remembers to add it.
+    C: Checking who may change roles closes this instance, but credit limits, verification flags and future fields stay
+      writable through the same binding.
+    D: Type and range checks catch malformed values, but an administrator role is a valid value for the role field, so the
+      request would still be accepted.
 status: published
 outline_version: '2024-04-15'
 sample: false

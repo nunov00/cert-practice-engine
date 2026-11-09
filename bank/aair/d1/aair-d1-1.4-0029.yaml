@@ -1,27 +1,27 @@
 id: aair-d1-1.4-0029
 subdomain: '1.4'
 difficulty: hard
-stem: A consultancy's staff use an approved AI assistant to draft client reports. Some client contracts bar AI use,
-  a few require it to be disclosed, and most say nothing. Engagement teams often do not know their own contract's
-  terms. Which procedure BEST manages this?
+stem: A consultancy's staff use an approved AI assistant to draft client reports. Some client contracts bar AI use, a
+  few require it to be disclosed, and most say nothing. Engagement teams often do not know their own contract's terms.
+  Which procedure BEST manages this?
 options:
   A: Disclose AI assistance in each report the firm issues to clients
   B: Record each contract's AI terms at setup and set tool access to match
-  C: Train engagement leads on how client contracts commonly treat AI
-  D: Have the quality team check each AI-drafted report before issue
+  C: Train engagement leads on how client contracts most commonly treat AI
+  D: Have the quality team check each AI-drafted report against its contract
 answer: B
 explanation:
-  why_correct: The obligation differs by contract, and the people using the tool do not know which terms apply to
-    them. Capturing each engagement's AI terms when it is set up, and turning the assistant off, on, or on with
-    disclosure to match, applies the contract's answer at the point of use. It prevents use where it is barred instead
-    of finding it afterwards.
+  why_correct: The obligation differs by contract, and the people using the tool do not know which terms apply to them.
+    Capturing each engagement's AI terms when it is set up, and turning the assistant off, on, or on with disclosure to
+    match, applies the contract's answer at the point of use, and the report workflow then adds the disclosure where it
+    is required. It prevents use where it is barred instead of finding it afterwards.
   why_not:
-    A: Disclosing in every report meets the contracts that ask for disclosure, but disclosure does not cure a breach
-      where the contract bars AI use altogether.
-    C: Training explains common patterns, but teams would still not know what their own contract says, which is
-      the stated problem.
-    D: A check before issue comes after the AI has already been used on work where the contract may forbid it, and
-      the reviewers would also need to know each contract's terms.
+    A: Disclosing in every report meets the contracts that ask for disclosure, but disclosure does not cure a breach where
+      the contract bars AI use altogether.
+    C: Training explains common patterns, but teams would still not know what their own contract says, which is the stated
+      problem.
+    D: Checking each report against its contract catches a breach before issue, but by then the AI has already been used on
+      work where the contract may forbid it, so the breach has happened.
 status: published
 outline_version: '2026-04-15'
 sample: false

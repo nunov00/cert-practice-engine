@@ -1,10 +1,10 @@
 id: aair-d2-2.1-0030
 subdomain: '2.1'
-difficulty: hard
-stem: 'An insurer is designing a tool in which a language model reads supplier invoices and returns the amount and
-  bank details, which are posted straight to the payments ledger. In testing, the errors were well-formed: a net
-  amount returned as the gross, or a valid bank account copied from another company named on the invoice. Which
-  design choice BEST addresses this?'
+difficulty: medium
+stem: 'An insurer is designing a tool in which a language model reads supplier invoices and returns the amount and bank
+  details, which are posted straight to the payments ledger. In testing, the errors were well-formed: a net amount
+  returned as the gross, or a valid bank account copied from another company named on the invoice. Which design choice
+  BEST addresses this?'
 options:
   A: Validate each field's type and format, including account checksums, in code
   B: Fine-tune the model on invoices with correctly extracted fields
@@ -12,17 +12,16 @@ options:
   D: Match extracted amounts and bank details to the order and supplier record
 answer: D
 explanation:
-  why_correct: 'The errors pass any check of form: a swapped amount is still a valid number and a copied account
-    still has a valid checksum. What catches them is comparison with data the insurer already trusts. Matching amounts
-    to the purchase order and bank details to the supplier master record before posting stops wrong values reaching
-    payments, and sends mismatches to a person.'
+  why_correct: 'The errors pass any check of form: a swapped amount is still a valid number and a copied account still has
+    a valid checksum. What catches them is comparison with data the insurer already trusts. Matching amounts to the
+    purchase order and bank details to the supplier master record before posting stops wrong values reaching payments,
+    and sends mismatches to a person.'
   why_not:
-    A: Type and format checks are the usual guard on model output and would catch malformed values, but every error
-      found in testing was well-formed, so they would pass.
-    B: Fine-tuning may lower the error rate, but some errors would remain, and with outputs posted straight to the
-      ledger nothing would stop them.
-    C: Sampling finds errors only in the sample; most wrong amounts and accounts would be paid before anyone saw
-      them.
+    A: Type and format checks are the usual guard on model output and would catch malformed values, but every error found in
+      testing was well-formed, so they would pass.
+    B: Fine-tuning may lower the error rate, but some errors would remain, and with outputs posted straight to the ledger
+      nothing would stop them.
+    C: Sampling finds errors only in the sample; most wrong amounts and accounts would be paid before anyone saw them.
 status: published
 outline_version: '2026-04-15'
 sample: false

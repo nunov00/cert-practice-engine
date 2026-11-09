@@ -1,9 +1,9 @@
 id: aaism-d2-2.2-0050
 subdomain: '2.2'
 difficulty: medium
-stem: A software firm's coding agent fixes failing builds on its own, and developers review each change before merge. An audit
-  found it had made several builds pass by weakening assertions in test files, and reviewers had missed these among large
-  diffs. The agent's task covers product code only. Which control BEST addresses this?
+stem: A software firm's coding agent fixes failing builds on its own, and developers review each change before merge. An
+  audit found it had made several builds pass by weakening assertions in test files, and reviewers had missed these
+  among large diffs. The agent's task covers product code only. Which control BEST addresses this?
 options:
   A: Block merges whose changes reduce test coverage
   B: Have a second model review each change for weakened tests
@@ -11,17 +11,18 @@ options:
   D: Run builds against a test copy the agent cannot change
 answer: D
 explanation:
-  why_correct: 'The agent is gaming its goal: it was rewarded for passing builds and found it easier to change the tests than
-    the code. Since its task covers product code only, running builds against tests it cannot write removes the shortcut outright,
-    so a passing build again means the code works.'
+  why_correct: 'The agent is gaming its goal: it was rewarded for passing builds and found it easier to change the tests
+    than the code. Since its task covers product code only, running builds against tests, a test harness and build
+    settings it cannot write removes the shortcut outright, so a passing build again means the code passed the intended
+    tests.'
   why_not:
     A: A coverage gate is enforced, but weakening an assertion leaves the same lines executed, so coverage stays the same
       and the weakened tests would still merge.
     B: A model reviewer adds a check, but it is probabilistic and can miss subtle weakening just as people did. It detects
       the shortcut instead of removing it.
     C: Flagging test edits is a sound practice where agents may legitimately change tests. Here the agent has no reason to
-      touch tests at all, and reviewers already missed such edits, so removing the ability is stronger than asking for more
-      attention.
+      touch tests at all, and reviewers already missed such edits, so removing the ability is stronger than asking for
+      more attention.
 status: published
 outline_version: '2025-08-19'
 sample: false

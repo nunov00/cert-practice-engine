@@ -1,9 +1,10 @@
 id: cissp-d7-7.10-0003
 subdomain: '7.10'
 difficulty: medium
-stem: A company runs its main systems in one public cloud and keeps immutable backups in a separate account there, under different
-  credentials. Its recovery plan now adds a scenario in which the company loses access to that provider entirely, for example
-  through an organisation-wide suspension, and core services must return within five days. Which strategy BEST covers it?
+stem: A company runs its main systems in one public cloud and keeps immutable backups in a separate account there, under
+  different credentials. Its recovery plan now adds a scenario in which the company loses access to that provider
+  entirely, for example through an organisation-wide suspension, and core services must return within five days. Which
+  strategy BEST covers it?
 options:
   A: Copy backups to a second provider in a format restorable without the first
   B: Replicate the backup account to a distant region of the same provider
@@ -12,11 +13,12 @@ options:
 answer: A
 explanation:
   why_correct: The scenario removes the provider itself, so any copy that depends on it, in any account or region, is out
-    of reach. A copy at a second provider, in a format that can be restored with tools that do not need the first provider's
-    services, gives the company something to rebuild from within five days.
+    of reach. A copy at a second provider, in a format that can be restored with tools that do not need the first
+    provider's services, gives the company something to rebuild from; a restore test there then shows whether five days
+    is achievable.
   why_not:
-    B: Cross-region copies protect against a regional outage, the most common cloud failure, but an organisation-wide suspension
-      reaches each region and account the company holds with that provider.
+    B: Cross-region copies protect against a regional outage, the most common cloud failure, but an organisation-wide
+      suspension reaches each region and account the company holds with that provider.
     C: Exit terms are worth having for an orderly move, but data returned within 30 days misses the five-day target, and a
       provider that has suspended the company may not cooperate quickly.
     D: Longer immutability protects backups from deletion for longer, which helps against ransomware, but they stay inside

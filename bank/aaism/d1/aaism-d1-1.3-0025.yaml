@@ -1,9 +1,10 @@
 id: aaism-d1-1.3-0025
 subdomain: '1.3'
 difficulty: medium
-stem: A sports analytics firm spent USD 2 million fine-tuning an open-weight model on public match data and on tracking data
-  licensed from two leagues, whose contracts require the data to be kept internal. The model gives the firm an edge over its
-  competitors. What should MAINLY decide the weights' classification?
+stem: A sports analytics firm spent USD 2 million fine-tuning an open-weight model on public match data and on tracking
+  data licensed from two leagues, whose contracts require the data to be kept internal and place no conditions on models
+  trained with it. The model gives the firm an edge over its competitors. What should MAINLY decide the weights'
+  classification?
 options:
   A: The sensitivity of the data the model was trained on
   B: The harm to the firm if the weights were disclosed
@@ -11,16 +12,16 @@ options:
   D: The number of the firm's services that depend on it
 answer: B
 explanation:
-  why_correct: Classification reflects the harm that disclosure would cause. Here the greatest harm lies in the weights themselves,
-    which embody costly tuning and a competitive edge. That harm is larger than anything the inputs alone imply, so it sets
-    a confidential level above the internal handling that the data and the licences call for.
+  why_correct: Classification reflects the harm that disclosure would cause. Here the greatest harm lies in the weights
+    themselves, which embody costly tuning and a competitive edge. That harm is larger than anything the inputs alone
+    imply, so it sets a confidential level above the internal handling that the data and the licences call for.
   why_not:
     A: Training data sensitivity often decides a model's classification, for example when a model can reveal personal data,
       but here it points only to public and internal data, well below what the weights are worth to the firm.
-    C: The league licences set a floor that must be respected, but they only require internal handling; they say nothing about
-      the firm's own loss if the weights, its costly competitive edge, leaked.
-    D: The number of dependent services measures criticality for availability, not the confidentiality harm that decides where
-      the weights may be stored.
+    C: The league licences set a floor that must be respected, but they only require internal handling; they say nothing
+      about the firm's own loss if the weights, its costly competitive edge, leaked.
+    D: The number of dependent services measures criticality for availability, not the confidentiality harm that decides
+      where the weights may be stored.
 status: published
 outline_version: '2025-08-19'
 sample: false

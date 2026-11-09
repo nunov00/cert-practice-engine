@@ -1,9 +1,10 @@
 id: cissp-d3-3.5-0004
 subdomain: '3.5'
 difficulty: hard
-stem: An online lender's API gateway signs users in, then adds a header naming the user to each request it passes to the 30 microservices
-  behind it. The microservices call one another to complete requests and trust that header. Testers who compromised one microservice
-  called the loan service directly with a forged header and read other customers' loans. Which change BEST closes this weakness?
+stem: An online lender's API gateway signs users in, then adds a header naming the user to each request it passes to the
+  30 microservices behind it. The microservices call one another to complete requests and trust that header. Testers who
+  compromised one microservice called the loan service directly with a forged header and read other customers' loans.
+  Which change BEST closes this weakness?
 options:
   A: Network policies that let each microservice accept calls only from the gateway
   B: Signed user tokens from the gateway that each microservice verifies on every call
@@ -11,16 +12,17 @@ options:
   D: Header checks at the gateway that strip any user header a client sends in
 answer: B
 explanation:
-  why_correct: The services trust a claim about the user that anything inside the network can write. A token signed by the gateway,
-    passed along with each call and verified by every service, cannot be forged by a compromised service, so each service knows which
-    user a request is really for, whatever path it took.
+  why_correct: The services trust a claim about the user that anything inside the network can write. A short-lived token
+    signed by the gateway, passed along with each call and verified by every service, including its audience, scope and
+    expiry, cannot be forged by a compromised service, so each service knows which user a request is really for,
+    whatever path it took. The loan service must still check that this user may read the loan requested.
   why_not:
-    A: Accepting calls only from the gateway would stop direct calls, but the services must call one another to complete requests, so
-      the policy would break them or be widened until the compromised service could still call.
-    C: Mutual TLS proves which service is calling, which helps for service-level permissions, but the compromised service holds a genuine
-      certificate, and the TLS identity says nothing about which user the request is for.
-    D: Stripping client-sent user headers at the gateway is standard and stops forgery from outside, but the testers forged the header
-      from inside, behind the gateway.
+    A: Accepting calls only from the gateway would stop direct calls, but the services must call one another to complete
+      requests, so the policy would break them or be widened until the compromised service could still call.
+    C: Mutual TLS proves which service is calling, which helps for service-level permissions, but the compromised service
+      holds a genuine certificate, and the TLS identity says nothing about which user the request is for.
+    D: Stripping client-sent user headers at the gateway is standard and stops forgery from outside, but the testers forged
+      the header from inside, behind the gateway.
 status: published
 outline_version: '2024-04-15'
 sample: false

@@ -1,10 +1,10 @@
 id: aair-d3-3.2-0035
 subdomain: '3.2'
 difficulty: hard
-stem: A hospital's AI tool assigns billing codes to patient records, and wrong codes lead to payer penalties. Coders
-  can review about 10% of records. In an audit sample, codes the tool gave with over 95% confidence were wrong about
-  as often as its other codes. A second, separately built model of similar overall accuracy is available. Which
-  treatment BEST reduces the risk?
+stem: A hospital's AI tool assigns billing codes to patient records, and wrong codes lead to payer penalties. Coders can
+  review about 10% of records. In an audit sample, codes the tool gave with over 95% confidence were wrong about as
+  often as its other codes. A second, separately built model of similar overall accuracy is available, and the two
+  models give different codes on about 8% of records. Which treatment BEST reduces the risk?
 options:
   A: Send the 10% of records with the lowest confidence scores to coders
   B: Use the second model's code wherever its confidence is higher
@@ -12,17 +12,19 @@ options:
   D: Send the records where the two models' codes disagree to coders
 answer: D
 explanation:
-  why_correct: 'With review capacity limited, the treatment depends on finding the records most likely to be wrong.
-    The audit shows the tool''s confidence does not separate right codes from wrong ones. Disagreement between two
-    separately built models is a different signal: where they differ, at least one is wrong, so those records are
-    rich in errors. Sending them to coders puts scarce review where it catches the most mistakes.'
+  why_correct: 'With review capacity limited, the treatment depends on finding the records most likely to be wrong. The
+    audit shows the tool''s confidence does not separate right codes from wrong ones. Disagreement between two
+    separately built models is a different signal: each record has one correct code, so where the codes differ at least
+    one model is wrong, and with two models of similar accuracy the tool is wrong on a far larger share of those records
+    than on the rest. The disagreements also fit within the coders'' 10%. The gain should be confirmed on a held-out
+    audit sample before the routing becomes standard.'
   why_not:
-    A: Routing by confidence is standard when scores track accuracy, but the audit shows these do not, so the records
-      chosen would be little better than a random pick.
-    B: Switching to the more confident model still trusts confidence scores, which have not been shown to work for
-      either model, and it sends no records to coders, so errors pass with no review.
-    C: High-value records may carry larger penalties, but value says nothing about whether a code is wrong, so most
-      errors in other records would go through.
+    A: Routing by confidence is standard when scores track accuracy, but the audit shows these do not, so the records chosen
+      would be little better than a random pick.
+    B: Switching to the more confident model still trusts confidence scores, which have not been shown to work for either
+      model, and it sends no records to coders, so errors pass with no review.
+    C: High-value records may carry larger penalties, but value says nothing about whether a code is wrong, so most errors
+      in other records would go through.
 status: published
 outline_version: '2026-04-15'
 sample: false
