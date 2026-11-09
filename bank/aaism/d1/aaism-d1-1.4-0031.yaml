@@ -1,0 +1,33 @@
+id: aaism-d1-1.4-0031
+subdomain: '1.4'
+difficulty: hard
+stem: At a bank, the model risk team validates every model before use, vendor models included, and has strong machine learning
+  skills. The security team reviews customer-facing applications. A post-incident review found that neither team tested models
+  against adversarial attacks, as each assumed the other did. What should the security manager propose?
+options:
+  A: Adversarial tests added to model validation, run by model risk
+  B: Adversarial testing added to security's application reviews
+  C: A joint working group that reviews adversarial risk each quarter
+  D: Model developers running adversarial tests to a security standard
+answer: A
+explanation:
+  why_correct: Model validation is the one checkpoint every model passes, including vendor and internal models that never
+    appear in a customer-facing application, and the team running it has the skills adversarial testing needs. Giving it clear
+    ownership closes the gap that the shared assumption created; security can still define the threat scenarios the tests
+    must cover.
+  why_not:
+    B: Security owning security testing is the reflex answer, but its reviews see only customer-facing applications, so internal
+      and vendor models elsewhere would stay untested, and the team lacks the machine learning skills.
+    C: A working group shares information but leaves no one accountable for running the tests, which is exactly the gap that
+      led to the incident.
+    D: Developers testing their own models lose the independence that validation provides, and the quality of the tests would
+      vary from team to team.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aaism-check
+  options_only: not_obvious

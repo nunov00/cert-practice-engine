@@ -11,23 +11,24 @@ options:
   D: Have a team independent of the developers run each evaluation
 answer: A
 explanation:
-  why_correct: Evaluation questions held in the training and retrieval sources end up in what the model learns from
-    and retrieves, so it is likely tested on material it has already seen, which would explain rising scores with no change in
-    real quality. Keeping evaluation data in a separate, controlled store and checking training and retrieval data for overlap
-    before each fine-tune confirms the cause and protects the test itself.
+  why_correct: Evaluation questions held in the training and retrieval sources end up in what the model learns from and
+    retrieves, so it is likely tested on material it has already seen, which would explain rising scores with no change
+    in real quality. Keeping evaluation data in a separate, controlled store and checking training and retrieval data
+    for overlap before each fine-tune shows the exposure and protects the test itself; a rerun on clean questions then
+    shows how much the scores were inflated.
   why_not:
-    B: New questions give a clean test for a while, but stored in the same repository they leak in the same way
-      at the next fine-tune. It treats the symptom, not where the data is kept.
-    C: Complaints are a useful real-world signal, but they lag, are sparse and do not repair the contaminated test,
-      which stays misleading.
-    D: Independence guards against biased judgement, but an independent team using contaminated questions still
-      gets inflated scores.
-status: draft
+    B: New questions give a clean test for a while, but stored in the same repository they leak in the same way at the next
+      fine-tune. It treats the symptom, not where the data is kept.
+    C: Complaints are a useful real-world signal, but they lag, are sparse and do not repair the contaminated test, which
+      stays misleading.
+    D: Independence guards against biased judgement, but an independent team using contaminated questions still gets
+      inflated scores.
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-07-daily-aair
   check_verdict: pass
-  checked_by: 2026-11-07-daily-aair-check
   options_only: not_obvious
+  checked_by: 2026-11-09-daily-aair-check

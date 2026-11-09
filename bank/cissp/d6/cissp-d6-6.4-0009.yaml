@@ -1,0 +1,34 @@
+id: cissp-d6-6.4-0009
+subdomain: '6.4'
+difficulty: medium
+stem: Midway through a penetration test of a distribution company, testers find a web shell they did not plant, with
+  recent commands run under the IT director's administrator account. The company's SOC reports to the IT director. The
+  rules of engagement name the IT director as emergency contact, and the CFO, who signed the engagement, as escalation
+  contact. What should the test lead do FIRST?
+options:
+  A: Report the finding to the CFO, and agree how to bring in incident response
+  B: Report the finding to the IT director, as the named emergency contact
+  C: Stop testing, preserve the web shell and logs, and report at the next scheduled check-in
+  D: Report the finding to the client's SOC through its incident line
+answer: A
+explanation:
+  why_correct: Evidence of a real compromise is reported at once, outside the normal report cycle. The IT director's
+    account is the one being used, whether the director is involved or the director's credentials were stolen, so a
+    warning to the director, or through channels the attacker may control, could reach the attacker. The escalation
+    contact who signed the engagement has the authority to start incident response.
+  why_not:
+    B: The emergency contact is the normal first call for a live compromise, and the director may well be a victim, but the
+      director's account, and perhaps mailbox, is in the attacker's hands, so the warning could reach the attacker.
+    C: Stopping and preserving evidence are sound steps, but a live compromise cannot wait for a scheduled check-in. Each
+      hour of delay leaves the attacker at work and the client unaware.
+    D: The incident line is the usual route for a suspected intrusion, but the SOC reports to the IT director, whose account
+      the attacker is using, so the report could reach the attacker or be handled under the director's control.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-cissp-check
+  options_only: not_obvious

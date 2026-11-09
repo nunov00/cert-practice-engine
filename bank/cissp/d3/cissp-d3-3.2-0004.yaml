@@ -1,0 +1,33 @@
+id: cissp-d3-3.2-0004
+subdomain: '3.2'
+difficulty: medium
+stem: A lab's raw sensor readings arrive from field devices it cannot fully trust. Its validated dataset, used in regulatory filings,
+  must stay free of readings whose quality has not been confirmed, yet good readings must end up in it. Analysts work on raw readings
+  and validated records side by side in one session, and they annotate validated records. Which security model's approach BEST fits
+  these needs?
+options:
+  A: Clark-Wilson, where raw readings become validated only through a certified checking program
+  B: Biba low-water-mark, where an analyst who reads raw readings drops to their integrity level
+  C: Biba ring policy, where analysts may read raw readings but write only at or below their level
+  D: Biba strict integrity, where analysts may not read raw readings at a lower integrity level
+answer: A
+explanation:
+  why_correct: Clark-Wilson separates unconstrained data, here the raw readings, from constrained data, the validated set, and lets
+    data cross only through a certified transformation, here the checking program. Analysts can read raw readings freely and change
+    validated records only through approved programs, so both the checks and the analysts' way of working are kept.
+  why_not:
+    B: Low-water-mark lets analysts read raw readings, but each one who does drops to the raw level for the session and can no longer
+      annotate validated records, and Biba gives raw data no route to become validated.
+    C: The ring policy lets analysts read raw readings and still write validated records, which fits how they work, but then nothing
+      stops an analyst copying an unchecked reading into the validated set, the very flow the checks exist to control.
+    D: Strict integrity keeps raw readings away from validated records, but it also stops analysts reading raw readings at all, which
+      their side-by-side work needs.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-cissp-check
+  options_only: not_obvious

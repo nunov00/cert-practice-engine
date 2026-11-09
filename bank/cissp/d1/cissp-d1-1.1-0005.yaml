@@ -1,0 +1,32 @@
+id: cissp-d1-1.1-0005
+subdomain: '1.1'
+difficulty: medium
+stem: A certified tester on an authorised red-team exercise at a manufacturer takes over an employee's mailbox. The rules of engagement
+  require proof of access to each compromised system, and a report to the sponsor only if evidence of a crime turns up. One of the mailbox's
+  folders is named after the employee's medical treatment. How should the tester evidence this access?
+options:
+  A: Record total folder and message counts and access times, without opening any messages
+  B: Capture short excerpts from a few messages, and redact them in the final report
+  C: Pause the exercise and ask the sponsor how the medical folder should be handled
+  D: Leave the mailbox out of the report, and note only that the account was taken over
+answer: A
+explanation:
+  why_correct: Acting honourably includes respecting the privacy of people who are not party to the engagement, by collecting only what
+    its purpose needs. The rules ask for proof of access, and total folder and message counts with access times prove it, while the employee's
+    private messages stay unread and nothing about the medical folder enters the test records.
+  why_not:
+    B: Excerpts are common evidence of impact, and redaction limits who sees them later, but the tester has still read and copied private
+      medical messages that the proof did not need, and the raw captures stay in the test records.
+    C: Asking the sponsor is right when the rules do not cover a situation, but they already say what proof is needed and when to report,
+      and the sponsor cannot consent for the employee to have their medical messages read.
+    D: Leaving the mailbox out protects the private content, but the rules require proof for each compromised system, so the client
+      loses evidence of a real exposure it engaged the testers to find.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-cissp-check
+  options_only: not_obvious

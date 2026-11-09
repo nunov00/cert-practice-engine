@@ -1,0 +1,35 @@
+id: aaism-d3-3.4-0041
+subdomain: '3.4'
+difficulty: hard
+stem: A logistics firm's HR assistant answers managers' questions from the HR records each manager may open, and
+  managers use it to plan cover, which needs each named team member's absence dates. Testers asked it which team members
+  were likely pregnant or close to retiring, and it answered from absence and benefit patterns. Which control BEST
+  addresses this?
+options:
+  A: Answer absence questions with team totals instead of names
+  B: Remove benefit fields from the data the assistant can read
+  C: Log managers' questions for a monthly review by the HR team
+  D: Refuse to infer protected traits of named employees
+answer: D
+explanation:
+  why_correct: 'The harm is a new inference. The assistant combines records the manager may legitimately see into a
+    conclusion about a protected characteristic, such as pregnancy or age, that the employee never disclosed and the
+    manager has no right to draw. Access to the records is needed for cover planning, so the control has to sit on what
+    the assistant will conclude: a content policy that refuses to infer protected characteristics of identifiable
+    people.'
+  why_not:
+    A: Team totals would stop answers naming individuals, but managers plan cover for specific people's absences and need
+      names, so this breaks the assistant's main use.
+    B: Dropping benefit fields removes one source, but absence patterns alone can still suggest pregnancy or approaching
+      retirement, so the inference remains possible.
+    C: Logging and review may detect misuse later, but by then the manager has already received the inference about the
+      employee.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aaism-check
+  options_only: not_obvious

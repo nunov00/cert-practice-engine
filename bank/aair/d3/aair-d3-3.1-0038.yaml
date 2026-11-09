@@ -1,0 +1,32 @@
+id: aair-d3-3.1-0038
+subdomain: '3.1'
+difficulty: medium
+stem: A bank is rating the likelihood that customers misuse its chatbot to obtain fee waivers, which it may grant
+  up to 50 euros as goodwill. Staff review each waiver above 20 euros. Which fact should MOST raise the likelihood
+  rating?
+options:
+  A: The chatbot handles about 200,000 customer conversations a month
+  B: Waivers of 20 euros or less are not reviewed by staff
+  C: A working method to trigger waivers is being shared on social media
+  D: Customer complaints about fees have risen sharply this year
+answer: C
+explanation:
+  why_correct: The likelihood of deliberate misuse depends above all on how easy it is to carry out and whether
+    people are already doing it. A working method shared publicly is evidence of active exploitation and removes
+    the skill barrier for any customer who sees it. No other fact changes how readily misuse happens as much.
+  why_not:
+    A: Volume widens exposure, but most conversations are ordinary; without a known way to trigger waivers, high
+      volume alone does not make misuse likely.
+    B: Unreviewed small waivers mean some misuse could go unnoticed, but larger waivers are reviewed, so this bears
+      mainly on detection and the size of losses, not on whether misuse starts.
+    D: Unhappiness about fees gives customers a motive, but a motive matters only when there is an easy means, which
+      this fact does not supply.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aair
+  check_verdict: fail
+  checked_by: 2026-11-09-daily-aair-check
+  options_only: obvious

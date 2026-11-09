@@ -1,0 +1,32 @@
+id: cissp-d8-8.5-0004
+subdomain: '8.5'
+difficulty: medium
+stem: A tester made his own account an administrator by adding a role field to a profile update request. The web
+  framework binds each request's JSON body straight onto the user model, which gains new fields most sprints, such as
+  credit limits and verification flags. Which rule should the secure coding standard add?
+options:
+  A: Bind each request only to the fields declared for that endpoint, and ignore the rest
+  B: Remove fields on a maintained list of sensitive names, such as role, before each binding
+  C: Reject requests that change a user's role unless the caller is an administrator
+  D: Mark sensitive model fields as read-only in the framework, so binding skips them
+answer: A
+explanation:
+  why_correct: Mass assignment happens because the client decides which fields are written. Binding each request to a
+    model that declares only the fields that endpoint may change means anything else is ignored, including fields added
+    to the user model in later sprints.
+  why_not:
+    B: A deny-list blocks the fields on it, but the user model gains fields most sprints, and each new sensitive field stays
+      writable until someone remembers to add it.
+    C: Checking who may change roles closes this instance, but credit limits, verification flags and future fields stay
+      writable through the same binding.
+    D: Read-only flags protect the fields someone remembers to mark, so each new sensitive field stays writable until it is
+      flagged, the same gap as a deny-list.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-cissp-check
+  options_only: not_obvious

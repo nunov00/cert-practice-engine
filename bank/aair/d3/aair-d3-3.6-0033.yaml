@@ -1,0 +1,34 @@
+id: aair-d3-3.6-0033
+subdomain: '3.6'
+difficulty: hard
+stem: An insurer's AI agent handles broker emails and keeps a long-term memory of notes that it consults in later tasks.
+  After it followed instructions hidden in one email, the team rolled back its prompt and model version and relaunched
+  it, but within a day it repeated the same unwanted actions. What should the recovery procedure MOST add?
+options:
+  A: Restoring the agent's memory store to a point before the attack
+  B: Rotating the credentials and keys the agent uses to reach systems
+  C: Filtering incoming emails for hidden instructions before relaunch
+  D: Rerunning the agent's regression test suite before each relaunch
+answer: A
+explanation:
+  why_correct: "Rolling back the prompt and model did not remove what the attack left behind. The repeat points to
+    persisted state: most likely the hidden instructions were saved as notes in the agent's long-term memory, though a
+    queued task or a replay of the original email should be ruled out too. Recovery for an agent with persistent state
+    has to check and restore that state, from a snapshot taken before the attack or by purging entries written since,
+    and clear the task queue before relaunch; otherwise the compromise survives every rollback."
+  why_not:
+    B: Rotating credentials is a sound step if keys may have leaked, but it does not change the instructions the agent keeps
+      acting on.
+    C: Filtering new emails helps prevent the next attack, but the instructions already sit in memory, so the agent would
+      repeat the actions even with a perfect filter.
+    D: Regression tests usually run in clean sessions and could pass while the live memory still holds the attacker's
+      instructions. They check the model and prompt, which were not the problem.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aair-check
+  options_only: not_obvious

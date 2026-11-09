@@ -1,0 +1,32 @@
+id: aaism-d2-2.3-0051
+subdomain: '2.3'
+difficulty: hard
+stem: A fashion retailer publishes thousands of product descriptions a week written by a start-up's hosted model. Lawsuits
+  against the start-up claim the model's training data was scraped unlawfully, and courts in such cases have ordered models
+  withdrawn with immediate effect. What BEST reduces the risk to the retailer?
+options:
+  A: Indemnity from the start-up against claims over generated text
+  B: Notice of any court order, with a 90-day wind-down of service
+  C: Escrow of the model weights, released if the start-up fails
+  D: An integration that can switch to another model, tested ahead
+answer: D
+explanation:
+  why_correct: The claims target the start-up, so the retailer's main exposure is losing a service it depends on every week.
+    A tested ability to switch to another provider's model keeps descriptions flowing whatever happens to the start-up's model,
+    and it stays under the retailer's own control.
+  why_not:
+    A: Indemnity covers the cost of legal claims over outputs, but the lawsuits target the start-up, and money does not keep
+      descriptions flowing once the model is withdrawn.
+    B: A wind-down period would give time to move, but a withdrawal ordered with immediate effect overrides it, and the start-up
+      could not lawfully keep serving the model.
+    C: Escrow protects against the vendor failing, but weights covered by a withdrawal order could not lawfully be used either,
+      and the release trigger is insolvency, not a court order.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aaism-check
+  options_only: not_obvious

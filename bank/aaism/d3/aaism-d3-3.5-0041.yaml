@@ -1,0 +1,33 @@
+id: aaism-d3-3.5-0041
+subdomain: '3.5'
+difficulty: hard
+stem: An energy company's SOC uses a language model to summarise the raw logs behind each alert so analysts read less, and
+  the model can also change the alert's priority. Testers put text in logged fields they control, such as user agents and
+  file names, telling the model to mark the alert benign, and it did. Which control BEST addresses this?
+options:
+  A: Screen logged fields with an injection classifier before summarising
+  B: Wrap logged fields in delimiters marked as data, not instructions
+  C: Keep priority with the detection rules, using summaries as context
+  D: Move the summariser to a model with stronger injection resistance
+answer: C
+explanation:
+  why_correct: The weakness is that a model reading attacker-controlled text holds authority over a security decision. Log
+    fields come from the attacker, so no filtering makes them trustworthy. Leaving priority with the detection rules, and
+    using the summary only as context for the analyst, means injected text can at worst colour a summary read beside the rule's
+    own verdict; it can no longer bury the alert.
+  why_not:
+    A: A classifier catches known injection phrasing, but attackers control many free-text fields and can reword endlessly,
+      so some injections would still get through to a model that sets priority.
+    B: Delimiting untrusted text reduces the chance the model follows it, but models still act on instructions inside marked
+      data, so the model would keep a decision attackers can influence.
+    D: A more resistant model lowers the success rate, but no current model reliably ignores injected instructions, so the
+      model would still hold a decision attackers can sway.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,34 @@
+id: cissp-d8-8.3-0006
+subdomain: '8.3'
+difficulty: hard
+stem: Internal audit at an insurer must test whether every change to its claims application in the past year went
+  through the pipeline's peer review. Engineers say that during outages, urgent fixes were sometimes copied straight
+  onto the production servers, and some were later overwritten by normal releases. Which evidence BEST tests the
+  control?
+options:
+  A: The pipeline's deployment records for the year, reconciled with the approved change tickets
+  B: A sample of change tickets, each checked for a recorded peer review and approval
+  C: Interviews with team leads about how urgent fixes are handled during outages
+  D: Host change logs for the year, reconciled with the pipeline's reviewed deployments
+answer: D
+explanation:
+  why_correct: The risk is changes that never passed through the pipeline, and those leave no trace in its records. The
+    hosts' change logs record each change made on the servers during the year, including fixes later overwritten, so
+    reconciling every logged change with a deployment from a peer-reviewed pipeline run shows which changes skipped
+    review, wherever they came from.
+  why_not:
+    A: Reconciling the pipeline with tickets checks the releases that went through it, but a fix copied onto the servers
+      appears in neither.
+    B: Change tickets show whether the process was documented, but changes made outside it during outages may have no ticket
+      at all, so a sample of tickets cannot find them.
+    C: Interviews help auditors understand the practice and can point to periods worth checking, but what people recall is
+      not evidence of what actually reached production.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-cissp-check
+  options_only: not_obvious

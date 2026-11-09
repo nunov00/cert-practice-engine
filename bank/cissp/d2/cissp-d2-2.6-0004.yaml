@@ -1,0 +1,33 @@
+id: cissp-d2-2.6-0004
+subdomain: '2.6'
+difficulty: hard
+stem: A health insurer is applying a control baseline to a claims system it runs on a large public cloud provider's infrastructure.
+  The regulator expects evidence for each control the insurer records as met or not applicable. The team proposes recording the baseline's
+  physical and environmental controls as not applicable, as the insurer runs no data centre for this system. How should those controls
+  be recorded?
+options:
+  A: Not applicable, with the cloud contract attached to show the insurer runs no facility
+  B: Inherited from the provider, citing the contract's terms on physical security
+  C: Inherited from the provider, citing its latest independent audit report on them
+  D: In scope for the insurer, met through a yearly audit visit to the provider's sites
+answer: C
+explanation:
+  why_correct: The claims data still sits in a physical data centre whose protection matters; the provider simply operates those controls.
+    Tailoring the baseline records them as inherited from the provider, and the provider's independent audit report is evidence that
+    the controls are designed and operating, which is what the regulator expects.
+  why_not:
+    A: Not applicable fits controls whose subject does not exist for the system, such as wireless controls where there is no wireless.
+      Physical protection of the servers still exists here, run by someone else, so recording it as not applicable misstates the risk.
+    B: Inherited is the right status, but contract terms are the provider's promises, not evidence that the controls work, so they do
+      not meet the regulator's expectation.
+    D: Customer audit visits are a way to gather evidence from smaller suppliers, but large public cloud providers seldom admit individual
+      customers' auditors, and their independent reports already give tested evidence.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-cissp-check
+  options_only: not_obvious

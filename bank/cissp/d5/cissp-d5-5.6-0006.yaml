@@ -1,0 +1,32 @@
+id: cissp-d5-5.6-0006
+subdomain: '5.6'
+difficulty: hard
+stem: In a test, an ordinary domain user forced a server to authenticate to his machine over NTLM, relayed that authentication over
+  HTTP to the internal certificate enrolment web service, and was issued a certificate that let him act as the server. Several legacy
+  applications still depend on NTLM. Which change BEST closes this path?
+options:
+  A: Require SMB signing on the domain's servers and workstations, refusing unsigned sessions
+  B: Require LDAP signing and channel binding on the domain controllers
+  C: Require HTTPS with extended protection (channel binding) on the enrolment service
+  D: Disable NTLM across the domain, so that servers accept only Kerberos sign-in
+answer: C
+explanation:
+  why_correct: Relay works because the target accepts an NTLM authentication that is not tied to the connection it arrives on. Serving
+    the enrolment service only over HTTPS with extended protection binds each authentication to its TLS channel, so one relayed from
+    another connection is refused. It closes the target this attack used without removing the NTLM that legacy applications need.
+  why_not:
+    A: SMB signing stops relay to file shares, a common target, but this relay went to a web service over HTTP, which SMB signing does
+      not touch.
+    B: LDAP signing and channel binding stop relay to the directory service on domain controllers, another common target, but the enrolment
+      web service accepts the relayed authentication on its own.
+    D: Removing NTLM ends relay of it altogether and is the long-term goal, but legacy applications still depend on it, so disabling
+      it now would break them.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-cissp-check
+  options_only: not_obvious

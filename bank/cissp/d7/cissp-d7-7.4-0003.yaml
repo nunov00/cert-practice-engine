@@ -1,0 +1,36 @@
+id: cissp-d7-7.4-0003
+subdomain: '7.4'
+difficulty: hard
+stem: Forty support agents at a software company reset MFA devices on customer accounts about 200 times a day, live
+  while the customer waits on the phone, with four team leads covering all of them; they never handle staff or
+  administrator accounts. Each agent holds global administrator rights in the identity platform so that the resets work,
+  and a review notes that one phished agent could take over the whole tenant. Which change BEST applies least privilege?
+options:
+  A: A built-in role that can reset MFA for any user, administrators included
+  B: Just-in-time activation of a customer-scoped reset role for each reset, approved by a team lead
+  C: A custom role that can reset MFA only for accounts within the customer directory scope
+  D: A built-in role that can reset passwords and MFA for any non-admin user, staff included
+answer: C
+explanation:
+  why_correct: Least privilege matches rights to the job. The agents need one action, on customer accounts only, many
+    times a day. A role limited to resetting MFA within the customer scope lets them work as now, while a phished agent
+    could reach neither staff nor administrator accounts. The residual risk, a phished agent resetting some customers'
+    MFA, is far smaller and can be watched with monitoring of reset volumes.
+  why_not:
+    A: The authentication administrator role is far narrower than global administrator, but it can reset MFA on
+      administrator accounts, so a phished agent could strip MFA from an administrator's account, leaving only a
+      password between the attacker and the tenant.
+    B: Just-in-time activation suits powerful rights used rarely. Here the role is already narrow and is needed 200 times a
+      day while customers wait on the line, so the approvals would swamp the leads and soon be rubber-stamped, adding
+      delay without real control.
+    D: The help desk role excludes administrators, but it covers every staff account and adds password resets, so a phished
+      agent could reset both factors on a staff member's account, rights the customer-only job never needs.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-cissp-check
+  options_only: not_obvious

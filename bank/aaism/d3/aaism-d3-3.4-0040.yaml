@@ -1,0 +1,33 @@
+id: aaism-d3-3.4-0040
+subdomain: '3.4'
+difficulty: hard
+stem: A lender's refused applicants can ask for a human review. Reviewers see the model's score and the original application,
+  and uphold 97% of refusals. Refusal letters list the main reasons, and most complaints say an input was out of date, such
+  as income from a previous job. Which change BEST makes the review meaningful?
+options:
+  A: Have reviewers record their decision before they see the score
+  B: Let applicants submit updated evidence for the review
+  C: Assign reviews to a team independent of the lending unit
+  D: Seed known wrong refusals into reviewers' queues to test them
+answer: B
+explanation:
+  why_correct: The complaints show that refusals rest on stale inputs. A reviewer who sees only the original application has
+    the same wrong facts as the model, however careful or independent that reviewer is, so the refusal is upheld. Letting
+    applicants supply current evidence, such as proof of their new income, gives the review information the model never had,
+    which is what makes it able to change the outcome.
+  why_not:
+    A: Recording a view before seeing the score counters automation bias, which matters when reviewers defer to the model.
+      Here the reviewer would still judge the same out-of-date application and reach the same answer.
+    C: Independence removes pressure from the lending unit, but an independent reviewer looking at the same stale income figure
+      still has no grounds to overturn the refusal.
+    D: Seeding known errors measures whether reviewers catch mistakes visible in the file. The errors here are not in the
+      file at all, so the test would not reach them.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aaism-check
+  options_only: not_obvious

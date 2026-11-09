@@ -23,12 +23,12 @@ explanation:
       the rows and read the other firm's records for every shared customer.
     D: Synthetic copies made separately by each firm cannot be joined person by person, so the link between a customer's repayments
       and purchases, which is the point of the model, is lost.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-07-daily-aaism
   check_verdict: pass
-  checked_by: 2026-11-07-daily-aaism-check
   options_only: not_obvious
+  checked_by: 2026-11-09-daily-aaism-check

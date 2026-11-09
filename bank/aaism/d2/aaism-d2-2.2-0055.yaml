@@ -1,0 +1,32 @@
+id: aaism-d2-2.2-0055
+subdomain: '2.2'
+difficulty: hard
+stem: A translation service for law firms fine-tunes one shared model each week on corrections that users make to its output,
+  including users on free trials. Most corrections are short edits to wording. Which threat should the threat model stress
+  MOST?
+options:
+  A: A trial user's crafted corrections altering other clients' output
+  B: One client's contract text resurfacing in other clients' translations
+  C: Injected instructions in a source document altering that translation
+  D: Membership inference revealing which firms' texts trained the model
+answer: A
+explanation:
+  why_correct: 'The training input is corrections from any user, trial accounts included, and the resulting model is shared
+    by every client and rebuilt each week. That makes poisoning the main threat: an attacker can submit consistent corrections
+    that make the model mistranslate chosen terms, for example in liability clauses, and the change persists for other firms.'
+  why_not:
+    B: Cross-client leakage is a strong concern when a shared model trains on clients' material, but corrections are mostly
+      short wording edits, which carry little confidential contract text.
+    C: Injected instructions in a document are the reflex threat for language models, but they affect only the translation
+      of that document, whereas poisoned corrections enter the weekly retraining and persist across clients.
+    D: Membership inference would at most reveal which firms use the service, a weaker harm than altering translations for
+      other clients.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: cissp-d1-1.6-0005
+subdomain: '1.6'
+difficulty: medium
+stem: A company's board-approved security policy says that passwords must be changed every 90 days. Over the next year, the CISO will
+  move all staff to passwordless sign-in with hardware security keys, which have no password to rotate. The CISO owns and approves the
+  authentication standard. What should the CISO do about the rotation rule?
+options:
+  A: Grant a policy exception to staff as they move to security keys, renewed each year
+  B: Amend the rule so that staff who sign in with security keys are exempt from rotation
+  C: Ask the board to replace the rule with a strong sign-in aim, leaving methods to the standard
+  D: Record a time-limited risk acceptance for the rule until rollout ends, then review the policy
+answer: C
+explanation:
+  why_correct: 'A policy states management''s intent and should not depend on a technology. The rotation rule is standard-level detail
+    written into the policy, which is why a change of method now collides with it. Replacing it with a requirement for strong sign-in,
+    and putting the rules for each method, rotation and security keys included, in the standard the CISO owns, resolves this change
+    and the next ones: the board approves the intent once, and the standard keeps up with technology.'
+  why_not:
+    A: Exceptions suit temporary or limited deviations, such as one legacy system. Here every member of staff moves permanently, so
+      the exception would end up covering the whole company with no end date, and the policy would no longer describe practice.
+    B: An exemption removes the collision for security keys, but it keeps method detail in the board-approved policy, so the next change
+      of method, or of the rules for staff still on passwords, needs another board amendment.
+    D: A risk acceptance suits a gap in protection, but moving to security keys raises protection rather than lowering it, and the policy
+      would still name a rule that most staff no longer follow, until a review that only defers the same fix.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-cissp-check
+  options_only: not_obvious

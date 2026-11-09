@@ -1,0 +1,34 @@
+id: aair-d3-3.2-0036
+subdomain: '3.2'
+difficulty: medium
+stem: An online fashion retailer promises same-day dispatch and relies on its payment provider's AI fraud screening.
+  The provider's console lets merchants add their own blocking rules, but fraud patterns against the retailer shift
+  every week or two. Under the contract, the retailer bears the chargebacks on fraudulent orders the screening approves,
+  and these losses are above appetite. Which treatment is MOST appropriate?
+options:
+  A: Move to a screening service that bears the chargebacks on orders it approves
+  B: Add console rules to block orders that match recent fraud patterns
+  C: Ask the provider to retrain its screening on the retailer's fraud cases
+  D: Hold high-value orders for manual review before they are dispatched
+answer: A
+explanation:
+  why_correct: The losses sit with the retailer, while the means of reducing them, the model, sits with the provider.
+    Moving to a screening service that guarantees the orders it approves transfers the loss to the party that controls
+    the decision and gives it a reason to screen well, without slowing dispatch. It keeps working as patterns shift,
+    because keeping up is then the provider's cost.
+  why_not:
+    B: Console rules are a real lever, but rules written for last week's patterns lag behind fraud that shifts every
+      week or two, and blunt rules tend to block good customers too.
+    C: Asking is reasonable, but the retailer has no control over whether or when the provider retrains, so it cannot
+      rely on this to bring losses within appetite.
+    D: Manual review can cut losses on large orders, but holding them breaks the same-day dispatch promise, and
+      losses on other orders continue.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aair-check
+  options_only: not_obvious
