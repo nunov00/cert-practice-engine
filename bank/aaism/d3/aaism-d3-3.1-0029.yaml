@@ -7,7 +7,7 @@ stem: An email agent asks users to confirm every action it takes, from labelling
 options:
   A: Confirm only external sends and forwards, showing full details
   B: Seed fake risky actions to test whether users are paying attention
-  C: Hold each confirm button for three seconds before it can be used
+  C: Confirm only actions the agent itself rates as high risk, with full details
   D: Ask users to type a short reason for each action they confirm
 answer: A
 explanation:
@@ -17,15 +17,15 @@ explanation:
   why_not:
     B: Seeded tests measure attention and can support training, but they add yet more prompts and do not change the flood
       of routine confirmations that causes the habit.
-    C: A delay adds friction, but users can wait out three seconds as automatically as they click. Every routine action would
-      also become slower.
+    C: This also cuts routine prompts, but an injected agent's own risk rating is under the attacker's influence, so the injected
+      forward could be rated low and never reach the user.
     D: Typed reasons force a pause, but applied to every action they make the fatigue worse, and users soon reuse stock reasons.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-03-daily-aaism
   check_verdict: pass
-  checked_by: 2026-11-03-daily-aaism-check
-  options_only: obvious
+  options_only: not_obvious
+  checked_by: 2026-11-09-daily-aaism-check

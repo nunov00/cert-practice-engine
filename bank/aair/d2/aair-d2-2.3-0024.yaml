@@ -1,0 +1,34 @@
+id: aair-d2-2.3-0024
+subdomain: '2.3'
+difficulty: medium
+stem: A telecom is retiring a support chatbot it fine-tuned on customer support transcripts. Tests showed the model
+  can repeat details customers mentioned in those chats, such as addresses and health conditions. The marketing
+  team wants a public tool that writes promotional copy in the brand's voice and asks to build it from this chatbot.
+  What should the risk practitioner recommend?
+options:
+  A: Reuse the weights after removing the memorised passages found in testing
+  B: Start the marketing tool from a base model not trained on the transcripts
+  C: Keep the fine-tuned weights and block personal details with an output filter
+  D: Train a new model on the transcripts with names and account numbers removed
+answer: B
+explanation:
+  why_correct: The transcripts carry personal details of many kinds, and the new tool would put whatever a model
+    learned from them in front of the public, for a purpose unrelated to support. The brand voice does not need
+    the transcripts. Starting from a base model never trained on them removes the exposure at its source, and the
+    retiring weights can then be deleted with the rest of the chatbot.
+  why_not:
+    A: Testing finds only part of what a model has memorised, so removing the passages found leaves an unknown amount
+      of customer data in a public-facing model.
+    C: An output filter lowers the chance of a leak but relies on recognising every form of personal detail, and
+      users of a public tool can work around filters.
+    D: Removing names and account numbers leaves the addresses and health details customers mentioned in free text,
+      which the model could still learn and repeat, and support chats remain a poor fit for a marketing purpose.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aair-check
+  options_only: not_obvious

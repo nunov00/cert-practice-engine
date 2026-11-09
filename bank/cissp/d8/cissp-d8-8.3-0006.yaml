@@ -1,0 +1,32 @@
+id: cissp-d8-8.3-0006
+subdomain: '8.3'
+difficulty: hard
+stem: Internal audit at an insurer must test whether every change to its claims application in the past year went through the pipeline's
+  peer review. Engineers say that during outages, urgent fixes were sometimes copied straight onto the production servers. Which evidence
+  BEST tests the control?
+options:
+  A: The pipeline's approval records for each release in the year, checked for a reviewer
+  B: A sample of change tickets, each checked for a recorded peer review and approval
+  C: Interviews with team leads about how urgent fixes are handled during outages
+  D: The code running in production, compared with the pipeline's signed build records
+answer: D
+explanation:
+  why_correct: The risk is changes that never passed through the pipeline, and those leave no trace in its records. Comparing what actually
+    runs in production with the builds the pipeline produced and signed shows whether anything running did not come from a reviewed
+    build, wherever it came from.
+  why_not:
+    A: The pipeline's records are complete for releases that went through it, which makes them a natural source, but a fix copied onto
+      the servers bypassed the pipeline and appears nowhere in them.
+    B: Change tickets show whether the process was documented, but changes made outside it during outages may have no ticket at all,
+      so a sample of tickets cannot find them.
+    C: Interviews help auditors understand the practice and can point to periods worth checking, but what people recall is not evidence
+      of what actually reached production.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-cissp-check
+  options_only: not_obvious

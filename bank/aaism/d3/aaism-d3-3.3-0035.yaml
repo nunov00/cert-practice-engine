@@ -1,0 +1,32 @@
+id: aaism-d3-3.3-0035
+subdomain: '3.3'
+difficulty: medium
+stem: A telecom's support assistant answers from customer emails indexed in a vector store. Erasure requests delete the customer's
+  CRM record and stored emails, yet weeks after one erasure the assistant quoted that customer's email. Which control BEST
+  fixes this?
+options:
+  A: Delete a record's indexed chunks by source ID on erasure
+  B: Stop indexing emails from customers who have asked for erasure
+  C: Filter answers that mention customers who have asked for erasure
+  D: Tag chunks by customer and filter retrieval against an erasure list
+answer: A
+explanation:
+  why_correct: The index holds derived copies of the emails that the erasure workflow does not reach. Storing each chunk with
+    the ID of its source record, and deleting by that ID as part of erasure, removes the copies together with the originals.
+    Erasure requires the data to be gone, and this is the only option that deletes what is already indexed.
+  why_not:
+    B: Blocking new indexing stops further copies, but the erased customer's emails were already in the index before the request,
+      so the existing chunks stay.
+    C: An output filter hides the customer's content in answers but leaves their personal data stored and searchable, and
+      name-based filters miss quoted text that does not name the customer.
+    D: Filtering retrieval against an erasure list reliably keeps the chunks out of answers, but the personal data is still
+      stored in the index; erasure requires it to be deleted, not hidden.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,34 @@
+id: aair-d1-1.3-0032
+subdomain: '1.3'
+difficulty: hard
+stem: A bank's AI committee often approves high-risk models subject to conditions, such as adding a fairness test
+  within six months. A review finds that half of last year's conditions were never met. The conditions are listed
+  in the committee minutes, which go to all members; most model owners are not members. Which change BEST strengthens
+  oversight?
+options:
+  A: Assign each condition to the model's owner, with a due date the committee tracks
+  B: Have the committee secretary send the minutes to each affected model owner
+  C: Have the second line check that conditions are met at each yearly model review
+  D: Have internal audit test a sample of approval conditions each year
+answer: A
+explanation:
+  why_correct: An approval with conditions only works if someone is answerable for meeting each condition and the
+    approver follows it through. Assigning each condition to the owner of the model it applies to, with a due date,
+    and having the committee track it until closed, gives the condition an accountable owner and keeps the approving
+    body's oversight going after the approval meeting.
+  why_not:
+    B: Sending the minutes tells owners about the conditions, but nobody is then answerable for a deadline or for
+      reporting back, so conditions can still lapse unnoticed.
+    C: Second-line checks add challenge, but a yearly check finds a missed six-month condition long after it was
+      due and still leaves the committee without a view of open conditions.
+    D: Audit sampling gives periodic assurance on whether the process works. It would report the same failure a
+      year later rather than prevent it.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aair-check
+  options_only: not_obvious

@@ -111,6 +111,15 @@ older Checked date.
   should be built on V8. CompTIA's exam pages list no free official sample
   questions, only paid practice products, so calibration moves from 4 to 3
   (total 24 to 23); rank unchanged.
+  Re-checked 2026-11-09: the Security+ page still says V8 is expected to
+  launch on or around 2026-11-17 and adds AI-related risks, security
+  operations and modern environments; the V7 page confirms SY0-701 (up to 90
+  multiple-choice and performance-based items, 90 minutes, 750/900, weights
+  12/22/18/28/20% listed in outline order) and its English retirement on
+  2027-06-11. The V8 page could not be fetched, so the V8 weights were not
+  re-read and stay as recorded on 2026-10-26. Still no free official sample
+  questions, only paid CertMaster products, so calibration stays at 3. Scores,
+  total and rank unchanged (5th, above CC on the higher demand score).
 - **CC:** very large candidate pool from ISC2's free-exam programmes, so
   learners are less likely to pay. Checked 2026-10-27: ISC2 delivers CC as an
   adaptive (CAT) exam, and a refreshed outline took effect on 2026-09-01 with
@@ -206,3 +215,4 @@ older Checked date.
 | 2026-11-03 | CISA row re-checked: 150 questions, five domains at 18/18/12/26/26% and the free 10-question practice quiz confirmed, no outline change announced; holder figure now "more than 200,000"; scores, total and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/cisa/cisa-exam-content-outline), [practice quiz](https://www.isaca.org/credentialing/cisa/cisa-practice-quiz) |
 | 2026-11-07 | CRISC row re-checked: 150 questions, four domains at 26/22/32/20% and the free 10-question practice quiz confirmed, no outline change announced; scores, total and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/crisc/crisc-exam-content-outline), [practice quiz](https://www.isaca.org/credentialing/crisc/crisc-practice-quiz) |
 | 2026-11-08 | CCSP row re-checked: 2026-08-01 outline (CAT, 100-150 items, 3 hours, 700/1000, six weights 17/20/17/16/17/13%) confirmed, no outline change announced; quiz and holder count still not readable; scores, total and rank unchanged | ISC2 [exam outline (effective 2026-08-01)](https://edge.sitecorecloud.io/internationf173-xmc4e73-prodbc0f-9660/media/Project/ISC2/Main/Media/documents/exam-outlines/EXAMS-CCSP-Exam-Outline-English-01-2026-V2.pdf), [outline page](https://www.isc2.org/certifications/ccsp/ccsp-certification-exam-outline), [CCSP exam page](https://www.isc2.org/certifications/ccsp/ccsp-exam), [CCSP page](https://www.isc2.org/certifications/ccsp) |
+| 2026-11-09 | Security+ row re-checked: V8 launch on or around 2026-11-17 and the V7 format, weights and 2027-06-11 retirement confirmed; V8 page not fetchable, so V8 weights not re-read; no free official samples; scores, total and rank unchanged | CompTIA [Security+ page](https://www.comptia.org/en-us/certifications/security/), [Security+ V7 page](https://www.comptia.org/en-em/certifications/security/v7/), [Security+ V8 page](https://www.comptia.org/en-us/certifications/security/v8/) |

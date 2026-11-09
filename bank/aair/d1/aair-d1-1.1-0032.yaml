@@ -1,0 +1,36 @@
+id: aair-d1-1.1-0032
+subdomain: '1.1'
+difficulty: hard
+stem: 'A home-care provider will use a readmission model twice: to order nurses'' visit lists by risk, and to add
+  up patients'' predicted probabilities to set how many nurses to roster each week. The shortlisted model orders
+  patients best of those tested. Last quarter its weekly predicted total averaged about 60 readmissions, against
+  about 30 that occurred. A second model orders patients less well, but its weekly totals match. What should the
+  risk practitioner recommend?'
+options:
+  A: Adopt the second model, whose weekly totals match what occurred
+  B: Recalibrate the shortlisted model's probabilities on recent outcomes
+  C: Roster from the count of patients scoring above a set threshold
+  D: Retrain with class weights so the rare readmissions count for more
+answer: B
+explanation:
+  why_correct: The scores do two jobs. Ordering visits needs good ranking, which the shortlisted model has; rostering
+    needs probabilities of the right size, which it lacks, since its totals run at about twice what occurs. Recalibrating
+    its probabilities on recent outcomes (for example with isotonic or Platt scaling) rescales them without changing
+    their order, so the provider keeps the best visit lists and gets weekly totals it can roster from.
+  why_not:
+    A: 'The second model fixes rostering, but at the cost of the visit lists: nurses would see higher-risk patients
+      later. Calibration can be corrected after training, while weaker ranking cannot, so giving up the better ranker
+      is unnecessary.'
+    C: Counting patients above a threshold gives the number flagged, not the number expected to be readmitted. The
+      count moves with wherever the threshold is set and ignores how likely each flagged patient is to return.
+    D: Class weighting helps a model notice a rare class, but it pushes predicted probabilities up, which would
+      make the overestimate worse. It treats a problem this model does not have.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aair-check
+  options_only: not_obvious

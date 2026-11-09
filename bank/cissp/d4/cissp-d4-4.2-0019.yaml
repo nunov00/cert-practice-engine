@@ -1,0 +1,33 @@
+id: cissp-d4-4.2-0019
+subdomain: '4.2'
+difficulty: hard
+stem: A company's regional data centre is unstaffed and four hours' drive from its network team, and its switches are managed over the
+  production network. Last month a faulty configuration push broke routing on both redundant core switches, and nobody could reach any
+  device until an engineer drove there. The team wants to repair devices within 30 minutes, whatever has broken the production network.
+  Which change BEST fits?
+options:
+  A: A separate management VLAN, carried on the production switches and their uplinks
+  B: Automatic rollback of any configuration change not confirmed within ten minutes
+  C: A remote-hands contract with the site's facility provider for console work on request
+  D: Console servers on an independent out-of-band network, reached over a cellular link
+answer: D
+explanation:
+  why_correct: The team needs a path to the devices that does not depend on the production network at all. Console servers on their
+    own network, reached over a cellular link, connect to each device's console port even when routing, switching or the uplinks have
+    failed, so engineers can repair whatever broke from afar within minutes.
+  why_not:
+    A: A separate management VLAN isolates management traffic and is sound practice, but it rides the same switches and uplinks, so
+      a routing failure like last month's would cut the team off again.
+    B: Rollback of unconfirmed changes would have undone last month's push by itself and is worth having, but it covers only configuration
+      changes, not failed hardware, firmware faults or an attack, which the team must also be able to repair.
+    C: Remote hands save the drive, but a technician has to be dispatched and then guided through each console step by phone, which
+      seldom fits within 30 minutes and depends on the provider's staff being free.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-cissp-check
+  options_only: not_obvious

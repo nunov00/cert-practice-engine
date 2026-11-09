@@ -1,0 +1,34 @@
+id: aair-d1-1.2-0036
+subdomain: '1.2'
+difficulty: hard
+stem: A building society plans to replace its manual checks of mortgage documents with a vendor's AI tool. The written
+  procedure for the checks was last updated eight years ago, and experienced checkers say they rarely consult it.
+  What should the risk practitioner recommend FIRST?
+options:
+  A: Pilot the tool on a sample of live cases alongside the checkers
+  B: Test the vendor's accuracy on a set of the society's past cases
+  C: Map the checks staff actually perform and the risks each one covers
+  D: Agree the benefit measures and automation targets for the change
+answer: C
+explanation:
+  why_correct: Before the process is redesigned around the tool, the society needs to know what the current process
+    really does. The written procedure is out of date and staff work from experience, so some of the checks that
+    control fraud and affordability risk may not be written down anywhere. Mapping them gives the baseline that
+    the accuracy test, the pilot and the new process must all be measured against; without it, a control could quietly
+    disappear in the change.
+  why_not:
+    A: A pilot is a sound later step, but without knowing which checks staff perform, the society cannot tell whether
+      the tool covers them. Gaps would show up only as unexplained disagreements, if at all.
+    B: Testing on past cases is valuable before buying, but the test has to know what the tool must catch. Scored
+      against an eight-year-old procedure, it could pass a tool that misses checks staff now make.
+    D: Benefit measures belong in the business case, but setting automation targets before the controls are understood
+      risks committing to a level of automation that drops checks the society relies on.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aair-check
+  options_only: not_obvious

@@ -1,0 +1,34 @@
+id: aair-d2-2.1-0031
+subdomain: '2.1'
+difficulty: hard
+stem: A hospital ran a proof of concept of a vendor's AI tool that reads chest X-rays, using its own images, and
+  the results met its requirements. The vendor says the version tested will be retired before go-live and replaced
+  by a newer one that scores better on the vendor's benchmark. What should the risk practitioner recommend before
+  the contract is signed?
+options:
+  A: Make acceptance depend on the delivered version passing the hospital's test
+  B: Require the vendor to deliver the version tested in the proof of concept
+  C: Obtain the vendor's clinical validation report for the new version
+  D: Add accuracy service levels, with credits, to the contract
+answer: A
+explanation:
+  why_correct: The hospital's evidence is about a version it will never use. The newer version does better on the
+    vendor's own benchmark, but the proof of concept was run because performance on this hospital's images and patients
+    can differ from a benchmark. Making acceptance depend on the delivered version passing the same test on the
+    hospital's data keeps the protection the proof of concept gave, without blocking the upgrade.
+  why_not:
+    B: Holding the vendor to a tested version is sound practice for hosted models, but this version is being retired,
+      so the hospital would end up on an unsupported release or without a deal.
+    C: A validation report is useful evidence, but it reflects the vendor's data and benchmark, the same kind of
+      evidence the proof of concept was needed to check.
+    D: Service levels compensate the hospital after poor performance is found in clinical use. They do not stop
+      a version that underperforms on its images from going live.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aair-check
+  options_only: not_obvious

@@ -1,0 +1,34 @@
+id: aair-d1-1.6-0028
+subdomain: '1.6'
+difficulty: medium
+stem: A software company markets its AI hiring tool as 'bias-free'. The claim rests on one test of shortlisting
+  rates for men and women, pooled across all job types, in one country. Customers use the tool in many countries,
+  mostly for a single job family each, and their regulators expect each employer to judge whether the tool suits
+  its own applicants. How should the claim BEST be changed?
+options:
+  A: '''No significant gap by sex in shortlisting'', from the pooled test'
+  B: Results by sex for each job family, from our own testing
+  C: The groups, settings and results tested, with their stated limits
+  D: '''Independently tested for bias'', with the report available on request'
+answer: C
+explanation:
+  why_correct: Customers must judge whether the tool suits their own applicants, in their own country and job family,
+    so they need to know what the evidence covers and what it does not. Stating the groups, settings and results
+    tested, with the limits, such as one attribute and one country, shows each customer where the evidence stops
+    and where it must test locally.
+  why_not:
+    A: The statement is accurate, but a pooled result can hide gaps within the single job families customers use,
+      and it does not say the test covered one country only.
+    B: Results by job family answer the pooling problem, but leave the tested country and the untested groups unstated,
+      so a customer elsewhere could take them as evidence for its own applicants.
+    D: '''Independently tested'' is true once an audit is done, but the headline suggests broad coverage and leaves
+      customers to find the limits in a report, when they need them to judge their own use.'
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aair
+  check_verdict: fail
+  checked_by: 2026-11-09-daily-aair-check
+  options_only: obvious

@@ -1,0 +1,32 @@
+id: aaism-d2-2.2-0056
+subdomain: '2.2'
+difficulty: hard
+stem: A telecom's staff assistant answers from public product guides and internal contract files, and most staff use it only
+  for product questions. A newly published technique makes such assistants return retrieved documents in full, and testing
+  confirms this one is vulnerable. The vendor has not yet given a fix date. What should the security manager do FIRST?
+options:
+  A: Search past prompt logs for signs the technique was used
+  B: Add input screening rules for the technique's known patterns
+  C: Limit retrieval to the public product guides until the fix
+  D: Limit the assistant to staff cleared for contract files until the fix
+answer: C
+explanation:
+  why_correct: The contract files stay exposed until the flaw is fixed. Narrowing retrieval to the public guides removes the
+    confidential content the technique could expose, whatever wording an attacker uses, while the assistant keeps serving
+    the product questions most staff bring. Searching the logs and chasing the vendor can follow.
+  why_not:
+    A: Searching the logs shows whether data has already leaked and needs doing, but the contract files stay exposed while
+      the search runs.
+    B: Pattern rules stop the published prompts, but techniques like this are easily reworded, so the files would remain exposed
+      to variants.
+    D: Restricting users to staff cleared for contracts also contains the exposure, but it cuts off most staff, who need only
+      product answers that carry no risk.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: aaism-d3-3.2-0034
+subdomain: '3.2'
+difficulty: medium
+stem: A retailer's shopping assistant runs on its servers, but its system prompt and tool list ship inside the mobile app,
+  so each change needs a new app build and store review. Past flaws, found in production, were fixed by rewording the prompt
+  or removing a tool. Which design choice BEST shortens the time a flaw stays live?
+options:
+  A: Staged app releases that send fixes to a share of users first
+  B: A server-side filter that patches known prompt flaws between releases
+  C: Prompt and tool settings served from the back end, with versions
+  D: Jailbreak testing of each app build before store submission
+answer: C
+explanation:
+  why_correct: 'The time a flaw stays live depends on where the configuration lives: any prompt or tool change needs a new
+    app build, a store review and users updating. Serving versioned prompt and tool settings from the back end lets the team
+    reword the prompt, remove a tool and roll back in minutes for every user. It also stops users from tampering with settings
+    held on their own devices.'
+  why_not:
+    A: A staged rollout limits the damage of a bad build, but each fix still waits for store review and for users to update
+      the app.
+    B: A server-side filter can block some known exploit prompts quickly, but past fixes needed the prompt reworded or a tool
+      removed, which a filter in front of the app cannot do.
+    D: Pre-release testing catches some flaws earlier, but these flaws were found in production, and fixing them would still
+      need a new build and store review.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aaism-check
+  options_only: not_obvious

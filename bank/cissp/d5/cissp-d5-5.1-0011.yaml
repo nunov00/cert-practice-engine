@@ -1,0 +1,32 @@
+id: cissp-d5-5.1-0011
+subdomain: '5.1'
+difficulty: medium
+stem: A payment processor's key management policy requires at least two key custodians to be present whenever anyone is in its HSM room.
+  Six custodians use the room a few times a month, the site has a security desk staffed around the clock, and fire rules require that
+  anyone inside can leave the room freely at any time. Which access arrangement BEST meets the policy?
+options:
+  A: Dual-badge entry, with CCTV of the HSM racks recorded and kept for a year
+  B: Dual-badge entry, with an alarm at the security desk when one custodian is left inside
+  C: Dual-badge entry and exit, so the door releases only when both custodians badge out
+  D: Single-badge entry, with a security guard posted inside the room throughout each visit
+answer: B
+explanation:
+  why_correct: The policy covers the whole time anyone is in the room, not just the moment of entry. Dual-badge entry makes two custodians
+    go in together, and an occupancy count that raises an alarm when only one remains lets the staffed desk respond at once, so the
+    rule is enforced for the whole visit.
+  why_not:
+    A: Dual-badge entry handles arrival and the recording gives a record, but once one custodian leaves, the other can work alone, and
+      the footage shows it only if someone reviews it later.
+    C: Requiring both badges to exit seems to keep the pair together, but the fire rules require free exit, so the door must open from
+      inside for anyone and one custodian can always leave.
+    D: A guard inside means nobody is ever alone, but the guard is not a custodian and cannot judge what is done to the HSMs, so a single
+      custodian still works the keys without a second custodian present.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-cissp-check
+  options_only: not_obvious

@@ -22,12 +22,12 @@ explanation:
       peak volume, so it barely changes the impact of losing online ordering at the peak.
     C: Owner interviews are a normal BIA input, but the figures already on hand allow the peak impact to be measured, and
       an estimate is what produced the understated 48 hours in the first place.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-02-daily-cissp
   check_verdict: pass
-  checked_by: 2026-11-02-daily-cissp-check
   options_only: not_obvious
+  checked_by: 2026-11-09-daily-cissp-check

@@ -1,0 +1,32 @@
+id: aaism-d2-2.1-0052
+subdomain: '2.1'
+difficulty: hard
+stem: A utility wants to pilot an AI agent that updates customer accounts, with 20 staff for two months. Its residual risk
+  for a full rollout is above appetite, and the treatments planned depend on learning how staff actually use the agent on
+  real work. What should the risk manager recommend?
+options:
+  A: Hold the pilot until treatments bring the rollout within appetite
+  B: Run the pilot under limits that keep its exposure within appetite
+  C: Have the business owner accept the residual risk for the pilot
+  D: Run the pilot on synthetic accounts with no real customers involved
+answer: B
+explanation:
+  why_correct: The pilot is a smaller exposure than the full rollout and can be assessed as its own risk. Bounding it, for
+    example with few users, limits on the changes the agent may make and close monitoring, can bring the pilot within appetite
+    while it produces the usage data the treatments need.
+  why_not:
+    A: Waiting for treatments is the cautious reflex, but the treatments depend on what the pilot would show, so the pilot
+      would never start.
+    C: Accepting risk above appetite is not the business owner's decision to make, and it skips limits that could keep the
+      pilot within appetite instead.
+    D: Synthetic accounts remove customer harm, but staff working on test data will not show how they use the agent on real
+      work, which is what the treatments need.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aaism-check
+  options_only: not_obvious

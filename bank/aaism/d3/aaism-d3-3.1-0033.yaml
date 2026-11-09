@@ -1,0 +1,33 @@
+id: aaism-d3-3.1-0033
+subdomain: '3.1'
+difficulty: medium
+stem: A pharmaceutical firm's analysis assistant runs generated Python in a sandbox whose firewall blocks outbound traffic
+  except to a DNS resolver that forwards queries to the internet. The code needs no network access, and the libraries it uses
+  are fixed. Testers exfiltrated uploaded files by encoding them in DNS lookups. Which design change BEST closes this route?
+options:
+  A: Reject generated code that imports networking libraries
+  B: Alert on DNS lookups with long or random-looking names
+  C: Allow DNS only for an allow-list of package-registry names
+  D: Remove DNS resolution, with packages preinstalled
+answer: D
+explanation:
+  why_correct: The code needs no network and its libraries are fixed, yet the sandbox can still reach the internet through
+    the resolver. Removing name resolution, with those libraries installed in the sandbox image, takes away the last outbound
+    path entirely. Nothing the code legitimately does depends on it, so this closes the channel rather than narrowing, watching
+    or slowing it.
+  why_not:
+    A: 'Static checks are easy to evade: name lookups happen through many ordinary functions, such as opening a URL or a file
+      path on a network share, and generated code can be obfuscated.'
+    B: Alerting on unusual names is a useful detective control, but by the time it fires the data has already left.
+    C: 'An allow-list narrows the channel, but it keeps a path the code has no use for: the firewall already blocks traffic
+      to the registries, and the libraries are fixed. Allow-lists also tend to grow wildcard entries that can carry encoded
+      data.'
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aaism-check
+  options_only: not_obvious

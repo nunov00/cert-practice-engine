@@ -1,0 +1,32 @@
+id: cissp-d4-4.3-0016
+subdomain: '4.3'
+difficulty: medium
+stem: A drug distributor sends daily orders to a wholesaler. After the wholesaler said a disputed order never arrived, their contract
+  now requires that either party can prove to a third party what was sent and when, and that the other side received it unaltered. Which
+  way of exchanging the orders BEST meets this?
+options:
+  A: AS2 transfers with signed, encrypted messages and signed delivery receipts
+  B: PGP-signed and encrypted order files, uploaded to the wholesaler's SFTP server
+  C: FTPS with mutual certificate authentication, and a checksum sent with each file
+  D: SFTP with key-based sign-in, keeping each server's transfer logs as the record
+answer: A
+explanation:
+  why_correct: Proof of what was sent comes from the sender's signature on the message, and proof of receipt from a receipt that the
+    recipient signs over the message's digest. AS2 provides both, signed messages and signed delivery notifications, so each party holds
+    evidence signed by the other that a third party can verify.
+  why_not:
+    B: PGP signatures prove who sent each file and that it was not altered, which covers half the requirement, but nothing signed by
+      the wholesaler proves receipt, so a dispute about arrival could happen again.
+    C: Mutual authentication and checksums protect each transfer while it runs, but they leave no lasting proof signed by the other
+      party, and the checksum comes from the sender.
+    D: Transfer logs are useful operational records, but each party's logs are its own and the other side can dispute them, so they
+      are not evidence signed by the other party.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-cissp-check
+  options_only: not_obvious

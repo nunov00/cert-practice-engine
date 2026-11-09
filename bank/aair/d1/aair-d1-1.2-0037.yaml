@@ -1,0 +1,35 @@
+id: aair-d1-1.2-0037
+subdomain: '1.2'
+difficulty: hard
+stem: A bank's model risk team tiers each model by the financial loss its errors could cause, and the tier sets
+  how often the model is validated and monitored. A low-tier model that routes payment exceptions failed unnoticed
+  for two days, breaching the impact tolerance of one of the bank's important business services. The resilience
+  team's service map already listed the model. Which change BEST aligns these processes?
+options:
+  A: Add model failure to the scenarios used to test impact tolerances
+  B: Give the service owners access to the model's monitoring reports
+  C: Have the model risk team review the service map each quarter
+  D: Include the business services a model supports in its tiering criteria
+answer: D
+explanation:
+  why_correct: The resilience team already knew the service depended on the model; the gap is that this never reaches
+    the decision that sets the model's controls. Because tiering looks only at financial loss, a model behind an
+    important service can get light monitoring and infrequent validation. Adding the services a model supports to
+    the tiering criteria lets operational impact raise the tier, so monitoring and validation match the harm a failure
+    can cause.
+  why_not:
+    A: Testing impact tolerances against model failure is good resilience practice and might expose the weakness,
+      but it does not change how closely the model is monitored day to day, which is why the failure went unnoticed.
+    B: More readers for the monitoring reports could help, but the model is low tier, so the monitoring behind those
+      reports is itself light. More people watching thin monitoring do not catch a silent failure sooner.
+    C: Reviewing the map would tell the model risk team which services use each model, but unless the tiering rules
+      use that information, the model stays low tier and lightly controlled.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aair-check
+  options_only: not_obvious

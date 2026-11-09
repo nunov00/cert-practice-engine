@@ -1,0 +1,32 @@
+id: aair-d2-2.4-0025
+subdomain: '2.4'
+difficulty: medium
+stem: A retailer's shelf cameras run a stock-detection model on about 3,000 store devices, which download updates
+  when they connect. Some stores' devices connect only every few weeks. After a faulty model version was withdrawn,
+  the team could not say which devices were still running it. Which practice BEST addresses this?
+options:
+  A: Tag each model build in the registry with an immutable version ID
+  B: Push the latest version to the devices at each nightly check-in
+  C: Record the version each device runs, updated as devices report in
+  D: Sign each model build so that devices load only approved versions
+answer: C
+explanation:
+  why_correct: The gap is in knowing where each asset is deployed, not which builds exist. A record of which model
+    version each device is running, updated whenever a device reports in, lets the team find every device still
+    on a withdrawn version, follow up the ones that have not connected, and show when the withdrawal is complete.
+  why_not:
+    A: Immutable IDs make each build identifiable, which helps, but the registry would still record builds, not
+      which of 3,000 devices is running each one.
+    B: Pushing updates speeds replacement for devices that connect, but devices that connect rarely would still
+      run the faulty version, and the team still could not tell which ones.
+    D: Signing stops unapproved builds from loading, but the faulty version was approved when released, so signed
+      copies would keep running and remain untracked.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aair-check
+  options_only: not_obvious

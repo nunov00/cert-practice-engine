@@ -1,0 +1,32 @@
+id: aaism-d1-1.1-0027
+subdomain: '1.1'
+difficulty: hard
+stem: An online travel agency's gap assessment against a new AI regulation found large gaps in three high-risk systems, whose
+  duties apply in two years. It also found a marketing tool that may fall under a practice the regulation bans from six months'
+  time. What should the security manager do FIRST?
+options:
+  A: Start remediating the three high-risk systems, the longest work
+  B: Get a legal ruling on whether the marketing tool is banned
+  C: Plan both workstreams in one roadmap for the board to approve
+  D: Pause the marketing tool until its review has been completed
+answer: B
+explanation:
+  why_correct: The ban applies first, carries the heaviest consequences and may mean withdrawing the tool, which takes planning.
+    Whether it applies is still open, so the first step is a legal determination. It decides whether the tool must stop, change
+    or can continue, and it fits well ahead of the two-year high-risk work.
+  why_not:
+    A: The high-risk remediation is the larger job, but it has two years; starting it first leaves the nearer and possibly
+      banned use undecided.
+    C: A combined roadmap is needed, but it cannot be planned properly until the ruling says whether the tool must be withdrawn
+      within six months.
+    D: Pausing a business tool over a possible issue, six months before the ban applies, is premature; the ruling may find
+      the tool outside the ban.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-aaism-check
+  options_only: not_obvious

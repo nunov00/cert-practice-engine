@@ -1,0 +1,31 @@
+id: cissp-d2-2.4-0004
+subdomain: '2.4'
+difficulty: medium
+stem: A telecom's support web form has a free-text box for describing the problem, and customers often paste card numbers into it. Each
+  ticket is stored in the CRM, copied within minutes to the analytics warehouse and emailed to the agent queue, so all three systems
+  fall under the card industry's data security standard. The company wants them out of that scope. Which change BEST fits?
+options:
+  A: Scan new tickets each night, and redact card numbers in the CRM and the warehouse
+  B: Shorten the retention of ticket text to 30 days in each of the systems that receive it
+  C: Warn customers on the form not to enter card numbers in the description box
+  D: Detect card number patterns in the box, and hold the ticket until they are removed
+answer: D
+explanation:
+  why_correct: Scope follows wherever card data is stored, processed or transmitted, so the data has to be stopped where it is collected.
+    Checking the box for card number patterns, which have a recognisable length and check digit, before the ticket is sent means the
+    CRM, the warehouse and the agents' mail never receive a card number.
+  why_not:
+    A: Nightly redaction cleans the stored copies, but by then each ticket has already been copied to the warehouse and emailed to agents,
+      so the systems still receive card data every day and stay in scope.
+    B: Shorter retention limits how much card data builds up, but a system that stores card data even briefly is still in scope.
+    C: A warning costs little and cuts the volume, but customers who miss or ignore it still send card numbers to all three systems,
+      so their scope does not change.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-09-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-09-daily-cissp-check
+  options_only: not_obvious
