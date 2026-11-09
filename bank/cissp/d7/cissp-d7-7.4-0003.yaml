@@ -6,10 +6,10 @@ stem: Forty support agents at a software company reset MFA devices on customer a
   administrator accounts. Each agent holds global administrator rights in the identity platform so that the resets work,
   and a review notes that one phished agent could take over the whole tenant. Which change BEST applies least privilege?
 options:
-  A: The built-in authentication administrator role, which can reset MFA for any user, administrators included
+  A: A built-in role that can reset MFA for any user, administrators included
   B: Just-in-time activation of a customer-scoped reset role for each reset, approved by a team lead
   C: A custom role that can reset MFA only for accounts within the customer directory scope
-  D: The built-in help desk administrator role, which can reset passwords and MFA for non-admin users
+  D: A built-in role that can reset passwords and MFA for any non-admin user, staff included
 answer: C
 explanation:
   why_correct: Least privilege matches rights to the job. The agents need one action, on customer accounts only, many
@@ -18,7 +18,8 @@ explanation:
     MFA, is far smaller and can be watched with monitoring of reset volumes.
   why_not:
     A: The authentication administrator role is far narrower than global administrator, but it can reset MFA on
-      administrator accounts, so a phished agent could reset an administrator's MFA and still take over the tenant.
+      administrator accounts, so a phished agent could strip MFA from an administrator's account, leaving only a
+      password between the attacker and the tenant.
     B: Just-in-time activation suits powerful rights used rarely. Here the role is already narrow and is needed 200 times a
       day while customers wait on the line, so the approvals would swamp the leads and soon be rubber-stamped, adding
       delay without real control.

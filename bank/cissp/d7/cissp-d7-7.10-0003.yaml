@@ -9,7 +9,7 @@ options:
   A: Copy backups to a second provider in a format restorable without the first
   B: Replicate the backup account to a distant region of the same provider
   C: Agree contract terms for exit assistance and return of data within 30 days
-  D: Lengthen immutability on the backup account from 35 days to one year
+  D: Copy backups each night to a second provider, using the first provider's backup service and snapshot format
 answer: A
 explanation:
   why_correct: The scenario removes the provider itself, so any copy that depends on it, in any account or region, is out
@@ -21,8 +21,8 @@ explanation:
       suspension reaches each region and account the company holds with that provider.
     C: Exit terms are worth having for an orderly move, but data returned within 30 days misses the five-day target, and a
       provider that has suspended the company may not cooperate quickly.
-    D: Longer immutability protects backups from deletion for longer, which helps against ransomware, but they stay inside
-      the provider the company can no longer reach.
+    D: The copy sits outside the provider, but restoring it needs the first provider's backup service and native snapshot
+      format, which the suspension also removes.
 status: published
 outline_version: '2024-04-15'
 sample: false

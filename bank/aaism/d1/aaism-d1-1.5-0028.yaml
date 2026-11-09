@@ -1,24 +1,25 @@
 id: aaism-d1-1.5-0028
 subdomain: '1.5'
 difficulty: hard
-stem: A construction firm's accounts agent pays supplier invoices from a work queue. Its continuity plan restores the queue
-  from hourly backups and restarts the agent. In a recovery test, the agent re-ran tasks it had completed after the last backup
-  and paid 40 invoices twice. Which control BEST prevents this in a real recovery?
+stem: A construction firm's accounts agent pays supplier invoices from a work queue. Its continuity plan restores the
+  queue from hourly backups and restarts the agent. In a recovery test, the agent re-ran tasks it had completed after
+  the last backup and paid 40 invoices twice. Which control BEST prevents this in a real recovery?
 options:
   A: The payment system rejects invoices it has already paid
   B: The agent saves its progress to durable storage after each step
   C: Staff approve each agent payment for a day after a recovery
-  D: The queue is backed up at five-minute intervals, not hourly
+  D: The queue is replicated continuously to a standby site
 answer: A
 explanation:
-  why_correct: Any restore from a backup can replay work done after it. A duplicate check in the payment system, the system
-    of record, makes a repeated payment request harmless whatever state the agent or its queue is restored to.
+  why_correct: Any restore from a backup can replay work done after it. A duplicate check in the payment system, the
+    system of record, makes a repeated payment request harmless whatever state the agent or its queue is restored to.
   why_not:
-    B: Saving progress narrows the problem, but the progress store may be lost or restored along with the queue, and a failure
-      between paying and saving still repeats the payment.
+    B: Saving progress narrows the problem, but the progress store may be lost or restored along with the queue, and a
+      failure between paying and saving still repeats the payment.
     C: Manual approval can catch duplicates, but a recovery is when backlogs and pressure are highest, and staff can miss
       repeats among many legitimate payments.
-    D: More frequent backups shrink the window but do not close it; work done since the last backup is still replayed.
+    D: Continuous replication keeps the queue current at the standby site, but it copies the in-flight state too, so a
+      payment made just before the failure is still in the queue and is replayed after failover.
 status: published
 outline_version: '2025-08-19'
 sample: false

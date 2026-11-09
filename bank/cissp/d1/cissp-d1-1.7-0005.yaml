@@ -1,27 +1,27 @@
 id: cissp-d1-1.7-0005
 subdomain: '1.7'
 difficulty: medium
-stem: A logistics company's IT department gave each of its systems a recovery tier, from one hour to five days, based on its own view
-  of each system's importance. The board must now decide whether to fund a second data centre that would double the yearly disaster
-  recovery budget. What should the continuity manager do FIRST?
+stem: A logistics company's IT department gave each of its systems a recovery tier, from one hour to five days, based on
+  its own view of each system's importance. The board must now decide whether to fund a second data centre that would
+  double the yearly disaster recovery budget. What should the continuity manager do FIRST?
 options:
   A: Test the current recovery plan to measure how long each tier really takes to restore
   B: Run an impact analysis with process owners to set each business process's downtime limit
   C: Assess threats to the current data centre, such as flood, fire and power loss, by likelihood
-  D: Compare the second site's cost with IT's estimate of what a day's outage would cost
+  D: Have process owners rank IT's existing tiers against the cost of a day's outage
 answer: B
 explanation:
-  why_correct: Whether a recovery investment is justified depends on how long the business can do without each process and what an outage
-    costs it, and that comes from the people who own the processes. The tiers reflect IT's own view, so nothing yet states the business
-    requirement. An impact analysis sets the downtime limits, against which the current capability, the threats and the new site's cost
-    can then be judged.
+  why_correct: Whether a recovery investment is justified depends on how long the business can do without each process and
+    what an outage costs it, and that comes from the people who own the processes. The tiers reflect IT's own view, so
+    nothing yet states the business requirement. An impact analysis sets the downtime limits, against which the current
+    capability, the threats and the new site's cost can then be judged.
   why_not:
-    A: Testing shows what the current plan achieves, which the decision needs later, but without business requirements nobody can say
-      whether the measured times are too slow, so it cannot answer the board yet.
-    C: A threat assessment shows how likely a site loss is, which also matters, but not how much each hour of outage would hurt the
-      business or which processes must return first, so it cannot size the recovery needed.
-    D: A cost comparison is the form the board's answer will take, but IT's outage estimate comes from the same IT-centred view as the
-      tiers, not from the process owners who bear the impact.
+    A: Testing shows what the current plan achieves, which the decision needs later, but without business requirements
+      nobody can say whether the measured times are too slow, so it cannot answer the board yet.
+    C: A threat assessment shows how likely a site loss is, which also matters, but not how much each hour of outage would
+      hurt the business or which processes must return first, so it cannot size the recovery needed.
+    D: "Bringing in process owners is right, but asking them to rank IT's existing tiers keeps IT's framing: they judge the
+      tiers they are shown instead of stating how long each process can be down, so the requirement is still not set."
 status: published
 outline_version: '2024-04-15'
 sample: false

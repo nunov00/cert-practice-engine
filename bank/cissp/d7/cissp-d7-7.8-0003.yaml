@@ -1,26 +1,26 @@
 id: cissp-d7-7.8-0003
 subdomain: '7.8'
 difficulty: hard
-stem: A company with 9,000 laptops across 40 hardware models pushes each month's operating system patches to every laptop at once. Last
-  month one patch left 2,000 laptops of two models unable to boot. Policy requires patches for actively exploited flaws on every laptop
-  within seven days. Which change BEST reduces the risk of a repeat?
+stem: A company with 9,000 laptops across 40 hardware models pushes each month's operating system patches to every
+  laptop at once. Last month one patch left 2,000 laptops of two models unable to boot. Policy requires patches for
+  actively exploited flaws on every laptop within seven days. Which change BEST reduces the risk of a repeat?
 options:
   A: Test each patch in the lab on the standard image before releasing it to all laptops
   B: Release each patch in waves, starting with a small group that covers every model
-  C: Hold each patch for 30 days, so that problems reported elsewhere come to light first
+  C: Keep a recovery partition with the previous OS build, so a failed patch rolls back automatically
   D: Have the change board approve each patch after reviewing the vendor's known issues
 answer: B
 explanation:
-  why_correct: A staged rollout gives each patch first to a small group that includes every hardware model, and widens only while those
-    laptops stay healthy, so a fault specific to one model hits a few machines instead of thousands. With short waves, the rollout still
-    finishes inside the seven days.
+  why_correct: A staged rollout gives each patch first to a small group that includes every hardware model, and widens
+    only while those laptops stay healthy, so a fault specific to one model hits a few machines instead of thousands.
+    With short waves, the rollout still finishes inside the seven days.
   why_not:
-    A: Lab testing catches failures on the configurations tested, but a standard image on a few lab machines cannot cover 40 models,
-      and last month's failure was specific to two of them.
-    C: Waiting lets other organisations find problems first, but it breaks the seven-day rule for exploited flaws and leaves the laptops
-      exposed for a month.
-    D: Change board review adds oversight, but known-issues lists cover problems already reported, and last month's failure was new,
-      so the board could not have seen it coming.
+    A: Lab testing catches failures on the configurations tested, but a standard image on a few lab machines cannot cover 40
+      models, and last month's failure was specific to two of them.
+    C: Automatic rollback shortens the outage, but every laptop of an affected model still fails at once, and rollback can
+      itself fail on a laptop that will not boot.
+    D: Change board review adds oversight, but known-issues lists cover problems already reported, and last month's failure
+      was new, so the board could not have seen it coming.
 status: published
 outline_version: '2024-04-15'
 sample: false

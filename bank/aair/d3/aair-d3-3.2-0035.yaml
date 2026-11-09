@@ -2,9 +2,9 @@ id: aair-d3-3.2-0035
 subdomain: '3.2'
 difficulty: hard
 stem: A hospital's AI tool assigns billing codes to patient records, and wrong codes lead to payer penalties. Coders can
-  review about 10% of records. In an audit sample, codes the tool gave with over 95% confidence were wrong about as
-  often as its other codes. A second, separately built model of similar overall accuracy is available, and the two
-  models give different codes on about 8% of records. Which treatment BEST reduces the risk?
+  review about 10% of records. In an audit sample, the tool's codes were wrong about as often at every confidence level,
+  high or low. A second, separately built model of similar overall accuracy is available, and the two models give
+  different codes on about 8% of records. Which treatment BEST reduces the risk?
 options:
   A: Send the 10% of records with the lowest confidence scores to coders
   B: Use the second model's code wherever its confidence is higher

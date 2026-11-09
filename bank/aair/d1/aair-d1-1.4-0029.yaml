@@ -6,9 +6,9 @@ stem: A consultancy's staff use an approved AI assistant to draft client reports
   Which procedure BEST manages this?
 options:
   A: Disclose AI assistance in each report the firm issues to clients
-  B: Record each contract's AI terms at setup and set tool access to match
+  B: Record each contract's AI terms at setup and set tool access and disclosure to match
   C: Train engagement leads on how client contracts most commonly treat AI
-  D: Have the quality team check each AI-drafted report against its contract
+  D: Have the quality team check each AI-drafted report against that client's contract terms
 answer: B
 explanation:
   why_correct: The obligation differs by contract, and the people using the tool do not know which terms apply to them.

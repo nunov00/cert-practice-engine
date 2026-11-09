@@ -1,20 +1,20 @@
 id: aaism-d1-1.2-0028
 subdomain: '1.2'
 difficulty: medium
-stem: A manufacturer's staff build small apps with AI coding tools, and leadership wants this to continue. Recent incidents
-  came from such apps, shared across teams, that stored customer data behind public cloud links. Personal scripts have caused
-  no problems. Which policy provision BEST addresses this?
+stem: A manufacturer's staff build small apps with AI coding tools, and leadership wants this to continue. Recent
+  incidents came from such apps, shared across teams, that stored customer data behind public cloud links. Personal
+  scripts have caused no problems. Which policy provision BEST addresses this?
 options:
-  A: Apps built with AI tools stay with the person who built them
-  B: Shared apps built with AI tools pass an automated code scan first
-  C: Shared or customer-data apps go through app release review
-  D: Shared apps built with AI tools are inventoried with an owner
+  A: AI-built apps stay with the person who built them
+  B: Shared AI-built apps pass an automated code scan first
+  C: Shared or customer-data AI-built apps get app release review
+  D: Shared AI-built apps are inventoried with an owner
 answer: C
 explanation:
-  why_correct: 'The incidents came from apps that others use or that hold customer data, and the flaw was a design and configuration
-    choice: data stored behind public sharing links. The app release review examines how an app stores and shares data, so
-    sending that class of app through it puts scrutiny where the harm arose, while personal scripts stay free and leadership
-    keeps its citizen development.'
+  why_correct: 'The incidents came from apps that others use or that hold customer data, and the flaw was a design and
+    configuration choice: data stored behind public sharing links. The app release review examines how an app stores and
+    shares data, so sending that class of app through it puts scrutiny where the harm arose, while personal scripts stay
+    free and leadership keeps its citizen development.'
   why_not:
     A: Keeping apps personal would stop shared exposure, but it removes the cross-team value that leadership wants to keep.
     B: A code scan on shared apps targets the right apps, but public sharing links are a storage configuration, not insecure

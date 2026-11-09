@@ -8,7 +8,7 @@ stem: A telecom's support web form has a free-text box for describing the proble
 options:
   A: Scan new tickets each night, and redact card numbers in the CRM and the warehouse
   B: Shorten the retention of ticket text to 30 days in each of the systems that receive it
-  C: Warn customers on the form not to enter card numbers in the description box
+  C: Mask card number patterns in the browser before the form is submitted
   D: Reject card number patterns server-side, before the ticket is stored or sent
 answer: D
 explanation:
@@ -22,8 +22,9 @@ explanation:
       emailed to agents, so the systems still receive card data every day and stay in scope.
     B: Shorter retention limits how much card data builds up, but a system that stores card data even briefly is still in
       scope.
-    C: A warning costs little and cuts the volume, but customers who miss or ignore it still send card numbers to all three
-      systems, so their scope does not change.
+    C: Masking at the point of collection looks equivalent, but a browser check runs on the customer's side and is skipped
+      by old cached pages, disabled scripts or anything posting to the form's endpoint directly, so card numbers can
+      still reach all three systems.
 status: published
 outline_version: '2024-04-15'
 sample: false

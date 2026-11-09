@@ -7,7 +7,7 @@ stem: A bank's AI committee often approves high-risk models subject to condition
   oversight?
 options:
   A: Assign each condition to the model's owner, with a due date the committee tracks
-  B: Have the committee secretary send each owner their conditions and a date to report back
+  B: Have the committee secretary email each affected owner their conditions after each meeting
   C: Have the second line check that conditions are met at each yearly model review
   D: Have internal audit test a sample of approval conditions each year
 answer: A
@@ -17,8 +17,8 @@ explanation:
     the committee track it until closed, gives the condition an accountable owner and keeps the approving body's
     oversight going after the approval meeting.
   why_not:
-    B: Sending each owner a date tells them what is due, but nobody follows up when a report does not arrive, so conditions
-      can still lapse unnoticed.
+    B: Telling owners what was set fixes the communication gap, but no one is accountable for checking that each condition
+      is closed by its date, so conditions can still lapse unnoticed.
     C: Second-line checks add challenge, but a yearly check finds a missed six-month condition long after it was due and
       still leaves the committee without a view of open conditions.
     D: Audit sampling gives periodic assurance on whether the process works. It would report the same failure a year later

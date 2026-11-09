@@ -6,7 +6,7 @@ stem: Internal audit at an insurer must test whether every change to its claims 
   onto the production servers, and some were later overwritten by normal releases. Which evidence BEST tests the
   control?
 options:
-  A: The pipeline's approval records for each release in the year, checked for a reviewer
+  A: The pipeline's deployment records for the year, reconciled with the approved change tickets
   B: A sample of change tickets, each checked for a recorded peer review and approval
   C: Interviews with team leads about how urgent fixes are handled during outages
   D: Host change logs for the year, reconciled with the pipeline's reviewed deployments
@@ -17,8 +17,8 @@ explanation:
     reconciling every logged change with a deployment from a peer-reviewed pipeline run shows which changes skipped
     review, wherever they came from.
   why_not:
-    A: The pipeline's records are complete for releases that went through it, which makes them a natural source, but a fix
-      copied onto the servers bypassed the pipeline and appears nowhere in them.
+    A: Reconciling the pipeline with tickets checks the releases that went through it, but a fix copied onto the servers
+      appears in neither.
     B: Change tickets show whether the process was documented, but changes made outside it during outages may have no ticket
       at all, so a sample of tickets cannot find them.
     C: Interviews help auditors understand the practice and can point to periods worth checking, but what people recall is
