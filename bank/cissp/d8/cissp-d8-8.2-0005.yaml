@@ -1,0 +1,32 @@
+id: cissp-d8-8.2-0005
+subdomain: '8.2'
+difficulty: medium
+stem: A software company's threat model for its update service now includes an attacker who controls its build system and alters
+  binaries during compilation, leaving the source repository untouched. The company's builds are deterministic, and it wants
+  such tampering caught before a release ships. Which control BEST fits?
+options:
+  A: Rebuild each release on an independent system from the same commit and compare outputs
+  B: Sign each release with a key held in an HSM that only the build system is allowed to call
+  C: Run static analysis and dependency scans on each commit before it is built
+  D: Build each release on fresh runners that the build system creates for each job
+answer: A
+explanation:
+  why_correct: If the build system itself is hostile, nothing it produces or approves can be trusted on its own. Because the
+    builds are deterministic, a second build from the same commit on a system the attacker does not control should give identical
+    output, so any difference in the binaries reveals tampering before the release ships.
+  why_not:
+    B: An HSM keeps the signing key from being stolen, but the build system controls what gets signed, so a tampered binary
+      is signed as genuine.
+    C: Source and dependency scanning finds flaws in the code going in, but the source here is untouched and the change is
+      made during compilation.
+    D: Fresh runners stop one job contaminating the next, but the build system that creates the runners is the one the attacker
+      controls, so it can tamper with each new runner too.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

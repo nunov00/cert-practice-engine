@@ -1,0 +1,32 @@
+id: aaism-d2-2.1-0053
+subdomain: '2.1'
+difficulty: medium
+stem: 'An insurer settles motor claims through three models in sequence, each owned by a different team: one reads repair estimates,
+  one classifies damage and one sets the payout. Each owner tracks its own model''s errors. Complaints about wrong payouts are
+  rising, and each owner points to another stage. Who should own the risk of wrong payouts?'
+options:
+  A: The head of claims, who owns the settlement process the models serve
+  B: Each model owner, for the share of wrong payouts traced to their stage
+  C: The owner of the payout model, whose output the customer receives
+  D: The chief risk officer, who sets the tolerances for model errors
+answer: A
+explanation:
+  why_correct: Wrong payouts are a business outcome produced by the whole chain, and errors at one stage can pass through or grow
+    at the next, so no stage owner controls the result. The head of claims owns the settlement process, can set a tolerance for
+    wrong payouts and direct the three model owners to meet it.
+  why_not:
+    B: Splitting the risk by stage matches the current tracking, but errors interact across stages and owners already blame each
+      other, so nobody would own the outcome customers experience.
+    C: The payout model's owner is closest to the customer, but cannot control errors that arrive from the reading and classification
+      stages, which belong to other teams.
+    D: The chief risk officer sets the framework and challenges ratings as the second line, but owning an operational risk would
+      leave no independent challenger and no business owner.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: not_obvious

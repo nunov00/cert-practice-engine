@@ -1,0 +1,33 @@
+id: cissp-d8-8.1-0006
+subdomain: '8.1'
+difficulty: hard
+stem: A bank has 30 internal web applications with no planned changes since launch, and nobody has released them in two years.
+  Dependency scans now report 400 known flaws in their libraries, some with public exploits. Each application's tests and release
+  steps are known only to the developers who built it, who now work on other products. Which change BEST addresses this in
+  the development life cycle?
+options:
+  A: A named owning team per application, with quarterly time to update its libraries
+  B: Security engineers upgrading each application's libraries themselves each quarter
+  C: Monthly pipeline rebuilds that raise automatic pull requests for library updates
+  D: Virtual patches in the WAF for flagged libraries, reviewed at each quarterly risk review
+answer: A
+explanation:
+  why_correct: The flaws pile up because the maintenance phase has nobody in it. A named owning team with planned time can learn
+    each application's tests and release steps, update its libraries, and check that the upgrades do not break it, so fixes
+    are actually released and keep being released.
+  why_not:
+    B: Security engineers can change library versions, but without anyone who knows each application's tests and release
+      steps they cannot tell whether an upgrade breaks it, so changes are either risky or held back.
+    C: Automated update requests make the work visible and cheap to start, but someone still has to review, test and release
+      each one, and no one is assigned to these applications.
+    D: Virtual patching reduces exposure to some known exploits quickly, but it leaves the flaws in the code and depends on
+      rules that must be kept up as new flaws appear.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

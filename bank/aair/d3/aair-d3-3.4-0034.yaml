@@ -1,0 +1,33 @@
+id: aair-d3-3.4-0034
+subdomain: '3.4'
+difficulty: hard
+stem: Underwriters at a lender may override its credit model's decisions, and overrides rose from 4% to 11% of applications
+  this year. The head of lending wants to cap them, while underwriters say they catch cases the model misjudges.
+  The risk committee asks which view the evidence supports. Which indicator BEST answers this?
+options:
+  A: Override rate for each underwriter, compared each month with the team's average
+  B: Early arrears on override approvals against model approvals with similar scores
+  C: Share of overrides that give a documented reason the credit policy permits
+  D: The model's accuracy on recent loans, compared with its accuracy at validation
+answer: B
+explanation:
+  why_correct: The dispute is about whether overrides lead to better or worse lending decisions, so the evidence
+    has to come from outcomes. Comparing early arrears on loans approved by override with model-approved loans of
+    similar scores shows whether underwriters are picking out good borrowers the model misjudged or adding risk.
+    That tells the committee which view the data supports.
+  why_not:
+    A: Comparing underwriters can spot outliers, but a high override rate can mean either good judgement or poor
+      discipline. It does not show whether overrides lead to better or worse outcomes.
+    C: Documented, permitted reasons show the overrides follow process, not that they turn out well. Overrides can
+      be well documented and still wrong.
+    D: A fall in model accuracy would make overrides more plausible, but it does not test the overrides themselves.
+      Underwriters could still be overriding the wrong cases.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aair-check
+  options_only: not_obvious

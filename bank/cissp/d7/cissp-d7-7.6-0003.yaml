@@ -1,0 +1,34 @@
+id: cissp-d7-7.6-0003
+subdomain: '7.6'
+difficulty: medium
+stem: Ransomware is spreading through a chemical maker's office network, where the attackers hold domain administrator rights
+  and push their tools from the IT management server. The plant's control network shows no sign of compromise, though a few
+  engineering workstations there are joined to the corporate domain. Production scheduling from IT can be done by hand for a
+  few days, at reduced output. What should the incident team do about the plant FIRST?
+options:
+  A: Keep the IT link up, limited to the scheduling and historian flows, and raise OT monitoring
+  B: Cut the IT link, and run the plant on manual scheduling at reduced output for now
+  C: Keep the IT link up, with the plant firewall blocking the IT management server and domain controllers
+  D: Cut the IT link, and rebuild the plant's domain-joined workstations before production resumes
+answer: B
+explanation:
+  why_correct: Containment should put a boundary between the spreading attack and the systems it has not reached. Attackers
+    with domain rights can act through any IT host and through the domain-joined workstations' trust in the domain, so cutting
+    the link is the boundary that holds, and manual scheduling keeps the plant producing, at a cost the business can carry for
+    a few days.
+  why_not:
+    A: Limiting the link to two flows keeps full output and narrows the path, but the attackers may control the IT systems at
+      the end of those flows, and the domain-joined workstations still trust a domain they hold.
+    C: Blocking the known attack infrastructure is a targeted step, but attackers with domain administrator rights can work
+      from any other IT host, so the remaining traffic is not trustworthy.
+    D: Rebuilding the domain-joined workstations may be needed later, but nothing shows they are compromised, and stopping
+      production for it goes beyond what the first containment step requires.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aaism-d1-1.5-0029
+subdomain: '1.5'
+difficulty: medium
+stem: A bank's customer assistant calls its provider's model through an alias, which the provider moved to a new model version
+  last night. Since this morning, the assistant sometimes quotes its internal fee-waiver rules to customers. The provider also
+  serves earlier dated versions under their own names. What should the bank do FIRST?
+options:
+  A: Return the assistant to an earlier version the bank has tested
+  B: Add an output filter that blocks the fee-waiver rule wording
+  C: Re-run the release tests on the new version to confirm the cause first
+  D: Move the fee-waiver rules out of the prompt into back-end code
+answer: A
+explanation:
+  why_correct: The leak is reaching customers now and began with the provider's version change. Moving back to an earlier version
+    that the bank has already tested stops it quickly, with a known-good configuration, and is easy to reverse. The cause can then
+    be confirmed and the design fixed without customers being exposed meanwhile.
+  why_not:
+    B: An output filter tackles the symptom, but the model can paraphrase or partly quote the rules, so a wording filter is likely
+      to miss some leaks.
+    C: Confirming the cause is worthwhile, but the timing already points to the version change, and testing first leaves the leak
+      running for customers while a tested fallback is available.
+    D: Keeping business rules out of the prompt is the right long-term fix, but it needs development and testing, and the leak
+      continues in the meantime.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: not_obvious

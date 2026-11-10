@@ -1,0 +1,32 @@
+id: aaism-d3-3.1-0034
+subdomain: '3.1'
+difficulty: medium
+stem: A SaaS platform serves many tenants' fine-tuned adapters on one shared base model, loaded into the same serving process.
+  Adapters must already be in a tensor-only format. A tester uploaded a crafted adapter that exploited a parsing flaw in the serving
+  library and read other tenants' prompts from memory. Which design change BEST limits this?
+options:
+  A: Validate each adapter's tensor shapes and sizes before it is loaded
+  B: Patch the serving library and add fuzz testing of its file parser
+  C: Scan each uploaded adapter with a model-aware scanner before loading
+  D: Serve each tenant's adapters from a worker process of its own
+answer: D
+explanation:
+  why_correct: The harm came from tenants sharing one process, so any flaw that runs inside it can reach every tenant's data. Serving
+    each tenant's adapters from a separate worker process means a crafted adapter that exploits a future flaw reaches only that
+    tenant's own memory.
+  why_not:
+    A: Checking shapes and sizes blocks some malformed files, but parser flaws can be triggered by inputs that pass such checks,
+      and a successful exploit would still reach every tenant in the process.
+    B: Patching and fuzzing fix this flaw and may find others, but some will be missed, and while tenants share a process the next
+      one would again expose all of them.
+    C: A model-aware scanner looks for known unsafe content such as embedded code; the format already holds tensors alone, and
+      a scanner is unlikely to spot a new parser exploit.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: not_obvious

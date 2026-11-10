@@ -5,7 +5,7 @@ stem: Staff sign in to the company's cloud email with a password and a push prom
   now send phishing links to a proxy that relays the real sign-in page, so staff complete MFA themselves while the
   attackers capture the session cookie. Which change BEST stops this attack?
 options:
-  A: One-time codes from an authenticator app in place of push prompts
+  A: Passwordless phone sign-in with number matching, showing app name and location
   B: FIDO2 security keys or platform passkeys
   C: Shorter sessions that require a fresh sign-in after four hours
   D: Risk-based detection that revokes sessions from unfamiliar locations
@@ -15,7 +15,9 @@ explanation:
     challenge bound to the real site's origin, so a sign-in through the attacker's domain produces nothing the real
     service accepts, and no session is created for the attacker.
   why_not:
-    A: The proxy relays one-time codes as easily as push approvals, so staff still complete MFA for the attacker.
+    A: Passwordless phone sign-in removes the password and adds context to the prompt, but the user still approves a sign-in
+      that the proxy relays from the real page, and the location shown is easy to overlook, so the attacker still receives
+      the session.
     C: Shorter sessions limit how long a stolen cookie works, but the attacker still gets hours of access each time a user
       is phished.
     D: "Revoking sessions that appear from unfamiliar places can cut an attack short, but it is detective: the attacker

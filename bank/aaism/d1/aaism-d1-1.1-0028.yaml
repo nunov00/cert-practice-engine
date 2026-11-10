@@ -1,0 +1,33 @@
+id: aaism-d1-1.1-0028
+subdomain: '1.1'
+difficulty: hard
+stem: A new AI regulation requires a manufacturer to ensure its staff have sufficient AI knowledge. Engineers fine-tune models,
+  HR staff oversee a high-risk CV-screening tool, and 4,000 office staff use a minimal-risk writing assistant that reads their
+  mailboxes and sends email for them. Which approach BEST meets this duty?
+options:
+  A: In-depth training for engineers and HR, and a signed AI use policy for office staff
+  B: Training tiered by each tool's risk class, with CV-screener users trained first
+  C: Training for each group on the limits and failure modes of the AI it uses
+  D: A common AI course for everyone, plus an advanced module for the engineers
+answer: C
+explanation:
+  why_correct: Sufficient knowledge depends on what each group's AI can do and get wrong. Engineers need model risks and secure
+    tuning, HR need to know where the screener fails so their oversight means something, and office staff need to know that an
+    assistant acting on their mail can be steered by content it reads and should not be trusted blindly. Training each group on
+    the limits of its own AI covers all three at the right depth.
+  why_not:
+    A: Deep training for engineers and HR is right, but a signed policy gives office staff rules without understanding, although
+      their assistant reads and sends their email and can be misled by what it reads.
+    B: Tiering by legal risk class looks proportionate, but it puts the writing assistant in the lowest tier, although its access
+      to mailboxes and email makes misplaced trust in it costly.
+    D: A common course plus an engineering module covers the builders, but HR staff, who must oversee a high-risk screener, get
+      only generic content and cannot judge when to challenge its rankings.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: not_obvious

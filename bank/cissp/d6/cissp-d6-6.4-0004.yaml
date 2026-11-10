@@ -5,21 +5,22 @@ stem: During a client engagement, a penetration tester finds an unpublished remo
   VPN appliance that thousands of organisations use. The engagement contract makes all findings confidential to the
   client. What should the tester do FIRST?
 options:
-  A: Report the flaw directly to the appliance vendor's security team
+  A: Report it to the client, and leave any notice to the vendor to the client
   B: Report it to the client and agree how the vendor will be told
   C: Request a CVE identifier for the flaw from a numbering authority
-  D: Set a ninety-day disclosure deadline and send it to the vendor
+  D: Report it to the client, then to the national CERT without naming the client
 answer: B
 explanation:
   why_correct: The contract makes the finding confidential to the client, so the client must hear of it first. The flaw
     also puts other organisations at risk, so the tester should agree with the client how the vendor will be told
     through coordinated disclosure.
   why_not:
-    A: Telling the vendor is the right goal, but doing it directly breaches the confidentiality the client contracted for.
+    A: Telling the client first is right, but the flaw endangers thousands of other organisations, so the tester should agree
+      with the client how the vendor will be told rather than leave it possibly untold.
     C: A CVE identifier is part of coordinated disclosure with the vendor, a later step that also needs the client's
       agreement.
-    D: A disclosure deadline belongs in coordinated disclosure, but setting one with the vendor before telling the client
-      bypasses the contract.
+    D: Reporting to a national CERT can support coordinated disclosure, but the finding is confidential to the client, so
+      passing it on without the client's agreement breaches the contract even if the client is not named.
 status: draft
 outline_version: 2024-04-15
 sample: false

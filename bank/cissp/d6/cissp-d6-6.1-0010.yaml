@@ -1,0 +1,33 @@
+id: cissp-d6-6.1-0010
+subdomain: '6.1'
+difficulty: medium
+stem: A retailer's yearly external penetration test is scoped from the internet-facing hosts in its CMDB, and for three years
+  it has found little. Last month attackers broke in through a forgotten campaign site that a marketing agency had set up in
+  the retailer's cloud account. The agency builds short-lived campaign sites throughout the year. Which change to the test
+  strategy BEST addresses this?
+options:
+  A: Require each internet-facing host to be recorded in the CMDB before it goes live
+  B: An attack-surface scan before each yearly test, adding what it finds to the scope
+  C: Ongoing discovery of exposed assets, with each new one outside the CMDB tested
+  D: Test each quarter instead of each year, keeping the CMDB as the source of the scope
+answer: C
+explanation:
+  why_correct: The tests looked only where the CMDB pointed, and the breached site was never in it. Ongoing discovery of what
+    is actually exposed, from DNS records, certificates and the cloud accounts' public addresses, catches short-lived sites
+    while they are live, and testing each new asset found outside the CMDB covers them and shows where the inventory is wrong.
+  why_not:
+    A: Registration before go-live is the right process rule, but an outside agency set this site up without IT, so a scope
+      that still relies on the CMDB misses whatever is built outside the rule.
+    B: A pre-test scan brings unrecorded hosts into scope, which is a real improvement, but it looks once a year, while short-lived
+      campaign sites can be built, exposed and abandoned between scans.
+    D: More frequent testing shortens the time between tests, but each one still covers only the hosts in the CMDB, so the
+      forgotten site would never have been tested.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

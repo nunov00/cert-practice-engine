@@ -1,0 +1,34 @@
+id: cissp-d1-1.9-0005
+subdomain: '1.9'
+difficulty: easy
+stem: Thirty business units use the same SaaS provider for payroll. Each unit assessed the risk of the provider failing, rated
+  its own loss within its delegated appetite, and its owner accepted the risk. The group's appetite caps the loss from any
+  single event at EUR 5m, and if the provider failed, all thirty units would be hit together, losing an estimated EUR 12m
+  in total. What should the CISO do?
+options:
+  A: Leave the thirty acceptances in place, each recorded against its own unit's owner
+  B: Ask each unit to add controls until its own share of the loss falls further
+  C: Record one group-level risk for the provider, for the owner of group appetite
+  D: Obtain the provider's resilience assurance report and attach it to each acceptance
+answer: C
+explanation:
+  why_correct: Each acceptance is valid on its own, but the thirty losses come from one event, so together they form a single
+    risk that exceeds the group's appetite. Recording it once at group level and putting it to the executive who owns that
+    appetite lets the group decide on a joint response, such as an exit plan or a second provider, which no unit can decide
+    alone.
+  why_not:
+    A: Each owner acted within their delegated authority, which is why the acceptances look sound, but no one has accepted
+      the combined EUR 12m exposure, which is beyond what the group allows.
+    B: Unit-level controls could lower each share, but thirty separate efforts may not bring the total under the cap, and
+      nobody with group authority sees or decides on the combined risk.
+    D: Assurance over the provider's resilience is useful input, but it changes neither the size of the combined exposure nor
+      who has authority to accept it.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: obvious

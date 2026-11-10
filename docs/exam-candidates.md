@@ -40,8 +40,8 @@ market; every row is *to verify* until a daily run checks it).
 | 2 | CISA (ISACA) | 150 MCQ, 5 domains (18/18/12/26/26%) | 5 | 5 | 5 | 5 | 4 | 29 | 2026-11-03 |
 | 3 | CRISC (ISACA) | 150 MCQ, 4 domains (26/22/32/20%) | 3 | 5 | 5 | 5 | 5 | 26 | 2026-11-07 |
 | 4 | CCSP (ISC2) | 100-150 CAT items (MCQ and advanced types), 6 domains (17/20/17/16/17/13%) | 4 | 5 | 3 | 5 | 4 | 25 | 2026-11-08 |
-| 5 | Security+ (CompTIA) | up to 90, MCQ and performance-based, 5 domains (27/24/19/16/14% on V8 from 2026-11-17) | 5 | 3 | 3 | 4 | 3 | 23 | 2026-10-26 |
-| 6 | CC (ISC2) | Adaptive (CAT), 5 domains (outline from 2026-09-01; weights to confirm from the outline) | 4 | 5 | 4 | 2 | 4 | 23 | 2026-10-27 |
+| 5 | Security+ (CompTIA) | up to 90, MCQ and performance-based, 5 domains (27/24/19/16/14% on V8 from 2026-11-17) | 5 | 3 | 3 | 4 | 3 | 23 | 2026-11-09 |
+| 6 | CC (ISC2) | Adaptive (CAT), 5 domains (outline from 2026-09-01; weights to confirm from the outline) | 4 | 5 | 4 | 2 | 4 | 23 | 2026-11-10 |
 | 7 | CEH (EC-Council) | 125 MCQ in 4 hours, v13; official blueprint v5 lists 9 domains (6/17/15/24/14/5/10/5/5%), applicability to v13 to confirm | 4 | 5 | 2 | 4 | 2 | 21 | 2026-10-28 |
 | 8 | CySA+ (CompTIA) | up to 85 in 165 min, MCQ and performance-based, 4 domains (34/26/24/16% on V4 from 2026-06-23) | 3 | 3 | 4 | 4 | 3 | 20 | 2026-10-29 |
 | 9 | SSCP (ISC2) | 100-125 CAT items (MCQ and advanced types) in 2 hours, 7 domains (16/15/15/14/9/16/15%) | 2 | 5 | 3 | 4 | 4 | 20 | 2026-10-31 |
@@ -133,7 +133,14 @@ older Checked date.
   Cybersecurity free course-and-exam programme is concluding, so more
   candidates will pay for the exam: willingness to pay moves from 1 to 2
   (total 22 to 23). It ties Security+ on 23 and stays below it on demand, so
-  the rank is unchanged.
+  the rank is unchanged. Re-checked 2026-11-10: the outline page still shows
+  the 2026-09-01 effective date and the same five domains, but its weights and
+  exam-format sections did not render, so the weights and item count still
+  need confirming from the outline PDF before a recipe. The CC page now sells
+  the exam as "Exam Only" (365-day window, one attempt) or with a second
+  attempt, and still links the free official CC practice quiz ("CC Knowledge
+  Check") and flash cards, so calibration stays at 4. Scores, total and rank
+  unchanged.
 - **CEH:** high name recognition in job postings; EC-Council publishes fewer
   official samples, so calibration is weaker. Checked 2026-10-28: the current
   version is CEH v13 ("CEH AI"); the knowledge exam is 125 multiple-choice
@@ -216,3 +223,4 @@ older Checked date.
 | 2026-11-07 | CRISC row re-checked: 150 questions, four domains at 26/22/32/20% and the free 10-question practice quiz confirmed, no outline change announced; scores, total and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/crisc/crisc-exam-content-outline), [practice quiz](https://www.isaca.org/credentialing/crisc/crisc-practice-quiz) |
 | 2026-11-08 | CCSP row re-checked: 2026-08-01 outline (CAT, 100-150 items, 3 hours, 700/1000, six weights 17/20/17/16/17/13%) confirmed, no outline change announced; quiz and holder count still not readable; scores, total and rank unchanged | ISC2 [exam outline (effective 2026-08-01)](https://edge.sitecorecloud.io/internationf173-xmc4e73-prodbc0f-9660/media/Project/ISC2/Main/Media/documents/exam-outlines/EXAMS-CCSP-Exam-Outline-English-01-2026-V2.pdf), [outline page](https://www.isc2.org/certifications/ccsp/ccsp-certification-exam-outline), [CCSP exam page](https://www.isc2.org/certifications/ccsp/ccsp-exam), [CCSP page](https://www.isc2.org/certifications/ccsp) |
 | 2026-11-09 | Security+ row re-checked: V8 launch on or around 2026-11-17 and the V7 format, weights and 2027-06-11 retirement confirmed; V8 page not fetchable, so V8 weights not re-read; no free official samples; scores, total and rank unchanged | CompTIA [Security+ page](https://www.comptia.org/en-us/certifications/security/), [Security+ V7 page](https://www.comptia.org/en-em/certifications/security/v7/), [Security+ V8 page](https://www.comptia.org/en-us/certifications/security/v8/) |
+| 2026-11-10 | CC row re-checked: 2026-09-01 outline and five domain names confirmed, weights and item count still not readable on the page; official practice quiz still linked and exam sold as a paid attempt; scores, total and rank unchanged. Security+ Checked date set to 2026-11-09 to match the previous re-check | ISC2 [CC exam outline](https://www.isc2.org/certifications/cc/cc-certification-exam-outline), [CC page](https://www.isc2.org/certifications/cc), [CC self-study resources](https://www.isc2.org/certifications/cc/cc-self-study-resources) |

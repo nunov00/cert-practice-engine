@@ -1,0 +1,32 @@
+id: aaism-d1-1.3-0026
+subdomain: '1.3'
+difficulty: hard
+stem: A retailer's product recommendation model, trained on confidential supplier margin data, is classified Confidential. Product
+  wants it shipped inside the mobile app so that recommendations keep working offline in stores with poor signal. What should the
+  security manager require?
+options:
+  A: Encrypt the model file in the app and decrypt it in memory at run time
+  B: Keep the model on the server and drop recommendations when offline
+  C: Obfuscate the model file and check app integrity before loading it
+  D: Ship a version trained without the margin data, classified for release
+answer: D
+explanation:
+  why_correct: 'A model shipped to phones the retailer does not control should be treated as disclosed: anyone with the app can
+    extract the weights, and with them what the model learned from the margin data. Shipping a version built without the confidential
+    data, and classified as fit for release, meets the offline need without putting Confidential information on devices.'
+  why_not:
+    A: Encryption in the app slows extraction, but the app must hold or fetch the key and decrypt the weights on the device, so
+      a determined user can still recover them.
+    B: Keeping the Confidential model on the server protects it, but it fails the stated need for recommendations to keep working
+      offline in stores.
+    C: Obfuscation and integrity checks raise the effort needed, but they cannot stop extraction from a phone the attacker fully
+      controls, so Confidential weights would still leave the retailer's control.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: not_obvious

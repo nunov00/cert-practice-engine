@@ -1,0 +1,33 @@
+id: cissp-d5-5.1-0012
+subdomain: '5.1'
+difficulty: hard
+stem: Staff in a mobile operator's shops see each customer's full date of birth and ID document number on the account screen.
+  Two staff members were caught selling those details, taken from customers they had served, to fraudsters who then ordered
+  SIM swaps. Staff need these details in full only when checking a document in person, at fewer than 5% of visits. Which change
+  BEST reduces this risk?
+options:
+  A: Privacy filters on shop terminals, with screens angled away from the counter
+  B: Access only to the account of a customer at the counter, opened by scanning their ID
+  C: Monthly reviews of each member of staff's account views for unusual volumes
+  D: Both fields masked by default, with a recorded reveal inside the document-check task
+answer: D
+explanation:
+  why_correct: The data was taken by staff from accounts they were entitled to open, so limiting which accounts they reach
+    does not help; limiting what they see in each one does. Masking both fields by default, with a recorded reveal only within
+    the task that needs them, removes the details from more than 95% of visits and leaves a record of each time they are shown.
+  why_not:
+    A: Privacy filters and angled screens stop customers and passers-by from reading the screen, but the people who copied the
+      details were the staff using it.
+    B: Limiting staff to the customer in front of them is a strong control against browsing other accounts, but these details
+      came from customers the staff had actually served, which this still allows.
+    C: Reviewing access volumes can catch staff browsing many accounts, but copying details of customers already being served
+      produces normal volumes, and the review is detective and monthly.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

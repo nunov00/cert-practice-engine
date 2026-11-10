@@ -1,0 +1,33 @@
+id: aaism-d2-2.3-0053
+subdomain: '2.3'
+difficulty: hard
+stem: A software firm ships its code to customers and relies on its AI coding assistant vendor's indemnity against copyright claims
+  over suggestions. On its current plan, the indemnity applies while the assistant's filter for suggestions matching public code
+  is on. Several teams have turned the filter off to get more suggestions. An enterprise plan offers the indemnity without that
+  condition, at higher cost. What should the security manager require?
+options:
+  A: Enforce the public-code filter on the firm's seats through the admin console
+  B: Let teams keep the filter off if their heads accept the claims risk in writing
+  C: Move to the enterprise plan so the indemnity no longer depends on the filter
+  D: Require developers to log which code the assistant suggested to them
+answer: A
+explanation:
+  why_correct: The firm ships its code, so code matching public projects could force it to change or withdraw releases, not just
+    pay a claim. Enforcing the filter keeps the indemnity valid and also keeps most matching code out of shipped products in the
+    first place.
+  why_not:
+    B: Written acceptance makes the risk visible, but team heads cannot accept a risk that voids the firm's indemnity and exposes
+      shipped products to claims beyond their budgets.
+    C: An unconditional indemnity pays for claims, but with the filter off more matching code would reach shipped products, where
+      a claim could still force changes or withdrawal of releases.
+    D: Recording suggested code helps traceability in a dispute, but it neither restores the indemnity nor keeps matching code
+      out of products.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: not_obvious

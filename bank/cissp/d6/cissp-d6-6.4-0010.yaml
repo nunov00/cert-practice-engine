@@ -1,0 +1,33 @@
+id: cissp-d6-6.4-0010
+subdomain: '6.4'
+difficulty: medium
+stem: An internal penetration test cracked the passwords of 40 domain accounts from captured hashes, including three administrator
+  accounts. The draft report lists each account with its password to show impact. The final report will go to the 25 members
+  of the IT steering group and to the external auditors. How should it present this finding?
+options:
+  A: List each affected account with its password partly masked, in the main report
+  B: Give counts and password patterns, and send the account list to the identity team alone
+  C: Put the full list of accounts and passwords in an encrypted annex to the report
+  D: List the affected accounts without passwords in the main report, for their owners to reset
+answer: B
+explanation:
+  why_correct: Readers of the report need to understand the weakness, which counts and patterns such as season-and-year passwords
+    show, while the people who must act need to know exactly which accounts to reset. Sending the account list only to the
+    identity team keeps working credentials, and a list of weak administrator accounts, out of a document read by more than
+    25 people outside that team.
+  why_not:
+    A: Partial masking shows impact vividly, but with the patterns in the same report a partly shown password is often easy
+      to complete, and the report reaches a wide audience.
+    C: Encryption protects the annex in transit and storage, but each recipient who can open the report can open the annex,
+      so working passwords, administrators' included, go to everyone on the distribution.
+    D: Leaving out the passwords removes the worst exposure, but naming accounts known to have crackable passwords, three of
+      them administrators, gives every reader a list of targets until the resets are done.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,34 @@
+id: aair-d2-2.1-0032
+subdomain: '2.1'
+difficulty: hard
+stem: A bank's fraud team plans to develop a new card fraud model on synthetic transactions generated from real
+  ones, so that developers do not handle customer data. The generator adds statistical noise to protect customers'
+  privacy. Fraud is about 0.1% of real transactions, and many schemes show only as combinations of several fields.
+  What should the risk practitioner require before the team relies on the synthetic data?
+options:
+  A: Compare models trained on synthetic and on real data, scored on real held-out cases
+  B: Have fraud analysts review a sample of the synthetic fraud cases for how realistic they look
+  C: Check that fraud rates and correlations between fields match the real data
+  D: Generate a much larger synthetic set so that rare fraud patterns are better covered
+answer: A
+explanation:
+  why_correct: The question is whether a model built on the synthetic data detects real fraud. Rare schemes that
+    show only as combinations of several fields are exactly what a noise-adding generator tends to blur. Training
+    on synthetic and on real data and scoring both on real held-out cases measures that loss directly, whatever
+    its cause, and shows whether the data is fit for the purpose.
+  why_not:
+    B: Analysts can spot obviously unrealistic cases, but a sample that looks plausible to a person can still lack
+      the subtle combinations a model needs to learn. It does not measure detection.
+    C: Matching fraud rates and pairwise correlations is a stronger check than single fields, but schemes that depend
+      on combinations of several fields can be lost while every pair still matches.
+    D: A larger synthetic set repeats whatever patterns the generator learned. If it blurred the rare combinations,
+      more volume will not bring them back.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aair-check
+  options_only: not_obvious

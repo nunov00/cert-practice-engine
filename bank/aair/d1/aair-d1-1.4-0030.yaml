@@ -1,0 +1,34 @@
+id: aair-d1-1.4-0030
+subdomain: '1.4'
+difficulty: medium
+stem: A consultancy's approved AI meeting assistant joins staff's online meetings by default, records them and sends
+  a summary to every attendee afterwards. Several people learned from the summary that their call had been recorded,
+  and some calls covered sensitive legal matters. Client calls often include the client's own advisers and other
+  parties. Recording laws differ across the firm's markets. Which procedure BEST addresses this?
+options:
+  A: Add a notice to client engagement letters that calls may be recorded by AI
+  B: Train staff on the call recording rules that apply in each market the firm works in
+  C: Have the host announce the assistant at the start and turn it off if anyone objects
+  D: Keep the assistant on client calls but have it take notes without saving audio
+answer: C
+explanation:
+  why_correct: The people on the call were captured without being told or given a choice, and the assistant joins
+    by default, so this will keep happening. Having the host announce the assistant and stop it on any objection
+    gives everyone on the call notice and a say at the time it matters, which is what the stricter recording laws
+    turn on, while keeping the assistant where nobody objects.
+  why_not:
+    A: An engagement letter informs the client once, but the advisers and other parties on the calls never see it,
+      and nobody is reminded or given a choice on the call itself.
+    B: Knowing the rules does not change the default, under which the assistant joins and captures calls automatically.
+      Staff would still need a step in each call to act on what they learned.
+    D: Dropping the audio reduces what is kept, but the assistant still listens to and captures the conversation
+      without telling the people on the call, which is what they objected to.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aair-check
+  options_only: not_obvious

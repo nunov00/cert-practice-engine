@@ -1,0 +1,32 @@
+id: cissp-d7-7.12-0004
+subdomain: '7.12'
+difficulty: medium
+stem: An insurer's quarterly parallel tests of its claims system pass well inside the recovery time objective. During each
+  test, the recovery-site servers authenticate and resolve names through the directory and DNS servers at head office, reached
+  over the WAN link between the sites. How should the next test change?
+options:
+  A: Run a full interruption test, moving claims processing to the recovery site for a day
+  B: Run it at peak claims volume, keeping the recovery site in service for a full week
+  C: Review the recovery servers' configurations beforehand and remove references to head office
+  D: Run it with the recovery site isolated from the other site for the whole test
+answer: D
+explanation:
+  why_correct: The disaster the plan covers is the loss of head office, but every test has leaned on services that run there.
+    Isolating the recovery site for the test, while production carries on, shows whether it can authenticate users, resolve
+    names and process claims on its own, which no passing result so far can show.
+  why_not:
+    A: A full interruption test gives stronger evidence that the recovery site can carry production, but head office would
+      still be up, so the site would keep using its directory and DNS.
+    B: A long, high-volume run tests capacity and stamina, which matters, but it still depends on head office services and
+      leaves the dependency untested.
+    C: A configuration review finds the references someone thinks to look for, which is a useful step, but only a test with
+      head office out of reach shows whether hidden dependencies remain.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

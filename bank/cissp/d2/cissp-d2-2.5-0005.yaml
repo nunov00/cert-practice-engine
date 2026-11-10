@@ -1,0 +1,32 @@
+id: cissp-d2-2.5-0005
+subdomain: '2.5'
+difficulty: medium
+stem: A life insurer must keep each policy's documents for 10 years after the policy ends, and privacy law bars keeping them
+  longer than needed. Policies may run for decades, and many are surrendered, lapse early or are extended. The archive takes in
+  about two million documents a year and now deletes each one 10 years after it was filed. How should retention be applied?
+options:
+  A: Set each document's deletion date at filing, from its policy's scheduled end date plus 10 years
+  B: Hold each document due for deletion until records staff confirm its policy ended 10 years ago
+  C: Check the policy system nightly, and hold back deletion of documents whose policies are still running
+  D: Start each document's 10-year period on the date the policy system records its policy's end
+answer: D
+explanation:
+  why_correct: The rule is triggered by an event, the actual end of the policy. Starting each document's period on the end
+    date recorded in the policy system keeps documents for exactly 10 years after the policy really ends, whether it runs its
+    course, lapses early or is extended, and it works automatically at two million documents a year.
+  why_not:
+    A: Dating retention from the scheduled end ties it to the policy, but surrendered and lapsed policies would keep their documents
+      for years past the rule, and extended policies would lose theirs too early.
+    B: A manual check gets each decision right, but at two million documents a year the review cannot keep pace, and deletions
+      would be delayed or waved through.
+    C: A nightly check protects running policies, but once a policy ends, any of its documents filed more than 10 years earlier
+      would be deleted at once instead of being kept for 10 more years.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

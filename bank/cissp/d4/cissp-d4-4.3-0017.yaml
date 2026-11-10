@@ -1,0 +1,33 @@
+id: cissp-d4-4.3-0017
+subdomain: '4.3'
+difficulty: medium
+stem: A consultancy's chat platform accepts messages and calls from any outside organisation on the same platform, and staff
+  work daily with about 40 client and partner organisations through it. Attackers set up an organisation named IT Service
+  Desk and messaged staff, who saw the platform's External tag on the messages but trusted the name. Which change BEST addresses
+  this?
+options:
+  A: Blocking of outside organisations whose names imitate the firm's own teams
+  B: Training for staff to check an outside organisation's verified domain before replying
+  C: External chat and calls allowed only with organisations on an approved partner list
+  D: External text chat kept open, with calls and file sharing from outside organisations off
+answer: C
+explanation:
+  why_correct: Open federation lets anyone who creates an organisation on the platform reach staff directly, under any name
+    they like. Allowing external chat only with the organisations the firm actually works with keeps the 40 client and partner
+    channels open and closes the channel to attacker-created organisations, without depending on names or on staff judgment.
+  why_not:
+    A: Blocking look-alike names stops this lure, but with open federation attackers can register another organisation under
+      a name that imitates a supplier, client or vendor instead.
+    B: Checking the verified domain would expose this lure, but it depends on each member of staff doing it each time, and
+      staff who trusted a name over the External tag are the ones the check relies on.
+    D: Turning off calls and files removes some attack paths, but the lure here arrived as text messages, which stay open to
+      any outside organisation.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

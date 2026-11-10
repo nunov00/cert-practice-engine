@@ -1,0 +1,32 @@
+id: aaism-d3-3.2-0036
+subdomain: '3.2'
+difficulty: medium
+stem: A bank releases a new voice verification model if false rejections on its 20,000-call test set stay under 2%. One release
+  cut them overall but tripled them for callers using electronic speech aids, who make about 0.3% of calls, and many were locked
+  out. What change to the release process BEST prevents a repeat?
+options:
+  A: Gate per caller group, pooling groups under 1% of calls into one
+  B: Add this release's wrongly rejected calls to the test set
+  C: Release to 5% of callers first and roll back if complaints rise
+  D: Gate per caller group, with extra test calls for small groups
+answer: D
+explanation:
+  why_correct: Speech-aid users make only a few dozen calls in the test set, so their failures vanish in the overall rate. A limit
+    for each defined caller group, with enough test calls added for small groups to measure them reliably, makes the gate catch
+    a release that fails any group.
+  why_not:
+    A: Per-group gates are the right idea, but pooling every group under 1% of calls into one would put the speech-aid users, about
+      0.3% of calls, back into a mixed group where their failures are diluted.
+    B: Adding these calls helps test this group, but if the gate still judges the overall rate, the group's results are diluted
+      again.
+    C: A staged release limits exposure, but complaints from a small group arrive slowly and in small numbers, so rollback may
+      come only after many callers are locked out.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: cissp-d8-8.4-0006
+subdomain: '8.4'
+difficulty: hard
+stem: A company has bought an identity management product that creates and changes accounts across its directory. The vendor
+  supports it only when its service account is a domain administrator. The application team, whose administrators manage the
+  company's business servers, expects to run the product's server. How should the company deploy it?
+options:
+  A: Domain administrator, on a hardened server run by the application team, with the password vaulted and rotated
+  B: Delegated rights over the user containers only, running outside the vendor's support
+  C: Domain administrator, on a hardened server run by the team that runs the domain controllers
+  D: Domain administrator, in its own network segment, with the application team running the server
+answer: C
+explanation:
+  why_correct: A service with domain administrator rights makes its server as powerful as a domain controller, because whoever
+    administers that server can use the rights. Hardening it and having it run only by the team, accounts and workstations
+    that manage the domain controllers keeps the vendor's supported setup while stopping the application team's wider estate
+    from becoming a path to the domain.
+  why_not:
+    A: Hardening and vaulting are sound, but the password vault does not stop the server's own administrators from using the
+      running service's rights, and theirs are accounts used across ordinary business servers.
+    B: Delegated rights are the least-privilege choice, but an identity system the business relies on would run without vendor
+      support, and failures in an unsupported setup may go unfixed.
+    D: A separate segment limits network paths to the server, but the application team, whose accounts are used across business
+      servers, would still administer a server that holds domain control.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

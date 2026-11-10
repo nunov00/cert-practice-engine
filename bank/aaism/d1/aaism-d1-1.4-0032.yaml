@@ -1,0 +1,32 @@
+id: aaism-d1-1.4-0032
+subdomain: '1.4'
+difficulty: medium
+stem: A company's security team reviews AI systems before launch. Sponsored by the CISO, it has built an AI tool that triages phishing
+  reports and can delete matching emails from staff mailboxes across the company. Internal audit, which reports to the board, has
+  no AI specialists. Who should review the tool before launch?
+options:
+  A: A senior security engineer who took no part in building the tool
+  B: A specialist firm engaged and briefed by the chief risk officer
+  C: The security governance team, which reports to the CISO and builds no tools
+  D: Internal audit, using the program's checklist for AI system reviews
+answer: B
+explanation:
+  why_correct: The tool belongs to the CISO's own organisation and can delete mail company-wide, so its review needs both independence
+    from that line and real AI security skill. A specialist firm engaged by the chief risk officer, outside the CISO's chain, provides
+    both.
+  why_not:
+    A: An engineer who did not build the tool separates duties, but works for the team that built it and the CISO who sponsored
+      it, so the review is not independent of the owner.
+    C: A governance team that builds no tools is a step removed, but it reports to the CISO who sponsored the tool, so the owner's
+      line would still be approving its own system.
+    D: Internal audit is independent, but it has no AI specialists; working through a checklist, it is unlikely to find design
+      flaws in a model-driven tool with company-wide delete rights.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: not_obvious

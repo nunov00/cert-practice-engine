@@ -1,0 +1,32 @@
+id: cissp-d4-4.2-0020
+subdomain: '4.2'
+difficulty: medium
+stem: An online retailer's load balancers terminate customers' TLS 1.3 sessions and open new TLS 1.3 sessions to the web servers.
+  The network IDS on the internet-facing segment now sees only encrypted traffic, and the security team wants it to inspect
+  the web requests again. Which design BEST fits?
+options:
+  A: An IDS on the load-balancer-to-server segment, loaded with the web servers' private keys
+  B: An IDS on the internet segment, loaded with the public site certificate's private key
+  C: A decrypted copy of each session sent from the load balancers to the IDS
+  D: A TLS-inspecting proxy in front of the load balancers, feeding the IDS in clear
+answer: C
+explanation:
+  why_correct: The load balancers already decrypt every request to route it. Having them send a decrypted copy of each session
+    to the IDS gives it the full requests without another device terminating TLS and without moving any private keys, and
+    it works whatever key exchange the sessions use.
+  why_not:
+    A: Giving a passive sensor the server keys was a long-standing way to inspect TLS, but TLS 1.3 uses ephemeral key exchange
+      for every session, so the servers' private keys cannot decrypt captured traffic on either segment.
+    B: Loading the site key onto the sensor fails for the same reason; with TLS 1.3, session keys come from an ephemeral exchange
+      that a passive device holding the certificate key cannot reproduce.
+    D: An inspecting proxy would let the IDS see clear traffic, but it adds a second point that terminates customers' TLS and
+      holds keys, plus latency and a new failure point, to do what the load balancers already do.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

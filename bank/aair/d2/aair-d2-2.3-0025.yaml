@@ -1,0 +1,34 @@
+id: aair-d2-2.3-0025
+subdomain: '2.3'
+difficulty: medium
+stem: A grocery chain's demand model retrains each Sunday on the past two years of sales. A national transport strike
+  has caused two weeks of panic buying, and the government has announced a settlement that ends the strike next
+  week. Forecasts during the strike have been far too low. What should the risk practitioner recommend for the coming
+  retraining runs?
+options:
+  A: Shorten the training window to the last eight weeks so the model adapts quickly
+  B: Retrain on schedule, with strike-week sales capped at the pre-strike peak
+  C: Pause retraining and keep the current version live until the strike is over
+  D: Retrain on schedule, with the strike weeks flagged and left out of training
+answer: D
+explanation:
+  why_correct: The panic buying is a one-off caused by an event that is ending. If those weeks enter the training
+    data in any form, the model will expect raised demand around them for as long as they sit in the two-year window,
+    including the same weeks next year. Retraining on schedule while leaving the flagged weeks out keeps the model
+    learning from normal new sales without absorbing a pattern that will not recur.
+  why_not:
+    A: A short window would make the strike weeks a quarter of the training data and drop the seasonal history the
+      model needs. It would learn the abnormal pattern faster, not avoid it.
+    B: Capping limits the most extreme values, but the strike weeks would still enter training at peak demand, so
+      the model would still learn raised demand where none will recur.
+    C: Pausing protects the model for now, but once retraining restarts the strike weeks are still in the window
+      and will distort it then. The model also misses normal new data while paused.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aair-check
+  options_only: not_obvious

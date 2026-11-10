@@ -1,0 +1,34 @@
+id: aair-d1-1.3-0033
+subdomain: '1.3'
+difficulty: hard
+stem: At an insurer, each model's business owner is accountable for its risk, but the central data science team's
+  work is ranked by the chief information officer's quarterly planning board, mostly by revenue impact. Fixes for
+  known model issues are small but arise most weeks, and several owners have waited months for theirs. Which change
+  BEST addresses this?
+options:
+  A: Give model owners a reserved share of the team's capacity for their fixes
+  B: Set a target time to fix known model issues and have the risk team track it
+  C: Escalate each overdue fix to the risk committee to decide its priority
+  D: Give owners a vote on the planning board, with risk ratings as a criterion
+answer: A
+explanation:
+  why_correct: Owners are accountable for risks they cannot act on, because the capacity to fix their models is
+    allocated elsewhere. The fixes are small and arrive most weeks, while the board ranks work quarterly, so any
+    arrangement that sends each fix through a ranking forum will lag. A reserved share of capacity lets owners schedule
+    fixes as they arise, lining their authority up with their accountability.
+  why_not:
+    B: A target makes delays visible, but it gives owners no capacity to meet it. Breaches would simply be reported
+      while the planning board keeps ranking other work higher.
+    C: Escalation can settle a single contested fix, but sending a stream of small weekly fixes to a committee is
+      slow and treats each delay while leaving the cause in place.
+    D: A vote and a risk criterion give owners more say, but fixes would still wait for a quarterly ranking, which
+      is too slow for issues that arise most weeks.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aair-check
+  options_only: not_obvious

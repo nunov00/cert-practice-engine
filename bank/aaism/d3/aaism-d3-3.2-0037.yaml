@@ -1,0 +1,32 @@
+id: aaism-d3-3.2-0037
+subdomain: '3.2'
+difficulty: medium
+stem: A lender's credit model retrains monthly through a pipeline that releases new versions on pre-approval when only the data
+  window changes and automated checks pass. A team now wants to add rental payment histories bought from a data broker as a new
+  input feature. How should this change be released?
+options:
+  A: Under the pre-approval, once the new data passes the automated checks
+  B: As a trial input, with the next version's outputs watched for drift
+  C: As a model change, with full validation and security review first
+  D: Under the pre-approval, after the broker warrants the data's quality
+answer: C
+explanation:
+  why_correct: The pre-approval rests on the model's design staying fixed while only fresh data flows in. A new feature from an
+    outside supplier changes what the model learns from and adds a new source that could be wrong, biased or tampered with, so
+    it needs the full validation and security review that the automated checks were never designed to replace.
+  why_not:
+    A: The automated checks catch data quality problems within the approved design, but a new feature changes the design itself,
+      which is outside what the pre-approval covers.
+    B: Watching outputs for drift after release finds problems only once credit decisions have been made with the new feature,
+      and drift is not a test of fairness or soundness.
+    D: A broker warranty gives a contractual remedy, but it does not validate how the feature changes the model's decisions, and
+      the change still falls outside the pre-approval.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: not_obvious

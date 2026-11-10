@@ -1,0 +1,32 @@
+id: cissp-d6-6.3-0008
+subdomain: '6.3'
+difficulty: hard
+stem: A company's identity provider requires MFA for each cloud application. An attacker then read a director's mail for weeks
+  with a phished password, through an older mail protocol that the mail service still accepts with a password alone. The board
+  asks how much access to company systems MFA really protects today. Which data BEST answers this?
+options:
+  A: Share of successful sign-ins in each service's own logs that used a second factor
+  B: Share of identity provider sign-ins that completed MFA, broken down by application
+  C: Share of sign-ins from unfamiliar devices or locations that were challenged for MFA
+  D: Share of sign-in traffic to cloud applications matched by an MFA-requiring policy
+answer: A
+explanation:
+  why_correct: The attacker's sign-ins were accepted by the mail service itself and never passed through the identity provider's
+    MFA step. Counting successful sign-ins from each service's own records, and how many used a second factor, includes such
+    password-only paths, so the figure shows how much access MFA actually covers.
+  why_not:
+    B: Identity provider sign-ins are the natural source, and the figure would look excellent, but sign-ins the mail service
+      accepts directly over the older protocol never appear in it.
+    C: Challenge rates for risky sign-ins show how adaptive MFA behaves, but they cover only a subset of sign-ins seen by the
+      identity provider, not access that bypasses it.
+    D: Policy matching shows how much identity provider traffic falls under an MFA rule, but matching a rule is not the same
+      as completing MFA, and the older protocol's sign-ins are outside that traffic.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aaism-d1-1.4-0033
+subdomain: '1.4'
+difficulty: hard
+stem: A company charges each project's own budget for its AI security reviews. Reviews are mandatory, yet network discovery keeps
+  finding AI features in small projects that never asked for one, several of them handling customer data. Their sponsors say the
+  review fee would use most of their budget. What should the security manager propose?
+options:
+  A: Block project spending on AI services that lack a completed review
+  B: A lighter review for projects rated low risk, at a lower fee
+  C: Funding the reviews centrally instead of from project budgets
+  D: Reporting projects that skip reviews to their sponsors' executives
+answer: C
+explanation:
+  why_correct: 'The sponsors'' answer shows why reviews are skipped: the charge falls on the project, so small teams avoid declaring
+    AI. Funding reviews centrally removes that cost from the decision to come forward, which addresses the cause rather than chasing
+    each project that hides its AI use.'
+  why_not:
+    A: A spending block enforces the rule, but AI features often arrive inside tools or services already paid for, and the fee
+      still pushes small projects to avoid declaring them.
+    B: A lighter, cheaper path suits low-risk work, but several of these small projects handle customer data, so they would not
+      qualify, and those that did would still pay a fee that discourages declaring AI.
+    D: Escalating to executives may push a few projects into compliance, but it handles each case after discovery and leaves the
+      fee that drives the behaviour in place.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: not_obvious

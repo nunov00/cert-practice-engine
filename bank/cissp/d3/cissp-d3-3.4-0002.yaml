@@ -19,7 +19,7 @@ explanation:
       and can still be read from the bus.
     C: Sealing to more measurements makes the TPM pickier about the boot state, yet a normal boot of the stolen laptop still
       matches, so the key is still released and exposed.
-    D: Memory encryption protects keys held in RAM against cold-boot or DMA attacks, but here the key is read off the bus
+    D: Memory encryption protects keys held in RAM against cold-boot attacks on the memory chips, but here the key is read off the bus
       as the TPM sends it, before it reaches memory.
 status: published
 outline_version: '2024-04-15'
