@@ -18,7 +18,8 @@ explanation:
     layer, not proof of licence compliance, so provenance and licence checks before merge still have a place.'
   why_not:
     B: An indemnity pays for claims, but it cannot undo an obligation to release source code or the cost of rewriting
-      shipped work. Transfer does not cover the part of this risk that matters most to a closed-source product.
+      shipped work. Such indemnities often require the matching filter to be on anyway, so relying on the indemnity adds
+      no prevention of its own.
     C: Keeping the assistant away from shipped code avoids the risk, but it gives up the purpose of the rollout, which is
       faster work on the main product.
     D: Release scanning is a strong check, but it finds matching code only after many changes have built on it, so removing

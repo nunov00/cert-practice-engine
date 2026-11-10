@@ -2,8 +2,9 @@ id: cissp-d1-1.5-0005
 subdomain: '1.5'
 difficulty: hard
 stem: Police investigating a payroll clerk for diverting salary payments to accounts he controls have asked his employer
-  not to alert him while they trace the money. He still prepares the weekly payroll run, and HR already holds enough
-  evidence to dismiss him under the company's own disciplinary standard. What should the security manager recommend?
+  not to alert him while they trace the money, though they accept changes to controls for the whole team. He still
+  prepares the weekly payroll run, and HR already holds enough evidence to dismiss him under the company's own
+  disciplinary standard. What should the security manager recommend?
 options:
   A: Dismiss him this week under the disciplinary process, on the evidence HR already holds
   B: Defer HR action, and move him out of payroll as part of a wider team restructure

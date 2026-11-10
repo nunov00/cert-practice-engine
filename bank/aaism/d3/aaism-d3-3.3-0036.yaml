@@ -8,7 +8,7 @@ options:
   A: Keep redacting and block calls to the model that bypass the gateway
   B: Swap each name for a placeholder at the gateway, then put the names back
   C: Send names through the provider's zero-retention endpoint instead
-  D: Strip names with no record of their place, then fill them in from the matter file
+  D: Strip names at the gateway, then fill them in from the matter file
 answer: B
 explanation:
   why_correct: A distinct placeholder for each name keeps names away from the provider, as the contracts require, while
@@ -21,7 +21,7 @@ explanation:
       contracts bar.
     D: Filling names from the matter file avoids retyping, but once names are stripped with no record of where each was, the
       system cannot tell which of several people belongs in each gap, so letters would name the wrong people.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

@@ -8,14 +8,14 @@ stem: A consultancy's approved AI meeting assistant joins staff's online meeting
 options:
   A: Add a notice to client engagement letters that calls may be recorded by AI
   B: Train staff on the call recording rules that apply in each market the firm works in
-  C: Have the host announce the assistant and start it only once all present agree
+  C: Have the host announce the assistant and run it only while all present agree
   D: Keep the assistant on client calls but have it take notes without saving audio
 answer: C
 explanation:
   why_correct: The people on the call were captured without being told or given a choice, and the assistant joins by
-    default, so this will keep happening. Having the host announce the assistant and start it only once everyone present
-    has agreed, pausing it again for anyone who joins later, gives everyone notice and a choice before anything is
-    captured. That meets the stricter all-party recording laws, while keeping the assistant where everyone agrees.
+    default, so this will keep happening. Having the host announce the assistant and run it only while everyone present
+    agrees gives everyone notice and a choice before anything is captured, including people who join later. That meets
+    the stricter all-party recording laws, while keeping the assistant where everyone agrees.
   why_not:
     A: An engagement letter informs the client once, but the advisers and other parties on the calls never see it, and
       nobody is reminded or given a choice on the call itself.

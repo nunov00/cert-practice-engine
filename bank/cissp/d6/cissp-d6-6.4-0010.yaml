@@ -2,8 +2,9 @@ id: cissp-d6-6.4-0010
 subdomain: '6.4'
 difficulty: medium
 stem: An internal penetration test cracked the passwords of 40 domain accounts from captured hashes, including three
-  administrator accounts. The draft report lists each account with its password to show impact. The final report will go
-  to the 25 members of the IT steering group and to the external auditors. How should it present this finding?
+  administrator accounts. The draft report lists each account with its password to show impact. The final report goes
+  next week to the 25 members of the IT steering group and to the external auditors; forcing the resets will take about
+  a month. How should it present this finding?
 options:
   A: List each affected account with its password partly masked, in the main report
   B: Give counts and password patterns, and send the account list to the identity team alone

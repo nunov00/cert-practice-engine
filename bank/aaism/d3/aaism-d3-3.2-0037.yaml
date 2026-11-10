@@ -22,7 +22,7 @@ explanation:
       the broker as a new outside data source, or the risk of that data being wrong or tampered with.
     D: A broker warranty gives a contractual remedy, but it does not validate how the feature changes the model's decisions,
       and the change still falls outside the pre-approval.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

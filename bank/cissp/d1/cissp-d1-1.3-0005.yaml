@@ -8,7 +8,7 @@ stem: A manufacturer has agreed to sell one division to a buyer that competes wi
 options:
   A: Keep the shared systems, with the division's staff limited by permissions to its own data
   B: Move the division into a separate tenant that the manufacturer operates under the agreement
-  C: Keep the shared systems, with the division's staff bound by the buyer's signed confidentiality terms
+  C: Move the division into a separate tenant with a two-way trust to the manufacturer's directory for the shared sites
   D: Keep the shared systems, with DLP and monitoring on the division's access to other data
 answer: B
 explanation:
@@ -19,8 +19,8 @@ explanation:
   why_not:
     A: Narrowing permissions is the natural first idea, but in a directory and file estate where many shares and sites are
       used across divisions, every missed group or inherited right stays open to a competitor's staff for nine months.
-    C: Confidentiality terms are a necessary part of the agreement, but they give a remedy after misuse, while the technical
-      access to shared data stays in place.
+    C: A separate tenant is the right start, but a two-way trust for the shared sites keeps cross-division shares reachable,
+      so the competitor's staff still have a path to the rest of the business.
     D: Monitoring access to other divisions' data would reveal misuse, but it is detective, and the access itself remains
       open to a competitor's staff for the whole transition.
 status: published

@@ -1,26 +1,26 @@
 id: aaism-d2-2.1-0055
 subdomain: '2.1'
 difficulty: hard
-stem: 'A bank''s advice chatbot has a key risk indicator: the share of chats handed to staff, with a ceiling that signals the bot
-  is struggling. The product team is measured on keeping that share low. After prompt changes it fell from 12% to 3% in a month,
-  with no rise in complaints. What should the risk manager do FIRST?'
+stem: 'A bank''s advice chatbot has a key risk indicator: the share of chats handed to staff, with a ceiling that
+  signals the bot is struggling. The product team is measured on keeping that share low. After prompt changes it fell
+  from 12% to 3% in a month, with no rise in complaints. What should the risk manager do FIRST?'
 options:
   A: Lower the ceiling to lock in the new hand-over level
   B: Add the complaint rate as a second indicator beside hand-overs
   C: Move ownership of the indicator from product to the second line
-  D: Check a sample of kept chats for ones that needed staff
+  D: Check a sample of chats the bot kept for ones that needed staff
 answer: D
 explanation:
-  why_correct: The team that changed the prompts is rewarded for a lower hand-over share, so the drop may mean the bot now keeps
-    chats it cannot handle rather than handling more of them well. Checking a sample of the chats it kept shows which is true before
-    the indicator is trusted, tightened or replaced.
+  why_correct: The team that changed the prompts is rewarded for a lower hand-over share, so the drop may mean the bot now
+    keeps chats it cannot handle rather than handling more of them well. Checking a sample of the chats it kept shows
+    which is true before the indicator is trusted, tightened or replaced.
   why_not:
-    A: Locking in the lower level treats the drop as genuine improvement, but if the bot now holds on to chats it should hand over,
-      a tighter ceiling rewards the same behaviour.
-    B: Complaints add a second view, but customers rarely know when advice was wrong until much later, so a flat complaint rate
-      cannot show whether the drop hides poor answers.
-    C: Second-line ownership removes the conflict of interest for the future, but it does not tell anyone whether the current drop
-      reflects better service or hidden errors.
+    A: Locking in the lower level treats the drop as genuine improvement, but if the bot now holds on to chats it should
+      hand over, a tighter ceiling rewards the same behaviour.
+    B: Complaints add a second view, but customers rarely know when advice was wrong until much later, so a flat complaint
+      rate cannot show whether the drop hides poor answers.
+    C: Second-line ownership removes the conflict of interest for the future, but it does not tell anyone whether the
+      current drop reflects better service or hidden errors.
 status: published
 outline_version: '2025-08-19'
 sample: false

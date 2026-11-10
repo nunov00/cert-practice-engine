@@ -8,7 +8,7 @@ stem: A bank's customer assistant calls its provider's model through an alias, w
 options:
   A: Return the assistant to an earlier version the bank has tested
   B: Add an output filter that blocks the fee-waiver rule wording
-  C: Re-run the release tests on the new version to confirm the cause first
+  C: Re-run the release tests on the new version to confirm the cause
   D: Move the fee-waiver rules out of the prompt into back-end code
 answer: A
 explanation:

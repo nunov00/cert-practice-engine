@@ -4,8 +4,7 @@ difficulty: medium
 stem: A contact centre's AI tool scores calls against a quality rubric, and the scores set part of each agent's bonus.
   Managers assess the rest of agents' performance, answer for their pay and hear challenges. Most disputed scores
   involve agents leaving the script to solve an unusual problem; the rubric allows no such departures, and the quality
-  team must apply it as written. Disputes now go to the vendor, which checks for scoring errors. Which change BEST
-  aligns these processes?
+  team must apply it as written. Disputes go to the vendor's technical check. Which change BEST aligns these processes?
 options:
   A: Have the vendor retune the rubric for calls where agents depart from the script
   B: Have the internal quality team re-mark disputed calls against the rubric

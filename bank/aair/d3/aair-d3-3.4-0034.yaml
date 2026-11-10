@@ -1,6 +1,6 @@
 id: aair-d3-3.4-0034
 subdomain: '3.4'
-difficulty: hard
+difficulty: medium
 stem: Underwriters at a lender may override its credit model's decisions, and overrides rose from 4% to 11% of
   applications this year. The head of lending wants to cap them, while underwriters say they catch cases the model
   misjudges. The risk committee asks which view the evidence supports. Which indicator BEST answers this?
@@ -15,7 +15,7 @@ explanation:
     come from outcomes. Comparing early arrears on loans approved by override with model-approved loans of similar
     scores shows whether underwriters are picking out good borrowers the model misjudged or adding risk. Override cases
     may differ in ways scores miss, and declined applicants have no outcomes, so this is strong evidence rather than
-    proof, but it is the only option that tests outcomes.
+    proof.
   why_not:
     A: Comparing underwriters can spot outliers, but a high override rate can mean either good judgement or poor discipline.
       It does not show whether overrides lead to better or worse outcomes.

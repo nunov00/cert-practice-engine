@@ -1,6 +1,6 @@
 id: aair-d1-1.6-0029
 subdomain: '1.6'
-difficulty: hard
+difficulty: medium
 stem: A technology company wants to build a speech model for an indigenous language, using recordings of elders that a
   university archived decades ago for research. The university confirms that its licence allows commercial use. The
   community's council has objected before when outsiders published material in its language without asking it. What
@@ -12,11 +12,10 @@ options:
   D: Agree terms of use and benefit with the council before using the recordings
 answer: D
 explanation:
-  why_correct: The licence covers the university's rights in the recordings; whether those extend to the elders' voices
-    for this new purpose is a separate check. Neither settles the ethical question, which is the community's control
-    over its own language and its elders' voices, recorded for a different purpose. The council speaks for the community
-    and has made clear it expects to be asked. Agreeing terms with it before the recordings are used lets the community
-    decide whether and how its language is used, rather than being told about a decision already made.
+  why_correct: The university's licence covers its own rights in the recordings; it does not settle whether the community
+    agrees to this new use of its language and its elders' voices. The council speaks for the community and has made
+    clear it expects to be asked. Agreeing terms with it before the recordings are used lets the community decide
+    whether and how its language is used, rather than being told about a decision already made.
   why_not:
     A: Consultation and free use are worthwhile, but starting development first means the decision to use the recordings has
       already been taken without the council. That is what it has objected to before.

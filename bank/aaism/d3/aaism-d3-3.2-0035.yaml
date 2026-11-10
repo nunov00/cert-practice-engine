@@ -7,14 +7,14 @@ stem: A chatbot's weekly release gate has a judge model score 2,000 test replies
 options:
   A: Use two judges from different families and block if either finds over 1%
   B: Have staff label a 200-reply sample each week instead of a judge
-  C: Use another family's judge, its errors tracked on staff labels
+  C: Use another family's judge, its error rate checked against staff labels
   D: Add each week's red team prompts to the 2,000 test cases
 answer: C
 explanation:
   why_correct: A judge from another family is less likely to share the chatbot's blind spots, but its own errors are
-    unknown until measured. Comparing its verdicts each week with the 200 replies staff can label shows how often it
-    misses unsafe replies and raises false alarms, so the gate's 1% limit can be trusted or adjusted, with a margin for
-    the uncertainty near the threshold.
+    unknown until measured. Staff labels, built up week on week and weighted toward borderline and known-unsafe replies,
+    show how often it misses unsafe replies and raises false alarms, so the gate's 1% limit can be trusted or adjusted,
+    with a margin for uncertainty near the threshold.
   why_not:
     A: Two judges from other families reduce the shared blind spot, but nobody would know how often either misses unsafe
       replies, and blocking on either adds false blocks without showing the gate is accurate.

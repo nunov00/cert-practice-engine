@@ -1,6 +1,6 @@
 id: aaism-d3-3.5-0042
 subdomain: '3.5'
-difficulty: hard
+difficulty: medium
 stem: A retailer's SOC gets about 400 alerts a day from an input classifier that spots jailbreak attempts on its
   shopping assistant, and analysts close most after reading the prompt. Last month a jailbreak that issued unauthorised
   discounts came to light only through finance reports. Which change BEST helps the SOC detect such cases?

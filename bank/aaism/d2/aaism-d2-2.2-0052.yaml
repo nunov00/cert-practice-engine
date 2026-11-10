@@ -19,7 +19,7 @@ explanation:
     B: Spending alerts limit how long an abuse runs, but they fire after costs have been incurred, and the attacker can return
       with another key.
     D: Rotation shortens how long a leaked key works, but attackers use leaked keys within hours, well inside a 30-day cycle.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:
