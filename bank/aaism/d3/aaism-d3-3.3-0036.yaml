@@ -1,26 +1,26 @@
 id: aaism-d3-3.3-0036
 subdomain: '3.3'
 difficulty: medium
-stem: A law firm's assistant drafts letters through an external model. Client contracts bar sending client names to outside providers,
-  so a gateway redacts names, but lawyers must then retype them, and some now bypass the gateway. Letters often name several people,
-  such as the client, the other side and witnesses. Which control BEST fixes this?
+stem: A law firm's assistant drafts letters through an external model. Client contracts bar sending client names to
+  outside providers, so a gateway redacts names, but lawyers must then retype them, and some now bypass the gateway.
+  Letters often name several people, such as the client, the other side and witnesses. Which control BEST fixes this?
 options:
   A: Keep redacting and block calls to the model that bypass the gateway
-  B: Swap each name for a placeholder, then put the names back
+  B: Swap each name for a placeholder at the gateway, then put the names back
   C: Send names through the provider's zero-retention endpoint instead
-  D: Redact names, then fill them in from the matter file after drafting
+  D: Strip names with no record of their place, then fill them in from the matter file
 answer: B
 explanation:
-  why_correct: A distinct placeholder for each name keeps names away from the provider, as the contracts require, while the gateway
-    keeps the mapping and puts each name back where it belongs in the returned draft. That removes the retyping that drives lawyers
-    around the gateway.
+  why_correct: A distinct placeholder for each name keeps names away from the provider, as the contracts require, while
+    the gateway keeps the mapping and puts each name back where it belongs in the returned draft. Calls still pass
+    through the gateway, and the retyping that drives lawyers around it goes away.
   why_not:
-    A: Blocking the bypass enforces the gateway, but lawyers would still have to retype names, so the pressure to find other workarounds
-      remains.
-    C: Zero retention limits what the provider keeps, but client names would still be sent to an outside provider, which the contracts
-      bar.
-    D: Filling names from the matter file avoids retyping, but once names are simply removed, the system cannot tell which of several
-      people belongs in each gap, so letters would name the wrong people.
+    A: Blocking the bypass enforces the gateway, but lawyers would still have to retype names, so the pressure to find other
+      workarounds remains.
+    C: Zero retention limits what the provider keeps, but client names would still be sent to an outside provider, which the
+      contracts bar.
+    D: Filling names from the matter file avoids retyping, but once names are stripped with no record of where each was, the
+      system cannot tell which of several people belongs in each gap, so letters would name the wrong people.
 status: published
 outline_version: '2025-08-19'
 sample: false

@@ -1,9 +1,9 @@
 id: aair-d2-2.2-0028
 subdomain: '2.2'
 difficulty: hard
-stem: Validators of a bank's new credit model retrained it five times with different random seeds on the same data.
-  Each version had the same test AUC to two decimal places, but the versions gave different approve or decline decisions
-  for about 6% of applicants. The model will make individual lending decisions. What should the validators recommend?
+stem: Validators of a bank's new credit model retrained it five times with different random seeds on the same data. Each
+  version had the same test AUC to two decimal places, but the versions gave different approve or decline decisions for
+  about 6% of applicants. The model will make individual lending decisions. What should the validators recommend?
 options:
   A: Fix the random seed so that each retraining gives a reproducible model
   B: Pick the version with the highest test AUC and record its seed
@@ -11,15 +11,16 @@ options:
   D: Report the share of applicants whose decision changes between seeds, by segment
 answer: C
 explanation:
-  why_correct: Equal AUC shows the versions rank applicants equally well overall, but for about 6% of applicants
-    the decision depends on an arbitrary seed. For a model that decides individual loans, some applicants would
-    be approved or declined by chance, which cannot be explained or defended to them. The instability has to be
-    reduced before use, for example by averaging several versions or sending unstable cases to review.
+  why_correct: Equal AUC shows the versions rank applicants about equally well overall, but for about 6% of applicants the
+    decision depends on an arbitrary seed. For a model that decides individual loans, some applicants would be approved
+    or declined by chance, which cannot be explained or defended to them. The instability has to be reduced before use,
+    for example by averaging several versions or sending unstable cases to review, and the chosen fix tested to confirm
+    it steadies individual decisions without losing overall performance.
   why_not:
-    A: Fixing the seed makes results reproducible, but it only freezes one arbitrary outcome. The applicants whose
-      decision depended on the seed are still decided by chance.
-    B: AUC differences beyond the second decimal place are noise, so choosing on them is still choosing a seed at
-      random. The changing decisions remain.
+    A: Fixing the seed makes results reproducible, but it only freezes one arbitrary outcome. The applicants whose decision
+      depended on the seed are still decided by chance.
+    B: AUC that matches to two decimal places gives no sound basis for preferring one version, so choosing on smaller
+      differences is close to choosing a seed at random. The changing decisions remain.
     D: Reporting the share by segment measures the problem at the right level, but it leaves it in place. The applicants
       affected would still be decided by chance.
 status: published

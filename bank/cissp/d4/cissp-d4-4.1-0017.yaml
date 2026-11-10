@@ -1,9 +1,9 @@
 id: cissp-d4-4.1-0017
 subdomain: '4.1'
 difficulty: hard
-stem: A data centre carries each tenant's virtual networks as VXLAN segments over a routed underlay network. The server team's
-  jump hosts also sit on the underlay. A tester on one jump host sent crafted VXLAN packets carrying a tenant's segment ID to
-  a hypervisor and reached that tenant's virtual machines. Which change BEST prevents this?
+stem: A data centre carries each tenant's virtual networks as VXLAN segments over a routed underlay network. The server
+  team's jump hosts also sit on the underlay. A tester on one jump host sent crafted VXLAN packets carrying a tenant's
+  segment ID to a hypervisor and reached that tenant's virtual machines. Which change BEST prevents this?
 options:
   A: Underlay filters that pass VXLAN only between the hypervisors' tunnel endpoints
   B: MACsec encryption on the underlay links between the data centre's switches
@@ -11,14 +11,15 @@ options:
   D: A larger, randomised range of segment IDs, so that tenants' IDs are hard to guess
 answer: A
 explanation:
-  why_correct: VXLAN has no authentication of its own, so a tunnel endpoint accepts any packet that reaches it with a valid
-    segment ID. Filtering the underlay so that VXLAN traffic is accepted only from the hypervisors' own tunnel endpoint addresses
-    stops other hosts on the underlay, such as the jump hosts, from injecting packets into tenant segments.
+  why_correct: VXLAN has no authentication of its own, so a tunnel endpoint accepts any packet that reaches it with a
+    valid segment ID. Filtering the underlay so that VXLAN traffic is accepted only from the hypervisors' own tunnel
+    endpoint addresses, with anti-spoofing on the underlay so other hosts cannot forge those addresses, stops hosts such
+    as the jump hosts from injecting packets into tenant segments.
   why_not:
     B: MACsec protects frames on each link between switches, but the jump host's packets enter the underlay legitimately and
       are carried, encrypted link by link, to the hypervisor.
-    C: Rules at each VM filter on the inner addresses, but the attacker builds the inner packet and can give it a source address
-      from the tenant's own range.
+    C: Rules at each VM filter on the inner addresses, but the attacker builds the inner packet and can give it a source
+      address from the tenant's own range.
     D: Harder-to-guess segment IDs only slow the attacker, as IDs can leak or be found by trying, and a correct ID is still
       accepted from any underlay host.
 status: published

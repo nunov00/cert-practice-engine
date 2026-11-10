@@ -1,26 +1,27 @@
 id: aaism-d3-3.2-0035
 subdomain: '3.2'
 difficulty: medium
-stem: A chatbot's weekly release gate has a judge model score 2,000 test replies and blocks the release if over 1% are unsafe.
-  The judge is built on the chatbot's base model, and an audit found it passed many unsafe replies written in the chatbot's style.
-  Staff can label about 200 replies a week. Which change BEST makes the gate reliable?
+stem: A chatbot's weekly release gate has a judge model score 2,000 test replies and blocks the release if over 1% are
+  unsafe. The judge is built on the chatbot's base model, and an audit found it passed many unsafe replies written in
+  the chatbot's style. Staff can label about 200 replies a week. Which change BEST makes the gate reliable?
 options:
   A: Use two judges from different families and block if either finds over 1%
   B: Have staff label a 200-reply sample each week instead of a judge
-  C: Use another family's judge, its misses tracked on staff labels
+  C: Use another family's judge, its errors tracked on staff labels
   D: Add each week's red team prompts to the 2,000 test cases
 answer: C
 explanation:
-  why_correct: A judge from another family avoids sharing the chatbot's blind spots, but its own misses are unknown until measured.
-    Comparing its verdicts each week with the 200 replies staff can label shows how often it misses unsafe replies, so the gate's
-    1% limit can be trusted or adjusted.
+  why_correct: A judge from another family is less likely to share the chatbot's blind spots, but its own errors are
+    unknown until measured. Comparing its verdicts each week with the 200 replies staff can label shows how often it
+    misses unsafe replies and raises false alarms, so the gate's 1% limit can be trusted or adjusted, with a margin for
+    the uncertainty near the threshold.
   why_not:
-    A: Two judges from other families reduce the shared blind spot, but nobody would know how often either misses unsafe replies,
-      and blocking on either adds false blocks without showing the gate is accurate.
-    B: Human labels are accurate, but 200 replies is too small a sample to tell a 1% unsafe rate from 2%, so the gate would pass
-      or block releases largely by chance.
-    D: New red team prompts widen coverage, but the replies they produce would still be scored by a judge that misses unsafe replies
-      in the chatbot's style.
+    A: Two judges from other families reduce the shared blind spot, but nobody would know how often either misses unsafe
+      replies, and blocking on either adds false blocks without showing the gate is accurate.
+    B: Human labels are accurate, but 200 replies is too small a sample to tell a 1% unsafe rate from 2%, so the gate would
+      pass or block releases largely by chance.
+    D: New red team prompts widen coverage, but the replies they produce would still be scored by a judge that misses unsafe
+      replies in the chatbot's style.
 status: published
 outline_version: '2025-08-19'
 sample: false

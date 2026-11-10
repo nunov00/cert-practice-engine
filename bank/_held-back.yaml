@@ -20,7 +20,6 @@ held:
   - { id: cissp-d4-4.3-0008, pr: 67 }
   - { id: cissp-d5-5.2-0005, pr: 67 }
   - { id: cissp-d6-6.1-0004, pr: 67 }
-  - { id: cissp-d6-6.4-0004, pr: 67 }
   # PR #67, merge run: hard share after Codex and the final review lowered or
   # dropped labels (AAIR kept no hard question). aair-d3-3.1-0023,
   # aair-d3-3.5-0023 and aaism-d2-2.2-0036 were rated obvious from the options

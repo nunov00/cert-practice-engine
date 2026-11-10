@@ -1,10 +1,10 @@
 id: aair-d1-1.2-0038
 subdomain: '1.2'
 difficulty: medium
-stem: A contact centre's AI tool scores each customer call against a quality rubric, and the scores set part of
-  each agent's bonus. Managers assess the rest of agents' performance, and agents can challenge those assessments.
-  Most disputed AI scores involve calls where the agent left the script to solve an unusual problem. Disputes now
-  go to the vendor's support desk, which checks that the scoring ran without technical errors. Which change BEST
+stem: A contact centre's AI tool scores calls against a quality rubric, and the scores set part of each agent's bonus.
+  Managers assess the rest of agents' performance, answer for their pay and hear challenges. Most disputed scores
+  involve agents leaving the script to solve an unusual problem; the rubric allows no such departures, and the quality
+  team must apply it as written. Disputes now go to the vendor, which checks for scoring errors. Which change BEST
   aligns these processes?
 options:
   A: Have the vendor retune the rubric for calls where agents depart from the script
@@ -13,18 +13,19 @@ options:
   D: Have the agent's manager review disputed calls and set the score that counts
 answer: D
 explanation:
-  why_correct: The disputes turn on whether leaving the script was the right call for an unusual customer problem,
-    which is a judgement about the agent's work, not about whether the rubric was applied correctly. The agent's
-    manager already makes and answers for such judgements on the rest of the agent's performance, and has authority
-    over the pay outcome. Having the manager review disputed calls and set the score that counts gives agents a
-    real remedy and keeps pay decisions with the people accountable for them.
+  why_correct: The disputes turn on whether leaving the script was the right call for an unusual customer problem, which
+    is a judgement about the agent's work, not about whether the rubric was applied correctly. The agent's manager
+    already makes and answers for such judgements on the rest of the agent's performance, and has authority over the pay
+    outcome. Having the manager review disputed calls and set the score that counts gives agents a real remedy and keeps
+    pay decisions with the people accountable for them.
   why_not:
-    A: Retuning the rubric may reduce future disputes, but it does nothing for the scores already disputed. Unusual
-      problems also vary too much for any rubric to anticipate them.
-    B: An internal re-mark is better than a technical check, but it applies the same rubric that the agents dispute.
-      A call where leaving the script was right would be marked down again.
-    C: Leaving disputed calls out removes the effect of a wrong score, but it lets agents drop any low score simply
-      by flagging it. Nobody decides whether the score was right.
+    A: Retuning the rubric may reduce future disputes, but it does nothing for the scores already disputed. Unusual problems
+      also vary too much for any rubric to anticipate them.
+    B: An internal re-mark is better than a technical check, but the quality team may only apply the rubric as written, and
+      it makes no allowance for justified departures. A call where leaving the script was right would be marked down
+      again.
+    C: Leaving disputed calls out removes the effect of a wrong score, but it lets agents drop any low score simply by
+      flagging it. Nobody decides whether the score was right.
 status: published
 outline_version: '2026-04-15'
 sample: false
