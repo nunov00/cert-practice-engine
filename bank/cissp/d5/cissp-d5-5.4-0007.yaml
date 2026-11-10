@@ -1,0 +1,34 @@
+id: cissp-d5-5.4-0007
+subdomain: '5.4'
+difficulty: medium
+stem: Forty internal applications at an insurer each contain their own code for deciding who may see a customer's records,
+  based on the customer's region and consent choices. Audits keep finding applications enforcing out-of-date rules after the
+  rules change, which happens several times a year. A customer's withdrawal of consent must take effect as soon as it is recorded.
+  Which approach BEST addresses this?
+options:
+  A: An API gateway enforcing the rules, with region and consent data copied to it each night
+  B: A central policy decision service that each application queries on access
+  C: A shared authorisation library that each application embeds and updates on release
+  D: A release gate that blocks any application build carrying an out-of-date rule version
+answer: B
+explanation:
+  why_correct: The rules drift because each application holds its own copy. With one policy decision point, each application
+    acts as an enforcement point that sends the request with the customer's current region and consent and applies the answer,
+    so a rule change is made once and applies to all forty applications together, and a consent withdrawal counts from the
+    next request.
+  why_not:
+    A: A gateway centralises the rules without touching the applications, but consent data copied nightly means a withdrawal
+      recorded in the morning is ignored until the next copy, which the requirement does not allow.
+    C: A shared library gives the applications the same code, but each picks up a rule change only when it is rebuilt and released,
+      so some keep enforcing old rules for months.
+    D: A release gate stops new builds shipping with old rules, but applications that are not rebuilt keep running their old
+      rules, and nothing forces a release when the rules change.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

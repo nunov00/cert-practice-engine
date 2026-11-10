@@ -1,0 +1,35 @@
+id: aair-d3-3.2-0037
+subdomain: '3.2'
+difficulty: hard
+stem: A software company sells its main product as closed-source software and wants developers to use an AI coding
+  assistant to speed up work on it. Some public code the assistant learned from carries licences requiring any product
+  that includes it to publish its own source code. Developers merge many small changes a day, and later work builds on
+  them quickly. The vendor offers an IP indemnity with conditions. Which treatment BEST addresses this risk?
+options:
+  A: Turn on the assistant's filter that blocks suggestions matching public code
+  B: Rely on the vendor's indemnity, using the assistant within its conditions
+  C: Limit the assistant to internal tools and tests that are not shipped to customers
+  D: Scan each release with a licence tool that detects open-source code snippets
+answer: A
+explanation:
+  why_correct: 'The harm is not only a damages claim: such code could oblige the company to publish its product''s source
+    or to pull and rewrite releases. Blocking suggestions that match public code stops such code at the point of
+    suggestion, before other work is built on it, while developers keep the speed the company wants. It is a preventive
+    layer, not proof of licence compliance, so provenance and licence checks before merge still have a place.'
+  why_not:
+    B: An indemnity pays for claims, but it cannot undo an obligation to release source code or the cost of rewriting
+      shipped work. Such indemnities often require the matching filter to be on anyway, so relying on the indemnity adds
+      no prevention of its own.
+    C: Keeping the assistant away from shipped code avoids the risk, but it gives up the purpose of the rollout, which is
+      faster work on the main product.
+    D: Release scanning is a strong check, but it finds matching code only after many changes have built on it, so removing
+      it means unpicking later work. Stopping it at the point of suggestion is far cheaper.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aair-check
+  options_only: not_obvious

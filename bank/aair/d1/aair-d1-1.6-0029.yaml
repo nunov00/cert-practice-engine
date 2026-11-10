@@ -1,0 +1,34 @@
+id: aair-d1-1.6-0029
+subdomain: '1.6'
+difficulty: medium
+stem: A technology company wants to build a speech model for an indigenous language, using recordings of elders that a
+  university archived decades ago for research. The university confirms that its licence allows commercial use. The
+  community's council has objected before when outsiders published material in its language without asking it. What
+  should the risk practitioner recommend?
+options:
+  A: Consult the council during development and give it free use of the model
+  B: Ask the university to show that the elders consented to future commercial use
+  C: Have community linguists check the model's accuracy before it is released
+  D: Agree terms of use and benefit with the council before using the recordings
+answer: D
+explanation:
+  why_correct: The university's licence covers its own rights in the recordings; it does not settle whether the community
+    agrees to this new use of its language and its elders' voices. The council speaks for the community and has made
+    clear it expects to be asked. Agreeing terms with it before the recordings are used lets the community decide
+    whether and how its language is used, rather than being told about a decision already made.
+  why_not:
+    A: Consultation and free use are worthwhile, but starting development first means the decision to use the recordings has
+      already been taken without the council. That is what it has objected to before.
+    B: 'Individual consent from the elders would strengthen the legal footing, but the community''s concern is collective:
+      how its language is used. The council, not past individual consent, speaks to that.'
+    C: Involving community linguists improves quality, but it uses the community's expertise on a project it never agreed
+      to. Accuracy is not the concern the council has raised.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aair-check
+  options_only: not_obvious

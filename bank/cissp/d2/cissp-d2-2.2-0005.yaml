@@ -1,0 +1,33 @@
+id: cissp-d2-2.2-0005
+subdomain: '2.2'
+difficulty: medium
+stem: A clinic's storage array, which does not encrypt data, holds patient records on solid-state drives. Under the support
+  contract, failed drives go by courier to the vendor's depot, where they are refurbished as spares for other customers. Drives
+  that fail often stop responding to commands. Which handling requirement BEST protects the records on failed drives?
+options:
+  A: Run each failed drive's built-in cryptographic erase before returning it to the vendor
+  B: Return failed drives under a contract term that the vendor destroys them and certifies it
+  C: Keep failed drives under a drive-retention option, and destroy them on site with a record
+  D: Have clinic staff witness the destruction of the failed drives at the vendor's depot
+answer: C
+explanation:
+  why_correct: A failed drive may not accept any command, so its contents cannot be erased or verified before it leaves, and
+    once it leaves, unencrypted records travel by courier and sit in a depot whose normal process is reuse. Keeping failed
+    drives, which most vendors allow for an added fee, and destroying them physically on site means the records never leave
+    the clinic's custody, whatever state the drive is in.
+  why_not:
+    A: Cryptographic erase is the right sanitisation for working solid-state drives, but a drive that has stopped responding
+      cannot run it, and no one can confirm it worked.
+    B: Vendor destruction with a certificate works on any drive and is common, but the unencrypted drives still travel by courier
+      and wait in a depot whose routine is to refurbish and reissue them, so the clinic relies on an exception being followed.
+    D: Witnessed destruction confirms the drives are destroyed, whatever their state, but they still travel by courier and wait
+      at the depot unencrypted before the clinic's staff arrive, which is where the exposure lies.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

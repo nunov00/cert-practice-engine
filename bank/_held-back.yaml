@@ -13,8 +13,6 @@ held:
   # PR #62, merge run
   # PR #65 (daily batch 2026-10-26), batch run
   # PR #65, hard top-ups that passed on content but were rated medium
-  - { id: cissp-d3-3.6-0003, pr: 65, pending: true }
-  - { id: cissp-d7-7.10-0002, pr: 65, pending: true }
   # PR #65, merge run
   # PR #67 (daily batch 2026-10-27), batch run: passed the independent check,
   # held because too few hard labels survived the strict hard-label check
@@ -22,9 +20,6 @@ held:
   - { id: cissp-d4-4.3-0008, pr: 67 }
   - { id: cissp-d5-5.2-0005, pr: 67 }
   - { id: cissp-d6-6.1-0004, pr: 67 }
-  - { id: cissp-d6-6.4-0004, pr: 67 }
-  - { id: aair-d1-1.2-0022, pr: 67 }
-  - { id: aair-d1-1.3-0022, pr: 67 }
   # PR #67, merge run: hard share after Codex and the final review lowered or
   # dropped labels (AAIR kept no hard question). aair-d3-3.1-0023,
   # aair-d3-3.5-0023 and aaism-d2-2.2-0036 were rated obvious from the options
@@ -51,7 +46,6 @@ held:
   # PR #73, merge run: Codex and the final Claude review lowered hard labels (AAISM
   # also lost hard aaism-d3-3.4-0031 to a disputed key), so the easiest new
   # questions go back to keep each exam's hard share at 30%
-  - { id: aair-d1-1.6-0021, pr: 73 }
   # PR #75 (daily batch 2026-11-02), batch run: passed both checks, held because
   # the night's hard share could not carry it (aaism-d1-1.4-0024 left the list
   # on recheck: obvious from the options alone)
@@ -61,7 +55,6 @@ held:
   - { id: aaism-d3-3.5-0038, pr: 75 }
   - { id: aaism-d3-3.4-0025, pr: 75 }
   - { id: aaism-d3-3.5-0028, pr: 75 }
-  - { id: aair-d1-1.3-0028, pr: 75 }
   # PR #76 (daily batch 2026-11-03), batch run: passed the independent check,
   # held because AAISM's 4 surviving hard labels can carry only 9 non-hard
   # PR #76, merge run: final review lowered cissp-d2-2.2-0004 and
@@ -69,5 +62,10 @@ held:
   # PR #77 (daily batch 2026-11-07), merge run: Codex and the final Claude review
   # lowered hard labels (AAIR 1.2-0033, 3.6-0032; AAISM 3.2-0031, 3.3-0031), so the
   # easiest new or released questions go back to keep each exam's hard share at 30%
-  - { id: aaism-d3-3.2-0031, pr: 77 }
-  - { id: aaism-d2-2.2-0052, pr: 77 }
+  # PR #82 (daily batch 2026-11-10), merge run: the final Claude review lowered
+  # aaism-d3-3.5-0042 to medium, so AAISM's 6 hard can carry only 14 non-hard;
+  # these three are the most options-guessable of the batch per Codex and the
+  # final review (released draft 2.2-0052 goes back on the list)
+  - { id: aaism-d2-2.2-0052, pr: 82 }
+  - { id: aaism-d3-3.3-0036, pr: 82 }
+  - { id: aaism-d3-3.2-0037, pr: 82 }

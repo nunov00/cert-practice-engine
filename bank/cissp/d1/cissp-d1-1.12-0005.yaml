@@ -1,0 +1,33 @@
+id: cissp-d1-1.12-0005
+subdomain: '1.12'
+difficulty: hard
+stem: Proxy logs show consultants pasting client documents into public AI chat sites, mostly in the days before client
+  deadlines. The firm licenses an approved AI assistant that keeps data in its own tenant; staff were trained in it and
+  say it handles their documents well, yet few use it. Three months ago 96% of staff passed a module on AI data risks.
+  Which addition to the awareness programme is MOST likely to change this behaviour?
+options:
+  A: A prompt shown when staff open a public AI site, offering the approved assistant
+  B: Short practice sessions on a deadline-pressure case, worked in the approved assistant
+  C: Briefings by each practice lead on which client data may go into AI tools
+  D: Reminders from managers in team meetings during the week before each client deadline
+answer: A
+explanation:
+  why_correct: Staff already know the risk, so knowledge is not what is missing. The pasting happens in the moment, under
+    deadline pressure, with a familiar public tool to hand. A prompt that appears as someone opens a public AI site
+    reaches them at that exact point and puts the approved assistant in front of them as the easy alternative.
+  why_not:
+    B: Practice on a deadline case rehearses the right habit, but staff can already use the approved assistant, and the
+      session happens days or weeks before the rushed moment when staff actually decide to paste.
+    C: Briefings from practice leads make the message relevant and add authority, but they reach staff in a meeting, away
+      from the moment of use, and repeat rules that staff already know.
+    D: Reminders timed to the week before a deadline get closer to the risky period, but they still arrive before the moment
+      of pasting and depend on staff recalling them while rushed.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

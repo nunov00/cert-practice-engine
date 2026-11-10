@@ -1,0 +1,34 @@
+id: cissp-d1-1.3-0005
+subdomain: '1.3'
+difficulty: medium
+stem: A manufacturer has agreed to sell one division to a buyer that competes with its other divisions. For nine months
+  after closing, under a transition services agreement, the manufacturer must provide the division's 800 staff with
+  directory, email and file-share services, hosted as it chooses, while the buyer builds its own systems. Many file
+  shares and project sites are shared across divisions. What should the CISO recommend before closing?
+options:
+  A: Keep the shared systems, with the division's staff limited by permissions to its own data
+  B: Move the division into a separate tenant that the manufacturer operates under the agreement
+  C: Move the division into a separate tenant with a two-way trust to the manufacturer's directory for the shared sites
+  D: Keep the shared systems, with DLP and monitoring on the division's access to other data
+answer: B
+explanation:
+  why_correct: After closing, the division's staff work for a competitor, yet the manufacturer must keep serving them for
+    nine months. A separate tenant that the manufacturer itself operates, holding only the division's users and data,
+    meets that obligation while leaving no shared directory, address book or file share through which the rest of the
+    business can be reached, and it gives the buyer a clean unit to migrate.
+  why_not:
+    A: Narrowing permissions is the natural first idea, but in a directory and file estate where many shares and sites are
+      used across divisions, every missed group or inherited right stays open to a competitor's staff for nine months.
+    C: A separate tenant is the right start, but a two-way trust for the shared sites keeps cross-division shares reachable,
+      so the competitor's staff still have a path to the rest of the business.
+    D: Monitoring access to other divisions' data would reveal misuse, but it is detective, and the access itself remains
+      open to a competitor's staff for the whole transition.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

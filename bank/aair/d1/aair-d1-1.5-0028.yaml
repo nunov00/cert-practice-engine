@@ -1,0 +1,34 @@
+id: aair-d1-1.5-0028
+subdomain: '1.5'
+difficulty: medium
+stem: A software company sells a document-processing service to corporate clients under negotiated contracts that
+  let it use client data only to provide the service to that client. It now plans to train one shared model on documents
+  from its clients, after removing personal data, to improve accuracy for every client. Which legal consideration
+  should the risk practitioner MOST raise?
+options:
+  A: Whether the contracts give clients rights in improvements made using their data
+  B: Whether training one shared model is a use the clients have permitted
+  C: Whether removing personal data takes the documents outside data protection law
+  D: Whether the shared model could reproduce text from one client's documents for another
+answer: B
+explanation:
+  why_correct: The plan treats removing personal data as the fix, but that answers a privacy question. The contracts
+    restrict what the company may do with client data, personal or not, and a shared model that serves every client
+    goes beyond providing the service to each one. Unless clients agree, the training itself would breach the contracts,
+    whatever else is settled.
+  why_not:
+    A: Rights in improvements may matter later, but they assume the company may use the data to make the improvement
+      in the first place. That permission is the prior question.
+    C: If the documents are truly anonymised, data protection law may no longer apply, but the contractual limit
+      on use still does. Settling the privacy point leaves the main legal obstacle in place.
+    D: Leakage between clients is a real risk of shared training and would breach confidentiality, but it is a consequence
+      of a use the contracts may not allow at all. Whether the company may train on the documents comes first.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aair-check
+  options_only: not_obvious

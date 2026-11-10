@@ -1,0 +1,35 @@
+id: aair-d2-2.4-0026
+subdomain: '2.4'
+difficulty: hard
+stem: A hospital is building a new sepsis model from six years of ward records. For the last five years, an older alert
+  tool has flagged at-risk patients, and staff started antibiotics early for most of them; few flagged patients went on
+  to develop sepsis. The new model will learn from whether each patient developed sepsis. What should be done with the
+  training data?
+options:
+  A: Train only on the year of records from before the older alert tool went live
+  B: Keep recorded outcomes but flag alerted, early-treated patients as a treated group
+  C: Remove the patients the older tool flagged from the training data altogether
+  D: Have clinicians re-review the alert-flagged patients' labels against sepsis criteria
+answer: B
+explanation:
+  why_correct: Many patients the old tool flagged were treated before sepsis could develop, so high-risk patients are
+    recorded as not developing it. Trained on those outcomes alone, the new model would learn that the signs which
+    prompted an alert mean low risk. Keeping the observed outcomes but flagging these patients as a treated group lets
+    the team, with clinicians, model the treatment's effect or decide how the group is used, without inventing outcomes
+    that were never observed, and keeps five years of data.
+  why_not:
+    A: Pre-tool records avoid the effect of the alerts, but one year holds few cases of a rare outcome and reflects older
+      practice. The model would be weak and out of date.
+    C: Removing flagged patients avoids the misleading labels, but it also removes most of the high-risk patients, so the
+      model would rarely see the signs it most needs to recognise.
+    D: A review against the criteria would confirm that these patients did not develop sepsis, which is true. The labels are
+      accurate but misleading, so checking them against criteria changes nothing.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aair-check
+  options_only: not_obvious

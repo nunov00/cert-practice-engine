@@ -1,0 +1,34 @@
+id: aair-d3-3.6-0034
+subdomain: '3.6'
+difficulty: medium
+stem: A data company sells tenant risk scores to about 50 letting agents through an API, and agents store the scores and
+  use them to accept or reject applicants. A coding error overstated the risk of some applicants for four days before it
+  was found. The error is fixed and the affected records have been identified. What should the incident team do NEXT?
+options:
+  A: Recalculate affected scores so agents get corrected ones on their next request
+  B: Notify the 50 agents of the error and ask them to re-request scores for recent applicants
+  C: Tell each agent which of its records were affected and send corrected scores
+  D: Contact the affected applicants directly to tell them their scores were wrong
+answer: C
+explanation:
+  why_correct: The harm sits in decisions the agents have already made with scores they stored. The company knows exactly
+    which records were affected, so telling each agent which of its records they are, with corrected scores, lets it
+    review and reverse wrong rejections quickly. The agents hold the decisions and the relationship with applicants, so
+    they are the ones who can put things right.
+  why_not:
+    A: Correcting the scores at source helps future requests, but agents stored the old scores and may never ask again.
+      Decisions already made on inflated scores would stand.
+    B: Notifying agents is right, but asking them to re-request scores for recent applicants pushes the search onto 50 firms
+      when the company already knows which records were affected. Some will not act, and others will re-check many
+      unaffected applicants.
+    D: Applicants deserve to know, but they cannot change a rejection themselves, and the company may not hold their contact
+      details. The agents who made the decisions must be told so they can review them.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aair-check
+  options_only: not_obvious

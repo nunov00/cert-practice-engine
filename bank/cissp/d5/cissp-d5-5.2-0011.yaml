@@ -1,0 +1,33 @@
+id: cissp-d5-5.2-0011
+subdomain: '5.2'
+difficulty: medium
+stem: Twelve cloud engineers hold standing administrator roles in production, which they use a few times a week, often at
+  night when a single engineer is on call. Last month malware on an engineer's laptop used his signed-in session to delete
+  backups. The CTO wants to shrink the time during which these rights can be used, without slowing incident work at night.
+  Which design BEST fits?
+options:
+  A: Separate administrator accounts for each engineer, kept apart from their daily accounts
+  B: Administrator roles activated only after a second engineer approves each request
+  C: Privileged access workstations, used for administrator work and nothing else
+  D: Administrator roles that each engineer activates for an hour, with MFA and a reason
+answer: D
+explanation:
+  why_correct: Just-in-time activation means the engineers hold no administrator rights until they ask for them, and the
+    rights lapse after an hour, so for most of the week there is nothing for malware or a stolen session to use. Self-activation
+    with MFA and a recorded reason lets a lone engineer on call act at once, and the record supports review afterwards.
+  why_not:
+    A: Separate admin accounts keep everyday browsing and email away from the rights, which is good practice, but the rights
+      remain standing, so any time the admin account is compromised they can be used.
+    B: Approval-based activation gives stronger oversight and suits daytime changes, but at night a single engineer is on
+      call, so incident work would wait for a second person.
+    C: Dedicated admin workstations would have kept the malware away from the admin session, which matters after this incident,
+      but the roles stay standing around the clock, which is the exposure the CTO wants to shrink.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

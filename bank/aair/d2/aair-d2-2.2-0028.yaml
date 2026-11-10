@@ -1,0 +1,35 @@
+id: aair-d2-2.2-0028
+subdomain: '2.2'
+difficulty: hard
+stem: Validators of a bank's new credit model retrained it five times with different random seeds on the same data. Each
+  version had the same test AUC to two decimal places, but the versions gave different approve or decline decisions for
+  about 6% of applicants. The model will make individual lending decisions. Which recommendation BEST addresses this
+  before approval?
+options:
+  A: Fix the random seed so that each retraining gives a reproducible model
+  B: Pick the version with the highest test AUC and record its seed
+  C: Reduce seed-driven changes in decisions, such as by averaging several versions
+  D: Report the share of applicants whose decision changes between seeds, by segment
+answer: C
+explanation:
+  why_correct: Equal AUC shows the versions rank applicants about equally well overall, but for about 6% of applicants the
+    decision depends on an arbitrary seed. For a model that decides individual loans, some applicants would be approved
+    or declined by chance, which cannot be explained or defended to them. The instability has to be reduced before use,
+    for example by averaging several versions or sending unstable cases to review, and the chosen fix tested to confirm
+    it steadies individual decisions without losing overall performance.
+  why_not:
+    A: Fixing the seed makes results reproducible, but it only freezes one arbitrary outcome. The applicants whose decision
+      depended on the seed are still decided by chance.
+    B: AUC that matches to two decimal places gives no sound basis for preferring one version, so choosing on smaller
+      differences is close to choosing a seed at random. The changing decisions remain.
+    D: Reporting the share by segment measures the problem at the right level, but it leaves it in place. The applicants
+      affected would still be decided by chance.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aair-check
+  options_only: not_obvious

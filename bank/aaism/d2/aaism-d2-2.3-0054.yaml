@@ -1,0 +1,32 @@
+id: aaism-d2-2.3-0054
+subdomain: '2.3'
+difficulty: medium
+stem: A firm's document search runs on an open-source vector index library. Its only active maintainer has stepped down, a published
+  flaw in its query parser is unfixed, and users' search text reaches that parser. The firm calls the library through a common
+  interface that two maintained libraries also implement. What should the security manager recommend?
+options:
+  A: Fork the library and patch the query parser flaw in-house
+  B: Switch to a maintained library behind the same interface
+  C: Buy extended support for the library from a support vendor
+  D: Filter search text at the gateway for the flaw's known patterns
+answer: B
+explanation:
+  why_correct: With no one maintaining the library, this flaw is unlikely to be the last one left unfixed. Because the firm uses
+    it through an interface that maintained libraries also implement, switching is a contained change that removes both the current
+    flaw and the ongoing dependency on abandoned code.
+  why_not:
+    A: A fork fixes this flaw quickly, but the firm becomes the sole maintainer of a codebase it did not write, and every future
+      flaw falls to it, when a maintained alternative fits the same interface.
+    C: A support vendor may patch the flaw, but the firm then depends on a niche provider keeping abandoned code alive, at ongoing
+      cost, when switching is a contained change.
+    D: Filtering known patterns can block the published exploit, but variants can get past it, and with no maintainer the flaw
+      and any later ones stay in the code.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: not_obvious

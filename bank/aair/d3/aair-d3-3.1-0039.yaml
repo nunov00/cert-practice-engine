@@ -1,0 +1,34 @@
+id: aair-d3-3.1-0039
+subdomain: '3.1'
+difficulty: medium
+stem: A council will let an AI agent read residents' online repair requests and book jobs in its works system. The
+  agent's tool for that system can also reschedule or cancel any booked job, which saves a step when residents chase
+  a repair. Testers found that wording in a request can steer what the agent does. The project rated impact from
+  a resident's own request being mishandled. Which factor should the rating MOST reflect?
+options:
+  A: Harm to the requesting resident when their own job is booked wrongly
+  B: Number of requests the agent handles each day with no staff review
+  C: Harm to other residents whose repairs could be cancelled or delayed
+  D: Cost of sending works crews to jobs that were booked in error
+answer: C
+explanation:
+  why_correct: Because request text can steer the agent and its tool can change any booked job, the worst outcome
+    is not a mishandled request but a request used to cancel or delay other residents' repairs, some of them urgent.
+    The rating based on the requester's own case understates the reach of harm. Rating it on the effect on other
+    residents shows the real exposure and supports narrowing the tool to the requester's own jobs.
+  why_not:
+    A: A wrongly booked job is the impact the project already rated, and it stays within one resident's request.
+      The tool's reach means the harm can extend well beyond that.
+    B: Volume affects how many errors occur and how fast, which bears more on likelihood than on the size of the
+      worst outcome. The tool's reach sets that.
+    D: Wasted crew visits are a real cost, but they are a modest, recoverable financial loss compared with cancelled
+      or delayed repairs for other residents.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aair-check
+  options_only: not_obvious

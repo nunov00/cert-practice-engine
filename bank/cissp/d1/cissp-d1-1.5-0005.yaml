@@ -1,0 +1,35 @@
+id: cissp-d1-1.5-0005
+subdomain: '1.5'
+difficulty: hard
+stem: Police investigating a payroll clerk for diverting salary payments to accounts he controls have asked his employer
+  not to alert him while they trace the money, though they accept changes to controls for the whole team. He still
+  prepares the weekly payroll run, and HR already holds enough evidence to dismiss him under the company's own
+  disciplinary standard. What should the security manager recommend?
+options:
+  A: Dismiss him this week under the disciplinary process, on the evidence HR already holds
+  B: Defer HR action, and move him out of payroll as part of a wider team restructure
+  C: Defer HR action, and require a second approver for payee changes by all payroll staff
+  D: Defer HR action, and quietly log his payroll and payee changes for the police
+answer: C
+explanation:
+  why_correct: Two investigations run side by side, and the criminal one sets the timing. Deferring HR action keeps the
+    police inquiry intact, and the administrative case loses nothing by waiting, as its evidence is already held. A
+    second approver on payee changes, agreed with the investigators and legal first and covering every route for
+    changing payees, stops new diversions before money leaves, and because it applies to the whole payroll team and
+    leaves his role unchanged, it gives him no sign that he in particular is suspected.
+  why_not:
+    A: The company's lower administrative standard is met, so dismissal would be within its rights, but it tells him he has
+      been found out while police are tracing the money, which can lead to funds being moved and evidence lost.
+    B: A restructure stops his access to payroll and gives a cover story, but he is the one moved, right after diverting
+      payments, so he is likely to suspect why, which is what the police asked the company to avoid.
+    D: Covert logging helps the police case without alerting him, but he keeps preparing payroll, so the diversions and the
+      company's losses carry on each week.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

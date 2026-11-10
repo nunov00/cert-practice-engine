@@ -1,0 +1,33 @@
+id: aaism-d2-2.2-0058
+subdomain: '2.2'
+difficulty: medium
+stem: Threat reports show attackers using AI tools to turn vendor patches into working exploits within a day of release. A firm
+  patches critical flaws in internet-facing systems within 14 days, after a week of regression testing. Most of those systems are VPN and
+  remote-access appliances that no edge filter fronts. Which change BEST addresses
+  this threat?
+options:
+  A: Patch internet-facing critical flaws within days on a shorter test path
+  B: Apply virtual patches at the edge on release and keep the 14-day cycle
+  C: Fast-track flaws that threat intelligence reports as exploited
+  D: Scan internet-facing systems daily instead of weekly for missing patches
+answer: A
+explanation:
+  why_correct: When a patch can become a working exploit within a day, a two-week window leaves exposed systems open for most of
+    it. Shortening the target for internet-facing critical flaws to days, with a lighter, risk-based test path, closes most of
+    that gap for every such flaw.
+  why_not:
+    B: Virtual patches help where an edge rule can block the exploit, but many flaws, such as those in appliances or logic errors,
+      have no reliable edge rule, and those stay open for 14 days.
+    C: Prioritising flaws known to be exploited is sound practice, but with exploits built within a day, reports of exploitation
+      tend to arrive after attacks have begun.
+    D: Daily scanning finds missing patches sooner, but the delay sits in the 14-day patch cycle, not in knowing which systems
+      need the patch.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: not_obvious

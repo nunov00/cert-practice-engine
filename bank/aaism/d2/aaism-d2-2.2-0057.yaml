@@ -1,0 +1,32 @@
+id: aaism-d2-2.2-0057
+subdomain: '2.2'
+difficulty: hard
+stem: An engineering firm's expense tool uses a vision model to read receipt photos into fields, and a rules engine auto-approves
+  claims under USD 300 that match policy. Most claims are for cash spending on site visits, with no card record to check against.
+  The model has no tools. Which threat should the threat model stress MOST?
+options:
+  A: Instructions hidden in receipt images that steer the extracted fields
+  B: Adversarial noise in receipt photos that makes the model misread amounts
+  C: Convincing receipts generated for spending that never took place
+  D: Reuse of one genuine receipt in claims from several different employees
+answer: C
+explanation:
+  why_correct: The claimant controls the whole image and gains from it. With claims under USD 300 approved automatically and no
+    card record to compare, a convincing receipt made with an image tool for spending that never happened would pass every check.
+    That is the cheapest attack on this design and the easiest to repeat.
+  why_not:
+    A: Hidden instructions are a real risk for models with tools, but this model only extracts fields that the claimant could simply
+      print on the receipt, so injection adds little.
+    B: Adversarial noise could make amounts misread, but it takes effort to get a result the claimant can produce directly by putting
+      the amount they want on the receipt.
+    D: Reusing a receipt is a classic expense fraud, but each claim needs a real receipt and leaves a duplicate that a match across
+      claims can find, whereas generated receipts are unique and unlimited.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: not_obvious

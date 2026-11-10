@@ -1,0 +1,33 @@
+id: aair-d3-3.3-0037
+subdomain: '3.3'
+difficulty: hard
+stem: A telecom's churn model publishes scores through an internal API that any team with network access can call. The
+  model owner recently found that two teams had used the scores for months to set credit limits and to decide which
+  customers get repairs first, uses nobody had assessed. Both teams said they thought their use was what the scores were
+  for. Which control BEST prevents a repeat?
+options:
+  A: Require callers to register their intended use before the API returns scores
+  B: Issue each calling team its own API credential, logged against its name
+  C: Log each caller of the API and have the owner review usage each month
+  D: Issue API credentials only to teams whose use the owner has approved
+answer: D
+explanation:
+  why_correct: The teams believed their uses were fine, so the gap is that nobody who understood the model judged them
+    before they began. Issuing credentials only for uses the owner has approved makes that judgement a condition of
+    access, so each new use is assessed before decisions rely on it.
+  why_not:
+    A: Registration records each intended use before access, but the teams would have registered their uses in good faith.
+      Without the owner approving them, unsuitable uses still get through.
+    B: Per-team credentials show who calls the API, but any team can still obtain one, and nobody who understands the model
+      judges whether its use is suitable before decisions rely on it.
+    C: Monthly review would reveal new callers within weeks rather than months, but the uses would already be running and
+      influencing decisions by then.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aair-check
+  options_only: not_obvious

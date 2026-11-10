@@ -1,0 +1,32 @@
+id: cissp-d3-3.4-0004
+subdomain: '3.4'
+difficulty: medium
+stem: Consultants' laptops use full-disk encryption with a pre-boot PIN, and are usually left asleep, with the screen locked,
+  in hotel rooms. Testers with one such laptop plugged a device into its external high-speed port and read the disk key from
+  memory while the screen stayed locked. Which capability BEST defends against this attack?
+options:
+  A: Processor encryption of system memory, with the keys held inside the processor
+  B: Secure boot that loads only signed drivers and boot components
+  C: Sealing the disk key to the TPM's boot measurements as well as the PIN
+  D: Kernel DMA protection, enabled in the firmware and the operating system
+answer: D
+explanation:
+  why_correct: The attack uses direct memory access, where a device on a high-speed port reads system memory without the
+    processor's involvement. An IOMMU, as used by kernel DMA protection, limits each device to the memory regions assigned
+    to it, so a newly attached device cannot read the disk key while the laptop sleeps.
+  why_not:
+    A: Memory encryption protects against reading the memory chips directly, as in cold-boot attacks, but it is transparent
+      to devices, so DMA reads come back decrypted.
+    B: Secure boot checks code at start-up, but the laptop was already running and asleep, and the attack loaded no code on
+      it.
+    C: Sealing and the PIN control when the key is released at boot, but once the laptop has booted the key sits in memory,
+      which is where the testers read it.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-cissp-check
+  options_only: not_obvious

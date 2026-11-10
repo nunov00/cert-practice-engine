@@ -1,0 +1,32 @@
+id: aaism-d2-2.1-0054
+subdomain: '2.1'
+difficulty: medium
+stem: A logistics firm rated its general writing assistant low risk at intake, for drafting. Prompt logs now show HR staff pasting
+  batches of CVs and asking it to rank candidates. HR wants the ranking approved and keeps using it while the risk is reassessed.
+  What should the new rating MAINLY be based on?
+options:
+  A: The most harmful use the assistant's features could support
+  B: How staff use it now, including the CV ranking
+  C: The approved drafting use, with ranking stopped as a policy breach
+  D: The uses HR declares on a fresh intake form for the tool
+answer: B
+explanation:
+  why_correct: Risk follows how a system is actually used. Candidate ranking is happening now and will continue during the reassessment,
+    and it carries far higher impact than drafting. Basing the rating on current use, as the logs show it, puts the real exposure
+    in front of the risk owner and the approval decision.
+  why_not:
+    A: Rating on the worst use any feature could support would push every general-purpose tool to the top tier and give no basis
+      for proportionate treatment, when the logs show the actual use.
+    C: Stopping unapproved use is a fair response, but HR is still ranking candidates while the reassessment runs, so a rating
+      that assumes it has stopped understates the exposure.
+    D: A fresh intake form relies on HR's own account, when the logs already give a direct record of use and may show more than
+      HR declares.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: not_obvious

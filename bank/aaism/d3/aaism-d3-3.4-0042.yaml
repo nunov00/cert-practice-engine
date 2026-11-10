@@ -1,0 +1,33 @@
+id: aaism-d3-3.4-0042
+subdomain: '3.4'
+difficulty: medium
+stem: A university sends students to a misconduct hearing when an AI-writing detector scores their essay as likely
+  machine-written. Appeals show fluent non-native English writers are flagged far more often. Students submit essays
+  through a system that keeps their draft history. Which control BEST reduces the harm?
+options:
+  A: Raise the score needed for a flag until false flags fall below 1%
+  B: Require a second detector to agree before a flag goes to a hearing
+  C: Calibrate flag thresholds separately for non-native English writers
+  D: Hold a hearing only when the draft history also supports the flag
+answer: D
+explanation:
+  why_correct: A detector score is a statistical signal whose errors fall more on one group. Requiring independent
+    evidence, such as draft history showing large pasted blocks, before a hearing means no student faces a misconduct
+    case on the score alone. Draft history still needs human judgement, as large pastes can have innocent causes, and
+    the student gets a chance to explain, while real misuse can still be pursued.
+  why_not:
+    A: A higher threshold cuts false flags overall, but the bias against fluent non-native writers remains in the score, and
+      each remaining false flag still leads to a hearing.
+    B: A second detector adds a check, but detectors tend to rely on similar features of fluent, plain writing, so they are
+      likely to share the same bias and agree on the same wrong flags.
+    C: Separate thresholds could even out flag rates, but the university would need to know each student's language
+      background, and flags would still go straight to hearings on a score alone.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: not_obvious

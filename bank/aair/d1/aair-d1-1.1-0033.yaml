@@ -1,0 +1,35 @@
+id: aair-d1-1.1-0033
+subdomain: '1.1'
+difficulty: hard
+stem: A consumer goods company plans to replace its customer surveys with a large language model prompted to answer
+  as typical customers, so it can test product ideas within hours. Its next launch targets older rural shoppers
+  in a market where few of them use the internet. Which risk should MOST shape the risk practitioner's advice?
+options:
+  A: Simulated answers may describe what shoppers say they would do, not what they buy
+  B: Simulated answers may reflect the model's training text, not these shoppers
+  C: Simulated answers may vary far less than real shoppers' answers do
+  D: Simulated answers may tend to agree with ideas as the prompts frame them
+answer: B
+explanation:
+  why_correct: A language model playing a customer reproduces the views found in the text it was trained on, which
+    comes mostly from people who write online. The target shoppers are barely online, so even the typical simulated
+    answer is likely to describe someone else, while still reading fluently and convincingly. Because the plan replaces
+    the surveys, nothing would reveal the gap before the launch decision. This risk goes to whether the method can
+    describe this group at all.
+  why_not:
+    A: The gap between what people say and what they do is real, but it applies equally to the surveys being replaced.
+      It is not a new risk created by the change, and it does not depend on who the target shoppers are.
+    C: Simulated answers do tend to cluster, which understates how much opinions differ. That weakens confidence
+      in the spread of views, but the offline detail means the central view itself is likely to be wrong for this
+      group, which is the larger problem.
+    D: Framing effects are real and prompts should be worded neutrally, but they apply to any use of simulated respondents
+      and careful wording reduces them. They do not explain why this particular group would be misrepresented.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aair-check
+  options_only: not_obvious

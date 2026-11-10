@@ -1,0 +1,32 @@
+id: aaism-d2-2.3-0052
+subdomain: '2.3'
+difficulty: medium
+stem: Engineers need a 4-bit quantised build of a popular open-weight model to fit their GPUs. The publisher's files carry published
+  hashes but use an older format that can run code when loaded. Community uploaders offer quantised builds and safe-format conversions.
+  Quantising takes about a day of GPU time. What is the BEST way to obtain the build?
+options:
+  A: Quantise in-house from a community conversion of the weights to a safe format
+  B: Quantise the publisher's hash-checked files in an isolated, offline job
+  C: Use a community quantised build whose benchmark scores match the original
+  D: Use a community quantised build signed by its uploader with a known key
+answer: B
+explanation:
+  why_correct: Only the publisher's files can be checked against its hashes, so they are the one source whose weights are known
+    to be genuine. Loading them in an isolated job with no network contains the code-on-load risk of the older format, and the
+    in-house quantisation then gives a build traceable to the publisher.
+  why_not:
+    A: A safe-format conversion removes code-on-load risk and the quantising is done in-house, but the converted weights come from
+      a community uploader and cannot be checked against the publisher's hashes.
+    C: Matching benchmark scores show the build performs like the original, but a backdoor that responds to a rare trigger leaves
+      benchmark scores unchanged.
+    D: An uploader's signature proves who published the build and that it has not changed since, but not that the uploader's weights
+      match the publisher's release.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: fail
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: obvious

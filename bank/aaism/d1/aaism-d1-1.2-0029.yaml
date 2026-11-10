@@ -1,0 +1,33 @@
+id: aaism-d1-1.2-0029
+subdomain: '1.2'
+difficulty: medium
+stem: A bank's red team ran automated jailbreak tests against its hosted model provider's service from a non-production project,
+  with synthetic data and the CISO's approval. The runs went past the request rates set in the security-testing section of the
+  provider's terms, which let the provider act on any account a customer holds. It suspended the bank for a day, halting customer
+  chat. Which provision should the testing procedure add?
+options:
+  A: Tests of a provider's service stay within the limits its terms set for testing
+  B: Tests run from a non-production project with its own keys and spending cap
+  C: Tests run from a separate organisation account opened for security testing
+  D: Tests are announced to the provider's abuse team, with dates and source addresses
+answer: A
+explanation:
+  why_correct: The suspension followed tests that exceeded the request rates in the terms' security-testing section. Writing those
+    testing limits into the procedure keeps future tests within what the provider permits, so it has no grounds to act against
+    any of the bank's accounts.
+  why_not:
+    B: A separate project with its own keys and cap limits cost and data exposure, but the terms let the provider act on any account
+      the customer holds, so tests that break them still put production at risk.
+    C: A separate account would hold the test traffic apart, but the tests would still break the terms, and the terms let the provider
+      act on any account the bank holds, production included.
+    D: Advance notice may help the abuse team understand the traffic, but it does not change the request rates the terms set, so
+      tests that exceed them are still a breach the provider can act on.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-10-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-10-daily-aaism-check
+  options_only: not_obvious
