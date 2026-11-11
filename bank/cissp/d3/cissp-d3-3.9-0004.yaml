@@ -1,0 +1,32 @@
+id: cissp-d3-3.9-0004
+subdomain: '3.9'
+difficulty: medium
+stem: A trading firm is fitting fire suppression to a small equipment room where engineers work for most of the day. The
+  trading systems in the room must keep running through a small, contained fire, and local code allows a gaseous system
+  in place of sprinklers. Which system BEST fits?
+options:
+  A: A pre-action sprinkler system with a double interlock
+  B: A carbon dioxide gaseous total-flooding system
+  C: A high-pressure water mist system
+  D: A clean-agent gaseous total-flooding system
+answer: D
+explanation:
+  why_correct: Clean agents put out fires without leaving residue or conducting electricity, so equipment can keep running
+    through a discharge, and they are designed to be safe for people at the concentrations used, which matters in a room
+    where engineers work all day.
+  why_not:
+    A: A double-interlock pre-action system greatly reduces accidental discharge, but when it does discharge it wets the
+      equipment, which would stop the trading systems.
+    B: Carbon dioxide leaves no residue and does not conduct, but at fire-suppressing concentrations it is lethal, so it
+      suits unoccupied spaces rather than a room where engineers work.
+    C: Water mist uses far less water than sprinklers and is used in some equipment rooms, but it still wets electrical
+      equipment, so the systems could not be relied on to keep running.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-cissp-check
+  options_only: not_obvious

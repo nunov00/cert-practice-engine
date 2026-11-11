@@ -1,0 +1,33 @@
+id: aaism-d3-3.2-0038
+subdomain: '3.2'
+difficulty: medium
+stem: A finance company's analysis agent can save scripts it writes as reusable skills, which then appear in other users'
+  sessions. Its users are finance analysts, not developers. A tester got the agent, via an injected spreadsheet, to save a
+  skill that later changed supplier bank details through the finance API in other users' sessions. Which life cycle control
+  BEST prevents this?
+options:
+  A: Static analysis of each skill for outbound calls before saving
+  B: User confirmation of a skill's code before it is saved
+  C: Review and testing of skills before they reach other users
+  D: Skills run in a sandbox with egress limited to internal hosts
+answer: C
+explanation:
+  why_correct: A saved skill is code that runs in other people's sessions, so publishing it is a release. Putting shared skills
+    through review and testing before they reach other users treats them like any other code change, which stops injected
+    code from being promoted while keeping the reuse the feature exists for.
+  why_not:
+    A: Scanning for outbound calls targets data leaving the network, but this skill did its harm through the internal finance
+      API, a call that skills make legitimately.
+    B: Confirmation puts a person in the loop, but the users are finance analysts who cannot judge the code they are shown,
+      so an injected skill would usually be approved.
+    D: Limiting egress to internal hosts stops data being sent outside, but the harmful change went through an internal API
+      that the sandbox would still allow.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aaism-check
+  options_only: not_obvious

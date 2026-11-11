@@ -1,0 +1,33 @@
+id: aaism-d1-1.1-0029
+subdomain: '1.1'
+difficulty: medium
+stem: A media-monitoring firm trains its summarisation model on news articles it crawls, and sells the summaries to clients.
+  A new copyright rule lets it mine published text unless the rights holder has reserved that right in a machine-readable
+  form. Many news sites let search engines crawl them but state such reservations separately. Which control BEST meets this
+  rule?
+options:
+  A: Licensing deals with the largest publishers that it crawls
+  B: Honouring each site's crawl-blocking file, as search engines do
+  C: Removing a site's articles once its publisher objects in writing
+  D: Checking each site's text-mining reservation before crawling it
+answer: D
+explanation:
+  why_correct: The rule turns on a reservation of mining rights, which these sites state separately from their crawl settings.
+    Checking each site for that reservation before collecting its articles, and keeping a record, keeps reserved text out
+    of the corpus and gives evidence that the firm respected the reservations in force when it mined.
+  why_not:
+    A: Licences make mining lawful for the publishers that sign, but most sites would still be mined without any check of
+      their reservations.
+    B: Crawl-blocking files are the usual way to keep crawlers out, but these sites allow search crawling and reserve mining
+      separately, so a crawler that obeys only those files would still mine reserved text.
+    C: The rule is triggered by a reservation published in advance, not by a letter. Waiting for objections means reserved
+      articles are mined first and removed only if a publisher complains.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aaism-check
+  options_only: not_obvious

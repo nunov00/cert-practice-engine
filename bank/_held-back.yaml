@@ -69,3 +69,18 @@ held:
   - { id: aaism-d2-2.2-0052, pr: 82 }
   - { id: aaism-d3-3.3-0036, pr: 82 }
   - { id: aaism-d3-3.2-0037, pr: 82 }
+  # Daily batch 2026-11-11, batch run: passed the independent check, held
+  # because the strict hard-label check left CISSP 4 and AAISM 5 hard, which
+  # carry only 9 and 11 non-hard (the most options-guessable go back first)
+  - { id: cissp-d6-6.4-0011, pr: 83 }
+  - { id: cissp-d2-2.3-0006, pr: 83 }
+  - { id: cissp-d8-8.5-0005, pr: 83 }
+  - { id: cissp-d7-7.9-0003, pr: 83 }
+  - { id: cissp-d1-1.4-0005, pr: 83 }
+  - { id: cissp-d6-6.2-0010, pr: 83 }
+  - { id: cissp-d3-3.7-0004, pr: 83 }
+  - { id: cissp-d3-3.9-0004, pr: 83 }
+  - { id: aaism-d1-1.4-0034, pr: 83 }
+  - { id: aaism-d1-1.5-0030, pr: 83 }
+  - { id: aaism-d3-3.3-0038, pr: 83 }
+  - { id: aaism-d3-3.4-0043, pr: 83 }

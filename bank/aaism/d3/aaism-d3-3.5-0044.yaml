@@ -1,0 +1,31 @@
+id: aaism-d3-3.5-0044
+subdomain: '3.5'
+difficulty: medium
+stem: A sales team's email assistant can read mail and forward messages and files. Injected text in an incoming email made
+  it forward a pricing file to an outside address in a single tool call. Sales staff use the assistant throughout the day
+  to send quotes and documents to prospects who have just made contact. Which monitoring BEST detects such cases?
+options:
+  A: Alerts when a tool call does not match the user's request
+  B: Alerts on forwards to external domains not seen before
+  C: Alerts on spikes in the assistant's tool calls per hour
+  D: Alerts when incoming mail contains text that reads like instructions
+answer: A
+explanation:
+  why_correct: The injected forward looked like routine work, so only its relation to the user's task gives it away. Checking
+    each tool call against what the user actually asked for, for example with a separate checker that sees the request and
+    the call, flags actions the user never requested.
+  why_not:
+    B: New-domain alerts suit many teams, but these staff send documents to prospects who have just made contact, so most
+      forwards go to unfamiliar domains and the alert would be swamped.
+    C: A volume alert catches runaway behaviour, but this was one tool call, which does not change the hourly rate.
+    D: Prospects' emails routinely ask for quotes and documents, so instruction-like text is normal here, and the alert would
+      not show whether the assistant acted on it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: cissp-d5-5.2-0012
+subdomain: '5.2'
+difficulty: hard
+stem: An online bank's customers sign in with a password and an SMS code. Malware in customers' browsers now waits until
+  they set up a payment, then swaps the payee's account number while leaving the amount as typed, and the page still shows
+  the customer what they entered. Which authentication change BEST stops these frauds?
+options:
+  A: FIDO2 passkeys for sign-in, replacing the passwords and SMS codes
+  B: An SMS code for each payment, with the payment amount shown in the message
+  C: Approval of each payment in the bank's phone app, which shows payee and amount
+  D: A code from a hardware token for each payment, entered on the payment page
+answer: C
+explanation:
+  why_correct: The attack happens after a genuine sign-in, inside the customer's own browser, so the defence has to
+    confirm the transaction itself on a separate channel. Approving each payment in the phone app, which shows the payee
+    and amount the bank actually received, lets the customer spot the swapped account and binds the approval to those
+    details.
+  why_not:
+    A: Passkeys stop phishing and credential theft at sign-in, but this malware acts after the customer has signed in
+      properly, so stronger sign-in does not touch it.
+    B: A per-payment code with details is the right idea, but the message shows only the amount, which the malware leaves
+      unchanged, so the customer has no way to see that the payee was swapped.
+    D: A token code for each payment adds a step, but the code is not tied to the payee, and it is typed into the same
+      infected page, so the malware can submit it with its own account number.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-11-daily-cissp-check

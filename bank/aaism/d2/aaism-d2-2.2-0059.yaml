@@ -1,0 +1,33 @@
+id: aaism-d2-2.2-0059
+subdomain: '2.2'
+difficulty: medium
+stem: A model provider lets business customers fine-tune its safety-tuned model and serves the tuned versions back to them
+  through its API. Researchers showed that small sets of training examples mixed into an ordinary dataset can strip the model's
+  refusals, and the provider's own tests found that some customers' everyday business datasets weaken refusals too. Which
+  control BEST addresses this?
+options:
+  A: Run refusal tests on each tuned model before serving it
+  B: Scan each training set with a harmful-content classifier
+  C: Restrict fine-tuning to customers that pass identity checks
+  D: Cap the number of examples a customer may train on
+answer: A
+explanation:
+  why_correct: 'Refusals can be lost through crafted examples or through ordinary business data, so the reliable signal is
+    the result: whether the tuned model still refuses. Testing each tuned model before it is served catches lost safety behaviour
+    whatever caused it.'
+  why_not:
+    B: Content scanning finds plainly harmful examples, but everyday business data also weakens refusals and passes any harmful-content
+      scan, so weakened models would still be served.
+    C: Identity checks deter anonymous abuse, but verified customers can weaken refusals with their ordinary data, and the
+      check says nothing about the resulting model.
+    D: A small set of examples is enough to strip refusals, and ordinary datasets weaken them too, so a cap that still allows
+      useful fine-tuning does not prevent it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aaism-check
+  options_only: not_obvious

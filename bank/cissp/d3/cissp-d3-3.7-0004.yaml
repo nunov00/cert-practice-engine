@@ -1,0 +1,32 @@
+id: cissp-d3-3.7-0004
+subdomain: '3.7'
+difficulty: medium
+stem: A utility's field inspectors open its inspection app with a six-digit PIN, and the app must open where there is no
+  mobile coverage. It checks the PIN against a salted, memory-hard hash stored on the phone. Testers who copied the app's
+  data from a lost phone recovered the PIN within an hour. Which change BEST counters this attack?
+options:
+  A: Raise the hash function's memory and time cost as far as app start-up allows
+  B: Check the PIN inside the phone's secure hardware, which limits failed attempts
+  C: Check the PIN on the utility's server, locking the account after five failures
+  D: Encrypt the stored hash under a key held in the app's own code
+answer: B
+explanation:
+  why_correct: A six-digit PIN has only a million values, so once the hash is copied off the phone, an offline brute-force
+    search will find it whatever the hash costs. Checking the PIN inside the phone's secure hardware keeps the secret where
+    it cannot be copied and caps the number of guesses, which works offline too.
+  why_not:
+    A: A slower hash is the right defence for passwords with a large search space, but a million guesses at the cost a
+      user will wait for at start-up still take only hours across many processors.
+    C: Server-side checking with lockout stops offline guessing, but the app must open where there is no coverage, so it
+      cannot depend on reaching the server.
+    D: Encrypting the hash adds a step, but a key held in the app's code can be pulled from the same copied app, so the
+      attacker decrypts the hash and searches as before.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-11-daily-cissp-check

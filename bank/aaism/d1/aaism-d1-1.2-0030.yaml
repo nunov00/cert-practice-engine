@@ -1,0 +1,32 @@
+id: aaism-d1-1.2-0030
+subdomain: '1.2'
+difficulty: medium
+stem: Line managers at an insurer ask to read their teams' prompts in the enterprise AI assistant, to judge how well staff
+  use it. Staff often paste personal matters into it, such as notes for sick-leave requests. The security team relies on the
+  prompt logs to investigate data leaks. Which policy provision BEST fits?
+options:
+  A: Managers may read their own team's prompts after notifying staff in advance
+  B: Managers see usage figures only; prompt text is read only in investigations
+  C: Prompts are deleted after 30 days, so that they cannot be read later
+  D: Staff may mark prompts as private to keep them out of any review
+answer: B
+explanation:
+  why_correct: Judging adoption needs usage figures, not the text of what staff typed, and the text often holds personal matters
+    that a manager has no need to see. Keeping prompt content for security investigations under a defined process protects
+    staff privacy while preserving the logs that leak investigations depend on.
+  why_not:
+    A: 'Notice makes the access transparent, but it is still disproportionate: managers would read sick-leave notes and other
+      personal matters to answer a question that usage figures can answer.'
+    C: Short retention limits exposure, but security needs the logs to investigate leaks, which are often found weeks after
+      the event, so deleting them at 30 days defeats that purpose.
+    D: A private flag protects personal notes, but anyone leaking data could mark those prompts private too, which removes
+      them from the investigations the logs exist for.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aaism-check
+  options_only: not_obvious

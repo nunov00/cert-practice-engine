@@ -1,0 +1,32 @@
+id: cissp-d3-3.10-0004
+subdomain: '3.10'
+difficulty: medium
+stem: A pension fund will move 400,000 members' contribution histories to a new administration system over one weekend.
+  The migration splits each history into new fields, and an error in a member's record would come to light only when that
+  member retires, often decades later. Which verification BEST supports the decision to go live?
+options:
+  A: Compare record counts and contribution totals for each fund between the two systems
+  B: Compare a random sample of 20,000 members field by field between the two systems
+  C: Compare each member's history field by field between the two systems, by automated means
+  D: Run one month's pension payroll on both systems and compare the payments made
+answer: C
+explanation:
+  why_correct: Because a wrong record would go unnoticed for decades and harm the member it belongs to, the fund needs
+    assurance about each record, not about the data as a whole. An automated field-by-field comparison of each history
+    finds transformation errors in any record before go-live, when they are cheap to fix.
+  why_not:
+    A: Counts and control totals are a standard first check, but values moved between members or fields can leave the
+      totals unchanged, so they cannot show that each member's history is right.
+    B: A large sample gives good statistical confidence about the error rate, but errors that affect a small group of
+      members can easily fall outside it, and any wrong record matters here.
+    D: A parallel payroll run tests the system with real outputs, but it covers only members already drawing pensions,
+      while most errors would sit in the records of members decades from retirement.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-11-daily-cissp-check

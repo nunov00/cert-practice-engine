@@ -1,0 +1,31 @@
+id: aaism-d2-2.3-0056
+subdomain: '2.3'
+difficulty: hard
+stem: A lender licenses consumer payment data from a broker to train its credit model. Privacy law lets each consumer withdraw
+  consent through the broker at any time, after which the lender must stop using that person's data. Which contract term is
+  MOST important?
+options:
+  A: A warranty that valid consent existed at delivery
+  B: Indemnity for claims arising from the broker's data
+  C: A yearly right to audit the broker's consent records and processes
+  D: Notice of withdrawals affecting records already delivered
+answer: D
+explanation:
+  why_correct: Withdrawals are made to the broker, so without a duty to pass them on the lender cannot know which records
+    it must stop using. A notice term for withdrawals that affect delivered records lets the lender remove them from training
+    sets and plan retraining.
+  why_not:
+    A: A warranty covers consent at the time of delivery, but consent can be withdrawn later, and the warranty would not tell
+      the lender when that happens.
+    B: An indemnity moves some of the cost of a breach to the broker, but the lender would still be using data it may not
+      use and would not know it.
+    C: A yearly audit tests the broker's records at one point in time, so withdrawals in between would go unnoticed for months.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aaism-check
+  options_only: not_obvious

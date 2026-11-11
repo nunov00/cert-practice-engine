@@ -1,0 +1,32 @@
+id: aaism-d1-1.4-0034
+subdomain: '1.4'
+difficulty: easy
+stem: Post-incident reviews at an insurer find the root causes of its AI incidents, and each system's fixes are closed on
+  time. Yet the same design flaws keep turning up in newly built AI systems, each of which passed the program's pre-launch
+  security review. What should the program change?
+options:
+  A: Send each post-incident report to the AI delivery teams
+  B: Red team the other live AI systems for each flaw found
+  C: Feed each root cause into the AI standards and review criteria
+  D: Report recurring flaws to the AI steering committee each quarter
+answer: C
+explanation:
+  why_correct: The new systems passed review with the same flaws, so the lessons never reached the gate that approves designs.
+    Turning each root cause into a requirement in the standards and a check in the review criteria means later designs are
+    built and judged against it.
+  why_not:
+    A: Sharing reports raises awareness, but the flaws keep passing the formal review, which is still checking against the
+      old criteria, so the gate does not stop them.
+    B: Red teaming live systems finds the flaw where it already exists, but the problem is in systems not yet built, which
+      this does not reach.
+    D: Escalation makes the pattern visible to leadership, but it does not change what designers are required to do or what
+      reviewers check.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aaism-check
+  options_only: obvious

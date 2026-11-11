@@ -1,0 +1,33 @@
+id: cissp-d6-6.1-0011
+subdomain: '6.1'
+difficulty: hard
+stem: A hospital's board wants independent assurance on the network segmentation that a consulting firm designed and
+  configured last year, in a project the IT director commissioned and oversaw. The same firm runs the hospital's yearly
+  penetration test, and its test team took no part in the design work. Internal audit has no technical testers. Which
+  arrangement BEST fits?
+options:
+  A: The consulting firm's separate test team, reporting its results straight to the board
+  B: Internal audit, reviewing the segmentation findings in the firm's latest yearly test
+  C: A second testing firm, selected and managed by the IT director for this test
+  D: A second testing firm, engaged by the board's audit committee and reporting to it
+answer: D
+explanation:
+  why_correct: Independent assurance needs an assessor free of both the party that built the control and the management
+    that owns it. A firm with no stake in the design, engaged by and reporting to the audit committee, brings the
+    technical skill internal audit lacks without answering to anyone whose work is being judged.
+  why_not:
+    A: A separate team and a direct line to the board reduce the conflict, but the team still belongs to the firm whose
+      design is under test, and that firm has a commercial interest in its own work passing.
+    B: Reusing existing evidence is efficient, but the evidence comes from the firm that designed the segmentation, and
+      internal audit has no technical testers to judge whether that test was sound.
+    C: A second firm removes the designer's self-review, but it would be chosen and steered by the IT director, who
+      commissioned and oversaw the design, so the result would not be independent of management.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-11-daily-cissp-check
+  options_only: obvious

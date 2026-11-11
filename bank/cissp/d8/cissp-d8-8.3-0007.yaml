@@ -1,0 +1,32 @@
+id: cissp-d8-8.3-0007
+subdomain: '8.3'
+difficulty: medium
+stem: Three times this year, access control flaws that a penetration test had found and developers had fixed came back in
+  later releases of a lending platform, each time when a long-running feature branch was merged. The platform ships weekly.
+  Which change BEST shows, release by release, that fixed flaws stay fixed?
+options:
+  A: A static analysis rule for each fixed flaw, blocking builds whose code matches it
+  B: A security champion's review of each merge from a long-running feature branch
+  C: A monthly manual retest by the security team of each past penetration test finding
+  D: An automated test for each fixed flaw, run against the application on each build
+answer: D
+explanation:
+  why_correct: A regression test that reproduces each fixed flaw against the running application fails the build the
+    moment a merge brings the flaw back, whatever code path reintroduces it. Run on each build, it gives evidence for every
+    weekly release that the fixed flaws are still fixed.
+  why_not:
+    A: Static rules suit code patterns such as injection, but access control flaws are about missing or wrong logic, which
+      a pattern rule finds poorly, and code can be reintroduced in a form the rule does not match.
+    B: Reviewing risky merges is sensible, but a reviewer can miss a reintroduced flaw, and a review leaves no repeatable
+      evidence that each fixed flaw is still absent.
+    C: Retesting past findings checks the right things, but monthly checks leave several weekly releases untested between
+      rounds, so a returned flaw could be live for weeks.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: cissp-d3-3.1-0006
+subdomain: '3.1'
+difficulty: medium
+stem: A company sells internet-connected cameras to small shops. Installers pair each camera with the owner's phone app,
+  and the camera's web admin interface is used later, if at all, by integrators managing cameras remotely. Botnets are taking
+  over cameras by signing in to that interface at the first attempt with the shared default admin password. Which design
+  change BEST fixes this in new cameras?
+options:
+  A: A forced change of the default password at the first admin sign-in
+  B: Lockout of the admin account after five failed sign-in attempts
+  C: Remote admin access off by default, switched on from the owner's app
+  D: A unique random admin password for each camera, printed on its label
+answer: D
+explanation:
+  why_correct: Secure defaults mean a device is safe as shipped, before anyone configures it. A unique random password per
+    camera removes the shared secret the botnets rely on, and it protects cameras whose admin interface nobody ever signs
+    in to, while integrators can still read the password from the label when they need it.
+  why_not:
+    A: Forcing a change at first sign-in works when an owner signs in early. Many of these interfaces are never used, so
+      their default password stays valid, and a botnet's sign-in would be the first, letting it set its own password.
+    B: Lockout slows guessing, but the botnets succeed at the first attempt with a published password, so no failed
+      attempts ever build up.
+    C: Turning remote access off by default narrows exposure, but integrators need it, and once they switch it on the
+      shared default password is exposed again.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-11-daily-cissp-check

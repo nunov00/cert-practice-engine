@@ -1,0 +1,32 @@
+id: aaism-d2-2.3-0055
+subdomain: '2.3'
+difficulty: hard
+stem: A bank runs a vendor's document AI in its own data centre so that customer documents stay inside its network. The product
+  must reach the vendor for licence checks and updates, and also sends usage telemetry that the vendor says helps improve
+  quality. What should the security manager require before go-live?
+options:
+  A: Contract terms barring the vendor from training on telemetry
+  B: A documented telemetry schema, checked against captured traffic
+  C: Blocking of outbound traffic from the product's servers
+  D: An independent assurance report on the vendor's telemetry handling
+answer: B
+explanation:
+  why_correct: The reason for self-hosting is that documents do not leave, and telemetry is the channel through which they
+    could. Requiring the vendor to document exactly which fields telemetry carries, and confirming it by inspecting the traffic
+    the product actually sends, shows whether document content leaves before go-live.
+  why_not:
+    A: A training bar limits how the vendor uses what it receives, but the bank's aim is that customer documents never leave
+      its network at all.
+    C: Blocking outbound traffic would stop the leak, but the product needs to reach the vendor for licence checks and updates,
+      so it would stop working.
+    D: An assurance report covers how the vendor protects telemetry once received. It does not show whether document content
+      is in the telemetry in the first place.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aaism-check
+  options_only: not_obvious

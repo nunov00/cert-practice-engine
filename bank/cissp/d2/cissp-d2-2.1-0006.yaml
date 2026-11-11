@@ -1,0 +1,33 @@
+id: cissp-d2-2.1-0006
+subdomain: '2.1'
+difficulty: medium
+stem: A hospital rates each system by the most sensitive data it holds, and the rating sets both its access controls and
+  its recovery tier. The pharmacy formulary server holds no patient data and was rated low, and its failure stopped dispensing
+  for six hours. A research archive of identifiable records supports no urgent work. Top recovery tiers are costly, and strict
+  access controls slow pharmacy staff. Which rating scheme BEST fits?
+options:
+  A: Rate each system at the higher of its data sensitivity and its business criticality
+  B: Rate each system by the most critical business process that depends on it
+  C: Rate each system separately for confidentiality, integrity and availability impact
+  D: Rate each system by data sensitivity, letting owners raise a system's rating
+answer: C
+explanation:
+  why_correct: The two systems show that confidentiality and availability needs differ. Separate ratings let the formulary
+    server get a top recovery tier without strict access controls, and the research archive get strict access controls
+    without a costly recovery tier, so each control is set by the impact it addresses.
+  why_not:
+    A: Taking the higher of the two fixes the formulary outage, but a single rating would give the formulary server strict
+      access controls that slow pharmacy staff, and the archive a costly recovery tier it does not need.
+    B: Rating by process criticality protects the formulary server, but the research archive supports no urgent work, so
+      it would be rated low and its identifiable records would get weak access controls.
+    D: Letting owners raise ratings could protect the formulary server, but one raised rating would still bring strict
+      access controls with the higher recovery tier, and it depends on each owner spotting the gap.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-11-daily-cissp-check

@@ -1,0 +1,32 @@
+id: cissp-d8-8.5-0005
+subdomain: '8.5'
+difficulty: medium
+stem: A digital wallet's withdrawal code reads the balance, checks that it covers the amount, then writes the new balance
+  and sends the payout, which reaches the user's card within seconds. Testers sent 20 separate withdrawal requests at the
+  same moment and withdrew ten times their balance. Which rule should the secure coding standard add?
+options:
+  A: Check and debit the balance in one atomic conditional update before any payout
+  B: Require an idempotency key on each withdrawal request, rejecting reused keys
+  C: Reconcile balances after each payout, reversing any that left a balance negative
+  D: Limit each account to five withdrawal requests per minute at the API gateway
+answer: A
+explanation:
+  why_correct: The flaw is a race between the check and the update, since concurrent requests all read the same balance
+    before any of them writes. Making the check and the debit one atomic conditional update means only requests the
+    balance truly covers succeed, however many arrive together.
+  why_not:
+    B: Idempotency keys stop one request being processed twice, but the testers sent separate requests, each with its own
+      key, so all of them would pass.
+    C: Reconciliation finds the overdraft, but the payouts have already reached the cards within seconds, so reversing the
+      ledger entry does not get the money back.
+    D: A rate limit reduces how many requests race at once, but five simultaneous requests can still overdraw the account,
+      so the race remains.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-11-daily-cissp-check

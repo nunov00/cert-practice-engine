@@ -1,0 +1,33 @@
+id: cissp-d1-1.1-0006
+subdomain: '1.1'
+difficulty: medium
+stem: A certified consultant is reviewing a water utility's cloud security. The utility now asks her to assess its plant
+  control network too, and wants one firm accountable for both reports within six weeks. She has never worked on industrial
+  control systems, and her firm employs a control systems engineer who is free next month. What should she do?
+options:
+  A: Take on the plant work, studying the relevant control system standards first
+  B: Decline the plant work, and refer the utility to a control systems specialist firm
+  C: Take on the plant work, with her firm's control systems engineer leading the testing
+  D: Take on only a document review of the plant, with its limits stated in the report
+answer: C
+explanation:
+  why_correct: The code of ethics asks for diligent and competent service, so she must not take on work she cannot do
+    competently on her own. It does not require turning the client away when competent help is at hand. Her firm has a
+    qualified engineer free within the deadline, so she can tell the utility who will do what and deliver both reports,
+    with the plant testing led by someone competent to do it, as the client asked.
+  why_not:
+    A: Study builds general understanding, but control networks are fragile and testing them safely takes practical
+      experience. A few weeks of reading alone does not make her competent to test a live plant.
+    B: Referring the work elsewhere is the right call when no competent help is available. Here her own firm has the
+      expertise within the deadline, and the client wants one accountable firm, so declining serves the client less well.
+    D: Stating limits honestly is sound, but a document review alone falls short of the assessment the utility asked for,
+      when a competent tester can do the full work in time.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-11-daily-cissp-check
