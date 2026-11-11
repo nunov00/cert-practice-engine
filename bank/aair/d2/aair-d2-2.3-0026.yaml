@@ -5,22 +5,23 @@ stem: A card issuer has validated and approved a new credit limit model that pre
   one. Applied to existing cardholders, it would cut limits for about 15% of them overnight, and many of them carry
   balances close to their new limit. How should the issuer BEST implement the model for existing cardholders?
 options:
-  A: Run it in shadow alongside the current model for three months first
-  B: Phase in limit cuts at each account's next scheduled review
-  C: Release it to 5% of cardholders first and widen if losses fall
-  D: Write to affected cardholders a month before their limits fall
+  A: Run it in shadow alongside the current model for three months before any cuts
+  B: Lower limits in steps over several reviews, with notice before each step
+  C: Release it to 5% of cardholders first and widen the rollout if losses fall
+  D: Write to affected cardholders a month before their limits fall to the new level
 answer: B
 explanation:
-  why_correct: The model is validated; the risk lies in the impact of applying it to existing customers in one step,
-    where sudden cuts near current balances could cause declined payments and fees. Phasing cuts in at each account's
-    scheduled review spreads the change over time and gives cardholders room to adjust.
+  why_correct: The model is validated; the risk lies in the impact of applying it to existing customers in one step, where
+    sudden cuts near current balances could cause declined payments and fees. Lowering limits in steps over several
+    reviews, with notice before each step, gives every affected cardholder time and room to bring balances down before
+    they meet the new limit.
   why_not:
-    A: Shadow running tests a model whose live behaviour is uncertain, but this model is already validated. It would
-      delay the benefit without changing what happens to cardholders when the cuts are applied.
-    C: A staged rollout limits exposure to an unproven model, but each cardholder in the first 5% would still have
-      their limit cut overnight, so the harm to them is the same.
-    D: Advance notice is good practice and may be required, but cardholders with balances close to the new limit
-      could still face declines and fees once it falls.
+    A: Shadow running tests a model whose live behaviour is uncertain, but this model is already validated. It would delay
+      the benefit without changing what happens to cardholders when the cuts are applied.
+    C: A staged rollout limits exposure to an unproven model, but each cardholder in the first 5% would still have their
+      limit cut in one step, so the harm to them is the same.
+    D: Advance notice is good practice and may be required, but the limit still falls in one step, so cardholders who cannot
+      clear their balance within the month still face declines and fees.
 status: published
 outline_version: '2026-04-15'
 sample: false

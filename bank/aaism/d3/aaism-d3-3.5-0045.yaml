@@ -1,19 +1,19 @@
 id: aaism-d3-3.5-0045
 subdomain: '3.5'
 difficulty: medium
-stem: Staff use an internal assistant that calls the company's model gateway under one service key. The SOC saw a burst of
-  prompts pulling salary data through the assistant but could not tell which employee sent them. Thousands of staff use the
-  assistant at once, from many offices. Which logging change BEST supports such investigations?
+stem: Staff use an internal assistant that calls the company's model gateway under one service key. The SOC saw a burst
+  of prompts pulling salary data through the assistant but could not tell which employee sent them. Thousands of staff
+  use the assistant at once, from many offices. Which logging change BEST supports such investigations?
 options:
   A: Rate alerts on the assistant's gateway key above its normal use
   B: Gateway logs matched to the assistant's sign-in logs by time
   C: Gateway logs recording the network address of each request
-  D: The signed-in user's ID passed with each request and logged
+  D: The signed-in user's ID, from the session, logged with each request
 answer: D
 explanation:
-  why_correct: The gateway sees only the assistant's service key, so its logs cannot name the person behind a prompt. Passing
-    the signed-in user's ID with each request and logging it ties every prompt to an individual, which is what the investigation
-    needed.
+  why_correct: The gateway sees only the assistant's service key, so its logs cannot name the person behind a prompt.
+    Having the assistant pass the user ID from the authenticated session over its trusted channel to the gateway, logged
+    with a request ID, ties every prompt to an individual, which is what the investigation needed.
   why_not:
     A: A rate alert might flag the burst sooner, but it is tied to the shared key and still cannot say which employee sent
       the prompts.

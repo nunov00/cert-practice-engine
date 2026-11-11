@@ -1,9 +1,9 @@
 id: aair-d2-2.4-0027
 subdomain: '2.4'
 difficulty: medium
-stem: A water utility trains a leak detection model on hourly meter readings. The model flags leaks largely from
-  whether a property's use ever falls to zero overnight. When a meter loses its connection, the data platform records
-  that hour's reading as zero. Which data management practice BEST protects the training data?
+stem: A water utility trains a leak detection model on hourly meter readings. The model flags leaks largely from whether
+  a property's use ever falls to zero overnight. When a meter loses its connection, the data platform records that
+  hour's reading as zero. Which data management practice BEST protects the training data?
 options:
   A: Record lost readings with a distinct missing-value code at ingestion
   B: Drop the zero readings from the training data before each training run
@@ -11,16 +11,17 @@ options:
   D: Monitor the share of zero readings per meter for sudden rises
 answer: A
 explanation:
-  why_correct: Once a lost reading is stored as zero it cannot be told apart from a real zero, and real overnight
-    zeros are the model's main sign that there is no leak. Recording lost readings with their own missing-value
-    code at ingestion keeps the distinction, so outages are not read as normal use and genuine zeros are kept.
+  why_correct: Once a lost reading is stored as zero it cannot be told apart from a real zero, and real overnight zeros
+    are the model's main sign that there is no leak. Recording lost readings with their own missing-value code at
+    ingestion keeps the distinction, so outages are not read as normal use and genuine zeros are kept, provided training
+    and scoring treat that code as missing rather than as a value.
   why_not:
-    B: Dropping zeros removes the outage records, but it also removes the genuine overnight zeros the model relies
-      on to tell properties without leaks from those with them.
-    C: Imputing removes false zeros only if they can be found, and here they look the same as real ones. Genuine
-      overnight zeros would be overwritten with invented use, making sound properties look leaky.
-    D: Monitoring can show that outages are happening, but it cannot separate lost readings from real zeros in the
-      stored data, so the training data stays contaminated.
+    B: Dropping zeros removes the outage records, but it also removes the genuine overnight zeros the model relies on to
+      tell properties without leaks from those with them.
+    C: Imputing removes false zeros only if they can be found, and here they look the same as real ones. Genuine overnight
+      zeros would be overwritten with invented use, making sound properties look leaky.
+    D: Monitoring can show that outages are happening, but it cannot separate lost readings from real zeros in the stored
+      data, so the training data stays contaminated.
 status: published
 outline_version: '2026-04-15'
 sample: false

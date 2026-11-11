@@ -1,9 +1,9 @@
 id: aair-d2-2.1-0033
 subdomain: '2.1'
 difficulty: hard
-stem: A pathology lab is developing a model that grades tumour slides, trained on images from its one scanner. Over
-  the next few years it will add scanners from other makers, not yet chosen, as budgets allow. In a trial on another
-  lab's slides, the model's accuracy fell sharply. Which feature is MOST important to include in the design?
+stem: A pathology lab is developing a model that grades tumour slides, trained on images from its one scanner. Over the
+  next few years it will add scanners from other makers, not yet chosen, as budgets allow. In a trial on another lab's
+  slides, the model's accuracy fell sharply. Which feature is MOST important to include in the design?
 options:
   A: Colour normalisation of each slide image before it is graded
   B: A confidence level below which slides go to a pathologist
@@ -11,16 +11,18 @@ options:
   D: A check that routes slides unlike its training set to a pathologist
 answer: D
 explanation:
-  why_correct: The model will meet images from scanners not yet chosen, and the trial showed it fails on unfamiliar
+  why_correct: "The model will meet images from scanners not yet chosen, and the trial showed it fails on unfamiliar
     slides. A check that detects inputs unlike the training data and sends them to a pathologist protects patients
-    whatever the source of the difference, including while labelled slides for retraining are being collected.
+    whatever the source of the difference, including while labelled slides for retraining are being collected. It is a
+    fallback, not proof of safety: each new scanner configuration should still be validated before its slides are graded
+    automatically."
   why_not:
-    A: Colour normalisation reduces one known kind of scanner variation, but other makers' scanners differ in more
-      ways than colour, and it gives no warning when a slide is still unfamiliar.
-    B: Confidence routing is a common safeguard, but models are often just as confident on unfamiliar images as
-      on familiar ones, so slides from an unknown scanner may not be routed.
-    C: Retraining for each scanner is good maintenance, but the model would grade a new scanner's slides unchecked
-      until enough labelled examples had been collected.
+    A: Colour normalisation reduces one known kind of scanner variation, but other makers' scanners differ in more ways than
+      colour, and it gives no warning when a slide is still unfamiliar.
+    B: Confidence routing is a common safeguard, but models are often just as confident on unfamiliar images as on familiar
+      ones, so slides from an unknown scanner may not be routed.
+    C: Retraining for each scanner is good maintenance, but the model would grade a new scanner's slides unchecked until
+      enough labelled examples had been collected.
 status: published
 outline_version: '2026-04-15'
 sample: false

@@ -1,26 +1,28 @@
 id: aair-d1-1.1-0034
 subdomain: '1.1'
 difficulty: medium
-stem: A retailer's finance team wants an AI assistant that answers staff questions about sales, such as how one
-  product line performed across a region over a chosen run of weeks. Answers must reconcile exactly with the governed
-  sales warehouse. Which design BEST fits this use case?
+stem: A retailer's finance team wants an AI assistant that answers staff questions about sales, such as how one product
+  line performed across a region over a chosen run of weeks. Answers must reconcile exactly with the governed sales
+  warehouse, whose approved metric definitions sit in a semantic layer. Which design BEST fits this use case?
 options:
-  A: Generate read-only queries on the warehouse and show the query used
+  A: Generate read-only queries on the semantic layer and show the query used
   B: Retrieve passages from the monthly sales reports and cite each one
   C: Fine-tune a model each month on the latest set of sales reports
   D: Give the model the warehouse's daily summary tables to answer from
 answer: A
 explanation:
-  why_correct: The questions pick their own combinations of product, region and weeks, and the figures must match
-    the warehouse exactly. Having the model write read-only queries that the warehouse itself computes keeps every
-    figure authoritative, and showing the query lets users and reviewers check how it was produced.
+  why_correct: The questions pick their own combinations of product, region and weeks, and the figures must match the
+    warehouse exactly. Having the model write read-only queries against the approved metric definitions, under the
+    user's own permissions, lets the warehouse compute every figure, and showing the query lets users and reviewers
+    check that the right metric and filters were used before relying on the answer, which presents the computed result
+    as returned.
   why_not:
-    B: Cited report passages suit questions that existing reports answer, but staff choose their own mix of product,
-      region and weeks, which fixed monthly reports rarely show, so the model would combine or estimate figures.
-    C: Fine-tuning teaches style and patterns, not exact figures. The model would reproduce or estimate numbers
-      from reports it has seen, with no way to reconcile them to the warehouse.
-    D: Summary tables give the model real figures, but it would have to add and filter them itself, and language
-      models do arithmetic over tables unreliably, so totals would not reconcile exactly.
+    B: Cited report passages suit questions that existing reports answer, but staff choose their own mix of product, region
+      and weeks, which fixed monthly reports rarely show, so the model would combine or estimate figures.
+    C: Fine-tuning teaches style and patterns, not exact figures. The model would reproduce or estimate numbers from reports
+      it has seen, with no way to reconcile them to the warehouse.
+    D: Summary tables give the model real figures, but it would have to add and filter them itself, and language models do
+      arithmetic over tables unreliably, so totals would not reconcile exactly.
 status: published
 outline_version: '2026-04-15'
 sample: false

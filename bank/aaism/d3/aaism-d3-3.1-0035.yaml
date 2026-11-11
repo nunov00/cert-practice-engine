@@ -1,24 +1,25 @@
 id: aaism-d3-3.1-0035
 subdomain: '3.1'
 difficulty: medium
-stem: A development team's agent builds its own HTTP requests to three internal services, and its system prompt holds the
-  API tokens it adds to each request's headers. Testers got it to print the tokens and then called the services directly with
-  them. Which design change BEST addresses this?
+stem: A development team's agent builds its own HTTP requests to three internal services, and its system prompt holds
+  the API tokens it adds to each request's headers. Testers got it to print the tokens and then called the services
+  directly with them. Which design change BEST addresses this?
 options:
   A: A tool layer that adds credentials outside the model's context
   B: Output filtering that blocks token patterns in the agent's replies
-  C: Short-lived tokens that are rotated each hour automatically
+  C: A secrets vault the agent queries for each token at call time
   D: Tokens narrowed to the actions the agent's tasks need
 answer: A
 explanation:
-  why_correct: Anything in the model's context can be extracted with the right prompt. If the agent asks a tool layer to make
-    the call and that layer attaches the credential, the model never holds the token, so there is nothing to print and no
-    way to reuse it outside the agent.
+  why_correct: Anything in the model's context can be extracted with the right prompt. If the agent asks a tool layer to
+    make the call and that layer attaches the credential, the model never holds the token, so there is nothing to print
+    and no way to reuse it outside the agent. The tool layer should also check destinations and operations, and never
+    return credential-bearing headers to the model.
   why_not:
     B: A pattern filter can be evaded by asking the model to encode, split or translate the token, and the token still sits
       in the context waiting to be extracted.
-    C: Hourly rotation shortens the window, but a token printed during a session is usable at once, which is all the testers
-      needed.
+    C: A vault keeps tokens out of the system prompt, but the agent still fetches each token into its context to build the
+      request, so the testers could have it print the token just the same.
     D: Narrow scopes limit what a stolen token can do, but the testers would still call the services directly, outside the
       agent's checks.
 status: published

@@ -84,3 +84,12 @@ held:
   - { id: aaism-d1-1.5-0030, pr: 83 }
   - { id: aaism-d3-3.3-0038, pr: 83 }
   - { id: aaism-d3-3.4-0043, pr: 83 }
+  # PR #83, merge run: Codex findings on held drafts to fix on recheck before
+  # release: aaism-d2-2.1-0028 (state independence is unproven; require a joint
+  # test of the deployed sequence), aaism-d3-3.3-0038 (limit input capture to the
+  # app and exclude sensitive fields), aaism-d3-3.4-0043 (representative real-image
+  # test with an acceptance threshold), cissp-d3-3.9-0004 (qualify clean-agent
+  # suitability and uptime claims), cissp-d4-4.1-0008 (NAT-T needs the NAT-side
+  # gateway to initiate and keep the mapping), cissp-d6-6.2-0010 (state that the
+  # appliances expose authenticated inventory data). aaism-d2-2.2-0059 was
+  # dropped as a duplicate of aaism-d3-3.2-0017 and is not on this list.
