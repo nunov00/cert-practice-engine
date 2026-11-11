@@ -12,10 +12,9 @@ options:
 answer: A
 explanation:
   why_correct: The questions pick their own combinations of product, region and weeks, and the figures must match the
-    warehouse exactly. Having the model write read-only queries against the approved metric definitions, under the
-    user's own permissions, lets the warehouse compute every figure, and showing the query lets users and reviewers
-    check that the right metric and filters were used before relying on the answer, which presents the computed result
-    as returned.
+    warehouse exactly. Having the model write read-only queries against the approved metric definitions lets the
+    warehouse compute every figure. Showing the query lets users and reviewers check that the right metric and filters
+    were used before relying on the answer.
   why_not:
     B: Cited report passages suit questions that existing reports answer, but staff choose their own mix of product, region
       and weeks, which fixed monthly reports rarely show, so the model would combine or estimate figures.

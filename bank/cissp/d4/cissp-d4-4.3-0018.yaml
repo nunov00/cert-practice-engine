@@ -1,13 +1,13 @@
 id: cissp-d4-4.3-0018
 subdomain: '4.3'
 difficulty: medium
-stem: A listed company prepares its results on video calls with outside bankers and lawyers, who have no company accounts.
-  Last quarter an outsider joined a call under the name of an expected banker, using a full invitation that one adviser had
-  forwarded. Which meeting control BEST prevents a repeat?
+stem: A listed company prepares its results on video calls with outside bankers and lawyers, who have no company
+  accounts. Last quarter an outsider joined a call under the name of an expected banker, using a full invitation that
+  one adviser had forwarded. Which meeting control BEST prevents a repeat?
 options:
   A: A lobby where the host admits each participant after checking the display name
   B: Sign-in required to join, limited to the company's own staff accounts
-  C: End-to-end encryption, with keys exchanged only among the call's participants
+  C: A meeting passcode sent to invitees separately from the join link
   D: A join link unique to each invitee, usable only with a code sent to their email
 answer: D
 explanation:
@@ -19,8 +19,8 @@ explanation:
       have admitted them.
     B: Requiring company sign-in would keep the outsider out, but it would also exclude the bankers and lawyers the calls
       need.
-    C: End-to-end encryption protects the call from the provider and the network path, but an intruder who joins becomes
-      a participant and receives the keys.
+    C: A passcode is shared by every invitee and travels with whatever an adviser forwards, so it does not tie a seat to one
+      person; the outsider who received the full invitation would have had it too.
 status: published
 outline_version: '2024-04-15'
 sample: false

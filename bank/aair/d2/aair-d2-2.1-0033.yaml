@@ -3,7 +3,8 @@ subdomain: '2.1'
 difficulty: hard
 stem: A pathology lab is developing a model that grades tumour slides, trained on images from its one scanner. Over the
   next few years it will add scanners from other makers, not yet chosen, as budgets allow. In a trial on another lab's
-  slides, the model's accuracy fell sharply. Which feature is MOST important to include in the design?
+  slides, which differed in resolution and focus as well as colour, accuracy fell sharply. Which feature is MOST
+  important to include in the design?
 options:
   A: Colour normalisation of each slide image before it is graded
   B: A confidence level below which slides go to a pathologist

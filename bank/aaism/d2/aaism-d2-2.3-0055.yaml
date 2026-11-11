@@ -6,7 +6,7 @@ stem: A bank runs a vendor's document AI in its own data centre so that customer
   helps improve quality. What should the security manager require before go-live?
 options:
   A: Contract terms barring the vendor from training on telemetry
-  B: A documented telemetry schema, verified on decoded payloads in testing
+  B: A telemetry field list, verified on decoded payloads in tests
   C: Blocking of outbound traffic from the product's servers
   D: An independent assurance report on the vendor's telemetry handling
 answer: B

@@ -2,9 +2,9 @@ id: aair-d3-3.6-0035
 subdomain: '3.6'
 difficulty: medium
 stem: An AI agent that updates customer accounts followed instructions hidden in a supplier document for two days before
-  it was stopped. It ran with an administrator role on the application server that holds its activity log, but it had no
-  rights over the account systems' own logs. The team must establish exactly which account changes it made. Which source
-  should the investigation MOST rely on?
+  it was stopped. It ran with an administrator role on the application server that holds its activity log, and reached
+  the account systems only through their APIs. The team must establish exactly which account changes it made. Which
+  source should the investigation MOST rely on?
 options:
   A: The agent's own activity log for the two days
   B: The model provider's records of the tool calls the agent requested
@@ -12,9 +12,9 @@ options:
   D: The account systems' backups from before and after the two days, compared
 answer: C
 explanation:
-  why_correct: The account systems' own audit logs record the changes actually made, and the agent's administrator role on
-    its own server did not extend to them. They are the most reliable evidence of exactly what changed in customer
-    accounts.
+  why_correct: The account systems' own audit logs record the changes actually made, and the agent, which reached those
+    systems only through their APIs, had no administrator rights over them. They are the most reliable evidence of
+    exactly what changed in customer accounts.
   why_not:
     A: An application's activity log is normally a key source, but the agent had administrator rights on the server holding
       that log, so the hidden instructions could have led it to alter or delete entries.

@@ -7,7 +7,7 @@ stem: Staff use an internal assistant that calls the company's model gateway und
 options:
   A: Rate alerts on the assistant's gateway key above its normal use
   B: Gateway logs matched to the assistant's sign-in logs by time
-  C: Gateway logs recording the network address of each request
+  C: A gateway key for each office, logged with each request
   D: The signed-in user's ID, from the session, logged with each request
 answer: D
 explanation:
@@ -19,8 +19,8 @@ explanation:
       the prompts.
     B: Matching by time can work for low traffic, but with thousands of concurrent users many sessions overlap each moment,
       so the match is ambiguous.
-    C: Requests reach the gateway from the assistant's servers, so the recorded address identifies the assistant, not the
-      employee using it.
+    C: Per-office keys narrow a prompt to an office, but each office has many staff using the assistant at once, so the logs
+      still cannot say which employee sent it.
 status: published
 outline_version: '2025-08-19'
 sample: false

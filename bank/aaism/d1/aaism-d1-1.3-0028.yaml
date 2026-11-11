@@ -1,10 +1,10 @@
 id: aaism-d1-1.3-0028
 subdomain: '1.3'
 difficulty: hard
-stem: A social platform trains its moderation model on labels from three vendors. In March the labelling guideline narrowed
-  its definition of harassment, and the vendors retrained their labellers on it team by team over the next two months. The
-  team cannot now tell which labels follow the old definition and must relabel the whole set. Which record would MOST have
-  avoided this?
+stem: A social platform trains its moderation model on labels from three vendors. In March the labelling guideline
+  narrowed its definition of harassment, and the vendors retrained their labellers on it team by team over the next two
+  months, keeping no record of when each team switched. The team cannot now tell which labels follow the old definition
+  and must relabel the whole set. Which record would MOST have avoided this?
 options:
   A: The guideline version each labeller applied, stored with the label
   B: The vendor, labeller team and labelling date stored with each label
@@ -12,9 +12,9 @@ options:
   D: A dated change log kept for each labelling guideline edit
 answer: A
 explanation:
-  why_correct: The switch to the new definition happened labeller team by labeller team over two months, so no date or grouping
-    marks the boundary reliably. Recording the guideline version applied with each label lets the team pick out exactly the
-    labels made under the old definition and relabel only those.
+  why_correct: The switch to the new definition happened labeller team by labeller team over two months, so no date or
+    grouping marks the boundary reliably. Recording the guideline version applied with each label lets the team pick out
+    exactly the labels made under the old definition and relabel only those.
   why_not:
     B: Vendor, team and date narrow it down, but they identify the old-definition labels only if each team's switch date was
       also recorded, which the gradual retraining did not produce.
