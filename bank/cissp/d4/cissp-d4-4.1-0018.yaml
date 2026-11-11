@@ -1,0 +1,32 @@
+id: cissp-d4-4.1-0018
+subdomain: '4.1'
+difficulty: hard
+stem: A hospital's radiology workstations each have one network card on the corporate network and a second on the imaging
+  VLAN, so radiologists can reach the image archive server there. Malware that gained administrator rights on one workstation
+  through a phishing email scanned the imaging VLAN and infected two CT scanners. Which change BEST prevents a repeat?
+options:
+  A: Turn off IP forwarding between each workstation's two network interfaces
+  B: Remove the imaging card, routing workstations to the archive through a firewall
+  C: Host firewall rules allowing only archive traffic on each workstation's imaging card
+  D: Network access control on the imaging VLAN, admitting only registered devices
+answer: B
+explanation:
+  why_correct: A dual-homed host joins two segments, so whatever compromises it can reach both. Removing the second card
+    and sending archive traffic through a firewall that admits only the archive server means a compromised workstation
+    can no longer reach the scanners at all.
+  why_not:
+    A: Disabling forwarding stops the workstation routing other hosts' traffic between the networks, but here the malware
+      ran on the workstation itself and used its imaging card directly.
+    C: Host firewall rules would block the scan in normal use, but malware with administrator rights can change or turn
+      off the workstation's own firewall.
+    D: Network access control keeps unknown devices off the VLAN, but the infected workstation is a registered device and
+      would still be admitted.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-11-daily-cissp-check

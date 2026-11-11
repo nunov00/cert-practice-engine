@@ -1,0 +1,32 @@
+id: cissp-d1-1.9-0006
+subdomain: '1.9'
+difficulty: medium
+stem: At a hospital, nurses take controlled drugs from dispensing cabinets under their own sign-in, for patients in their
+  care. An investigation found that one nurse had taken doses for weeks that were never recorded as given. Night wards often
+  have a single nurse on duty. Which control BEST reduces this risk?
+options:
+  A: Cameras over each cabinet, with footage kept for 90 days for investigations
+  B: A second nurse to witness and co-sign each controlled-drug withdrawal
+  C: Daily matching of cabinet withdrawals against doses recorded as given, flagging gaps
+  D: Fingerprint sign-in at each cabinet, in place of the current badge and PIN
+answer: C
+explanation:
+  why_correct: The diversion leaves a trace in data the hospital already holds, a withdrawal with no matching dose given.
+    Matching the two each day flags the pattern within a day for any nurse on any shift, without needing extra staff on
+    the ward, and staff knowing it runs also deters.
+  why_not:
+    A: Cameras help an investigation once a case is suspected, but footage shows only that a nurse took drugs, which is
+      what their job requires, so it does not reveal that the doses were never given.
+    B: Witnessing is a strong preventive control where two nurses are present, but night wards often have only one, so
+      the co-signature would be skipped or signed without watching just when the risk is highest.
+    D: Biometric sign-in stops staff using each other's credentials, but this nurse used her own sign-in for her own
+      patients, so a stronger sign-in does not touch the diversion.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-cissp-check
+  options_only: not_obvious

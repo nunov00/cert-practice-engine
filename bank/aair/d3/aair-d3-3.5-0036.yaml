@@ -1,0 +1,32 @@
+id: aair-d3-3.5-0036
+subdomain: '3.5'
+difficulty: hard
+stem: A retailer is ending its contract with a vendor whose demand forecasting service was fine-tuned on sales data
+  exported each night from the retailer's own systems. The vendor serves other clients, including some of the retailer's
+  competitors, from the same platform. Which exit requirement is MOST important?
+options:
+  A: Return of the retailer's data in a usable format before exit
+  B: Certified deletion of the retailer's stored data at exit
+  C: An audit of the vendor's data deletion process after exit
+  D: Deletion of model weights and features built from its data
+answer: D
+explanation:
+  why_correct: The fine-tuned weights and derived features carry what was learned from the retailer's sales and
+    could keep being used on a platform that serves competitors. Requiring their deletion, not just deletion of
+    the raw data, removes the commercially sensitive knowledge the vendor would otherwise keep.
+  why_not:
+    A: Data return matters when the customer depends on the vendor's copy, but the data was exported from the retailer's
+      own systems, so the retailer already holds it.
+    B: Deleting stored data is the usual exit term, but it can leave the fine-tuned model in place, and that model
+      still reflects the retailer's sales patterns.
+    C: An audit checks that deletion happened as agreed, but if the agreed scope covers only stored data, the audit
+      would confirm a deletion that leaves the derived models behind.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aair-check
+  options_only: not_obvious

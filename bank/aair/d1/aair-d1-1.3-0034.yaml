@@ -1,0 +1,33 @@
+id: aair-d1-1.3-0034
+subdomain: '1.3'
+difficulty: medium
+stem: A bank's AI committee of senior executives must approve every new model and every model change. Its monthly
+  agenda now runs to about 70 items, mostly routine retrains, and grows each quarter. Minutes show high-risk items
+  get the same few minutes of discussion as the rest. Which change BEST strengthens oversight?
+options:
+  A: Meet twice a month so that each item gets more discussion time
+  B: Delegate low-tier changes to model risk staff under set criteria
+  C: Add an independent model risk expert as a voting member
+  D: Require a one-page risk summary for each item on the agenda
+answer: B
+explanation:
+  why_correct: The committee's attention is spread evenly across a growing volume of items, so high-risk decisions
+    get no more scrutiny than routine ones. Delegating low-tier changes to model risk staff under defined criteria
+    frees the committee to concentrate on the decisions that matter, and the criteria keep the delegated decisions
+    controlled.
+  why_not:
+    A: More meetings give more total time, but the agenda grows each quarter and the time would still be spread
+      evenly across routine and high-risk items. Senior executives' time does not scale with the volume.
+    C: An expert member can improve challenge, but with about 70 items a meeting there is still too little time
+      to apply it to the high-risk ones.
+    D: Summaries make each item quicker to read, but the committee would still handle every item, so the volume
+      and the even spread of attention remain.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aair
+  checked_by: 2026-11-11-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

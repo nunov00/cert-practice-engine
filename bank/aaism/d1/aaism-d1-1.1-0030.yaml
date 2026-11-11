@@ -1,0 +1,32 @@
+id: aaism-d1-1.1-0030
+subdomain: '1.1'
+difficulty: hard
+stem: A bank is designing a customer AI assistant to launch in 18 months. A draft AI rule, likely final in about a year, would
+  require such systems to log each interaction for later review. The logging clause is unchanged after two consultation rounds,
+  while other clauses have shifted. What should the security manager do?
+options:
+  A: Wait for the final text before committing any design effort to logging
+  B: Send the bank's view on logging to the next consultation round
+  C: Build logging into the design now, configurable as the text settles
+  D: Record the draft duty as a compliance risk for the owner to track
+answer: C
+explanation:
+  why_correct: The system launches after the rule is likely to take effect, and the logging clause has stayed stable while
+    others moved. Logging is cheap to design in and costly to retrofit, so building it now, with retention and content configurable,
+    meets the probable duty without betting on details that may still change.
+  why_not:
+    A: Waiting avoids rework on clauses still moving, but this clause has held through two rounds, and waiting a year leaves
+      logging to be retrofitted shortly before launch.
+    B: Responding to consultation can shape the rule, but the bank is not contesting logging, and comments do nothing to prepare
+      a system that launches after the rule applies.
+    D: Tracking the duty as a risk keeps it visible, but it leaves the design unchanged, and the cheapest point to build logging
+      in is passing now.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aaism-check
+  options_only: not_obvious

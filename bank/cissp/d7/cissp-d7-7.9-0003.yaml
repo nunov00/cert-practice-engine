@@ -1,0 +1,34 @@
+id: cissp-d7-7.9-0003
+subdomain: '7.9'
+difficulty: medium
+stem: A bank's change board meets weekly and reviews each production change. Engineers now skip it for routine work, and
+  audits found unrecorded changes. Most were certificate renewals, DNS records and firewall rules for new servers, about 60
+  a week, each done the same way from a written runbook and often carried out by the team leads themselves. Which change
+  BEST addresses this?
+options:
+  A: Have the change board approve routine changes by email between its weekly meetings
+  B: Detect unrecorded changes through configuration monitoring, raising each as an incident
+  C: Pre-approve these routine changes as standard changes run from their runbooks
+  D: Let team leads approve routine changes in their own area, outside the change board
+answer: C
+explanation:
+  why_correct: Low-risk changes done the same way each time from a tested procedure are what standard changes are for.
+    Approving the procedure once lets engineers make and record each instance without waiting, which removes the reason
+    to skip the process, keeps independent review of how the work is done, and frees the board for changes that need
+    judgment.
+  why_not:
+    A: Email approval cuts the wait, but the board would still approve some 60 identical changes a week one by one, which
+      soon becomes a rubber stamp on work a pre-approved procedure already controls.
+    B: Detecting unrecorded changes is a useful control, but it treats the symptom; the approval process would still be
+      slow enough to push engineers around it.
+    D: Delegating approval to team leads speeds things up, but the leads often make these changes themselves, so they
+      would be approving their own work.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-cissp-check
+  options_only: not_obvious

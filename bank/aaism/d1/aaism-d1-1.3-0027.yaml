@@ -1,0 +1,32 @@
+id: aaism-d1-1.3-0027
+subdomain: '1.3'
+difficulty: medium
+stem: A retailer's pricing model was built by a contractor who left last year. The business now wants to use it for a new
+  product line, but the team cannot say whether the model's original testing covered products of that kind, and the request
+  has stalled for months. Which control would MOST likely have prevented this?
+options:
+  A: A named technical owner recorded in the registry for each model in use
+  B: Peer review of each model's code by a second data scientist
+  C: Documented design choices, validation scope and limits per version
+  D: Retention of the code, data and settings behind each version
+answer: C
+explanation:
+  why_correct: The question the team cannot answer is what the model was validated for and where it should not be relied on.
+    Documentation of design choices, validation scope and known limits, kept with each registered version, holds that knowledge
+    with the asset, so it survives the departure of whoever built it.
+  why_not:
+    A: A named owner gives accountability, but the owner was in effect the contractor, and a new name in the registry does
+      not bring back what the testing covered.
+    B: Peer review spreads some knowledge of the code, but it checks how the model is built, not what it was validated for,
+      and what the reviewer learned is not recorded either.
+    D: Kept code and data would let the team rebuild the model and study its training data, but not reconstruct which product
+      types the original validation tested or what limits were set on its use.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aaism-check
+  options_only: not_obvious

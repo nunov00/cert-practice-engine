@@ -1,0 +1,32 @@
+id: aaism-d1-1.5-0030
+subdomain: '1.5'
+difficulty: easy
+stem: At 01:00 a retailer's chatbot began showing customers other people's addresses, cause unknown. The on-call security
+  analyst could have disabled it within minutes, but policy lets only the business owner take a customer service offline.
+  The owner, paged at 01:10, consulted the sales director first and agreed at 06:00. Which change BEST prevents a repeat?
+options:
+  A: A named deputy owner who can be reached overnight
+  B: Pre-agreed harm criteria under which on-call staff may suspend it
+  C: A switch that disables only the chatbot's lookups of customer addresses
+  D: Authority for the CISO to take AI services offline
+answer: B
+explanation:
+  why_correct: The delay came from the decision, not from reaching anyone or from technical ability. Agreeing in advance,
+    with the owner, the harm criteria under which on-call staff may suspend the service lets containment start within minutes,
+    while the owner still decides on restoring it.
+  why_not:
+    A: The owner was reached within ten minutes. A deputy adds availability, but the hours were lost while a decision was
+      made, which a deputy would face too.
+    C: A narrow switch reduces business impact, but the cause was not known, so disabling lookups might not stop the leak,
+      and the owner's approval would still be needed.
+    D: Moving authority to the CISO puts one more senior person in the path at night, who would also need waking and briefing,
+      rather than letting those on call act.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aaism-check
+  options_only: obvious

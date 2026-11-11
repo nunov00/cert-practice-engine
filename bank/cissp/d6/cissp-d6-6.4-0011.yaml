@@ -1,0 +1,33 @@
+id: cissp-d6-6.4-0011
+subdomain: '6.4'
+difficulty: easy
+stem: A retailer's quarterly scan reported 3,000 findings, and the team can fix about 100 this month. Its customer
+  database servers accept connections only from the application servers, which in turn accept them only from the web
+  servers facing the internet. Which group of findings should the report put FIRST for fixing?
+options:
+  A: Findings with a critical base score on the customer database servers
+  B: Findings on the known-exploited list on the internet-facing web servers
+  C: Findings with a critical base score on the internet-facing web servers
+  D: Findings on the known-exploited list on the customer database servers
+answer: B
+explanation:
+  why_correct: Two things drive the real risk here. The database servers can be reached only by going through the web and
+    application tiers, so the internet-facing servers are where an attack would start, and a flaw already being exploited
+    elsewhere is far more likely to be used than one that merely scores high. Fixing exploited flaws on the exposed tier
+    first removes the likeliest way in.
+  why_not:
+    A: The database holds the most valuable data, but it is reachable only through two other tiers, and a high base score
+      shows severity, not whether attackers are using the flaw.
+    C: Exposure is the right focus, but a critical base score does not show that the flaw is being exploited, and many
+      critical flaws are never used in attacks, while lower-scored exploited ones are.
+    D: Exploited flaws are the right focus, but on the database servers an attacker would first need a way through the web
+      and application tiers, so these are less likely to be reached this month.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-cissp-check
+  options_only: obvious

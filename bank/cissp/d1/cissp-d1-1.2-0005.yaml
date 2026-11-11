@@ -1,0 +1,33 @@
+id: cissp-d1-1.2-0005
+subdomain: '1.2'
+difficulty: medium
+stem: A genetics lab encrypts each study's data with a key held only on its lead researcher's PIN-protected hardware token,
+  as ethics approvals bar anyone outside a study team from reading the data. When a lead researcher left suddenly last year,
+  two years of results became unreadable. Each study team has three to eight members. Which key arrangement BEST fits?
+options:
+  A: Escrow each study key in the lab's key management service, released with IT approval
+  B: Escrow each study key with the lab director, in a sealed envelope opened on departure
+  C: Give each lead researcher a second token holding the key, kept in the lab's safe
+  D: Split each study key into shares, any two of which rebuild it, held by team members
+answer: D
+explanation:
+  why_correct: The lab must restore availability without weakening confidentiality. Splitting each key so that any two
+    team members can rebuild it means no single departure loses the data, while the key never sits with anyone outside
+    the study team, which is what the ethics approvals require. Needing two shares also stops one member recovering the
+    key alone.
+  why_not:
+    A: Central escrow in a key management service is common practice and solves availability, but it lets IT staff, who
+      are outside the study teams, release and so read the data, which the ethics approvals forbid.
+    B: Escrow with a senior officer is a familiar recovery route, but the lab director is outside the study teams, so
+      the arrangement breaches the ethics approvals in the same way.
+    C: A spare token guards against a lost or broken token, but it is unlocked with the same researcher's PIN, so when
+      that researcher leaves, the spare is as unusable as the original.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-11-daily-cissp-check

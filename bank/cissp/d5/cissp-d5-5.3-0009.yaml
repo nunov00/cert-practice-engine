@@ -1,0 +1,34 @@
+id: cissp-d5-5.3-0009
+subdomain: '5.3'
+difficulty: hard
+stem: A company's cloud applications trust sign-ins from its on-premises federation server, which signs each token with
+  a key kept on that server. Attackers who held domain administrator rights for several weeks copied the key and forged
+  tokens for any user, passing every MFA check. Which change BEST prevents a repeat?
+options:
+  A: Move sign-in to the cloud identity provider itself, retiring the federation server
+  B: Move the token-signing key into a hardware security module attached to the server
+  C: Rotate the token-signing certificate each month, publishing the new one to the apps
+  D: Require MFA at the federation server for each administrator who signs in to it
+answer: A
+explanation:
+  why_correct: The federation server sits inside a domain the attackers controlled, so any signing done there is in their
+    reach. Moving authentication to the cloud identity provider takes token signing out of the on-premises domain, so
+    domain administrator rights no longer let anyone mint tokens for the cloud applications, provided cloud
+    administration, provisioning, privileged recovery and any sign-in features that still trust on-premises keys (such
+    as Kerberos-based seamless sign-in) do not depend on that domain either.
+  why_not:
+    B: A hardware module stops the key being copied, but it signs for anyone allowed to call it, and attackers with
+      administrator rights on the server for weeks can ask it to sign whatever tokens they like.
+    C: Rotation limits how long a stolen key works, but attackers who hold the domain for weeks can take each new key as it
+      is issued.
+    D: MFA for administrators raises the bar for signing in to the server, but these attackers already held domain
+      administrator rights and forged tokens offline, so the MFA prompt is never reached.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-cissp-check
+  options_only: not_obvious

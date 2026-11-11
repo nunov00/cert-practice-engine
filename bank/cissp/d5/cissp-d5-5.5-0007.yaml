@@ -1,0 +1,32 @@
+id: cissp-d5-5.5-0007
+subdomain: '5.5'
+difficulty: medium
+stem: A firm reassigns a leaver's email address to a new hire with the same name after 90 days. One new hire began receiving
+  password-reset links and renewal invoices for cloud services that her predecessor had signed up for with that address,
+  some of them years ago and never recorded by IT. Mail is deleted after twelve months. Which change BEST prevents this?
+options:
+  A: Retire each leaver's address permanently, giving new hires a distinct one
+  B: Hold each leaver's address unused for two years before reassigning it
+  C: Forward each leaver's mail to their manager for a year after departure
+  D: Search each leaver's mailbox at exit for sign-ups, closing the accounts found
+answer: A
+explanation:
+  why_correct: An email address works as an identifier for every outside service registered with it, and the firm cannot
+    see all of those services. Never reusing an identifier means a new person can never inherit the old one's accounts,
+    whatever the leaver signed up for and however long ago.
+  why_not:
+    B: A longer quarantine reduces the volume of stray mail, but services signed up for years ago keep sending resets and
+      renewals, so whoever gets the address after two years still inherits them.
+    C: Forwarding helps the business catch mail it needs after a departure, but the address is still reassigned later, so
+      the new holder inherits the accounts as before.
+    D: Closing a leaver's outside accounts at exit is good practice, but mail is deleted after a year, so sign-ups older
+      than that leave no trace to find.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-11-daily-cissp-check

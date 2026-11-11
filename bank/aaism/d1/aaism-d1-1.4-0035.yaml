@@ -1,0 +1,32 @@
+id: aaism-d1-1.4-0035
+subdomain: '1.4'
+difficulty: medium
+stem: An AI security program can fund one training effort this year. Most of last year's AI incidents involved agents that
+  business staff built on the company's low-code platform, able to read whole mailboxes and drives for simple tasks. Security
+  reviews only agents that touch payment systems. Which training should the program fund?
+options:
+  A: Awareness training on AI risks for the whole workforce
+  B: Secure AI coding training for the IT department's developers
+  C: Agent threat training for the security team's reviewers
+  D: Agent design training for the platform's business makers
+answer: D
+explanation:
+  why_correct: The incidents came from how business makers set up agents, giving them far more access than their tasks needed,
+    and most of those agents never reach a security review. Training the makers on scoping what an agent can read and do reaches
+    the people making the decisions that caused the incidents.
+  why_not:
+    A: Broad awareness helps general hygiene, but it is too shallow to change how makers scope agent access, which is the
+      specific cause of most incidents.
+    B: Secure coding training suits professional developers, but these agents were built by business staff on a low-code platform,
+      not by IT.
+    C: Better reviewers would catch more in the agents they see, but reviews cover only payment-related agents, while most
+      incidents came from others.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aaism-check
+  options_only: not_obvious

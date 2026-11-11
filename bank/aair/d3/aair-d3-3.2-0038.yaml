@@ -1,0 +1,34 @@
+id: aair-d3-3.2-0038
+subdomain: '3.2'
+difficulty: medium
+stem: A lender's credit model approves recent immigrants far less often than other applicants, and the gap is above
+  appetite. Validation shows that it ranks applicants with short credit histories little better than chance. Before the
+  model, underwriters decided these applications with a similar gap. Which treatment is MOST appropriate?
+options:
+  A: Route short-history applicants to underwriters for a final decision
+  B: Retrain the model without the credit history length input
+  C: Let applicants add rent and utility payment records, with consent
+  D: Lower the approval cut-off for applicants with short histories
+answer: C
+explanation:
+  why_correct: 'The gap comes from too little information about these applicants: neither the model nor underwriters could
+    tell good from bad risks among people with thin credit files. Letting applicants add, with consent, other evidence
+    of paying regularly gives the decision something to assess. It can narrow the gap while keeping credit decisions
+    sound, once validation on representative applicants confirms that the added data improves ranking and group
+    outcomes.'
+  why_not:
+    A: Human review helps when people can judge what the model cannot, but underwriters produced a similar gap on the same
+      applications, so they have no better basis for deciding.
+    B: Removing an input helps when one feature drives a gap. Here the model has too little information to rank these
+      applicants, so dropping history length would not make it rank them better.
+    D: A lower cut-off would approve more of them, but the model cannot tell good from bad risks in this group, so it would
+      raise losses without making the decisions any better founded.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aair-check
+  options_only: not_obvious

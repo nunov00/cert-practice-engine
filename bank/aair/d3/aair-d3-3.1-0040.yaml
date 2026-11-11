@@ -1,0 +1,34 @@
+id: aair-d3-3.1-0040
+subdomain: '3.1'
+difficulty: hard
+stem: An insurer's AI model proposes a premium for each commercial property policy, and an underwriter reviews every
+  proposal on a screen showing the property's details, including a flood score licensed from a data vendor. The
+  model was trained on the same property data. The assessment rates residual risk as low, crediting the review.
+  Which risk scenario should the assessment MOST include?
+options:
+  A: Underwriters approve proposals hastily during quarter-end peaks
+  B: Claims patterns shift faster than the model is retrained
+  C: Underwriters defer to the proposed premium instead of judging it
+  D: An error in the vendor's flood data flows into issued premiums
+answer: D
+explanation:
+  why_correct: The low rating assumes the underwriter is an independent check, but the underwriter and the model
+    rely on the same vendor data. If the flood data is wrong, the model misprices and even an attentive underwriter
+    sees the same misleading figure, so the error reaches issued premiums. The assessment has not considered this
+    common cause.
+  why_not:
+    A: Rushed reviews at peaks are a real scenario, but they weaken the review only at certain times. A faulty shared
+      input defeats it even when underwriters work carefully.
+    B: Shifting claims patterns are a general model risk, but they do not challenge the review the low rating relies
+      on.
+    C: Automation bias is a strong candidate, but even underwriters who judge each proposal carefully would be misled
+      by the same vendor data, so the shared input is the deeper gap.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aair-check
+  options_only: not_obvious

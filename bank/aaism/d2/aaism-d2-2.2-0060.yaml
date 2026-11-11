@@ -1,0 +1,32 @@
+id: aaism-d2-2.2-0060
+subdomain: '2.2'
+difficulty: hard
+stem: Developers at a software firm add tool servers to their coding agents by installing them by name from a public
+  registry. The servers run on the developers' laptops as ordinary local programs, alongside their source code and cloud
+  credentials. Which threat should the threat model stress MOST?
+options:
+  A: Instructions planted in tool descriptions that steer the agent
+  B: Files the agent reads being sent to a remote tool operator
+  C: Malicious package code running with the developer's own rights
+  D: An agent calling more tools than the developer's task requires
+answer: C
+explanation:
+  why_correct: A package installed by name from a public registry and run as a local program executes whatever code it
+    contains with the developer's own rights. It can read source code and cloud credentials directly, without needing to
+    fool the model, so it is the widest and most direct path to compromise here.
+  why_not:
+    A: Tool-description injection is a real agent threat, but it works through the model and is limited to what the agent
+      can be talked into, while malicious package code acts directly on the laptop.
+    B: Exfiltration to a remote operator is possible, but it is one of the things malicious local code can do, and that code
+      needs no help from the agent to read and send files.
+    D: Excess tool use is a least-privilege concern, but it assumes the tools are benign. Here a tool could be hostile code
+      with the developer's full rights.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aaism-check
+  options_only: not_obvious

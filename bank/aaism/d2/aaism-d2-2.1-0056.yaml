@@ -1,0 +1,33 @@
+id: aaism-d2-2.1-0056
+subdomain: '2.1'
+difficulty: medium
+stem: A consumer tax-filing assistant suggests wrong deductions in about 3% of answers, above the risk owner's tolerance for
+  customer harm. Product proposes a prominent warning asking users to check each suggestion before filing, and records the
+  risk as treated. The tool is marketed to people filing without an accountant for the first time. What is the GREATEST concern
+  with this treatment?
+options:
+  A: The warning may not limit the firm's legal liability for errors
+  B: Users tend to stop noticing a warning that they see on each answer
+  C: The 3% error rate was measured on test questions before the launch
+  D: Users are unlikely to be able to check the deductions it suggests
+answer: D
+explanation:
+  why_correct: A warning only lowers harm if users can act on it. First-time filers without an accountant generally cannot
+    judge whether a deduction is valid, so the likelihood of harm hardly falls, and recording the risk as treated overstates
+    the reduction.
+  why_not:
+    A: Liability matters to the firm, but the tolerance is set for customer harm, which a warning that users cannot act on
+      does not reduce, whatever its legal effect.
+    B: Warning fatigue is real, but even users who read every warning could not verify the deductions, so the treatment fails
+      before habituation sets in.
+    C: Pre-launch measurement may be imprecise, but the concern raised is whether the treatment lowers the risk, and that
+      turns on what users can check, not on the estimate.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aaism-check
+  options_only: not_obvious

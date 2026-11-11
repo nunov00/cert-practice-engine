@@ -1,0 +1,32 @@
+id: aair-d1-1.4-0031
+subdomain: '1.4'
+difficulty: medium
+stem: Interviewers at a software firm suspect that candidates use AI coding assistants during live coding tests.
+  The firm's engineering standard requires developers to review and test any AI-generated code before they commit
+  it. The firm wants a fair and consistent interview procedure. What should the procedure BEST do?
+options:
+  A: Check recordings with AI-use detection software and review flags
+  B: Hold the final coding test in person at one of the firm's own offices
+  C: Have candidates declare in writing that they used no AI help
+  D: Allow the assistants and assess how candidates direct and check them
+answer: D
+explanation:
+  why_correct: 'The firm''s own standard shows that developers work with AI-generated code and are expected to review
+    and test it. Allowing assistants openly, under the same rules for everyone, removes the incentive to hide their
+    use and assesses a skill the job needs: directing the tool and checking what it produces.'
+  why_not:
+    A: AI-use detection is unreliable and can wrongly flag honest candidates, which makes the procedure less fair.
+      It also tests candidates without a tool the engineering standard assumes they will use.
+    B: In-person tests stop hidden help and are consistent, but they assess candidates without the tools the job
+      relies on, and they add travel cost and can disadvantage candidates who cannot attend.
+    C: A declaration sets an expectation but cannot be checked, so honest candidates are disadvantaged against those
+      who ignore it, and it still bans a tool the job relies on.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aair-check
+  options_only: not_obvious

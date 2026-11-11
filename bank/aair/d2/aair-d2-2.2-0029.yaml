@@ -1,0 +1,34 @@
+id: aair-d2-2.2-0029
+subdomain: '2.2'
+difficulty: medium
+stem: An asset manager's model forecasts inflation from economic indicators such as employment and retail sales, which
+  statistics offices often revise for months after first release. The team validated it with walk-forward backtests,
+  each trained only on earlier quarters, using the indicator values in today's database. Which change BEST makes the
+  test reflect live use?
+options:
+  A: Add backtests over past recessions and periods of high inflation
+  B: Compare the forecasts each quarter with published consensus forecasts
+  C: Rerun the backtests on the indicator values available at each forecast date
+  D: Test how the forecasts change when each indicator is perturbed slightly
+answer: C
+explanation:
+  why_correct: In live use the model sees only the estimates published by the forecast date, including any revisions to
+    earlier periods released by then, but the backtests used today's fully revised values. Rerunning the backtests on
+    point-in-time data, the values available at each forecast date after release lags, removes this look-ahead and shows
+    the accuracy the model can actually achieve.
+  why_not:
+    A: Stress periods are a useful addition, but they would still use revised data, so every backtest result, stressed or
+      not, would overstate live accuracy.
+    B: A benchmark against consensus helps judge whether the model adds value, but the comparison would rest on backtests
+      that used information unavailable at the time.
+    D: Sensitivity tests show how forecasts react to small changes in inputs, but revisions are not small random noise. The
+      backtests would still be scored on data the model will never see live.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aair
+  checked_by: 2026-11-11-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

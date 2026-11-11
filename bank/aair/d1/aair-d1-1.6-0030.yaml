@@ -1,0 +1,32 @@
+id: aair-d1-1.6-0030
+subdomain: '1.6'
+difficulty: medium
+stem: A motor insurer's renewal pricing model raises premiums most for the customers it predicts are least likely
+  to shop around. Long-standing customers, many of them older, now pay far more than new customers with the same
+  risk. Which change should the risk practitioner MOST recommend?
+options:
+  A: Limit renewal prices to what a new customer with the same risk pays
+  B: Show each renewing customer last year's price beside the new one
+  C: Exclude customers flagged as vulnerable from the price optimisation
+  D: Remind renewing customers each year to compare prices elsewhere
+answer: A
+explanation:
+  why_correct: 'The unfairness comes from what the model optimises: it charges people more because they are unlikely
+    to leave, not because they cost more to insure. Tying renewal prices to the price for an equivalent new customer
+    removes that loyalty penalty for everyone it affects.'
+  why_not:
+    B: Showing the price change is more transparent, but the model selects the customers least likely to act on
+      such information, so most would still pay the loyalty penalty.
+    C: Excluding vulnerable customers helps where the harm is confined to them. Here it falls on long-standing customers
+      in general, so customers who are not flagged would still pay more than new customers with the same risk.
+    D: Reminders encourage switching, but the model picks out precisely the customers who do not shop around, so
+      the unfair pricing stays in place for most of them.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aair-check
+  options_only: not_obvious

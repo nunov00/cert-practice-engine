@@ -1,0 +1,32 @@
+id: aaism-d2-2.1-0057
+subdomain: '2.1'
+difficulty: easy
+stem: A lender's AI model declines small loans automatically. The residual risk of wrong declines sits within the board's
+  appetite, so the owner wants to accept it as it stands. A new consumer rule requires that applicants refused by a fully
+  automated decision can obtain a human review, and the lender offers none. What should the security manager advise?
+options:
+  A: Accept the risk, as it sits within the board's approved appetite
+  B: Treat the review route as required, whatever the risk rating
+  C: Ask the board to accept the compliance gap explicitly in writing
+  D: Weigh the expected fines against the cost of a review route
+answer: B
+explanation:
+  why_correct: Risk appetite governs discretionary risks; it does not let the lender opt out of a legal duty. The human review
+    route is a requirement, so it has to be put in place whatever the residual rating, and the remaining risk of wrong declines
+    can then be accepted within appetite.
+  why_not:
+    A: The rating concerns wrong declines, but the rule's requirement applies regardless of how often declines are wrong,
+      so acceptance within appetite does not meet it.
+    C: Board acceptance is right for risks above appetite, but no level of the lender can accept a breach of a binding consumer
+      rule on its behalf.
+    D: Cost-benefit analysis suits discretionary treatments, but treating a legal duty as a priced option is non-compliance,
+      and regulators can go beyond fines.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aaism
+  check_verdict: fail
+  checked_by: 2026-11-11-daily-aaism-check
+  options_only: obvious

@@ -1,0 +1,33 @@
+id: aair-d1-1.2-0039
+subdomain: '1.2'
+difficulty: medium
+stem: A card issuer's fraud model was approved on the basis that its alert cut-off catches at least 85% of fraud
+  by value. Fraud operations sets the cut-off in its case system and adjusts it as staffing changes, sometimes several
+  times a week. Which change BEST aligns these processes?
+options:
+  A: Lock the cut-off in the model's own configuration under model change control
+  B: Have the model owner approve each cut-off change before it is applied
+  C: Agree a range of cut-offs that operations may set without further approval
+  D: Report detection at the cut-offs used to the risk committee each month
+answer: C
+explanation:
+  why_correct: Operations has a real need to flex the cut-off with staffing, and the approval rested on a detection
+    level. Agreeing in advance the range of cut-offs that still meets that level lets operations keep its flexibility
+    while every setting it uses stays within what the model was approved for.
+  why_not:
+    A: Locking the cut-off under change control suits a fixed operating point, but operations sets it to match staffing,
+      so a locked value would break that process or push teams to work around it.
+    B: Per-change approval keeps the owner informed, but with changes several times a week it adds a bottleneck
+      to routine staffing decisions and tends to become a formality, when the acceptable settings can be agreed
+      once.
+    D: Monthly reporting shows after the event whether detection fell below the approved level. It does not stop
+      operations from running at an unapproved cut-off in the meantime.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aair-check
+  options_only: not_obvious

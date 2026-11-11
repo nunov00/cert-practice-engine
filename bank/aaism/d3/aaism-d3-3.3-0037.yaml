@@ -1,0 +1,32 @@
+id: aaism-d3-3.3-0037
+subdomain: '3.3'
+difficulty: medium
+stem: A bank's data lake grants read access by role and data classification. Its credit modelling team has used survey
+  answers collected only for marketing as model features, and dozens of modelling projects start each month. Which
+  control BEST prevents a repeat?
+options:
+  A: A privacy review of each new model before it is trained
+  B: A data catalogue entry stating each dataset's collection purpose
+  C: Approval by the dataset owner before each new team is given read access
+  D: Purpose tags checked against each project's approved purpose at access
+answer: D
+explanation:
+  why_correct: Role and classification say who may see data and how sensitive it is, but not what it may be used for.
+    Tagging datasets with their permitted purposes and checking them against the purpose approved for each project's
+    workload when data is accessed, with tags carried onto exports and copies, enforces purpose limits automatically, at
+    the pace projects start.
+  why_not:
+    A: A privacy review would catch the misuse, but with dozens of projects a month it becomes a bottleneck or a rubber
+      stamp, and it relies on reviewers spotting each dataset's purpose.
+    B: Documenting the purpose helps people who look, but nothing stops a team with role access from using the data anyway.
+    C: Owner approval adds a check, but it does not scale to dozens of projects, and the credit team already reached the
+      data through its role.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-11-daily-aaism-check
+  options_only: not_obvious

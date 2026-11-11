@@ -1,0 +1,34 @@
+id: cissp-d7-7.2-0003
+subdomain: '7.2'
+difficulty: hard
+stem: During an investigation at a logistics firm, responders found that intruders holding domain administrator rights
+  had cleared the event logs on 40 servers. A collector pulls the servers' logs into the SIEM every six hours, and the
+  SIEM is run by a separate team whose accounts are outside the domain. Which change BEST preserves this evidence next
+  time?
+options:
+  A: Stream each server's events to the SIEM as they are written
+  B: Limit who can clear the servers' event logs through group policy
+  C: Hash each server's logs hourly, storing the hashes in the SIEM
+  D: Enlarge each server's local logs to hold 90 days of events
+answer: A
+explanation:
+  why_correct: Evidence is safe once it has left the host for a store the attacker cannot reach. Streaming events as they
+    are written moves them into the SIEM, run by accounts outside the compromised domain, within seconds, so clearing
+    the local logs later destroys nothing already delivered. Intruders could still stop forwarding, but the resulting
+    gap is itself visible evidence.
+  why_not:
+    B: Restricting log clearing is good hardening, but group policy is controlled by domain administrators, so intruders
+      with those rights can change it back.
+    C: Hashes show that logs were altered or deleted, but they cannot restore the events, so the investigators still lose
+      the evidence.
+    D: Larger local logs keep more history against rollover, but they stay on servers the intruders control and can be
+      cleared just as easily.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-11-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-11-daily-cissp-check
