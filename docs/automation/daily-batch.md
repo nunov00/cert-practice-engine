@@ -6,12 +6,13 @@ question pool size, add 10 questions; if all exams already have the ideal pool
 size, suggest a new exam, at the moment only security related." The owner also
 agreed to an independent Codex review between opening and merging.
 
-**Batch size: 50 questions per night, split evenly across the active exams
+**Batch size: 30 questions per night, split evenly across the active exams
 still under target** (owner: 50 on 2026-10-18, raised to 100 on 2026-10-19
 after the first night used about 3% of the plan allowance, back to 50 on
-2026-10-23 after the 2026-10-20 run hit the weekly usage limit), larger shares
-first to the exams furthest below target: with three exams that is 17, 17 and
-16; with one, all 50. The owner watches usage and may change it.
+2026-10-23 after the 2026-10-20 run hit the weekly usage limit, cut to 30 from
+2026-11-12: "Ok, let's reduce to 30 please", 2026-11-11), larger shares
+first to the exams furthest below target: with three exams that is 10 each;
+with two, 15 each; with one, all 30. The owner watches usage and may change it.
 **AAIG is paused** until ISACA publishes its outline, because its
 questions will need remapping to the real domains; a paused exam counts as at
 target for step 4.
@@ -51,7 +52,7 @@ published questions than the target.
    `status: published`, `check_verdict: pass` and `checked_by: <run-id>-check`,
    and leaves the list. One that fails the recheck leaves the list too and
    stays a draft; say why in the PR. The rest stay on the list for a later
-   night. Released drafts do not count toward the 50 new questions. Never
+   night. Released drafts do not count toward the 30 new questions. Never
    relabel one up to make room.
 4. **If every exam is at its target**, write no questions. Open (or update, if
    one is already open) one GitHub issue labelled `new-exam-suggestion`
@@ -60,7 +61,7 @@ published questions than the target.
    available for calibration, and the expected bank target. Building it waits
    for the owner. Go on to step 7 for the queue, then open the PR without
    questions.
-5. **Otherwise, split the night's 50 questions across the exams under target
+5. **Otherwise, split the night's 30 questions across the exams under target
    (AAIG excluded)** and write each exam's share, following
    [`generation.md`](generation.md), the writer brief and
    `recipes/<exam>/calibration.yaml`. Spread them over the domains furthest
@@ -68,7 +69,7 @@ published questions than the target.
    domains fill first. Run ID: `<YYYY-MM-DD>-daily-<exam>`. Number new
    questions above both the files in `bank/` and `bank/_reserved-ids.yaml`;
    when a question is deleted before merge, add its ID to that list in the same
-   PR. Never more than 50 in total per night, top-ups in step 6 aside.
+   PR. Never more than 30 in total per night, top-ups in step 6 aside.
    - **Read the subdomain first** (owner, 2026-10-26). Before writing into a
      subdomain, the writer reads every existing question in it in full (stem,
      options, key and explanations, drafts included), not just the stems, and
@@ -84,7 +85,7 @@ published questions than the target.
      are always downgrades, maybe aim for a larger percentage of hard?"). So
      every new question is first written as `hard`, and the questions whose
      label is lowered become the night's easy and medium ones:
-     1. **Hard pass.** Write the exam's whole share (17 of 17, 16 of 16) as
+     1. **Hard pass.** Write the exam's whole share (all 10 of 10 with three exams) as
         `hard` questions only, using the "Writing hard questions that stay
         hard" section of the writer brief, and send them through step 6 at
         once: the independent check, the strict hard-label check and the hard
