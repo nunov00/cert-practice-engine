@@ -1,0 +1,31 @@
+id: aaism-d2-2.3-0057
+subdomain: "2.3"
+difficulty: hard
+stem: A company installed smart cameras whose vendor AI analyses footage on the device. The vendor pushes model and
+  firmware updates from its cloud, and the cameras verify each update's signature before installing it. The cameras sit
+  on the main corporate network. Which control BEST reduces the risk from a compromise of the vendor's update service?
+options:
+  A: Require the vendor to sign updates with a hardware-protected key
+  B: Put the cameras on an isolated segment that can reach only the vendor's update service
+  C: Disable automatic updates and install each one after testing it
+  D: Require an independent assurance report on the vendor's update service each year
+answer: B
+explanation:
+  why_correct: If the update service is compromised, a signed malicious update will install anyway. Isolating the cameras
+    limits what a compromised camera can reach, protecting the corporate network whatever the update contains.
+  why_not:
+    A: The cameras already check signatures, and an attacker inside the update service may be able to sign, so stronger key
+      storage alone does not limit the impact.
+    C: Testing may catch obvious faults, but a well-built malicious update can pass functional tests and then reach the
+      corporate network.
+    D: An assurance report gives yearly confidence in the vendor's controls but does nothing when those controls are
+      bypassed.
+status: published
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-12-daily-aaism-check

@@ -20,7 +20,7 @@ explanation:
       broad or stale.
     D: Short-lived tokens limit how long one stolen token works, but the client secret is itself a static credential that
       can leak from code or configuration just as the key did, and whoever holds it can keep requesting fresh tokens.
-status: draft
+status: published
 outline_version: 2024-04-15
 sample: false
 provenance:
@@ -28,4 +28,4 @@ provenance:
   run_id: 2026-10-27-daily-cissp
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-11-11-daily-cissp-check
+  checked_by: 2026-11-12-daily-cissp-check

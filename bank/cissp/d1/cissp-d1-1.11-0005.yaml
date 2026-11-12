@@ -1,0 +1,31 @@
+id: cissp-d1-1.11-0005
+subdomain: "1.11"
+difficulty: hard
+stem: A company installs updates for its network monitoring software automatically. The software runs on servers with
+  broad network access. A peer firm recently received a malicious update from a similar vendor whose build system had
+  been compromised; the update carried the vendor's valid signature. Which control BEST limits the harm if this
+  company's vendor suffers the same attack?
+options:
+  A: Verify each update's digital signature before it is installed
+  B: Delay installing each update for 30 days to let others find problems
+  C: Require the vendor to attest that its build pipeline meets a secure build framework
+  D: Allow the monitoring servers outbound connections only to required destinations, and alert on others
+answer: D
+explanation:
+  why_correct: A trojanised update with a valid signature will install, so the control must limit what it can do
+    afterwards. Restricting and watching outbound traffic blocks the command channel such malware needs and exposes its
+    attempts.
+  why_not:
+    A: The malicious update carried a valid signature, so signature checks would accept it.
+    B: A delay helps only if others detect the compromise within 30 days; stealthy supply chain attacks have gone unnoticed
+      for months.
+    C: Attestation reduces the chance of a build compromise but does not limit the harm once one gets through.
+status: published
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-12-daily-cissp-check

@@ -1,0 +1,31 @@
+id: aair-d1-1.4-0032
+subdomain: "1.4"
+difficulty: medium
+stem: A company's AI policy requires staff to report AI incidents, such as harmful outputs or data shown to the wrong
+  person, to the risk team. In a year, only two reports arrived, yet surveys show many staff have seen such events and
+  did not know they counted. Staff raise IT problems daily through the company's service desk. Which change BEST
+  increases reporting?
+options:
+  A: Add an AI incident category, with examples, to the existing service desk
+  B: Set up a dedicated AI incident mailbox and promote it in the staff newsletter
+  C: Add a module on AI incident reporting to the annual compliance training
+  D: State in the policy that failing to report an AI incident is a disciplinary matter
+answer: A
+explanation:
+  why_correct: Staff did not know what counted, and they already use the service desk every day. Putting a category with
+    examples in that familiar channel addresses both causes at the point where staff act.
+  why_not:
+    B: A new mailbox adds a channel staff must remember and still does not show them what counts as an AI incident.
+    C: Annual training helps awareness, but it reaches staff once a year, far from the moment they see an event, and adds no
+      easy route to report.
+    D: The cause is not knowing what counts, not unwillingness, so a disciplinary threat adds fear without improving
+      recognition.
+status: published
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-12-daily-aair-check

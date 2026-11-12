@@ -1,0 +1,28 @@
+id: cissp-d7-7.15-0004
+subdomain: "7.15"
+difficulty: easy
+stem: A server room's doors use magnetic locks that are set to stay locked when power fails, so the room stays secure
+  during outages. A fire drill showed that staff inside could be trapped if a fire cut the power. The room must stay
+  secure during ordinary power cuts. Which change BEST meets both needs?
+options:
+  A: Change the locks to release whenever power fails
+  B: Add battery backup so the locks keep working through a power cut
+  C: Give facilities staff a mechanical override key to free trapped people
+  D: Release the locks on a fire alarm signal and fit an exit device that always opens from inside
+answer: D
+explanation:
+  why_correct: Life safety comes first, so people inside must always be able to leave. Free egress from inside, plus
+    release on a fire alarm, protects staff while entry from outside stays locked during ordinary outages.
+  why_not:
+    A: Releasing on every power failure protects people but leaves the room open during ordinary power cuts, which the stem
+      rules out.
+    B: Battery backup keeps the doors locked longer, which makes the risk to people trapped inside worse.
+    C: A key held by facilities depends on someone arriving in time, which cannot be relied on in a fire.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-cissp
+  check_verdict: pending
+  options_only: obvious

@@ -1,0 +1,27 @@
+id: cissp-d3-3.8-0004
+subdomain: "3.8"
+difficulty: easy
+stem: A company is choosing where to put a new data hall in its five-storey head office, which sits in an area that
+  floods every few decades. The ground floor faces a busy street with large windows, and the roof carries cooling plant.
+  Where should the data hall BEST be placed?
+options:
+  A: In the basement, which has no windows and a single entrance
+  B: On a middle floor, in an interior area away from exterior walls
+  C: On the ground floor, next to the loading dock for easy equipment delivery
+  D: On the top floor, directly below the rooftop cooling plant
+answer: B
+explanation:
+  why_correct: An interior middle-floor area avoids the flood risk below, water leaks and plant risks from the roof above,
+    and the street-facing exposure of the ground floor.
+  why_not:
+    A: A basement is easy to secure, but in an area that floods it is the first place water reaches.
+    C: Delivery is convenient, but the street-facing ground floor raises intrusion, vehicle and flood exposure.
+    D: The top floor avoids floods but sits under plant that can leak, and roofs are exposed to storm damage.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-cissp
+  check_verdict: pending
+  options_only: obvious

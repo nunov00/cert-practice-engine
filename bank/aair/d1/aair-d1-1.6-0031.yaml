@@ -1,0 +1,32 @@
+id: aair-d1-1.6-0031
+subdomain: "1.6"
+difficulty: hard
+stem: An HR team built a model that predicts which employees are likely to resign within six months, and it passed the
+  company's bias testing across protected groups. Managers propose using individual scores to decide who is offered
+  long-term projects and paid training. What should the risk practitioner recommend?
+options:
+  A: Limit the scores to team-level retention planning, not decisions about individuals
+  B: Show each employee their score and let them contest it before it is used
+  C: Repeat the bias testing each quarter while managers use the scores
+  D: Update the employee privacy notice to describe the new use of the scores
+answer: A
+explanation:
+  why_correct: The ethical harm is denying people opportunities for something they have not done, which can push them to
+    leave and make the prediction come true. Keeping scores at team level supports planning without penalising
+    individuals for a forecast.
+  why_not:
+    B: Contesting a score adds fairness to the process, but employees would still lose opportunities on the basis of a
+      prediction about them.
+    C: Bias testing addresses unequal treatment between groups, not the harm of acting on predicted behaviour, which affects
+      every group.
+    D: Transparency is needed but does not make it fair to withhold training from someone because a model expects them to
+      leave.
+status: published
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-12-daily-aair-check

@@ -1,9 +1,9 @@
 id: aaism-d2-2.2-0052
 subdomain: '2.2'
 difficulty: medium
-stem: Attackers used cloud keys leaked from developers' laptops and build logs to run costly hosted models in a firm's cloud
-  account, in regions it does not use. The firm calls models from one region, through two application roles. Which control
-  BEST prevents a repeat?
+stem: Attackers used cloud keys leaked from developers' laptops and build logs to run costly hosted models in a firm's
+  cloud account, in regions it does not use. The firm calls models from one region, through two application roles. Which
+  control BEST prevents a repeat?
 options:
   A: Scan code repositories for cloud keys before each commit
   B: Alert when model spending in any region rises above normal
@@ -11,14 +11,16 @@ options:
   D: Rotate every developer's cloud access keys each 30 days
 answer: C
 explanation:
-  why_correct: Model abuse with stolen keys works because ordinary developer identities can call costly models anywhere. An
-    account-level policy that allows model use only to the two application roles, in the one region they use, makes any leaked
-    developer key useless for this purpose, however it leaked.
+  why_correct: Model abuse with stolen keys works because ordinary developer identities can call costly models anywhere.
+    An account-level policy that allows model use only to the two application roles, in the one region they use, makes
+    any leaked developer key useless for this purpose, however it leaked.
   why_not:
-    A: Repository scanning stops one common leak, but these keys leaked from laptops and build logs, which it does not cover.
-    B: Spending alerts limit how long an abuse runs, but they fire after costs have been incurred, and the attacker can return
-      with another key.
-    D: Rotation shortens how long a leaked key works, but attackers use leaked keys within hours, well inside a 30-day cycle.
+    A: Repository scanning stops one common leak, but these keys leaked from laptops and build logs, which it does not
+      cover.
+    B: Spending alerts limit how long an abuse runs, but they fire after costs have been incurred, and the attacker can
+      return with another key.
+    D: Rotation shortens how long a leaked key works, but attackers use leaked keys within hours, well inside a 30-day
+      cycle.
 status: draft
 outline_version: '2025-08-19'
 sample: false
@@ -27,4 +29,4 @@ provenance:
   run_id: 2026-11-07-daily-aaism
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-11-11-daily-aaism-check
+  checked_by: 2026-11-12-daily-aaism-check

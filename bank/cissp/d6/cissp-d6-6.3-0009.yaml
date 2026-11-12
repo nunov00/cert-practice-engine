@@ -1,0 +1,28 @@
+id: cissp-d6-6.3-0009
+subdomain: "6.3"
+difficulty: medium
+stem: A CISO wants to know whether the endpoint detection and response agent is running on every company laptop. The EDR
+  console lists 4,800 healthy agents. Most staff work from home and rarely connect to the office network, and every
+  company laptop signs in to the company's identity provider each day. Which data BEST answers the question?
+options:
+  A: Devices that signed in to the identity provider in the last 30 days, matched against the EDR list
+  B: Hosts found by vulnerability scans of the office subnets, matched against the EDR list
+  C: The EDR console's share of agents reporting as healthy
+  D: Laptops recorded as bought in procurement records, matched against the EDR list
+answer: A
+explanation:
+  why_correct: The question is about laptops without the agent, which the EDR console cannot see. Identity provider
+    sign-ins cover every laptop in active use, wherever it is, so matching them against the EDR list reveals the gaps.
+  why_not:
+    B: Office subnet scans miss the many laptops that work from home and rarely connect there.
+    C: The console only knows laptops that already run the agent, so its healthy share cannot reveal laptops without one.
+    D: Procurement records include laptops in storage or disposed of, so mismatches mix real gaps with noise.
+status: published
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-12-daily-cissp-check

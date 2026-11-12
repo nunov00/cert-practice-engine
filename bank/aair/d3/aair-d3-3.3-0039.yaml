@@ -1,0 +1,32 @@
+id: aair-d3-3.3-0039
+subdomain: "3.3"
+difficulty: easy
+stem: An HR assistant answers staff questions from documents indexed by a service account that can read every HR folder.
+  Testers found it quoted salary review papers to staff who cannot open those files. Managers rely on it to answer
+  questions about their own teams' pay bands, which come from the same papers, and folder permissions differ by team.
+  Which control BEST addresses the risk?
+options:
+  A: Remove the salary review folders from the assistant's index
+  B: Filter retrieved passages by the asking user's own file permissions
+  C: Instruct the assistant in its system prompt to refuse pay questions from non-managers
+  D: Block answers containing salary figures with a data loss prevention rule
+answer: B
+explanation:
+  why_correct: The leak comes from retrieval running with the service account's rights. Checking each passage against the
+    asking user's own permissions before the model sees it keeps managers' answers working while staff only get content
+    they could open themselves, team by team.
+  why_not:
+    A: Removing the folders stops the leak but also removes the content managers need for their pay band questions, so it
+      defeats the purpose of the assistant.
+    C: A prompt instruction is a soft control that users can talk around, and a manager-or-not rule does not match the
+      per-team folder permissions.
+    D: A blanket output rule would also block the salary figures managers are entitled to see, and figures written in words
+      or ranges can slip past it.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-aair
+  check_verdict: pending
+  options_only: obvious

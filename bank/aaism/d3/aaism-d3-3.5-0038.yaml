@@ -1,9 +1,9 @@
 id: aaism-d3-3.5-0038
 subdomain: '3.5'
 difficulty: easy
-stem: An IT helpdesk agent acts on ticket text that anyone in the company can write. It holds standing domain administrator
-  rights so that it can reset executives' passwords, a task it performs about twice a month. Which control BEST reduces the
-  risk from these rights?
+stem: An IT helpdesk agent acts on ticket text that anyone in the company can write. It holds standing domain
+  administrator rights so that it can reset executives' passwords, a task it performs about twice a month. Which control
+  BEST reduces the risk from these rights?
 options:
   A: SOC alerts on each administrator action the agent takes
   B: Reset rights only, granted per approved task, then removed
@@ -11,10 +11,11 @@ options:
   D: A quarterly review confirming the agent still needs the rights
 answer: B
 explanation:
-  why_correct: 'The agent needs reset power for a few minutes twice a month but holds full domain administrator rights permanently, while
-    taking instructions from text anyone can write. Granting only the password-reset right for an approved task and removing
-    it afterwards applies least privilege and least standing privilege together: a manipulated agent has no administrator
-    power the rest of the time, never more than a reset when it does, and each use is tied to a human decision.'
+  why_correct: 'The agent needs reset power for a few minutes twice a month but holds full domain administrator rights
+    permanently, while taking instructions from text anyone can write. Granting only the password-reset right for an
+    approved task and removing it afterwards applies least privilege and least standing privilege together: a
+    manipulated agent has no administrator power the rest of the time, never more than a reset when it does, and each
+    use is tied to a human decision.'
   why_not:
     A: Alerts help investigation, but an administrator action such as a reset takes effect before analysts can respond, so
       they detect misuse rather than prevent it.
@@ -29,4 +30,4 @@ provenance:
   run_id: 2026-11-02-daily-aaism
   check_verdict: pass
   options_only: obvious
-  checked_by: 2026-11-11-daily-aaism-check
+  checked_by: 2026-11-12-daily-aaism-check

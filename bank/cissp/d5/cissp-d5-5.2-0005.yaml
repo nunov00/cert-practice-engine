@@ -17,8 +17,8 @@ explanation:
   why_not:
     A: Certificate sign-in is also bound to the real connection and resists relaying, but it covers only company laptops
       with card readers, so staff phished on their own phones would still hand over a session.
-    C: Hardware tokens remove reliance on the phone, but the user types the code into the proxy page, which relays it to
-      the real site in time, so the attacker still gets the session.
+    C: Hardware tokens remove reliance on the phone, but the user types the code into the proxy page, which relays it to the
+      real site in time, so the attacker still gets the session.
     D: Passwordless phone sign-in adds context to the prompt, but the user still approves a sign-in that the proxy relays
       from the real page, and the location shown is easy to overlook, so the attacker still receives the session.
 status: draft
@@ -28,5 +28,5 @@ provenance:
   generated_by: claude
   run_id: 2026-10-27-daily-cissp
   check_verdict: pass
-  checked_by: 2026-11-11-daily-cissp-check
-  options_only: not_obvious
+  options_only: obvious
+  checked_by: 2026-11-12-daily-cissp-check

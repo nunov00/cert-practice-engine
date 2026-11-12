@@ -1,0 +1,29 @@
+id: aair-d2-2.1-0034
+subdomain: "2.1"
+difficulty: easy
+stem: A health insurer is designing a model to choose members for a care management programme, using next year's medical
+  spending as the target, as that data is readily available. Members in rural areas spend less than urban members with
+  the same illnesses, because they have less access to care. Which prediction target BEST addresses this?
+options:
+  A: Number of active chronic conditions next year
+  B: Medical spending next year, adjusted for regional prices of care
+  C: Number of outpatient visits next year
+  D: Medical spending next year, with separate models for rural and urban members
+answer: A
+explanation:
+  why_correct: Spending understates rural need because access to care shapes it. A target that measures illness directly,
+    such as active chronic conditions, scores equally ill members alike wherever they live.
+  why_not:
+    B: Price adjustment corrects for care costing different amounts in different places, not for rural members using less
+      care, so their need is still understated.
+    C: Outpatient visits also depend on access to care, so they carry the same bias as spending.
+    D: Separate models rank members within each group, but selection still compares predicted spending across groups, which
+      stays lower for rural members with the same need.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-aair
+  check_verdict: pending
+  options_only: obvious
