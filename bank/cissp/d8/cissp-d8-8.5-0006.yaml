@@ -5,15 +5,15 @@ stem: Testers ran code on a Java service by sending a crafted session cookie, wh
   platform's native object deserialisation. Several other services also accept serialised objects from browsers and from
   partner systems, and new libraries are added often. Which rule should the secure coding standard set?
 options:
-  A: Sign each serialised object with an HMAC and check it before deserialising
-  B: Exchange data across trust boundaries only in data-only formats such as JSON, validated against a schema
-  C: Deserialise only classes on an approved allow-list for each service
-  D: Remove known vulnerable libraries from the class path before each release
+  A: Sign each serialised object with an HMAC and verify it before deserialising
+  B: Accept only plain data formats, schema-validated, with polymorphic typing off
+  C: Deserialise only classes on an approved allow-list kept for each service
+  D: Scan for and remove known gadget-chain libraries from the class path each release
 answer: B
 explanation:
-  why_correct: Native deserialisation of untrusted input lets attackers drive code through any class on the path. A
-    data-only format with schema validation removes object creation from the trust boundary entirely, whatever libraries
-    are added later.
+  why_correct: Native deserialisation of untrusted input lets attackers drive code through any class on the path. Parsing
+    input across trust boundaries only into inert data, such as schema-validated JSON with polymorphic type handling
+    disabled, removes object construction from the boundary, whatever libraries are added later.
   why_not:
     A: Signing blocks tampering only while every key stays secret, and partners producing objects would need the key, so one
       leak reopens the flaw.

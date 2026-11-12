@@ -1,18 +1,21 @@
 id: aaism-d1-1.2-0031
 subdomain: "1.2"
 difficulty: medium
-stem: A company's security policy says AI may not make final decisions on security events. Its SOC piloted an AI
-  assistant that closes low-severity alerts on its own, under a six-month exception. Over a year of sampled closures, it
-  matched analysts 99.5% of the time, and the SOC wants to keep it permanently. What should the security manager do?
+stem: A company's security policy, owned by the CISO, says AI may not make final decisions on security events. Its SOC
+  piloted an AI assistant that closes low-severity alerts on its own, under a six-month exception the CISO has since
+  renewed once. Over the year, sampled closures matched analysts 99.5% of the time, and a review of its wrong closures
+  by alert class found them within the tolerance the CISO set. The SOC wants to keep it permanently. What should the
+  security manager do?
 options:
   A: Renew the exception for another six months and keep sampling
-  B: Revise the policy to allow autonomous closure for defined alert classes, with ongoing sampling
-  C: Keep the policy and have analysts confirm each closure the assistant proposes
-  D: Let the assistant lower alert priority instead of closing alerts
+  B: Have the policy amended to allow it for the reviewed alert classes
+  C: Keep the policy and have analysts confirm each proposed closure
+  D: Let the assistant lower alert priority instead of closing the alerts
 answer: B
 explanation:
-  why_correct: A permanent, evidenced need is a reason to change the policy through its owner, not to stretch an
-    exception. Defining which alerts qualify and keeping sampling preserves the policy's intent while allowing the use.
+  why_correct: A permanent, evidenced need is a reason to change the policy through its owner, not to stretch an exception
+    again. The owner has already judged the wrong closures by class against a set tolerance, so amending the policy for
+    those classes, with sampling kept as a condition, preserves its intent while allowing the use.
   why_not:
     A: Repeated exceptions for a permanent use hollow out the policy and leave the rule out of step with practice.
     C: Confirming every low-severity closure removes the benefit and invites rubber-stamping, given the volume involved.

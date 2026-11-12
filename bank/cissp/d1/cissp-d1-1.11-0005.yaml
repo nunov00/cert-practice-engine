@@ -6,15 +6,16 @@ stem: A company installs updates for its network monitoring software automatical
   been compromised; the update carried the vendor's valid signature. Which control BEST limits the harm if this
   company's vendor suffers the same attack?
 options:
-  A: Verify each update's digital signature before it is installed
-  B: Delay installing each update for 30 days to let others find problems
+  A: Verify each update's digital signature against the vendor's key before install
+  B: Hold each update for 30 days so other customers can find problems first
   C: Require the vendor to attest that its build pipeline meets a secure build framework
-  D: Allow the monitoring servers outbound connections only to required destinations, and alert on others
+  D: Limit the servers' outbound traffic to needed destinations and alert on the rest
 answer: D
 explanation:
   why_correct: A trojanised update with a valid signature will install, so the control must limit what it can do
-    afterwards. Restricting and watching outbound traffic blocks the command channel such malware needs and exposes its
-    attempts.
+    afterwards. Restricting outbound traffic limits where it can send data or take commands from, and alerting on
+    blocked attempts makes it visible early. It cannot stop local damage or abuse of allowed destinations, but it is the
+    only option that reduces harm once the update is in.
   why_not:
     A: The malicious update carried a valid signature, so signature checks would accept it.
     B: A delay helps only if others detect the compromise within 30 days; stealthy supply chain attacks have gone unnoticed
