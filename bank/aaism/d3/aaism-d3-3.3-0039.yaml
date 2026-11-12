@@ -1,0 +1,29 @@
+id: aaism-d3-3.3-0039
+subdomain: "3.3"
+difficulty: easy
+stem: Data scientists at an insurer export claims data from its governed data lake into notebook workspaces to build
+  model features. A review found 300 such copies, many owned by people who have left. Two cleanup drives each deleted
+  hundreds of copies, and within months the count was back. Which control BEST addresses this?
+options:
+  A: Scan workspaces with data loss prevention and delete copies older than 90 days
+  B: Register each export with an owner and an expiry date before it is allowed
+  C: Let notebooks query the lake in place through governed views, with export disabled
+  D: Route exports through a service that deletes each copy after 30 days
+answer: C
+explanation:
+  why_correct: Copies return after every cleanup because work depends on exporting. Giving notebooks governed in-place
+    access removes the need for copies, so the lake's controls keep applying to the data.
+  why_not:
+    A: Automated cleanup repeats the drives that already failed to stop new copies, and copies stay exposed for up to 90
+      days.
+    B: Registration adds ownership and expiry, but copies are still made and held outside the lake's access controls.
+    D: Automatic expiry limits how long each copy lives, but analysts still export, so copies keep sitting outside the
+      lake's access controls for up to 30 days each.
+status: draft
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-aaism
+  check_verdict: pending
+  options_only: obvious

@@ -1,0 +1,28 @@
+id: cissp-d3-3.7-0005
+subdomain: "3.7"
+difficulty: easy
+stem: Sensors encrypt readings with AES-GCM under a key installed at manufacture. Each sensor takes its 96-bit nonce
+  from a counter held in memory, which restarts at zero when the sensor reboots, and sensors reboot after power cuts.
+  Which change BEST addresses the resulting weakness?
+options:
+  A: Move from a 128-bit to a 256-bit AES key
+  B: Add an HMAC-SHA256 tag over each GCM ciphertext
+  C: Ensure nonces never repeat under a key, for example by deriving a fresh key at each boot
+  D: Replace each sensor's key every 30 days through a key update message
+answer: C
+explanation:
+  why_correct: After each reboot the sensor reuses nonces under the same key, which in GCM exposes the XOR of plaintexts
+    and lets an attacker forge tags. Guaranteeing unique nonces per key, such as a fresh key per boot, removes the
+    cause.
+  why_not:
+    A: Nonce reuse breaks GCM regardless of key length, so a longer key leaves the weakness intact.
+    B: An extra HMAC can restore integrity, but repeated keystream still reveals relationships between plaintexts.
+    D: Monthly rotation limits how long one key is exposed, but each power cut within the month still repeats nonces.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-cissp
+  check_verdict: pending
+  options_only: obvious

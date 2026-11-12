@@ -2,8 +2,8 @@ id: cissp-d4-4.1-0008
 subdomain: "4.1"
 difficulty: easy
 stem: Two offices will be linked over the internet by their gateways. The link must encrypt traffic, hide each office's
-  internal addresses from anyone on the path, and work through a carrier-grade NAT in front of one office. Which IPsec
-  configuration fits?
+  internal addresses from anyone on the path, and work through a carrier-grade NAT in front of one office, whose gateway
+  will start the tunnel. Which IPsec configuration fits?
 options:
   A: AH in tunnel mode, with NAT traversal
   B: ESP in transport mode, with NAT traversal
@@ -12,7 +12,8 @@ options:
 answer: C
 explanation:
   why_correct: ESP provides encryption, and tunnel mode wraps the whole original packet, internal addresses included,
-    inside a new packet between the gateways. NAT traversal carries ESP inside UDP so it passes the carrier-grade NAT.
+    inside a new packet between the gateways. NAT traversal carries ESP inside UDP so it passes the carrier-grade NAT,
+    with the gateway behind the NAT starting the tunnel and sending keepalives so the NAT mapping stays open.
   why_not:
     A: AH authenticates packets but does not encrypt them, and its integrity check covers address fields that NAT rewrites,
       so it fails through NAT.
@@ -20,7 +21,7 @@ explanation:
       visible on the path. It does not suit a gateway-to-gateway link.
     D: AH gives no encryption, leaves the original header in place in transport mode, and breaks when NAT changes the
       addresses it protects.
-status: draft
+status: published
 outline_version: 2024-04-15
 sample: false
 provenance:
@@ -28,4 +29,4 @@ provenance:
   run_id: 2026-10-27-daily-cissp
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-11-11-daily-cissp-check
+  checked_by: 2026-11-12-daily-cissp-check

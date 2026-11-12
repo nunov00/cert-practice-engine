@@ -1,0 +1,30 @@
+id: cissp-d4-4.2-0021
+subdomain: "4.2"
+difficulty: medium
+stem: A tester on an office user VLAN intercepted colleagues' traffic by sending forged ARP replies that claimed the
+  default gateway's address. Every switch port already authenticates devices with 802.1X, and the tester used a genuine
+  company laptop. Addresses on the VLAN are assigned by DHCP. Which control BEST prevents this attack?
+options:
+  A: Enable dynamic ARP inspection, backed by DHCP snooping, on the access switches
+  B: Limit each switch port to one learned MAC address with port security
+  C: Isolate user ports from each other with private VLANs
+  D: Move each department to its own smaller VLAN
+answer: A
+explanation:
+  why_correct: The attack uses forged ARP replies from an authorised device. Dynamic ARP inspection checks each ARP reply
+    against the DHCP snooping bindings and drops replies that claim another host's address, stopping the interception.
+  why_not:
+    B: Port security limits MAC addresses per port, but the tester used the laptop's own MAC; forged ARP replies do not need
+      another MAC.
+    C: Private VLANs stop the tester sending forged replies to colleagues, but the tester can still poison the gateway's own
+      ARP cache, so traffic towards colleagues is still redirected through the laptop.
+    D: Smaller VLANs reduce how many colleagues share a broadcast domain, but an attacker in each still intercepts traffic
+      in it.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-cissp
+  check_verdict: pending
+  options_only: not_obvious

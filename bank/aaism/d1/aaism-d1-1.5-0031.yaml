@@ -1,0 +1,30 @@
+id: aaism-d1-1.5-0031
+subdomain: "1.5"
+difficulty: medium
+stem: An AI writing service's provider notifies a company of a breach in a logging subsystem that held customer prompts
+  for a two-week window. The company's privacy law requires notifying the regulator within 72 hours of becoming aware of
+  a personal data breach. Different teams use the service, and some include customer names in prompts. What should the
+  security manager do FIRST?
+options:
+  A: Notify the regulator now with what is known and update later
+  B: Suspend use of the service until the provider closes the breach
+  C: Use the company's own gateway logs to find which prompts in the window held personal data
+  D: Invoke the contract's audit right to inspect the provider's logging subsystem
+answer: C
+explanation:
+  why_correct: Whether the company must notify, and about whom, depends on what personal data its prompts contained in the
+    window. Its own logs answer that quickly and inside the 72 hours, which drives every next step.
+  why_not:
+    A: Notifying early is allowed, but without knowing whether personal data was involved the company cannot say what or
+      whom to report.
+    B: Suspension may be wise, but the breach is in a past window, so it does not establish the facts the 72-hour clock
+      needs.
+    D: An audit takes weeks and examines the provider's controls, not which of the company's data was exposed.
+status: draft
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-aaism
+  check_verdict: pending
+  options_only: not_obvious

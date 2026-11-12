@@ -1,10 +1,10 @@
 id: cissp-d2-2.3-0006
 subdomain: '2.3'
 difficulty: medium
-stem: A drug maker's asset inventory is fed by the endpoint agent on each device. Ransomware entered through a laboratory
-  instrument PC that was missing from the inventory and had never been patched. Instrument PCs run vendor-locked builds whose
-  validation lapses if any software is added, and researchers often buy instruments on research grants and move them between
-  labs. Which change BEST addresses this?
+stem: A drug maker's asset inventory is fed by the endpoint agent on each device. Ransomware entered through a
+  laboratory instrument PC that was missing from the inventory and had never been patched. Instrument PCs run
+  vendor-locked builds whose validation lapses if any software is added, and researchers often buy instruments on
+  research grants and move them between labs. Which change BEST addresses this?
 options:
   A: Passive network discovery, with each unknown device recorded and given an owner
   B: Network access control that blocks devices on which no endpoint agent reports
@@ -13,16 +13,16 @@ options:
 answer: A
 explanation:
   why_correct: Passive discovery watches the network for devices without installing anything on them, so it finds
-    instrument PCs that cannot run the agent, wherever they were bought and whichever lab they are in. Recording each one
-    with an owner brings it under patching and risk decisions.
+    instrument PCs that cannot run the agent, wherever they were bought and whichever lab they are in. Recording each
+    one with an owner brings it under patching and risk decisions.
   why_not:
     B: Network access control is a good way to keep unmanaged devices off a network, but instrument PCs cannot take the
       agent without losing validation, so it would block the instruments the labs depend on.
-    C: A physical audit can find unknown devices, but instruments are bought and moved often, so a yearly check leaves
-      new ones unrecorded and unpatched for months.
-    D: Recording assets at delivery is sound practice, but instruments bought on research grants bypass central
-      purchasing, and the rule does nothing for the PCs already missing from the inventory.
-status: draft
+    C: A physical audit can find unknown devices, but instruments are bought and moved often, so a yearly check leaves new
+      ones unrecorded and unpatched for months.
+    D: Recording assets at delivery is sound practice, but instruments bought on research grants bypass central purchasing,
+      and the rule does nothing for the PCs already missing from the inventory.
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
@@ -30,4 +30,4 @@ provenance:
   run_id: 2026-11-11-daily-cissp
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-11-11-daily-cissp-check
+  checked_by: 2026-11-12-daily-cissp-check

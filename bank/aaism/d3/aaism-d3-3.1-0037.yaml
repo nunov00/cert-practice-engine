@@ -1,0 +1,29 @@
+id: aaism-d3-3.1-0037
+subdomain: "3.1"
+difficulty: easy
+stem: A bank's assistant, which can move money between a customer's own accounts, sends each prompt through a content
+  safety service before the model. At peak load the service times out on about 2% of requests, and the gateway then
+  forwards them unchecked to keep replies fast. Testers found that very long prompts reliably cause the timeout. Which
+  change BEST addresses the risk?
+options:
+  A: Scale the safety service so it has capacity for peak load
+  B: Log requests that skip the check and review them each day
+  C: Have the gateway reject a request with a retry message when the check times out
+  D: Cache safety verdicts so repeated prompts skip a new check
+answer: C
+explanation:
+  why_correct: The flaw is that the gateway fails open, and attackers can trigger the timeout at will. Failing closed
+    means a request that could not be checked never reaches a model that can move money.
+  why_not:
+    A: More capacity reduces load-driven timeouts, but very long prompts still trigger them, and the gateway would still
+      forward those unchecked.
+    B: Daily review finds bypasses after the model has acted on them, which is too late when it can move money.
+    D: Caching speeds repeated prompts but does nothing for new, very long prompts crafted to time out.
+status: draft
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-aaism
+  check_verdict: pending
+  options_only: obvious

@@ -16,8 +16,6 @@ held:
   # PR #65, merge run
   # PR #67 (daily batch 2026-10-27), batch run: passed the independent check,
   # held because too few hard labels survived the strict hard-label check
-  - { id: cissp-d4-4.1-0008, pr: 67 }
-  - { id: cissp-d4-4.3-0008, pr: 67 }
   - { id: cissp-d5-5.2-0005, pr: 67 }
   - { id: cissp-d6-6.1-0004, pr: 67 }
   # PR #67, merge run: hard share after Codex and the final review lowered or
@@ -73,7 +71,6 @@ held:
   # because the strict hard-label check left CISSP 4 and AAISM 5 hard, which
   # carry only 9 and 11 non-hard (the most options-guessable go back first)
   - { id: cissp-d6-6.4-0011, pr: 83 }
-  - { id: cissp-d2-2.3-0006, pr: 83 }
   - { id: cissp-d8-8.5-0005, pr: 83 }
   - { id: cissp-d7-7.9-0003, pr: 83 }
   - { id: cissp-d1-1.4-0005, pr: 83 }
@@ -93,3 +90,10 @@ held:
   # gateway to initiate and keep the mapping), cissp-d6-6.2-0010 (state that the
   # appliances expose authenticated inventory data). aaism-d2-2.2-0059 was
   # dropped as a duplicate of aaism-d3-3.2-0017 and is not on this list.
+  # Daily batch 2026-11-12, batch run: rechecked 15 held drafts. Released
+  # cissp-d2-2.3-0006, cissp-d4-4.1-0008 (Codex NAT-T fix applied) and
+  # cissp-d4-4.3-0008 within CISSP's hard share. The rest passed but stay held
+  # (no room). The check rated these obvious from the options alone, so rework a
+  # distractor before release: aaism-d3-3.2-0026 (B is a straw man, A and C near
+  # twins), aaism-d3-3.5-0038, cissp-d5-5.2-0005 ("laptops and phones alike"
+  # telegraphs the key), cissp-d6-6.4-0011, cissp-d8-8.5-0005 ("atomic" names the fix).

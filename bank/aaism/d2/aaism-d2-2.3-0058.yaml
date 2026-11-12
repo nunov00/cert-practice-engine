@@ -1,0 +1,28 @@
+id: aaism-d2-2.3-0058
+subdomain: "2.3"
+difficulty: easy
+stem: Dozens of development teams independently install an open-source AI agent framework, which updates weekly. A
+  review found that its default settings send traces, including prompt text, to the project's hosted analytics service.
+  Which response BEST controls this?
+options:
+  A: Ask each team to switch off telemetry in its framework settings
+  B: Block the analytics endpoint at the egress proxy and set telemetry off in the base image
+  C: Assess the project's privacy policy for the analytics service
+  D: Fork the framework and remove the telemetry code from the fork
+answer: B
+explanation:
+  why_correct: With many teams and weekly updates, the control must not rely on each install. Blocking the endpoint and
+    setting the default centrally stops prompts leaving whatever any team or update does.
+  why_not:
+    A: Relying on dozens of teams to change a setting, which an update may reset, leaves gaps that are hard to detect.
+    C: A privacy policy says how the project treats data it receives; it does not stop prompt text leaving the company.
+    D: A fork removes the code, but keeping it in step with weekly upstream releases is costly, and teams may install
+      upstream anyway.
+status: draft
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-aaism
+  check_verdict: pending
+  options_only: obvious

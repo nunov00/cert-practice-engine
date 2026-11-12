@@ -10,9 +10,9 @@ options:
   D: Run the serving processes under a non-administrator account
 answer: A
 explanation:
-  why_correct: The concern is a payload that has already evaded detection. Default-deny egress removes most paths out, so code that runs
-    cannot reach an arbitrary attacker server. Allowed destinations can still carry data, so this is one layer, alongside
-    controls and monitoring on the channels that stay open.
+  why_correct: The concern is a payload that has already evaded detection. Default-deny egress removes most paths out, so
+    code that runs cannot reach an arbitrary attacker server. Allowed destinations can still carry data, so this is one
+    layer, alongside controls and monitoring on the channels that stay open.
   why_not:
     B: A second scan uses the same detection methods, so a payload the scanner missed once is likely to be missed again.
     C: DNS alerts detect some exfiltration, but a payload can use established domains or direct addresses, and data may
@@ -26,4 +26,4 @@ provenance:
   run_id: 2026-10-27-daily-aaism
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-11-11-daily-aaism-check
+  checked_by: 2026-11-12-daily-aaism-check

@@ -1,0 +1,30 @@
+id: aaism-d3-3.3-0040
+subdomain: "3.3"
+difficulty: easy
+stem: A retailer's AI assistant stores every customer prompt and reply with no end date, 'for future training', a use
+  for which no project exists yet. The security team uses these logs to investigate abuse, which it always does within
+  90 days. Prompts often contain addresses and order details. What should the security manager recommend?
+options:
+  A: Keep the logs as now but restrict access to the security team
+  B: Keep the logs for one year, the company's standard period for operational records
+  C: Anonymise the logs after 90 days and keep them for future training
+  D: Keep the logs for 90 days, then delete them
+answer: D
+explanation:
+  why_correct: The only purpose that exists today is abuse investigation, which needs 90 days, so retention should end
+    there. If a training project is approved later, it can build its own dataset under its own decision.
+  why_not:
+    A: Restricting access reduces exposure, but keeping personal data with no end date for a purpose nobody has planned
+      breaches minimisation.
+    B: A standard records period is a common default, but it keeps personal data nine months longer than the only real
+      purpose needs.
+    C: Anonymising free-text prompts that contain addresses is hard to do reliably, and the training purpose it serves does
+      not yet exist.
+status: draft
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-aaism
+  check_verdict: pending
+  options_only: obvious

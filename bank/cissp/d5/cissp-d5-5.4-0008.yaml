@@ -1,0 +1,28 @@
+id: cissp-d5-5.4-0008
+subdomain: "5.4"
+difficulty: medium
+stem: A company's 12 database administrators hold permanent administrator rights on production databases. They need
+  these rights a few times a week, mostly for planned changes, but sometimes urgently at night. A red-team exercise
+  showed that phishing one administrator gave immediate control of production. Which change BEST reduces this risk?
+options:
+  A: Record administrator sessions through a privileged access gateway
+  B: Grant administrator rights just in time, for a limited period, after an approval step that on-call staff can complete
+  C: Review the administrators' rights quarterly and remove those not needed
+  D: Replace their accounts with a shared break-glass account kept in a password vault
+answer: B
+explanation:
+  why_correct: Standing rights are what made one phished account enough. Time-limited elevation with an approval step
+    means a stolen login holds no admin rights by default, while on-call approval keeps urgent night work possible.
+  why_not:
+    A: Recording helps investigation and deters misuse, but the attacker still gains admin rights the moment the account is
+      phished.
+    C: All 12 administrators genuinely need the rights, so a review would keep them all standing.
+    D: A break-glass account suits rare emergencies; using it for routine weekly work loses individual accountability.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-cissp
+  check_verdict: pending
+  options_only: obvious

@@ -10,14 +10,14 @@ options:
   D: ISO/IEC 27701
 answer: A
 explanation:
-  why_correct: ISO/IEC 42001 sets requirements for an AI management system and is written to be certified by accredited bodies.
-    It follows the same management system structure as ISO/IEC 27001, so it fits beside the existing system.
+  why_correct: ISO/IEC 42001 sets requirements for an AI management system and is written to be certified by accredited
+    bodies. It follows the same management system structure as ISO/IEC 27001, so it fits beside the existing system.
   why_not:
-    B: The NIST AI RMF is a widely used voluntary framework for managing AI risk, but it is not a certifiable management system
-      standard.
+    B: The NIST AI RMF is a widely used voluntary framework for managing AI risk, but it is not a certifiable management
+      system standard.
     C: ISO/IEC 23894 gives guidance on AI risk management. It is guidance, not a set of requirements to certify against.
-    D: ISO/IEC 27701 sets requirements for a privacy information management system. It can be certified, but it does not cover AI
-      management.
+    D: ISO/IEC 27701 sets requirements for a privacy information management system. It can be certified, but it does not
+      cover AI management.
 status: draft
 outline_version: 2025-08-19
 sample: false
@@ -26,4 +26,4 @@ provenance:
   run_id: 2026-10-23-daily-aaism
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-11-11-daily-aaism-check
+  checked_by: 2026-11-12-daily-aaism-check

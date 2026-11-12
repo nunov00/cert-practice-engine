@@ -17,8 +17,8 @@ explanation:
   why_not:
     B: Deciding whether to tell the SOC shapes what the test measures, but it is a planning choice that matters only once
       the test is lawful to run.
-    C: Signed authorisation from the CIO is essential for the retailer's own systems, but the CIO cannot authorise testing of
-      systems the SaaS provider owns and runs, so it does not cover the CRM.
+    C: Signed authorisation from the CIO is essential for the retailer's own systems, but the CIO cannot authorise testing
+      of systems the SaaS provider owns and runs, so it does not cover the CRM.
     D: Scheduling around peak hours limits business disruption, but the CRM part of the test cannot go ahead without the
       provider's permission.
 status: draft
@@ -29,4 +29,4 @@ provenance:
   run_id: 2026-10-27-daily-cissp
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-11-11-daily-cissp-check
+  checked_by: 2026-11-12-daily-cissp-check

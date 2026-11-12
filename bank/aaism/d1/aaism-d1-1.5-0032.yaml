@@ -1,0 +1,28 @@
+id: aaism-d1-1.5-0032
+subdomain: "1.5"
+difficulty: easy
+stem: A company restored its customer assistant from backup after a server failure. Within hours it was again vulnerable
+  to a prompt injection that had been fixed a week earlier. Product staff edit the system prompt and guardrail rules
+  directly in the production console several times a week, and backups run nightly. Which change BEST prevents a repeat?
+options:
+  A: Back up the assistant's configuration hourly instead of nightly
+  B: Add a step to the restore checklist to re-apply recent fixes by hand
+  C: Snapshot the configuration automatically after each console edit
+  D: Keep prompts and guardrails in version control and deploy them only through a pipeline
+answer: D
+explanation:
+  why_correct: The restore brought back a stale configuration because the approved version lived only in the running
+    system. With configuration in version control and deployed by pipeline, any restore redeploys the current approved
+    version, including every fix.
+  why_not:
+    A: More frequent backups shrink the window but a restore can still bring back a version that predates a fix.
+    B: A manual step depends on responders knowing every recent fix under pressure, which is what failed here.
+    C: Snapshots capture every edit, including bad ones, and still leave no record of which version is approved to restore.
+status: draft
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-aaism
+  check_verdict: pending
+  options_only: obvious

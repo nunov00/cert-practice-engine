@@ -1,0 +1,28 @@
+id: cissp-d1-1.8-0005
+subdomain: "1.8"
+difficulty: easy
+stem: A company's contractors come through an agency, which must tell the company within one day when an assignment
+  ends. Twice this year the agency forgot, and a former contractor's account stayed active for weeks. Assignments are
+  often extended at short notice. Which control BEST addresses this?
+options:
+  A: Set each contractor account to expire on its planned end date, renewable only by the sponsoring manager
+  B: Reconcile active contractor accounts each month against the agency's invoices
+  C: Add a financial penalty to the agency contract for late notice of assignment ends
+  D: Include contractor accounts in the quarterly access review by system owners
+answer: A
+explanation:
+  why_correct: "Expiry by default removes the dependence on the agency's notice: an account ends on its planned date
+    unless a manager who knows the work actively extends it, which also handles short-notice extensions."
+  why_not:
+    B: Monthly reconciliation catches leftover accounts, but only up to a month later, and invoices can lag the real end
+      date.
+    C: Penalties may improve the agency's diligence, but the account still stays open whenever a notice is missed.
+    D: Quarterly reviews detect stale access months after the fact, which is longer than the exposure already seen.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-cissp
+  check_verdict: pending
+  options_only: obvious

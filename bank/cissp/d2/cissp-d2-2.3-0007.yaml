@@ -1,0 +1,30 @@
+id: cissp-d2-2.3-0007
+subdomain: "2.3"
+difficulty: easy
+stem: A company's standard virtual machine image contains a shared API key that each new machine uses at boot to fetch
+  its configuration and secrets. The image is shared with many teams, and copies of it sit in their build caches and
+  test environments. Which change BEST addresses the underlying risk?
+options:
+  A: Rotate the embedded API key monthly and rebuild the image
+  B: Pass the API key to each machine at launch through instance user data
+  C: Restrict access to the image to an approved list of teams
+  D: Give each machine a platform-issued identity that it uses at boot to fetch its secrets
+answer: D
+explanation:
+  why_correct: The root problem is a reusable secret baked into a widely copied asset. Platform-issued identities give
+    each machine its own short-lived credential at provisioning time, so the image holds nothing an outsider can reuse.
+  why_not:
+    A: Rotation shortens how long a leaked key works, but each new image still carries a shared secret that leaks with every
+      copy.
+    B: Moving the key into launch data takes it out of the image, but every machine still receives the same shared key,
+      readable by anyone who can view instance settings.
+    C: Fewer teams reduces spread, but the copies already cached across teams still hold the shared key, and every new copy
+      will too.
+status: draft
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-cissp
+  check_verdict: pending
+  options_only: obvious

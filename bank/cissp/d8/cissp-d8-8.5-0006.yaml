@@ -1,0 +1,31 @@
+id: cissp-d8-8.5-0006
+subdomain: "8.5"
+difficulty: hard
+stem: Testers ran code on a Java service by sending a crafted session cookie, which the service decoded with the
+  platform's native object deserialisation. Several other services also accept serialised objects from browsers and from
+  partner systems, and new libraries are added often. Which rule should the secure coding standard set?
+options:
+  A: Sign each serialised object with an HMAC and verify it before deserialising
+  B: Accept only plain data formats, schema-validated, with polymorphic typing off
+  C: Deserialise only classes on an approved allow-list kept for each service
+  D: Scan for and remove known gadget-chain libraries from the class path each release
+answer: B
+explanation:
+  why_correct: Native deserialisation of untrusted input lets attackers drive code through any class on the path. Parsing
+    input across trust boundaries only into inert data, such as schema-validated JSON with polymorphic type handling
+    disabled, removes object construction from the boundary, whatever libraries are added later.
+  why_not:
+    A: Signing blocks tampering only while every key stays secret, and partners producing objects would need the key, so one
+      leak reopens the flaw.
+    C: Allow-lists help, but each service must maintain them as libraries change, and gaps in them have been bypassed
+      repeatedly.
+    D: Removing known gadget libraries is a moving target, as new gadget chains are found in libraries added later.
+status: published
+outline_version: 2024-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-12-daily-cissp-check

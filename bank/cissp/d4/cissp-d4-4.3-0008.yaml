@@ -1,6 +1,6 @@
 id: cissp-d4-4.3-0008
 subdomain: "4.3"
-difficulty: easy
+difficulty: medium
 stem: A payments partner's servers call a company's API with a static API key that does not expire. The key leaked in
   the partner's public code repository and was misused for a week before anyone noticed. The partner's servers run in a
   cloud whose outbound addresses change often. Which change BEST reduces the risk of a repeat?
@@ -13,14 +13,15 @@ answer: C
 explanation:
   why_correct: A credential that is stolen is useful until it expires. Tokens issued through mutual TLS and bound to the
     partner's certificate, with the API checking that binding on each call, last minutes and can be used or renewed only
-    with the certificate's private key, which is not in the code, so a leaked token is soon useless.
+    with the certificate's private key, which can be kept non-exportable, so a leaked token is soon useless.
   why_not:
     A: Monthly rotation shortens how long a leaked key works, but a key leaked early in the month is still usable for weeks.
     B: Address allowlisting fails here, because the partner's cloud addresses change often and the allowed ranges would be
       broad or stale.
-    D: Short-lived tokens limit how long one stolen token works, but the client secret is itself a static credential that
-      can leak from code or configuration just as the key did, and whoever holds it can keep requesting fresh tokens.
-status: draft
+    D: A vault reduces the chance of a repeat leak, but the client secret is still a bearer credential the application reads
+      and sends; whoever obtains it, from the vault, memory or logs, can keep minting fresh tokens. A certificate-bound
+      token needs the private key, which never has to leave the partner's keystore.
+status: published
 outline_version: 2024-04-15
 sample: false
 provenance:
@@ -28,4 +29,4 @@ provenance:
   run_id: 2026-10-27-daily-cissp
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-11-11-daily-cissp-check
+  checked_by: 2026-11-12-daily-cissp-check

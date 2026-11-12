@@ -1,0 +1,28 @@
+id: aaism-d2-2.2-0061
+subdomain: "2.2"
+difficulty: easy
+stem: A company's network anomaly model re-learns each host's normal behaviour from its last 30 days of traffic. Over
+  two months, a compromised server's outbound transfers to an outside host grew slowly and never raised an alert. Which
+  change BEST addresses this weakness?
+options:
+  A: Shorten the learning window to seven days
+  B: Lower the alert threshold for deviations from the baseline
+  C: Add signatures for known exfiltration tools to the IDS
+  D: Compare each host against a reviewed baseline that changes only on approval
+answer: D
+explanation:
+  why_correct: The attacker exploited the rolling window, which absorbed each small increase as normal. A reference
+    baseline that changes only after review exposes the cumulative growth that the rolling model learned to accept.
+  why_not:
+    A: A shorter window adapts even faster, so slow growth would be absorbed sooner, not detected.
+    B: A lower threshold adds noise but still measures against a baseline that keeps moving with the attacker.
+    C: Signatures catch known tools, but this attack is defined by gradual volume growth, which a custom or ordinary tool
+      can produce.
+status: draft
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-aaism
+  check_verdict: pending
+  options_only: obvious

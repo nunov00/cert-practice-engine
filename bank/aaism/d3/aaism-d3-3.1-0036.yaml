@@ -1,0 +1,32 @@
+id: aaism-d3-3.1-0036
+subdomain: "3.1"
+difficulty: medium
+stem: A vendor deploys its proprietary inspection model on appliances at customers' remote mining sites. The appliances
+  must work offline for weeks, and customers' staff have physical access to them. The vendor's main concern is theft of
+  the model weights. Which design BEST protects them?
+options:
+  A: Obfuscate the model file format and strip its metadata
+  B: Keep the weights encrypted and run inference only inside a hardware enclave
+  C: Serve the model from the vendor's cloud and send only results to the site
+  D: Bind the weights by licence to each customer with contract penalties for extraction
+answer: B
+explanation:
+  why_correct: With physical access and offline operation, the weights must sit on the device yet resist copying. Keeping
+    the keys, the decrypted weights and inference itself inside a hardware-protected enclave means plaintext weights
+    never reach the disk or ordinary memory, and raises the cost of physical extraction well beyond the other options.
+  why_not:
+    A: Obfuscation slows a casual attacker but a determined one with the device can reverse it, so it does not protect the
+      weights.
+    C: Cloud serving would protect the weights, but the appliances must work offline for weeks, so the design cannot depend
+      on a connection.
+    D: A licence deters and allows recovery after theft, but it does nothing technically to stop someone copying the
+      weights.
+status: published
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-12-daily-aaism-check

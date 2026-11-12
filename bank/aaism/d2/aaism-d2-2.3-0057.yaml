@@ -1,0 +1,35 @@
+id: aaism-d2-2.3-0057
+subdomain: "2.3"
+difficulty: hard
+stem: A company installed smart cameras whose vendor AI analyses footage on the device. The vendor pushes model and
+  firmware updates from its cloud, and the cameras verify each update's signature before installing it. The company's
+  threat model assumes an attacker who takes over the update service can also push validly signed updates. The cameras
+  sit on the main corporate network. Which control BEST reduces the risk from a compromise of the vendor's update
+  service?
+options:
+  A: Ask the vendor to release each update in waves, starting with a few customers
+  B: Isolate the cameras on a segment that reaches only the update and video servers
+  C: Disable automatic updates and install each one only after testing it
+  D: Require a yearly independent assurance report covering the vendor's update service
+answer: B
+explanation:
+  why_correct: If the update service is compromised, a validly signed malicious update will install anyway. Isolating the
+    cameras on a segment that reaches only what they need, the update service and the video management servers, stops a
+    compromised camera from moving laterally into the corporate network, whatever the update contains. It does not
+    protect the footage the cameras already hold, but it contains the wider damage.
+  why_not:
+    A: Staged release limits how many customers a bad update reaches at once, but a stealthy malicious update can pass the
+      early waves unnoticed and still install here.
+    C: Testing may catch obvious faults, but a well-built malicious update can pass functional tests and then reach the
+      corporate network.
+    D: A yearly assurance report gives confidence in the vendor's controls but does nothing when those controls are
+      bypassed.
+status: published
+outline_version: 2025-08-19
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-12-daily-aaism-check

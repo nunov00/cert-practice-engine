@@ -1,0 +1,29 @@
+id: aair-d1-1.6-0032
+subdomain: "1.6"
+difficulty: easy
+stem: A social media company's safety classifier needs human labels on real violent images. Its labelling vendor pays
+  annotators per item, sets no limits on daily exposure and offers no counselling, and several annotators report trauma.
+  Synthetic images have proved too unlike real ones to train on. What should the risk practitioner recommend?
+options:
+  A: Move labelling to in-house staff so the company controls the work
+  B: Contract the vendor to set exposure limits and counselling, and audit them
+  C: Train only on synthetic images and drop the real violent images
+  D: Have a model pre-sort the images so that annotators label fewer of them
+answer: B
+explanation:
+  why_correct: Real images must still be labelled by people, so the harm has to be managed where the work happens.
+    Contracting for exposure limits and counselling, and checking they are delivered, addresses the conditions causing
+    the trauma.
+  why_not:
+    A: In-house staff would face the same images; without limits and support the harm moves rather than shrinks.
+    C: The stem says synthetic images are too unlike real ones, so dropping real images would leave a classifier that fails
+      at its safety task.
+    D: Pre-sorting may reduce volume somewhat, but annotators would still see violent material without limits or support.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-aair
+  check_verdict: pending
+  options_only: obvious

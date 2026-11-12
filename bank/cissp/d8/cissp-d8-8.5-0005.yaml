@@ -1,9 +1,9 @@
 id: cissp-d8-8.5-0005
 subdomain: '8.5'
 difficulty: medium
-stem: A digital wallet's withdrawal code reads the balance, checks that it covers the amount, then writes the new balance
-  and sends the payout, which reaches the user's card within seconds. Testers sent 20 separate withdrawal requests at the
-  same moment and withdrew ten times their balance. Which rule should the secure coding standard add?
+stem: A digital wallet's withdrawal code reads the balance, checks that it covers the amount, then writes the new
+  balance and sends the payout, which reaches the user's card within seconds. Testers sent 20 separate withdrawal
+  requests at the same moment and withdrew ten times their balance. Which rule should the secure coding standard add?
 options:
   A: Check and debit the balance in one atomic conditional update before any payout
   B: Require an idempotency key on each withdrawal request, rejecting reused keys
@@ -28,5 +28,5 @@ provenance:
   generated_by: claude
   run_id: 2026-11-11-daily-cissp
   check_verdict: pass
-  options_only: not_obvious
-  checked_by: 2026-11-11-daily-cissp-check
+  options_only: obvious
+  checked_by: 2026-11-12-daily-cissp-check

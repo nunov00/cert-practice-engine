@@ -1,0 +1,30 @@
+id: aair-d2-2.1-0035
+subdomain: "2.1"
+difficulty: medium
+stem: A manufacturer is building a model that predicts failures from sensor readings. The training data covers 200
+  machines over three years, and a test set drawn at random from all readings gives 97% accuracy. The model will be used
+  on machines being installed at new plants. Which evaluation design BEST shows how it will perform in use?
+options:
+  A: Hold out the most recent three months of readings from all machines
+  B: Hold out all readings from a set of machines that are excluded from training
+  C: Use cross-validation with folds drawn at random across all readings
+  D: Use a larger random test set, stratified by failure type
+answer: B
+explanation:
+  why_correct: Random splits put readings from the same machine in both training and test sets, so the model can score
+    well by recognising machines it has seen. Holding out whole machines mirrors its real use on machines it has never
+    seen.
+  why_not:
+    A: A time-based holdout tests drift, which matters, but the same machines still appear in training, so accuracy on
+      unseen machines stays unmeasured.
+    C: Random folds repeat the same leak across every fold, so averaging them gives the same optimistic figure.
+    D: Stratifying helps balance failure types, but a random test set still shares machines with training and overstates
+      accuracy.
+status: draft
+outline_version: 2026-04-15
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-12-daily-aair
+  check_verdict: pending
+  options_only: not_obvious
