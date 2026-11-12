@@ -2,10 +2,9 @@ id: aaism-d1-1.2-0031
 subdomain: "1.2"
 difficulty: medium
 stem: A company's security policy, owned by the CISO, says AI may not make final decisions on security events. Its SOC
-  piloted an AI assistant that closes low-severity alerts on its own, under a six-month exception the CISO has since
-  renewed once. Over the year, sampled closures matched analysts 99.5% of the time, and a review of its wrong closures
-  by alert class found them within the tolerance the CISO set. The SOC wants to keep it permanently. What should the
-  security manager do?
+  piloted an AI assistant that closes low-severity alerts on its own, under a six-month exception since renewed once.
+  Over the year, sampled closures matched analysts 99.5% of the time, and a review of its wrong closures by alert class
+  found them within the CISO's tolerance. The SOC wants to keep it permanently. What should the security manager do?
 options:
   A: Renew the exception for another six months and keep sampling
   B: Have the policy amended to allow it for the reviewed alert classes
@@ -19,8 +18,8 @@ explanation:
   why_not:
     A: Repeated exceptions for a permanent use hollow out the policy and leave the rule out of step with practice.
     C: Confirming every low-severity closure removes the benefit and invites rubber-stamping, given the volume involved.
-    D: Lowering priority so alerts are never looked at is closure in practice, which sidesteps the policy rather than
-      resolving it.
+    D: In practice low-priority alerts are rarely reached, so lowering priority acts as closure and sidesteps the policy
+      rather than resolving it.
 status: published
 outline_version: 2025-08-19
 sample: false

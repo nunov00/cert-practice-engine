@@ -7,18 +7,19 @@ stem: A company installed smart cameras whose vendor AI analyses footage on the 
   sit on the main corporate network. Which control BEST reduces the risk from a compromise of the vendor's update
   service?
 options:
-  A: Require the vendor to sign updates with a hardware-protected key
-  B: Isolate the cameras on a segment that reaches only the update service
+  A: Ask the vendor to release each update in waves, starting with a few customers
+  B: Isolate the cameras on a segment that reaches only the update and video servers
   C: Disable automatic updates and install each one only after testing it
-  D: Require a yearly independent assurance report on the vendor's update service
+  D: Require a yearly independent assurance report covering the vendor's update service
 answer: B
 explanation:
   why_correct: If the update service is compromised, a validly signed malicious update will install anyway. Isolating the
-    cameras stops a compromised camera from moving laterally into the corporate network, whatever the update contains.
-    It does not protect the footage the cameras already hold, but it contains the wider damage.
+    cameras on a segment that reaches only what they need, the update service and the video management servers, stops a
+    compromised camera from moving laterally into the corporate network, whatever the update contains. It does not
+    protect the footage the cameras already hold, but it contains the wider damage.
   why_not:
-    A: The threat model assumes an attacker in the update service can already ship validly signed updates, so stronger key
-      storage would not limit the impact.
+    A: Staged release limits how many customers a bad update reaches at once, but a stealthy malicious update can pass the
+      early waves unnoticed and still install here.
     C: Testing may catch obvious faults, but a well-built malicious update can pass functional tests and then reach the
       corporate network.
     D: A yearly assurance report gives confidence in the vendor's controls but does nothing when those controls are

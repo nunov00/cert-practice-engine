@@ -6,7 +6,7 @@ stem: A company installs updates for its network monitoring software automatical
   been compromised; the update carried the vendor's valid signature. Which control BEST limits the harm if this
   company's vendor suffers the same attack?
 options:
-  A: Verify each update's digital signature against the vendor's key before install
+  A: Test each update in a sandbox and compare its behaviour with the prior version
   B: Hold each update for 30 days so other customers can find problems first
   C: Require the vendor to attest that its build pipeline meets a secure build framework
   D: Limit the servers' outbound traffic to needed destinations and alert on the rest
@@ -17,7 +17,8 @@ explanation:
     blocked attempts makes it visible early. It cannot stop local damage or abuse of allowed destinations, but it is the
     only option that reduces harm once the update is in.
   why_not:
-    A: The malicious update carried a valid signature, so signature checks would accept it.
+    A: Sandbox testing can catch crude malware, but a well-built trojan behaves normally under test, as supply chain attacks
+      have shown, and then runs with full access once deployed.
     B: A delay helps only if others detect the compromise within 30 days; stealthy supply chain attacks have gone unnoticed
       for months.
     C: Attestation reduces the chance of a build compromise but does not limit the harm once one gets through.

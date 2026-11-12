@@ -1,12 +1,12 @@
 id: aair-d1-1.6-0031
 subdomain: "1.6"
-difficulty: hard
+difficulty: medium
 stem: An HR team built a model that predicts which employees are likely to resign within six months, and it passed the
   company's bias testing across protected groups. Managers propose using individual scores to decide who is offered
   long-term projects and paid training. What should the risk practitioner recommend?
 options:
   A: Limit the scores to team-level retention planning, not decisions about individuals
-  B: Show each employee their score and let them contest it before it is used
+  B: Show each employee their score and let them contest it before any decision uses it
   C: Repeat the bias testing each quarter while managers use the scores
   D: Update the employee privacy notice to describe the new use of the scores
 answer: A

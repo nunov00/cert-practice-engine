@@ -2,20 +2,20 @@ id: aair-d3-3.3-0040
 subdomain: "3.3"
 difficulty: hard
 stem: A retailer updates its pricing model weekly. Each update passes offline validation on historical data before
-  release. Last month an update that passed mispriced goods in one region for a day, because a feature the production
-  system computes differently from the training pipeline took unusual values there. Which control would BEST catch such
-  a fault before customers see it?
+  release. Last month an update that had passed validation mispriced goods in one region for a day, because a feature
+  the production system computes differently from the training pipeline took unusual values there. Which control would
+  BEST catch such a fault before customers see it?
 options:
-  A: Extend the offline validation set with more recent data from every region
+  A: Extend the offline validation set with more recent data from each region
   B: Require a second approver to sign off each weekly release before it goes live
   C: Alert the pricing team when live prices move beyond set limits in any region
   D: Shadow new versions on live traffic and compare prices with the current model
 answer: D
 explanation:
   why_correct: The fault arose only from features computed in production, which offline tests on historical data cannot
-    see. A shadow run on live traffic feeds the new version the real feature values; comparing its prices with the
-    current model by region, against a threshold that blocks the switch pending investigation, shows the divergence
-    before any customer is priced by it.
+    see. A shadow run on live traffic feeds the new version the real feature values, and comparing its prices with the
+    current model's, region by region, shows the divergence so the switch can be held before any customer is priced by
+    it.
   why_not:
     A: More regional history still uses the training pipeline's features, so it would not reproduce the production
       computation that caused the error.

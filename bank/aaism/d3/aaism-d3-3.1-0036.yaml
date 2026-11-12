@@ -13,7 +13,7 @@ answer: B
 explanation:
   why_correct: With physical access and offline operation, the weights must sit on the device yet resist copying. Keeping
     the keys, the decrypted weights and inference itself inside a hardware-protected enclave means plaintext weights
-    never reach the disk or ordinary memory, and the enclave's tamper resistance makes physical extraction much harder.
+    never reach the disk or ordinary memory, and raises the cost of physical extraction well beyond the other options.
   why_not:
     A: Obfuscation slows a casual attacker but a determined one with the device can reverse it, so it does not protect the
       weights.
