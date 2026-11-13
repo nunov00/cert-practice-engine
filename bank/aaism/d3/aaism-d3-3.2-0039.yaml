@@ -1,10 +1,10 @@
 id: aaism-d3-3.2-0039
 subdomain: '3.2'
 difficulty: medium
-stem: An insurer's claims model outputs a fraud score, and a rules engine run by another team auto-pays claims scoring below
-  a cut-off. After a monthly retrain that also upgraded a library, the model passed its accuracy and ranking tests, but its
-  scores came out on a new scale, and auto-payments tripled for two days. Earlier retrains had shifted its scores less sharply.
-  Which life cycle control BEST prevents a repeat?
+stem: An insurer's claims model outputs a fraud score, and a rules engine run by another team auto-pays claims scoring
+  below a cut-off. After a monthly retrain that also upgraded a library, the model passed its accuracy and ranking
+  tests, but its scores came out on a new scale, and auto-payments tripled for two days. Earlier retrains had shifted
+  its scores less sharply. Which life cycle control BEST prevents a repeat?
 options:
   A: Pin library versions and review each upgrade before a retrain
   B: Test each release's scores against the rules engine's cut-off
@@ -12,12 +12,13 @@ options:
   D: Give the rules engine team notice of each model release in advance
 answer: B
 explanation:
-  why_correct: Accuracy and ranking tests check whether the model orders claims well, not whether its scores still mean what
-    the downstream cut-off assumes. A release gate that runs each new version's scores through the rules engine's cut-off,
-    and checks the share of claims that would be auto-paid, catches a scale change from any cause before it reaches production.
+  why_correct: Accuracy and ranking tests check whether the model orders claims well, not whether its scores still mean
+    what the downstream cut-off assumes. A release gate that runs each new version on a fixed, representative set of
+    claims through the rules engine's cut-off, and fails if the share that would be auto-paid moves beyond a set
+    tolerance, catches a scale change from any cause before it reaches production.
   why_not:
-    A: Pinning libraries removes this particular trigger, but scores have shifted after earlier retrains too, so a change
-      in the data alone can move them past the cut-off.
+    A: Pinning libraries removes this particular trigger, but scores have shifted after earlier retrains too, so a change in
+      the data alone can move them past the cut-off.
     C: A volume alert limits the damage once auto-payments jump, but the claims are already paid by then. The question asks
       for a control that prevents a repeat.
     D: 'Notice helps coordination, but nobody knew the scale had changed: the model passed its tests, so the notice would

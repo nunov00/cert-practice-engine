@@ -1,10 +1,10 @@
 id: aair-d3-3.6-0036
 subdomain: '3.6'
 difficulty: hard
-stem: A building society's staff assistant told an adviser that a mortgage allowed early repayment without penalty, and a
-  customer relied on it. The incident team cannot tell whether the model invented this, as logs keep only each question and
-  reply. The assistant answers from a product library that staff edit several times a day, and the nightly backups of the
-  library hold no such clause. Which addition to the logs would MOST have helped?
+stem: A building society's staff assistant told an adviser that a mortgage allowed early repayment without penalty, and
+  a customer relied on it. The incident team cannot tell whether the model invented this, as logs keep only each
+  question and reply. The assistant answers from a product library that staff edit several times a day, and the nightly
+  backups of the library hold no such clause. Which addition to the logs would MOST have helped?
 options:
   A: The sampling settings and random seed the model used for each reply
   B: The name and exact version of the model that produced each reply
@@ -13,17 +13,18 @@ options:
 answer: C
 explanation:
   why_correct: 'The open question is whether the clause came from a document the assistant retrieved or was made up by the
-    model. Logging the passages actually passed to the model with each question answers that directly: if the clause is in
-    them, the fault sits in the library; if not, the model invented it. Because the library changes several times a day, only
-    a record taken at the moment of the answer shows what the model saw.'
+    model. Logging the passages actually passed to the model with each question answers that directly: if a passage
+    states the clause, the fault sits in the library; if a passage says something close, the model misread it; if
+    nothing supports it, the model invented it. Because the library changes several times a day, only a record taken at
+    the moment of the answer shows what the model saw.'
   why_not:
     A: Settings and seed help reproduce a reply, but rerunning today would retrieve from today's library. The passages the
       model saw that day would still be unknown.
     B: The model version matters when a provider changes the model, and it should be logged. It would not show whether this
       reply came from a retrieved passage or was invented.
     D: A saved copy after each edit would show whether such a clause existed at some point that day. It would not show what
-      was retrieved and passed to the model for this reply, or whether the model misread a passage it did receive, so the
-      record tied to the reply is still the better evidence.
+      was retrieved and passed to the model for this reply, or whether the model misread a passage it did receive, so
+      the record tied to the reply is still the better evidence.
 status: published
 outline_version: '2026-04-15'
 sample: false

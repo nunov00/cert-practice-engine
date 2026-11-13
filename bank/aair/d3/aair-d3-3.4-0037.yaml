@@ -1,28 +1,28 @@
 id: aair-d3-3.4-0037
 subdomain: '3.4'
 difficulty: medium
-stem: A water utility's chatbot advises customers during supply incidents, such as boil-water notices. The board's appetite
-  allows no more than 50 customers a year to receive unsafe advice. The key risk indicator is the share of unsafe answers
-  in a weekly graded sample of 300 answers. It has stayed flat and green while chat volume tripled after the phone line closed.
-  Which change to the indicator BEST serves the board?
+stem: A water utility's chatbot advises customers during supply incidents, such as boil-water notices. The board's
+  appetite allows no more than 50 unsafe answers a year to reach customers. The key risk indicator is the share of
+  unsafe answers in a weekly graded sample of 300 answers. It has stayed flat and green while chat volume tripled after
+  the phone line closed. Which change to the indicator BEST serves the board?
 options:
   A: Report the unsafe share separately for incident and normal periods
   B: Grade a larger weekly sample as chat volume rises, keeping the share
   C: Report the unsafe share with the margin of error of each weekly sample
-  D: Report the estimated number of customers given unsafe advice this year
+  D: Report the estimated number of unsafe answers given so far this year
 answer: D
 explanation:
-  why_correct: The board set its appetite as a number of customers harmed a year, but the indicator reports a share. With
-    volume tripled, an unchanged share means about three times as many customers receive unsafe advice, so the indicator can
-    stay green while the appetite is breached. Estimating the number of customers affected, from the sampled share and the
-    chat volume, measures the risk in the board's own terms.
+  why_correct: The board set its appetite as a number of unsafe answers a year, but the indicator reports a share. With
+    volume tripled, an unchanged share means about three times as many unsafe answers reach customers, so the indicator
+    can stay green while the appetite is breached. Estimating the number of unsafe answers, from the sampled share and
+    the chat volume, measures the risk in the board's own terms.
   why_not:
     A: Splitting by period is useful because unsafe advice matters most during incidents. Each split is still a share, so
       neither would show the effect of the tripled volume on the yearly count.
     B: A larger sample makes the share more precise, but it is still a share. It would still stay flat while the number of
-      customers harmed tripled.
+      unsafe answers tripled.
     C: A margin of error is good statistical practice for a sampled rate, but it does not change the unit. The board's limit
-      is a count of customers, which the share does not show.
+      is a count of unsafe answers, which the share does not show.
 status: published
 outline_version: '2026-04-15'
 sample: false

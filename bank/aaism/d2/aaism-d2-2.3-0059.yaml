@@ -13,8 +13,9 @@ answer: C
 explanation:
   why_correct: 'The harm came from one contributor''s bad data flowing straight into a model that every member relies on.
     Requiring the vendor to compare each member''s monthly batch with that member''s own history, and to hold back
-    batches that shift sharply, stops a faulty or poisoned contribution before it reaches training, which protects all
-    members rather than repairing the damage afterwards.'
+    batches that shift sharply until the source is checked, stops a sudden faulty or poisoned contribution like this one
+    before it reaches training, which protects all members rather than repairing the damage afterwards. It will not
+    catch every subtle labelling error, so it adds to validation of each retrained model rather than replacing it.'
   why_not:
     A: A warranty gives a route to compensation, but it does not keep the bank's legitimate payments flowing, and the
       blocked customers are harmed whoever pays.

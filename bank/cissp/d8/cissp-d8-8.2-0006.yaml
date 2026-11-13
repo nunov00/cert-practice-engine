@@ -1,26 +1,28 @@
 id: cissp-d8-8.2-0006
 subdomain: '8.2'
 difficulty: medium
-stem: A payments start-up publishes its client SDK in a public repository. Developers keep the payment provider's API keys
-  in local config files so that they can run the SDK's tests on their own machines. Last month a key pushed by mistake was
-  misused within an hour. Which control BEST prevents a repeat?
+stem: A payments start-up publishes its client SDK in a public repository. Its developers must run the SDK's integration
+  tests against the live provider on their own machines, so they keep the provider's API keys, which carry a fixed
+  prefix, in local config files. Last month a key pushed by mistake was misused within an hour. Which control BEST
+  prevents a repeat?
 options:
   A: Secret-scanning hooks installed on each developer's machine, run before each commit
   B: Rotation of the provider keys once a day through the provider's management API
-  C: Push protection on the repository host, refusing any push that contains a secret
+  C: Push protection on the repository host, refusing any push that contains a provider key
   D: A secrets vault from which only build jobs fetch the keys, kept off developer machines
 answer: C
 explanation:
-  why_correct: In a public repository a leaked key is found and used within minutes, so the control has to stop the key before
-    it is published. Push protection on the repository host checks each incoming push centrally and refuses it, so a key never
-    reaches the public repository, whatever the state of the developer's machine.
+  why_correct: In a public repository a leaked key is found and used within minutes, so the control has to stop the key
+    before it is published. Push protection on the repository host checks each incoming push centrally for the
+    provider's key format and refuses it, so a key never reaches the public repository, whatever the state of the
+    developer's machine.
   why_not:
     A: Local hooks catch most mistakes early, but they run on each machine, must be installed and can be skipped, so the one
       push that matters can go through without them.
     B: Daily rotation shortens how long a leaked key works, but this key was misused within an hour, well inside a 24-hour
       window.
-    D: Keeping keys in a vault and off developer machines is the long-term ideal, but developers need the keys to run the
-      tests locally, so they would end up holding copies again.
+    D: Keeping keys in a vault and off developer machines is the long-term ideal, but the developers must run the live tests
+      locally, so they would end up holding copies again.
 status: published
 outline_version: '2024-04-15'
 sample: false
