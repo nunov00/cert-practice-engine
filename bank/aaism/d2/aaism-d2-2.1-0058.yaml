@@ -6,7 +6,7 @@ stem: An insurer's key risk indicator for its claim-form reading model is the mo
   decision to release. After the last alert, errors stayed above tolerance for two months. No other measure was found
   that tracks these errors ahead of the audits. What should the risk manager change?
 options:
-  A: Keep the tolerance and set the alert below it by the retrain time
+  A: Keep the tolerance and set the alert low enough to allow for the retrain
   B: Audit the error rate each week instead of each month, to alert sooner
   C: Add a leading indicator that signals rising errors before audits do
   D: Ask the risk owner to lower the tolerance to 2% so alerts come sooner

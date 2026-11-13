@@ -4,7 +4,7 @@ difficulty: hard
 stem: Consultants upload files to their firm's AI assistant to ask questions about them. Each upload is also added to
   the firm-wide knowledge base so later answers can draw on it. Uploads have included client contracts and HR
   complaints. Client terms require the firm to delete a client's documents within 60 days of each engagement ending.
-  Conversations are kept for 30 days. Which change BEST manages these uploads?
+  Conversations are deleted 30 days after they start. Which change BEST manages these uploads?
 options:
   A: Index each upload with access limited to the person who uploaded it
   B: Keep each upload only within its conversation, deleted along with it

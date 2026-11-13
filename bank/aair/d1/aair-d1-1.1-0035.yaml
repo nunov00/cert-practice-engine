@@ -13,9 +13,10 @@ options:
 answer: D
 explanation:
   why_correct: Language models often attend less reliably to material in the middle of a long input, even when it fits in
-    the context window. That matches the test results. Splitting the contract into overlapping sections, so no clause is
-    lost at a boundary, keeps every clause near the edge of a short input. Combining the results, with a completeness
-    check on a sample, gives the full list the lawyers need.
+    the context window. That matches the test results. Splitting the contract into overlapping sections keeps each input
+    short, where position matters much less, and the overlap stops a clause being lost at a boundary. Combining the
+    clauses found in each section gives the full list the lawyers need, and a check on a sample of contracts confirms
+    that nothing is missed.
   why_not:
     A: Fine-tuning would help the model recognise clauses, but it already finds them at the start and end. The misses depend
       on position in a long input, not on recognition.

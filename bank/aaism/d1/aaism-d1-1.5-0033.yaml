@@ -13,8 +13,9 @@ options:
 answer: C
 explanation:
   why_correct: Scoping needs the link between the bad source and each answer it shaped. Logging which documents, and which
-    versions, were retrieved for every answer lets responders narrow the review to the answers that drew on the tampered
-    sheet during the nine days, and so contact only the customers who received them.
+    versions, were retrieved for every answer, alongside the session that received it, lets responders narrow the review
+    to the answers that drew on the tampered sheet during the nine days, and so contact only the customers who received
+    them.
   why_not:
     A: Full transcripts are useful evidence, but the assistant paraphrases, so searching answer text for the sheet's content
       would miss answers that used it in other words.

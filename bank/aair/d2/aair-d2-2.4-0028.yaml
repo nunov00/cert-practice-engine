@@ -4,10 +4,10 @@ difficulty: hard
 stem: A lender is building a default model from five years of past loans. Each loan is joined to the customer's profile
   table, which holds income, employment status and contact flags and is overwritten whenever a customer's details
   change. In testing, the model predicts defaults far better than any earlier model. Which data management practice BEST
-  protects the model's training data?
+  addresses the cause of these results?
 options:
   A: Keep dated profile history and join only values recorded by each loan date
-  B: Keep immutable, versioned snapshots of each training table the model uses
+  B: Keep immutable, versioned snapshots of each training table and join used
   C: Record each profile field's definition, owner and rules for updating it
   D: Test the model on the most recent year of loans, held out from training
 answer: A

@@ -6,7 +6,7 @@ stem: A land registry keeps deeds signed electronically by notaries, whose signi
   forged deeds bearing earlier dates, and the owners claimed that registry staff had colluded. Which measure BEST keeps
   each deed's signature provable in later disputes?
 options:
-  A: Timestamp each deed with its certificate status on receipt via an independent authority, renewed as algorithms age
+  A: Have an independent authority timestamp each deed and its certificate status on receipt, renewed as algorithms age
   B: Keep each deed with the notary's certificate chain and its revocation status at the date of signing
   C: Countersign each deed with the registry's own key on receipt, re-signing the archive as algorithms age
   D: Store each signed deed on write-once media at two sites, with its hash kept in the registry's audit log

@@ -1,6 +1,6 @@
 id: cissp-d1-1.10-0005
 subdomain: '1.10'
-difficulty: hard
+difficulty: medium
 stem: An insurer's product teams each keep a STRIDE threat model of their own application, and each team can see only
   its own application's bus permissions. Attackers took over a little-used internal survey app and used the message bus
   credentials it held to publish fake claims, which the payments app then paid. The bus authenticates every publisher

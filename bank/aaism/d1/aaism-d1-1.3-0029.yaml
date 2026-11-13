@@ -15,7 +15,7 @@ explanation:
     online. A signed validity date that the app enforces and only a server check can renew does that: once the firm
     stops renewing an unsafe version, it stops giving results when its date lapses, even on a phone that never connects,
     and the app asks the user to update. The validity period bounds the delay rather than withdrawing at once, so it
-    should be short, and the expiry check must be in the installed app.'
+    should be as short as typical offline use allows, and the expiry check must be in the installed app.'
   why_not:
     A: Messages raise update rates a little, but 30% of installs ignored the fixed release for three months, so they cannot
       ensure withdrawal.

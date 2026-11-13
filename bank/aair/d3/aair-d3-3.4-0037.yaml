@@ -8,7 +8,7 @@ stem: A water utility's chatbot advises customers during supply incidents, such 
 options:
   A: Report the unsafe share separately for incident and normal periods
   B: Grade a larger weekly sample as chat volume rises, keeping the share
-  C: Report the unsafe share with the margin of error of each weekly sample
+  C: Report the weekly number of unsafe answers found in the graded sample
   D: Report the estimated number of unsafe answers given so far this year
 answer: D
 explanation:
@@ -21,8 +21,8 @@ explanation:
       neither would show the effect of the tripled volume on the yearly count.
     B: A larger sample makes the share more precise, but it is still a share. It would still stay flat while the number of
       unsafe answers tripled.
-    C: A margin of error is good statistical practice for a sampled rate, but it does not change the unit. The board's limit
-      is a count of unsafe answers, which the share does not show.
+    C: A count taken from a fixed sample of 300 moves with the share, not with chat volume, so it would stay flat while the
+      yearly number of unsafe answers tripled.
 status: published
 outline_version: '2026-04-15'
 sample: false

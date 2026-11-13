@@ -14,7 +14,8 @@ explanation:
   why_correct: Early data can be replayed by anyone who captures it, because it is sent before the handshake proves the
     connection is fresh. Accepting it only for requests that change nothing, such as loading balances, keeps the fast
     start the team wanted. The server rejects early data for any other request, so the client sends a payment again over
-    the established connection, where a captured copy cannot be replayed.
+    the established connection, where a captured copy cannot be replayed. In HTTP this is done by answering such
+    requests with 425 Too Early, which makes the client resend them after the handshake.
   why_not:
     A: Turning off early data removes the replay risk and is a sound default, but it gives up the faster start that was the
       reason for enabling it, when only requests that change something need protection.

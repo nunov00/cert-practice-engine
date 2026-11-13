@@ -4,7 +4,7 @@ difficulty: hard
 stem: A building society's staff assistant told an adviser that a mortgage allowed early repayment without penalty, and
   a customer relied on it. The incident team cannot tell whether the model invented this, as logs keep only each
   question and reply. The assistant answers from a product library that staff edit several times a day, and the nightly
-  backups of the library hold no such clause. Which addition to the logs would MOST have helped?
+  backups of the library hold no such clause. Which additional record would MOST have helped?
 options:
   A: The sampling settings and random seed the model used for each reply
   B: The name and exact version of the model that produced each reply

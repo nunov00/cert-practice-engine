@@ -1,10 +1,10 @@
 id: aair-d3-3.4-0036
 subdomain: '3.4'
 difficulty: medium
-stem: A letting agency's AI agent reads tenants' emails and can log repairs, change contact details and apply rent credits.
-  A filter blocks emails containing known prompt-injection wording, and its monthly block count is the agency's key risk indicator
-  for this threat. Both successful attacks last year used new wording and made changes that looked routine until a quarterly
-  audit. Which indicator gives the EARLIEST warning that attacks are getting through?
+stem: A letting agency's AI agent reads tenants' emails and can log repairs, change contact details and apply rent
+  credits. A filter blocks emails containing known prompt-injection wording, and its monthly block count is the agency's
+  key risk indicator for this threat. Both successful attacks last year used new wording and made changes that looked
+  routine until a quarterly audit. Which indicator gives the EARLIEST warning that attacks are getting through?
 options:
   A: Weekly count of emails the injection filter blocks, by sender domain
   B: Weekly share of agent actions not matching what the email asked for
@@ -12,10 +12,10 @@ options:
   D: Weekly count of agent changes that staff later reverse as wrong
 answer: B
 explanation:
-  why_correct: Successful attacks used wording the filter had never seen, so the signal has to come from what the agent does,
-    not from what the filter catches. A rent credit applied in reply to a repair email looks routine on its own, but it does
-    not match the request. Tracking the share of actions that do not fit the email's request shows attacks that got through,
-    as they happen.
+  why_correct: Successful attacks used wording the filter had never seen, so the signal has to come from what the agent
+    does, not from what the filter catches. A rent credit applied in reply to a repair email looks routine on its own,
+    but it does not match the request. Tracking the share of actions that do not fit the email's request, through an
+    automatic check by rule or by a second model, shows attacks that got through, as they happen.
   why_not:
     A: Blocked emails show how often known attacks are tried and stopped. The attacks that succeeded used new wording, which
       the filter does not block, so the count can stay flat while attacks get through.

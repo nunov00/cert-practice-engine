@@ -6,7 +6,7 @@ stem: An insurer is validating a model that sorts incoming claim documents into 
   or changed. The model matches the final labels on 95% of documents. What is the MAIN concern about this result?
 options:
   A: Each document had one labeller, so labelling errors were not measured
-  B: The test labels are not independent of the model being tested
+  B: Labellers saw the model's answer, so their labels lean towards it
   C: The overall figure can hide poor results on the rarer document types
   D: The 3,000 documents may be too few to test the 30 types reliably
 answer: B
@@ -14,14 +14,15 @@ explanation:
   why_correct: 'Labellers who see a proposed answer tend to accept it unless it is clearly wrong, so borderline and subtly
     wrong predictions are likely to become the "correct" label. The 95% match then partly measures the model against
     itself and overstates its accuracy by an unknown amount. Every other check on this test set inherits the same bias,
-    so the labels need to be made without sight of the model''s output, at least for a sample used to measure the effect.'
+    so the labels need to be made without sight of the model''s output, at least for a sample used to measure the
+    effect.'
   why_not:
     A: Agreement between labellers is worth measuring, but experienced staff labelling alone is a common, acceptable
       approach; the larger problem is that their labels lean towards the model's own answers.
     C: Results by type should be reported, but breaking down a biased figure by type gives biased figures by type, so this
       does not fix the main problem.
-    D: Small per-type samples widen the uncertainty, but more documents labelled the same way would only make an
-      overstated result look more precise.
+    D: Small per-type samples widen the uncertainty, but more documents labelled the same way would only make an overstated
+      result look more precise.
 status: published
 outline_version: '2026-04-15'
 sample: false

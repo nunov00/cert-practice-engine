@@ -1,10 +1,10 @@
 id: aair-d2-2.3-0027
 subdomain: '2.3'
 difficulty: medium
-stem: A manufacturer is retiring an AI agent that onboarded new suppliers, now that a replacement process is live. The retirement
-  plan disables the agent's service account and deletes its deployment. To finish jobs that ran over several days, the agent
-  scheduled follow-up tasks in the procurement system, each running under an access token issued to the task. What should
-  the plan MOST add?
+stem: A manufacturer is retiring an AI agent that onboarded new suppliers, now that a replacement process is live. The
+  retirement plan disables the agent's service account and deletes its deployment. To finish jobs that ran over several
+  days, the agent scheduled follow-up tasks in the procurement system, each running under an access token issued to the
+  task. What is MOST important to add to the plan?
 options:
   A: Keep the agent's logs and decision records for the retention period
   B: Find and remove the scheduled tasks and tokens the agent created
@@ -12,14 +12,15 @@ options:
   D: Have the procurement owner sign off that the agent is retired
 answer: B
 explanation:
-  why_correct: The follow-up tasks run under their own tokens, so disabling the agent's account and deleting its deployment
-    does not stop them. Left in place, they would keep acting in the procurement system with no owner and no monitoring. Finding
-    and removing what the agent created, and revoking those tokens, is what actually ends the agent's ability to act.
+  why_correct: The follow-up tasks run under their own tokens, so disabling the agent's account and deleting its
+    deployment does not stop them. Left in place, they would keep acting in the procurement system with no owner and no
+    monitoring. Finding and removing what the agent created, and revoking those tokens, is what actually ends the
+    agent's ability to act.
   why_not:
     A: Keeping records for audit and disputes is a standard part of retirement. It does not stop the tasks that will keep
       running in the procurement system after the account is disabled.
-    C: 'Checking for callers prevents broken processes, and such breaks show up as errors. The scheduled tasks are the opposite
-      problem: they act on their own and would carry on silently.'
+    C: 'Checking for callers prevents broken processes, and such breaks show up as errors. The scheduled tasks are the
+      opposite problem: they act on their own and would carry on silently.'
     D: Owner sign-off gives the retirement an accountable decision. Without someone finding the tasks the agent left behind,
       the owner would be signing off a retirement that is not complete.
 status: published
