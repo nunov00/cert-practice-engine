@@ -1,0 +1,34 @@
+id: aair-d1-1.5-0030
+subdomain: '1.5'
+difficulty: medium
+stem: A gym chain plans to replace membership cards with face recognition at its entrances, storing a face template for
+  each member. Local law allows biometric identification of customers only with their explicit consent, and the chain
+  will ask each member for it. Members who keep a card will pay a higher monthly fee. Which legal consideration should
+  the risk practitioner MOST raise?
+options:
+  A: How long face templates may be kept after a membership ends
+  B: Whether members' consent to the face scans is freely given
+  C: What security the law requires for stored face templates
+  D: Whether members must be told how their face templates are used
+answer: B
+explanation:
+  why_correct: Face templates used to identify people are biometric data, which data protection laws usually allow only on
+    narrow grounds such as explicit consent. Consent must be freely given, and charging members more for refusing makes
+    it hard to say that it is. If the consent is not valid, the chain has no lawful basis for the processing at all,
+    whatever its retention, security or accuracy controls.
+  why_not:
+    A: Retention limits for templates are a real requirement, but they only matter once the processing has a lawful basis.
+      The priced alternative puts that basis itself in doubt.
+    C: Biometric templates need strong protection, and the chain must provide it. Good security does not cure processing
+      that rests on consent members were pressed to give.
+    D: Members must be told how their data is used, and the chain should do so. Notice does not make consent valid when
+      refusing costs more, and the price of refusing goes to the lawful basis itself.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-13-daily-aair-check

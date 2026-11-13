@@ -3,7 +3,7 @@ subdomain: '6.2'
 difficulty: medium
 stem: A logistics firm's monthly unauthenticated vulnerability scans of its 1,500 servers report few findings, yet a
   penetration tester found outdated libraries on many of them that no network service exposes. Most servers run purchased
-  software, and about a third are vendor appliances that accept no added agents. Which change to the scanning BEST fits?
+  software, and about a third are vendor appliances that accept no added agents but offer a read-only administrative sign-in that reports their installed software and versions. Which change to the scanning BEST fits?
 options:
   A: Install a vulnerability agent on each server that reports its installed packages
   B: Run credentialed scans that sign in to each server with a read-only account
@@ -13,7 +13,8 @@ answer: B
 explanation:
   why_correct: Flaws in libraries that no network service exposes are invisible from outside, so the scanner has to look
     at each host from the inside. Credentialed scans sign in and read installed packages and versions, and they also reach
-    appliances that cannot take an agent, since these usually allow a read-only sign-in.
+    appliances that cannot take an agent, since their vendors expose authenticated inventory data through a read-only
+    sign-in.
   why_not:
     A: Agents give the same inside view and suit servers that can run them, but a third of the estate is appliances that
       accept no added agents, so the gap would remain there.
@@ -21,7 +22,7 @@ explanation:
       on any port.
     D: Composition analysis finds outdated libraries in software the firm builds, but most of these servers run purchased
       software that never passes through its pipelines.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
@@ -29,4 +30,4 @@ provenance:
   run_id: 2026-11-11-daily-cissp
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-11-11-daily-cissp-check
+  checked_by: 2026-11-13-daily-cissp-check

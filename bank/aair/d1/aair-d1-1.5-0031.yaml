@@ -1,0 +1,32 @@
+id: aair-d1-1.5-0031
+subdomain: '1.5'
+difficulty: medium
+stem: A software start-up plans to train its own small language model on several million answers that it will generate through
+  a large provider's paid API. It will then sell the small model to businesses as a cheaper alternative to that provider's
+  own service. Which legal consideration should the risk practitioner MOST raise?
+options:
+  A: Whether the generated answers contain memorised personal data
+  B: Whether the provider owns copyright in the answers its model generates
+  C: Whether the API's terms permit this use of the outputs
+  D: Whether claims over the provider's training data could reach the start-up
+answer: C
+explanation:
+  why_correct: The start-up gets the answers only by accepting the provider's API terms, and such terms commonly bar using
+    outputs to build a competing model. A breach could bring termination, damages or a claim against the product itself. The
+    contract binds the start-up whatever copyright says about the outputs, so it is the first legal question for this plan.
+  why_not:
+    A: Memorised personal data in outputs is possible and worth filtering for. It is a secondary data quality risk, not the
+      legal question that the plan to compete with the provider raises.
+    B: Copyright in model outputs is unsettled and often weak, and providers' terms usually assign output rights to users
+      anyway. The restriction that matters comes from the contract the start-up must accept.
+    D: Disputes over how the provider trained its model are real, but they are aimed at the provider. The start-up's own exposure
+      turns on the terms it accepts to use the API.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-13-daily-aair-check

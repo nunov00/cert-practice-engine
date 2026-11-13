@@ -1,0 +1,34 @@
+id: cissp-d2-2.4-0005
+subdomain: '2.4'
+difficulty: hard
+stem: A SaaS HR provider encrypts each customer's records under that customer's own data key, and plans to destroy the key
+  when a contract ends so that the data becomes unreadable everywhere, including its 13 months of immutable database backups.
+  Contracts require this within 30 days of exit. Each data key is stored in a table of the same database. Which change does
+  the plan MOST need?
+options:
+  A: Hold the data keys in a key management service that keeps deleted keys for 30 days at most
+  B: Wrap each data key with a master key held in a hardware security module
+  C: Leave the key table out of the database backups so that no old copies of keys survive
+  D: Re-encrypt a departing customer's records under a fresh key at exit, then destroy that key
+answer: A
+explanation:
+  why_correct: Cryptographic erasure works only if every copy of the key is destroyed. With the keys in the same database,
+    each immutable backup holds a copy for 13 months. Keeping the keys in a separate key management service, whose own retention
+    of deleted keys fits within 30 days, means destroying a customer's key ends access to every backup of their data, while
+    other customers' keys stay recoverable.
+  why_not:
+    B: Wrapping protects the keys if a backup is stolen, but each backup still holds the departing customer's wrapped key,
+      and the master key still unwraps it, so deleting the live copy leaves the backups readable.
+    C: Leaving keys out of the backups does stop old key copies surviving, but a restore would then bring back every customer's
+      data with no keys to read it, which defeats the backups.
+    D: Re-encrypting at exit protects the live copy, but the 13 months of backups hold the records under the old key, and
+      that key sits in those same backups.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-13-daily-cissp-check
+  options_only: not_obvious

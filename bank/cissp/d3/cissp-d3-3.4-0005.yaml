@@ -1,0 +1,33 @@
+id: cissp-d3-3.4-0005
+subdomain: '3.4'
+difficulty: medium
+stem: A security vendor's endpoint agent scans files inside a kernel-mode driver, including archives and documents that arrive
+  by email. Testers sent a crafted archive that exploited a parsing flaw and ran their code in the kernel. The vendor maintains
+  about 40 file-format parsers and expects further flaws to be found in them. Which design change BEST addresses this risk?
+options:
+  A: Compile the driver with stack canaries, control-flow guard and kernel address randomisation
+  B: Fuzz each parser continuously in the build pipeline, and fix each crash before release
+  C: Check each file's structure with a strict format validator in the driver before parsing
+  D: Parse files in a sandboxed, low-privilege user process, keeping interception in the kernel
+answer: D
+explanation:
+  why_correct: Untrusted content is parsed in the most privileged ring, so any parsing flaw hands the attacker the whole machine.
+    Moving the parsers into a sandboxed, low-privilege user-mode process uses the processor's privilege rings and the operating
+    system's process isolation, so a future flaw, which the vendor expects, yields only a confined process. The kernel keeps
+    the small, stable job of intercepting files.
+  why_not:
+    A: Exploit mitigations raise the cost of each exploit and are worth having, but they can be bypassed, and any flaw that
+      is exploited still runs with kernel rights.
+    B: Continuous fuzzing finds many flaws before release and should be done, but it cannot find them all, and with 40 parsers
+      more will ship. Each one missed is still a kernel compromise.
+    C: A strict validator rejects many malformed files, but it is itself a parser of untrusted input running in the kernel,
+      so it moves the attack surface rather than removing it.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-13-daily-cissp-check
+  options_only: not_obvious

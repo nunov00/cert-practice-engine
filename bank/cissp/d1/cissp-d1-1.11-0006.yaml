@@ -1,0 +1,34 @@
+id: cissp-d1-1.11-0006
+subdomain: '1.11'
+difficulty: medium
+stem: A bank outsources development of its mobile banking app to a contractor whose developers commit code to the bank's
+  repository, about 30 changes a week. The contractor staffs the team through several subcontracted agencies, and its
+  developers change every few months. The bank's main concern is a developer deliberately hiding malicious logic in the app.
+  Which control BEST addresses this concern?
+options:
+  A: Background screening of each contractor developer before they are given access
+  B: Peer review of each change by a second contractor developer before commit
+  C: Review and approval of each contractor change by a bank engineer before merge
+  D: Static analysis of each contractor change, with builds blocked on findings
+answer: C
+explanation:
+  why_correct: Deliberately hidden logic is best caught by a person who understands the code and does not answer to the
+    supplier. Requiring a bank engineer to review and approve each contractor change before it is merged puts an independent
+    check at the one point every change must pass, and about 30 changes a week is a workload the bank can sustain.
+  why_not:
+    A: Screening reduces the chance of hiring a bad actor and is good practice, but with developers supplied through several
+      agencies and replaced every few months, the bank cannot verify the screening, and a clean record does not stop a
+      developer who is coerced or bribed later.
+    B: Peer review catches many mistakes, but the second reviewer comes from the same rotating, subcontracted pool as the
+      author, so it is not independent of the threat the bank is worried about.
+    D: Static analysis finds common coding flaws at scale, but malicious logic is written to look like normal code, such as
+      a hidden condition or an extra data flow, which pattern-based scanners rarely flag.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-13-daily-cissp-check
+  options_only: not_obvious

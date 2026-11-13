@@ -1,0 +1,32 @@
+id: cissp-d3-3.3-0005
+subdomain: '3.3'
+difficulty: easy
+stem: A bank's corporate portal lets officers at client companies approve large transfers. Twice this year a client said its
+  officer never approved a transfer the portal shows as approved, and each dispute took months to settle. The new requirement
+  is approval evidence that will stand up if a client denies an approval in court. Which control BEST meets this requirement?
+options:
+  A: Approvals written to a write-once log with a trusted timestamp on each entry
+  B: Each approval signed with the bank's HSM key and the officer's user ID
+  C: Each approval signed on a token whose key only that officer holds
+  D: Step-up MFA for each approval, with the approval session recorded
+answer: C
+explanation:
+  why_correct: The dispute is between the bank and its client, so the evidence must be something the bank could not have
+    produced on its own. A signature made over the transfer details with a private key that only the client's officer holds,
+    on a token the bank never controls, shows that the officer's key approved that specific transfer.
+  why_not:
+    A: A write-once, timestamped log shows the record was not changed later, but the bank's own system created the entry, so
+      it cannot show that the officer, rather than someone else or the system, made the approval.
+    B: A digital signature is the right kind of evidence, but a key the bank holds proves only that the bank's system signed
+      the record, which is exactly what a client challenging the bank's records disputes.
+    D: Step-up MFA makes it much harder for someone else to approve with the officer's account, but the proof it leaves is
+      still the bank's own logs and recordings, not evidence bound to the officer.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-13-daily-cissp-check
+  options_only: obvious

@@ -1,0 +1,35 @@
+id: aair-d1-1.1-0035
+subdomain: '1.1'
+difficulty: hard
+stem: A law firm wants a language model to list every indemnity clause in contracts of up to 300 pages, so that lawyers
+  can check each one. The longest contracts fit within the model's context window. In testing, the model reliably found
+  clauses near the start and end of long contracts but often missed those in the middle. Which approach BEST fits this
+  use?
+options:
+  A: Fine-tune the model on contracts with their indemnity clauses labelled
+  B: Retrieve the passages most similar to an indemnity query and review those
+  C: Move to a model with a context window several times larger
+  D: Run the model on overlapping sections in turn and combine the clauses found
+answer: D
+explanation:
+  why_correct: Language models often attend less reliably to material in the middle of a long input, even when it fits in
+    the context window. That matches the test results. Splitting the contract into overlapping sections keeps each input
+    short, where position matters much less, and the overlap stops a clause being lost at a boundary. Combining the
+    clauses found in each section gives the full list the lawyers need, and a check on a sample of contracts confirms
+    that nothing is missed.
+  why_not:
+    A: Fine-tuning would help the model recognise clauses, but it already finds them at the start and end. The misses depend
+      on position in a long input, not on recognition.
+    B: Retrieval is a good way to focus a model on relevant text, but it returns a set number of the closest passages. The
+      task needs every clause, and differently worded clauses can fall outside that set.
+    C: A larger window helps when documents do not fit. These contracts already fit, and the misses come from where clauses
+      sit in a long input, which a larger window does not fix.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-13-daily-aair-check

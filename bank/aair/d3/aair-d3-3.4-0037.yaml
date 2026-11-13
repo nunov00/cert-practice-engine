@@ -1,0 +1,34 @@
+id: aair-d3-3.4-0037
+subdomain: '3.4'
+difficulty: medium
+stem: A water utility's chatbot advises customers during supply incidents, such as boil-water notices. The board's
+  appetite allows no more than 50 unsafe answers a year to reach customers. The key risk indicator is the share of
+  unsafe answers in a weekly graded sample of 300 answers. It has stayed flat and green while chat volume tripled after
+  the phone line closed. Which change to the indicator BEST serves the board?
+options:
+  A: Report the unsafe share separately for incident and normal periods
+  B: Grade a larger weekly sample as chat volume rises, keeping the share
+  C: Report the weekly number of unsafe answers found in the graded sample
+  D: Report the estimated number of unsafe answers given so far this year
+answer: D
+explanation:
+  why_correct: The board set its appetite as a number of unsafe answers a year, but the indicator reports a share. With
+    volume tripled, an unchanged share means about three times as many unsafe answers reach customers, so the indicator
+    can stay green while the appetite is breached. Estimating the number of unsafe answers, from the sampled share and
+    the chat volume, measures the risk in the board's own terms.
+  why_not:
+    A: Splitting by period is useful because unsafe advice matters most during incidents. Each split is still a share, so
+      neither would show the effect of the tripled volume on the yearly count.
+    B: A larger sample makes the share more precise, but it is still a share. It would still stay flat while the number of
+      unsafe answers tripled.
+    C: A count taken from a fixed sample of 300 moves with the share, not with chat volume, so it would stay flat while the
+      yearly number of unsafe answers tripled.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-13-daily-aair-check

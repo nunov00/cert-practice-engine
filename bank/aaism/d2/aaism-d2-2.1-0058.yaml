@@ -1,0 +1,34 @@
+id: aaism-d2-2.1-0058
+subdomain: '2.1'
+difficulty: medium
+stem: An insurer's key risk indicator for its claim-form reading model is the monthly audited error rate, set to alert
+  at 3%, the risk owner's tolerance. The rate has crept up about half a point a month. A retrain takes six weeks from
+  decision to release. After the last alert, errors stayed above tolerance for two months. No other measure was found
+  that tracks these errors ahead of the audits. What should the risk manager change?
+options:
+  A: Keep the tolerance and set the alert low enough to allow for the retrain
+  B: Audit the error rate each week instead of each month, to alert sooner
+  C: Add a leading indicator that signals rising errors before audits do
+  D: Ask the risk owner to lower the tolerance to 2% so alerts come sooner
+answer: A
+explanation:
+  why_correct: An indicator that alerts at the tolerance itself reports a breach rather than warning of one. Because the
+    error rate rises steadily and a retrain takes six weeks, setting the alert below the tolerance by the rise expected
+    over that lead time, plus the audit interval and the time taken to decide, lets the treatment land before errors
+    cross the limit, while the tolerance keeps its meaning.
+  why_not:
+    B: Weekly audits would spot the 3% crossing a few weeks sooner, but the alert would still fire at the tolerance, and the
+      six-week retrain would start only once errors were already above it.
+    C: Leading indicators help where errors rise without warning, but none has been found here, and the audited rate already
+      climbs steadily and predictably. The problem is where the alert is set, not what is measured.
+    D: This gives earlier alerts by changing the owner's statement of acceptable harm. Errors between 2% and 3% would then
+      be reported as breaches although the business can accept them.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-13-daily-aaism-check
+  options_only: not_obvious

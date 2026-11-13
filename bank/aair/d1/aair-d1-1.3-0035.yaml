@@ -1,0 +1,33 @@
+id: aair-d1-1.3-0035
+subdomain: '1.3'
+difficulty: hard
+stem: An insurer's claims model proposes a settlement for each motor claim, and a handler must approve or change each proposal
+  before payment. Handlers' bonuses are based on the number of claims they close each day. A quality review finds handlers
+  approved several proposals with plain errors, and the override rate has fallen below 1%. Which change BEST strengthens human
+  oversight of the model?
+options:
+  A: Insert test proposals with known errors to see if handlers catch them
+  B: Track each handler's override rate and review those near zero
+  C: Base handlers' bonuses on review quality instead of daily volume
+  D: Train handlers on the risk of deferring to the model's proposals
+answer: C
+explanation:
+  why_correct: Handlers are paid to close claims quickly, and approving a proposal as it stands is the fastest way to close
+    one. As long as that incentive stands, oversight will be rushed, whatever monitoring or training is added. Rewarding the
+    quality of review instead removes the pressure that turns approval into a formality.
+  why_not:
+    A: Seeded errors are a strong test of whether reviewers are paying attention. They would confirm the problem, but handlers
+      would still be paid to approve quickly.
+    B: Override rates are a useful oversight indicator, but a low rate can be right or wrong, and the pressure to approve
+      quickly would remain for every handler.
+    D: Training on automation bias helps where reviewers defer out of habit. Here they are paid to clear claims quickly, which
+      training does not change.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-13-daily-aair-check

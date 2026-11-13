@@ -1,0 +1,34 @@
+id: cissp-d5-5.6-0007
+subdomain: '5.6'
+difficulty: medium
+stem: A SaaS provider accepts SAML responses from its customers' identity providers and checks the XML signature on each.
+  A tester rearranged a validly signed response issued for her own account so that it also carried an unsigned assertion naming
+  a customer's administrator. The signature still verified, and the service signed her in as the administrator. Which change
+  BEST fixes this?
+options:
+  A: Require identity providers to encrypt each assertion to the provider's public key
+  B: Take user details only from the element that the verified signature covers
+  C: Pin each customer identity provider's signing certificate in the configuration
+  D: Require identity providers to sign each assertion as well as the whole response
+answer: B
+explanation:
+  why_correct: This is signature wrapping. The check confirmed that some element of the message was validly signed, but the
+    code then read the user from a different, unsigned element. Reading user details only from the element the verified signature
+    references closes the gap whatever the identity providers send, because an inserted element is never the one that was
+    signed.
+  why_not:
+    A: Encryption hides assertions from the browser, but the provider's public key is public, so the tester can encrypt her
+      inserted assertion too, and the service would decrypt and accept it in the same way.
+    C: Pinning guards against a forged signing certificate, but the signature here was genuine and came from the right identity
+      provider. The flaw is in which element the service trusted after the check.
+    D: Signing each assertion is good practice, but the service's code still read the user from an element it had not checked.
+      Unless the service changes what it consumes, an unsigned assertion placed beside a signed one is still accepted.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-13-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: aaism-d3-3.1-0038
+subdomain: '3.1'
+difficulty: medium
+stem: A company's AI agent books staff travel by driving a web browser, using whichever airline and hotel sites offer
+  the best fare. It runs in each employee's own browser profile, signed in to their webmail, HR portal and card account.
+  Staff start a booking and leave it to finish. A test page told it to open webmail and forward recent messages, and it
+  did. Which design change BEST addresses this?
+options:
+  A: Limit the agent's browsing to an approved list of travel sites
+  B: Ask the employee to confirm each step outside the booking flow
+  C: Screen each page the agent visits with an injection classifier
+  D: Run the agent in a profile signed in to travel accounts only
+answer: D
+explanation:
+  why_correct: The injected page could act on webmail because the agent browses with every session the employee holds. A
+    separate profile signed in only to the travel accounts removes that ambient access, so a page that steers the agent
+    can reach nothing beyond the booking, whichever sites the agent visits.
+  why_not:
+    A: An allow-list would keep the agent off unknown sites, but the agent must use whichever airline and hotel sites offer
+      the best fare, so the list cannot be fixed in advance.
+    B: Confirmation works when someone is there to give it, but staff start a booking and leave the agent to finish, so the
+      steps would stall or be approved without attention.
+    C: A classifier catches some injected pages, but it misses new wording, and the agent would still hold the webmail and
+      card sessions that make a miss damaging.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-13-daily-aaism-check

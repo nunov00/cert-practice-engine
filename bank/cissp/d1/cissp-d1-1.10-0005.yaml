@@ -1,0 +1,35 @@
+id: cissp-d1-1.10-0005
+subdomain: '1.10'
+difficulty: medium
+stem: An insurer's product teams each keep a STRIDE threat model of their own application, and each team can see only
+  its own application's bus permissions. Attackers took over a little-used internal survey app and used the message bus
+  credentials it held to publish fake claims, which the payments app then paid. The bus authenticates every publisher
+  with credentials of its own. Which modelling step would MOST likely have exposed this path beforehand?
+options:
+  A: STRIDE spoofing analysis of the payments app's inbound flow from the message bus
+  B: An attack tree, built by the payments team, rooted at a fraudulent claim payment
+  C: A model of the message bus itself, listing each publisher and the topics it may write
+  D: STRIDE analysis, in the survey app's own model, of theft of the bus credentials it holds
+answer: C
+explanation:
+  why_correct: The path ran between two applications through a shared component that neither team's model owned. Modelling
+    the bus as a system in its own right, with every application that can publish to it and what each may write, shows
+    that a little-used survey app can write to the claims topic the payments app trusts. That cross-application
+    authorisation flaw is the one the attackers used.
+  why_not:
+    A: Spoofing analysis of the inbound flow is the standard STRIDE step, but because the bus authenticates each publisher,
+      the payments team would rate spoofing as mitigated. The attackers did not forge an identity; they used a genuine
+      one that had rights it should not have had.
+    B: An attack tree rooted at the loss is a strong way to find routes to it, but the payments team can see only its own
+      bus permissions, so it cannot tell which other applications hold credentials that can write to the claims topic.
+    D: The survey team may well list credential theft, but it rates the impact against its own little-used app. Without
+      knowing that those credentials can publish claims that payments acts on, it would rank the threat low.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-13-daily-cissp-check
+  options_only: not_obvious

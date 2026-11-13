@@ -1,0 +1,33 @@
+id: cissp-d2-2.6-0005
+subdomain: '2.6'
+difficulty: medium
+stem: A wealth manager wants its email DLP to stop staff sending client records outside the firm. Past leaks were spreadsheets
+  staff built from ad hoc CRM queries, each holding a different mix of clients and fields such as names, addresses and portfolio
+  values. Rules matching the account-number format flag thousands of harmless emails a day, as order and invoice numbers share
+  it. Which detection method BEST fits?
+options:
+  A: Fingerprints of the firm's standard client reports and document templates
+  B: Account-number pattern rules that also require client keywords nearby
+  C: Sensitivity labels that staff apply to files, with DLP blocking labelled ones
+  D: Exact data matching against an indexed copy of the CRM's client fields
+answer: D
+explanation:
+  why_correct: Exact data matching hashes the actual values held in the CRM and looks for them in outgoing mail, so it
+    recognises real client names, addresses and values in any combination, in any newly built spreadsheet, while order and
+    invoice numbers that are not client data do not match. That suits leaks made of ad hoc extracts with no fixed layout.
+  why_not:
+    A: Fingerprinting works well for known documents and templates, but each leaked spreadsheet was a new mix of clients and
+      fields built from a query, so there is no fixed document to fingerprint.
+    B: Proximity keywords cut some false positives, but the leaks were built from names, addresses and values that have no
+      fixed format, and an extract need not contain account numbers at all.
+    C: Labels let DLP act on a file's classification, but these spreadsheets are new files built by the staff who send them,
+      so the control depends on each sender labelling their own extract correctly.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-13-daily-cissp-check
+  options_only: not_obvious

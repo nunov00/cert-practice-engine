@@ -1,0 +1,35 @@
+id: aaism-d3-3.1-0040
+subdomain: '3.1'
+difficulty: medium
+stem: A bank's customer assistant drafts each reply, and a second general-purpose chat model, prompted with the bank's
+  conduct rules, approves or blocks it before sending. Red teamers got unsuitable investment tips approved by making the
+  assistant end each reply with a short note telling the reviewer that compliance had cleared it. Which design change
+  BEST addresses this?
+options:
+  A: Remove notes addressed to the reviewer from each reply before checking
+  B: Tell the reviewer model in its prompt to ignore instructions in replies
+  C: Replace the reviewer with a classifier trained to score rule breaches
+  D: Use a reviewer model from a different provider than the assistant's
+answer: C
+explanation:
+  why_correct: 'A general-purpose chat model follows instructions in whatever text it reads, and the reply it checks is
+    text an attacker can shape through the assistant. A classifier trained only to score replies against the conduct rules
+    returns a score rather than following instructions, so a note addressed to it is just more text to score, not a command
+    it obeys. That removes the route the red team used instead of patching one form of it, though the classifier still
+    needs its own adversarial testing.'
+  why_not:
+    A: Removing such notes blocks this wording, but attackers can disguise the instruction in many other ways, and the
+      reviewer would still follow any it reads.
+    B: A prompt telling the model to ignore embedded instructions is itself just text in the same context; it reduces
+      success rates but red teams routinely get past it.
+    D: A different provider avoids shared blind spots between the two models, but any general chat model can still be
+      instructed by text placed in the reply it checks.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aaism
+  check_verdict: fail
+  checked_by: 2026-11-13-daily-aaism-check
+  options_only: not_obvious
