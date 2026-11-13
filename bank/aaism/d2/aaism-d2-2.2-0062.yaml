@@ -1,0 +1,32 @@
+id: aaism-d2-2.2-0062
+subdomain: '2.2'
+difficulty: medium
+stem: A bank's operations agent, used only by back-office staff, reads customer case records and can raise card limits and
+  waive fees. It has no web or email access. Customers open cases in the bank's app, describing the problem in their own words.
+  Staff can raise limits and waive fees themselves in the core system. Which threat should testing prioritise?
+options:
+  A: Staff talking the agent into raising limits or waiving fees for friends
+  B: A customer extracting other customers' case details through the agent
+  C: Instructions in case descriptions that steer the agent's actions
+  D: Theft of the agent's credentials for the card and fee systems
+answer: C
+explanation:
+  why_correct: The agent has no web or email, but customers write the case descriptions it reads, so outside text still reaches
+    a model that can raise limits and waive fees. Instructions planted in a case description could steer those actions, which
+    makes indirect prompt injection through case records the threat to test first.
+  why_not:
+    A: Insider misuse is a real threat, but staff can already make these changes themselves in the core system, so the agent
+      gives them no new route to abuse.
+    B: This would matter for a customer-facing assistant, but customers never interact with this agent. Only back-office staff
+      use it.
+    D: Stolen credentials matter for any integration and are covered by normal access controls. The new exposure this agent
+      adds is outside text driving its actions.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-13-daily-aaism-check

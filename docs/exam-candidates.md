@@ -44,8 +44,8 @@ market; every row is *to verify* until a daily run checks it).
 | 6 | CC (ISC2) | Adaptive (CAT), 5 domains (outline from 2026-09-01; weights to confirm from the outline) | 4 | 5 | 4 | 2 | 4 | 23 | 2026-11-10 |
 | 7 | CEH (EC-Council) | 125 MCQ in 4 hours, v13; official blueprint v5 lists 9 domains (6/17/15/24/14/5/10/5/5%), applicability to v13 to confirm | 4 | 5 | 2 | 4 | 2 | 21 | 2026-11-11 |
 | 8 | CySA+ (CompTIA) | up to 85 in 165 min, MCQ and performance-based, 4 domains (34/26/24/16% on V4 from 2026-06-23) | 3 | 3 | 4 | 4 | 3 | 20 | 2026-11-12 |
-| 9 | SSCP (ISC2) | 100-125 CAT items (MCQ and advanced types) in 2 hours, 7 domains (16/15/15/14/9/16/15%) | 2 | 5 | 3 | 4 | 4 | 20 | 2026-10-31 |
-| 10 | CGRC (ISC2) | 125 items (MCQ and advanced types) in 3 hours, 7 domains (16/10/14/17/16/14/13%) | 2 | 5 | 3 | 4 | 4 | 20 | 2026-11-01 |
+| 9 | CGRC (ISC2) | 125 items (MCQ and advanced types) in 3 hours, 7 domains (16/10/14/17/16/14/13%) | 2 | 5 | 3 | 4 | 4 | 20 | 2026-11-01 |
+| 10 | SSCP (ISC2) | 100-125 CAT items (MCQ and advanced types) in 2 hours, 7 domains (16/15/15/14/9/16/15%) | 2 | 5 | 3 | 4 | 4 | 20 | 2026-11-13 |
 
 Rank follows the total; ties go to the higher demand score, then to the
 older Checked date.
@@ -200,7 +200,8 @@ older Checked date.
   the CCSP and SSCP quizzes, was not read through a page fetch, so calibration
   stays at 3. ISC2 publishes no CGRC holder count, so demand stays at 2. Scores
   and total (20) unchanged; it ranks 10th, below SSCP, which ties on total and
-  demand and now has the older Checked date.
+  demand and now has the older Checked date. Since SSCP's re-check on
+  2026-11-13, CGRC has the older Checked date and ranks 9th.
 - **SSCP:** ISC2's practitioner-level operations exam; shares ground with
   CISSP and CCSP. Checked 2026-10-31: adaptive (CAT) since 2025-10-01, 100 to
   125 items in 2 hours, multiple choice and advanced item types, pass mark
@@ -217,7 +218,16 @@ older Checked date.
   Security+, gives full DoD 8140 operational qualification; ISC2 publishes no
   SSCP holder count (its member counts page gives only the total of more than
   270,000), so demand stays at 2. Scores and total (20) unchanged; it ranked
-  10th until CGRC was checked on 2026-11-01; it is now 9th.
+  10th until CGRC was checked on 2026-11-01; it is now 9th. Re-checked 2026-11-13:
+  the outline PDF still gives the 2025-10-01 effective date, CAT delivery, 100
+  to 125 items in 2 hours, 700/1000, multiple choice and advanced item types,
+  and the same seven weights; the outline page lists the same seven domains
+  and announces no new outline. The SSCP page still shows DoDM 8140.03
+  approval and the pairing with Security+, publishes no holder count, and sells
+  the exam as one attempt or two; the quiz directory rendered no quiz listings
+  through a page fetch, so calibration stays at 3 and demand at 2. Scores and
+  total (20) unchanged; it moves from 9th to 10th, as CGRC now has the older
+  Checked date.
 
 ## Changes
 
@@ -243,3 +253,4 @@ older Checked date.
 | 2026-11-10 | CC row re-checked: 2026-09-01 outline and five domain names confirmed, weights and item count still not readable on the page; official practice quiz still linked and exam sold as a paid attempt; scores, total and rank unchanged. Security+ Checked date set to 2026-11-09 to match the previous re-check | ISC2 [CC exam outline](https://www.isc2.org/certifications/cc/cc-certification-exam-outline), [CC page](https://www.isc2.org/certifications/cc), [CC self-study resources](https://www.isc2.org/certifications/cc/cc-self-study-resources) |
 | 2026-11-11 | CEH row re-checked: v13 format (125 MCQ, 4 hours, 60-85% pass mark, optional practical) confirmed, no v14 announced; still no domain weights on the issuer page, so blueprint v5 remains the weight source to confirm; scores, total and rank unchanged | EC-Council [CEH page](https://www.eccouncil.org/train-certify/certified-ethical-hacker-ceh/), [blueprint v5](https://cert.eccouncil.org/wp-content/uploads/2024/04/CEH-Exam-Blueprint-v5.pdf) |
 | 2026-11-12 | CySA+ row re-checked: V4 (CS0-004) format, weights and the V3 English retirement on 2026-12-22 confirmed; the free official 10 V4 practice questions still published; scores, total and rank unchanged | CompTIA [CySA+ V4 page](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v4/), [V4 practice questions](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v4/practice-questions/), [CySA+ V3 page](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v3/) |
+| 2026-11-13 | SSCP row re-checked: 2025-10-01 outline (CAT, 100-125 items, 2 hours, 700/1000, MCQ and advanced types, seven weights 16/15/15/14/9/16/15%) confirmed, no outline change announced; no holder count, quiz not readable; scores and total unchanged, rank 9 to 10 (CGRC now has the older Checked date) | ISC2 [exam outline (effective 2025-10-01)](https://edge.sitecorecloud.io/internationf173-xmc4e73-prodbc0f-9660/media/Project/ISC2/Main/Media/documents/exam-outlines/MAR-EXAMS-SSCP-Exam_Outline-English---10012025---FINAL.pdf), [outline page](https://www.isc2.org/certifications/sscp/sscp-certification-exam-outline), [SSCP page](https://www.isc2.org/certifications/sscp), [quiz directory](https://www.isc2.org/certifications/quizzes) |

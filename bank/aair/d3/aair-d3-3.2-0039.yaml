@@ -1,0 +1,33 @@
+id: aair-d3-3.2-0039
+subdomain: '3.2'
+difficulty: medium
+stem: A breast screening service added an AI tool that marks suspicious areas on each mammogram as the radiologist opens
+  it. A year on, audits show that radiologists now miss more cancers in areas the tool left unmarked than they did before
+  the tool was introduced. Residual risk is above appetite. Which treatment is MOST appropriate?
+options:
+  A: Raise the tool's sensitivity so that it marks more possible areas
+  B: Train radiologists on the kinds of cancer the tool tends to miss
+  C: Show the tool's marks only after the radiologist records a first read
+  D: Have a second radiologist re-read a sample of unmarked mammograms
+answer: C
+explanation:
+  why_correct: 'Radiologists now do worse than they did without the tool in exactly the areas it leaves blank, so the added
+    risk comes from how they use it: seeing the marks first draws attention to them and away from the rest of the image.
+    Having each radiologist record an independent read before the marks appear restores the unaided search and keeps the
+    tool as a second check, which treats the cause rather than the tool''s own error rate.'
+  why_not:
+    A: A more sensitive tool would mark more cancers, but it would also mark many more normal areas, and radiologists
+      would still lean on the marks first, so cancers the tool misses would still be overlooked.
+    B: Knowing the tool's weak spots helps, but the problem is a shift in attention each time marked images open, which
+      training alone rarely changes for long when the workflow keeps showing marks first.
+    D: Sampled re-reads would detect some missed cancers and measure the problem, but they treat a small share of cases
+      after the fact and leave the cause of the extra misses in place.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-13-daily-aair-check
+  options_only: not_obvious

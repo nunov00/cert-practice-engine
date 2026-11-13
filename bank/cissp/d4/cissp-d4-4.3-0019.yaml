@@ -1,0 +1,33 @@
+id: cissp-d4-4.3-0019
+subdomain: '4.3'
+difficulty: hard
+stem: A bank's mobile API runs on 40 front-end servers in three regions that share no session state. To make the app open
+  fast on slow networks, the team enabled TLS 1.3 early data (0-RTT) for resumed sessions. Testers then captured an early-data
+  request that made a payment and replayed it, and the payment went through twice. Which change BEST fits?
+options:
+  A: Turn off early data and rely on ordinary one-round-trip session resumption
+  B: Accept early data only for read requests, holding others until the handshake ends
+  C: Issue single-use session tickets, so that each ticket can resume a session only once
+  D: Cut the lifetime of resumption tickets from seven days to a few minutes
+answer: B
+explanation:
+  why_correct: Early data can be replayed by anyone who captures it, because it is sent before the handshake proves the connection
+    is fresh. Accepting it only for requests that change nothing, such as loading balances, keeps the fast start the team
+    wanted, while a payment waits for the completed handshake, which a replay cannot reproduce. The server holds early requests
+    of other kinds until the handshake completes, or answers them with a retry signal so that the client sends them again.
+  why_not:
+    A: Turning off early data removes the replay risk and is a sound default, but it gives up the faster start that was the
+      reason for enabling it, when only requests that change something need protection.
+    C: Single-use tickets are the protocol's own anti-replay measure, but every server must know which tickets have been used,
+      and these 40 servers in three regions share no session state, so a replay sent to another server still succeeds.
+    D: Shorter ticket lifetimes shrink the window, but a replay sent seconds after the original falls well inside any lifetime
+      that still makes resumption useful.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-13-daily-cissp-check
+  options_only: not_obvious

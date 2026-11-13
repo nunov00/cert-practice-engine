@@ -1,0 +1,33 @@
+id: cissp-d3-3.2-0005
+subdomain: '3.2'
+difficulty: easy
+stem: A consultancy's 300 analysts are re-staffed each week across clients in a dozen industries, and new clients sign up
+  weekly. An analyst who has worked with one client's data must not later see a competitor's data, though they may work for
+  any client in another industry. Which access design BEST enforces this?
+options:
+  A: Information barriers between departments, each serving its own fixed set of client industries
+  B: Access decided from each analyst's history, refusing competitors of clients already seen
+  C: A role for each client, granted at staffing and removed when the analyst moves on
+  D: A compartment for each client, with analysts cleared only into those of current clients
+answer: B
+explanation:
+  why_correct: The rule depends on what each analyst has already seen, so the access decision has to remember it. Checking
+    each analyst's history and refusing data of any competitor of a client they have worked with is the Brewer-Nash approach.
+    Analysts can still start on any client, new clients fit in as they join, and the wall builds itself around each person
+    as they work.
+  why_not:
+    A: Departmental barriers are the classic way to separate conflicting work, but competitors sit in the same industry and
+      so in the same department, where every analyst could see all of them.
+    C: Per-client roles limit each analyst to current clients, but removing the role at re-staffing forgets what the analyst
+      saw. With weekly moves, an analyst could go from one client to its competitor the following week.
+    D: Compartments add mandatory labels, but clearance follows current assignments, so the same weekly moves let an analyst
+      be cleared into a competitor's compartment straight after working for its rival.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-13-daily-cissp-check
+  options_only: obvious

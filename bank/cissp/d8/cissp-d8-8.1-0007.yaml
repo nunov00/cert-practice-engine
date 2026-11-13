@@ -1,0 +1,34 @@
+id: cissp-d8-8.1-0007
+subdomain: '8.1'
+difficulty: hard
+stem: A retailer's teams merge code to the main branch many times a day, and each merge is deployed to production within the
+  hour. Unfinished features stay switched off by feature flags until launch, and the security team reviews each feature in
+  the week before it launches. A researcher recently used the API of a feature that was still switched off to export customer
+  orders. Which change BEST addresses this in the SDLC?
+options:
+  A: Penetration test each feature in staging before its flag is turned on
+  B: Make a risk-based security review part of merging each change to main
+  C: Make each flagged feature's endpoints refuse requests while it is off
+  D: Keep unfinished features on branches until their security review
+answer: B
+explanation:
+  why_correct: In this process code reaches production when it is merged, not when its flag is turned on, so a review timed
+    for launch comes after the code is already exposed. Making a proportionate security review part of each merge, through
+    the pull request's definition of done, puts the check where the code actually enters production, without changing how the
+    teams deliver.
+  why_not:
+    A: Testing before launch is thorough, but it has the same timing as the current review, so code would still sit in
+      production unreviewed for weeks before its flag is turned on.
+    C: Gating endpoints on the flag closes this path, but the unreviewed code still runs in production, and the protection
+      depends on each developer wrapping each entry point correctly.
+    D: Long-lived branches keep unfinished code out of production, but they undo the frequent merging the teams rely on,
+      causing large, risky merges at launch, and the review would still come late.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-13-daily-cissp-check
+  options_only: not_obvious

@@ -72,11 +72,6 @@ held:
   # carry only 9 and 11 non-hard (the most options-guessable go back first)
   - { id: cissp-d6-6.4-0011, pr: 83 }
   - { id: cissp-d8-8.5-0005, pr: 83 }
-  - { id: cissp-d7-7.9-0003, pr: 83 }
-  - { id: cissp-d1-1.4-0005, pr: 83 }
-  - { id: cissp-d6-6.2-0010, pr: 83 }
-  - { id: cissp-d3-3.7-0004, pr: 83 }
-  - { id: cissp-d3-3.9-0004, pr: 83 }
   - { id: aaism-d1-1.4-0034, pr: 83 }
   - { id: aaism-d1-1.5-0030, pr: 83 }
   - { id: aaism-d3-3.3-0038, pr: 83 }
@@ -97,3 +92,10 @@ held:
   # distractor before release: aaism-d3-3.2-0026 (B is a straw man, A and C near
   # twins), aaism-d3-3.5-0038, cissp-d5-5.2-0005 ("laptops and phones alike"
   # telegraphs the key), cissp-d6-6.4-0011, cissp-d8-8.5-0005 ("atomic" names the fix).
+  # Daily batch 2026-11-13, batch run: rechecked cissp-d1-1.4-0005,
+  # cissp-d3-3.7-0004, cissp-d3-3.9-0004, cissp-d6-6.2-0010 and cissp-d7-7.9-0003
+  # (Codex points on 3.9-0004 and 6.2-0010 applied) and released all five within
+  # CISSP's hard share. aaism-d3-3.1-0039 passed the independent check but the
+  # strict check lowered it (shared kernel -> per-session VM is close to a
+  # textbook mapping); AAISM's 3 surviving hard labels carry only 7 non-hard.
+  - { id: aaism-d3-3.1-0039, pr: 86 }

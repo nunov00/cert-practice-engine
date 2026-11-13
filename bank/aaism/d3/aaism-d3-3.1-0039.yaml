@@ -1,0 +1,32 @@
+id: aaism-d3-3.1-0039
+subdomain: '3.1'
+difficulty: medium
+stem: A free public data-analysis assistant runs the Python it writes for each user in a container on shared hosts, with no
+  network access and a hardened system-call profile. Users can steer it into running almost any code. A tester used a published
+  kernel flaw to break out of a container and read other users' files on the host. Which design change BEST addresses this?
+options:
+  A: Run each session's code in its own lightweight virtual machine
+  B: Patch the host kernels within days of each published flaw
+  C: Run the code as an unprivileged user with no root in the container
+  D: Watch the hosts for container escape attempts and end those sessions
+answer: A
+explanation:
+  why_correct: 'Containers share the host kernel, so any kernel flaw is a path from one user''s code to another''s files.
+    When anonymous users can run almost any code, the boundary has to survive kernel flaws: a lightweight virtual machine
+    per session gives each one its own kernel behind a hardware-backed boundary, which is far harder to cross.'
+  why_not:
+    B: Fast patching shrinks the window, but anonymous users can try each new flaw as soon as it is published and before any
+      patch lands, and the shared kernel remains the only barrier.
+    C: Dropping root reduces what code can do inside the container, but the escape went through the kernel, which unprivileged
+      processes still call into, so this flaw class stays open.
+    D: Monitoring may catch some escapes, but it acts after the boundary is crossed, and a quick read of other users' files
+      can finish before the session is ended.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-13-daily-aaism-check

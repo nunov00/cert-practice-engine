@@ -1,0 +1,34 @@
+id: aaism-d3-3.3-0041
+subdomain: '3.3'
+difficulty: medium
+stem: A hospital will share 50,000 discharge notes in a competition open to outside teams building summarisation models. A
+  tool tested at 99% recall removes names, dates and record numbers. The notes often mention rare conditions, jobs and small
+  home towns, and entries will be scored on how much clinical detail their summaries keep. Which approach BEST protects
+  patients while keeping the competition useful?
+options:
+  A: Release the notes publicly under terms that forbid re-identification attempts
+  B: Run a second de-identification tool to catch what the first one misses
+  C: Give registered teams access in a hosted enclave under data use terms
+  D: Generalise rare conditions, jobs and places in the text before release
+answer: C
+explanation:
+  why_correct: 'Once names and numbers are gone, the residual risk sits in free-text details such as a rare condition in a
+    small town, which no redaction tool finds reliably. Because the competition needs that clinical detail, the protection
+    has to come from controlling who sees the data and what can leave: registered teams working in a hosted enclave under
+    data use terms keeps the detail usable while the notes never become public.'
+  why_not:
+    A: Terms that forbid re-identification bind only those who respect them. A public release cannot be withdrawn, and rare
+      conditions and home towns make the notes linkable by anyone who ignores the terms.
+    B: A second tool catches more direct identifiers, but the remaining risk comes from combinations of ordinary details,
+      such as condition, job and town, that are not identifiers a redaction tool looks for.
+    D: Generalising these details would lower re-identification risk, but it strips the clinical detail that entries are scored
+      on keeping, so the competition loses its purpose.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-13-daily-aaism-check
+  options_only: not_obvious

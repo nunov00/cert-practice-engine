@@ -1,0 +1,32 @@
+id: aaism-d1-1.1-0031
+subdomain: '1.1'
+difficulty: medium
+stem: A software firm provides a CV-screening tool that an AI regulation classes as high-risk, and as its provider must monitor
+  how the tool performs once in use. Its 60 corporate customers run the tool on their own applicants, and their contracts
+  bar sending applicant data to the firm. Which approach BEST meets the monitoring duty?
+options:
+  A: Agreements for customers to report aggregate results and incidents
+  B: Quarterly retesting of the tool on the firm's own labelled CV sets
+  C: Telemetry that sends each screening decision's inputs to the firm
+  D: Reliance on customers' own duties to monitor and report incidents
+answer: A
+explanation:
+  why_correct: Monitoring after release needs evidence from real use, and that use happens at the customers. Agreements under
+    which customers report aggregate outcomes, such as selection rates by group, and incidents give the firm that evidence
+    without moving applicant data, which the contracts bar.
+  why_not:
+    B: Retesting on the firm's own sets checks the tool against data it already knows, not against the applicant pools customers
+      actually run it on, which is what monitoring in use is meant to reveal.
+    C: Decision-level telemetry would give the richest evidence, but sending applicants' inputs to the firm is exactly what
+      the customers' contracts bar.
+    D: Customers have their own duties as deployers, but the provider's monitoring duty is its own, and incident reports alone
+      would not show gradual changes in how the tool performs.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-13-daily-aaism-check

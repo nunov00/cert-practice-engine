@@ -22,7 +22,7 @@ explanation:
       rebuild the same scoring in new code without infringing it.
     D: Defensive disclosure keeps others from patenting an idea, but it makes the method public, which is the outcome the
       company most needs to avoid.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
@@ -30,4 +30,4 @@ provenance:
   run_id: 2026-11-11-daily-cissp
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-11-11-daily-cissp-check
+  checked_by: 2026-11-13-daily-cissp-check

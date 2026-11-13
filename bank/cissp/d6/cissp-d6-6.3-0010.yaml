@@ -1,0 +1,32 @@
+id: cissp-d6-6.3-0010
+subdomain: '6.3'
+difficulty: medium
+stem: A bank records all of its roughly 40,000 privileged sessions each month. Its procedure says that each session's actions
+  must stay within the scope of the change ticket it was opened for. The risk committee asks how often administrators stray
+  outside that scope. Which data BEST answers the question?
+options:
+  A: Alerts from rules that scan each session transcript for high-risk or unusual commands
+  B: Findings from reviewing each session opened under an emergency change ticket
+  C: Findings from reviewing the 20 longest sessions recorded in each month
+  D: Findings from reviewing a random monthly sample of sessions against their tickets
+answer: D
+explanation:
+  why_correct: The committee wants a rate across all sessions. Judging whether actions fit a ticket's scope needs a person
+    to compare them, which cannot be done for 40,000 sessions a month, so a random sample reviewed against each ticket gives
+    an unbiased estimate of the rate, with a known margin of error, and shows what kinds of deviation occur.
+  why_not:
+    A: Rules over every transcript give full coverage, but a high-risk command can be in scope and out-of-scope work often
+      uses ordinary commands, so alert counts do not measure deviation from the ticket.
+    B: Emergency changes are a sensible focus for risk-based review, but they are not representative of all sessions, so their
+      findings cannot say how often administrators stray in general.
+    C: Long sessions may hide more deviation, but a sample chosen by length is biased, and 20 sessions out of 40,000 cannot
+      give an overall rate.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-13-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: aaism-d1-1.3-0030
+subdomain: '1.3'
+difficulty: hard
+stem: Consultants upload files to their firm's AI assistant to ask questions about them. Each upload is also added to the
+  firm-wide knowledge base so later answers can draw on it. Uploads have included client contracts and HR complaints. Client
+  terms require the firm to delete a client's documents when each engagement ends. Conversations are kept for 30 days. Which
+  change BEST manages these uploads?
+options:
+  A: Index each upload with access limited to the person who uploaded it
+  B: Keep each upload only within its conversation, deleted along with it
+  C: Scan each upload and keep files flagged as sensitive out of the index
+  D: Keep uploads in the knowledge base for one year, then delete them
+answer: B
+explanation:
+  why_correct: Staff upload files to ask about them, so the files are needed only for that conversation. Keeping each upload
+    with its conversation, and deleting it with the conversation after 30 days, stops it spreading to other staff and ends
+    the copies the firm would otherwise have to find and delete when each client engagement closes.
+  why_not:
+    A: Limiting access to the uploader stops other staff seeing the files, but the copies stay in the index with no end date,
+      so client documents outlive the engagements the client terms tie them to.
+    C: Scanning keeps some sensitive files out, but contracts and complaints are hard to flag reliably, and unflagged client
+      documents would still stay in the shared index after engagements end.
+    D: A fixed retention period ends the copies eventually, but engagements end on their own dates, and the files are visible
+      firm-wide for the whole year.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-13-daily-aaism-check

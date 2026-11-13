@@ -1,0 +1,33 @@
+id: aaism-d2-2.3-0059
+subdomain: '2.3'
+difficulty: medium
+stem: A bank uses a vendor's fraud model, retrained each month on transactions and fraud labels sent in by 20 member
+  banks. Last year one member's faulty export marked thousands of genuine payments as fraud, and the next month's model
+  blocked many legitimate payments at every member for weeks. What should the bank require of the vendor?
+options:
+  A: Each member warrants its labels and bears the losses its errors cause
+  B: Rollback to the previous month's model when its error rates rise
+  C: Checks that hold back a member's batch that departs from its history
+  D: An independent assurance report on the vendor's training pipeline
+answer: C
+explanation:
+  why_correct: 'The harm came from one contributor''s bad data flowing straight into a model that every member relies on.
+    Requiring the vendor to compare each member''s monthly batch with that member''s own history, and to hold back
+    batches that shift sharply, stops a faulty or poisoned contribution before it reaches training, which protects all
+    members rather than repairing the damage afterwards.'
+  why_not:
+    A: A warranty gives a route to compensation, but it does not keep the bank's legitimate payments flowing, and the
+      blocked customers are harmed whoever pays.
+    B: Rollback limits how long a bad model stays live, but only once rising errors are noticed, after customers have been
+      blocked, and the faulty batch would still be used again at the next retraining unless it is found.
+    D: An assurance report shows how the pipeline is controlled at a point in time, but it does not itself screen what
+      members send in each month.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-13-daily-aaism-check
+  options_only: not_obvious

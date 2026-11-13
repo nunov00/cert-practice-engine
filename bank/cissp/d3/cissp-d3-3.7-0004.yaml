@@ -1,6 +1,6 @@
 id: cissp-d3-3.7-0004
 subdomain: '3.7'
-difficulty: medium
+difficulty: easy
 stem: A utility's field inspectors open its inspection app with a six-digit PIN, and the app must open where there is no
   mobile coverage. It checks the PIN against a salted, memory-hard hash stored on the phone. Testers who copied the app's
   data from a lost phone recovered the PIN within an hour. Which change BEST counters this attack?
@@ -21,12 +21,12 @@ explanation:
       cannot depend on reaching the server.
     D: Encrypting the hash adds a step, but a key held in the app's code can be pulled from the same copied app, so the
       attacker decrypts the hash and searches as before.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-11-daily-cissp
   check_verdict: pass
-  options_only: not_obvious
-  checked_by: 2026-11-11-daily-cissp-check
+  options_only: obvious
+  checked_by: 2026-11-13-daily-cissp-check

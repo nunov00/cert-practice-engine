@@ -1,0 +1,35 @@
+id: cissp-d1-1.2-0006
+subdomain: '1.2'
+difficulty: hard
+stem: A land registry keeps deeds signed electronically by notaries, whose signing certificates expire after three years,
+  and ownership disputes can surface decades later. In one past case a notary's stolen key was used to sign forged deeds bearing
+  earlier dates, and the owners claimed that registry staff had colluded. Which measure BEST keeps each deed's signature provable
+  in later disputes?
+options:
+  A: Timestamp each signed deed on receipt through an independent authority, renewed as algorithms age
+  B: Keep each deed with the notary's certificate chain and its revocation status at the date of signing
+  C: Countersign each deed with the registry's own key on receipt, re-signing the archive as algorithms age
+  D: Store each signed deed on write-once media at two sites, with its hash kept in the registry's audit log
+answer: A
+explanation:
+  why_correct: A signature stays provable after its certificate expires only if someone can show when it was made, and that
+    the certificate was valid and unrevoked at that time. An independent timestamp on receipt fixes that time without relying
+    on the date the signer chose or on the registry, whose staff have been accused of collusion. Renewing it before the hash
+    and signature algorithms weaken keeps the evidence sound for decades.
+  why_not:
+    B: Keeping the chain and revocation data is part of long-term validation, but the signing date comes from the signer.
+      A thief with a stolen key can date a deed before the revocation, as happened here, and the stored status would then
+      look clean.
+    C: A countersignature on receipt does fix the time and can be renewed, but it is the registry's own evidence, and the
+      registry is the party owners accused of collusion, so it carries little weight in the disputes that matter most.
+    D: Write-once storage and logged hashes show that a deed has not changed since it arrived, but the proof of when it arrived
+      rests on the registry's own systems, which a court may doubt when the registry's staff are accused.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-13-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,34 @@
+id: aair-d3-3.1-0041
+subdomain: '3.1'
+difficulty: medium
+stem: An asset manager gives its analysts a research assistant that can browse public websites. Analysts often paste client
+  holdings into their questions to get tailored research. The assistant's answers appear in an internal portal that displays
+  images from any web address an answer contains. Analysts make every investment decision themselves. Which risk scenario
+  should the assessment MOST include?
+options:
+  A: Analysts act on the assistant's summaries without checking the cited sources
+  B: Hidden text on a web page steers the assistant's answers toward one fund
+  C: Web pages with false market news distort the assistant's research summaries
+  D: Hidden text on a web page gets client holdings sent out in an image link
+answer: D
+explanation:
+  why_correct: A page the assistant reads can carry instructions telling it to add an image whose web address contains data
+    from the conversation. When the portal displays the image, the browser calls the attacker's server and the client holdings
+    leave the firm, with no click by the analyst. The browsing, the pasted client data and the image display together create
+    a client data breach that no human step stands in front of.
+  why_not:
+    A: Over-reliance on summaries is a common concern with research tools. Here the analysts decide, so this harm is limited
+      by their judgement, while the leak in the key needs no action from them.
+    B: Injected text that slants answers is a real risk, but its harm passes through the analysts, who make every decision.
+      The data leak in the key happens with no human step at all.
+    C: False information on public pages can distort research, and analysts should weigh sources. It is a quality risk that
+      their own judgement still filters, not a breach of client data.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-13-daily-aair-check

@@ -1,6 +1,6 @@
 id: cissp-d7-7.9-0003
 subdomain: '7.9'
-difficulty: medium
+difficulty: easy
 stem: A bank's change board meets weekly and reviews each production change. Engineers now skip it for routine work, and
   audits found unrecorded changes. Most were certificate renewals, DNS records and firewall rules for new servers, about 60
   a week, each done the same way from a written runbook and often carried out by the team leads themselves. Which change
@@ -23,12 +23,12 @@ explanation:
       slow enough to push engineers around it.
     D: Delegating approval to team leads speeds things up, but the leads often make these changes themselves, so they
       would be approving their own work.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-11-daily-cissp
   check_verdict: pass
-  checked_by: 2026-11-11-daily-cissp-check
-  options_only: not_obvious
+  options_only: obvious
+  checked_by: 2026-11-13-daily-cissp-check

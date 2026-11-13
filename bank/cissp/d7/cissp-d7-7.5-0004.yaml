@@ -1,0 +1,33 @@
+id: cissp-d7-7.5-0004
+subdomain: '7.5'
+difficulty: hard
+stem: A company's storage arrays sit in a shared colocation hall and use self-encrypting drives, which unlock with keys held
+  in each array's controller so that the arrays restart unattended after a power cut. Last month thieves removed whole racks
+  of servers and storage from another tenant's cage in the same hall. Which measure BEST protects the company's stored data
+  against such a theft?
+options:
+  A: Encrypt each volume on its host server, with keys sealed to that server's TPM
+  B: Move the drive keys from the controllers into each array's own built-in security module
+  C: Have the arrays fetch unlock keys at start-up from a head-office key manager over a private link
+  D: Require an administrator to enter a passphrase to unlock each array after it starts
+answer: C
+explanation:
+  why_correct: The drives are encrypted, but the key that unlocks them travels with the array, so stolen equipment unlocks
+    itself when powered on. Keeping the unlock keys on a key manager at head office, released only to arrays that authenticate
+    over the company's private link to the hall, means stolen arrays power up locked, while arrays in place still restart with nobody present.
+  why_not:
+    A: Host encryption with TPM-sealed keys protects storage that is stolen on its own, but these thieves took servers and
+      storage together, and a stolen server boots normally and releases its keys.
+    B: A security module inside the array stops the key being extracted, but it still releases the key automatically at start-up,
+      and the module leaves with the array.
+    D: A start-up passphrase keeps stolen arrays locked, but after every power cut storage would stay offline until an administrator
+      reached the site, which unattended restart exists to avoid.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-13-daily-cissp-check
+  options_only: not_obvious

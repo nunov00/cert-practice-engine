@@ -1,0 +1,34 @@
+id: aair-d2-2.4-0028
+subdomain: '2.4'
+difficulty: hard
+stem: A lender is building a default model from five years of past loans. Each loan is joined to the customer's profile table,
+  which holds income, employment status and contact flags and is overwritten whenever a customer's details change. In testing,
+  the model predicts defaults far better than any earlier model. Which data management practice BEST protects the model's
+  training data?
+options:
+  A: Keep dated profile history and join values as of each loan date
+  B: Keep immutable, versioned snapshots of each training table the model uses
+  C: Record each profile field's definition, owner and rules for updating it
+  D: Test the model on the most recent year of loans, held out from training
+answer: A
+explanation:
+  why_correct: Because the profile table is overwritten, each old loan is joined to the customer's details as they are today,
+    including changes made after the loan went bad, such as lost jobs or collections flags. The model learns from information
+    it will not have when it scores a new application, which explains the unusually strong results. Keeping dated history
+    and joining the values that applied at each loan date removes this leakage.
+  why_not:
+    B: Snapshots make each training set reproducible, which matters for audit. They would faithfully preserve the same leaky
+      join, so the model would still learn from later information.
+    C: Field definitions and update rules help users understand data. Documenting that the table is overwritten does not give
+      the model the values that applied when each loan was made.
+    D: An out-of-time test is a good check against overfitting to the past. The held-out loans would be joined in the same
+      way, so the leak would inflate their results too.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-13-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-13-daily-aair-check
