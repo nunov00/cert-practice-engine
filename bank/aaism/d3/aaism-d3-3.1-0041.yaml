@@ -1,6 +1,6 @@
 id: aaism-d3-3.1-0041
 subdomain: '3.1'
-difficulty: hard
+difficulty: medium
 stem: An insurer's claims agent calls an internal payments API by producing JSON arguments. The API accepts any field it recognises,
   including an 'override_limit' flag meant for the supervisors' console. An instruction hidden in a claim document made the
   agent add that flag. Other agents and scripts call the same API. Which change BEST closes this?

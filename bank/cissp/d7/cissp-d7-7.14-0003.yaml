@@ -1,6 +1,6 @@
 id: cissp-d7-7.14-0003
 subdomain: '7.14'
-difficulty: hard
+difficulty: medium
 stem: A data hall's doors use magnetic locks, which release when power is lost so that staff can always get out in a fire.
   During a four-hour power cut last month, when the generator failed to start, the doors stayed unlocked. Fire rules require
   free exit at all times. Which change BEST fixes this?

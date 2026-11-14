@@ -20,7 +20,7 @@ explanation:
     B: Down-weighting may limit harm from poor synthetic data, but it does not show whether accuracy on real darker-skin patients
       improved.
     D: Disclosure supports transparency, but it says nothing about whether the model is now safe to rely on for these patients.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:

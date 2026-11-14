@@ -21,7 +21,7 @@ explanation:
       real site in time, so the attacker still gets the session.
     D: Passwordless phone sign-in adds context to the prompt, but the user still approves a sign-in that the proxy relays
       from the real page, and the location shown is easy to overlook, so the attacker still receives the session.
-status: draft
+status: published
 outline_version: 2024-04-15
 sample: false
 provenance:

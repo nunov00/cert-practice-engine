@@ -1,6 +1,6 @@
 id: cissp-d1-1.6-0006
 subdomain: '1.6'
-difficulty: hard
+difficulty: medium
 stem: A company's secure coding standard, which only its risk committee can change at twice-yearly meetings, requires every
   build to be scanned with one named static analysis product. That product does not support Kotlin, which two teams adopted
   this year, and three more languages are planned. Which change BEST fixes this?

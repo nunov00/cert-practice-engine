@@ -20,11 +20,12 @@ explanation:
       stays grantable.
     D: A daily review finds misuse only after bookings are made and discounts given, and new wordings would keep producing
       cases to chase.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-14-daily-aair
-  check_verdict: pending
-  options_only: obvious
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aair-check

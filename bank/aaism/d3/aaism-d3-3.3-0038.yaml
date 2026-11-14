@@ -20,7 +20,7 @@ explanation:
     C: Access limits protect the recordings while stored, but the model is still trained on unrelated personal data and passwords,
       which it may learn and reproduce.
     D: Deletion after release shortens how long the data is kept, but the model has already been trained on it by then.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:

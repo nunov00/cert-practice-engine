@@ -16,8 +16,6 @@ held:
   # PR #65, merge run
   # PR #67 (daily batch 2026-10-27), batch run: passed the independent check,
   # held because too few hard labels survived the strict hard-label check
-  - { id: cissp-d5-5.2-0005, pr: 67 }
-  - { id: cissp-d6-6.1-0004, pr: 67 }
   # PR #67, merge run: hard share after Codex and the final review lowered or
   # dropped labels (AAIR kept no hard question). aair-d3-3.1-0023,
   # aair-d3-3.5-0023 and aaism-d2-2.2-0036 were rated obvious from the options
@@ -37,7 +35,6 @@ held:
   # PR #71, merge run: Codex lowered two AAISM hard labels, so the easiest
   # AAISM questions go back to keep the hard share at 30%
   - { id: aaism-d1-1.5-0019, pr: 71 }
-  - { id: aaism-d2-2.1-0028, pr: 71 }
   # PR #73 (daily batch 2026-11-01), batch run: passed the independent check, held
   # because too few hard labels survived the strict hard-label check
   - { id: aaism-d3-3.2-0026, pr: 73 }
@@ -74,8 +71,6 @@ held:
   - { id: cissp-d8-8.5-0005, pr: 83 }
   - { id: aaism-d1-1.4-0034, pr: 83 }
   - { id: aaism-d1-1.5-0030, pr: 83 }
-  - { id: aaism-d3-3.3-0038, pr: 83 }
-  - { id: aaism-d3-3.4-0043, pr: 83 }
   # PR #83, merge run: Codex findings on held drafts to fix on recheck before
   # release: aaism-d2-2.1-0028 (state independence is unproven; require a joint
   # test of the deployed sequence), aaism-d3-3.3-0038 (limit input capture to the
@@ -99,3 +94,7 @@ held:
   # strict check lowered it (shared kernel -> per-session VM is close to a
   # textbook mapping); AAISM's 3 surviving hard labels carry only 7 non-hard.
   - { id: aaism-d3-3.1-0039, pr: 86 }
+  # Daily batch 2026-11-14, batch run: rechecked aaism-d2-2.1-0028,
+  # aaism-d3-3.3-0038, aaism-d3-3.4-0043 (Codex points from PR #83 applied),
+  # cissp-d5-5.2-0005 (key no longer telegraphed) and cissp-d6-6.1-0004; all
+  # passed and were released within each exam's hard share.

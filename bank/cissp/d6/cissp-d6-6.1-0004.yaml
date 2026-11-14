@@ -21,7 +21,7 @@ explanation:
       of systems the SaaS provider owns and runs, so it does not cover the CRM.
     D: Scheduling around peak hours limits business disruption, but the CRM part of the test cannot go ahead without the provider's
       permission.
-status: draft
+status: published
 outline_version: 2024-04-15
 sample: false
 provenance:
