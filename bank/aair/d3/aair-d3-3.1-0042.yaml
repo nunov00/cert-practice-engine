@@ -1,0 +1,28 @@
+id: aair-d3-3.1-0042
+subdomain: '3.1'
+difficulty: hard
+stem: A bank's customer assistant will remember facts each customer shares, such as preferred accounts and payees, and use
+  them in later chats, where it can set up payments. Memories are stored under each customer's own account. Customers often
+  paste text from emails and messages into the chat. Which risk scenario should the assessment MOST add?
+options:
+  A: One customer's memories surface in another customer's later chat
+  B: Pasted scam text is saved as a standing instruction about payees
+  C: Memories are kept longer than the bank's retention schedule allows
+  D: Outdated memories, such as an old payee, lead to wrong suggestions
+answer: B
+explanation:
+  why_correct: 'Memory turns a one-off injection into a persistent one: text pasted from a scam message could be stored as
+    a ''preference'' that steers later payment set-ups, long after the customer has forgotten the message.'
+  why_not:
+    A: Cross-customer leakage matters for shared stores, but these memories sit under each customer's own account, so it is
+      less likely than poisoning within an account.
+    C: Over-retention is a real compliance point, but its harm is far lower than payments steered to fraudsters.
+    D: Stale memories cause occasional errors that customers tend to notice, whereas a planted instruction is crafted to look
+      legitimate and move money to fraudsters.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-aair
+  check_verdict: pending

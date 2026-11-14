@@ -1,0 +1,30 @@
+id: cissp-d1-1.5-0006
+subdomain: '1.5'
+difficulty: hard
+stem: After a breach of customer data, a retailer expects class-action lawsuits. It has a long-standing retainer with a forensic
+  firm for routine incident work, and its cyber insurer will pay for any firm on its panel, which includes that firm. Outside
+  counsel wants the investigation's findings protected as far as possible in the litigation. How should the forensic work
+  be commissioned?
+options:
+  A: Under the existing retainer, with the report copied to outside counsel
+  B: By outside counsel, under a new engagement whose report goes to counsel
+  C: By the insurer from its panel, with the report sent to insurer and counsel
+  D: By the retailer's own incident team, with counsel attending its meetings
+answer: B
+explanation:
+  why_correct: In jurisdictions with litigation protections such as US work-product doctrine, forensic work that counsel commissions
+    to advise on expected litigation, with the report going to counsel, has the best chance of being protected from disclosure.
+  why_not:
+    A: Courts have refused protection where the firm worked under a pre-existing business retainer, because the work looked
+      like routine business rather than preparation for litigation.
+    C: The insurer can still pay for a panel firm, but a report addressed to the insurer serves a business purpose and goes
+      to a third party, which weakens protection.
+    D: An internal investigation run for business purposes is the least likely to be protected, and counsel attending its
+      meetings does not change its purpose.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-cissp
+  check_verdict: pending

@@ -1,0 +1,27 @@
+id: aaism-d3-3.2-0040
+subdomain: '3.2'
+difficulty: hard
+stem: A bank's chatbot API lets its mobile app choose a prompt variant by name, so that older app versions keep working. A
+  release fixed a jailbreak in the current variant. Testers then asked for the previous variant by name, and the jailbreak
+  worked. App versions older than the release can no longer sign in. What should be done?
+options:
+  A: Remove superseded variants from production when a release replaces them
+  B: Apply the jailbreak fix to each earlier variant still deployed
+  C: Accept variant names only in requests signed by the current app
+  D: Alert the security team when a request names an earlier variant
+answer: A
+explanation:
+  why_correct: Old variants exist only to serve old app versions, which can no longer sign in, so they serve no one and only
+    widen the attack surface. Retiring them at each release closes this route and keeps it closed for future fixes.
+  why_not:
+    B: Patching each old variant repeats work for every future fix and keeps variants reachable that no app uses.
+    C: Anyone who extracts the app's signing key or runs a modified app can still sign requests, and the vulnerable variants
+      stay deployed.
+    D: Alerts show that old variants are being used but do not stop the jailbreak from working.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-aaism
+  check_verdict: pending

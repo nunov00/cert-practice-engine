@@ -1,0 +1,28 @@
+id: aaism-d2-2.1-0059
+subdomain: '2.1'
+difficulty: hard
+stem: A bank's chatbot risk assessment rates harmful-reply risk as low, relying on its model provider's content filter. The
+  provider retunes the filter often and without notice, and last month a retune briefly let through replies that the bank's
+  earlier tests had shown it blocking. How should the residual risk be rated?
+options:
+  A: Low, as the provider's contract commits it to maintain the filter
+  B: On the bank's own tests of the live filter, repeated daily
+  C: As if no filter existed, until the bank adds a filter of its own
+  D: Low, once the provider agrees to give notice of filter changes
+answer: B
+explanation:
+  why_correct: A residual rating should rest on evidence that a control works now. Frequent tests of the live filter measure
+    its current effect and catch silent retunes within a day.
+  why_not:
+    A: A contractual commitment is not evidence of effectiveness, and last month's lapse shows the filter can weaken while
+      the contract stands.
+    C: Ignoring a filter that usually works overstates the risk and can misdirect treatment spending, when its effect can
+      be measured instead.
+    D: Notice would help plan retesting, but the rating would still rest on untested assumptions about each new tuning.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-aaism
+  check_verdict: pending

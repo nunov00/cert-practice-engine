@@ -1,0 +1,29 @@
+id: aaism-d1-1.2-0033
+subdomain: '1.2'
+difficulty: hard
+stem: Researchers at a telecom published a fine-tuned model on a public hub alongside a conference paper. The paper had passed
+  the company's publication review, which checks text and figures. Testers later drew customer phone numbers out of the model,
+  which had been tuned on support chats. Which policy change BEST prevents a repeat?
+options:
+  A: Extend publication review to models and datasets released with papers
+  B: Bar publication of models trained on any company data
+  C: Require differential privacy for models trained on customer data
+  D: Scrub names and account numbers from data before fine-tuning
+answer: A
+explanation:
+  why_correct: The leak happened because released artefacts fell outside the only review publication had. Bringing models
+    and datasets into that review lets reviewers test for memorised personal data before anything leaves the company.
+  why_not:
+    B: A blanket bar stops legitimate releases, such as models trained on non-sensitive data, and pushes researchers to work
+      around the policy.
+    C: Differential privacy limits memorisation, but requiring it for every model trained on customer data imposes accuracy
+      costs on internal models that are never published.
+    D: Scrubbing names and account numbers leaves other personal data, such as the phone numbers that leaked, and does not
+      cover what else a released model might reveal.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-aaism
+  check_verdict: pending

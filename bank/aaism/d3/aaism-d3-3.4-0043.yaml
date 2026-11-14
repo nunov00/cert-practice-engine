@@ -7,7 +7,7 @@ stem: A dermatology app detects skin cancer less accurately on darker skin. Only
 options:
   A: Dermatologists' review of the synthetic images for realism
   B: Lower weighting of the synthetic images during training
-  C: Testing on the real darker-skin images, kept out of training
+  C: Testing on held-out real darker-skin images against a set accuracy bar
   D: Disclosure to users that synthetic images were used in training
 answer: C
 explanation:
@@ -26,6 +26,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-11-daily-aaism
-  check_verdict: pass
+  check_verdict: pending
   checked_by: 2026-11-11-daily-aaism-check
   options_only: obvious

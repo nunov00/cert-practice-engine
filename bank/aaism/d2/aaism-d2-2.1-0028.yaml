@@ -8,7 +8,7 @@ options:
   A: The test attacks may not reflect current techniques
   B: The rating covers likelihood but not impact
   C: The screens' false positive rates were not measured
-  D: The estimate assumes the screens act independently
+  D: The estimate assumes the two screens fail independently
 answer: D
 explanation:
   why_correct: Multiplying the two miss rates (5% x 5%) assumes the screens fail independently, which nobody has shown.
@@ -27,6 +27,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-10-24-daily-aaism
-  check_verdict: pass
+  check_verdict: pending
   options_only: not_obvious
   checked_by: 2026-11-12-daily-aaism-check

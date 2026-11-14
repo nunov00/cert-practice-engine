@@ -1,0 +1,28 @@
+id: cissp-d3-3.1-0007
+subdomain: '3.1'
+difficulty: hard
+stem: A contractor's laptop, connected through the company VPN with MFA, was infected, and the malware scanned and reached
+  40 internal servers. The contractor uses only the ticketing and wiki apps. Contractors change projects weekly, and the apps
+  move between cloud hosts as they scale. Which design BEST limits a repeat?
+options:
+  A: Check each laptop's malware protection status before the VPN connects
+  B: A contractor VPN pool whose firewall rules allow only those apps' servers
+  C: Per-app access through a proxy that checks user and device on each request
+  D: Monitor VPN traffic for scanning and disconnect laptops that trigger alerts
+answer: C
+explanation:
+  why_correct: Per-app access through an identity-aware proxy grants only the apps a user needs, verifies user and device
+    on each request, and follows the apps as they move between hosts, so malware on a laptop cannot reach other servers.
+  why_not:
+    A: A check at connection does not catch infection that occurs or activates afterwards, and a connected laptop still reaches
+      the whole network.
+    B: Rules by server address break as apps move between hosts and contractors change projects weekly, so they lag behind
+      and tend to be widened.
+    D: Detection shortens the window, but the malware still reaches servers before an alert fires and the laptop is cut off.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-cissp
+  check_verdict: pending
