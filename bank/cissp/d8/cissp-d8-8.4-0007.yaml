@@ -1,6 +1,6 @@
 id: cissp-d8-8.4-0007
 subdomain: '8.4'
-difficulty: hard
+difficulty: medium
 stem: A company will use a two-year-old vendor's SaaS platform to run staff training, storing staff names, roles and course
   results. The vendor has no independent assurance report and expects its first SOC 2 Type II report in a year. Rollout is
   due in two months. Which approach to assessing the vendor is BEST?
@@ -19,10 +19,12 @@ explanation:
       vendor.
     D: Clauses set duties but give no information on whether the vendor can meet them, so the company would accept an unknown
       risk.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-14-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-cissp-check

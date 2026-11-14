@@ -18,10 +18,12 @@ explanation:
       the main exposure in place.
     C: Monthly rotation leaves a stolen token usable for weeks, while an export takes minutes.
     D: A future report gives assurance on how tokens are stored, but does not stop a stolen token from being used.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-14-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aaism-check

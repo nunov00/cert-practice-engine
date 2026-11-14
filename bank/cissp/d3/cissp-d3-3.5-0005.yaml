@@ -18,10 +18,12 @@ explanation:
     C: Micro-segmentation controls network paths between VMs, but a hypervisor escape bypasses the virtual network entirely.
     D: Disk encryption protects data at rest, but an attacker who controls the hypervisor can read a running VM's memory and
       mounted disks.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-14-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-cissp-check

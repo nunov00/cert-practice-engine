@@ -18,10 +18,12 @@ explanation:
       point.
     C: Screening catches some hidden instructions but not all, and the API would still honour the flag from any caller.
     D: A system prompt rule can be overridden by an injected instruction, which is how the flag was set in the first place.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-14-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aaism-check

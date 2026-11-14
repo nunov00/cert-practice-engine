@@ -6,8 +6,8 @@ stem: An image-generation start-up will train on a public dataset of five billio
 options:
   A: Run an adult-content classifier and drop the images it flags
   B: Match images against known-abuse hash lists, reporting any matches
-  C: Have reviewers inspect a random sample of images before each run
-  D: Rely on the dataset publisher's filtering, as its documentation records
+  C: Exclude images hosted on web domains listed as adult-content sites
+  D: Filter out images whose captions contain terms linked to abuse material
 answer: B
 explanation:
   why_correct: Matching against hash lists kept by child-protection bodies finds known abuse images without anyone viewing
@@ -15,9 +15,9 @@ explanation:
   why_not:
     A: An adult-content classifier is built for a different task and misses much abuse material, and it gives no route to
       report what it finds.
-    C: A sample inspects a tiny share of five billion images, and asking staff to view such material is harmful and may itself
-      be unlawful.
-    D: The publisher's filtering already failed on the earlier version, so relying on it repeats the gap.
+    C: Abuse material is often hosted on ordinary sites and file hosts, so a domain blocklist misses much of it and gives
+      no route to report what remains.
+    D: Captions are often missing, misleading or deliberately innocent, so filtering on caption terms misses much abuse material.
 status: draft
 outline_version: '2025-08-19'
 sample: false
@@ -25,3 +25,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-14-daily-aaism
   check_verdict: pending
+  options_only: obvious

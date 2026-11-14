@@ -6,7 +6,7 @@ stem: A bank's language model assistant drafts summaries of loan applicants' fil
   describe similar applicants differently by ethnicity. Which test BEST answers this?
 options:
   A: Compare approval rates by ethnic group before and after the assistant's launch
-  B: Measure how often summaries mention ethnicity or nationality, for each group
+  B: Compare summaries of real applicants from different groups with similar credit scores
   C: Run paired files that differ only in identity cues and compare the summaries
   D: Have credit officers rate a random sample of summaries for tone and accuracy
 answer: C
@@ -16,8 +16,8 @@ explanation:
   why_not:
     A: Approval rates reflect officers' decisions and many other factors, and a before-and-after shift cannot separate the
       summaries' effect from changes in applicants or lending policy.
-    B: Counting explicit mentions misses the more likely bias, a difference in tone or emphasis for similar applicants, which
-      needs no mention of ethnicity at all.
+    B: Real applicants with similar scores still differ in income, history and much else, so differences in their summaries
+      cannot be traced to ethnicity alone.
     D: Officers rating summaries one at a time cannot see how a similar applicant with different identity cues would have
       been described, so subtle differences go unnoticed.
 status: draft
@@ -27,3 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-14-daily-aair
   check_verdict: pending
+  options_only: obvious

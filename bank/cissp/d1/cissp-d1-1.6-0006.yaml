@@ -18,10 +18,12 @@ explanation:
       describes less of what teams do.
     B: Naming a second product repeats the problem, since each new language would wait up to six months for the committee.
     D: A guideline makes scanning optional, weakening a control the company wants to stay mandatory.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-14-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-cissp-check

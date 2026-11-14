@@ -19,10 +19,12 @@ explanation:
     C: Reserved capacity keeps generation running at B, but generation did not fail in the test; retrieval did.
     D: Cached answers cover only repeated common questions and may go stale, so the assistant still cannot answer anything
       new.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-14-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aaism-check

@@ -12,8 +12,8 @@ options:
 answer: B
 explanation:
   why_correct: The agent only needs to learn the claims system, so the data it trains on should come only from that system.
-    Capturing just the claims window, and masking sensitive fields such as passwords, keeps chats, other applications and credentials out of
-    the training data from the start.
+    Capturing just the claims window, and masking sensitive fields such as passwords, keeps chats, other applications and
+    credentials out of the training data from the start.
   why_not:
     A: OCR redaction reduces exposure, but it misses some text and cannot remove keystrokes typed into other applications,
       so passwords and chats still enter training.
@@ -26,6 +26,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-11-daily-aaism
-  check_verdict: pending
-  checked_by: 2026-11-11-daily-aaism-check
-  options_only: obvious
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aaism-check

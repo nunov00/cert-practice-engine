@@ -6,19 +6,20 @@ stem: An insurer's AI red team logs its findings, such as jailbreaks and injecti
   several high findings have been open for a year. What should the security manager do?
 options:
   A: Bring AI findings into the enterprise process, with severity criteria for them
-  B: Build a separate AI findings tracker with its own deadlines and escalation
-  C: Appoint an AI security lead to chase open findings with owners each month
-  D: Report the number of open AI findings to the risk committee each quarter
+  B: Load AI findings into the enterprise process, rated with its existing CVSS scoring
+  C: Give the red team's spreadsheet deadlines and escalation matching enterprise SLAs
+  D: Make each AI system's owner accountable for the red team's findings on it
 answer: A
 explanation:
   why_correct: The enterprise process already provides ownership, deadlines and escalation. Adding AI findings, with criteria
     to rate their severity, puts them through the same machinery that drives other findings to closure.
   why_not:
-    B: A parallel tracker duplicates machinery that already exists, splits remediation reporting and needs authority of its
-      own to escalate.
-    C: A chaser adds effort but no deadlines or authority, so owners can still put findings outside the process they are measured
-      on at the back of the queue.
-    D: Reporting counts raises visibility but gives no finding an owner or a deadline.
+    B: CVSS rates software flaws by exploit and impact vectors that fit jailbreaks and injection routes poorly, so AI findings
+      would be rated inconsistently and get the wrong deadlines.
+    C: Copying deadlines into a spreadsheet brings no assigned owners, tracking or escalation path, so findings stay outside
+      the process that drives fixes.
+    D: Named accountability helps, but without the deadlines and escalation of the enterprise process, owners can still leave
+      findings open.
 status: draft
 outline_version: '2025-08-19'
 sample: false
@@ -26,3 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-14-daily-aaism
   check_verdict: pending
+  options_only: obvious

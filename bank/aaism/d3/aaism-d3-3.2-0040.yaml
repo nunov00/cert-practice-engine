@@ -18,10 +18,12 @@ explanation:
     C: Anyone who extracts the app's signing key or runs a modified app can still sign requests, and the vulnerable variants
       stay deployed.
     D: Alerts show that old variants are being used but do not stop the jailbreak from working.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-14-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aaism-check

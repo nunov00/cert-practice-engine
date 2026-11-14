@@ -19,10 +19,12 @@ explanation:
       at all.
     D: Unique passwords limit spread from one compromised laptop, but the ports stay exposed to flaws and attacks that need
       no password.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-14-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-cissp-check

@@ -1,6 +1,6 @@
 id: aaism-d2-2.2-0063
 subdomain: '2.2'
-difficulty: hard
+difficulty: medium
 stem: A company self-hosts an open-weight chat model and builds each prompt as one text string in the model's chat template.
   Testers typed the template's role markers into a support question, and the model then treated the rest of their text as
   system instructions. Which fix BEST addresses the cause?
@@ -20,10 +20,12 @@ explanation:
       text from the attacker's.
     D: Screening replies may catch some effects afterwards, but the model has already acted on forged system text, including
       any tool calls it made.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-14-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aaism-check
