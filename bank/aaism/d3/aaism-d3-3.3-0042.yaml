@@ -1,0 +1,32 @@
+id: aaism-d3-3.3-0042
+subdomain: '3.3'
+difficulty: hard
+stem: A bank's data lake keeps EU customer data in EU regions, as its regulator requires. Its ML platform schedules training
+  jobs in whichever region has spare GPUs, and a job in a US region recently read EU data directly from EU storage. Which
+  control BEST prevents a repeat?
+options:
+  A: Location tags on datasets that the scheduler checks before placing jobs
+  B: Encryption of EU datasets with keys held in an EU key store
+  C: Contract terms with the cloud provider on where data is processed
+  D: A data loss prevention rule that blocks EU personal data leaving EU storage
+answer: A
+explanation:
+  why_correct: The failure is in job placement. A scheduler that checks each dataset's location tag before placing a job keeps
+    EU data processed in EU regions, at the point where the decision is made. It depends on accurate tags, and storage
+    policies should still block direct reads of EU data from other regions, including by downstream jobs.
+  why_not:
+    B: An EU key store controls where keys are kept. It only enforces location if key-use policies add region conditions,
+      and the scheduler's jobs hold the key grant, so a US job would still decrypt and process the data in the US.
+    C: Contract terms bind the provider, but the bank's own platform chose the region, so a contract would not have stopped
+      it.
+    D: Data loss prevention inspects data leaving through monitored channels, while a training job's direct reads from storage
+      look like ordinary platform traffic.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aaism-check

@@ -1,0 +1,33 @@
+id: aair-d3-3.2-0040
+subdomain: '3.2'
+difficulty: medium
+stem: A warehouse's AI system steers autonomous forklifts through aisles where workers pick goods throughout each shift, and
+  order deadlines require picking and forklift moves to share the aisles. Since a model update, forklifts sometimes pass close
+  to workers at full speed, and the residual risk is above appetite. Retraining with a stronger penalty for close passes would
+  take about three months. Which treatment BEST brings the risk within appetite?
+options:
+  A: Retrain the model with a larger penalty for any pass close to a worker
+  B: A safety-rated controller, outside the model, that slows forklifts near people
+  C: A supervisor on each shift who watches live routes and halts any unsafe forklifts
+  D: Close the aisles to workers while forklifts operate until retraining is done
+answer: B
+explanation:
+  why_correct: An independent, safety-rated layer that detects people and slows forklifts to a validated safe speed and stopping
+    distance bounds the harm whatever the model does, so it holds through this update and future ones while workers and forklifts
+    keep sharing the aisles.
+  why_not:
+    A: Retraining tackles the cause, but the risk stays above appetite for three months, and a learned penalty still gives
+      no hard limit on the model's behaviour.
+    C: One supervisor cannot watch every forklift at once, and close passes happen in seconds, faster than a person can spot
+      and stop them.
+    D: Order deadlines require picking and forklift moves to share the aisles, so closing them for three months would halt
+      the operation the forklifts exist to support.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aair-check

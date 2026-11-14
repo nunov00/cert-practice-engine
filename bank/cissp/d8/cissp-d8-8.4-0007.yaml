@@ -1,0 +1,30 @@
+id: cissp-d8-8.4-0007
+subdomain: '8.4'
+difficulty: medium
+stem: A company will use a two-year-old vendor's SaaS platform to run staff training, storing staff names, roles and course
+  results. The vendor has no independent assurance report and expects its first SOC 2 Type II report in a year. Rollout is
+  due in two months. Which approach to assessing the vendor is BEST?
+options:
+  A: Delay the contract until the vendor's SOC 2 Type II report is issued
+  B: A standard questionnaire, with evidence checked for the key answers
+  C: An on-site assessment of the vendor by an external audit firm
+  D: Contract clauses on security, breach notice and a right to audit
+answer: B
+explanation:
+  why_correct: A questionnaire backed by evidence for the key controls gives assurance in proportion to low-sensitivity data
+    such as names, roles and course results, and fits the two-month timeline.
+  why_not:
+    A: Waiting a year for the report misses the rollout, and the data's sensitivity does not justify making it a precondition.
+    C: An external on-site assessment costs far more than the data's sensitivity justifies and is a heavy demand on a young
+      vendor.
+    D: Clauses set duties and allow a later audit, but give no information before go-live on whether the vendor can meet them,
+      so the company would accept an unknown risk.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-cissp-check

@@ -7,19 +7,20 @@ stem: A dermatology app detects skin cancer less accurately on darker skin. Only
 options:
   A: Dermatologists' review of the synthetic images for realism
   B: Lower weighting of the synthetic images during training
-  C: Testing on the real darker-skin images, kept out of training
-  D: Disclosure to users that synthetic images were used in training
+  C: Testing on held-out real darker-skin images against a set accuracy bar
+  D: Testing on a held-out synthetic set made by a different image generator
 answer: C
 explanation:
   why_correct: A gain measured on synthetic images shows the model learned the generator's images, not real lesions. The few
-    hundred real images are too few to train on but enough to test with, so holding them out and testing on them is the evidence
-    that patients with darker skin are actually better served.
+    hundred real images are too few to train on but can test with, so holding out a representative set and setting the bar
+    with the uncertainty of a small sample in mind is the evidence that patients with darker skin are actually better served.
   why_not:
     A: Expert review can catch images that look wrong, but realistic-looking images can still miss how lesions really present,
       and a review does not measure the model's accuracy.
     B: Down-weighting may limit harm from poor synthetic data, but it does not show whether accuracy on real darker-skin patients
       improved.
-    D: Disclosure supports transparency, but it says nothing about whether the model is now safe to rely on for these patients.
+    D: A second generator gives a less self-serving test, but its images still are not real lesions, so the result says nothing
+      certain about real darker-skin patients.
 status: draft
 outline_version: '2025-08-19'
 sample: false
@@ -27,5 +28,5 @@ provenance:
   generated_by: claude
   run_id: 2026-11-11-daily-aaism
   check_verdict: pass
-  checked_by: 2026-11-11-daily-aaism-check
   options_only: obvious
+  checked_by: 2026-11-14-daily-aaism-check

@@ -1,0 +1,32 @@
+id: aair-d1-1.2-0040
+subdomain: '1.2'
+difficulty: hard
+stem: At a retailer, analysts get customer data through access requests that the data owner approves for a stated purpose.
+  Data scientists use the same form, stating 'analytics', then train models on the data, including for uses the owners would
+  have refused. The AI risk review takes place at model approval, after training. Which change BEST aligns the processes?
+options:
+  A: Add model training and its intended use to the purposes owners approve
+  B: Have the AI risk review confirm each dataset's approved purpose at model approval
+  C: Tag datasets in the data catalogue with the uses their owners allow
+  D: Route data scientists' access requests to the AI risk team instead of owners
+answer: A
+explanation:
+  why_correct: 'The gap sits at the point of access: owners approve a purpose that hides the training use. Making training
+    and its intended use an explicit purpose lets the people accountable for the data decide before it is copied and trained
+    on.'
+  why_not:
+    B: A check at model approval comes after the data has been copied and used, so misuse is found late, when the only remedy
+      is discarding or retraining the model.
+    C: Tags record what owners allow, but nothing in the request ties a data scientist's real purpose to them, so vague 'analytics'
+      requests would still be approved.
+    D: The AI risk team can judge model risk but is not accountable for the data, and moving approval away from owners removes
+      the people who know which uses are acceptable.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aair-check

@@ -1,0 +1,29 @@
+id: aaism-d3-3.1-0041
+subdomain: '3.1'
+difficulty: medium
+stem: An insurer's claims agent calls an internal payments API by producing JSON arguments. The API accepts any field it recognises,
+  including an 'override_limit' flag meant for the supervisors' console. An instruction hidden in a claim document made the
+  agent add that flag. Other agents and scripts call the same API. Which change BEST closes this?
+options:
+  A: Constrain the claims agent's output to a JSON schema without the flag
+  B: Have the API accept the flag only from the supervisors' console identity
+  C: Screen claim documents for hidden instructions before the agent reads them
+  D: Tell the agent in its system prompt not to set the override flag
+answer: B
+explanation:
+  why_correct: The flag is a privileged function, so the API should authorise it by caller identity. Then no agent or script,
+    however it is manipulated, can set it.
+  why_not:
+    A: A schema fixes this agent's output, but other agents and scripts can still send the flag, so the API remains the weak
+      point.
+    C: Screening catches some hidden instructions but not all, and the API would still honour the flag from any caller.
+    D: A system prompt rule can be overridden by an injected instruction, which is how the flag was set in the first place.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aaism-check

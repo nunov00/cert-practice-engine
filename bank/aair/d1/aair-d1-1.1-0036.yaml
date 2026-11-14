@@ -1,0 +1,33 @@
+id: aair-d1-1.1-0036
+subdomain: '1.1'
+difficulty: medium
+stem: A consulting firm wants an assistant that answers staff questions from 200,000 internal documents. Most documents are
+  open only to the engagement team that wrote them, and team membership changes daily as staff join and leave engagements.
+  Which approach BEST fits?
+options:
+  A: Fine-tune one model on the document set and offer it to senior staff only
+  B: Retrieve from an index of only the documents open to the whole firm
+  C: Retrieve from a full index, checking the asker's current access to each source document
+  D: Fine-tune a separate model for each practice area on that practice area's own documents
+answer: C
+explanation:
+  why_correct: Model weights cannot enforce per-document permissions that change daily. Retrieval with a live access check
+    returns only passages the asker may open today, while still drawing on everything they are allowed to read. Any cached
+    retrieval results need the same check.
+  why_not:
+    A: Fine-tuning can memorise content from restricted documents, and the model cannot enforce document permissions over
+      what it memorised, so senior staff could draw out content from engagements they are not on, and the weights cannot reflect
+      daily changes in access.
+    B: This is safe, but most documents are open only to their engagement team, so the assistant could not answer from the
+      material staff most need.
+    D: Each practice-area model still mixes documents from many engagement teams, so restricted content could reach colleagues
+      outside an engagement, and weights cannot follow daily membership changes.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aair-check

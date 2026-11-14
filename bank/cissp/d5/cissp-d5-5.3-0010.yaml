@@ -1,0 +1,33 @@
+id: cissp-d5-5.3-0010
+subdomain: '5.3'
+difficulty: hard
+stem: A company's deployment pipeline on a hosted CI service pushes to production with a long-lived cloud access key stored
+  as a pipeline secret. Last month, a contributor's pull request in another repository of the same organisation printed an
+  organisation-wide secret to the build log. The company wants no stored cloud keys. Which design is BEST?
+options:
+  A: Keep the key in the CI's encrypted secret store, rotated monthly
+  B: Trust the CI provider's tokens from any repository in the organisation
+  C: Trust the CI provider's tokens only from the deploy repo's release branch
+  D: Issue a key for each run from a vault, after an admin approves it
+answer: C
+explanation:
+  why_correct: Federating with the CI provider's signed tokens removes stored keys, and a trust policy that checks the token's
+    issuer and audience and limits trust to the deploy repository's release branch stops other repositories' pipelines, including
+    untrusted pull requests, from taking the production role. Protecting that branch, or a deployment environment, keeps untrusted
+    changes from running there.
+  why_not:
+    A: Encrypted storage and rotation still leave a long-lived key that a pipeline can print, which is how last month's secret
+      leaked.
+    B: Organisation-wide trust removes stored keys, but any repository's pipeline, including one running a contributor's pull
+      request, could then deploy to production.
+    D: The vault still holds a long-lived cloud credential to issue per-run keys, admin approval of every run slows each deployment,
+      and the vault's own trust in the pipeline still needs the branch restriction that option C sets directly.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-cissp-check

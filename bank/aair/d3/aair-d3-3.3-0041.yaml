@@ -1,0 +1,31 @@
+id: aair-d3-3.3-0041
+subdomain: '3.3'
+difficulty: medium
+stem: A travel firm's chatbot can apply discounts to bookings. Its system prompt lists the discount rules, including a staff
+  discount, and tells it not to reveal them. Testers got it to print its instructions and then talked it into applying the
+  staff discount to their own booking. New jailbreak wordings appear weekly. Which control BEST prevents a repeat?
+options:
+  A: Check discount eligibility in the booking system before a discount applies
+  B: Screen replies for system prompt text and block those that contain it
+  C: Screen customer messages with a jailbreak classifier before the model
+  D: Log each discount the chatbot applies, for a daily review by finance
+answer: A
+explanation:
+  why_correct: Eligibility is a business rule that belongs in code, checked against the customer's verified status. Then no
+    wording can make the chatbot grant a discount, because the booking system will not apply it.
+  why_not:
+    B: Blocking leaked prompt text protects the rules' secrecy, but the staff discount was obtained by persuasion, which needs
+      no leak.
+    C: A classifier catches known jailbreak styles, but new wordings appear weekly, so some will get through while the discount
+      stays grantable.
+    D: A daily review finds misuse only after bookings are made and discounts given, and new wordings would keep producing
+      cases to chase.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aair-check

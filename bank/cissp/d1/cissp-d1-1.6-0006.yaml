@@ -1,0 +1,29 @@
+id: cissp-d1-1.6-0006
+subdomain: '1.6'
+difficulty: medium
+stem: A company's secure coding standard, which only its risk committee can change at twice-yearly meetings, requires every
+  build to be scanned with one named static analysis product. That product does not support Kotlin, which two teams adopted
+  this year, and three more languages are planned. Which change BEST fixes this?
+options:
+  A: Grant the Kotlin teams an exception until the vendor adds support
+  B: Name a second scanner for Kotlin in the standard at the next meeting
+  C: Require scanning with a tool from a list that AppSec maintains
+  D: Move the scanner requirement into a guideline teams adapt per language
+answer: C
+explanation:
+  why_correct: The requirement to scan each build belongs in the standard; the product names belong in a list that application
+    security can update as languages change, without waiting for a committee cycle.
+  why_not:
+    A: An exception covers Kotlin for now, but three more languages are coming, so exceptions would multiply while the standard
+      describes less of what teams do.
+    B: Naming a second product repeats the problem, since each new language would wait up to six months for the committee.
+    D: A guideline makes scanning optional, weakening a control the company wants to stay mandatory.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-cissp
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-cissp-check

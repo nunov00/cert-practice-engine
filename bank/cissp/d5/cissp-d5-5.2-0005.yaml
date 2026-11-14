@@ -1,27 +1,27 @@
 id: cissp-d5-5.2-0005
-subdomain: "5.2"
+subdomain: '5.2'
 difficulty: easy
-stem: Staff read the company's cloud email on company laptops and on their own phones, signing in with a password and a
-  push prompt that uses number matching. Attackers now send phishing links to a proxy that relays the real sign-in page,
-  so staff complete MFA themselves while the attackers capture the session cookie. Which change BEST stops this attack?
+stem: Staff read the company's cloud email on company laptops and on their own phones, signing in with a password and a push
+  prompt that uses number matching. Attackers now send phishing links to a proxy that relays the real sign-in page, so staff
+  complete MFA themselves while the attackers capture the session cookie. Which change BEST stops this attack?
 options:
   A: Smart-card certificate sign-in, available on company laptops with card readers
-  B: FIDO2 security keys or platform passkeys, on laptops and phones alike
+  B: FIDO2 security keys or platform passkeys, registered for each device
   C: Hardware one-time password tokens, replacing the push prompt at each sign-in
   D: Passwordless phone sign-in with number matching, showing app name and location
 answer: B
 explanation:
-  why_correct: The proxy works because the victim's MFA answer is valid wherever it is relayed. FIDO2 credentials sign a
-    challenge bound to the real site's origin, so a sign-in through the attacker's domain produces nothing the real
-    service accepts, and passkeys work on both the laptops and the phones staff use.
+  why_correct: The proxy works because the victim's MFA answer is valid wherever it is relayed. FIDO2 credentials sign a challenge
+    bound to the real site's origin, so a sign-in through the attacker's domain produces nothing the real service accepts,
+    and passkeys work on both the laptops and the phones staff use.
   why_not:
-    A: Certificate sign-in is also bound to the real connection and resists relaying, but it covers only company laptops
-      with card readers, so staff phished on their own phones would still hand over a session.
+    A: Certificate sign-in is also bound to the real connection and resists relaying, but it covers only company laptops with
+      card readers, so staff phished on their own phones would still hand over a session.
     C: Hardware tokens remove reliance on the phone, but the user types the code into the proxy page, which relays it to the
       real site in time, so the attacker still gets the session.
     D: Passwordless phone sign-in adds context to the prompt, but the user still approves a sign-in that the proxy relays
       from the real page, and the location shown is easy to overlook, so the attacker still receives the session.
-status: draft
+status: published
 outline_version: 2024-04-15
 sample: false
 provenance:
@@ -29,4 +29,4 @@ provenance:
   run_id: 2026-10-27-daily-cissp
   check_verdict: pass
   options_only: obvious
-  checked_by: 2026-11-12-daily-cissp-check
+  checked_by: 2026-11-14-daily-cissp-check

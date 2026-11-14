@@ -1,0 +1,32 @@
+id: aair-d2-2.1-0036
+subdomain: '2.1'
+difficulty: medium
+stem: A bank retrains a marketing model each month on customer data. Customers may withdraw consent at any time, and the bank
+  has promised that a withdrawn customer's data will be left out of the next training run. Records reach the training set
+  through several joins and aggregations. Which documentation design BEST supports this promise?
+options:
+  A: A version hash of each training dataset, stored with each model release
+  B: A link from each training record to its source customers and consent status
+  C: A datasheet describing each dataset's sources, collection methods and known gaps
+  D: A record of each training run's code version, settings and customer data snapshot
+answer: B
+explanation:
+  why_correct: After joins and aggregations, only record-level lineage tells the pipeline which training records derive from
+    a customer who withdrew, so the pipeline can drop them and rebuild any affected aggregates without that customer's data
+    before the next run.
+  why_not:
+    A: A hash proves which dataset a model used, but says nothing about which records came from which customer, so it cannot
+      drive exclusions.
+    C: A datasheet describes a dataset as a whole. It helps reviewers judge suitability, but it cannot pick out individual
+      customers' records.
+    D: Run records support reproducing a model, but a snapshot reference still does not show which records derive from a given
+      customer after the joins.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aair-check

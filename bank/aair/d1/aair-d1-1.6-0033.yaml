@@ -1,0 +1,31 @@
+id: aair-d1-1.6-0033
+subdomain: '1.6'
+difficulty: hard
+stem: A bank's language model assistant drafts summaries of loan applicants' files for credit officers, who make the decisions.
+  Files include names, addresses, languages spoken and community memberships. The bank wants to know whether the summaries
+  describe similar applicants differently by ethnicity. Which test BEST answers this?
+options:
+  A: Compare approval rates by ethnic group before and after the assistant's launch
+  B: Compare summaries of real applicants from different groups with similar credit scores
+  C: Run paired files that differ only in identity cues and compare the summaries
+  D: Have credit officers rate a random sample of summaries for tone and accuracy
+answer: C
+explanation:
+  why_correct: 'Paired files that are identical except for identity cues isolate the assistant''s own treatment of ethnicity:
+    any systematic difference in tone, emphasis or content can come only from those cues.'
+  why_not:
+    A: Approval rates reflect officers' decisions and many other factors, and a before-and-after shift cannot separate the
+      summaries' effect from changes in applicants or lending policy.
+    B: Real applicants with similar scores still differ in income, history and much else, so differences in their summaries
+      cannot be traced to ethnicity alone.
+    D: Officers rating summaries one at a time cannot see how a similar applicant with different identity cues would have
+      been described, so subtle differences go unnoticed.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-aair
+  check_verdict: fail
+  options_only: obvious
+  checked_by: 2026-11-14-daily-aair-check

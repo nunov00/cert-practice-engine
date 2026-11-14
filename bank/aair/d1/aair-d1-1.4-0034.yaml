@@ -1,0 +1,31 @@
+id: aair-d1-1.4-0034
+subdomain: '1.4'
+difficulty: medium
+stem: A bank's AI policy requires a full risk assessment before any AI use, including short experiments. Data scientists now
+  run experiments on their laptops without registering them, and some have used real customer data. Leadership wants experimentation
+  to stay quick. Which policy change BEST addresses this?
+options:
+  A: Exempt experiments from the policy and assess only models proposed for production
+  B: A light route for registered experiments that use no real customer data
+  C: Keep the full assessment for experiments, with approval targeted within five days
+  D: Require experiments to be registered, with assessment once results are known
+answer: B
+explanation:
+  why_correct: A proportionate route keeps experiments quick and visible while taking the main harm, real customer data, out
+    of them. Anything that needs real data or would affect customers still goes through the full assessment.
+  why_not:
+    A: 'An exemption makes the current problem official: experiments, including those on real customer data, would carry no
+      rules at all until production.'
+    C: Five days is still slower than an unregistered laptop experiment, so the incentive to bypass the policy remains, and
+      a full assessment is out of proportion for most experiments.
+    D: Registration restores visibility, but deferring the assessment means real customer data can still be used on laptops
+      while the experiments run.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aair-check

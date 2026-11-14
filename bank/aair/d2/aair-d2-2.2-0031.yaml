@@ -1,0 +1,30 @@
+id: aair-d2-2.2-0031
+subdomain: '2.2'
+difficulty: hard
+stem: An insurer validated an open-weight model for drafting replies to customer emails in eight languages. To cut hosting
+  costs, engineers will deploy a 4-bit quantised version. The publisher reports that the quantised model loses one point on
+  average across a public multilingual benchmark. Which validation is MOST needed before release?
+options:
+  A: Rerun the public multilingual benchmark on the quantised build in-house
+  B: Rerun the insurer's own validation tests on the quantised model, per language
+  C: Rerun the insurer's own tests on the quantised model, scored as one pooled set
+  D: Compare quantised and full model outputs on a sample of English customer emails
+answer: B
+explanation:
+  why_correct: Quantisation can degrade some languages and tasks far more than an average shows. Rerunning the insurer's own
+    validation, per language, on the version actually deployed shows whether each language still meets its criteria.
+  why_not:
+    A: An in-house rerun confirms the publisher's figure, but a public benchmark does not test the insurer's email tasks,
+      and its average can still hide a drop in some languages.
+    C: A pooled score is dominated by the high-volume languages, so a sharp drop in a smaller language could pass unnoticed.
+    D: English is usually among the most robust languages after quantisation, so an English-only sample would miss the losses
+      most likely to occur.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-aair
+  check_verdict: fail
+  options_only: obvious
+  checked_by: 2026-11-14-daily-aair-check

@@ -1,0 +1,31 @@
+id: cissp-d6-6.5-0009
+subdomain: '6.5'
+difficulty: hard
+stem: External auditors of a SaaS firm want to collect configuration evidence from its production cloud account themselves,
+  saying that screenshots supplied by staff could be altered. The cloud team suggests giving them an administrator account
+  for the audit. What should the security manager provide?
+options:
+  A: A time-limited read-only audit role, with its activity logged
+  B: Configuration exports signed off by the cloud team lead
+  C: Live screen-share sessions in which staff show settings on request
+  D: An export of the infrastructure code that defines the account's settings
+answer: A
+explanation:
+  why_correct: Read-only access lets the auditors gather evidence first-hand, which meets their concern, while least privilege
+    and logging protect production during the audit.
+  why_not:
+    B: Exports produced and signed by staff are still evidence prepared by the auditee, which is what the auditors are worried
+      about.
+    C: Staff still choose what to show and where to look, so the auditors cannot test the settings independently or select
+      their own samples.
+    D: Infrastructure code shows the intended configuration, but manual changes and drift mean the live account can differ
+      from it.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-cissp
+  check_verdict: fail
+  options_only: obvious
+  checked_by: 2026-11-14-daily-cissp-check

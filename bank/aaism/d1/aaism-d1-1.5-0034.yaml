@@ -1,0 +1,30 @@
+id: aaism-d1-1.5-0034
+subdomain: '1.5'
+difficulty: medium
+stem: A bank's assistant embeds each customer question with provider A's embedding model to search a vector index built with
+  that same model. Its continuity plan moves answer generation to provider B if A fails. In a failover test, the assistant
+  could not retrieve any documents. Which change BEST fixes the plan?
+options:
+  A: Back up the vector index daily to a second cloud region
+  B: Keep a second index embedded with a model the bank can run itself
+  C: Reserve answer generation capacity with provider B for outages
+  D: Cache answers to the most common questions for use during provider outages
+answer: B
+explanation:
+  why_correct: Retrieval needs each question embedded by the same model that built the index. A second index built with a
+    model the bank controls lets retrieval keep working when provider A is unavailable.
+  why_not:
+    A: A copy of the index is unusable while A is down, because new questions cannot be embedded into A's vector space to
+      search it.
+    C: Reserved capacity keeps generation running at B, but generation did not fail in the test; retrieval did.
+    D: Cached answers cover only repeated common questions and may go stale, so the assistant still cannot answer anything
+      new.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aaism-check

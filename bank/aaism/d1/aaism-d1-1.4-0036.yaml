@@ -1,0 +1,31 @@
+id: aaism-d1-1.4-0036
+subdomain: '1.4'
+difficulty: medium
+stem: An insurer's AI red team logs its findings, such as jailbreaks and injection routes, in its own spreadsheet. The enterprise
+  vulnerability process, which assigns owners, sets fix deadlines and escalates overdue items, does not include them, and
+  several high findings have been open for a year. What should the security manager do?
+options:
+  A: Bring AI findings into the enterprise process, with severity criteria for them
+  B: Load AI findings into the enterprise process, rated with its existing CVSS scoring
+  C: Give the red team's spreadsheet deadlines and escalation matching enterprise SLAs
+  D: Make each AI system's owner accountable for the red team's findings on it
+answer: A
+explanation:
+  why_correct: The enterprise process already provides ownership, deadlines and escalation. Adding AI findings, with criteria
+    to rate their severity, puts them through the same machinery that drives other findings to closure.
+  why_not:
+    B: CVSS rates software flaws by exploit and impact vectors that fit jailbreaks and injection routes poorly, so AI findings
+      would be rated inconsistently and get the wrong deadlines.
+    C: A parallel tracker duplicates the process and stays outside enterprise ownership assignment and risk reporting, so overdue
+      AI findings remain invisible to the people who enforce the SLAs.
+    D: Named accountability helps, but without the deadlines and escalation of the enterprise process, owners can still leave
+      findings open.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-14-daily-aaism
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-14-daily-aaism-check
