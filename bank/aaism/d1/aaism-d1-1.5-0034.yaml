@@ -1,6 +1,6 @@
 id: aaism-d1-1.5-0034
 subdomain: '1.5'
-difficulty: hard
+difficulty: medium
 stem: A bank's assistant embeds each customer question with provider A's embedding model to search a vector index built with
   that same model. Its continuity plan moves answer generation to provider B if A fails. In a failover test, the assistant
   could not retrieve any documents. Which change BEST fixes the plan?

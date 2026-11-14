@@ -8,7 +8,7 @@ options:
   A: Dermatologists' review of the synthetic images for realism
   B: Lower weighting of the synthetic images during training
   C: Testing on held-out real darker-skin images against a set accuracy bar
-  D: Disclosure to users and regulators that synthetic images were used in training
+  D: Testing on a held-out synthetic set made by a different image generator
 answer: C
 explanation:
   why_correct: A gain measured on synthetic images shows the model learned the generator's images, not real lesions. The few
@@ -19,8 +19,9 @@ explanation:
       and a review does not measure the model's accuracy.
     B: Down-weighting may limit harm from poor synthetic data, but it does not show whether accuracy on real darker-skin patients
       improved.
-    D: Disclosure supports transparency, but it says nothing about whether the model is now safe to rely on for these patients.
-status: published
+    D: A second generator gives a less self-serving test, but its images still are not real lesions, so the result says nothing
+      certain about real darker-skin patients.
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

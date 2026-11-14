@@ -98,3 +98,7 @@ held:
   # aaism-d3-3.3-0038, aaism-d3-3.4-0043 (Codex points from PR #83 applied),
   # cissp-d5-5.2-0005 (key no longer telegraphed) and cissp-d6-6.1-0004; all
   # passed and were released within each exam's hard share.
+  # PR #87, merge run: the final review lowered aaism-d1-1.5-0034 to medium, so
+  # the easiest AAISM release goes back to keep the hard share at 30%. Its
+  # disclosure distractor was replaced with a synthetic-test one (final review).
+  - { id: aaism-d3-3.4-0043, pr: 87 }

@@ -1,6 +1,6 @@
 id: aair-d3-3.2-0040
 subdomain: '3.2'
-difficulty: hard
+difficulty: medium
 stem: A warehouse's AI system steers autonomous forklifts through aisles where workers pick goods throughout each shift, and
   order deadlines require picking and forklift moves to share the aisles. Since a model update, forklifts sometimes pass close
   to workers at full speed, and the residual risk is above appetite. Retraining with a stronger penalty for close passes would

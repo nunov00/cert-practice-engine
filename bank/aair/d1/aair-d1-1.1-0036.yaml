@@ -7,7 +7,7 @@ stem: A consulting firm wants an assistant that answers staff questions from 200
 options:
   A: Fine-tune one model on the document set and offer it to senior staff only
   B: Retrieve from an index of only the documents open to the whole firm
-  C: Retrieve from a full index, checking the asker's current access to each passage
+  C: Retrieve from a full index, checking the asker's current access to each source document
   D: Fine-tune a separate model for each practice area on that practice area's own documents
 answer: C
 explanation:

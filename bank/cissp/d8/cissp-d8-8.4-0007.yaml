@@ -8,7 +8,7 @@ options:
   A: Delay the contract until the vendor's SOC 2 Type II report is issued
   B: A standard questionnaire, with evidence checked for the key answers
   C: An on-site assessment of the vendor by an external audit firm
-  D: Contract clauses on security and breach notice, with no further review
+  D: Contract clauses on security, breach notice and a right to audit
 answer: B
 explanation:
   why_correct: A questionnaire backed by evidence for the key controls gives assurance in proportion to low-sensitivity data
@@ -17,8 +17,8 @@ explanation:
     A: Waiting a year for the report misses the rollout, and the data's sensitivity does not justify making it a precondition.
     C: An external on-site assessment costs far more than the data's sensitivity justifies and is a heavy demand on a young
       vendor.
-    D: Clauses set duties but give no information on whether the vendor can meet them, so the company would accept an unknown
-      risk.
+    D: Clauses set duties and allow a later audit, but give no information before go-live on whether the vendor can meet them,
+      so the company would accept an unknown risk.
 status: published
 outline_version: '2024-04-15'
 sample: false

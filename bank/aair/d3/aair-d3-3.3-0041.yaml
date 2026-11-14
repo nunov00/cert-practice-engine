@@ -1,6 +1,6 @@
 id: aair-d3-3.3-0041
 subdomain: '3.3'
-difficulty: hard
+difficulty: medium
 stem: A travel firm's chatbot can apply discounts to bookings. Its system prompt lists the discount rules, including a staff
   discount, and tells it not to reveal them. Testers got it to print its instructions and then talked it into applying the
   staff discount to their own booking. New jailbreak wordings appear weekly. Which control BEST prevents a repeat?

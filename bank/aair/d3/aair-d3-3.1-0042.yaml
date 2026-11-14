@@ -3,7 +3,7 @@ subdomain: '3.1'
 difficulty: hard
 stem: A bank's customer assistant will remember facts each customer shares, such as preferred accounts and payees, and use
   them in later chats, where it can set up payments. Memories are stored under each customer's own account. Customers often
-  paste text from emails and messages into the chat. Which risk scenario should the assessment MOST add?
+  paste text from emails and messages into the chat. Which risk scenario is MOST important to add to the assessment?
 options:
   A: One customer's memories surface in another customer's later chat
   B: Pasted scam text is saved as a standing instruction about payees

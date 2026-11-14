@@ -20,8 +20,8 @@ explanation:
       leaked.
     B: Organisation-wide trust removes stored keys, but any repository's pipeline, including one running a contributor's pull
       request, could then deploy to production.
-    D: A vault removes the stored cloud key, but admin approval of every run slows each deployment, and the vault's own trust
-      in the pipeline still needs the branch restriction the key option sets directly.
+    D: The vault still holds a long-lived cloud credential to issue per-run keys, admin approval of every run slows each deployment,
+      and the vault's own trust in the pipeline still needs the branch restriction that option C sets directly.
 status: published
 outline_version: '2024-04-15'
 sample: false

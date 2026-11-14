@@ -8,7 +8,7 @@ options:
   A: A version hash of each training dataset, stored with each model release
   B: A link from each training record to its source customers and consent status
   C: A datasheet describing each dataset's sources, collection methods and known gaps
-  D: A record of each training run's code version, settings and data snapshot
+  D: A record of each training run's code version, settings and customer data snapshot
 answer: B
 explanation:
   why_correct: After joins and aggregations, only record-level lineage tells the pipeline which training records derive from

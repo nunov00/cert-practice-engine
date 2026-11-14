@@ -1,6 +1,6 @@
 id: aair-d1-1.4-0034
 subdomain: '1.4'
-difficulty: hard
+difficulty: medium
 stem: A bank's AI policy requires a full risk assessment before any AI use, including short experiments. Data scientists now
   run experiments on their laptops without registering them, and some have used real customer data. Leadership wants experimentation
   to stay quick. Which policy change BEST addresses this?

@@ -8,7 +8,7 @@ options:
   A: Remove superseded variants from production when a release replaces them
   B: Apply the jailbreak fix to each earlier variant still deployed
   C: Accept variant names only in requests signed by the current app
-  D: Alert the security team whenever a request names an earlier model variant
+  D: Alert the security team whenever a request names an earlier prompt variant
 answer: A
 explanation:
   why_correct: Old variants exist only to serve old app versions, which can no longer sign in, so they serve no one and only

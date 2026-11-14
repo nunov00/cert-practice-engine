@@ -16,8 +16,8 @@ explanation:
   why_not:
     B: CVSS rates software flaws by exploit and impact vectors that fit jailbreaks and injection routes poorly, so AI findings
       would be rated inconsistently and get the wrong deadlines.
-    C: Copying deadlines into a spreadsheet brings no assigned owners, tracking or escalation path, so findings stay outside
-      the process that drives fixes.
+    C: A parallel tracker duplicates the process and stays outside enterprise ownership assignment and risk reporting, so overdue
+      AI findings remain invisible to the people who enforce the SLAs.
     D: Named accountability helps, but without the deadlines and escalation of the enterprise process, owners can still leave
       findings open.
 status: published

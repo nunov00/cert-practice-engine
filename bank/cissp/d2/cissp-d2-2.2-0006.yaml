@@ -7,13 +7,13 @@ stem: A company's central backup service protects every server, including the HR
   BEST addresses this?
 options:
   A: Encrypt the HR backups under a key that only the backup service can use
-  B: HR restores only by Restricted-cleared staff, to approved hosts, with HR's approval
-  C: Log each restore job, with monthly review of the log by security
+  B: HR restores only by Restricted-cleared staff, to approved hosts
+  C: Log each restore of Restricted backups, reviewed monthly by security
   D: A separate backup system for HR, run only by HR's own IT team
 answer: B
 explanation:
   why_correct: Backups carry the classification of their source, so restoring HR backups is handling Restricted data. Limiting
-    restores to Restricted-cleared staff and to servers approved for Restricted data, with the data owner's approval, applies
+    restores to Restricted-cleared staff and to servers approved for Restricted data applies
     the same rule as the live system.
   why_not:
     A: Encryption protects backup media, but the operator restored through the backup service itself, which can decrypt the

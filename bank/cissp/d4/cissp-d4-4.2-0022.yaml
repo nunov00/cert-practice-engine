@@ -1,6 +1,6 @@
 id: cissp-d4-4.2-0022
 subdomain: '4.2'
-difficulty: hard
+difficulty: medium
 stem: Company laptops expose file-sharing and remote-management ports, which the help desk uses to fix them on the office
   network. In a test on a hotel network, another guest's machine reached a laptop through those ports. The always-on VPN can
   connect only after the hotel's sign-in page is completed in a browser. Which control BEST closes this exposure?
@@ -12,7 +12,8 @@ options:
 answer: A
 explanation:
   why_correct: Network-aware host firewall rules keep the ports open on the corporate network, where the help desk needs them,
-    and closed on any other network, including the time before the VPN connects.
+    and closed on any other network, including the time before the VPN connects. The rules should recognise the corporate
+    network by an authenticated check, not a DNS suffix alone, so a hostile network cannot pose as the office.
   why_not:
     B: Disabling the services would stop the help desk from fixing laptops the way it does now.
     C: Blocking traffic until the VPN connects would also block the hotel's sign-in page, so laptops could not get online
