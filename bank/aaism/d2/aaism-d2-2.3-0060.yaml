@@ -3,16 +3,17 @@ subdomain: '2.3'
 difficulty: hard
 stem: A company's AI sales assistant, run by a vendor, reads and updates contacts, deals and notes in the company's CRM through
   a token the vendor stores. Attackers who breached another AI vendor used tokens stored there to export its customers' CRM
-  data from their own servers. Which control BEST limits this risk?
+  data from attacker-controlled servers outside that vendor's network. Which control BEST limits this risk?
 options:
   A: Narrow the token's scope to the CRM objects the assistant needs
   B: Accept the token only from the vendor's published network addresses
   C: Rotate the token each month through the vendor's admin console
-  D: Require the vendor's next assurance report to cover token storage
+  D: Require the vendor's next assurance report to cover how tokens are stored
 answer: B
 explanation:
   why_correct: Binding the token to the vendor's own addresses means a stolen copy cannot be used from attackers' servers,
-    the route used in the other breach.
+    the route used in the other breach. It would not stop an attacker who took over the vendor's own environment, so it complements
+    rather than replaces the vendor's controls.
   why_not:
     A: The assistant needs contacts, deals and notes, which hold most of the CRM's sensitive data, so a narrower scope leaves
       the main exposure in place.

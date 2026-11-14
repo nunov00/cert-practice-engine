@@ -12,7 +12,8 @@ options:
 answer: A
 explanation:
   why_correct: The failure is in job placement. A scheduler that checks each dataset's location tag before placing a job keeps
-    EU data processed in EU regions, at the point where the decision is made.
+    EU data processed in EU regions, at the point where the decision is made. It depends on accurate tags, and storage
+    policies should still block direct reads of EU data from other regions, including by downstream jobs.
   why_not:
     B: An EU key store controls where keys are kept, but a US job granted the key would still decrypt and process the data
       in the US.

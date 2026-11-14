@@ -12,7 +12,8 @@ options:
 answer: A
 explanation:
   why_correct: Fail-secure strikes stay locked from outside without power, while mechanical handles let people out at any
-    time, so the doors meet both security and fire rules without depending on power.
+    time, so the doors meet both security and fire rules without depending on power, subject to the local fire code's rules
+    on door hardware.
   why_not:
     B: Batteries extend the locked time, but a longer cut or a battery fault would release the doors again, so security still
       depends on power.

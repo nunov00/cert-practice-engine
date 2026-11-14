@@ -1,7 +1,7 @@
 id: cissp-d1-1.5-0006
 subdomain: '1.5'
 difficulty: hard
-stem: After a breach of customer data, a retailer expects class-action lawsuits. It has a long-standing retainer with a forensic
+stem: After a breach of customer data, a US retailer expects class-action lawsuits in US courts. It has a long-standing retainer with a forensic
   firm for routine incident work, and its cyber insurer will pay for any firm on its panel, which includes that firm. Outside
   counsel wants the investigation's findings protected as far as possible in the litigation. How should the forensic work
   be commissioned?
@@ -14,6 +14,8 @@ answer: B
 explanation:
   why_correct: In jurisdictions with litigation protections such as US work-product doctrine, forensic work that counsel commissions
     to advise on expected litigation, with the report going to counsel, has the best chance of being protected from disclosure.
+    Commissioning through counsel does not guarantee it. The work must serve the litigation and be kept apart from any parallel
+    operational investigation.
   why_not:
     A: Courts have refused protection where the firm worked under a pre-existing business retainer, because the work looked
       like routine business rather than preparation for litigation.

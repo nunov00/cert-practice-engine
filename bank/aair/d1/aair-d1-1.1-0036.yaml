@@ -8,14 +8,16 @@ options:
   A: Fine-tune one model on the document set and offer it to senior staff only
   B: Retrieve from an index of only the documents open to the whole firm
   C: Retrieve from a full index, checking the asker's current access to each passage
-  D: Fine-tune a separate model for each practice area on that area's documents
+  D: Fine-tune a separate model for each practice area on that practice area's own documents
 answer: C
 explanation:
   why_correct: Model weights cannot enforce per-document permissions that change daily. Retrieval with a live access check
-    returns only passages the asker may open today, while still drawing on everything they are allowed to read.
+    returns only passages the asker may open today, while still drawing on everything they are allowed to read. Any cached
+    retrieval results need the same check.
   why_not:
-    A: Anything learned in fine-tuning is available to every user of the model, so senior staff could draw out content from
-      engagements they are not on, and the weights cannot reflect daily changes in access.
+    A: Fine-tuning can memorise content from restricted documents, and the model cannot enforce document permissions over
+      what it memorised, so senior staff could draw out content from engagements they are not on, and the weights cannot reflect
+      daily changes in access.
     B: This is safe, but most documents are open only to their engagement team, so the assistant could not answer from the
       material staff most need.
     D: Each practice-area model still mixes documents from many engagement teams, so restricted content could reach colleagues

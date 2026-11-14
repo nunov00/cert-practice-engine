@@ -11,8 +11,10 @@ options:
   D: Issue a key for each run from a vault, after an admin approves it
 answer: C
 explanation:
-  why_correct: Federating with the CI provider's signed tokens removes stored keys, and limiting trust to the deploy repository's
-    release branch stops other repositories' pipelines, including untrusted pull requests, from taking the production role.
+  why_correct: Federating with the CI provider's signed tokens removes stored keys, and a trust policy that checks the token's
+    issuer and audience and limits trust to the deploy repository's release branch stops other repositories' pipelines, including
+    untrusted pull requests, from taking the production role. Protecting that branch, or a deployment environment, keeps untrusted
+    changes from running there.
   why_not:
     A: Encrypted storage and rotation still leave a long-lived key that a pipeline can print, which is how last month's secret
       leaked.

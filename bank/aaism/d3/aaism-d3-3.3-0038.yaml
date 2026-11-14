@@ -5,15 +5,15 @@ stem: To fine-tune an agent that works its claims system, an insurer records ful
   handle claims. A review found the recordings include staff's personal chats, other customers' records in other windows and
   passwords typed into other applications. Which control BEST protects the training data?
 options:
-  A: Redacting personal data from the recordings with OCR-based scanning
-  B: Capturing only the claims app window, with sensitive fields masked
-  C: Limiting access to the stored recordings to the model training team
+  A: Redacting personal data from the stored recordings with OCR-based text scanning
+  B: Capturing only the claims app's window and keystrokes, masking sensitive fields
+  C: Limiting access to the stored recordings to the model training team only
   D: Deleting the recordings once the tuned model is released
 answer: B
 explanation:
   why_correct: The agent only needs to learn the claims system, so the data it trains on should come only from that system.
-    Capturing just the claims window, and masking sensitive fields such as passwords, keeps chats, other applications and
-    credentials out of the training data from the start.
+    Capturing just the claims window and the keystrokes typed into it, and suppressing sensitive fields such as passwords before
+    anything is stored, keeps chats, other applications and credentials out of the training data from the start.
   why_not:
     A: OCR redaction reduces exposure, but it misses some text and cannot remove keystrokes typed into other applications,
       so passwords and chats still enter training.

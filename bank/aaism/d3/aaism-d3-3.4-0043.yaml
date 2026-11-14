@@ -8,12 +8,12 @@ options:
   A: Dermatologists' review of the synthetic images for realism
   B: Lower weighting of the synthetic images during training
   C: Testing on held-out real darker-skin images against a set accuracy bar
-  D: Disclosure to users that synthetic images were used in training
+  D: Disclosure to users and regulators that synthetic images were used in training
 answer: C
 explanation:
   why_correct: A gain measured on synthetic images shows the model learned the generator's images, not real lesions. The few
-    hundred real images are too few to train on but enough to test with, so holding them out and testing on them is the evidence
-    that patients with darker skin are actually better served.
+    hundred real images are too few to train on but can test with, so holding out a representative set and setting the bar
+    with the uncertainty of a small sample in mind is the evidence that patients with darker skin are actually better served.
   why_not:
     A: Expert review can catch images that look wrong, but realistic-looking images can still miss how lesions really present,
       and a review does not measure the model's accuracy.

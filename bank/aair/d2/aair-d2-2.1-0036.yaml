@@ -7,12 +7,13 @@ stem: A bank retrains a marketing model each month on customer data. Customers m
 options:
   A: A version hash of each training dataset, stored with each model release
   B: A link from each training record to its source customers and consent status
-  C: A datasheet describing each dataset's sources, collection and known gaps
+  C: A datasheet describing each dataset's sources, collection methods and known gaps
   D: A record of each training run's code version, settings and data snapshot
 answer: B
 explanation:
   why_correct: After joins and aggregations, only record-level lineage tells the pipeline which training records derive from
-    a customer who withdrew, so those records can be excluded before the next run.
+    a customer who withdrew, so the pipeline can drop them and rebuild any affected aggregates without that customer's data
+    before the next run.
   why_not:
     A: A hash proves which dataset a model used, but says nothing about which records came from which customer, so it cannot
       drive exclusions.

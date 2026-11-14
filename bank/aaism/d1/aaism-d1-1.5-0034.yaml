@@ -8,7 +8,7 @@ options:
   A: Back up the vector index daily to a second cloud region
   B: Keep a second index embedded with a model the bank can run itself
   C: Reserve answer generation capacity with provider B for outages
-  D: Cache answers to common questions for use during outages
+  D: Cache answers to the most common questions for use during provider outages
 answer: B
 explanation:
   why_correct: Retrieval needs each question embedded by the same model that built the index. A second index built with a

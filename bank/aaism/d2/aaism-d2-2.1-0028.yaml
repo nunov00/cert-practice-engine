@@ -5,7 +5,7 @@ stem: 'A team rates a chatbot''s jailbreak risk as very low: an input screen and
   attacks, so it estimates that only 1 in 400 attacks gets past both. Both screens are the same model with different prompts.
   What is the MAIN flaw?'
 options:
-  A: The test attacks may not reflect current techniques
+  A: The test attacks may not reflect current attack techniques
   B: The rating covers likelihood but not impact
   C: The screens' false positive rates were not measured
   D: The estimate assumes the two screens fail independently
