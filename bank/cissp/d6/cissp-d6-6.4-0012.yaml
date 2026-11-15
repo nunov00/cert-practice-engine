@@ -1,0 +1,35 @@
+id: cissp-d6-6.4-0012
+subdomain: '6.4'
+difficulty: hard
+stem: A hospital's monthly scan keeps reporting a critical remote code execution flaw on 30 infusion pump gateways. The
+  vendor has ended support and will release no fix, and replacements are funded for 18 months from now. The security
+  manager designed a segment that now isolates the gateways and judges the remaining risk low. How should the analyst
+  record the finding in this month's report?
+options:
+  A: As a risk exception for the gateways' business owner to accept, with a review date
+  B: As closed and mitigated, citing the segment that now isolates the gateways
+  C: As a risk exception for the security manager to accept, with a review date
+  D: As open and critical, reported again each quarter until the replacement arrives
+answer: A
+explanation:
+  why_correct: The flaw is real and cannot be fixed for 18 months, so the residual risk has to be accepted for that time.
+    Accepting risk is a decision for the business owner of the gateways, who owns the clinical service and its risk,
+    informed by the security manager's view of the segment. Recording it as an open exception pending the
+    owner's acceptance, with the segment noted as a compensating control and a review date, keeps the finding visible
+    and brings it back before the replacement.
+  why_not:
+    B: Segmentation reduces the exposure, but the vulnerable software is still running, so closing the finding would
+      misstate the position and drop it from tracking.
+    C: The security manager's assessment is valuable input, but the manager designed the control being relied on and does
+      not own the clinical risk, so the acceptance belongs with the business owner.
+    D: Keeping it open is honest, but with no fix coming it would repeat as critical for 18 months without anyone deciding
+      to accept the risk, and it adds noise that hides findings that can be fixed.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-cissp-check
+  options_only: not_obvious

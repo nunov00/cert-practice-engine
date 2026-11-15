@@ -1,0 +1,32 @@
+id: aaism-d3-3.4-0047
+subdomain: '3.4'
+difficulty: medium
+stem: A staffing firm's interview tool scores candidates partly on facial expressions and voice tone from recorded video interviews.
+  Candidates consent, and bias tests across sex, age and ethnicity pass. An expert review finds no evidence that these signals
+  predict how candidates perform in the job. What should the security manager recommend?
+options:
+  A: Explain to candidates how expression and tone affect their scores
+  B: Remove the expression and tone signals from the candidate score
+  C: Offer candidates a non-video assessment route on request
+  D: Extend bias testing to candidates whose disabilities affect expression
+answer: B
+explanation:
+  why_correct: 'A signal with no evidence that it predicts job performance cannot justify affecting anyone''s chances, whatever
+    the bias tests show. Removing expression and tone from the score, at least until they are validated, fixes the cause:
+    the tool would otherwise keep ranking candidates on features with no shown relevance to the job, which is unfair to every candidate, not only to particular groups.'
+  why_not:
+    A: Transparency about how the score works is good practice, but explaining an invalid signal does not make it fair to
+      use, and candidates would still be ranked on it.
+    C: An alternative route helps candidates who know to ask for it, but those who take the video interview are still scored
+      on signals with no evidence that they predict performance.
+    D: Testing for disability bias is a sound addition where signals are valid, but here the review finds no evidence the signals
+      are valid for anyone, so more bias tests would not fix the scoring.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aaism-check
+  options_only: not_obvious

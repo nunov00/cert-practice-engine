@@ -1,0 +1,33 @@
+id: cissp-d1-1.12-0006
+subdomain: '1.12'
+difficulty: medium
+stem: Twice this year, technicians at a food plant plugged USB drives brought by the equipment vendor's field engineers
+  into production control panels, against site rules. Interviews show the technicians know the rule but believe it does
+  not cover the vendor's own drives. Shop-floor staff have no company email, and each shift starts with a
+  supervisor-led safety briefing. Which addition to the awareness programme is MOST likely to change this behaviour?
+options:
+  A: Talks in the shift briefings on why vendor drives carry the same risk
+  B: A label on each panel's USB port stating the rule and whom to call
+  C: A kiosk e-learning module on removable media, with completion tracked by HR
+  D: Simulated drives left near the panels, with coaching for those who use one
+answer: A
+explanation:
+  why_correct: The technicians already know the rule; what drives the behaviour is a mistaken belief that the vendor's
+    drives are an exception. Correcting a belief needs explanation and a chance to ask questions, and the shift briefing
+    is the channel these staff already attend and trust, led by the supervisors they take direction from.
+  why_not:
+    B: A label at the point of use is a strong reminder, but as described it restates a rule the technicians already know;
+      even one naming vendor drives would assert the point without the explanation and questions that change a belief.
+    C: Kiosk e-learning reaches staff without email and gives a completion record, but a generic module on removable media
+      is unlikely to address the specific vendor exception they believe in, and it sits outside their daily routine.
+    D: A drop test measures whether staff plug in found drives, but the incidents involved drives handed over by trusted
+      vendor engineers, a different situation that the test does not rehearse.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-cissp-check
+  options_only: not_obvious

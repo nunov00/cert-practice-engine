@@ -1,0 +1,33 @@
+id: aaism-d1-1.2-0034
+subdomain: '1.2'
+difficulty: hard
+stem: A water utility's customers increasingly send AI agents to its web portal and phone line to dispute bills and switch
+  tariffs for them, and say they use agents so they need not take part in each step. Policy lets staff deal only with the
+  account holder, so agents are turned away. Fraudsters already use leaked customer details to change payment details by phone.
+  Which policy provision BEST fits?
+options:
+  A: Agents may act once they give the holder's name, address and account number
+  B: Agents may view account information, while changes stay with the holder
+  C: Agents may act once the holder confirms each change with a code sent by text
+  D: Agents may act once the holder grants them scoped access through the portal
+answer: D
+explanation:
+  why_correct: Access that the holder grants once in the portal, limited to what the agent may do, proves the holder's consent
+    rather than the agent's knowledge of account details. Agents can then handle disputes and tariff changes on their own,
+    as customers want, while agents run by fraudsters holding leaked details are kept out.
+  why_not:
+    A: Name, address and account number are exactly the details fraudsters already hold from leaks, so their agents could
+      pass this check and act on accounts.
+    B: Read-only access is a sensible first step in some settings, but the agents' main tasks here, disputes and tariff switches,
+      are changes, so agents still could not do what customers send them for.
+    C: A one-time code per change is strong verification, but it draws the holder into every step, which is what customers
+      use agents to avoid, so agents could not do the work unattended.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aaism-check
+  options_only: obvious

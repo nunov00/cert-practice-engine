@@ -1,0 +1,32 @@
+id: aair-d3-3.6-0037
+subdomain: '3.6'
+difficulty: easy
+stem: A retailer's vendor-hosted chatbot began granting discounts it is not allowed to give, after customers shared a phrase
+  online that triggered them. The vendor shipped an update, and no such discounts have appeared since. The vendor has not
+  said what it changed. Discounts already granted are being honoured. When should the incident be closed?
+options:
+  A: Once two weeks of monitoring show no further unauthorised discounts
+  B: Once the vendor confirms in writing that the fault has been fixed
+  C: Once the discounts granted are honoured and recorded as a loss
+  D: Once the shared phrase and its variants fail in the retailer's own tests
+answer: D
+explanation:
+  why_correct: The behaviour was triggered by a known phrase, and nobody has shown why it stopped. A quiet period could simply
+    mean customers stopped using the phrase. Testing the phrase and its variants against the updated chatbot shows that the
+    trigger itself no longer works before the incident is closed.
+  why_not:
+    A: Monitoring after a fix is normal practice, but here a quiet fortnight may only reflect the phrase falling out of circulation,
+      so the weakness could still be present.
+    B: A written confirmation from the vendor adds accountability but no evidence, as the vendor has not explained what it
+      changed or how it tested the fix.
+    C: Settling and recording the loss is part of closing out, but it deals with past harm and says nothing about whether
+      the chatbot can still be triggered.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aair-check
+  options_only: obvious

@@ -1,0 +1,34 @@
+id: cissp-d4-4.2-0023
+subdomain: '4.2'
+difficulty: hard
+stem: Two of a bank's data centre buildings are joined by leased dark fibre that runs through a city utility tunnel shared
+  with other carriers' cables. The link is a Layer 2 trunk carrying a dozen VLANs, including storage replication that must
+  run at full line rate and building-system traffic in old plain-text protocols. Which control BEST protects this traffic
+  against a tap in the tunnel? Switches and routers at both ends
+  support line-rate hardware encryption.
+options:
+  A: IPsec tunnels between routers at each site for traffic crossing the link
+  B: Link-layer encryption between the switches at each end of the fibre
+  C: Optical power monitoring that alerts when the light level on the fibre drops
+  D: TLS added to each application whose traffic crosses between the buildings
+answer: B
+explanation:
+  why_correct: Link-layer encryption such as MACsec runs in the switches' hardware at line rate and protects every frame on
+    the trunk, whatever VLAN or protocol it carries, so the storage replication and the old building-system protocols are
+    covered without changing them or the Layer 2 design.
+  why_not:
+    A: IPsec is the usual choice between sites, but it protects routed IP traffic, while this link is a Layer 2 trunk, and
+      gateway encryption at full replication line rate adds cost and latency.
+    C: Power monitoring can reveal some taps, but a well-made tap loses little light, and an alert comes after the traffic
+      has been read rather than protecting it.
+    D: Application TLS protects data end to end where it can be used, but the old plain-text building-system protocols
+      cannot carry it, so part of the traffic would stay exposed.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-15-daily-cissp-check
+  options_only: not_obvious

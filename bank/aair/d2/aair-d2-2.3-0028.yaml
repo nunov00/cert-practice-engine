@@ -1,0 +1,34 @@
+id: aair-d2-2.3-0028
+subdomain: '2.3'
+difficulty: medium
+stem: A council's housing repairs model runs in a container image that is rebuilt monthly to take operating system patches.
+  After one rebuild, its priority scores shifted noticeably, although nobody had changed the model; the rebuild had pulled
+  newer releases of its numerical libraries. Full revalidation takes about three weeks. Which control BEST prevents a repeat?
+options:
+  A: Rerun the full validation suite after each monthly image rebuild
+  B: Alert the model owner when live score distributions shift suddenly
+  C: Pin the library versions so rebuilds change only operating system patches
+  D: Rebuild the image only for critical patches rather than on a monthly cycle
+answer: C
+explanation:
+  why_correct: The scores moved because an unrelated rebuild silently changed the libraries the model depends on. Pinning
+    those versions keeps the monthly security patching while ensuring the model's numerical behaviour changes only when someone
+    deliberately upgrades a library, which can then be tested as a model change.
+    A quick parity check of scores after each rebuild, and a tested route for urgent library security updates, round
+    this out, since an OS update can still occasionally affect numerical behaviour.
+  why_not:
+    A: Full validation would catch the shift, but at three weeks per run it would take up most of each monthly cycle, and
+      it treats every routine patch as a model change.
+    B: An alert finds the shift after scores have already changed priorities for live repairs; it limits the harm rather than
+      preventing it.
+    D: Fewer rebuilds lower how often libraries change but leave the model exposed whenever a rebuild happens, and they delay
+      security patches the council needs.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aair-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: cissp-d6-6.5-0010
+subdomain: '6.5'
+difficulty: hard
+stem: Internal audit is testing a payments firm's quarterly user access reviews over the past year, and the regulator
+  will rely on its report. Fieldwork found that two of the four reviews were not done. Before the report is issued,
+  management completes a full review and asks that the finding be removed. How should the audit team report this?
+options:
+  A: Report the finding as remediated and rated low, on management's evidence of the fix
+  B: Retest the review just completed, and report the finding as closed if it passes
+  C: Hold the report until the next two reviews are done on time, then retest
+  D: Report the finding for the year, noting the completed review as later action
+answer: D
+explanation:
+  why_correct: The report concludes on how the control operated across the year, and for half of it the control did not
+    operate. Reporting that exception, with management's later review recorded as a response, gives the regulator an
+    accurate picture of the period and of the fix, which the auditors can verify at follow-up.
+  why_not:
+    A: Recording management's remediation is right, but rating the finding low and remediated on management's own
+      evidence understates two missed quarters out of four, and the auditors have not yet tested the fix themselves.
+    B: Retesting the new review shows the control can work now, but a passing retest does not undo two missed quarters,
+      so calling the finding closed misstates the period under audit.
+    C: Waiting for two more on-time reviews would show sustained operation, but it delays a report the regulator relies
+      on, and the missed quarters still have to be reported.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-cissp-check
+  options_only: not_obvious

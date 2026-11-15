@@ -13,7 +13,8 @@ answer: B
 explanation:
   why_correct: A distinct placeholder for each name keeps names away from the provider, as the contracts require, while
     the gateway keeps the mapping and puts each name back where it belongs in the returned draft. Calls still pass
-    through the gateway, and the retyping that drives lawyers around it goes away.
+    through the gateway, and the retyping that drives lawyers around it goes away. The mapping must be deterministic and
+    handle placeholders the model drops or repeats, and provider calls should still be forced through the gateway.
   why_not:
     A: Blocking the bypass enforces the gateway, but lawyers would still have to retype names, so the pressure to find other
       workarounds remains.
@@ -21,12 +22,12 @@ explanation:
       contracts bar.
     D: Filling names from the matter file avoids retyping, but once names are stripped with no record of where each was, the
       system cannot tell which of several people belongs in each gap, so letters would name the wrong people.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-10-daily-aaism
   check_verdict: pass
+  checked_by: 2026-11-15-daily-aaism-check
   options_only: not_obvious
-  checked_by: 2026-11-11-daily-aaism-check

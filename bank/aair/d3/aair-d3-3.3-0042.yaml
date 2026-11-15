@@ -1,0 +1,33 @@
+id: aair-d3-3.3-0042
+subdomain: '3.3'
+difficulty: hard
+stem: A steelworks retrains its furnace control model each night on the previous day's sensor data, so that it tracks wear
+  in the furnace lining. Last month a miscalibrated sensor fed a day of readings 30 degrees low, and the retrained model ran
+  furnaces too hot until an engineer noticed. Which control BEST prevents a repeat?
+options:
+  A: Compare each retrained model's outputs with the current model's before release
+  B: Alert operators when furnace temperatures move outside their normal range
+  C: Check each day's readings against other sensors and physical limits first
+  D: Retrain each week instead of each night, so one bad day weighs less
+answer: C
+explanation:
+  why_correct: The fault entered through the training data, and a model trained on bad readings behaves badly however well
+    it fits them. Checking each day's readings against neighbouring sensors and physical limits quarantines anomalous
+    readings before retraining, without giving up the nightly updates that lining wear calls for.
+  why_not:
+    A: The model is retrained nightly because the furnace changes, so each new model is expected to differ from the current
+      one. A comparison needs a tolerance wide enough for nightly wear, so a smaller bias could pass, and it acts only
+      after the model has already trained on bad data.
+    B: A temperature alert would detect the harm only once furnaces are already running hot, much as the engineer did here.
+      It limits damage but does not stop a faulty model being released.
+    D: Weekly retraining dilutes one bad day but still trains on it, and it slows the model's tracking of lining wear, which
+      is why it retrains nightly.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aair-check
+  options_only: not_obvious

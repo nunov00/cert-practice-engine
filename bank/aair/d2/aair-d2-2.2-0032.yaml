@@ -1,0 +1,31 @@
+id: aair-d2-2.2-0032
+subdomain: '2.2'
+difficulty: medium
+stem: A staffing agency's model ranks CVs for client roles. It was trained and tested on CVs entered through the agency's
+  own online form. It will now also rank CVs that candidates upload as PDFs made from many different templates. Accuracy and
+  group fairness tests on held-out form CVs passed. Which further test is MOST important?
+options:
+  A: Fairness tests repeated on the most recent quarter of form CVs
+  B: Accuracy on a held-out sample of form CVs for the newest roles
+  C: Scores for CVs stuffed with job-advert keywords against the originals
+  D: Scores for the same CV content laid out in different PDF templates
+answer: D
+explanation:
+  why_correct: 'The change in use is the input format: content the form once structured now arrives as parsed PDFs in many
+    layouts. Feeding identical content through different templates shows whether rankings depend on layout and parsing rather
+    than on the candidate, a failure the form-based tests could not reveal.'
+  why_not:
+    A: Repeating fairness tests on form CVs adds evidence from the old input route and says nothing about how parsed PDFs
+      treat candidates whose templates differ.
+    B: Newer roles test whether the model is current, but still on form CVs, so the main change in use stays untested.
+    C: Keyword stuffing is a real gaming risk worth testing, but it existed under the form too. It is not what the move to
+      uploaded PDFs introduces.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aair-check
+  options_only: not_obvious

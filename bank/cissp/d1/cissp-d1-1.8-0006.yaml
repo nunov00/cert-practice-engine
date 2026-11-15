@@ -1,0 +1,34 @@
+id: cissp-d1-1.8-0006
+subdomain: '1.8'
+difficulty: hard
+stem: A water utility's commercial billing specialist has handled the same 40 large accounts for nine years and rarely
+  takes more than two days off. Auditors noticed that some customer payments reach her accounts days after the bank
+  received them, which she puts down to remittance mix-ups. The contracts for those accounts name her as each customer's
+  dedicated contact for three more years. Which control BEST addresses the auditors' concern?
+options:
+  A: Move her accounts to another specialist on a yearly rotation
+  B: Have a supervisor review a monthly sample of her account adjustments
+  C: Require two consecutive weeks of leave, with a colleague working her accounts
+  D: Re-screen her, including a credit check, as part of a periodic personnel review
+answer: C
+explanation:
+  why_correct: Late application of payments is the classic sign of lapping, where one customer's payment covers money
+    taken from another. Such a scheme needs the same person to keep juggling postings every day, so two consecutive
+    weeks in which a colleague works her accounts is very likely to expose it. Holiday cover is normal even for a named
+    contact, so the contracts are not affected.
+  why_not:
+    A: Rotation exposes hidden schemes in the same way, but the contracts name her as the customers' contact for three
+      more years, so a year-long handover of the accounts is not available.
+    B: A supervisor's sample of adjustments is a useful detective control, but lapping works through the timing of payment
+      postings rather than credits or write-offs, so the sample would not show it.
+    D: Periodic re-screening can reveal financial pressure, a risk indicator, but it says nothing about whether her
+      accounts actually hide a scheme.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: aaism-d2-2.2-0064
+subdomain: '2.2'
+difficulty: hard
+stem: A retailer runs about 120 AI apps on models from five providers, which together publish dozens of security advisories
+  a month, few with CVE numbers. Apps pin a model version so each change can be validated first. An advisory on a prompt-leak
+  flaw in one version reached the security team the day it appeared; owners of three affected apps learned of it from an audit
+  two months later. What BEST prevents a repeat?
+options:
+  A: Record each app's model versions and match new advisories to them
+  B: Route each advisory to the owners of apps that use that provider
+  C: Test each app monthly against published prompt-leak techniques
+  D: Have owners check their pinned versions against advisories quarterly
+answer: A
+explanation:
+  why_correct: The advisory arrived on time but could not be tied to the apps running the affected version. Recording model
+    versions in the asset inventory lets the team match each advisory to the apps it affects, assign them and track them to
+    closure, as vulnerability management already does for software flaws with CVE numbers.
+  why_not:
+    B: Routing by provider narrows the audience, but each provider serves many apps on different versions, so owners still
+      have to work out whether their version is affected, and nothing tracks whether they did.
+    C: Regular testing catches some leaks, but only for techniques the tests include, and it does not tell owners which provider
+      flaws affect the version they have pinned.
+    D: A quarterly check puts the version match on a schedule, but a flaw could stay unfixed for up to three months, longer
+      than the two-month gap this process is meant to close.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aair-d1-1.2-0041
+subdomain: '1.2'
+difficulty: medium
+stem: A freight company's sales teams sign contracts that promise customers delivery windows taken from its AI arrival-time
+  model, with a penalty for each miss. The model's accuracy varies widely by route and season, and contract approval involves
+  only legal and finance. Penalty payments have tripled this year. Which change BEST aligns these processes?
+options:
+  A: Set one minimum window width that sales may promise on any contract
+  B: Report penalty payments by route to the model owner each month
+  C: Have the model owner confirm promised windows during contract approval
+  D: Retrain the model with seasonal features to narrow its errors by route
+answer: C
+explanation:
+  why_correct: The penalties come from commitments made without anyone who knows how accurate the model is on a given route
+    and season. Bringing the model owner into contract approval ties each promise to the model's actual performance before
+    the company is bound by it.
+  why_not:
+    A: A single width ignores that accuracy varies by route and season. It would be too tight for weak routes and needlessly
+      loose for strong ones, so penalties continue where errors are largest.
+    B: Reporting shows the owner where penalties fall after contracts are signed. It does not change what sales promise, so
+      new contracts carry the same exposure.
+    D: Better seasonal accuracy is worth having, but variation between routes will remain, and sales would still promise windows
+      without knowing what the model can support.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aair-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aair-d1-1.6-0035
+subdomain: '1.6'
+difficulty: medium
+stem: A hospital's outpatient service uses a model to predict which patients will miss appointments, and double-books their
+  slots. Flagged patients who do attend wait longest. Most flagged patients live in outlying areas with infrequent buses.
+  Audits find the predictions equally accurate across patient groups. What should the risk practitioner recommend?
+options:
+  A: Remove postcode and other area-linked inputs from the no-show model
+  B: Cap the share of double-booked slots in each clinic session
+  C: Raise the model's flagging threshold so fewer patients are flagged
+  D: Use the predictions to offer reminders and transport help instead
+answer: D
+explanation:
+  why_correct: The model is accurate; the harm comes from how its predictions are used. Double-booking makes patients who
+    already face barriers to attending bear the cost of longer waits. Using the same predictions to help them attend, through
+    reminders and transport support, tackles missed appointments without penalising those patients.
+  why_not:
+    A: Removing area-linked inputs lowers accuracy, and other signals of the same barriers would still flag many of the same
+      patients, who would still be double-booked and wait longest.
+    B: A cap reduces how much double-booking happens, but the patients who are flagged still carry the longer waits, so the
+      unfair burden stays with the same group.
+    C: A higher threshold flags fewer patients, but those still flagged, mostly from the same outlying areas, keep bearing
+      the waits; the way the predictions are used is unchanged.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aair
+  check_verdict: fail
+  checked_by: 2026-11-15-daily-aair-check
+  options_only: obvious

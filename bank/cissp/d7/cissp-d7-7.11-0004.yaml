@@ -1,0 +1,33 @@
+id: cissp-d7-7.11-0004
+subdomain: '7.11'
+difficulty: medium
+stem: A flood has taken out a distributor's primary data centre. Its virtual machines replicate every few minutes to a
+  recovery site, and the DR plan lists them in order of business priority, with order processing first. Its applications
+  and databases run under domain service accounts. The team has declared a disaster, and the recovery site's network,
+  including its firewalls and load balancers, is up. No servers are running there yet. Which servers should the team start FIRST?
+options:
+  A: The order processing servers, holding the service the plan ranks first
+  B: The database servers, holding the orders that order processing reads and writes
+  C: The directory and DNS servers, holding the accounts and host names in use
+  D: The privileged access vault servers, holding the service account passwords
+answer: C
+explanation:
+  why_correct: Business priority decides which services matter most, but technical dependencies decide start order. The
+    applications and databases run under domain service accounts and reach each other by name, so none of them can start
+    cleanly until directory and DNS are running. Starting those first is the fastest way to get order processing back.
+  why_not:
+    A: Order processing is the most important service, but started without directory and DNS its service accounts cannot
+      sign in, so the team loses time restarting it.
+    B: Databases do come before the applications that use them, but these databases also run under domain service
+      accounts, so they depend on the directory in turn.
+    D: The vault lets people and tools check out credentials, but the service accounts still sign in against the
+      directory, so the vault cannot make them usable until the directory is running.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: aair-d1-1.6-0034
+subdomain: '1.6'
+difficulty: medium
+stem: A wellbeing app tests new AI-written reminder styles on random groups of users and adopts whichever raises daily use
+  most. In the latest test, reminders hinting that users had let themselves down raised use the most. Many of the app's users
+  are being treated for depression. What should the risk practitioner recommend?
+options:
+  A: State in the app's terms that reminder styles are tested on users
+  B: Stop testing and choose reminder styles from surveys of user preference
+  C: Send tests of emotional wording through ethics review with harm stop rules
+  D: Add wellbeing measures to each test's success criteria alongside daily use
+answer: C
+explanation:
+  why_correct: The tests vary emotional pressure on people, many of them in treatment for depression, so harm can occur during
+    a test, not only after a style is adopted. An ethics review before such tests, with rules that halt a test when harm signals
+    appear, protects participants while the app keeps learning what works.
+  why_not:
+    A: A line in the terms gives users no real choice about receiving guilt-based messages and does nothing to limit harm
+      to vulnerable users.
+    B: Ending tests gives up useful learning, and stated preferences may not show what messages do to vulnerable users. The
+      problem is how tests are approved, not testing itself.
+    D: Wellbeing measures would show harm once a test has run and might stop the style being adopted, but users in the test
+      would already have received it. Nothing decides beforehand whether such wording should be tried on them.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aair-check
+  options_only: not_obvious

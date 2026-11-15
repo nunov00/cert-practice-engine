@@ -1,0 +1,33 @@
+id: aaism-d2-2.1-0060
+subdomain: '2.1'
+difficulty: medium
+stem: A mobile operator's model decides which applicants get handsets on monthly credit. Its risk register rates the risk
+  of wrongly refusing applicants who would have paid as low, citing two years in which non-payment by accepted customers stayed
+  within tolerance. What is the MAIN weakness of this evidence?
+options:
+  A: Two years of data may not include an economic downturn
+  B: Customers accepted recently have not yet had time to default
+  C: Non-payment may be under-recorded until accounts reach collection
+  D: It shows nothing about refused applicants who would have paid
+answer: D
+explanation:
+  why_correct: The risk being rated is wrongful refusal, but the evidence covers accepted customers only. Refused applicants
+    never get a contract, so whether they would have paid is never observed, and non-payment can stay low even if the model
+    turns away many good applicants. Rating this risk needs other evidence, such as outcomes for a small group approved despite
+    a refusal score.
+  why_not:
+    A: A period without a downturn weakens evidence about default risk, but default rates do not measure wrongful refusals
+      at any point in the economic cycle.
+    B: Young accounts can understate defaults, but that again concerns the payment risk of accepted customers, not applicants
+      who were refused.
+    C: Late recording affects how accurately defaults are measured, yet even perfect default data would say nothing about
+      the applicants who were turned away.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aaism-check
+  options_only: not_obvious

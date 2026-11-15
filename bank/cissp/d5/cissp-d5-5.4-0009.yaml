@@ -1,0 +1,33 @@
+id: cissp-d5-5.4-0009
+subdomain: '5.4'
+difficulty: medium
+stem: An aerospace firm's engineering files sit in project folders that project leads manage, adding collaborators as
+  work needs. Foreign national staff work on the uncontrolled parts of many projects, export-controlled and uncontrolled
+  files sit side by side, and files are reclassified as designs mature. Last year a lead added a foreign national
+  contractor to a folder holding controlled drawings. Which authorization approach BEST meets the export rules?
+options:
+  A: Folder permissions set by leads, attested each quarter by the export control office
+  B: A role per controlled project, granted by the export control office alone
+  C: Labels on controlled files, checked against each user's export status on access
+  D: Data loss prevention that blocks controlled files from leaving the company network
+answer: C
+explanation:
+  why_correct: The rule must hold whatever a folder's owner grants, so the decision cannot rest with the leads. A label on
+    each controlled file, compared with the user's export status at each access, is a mandatory control that follows the
+    file through reclassification and lets foreign national staff keep working on uncontrolled files in the same folders.
+  why_not:
+    A: Attestation by the export office adds oversight of the leads' grants, but it finds a wrong grant up to a quarter
+      later, after the controlled drawings may already have been seen.
+    B: A centrally granted role takes the decision away from leads, but it works at project level, while controlled and
+      uncontrolled files share the same projects and folders and foreign national staff need the uncontrolled ones.
+    D: Data loss prevention guards the network edge, but the foreign national staff and contractors are inside the
+      company, where the disclosure happens.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-cissp-check
+  options_only: not_obvious

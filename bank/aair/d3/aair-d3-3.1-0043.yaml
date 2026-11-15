@@ -1,0 +1,32 @@
+id: aair-d3-3.1-0043
+subdomain: '3.1'
+difficulty: medium
+stem: A bank's credit limit model draws its inputs from twelve internal systems, whose teams change them several times a year.
+  So that scoring never stops, the model fills any missing input with a typical value. Customers do not enter any of these
+  inputs. Which risk scenario should the assessment MOST include?
+options:
+  A: Customer groups with more missing data are scored less accurately
+  B: A source change empties a field and scores shift quietly for many customers
+  C: Customer behaviour changes and scores drift from the development sample
+  D: A source system sends stale data that the model scores as current
+answer: B
+explanation:
+  why_correct: 'Filling gaps with typical values means that a field left empty by an upstream change raises no error: the
+    model keeps scoring, with that input set to an average for everyone. With twelve systems changing several times a year,
+    this silent, wide shift in scores is both likely and far-reaching.'
+  why_not:
+    A: Uneven missing data can bias scores for some groups, but here the inputs come automatically from internal systems,
+      so gaps arise mainly from system changes that affect many customers at once.
+    C: Drift is a standing risk for any model, but it builds gradually and routine monitoring is designed to catch it. It
+      is not the exposure this design creates.
+    D: Stale feeds are a real data risk, but they arise with or without gap filling. The scenario this design adds is that
+      empty fields are hidden rather than flagged.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aair-check
+  options_only: not_obvious
