@@ -2,25 +2,26 @@ id: aaism-d1-1.2-0034
 subdomain: '1.2'
 difficulty: hard
 stem: A water utility's customers increasingly send AI agents to its web portal and phone line to dispute bills and switch
-  tariffs for them. Policy lets staff deal only with the account holder, so agents are turned away and complaints are rising.
-  Fraudsters already use leaked customer details to change payment details by phone. Which policy provision BEST fits?
+  tariffs for them, and say they use agents so they need not take part in each step. Policy lets staff deal only with the
+  account holder, so agents are turned away. Fraudsters already use leaked customer details to change payment details by phone.
+  Which policy provision BEST fits?
 options:
   A: Agents may act once they give the holder's name, address and account number
   B: Agents may view account information, while changes stay with the holder
-  C: Agents are refused, and holders are offered priority callbacks from staff
+  C: Agents may act once the holder confirms each change with a code sent by text
   D: Agents may act once the holder grants them scoped access through the portal
 answer: D
 explanation:
-  why_correct: Access that the holder grants in the portal, limited to what the agent may do, proves the holder's consent
-    rather than the agent's knowledge of account details. The utility can then serve agents for disputes and tariff changes
-    while agents run by fraudsters holding leaked details are kept out.
+  why_correct: Access that the holder grants once in the portal, limited to what the agent may do, proves the holder's consent
+    rather than the agent's knowledge of account details. Agents can then handle disputes and tariff changes on their own,
+    as customers want, while agents run by fraudsters holding leaked details are kept out.
   why_not:
     A: Name, address and account number are exactly the details fraudsters already hold from leaks, so their agents could
       pass this check and act on accounts.
     B: Read-only access is a sensible first step in some settings, but the agents' main tasks here, disputes and tariff switches,
       are changes, so the complaints would continue.
-    C: Refusing agents keeps the current control but does not meet the rising demand; priority callbacks shift the work to
-      staff without letting customers delegate safely.
+    C: A one-time code per change is strong verification, but it draws the holder into every step, which is what customers
+      use agents to avoid, so agents could not do the work unattended.
 status: draft
 outline_version: '2025-08-19'
 sample: false

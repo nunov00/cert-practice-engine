@@ -1,6 +1,6 @@
 id: aair-d2-2.2-0032
 subdomain: '2.2'
-difficulty: hard
+difficulty: medium
 stem: A staffing agency's model ranks CVs for client roles. It was trained and tested on CVs entered through the agency's
   own online form. It will now also rank CVs that candidates upload as PDFs made from many different templates. Accuracy and
   group fairness tests on held-out form CVs passed. Which further test is MOST important?
@@ -27,3 +27,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-aair
   check_verdict: pending
+  options_only: not_obvious

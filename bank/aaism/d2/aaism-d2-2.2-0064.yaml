@@ -7,21 +7,21 @@ stem: A retailer runs about 120 AI apps on models from five providers, which tog
   two months later. What BEST prevents a repeat?
 options:
   A: Record each app's model versions and match new advisories to them
-  B: Send each new provider advisory to the AI app owners' mailing list
+  B: Route each advisory to the owners of apps that use that provider
   C: Test each app monthly against published prompt-leak techniques
-  D: Let apps use each provider's latest model rather than a pinned one
+  D: Have owners check their pinned versions against advisories quarterly
 answer: A
 explanation:
   why_correct: The advisory arrived on time but could not be tied to the apps running the affected version. Recording model
     versions in the asset inventory lets the team match each advisory to the apps it affects, assign them and track them to
     closure, as vulnerability management already does for software flaws with CVE numbers.
   why_not:
-    B: Broadcasting dozens of advisories a month to 120 owners leaves each owner to judge relevance alone, with nothing tracking
-      the response, so notices are easily missed as this one was.
+    B: Routing by provider narrows the audience, but each provider serves many apps on different versions, so owners still
+      have to work out whether their version is affected, and nothing tracks whether they did.
     C: Regular testing catches some leaks, but only for techniques the tests include, and it does not tell owners which provider
       flaws affect the version they have pinned.
-    D: Following the latest version would skip the validation the apps rely on, trading a known flaw for model changes nobody
-      has tested.
+    D: A quarterly check puts the version match on a schedule, but a flaw could stay unfixed for up to three months, close
+      to the two-month gap this process is meant to close.
 status: draft
 outline_version: '2025-08-19'
 sample: false

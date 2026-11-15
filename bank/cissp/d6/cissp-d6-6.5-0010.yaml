@@ -5,7 +5,7 @@ stem: Internal audit is testing a payments firm's quarterly user access reviews 
   will rely on its report. Fieldwork found that two of the four reviews were not done. Before the report is issued,
   management completes a full review and asks that the finding be removed. How should the audit team report this?
 options:
-  A: Remove the finding and record management's fix in the working papers
+  A: Report the finding as remediated and rated low, on management's evidence of the fix
   B: Retest the review just completed, and report the finding as closed if it passes
   C: Hold the report until the next two reviews are done on time, then retest
   D: Report the finding for the year, noting the completed review as later action
@@ -15,8 +15,8 @@ explanation:
     operate. Reporting that exception, with management's later review recorded as a response, gives the regulator an
     accurate picture of the period and of the fix, which the auditors can verify at follow-up.
   why_not:
-    A: The fix matters for the future, but removing the finding would tell the regulator the control worked all year,
-      which the fieldwork showed it did not.
+    A: Recording management's remediation is right, but rating the finding low and remediated on management's own
+      evidence understates two missed quarters out of four, and the auditors have not yet tested the fix themselves.
     B: Retesting the new review shows the control can work now, but a passing retest does not undo two missed quarters,
       so calling the finding closed misstates the period under audit.
     C: Waiting for two more on-time reviews would show sustained operation, but it delays a report the regulator relies

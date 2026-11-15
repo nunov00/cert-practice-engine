@@ -1,6 +1,6 @@
 id: aair-d1-1.6-0034
 subdomain: '1.6'
-difficulty: hard
+difficulty: medium
 stem: A wellbeing app tests new AI-written reminder styles on random groups of users and adopts whichever raises daily use
   most. In the latest test, reminders hinting that users had let themselves down raised use the most. Many of the app's users
   are being treated for depression. What should the risk practitioner recommend?
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-aair
   check_verdict: pending
+  options_only: not_obvious

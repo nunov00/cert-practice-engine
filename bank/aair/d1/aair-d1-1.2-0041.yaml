@@ -1,6 +1,6 @@
 id: aair-d1-1.2-0041
 subdomain: '1.2'
-difficulty: hard
+difficulty: medium
 stem: A freight company's sales teams sign contracts that promise customers delivery windows taken from its AI arrival-time
   model, with a penalty for each miss. The model's accuracy varies widely by route and season, and contract approval involves
   only legal and finance. Penalty payments have tripled this year. Which change BEST aligns these processes?
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-aair
   check_verdict: pending
+  options_only: not_obvious

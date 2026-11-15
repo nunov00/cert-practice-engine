@@ -7,20 +7,21 @@ stem: A city's housing agency uses a model to rank applications for social housi
 options:
   A: Delete the inputs after 90 days and keep each applicant's final score and rank
   B: Keep the inputs and model version for the appeal period, with access limited to appeals
-  C: Keep the inputs for 90 days and ask applicants' consent to keep them for longer
-  D: Keep pseudonymised inputs for the appeal period and delete the link to each applicant
+  C: Keep the inputs for the appeal period in the case system, open to housing staff
+  D: Keep the inputs for the appeal period and delete superseded model versions
 answer: B
 explanation:
-  why_correct: Data minimisation means keeping personal data no longer than its purposes need, and answering appeals is one
-    of those purposes, backed by the agency's duty to show the basis of each decision. Keeping the inputs and model version
-    for the appeal period, used for appeals alone, meets that duty while limiting the processing.
+  why_correct: Data minimisation means keeping personal data no longer, and no more widely, than its purposes need. Answering
+    appeals is one of those purposes, backed by the agency's duty to show the basis of each decision, and that needs both
+    the inputs and the model version that ranked them. Keeping both for the appeal period, used for appeals alone, meets the
+    duty while limiting the processing.
   why_not:
     A: A score and rank show the outcome, not what it rested on. Without the inputs the agency cannot show on appeal whether
       the applicant's data was right or how the model reached the result.
-    C: Consent is a poor basis where the agency needs the data to meet a legal duty, and applicants who refuse would leave
-      decisions that cannot be defended on appeal.
-    D: Pseudonymisation reduces exposure, but deleting the link means the agency cannot find the records of the applicant
-      who appeals, which defeats the reason for keeping them.
+    C: Keeping the inputs meets the appeal duty, but leaving them open to housing staff in the working system allows uses
+      beyond appeals. The purpose that justifies keeping them should also limit who can see them.
+    D: The inputs alone cannot show how the decision was reached if the model that ranked them is gone. On appeal the agency
+      must be able to show which model version produced the result and why.
 status: draft
 outline_version: '2026-04-15'
 sample: false

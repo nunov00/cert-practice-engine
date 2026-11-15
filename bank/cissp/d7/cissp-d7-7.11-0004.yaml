@@ -2,25 +2,26 @@ id: cissp-d7-7.11-0004
 subdomain: '7.11'
 difficulty: hard
 stem: A flood has taken out a distributor's primary data centre. Its virtual machines replicate every few minutes to a
-  recovery site, and the DR plan lists them in order of business priority, with order processing first. The team has
-  declared a disaster, and the recovery site's network is up. Which systems should the team start FIRST?
+  recovery site, and the DR plan lists them in order of business priority, with order processing first. Its applications
+  and databases run under domain service accounts. The team has declared a disaster, and the recovery site's network is
+  up. Which servers should the team start FIRST?
 options:
-  A: The order processing servers, which the plan ranks first for the business
-  B: The backup servers, so that data missing from the replicas can be restored
-  C: The directory and DNS servers, which other systems use to sign in and find hosts
-  D: The security logging servers, so that later systems are monitored from the start
+  A: The order processing servers, holding the service the plan ranks first
+  B: The database servers, holding the orders that order processing reads and writes
+  C: The directory and DNS servers, holding the accounts and host names in use
+  D: The perimeter firewalls and load balancers, carrying traffic to the servers
 answer: C
 explanation:
-  why_correct: Business priority decides which services matter most, but technical dependencies decide start order.
-    Order processing cannot authenticate its service accounts or find its database without directory and name services,
-    so starting those first is the fastest way to get the top-priority system working.
+  why_correct: Business priority decides which services matter most, but technical dependencies decide start order. The
+    applications and databases run under domain service accounts and reach each other by name, so none of them can start
+    cleanly until directory and DNS are running. Starting those first is the fastest way to get order processing back.
   why_not:
-    A: Order processing is the most important service, but started without directory and DNS it fails to sign in or reach
-      its database, so the team loses time restarting it.
-    B: Backup servers come first when systems must be rebuilt from backups, but the replicas are only minutes old, so
-      restoring data is not the first need here.
-    D: Logging from the start matters after a cyber attack, but this outage came from a flood, and logging servers need
-      directory and DNS too.
+    A: Order processing is the most important service, but started without directory and DNS its service accounts cannot
+      sign in, so the team loses time restarting it.
+    B: Databases do come before the applications that use them, but these databases also run under domain service
+      accounts, so they depend on the directory in turn.
+    D: Firewalls and load balancers must be up before traffic can flow, but they are part of the recovery site's network,
+      which is already running.
 status: draft
 outline_version: '2024-04-15'
 sample: false
