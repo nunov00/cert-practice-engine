@@ -2,7 +2,7 @@ id: aair-d1-1.4-0036
 subdomain: '1.4'
 difficulty: hard
 stem: At a logistics group, staff proposing a new AI use rate its risk tier themselves, and the tier sets how much review
-  it gets. About 400 proposals arrive a year, and the AI risk team has two people. A review found that half the proposals
+  it gets. About 2,000 proposals arrive a year, and the AI risk team has two people, who also run model validation. A review found that half the proposals
   rated low had been under-rated. Which procedure change BEST addresses this?
 options:
   A: Derive the tier from proposers' factual answers on data, users and autonomy
@@ -13,18 +13,20 @@ answer: A
 explanation:
   why_correct: Self-rating fails because proposers judge risk loosely and gain from a low tier. Asking factual questions,
     such as what data is used, who is affected and whether the AI acts on its own, and deriving the tier from the answers
-    removes that judgement while scaling to 400 proposals with a two-person team.
+    removes that judgement while scaling to 2,000 proposals with a two-person team.
   why_not:
     B: Spot-checks are a sound backstop where ratings are mostly right, but with half the low ratings wrong, a sample would
       leave most under-rated proposals with too little review.
     C: Managers usually share the proposer's interest in a light review and rarely have the expertise to judge AI risk, so
       the rating would gain a signature rather than accuracy.
-    D: Risk team tiering would be accurate, but two people cannot hold calls on about 400 proposals a year without becoming
+    D: Risk team tiering would be accurate, but two people who also run model validation cannot hold calls on about 2,000 proposals a year without becoming
       a bottleneck that encourages teams to bypass the process.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aair-check
+  options_only: not_obvious

@@ -21,11 +21,12 @@ explanation:
       new contracts carry the same exposure.
     D: Better seasonal accuracy is worth having, but variation between routes will remain, and sales would still promise windows
       without knowing what the model can support.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aair-check
   options_only: not_obvious

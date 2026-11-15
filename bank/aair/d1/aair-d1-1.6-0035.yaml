@@ -1,6 +1,6 @@
 id: aair-d1-1.6-0035
 subdomain: '1.6'
-difficulty: hard
+difficulty: medium
 stem: A hospital's outpatient service uses a model to predict which patients will miss appointments, and double-books their
   slots. Flagged patients who do attend wait longest. Most flagged patients live in outlying areas with infrequent buses.
   Audits find the predictions equally accurate across patient groups. What should the risk practitioner recommend?
@@ -27,4 +27,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-aair
-  check_verdict: pending
+  check_verdict: fail
+  checked_by: 2026-11-15-daily-aair-check
+  options_only: obvious

@@ -21,11 +21,12 @@ explanation:
       overstate their risk unless the scores are recalibrated.
     D: Class weighting distorts output probabilities in much the same way as oversampling, so it does not make the displayed
       percentage a true chance.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aair-check
   options_only: not_obvious

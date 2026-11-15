@@ -20,11 +20,12 @@ explanation:
     B: Newer roles test whether the model is current, but still on form CVs, so the main change in use stays untested.
     C: Keyword stuffing is a real gaming risk worth testing, but it existed under the form too. It is not what the move to
       uploaded PDFs introduces.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aair-check
   options_only: not_obvious
