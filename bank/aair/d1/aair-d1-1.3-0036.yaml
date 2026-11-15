@@ -5,7 +5,7 @@ stem: A parcel carrier names one dispatcher per shift as the human overseer of a
   an hour across 40 depots. The dispatcher can open any assignment and change it. Logs show a handful of changes each shift,
   nearly all made after drivers phone in. Which change BEST makes this oversight effective?
 options:
-  A: Alerts on depot-level patterns, such as late jobs, with power to pause the AI
+  A: Depot-level pattern alerts with power to pause the AI
   B: More dispatchers, so that each oversees a smaller share of assignments
   C: An hourly check by the dispatcher of a random sample of assignments
   D: Dispatcher approval of each assignment the AI rates as low confidence

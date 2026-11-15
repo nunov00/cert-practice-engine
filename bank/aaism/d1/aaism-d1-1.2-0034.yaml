@@ -19,7 +19,7 @@ explanation:
     A: Name, address and account number are exactly the details fraudsters already hold from leaks, so their agents could
       pass this check and act on accounts.
     B: Read-only access is a sensible first step in some settings, but the agents' main tasks here, disputes and tariff switches,
-      are changes, so the complaints would continue.
+      are changes, so agents still could not do what customers send them for.
     C: A one-time code per change is strong verification, but it draws the holder into every step, which is what customers
       use agents to avoid, so agents could not do the work unattended.
 status: published

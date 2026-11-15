@@ -1,6 +1,6 @@
 id: cissp-d7-7.11-0004
 subdomain: '7.11'
-difficulty: hard
+difficulty: medium
 stem: A flood has taken out a distributor's primary data centre. Its virtual machines replicate every few minutes to a
   recovery site, and the DR plan lists them in order of business priority, with order processing first. Its applications
   and databases run under domain service accounts. The team has declared a disaster, and the recovery site's network,
@@ -9,7 +9,7 @@ options:
   A: The order processing servers, holding the service the plan ranks first
   B: The database servers, holding the orders that order processing reads and writes
   C: The directory and DNS servers, holding the accounts and host names in use
-  D: The perimeter firewalls and load balancers, carrying traffic to the servers
+  D: The privileged access vault servers, holding the service account passwords
 answer: C
 explanation:
   why_correct: Business priority decides which services matter most, but technical dependencies decide start order. The
@@ -20,8 +20,8 @@ explanation:
       sign in, so the team loses time restarting it.
     B: Databases do come before the applications that use them, but these databases also run under domain service
       accounts, so they depend on the directory in turn.
-    D: Firewalls and load balancers must be up before traffic can flow, but here they are part of the recovery site's
-      network, which is already running.
+    D: The vault lets people and tools check out credentials, but the service accounts still sign in against the
+      directory, so the vault cannot make them usable until the directory is running.
 status: published
 outline_version: '2024-04-15'
 sample: false

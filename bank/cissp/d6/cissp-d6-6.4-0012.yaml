@@ -14,8 +14,9 @@ answer: A
 explanation:
   why_correct: The flaw is real and cannot be fixed for 18 months, so the residual risk has to be accepted for that time.
     Accepting risk is a decision for the business owner of the gateways, who owns the clinical service and its risk,
-    informed by the security manager's view of the segment. Until the owner signs, the finding stays open with the segment
-    noted as a compensating control; once accepted, the exception with a review date keeps the finding visible and brings it back before the replacement.
+    informed by the security manager's view of the segment. Recording it as an open exception pending the
+    owner's acceptance, with the segment noted as a compensating control and a review date, keeps the finding visible
+    and brings it back before the replacement.
   why_not:
     B: Segmentation reduces the exposure, but the vulnerable software is still running, so closing the finding would
       misstate the position and drop it from tracking.

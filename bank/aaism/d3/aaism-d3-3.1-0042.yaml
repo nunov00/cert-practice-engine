@@ -12,7 +12,7 @@ options:
 answer: D
 explanation:
   why_correct: The model reads restricted text before any check runs, so it can reuse it in ways a citation check cannot see.
-    Checking every retrieved passage, and any cached result, against the user's document permissions before it enters the
+    Checking every retrieved passage against the user's document permissions before it enters the
     prompt means the model does not receive, through retrieval, content the user may not open.
   why_not:
     A: Per-practice indexes follow practice lines, but permissions are set per document and many documents cross practices,

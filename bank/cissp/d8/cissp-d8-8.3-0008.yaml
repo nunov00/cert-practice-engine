@@ -4,7 +4,7 @@ difficulty: hard
 stem: A software company is choosing between two static analysis tools after a month's trial. Most of its code uses an
   in-house web framework, and its version history holds the fixes for 40 flaws that penetration tests found over three
   years. Tool X reported twice as many findings as tool Y on the current code. Which evidence BEST shows which tool will
-  find more real flaws in this code?
+  miss fewer of the real flaws in this code?
 options:
   A: Each tool's scan of the code before the 40 fixes, counting the flaws it finds
   B: Each tool's score on a public benchmark of seeded flaws in common frameworks

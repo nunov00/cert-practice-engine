@@ -1,6 +1,6 @@
 id: aaism-d1-1.4-0037
 subdomain: '1.4'
-difficulty: medium
+difficulty: hard
 stem: A food retailer has acquired a start-up that built about 40 experimental models on public data and has no security program.
   The integration plan connects two of its recommendation models to the retailer's loyalty data in three months. What should
   the security manager do FIRST?
