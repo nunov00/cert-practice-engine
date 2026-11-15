@@ -1,0 +1,30 @@
+id: aaism-d1-1.1-0032
+subdomain: '1.1'
+difficulty: hard
+stem: A recruitment agency uses a vendor-hosted CV-screening tool that an AI regulation classes as high-risk. As deployer,
+  the agency must keep the tool's automatically generated logs for at least six months. The vendor's platform keeps them for
+  a year, and the agency plans to change vendor when the contract ends in eight months. What should the security manager arrange?
+options:
+  A: A contract term requiring the vendor to hold the logs for the full period
+  B: Logging of recruiters' screening decisions in the agency's own system
+  C: Regular export of the tool's logs into storage the agency controls
+  D: A review of the vendor's log retention controls at each annual audit
+answer: C
+explanation:
+  why_correct: The duty sits with the agency as deployer, and logs from the last months of the contract must still be available
+    after the vendor relationship ends. Exporting them on a schedule into storage the agency controls keeps them intact and
+    retrievable for a regulator, whichever vendor the agency uses next.
+  why_not:
+    A: A retention clause works while the relationship lasts, but after the switch the agency would depend on a former vendor's
+      goodwill to produce logs it is legally required to keep.
+    B: Records of recruiters' decisions support human oversight, but they are not the tool's own automatically generated logs,
+      which the duty covers.
+    D: Audits give assurance on how the vendor keeps logs today; they do not keep the logs within reach once the contract
+      has ended.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aaism
+  check_verdict: pending

@@ -1,0 +1,32 @@
+id: cissp-d3-3.2-0006
+subdomain: '3.2'
+difficulty: hard
+stem: An intelligence agency's system enforces Bell-LaPadula labels. Analysts raise a report's classification during the
+  working day when new sources arrive, and the agency needs this to continue. An audit found that an analyst cleared for
+  Secret went on reading a report for an hour after it had been raised to Top Secret. Which model property BEST
+  addresses this?
+options:
+  A: Strong tranquility, so that labels do not change while the system runs
+  B: The star property, so that she cannot write the content to a lower level
+  C: The simple security property, so that she cannot read above her own clearance
+  D: Weak tranquility, so that a label change cannot violate the policy in force
+answer: D
+explanation:
+  why_correct: Under weak tranquility, labels may change while the system runs, but only in ways that do not break the
+    security policy. Raising the report's label must therefore take effect on accesses already open, so the analyst's
+    Secret-level access ends when the report becomes Top Secret, while analysts can still reclassify reports during the
+    day.
+  why_not:
+    A: Strong tranquility would remove the problem, since labels could not change during operation, but the agency needs
+      analysts to raise classifications during the working day.
+    B: The star property stops writing down, which matters if she copies the content, but the failure here is that she
+      kept reading a report above her clearance.
+    C: The simple security property was met when she opened the report at Secret. The gap appears after the label
+      changes, which is what the tranquility properties govern.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-cissp
+  check_verdict: pending

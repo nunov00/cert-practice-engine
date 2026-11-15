@@ -1,0 +1,30 @@
+id: aair-d1-1.5-0032
+subdomain: '1.5'
+difficulty: hard
+stem: A city's housing agency uses a model to rank applications for social housing. Applicants may appeal up to two years
+  after a decision, and the agency must then show what the decision was based on. Its privacy officer wants the model's input
+  data deleted after 90 days, once ranking is complete. What should the risk practitioner advise?
+options:
+  A: Delete the inputs after 90 days and keep each applicant's final score and rank
+  B: Keep the inputs and model version for the appeal period, with access limited to appeals
+  C: Keep the inputs for 90 days and ask applicants' consent to keep them for longer
+  D: Keep pseudonymised inputs for the appeal period and delete the link to each applicant
+answer: B
+explanation:
+  why_correct: Data minimisation means keeping personal data no longer than its purposes need, and answering appeals is one
+    of those purposes, backed by the agency's duty to show the basis of each decision. Keeping the inputs and model version
+    for the appeal period, used for appeals alone, meets that duty while limiting the processing.
+  why_not:
+    A: A score and rank show the outcome, not what it rested on. Without the inputs the agency cannot show on appeal whether
+      the applicant's data was right or how the model reached the result.
+    C: Consent is a poor basis where the agency needs the data to meet a legal duty, and applicants who refuse would leave
+      decisions that cannot be defended on appeal.
+    D: Pseudonymisation reduces exposure, but deleting the link means the agency cannot find the records of the applicant
+      who appeals, which defeats the reason for keeping them.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aair
+  check_verdict: pending

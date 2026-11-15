@@ -6,8 +6,8 @@ stem: A bank's release pipeline runs a jailbreak test suite against each new cha
   chatbot generates replies with sampling switched on. Which change BEST makes the gate reliable?
 options:
   A: Run the suite with sampling switched off so results repeat
-  B: Re-run each failed attack once and pass if the retry is blocked
-  C: Fix the random seed so each run draws the same samples
+  B: Have red teamers judge each attack with mixed results before release
+  C: Gate on the worst result of three runs at production settings
   D: Run each attack many times and gate on its success rate
 answer: D
 explanation:
@@ -19,16 +19,14 @@ explanation:
   why_not:
     A: Switching sampling off makes results repeat, but the gate then tests a configuration customers never meet, and an
       attack that works one time in ten in production may never work in the test.
-    B: Retrying failures is a common fix for flaky tests, but here a failure means an attack got through, and passing on a
-      blocked retry hides attacks that work only part of the time.
-    C: A fixed seed makes results repeat, but it tests one sample path out of the many that production users meet, so an
-      attack that works one time in ten may still pass.
+    B: Human judgement adds review effort, but it does not measure how often an attack succeeds, so the release decision
+      still rests on a few inconsistent runs.
+    C: Taking the worst of three runs is stricter than one run, but an attack that works one time in ten is still missed
+      in most sets of three, so the gate keeps giving different verdicts.
 status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-01-daily-aaism
-  check_verdict: pass
-  options_only: obvious
-  checked_by: 2026-11-12-daily-aaism-check
+  check_verdict: pending

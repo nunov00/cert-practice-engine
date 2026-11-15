@@ -1,0 +1,31 @@
+id: aaism-d2-2.3-0061
+subdomain: '2.3'
+difficulty: hard
+stem: A media company's training pipelines load models by name, checking its private registry first and falling back to a
+  public hub when the name is not found. Teams create new internal model names weekly. A tester published a model on the hub
+  under an internal name recently deleted from the registry; a pipeline loaded it and ran code that read the pipeline's cloud
+  credentials. Which control BEST addresses this?
+options:
+  A: Register the company's internal model names on the public hub
+  B: Resolve internal model names from the private registry alone
+  C: Scan each downloaded model for code that runs when it is loaded
+  D: Verify each model's hash against the registry before deployment
+answer: B
+explanation:
+  why_correct: 'The weakness is the fallback: a name the company treats as internal can be supplied by anyone on the public
+    hub. Resolving internal names from the private registry alone, and failing when a name is missing there, closes the route
+    whatever names teams create or delete.'
+  why_not:
+    A: Defensive registration helps for names known in advance, but teams add names weekly and deleted names can be claimed
+      later, so new gaps keep appearing.
+    C: Scanning reduces the risk from known payload patterns, but scanners miss new ones, and pipelines would still accept
+      models from strangers under internal names.
+    D: 'A hash check at deployment comes too late: the code ran when the training pipeline loaded the model, before anything
+      was deployed.'
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aaism
+  check_verdict: pending

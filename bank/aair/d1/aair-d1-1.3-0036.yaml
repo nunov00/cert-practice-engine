@@ -1,0 +1,30 @@
+id: aair-d1-1.3-0036
+subdomain: '1.3'
+difficulty: hard
+stem: A parcel carrier names one dispatcher per shift as the human overseer of an AI that assigns about 3,000 delivery jobs
+  an hour across 40 depots. The dispatcher can open any assignment and change it. Logs show a handful of changes each shift,
+  nearly all made after drivers phone in. Which change BEST makes this oversight effective?
+options:
+  A: Alerts on depot-level patterns, such as late jobs, with power to pause the AI
+  B: More dispatchers, so that each oversees a smaller share of assignments
+  C: An hourly check by the dispatcher of a random sample of assignments
+  D: Dispatcher approval of each assignment the AI rates as low confidence
+answer: A
+explanation:
+  why_correct: At 3,000 jobs an hour no person can judge individual assignments, so case-by-case review leaves the overseer
+    reacting to drivers' calls. Oversight works at this scale when the overseer watches aggregate signals that show the AI
+    going wrong at a depot and can stop it there.
+  why_not:
+    B: Even several more dispatchers could not judge thousands of assignments an hour. Oversight would stay case by case and
+      reactive, at greater cost.
+    C: A sample shows errors in a few jobs, not a pattern building at one depot, and an hourly check leaves the dispatcher
+      no quicker to act than the drivers' calls.
+    D: Confidence routing helps when errors are uncertain ones, but systematic faults, such as bad data at one depot, often
+      produce confident assignments that would pass straight through.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aair
+  check_verdict: pending

@@ -1,0 +1,30 @@
+id: aair-d1-1.4-0035
+subdomain: '1.4'
+difficulty: hard
+stem: A lender trained its credit officers to challenge model recommendations that do not fit an applicant's file, after audits
+  found they almost never did. Since the training, the officers' override rate has risen from 1% to 9%. Management asks whether
+  the training has worked. Which evidence BEST answers this?
+options:
+  A: Officers' scores on the case-based test at the end of the training
+  B: The new override rate compared with a target agreed before the training
+  C: Officers' ratings of their own confidence in challenging the model
+  D: A review of sampled overrides and approvals for whether each was sound
+answer: D
+explanation:
+  why_correct: The training aimed at better judgement, so the evidence must show whether officers now challenge the right
+    cases. Reviewing a sample of both overrides and accepted recommendations shows whether overrides are justified and whether
+    poor recommendations still get through.
+  why_not:
+    A: A test shows what officers can do in a classroom, not what they do with live files under time pressure, which is where
+      the audits found the problem.
+    B: The rate shows more challenges, not better ones. Officers could be overriding sound recommendations, and a target could
+      even encourage overrides for their own sake.
+    C: 'Confidence is a weak proxy for practice: officers can feel confident while challenging the wrong cases and accepting
+      poor recommendations.'
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aair
+  check_verdict: pending

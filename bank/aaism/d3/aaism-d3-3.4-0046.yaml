@@ -1,0 +1,30 @@
+id: aaism-d3-3.4-0046
+subdomain: '3.4'
+difficulty: hard
+stem: A housing association's model ranks applicants for home repair grants. Its fairness tests compare outcomes by sex and,
+  separately, by age band, and each passes the agreed threshold. Complaints and a caseworker review show older women ranked
+  low far more often than other applicants; they are about 4% of applicants. Which change to the fairness testing BEST addresses
+  this?
+options:
+  A: Compare outcomes for groups defined by sex and age band together
+  B: Tighten the disparity threshold that each attribute has to meet
+  C: Run the tests on a larger sample from the full year's applicants
+  D: Report each attribute's disparity with a confidence interval
+answer: A
+explanation:
+  why_correct: Testing each attribute alone averages older women in with younger women and with older men, who may be ranked
+    fairly, so a large gap for the combined group can stay hidden. Testing intersectional groups, with enough cases in each,
+    measures the disparity where the complaints point.
+  why_not:
+    B: A tighter threshold makes each one-attribute test stricter, but a gap confined to a small combined group may barely
+      move either attribute's overall figure.
+    C: A larger sample gives more precise results, yet the tests would still compare by sex and by age separately and keep
+      averaging the gap away.
+    D: Confidence intervals show how certain each one-attribute result is, but they still do not test the combined group.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aaism
+  check_verdict: pending

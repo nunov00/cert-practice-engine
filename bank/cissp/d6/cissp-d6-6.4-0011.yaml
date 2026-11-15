@@ -5,7 +5,7 @@ stem: A retailer's quarterly scan reported 3,000 findings, and the team can fix 
   database servers accept connections only from the application servers, which in turn accept them only from the web
   servers facing the internet. Which group of findings should the report put FIRST for fixing?
 options:
-  A: Findings with a critical base score on the customer database servers
+  A: Findings with a high exploit prediction score on the internet-facing web servers
   B: Findings on the known-exploited list on the internet-facing web servers
   C: Findings with a critical base score on the internet-facing web servers
   D: Findings on the known-exploited list on the customer database servers
@@ -16,8 +16,8 @@ explanation:
     exploited elsewhere is far more likely to be used than one that merely scores high. Fixing exploited flaws on the
     exposed tier first removes the likeliest way in.
   why_not:
-    A: The database holds the most valuable data, but it is reachable only through two other tiers, and a high base score
-      shows severity, not whether attackers are using the flaw.
+    A: Exposure is the right focus, and a high exploit prediction score is a useful signal, but it estimates the chance
+      of future attacks, while flaws on the known-exploited list are confirmed to be in use now.
     C: Exposure is the right focus, but a critical base score does not show that the flaw is being exploited, and many
       critical flaws are never used in attacks, while lower-scored exploited ones are.
     D: Exploited flaws are the right focus, but on the database servers an attacker would first need a way through the web
@@ -28,6 +28,4 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-11-daily-cissp
-  check_verdict: pass
-  options_only: obvious
-  checked_by: 2026-11-12-daily-cissp-check
+  check_verdict: pending

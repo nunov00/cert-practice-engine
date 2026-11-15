@@ -1,0 +1,30 @@
+id: aair-d2-2.1-0037
+subdomain: '2.1'
+difficulty: hard
+stem: A hospital's team is designing a sepsis model. Sepsis occurs in about 2% of admissions, so developers oversample sepsis
+  cases to make up half the training set. Nurses will see each patient's output as a percentage chance of sepsis and use it
+  to set how often they check the patient. Which design requirement is MOST important?
+options:
+  A: Recalibrate outputs to the real admission case rate before display
+  B: Oversample further until missed sepsis cases fall below the target
+  C: Show nurses a low, medium or high risk band instead of a percentage
+  D: Replace oversampling with class weights on sepsis cases in training
+answer: A
+explanation:
+  why_correct: Training on a half-and-half case mix makes the model's outputs far higher than the real chance of sepsis when
+    only about 2% of admissions have it. Nurses will read the figure as a true probability, so the outputs must be recalibrated
+    to the real case rate, or patients will look much riskier than they are and checks will be misallocated.
+  why_not:
+    B: More oversampling may catch more cases, but it pushes the displayed percentages even further from reality, worsening
+      the problem the nurses face.
+    C: Bands hide the number, but their cut-offs would still sit on inflated outputs, so patients would land in bands that
+      overstate their risk unless the scores are recalibrated.
+    D: Class weighting distorts output probabilities in much the same way as oversampling, so it does not make the displayed
+      percentage a true chance.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-15-daily-aair
+  check_verdict: pending
