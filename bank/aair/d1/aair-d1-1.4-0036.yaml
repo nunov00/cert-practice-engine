@@ -6,14 +6,15 @@ stem: At a logistics group, staff proposing a new AI use rate its risk tier them
   rated low had been under-rated. Which procedure change BEST addresses this?
 options:
   A: Derive the tier from proposers' factual answers on data, users and autonomy
-  B: Keep proposers' own ratings, with the risk team spot-checking a sample
+  B: Keep proposers' own ratings, with the risk team spot-checking a random sample
   C: Have each proposer's line manager confirm the rating before submission
   D: Have the risk team set each tier after a short call with the proposer
 answer: A
 explanation:
   why_correct: Self-rating fails because proposers judge risk loosely and gain from a low tier. Asking factual questions,
     such as what data is used, who is affected and whether the AI acts on its own, and deriving the tier from the answers
-    removes that judgement while scaling to 2,000 proposals with a two-person team.
+    removes most of that judgement while scaling to 2,000 proposals with a two-person team. The answers still rely on accurate
+    self-report and a correct mapping to tiers, so a light sample check of answers remains a useful backstop.
   why_not:
     B: Spot-checks are a sound backstop where ratings are mostly right, but with half the low ratings wrong, a sample would
       leave most under-rated proposals with too little review.

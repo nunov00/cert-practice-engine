@@ -13,7 +13,8 @@ answer: B
 explanation:
   why_correct: A distinct placeholder for each name keeps names away from the provider, as the contracts require, while
     the gateway keeps the mapping and puts each name back where it belongs in the returned draft. Calls still pass
-    through the gateway, and the retyping that drives lawyers around it goes away.
+    through the gateway, and the retyping that drives lawyers around it goes away. The mapping must be deterministic and
+    handle placeholders the model drops or repeats, and provider calls should still be forced through the gateway.
   why_not:
     A: Blocking the bypass enforces the gateway, but lawyers would still have to retype names, so the pressure to find other
       workarounds remains.

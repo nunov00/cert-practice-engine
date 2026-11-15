@@ -16,8 +16,8 @@ explanation:
     drives are an exception. Correcting a belief needs explanation and a chance to ask questions, and the shift briefing
     is the channel these staff already attend and trust, led by the supervisors they take direction from.
   why_not:
-    B: A label at the point of use is a strong reminder, but it restates a rule the technicians already know and leaves
-      their belief that vendor drives are exempt untouched.
+    B: A label at the point of use is a strong reminder, but as described it restates a rule the technicians already know;
+      even one naming vendor drives would assert the point without the explanation and questions that change a belief.
     C: Kiosk e-learning reaches staff without email and gives a completion record, but a generic module on removable media
       is unlikely to address the specific vendor exception they believe in, and it sits outside their daily routine.
     D: A drop test measures whether staff plug in found drives, but the incidents involved drives handed over by trusted

@@ -8,12 +8,13 @@ options:
   A: Apply the opt-out in each system that receives the model's scores
   B: Apply the opt-out before customer data reaches the model for scoring
   C: Apply the opt-out to the training data the model is rebuilt from
-  D: Apply the opt-out to the score display that branch staff use
+  D: Apply the opt-out to the score display that branch staff see on screen
 answer: B
 explanation:
   why_correct: Customers opted out of profiling, and scoring them is itself profiling, whatever happens to the score afterwards.
     Applying the opt-out where data enters the scoring run means opted-out customers are not profiled at all, and every later
-    use of the scores inherits that.
+    use of the scores inherits that. Scores already produced before an opt-out takes effect should also be invalidated
+    in the systems that cached them.
   why_not:
     A: Filtering in each system that receives scores hides them from campaigns and branches, but the customers are still being
       profiled each night, which is what they opted out of; any new consumer of the scores would also need its own filter.

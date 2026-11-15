@@ -3,7 +3,7 @@ subdomain: '3.5'
 difficulty: medium
 stem: A lender will add a data supplier's rent payment histories to its credit model so that applicants with thin credit files
   can qualify. The supplier collects the histories through partnerships with large letting agencies. Most of the lender's
-  thin-file applicants rent from individual private landlords. What should due diligence on the supplier MOST establish?
+  thin-file applicants rent from individual private landlords. What should due diligence on the supplier MOST establish about the data's fitness for this purpose?
 options:
   A: How the histories were collected and the consent behind them
   B: How well the histories cover the lender's thin-file applicants
@@ -15,7 +15,8 @@ explanation:
     of those applicants rent from private landlords. If the histories rarely cover them, the purchase brings little benefit
     and may favour agency tenants over the very group it was meant to help.
   why_not:
-    A: Lawful collection and consent are essential checks on any bought personal data, but they do not show whether the data
+    A: Lawful collection and consent are a prerequisite for using any bought personal data and must be confirmed too, but
+      they do not show whether the data
       reaches the applicants the lender is buying it for.
     C: Accuracy matters for records the supplier holds, but accurate records for agency tenants do not help applicants who
       have no record at all.

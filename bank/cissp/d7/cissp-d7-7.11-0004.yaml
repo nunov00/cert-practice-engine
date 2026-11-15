@@ -3,8 +3,8 @@ subdomain: '7.11'
 difficulty: hard
 stem: A flood has taken out a distributor's primary data centre. Its virtual machines replicate every few minutes to a
   recovery site, and the DR plan lists them in order of business priority, with order processing first. Its applications
-  and databases run under domain service accounts. The team has declared a disaster, and the recovery site's network is
-  up. Which servers should the team start FIRST?
+  and databases run under domain service accounts. The team has declared a disaster, and the recovery site's network,
+  including its firewalls and load balancers, is up. No servers are running there yet. Which servers should the team start FIRST?
 options:
   A: The order processing servers, holding the service the plan ranks first
   B: The database servers, holding the orders that order processing reads and writes
@@ -20,8 +20,8 @@ explanation:
       sign in, so the team loses time restarting it.
     B: Databases do come before the applications that use them, but these databases also run under domain service
       accounts, so they depend on the directory in turn.
-    D: Firewalls and load balancers must be up before traffic can flow, but they are part of the recovery site's network,
-      which is already running.
+    D: Firewalls and load balancers must be up before traffic can flow, but here they are part of the recovery site's
+      network, which is already running.
 status: published
 outline_version: '2024-04-15'
 sample: false

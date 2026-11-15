@@ -8,12 +8,14 @@ options:
   A: Rerun the full validation suite after each monthly image rebuild
   B: Alert the model owner when live score distributions shift suddenly
   C: Pin the library versions so rebuilds change only operating system patches
-  D: Rebuild the image for critical patches instead of on a monthly cycle
+  D: Rebuild the image only for critical patches rather than on a monthly cycle
 answer: C
 explanation:
   why_correct: The scores moved because an unrelated rebuild silently changed the libraries the model depends on. Pinning
     those versions keeps the monthly security patching while ensuring the model's numerical behaviour changes only when someone
     deliberately upgrades a library, which can then be tested as a model change.
+    A quick parity check of scores after each rebuild, and a tested route for urgent library security updates, round
+    this out, since an OS update can still occasionally affect numerical behaviour.
   why_not:
     A: Full validation would catch the shift, but at three weeks per run it would take up most of each monthly cycle, and
       it treats every routine patch as a model change.

@@ -12,8 +12,10 @@ options:
 answer: C
 explanation:
   why_correct: Pausing retraining stops tonight's run from building more relabelled cases into the model, and a snapshot preserves
-    the current labels, which later edits would overwrite, as evidence for finding the analyst and the affected cases. The
-    model is still within tolerance, so it can keep serving while the investigation proceeds.
+    the current labels, which later edits would overwrite, as evidence for finding the affected cases. Preserving the store's
+    available audit and access logs alongside it helps establish who made the changes. The model is still within tolerance
+    overall, so it can keep serving while the investigation proceeds, with its results on the affected case types reviewed
+    once they are known, since an aggregate metric can hide targeted damage.
   why_not:
     A: Rolling back is a common containment step, but the next nightly run would rebuild the model from the same tampered
       labels, and the model now in use is still within tolerance.

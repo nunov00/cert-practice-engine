@@ -11,16 +11,16 @@ options:
   D: Extend bias testing to candidates whose disabilities affect expression
 answer: B
 explanation:
-  why_correct: 'A signal that does not predict job performance cannot justify affecting anyone''s chances, whatever the bias
-    tests show. Removing expression and tone from the score fixes the cause: the tool would otherwise keep ranking candidates
-    on features that are irrelevant to the job, which is unfair to every candidate, not only to particular groups.'
+  why_correct: 'A signal with no evidence that it predicts job performance cannot justify affecting anyone''s chances, whatever
+    the bias tests show. Removing expression and tone from the score, at least until they are validated, fixes the cause:
+    the tool would otherwise keep ranking candidates on features with no shown relevance to the job, which is unfair to every candidate, not only to particular groups.'
   why_not:
     A: Transparency about how the score works is good practice, but explaining an invalid signal does not make it fair to
       use, and candidates would still be ranked on it.
     C: An alternative route helps candidates who know to ask for it, but those who take the video interview are still scored
-      on signals that do not predict performance.
-    D: Testing for disability bias is a sound addition where signals are valid, but here the review shows the signals are
-      irrelevant for everyone, so more bias tests would not fix the scoring.
+      on signals with no evidence that they predict performance.
+    D: Testing for disability bias is a sound addition where signals are valid, but here the review finds no evidence the signals
+      are valid for anyone, so more bias tests would not fix the scoring.
 status: published
 outline_version: '2025-08-19'
 sample: false

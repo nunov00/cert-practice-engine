@@ -13,7 +13,8 @@ answer: A
 explanation:
   why_correct: Training on a half-and-half case mix makes the model's outputs far higher than the real chance of sepsis when
     only about 2% of admissions have it. Nurses will read the figure as a true probability, so the outputs must be recalibrated
-    to the real case rate, or patients will look much riskier than they are and checks will be misallocated.
+    to the real case rate and the calibration then checked on a representative set of admissions with the natural case
+    mix, or patients will look much riskier than they are and checks will be misallocated.
   why_not:
     B: More oversampling may catch more cases, but it pushes the displayed percentages even further from reality, worsening
       the problem the nurses face.

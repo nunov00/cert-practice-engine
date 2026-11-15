@@ -4,7 +4,8 @@ difficulty: hard
 stem: Two of a bank's data centre buildings are joined by leased dark fibre that runs through a city utility tunnel shared
   with other carriers' cables. The link is a Layer 2 trunk carrying a dozen VLANs, including storage replication that must
   run at full line rate and building-system traffic in old plain-text protocols. Which control BEST protects this traffic
-  against a tap in the tunnel?
+  against a tap in the tunnel? Switches and routers at both ends
+  support line-rate hardware encryption.
 options:
   A: IPsec tunnels between routers at each site for traffic crossing the link
   B: Link-layer encryption between the switches at each end of the fibre
@@ -12,7 +13,7 @@ options:
   D: TLS added to each application whose traffic crosses between the buildings
 answer: B
 explanation:
-  why_correct: Link-layer encryption such as MACsec runs in the switch hardware at line rate and protects every frame on
+  why_correct: Link-layer encryption such as MACsec runs in the switches' hardware at line rate and protects every frame on
     the trunk, whatever VLAN or protocol it carries, so the storage replication and the old building-system protocols are
     covered without changing them or the Layer 2 design.
   why_not:

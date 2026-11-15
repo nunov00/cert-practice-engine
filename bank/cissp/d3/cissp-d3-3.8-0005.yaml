@@ -2,7 +2,7 @@ id: cissp-d3-3.8-0005
 subdomain: '3.8'
 difficulty: medium
 stem: A colocation data centre is being refitted. Server deliveries arrive several times a week from different carriers,
-  on pallets too large for the staff mantrap, so during each delivery its outer and inner doors are held open for up to
+  on pallets too large for the staff mantrap, though the unpacked servers fit through it, so during each delivery its outer and inner doors are held open for up to
   an hour while couriers wheel the pallets to the halls. Site policy keeps cardboard and packing material out of the halls.
   Which design change BEST fits?
 options:

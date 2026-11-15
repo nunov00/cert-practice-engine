@@ -12,13 +12,13 @@ options:
 answer: C
 explanation:
   why_correct: The fault entered through the training data, and a model trained on bad readings behaves badly however well
-    it fits them. Checking each day's readings against neighbouring sensors and physical limits stops a miscalibrated sensor
-    before retraining, without giving up the nightly updates that lining wear calls for.
+    it fits them. Checking each day's readings against neighbouring sensors and physical limits quarantines anomalous
+    readings before retraining, without giving up the nightly updates that lining wear calls for.
   why_not:
     A: The model is retrained nightly because the furnace changes, so each new model is expected to differ from the current
       one. A comparison cannot tell real wear from bad data.
-    B: A temperature alert detects the harm once furnaces are already running hot, which is what happened here. It limits
-      damage but does not stop a faulty model being released.
+    B: A temperature alert would detect the harm only once furnaces are already running hot, much as the engineer did here.
+      It limits damage but does not stop a faulty model being released.
     D: Weekly retraining dilutes one bad day but still trains on it, and it slows the model's tracking of lining wear, which
       is why it retrains nightly.
 status: published

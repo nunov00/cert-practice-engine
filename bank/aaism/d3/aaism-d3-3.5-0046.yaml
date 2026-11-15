@@ -14,6 +14,8 @@ explanation:
   why_correct: Suspending the whole assistant lets any one account take the service down for every customer by sending known
     attack prompts. Scoping automatic containment to the sessions and accounts that set off the detector keeps the fast response
     the earlier incident showed was needed, while other customers keep the service.
+    The playbook should still escalate to a wider suspension when detections span many accounts or point to a shared
+    failure, such as discounts actually being issued.
   why_not:
     A: A higher threshold still lets one or two accounts force a full suspension by sending a few more prompts, and it slows
       the response to a real attack.
