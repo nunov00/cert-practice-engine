@@ -1,6 +1,6 @@
 id: aaism-d3-3.4-0047
 subdomain: '3.4'
-difficulty: hard
+difficulty: medium
 stem: A staffing firm's interview tool scores candidates partly on facial expressions and voice tone from recorded video interviews.
   Candidates consent, and bias tests across sex, age and ethnicity pass. An expert review finds no evidence that these signals
   predict how candidates perform in the job. What should the security manager recommend?
@@ -21,10 +21,12 @@ explanation:
       on signals that do not predict performance.
     D: Testing for disability bias is a sound addition where signals are valid, but here the review shows the signals are
       irrelevant for everyone, so more bias tests would not fix the scoring.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aaism-check
+  options_only: not_obvious

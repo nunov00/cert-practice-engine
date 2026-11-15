@@ -23,11 +23,12 @@ explanation:
       agent that reads text anyone can write.
     D: An approver named in the ticket is itself ticket text that anyone can write, so it gives no real check and the
       reset rights stay standing.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-02-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aaism-check
   options_only: obvious

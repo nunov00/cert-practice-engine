@@ -1,6 +1,6 @@
 id: aair-d3-3.1-0043
 subdomain: '3.1'
-difficulty: hard
+difficulty: medium
 stem: A bank's credit limit model draws its inputs from twelve internal systems, whose teams change them several times a year.
   So that scoring never stops, the model fills any missing input with a typical value. Customers do not enter any of these
   inputs. Which risk scenario should the assessment MOST include?

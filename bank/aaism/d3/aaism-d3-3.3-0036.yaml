@@ -21,11 +21,12 @@ explanation:
       contracts bar.
     D: Filling names from the matter file avoids retyping, but once names are stripped with no record of where each was, the
       system cannot tell which of several people belongs in each gap, so letters would name the wrong people.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-10-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aaism-check
   options_only: not_obvious

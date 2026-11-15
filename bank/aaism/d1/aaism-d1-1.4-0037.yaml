@@ -1,6 +1,6 @@
 id: aaism-d1-1.4-0037
 subdomain: '1.4'
-difficulty: hard
+difficulty: medium
 stem: A food retailer has acquired a start-up that built about 40 experimental models on public data and has no security program.
   The integration plan connects two of its recommendation models to the retailer's loyalty data in three months. What should
   the security manager do FIRST?
@@ -20,11 +20,12 @@ explanation:
     C: Bringing the start-up up to the standard is the right long-term goal, but a one-year deadline leaves the two connections
       unassessed when they go live.
     D: Reviewing new launches covers future work, but the two models already exist and would be connected without a review.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aaism-check
   options_only: not_obvious

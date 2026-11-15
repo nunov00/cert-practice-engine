@@ -1,6 +1,6 @@
 id: aaism-d3-3.4-0046
 subdomain: '3.4'
-difficulty: hard
+difficulty: medium
 stem: A housing association's model ranks applicants for home repair grants. Its fairness tests compare outcomes by sex and,
   separately, by age band, and each passes the agreed threshold. Complaints and a caseworker review show older women ranked
   low far more often than other applicants; they are about 4% of applicants. Which change to the fairness testing BEST addresses
@@ -21,11 +21,12 @@ explanation:
     C: A larger sample gives more precise results, yet the tests would still compare by sex and by age separately and keep
       averaging the gap away.
     D: Confidence intervals show how certain each one-attribute result is, but they still do not test the combined group.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aaism-check
   options_only: not_obvious

@@ -20,12 +20,14 @@ explanation:
       have to work out whether their version is affected, and nothing tracks whether they did.
     C: Regular testing catches some leaks, but only for techniques the tests include, and it does not tell owners which provider
       flaws affect the version they have pinned.
-    D: A quarterly check puts the version match on a schedule, but a flaw could stay unfixed for up to three months, close
-      to the two-month gap this process is meant to close.
-status: draft
+    D: A quarterly check puts the version match on a schedule, but a flaw could stay unfixed for up to three months, longer
+      than the two-month gap this process is meant to close.
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aaism-check
+  options_only: not_obvious

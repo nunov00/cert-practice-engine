@@ -1,6 +1,6 @@
 id: aair-d1-1.5-0032
 subdomain: '1.5'
-difficulty: hard
+difficulty: medium
 stem: A city's housing agency uses a model to rank applications for social housing. Applicants may appeal up to two years
   after a decision, and the agency must then show what the decision was based on. Its privacy officer wants the model's input
   data deleted after 90 days, once ranking is complete. What should the risk practitioner advise?
@@ -28,4 +28,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-aair
-  check_verdict: pending
+  check_verdict: fail
+  checked_by: 2026-11-15-daily-aair-check
+  options_only: obvious

@@ -22,10 +22,12 @@ explanation:
       are changes, so the complaints would continue.
     C: A one-time code per change is strong verification, but it draws the holder into every step, which is what customers
       use agents to avoid, so agents could not do the work unattended.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aaism-check
+  options_only: obvious

@@ -1,6 +1,6 @@
 id: cissp-d3-3.8-0005
 subdomain: '3.8'
-difficulty: hard
+difficulty: medium
 stem: A colocation data centre is being refitted. Server deliveries arrive several times a week from different carriers,
   on pallets too large for the staff mantrap, so during each delivery its outer and inner doors are held open for up to
   an hour while couriers wheel the pallets to the halls. Site policy keeps cardboard and packing material out of the halls.
@@ -22,11 +22,12 @@ explanation:
       into the halls.
     D: A door-held alarm makes the open doors visible, but deliveries need them open, so it would sound at each delivery
       without changing who enters.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-cissp-check
   options_only: not_obvious

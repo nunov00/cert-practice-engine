@@ -22,7 +22,6 @@ held:
   # by the final review; rework a distractor on recheck.
   # PR #69 (daily batch 2026-10-28), merge run: released by the batch run, put
   # back after review lowered hard labels below the minimum
-  - { id: aaism-d1-1.1-0017, pr: 69 }
   # PR #70 (daily batch 2026-10-29), merge run: AAISM hard share after Codex
   # dropped hard aaism-d1-1.4-0021 (duplicate). The final review rated
   # aaism-d3-3.5-0032 close to obvious from the options; rework distractor D
@@ -34,10 +33,8 @@ held:
   # aair-d1-1.2-0022, aair-d1-1.3-0022 (entries above).
   # PR #71, merge run: Codex lowered two AAISM hard labels, so the easiest
   # AAISM questions go back to keep the hard share at 30%
-  - { id: aaism-d1-1.5-0019, pr: 71 }
   # PR #73 (daily batch 2026-11-01), batch run: passed the independent check, held
   # because too few hard labels survived the strict hard-label check
-  - { id: aaism-d3-3.2-0026, pr: 73 }
   # PR #73, merge run: Codex and the final Claude review lowered hard labels (AAISM
   # also lost hard aaism-d3-3.4-0031 to a disputed key), so the easiest new
   # questions go back to keep each exam's hard share at 30%
@@ -47,9 +44,6 @@ held:
   # PR #75, merge run: Codex and the final Claude review lowered hard labels and
   # dropped hard aair-d2-2.1-0025 and aair-d3-3.3-0032 (disputed keys), so the easiest
   # new or released questions go back to keep each exam's hard share at 30%
-  - { id: aaism-d3-3.5-0038, pr: 75 }
-  - { id: aaism-d3-3.4-0025, pr: 75 }
-  - { id: aaism-d3-3.5-0028, pr: 75 }
   # PR #76 (daily batch 2026-11-03), batch run: passed the independent check,
   # held because AAISM's 4 surviving hard labels can carry only 9 non-hard
   # PR #76, merge run: final review lowered cissp-d2-2.2-0004 and
@@ -61,14 +55,11 @@ held:
   # aaism-d3-3.5-0042 to medium, so AAISM's 6 hard can carry only 14 non-hard;
   # these three are the most options-guessable of the batch per Codex and the
   # final review (released draft 2.2-0052 goes back on the list)
-  - { id: aaism-d2-2.2-0052, pr: 82 }
-  - { id: aaism-d3-3.3-0036, pr: 82 }
   - { id: aaism-d3-3.2-0037, pr: 82 }
   # Daily batch 2026-11-11, batch run: passed the independent check, held
   # because the strict hard-label check left CISSP 4 and AAISM 5 hard, which
   # carry only 9 and 11 non-hard (the most options-guessable go back first)
   - { id: cissp-d6-6.4-0011, pr: 83 }
-  - { id: cissp-d8-8.5-0005, pr: 83 }
   - { id: aaism-d1-1.4-0034, pr: 83 }
   - { id: aaism-d1-1.5-0030, pr: 83 }
   # PR #83, merge run: Codex findings on held drafts to fix on recheck before
@@ -102,3 +93,12 @@ held:
   # the easiest AAISM release goes back to keep the hard share at 30%. Its
   # disclosure distractor was replaced with a synthetic-test one (final review).
   - { id: aaism-d3-3.4-0043, pr: 87 }
+  # Daily batch 2026-11-15, batch run: rechecked ten held drafts.
+  # aaism-d3-3.2-0026 and aaism-d3-3.5-0038 got new distractors (the 2026-11-12
+  # notes) and cissp-d8-8.5-0005 no longer names the fix ("atomic"). Released
+  # within each exam's hard share: aaism-d1-1.1-0017, aaism-d1-1.5-0019,
+  # aaism-d2-2.2-0052, aaism-d3-3.2-0026, aaism-d3-3.3-0036, aaism-d3-3.4-0025,
+  # aaism-d3-3.5-0028, aaism-d3-3.5-0038 and cissp-d8-8.5-0005.
+  # cissp-d6-6.4-0011 stays held: its new distractor A did not break the 2x2
+  # grid (the key is still the only "exploited and exposed" option); rework the
+  # option set before the next recheck.

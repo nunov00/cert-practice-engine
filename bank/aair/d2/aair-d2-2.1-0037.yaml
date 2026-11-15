@@ -1,6 +1,6 @@
 id: aair-d2-2.1-0037
 subdomain: '2.1'
-difficulty: hard
+difficulty: medium
 stem: A hospital's team is designing a sepsis model. Sepsis occurs in about 2% of admissions, so developers oversample sepsis
   cases to make up half the training set. Nurses will see each patient's output as a percentage chance of sepsis and use it
   to set how often they check the patient. Which design requirement is MOST important?

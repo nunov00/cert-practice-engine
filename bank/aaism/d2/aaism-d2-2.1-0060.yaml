@@ -1,6 +1,6 @@
 id: aaism-d2-2.1-0060
 subdomain: '2.1'
-difficulty: hard
+difficulty: medium
 stem: A mobile operator's model decides which applicants get handsets on monthly credit. Its risk register rates the risk
   of wrongly refusing applicants who would have paid as low, citing two years in which non-payment by accepted customers stayed
   within tolerance. What is the MAIN weakness of this evidence?
@@ -22,11 +22,12 @@ explanation:
       who were refused.
     C: Late recording affects how accurately defaults are measured, yet even perfect default data would say nothing about
       the applicants who were turned away.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aaism-check
   options_only: not_obvious

@@ -21,11 +21,12 @@ explanation:
       which the duty covers.
     D: Audits give assurance on how the vendor keeps logs today; they do not keep the logs within reach once the contract
       has ended.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-15-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-15-daily-aaism-check
   options_only: not_obvious
