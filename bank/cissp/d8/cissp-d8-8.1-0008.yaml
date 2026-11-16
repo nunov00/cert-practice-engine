@@ -7,22 +7,24 @@ stem: A retailer's mobile app ships weekly, and each release passes functional t
   Which change BEST addresses this in the SDLC?
 options:
   A: Abuse cases written with each user story, and tests that check the feature resists them
-  B: A penetration test of each weekly release, focused on the features that the release changes
-  C: Fraud monitoring in production that flags unusual patterns of points and discounts
-  D: A business-logic module added to the automated security scans run on each build
+  B: Security acceptance criteria from a standard requirements checklist added to each story
+  C: A threat model of the app's architecture, revisited at each quarterly penetration test
+  D: A penetration test of each weekly release, focused on the features that the release changes
 answer: A
 explanation:
   why_correct: Both losses came from features that did exactly what their stories asked, so the flaw lay in the
-    requirements, which never said how the features could be misused. Writing abuse cases alongside each story, such as
-    cancelling after a reward or reusing a code in parallel, puts those limits into the requirement and gives testers
-    something concrete to verify every week.
+    requirements, which never said how those particular features could be misused. Writing abuse cases alongside each
+    story, such as cancelling after a reward or reusing a code in parallel, puts the retailer's own limits into the
+    requirement as each feature is designed, and gives testers something concrete to verify every week.
   why_not:
-    B: Testers find business-logic flaws more often than tools do, but a test per weekly release is costly, and testers
+    B: A standard checklist brings security into requirements, but its criteria are generic, such as authentication,
+      input validation and session handling, and cannot state this retailer's own rules for when points are reversed or
+      a code counts as used.
+    C: Threat modelling is the right kind of early activity, but a quarterly review of the architecture looks at
+      components and trust boundaries, and it lags behind loyalty and discount features that change in each weekly
+      release.
+    D: Testers find business-logic flaws more often than tools do, but a test per weekly release is costly, and testers
       still judge against stories that never stated the limits the features needed.
-    C: Fraud monitoring catches abuse after it starts and limits the loss, but it treats the symptom in production rather
-      than stopping the flaw from being built.
-    D: Scanners can probe some logic patterns, but they cannot know a retailer's business rules, such as when points should
-      be reversed, unless those rules have first been written down.
 status: draft
 outline_version: '2024-04-15'
 sample: false

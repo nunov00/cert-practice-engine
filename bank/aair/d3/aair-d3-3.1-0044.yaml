@@ -1,27 +1,29 @@
 id: aair-d3-3.1-0044
 subdomain: '3.1'
 difficulty: hard
-stem: A software firm's AI meeting assistant joins video calls and, when each call ends, emails a summary with action
-  items to everyone on the invitation. Account managers often invite a client to the opening part of a call, then
-  stay on to talk with colleagues about the client's account. Which risk scenario should the assessment MOST include?
+stem: A software firm's AI meeting assistant joins each call on an account manager's calendar, records until the
+  meeting link closes, and emails a summary with action items to everyone invited. To save time, account managers
+  book client calls back to back with their team's internal account reviews, on the same meeting link. Which risk
+  scenario should the assessment MOST include?
 options:
-  A: Statements in the summary are attributed to the wrong people on the call
-  B: Recordings and transcripts are kept by the vendor longer than the contract allows
-  C: Clients receive summaries that list commitments nobody made on the call
-  D: Clients receive summaries that include the firm's internal account discussion
+  A: Clients receive summaries that state commitments the firm did not make
+  B: Client participants are recorded without having agreed to it
+  C: Summaries leave out conditions that clients raised during the call
+  D: Clients receive summaries that include the firm's internal account review
 answer: D
 explanation:
-  why_correct: The assistant summarises the whole call and sends the summary to every invitee, and a common working
-    pattern puts an internal discussion about the client in the same call after the client has left. In the normal
-    running of the process, the client is likely to receive the firm's internal views, such as pricing positions
-    or concerns about the account, so this frequent, high-impact disclosure must be assessed.
+  why_correct: Because recording runs until the link closes and internal reviews follow client calls on the same
+    link, a single summary covers both parts and goes to every invitee, including the client. The client is then
+    likely to receive the firm's internal views, such as pricing positions or concerns about the account, in the
+    normal running of the process. That routine, high-impact disclosure is the scenario the assessment must cover.
   why_not:
-    A: Misattribution is a known summarisation error, but it is occasional and attendees usually notice it. It does
-      not follow from the working pattern described.
-    B: Vendor retention is a data protection point to check in the contract, but nothing in the scenario points
-      to it, and it is not the exposure this meeting pattern creates.
-    C: Invented commitments sent to a client would be harmful, and generated summaries can contain them, but they
-      are occasional errors. The internal discussion reaches the client through the process working as designed.
+    A: Invented commitments in a summary sent to a client would be harmful, and generated summaries can contain
+      them, but they are occasional errors. The internal review reaches clients through the process working as set
+      up.
+    B: Recording consent is a real legal point, but it is usually handled by notice when the assistant joins, and
+      it does not reflect the exposure created by the way these calls are booked.
+    C: Omitted client conditions could mislead the firm's follow-up and are a known summarisation weakness, but
+      they are occasional. The booking practice makes the disclosure of the internal review a likely, repeated event.
 status: draft
 outline_version: '2026-04-15'
 sample: false

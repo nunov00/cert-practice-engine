@@ -6,20 +6,22 @@ stem: An insurer is assessing a claims-summary vendor. The vendor's independent 
   report to its customers' customers under a standard NDA. Contracting is due next month. What should the security manager
   do NEXT?
 options:
-  A: Require the vendor's next report to cover the provider's controls
-  B: Add flow-down security terms for the provider to the vendor contract
-  C: Send the provider a security questionnaire through the vendor
+  A: Review the vendor's own monitoring records for the provider's controls
+  B: Commission a penetration test of the vendor's service before signing
+  C: Require the vendor's next report to cover the provider's controls
   D: Obtain the provider's report and map it to the carved-out controls
 answer: D
 explanation:
-  why_correct: A carve-out means the vendor's report covers only part of the service, and evidence for the rest is available
-    now. Reading the provider's own independent report, and checking that it covers the controls the vendor relies on and
-    that the vendor runs the controls the provider expects of its customers, gives tested evidence before contracting.
+  why_correct: A carve-out leaves the provider's controls outside the vendor's report, and the provider's own independently
+    tested report is available now. Reading it, and checking that it covers the controls the vendor relies on and that the
+    vendor runs the controls the provider expects of its customers, gives first-hand tested evidence before contracting.
   why_not:
-    A: An inclusive report would cover both in one view, but it would arrive with the next reporting cycle, after contracting,
+    A: A vendor should monitor a carved-out provider, and its records are useful, but they are the vendor's own summary, which
+      is second-hand and not independent when the provider's tested report can be read directly.
+    B: A penetration test gives tested evidence now, but it probes the vendor's exposed service, not the provider's internal
+      controls over prompt handling, retention and staff access, which the carve-out leaves untested.
+    C: An inclusive report would cover both in one view, but it would arrive with the next reporting cycle, after contracting,
       and providers often decline to be included in a customer's report.
-    B: Flow-down terms put obligations on the provider, but they give no evidence that its controls operate today.
-    C: A questionnaire collects the provider's own statements, which are weaker evidence than its independently tested report.
 status: draft
 outline_version: '2025-08-19'
 sample: false

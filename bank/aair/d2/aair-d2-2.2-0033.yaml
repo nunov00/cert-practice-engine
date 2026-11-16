@@ -1,26 +1,28 @@
 id: aair-d2-2.2-0033
 subdomain: '2.2'
 difficulty: hard
-stem: A marketplace's model flags listings of counterfeit goods for removal. It was validated on a random holdout
-  of last year's labelled listings, where it caught most counterfeits. Sellers whose listings are removed usually
-  relist within hours with reworded text and edited photos. Which further test is MOST important before launch?
+stem: A marketplace will replace its manual review with a model that removes counterfeit listings within seconds
+  of posting. It was validated on a random holdout of last year's listings labelled by the review team, with high
+  recall. A seller gets a removal notice at once and can post a new listing straight away at no cost. Which further
+  test is MOST important before launch?
 options:
   A: Recall on a time-based holdout of listings from the most recent quarter
-  B: Recall broken down by product category and by seller's country
-  C: Recall on a larger random holdout from the same labelled listings
+  B: Precision by product category, to size wrongful removals of genuine sellers
+  C: Recall on listings from seller accounts opened after the holdout period
   D: Recall on listings testers alter to evade the model as sellers would
 answer: D
 explanation:
-  why_correct: Last year's listings show how sellers behaved against the old controls. Once this model removes listings,
-    sellers will adapt to it directly, rewording and editing until they pass. Testing recall on listings deliberately
-    altered in the ways sellers alter them estimates performance against that adaptive behaviour, which no historical
-    holdout contains.
+  why_correct: Instant notice and free relisting give counterfeit sellers a fast, costless way to try variations
+    until one passes, a feedback loop the manual process never offered. Last year's listings were written against
+    human reviewers, not against this model. Testing recall on listings deliberately altered the way sellers would
+    alter them estimates performance against that adaptive behaviour, which no historical sample contains.
   why_not:
-    A: A recent holdout tests for drift over time, which matters, but it still holds only listings written before
-      this model existed, not listings changed to get past it.
-    B: Segment results can reveal weak categories or regions, but each segment comes from the same historical listings
-      and says nothing about evasion.
-    C: A larger holdout narrows the uncertainty of the same estimate; it does not change what the estimate measures.
+    A: A recent holdout tests for drift over time, which matters, but recent listings were still written before
+      this model existed. None of them was changed to get past it.
+    B: Wrongful removals of genuine sellers are a real cost to measure, but they do not show whether the model keeps
+      counterfeits off the site once sellers start working around it.
+    C: Counterfeit sellers do churn accounts, so new accounts are a sensible slice, but their listings were also
+      written without any chance to probe this model and say nothing about evasion.
 status: draft
 outline_version: '2026-04-15'
 sample: false

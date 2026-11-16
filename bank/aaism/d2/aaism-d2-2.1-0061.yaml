@@ -2,24 +2,24 @@ id: aaism-d2-2.1-0061
 subdomain: '2.1'
 difficulty: hard
 stem: An insurer wants its claims model to settle small home claims without an adjuster. In testing, wrong approvals cost
-  about 1% of payouts, within the loss budget the risk owner set. Wrong declines were rarer, but past data shows most customers
-  wrongly declined never contest, and the regulator treats unfair declines as conduct breaches. Which automation scope should
-  the risk manager support?
+  about 1% of payouts, within the loss budget the risk owner set. Wrong declines were rarer but scored as confidently as correct
+  ones, most customers wrongly declined never contest, and the regulator treats unfair declines as conduct breaches. Which
+  automation scope is BEST?
 options:
-  A: Automate both, with adjusters handling cases below a confidence cut-off
+  A: Automate both, sending low-confidence declines to an adjuster to check
   B: Automate approvals, sending each proposed decline to an adjuster
-  C: Automate declines, sending each proposed approval to an adjuster
-  D: Automate both, with an appeal route offered in each decline letter
+  C: Have an adjuster confirm each settlement the model recommends
+  D: Automate both, offering an appeal route in each decline letter
 answer: B
 explanation:
   why_correct: The two errors carry different risks. Wrong approvals are a cost the owner has budgeted for, so automating
     them stays within tolerance. Wrong declines harm customers, count as conduct breaches and stay hidden because most customers
-    do not contest them, so a person should confirm each one before it goes out.
+    do not contest them, so a person should confirm each one before it goes out, while approvals keep the time saving.
   why_not:
-    A: A confidence cut-off is common practice, but some confident declines will still be wrong, and those errors go uncorrected
-      because customers rarely contest them.
-    C: Checking approvals would cut payout losses, but those losses are already within budget, while declines, the error that
-      harms customers and breaches conduct rules, would go out unchecked.
+    A: Routing low-confidence cases to people is common practice, but the wrong declines scored as confidently as correct
+      ones, so they would pass the cut-off and go out unchecked.
+    C: Confirming each settlement would catch wrong declines, but it gives up the aim of settling without an adjuster to check
+      approvals whose errors are already within the loss budget.
     D: An appeal route is a fair safeguard, but it depends on customers contesting, which past data shows most wrongly declined
       customers do not do.
 status: draft

@@ -6,10 +6,10 @@ stem: A software company runs 30 autonomous product teams, each led by a product
   feature work, and after each breach the board asks the CISO why it happened. Which governance change BEST addresses
   this?
 options:
-  A: Reserve a fixed share of each team's sprint capacity for the fixes that the CISO's team has raised
-  B: Give the CISO's team authority to stop a product's release that still has open high-risk fixes
+  A: Make each team's security champion accountable for the product's security risk, within the CISO's standards
+  B: Make the CISO's team the owner of security items in each backlog, with authority to schedule them
   C: Make each product owner accountable for the product's security risk, within the CISO's standards
-  D: Embed a security engineer in each product team, reporting to the CISO, to drive its fixes
+  D: Make the CTO accountable for security risk across the 30 products, within the CISO's standards
 answer: C
 explanation:
   why_correct: The people who decide what each team works on are the product owners, yet the board holds the CISO to account
@@ -17,12 +17,15 @@ explanation:
     for the product's security risk, against standards the CISO sets and monitors, puts the decision and the accountability
     in the same place, and lets a payments product weigh its fixes differently from a public content site.
   why_not:
-    A: A reserved share guarantees some security work, but the same quota for a payments product and a public content site
-      misallocates effort, and the product owners still do not own the risk they are trading off.
-    B: Release authority is a strong lever, but it puts the CISO's team in the delivery path of 30 teams and keeps the CISO
-      accountable for decisions the product owners make, which invites conflict and workarounds.
-    D: Embedded engineers add skill and capacity, but they do not set the backlog, so fixes can still lose to feature work,
-      and the board would still be asking the CISO.
+    A: A champion sits inside the team and knows its product, which makes this look like local ownership, but the champion
+      does not set the backlog. The product owner would still decide whether fixes beat feature work, while someone else
+      answered for the result.
+    B: Giving the CISO's team scheduling authority joins decision and accountability, but in the wrong place. The CISO
+      would be trading off features against risk in 30 products whose business value the product owners understand, and
+      the teams would lose the autonomy they are organised around.
+    D: A single senior owner for technology risk is common, but the CTO does not set the 30 backlogs either, so the
+      product owners would still make the tradeoffs while the CTO answered for them, and one owner cannot weigh each
+      product's risk.
 status: draft
 outline_version: '2024-04-15'
 sample: false

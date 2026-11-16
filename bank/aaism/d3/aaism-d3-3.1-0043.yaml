@@ -1,26 +1,26 @@
 id: aaism-d3-3.1-0043
 subdomain: '3.1'
 difficulty: hard
-stem: A SaaS firm's analytics assistant writes SQL for each client's users over one set of warehouse tables shared by all
-  clients. The application appends a filter on the client's ID to each generated query. Testers got the model to write queries
-  using unions and subqueries that read other clients' rows. Clients rely on asking free-form questions. Which design change
-  BEST closes this?
+stem: A SaaS firm's analytics assistant writes SQL for each client's users over warehouse tables shared by all clients, and
+  the application appends a client ID filter to each query. Testers read other clients' rows with unions and with warehouse
+  functions that read a table named in a text string. Clients rely on free-form questions, and splitting storage per client
+  is over a year away. Which design change BEST closes this?
 options:
-  A: A query parser that rejects unions, subqueries and comments
+  A: Rewrite each parsed query so each table reference carries the client filter
   B: Row-level security in the warehouse, bound to the session's client
-  C: A library of approved query templates that the model fills in
-  D: A second model that reviews each query for cross-client data access
+  C: A separate schema per client, queried with that client's credentials
+  D: A library of approved query templates that the model fills in
 answer: B
 explanation:
-  why_correct: The filter was added to text the model controls, so the model could write around it. Row-level security enforced
-    by the warehouse for the session's client applies to each query whatever its form, so free-form questions keep working
-    and other clients' rows stay out of reach.
+  why_correct: The filter is applied to SQL text the model controls, so the model can write around it. Row-level security
+    enforced by the warehouse for the session's client applies however a table is reached, including through functions, keeps
+    free-form questions working and can be added to the shared tables now.
   why_not:
-    A: Blocking these constructs stops the tested queries, but SQL offers other ways around a filter added as text, and many
-      legitimate analytical questions need subqueries.
-    C: Templates would contain the queries, but they would end the free-form questions that clients rely on.
-    D: A reviewing model can miss a disguised query, and it can be steered by the same kind of crafted input that steered
-      the first model.
+    A: Rewriting the parsed query handles unions and subqueries, but a table named inside a text string passed to a function
+      is not a table reference the rewriter sees, so that route stays open.
+    C: Separate schemas with per-client credentials would isolate clients firmly, but splitting storage per client is over
+      a year away, leaving the gap open meanwhile.
+    D: Templates would contain the queries, but they would end the free-form questions that clients rely on.
 status: draft
 outline_version: '2025-08-19'
 sample: false
