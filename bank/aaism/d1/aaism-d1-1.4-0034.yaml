@@ -3,7 +3,7 @@ subdomain: '1.4'
 difficulty: easy
 stem: Post-incident reviews at an insurer find the root causes of its AI incidents, and each system's fixes are closed on
   time. Yet the same design flaws keep turning up in newly built AI systems, each of which passed the program's pre-launch
-  security review. What should the program change?
+  security review. Which program change BEST addresses this?
 options:
   A: Add an incident reviewer to each pre-launch security review
   B: Red team the other live AI systems for each flaw found

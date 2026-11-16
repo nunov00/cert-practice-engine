@@ -1,12 +1,12 @@
 id: cissp-d4-4.2-0024
 subdomain: '4.2'
-difficulty: hard
+difficulty: medium
 stem: Field engineers read company email and service manuals on their own phones, often at plant sites with no mobile
   signal. A works agreement bars the company from enrolling the phones in device management or seeing personal content,
   and company data must be removable from a phone when its owner leaves. Which endpoint control BEST fits?
 options:
   A: App protection policies on the company's mail and document apps, with selective wipe
-  B: Full enrolment of each phone in MDM, with a remote wipe when its engineer leaves the company
+  B: Conditional access admitting only phones that pass app attestation, revoking sign-in tokens on exit
   C: A work profile on each phone, created and managed through the company's MDM
   D: Access only through a virtual desktop app, with no company data stored on the phone
 answer: A
@@ -16,8 +16,8 @@ explanation:
     the phone itself stays unenrolled and personal content stays out of the company's view. The data is held on the phone,
     so engineers can still read manuals where there is no signal.
   why_not:
-    B: Full enrolment gives the strongest control and a complete wipe, but it is exactly the device management the works
-      agreement bars, and a full wipe would also erase the engineer's personal data.
+    B: Conditional access with attestation needs no enrolment and revoking tokens blocks new access, but mail and manuals
+      already cached on the phone stay there, so company data is not removed when the engineer leaves.
     C: A work profile keeps personal and company data apart and is a common answer for personal phones, but it is created
       by enrolling the phone in device management, which the agreement does not allow.
     D: A virtual desktop keeps company data off the phone and needs no device management, but it works only with a network

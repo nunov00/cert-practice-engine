@@ -2,6 +2,7 @@ id: aaism-d2-2.2-0065
 subdomain: '2.2'
 difficulty: hard
 stem: Staff at an engineering firm can share any chat with its AI assistant through a link that anyone holding it can open.
+  A shared link shows the full chat, including files the assistant retrieved from client project folders.
   Most links go to colleagues in tickets and team channels, often about client design work. Some staff have pasted links into
   public vendor forums when asking for help, and search engines indexed several. Which control BEST addresses this weakness?
 options:

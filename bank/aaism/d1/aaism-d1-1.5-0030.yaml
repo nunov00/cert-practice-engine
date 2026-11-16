@@ -1,13 +1,13 @@
 id: aaism-d1-1.5-0030
 subdomain: '1.5'
 difficulty: easy
-stem: At 01:00 a retailer's chatbot began showing customers other people's addresses, cause unknown. The on-call security
+stem: At 01:00 a travel agency's chatbot began showing customers other travellers' passport details, cause unknown. The on-call security
   analyst could have disabled it within minutes, but policy lets only the business owner take a customer service offline.
   The owner, paged at 01:10, consulted the sales director first and agreed at 06:00. Which change BEST prevents a repeat?
 options:
   A: A named deputy owner who can be reached overnight
   B: Pre-agreed harm criteria under which on-call staff may suspend it
-  C: A switch that disables only the chatbot's lookups of customer addresses
+  C: A switch that disables only the chatbot's lookups of traveller records
   D: A pre-agreed time limit for the owner's decision on data leaks
 answer: B
 explanation:
@@ -17,7 +17,7 @@ explanation:
   why_not:
     A: The owner was reached within ten minutes. A deputy adds availability, but the hours were lost while a decision was
       made, which a deputy would face too.
-    C: A narrow switch reduces business impact, but the cause was not known, so disabling lookups might not stop the leak,
+    C: A narrow switch reduces business impact, but the cause was not known, so disabling record lookups might not stop the leak,
       and the owner's approval would still be needed.
     D: A time limit would shorten the delay, but containment would still wait for one person to be woken, briefed and decide
       on an unknown cause, while the analyst could have acted within minutes.

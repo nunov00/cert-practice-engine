@@ -8,7 +8,7 @@ stem: About 400 staff and contractors hold standing badge access to a company's 
 options:
   A: Access that lapses after six months unless the holder's manager renews it in the system
   B: Access granted for the window of each approved change ticket, ending when it closes
-  C: Access for one day at a time, issued by the security desk to anyone on the approved list
+  C: Access for one day at a time, issued by the security desk to any of the confirmed holders who asks
   D: Removal of access from each holder who has not entered the data hall for 90 days
 answer: B
 explanation:
@@ -19,7 +19,7 @@ explanation:
   why_not:
     A: Expiry with renewal is a common way to stop access piling up, but it relies on the same managers who just confirmed
       all 400 holders, so most access would simply be renewed.
-    C: Day passes shorten each grant, but the approved list is the 400 people managers confirmed, so any of them can still
+    C: Day passes shorten each grant, but any of the 400 people managers confirmed can still
       get in on any day, without the entry being tied to approved work.
     D: Removing unused access is a sound clean-up, but because different people visit each month, it would still leave
       dozens with standing access while cutting off people who will soon need it again.

@@ -6,9 +6,9 @@ stem: A SaaS firm's analytics assistant writes SQL for each client's users over 
   functions that read a table named in a text string. Clients rely on free-form questions, and splitting storage per client
   is over a year away. Which design change BEST closes this?
 options:
-  A: Rewrite each parsed query so each table reference carries the client filter
+  A: Query rewriting that adds the client filter to each parsed table reference
   B: Row-level security in the warehouse, bound to the session's client
-  C: A separate schema per client, queried with that client's credentials
+  C: A separate copy of the tables per client, read with that client's credentials
   D: A library of approved query templates that the model fills in
 answer: B
 explanation:
@@ -18,7 +18,7 @@ explanation:
   why_not:
     A: Rewriting the parsed query handles unions and subqueries, but a table named inside a text string passed to a function
       is not a table reference the rewriter sees, so that route stays open.
-    C: Separate schemas with per-client credentials would isolate clients firmly, but splitting storage per client is over
+    C: Separate per-client copies with per-client credentials would isolate clients firmly, but splitting storage per client is over
       a year away, leaving the gap open meanwhile.
     D: Templates would contain the queries, but they would end the free-form questions that clients rely on.
 status: published

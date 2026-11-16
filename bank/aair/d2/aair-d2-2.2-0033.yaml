@@ -3,11 +3,11 @@ subdomain: '2.2'
 difficulty: hard
 stem: A marketplace will replace its manual review with a model that removes counterfeit listings within seconds
   of posting. It was validated on a random holdout of last year's listings labelled by the review team, with high
-  recall. A seller gets a removal notice at once and can post a new listing straight away at no cost. Which further
+  precision and recall in every product category. A seller gets a removal notice at once and can post a new listing straight away at no cost. Which further
   test is MOST important before launch?
 options:
   A: Recall on a time-based holdout of listings from the most recent quarter
-  B: Precision by product category, to size wrongful removals of genuine sellers
+  B: Recall on a holdout relabelled by a second team, to test label quality
   C: Recall on listings from seller accounts opened after the holdout period
   D: Recall on listings testers alter to evade the model as sellers would
 answer: D
@@ -19,8 +19,8 @@ explanation:
   why_not:
     A: A recent holdout tests for drift over time, which matters, but recent listings were still written before
       this model existed. None of them was changed to get past it.
-    B: Wrongful removals of genuine sellers are a real cost to measure, but they do not show whether the model keeps
-      counterfeits off the site once sellers start working around it.
+    B: Label noise matters, but a relabelled holdout is still made of last year's listings, none of which was written
+      to get past this model, so it says nothing about how recall holds up once sellers probe it.
     C: Counterfeit sellers do churn accounts, so new accounts are a sensible slice, but their listings were also
       written without any chance to probe this model and say nothing about evasion.
 status: published

@@ -1,6 +1,6 @@
 id: aair-d1-1.1-0037
 subdomain: '1.1'
-difficulty: hard
+difficulty: medium
 stem: A drug maker wants an AI assistant on its website that answers doctors' questions about its medicines in real
   time. Regulators let it give only information from its approved product documents, in the approved wording. Most
   questions fall into about 300 recurring topics. Which design BEST fits this use case?
