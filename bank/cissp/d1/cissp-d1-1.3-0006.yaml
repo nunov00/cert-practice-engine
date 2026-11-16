@@ -1,0 +1,37 @@
+id: cissp-d1-1.3-0006
+subdomain: '1.3'
+difficulty: easy
+stem: A software company runs 30 autonomous product teams, each led by a product owner who sets its backlog. Some products
+  process card payments, while others serve only public content. Fixes raised by the CISO's team keep slipping behind
+  feature work, and after each breach the board asks the CISO why it happened. Which governance change BEST addresses
+  this?
+options:
+  A: Make each team's security champion accountable for the product's security risk, within the CISO's standards
+  B: Make the CISO's team the owner of security items in each backlog, with authority to schedule them
+  C: Make each product owner accountable for the product's security risk, within the CISO's standards
+  D: Make the CTO accountable for security risk across the 30 products, within the CISO's standards
+answer: C
+explanation:
+  why_correct: The people who decide what each team works on are the product owners, yet the board holds the CISO to account
+    for the result. Accountability for risk belongs with whoever makes the tradeoffs. Making each product owner answerable
+    for the product's security risk, against standards the CISO sets and monitors, puts the decision and the accountability
+    in the same place, and lets a payments product weigh its fixes differently from a public content site.
+  why_not:
+    A: A champion sits inside the team and knows its product, which makes this look like local ownership, but the champion
+      does not set the backlog. The product owner would still decide whether fixes beat feature work, while someone else
+      answered for the result.
+    B: Giving the CISO's team scheduling authority joins decision and accountability, but in the wrong place. The CISO
+      would be trading off features against risk in 30 products whose business value the product owners understand, and
+      the teams would lose the autonomy they are organised around.
+    D: A single senior owner for technology risk is common, but the CTO does not set the 30 backlogs either, so the
+      product owners would still make the tradeoffs while the CTO answered for them, and one owner cannot weigh each
+      product's risk.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-cissp-check
+  options_only: obvious

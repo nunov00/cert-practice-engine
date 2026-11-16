@@ -1,0 +1,33 @@
+id: aair-d1-1.1-0037
+subdomain: '1.1'
+difficulty: medium
+stem: A drug maker wants an AI assistant on its website that answers doctors' questions about its medicines in real
+  time. Regulators let it give only information from its approved product documents, in the approved wording. Most
+  questions fall into about 300 recurring topics. Which design BEST fits this use case?
+options:
+  A: Answer from passages retrieved from the approved documents, citing each one
+  B: Match each question to an approved answer, passing others to medical staff
+  C: Fine-tune a model on the approved documents and filter answers against them
+  D: Have a model draft answers from the approved documents for staff to check
+answer: B
+explanation:
+  why_correct: The constraint is the wording, not only the source. Matching each question to a recurring topic and
+    returning an answer whose text was approved in advance keeps every reply word for word within what regulators
+    allow. Questions outside the known topics go to medical information staff instead of being answered by improvised
+    text.
+  why_not:
+    A: Retrieval with citations grounds answers in the right documents, but the model still writes its own sentences,
+      which can paraphrase, combine or overstate the approved text.
+    C: Fine-tuning does not tie answers to the approved wording, and a filter can catch only some of the departures
+      from it.
+    D: Staff checking each draft would keep answers within the approved wording, but not in real time, which this
+      use case requires.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-aair-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: aaism-d1-1.2-0035
+subdomain: '1.2'
+difficulty: medium
+stem: A company's AI tool approval procedure assesses each tool once and then lists it as approved for all staff. Marketing
+  values an approved transcription tool for public webinars, and HR now uses it to record disciplinary hearings. The vendor
+  keeps audio for 90 days for quality review, which the assessment accepted for public content. Which change to the procedure
+  is BEST?
+options:
+  A: Reassess each approved tool each year against how staff use it
+  B: Assess each tool once for the most sensitive data staff might enter
+  C: Approve each tool for named data classes, assessing any new class
+  D: Have teams register their uses of approved tools in the inventory
+answer: C
+explanation:
+  why_correct: The risk depends on the data a tool handles, not on the tool alone. Approving each tool for named data classes
+    keeps the valued low-risk use running, and makes a move to a more sensitive class, such as recordings of disciplinary
+    hearings, trigger an assessment before that use begins.
+  why_not:
+    A: Yearly reassessment would pick up the HR use eventually, but a sensitive use could run unassessed for up to a year
+      in between.
+    B: Assessing each tool against the most sensitive data anyone might enter would reject or delay tools whose terms suit
+      low-risk work, such as the webinar use, and push staff towards unapproved tools.
+    D: Registration records who uses a tool for what, but with no assessment trigger the HR use would be recorded, not checked
+      against the vendor's retention.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-aaism-check
+  options_only: not_obvious

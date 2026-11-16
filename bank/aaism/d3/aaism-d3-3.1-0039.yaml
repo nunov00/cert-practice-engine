@@ -21,7 +21,7 @@ explanation:
       processes still call into, so this flaw class stays open.
     D: Monitoring may catch some escapes, but it acts after the boundary is crossed, and a quick read of other users' files
       can finish before the session is ended.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
@@ -29,4 +29,4 @@ provenance:
   run_id: 2026-11-13-daily-aaism
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-11-13-daily-aaism-check
+  checked_by: 2026-11-16-daily-aaism-check

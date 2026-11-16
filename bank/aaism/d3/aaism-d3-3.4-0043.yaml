@@ -6,9 +6,9 @@ stem: A dermatology app detects skin cancer less accurately on darker skin. Only
   set. What should the security manager require before release?
 options:
   A: Dermatologists' review of the synthetic images for realism
-  B: Lower weighting of the synthetic images during training
+  B: Fine-tuning on the real darker-skin images after synthetic training
   C: Testing on held-out real darker-skin images against a set accuracy bar
-  D: Testing on a held-out synthetic set made by a different image generator
+  D: Testing on a second generator's darker-skin images against a set accuracy bar
 answer: C
 explanation:
   why_correct: A gain measured on synthetic images shows the model learned the generator's images, not real lesions. The few
@@ -17,11 +17,11 @@ explanation:
   why_not:
     A: Expert review can catch images that look wrong, but realistic-looking images can still miss how lesions really present,
       and a review does not measure the model's accuracy.
-    B: Down-weighting may limit harm from poor synthetic data, but it does not show whether accuracy on real darker-skin patients
-      improved.
-    D: A second generator gives a less self-serving test, but its images still are not real lesions, so the result says nothing
-      certain about real darker-skin patients.
-status: draft
+    B: Fine-tuning on the real images may help the model, but it uses up the only real darker-skin images, leaving no real
+      evidence of how it performs on patients.
+    D: A second generator and a set bar give a less self-serving test, but its images still are not real lesions, so passing
+      the bar says nothing certain about real darker-skin patients.
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
@@ -29,4 +29,4 @@ provenance:
   run_id: 2026-11-11-daily-aaism
   check_verdict: pass
   options_only: obvious
-  checked_by: 2026-11-14-daily-aaism-check
+  checked_by: 2026-11-16-daily-aaism-check

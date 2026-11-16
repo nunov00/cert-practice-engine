@@ -1,0 +1,33 @@
+id: aaism-d2-2.3-0062
+subdomain: '2.3'
+difficulty: easy
+stem: An insurer is assessing a claims-summary vendor. The vendor's independent assurance report carves out the hosted model
+  provider that processes each prompt, so the provider's controls are not tested in it. The provider gives its own assurance
+  report to its customers' customers under a standard NDA. Contracting is due next month. What should the security manager
+  do NEXT?
+options:
+  A: Review the vendor's own monitoring records for the provider's controls
+  B: Commission a penetration test of the vendor's service before signing
+  C: Require the vendor's next report to cover the provider's controls
+  D: Obtain the provider's report and map it to the carved-out controls
+answer: D
+explanation:
+  why_correct: A carve-out leaves the provider's controls outside the vendor's report, and the provider's own independently
+    tested report is available now. Reading it, and checking that it covers the controls the vendor relies on and that the
+    vendor runs the controls the provider expects of its customers, gives first-hand tested evidence before contracting.
+  why_not:
+    A: A vendor should monitor a carved-out provider, and its records are useful, but they are the vendor's own summary, which
+      is second-hand and not independent when the provider's tested report can be read directly.
+    B: A penetration test gives tested evidence now, but it probes the vendor's exposed service, not the provider's internal
+      controls over prompt handling, retention and staff access, which the carve-out leaves untested.
+    C: An inclusive report would cover both in one view, but it would arrive with the next reporting cycle, after contracting,
+      and providers often decline to be included in a customer's report.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-aaism-check
+  options_only: obvious

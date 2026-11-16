@@ -1,0 +1,32 @@
+id: aaism-d3-3.4-0048
+subdomain: '3.4'
+difficulty: hard
+stem: A tenant-screening service's assistant answers landlords' questions about named applicants from public web pages. Testers
+  found it sometimes states eviction or fraud histories that no source supports, often for people with common names. Landlords
+  seldom tell applicants why they were refused, and genuine court records of evictions are a lawful part of screening. Which
+  control BEST reduces the harm?
+options:
+  A: State claims about an applicant only with a cited source record
+  B: Remove allegations of wrongdoing about named people from answers
+  C: Suppress claims about people once they report them as false
+  D: Show a notice on each answer that facts about people may be wrong
+answer: A
+explanation:
+  why_correct: The harm comes from unsupported claims that landlords act on. Requiring each claim about an applicant to rest
+    on a retrieved record the landlord can see stops invented histories, lets the landlord check that the record is about
+    the same person, and keeps genuine court records available.
+  why_not:
+    B: Removing allegations would stop the invented ones, but it would also hide genuine eviction records, which are a lawful
+      and expected part of screening.
+    C: A correction route helps people who find out, but applicants are seldom told why they were refused, so most never learn
+      of the false claim.
+    D: A notice warns landlords in general, but it does not stop a specific invented history from deciding an application.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-aaism-check
+  options_only: not_obvious

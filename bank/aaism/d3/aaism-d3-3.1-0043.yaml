@@ -1,0 +1,32 @@
+id: aaism-d3-3.1-0043
+subdomain: '3.1'
+difficulty: medium
+stem: A SaaS firm's analytics assistant writes SQL for each client's users over warehouse tables shared by all clients, and
+  the application appends a client ID filter to each query. Testers read other clients' rows with unions and with warehouse
+  functions that read a table named in a text string. Clients rely on free-form questions, and splitting storage per client
+  is over a year away. Which design change BEST closes this?
+options:
+  A: Query rewriting that adds the client filter to each parsed table reference
+  B: Row-level security in the warehouse, bound to the session's client
+  C: A separate copy of the tables per client, read with that client's credentials
+  D: A library of approved query templates that the model fills in
+answer: B
+explanation:
+  why_correct: The filter is applied to SQL text the model controls, so the model can write around it. Row-level security
+    enforced by the warehouse for the session's client applies however a table is reached, including through functions, keeps
+    free-form questions working and can be added to the shared tables now.
+  why_not:
+    A: Rewriting the parsed query handles unions and subqueries, but a table named inside a text string passed to a function
+      is not a table reference the rewriter sees, so that route stays open.
+    C: Separate per-client copies with per-client credentials would isolate clients firmly, but splitting storage per client is over
+      a year away, leaving the gap open meanwhile.
+    D: Templates would contain the queries, but they would end the free-form questions that clients rely on.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: cissp-d6-6.4-0013
+subdomain: '6.4'
+difficulty: hard
+stem: In a purple-team exercise, testers ran 12 attack techniques on a company's network. The SIEM raised alerts for 9 of
+  them, but on-shift analysts closed 7 of those 9 as benign, each noting that the activity matched tools the IT team uses
+  for administration. Which recommendation should the exercise report lead with?
+options:
+  A: New detection rules for the three techniques that raised no alert in the SIEM
+  B: Higher severity for the seven dismissed alerts, so that senior analysts handle them
+  C: A record of approved admin hosts and accounts that analysts check alerts against
+  D: Retraining for the on-shift analysts on the techniques used in the exercise
+answer: C
+explanation:
+  why_correct: The detections mostly worked; the largest loss came at triage, where seven real alerts were dismissed. The
+    analysts' notes show why. The activity looked like sanctioned administration, and they had no way to tell the IT team's
+    use of those tools from an attacker's. An authoritative record of which hosts and accounts are approved for admin work
+    lets them make that distinction, which turns seven dismissals into detections.
+  why_not:
+    A: The three missed techniques are a real gap, but a smaller one than the seven alerts that fired and were dismissed,
+      so leading with new rules misplaces the main finding.
+    B: Escalating these alerts adds expertise, but senior analysts face the same question without the same missing context,
+      and raising severity on alerts that often match normal admin work adds load to the scarcest staff.
+    D: Training improves analysts' grasp of attack techniques, but their reasoning was consistent, since the activity did
+      match admin tools. Knowing the techniques better does not tell them which use was sanctioned.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-cissp-check
+  options_only: not_obvious

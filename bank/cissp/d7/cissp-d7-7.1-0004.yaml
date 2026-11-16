@@ -1,0 +1,34 @@
+id: cissp-d7-7.1-0004
+subdomain: '7.1'
+difficulty: hard
+stem: A responder finds signs of an attacker's tool running in memory on a web server in a cloud autoscaling group. The group
+  replaces any instance that fails its load balancer health checks, and the group's scale-in policy is expected to remove
+  instances within 15 minutes as evening traffic drops. A memory capture takes about 30 minutes. What should the
+  responder do FIRST?
+options:
+  A: Capture the instance's memory with the response team's forensic agent
+  B: Detach the instance from its group and protect it from termination
+  C: Snapshot the instance's disk volumes through the cloud provider's API
+  D: Move the instance into a security group that blocks its inbound and outbound traffic
+answer: B
+explanation:
+  why_correct: The greatest threat to the evidence is the platform itself. Within 15 minutes the instance may be terminated,
+    which destroys both its memory and, by default, its disks. Detaching it from the group and turning on termination
+    protection takes moments and keeps both intact, so the 30-minute memory capture and the disk snapshot can then follow
+    in order of volatility.
+  why_not:
+    A: Memory is normally captured first because it is the most volatile, but a capture that needs 30 minutes is likely to
+      be cut off when scale-in removes the instance, losing the memory and the disks together.
+    C: A snapshot is quick and preserves the disks, but the attacker's tool is running in memory, which the snapshot does
+      not hold and termination would destroy.
+    D: Isolation is a sound containment step, but an instance cut off from all traffic fails its health checks, so the group
+      replaces it and the evidence is lost even sooner.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,34 @@
+id: aair-d2-2.2-0033
+subdomain: '2.2'
+difficulty: hard
+stem: A marketplace will replace its manual review with a model that removes counterfeit listings within seconds
+  of posting. It was validated on a random holdout of last year's listings labelled by the review team, with high
+  precision and recall in every product category. A seller gets a removal notice at once and can post a new listing straight away at no cost. Which further
+  test is MOST important before launch?
+options:
+  A: Recall on a time-based holdout of listings from the most recent quarter
+  B: Recall on a holdout relabelled by a second team, to test label quality
+  C: Recall on listings from seller accounts opened after the holdout period
+  D: Recall on listings testers alter to evade the model as sellers would
+answer: D
+explanation:
+  why_correct: Instant notice and free relisting give counterfeit sellers a fast, costless way to try variations
+    until one passes, a feedback loop the manual process never offered. Last year's listings were written against
+    human reviewers, not against this model. Testing recall on listings deliberately altered the way sellers would
+    alter them estimates performance against that adaptive behaviour, which no historical sample contains.
+  why_not:
+    A: A recent holdout tests for drift over time, which matters, but recent listings were still written before
+      this model existed. None of them was changed to get past it.
+    B: Label noise matters, but a relabelled holdout is still made of last year's listings, none of which was written
+      to get past this model, so it says nothing about how recall holds up once sellers probe it.
+    C: Counterfeit sellers do churn accounts, so new accounts are a sensible slice, but their listings were also
+      written without any chance to probe this model and say nothing about evasion.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-aair-check
+  options_only: not_obvious

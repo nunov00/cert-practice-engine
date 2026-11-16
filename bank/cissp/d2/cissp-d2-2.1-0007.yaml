@@ -1,0 +1,34 @@
+id: cissp-d2-2.1-0007
+subdomain: '2.1'
+difficulty: hard
+stem: A manufacturer's classification levels, in rising order, are Public, Internal (any employee), Confidential (named
+  project groups) and Restricted (named recipients, encrypted). A partner sends design specifications that carry its own
+  label Internal, under an agreement limiting them to staff on the joint project. Their leak would do the manufacturer
+  itself little harm. How should the manufacturer classify them?
+options:
+  A: Internal, matching the label the partner put on the specifications
+  B: Internal, as their loss would do the manufacturer little harm
+  C: Restricted, as they are held for another organisation under contract
+  D: Confidential, as the agreement limits them to the project's staff
+answer: D
+explanation:
+  why_correct: Classification must reflect every obligation attached to the information, including contractual ones, not
+    only the harm its loss would do the holder. The agreement allows only the joint project's staff to see the
+    specifications, and the manufacturer's Confidential level is the lowest one that limits access to a named project
+    group. Internal would let any employee read them, which breaches the agreement.
+  why_not:
+    A: Respecting the originator's marking is a good default, but the partner's Internal is defined by the partner's scheme,
+      and the agreement sets a narrower audience than the manufacturer's own Internal level allows.
+    B: Rating by business impact is the usual basis for classification, but the harm here includes breaching the agreement,
+      and an Internal label would let every employee open documents the manufacturer promised to restrict.
+    C: Restricted would also keep the documents within named people, but it adds encryption and per-recipient handling that
+      neither the agreement nor the information calls for, so it over-classifies and burdens the project for no gain.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-cissp-check
+  options_only: not_obvious

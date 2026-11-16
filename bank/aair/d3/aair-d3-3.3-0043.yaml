@@ -1,0 +1,33 @@
+id: aair-d3-3.3-0043
+subdomain: '3.3'
+difficulty: hard
+stem: An insurer's fine-tuned pricing model is a key competitive asset. Forty data scientists download its weight
+  files to their company laptops most weeks to evaluate and retrain it. The risk team's concern is an employee taking
+  a copy of the weights before leaving to join a rival. Which control BEST addresses this?
+options:
+  A: Serve the model to data scientists only through an API, without file access
+  B: Require a manager's approval before each download of the weight files
+  C: Give data scientists the weights only in a workspace that blocks export
+  D: Block uploads of large files from laptops to outside storage and email
+answer: C
+explanation:
+  why_correct: The people who pose the threat need the weights for their weekly work, so access cannot simply be
+    removed, and any copy that reaches a laptop can leave by many routes. A controlled workspace that holds the
+    weights and blocks downloads and outbound transfers keeps evaluation and retraining possible while stopping
+    the copy from leaving the insurer's control.
+  why_not:
+    A: API-only access would stop copying, but retraining and much evaluation need the weight files themselves,
+      so it would block the work the data scientists do most weeks.
+    B: Approval adds friction, but with forty people downloading most weeks it soon becomes routine, and each approved
+      download still puts a full copy on a laptop.
+    D: Blocking large uploads closes some exit routes, but the weights already sit on laptops, from which they can
+      leave by removable media, splitting or other channels the rule does not see.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-aair-check
+  options_only: not_obvious

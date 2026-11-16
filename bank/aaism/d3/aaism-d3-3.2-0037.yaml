@@ -6,8 +6,8 @@ stem: A lender's credit model retrains monthly through a pipeline that releases 
   broker as a new input feature. How should this change be released?
 options:
   A: Under the pre-approval, once the new data passes the automated checks
-  B: As a model change, released after a back-test on held-out loans
-  C: As a model change, with full validation and security review first
+  B: As a model change, after independent validation of accuracy and fairness
+  C: As a model change, after validation and a security review of the broker data
   D: Under the pre-approval, after the broker warrants the data's quality
 answer: C
 explanation:
@@ -18,11 +18,11 @@ explanation:
   why_not:
     A: The automated checks catch data quality problems within the approved design, but a new feature changes the design
       itself, which is outside what the pre-approval covers.
-    B: Treating it as a model change is right, but a back-test checks predictive accuracy only. It does not review fairness,
-      the broker as a new outside data source, or the risk of that data being wrong or tampered with.
+    B: Treating it as a model change with independent validation is right, but it leaves out the broker as a new outside
+      source whose data could be wrong, biased in how it was collected, or tampered with.
     D: A broker warranty gives a contractual remedy, but it does not validate how the feature changes the model's decisions,
       and the change still falls outside the pre-approval.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
@@ -30,4 +30,4 @@ provenance:
   run_id: 2026-11-10-daily-aaism
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-11-11-daily-aaism-check
+  checked_by: 2026-11-16-daily-aaism-check

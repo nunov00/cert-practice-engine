@@ -1,0 +1,36 @@
+id: aair-d1-1.5-0033
+subdomain: '1.5'
+difficulty: medium
+stem: A maker of robotic lawn mowers updates the mowers' obstacle-detection model over the air each month. Each
+  update passes a safety regression suite on a build server that holds only the current model. Product liability
+  law in its markets treats software as part of the product, covers defects introduced by updates, and lets courts
+  presume a defect when a maker does not disclose relevant technical evidence. Which measure BEST addresses this
+  legal exposure?
+options:
+  A: Exclude liability for defects caused by updates in the mower's terms of sale
+  B: Let owners choose whether to install each obstacle-detection update
+  C: Log each mower's sensor readings and installed model version for 90 days
+  D: Keep each released model version with its test results and release decision
+answer: D
+explanation:
+  why_correct: Under this law, missing evidence can itself become a finding of defect. The maker already tests each
+    update, but once the next release replaces it on the build server, it can no longer show what an earlier model
+    was or how it performed in testing. Keeping each released version with its test results and release decision
+    lets the maker show exactly what was running on a mower at the time of an accident and answer the presumption.
+  why_not:
+    A: Liability to people injured by a defective product generally cannot be excluded by contract, and those hurt
+      by a mower, such as neighbours or children, are not party to the terms of sale.
+    B: Owner choice does not remove the maker's liability for the updates it ships, and safety updates left uninstalled
+      can create exposure of their own. It also leaves the evidence problem untouched.
+    C: Device logs are useful evidence of what happened and which version was installed, but they name a model the
+      maker no longer holds, so it still cannot show how that model was built and tested. Ninety days may also end
+      before a claim is brought.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-aair-check
+  options_only: not_obvious
