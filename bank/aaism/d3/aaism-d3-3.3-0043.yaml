@@ -22,11 +22,12 @@ explanation:
       files, so this would need a costly redesign of its storage.
     D: Shorter backup retention narrows the gap but leaves it, since a restore can still bring back up to 30 days of erasures,
       and backups may be needed for longer for other reasons.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-16-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-aaism-check
   options_only: not_obvious

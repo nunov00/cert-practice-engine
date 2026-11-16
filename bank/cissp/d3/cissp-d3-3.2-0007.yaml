@@ -23,11 +23,12 @@ explanation:
       example from a counting loop, so the channel shrinks rather than closes.
     D: Write-down checks mediate operations on labelled objects, but the Secret VM writes nothing to a lower object. The leak
       is contention for a shared resource, which no access check sees.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-16-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-cissp-check
   options_only: not_obvious

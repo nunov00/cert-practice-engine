@@ -23,11 +23,12 @@ explanation:
       of future attacks, while flaws on the known-exploited list are confirmed to be in use now.
     D: Exposure is the right focus, and public exploit code makes attacks easier, but code being available does not show
       that attackers are using it, while flaws on the known-exploited list are confirmed to be in use now.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-11-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-cissp-check
   options_only: not_obvious

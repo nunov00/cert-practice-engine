@@ -1,6 +1,6 @@
 id: cissp-d1-1.3-0006
 subdomain: '1.3'
-difficulty: hard
+difficulty: easy
 stem: A software company runs 30 autonomous product teams, each led by a product owner who sets its backlog. Some products
   process card payments, while others serve only public content. Fixes raised by the CISO's team keep slipping behind
   feature work, and after each breach the board asks the CISO why it happened. Which governance change BEST addresses
@@ -26,10 +26,12 @@ explanation:
     D: A single senior owner for technology risk is common, but the CTO does not set the 30 backlogs either, so the
       product owners would still make the tradeoffs while the CTO answered for them, and one owner cannot weigh each
       product's risk.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-16-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-cissp-check
+  options_only: obvious

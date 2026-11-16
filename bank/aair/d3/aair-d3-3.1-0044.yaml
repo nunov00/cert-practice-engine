@@ -1,6 +1,6 @@
 id: aair-d3-3.1-0044
 subdomain: '3.1'
-difficulty: hard
+difficulty: medium
 stem: A software firm's AI meeting assistant joins each call on an account manager's calendar, records until the
   meeting link closes, and emails a summary with action items to everyone invited. To save time, account managers
   book client calls back to back with their team's internal account reviews, on the same meeting link. Which risk
@@ -20,14 +20,16 @@ explanation:
     A: Invented commitments in a summary sent to a client would be harmful, and generated summaries can contain
       them, but they are occasional errors. The internal review reaches clients through the process working as set
       up.
-    B: Recording consent is a real legal point, but it is usually handled by notice when the assistant joins, and
+    B: Recording consent is a real legal point, but the firm's consent step when the assistant joins (notice, or each participant's consent where the law needs it) covers it, and
       it does not reflect the exposure created by the way these calls are booked.
     C: Omitted client conditions could mislead the firm's follow-up and are a known summarisation weakness, but
       they are occasional. The booking practice makes the disclosure of the internal review a likely, repeated event.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-16-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-aair-check
+  options_only: not_obvious

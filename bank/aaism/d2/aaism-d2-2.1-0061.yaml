@@ -22,10 +22,12 @@ explanation:
       approvals whose errors are already within the loss budget.
     D: An appeal route is a fair safeguard, but it depends on customers contesting, which past data shows most wrongly declined
       customers do not do.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-16-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-aaism-check
+  options_only: not_obvious

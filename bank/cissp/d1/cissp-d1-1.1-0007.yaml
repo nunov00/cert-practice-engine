@@ -24,11 +24,12 @@ explanation:
       it to use in that review takes another customer's confidential document for her company's benefit.
     D: Asking legal counsel suits a case whose handling is unclear, but forwarding the report spreads another customer's
       confidential document further inside her company, and the right course here is plain enough to take herself.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-16-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-cissp-check
   options_only: not_obvious

@@ -22,11 +22,12 @@ explanation:
       the assistant for routine content and build a large review queue.
     D: Project teams know their documents but not the caches and training sets built from them, so the list would be incomplete
       and depend on each request.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-16-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-aaism-check
   options_only: not_obvious

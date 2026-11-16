@@ -25,10 +25,12 @@ explanation:
       release.
     D: Testers find business-logic flaws more often than tools do, but a test per weekly release is costly, and testers
       still judge against stories that never stated the limits the features needed.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-16-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-cissp-check
+  options_only: not_obvious

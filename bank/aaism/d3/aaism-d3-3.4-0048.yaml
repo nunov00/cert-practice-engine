@@ -21,11 +21,12 @@ explanation:
     C: A correction route helps people who find out, but applicants are seldom told why they were refused, so most never learn
       of the false claim.
     D: A notice warns landlords in general, but it does not stop a specific invented history from deciding an application.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-16-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-aaism-check
   options_only: not_obvious

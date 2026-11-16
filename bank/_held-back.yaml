@@ -55,13 +55,9 @@ held:
   # aaism-d3-3.5-0042 to medium, so AAISM's 6 hard can carry only 14 non-hard;
   # these three are the most options-guessable of the batch per Codex and the
   # final review (released draft 2.2-0052 goes back on the list)
-  - { id: aaism-d3-3.2-0037, pr: 82 }
   # Daily batch 2026-11-11, batch run: passed the independent check, held
   # because the strict hard-label check left CISSP 4 and AAISM 5 hard, which
   # carry only 9 and 11 non-hard (the most options-guessable go back first)
-  - { id: cissp-d6-6.4-0011, pr: 83 }
-  - { id: aaism-d1-1.4-0034, pr: 83 }
-  - { id: aaism-d1-1.5-0030, pr: 83 }
   # PR #83, merge run: Codex findings on held drafts to fix on recheck before
   # release: aaism-d2-2.1-0028 (state independence is unproven; require a joint
   # test of the deployed sequence), aaism-d3-3.3-0038 (limit input capture to the
@@ -84,7 +80,6 @@ held:
   # CISSP's hard share. aaism-d3-3.1-0039 passed the independent check but the
   # strict check lowered it (shared kernel -> per-session VM is close to a
   # textbook mapping); AAISM's 3 surviving hard labels carry only 7 non-hard.
-  - { id: aaism-d3-3.1-0039, pr: 86 }
   # Daily batch 2026-11-14, batch run: rechecked aaism-d2-2.1-0028,
   # aaism-d3-3.3-0038, aaism-d3-3.4-0043 (Codex points from PR #83 applied),
   # cissp-d5-5.2-0005 (key no longer telegraphed) and cissp-d6-6.1-0004; all
@@ -92,7 +87,6 @@ held:
   # PR #87, merge run: the final review lowered aaism-d1-1.5-0034 to medium, so
   # the easiest AAISM release goes back to keep the hard share at 30%. Its
   # disclosure distractor was replaced with a synthetic-test one (final review).
-  - { id: aaism-d3-3.4-0043, pr: 87 }
   # Daily batch 2026-11-15, batch run: rechecked ten held drafts.
   # aaism-d3-3.2-0026 and aaism-d3-3.5-0038 got new distractors (the 2026-11-12
   # notes) and cissp-d8-8.5-0005 no longer names the fix ("atomic"). Released
@@ -102,3 +96,7 @@ held:
   # cissp-d6-6.4-0011 stays held: its new distractor A did not break the 2x2
   # grid (the key is still the only "exploited and exposed" option); rework the
   # option set before the next recheck.
+  # Daily batch 2026-11-16, batch run: rechecked all six held drafts.
+  # aaism-d1-1.4-0034, aaism-d1-1.5-0030, aaism-d3-3.4-0043 and cissp-d6-6.4-0011
+  # got reworked distractors (no 2x2 grid in 6.4-0011); all six passed and were
+  # released within each exam's hard share. The list is now empty.

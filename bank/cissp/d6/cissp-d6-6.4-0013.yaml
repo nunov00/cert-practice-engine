@@ -22,11 +22,12 @@ explanation:
       and raising severity on alerts that often match normal admin work adds load to the scarcest staff.
     D: Training improves analysts' grasp of attack techniques, but their reasoning was consistent, since the activity did
       match admin tools. Knowing the techniques better does not tell them which use was sanctioned.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-16-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-cissp-check
   options_only: not_obvious

@@ -1,6 +1,6 @@
 id: aaism-d1-1.2-0035
 subdomain: '1.2'
-difficulty: hard
+difficulty: medium
 stem: A company's AI tool approval procedure assesses each tool once and then lists it as approved for all staff. Marketing
   values an approved transcription tool for public webinars, and HR now uses it to record disciplinary hearings. The vendor
   keeps audio for 90 days for quality review, which the assessment accepted for public content. Which change to the procedure
@@ -22,11 +22,12 @@ explanation:
       low-risk work, such as the webinar use, and push staff towards unapproved tools.
     D: Registration records who uses a tool for what, but with no assessment trigger the HR use would be recorded, not checked
       against the vendor's retention.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-16-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-aaism-check
   options_only: not_obvious

@@ -22,11 +22,12 @@ explanation:
       from it.
     D: Staff checking each draft would keep answers within the approved wording, but not in real time, which this
       use case requires.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-16-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-aair-check
   options_only: not_obvious

@@ -1,6 +1,6 @@
 id: cissp-d5-5.1-0013
 subdomain: '5.1'
-difficulty: hard
+difficulty: easy
 stem: About 400 staff and contractors hold standing badge access to a company's data hall, though only about 20 enter it
   in a typical month, and mostly different people each month. Nearly all visits are planned work under approved change
   tickets. At the last quarterly access review, managers confirmed all 400 holders as still needed. Which change BEST
@@ -23,10 +23,12 @@ explanation:
       get in on any day, without the entry being tied to approved work.
     D: Removing unused access is a sound clean-up, but because different people visit each month, it would still leave
       dozens with standing access while cutting off people who will soon need it again.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-16-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-cissp-check
+  options_only: obvious

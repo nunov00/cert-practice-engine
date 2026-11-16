@@ -1,6 +1,6 @@
 id: aair-d1-1.2-0043
 subdomain: '1.2'
-difficulty: hard
+difficulty: medium
 stem: A lender's data office gives three months' notice of each change to a shared data field, emailing the owners
   of the systems its data catalogue lists as using that field. Models built by the data science team read fields
   directly from the warehouse. After the income field changed from gross to net, the credit model scored on the
@@ -29,5 +29,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-16-daily-aair
-  check_verdict: pending
+  check_verdict: fail
+  checked_by: 2026-11-16-daily-aair-check
   options_only: not_obvious

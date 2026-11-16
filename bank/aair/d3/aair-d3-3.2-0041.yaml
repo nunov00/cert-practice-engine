@@ -1,6 +1,6 @@
 id: aair-d3-3.2-0041
 subdomain: '3.2'
-difficulty: hard
+difficulty: medium
 stem: An insurer's claims system decides each claim, and its AI chatbot tells customers the outcome. Regulation
   requires each rejection to tell the customer of their right to complain to an ombudsman. The chatbot leaves this
   out in about one rejection in 500. The assessment rates the risk low and within appetite, and the owner proposes
@@ -23,11 +23,12 @@ explanation:
       at a lower level.
     D: Sampling with follow-up repairs some misses after the fact, but a sample cannot find them all, and the customers
       have already received rejections that break the rule.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-16-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-16-daily-aair-check
   options_only: not_obvious
