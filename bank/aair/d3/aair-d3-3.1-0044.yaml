@@ -1,0 +1,31 @@
+id: aair-d3-3.1-0044
+subdomain: '3.1'
+difficulty: hard
+stem: A software firm's AI meeting assistant joins video calls and, when each call ends, emails a summary with action
+  items to everyone on the invitation. Account managers often invite a client to the opening part of a call, then
+  stay on to talk with colleagues about the client's account. Which risk scenario should the assessment MOST include?
+options:
+  A: Statements in the summary are attributed to the wrong people on the call
+  B: Recordings and transcripts are kept by the vendor longer than the contract allows
+  C: Clients receive summaries that list commitments nobody made on the call
+  D: Clients receive summaries that include the firm's internal account discussion
+answer: D
+explanation:
+  why_correct: The assistant summarises the whole call and sends the summary to every invitee, and a common working
+    pattern puts an internal discussion about the client in the same call after the client has left. In the normal
+    running of the process, the client is likely to receive the firm's internal views, such as pricing positions
+    or concerns about the account, so this frequent, high-impact disclosure must be assessed.
+  why_not:
+    A: Misattribution is a known summarisation error, but it is occasional and attendees usually notice it. It does
+      not follow from the working pattern described.
+    B: Vendor retention is a data protection point to check in the contract, but nothing in the scenario points
+      to it, and it is not the exposure this meeting pattern creates.
+    C: Invented commitments sent to a client would be harmful, and generated summaries can contain them, but they
+      are occasional errors. The internal discussion reaches the client through the process working as designed.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aair
+  check_verdict: pending

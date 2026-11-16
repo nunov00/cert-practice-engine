@@ -1,0 +1,32 @@
+id: aair-d1-1.2-0043
+subdomain: '1.2'
+difficulty: hard
+stem: A lender's data office gives three months' notice of each change to a shared data field, emailing the owners
+  of the systems its data catalogue lists as using that field. Models built by the data science team read fields
+  directly from the warehouse. After the income field changed from gross to net, the credit model scored on the
+  old meaning for two months. Which change BEST aligns these processes?
+options:
+  A: Record each production model's input fields in the data catalogue
+  B: Alert model owners when an input field's distribution moves beyond set limits
+  C: Have the model risk team review each data change notice for affected models
+  D: Revalidate each production model against current warehouse data each quarter
+answer: A
+explanation:
+  why_correct: The data office already gives long notice through a working process; the credit model was missed
+    only because the catalogue did not show it as a user of the field. Recording each model's input fields there
+    brings models into the existing change process, so their owners hear of a change in time to adapt or revalidate
+    before it takes effect.
+  why_not:
+    B: Drift alerts are a useful detective control, but they fire only after the changed data reaches the model,
+      wasting the three months' notice, and a change of meaning may shift the distribution too little to trip them.
+    C: Central review of every notice adds a manual step by a team that does not know which fields each model reads,
+      so it depends on the same missing dependency information.
+    D: Periodic revalidation could find the problem eventually, but a quarterly cycle can leave the model on the
+      wrong basis for months, and it makes no use of the notice the data office already gives.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aair
+  check_verdict: pending

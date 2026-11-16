@@ -1,0 +1,31 @@
+id: aair-d3-3.3-0043
+subdomain: '3.3'
+difficulty: hard
+stem: An insurer's fine-tuned pricing model is a key competitive asset. Its weight files sit in a storage bucket
+  that 40 data scientists can read, as they evaluate and retrain the model most weeks. The risk team's concern is
+  an employee copying the weights before leaving to join a rival. Which control BEST addresses this?
+options:
+  A: Encrypt the weight files at rest with keys held by the security team
+  B: Log each read of the weight files and review the logs each month
+  C: Give data scientists the weights only in a workspace that blocks export
+  D: Embed a watermark in the weights so that a leaked copy can be traced
+answer: C
+explanation:
+  why_correct: The threat comes from people who are allowed to read the weights, so controls that only stop outsiders
+    or record events afterwards leave it open. Giving access only inside a controlled workspace that blocks downloads
+    and outbound transfers keeps the weekly evaluation and retraining possible while preventing the copy the risk
+    team fears.
+  why_not:
+    A: Encryption at rest protects against stolen storage or outside access, but authorised readers receive decrypted
+      files, so an employee with access can still copy them.
+    B: Read logs give evidence and may deter, but a monthly review finds the copy after it has left, when the competitive
+      value is already lost.
+    D: A watermark may help prove that a leaked copy came from the insurer, which supports legal action, but it
+      does not stop the copy or restore the advantage.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aair
+  check_verdict: pending

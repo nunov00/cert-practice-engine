@@ -1,0 +1,31 @@
+id: aaism-d1-1.3-0031
+subdomain: '1.3'
+difficulty: hard
+stem: A bank's staff assistant answers from a document library. When a document is indexed, its label is copied to its chunks,
+  to answers cached from it and to the training set of a weekly fine-tuned adapter. After a merger project's documents were
+  relabelled Restricted, staff outside the deal still got answers drawing on them. Most documents keep one label for life.
+  Which control BEST prevents this?
+options:
+  A: Push each label change through lineage to the assets derived from it
+  B: Re-index the library each night so chunks pick up current labels
+  C: Label each derived asset Restricted until a reviewer clears it
+  D: Have project teams list derived assets when they request relabelling
+answer: A
+explanation:
+  why_correct: The label was right at the source but stale in the copies made from it. Using lineage to carry each label change
+    to the chunks, cached answers and adapter built from the document re-applies the restriction wherever the content now
+    lives, and leaves the many documents whose label never changes alone.
+  why_not:
+    B: Nightly re-indexing refreshes the chunks, but cached answers and the adapter trained on the documents would keep serving
+      the content, and the chunks would lag by up to a day.
+    C: Restricting derived assets until review would close the gap, but most documents never change label, so it would block
+      the assistant for routine content and build a large review queue.
+    D: Project teams know their documents but not the caches and training sets built from them, so the list would be incomplete
+      and depend on each request.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aaism
+  check_verdict: pending

@@ -1,0 +1,31 @@
+id: cissp-d7-7.15-0005
+subdomain: '7.15'
+difficulty: hard
+stem: Night staff at a pharmaceutical distributor's warehouse open a vault of controlled drugs with a badge and PIN. After
+  an armed robbery at another site, the company's policy is that staff comply with armed demands and that nothing should
+  prolong or escalate an encounter. Police can reach the site within ten minutes of an alert. Which control BEST protects
+  staff and stock?
+options:
+  A: A time-delay lock that holds the vault shut for 15 minutes after a valid entry
+  B: A panic button at each workstation that sounds a loud alarm across the whole site
+  C: Night vault opening only once the monitoring centre has verified the staff on camera
+  D: A duress PIN that opens the vault as normal and silently alerts the monitoring centre
+answer: D
+explanation:
+  why_correct: Under this policy, staff should hand over what armed robbers demand without delay or confrontation. A duress
+    PIN lets them do exactly that while raising a silent alert, so nothing visible changes for the robbers, staff are not
+    put at greater risk, and police are on their way within minutes to pursue the robbers and recover the stock.
+  why_not:
+    A: Time-delay locks are a proven deterrent for safes, but holding staff with armed robbers for 15 minutes is the kind of
+      prolonged encounter the policy rules out.
+    B: An alarm brings help, but a siren sounding around armed intruders can startle them into violence, which escalates
+      the encounter the policy tries to keep calm.
+    C: Remote verification stops a lone insider opening the vault, but under duress it adds a visible delay and a chance of
+      refusal while staff stand with armed robbers, and robbers can stay out of the camera's view.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-cissp
+  check_verdict: pending

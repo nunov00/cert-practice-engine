@@ -1,0 +1,32 @@
+id: aair-d1-1.6-0036
+subdomain: '1.6'
+difficulty: hard
+stem: A vendor's screening model ranks applicants for store jobs at most of the large retailers in one country.
+  Each retailer's bias tests across protected groups show no significant gaps. Job seekers' advocates report that
+  some applicants with the experience the jobs ask for are turned down by every retailer they apply to, often within
+  minutes. What is the MOST significant ethical concern?
+options:
+  A: Applicants in a group the bias tests do not cover may be rated unfairly
+  B: Rejected applicants may not learn why they were turned down or how to improve
+  C: The same applicants may be shut out of a whole job market by one model
+  D: Retailers may rely on the vendor's tests instead of judging their own use
+answer: C
+explanation:
+  why_correct: When one model decides for most employers in a market, its errors stop being independent. A person
+    it rates poorly is turned down everywhere at once, instead of meeting different judgments from different employers.
+    Qualified people refused by every retailer is the sign of this homogenised outcome, a societal harm that per-employer
+    bias tests by group cannot show, so it is the concern to raise with the retailers and the vendor.
+  why_not:
+    A: An untested group is a real gap, but nothing reported points to a shared group trait. Rejection by every
+      retailer follows from many employers using one model, and it would remain even if every group passed its tests.
+    B: Reasons and a route to improve matter and could help these applicants, but their absence is not what makes
+      them fail everywhere. It addresses the experience of rejection, not the market-wide exclusion.
+    D: Over-reliance on vendor testing is a governance weakness at each retailer, but more local testing of the
+      same kind would still assess each use on its own and miss the combined effect across the market.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aair
+  check_verdict: pending

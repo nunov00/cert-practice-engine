@@ -1,0 +1,33 @@
+id: aair-d1-1.5-0033
+subdomain: '1.5'
+difficulty: hard
+stem: A maker of robotic lawn mowers updates the mowers' obstacle-detection model over the air each month. Product
+  liability law in its markets treats software as part of the product, covers defects introduced by updates, and
+  lets courts presume a defect when a maker does not disclose relevant technical evidence. What should the risk
+  practitioner recommend?
+options:
+  A: Exclude liability for defects caused by updates in the mower's terms of sale
+  B: Let owners choose whether to install each obstacle-detection update
+  C: Run each update through a safety regression test suite before release
+  D: Keep each released model version with its test results and release decision
+answer: D
+explanation:
+  why_correct: Under this law, missing evidence can itself become a finding of defect. Keeping each released model
+    version together with how it was tested and why it was released lets the maker show exactly what was running
+    on a mower at the time of an accident and answer the presumption. The same records support recalls and root-cause
+    work.
+  why_not:
+    A: Liability to people injured by a defective product generally cannot be excluded by contract, and those hurt
+      by a mower, such as neighbours or children, are not party to the terms of sale.
+    B: Owner choice does not remove the maker's liability for the updates it ships, and safety updates left uninstalled
+      can create exposure of their own. It also leaves the evidence problem untouched.
+    C: Regression testing lowers the chance of a defect and is good practice, but unless each shipped version and
+      its results are kept and linked, the maker still cannot produce the evidence a court will presume against
+      it.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aair
+  check_verdict: pending

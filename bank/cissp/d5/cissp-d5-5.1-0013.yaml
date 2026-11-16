@@ -1,0 +1,32 @@
+id: cissp-d5-5.1-0013
+subdomain: '5.1'
+difficulty: hard
+stem: About 400 staff and contractors hold standing badge access to a company's data hall, though only about 20 enter it
+  in a typical month, and mostly different people each month. Nearly all visits are planned work under approved change
+  tickets. At the last quarterly access review, managers confirmed all 400 holders as still needed. Which change BEST
+  reduces this exposure?
+options:
+  A: Quarterly reviews in which security asks each manager to justify each holder's access
+  B: Access granted for the window of each approved change ticket, ending when it closes
+  C: A biometric reader on the data hall door, used alongside the existing badge reader
+  D: Removal of access from each holder who has not entered the data hall for 90 days
+answer: B
+explanation:
+  why_correct: The exposure is hundreds of people able to enter at any time when only a few need to on a given day. Visits
+    are planned under approved change tickets, so tying access to each ticket's window grants it only to the named people,
+    only while the work runs, and removes it on its own afterwards. A small standing list for the on-call team can cover
+    the rare unplanned visit.
+  why_not:
+    A: Pressing managers harder may trim the list, but managers just confirmed all 400, and a review can only decide who
+      keeps standing access, which most holders need for a few hours a year at most.
+    C: A biometric check ensures that the person at the door is the badge holder, but it leaves all 400 holders able to
+      enter at any time, which is the exposure here.
+    D: Removing unused access is a sound clean-up, but because different people visit each month, it would still leave
+      dozens with standing access while cutting off people who will soon need it again.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-cissp
+  check_verdict: pending

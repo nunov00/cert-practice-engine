@@ -1,0 +1,30 @@
+id: aair-d2-2.2-0033
+subdomain: '2.2'
+difficulty: hard
+stem: A marketplace's model flags listings of counterfeit goods for removal. It was validated on a random holdout
+  of last year's labelled listings, where it caught most counterfeits. Sellers whose listings are removed usually
+  relist within hours with reworded text and edited photos. Which further test is MOST important before launch?
+options:
+  A: Recall on a time-based holdout of listings from the most recent quarter
+  B: Recall broken down by product category and by seller's country
+  C: Recall on a larger random holdout from the same labelled listings
+  D: Recall on listings testers alter to evade the model as sellers would
+answer: D
+explanation:
+  why_correct: Last year's listings show how sellers behaved against the old controls. Once this model removes listings,
+    sellers will adapt to it directly, rewording and editing until they pass. Testing recall on listings deliberately
+    altered in the ways sellers alter them estimates performance against that adaptive behaviour, which no historical
+    holdout contains.
+  why_not:
+    A: A recent holdout tests for drift over time, which matters, but it still holds only listings written before
+      this model existed, not listings changed to get past it.
+    B: Segment results can reveal weak categories or regions, but each segment comes from the same historical listings
+      and says nothing about evasion.
+    C: A larger holdout narrows the uncertainty of the same estimate; it does not change what the estimate measures.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aair
+  check_verdict: pending

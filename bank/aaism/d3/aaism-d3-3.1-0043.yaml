@@ -1,0 +1,30 @@
+id: aaism-d3-3.1-0043
+subdomain: '3.1'
+difficulty: hard
+stem: A SaaS firm's analytics assistant writes SQL for each client's users over one set of warehouse tables shared by all
+  clients. The application appends a filter on the client's ID to each generated query. Testers got the model to write queries
+  using unions and subqueries that read other clients' rows. Clients rely on asking free-form questions. Which design change
+  BEST closes this?
+options:
+  A: A query parser that rejects unions, subqueries and comments
+  B: Row-level security in the warehouse, bound to the session's client
+  C: A library of approved query templates that the model fills in
+  D: A second model that reviews each query for cross-client data access
+answer: B
+explanation:
+  why_correct: The filter was added to text the model controls, so the model could write around it. Row-level security enforced
+    by the warehouse for the session's client applies to each query whatever its form, so free-form questions keep working
+    and other clients' rows stay out of reach.
+  why_not:
+    A: Blocking these constructs stops the tested queries, but SQL offers other ways around a filter added as text, and many
+      legitimate analytical questions need subqueries.
+    C: Templates would contain the queries, but they would end the free-form questions that clients rely on.
+    D: A reviewing model can miss a disguised query, and it can be steered by the same kind of crafted input that steered
+      the first model.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aaism
+  check_verdict: pending

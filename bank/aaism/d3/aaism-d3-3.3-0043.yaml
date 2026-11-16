@@ -1,0 +1,31 @@
+id: aaism-d3-3.3-0043
+subdomain: '3.3'
+difficulty: hard
+stem: A retailer's data lake feeds model training, billing analytics and support tools, storing many customers' records together
+  in shared columnar files. Erasure requests are carried out in the lake within a month. After a storage failure, the team
+  restored the lake from a backup taken ten weeks earlier, and records erased since then appeared in a newly trained model.
+  Which control BEST prevents a repeat?
+options:
+  A: Check each training set against the current erasure list before training
+  B: Encrypt each customer's records under a key destroyed on erasure
+  C: Re-apply a log of completed erasures after a restore, before use resumes
+  D: Keep backups for 30 days at most so that restored copies are more recent
+answer: C
+explanation:
+  why_correct: The restore brought back records erased after the backup was taken, in each system the lake feeds. Keeping
+    a log of completed erasures and re-applying it to restored data before anything reads it removes those records from training,
+    billing analytics and support tools alike.
+  why_not:
+    A: Checking training sets would keep the erased records out of models, but the restored lake also feeds billing analytics
+      and support tools, where they would reappear.
+    B: Per-customer keys would make erasure survive restores, but the lake stores many customers' records together in shared
+      files, so this would need a costly redesign of its storage.
+    D: Shorter backup retention narrows the gap but leaves it, since a restore can still bring back up to 30 days of erasures,
+      and backups may be needed for longer for other reasons.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aaism
+  check_verdict: pending

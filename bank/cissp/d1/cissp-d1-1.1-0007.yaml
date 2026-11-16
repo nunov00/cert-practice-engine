@@ -1,0 +1,33 @@
+id: cissp-d1-1.1-0007
+subdomain: '1.1'
+difficulty: hard
+stem: A certified security manager at a retailer receives, by mistake, a SaaS vendor's penetration test report written for
+  another of the vendor's customers. Before she realises what it is, she reads its summary, which describes a critical,
+  unfixed flaw in the vendor's shared platform. Her company runs its payroll on that platform. What should she do?
+options:
+  A: Delete the report, tell the vendor, and ask it whether the flaw affects her company's payroll service
+  B: Delete the report, tell the vendor, and keep what she read to herself as the other customer's information
+  C: Keep the report for her company's vendor risk review, and tell the vendor that it was misdirected
+  D: Forward the report to her company's legal team, and ask them to decide how it should be handled
+answer: A
+explanation:
+  why_correct: The code of ethics asks her to act honourably and to give diligent service to her principal. The report
+    belongs to another customer, so she should not keep, use or spread it, and the vendor needs to know it was misdirected.
+    But she cannot unlearn that the platform holding her company's payroll has a critical flaw. Asking the vendor, through
+    her own company's relationship, whether its service is affected protects her employer without revealing the other
+    customer or using its document.
+  why_not:
+    B: Saying nothing further looks like the most discreet course, but it leaves her own employer exposed to a critical
+      flaw she knows about. Honouring the other customer's confidentiality does not require her to neglect the duty she
+      owes her own principal.
+    C: The vendor risk review is a legitimate use of vendor assurance, but this report was never given to her company. Keeping
+      it to use in that review takes another customer's confidential document for her company's benefit.
+    D: Asking legal counsel suits a case whose handling is unclear, but forwarding the report spreads another customer's
+      confidential document further inside her company, and the right course here is plain enough to take herself.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-cissp
+  check_verdict: pending

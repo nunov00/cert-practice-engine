@@ -1,0 +1,29 @@
+id: aaism-d2-2.2-0065
+subdomain: '2.2'
+difficulty: hard
+stem: Staff at an engineering firm can share any chat with its AI assistant through a link that anyone holding it can open.
+  Most links go to colleagues in tickets and team channels, often about client design work. Some staff have pasted links into
+  public vendor forums when asking for help, and search engines indexed several. Which control BEST addresses this weakness?
+options:
+  A: Mark shared pages no-index and expire each link after 30 days
+  B: Scan each chat for sensitive data before a link can be created
+  C: Open shared links only to users signed in with firm accounts
+  D: Disable link sharing and let staff export chats as files instead
+answer: C
+explanation:
+  why_correct: The weakness is that a link works for whoever holds it. Requiring a firm sign-in keeps sharing with colleagues
+    working as before, while a link pasted into a public forum or picked up by a search engine shows nothing to outsiders.
+  why_not:
+    A: Keeping pages out of search results and expiring links narrows the exposure, but anyone reading the forum post can
+      still open the link for a month.
+    B: Scanning may catch some sensitive chats, but chats about client design work are shared with colleagues as part of normal
+      work, so blocking them gets in the way, and design detail in free text is easy to miss.
+    D: Exported files can still be attached to forum posts, and staff lose the easy sharing they use with colleagues, which
+      may push them to less controlled ways of sharing.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aaism
+  check_verdict: pending

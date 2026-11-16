@@ -1,0 +1,32 @@
+id: cissp-d8-8.1-0008
+subdomain: '8.1'
+difficulty: hard
+stem: A retailer's mobile app ships weekly, and each release passes functional tests, automated security scans and a
+  quarterly penetration test. This year customers drained loyalty points by cancelling orders after points were credited,
+  and stacked single-use discount codes across parallel sessions. Both features behaved as their user stories specified.
+  Which change BEST addresses this in the SDLC?
+options:
+  A: Abuse cases written with each user story, and tests that check the feature resists them
+  B: A penetration test of each weekly release, focused on the features that the release changes
+  C: Fraud monitoring in production that flags unusual patterns of points and discounts
+  D: A business-logic module added to the automated security scans run on each build
+answer: A
+explanation:
+  why_correct: Both losses came from features that did exactly what their stories asked, so the flaw lay in the
+    requirements, which never said how the features could be misused. Writing abuse cases alongside each story, such as
+    cancelling after a reward or reusing a code in parallel, puts those limits into the requirement and gives testers
+    something concrete to verify every week.
+  why_not:
+    B: Testers find business-logic flaws more often than tools do, but a test per weekly release is costly, and testers
+      still judge against stories that never stated the limits the features needed.
+    C: Fraud monitoring catches abuse after it starts and limits the loss, but it treats the symptom in production rather
+      than stopping the flaw from being built.
+    D: Scanners can probe some logic patterns, but they cannot know a retailer's business rules, such as when points should
+      be reversed, unless those rules have first been written down.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-cissp
+  check_verdict: pending

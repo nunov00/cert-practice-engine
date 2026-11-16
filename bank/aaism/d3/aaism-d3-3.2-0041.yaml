@@ -1,0 +1,31 @@
+id: aaism-d3-3.2-0041
+subdomain: '3.2'
+difficulty: hard
+stem: A retailer's shopping assistant pins one hosted model version. Fortnightly releases change only its system prompt, retrieval
+  sources and tool settings. Each release must pass a safety suite that sends attack prompts straight to the model's API,
+  and all have passed. Last month a release with a reworded system prompt leaked discount codes in production. Which change
+  to the release process BEST addresses this?
+options:
+  A: Have security review each system prompt change before release
+  B: Add the leaked-code attack to the suite that runs against the model API
+  C: Release to 5% of users first, rolling back on leak alerts
+  D: Run the attack suite through the assembled assistant for each release
+answer: D
+explanation:
+  why_correct: Releases change the prompt, retrieval and tools, but the suite tests the bare model, which does not change,
+    so it cannot fail. Sending the attacks through the assistant as it will be released, with its prompt, sources and tools,
+    tests what each release actually changes.
+  why_not:
+    A: A review can catch obvious prompt mistakes, but reviewers cannot predict how a reworded prompt changes model behaviour,
+      and retrieval and tool changes would still go untested.
+    B: Adding the attack helps regression testing, but run against the bare model it would pass, since the leak depended on
+      the released prompt.
+    C: A staged release limits how many users are exposed, but leaks still reach real users before the alert, when testing
+      before release could catch them.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aaism
+  check_verdict: pending

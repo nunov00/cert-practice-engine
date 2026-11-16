@@ -1,0 +1,30 @@
+id: aaism-d1-1.4-0038
+subdomain: '1.4'
+difficulty: hard
+stem: An AI security program revises its AI security standard each quarter. Most revisions add hardening detail, but a few
+  respond to attack techniques already used against peers. Projects take six to twelve months from design approval to launch,
+  and teams say launch reviews against the newest version force late redesigns. Which review rule should the program adopt?
+options:
+  A: Review each project against the version in force at its launch
+  B: Apply each new version to project reviews after a six-month transition
+  C: Let architects waive new-version items found late in a project
+  D: Review against the version at design approval, plus urgent revisions
+answer: D
+explanation:
+  why_correct: Fixing the baseline at design approval lets teams build to a known target and removes late redesigns caused
+    by routine hardening detail. Carrying forward only the revisions marked urgent, those that answer techniques already in
+    use, keeps projects from launching with a known, actively exploited weakness.
+  why_not:
+    A: Reviewing against the newest version is the current practice. It catches each revision, but forces late redesign for
+      routine detail and pushes teams to resist or work around the review.
+    B: A transition period gives teams notice, but projects take up to a year, so many would still meet new versions late,
+      and an urgent fix for a technique already in use would wait six months.
+    C: Waivers relieve late redesigns case by case, but they turn each late item into a negotiation under deadline pressure,
+      with no rule that separates routine detail from urgent fixes.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-aaism
+  check_verdict: pending

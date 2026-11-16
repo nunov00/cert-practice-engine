@@ -1,0 +1,32 @@
+id: cissp-d1-1.3-0006
+subdomain: '1.3'
+difficulty: hard
+stem: A software company runs 30 autonomous product teams, each led by a product owner who sets its backlog. Some products
+  process card payments, while others serve only public content. Fixes raised by the CISO's team keep slipping behind
+  feature work, and after each breach the board asks the CISO why it happened. Which governance change BEST addresses
+  this?
+options:
+  A: Reserve a fixed share of each team's sprint capacity for the fixes that the CISO's team has raised
+  B: Give the CISO's team authority to stop a product's release that still has open high-risk fixes
+  C: Make each product owner accountable for the product's security risk, within the CISO's standards
+  D: Embed a security engineer in each product team, reporting to the CISO, to drive its fixes
+answer: C
+explanation:
+  why_correct: The people who decide what each team works on are the product owners, yet the board holds the CISO to account
+    for the result. Accountability for risk belongs with whoever makes the tradeoffs. Making each product owner answerable
+    for the product's security risk, against standards the CISO sets and monitors, puts the decision and the accountability
+    in the same place, and lets a payments product weigh its fixes differently from a public content site.
+  why_not:
+    A: A reserved share guarantees some security work, but the same quota for a payments product and a public content site
+      misallocates effort, and the product owners still do not own the risk they are trading off.
+    B: Release authority is a strong lever, but it puts the CISO's team in the delivery path of 30 teams and keeps the CISO
+      accountable for decisions the product owners make, which invites conflict and workarounds.
+    D: Embedded engineers add skill and capacity, but they do not set the backlog, so fixes can still lose to feature work,
+      and the board would still be asking the CISO.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-cissp
+  check_verdict: pending

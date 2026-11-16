@@ -1,0 +1,32 @@
+id: cissp-d3-3.2-0007
+subdomain: '3.2'
+difficulty: hard
+stem: A government cloud host runs Secret and Unclassified virtual machines side by side on the same processor cores.
+  Its hypervisor enforces Bell-LaPadula rules on every file, message and shared memory page. Testers showed that an
+  Unclassified VM could tell when Secret jobs were running by timing its own memory accesses. Which change BEST addresses
+  this?
+options:
+  A: Encrypt each Secret VM's memory with its own key, held in the processor
+  B: Run each level on its own processor cores, with no cache shared across levels
+  C: Coarsen the clocks given to Unclassified VMs so fine timings cannot be measured
+  D: Extend the hypervisor's write-down checks to cover the processor's cache lines
+answer: B
+explanation:
+  why_correct: Bell-LaPadula controls reads and writes of labelled objects, and it is already enforced, yet information still
+    flows from Secret to Unclassified through a timing channel in the shared cache. The goal that covers this is
+    noninterference, where activity at a high level has no effect that a lower level can observe. Giving each level its own
+    cores and cache removes the shared resource, so Secret jobs no longer change what Unclassified VMs can measure.
+  why_not:
+    A: Memory encryption protects the contents of Secret memory, but the Unclassified VM reads none of it. It measures its
+      own access times, which encryption leaves unchanged.
+    C: Coarser clocks are a recognised way to cut the bandwidth of timing channels, but a VM can build its own timer, for
+      example from a counting loop, so the channel shrinks rather than closes.
+    D: Write-down checks mediate operations on labelled objects, but the Secret VM writes nothing to a lower object. The leak
+      is contention for a shared resource, which no access check sees.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-16-daily-cissp
+  check_verdict: pending
