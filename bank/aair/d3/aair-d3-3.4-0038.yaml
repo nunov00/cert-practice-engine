@@ -1,0 +1,36 @@
+id: aair-d3-3.4-0038
+subdomain: '3.4'
+difficulty: medium
+stem: A retailer's AI risk dashboard reports the share of AI systems in its inventory that have a current risk
+  assessment, and it has stood at 100% for a year. Systems enter the inventory when a team registers a new AI
+  project. Most of the retailer's new AI use now comes from features that vendors add, through routine updates,
+  to software it already licenses. Which change to the indicator BEST serves the risk committee?
+options:
+  A: Measure against AI services detected in outbound network traffic
+  B: Measure against AI declared in new procurement contracts
+  C: Measure against AI features listed in vendors' update notes
+  D: Measure against AI use that department heads attest to quarterly
+answer: C
+explanation:
+  why_correct: The indicator's denominator holds only AI that teams register as projects, so most new AI never
+    enters it and the 100% figure says little. The new AI arrives as features in updates to software the retailer
+    already licenses, and vendors' update notes are where those additions are recorded. Counting against them
+    brings the unregistered features into the denominator and shows the real coverage gap.
+  why_not:
+    A: Network monitoring is a good way to find staff using unapproved AI services. Features added to licensed
+      software usually run inside the vendor's existing service, so their traffic goes to the same endpoints as
+      before and does not show up as new AI use.
+    B: Procurement records catch AI bought under new contracts, which is a real route for new AI. These features
+      arrive through routine updates under existing licences, so no new contract is signed and none would be counted.
+    D: Attestations widen the count beyond registered projects, but they depend on department heads knowing that
+      a vendor update added AI, which is the same blind spot. The result would be self-reported coverage, not a
+      count from a record of what was added.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-aair-check
+  options_only: not_obvious

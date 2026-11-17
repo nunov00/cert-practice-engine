@@ -1,0 +1,37 @@
+id: aair-d1-1.5-0034
+subdomain: '1.5'
+difficulty: hard
+stem: A law in a retailer's market requires AI-generated images that it publishes to carry a machine-readable marking.
+  Its image generator writes the marking into each file's metadata. Designers often crop generated images and combine
+  them with photos, and the website's content system re-saves each uploaded image in several sizes. Which measure
+  BEST meets this requirement?
+options:
+  A: Embed a pixel watermark at generation that survives re-saving
+  B: Configure the editing tools and content system to keep metadata
+  C: Scan the live website daily and re-mark images found unmarked
+  D: Apply the marking to each AI image file as the site publishes it
+answer: D
+explanation:
+  why_correct: The duty attaches to the images as published, and the files the site serves are not the files the
+    generator wrote. Cropping and combining create new files, and the content system makes new copies in several
+    sizes. Marking each file at the point of publication, with the content system told which uploads contain AI
+    content, puts the marking on exactly what the law covers, whatever happened to the image on the way.
+  why_not:
+    A: A robust pixel watermark is a real machine-readable marking and survives plain re-saving and resizing. But
+      designers crop the images and combine them with photos, which can cut away or dilute much of the watermarked
+      area, and nothing checks that a detectable mark remains in the published file.
+    B: Keeping metadata through the tools is a sensible step, but when a designer combines a generated image with
+      a photo, the new file takes its metadata from the composition, not from the generated part. The marking can
+      be lost even with every tool set to keep metadata.
+    C: Scanning the live site finds and fixes unmarked images, which is useful as a check. As the only measure,
+      it lets unmarked AI images go live and stay published for up to a day, while the law requires the marking on
+      the images as they are published.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-aair-check
+  options_only: not_obvious

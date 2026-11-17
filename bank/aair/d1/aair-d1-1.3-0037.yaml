@@ -1,0 +1,36 @@
+id: aair-d1-1.3-0037
+subdomain: '1.3'
+difficulty: medium
+stem: A logistics firm's AI policy makes each model's business owner accountable for its risk, and most units named
+  the analysts who run their models day to day as owners. When monitoring showed a routing model breaching its tolerance,
+  its owner raised the breach twice with her unit's managers, but the model stayed in use for two months while they
+  debated the cost of a fix. Which change BEST addresses this?
+options:
+  A: Give the second-line risk team authority to suspend models in breach
+  B: Require owners to escalate breaches unresolved after 30 days to the risk committee
+  C: Require owners to hold authority over the model's use and its budget
+  D: Train owners to present model fixes in terms of their business impact
+answer: C
+explanation:
+  why_correct: 'Accountability works only when the accountable person can act on it: restrict or stop the model
+    and fund the fix. Here the named owner could do neither, and the managers who could decide were not accountable,
+    so a known breach turned into a two-month debate. Placing ownership with someone who holds decision rights over
+    the model''s use and budget aligns accountability with authority, so a breach leads to a decision.'
+  why_not:
+    A: A second-line power to suspend can be a useful backstop, but it moves a first-line decision to the function
+      meant to challenge it, and it does nothing to get the fix funded. The owner would still lack authority over
+      her own model.
+    B: Escalation would bring breaches to senior attention sooner, but it works around the owner instead of fixing
+      who owns the risk. Every breach would still need a committee to make a decision the owner should be able to
+      make.
+    D: A better business case might persuade managers faster, but the owner would still depend on others to act.
+      The delay came from where authority sits, not from how the case was presented.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-17-daily-aair-check

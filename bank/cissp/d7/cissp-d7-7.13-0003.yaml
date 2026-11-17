@@ -1,0 +1,34 @@
+id: cissp-d7-7.13-0003
+subdomain: '7.13'
+difficulty: hard
+stem: In this year's continuity exercise, finance's recovery steps described restoring the ERP system's on-premises servers,
+  eight months after the ERP moved to a SaaS provider, and IT's recovery runbook for the ERP was just as out of date. Last
+  year's exercise found a similar gap after a small change moved the call centre's phone numbers to a new carrier. As the
+  security member of the planning group, which change should you push for?
+options:
+  A: Make IT own the technical recovery steps, with business plans referring to IT's runbooks
+  B: Add a review of affected continuity plans to the closure checklist for system projects
+  C: Add a check of the affected continuity plans to the change approval process
+  D: Have the planning group reconcile each plan against the IT asset inventory each quarter
+answer: C
+explanation:
+  why_correct: Both gaps came from changes that no one carried through to the plans, so the fix belongs where changes are
+    approved. If change approval asks which continuity plans and runbooks a change affects, and makes updating them part of
+    the change, the plans stay current at the moment they would go out of date. It covers large moves like the ERP and small
+    changes like the phone numbers alike.
+  why_not:
+    A: Separating business steps from technical runbooks is a sound plan structure, but IT's own ERP runbook was just as out
+      of date, so moving ownership to IT would not have kept the steps current.
+    B: A closure check would catch large projects like the ERP move, but the phone gap came from a small change that was never
+      run as a project, so it would slip through.
+    D: Regular reconciliation finds drift, but only after it happens, and it depends on the inventory reflecting the change.
+      It treats the symptom while the plans keep going out of date with each change.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-cissp-check
+  options_only: not_obvious

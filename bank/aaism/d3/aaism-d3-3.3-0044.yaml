@@ -1,0 +1,32 @@
+id: aaism-d3-3.3-0044
+subdomain: '3.3'
+difficulty: medium
+stem: A bank's speech model retrains each month on recorded calls. To remove poisoned data, its pipeline drops recordings that
+  sit far from the rest. After the last retrain, errors for customers with strong regional accents doubled, and most dropped
+  recordings proved to be genuine calls from those regions. Thousands are dropped each month. Which change BEST keeps the
+  poisoning protection while fixing this?
+options:
+  A: Widen the distance threshold so fewer recordings are dropped
+  B: Compare each recording with others from its region before dropping it
+  C: Have reviewers restore genuine recordings from those dropped each month
+  D: Give the remaining regional recordings more weight in training
+answer: B
+explanation:
+  why_correct: The filter judges each recording against all calls, so genuine but less common voices look like outliers.
+    Judging each one against calls from the same region keeps accented calls that fit their own group, while poisoned
+    recordings that fit no genuine group are still dropped.
+  why_not:
+    A: A looser threshold keeps more accented calls but also lets more poisoned recordings through, for every region.
+    C: Review could recover genuine calls, but with thousands dropped each month it would be slow and uneven, and the filter
+      would keep discarding the same voices.
+    D: Weighting the few regional calls that survive amplifies a thin, skewed sample and still leaves most genuine regional
+      calls out of training.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-aaism-check
+  options_only: not_obvious
