@@ -1,0 +1,33 @@
+id: aaism-d2-2.2-0067
+subdomain: '2.2'
+difficulty: hard
+stem: A security vendor's API lets partners submit a photo and get a similarity score against an enrolled employee's face
+  template. Partners act only on whether the score clears the vendor's recommended threshold, and they send thousands of
+  legitimate checks an hour. Researchers showed that by adjusting a synthetic image again and again to raise the score, they
+  could rebuild a recognisable face of the enrolled person. Which control BEST addresses this?
+options:
+  A: Return only a match or no-match result instead of the score
+  B: Limit the number of checks each partner can send per hour
+  C: Encrypt the stored face templates under keys the vendor holds
+  D: Require a liveness check on each photo before it is scored
+answer: A
+explanation:
+  why_correct: The attack climbs the score, using each small change to learn whether the image has moved closer to the enrolled
+    face. Partners need only the pass or fail decision, so returning that alone removes the fine-grained feedback the
+    reconstruction depends on, at no cost to legitimate use.
+  why_not:
+    B: A rate limit slows the attack, but partners legitimately send thousands of checks an hour, so a limit they can live with
+      still allows a great many reconstruction queries.
+    C: Encryption protects templates at rest, but the attack never touches the stored templates; it learns the face through
+      the scores the API returns.
+    D: Liveness checks are aimed at spoofing in front of a camera. Synthetic images can be tuned to pass them, and a passing
+      image still receives the score that drives the reconstruction.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-aaism-check
+  options_only: not_obvious

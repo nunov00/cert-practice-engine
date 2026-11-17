@@ -1,0 +1,36 @@
+id: aair-d1-1.6-0037
+subdomain: '1.6'
+difficulty: easy
+stem: A health system's model picks patients for a chronic illness care programme by predicting each patient's
+  healthcare spending next year. Patients in one community have long had lower spending than others with the same
+  illnesses, because of access barriers such as distance and shift work, which differ widely between patients.
+  Testing shows predictions are equally accurate for each group. What should the risk practitioner recommend?
+options:
+  A: Predict spending, raised for that community by its average access gap
+  B: Predict each patient's number of clinic visits instead of spending
+  C: Predict a measure of illness burden from diagnoses and test results
+  D: Predict spending, with each patient's diagnoses added as inputs
+answer: C
+explanation:
+  why_correct: The bias sits in what the model is asked to predict. Spending reflects access to care as well as
+    illness, so a model that predicts spending accurately for each group still ranks patients who face barriers
+    as less sick than they are. Predicting illness burden from diagnoses and test results ranks patients by need,
+    which is what the programme is for, and removes the access effect from the target itself.
+  why_not:
+    A: Adjusting the target for the community's average gap is a real correction method, but the barriers differ
+      widely between patients. A flat uplift would over-rank patients in the community who face few barriers and
+      still under-rank those who face many.
+    B: Visit counts remove price differences from the target, but access barriers such as distance and shift work
+      cut visits as much as spending. The model would still learn that patients who face barriers need less care.
+    D: Adding diagnoses as inputs gives the model better information, but it is still trained to predict spending.
+      For two patients with the same diagnoses, it would still predict lower spending, and so lower priority, for
+      the one who faces access barriers.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-aair-check
+  options_only: obvious

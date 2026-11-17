@@ -1,0 +1,33 @@
+id: aaism-d1-1.3-0032
+subdomain: '1.3'
+difficulty: hard
+stem: A water utility fine-tuned an open-weight model on public engineering manuals. It now proposes chlorine dose changes,
+  which operators apply after a brief check. The model is classified Public because disclosing its weights or training data
+  would cause no harm, so it receives only the baseline controls for public assets. What is the GREATEST weakness in how this
+  asset was valued?
+options:
+  A: It was valued by the data science team, not the owner of the dosing process
+  B: It was not revalued when operators began acting on its proposals
+  C: It was classified before the base model's provenance was assessed
+  D: Its value reflected harm from disclosure only, not from tampering or error
+answer: D
+explanation:
+  why_correct: An asset's value includes the harm from losing its integrity or availability, not only from disclosure.
+    Nothing here is secret, but a tampered or faulty model could push wrong chlorine doses into a public water supply past a
+    brief human check. Valuing it on disclosure alone leaves a safety-critical asset with the controls of a public one.
+  why_not:
+    A: The process owner should own the asset, but an owner applying the same disclosure-only criteria would still reach a
+      Public label.
+    B: Revaluing an asset when its use changes is good practice, but a revaluation on the same disclosure-only criteria would
+      still give Public.
+    C: The base model's provenance matters to its integrity, but it is one input; the gap is that integrity harm was left out
+      of the valuation altogether.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-aaism-check
+  options_only: not_obvious

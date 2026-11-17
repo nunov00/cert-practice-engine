@@ -1,0 +1,35 @@
+id: cissp-d1-1.7-0006
+subdomain: '1.7'
+difficulty: hard
+stem: The business impact analysis for a building society's payment submissions found that a one-day outage would cost little
+  in lost fees, so the process owner proposed a 24-hour maximum tolerable downtime. The payment scheme's rules require members
+  to resume submissions within 4 hours of a disruption and allow the scheme to suspend members that fail. What should the
+  continuity manager do?
+options:
+  A: Set the process's downtime limit at 4 hours, citing the scheme rules in the analysis
+  B: Keep the 24-hour limit and set a 4-hour recovery objective for the payment system
+  C: Ask the scheme operator for a longer resumption window, citing the low financial impact
+  D: Cost a scheme suspension and set the limit where it outweighs the recovery spending
+answer: A
+explanation:
+  why_correct: An impact analysis weighs legal, regulatory and contractual impacts alongside financial ones, and the downtime
+    limit is set by whichever impact becomes intolerable first. The scheme's 4-hour rule is a binding obligation whose breach
+    can cut the society off from payments, so it sets the limit, and recording it as such drives the recovery strategy, staffing
+    and manual steps for the whole process.
+  why_not:
+    B: Recovery objectives must sit inside the downtime limit, and this pair would technically do so, but the analysis would
+      still state that the business can bear a day without submissions. Plans for staff, sites and manual steps are sized
+      from that figure, and the process would be ranked far below where the obligation puts it.
+    C: Seeking a variance is sometimes possible, but the rule applies to all members and the society cannot plan on a concession
+      it does not have. Meanwhile the process must meet the rule as written.
+    D: Costing impacts is normal in an analysis, but this treats a binding scheme rule as a price that might be worth paying.
+      Suspension would stop the society making payments at all, so the obligation fixes the limit rather than a cost comparison.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-cissp-check
+  options_only: not_obvious

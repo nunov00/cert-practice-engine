@@ -1,0 +1,35 @@
+id: cissp-d6-6.5-0011
+subdomain: '6.5'
+difficulty: hard
+stem: During an audit of user access, an internal auditor finds that the IT operations manager, the audit's main contact,
+  twice granted himself payroll access outside the change process and removed it days later. Both times fall in weeks when
+  unexplained payments were made. The CIO, who sponsors the audit, signs off the quarterly access reviews, which flagged neither
+  grant. What should the auditor do FIRST?
+options:
+  A: Ask the IT operations manager to explain both grants, as for any other exception
+  B: Report it to the CIO, as the audit's sponsor, before the manager learns of it
+  C: Trace the unexplained payments in payroll to confirm the link before reporting it
+  D: Report it to the chief audit executive, before the manager learns of it
+answer: D
+explanation:
+  why_correct: Self-granted access that lines up with unexplained payments is a possible fraud, not only a control finding.
+    The auditor should take it to the chief audit executive, who decides with those charged with governance and legal advisers
+    whether and how to investigate, and who keeps the matter away from anyone who may be involved. Keeping it from the manager
+    for now protects evidence he could otherwise alter.
+  why_not:
+    A: Asking the auditee to explain is the normal step for an exception, but here the contact is the person implicated, so
+      asking would warn him and give him a chance to cover his tracks.
+    B: Reporting to the sponsor is normal for findings, but the CIO is in the manager's line and signs off the access reviews
+      that missed both grants, so the CIO is not independent of the matter. Who else to inform is the chief audit executive's
+      decision.
+    C: Corroborating findings is good practice, but tracing payments turns the audit into an investigation without the authority,
+      legal advice or evidence handling one needs, and it delays escalation while the manager can still act.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-cissp-check
+  options_only: not_obvious

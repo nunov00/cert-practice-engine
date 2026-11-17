@@ -1,0 +1,32 @@
+id: cissp-d5-5.5-0008
+subdomain: '5.5'
+difficulty: hard
+stem: An identity review at a manufacturer finds 600 service accounts in the directory. Most have passwords unchanged for
+  years, about a third have no recorded owner, and some are used only by finance jobs that run at year end. What should the
+  identity manager do FIRST?
+options:
+  A: Disable accounts with no sign-in for 90 days, re-enabling any whose loss is reported
+  B: Assign an owner to each account, disabling those still unclaimed after a notice period
+  C: Rotate the service accounts' passwords and store the new ones in the company vault
+  D: Replace the accounts with platform-managed identities that rotate their own credentials
+answer: B
+explanation:
+  why_correct: Each later step, rotating a password, moving to a managed identity or removing an account, needs someone who
+    knows what depends on the account and can accept the change. Giving every account an owner first anchors its lifecycle,
+    and disabling the ones nobody claims after notice removes orphans with a warning period that suits rarely used accounts.
+  why_not:
+    A: Disabling inactive accounts is standard for user accounts, but the year-end finance jobs sit idle for months, so their
+      accounts would be disabled and the failure found only at year-end close, with no owner to call.
+    C: Rotation is needed, but without owners nobody knows where each password is configured, so rotating breaks services
+      and the orphaned accounts stay in place.
+    D: Managed identities are a sound target, but each move means changing the application that uses the account, which needs
+      an owner to plan and approve it, so it cannot come first.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-cissp-check
+  options_only: not_obvious

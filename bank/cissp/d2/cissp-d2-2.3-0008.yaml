@@ -1,0 +1,36 @@
+id: cissp-d2-2.3-0008
+subdomain: '2.3'
+difficulty: easy
+stem: A product microsite went offline when its domain name lapsed. An agency had registered it for marketing in the agency's
+  own registrar account, and renewal notices went to an account manager who has since left the agency. Restoring the site
+  took three weeks because only the agency could sign in to that account. The company holds about 60 domains, several registered
+  by teams the security office had not heard of. Which change BEST addresses this?
+options:
+  A: Bring every company domain into a company-held registrar account managed by IT, with renewal alerts to a shared mailbox
+  B: Have IT register new domains in a company-held account, and move existing ones as each comes up for renewal
+  C: Make the security office the registrant and owner of all company domains, in a company-held account
+  D: Bring every company domain into a company-held registrar account, each with a named business owner
+answer: D
+explanation:
+  why_correct: Domain names are intangible assets, and two things failed here. The company did not control the account its
+    domain sat in, and no one in the business was accountable for it, so renewal depended on an outsider's staff. Finding
+    every company domain, bringing each into a company-held account and giving each a named business owner fixes both, for
+    the existing domains as well as new ones. The owner decides whether a domain is still needed and keeps its renewal and
+    contacts current, while the company keeps the ability to renew, transfer and secure it.
+  why_not:
+    A: Company control of the account fixes renewal access, but with no business owner nobody decides whether each domain is
+      still needed or keeps its contacts and purpose current, so unknown domains stay unexplained.
+    B: Registering new domains centrally is a sound rule, but moving existing ones only at renewal leaves them in outside accounts
+      until the very moment this one failed, and the domains no one in the security office knows about would never be moved.
+    C: This brings the domains under company control, but the security office does not know what several of them are for,
+      so it cannot judge whether each is still needed or who must act on it. Accountability for an asset belongs with the
+      business that uses it, with security advising.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-cissp-check
+  options_only: obvious

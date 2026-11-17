@@ -1,0 +1,37 @@
+id: aaism-d1-1.1-0033
+subdomain: '1.1'
+difficulty: easy
+stem: A city council will use a high-risk AI tool to rank housing applications, and staff will decide each case using
+  the rank. An AI regulation requires public-body deployers to assess the tool's impact on fundamental rights before first
+  use. The council's signed-off data protection impact assessment includes a bias test on past applications. What is the
+  BEST next step?
+options:
+  A: Extend the assessment with a bias test on recent applications split by protected group
+  B: Pilot the tool in one district and complete the rights assessment from its outcomes
+  C: Extend the assessment to how staff act on the rank and how applicants can contest it
+  D: Have the equality officer review the assessment's bias test and sign it off for the rights duty
+answer: C
+explanation:
+  why_correct: A rights assessment by a deployer looks at its own use of the tool, not only at the model. The existing
+    assessment already covers privacy, security and a test for biased outcomes, so the missing part is the council's
+    process. That means how staff rely on or override the rank, what human oversight applies, and how a refused applicant
+    can find out and challenge the result. Extending the signed-off assessment to these points builds on the work already
+    done and closes the gap before first use.
+  why_not:
+    A: A fresh bias test refreshes evidence the assessment already holds. It still looks only at the model's outputs and
+      says nothing about how staff act on the rank or how an applicant can contest a refusal, which is where the council's
+      own rights impact sits.
+    B: Learning from real outcomes is sound practice for monitoring, but a pilot on live applications is already first use.
+      The regulation requires the rights assessment before that point, so the applicants in the pilot district would be
+      ranked with no assessment in place.
+    D: An expert review strengthens the bias analysis, but equal treatment is only one of the rights at stake. Signing off
+      the existing assessment would leave human oversight and the applicants' route to challenge decisions unassessed.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-aaism-check
+  options_only: obvious

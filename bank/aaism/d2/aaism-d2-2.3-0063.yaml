@@ -1,0 +1,32 @@
+id: aaism-d2-2.3-0063
+subdomain: '2.3'
+difficulty: medium
+stem: A firm tiers AI vendors by the sensitivity of the data they receive, and only top-tier vendors get an in-depth review.
+  An AI operations vendor whose agent will restart, resize and reconfigure production servers through an admin API was placed
+  in the lowest tier, as it receives only server metrics. Which change to the tiering criteria is MOST needed?
+options:
+  A: Add how far operations depend on the vendor's service being available
+  B: Add the actions the vendor's AI can take in the firm's own systems
+  C: Add the vendor's own suppliers that receive the firm's server metrics
+  D: Add whether the metrics could help an attacker map the firm's systems
+answer: B
+explanation:
+  why_correct: Tiering by data assumes a vendor's harm comes from what it receives. This vendor's agent can change production
+    servers, so a fault in it or a compromise of the vendor could take servers down or reconfigure them directly. Tiering on
+    the access and actions a vendor's AI holds sends vendors like this one to in-depth review.
+  why_not:
+    A: Dependence matters for continuity, but the main exposure here is not losing the service; it is the service acting wrongly
+      on production servers.
+    C: Fourth parties matter where sensitive data flows on, but the metrics are low in sensitivity, so tracing them does not
+      reach the reason this vendor is risky.
+    D: Metrics can help an attacker a little, but that is still a data criterion; the agent's write access to production is a
+      far larger exposure than anything the metrics reveal.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-aaism-check
+  options_only: not_obvious

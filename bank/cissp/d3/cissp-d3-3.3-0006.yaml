@@ -1,0 +1,34 @@
+id: cissp-d3-3.3-0006
+subdomain: '3.3'
+difficulty: hard
+stem: A law firm will move its document management to a SaaS platform, which must keep indexing and full-text search of document
+  content. The security requirement is that the provider cannot read stored documents without a request the firm can see and
+  refuse, including when the provider is served with a foreign court order. Which control BEST meets the requirement?
+options:
+  A: Provider-side encryption with keys the firm generates and imports into the provider's key service
+  B: Provider-side encryption with keys held in the firm's own key manager, which approves each use
+  C: Client-side encryption of each document before upload, with the keys kept inside the firm
+  D: Provider-side encryption, with contract terms requiring notice of any request for firm data
+answer: B
+explanation:
+  why_correct: With keys held in the firm's own external key manager, the provider's service must ask the firm each time it
+    needs to unwrap a key, so the firm sees each use and can refuse it or cut off access altogether. When the firm approves,
+    the platform decrypts content and can still index and search it. Content is readable in the provider's service while it
+    is processed, which is the residual risk the firm accepts by keeping search. This holds only if the platform protects its search index
+    and cached data keys under the same externally held keys, which the firm should confirm.
+  why_not:
+    A: Importing its own keys lets the firm control how keys are made and revoke them, but once a key is in the provider's
+      key service the provider uses it without asking, so the firm cannot see or refuse individual uses.
+    C: Client-side encryption keeps content away from the provider entirely, which suits stricter needs, but the platform
+      could no longer index or search document content, which the requirement keeps.
+    D: Notice terms are a sensible safeguard, but the provider can still decrypt, and a court order may forbid it from telling
+      the firm, so the firm has no technical means to refuse.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-cissp-check
+  options_only: not_obvious

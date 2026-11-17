@@ -1,0 +1,31 @@
+id: aaism-d2-2.3-0064
+subdomain: '2.3'
+difficulty: medium
+stem: A retailer's customer chatbot runs on a hosted model under the provider's standard plan. On last year's busiest sales
+  day, many requests failed with overload errors while the retailer was well under its rate limit, as the provider's shared
+  capacity was full. The retailer's prompts and safety tests are tuned to this model, and validating another takes months.
+  Which contract provision MOST reduces this risk for the next peak?
+options:
+  A: A higher rate-limit tier for the retailer's account
+  B: Service credits for each hour of degraded availability
+  C: Reserved throughput at the retailer's agreed peak levels
+  D: A standby contract with a second provider's model for overflow
+answer: C
+explanation:
+  why_correct: The failures came from the provider's shared capacity running out, not from the retailer's own limit. Reserved
+    throughput sets capacity aside for the retailer at the levels agreed for its peak, so other customers' demand cannot crowd
+    it out, and the model the retailer has validated stays in use.
+  why_not:
+    A: The retailer was already well under its rate limit, and a higher limit adds no capacity when the shared pool is full.
+    B: Credits compensate after the event but do not keep the chatbot answering customers on the busiest day of the year.
+    D: A second provider's model adds resilience, but it would need months of validation of prompts and safety tests before it
+      could safely take customer traffic.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-aaism-check
+  options_only: not_obvious

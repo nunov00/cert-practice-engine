@@ -100,3 +100,13 @@ held:
   # aaism-d1-1.4-0034, aaism-d1-1.5-0030, aaism-d3-3.4-0043 and cissp-d6-6.4-0011
   # got reworked distractors (no 2x2 grid in 6.4-0011); all six passed and were
   # released within each exam's hard share. The list is now empty.
+  # PR #90, merge run: the final Claude review lowered aaism-d2-2.1-0063 to
+  # medium and dropped medium aaism-d2-2.2-0066 (near-duplicate of
+  # aaism-d3-3.1-0023, not on this list), so AAISM's 2 hard can carry only 4
+  # non-hard. Rework on recheck: 1.1-0033 (B near straw; try an independent
+  # pre-use accuracy audit across applicant groups), 1.2-0036 (C false
+  # attribution is weak; try after-the-fact daily change review), 2.1-0062 (key
+  # the only participatory option; make one distractor participatory too).
+  - { id: aaism-d1-1.1-0033, pr: 90 }
+  - { id: aaism-d1-1.2-0036, pr: 90 }
+  - { id: aaism-d2-2.1-0062, pr: 90 }

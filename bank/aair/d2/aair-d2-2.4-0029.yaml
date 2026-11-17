@@ -1,0 +1,36 @@
+id: aair-d2-2.4-0029
+subdomain: '2.4'
+difficulty: easy
+stem: A bank's contract with a credit bureau allows bureau data to be used only for credit decisions. A credit data
+  scientist built a payment stress feature from bureau data and published it in the bank's shared feature store,
+  which holds 3,000 features. A colleague who works on both credit and marketing models later used it in a
+  cross-sell model. Which control would BEST have prevented this?
+options:
+  A: Limit bureau-derived features to users in the credit risk teams
+  B: Have the bureau data owner approve each model's list of features
+  C: Carry source use limits onto features, checked against model purpose
+  D: Record each data source's permitted uses in the data catalogue
+answer: C
+explanation:
+  why_correct: The limit in the contract is on the purpose, not on who may see the data, and the restricted data
+    reached the marketing model through a derived feature. Carrying each source's use limits onto the features
+    built from it, and checking them against the purpose of the model that selects them, stops the reuse at the
+    point where it happens, whoever builds the model.
+  why_not:
+    A: Restricting the features to credit teams is a sound access control, but the colleague belongs to a credit
+      team as well as building marketing models. Access by person cannot tell a credit model from a cross-sell
+      model built by the same person.
+    B: An owner review would apply the limit at the right moment, but the bureau data owner would need to recognise
+      which of 3,000 features come from bureau data, and feature names do not say. Nor is it clear which models
+      should go to this owner at all, unless the features already carry their sources.
+    D: A catalogue entry records the bureau limit correctly, but only against the source table. A team choosing a
+      payment stress feature in the store would see nothing linking it to that entry.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-aair-check
+  options_only: obvious

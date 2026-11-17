@@ -1,0 +1,34 @@
+id: aair-d3-3.6-0038
+subdomain: '3.6'
+difficulty: hard
+stem: A company's staff assistant answers from an index of its shared drive, rebuilt each night. This morning it
+  began telling finance staff that a key supplier's bank details had changed. The cause is a document uploaded yesterday
+  by a compromised account, which security has now locked. Finance has already put a hold on all supplier bank
+  detail changes. The account could write to many folders. What should
+  the incident team do FIRST?
+options:
+  A: Delete the document from the shared drive and let tonight's rebuild remove it
+  B: Remove from the live index all the account added since its compromise
+  C: Block the assistant from answering questions about supplier payments
+  D: Tell finance staff to confirm any bank detail change by calling back
+answer: B
+explanation:
+  why_correct: The assistant is still serving the planted content, and the account could have planted more in other
+    folders on other topics. Removing all of its recent additions from the live index stops every planted instruction
+    from reaching staff now, including ones not yet found, without taking the assistant down.
+  why_not:
+    A: Deleting the source file is needed, but the live index keeps serving it until tonight's rebuild. Other documents
+      the account planted would also stay in place.
+    C: Blocking payment questions contains the one attack seen so far. Content planted in other folders could target
+      other topics and would still be served.
+    D: Finance already holds bank detail changes, so a call-back reminder adds little now, and it does nothing
+      about other planted content that the assistant is still serving.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-17-daily-aair-check

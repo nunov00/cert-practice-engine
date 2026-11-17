@@ -1,0 +1,35 @@
+id: aair-d2-2.3-0029
+subdomain: '2.3'
+difficulty: hard
+stem: A bank ran a new transaction-monitoring model in shadow beside its current one for two months. The new model
+  was built to catch laundering patterns the current one misses. Only the current model's alerts went to investigators.
+  The two models agreed on 97% of alerts, and the project team proposes switching over. What should the risk practitioner
+  recommend BEFORE the switch?
+options:
+  A: Compare the two models' alert rates by customer segment over the period
+  B: Have investigators work a sample of alerts raised only by the new model
+  C: Measure each model's precision on the alerts investigated during the period
+  D: Switch one business line first and compare its investigation outcomes
+answer: B
+explanation:
+  why_correct: The new model's value lies in the alerts where it differs from the current one, and those were never
+    investigated, so nothing yet shows whether they are real laundering or noise. High agreement says nothing about
+    that. Working a sample of the new-only alerts gives direct evidence of what the switch would gain, and the outcomes
+    of the current-only alerts, already investigated, show what it would lose.
+  why_not:
+    A: Segment alert rates show where the two models behave differently, which helps target a review. They do not
+      show whether the new model's extra alerts are correct.
+    C: Only the current model's alerts have investigation outcomes. Precision measured on them covers mostly shared
+      alerts and leaves out exactly the new patterns the model was built to catch.
+    D: A phased switch would produce outcomes, but in that business line it removes the current model's coverage
+      before anyone knows whether the new one is better. The same evidence can be gathered without changing a live
+      control.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-aair
+  check_verdict: pass
+  options_only: not_obvious
+  checked_by: 2026-11-17-daily-aair-check

@@ -1,0 +1,32 @@
+id: cissp-d4-4.1-0019
+subdomain: '4.1'
+difficulty: hard
+stem: A company's microservices now call each other through a service mesh that encrypts each connection with mutual TLS.
+  The network intrusion detection sensor on the data centre's switches, which used to flag unusual API calls between services,
+  now sees only encrypted sessions. Which change BEST restores this detection?
+options:
+  A: Flow records from the data centre switches, analysed for unusual service connections
+  B: A TLS inspection proxy between services, decrypting traffic for the existing sensor
+  C: Request logs from the mesh's sidecar proxies, sent to security monitoring
+  D: Endpoint detection agents on the container hosts, watching each service's processes
+answer: C
+explanation:
+  why_correct: The sidecar proxies terminate the mutual TLS sessions, so they see each request in clear, with the calling
+    service's identity, the method, the path and the response. Sending their request logs to security monitoring restores
+    API-level visibility of east-west traffic without weakening the encryption.
+  why_not:
+    A: Flow records survive encryption and show which services talk to each other, but not which API calls they make, which
+      is what the lost detection relied on.
+    B: Interception would give the sensor plaintext again, but it breaks the end-to-end service identity that mutual TLS provides
+      and adds a component that holds the keys to every service's traffic.
+    D: Endpoint agents catch suspicious activity on a host, such as unexpected processes, but they do not see the content
+      of API calls between services.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-cissp-check
+  options_only: not_obvious

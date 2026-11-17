@@ -1,0 +1,37 @@
+id: aair-d1-1.4-0037
+subdomain: '1.4'
+difficulty: medium
+stem: An insurer's AI procedure requires an ethics and risk assessment when each AI project is approved, based on
+  its business case. Vendors and data sources are chosen months later, after a pilot, and vendor contracts usually
+  run three years. Reviews find live systems with vendor and data risks the assessments did not cover, some serious
+  enough to have ruled out the chosen vendor. Which procedure change BEST addresses this?
+options:
+  A: Require business cases to name the vendor and data sources before approval
+  B: Reassess when the vendor and data sources are being selected
+  C: Reassess the built system at the go-live gate, against its final setup
+  D: Review each live system's assessment once a year against its current setup
+answer: B
+explanation:
+  why_correct: The risks that were missed come from the vendor and the data, and those are decided at selection,
+    months after the approval assessment. Reassessing at that point puts the findings in front of the people
+    choosing, while another vendor or data source can still be picked. Because contracts run three years, this is
+    the last point where a serious vendor risk can change the outcome rather than only be accepted.
+  why_not:
+    A: Naming the vendor and data in the business case would make the approval assessment more specific, but they
+      are chosen after a pilot, months later. Names given at approval would often be guesses that the pilot
+      changes, so the assessment would still miss the risks of what is finally chosen.
+    C: A go-live reassessment would cover the system as built, which is a sound final check. But by then a
+      three-year contract is signed and the pipeline built, so a finding that should have ruled out the vendor can
+      only block the launch or be accepted.
+    D: An annual review of live systems catches risks that appear or change in use. Here the risks were present
+      from the start and came from choices made before launch, so a yearly review finds them only once the
+      contract and the system are in place.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-aair-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: cissp-d1-1.4-0006
+subdomain: '1.4'
+difficulty: medium
+stem: A company's network product includes an encryption module built at its home office. Engineers at a development centre
+  the company has just opened abroad will help maintain the module's source code. The code stays on servers at home and is
+  reached only through a virtual desktop that blocks downloads. What must the company do BEFORE the engineers get access?
+options:
+  A: Block copying, printing and screen capture in the engineers' virtual desktop sessions
+  B: Confirm that the overseas country allows the import and use of encryption
+  C: Obtain any export licence needed to release the source code to those engineers
+  D: Add confidentiality and IP assignment terms to the overseas engineers' contracts
+answer: C
+explanation:
+  why_correct: Export controls on strong encryption cover the technology and source code, not only shipped products. Letting
+    engineers based abroad see and work on controlled source code releases that technology to them, even though the files
+    never leave the home servers. The company must classify the code and hold any licence or licence exception the release
+    needs before access begins.
+  why_not:
+    A: Locking down the session limits copying, but the controlled act is the release of the technology to the engineers themselves.
+      That happens as soon as they can read and change the code, however tightly the desktop is restricted.
+    B: Some countries regulate the import or use of encryption, which matters when products are shipped and sold there. Here
+      the code is not being shipped, and the obligation that applies is the home country's control on releasing it abroad.
+    D: Confidentiality and assignment terms protect the company's intellectual property, but they do not authorise a controlled
+      release. The licence question remains whatever the engineers sign.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-cissp-check
+  options_only: not_obvious

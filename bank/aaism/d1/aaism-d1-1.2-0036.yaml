@@ -1,0 +1,32 @@
+id: aaism-d1-1.2-0036
+subdomain: '1.2'
+difficulty: medium
+stem: A company's change policy requires a named person to raise each production change and another to approve it. The
+  operations team wants an AI agent to apply routine fixes from fixed runbooks, such as restarting services and renewing
+  certificates, at any hour without waiting for an approver. Which policy provision BEST fits?
+options:
+  A: Runbook fixes become pre-approved changes run under the agent's identity
+  B: The agent raises each fix as a change and an on-call approver authorises it
+  C: The agent's fixes are recorded as changes raised by the operations lead
+  D: The agent applies runbook fixes only inside agreed maintenance windows
+answer: A
+explanation:
+  why_correct: Routine, repeatable fixes that follow a fixed procedure are what pre-approved (standard) changes are for. Each
+    runbook is reviewed and approved once, and every run is logged under the agent's own identity, so the audit trail shows
+    what acted. Anything outside the runbooks still goes through normal approval.
+  why_not:
+    B: This keeps the policy unchanged, but every fix waits for a person at any hour, which removes the benefit the team wants
+      for low-risk work whose steps are already fixed.
+    C: Naming the lead gives a person to answer for the changes, but the record then shows someone who did not act, and it
+      leaves open whether each fix needs approval.
+    D: Windows limit when changes happen, but a failed service or an expiring certificate needs fixing when it occurs, not at
+      the next window.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-aaism-check
+  options_only: not_obvious

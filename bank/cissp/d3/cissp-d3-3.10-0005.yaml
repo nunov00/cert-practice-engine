@@ -1,0 +1,34 @@
+id: cissp-d3-3.10-0005
+subdomain: '3.10'
+difficulty: easy
+stem: A benefits agency's deputy director authorised its case system to operate last year, for use by agency staff only.
+  The agreed monitoring strategy reports changes to her each quarter. A small code change, already tested, will let caseworkers
+  at a partner charity view case summaries over the internet. The change board approves changes of this size each week.
+  How should this change be handled?
+options:
+  A: The change board approves it once a security impact analysis finds no new high risks
+  B: The system owner accepts the added risk after a penetration test of the partner interface
+  C: The authorising official receives its impact analysis in the next quarterly monitoring report
+  D: The authorising official decides on reauthorisation, based on a security impact analysis
+answer: D
+explanation:
+  why_correct: Operating a system includes judging each change against the conditions under which it was authorised. This
+    change is small in code, but it lets another organisation's staff reach the system over the internet, which takes it outside
+    the staff-only use that the deputy director accepted. A change that moves the system's boundary is significant, so a security
+    impact analysis and the authorising official's decision on reauthorisation must come before the change goes live.
+  why_not:
+    A: Change control with an impact analysis suits changes inside the authorised boundary. The board can confirm the change
+      works and is analysed, but it did not accept the system's risk and cannot widen what the authorisation covers.
+    B: A penetration test is good evidence for the decision, but the system owner would be accepting an exposure that the
+      authorising official accepted only for staff-only use. The owner can recommend, not reauthorise.
+    C: Quarterly reporting is the right channel for changes that stay within the authorisation. Here the system would run
+      outside the conditions of its authorisation for up to three months before the official learns of it.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-cissp-check
+  options_only: obvious

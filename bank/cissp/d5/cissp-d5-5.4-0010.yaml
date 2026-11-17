@@ -1,0 +1,32 @@
+id: cissp-d5-5.4-0010
+subdomain: '5.4'
+difficulty: medium
+stem: A telecom's 900 support agents can open any customer's account record, which they need because customers phone in unannounced.
+  One agent used this to look up her former partner's new address. Calls are routed to agents by the phone system, which also
+  opens a case for each call. Which control BEST prevents a repeat without slowing calls?
+options:
+  A: Grant record access only for the customer on the agent's active call or assigned case
+  B: Require agents to enter a reason before opening a record, with reasons sampled weekly
+  C: Move high-profile customers' records to a restricted group served by senior agents
+  D: Alert team leaders when an agent opens a record that matches no call they handled
+answer: A
+explanation:
+  why_correct: Access that follows the agent's current work, the routed call or a case assigned to them, gives each agent
+    the record they need the moment the call arrives and nothing else. Because the phone system already ties each call to
+    a customer and a case, this enforces need-to-know before a record is opened, with no extra step for the agent.
+  why_not:
+    B: A stated reason deters some misuse and helps review, but an agent can type any reason, and the record is open before
+      anyone samples it. It also adds a step to each call.
+    C: Restricting well-known customers' records is common, but the person harmed here was an ordinary customer, so this would
+      not have stopped the lookup.
+    D: Alerts on unmatched lookups are a good detective control, but they fire after the address has been seen, and the policy
+      goal is to stop the lookup.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-17-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-17-daily-cissp-check
+  options_only: not_obvious
