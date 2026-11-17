@@ -1,6 +1,6 @@
 id: aaism-d2-2.1-0063
 subdomain: '2.1'
-difficulty: hard
+difficulty: medium
 stem: An insurer's onboarding agent adds new suppliers and their bank details, and its payments agent pays invoices from
   approved suppliers under USD 10,000 without review. Suppliers the onboarding agent adds are approved at once. Each agent was
   assessed on its own and rated within appetite. What is the GREATEST gap in these assessments?
@@ -20,8 +20,9 @@ explanation:
       gap that separate assessments leave is the chain across both agents.
     B: A shared provider is a concentration risk, but its failure stops both agents working; the larger loss here is money paid
       out to suppliers who do not exist.
-    C: Changing bank details is within the onboarding agent's own scope, which its own assessment examined. What neither
-      assessment saw is the automatic payment that can follow.
+    C: Changing bank details is a risk inside the onboarding agent's own scope, which its own assessment could examine. On
+      its own it is one step; the gap separate assessments leave is that a new supplier can be created and paid end to end
+      with no person involved.
 status: published
 outline_version: '2025-08-19'
 sample: false

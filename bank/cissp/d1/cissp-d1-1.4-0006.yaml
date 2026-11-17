@@ -1,6 +1,6 @@
 id: cissp-d1-1.4-0006
 subdomain: '1.4'
-difficulty: hard
+difficulty: medium
 stem: A company's network product includes an encryption module built at its home office. Engineers at a development centre
   the company has just opened abroad will help maintain the module's source code. The code stays on servers at home and is
   reached only through a virtual desktop that blocks downloads. What must the company do BEFORE the engineers get access?

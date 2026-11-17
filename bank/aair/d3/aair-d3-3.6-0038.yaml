@@ -3,11 +3,12 @@ subdomain: '3.6'
 difficulty: hard
 stem: A company's staff assistant answers from an index of its shared drive, rebuilt each night. This morning it
   began telling finance staff that a key supplier's bank details had changed. The cause is a document uploaded yesterday
-  by a compromised account, which security has now locked. The account could write to many folders. What should
+  by a compromised account, which security has now locked. Finance has already put a hold on all supplier bank
+  detail changes. The account could write to many folders. What should
   the incident team do FIRST?
 options:
   A: Delete the document from the shared drive and let tonight's rebuild remove it
-  B: Remove everything the compromised account added from the live index
+  B: Remove from the live index all the account added since its compromise
   C: Block the assistant from answering questions about supplier payments
   D: Tell finance staff to confirm any bank detail change by calling back
 answer: B
@@ -20,8 +21,8 @@ explanation:
       the account planted would also stay in place.
     C: Blocking payment questions contains the one attack seen so far. Content planted in other folders could target
       other topics and would still be served.
-    D: A call-back reminder is a sound safeguard for this payment fraud, but it relies on each person heeding it
-      and does nothing about other planted content. The source of the harm stays live in the assistant.
+    D: Finance already holds bank detail changes, so a call-back reminder adds little now, and it does nothing
+      about other planted content that the assistant is still serving.
 status: published
 outline_version: '2026-04-15'
 sample: false

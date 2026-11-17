@@ -6,7 +6,7 @@ stem: A product microsite went offline when its domain name lapsed. An agency ha
   took three weeks because only the agency could sign in to that account. The company holds about 60 domains, several registered
   by teams the security office had not heard of. Which change BEST addresses this?
 options:
-  A: Record every company domain in the asset inventory with a named business owner, at its current registrar
+  A: Bring every company domain into a company-held registrar account managed by IT, with renewal alerts to a shared mailbox
   B: Have IT register new domains in a company-held account, and move existing ones as each comes up for renewal
   C: Make the security office the registrant and owner of all company domains, in a company-held account
   D: Bring every company domain into a company-held registrar account, each with a named business owner
@@ -18,9 +18,8 @@ explanation:
     the existing domains as well as new ones. The owner decides whether a domain is still needed and keeps its renewal and
     contacts current, while the company keeps the ability to renew, transfer and secure it.
   why_not:
-    A: Named owners in the inventory give accountability, but the domains stay in accounts that others control. The three-week
-      outage came from exactly that, since an owner cannot renew or restore a domain in an account the company cannot sign
-      in to.
+    A: Company control of the account fixes renewal access, but with no business owner nobody decides whether each domain is
+      still needed or keeps its contacts and purpose current, so unknown domains stay unexplained.
     B: Registering new domains centrally is a sound rule, but moving existing ones only at renewal leaves them in outside accounts
       until the very moment this one failed, and the domains no one in the security office knows about would never be moved.
     C: This brings the domains under company control, but the security office does not know what several of them are for,

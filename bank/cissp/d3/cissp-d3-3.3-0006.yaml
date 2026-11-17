@@ -14,7 +14,8 @@ explanation:
   why_correct: With keys held in the firm's own external key manager, the provider's service must ask the firm each time it
     needs to unwrap a key, so the firm sees each use and can refuse it or cut off access altogether. When the firm approves,
     the platform decrypts content and can still index and search it. Content is readable in the provider's service while it
-    is processed, which is the residual risk the firm accepts by keeping search.
+    is processed, which is the residual risk the firm accepts by keeping search. This holds only if the platform protects its search index
+    and cached data keys under the same externally held keys, which the firm should confirm.
   why_not:
     A: Importing its own keys lets the firm control how keys are made and revoke them, but once a key is in the provider's
       key service the provider uses it without asking, so the firm cannot see or refuse individual uses.

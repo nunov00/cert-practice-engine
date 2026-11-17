@@ -21,7 +21,7 @@ explanation:
       leaves open whether each fix needs approval.
     D: Windows limit when changes happen, but a failed service or an expiring certificate needs fixing when it occurs, not at
       the next window.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

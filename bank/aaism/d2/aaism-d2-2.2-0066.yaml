@@ -23,12 +23,12 @@ explanation:
       route open to the rest.
     D: An allowlist would keep internal hosts out but would also block many genuine links, as customers share pages from many
       different sites, and an allowed site can still redirect elsewhere.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-17-daily-aaism
-  check_verdict: pass
+  check_verdict: fail
   checked_by: 2026-11-17-daily-aaism-check
   options_only: not_obvious

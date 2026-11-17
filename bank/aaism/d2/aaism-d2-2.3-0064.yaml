@@ -9,7 +9,7 @@ options:
   A: A higher rate-limit tier for the retailer's account
   B: Service credits for each hour of degraded availability
   C: Reserved throughput at the retailer's agreed peak levels
-  D: A standby contract with a second provider for overflow
+  D: A standby contract with a second provider's model for overflow
 answer: C
 explanation:
   why_correct: The failures came from the provider's shared capacity running out, not from the retailer's own limit. Reserved
@@ -18,7 +18,7 @@ explanation:
   why_not:
     A: The retailer was already well under its rate limit, and a higher limit adds no capacity when the shared pool is full.
     B: Credits compensate after the event but do not keep the chatbot answering customers on the busiest day of the year.
-    D: A second provider adds resilience, but its model would need months of validation of prompts and safety tests before it
+    D: A second provider's model adds resilience, but it would need months of validation of prompts and safety tests before it
       could safely take customer traffic.
 status: published
 outline_version: '2025-08-19'

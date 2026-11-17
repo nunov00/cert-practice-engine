@@ -8,7 +8,7 @@ stem: A logistics firm's AI policy makes each model's business owner accountable
 options:
   A: Give the second-line risk team authority to suspend models in breach
   B: Require owners to escalate breaches unresolved after 30 days to the risk committee
-  C: Require owners to hold authority over the model's use and its budget
+  C: Name as owners the managers with authority over the model's use and budget
   D: Train owners to present model fixes in terms of their business impact
 answer: C
 explanation:
