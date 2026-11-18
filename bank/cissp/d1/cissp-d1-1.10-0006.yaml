@@ -13,8 +13,8 @@ options:
 answer: D
 explanation:
   why_correct: The concerns span linkability, unawareness and over-collection, and the team works threat by threat against
-    diagram elements. LINDDUN is a privacy threat modelling method applied to the same data flow diagram, with categories
-    for linkability, identifiability, unawareness and non-compliance, so it covers all three concerns and yields threats per
+    diagram elements. LINDDUN is a privacy threat modelling method applied to the same data flow diagram, with categories for linking, identifying, unawareness and data disclosure (which covers collecting more
+    than needed), so it covers all three concerns and yields threats per
     element that fit the team's backlog alongside its STRIDE threats.
   why_not:
     A: A minimisation review would catch the unneeded location data, and may cut what partners receive, but it does not

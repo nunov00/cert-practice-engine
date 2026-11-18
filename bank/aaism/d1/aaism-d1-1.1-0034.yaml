@@ -1,6 +1,6 @@
 id: aaism-d1-1.1-0034
 subdomain: '1.1'
-difficulty: hard
+difficulty: medium
 stem: An AI regulation's duties for high-risk systems do not cover research and development carried out before a system
   is put into service. A lender plans a three-month trial in which its new credit-limit model, a high-risk use, sets the
   limits of 500 real applicants, each limit approved by an analyst. The trial is meant to measure how applicants respond
@@ -15,6 +15,8 @@ explanation:
   why_correct: The exclusion ends where a system is put into service. A trial in which the model's limits are applied to
     real applicants is live use, whatever its size, length or label, so the high-risk duties, such as risk management,
     logging, data governance and human oversight, have to be met before the first applicant is affected.
+    Where a regulation offers a supervised route for real-world testing, that route carries its own conditions, such as a
+    registered plan, informed consent and reversible outcomes; it is not the research exclusion either.
   why_not:
     A: Analyst approval is a form of human oversight, which is itself one of the duties, and it does not turn live use
       into research. Each approved limit is still a decision a high-risk system applies to a real applicant.

@@ -20,9 +20,9 @@ explanation:
     A: A recall target is a common, defensible way to favour catching fraud, and it suits cases where error costs are unknown.
       Here they are estimated, and a recall target ignores the friction of holds, so the agreed level may sit far from the
       point where total cost is lowest.
-    B: F-beta weighted toward recall is a principled way to favour recall over precision, but it weights the two rates by
-      a chosen beta, not by what each error costs, and it ignores how common fraud is. It approximates the cost trade-off
-      the issuer can calculate directly from its estimates.
+    B: F-beta weighted toward recall is a principled way to favour recall over precision, but it weights
+      recall and precision by a chosen beta, not by what each error costs, and it ignores true negatives, so it does not
+      track total cost. It approximates the cost trade-off the issuer can calculate directly from its estimates.
     C: A cap on the share of payments held controls customer friction, which matters, but that friction is already counted
       in the cost estimate. A cap ignores the much larger cost of missed fraud, so it could stop the threshold short of where
       losses are lowest.

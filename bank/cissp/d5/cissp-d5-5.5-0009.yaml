@@ -1,6 +1,6 @@
 id: cissp-d5-5.5-0009
 subdomain: '5.5'
-difficulty: hard
+difficulty: medium
 stem: At a retailer, access requests go through a provisioning workflow that routes each one to the resource owner for
   approval. An audit found finance rights that no workflow request explains, all added by helpdesk staff. Helpdesk staff hold
   administrator rights in the twelve core applications, which they use to reset passwords and unlock accounts. Which change
@@ -14,7 +14,7 @@ answer: C
 explanation:
   why_correct: The unexplained rights were granted directly in the applications, outside the workflow, using administrator
     rights that the helpdesk holds only for resets and unlocks. A role limited to those tasks removes the ability to grant
-    rights at all, so every grant has to go through the approval workflow.
+    rights at all, so the helpdesk can no longer grant rights outside the approval workflow.
   why_not:
     A: A second approver strengthens the workflow, but these rights never passed through it, so the bypass stays open.
     B: Reconciliation is a sound control that finds rights without an approved request, but it finds them up to a month

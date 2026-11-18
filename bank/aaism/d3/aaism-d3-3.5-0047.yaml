@@ -7,7 +7,7 @@ stem: A health insurer's SOC investigates leaks from its member chatbot using fu
 options:
   A: Full logs readable only by named senior analysts, with each access recorded
   B: Session metadata only, with the text of prompts and replies not stored
-  C: Logs with personal details tokenised, revealed only for approved cases
+  C: Logs with identities and diagnoses tokenised, revealed for approved cases
   D: Full logs encrypted and deleted after 30 days unless a case holds them
 answer: C
 explanation:

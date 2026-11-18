@@ -23,7 +23,7 @@ explanation:
       leaves, which is the case that failed, so the agent runs on with no one reviewing or answering for it.
     C: Disabling the agent when its builder leaves ends the unattended running, but it stops month-end finance tasks for
       whole teams, which repeats the second failure in the incident.
-status: published
+status: draft
 outline_version: '2025-08-19'
 sample: false
 provenance:

@@ -9,7 +9,7 @@ options:
   A: Map the design to a published catalogue of AI attack techniques
   B: Run scenario workshops with buyers, lawyers and the agent's designers
   C: Interview senior buyers on past supplier disputes to extend the checklist
-  D: Extend the checklist with risks from the agent vendor's documentation
+  D: Extend the checklist with risks listed in the agent platform's documentation
 answer: B
 explanation:
   why_correct: The worry is a business failure with little history behind it, in a design that can still change. Structured
@@ -22,7 +22,7 @@ explanation:
     C: Buyers' experience is valuable, but past disputes show how human negotiators went wrong, not how an agent pressed
       by a supplier's agent could. Feeding them into a checklist built on past incidents keeps the method backward-looking
       and leaves out the designers, who know what this agent can be led to agree to.
-    D: The vendor's documents describe its product in general and the checklist rests on past incidents, so extending it stays
+    D: The platform's documents describe its product in general and the checklist rests on past incidents, so extending it stays
       backward-looking and says little about this firm's buyers and contracts.
 status: published
 outline_version: '2025-08-19'

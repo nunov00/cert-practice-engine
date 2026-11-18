@@ -6,13 +6,14 @@ stem: A firm's patch tool reported a critical library fix installed on its 600 L
   library, and others ran applications that ship their own copy of it. Which change BEST prevents this from recurring?
 options:
   A: Restart dependent services automatically after each library patch is installed
-  B: Close each ticket only when a rescan confirms the flaw is gone from the server
+  B: Close each ticket only when a rescan shows the flaw can no longer be exploited
   C: Add the applications that bundle the library to the patch tool's inventory
   D: Require server owners to confirm each critical patch before its ticket closes
 answer: B
 explanation:
   why_correct: Both failures were hidden because tickets closed on the patch tool's report that a package was installed, not
-    on evidence that the flaw was gone. Closing a ticket only after a rescan confirms it catches any reason a fix did not take
+    on evidence that the flaw was gone. Closing a ticket only after a rescan that checks loaded libraries and bundled copies, not just the installed
+    package, confirms it catches any reason a fix did not take
     effect, including these two and ones not yet seen, and leaves the ticket open until the server is actually safe.
   why_not:
     A: Automatic restarts fix servers that kept the old library in memory, but they do nothing for applications that ship

@@ -8,7 +8,7 @@ options:
   A: Stop holding underwriters personally to account for losses on overridden loans
   B: Hold underwriters accountable for each decision they sign, followed or not
   C: Require a second underwriter to approve each override before it applies
-  D: Train underwriters on the model's known weaknesses and when to override
+  D: Track each underwriter's override rate and review those near zero
 answer: B
 explanation:
   why_correct: 'The arrangement makes following the model the safe choice for an underwriter whatever they think, because
@@ -20,8 +20,8 @@ explanation:
       losses on followed decisions still fall on the model. Oversight needs someone to answer for decisions, not fewer people.
     C: A second approval adds another hurdle to overriding, so departures become rarer still, and losses on followed decisions
       still belong to nobody.
-    D: Training helps underwriters who cannot tell when the model is wrong, but these underwriters doubted the decisions and
-      signed anyway. The consequences of overriding, not a lack of knowledge, kept them from acting.
+    D: Reviewing low override rates pushes underwriters to override more, but an override still carries a personal penalty that
+      following does not, so they would override just enough to avoid review rather than whenever they doubt the model.
 status: published
 outline_version: '2026-04-15'
 sample: false

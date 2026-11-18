@@ -2,7 +2,7 @@ id: aair-d2-2.2-0034
 subdomain: '2.2'
 difficulty: hard
 stem: A law firm validated its research assistant, which passes the top five retrieved passages to a language model, on 400
-  graded questions against an index of 50,000 recent documents; 94% of answers were correct. Before launch, the index will
+  graded questions against an index of 50,000 recent documents; 94% of answers were correct. The questions cover points of law that later cases have changed. Before launch, the index will
   grow to two million documents, including older judgments that later cases overturned. Which further validation is MOST important?
 options:
   A: Measure on the full index how often the right passages reach the top five
@@ -17,7 +17,8 @@ explanation:
     receive, and shows whether the 94% holds.
   why_not:
     A: Retrieval recall on the full index is a useful diagnostic, but the right passage can reach the top five alongside an
-      overturned judgment, and the answer can still follow the wrong one. Good retrieval figures would not show that.
+      overturned judgment, and the answer can still follow the wrong one. Good retrieval figures would not show that. It also measures retrieval alone, while the launch question is whether the
+      answers lawyers receive are still correct.
     B: A support check catches invented content, but an answer that relies on an overturned judgment is fully supported by
       its cited passage, so it would pass.
     D: Repeat runs reveal answers that change from run to run, but an answer that consistently relies on an overturned judgment

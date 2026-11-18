@@ -13,8 +13,7 @@ options:
 answer: A
 explanation:
   why_correct: The console needs a way in that does not depend on the identity provider. A small number of emergency accounts
-    that sign in directly to the cloud platform, protected by hardware keys, with credentials held under dual control and
-    alerts on every use, gives that path while keeping its exposure small and its use visible.
+    that sign in directly to the cloud platform, protected by hardware keys and alerting on every use, gives that path while keeping its exposure small and its use visible.
   why_not:
     B: Regional failover protects against losing one site, but this fault was a configuration change copied to the standby,
       so both instances would fail together.

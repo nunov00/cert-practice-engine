@@ -1,6 +1,6 @@
 id: aaism-d1-1.4-0039
 subdomain: '1.4'
-difficulty: hard
+difficulty: medium
 stem: An AI security program requires each AI agent to have its own identity, with access reviews and removal when the
   agent is retired. Agents act in the CRM, ERP and HR systems. The platform team issues agents' credentials on request
   and keeps no review records. The IAM team runs joiner, mover and leaver processes and quarterly access reviews for staff

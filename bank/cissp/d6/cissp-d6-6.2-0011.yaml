@@ -5,7 +5,7 @@ stem: A retailer must show each year that none of its 40 office and warehouse ne
   segment. Last year two engineers reviewed and signed off the firewall rule base, yet a tester later reached a card server
   through a rule that referred to a nested address group. Which test gives the BEST evidence this year?
 options:
-  A: Probe the card segment's addresses and ports from a host in each other segment
+  A: Probe the card segment from many source addresses in each other segment
   B: Analyse a month of flow logs for traffic from other segments to the card segment
   C: Review the rule base with a tool that expands nested groups into each address
   D: Scan the card segment from the internet and from the guest wireless network
@@ -13,7 +13,8 @@ answer: A
 explanation:
   why_correct: The claim to prove is that no path exists. Probing from inside each segment tests the paths themselves,
     through every rule, route and device actually in place, so it catches errors that a reading of the configuration misses,
-    such as last year's nested group.
+    such as last year's nested group. Testing from addresses across each segment's range exercises rules that admit
+    only certain hosts too.
   why_not:
     B: Flow logs show what traffic did happen. A month with no traffic from a segment says nothing about whether a path is
       open, which is what an attacker needs.

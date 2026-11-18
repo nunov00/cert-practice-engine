@@ -8,12 +8,12 @@ stem: A firm will replace each employee's single key pair, now used both to decr
 options:
   A: Separate pairs; no escrow, with each message also encrypted to a company archive key
   B: Separate pairs; escrow both keys under split knowledge held by two custodians
-  C: Separate pairs; escrow the encryption key only, with the signing key made on a card
+  C: Separate pairs; escrow the encryption key only, signing key made on a smart card
   D: One pair per person; escrowed, with each signature countersigned by a timestamp service
 answer: C
 explanation:
   why_correct: The two requirements pull in opposite directions, so each needs its own key. Escrowing the encryption key lets
-    the firm read mail after a departure, whoever sent it. A signing key generated on the employee's card and never copied
+    the firm read mail after a departure, whoever sent it. A signing key generated on the employee's smart card and never copied
     means that only the employee could have produced a signature, which is what gives an approval its evidential weight.
   why_not:
     A: An archive key added to each message is a sound recovery design when the firm controls the senders' software, but most

@@ -9,7 +9,7 @@ options:
   A: Let declined applicants see the screening report and dispute its records
   B: Have the vendor audit how accurately it matches records to applicants
   C: Have a letting officer review each report-driven decline before it is sent
-  D: Publish a notice on the agency's website describing the automated screening
+  D: Tell each declined applicant that the vendor's screening report drove the decision
 answer: A
 explanation:
   why_correct: A record that belongs to someone else is easy for the applicant to recognise and nearly impossible for anyone
@@ -21,8 +21,8 @@ explanation:
       wrong matches, and the applicants affected would still be declined without knowing why or being able to challenge it.
     C: Human review is the usual safeguard for automated declines, but officers see only the report, where another person's
       record looks just like the applicant's own, so they would confirm the same declines.
-    D: A general notice is a step toward transparency, but it does not tell an applicant which records were used against them
-      or give any way to correct them.
+    D: Naming the report as the reason is more honest than the current message, but the applicant still cannot see which records
+      were used or correct one that belongs to someone else.
 status: published
 outline_version: '2026-04-15'
 sample: false

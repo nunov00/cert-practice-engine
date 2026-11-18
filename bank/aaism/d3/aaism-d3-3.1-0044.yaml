@@ -13,8 +13,8 @@ answer: C
 explanation:
   why_correct: The weakness is that one token works everywhere, so whoever receives it, including a tool server, can replay
     it against any API. Exchanging the user's token for one whose audience is only the receiving tool server, and having
-    each API accept only tokens issued for it, means a token captured by one server is useless anywhere else, while the
-    user's own rights still apply.
+    each API accept only tokens issued for it, means a token captured by one server is useless anywhere else, while the user's own rights still apply. If a tool server must call an internal API, it exchanges again
+    for a token valid only at that API, under a policy that limits which APIs each tool server may request.
   why_not:
     A: Narrower scopes reduce what a token can reach, but a user who often uses HR or finance tools still sends a token valid
       there to every tool server, so replay still works for those users.
