@@ -1,0 +1,35 @@
+id: aair-d3-3.4-0039
+subdomain: '3.4'
+difficulty: medium
+stem: A bank's quarterly AI risk report to its risk committee lists the ten highest-scoring AI risks, each scored as likelihood
+  times impact. The committee's appetite says no AI system may be able to cause a loss above 50 million, however unlikely.
+  A trading agent able to cause a far larger loss is rated rare, so it ranks outside the ten. Which change to the report BEST
+  serves the committee?
+options:
+  A: List the top ten by score, each with its impact shown against the appetite
+  B: Scale the impact weight in the score to the appetite so severe risks rank higher
+  C: Report each risk's score against an appetite threshold set for the score
+  D: Flag each risk that could exceed the appetite's loss limit, whatever its score
+answer: D
+explanation:
+  why_correct: The appetite is a limit on impact alone, so likelihood has no bearing on whether a risk breaches it. A ranking
+    or threshold on likelihood times impact lets a rare but very large risk sit below many frequent small ones and never reach
+    the committee. Flagging each risk whose possible loss exceeds the limit, whatever its score, reports against the appetite
+    in the terms the committee set.
+  why_not:
+    A: Showing each listed risk's impact against the appetite adds useful detail, but the list is still chosen by score, so
+      the trading agent, ranked outside the ten, would still not appear.
+    B: Weighting impact more heavily may lift this risk into the ten, but it is still a combined score. A rare enough event
+      can still rank low, and the report still does not test each risk against the loss limit itself.
+    C: A score threshold is the usual way to express appetite on a heat map, but this appetite is set on loss alone, however
+      unlikely. A rare risk with a huge possible loss can still score below any threshold that frequent small risks do not
+      breach.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aair-check
+  options_only: not_obvious

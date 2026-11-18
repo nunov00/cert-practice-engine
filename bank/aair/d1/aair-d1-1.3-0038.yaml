@@ -1,0 +1,33 @@
+id: aair-d1-1.3-0038
+subdomain: '1.3'
+difficulty: hard
+stem: At a lender, an underwriter who overrides the credit model must record a reason and answers personally for any loss
+  on that loan, while losses on loans decided as the model suggested are put down to the model. Overrides have almost stopped,
+  and reviews find underwriters signing off decisions they doubted at the time. Which change BEST strengthens human oversight?
+options:
+  A: Stop holding underwriters personally to account for losses on overridden loans
+  B: Hold underwriters accountable for each decision they sign, followed or not
+  C: Require a second underwriter to approve each override before it applies
+  D: Track each underwriter's override rate and review those near zero
+answer: B
+explanation:
+  why_correct: 'The arrangement makes following the model the safe choice for an underwriter whatever they think, because
+    only a departure carries personal consequences. Making underwriters answer for each decision they sign, whether it follows
+    the model or not, removes that one-sided risk: a doubtful approval becomes as much theirs as an override, so they have
+    a reason to act on their doubts. A model cannot be accountable for a decision; the person who signs it can.'
+  why_not:
+    A: Removing the penalty on overrides ends the imbalance, but it does so by leaving nobody accountable for any loss, since
+      losses on followed decisions still fall on the model. Oversight needs someone to answer for decisions, not fewer people.
+    C: A second approval adds another hurdle to overriding, so departures become rarer still, and losses on followed decisions
+      still belong to nobody.
+    D: Reviewing low override rates pushes underwriters to override more, but an override still carries a personal penalty that
+      following does not, so they would override just enough to avoid review rather than whenever they doubt the model.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aair-check
+  options_only: not_obvious

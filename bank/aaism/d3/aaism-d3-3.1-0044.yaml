@@ -1,0 +1,33 @@
+id: aaism-d3-3.1-0044
+subdomain: '3.1'
+difficulty: hard
+stem: An agent platform passes each user's access token to third-party tool servers, which forward it to the company's
+  internal APIs. Every internal API accepts any valid company token. Testers who controlled one tool server reused tokens
+  it received to call the HR and finance APIs. Which design change BEST addresses this?
+options:
+  A: Narrow each user's token to the scopes of the tools that user often uses
+  B: Shorten token lifetimes to five minutes so captured tokens soon expire
+  C: Exchange each token for one valid only at the tool server it is sent to
+  D: Require mutual TLS between the agent platform and each tool server
+answer: C
+explanation:
+  why_correct: The weakness is that one token works everywhere, so whoever receives it, including a tool server, can replay
+    it against any API. Exchanging the user's token for one whose audience is only the receiving tool server, and having
+    each API accept only tokens issued for it, means a token captured by one server is useless anywhere else, while the user's own rights still apply. If a tool server must call an internal API, it exchanges again
+    for a token valid only at that API, under a policy that limits which APIs each tool server may request.
+  why_not:
+    A: Narrower scopes reduce what a token can reach, but a user who often uses HR or finance tools still sends a token valid
+      there to every tool server, so replay still works for those users.
+    B: Short lifetimes shrink the window, but a server that receives a token can replay it within seconds, well inside
+      five minutes.
+    D: Mutual TLS proves the platform is talking to a registered server, but the server the testers controlled was
+      registered and received valid tokens exactly as designed.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aaism-check
+  options_only: not_obvious

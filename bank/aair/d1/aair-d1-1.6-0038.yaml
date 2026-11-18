@@ -1,0 +1,34 @@
+id: aair-d1-1.6-0038
+subdomain: '1.6'
+difficulty: hard
+stem: A letting agency declines rental applicants on the basis of a vendor's AI screening report, which matches court and
+  credit records to each applicant by name and date of birth. Letting officers see only the report. An investigation found
+  that many wrongful declines came from records of other people with the same details. Applicants are told only that they
+  did not meet the agency's criteria. What should the risk practitioner recommend?
+options:
+  A: Let declined applicants see the screening report and dispute its records
+  B: Have the vendor audit how accurately it matches records to applicants
+  C: Have a letting officer review each report-driven decline before it is sent
+  D: Tell each declined applicant that the vendor's screening report drove the decision
+answer: A
+explanation:
+  why_correct: A record that belongs to someone else is easy for the applicant to recognise and nearly impossible for anyone
+    else to spot in the report. Showing declined applicants the report and letting them dispute its records gives the one
+    person who can catch a wrong match the means to do so, and lets the decision be corrected, whatever the source of the
+    error. It also ends the opacity that now leaves applicants unable to challenge a decision about their housing.
+  why_not:
+    B: A matching audit tackles the cause and should follow, but matching on name and date of birth will still produce some
+      wrong matches, and the applicants affected would still be declined without knowing why or being able to challenge it.
+    C: Human review is the usual safeguard for automated declines, but officers see only the report, where another person's
+      record looks just like the applicant's own, so they would confirm the same declines.
+    D: Naming the report as the reason is more honest than the current message, but the applicant still cannot see which records
+      were used or correct one that belongs to someone else.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aair-check
+  options_only: not_obvious

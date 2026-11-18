@@ -1,0 +1,35 @@
+id: aaism-d1-1.4-0039
+subdomain: '1.4'
+difficulty: medium
+stem: An AI security program requires each AI agent to have its own identity, with access reviews and removal when the
+  agent is retired. Agents act in the CRM, ERP and HR systems. The platform team issues agents' credentials on request
+  and keeps no review records. The IAM team runs joiner, mover and leaver processes and quarterly access reviews for staff
+  and service accounts. Who should own agent identities?
+options:
+  A: The AI security team, through a separate register and review cycle for agents
+  B: The platform team, adding owner records and reviews to the credentials it issues
+  C: The IAM team, extending its lifecycle and review processes to agents
+  D: Each agent's business owner, confirming its access in the AI inventory each year
+answer: C
+explanation:
+  why_correct: Agent identities are non-human accounts holding access across business systems, which is what the IAM team
+    already governs for service accounts. Extending its lifecycle and review processes to agents puts them under the same
+    controls, records and reviews as every other account in the CRM, ERP and HR systems, instead of building a parallel
+    process.
+  why_not:
+    A: The AI security team understands agent risks and should set the requirements, but a separate register duplicates
+      the IAM processes, leaves agents outside the enterprise access reviews and has security operating a control it
+      should oversee.
+    B: The platform team knows the agents and issues their credentials, but the agents' access is granted inside the CRM,
+      ERP and HR systems, which it does not govern, so its reviews would cover the credential but not what it can reach.
+    D: Business owners should confirm what their agents need, as reviewers within the process, but a yearly confirmation
+      in the inventory is not lifecycle management, and nothing would remove access when an agent is retired.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,34 @@
+id: cissp-d3-3.7-0006
+subdomain: '3.7'
+difficulty: hard
+stem: A web app serves pages over TLS with HTTP compression, and each page holds the session's anti-forgery token and echoes
+  a search term from the URL. Testers who could make a victim's browser send chosen search terms recovered the token by
+  watching the sizes of the encrypted responses. Mobile customers on metered data rely on the compression. Which change BEST
+  stops the attack?
+options:
+  A: Turn off HTTP compression on the pages that carry the token
+  B: Mask the token with fresh random bytes each time a page includes it
+  C: Add a random amount of padding to each response before encryption
+  D: Require TLS 1.3, which removed the compression older versions allowed
+answer: B
+explanation:
+  why_correct: The attack works because a guessed search term that matches part of the token compresses better, so the
+    encrypted response gets shorter. Masking the token with new random bytes in each response, and unmasking it on receipt,
+    means the token's bytes never repeat between responses, so a guess can never match them and the sizes reveal nothing.
+    Compression stays on for the mobile customers.
+  why_not:
+    A: Turning compression off removes the length signal and is a common fix, but the token is on each page, so this would
+      remove compression across the site, which the metered mobile customers rely on.
+    C: Random padding adds noise to each length, but an attacker can send each guess many times and average the noise out,
+      so it slows the attack rather than stopping it.
+    D: TLS 1.3 drops compression at the TLS layer, but this compression happens in HTTP, inside the encrypted data, so the
+      response sizes still leak in the same way.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-cissp-check
+  options_only: not_obvious

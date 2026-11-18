@@ -1,0 +1,33 @@
+id: cissp-d6-6.2-0011
+subdomain: '6.2'
+difficulty: hard
+stem: A retailer must show each year that none of its 40 office and warehouse network segments can reach its card-processing
+  segment. Last year two engineers reviewed and signed off the firewall rule base, yet a tester later reached a card server
+  through a rule that referred to a nested address group. Which test gives the BEST evidence this year?
+options:
+  A: Probe the card segment from many source addresses in each other segment
+  B: Analyse a month of flow logs for traffic from other segments to the card segment
+  C: Review the rule base with a tool that expands nested groups into each address
+  D: Scan the card segment from the internet and from the guest wireless network
+answer: A
+explanation:
+  why_correct: The claim to prove is that no path exists. Probing from inside each segment tests the paths themselves,
+    through every rule, route and device actually in place, so it catches errors that a reading of the configuration misses,
+    such as last year's nested group. Testing from addresses across each segment's range exercises rules that admit
+    only certain hosts too.
+  why_not:
+    B: Flow logs show what traffic did happen. A month with no traffic from a segment says nothing about whether a path is
+      open, which is what an attacker needs.
+    C: Expanding nested groups fixes the exact weakness of last year's review, but it is still a reading of the intended
+      configuration, and it misses paths created by routing or by devices outside the rule base.
+    D: Testing from the internet and guest wireless covers two likely attack sources, but the requirement covers the 40
+      internal segments, which these scans never test from.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-cissp-check
+  options_only: not_obvious

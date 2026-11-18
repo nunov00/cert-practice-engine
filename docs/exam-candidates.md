@@ -39,7 +39,7 @@ market; every row is *to verify* until a daily run checks it).
 | 1 | CISM (ISACA) | 150 MCQ, 4 domains (18/20/33/29% from 2026-11-03 per ISACA's press release; outline page still shows 17/20/33/30%) | 5 | 5 | 5 | 5 | 5 | 30 | 2026-11-15 |
 | 2 | CISA (ISACA) | 150 MCQ, 5 domains (18/18/12/26/26%) | 5 | 5 | 5 | 5 | 4 | 29 | 2026-11-16 |
 | 3 | CRISC (ISACA) | 150 MCQ, 4 domains (26/22/32/20%) | 3 | 5 | 5 | 5 | 5 | 26 | 2026-11-17 |
-| 4 | CCSP (ISC2) | 100-150 CAT items (MCQ and advanced types), 6 domains (17/20/17/16/17/13%) | 4 | 5 | 3 | 5 | 4 | 25 | 2026-11-08 |
+| 4 | CCSP (ISC2) | 100-150 CAT items (MCQ and advanced types), 6 domains (17/20/17/16/17/13%) | 4 | 5 | 3 | 5 | 4 | 25 | 2026-11-18 |
 | 5 | Security+ (CompTIA) | up to 90, MCQ and performance-based, 5 domains (27/24/19/16/14% on V8 from 2026-11-17) | 5 | 3 | 3 | 4 | 3 | 23 | 2026-11-09 |
 | 6 | CC (ISC2) | Adaptive (CAT), 5 domains (outline from 2026-09-01; weights to confirm from the outline) | 4 | 5 | 4 | 2 | 4 | 23 | 2026-11-10 |
 | 7 | CEH (EC-Council) | 125 MCQ in 4 hours, v13; official blueprint v5 lists 9 domains (6/17/15/24/14/5/10/5/5%), applicability to v13 to confirm | 4 | 5 | 2 | 4 | 2 | 21 | 2026-11-11 |
@@ -113,6 +113,12 @@ older Checked date.
   content client-side, so neither the quiz nor a holder count could be read
   through a page fetch; calibration stays at 3 and demand at 4. The CCSP page
   also lists U.S. DoDM 8140.03 approval. Scores, total and rank unchanged.
+  Re-checked 2026-11-18: the outline page still carries the 2026-08-01 date
+  and the same six domains, with no new outline announced; the exam page
+  still lists 100 to 150 items in 3 hours. Weights, price and the quiz render
+  client-side and could not be read through a page fetch, so the weights rest
+  on the outline PDF checked on 2026-11-08; calibration stays at 3 and demand
+  at 4. Scores, total and rank unchanged.
 - **Security+:** the most widely held entry security certification and a US
   DoD 8140 baseline, so its demand is the highest on the list. It ranks lower
   because its performance-based items cannot be practised here; a product note
@@ -279,3 +285,4 @@ older Checked date.
 | 2026-11-15 | CISM row re-checked: outline page still shows the pre-2026-11-03 weights (17/20/33/30%) and the "will be updated effective 3 November 2026" notice, so the new outline is not yet published on that page (new weights per ISACA's announcement, detailed verification pending); 150 questions and the free 10-question practice quiz confirmed; scores, total and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/cism/cism-exam-content-outline), [outline update announcement](https://www.isaca.org/about-us/newsroom/press-releases/2026/isaca-updates-cism-exam-content-outline-factoring-in-todays-technologies-security-responsibilities), [practice quiz](https://www.isaca.org/credentialing/cism/cism-practice-quiz) |
 | 2026-11-16 | CISA row re-checked: 150 questions and five domains at 18/18/12/26/26% confirmed on the outline page, no outline update notice; the free 10-question practice quiz is still published; scores, total and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/cisa/cisa-exam-content-outline), [practice quiz](https://www.isaca.org/credentialing/cisa/cisa-practice-quiz) |
 | 2026-11-17 | CRISC row re-checked: 150 questions and four domains at 26/22/32/20% confirmed on the outline page, no outline update notice; the free 10-question practice quiz is still published; scores, total and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/crisc/crisc-exam-content-outline), [practice quiz](https://www.isaca.org/credentialing/crisc/crisc-practice-quiz) |
+| 2026-11-18 | CCSP row re-checked: outline page still dated 2026-08-01 with the same six domains, no outline change announced; exam page still lists 100-150 items in 3 hours; weights and quiz render client-side, so they rest on the outline PDF checked 2026-11-08; scores, total and rank unchanged | ISC2 [outline page](https://www.isc2.org/certifications/ccsp/ccsp-certification-exam-outline), [CCSP exam page](https://www.isc2.org/certifications/ccsp/ccsp-exam), [outline refresh notice](https://www.isc2.org/Insights/2026/06/isc2-ccsp-exam-outline-revised) |

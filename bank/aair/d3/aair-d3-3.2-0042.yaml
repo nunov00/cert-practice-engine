@@ -1,0 +1,33 @@
+id: aair-d3-3.2-0042
+subdomain: '3.2'
+difficulty: hard
+stem: A buy-now-pay-later firm's strategy is to grow among customers with thin credit files. Its model approves about 20,000
+  of them a week, but its loss estimates for this group are highly uncertain, and the residual risk is above appetite. Repayment
+  data on these customers will take a year to build up. Which treatment is MOST appropriate?
+options:
+  A: Send thin-file applications to underwriters for a final decision
+  B: Start thin-file customers on low limits that rise as they repay
+  C: Decline thin-file applicants until a year of repayments is in
+  D: Retrain the model monthly as repayment outcomes come in
+answer: B
+explanation:
+  why_correct: The uncertainty cannot be removed until repayment data exists, so the treatment has to cap what the firm can
+    lose while that data builds up. Low starting limits bound the loss on each new customer, and raising them as customers
+    repay rewards good payers and produces the outcome data the model needs. The firm keeps growing in the segment its strategy
+    targets, with exposure held within appetite.
+  why_not:
+    A: Underwriters help where people can see what a model misses, but 20,000 applications a week is far beyond manual review,
+      and with thin files underwriters have little more to go on than the model.
+    C: Declining the group removes the exposure, but it abandons the strategy and denies credit to people who already struggle
+      to get it, while producing no repayment data to learn from.
+    D: Monthly retraining uses outcomes as they arrive, but early outcomes are few, and meanwhile each new customer is approved
+      at full exposure, so the risk stays above appetite.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aair-check
+  options_only: not_obvious

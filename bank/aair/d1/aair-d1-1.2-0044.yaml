@@ -1,0 +1,33 @@
+id: aair-d1-1.2-0044
+subdomain: '1.2'
+difficulty: hard
+stem: An insurer's complaints process refunds each customer whose complaint about a premium is upheld. Last quarter a pricing
+  model fault overcharged a few thousand renewing customers by small amounts; 60 complained and were refunded, and the model
+  team fixed the fault within a week. The model logs which version priced each policy. Which change BEST aligns complaint handling with the model's risk management?
+options:
+  A: Send complaints traced to a model fault to the model owner for a root-cause fix
+  B: Tag each complaint with the model involved and report the counts to its owner
+  C: Write to renewing customers inviting them to report possible overcharges
+  D: Review every policy a faulty version priced once a complaint confirms the fault
+answer: D
+explanation:
+  why_correct: The complaints process repairs harm only for people who complain, and with small overcharges most affected
+    customers will never notice. Once a complaint confirms a model fault, the version logs identify each policy the faulty
+    version priced, so the process should move from refunding the complainant to reviewing and refunding everyone affected.
+    That ties complaint handling to the model's records instead of leaving remediation to whoever speaks up.
+  why_not:
+    A: Routing faults to the model owner gets the model fixed, which here already happened within a week. The customers who
+      were overcharged and did not complain are still out of pocket.
+    B: Tagging complaints by model gives the owner useful monitoring data, but it still counts only people who complained,
+      so most of the overcharged customers stay unrefunded.
+    C: Inviting customers to report overcharges reaches more people than waiting for complaints, but it still depends on each customer
+      spotting a small difference, while the version logs already show every policy the faulty version priced.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aair-check
+  options_only: not_obvious
