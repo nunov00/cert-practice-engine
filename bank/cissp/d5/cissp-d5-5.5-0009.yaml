@@ -1,0 +1,32 @@
+id: cissp-d5-5.5-0009
+subdomain: '5.5'
+difficulty: hard
+stem: At a retailer, access requests go through a provisioning workflow that routes each one to the resource owner for
+  approval. An audit found finance rights that no workflow request explains, all added by helpdesk staff. Helpdesk staff hold
+  administrator rights in the twelve core applications, which they use to reset passwords and unlock accounts. Which change
+  BEST addresses this?
+options:
+  A: A second approver in the workflow for each request involving finance rights
+  B: A monthly reconciliation of application rights against approved requests
+  C: A helpdesk role in each application limited to password resets and unlocks
+  D: Alerts to the security team when helpdesk accounts change application rights
+answer: C
+explanation:
+  why_correct: The unexplained rights were granted directly in the applications, outside the workflow, using administrator
+    rights that the helpdesk holds only for resets and unlocks. A role limited to those tasks removes the ability to grant
+    rights at all, so every grant has to go through the approval workflow.
+  why_not:
+    A: A second approver strengthens the workflow, but these rights never passed through it, so the bypass stays open.
+    B: Reconciliation is a sound control that finds rights without an approved request, but it finds them up to a month
+      later and leaves the helpdesk able to grant them.
+    D: Alerting on helpdesk rights changes detects the grants sooner, but the helpdesk keeps the power to make them, and
+      the security team must judge each alert after the access already exists.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-cissp-check
+  options_only: not_obvious

@@ -7,8 +7,8 @@ stem: A manufacturer will let an AI agent negotiate prices and delivery terms wi
   identifies the risks?
 options:
   A: Map the design to a published catalogue of AI attack techniques
-  B: Run scenario workshops with buyers, legal staff and the agent's designers
-  C: Review industry incident reports on AI agents used in procurement
+  B: Run scenario workshops with buyers, lawyers and the agent's designers
+  C: Interview senior buyers on past supplier disputes to extend the checklist
   D: Extend the checklist with risks from the agent vendor's documentation
 answer: B
 explanation:
@@ -19,16 +19,17 @@ explanation:
   why_not:
     A: An attack catalogue helps with threats such as prompt injection, but the main worry is the agent agreeing to poor terms,
       which can happen with no attacker at all and which such catalogues do not describe.
-    C: Reports on negotiating agents are still few, and they describe other firms' designs, so they would miss most of what
-      could go wrong with this one.
+    C: Buyers' experience is valuable, but past disputes show how human negotiators went wrong, not how an agent pressed
+      by a supplier's agent could. Feeding them into a checklist built on past incidents keeps the method backward-looking
+      and leaves out the designers, who know what this agent can be led to agree to.
     D: The vendor's documents describe its product in general and the checklist rests on past incidents, so extending it stays
       backward-looking and says little about this firm's buyers and contracts.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-17-daily-aaism
   check_verdict: pass
-  checked_by: 2026-11-17-daily-aaism-check
+  checked_by: 2026-11-18-daily-aaism-check
   options_only: not_obvious

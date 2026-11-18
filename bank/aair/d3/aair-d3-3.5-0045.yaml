@@ -1,0 +1,33 @@
+id: aair-d3-3.5-0045
+subdomain: '3.5'
+difficulty: hard
+stem: A lender will use a vendor's hosted model for consumer credit decisions under a three-year contract. Regulation requires
+  the lender to keep each decision's inputs, model version and output for five years. The vendor's service records these for
+  each decision but deletes them after 90 days. Which arrangement BEST meets the requirement?
+options:
+  A: Contract the vendor to keep each decision's records for the full five years
+  B: Copy each decision's inputs, version and output to the lender's records
+  C: Obtain the vendor's assurance report covering its logging controls
+  D: Pin the model version so that any past decision can be rerun when needed
+answer: B
+explanation:
+  why_correct: 'The duty to keep the records is the lender''s, and it outlasts the contract: records made in the contract''s
+    last year must be kept for years after the vendor relationship may have ended. Copying each decision''s inputs, model
+    version and output into the lender''s own records as decisions are made keeps them under the lender''s control, whatever
+    happens to the vendor or the contract. The copies need the same protection as other credit records.'
+  why_not:
+    A: A longer retention term is the usual contract fix, but most records would outlive the three-year contract and depend
+      on the vendor still existing and honouring the term, with retrieval after exit uncertain.
+    C: An assurance report shows that the vendor logs reliably, but it does not change the 90-day deletion, so most records
+      would be gone long before five years.
+    D: Pinning helps reproduce behaviour while that version is hosted, but hosted versions are retired, and a rerun is not
+      the record the regulation asks for, which is the inputs and output of each actual decision.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aair-check
+  options_only: not_obvious

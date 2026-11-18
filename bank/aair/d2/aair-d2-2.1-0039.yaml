@@ -1,0 +1,37 @@
+id: aair-d2-2.1-0039
+subdomain: '2.1'
+difficulty: medium
+stem: A card issuer is developing a model that holds suspicious payments until the customer confirms them in its app. The
+  issuer estimates that a missed fraud costs about 50 times as much as the customer friction of holding a genuine payment.
+  The model's scores have been confirmed as calibrated probabilities. Which rule for setting the hold threshold should the
+  risk practitioner recommend?
+options:
+  A: The threshold where fraud recall meets the target agreed with operations
+  B: The threshold that maximises an F-beta score weighted toward recall
+  C: The threshold that keeps holds under an agreed share of payments
+  D: The threshold where expected cost from the two kinds of error is lowest
+answer: D
+explanation:
+  why_correct: 'The issuer has estimated what each kind of error costs, including the friction of a needless hold, and the
+    scores are calibrated probabilities. That is what an expected-cost threshold needs: the cut-off can be set directly from
+    the two costs, so it reflects what each error actually costs rather than a weighting chosen by judgement. The cost estimates
+    should be reviewed periodically, and the resulting hold volume checked with operations before launch.'
+  why_not:
+    A: A recall target is a common, defensible way to favour catching fraud, and it suits cases where error costs are unknown.
+      Here they are estimated, and a recall target ignores the friction of holds, so the agreed level may sit far from the
+      point where total cost is lowest.
+    B: F-beta weighted toward recall is a principled way to favour recall over precision, but it weights the two rates by
+      a chosen beta, not by what each error costs, and it ignores how common fraud is. It approximates the cost trade-off
+      the issuer can calculate directly from its estimates.
+    C: A cap on the share of payments held controls customer friction, which matters, but that friction is already counted
+      in the cost estimate. A cap ignores the much larger cost of missed fraud, so it could stop the threshold short of where
+      losses are lowest.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aair-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: aaism-d2-2.1-0064
+subdomain: '2.1'
+difficulty: hard
+stem: A card issuer set its fraud model's tolerance as an AUC of at least 0.90 on each month's labelled transactions. AUC
+  has held near 0.92 all year, yet fraud losses have doubled, as fraudsters have moved to fewer, larger transactions. Which
+  change to the tolerance BEST fits?
+options:
+  A: Raise the AUC tolerance to 0.94 so that weaker months breach it
+  B: Set it on the share of fraud cases missed at the model's cut-off
+  C: Set it on the value of fraud the model misses each month
+  D: Keep the AUC tolerance and add one on drift in the input data
+answer: C
+explanation:
+  why_correct: A tolerance should measure the harm the business cares about, here money lost to fraud. AUC summarises how
+    well the model ranks cases across all cut-offs and treats every case alike, so it can stay steady while the few large
+    frauds slip through. A tolerance on the value of fraud missed ties the limit to losses and would have been breached as
+    soon as the large cases grew.
+  why_not:
+    A: A stricter AUC is still a ranking measure that weighs a small fraud the same as a large one, so the model could
+      meet it while missing the high-value cases that drive the losses.
+    B: Misses at the actual cut-off are closer to operations than AUC, but the measure counts cases, so catching many small
+      frauds can hide missing a few large ones, which is the pattern behind the doubled losses.
+    D: Drift monitoring is a useful early signal that inputs are changing, but it does not measure losses, and the AUC
+      tolerance would still read as met while they doubled.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aaism-check
+  options_only: not_obvious

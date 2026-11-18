@@ -1,0 +1,33 @@
+id: cissp-d1-1.6-0007
+subdomain: '1.6'
+difficulty: medium
+stem: The security team wrote the leaver procedure that HR and IT staff carry out. Twice in two years HR replaced a system
+  the steps relied on, and each time security rewrote the procedure after an audit found leavers' accounts still active.
+  After a third HR system change, a new audit finds the same problem. What should the CISO do?
+options:
+  A: Make the HR process owner own and maintain the procedure, reviewed by security
+  B: Have security re-check the procedure against HR's systems each quarter
+  C: Train HR and IT staff on the procedure, with yearly sign-off that they follow it
+  D: Move the leaver steps into the access standard so that they become mandatory
+answer: A
+explanation:
+  why_correct: The procedure goes stale each time HR changes how it works, and security learns of those changes only when an
+    audit finds the damage. A procedure describes how a process is carried out, so it belongs to the owner of that process.
+    With HR owning it, changes to HR systems and the procedure happen together, and security checks that the result still
+    meets the access standard.
+  why_not:
+    B: A quarterly check shortens the lag, but security still learns of HR changes second-hand and up to three months late,
+      and it keeps maintaining steps it does not perform.
+    C: Training and sign-off help staff follow a procedure that is right. Here the procedure itself stops matching HR's
+      systems, so staff would be trained on steps they cannot carry out.
+    D: Standards set mandatory requirements, such as how quickly access must be removed, but step-by-step instructions tied
+      to particular systems belong in a procedure. Moving them up a level makes them slower to change, not more accurate.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-cissp-check
+  options_only: not_obvious

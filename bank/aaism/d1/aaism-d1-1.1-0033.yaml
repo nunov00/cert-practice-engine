@@ -7,9 +7,9 @@ stem: A city council will use a high-risk AI tool to rank housing applications, 
   BEST next step?
 options:
   A: Extend the assessment with a bias test on recent applications split by protected group
-  B: Pilot the tool in one district and complete the rights assessment from its outcomes
+  B: Commission an independent audit of the tool's accuracy for each applicant group
   C: Extend the assessment to how staff act on the rank and how applicants can contest it
-  D: Have the equality officer review the assessment's bias test and sign it off for the rights duty
+  D: Extend the assessment to how the vendor secures and retains applicants' records
 answer: C
 explanation:
   why_correct: A rights assessment by a deployer looks at its own use of the tool, not only at the model. The existing
@@ -21,17 +21,18 @@ explanation:
     A: A fresh bias test refreshes evidence the assessment already holds. It still looks only at the model's outputs and
       says nothing about how staff act on the rank or how an applicant can contest a refusal, which is where the council's
       own rights impact sits.
-    B: Learning from real outcomes is sound practice for monitoring, but a pilot on live applications is already first use.
-      The regulation requires the rights assessment before that point, so the applicants in the pilot district would be
-      ranked with no assessment in place.
-    D: An expert review strengthens the bias analysis, but equal treatment is only one of the rights at stake. Signing off
-      the existing assessment would leave human oversight and the applicants' route to challenge decisions unassessed.
-status: draft
+    B: An independent audit of accuracy by applicant group gives stronger evidence about the model before first use, but
+      like the existing bias test it examines the tool's outputs. It leaves the council's own use of the rank, human
+      oversight and the applicants' route to challenge a refusal unassessed.
+    D: How the vendor handles applicants' records is a real data protection question, but it is what the signed-off data
+      protection impact assessment already covers. Extending the assessment there adds little, while the council's own
+      process around the rank stays unassessed.
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-17-daily-aaism
   check_verdict: pass
-  checked_by: 2026-11-17-daily-aaism-check
-  options_only: obvious
+  checked_by: 2026-11-18-daily-aaism-check
+  options_only: not_obvious

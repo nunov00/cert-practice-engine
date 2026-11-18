@@ -1,0 +1,32 @@
+id: cissp-d7-7.8-0004
+subdomain: '7.8'
+difficulty: hard
+stem: A firm's patch tool reported a critical library fix installed on its 600 Linux servers, and the vulnerability tickets
+  were closed. A month later a tester exploited the flaw on 70 of them. Some had not restarted the services that load the
+  library, and others ran applications that ship their own copy of it. Which change BEST prevents this from recurring?
+options:
+  A: Restart dependent services automatically after each library patch is installed
+  B: Close each ticket only when a rescan confirms the flaw is gone from the server
+  C: Add the applications that bundle the library to the patch tool's inventory
+  D: Require server owners to confirm each critical patch before its ticket closes
+answer: B
+explanation:
+  why_correct: Both failures were hidden because tickets closed on the patch tool's report that a package was installed, not
+    on evidence that the flaw was gone. Closing a ticket only after a rescan confirms it catches any reason a fix did not take
+    effect, including these two and ones not yet seen, and leaves the ticket open until the server is actually safe.
+  why_not:
+    A: Automatic restarts fix servers that kept the old library in memory, but they do nothing for applications that ship
+      their own copy, which the patch never touched.
+    C: Tracking bundled copies fixes the second cause for the applications already known, but not the services left running
+      on the old code, or the next application that bundles the library.
+    D: Owner confirmation adds accountability, but owners would rely on the same installation report, so the hidden failures
+      would be confirmed as fixed.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-cissp-check
+  options_only: not_obvious

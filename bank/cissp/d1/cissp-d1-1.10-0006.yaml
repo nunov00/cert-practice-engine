@@ -1,0 +1,34 @@
+id: cissp-d1-1.10-0006
+subdomain: '1.10'
+difficulty: medium
+stem: A health app's team keeps a STRIDE threat model on its data flow diagram and logs each threat against a diagram element
+  in its backlog. A privacy review raises three concerns. Research partners could join their pseudonymised extracts to single
+  out patients, users cannot see which partners get their data, and the app collects location data it does not need. Which
+  approach BEST extends the team's model to cover these concerns?
+options:
+  A: A data minimisation review of each field the app collects and shares
+  B: A data protection impact assessment of the app's processing as a whole
+  C: A motivated-intruder re-identification test of the partners' combined extracts
+  D: A LINDDUN analysis of the existing data flow diagram, partners included
+answer: D
+explanation:
+  why_correct: The concerns span linkability, unawareness and over-collection, and the team works threat by threat against
+    diagram elements. LINDDUN is a privacy threat modelling method applied to the same data flow diagram, with categories
+    for linkability, identifiability, unawareness and non-compliance, so it covers all three concerns and yields threats per
+    element that fit the team's backlog alongside its STRIDE threats.
+  why_not:
+    A: A minimisation review would catch the unneeded location data, and may cut what partners receive, but it does not
+      address whether users can see who gets their data, and it works field by field rather than flow by flow.
+    B: A DPIA is the right legal assessment for health data and weighs these risks, but it judges the processing as a whole
+      at a point in time. It does not produce threats tied to diagram elements, which is how the team tracks and fixes them.
+    C: A motivated-intruder test is a strong way to measure whether partners could single out patients, but it addresses
+      only the first concern, not the missing transparency or the unneeded location data.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,36 @@
+id: aair-d1-1.1-0038
+subdomain: '1.1'
+difficulty: hard
+stem: A medical device maker sells AI diagnostic software in three markets. One market's AI law treats it as high risk and
+  has the most detailed requirements, buyers in another expect alignment with a voluntary AI risk framework, and hospitals
+  in the third ask for certification to an AI management system standard. Each market team keeps its own controls and evidence,
+  and audits keep finding gaps in one market that were already fixed in another. What should the risk practitioner recommend?
+options:
+  A: One control set, mapped to each market's requirements and evidence
+  B: One baseline from the strictest regime's requirements, used in each market
+  C: One certified management system that covers the three markets' operations
+  D: One central compliance team that runs the three markets' programmes
+answer: A
+explanation:
+  why_correct: The gaps recur because three teams build and evidence controls separately, so a fix in one market never reaches
+    the others. A single set of controls, each mapped to the requirements it meets in each market, means a control is fixed
+    once and the fix counts everywhere, while the mapping shows each regulator, buyer and certifier the evidence it asks for.
+    A requirement that only one regime has is added to the set rather than run beside it.
+  why_not:
+    B: A strictest-regime baseline is a popular way to integrate, and the high-risk law is the most detailed here, but detailed
+      is not the same as complete. It does not include the management system elements a certification audit checks, so the
+      certification work would grow up beside the baseline again, with its own controls and evidence.
+    C: A certified management system gives one governance structure across the markets, but certification checks that the
+      system works, not that the software meets the high-risk law's detailed requirements. Conformity work for that market
+      would continue outside it, and gaps could again be fixed in one place only.
+    D: A single team improves coordination, but if it runs three programmes it still keeps three control sets and three bodies
+      of evidence. A gap would still have to be found and fixed separately in each one.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aair-check
+  options_only: not_obvious

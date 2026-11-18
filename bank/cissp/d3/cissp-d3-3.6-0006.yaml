@@ -1,0 +1,33 @@
+id: cissp-d3-3.6-0006
+subdomain: '3.6'
+difficulty: medium
+stem: A firm will replace each employee's single key pair, now used both to decrypt email and to sign purchase approvals.
+  Most encrypted mail it receives comes from customers using their own mail tools. Legal requires that encrypted mail stay
+  readable after staff leave, and that a signed approval show that only that employee could have made it. Which design BEST
+  meets both requirements?
+options:
+  A: Separate pairs; no escrow, with each message also encrypted to a company archive key
+  B: Separate pairs; escrow both keys under split knowledge held by two custodians
+  C: Separate pairs; escrow the encryption key only, with the signing key made on a card
+  D: One pair per person; escrowed, with each signature countersigned by a timestamp service
+answer: C
+explanation:
+  why_correct: The two requirements pull in opposite directions, so each needs its own key. Escrowing the encryption key lets
+    the firm read mail after a departure, whoever sent it. A signing key generated on the employee's card and never copied
+    means that only the employee could have produced a signature, which is what gives an approval its evidential weight.
+  why_not:
+    A: An archive key added to each message is a sound recovery design when the firm controls the senders' software, but most
+      encrypted mail here comes from customers' own tools, which will encrypt only to the employee's key.
+    B: Split knowledge makes misuse of escrowed keys hard, but a recoverable copy of the signing key still exists, so an
+      employee can argue that the custodians could have signed, and the approvals lose their weight.
+    D: A timestamp proves when a signature was made, not who made it. With the one pair escrowed, a copy of the signing key
+      exists outside the employee's control, so non-repudiation is still lost.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-cissp-check
+  options_only: not_obvious

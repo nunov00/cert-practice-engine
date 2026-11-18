@@ -1,0 +1,34 @@
+id: aaism-d2-2.2-0068
+subdomain: '2.2'
+difficulty: hard
+stem: A ticketing firm's public chatbot can issue refunds. Each prompt first passes an open-weight jailbreak classifier
+  that the firm downloaded and runs unchanged, and the same model is freely available online. Which weakness of this
+  screen should the threat model stress MOST?
+options:
+  A: Jailbreaks published after the version the firm downloaded and still runs
+  B: Jailbreaks written in languages the classifier was not trained to read
+  C: Jailbreaks spread over many turns, each prompt harmless on its own
+  D: Jailbreaks refined offline against a downloaded copy until one passes
+answer: D
+explanation:
+  why_correct: Because the exact classifier is public, an attacker can run it at home and keep adjusting a jailbreak until
+    it passes, with unlimited attempts that the firm never sees and that no rate limit or alert can touch. Whatever gaps
+    the classifier has, this lets attackers find them before sending a single prompt to the firm, which makes it the
+    structural weakness of this design.
+  why_not:
+    A: Running an old version unchanged does leave it behind newer jailbreak techniques, but updating would fix that, and
+      each update is just as public. The weakness that remains whatever version runs is that attackers hold the same copy
+      and can tune against it.
+    B: Language gaps are a common weakness of classifiers, but whether this one has them is unknown, and an attacker with
+      a copy would find such a gap, or any other, by testing offline anyway.
+    C: Multi-turn attacks beat screens that judge each prompt alone, and this one may, but that is one technique among
+      many, while a public copy lets attackers find whichever technique works.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aaism-check
+  options_only: not_obvious

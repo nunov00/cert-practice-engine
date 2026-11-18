@@ -1,0 +1,32 @@
+id: cissp-d4-4.2-0025
+subdomain: '4.2'
+difficulty: hard
+stem: Attackers keep reaching a company's finance staff with spreadsheets carrying malicious macros, sent as links to files
+  on public cloud storage. The finance analysts build and change hundreds of macro workbooks of their own each month, kept
+  on internal file shares. Which endpoint control BEST stops the attacks without disrupting this work?
+options:
+  A: Block macros in files from the internet, allowing those from internal shares
+  B: Allow only macros signed with certificates the company issues to its analysts
+  C: Detonate email attachments in a sandbox at the mail gateway before delivery
+  D: Block Office applications from starting child processes such as script hosts
+answer: A
+explanation:
+  why_correct: The malicious files arrive from the internet, while the analysts' own workbooks live on internal shares. Blocking
+    macros in files marked as downloaded from the internet stops the attack files from running macros at all, whatever
+    they do, and leaves the analysts' internal workbooks working as before.
+  why_not:
+    B: Signed-macro rules are strong where macros change rarely, but analysts change hundreds of workbooks a month, and
+      each change would need re-signing, which disrupts exactly the work the company wants to keep.
+    C: Gateway sandboxing catches many malicious attachments, but these files arrive as links to cloud storage, so there is
+      no attachment for the gateway to detonate.
+    D: Blocking child processes stops a common way that macros launch payloads, but a macro can still download files, change
+      data or call system functions from inside the spreadsheet application, so it narrows the attack rather than stopping it.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-cissp-check
+  options_only: not_obvious

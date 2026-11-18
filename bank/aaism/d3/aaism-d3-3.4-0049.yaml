@@ -1,0 +1,34 @@
+id: aaism-d3-3.4-0049
+subdomain: '3.4'
+difficulty: hard
+stem: A city's model picks which restaurants inspectors visit, and it retrains each quarter on the results of those visits.
+  Districts it sends inspectors to more often record more failures, so it sends them there still more, while some districts
+  are rarely visited at all. Which change BEST corrects this?
+options:
+  A: Send a share of inspections to randomly chosen premises in all districts
+  B: Remove district and address features from the model's inputs
+  C: Weight training cases to offset how often each district has been inspected
+  D: Cap the share of inspections that any one district can receive
+answer: A
+explanation:
+  why_correct: The model learns only from places it chose to inspect, so its picture of rarely visited districts never
+    improves and its own choices confirm themselves. Sending part of the inspections to randomly chosen premises everywhere
+    produces outcomes the model did not select, which gives it unbiased evidence about every district and breaks the loop,
+    while most inspections still follow risk.
+  why_not:
+    B: Removing location features looks like removing the bias, but inputs such as cuisine, size or licence age vary by
+      district and act as proxies, and the training data still holds failures only from where inspectors went.
+    C: Reweighting corrects for how often districts were visited, but it can only reweight inspections that happened.
+      Districts that are rarely inspected contribute almost no cases, so nothing tells the model what failure looks like
+      there.
+    D: A cap spreads inspections more evenly, but the extra visits still go where the model ranks highest within each
+      district, so the data stays shaped by the model's own choices.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aaism-check
+  options_only: not_obvious

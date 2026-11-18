@@ -107,6 +107,6 @@ held:
   # pre-use accuracy audit across applicant groups), 1.2-0036 (C false
   # attribution is weak; try after-the-fact daily change review), 2.1-0062 (key
   # the only participatory option; make one distractor participatory too).
-  - { id: aaism-d1-1.1-0033, pr: 90 }
-  - { id: aaism-d1-1.2-0036, pr: 90 }
-  - { id: aaism-d2-2.1-0062, pr: 90 }
+  # Daily batch 2026-11-18, batch run: reworked and rechecked the three PR #90
+  # drafts; all passed and were released within AAISM's hard share. The list is
+  # now empty.

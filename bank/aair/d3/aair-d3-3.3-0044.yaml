@@ -1,0 +1,34 @@
+id: aair-d3-3.3-0044
+subdomain: '3.3'
+difficulty: hard
+stem: A company's AI assistant keeps a long-term memory for each user, which it updates itself during chats, including while
+  it summarises web pages. Users value that it remembers their preferences between sessions. Testers planted text on a web
+  page that the assistant saved as a standing preference, and in later sessions it copied each summary to an outside address.
+  Which control BEST addresses this?
+options:
+  A: Save to memory only entries that the user confirms, shown in full
+  B: Filter web pages for hidden instructions before the assistant reads them
+  C: Clear each user's memory at the end of each session
+  D: Review a weekly sample of stored memory entries for suspicious text
+answer: A
+explanation:
+  why_correct: The attack works because content the assistant reads can become a lasting instruction without the user knowing.
+    Allowing an entry into memory only when the user confirms it, with the entry shown in full, puts a person who knows their
+    own preferences at the one point where planted text becomes persistent, whatever wording got it there. Preferences users
+    really give are still kept between sessions.
+  why_not:
+    B: Injection filters lower the chance of planted text getting through, but such text can be phrased in endless ways, and
+      anything that slips past still lands in memory and acts in later sessions.
+    C: Clearing memory each session stops a planted entry from persisting, but it also removes the memory between sessions
+      that users value. It avoids the risk by giving up the feature.
+    D: A weekly review may find planted entries, but they act in the meantime, and an instruction phrased as an ordinary preference
+      is hard to recognise in a sample.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aair-check
+  options_only: not_obvious

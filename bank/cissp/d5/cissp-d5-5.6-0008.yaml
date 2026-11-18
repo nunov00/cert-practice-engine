@@ -1,0 +1,33 @@
+id: cissp-d5-5.6-0008
+subdomain: '5.6'
+difficulty: easy
+stem: A company's administrators sign in to its cloud console only through the corporate identity provider, as do its password
+  vault and ticketing system. A faulty signing-certificate change at the identity provider, copied straight to its standby
+  region, stopped federated sign-in for six hours, and nobody could reach the console to work around it. Which change BEST
+  keeps the console reachable in such an outage?
+options:
+  A: Two emergency accounts outside federation, with hardware keys and use alerts
+  B: A standby identity provider in another region, with automatic failover
+  C: A local password for each administrator, usable while federation is down
+  D: Console access keys for each administrator, stored in the secrets vault
+answer: A
+explanation:
+  why_correct: The console needs a way in that does not depend on the identity provider. A small number of emergency accounts
+    that sign in directly to the cloud platform, protected by hardware keys, with credentials held under dual control and
+    alerts on every use, gives that path while keeping its exposure small and its use visible.
+  why_not:
+    B: Regional failover protects against losing one site, but this fault was a configuration change copied to the standby,
+      so both instances would fail together.
+    C: Local passwords would restore access, but they give each administrator a standing credential outside federation, its
+      MFA and its leaver process, which multiplies the exposure that a few emergency accounts keep small.
+    D: Access keys bypass federated sign-in, but the vault that holds them signs users in through the same identity provider,
+      so nobody could retrieve them during the outage.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-cissp-check
+  options_only: obvious

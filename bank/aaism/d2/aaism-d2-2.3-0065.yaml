@@ -1,0 +1,33 @@
+id: aaism-d2-2.3-0065
+subdomain: '2.3'
+difficulty: hard
+stem: A bank plans to send every prompt and reply from its 40 AI applications, many holding customer and trading data,
+  through a SaaS AI security gateway that inspects them for injection and data leaks. Which due diligence area is MOST
+  important?
+options:
+  A: How well the gateway detects injection and leaks on the bank's own test set
+  B: How the gateway vendor stores, retains and accesses the traffic it inspects
+  C: Whether the gateway's added latency fits the applications' response targets
+  D: How the applications behave if the gateway becomes unavailable
+answer: B
+explanation:
+  why_correct: The gateway would see every prompt and reply across the bank, which makes its vendor the largest single
+    concentration of the bank's customer and trading data among its AI suppliers. How the vendor stores, retains and
+    accesses that traffic decides whether a security tool becomes the bank's biggest exposure, so it sets the depth of
+    review and the contract terms before detection quality is weighed.
+  why_not:
+    A: Detection quality is the reason to buy the gateway and should be tested, but a gateway that detects well can still
+      expose every prompt it holds, which is the larger risk of placing it in the path of all traffic.
+    C: Latency matters to users and can be measured in a pilot, but it does not affect what happens to the data, and slow
+      inspection can usually be tuned.
+    D: The bank must decide whether applications fail open or closed, but that is a design choice it controls, while what
+      the vendor does with the traffic it holds can only be judged and bound through due diligence and contract.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aaism-check
+  options_only: not_obvious

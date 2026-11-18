@@ -1,0 +1,33 @@
+id: aaism-d1-1.1-0034
+subdomain: '1.1'
+difficulty: hard
+stem: An AI regulation's duties for high-risk systems do not cover research and development carried out before a system
+  is put into service. A lender plans a three-month trial in which its new credit-limit model, a high-risk use, sets the
+  limits of 500 real applicants, each limit approved by an analyst. The trial is meant to measure how applicants respond
+  to their limits. What should the security manager advise?
+options:
+  A: Treat the trial as research with an analyst approving each limit it sets
+  B: Meet the regulation's duties for the model before the trial starts
+  C: Run the trial as research and meet the duties before the full launch
+  D: Run the trial in shadow mode, with limits shown to analysts but not applied
+answer: B
+explanation:
+  why_correct: The exclusion ends where a system is put into service. A trial in which the model's limits are applied to
+    real applicants is live use, whatever its size, length or label, so the high-risk duties, such as risk management,
+    logging, data governance and human oversight, have to be met before the first applicant is affected.
+  why_not:
+    A: Analyst approval is a form of human oversight, which is itself one of the duties, and it does not turn live use
+      into research. Each approved limit is still a decision a high-risk system applies to a real applicant.
+    C: Meeting the duties at full launch would suit a trial that never touches real people. Here 500 applicants would have
+      their credit limits set for three months by a system that meets none of the duties.
+    D: A shadow trial would stay within research and is a sound earlier step, but applicants never receive the limits, so
+      it cannot show how they respond to them, which is what this trial is for.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: aair-d2-2.2-0034
+subdomain: '2.2'
+difficulty: hard
+stem: A law firm validated its research assistant, which passes the top five retrieved passages to a language model, on 400
+  graded questions against an index of 50,000 recent documents; 94% of answers were correct. Before launch, the index will
+  grow to two million documents, including older judgments that later cases overturned. Which further validation is MOST important?
+options:
+  A: Measure on the full index how often the right passages reach the top five
+  B: Check on the full index that each answer is supported by its cited passages
+  C: Rerun and grade the 400 questions with the assistant on the full index
+  D: Run each question several times on the full index to check consistency
+answer: C
+explanation:
+  why_correct: The growth adds many passages that look relevant, including overturned judgments that state the opposite of
+    current law. An answer can then go wrong even when the right passage is retrieved, because the model is also handed a
+    contradicting one. Rerunning and grading the same questions end to end on the full index measures what lawyers will actually
+    receive, and shows whether the 94% holds.
+  why_not:
+    A: Retrieval recall on the full index is a useful diagnostic, but the right passage can reach the top five alongside an
+      overturned judgment, and the answer can still follow the wrong one. Good retrieval figures would not show that.
+    B: A support check catches invented content, but an answer that relies on an overturned judgment is fully supported by
+      its cited passage, so it would pass.
+    D: Repeat runs reveal answers that change from run to run, but an answer that consistently relies on an overturned judgment
+      is consistent and wrong. Consistency is not correctness.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-18-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-18-daily-aair-check
+  options_only: not_obvious
