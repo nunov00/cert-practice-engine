@@ -13,7 +13,7 @@ options:
 answer: B
 explanation:
   why_correct: A fallback has to keep the safety check in place without depending on the component that failed. The rules-based
-    checker was the production control before the model, still runs, and can check hundreds of orders at once, so every timed-out
+    checker was the production control before the model, is still maintained, and as a rules engine it does not depend on the model's capacity, so every timed-out
     order still gets an interaction check before dispatch. It may catch less than the model, but it is a known level of protection
     that keeps orders moving and passes on to pharmacists only what it flags.
   why_not:

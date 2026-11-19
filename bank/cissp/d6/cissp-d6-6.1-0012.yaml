@@ -12,7 +12,7 @@ options:
 answer: B
 explanation:
   why_correct: The aim is a current, fleet-wide picture of what firmware each controller runs, without risking operations.
-    Passive analysis of mirrored traffic reads device identity and firmware details from normal control traffic without
+    Passive analysis of mirrored traffic can identify devices and, for many protocols, their firmware versions from normal control traffic without
     sending anything to the controllers, so it cannot crash them, and it keeps up as engineers change firmware between
     visits.
   why_not:

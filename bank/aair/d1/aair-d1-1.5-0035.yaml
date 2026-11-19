@@ -14,7 +14,7 @@ explanation:
   why_correct: Risk-based AI regulations place duties on those who use high-risk systems as well as on those who supply them,
     such as assigning competent human oversight, monitoring operation, keeping logs and informing affected people. Those duties
     attach to the hospital by law, and a contract that makes the vendor responsible for compliance cannot move them. Raising
-    this first shows that the hospital must plan and staff its own compliance work, rather than relying on the contract and
+    it shows that the hospital must plan and staff its own compliance work, rather than relying on the contract and
     the indemnity.
   why_not:
     A: Whether fines can be indemnified matters, since many legal systems limit insuring or indemnifying regulatory penalties.

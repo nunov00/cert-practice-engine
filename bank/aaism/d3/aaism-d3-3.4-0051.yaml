@@ -7,7 +7,7 @@ stem: A consumer AI assistant saves 'memories' from chats to personalise later a
   this?
 options:
   A: A notice in the chat each time the assistant stores a memory
-  B: Keeping health and other sensitive facts only on request
+  B: Storing health and other sensitive facts only when the user asks
   C: Automatic deletion of each memory 90 days after storing it
   D: A clear choice at sign-up to turn the whole memory feature off
 answer: B

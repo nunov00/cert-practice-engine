@@ -9,7 +9,7 @@ options:
   A: Restore the full last backup before the encryption onto the existing servers
   B: Restore the full backup from 20 days ago, before the first login, onto rebuilt servers
   C: Restore the full backup from 13 days ago, before the tools arrived, onto rebuilt servers
-  D: Restore only the last backup's data files, scanned for the tools, onto rebuilt servers
+  D: Restore only pre-encryption data files, scanned for the tools, onto rebuilt servers
 answer: D
 explanation:
   why_correct: The servers' operating systems may hold attacker changes, but the data is what staff need. Rebuilding the servers

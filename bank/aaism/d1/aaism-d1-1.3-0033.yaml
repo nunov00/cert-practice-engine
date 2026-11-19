@@ -12,7 +12,7 @@ options:
   D: A record of the exact library versions each model version used
 answer: A
 explanation:
-  why_correct: Re-running an old decision needs the model to load and compute exactly as it did, which depends on the framework
+  why_correct: Re-running an old decision needs the model to load and run on the same software it used, which depends on the framework
     and library versions it ran on. Archiving a container image with that exact runtime keeps everything needed in the archive
     itself, so it no longer depends on current framework releases or on public repositories that have already withdrawn some
     of the libraries.

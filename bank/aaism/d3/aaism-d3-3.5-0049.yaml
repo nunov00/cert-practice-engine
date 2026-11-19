@@ -3,10 +3,10 @@ subdomain: '3.5'
 difficulty: medium
 stem: A software firm's coding agents run in sandboxes that can reach only the internal code host and package mirror, both
   of which accept uploads. Agents read configuration files holding cloud keys in most tasks. Testers made an agent leak a
-  key by committing it, base64-encoded, to a public project on the code host. Which monitoring BEST detects keys taken from
+  key by committing it, base64-encoded, to a project on the code host that outside users can read. Which monitoring BEST detects keys taken from
   the sandboxes?
 options:
-  A: Decoy cloud keys in each sandbox, with alerts on any use of them
+  A: Decoy cloud keys in the sandboxes' key files, with alerts on any use
   B: Data loss rules that match cloud key patterns in outbound uploads
   C: Alerts on sandbox connections to destinations outside the allowlist
   D: Alerts on agent commands that read files holding cloud keys
@@ -16,8 +16,8 @@ explanation:
     is unreliable here. A decoy key that no legitimate process ever uses raises an alert whenever anyone tries it, whichever
     channel or encoding carried it out, and it gives almost no false alarms.
   why_not:
-    B: Pattern matching on uploads is a standard leak control, but the testers encoded the key before committing it, and any
-      simple transformation defeats a key pattern.
+    B: Pattern matching on uploads is a standard leak control, but the testers encoded the key before committing it, and
+      encodings, splits or other transformations the rules do not unpack slip past a key pattern.
     C: Destination alerts catch traffic to unexpected hosts, but the leak went to the code host the sandbox is allowed to
       reach, so it raised nothing.
     D: Reads of key files are an obvious signal, but agents read those files in most tasks, so the alert would fire constantly

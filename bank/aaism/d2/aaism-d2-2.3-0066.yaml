@@ -7,7 +7,7 @@ stem: A law firm uses a vendor's hosted AI platform, which holds the firm's docu
   on the vendor BEST fits?
 options:
   A: Engineer access only after the firm approves each request
-  B: Support tooling that shows logs and metrics but no document text
+  B: Support only via tooling that shows logs and metrics, not document text
   C: Encryption of the firm's data under keys the firm holds and can revoke
   D: Recorded engineer sessions, with each access reported to the firm
 answer: B

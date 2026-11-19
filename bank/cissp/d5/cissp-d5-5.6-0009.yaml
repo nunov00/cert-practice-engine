@@ -14,7 +14,8 @@ answer: C
 explanation:
   why_correct: A certificate per meter lets the utility revoke a stolen meter without affecting the rest, and a key generated
     inside the secure element never exists anywhere it could be copied. Renewing the certificate and key over the air lets
-    the utility move to new algorithms, or replace a weakened key, during a 15-year life without visiting 20,000 sites.
+    the utility move to new algorithms, or replace a weakened key, during a 15-year life without visiting 20,000 sites,
+    provided the secure element can support the new algorithms, which the utility should require at purchase.
   why_not:
     A: Keeping the key in each meter's secure element makes it hard to extract, but every meter shares one identity, so the
       utility cannot shut out a stolen meter without cutting off the whole fleet.

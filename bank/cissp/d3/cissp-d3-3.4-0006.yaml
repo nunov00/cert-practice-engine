@@ -15,8 +15,8 @@ explanation:
     server can send it signing requests. Clustered HSMs can share the key among themselves under the HSMs' own protected
     replication, so one key serves four servers and an unattended nightly build.
   why_not:
-    A: A TPM keeps a non-exportable key inside one machine's chip. Four servers would need four different keys, or the key
-      would have to exist outside a TPM to be loaded into each, and the devices trust only one key.
+    A: A TPM keeps a non-exportable key inside one machine's chip, so it cannot be shared with the other three servers. Four
+      servers would need four different keys, and the devices trust only one.
     C: A smart card keeps the key in tamper-resistant hardware and suits signing by a person, but the build runs unattended
       every night, and a card in one reader cannot serve whichever of the four servers does the signing.
     D: An enclave protects a key from the rest of the server, but a key sealed to one processor cannot be used on the other

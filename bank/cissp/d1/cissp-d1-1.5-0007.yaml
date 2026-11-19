@@ -22,7 +22,7 @@ explanation:
       chat platform keeps deleting messages already known to be relevant.
     D: Collecting mailboxes for review comes later in e-discovery, and the mailboxes are not the records that a schedule is
       about to delete.
-status: published
+status: draft
 outline_version: '2024-04-15'
 sample: false
 provenance:

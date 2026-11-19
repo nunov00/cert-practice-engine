@@ -23,9 +23,8 @@ explanation:
       to avoid change in those weeks, not to test change more thoroughly.
     B: Hourly monitoring with rollback limits how long a bad release stays live, but it detects harm after customers see it.
       It does not stop the kind of peak release the freeze exists to prevent.
-    D: Approval by the pricing manager adds a person to each release, but that person sees the same check results that missed
-      the fault and is not the body that set the freeze. Releases would still go ahead during peak on a route the board's
-      decision does not cover.
+    D: Approval by the pricing manager adds a person to each release, but it puts one manager's sign-off in place of the board's
+      decision to avoid change during peak. Releases would still go ahead in those weeks on a route the freeze does not cover.
 status: published
 outline_version: '2026-04-15'
 sample: false
