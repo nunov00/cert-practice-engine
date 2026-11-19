@@ -1,0 +1,34 @@
+id: cissp-d5-5.6-0009
+subdomain: '5.6'
+difficulty: hard
+stem: A water utility is choosing how 20,000 smart meters will authenticate to its head-end servers. Each meter carries a
+  secure element, has no user interface and stays in service for about 15 years, during which the utility expects to move
+  to new cryptographic algorithms at least once. Meters taken from empty properties sometimes turn up for sale. Which
+  approach BEST fits?
+options:
+  A: One fleet certificate, with its private key held in each meter's secure element
+  B: A unique per-meter key, injected into its secure element at the factory and kept for life
+  C: A per-meter certificate, its key made in the secure element and renewed over the air
+  D: A per-meter certificate, its key made in the secure element and valid for the meter's life
+answer: C
+explanation:
+  why_correct: A certificate per meter lets the utility revoke a stolen meter without affecting the rest, and a key generated
+    inside the secure element never exists anywhere it could be copied. Renewing the certificate and key over the air lets
+    the utility move to new algorithms, or replace a weakened key, during a 15-year life without visiting 20,000 sites,
+    provided the secure element can support the new algorithms, which the utility should require at purchase.
+  why_not:
+    A: Keeping the key in each meter's secure element makes it hard to extract, but every meter shares one identity, so the
+      utility cannot shut out a stolen meter without cutting off the whole fleet.
+    B: A unique key in a secure element gives each meter its own protected identity, but a key fixed at the factory cannot
+      follow an algorithm change, and it existed outside the meter when it was injected.
+    D: A per-meter certificate with a key generated on the meter is strong today, but a credential valid for the whole life
+      leaves no way to move to new algorithms without a site visit to each meter.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-cissp-check
+  options_only: not_obvious

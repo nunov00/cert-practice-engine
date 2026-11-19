@@ -1,0 +1,33 @@
+id: aaism-d2-2.2-0069
+subdomain: '2.2'
+difficulty: medium
+stem: A travel firm's public booking chatbot accepts messages up to its model's full context of about 100,000 words, although
+  no customer message in a year of logs ran past 600 words. Red teamers got harmful replies by pasting in hundreds of made-up
+  dialogues in which an assistant complies with such requests. A classifier screens each message for known jailbreak phrasing.
+  Which control BEST addresses this weakness?
+options:
+  A: Retrain the classifier on the red team's made-up dialogue prompts
+  B: Cap each message at a length that covers genuine customer use
+  C: Tell the model in its system prompt to ignore example dialogues
+  D: Limit the number of messages each session may send
+answer: B
+explanation:
+  why_correct: This attack works by filling a very long context with many examples of compliance, so its strength grows with
+    the length of the input. Genuine customers never send more than about 600 words, so a cap near that size removes the room
+    the attack needs without affecting real use, and it does not depend on recognising any particular wording.
+  why_not:
+    A: Retraining on the red team's prompts helps with those examples, but the made-up dialogues can be reworded endlessly,
+      and a classifier tuned to phrasing will keep missing new variants while the long input stays available.
+    C: System prompt instructions are easy to add, but the attack works precisely by outweighing instructions with many in-context
+      examples, so a single extra rule is unlikely to hold.
+    D: Session message limits slow attacks spread over many turns, but this attack fits in one long message, so a limit on
+      message count does not reach it.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aaism-check
+  options_only: not_obvious

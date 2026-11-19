@@ -1,0 +1,33 @@
+id: cissp-d7-7.3-0004
+subdomain: '7.3'
+difficulty: hard
+stem: A consultancy ships new laptops straight from its supplier to staff in 20 countries. Enrolment applies the security
+  baseline and endpoint agent within about two hours of first sign-in, and in that window several staff installed
+  unapproved remote-access tools that the baseline did not later remove. The baseline changes monthly, and laptops can
+  sit in the supplier's stock for a quarter. Which change BEST fixes this?
+options:
+  A: Block the desktop at first setup until the baseline and agent have been applied
+  B: Have the supplier image each laptop with the current baseline before shipping
+  C: Block corporate apps on each laptop until it reports compliance with the baseline
+  D: Scan each laptop after enrolment and reimage any found with unapproved software
+answer: A
+explanation:
+  why_correct: The weakness is that a laptop is usable before its configuration is in place. Holding first setup until the
+    baseline and agent are applied means every laptop reaches its user already configured, with the baseline current on the
+    day of enrolment, so there is no window in which unmanaged software can be installed.
+  why_not:
+    B: Pre-imaging by the supplier closes the window, but the baseline changes monthly while laptops can wait a quarter in
+      stock, so many would arrive with an out-of-date baseline.
+    C: Conditional access keeps corporate apps away from a non-compliant laptop, but the user can still install tools on the
+      laptop itself during the window, and those survive enrolment.
+    D: Scanning and reimaging corrects drift after the fact, but tools installed in the window have already run, and each
+      reimage costs the user time in another country.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-cissp-check
+  options_only: not_obvious

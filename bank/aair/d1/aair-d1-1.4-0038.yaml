@@ -1,0 +1,35 @@
+id: aair-d1-1.4-0038
+subdomain: '1.4'
+difficulty: hard
+stem: A manufacturer's delegation of authority policy sets how much each role may commit to suppliers. Developers set the
+  order limit of an AI purchasing agent in its configuration, and it can now commit more per order than the procurement manager
+  who owns it may approve. How should the policy framework BEST govern agent limits?
+options:
+  A: Cap each agent's limits at the authority of its accountable owner
+  B: List AI agents in the delegation policy as a role with its own limits
+  C: Have the AI committee approve each agent's limits when it is deployed
+  D: Set agent limits in the AI standard according to each agent's risk tier
+answer: A
+explanation:
+  why_correct: 'An agent acts on someone''s behalf but cannot itself be held to account. Tying its limits to the authority
+    of the person who owns it keeps the delegation of authority policy intact: nobody can commit the company through an agent
+    beyond what they could approve themselves, and the existing policy, not a developer''s configuration, sets the ceiling.
+    If a higher limit is needed, it must come from someone who holds that authority.'
+  why_not:
+    B: Listing agents as a role brings them into the policy, which is a step forward, but a role with its own limits is not
+      tied to any person's authority. It could still be set above what the accountable owner may approve, which is the gap
+      in this case.
+    C: Committee approval adds scrutiny when an agent is deployed, but it creates a second, separate route for granting spending
+      authority outside the delegation policy. The committee could approve a limit that no one who owns the agent holds.
+    D: Risk tiers are a sound way to scale AI controls, but setting spending limits in the AI standard splits financial authority
+      across two frameworks. A tier-based limit can still exceed the authority of the manager who answers for the agent's
+      orders.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aair-check
+  options_only: not_obvious

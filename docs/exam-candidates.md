@@ -40,7 +40,7 @@ market; every row is *to verify* until a daily run checks it).
 | 2 | CISA (ISACA) | 150 MCQ, 5 domains (18/18/12/26/26%) | 5 | 5 | 5 | 5 | 4 | 29 | 2026-11-16 |
 | 3 | CRISC (ISACA) | 150 MCQ, 4 domains (26/22/32/20%) | 3 | 5 | 5 | 5 | 5 | 26 | 2026-11-17 |
 | 4 | CCSP (ISC2) | 100-150 CAT items (MCQ and advanced types), 6 domains (17/20/17/16/17/13%) | 4 | 5 | 3 | 5 | 4 | 25 | 2026-11-18 |
-| 5 | Security+ (CompTIA) | up to 90, MCQ and performance-based, 5 domains (27/24/19/16/14% on V8 from 2026-11-17) | 5 | 3 | 3 | 4 | 3 | 23 | 2026-11-09 |
+| 5 | Security+ (CompTIA) | up to 90 in 90 min, MCQ and performance-based, 5 domains (16/24/19/27/14% in outline order on V8, SY0-801, launched 2026-11-17) | 5 | 3 | 3 | 4 | 3 | 23 | 2026-11-19 |
 | 6 | CC (ISC2) | Adaptive (CAT), 5 domains (outline from 2026-09-01; weights to confirm from the outline) | 4 | 5 | 4 | 2 | 4 | 23 | 2026-11-10 |
 | 7 | CEH (EC-Council) | 125 MCQ in 4 hours, v13; official blueprint v5 lists 9 domains (6/17/15/24/14/5/10/5/5%), applicability to v13 to confirm | 4 | 5 | 2 | 4 | 2 | 21 | 2026-11-11 |
 | 8 | CySA+ (CompTIA) | up to 85 in 165 min, MCQ and performance-based, 4 domains (34/26/24/16% on V4 from 2026-06-23) | 3 | 3 | 4 | 4 | 3 | 20 | 2026-11-12 |
@@ -138,6 +138,16 @@ older Checked date.
   re-read and stay as recorded on 2026-10-26. Still no free official sample
   questions, only paid CertMaster products, so calibration stays at 3. Scores,
   total and rank unchanged (5th, above CC on the higher demand score).
+  Re-checked 2026-11-19, two days after launch: the V8 page now loads and
+  lists SY0-801 with a launch date of 2026-11-17, up to 90 multiple-choice and
+  performance-based items in 90 minutes, pass mark 750/900, and five domains
+  in outline order: General Security Concepts 16%, Threats, Vulnerabilities
+  and Attacks 24%, Security Architecture 19%, Security Operations 27%,
+  Security Program Management and Oversight 14%. The weights match the set
+  recorded on 2026-10-26; the row now lists them in outline order. Practice
+  resources are still paid CertMaster products only (the free item is the
+  exam objectives), so calibration stays at 3. Scores, total and rank
+  unchanged.
 - **CC:** very large candidate pool from ISC2's free-exam programmes, so
   learners are less likely to pay. Checked 2026-10-27: ISC2 delivers CC as an
   adaptive (CAT) exam, and a refreshed outline took effect on 2026-09-01 with
@@ -286,3 +296,4 @@ older Checked date.
 | 2026-11-16 | CISA row re-checked: 150 questions and five domains at 18/18/12/26/26% confirmed on the outline page, no outline update notice; the free 10-question practice quiz is still published; scores, total and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/cisa/cisa-exam-content-outline), [practice quiz](https://www.isaca.org/credentialing/cisa/cisa-practice-quiz) |
 | 2026-11-17 | CRISC row re-checked: 150 questions and four domains at 26/22/32/20% confirmed on the outline page, no outline update notice; the free 10-question practice quiz is still published; scores, total and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/crisc/crisc-exam-content-outline), [practice quiz](https://www.isaca.org/credentialing/crisc/crisc-practice-quiz) |
 | 2026-11-18 | CCSP row re-checked: outline page still dated 2026-08-01 with the same six domains, no outline change announced; exam page still lists 100-150 items in 3 hours; weights and quiz render client-side, so they rest on the outline PDF checked 2026-11-08; scores, total and rank unchanged | ISC2 [outline page](https://www.isc2.org/certifications/ccsp/ccsp-certification-exam-outline), [CCSP exam page](https://www.isc2.org/certifications/ccsp/ccsp-exam), [outline refresh notice](https://www.isc2.org/Insights/2026/06/isc2-ccsp-exam-outline-revised) |
+| 2026-11-19 | Security+ row re-checked: V8 (SY0-801) page live with the 2026-11-17 launch date, format and weights confirmed and listed in outline order (16/24/19/27/14%); still no free official samples; scores, total and rank unchanged | CompTIA [Security+ V8 page](https://www.comptia.org/en-us/certifications/security/v8/) |

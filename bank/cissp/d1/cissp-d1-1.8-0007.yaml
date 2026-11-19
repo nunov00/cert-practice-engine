@@ -1,0 +1,33 @@
+id: cissp-d1-1.8-0007
+subdomain: '1.8'
+difficulty: hard
+stem: A logistics firm's accounts payable team has three clerks. One sets up new suppliers and another approves payments,
+  and these two have just told HR that they are now married. The team pays several thousand small invoices a month, and
+  finance has no other role either of them could move to. Which control BEST addresses the risk this creates?
+options:
+  A: Have the third clerk approve payments to suppliers that one spouse set up
+  B: Add a treasury approval for payments above the team's usual payment threshold
+  C: Have internal audit review a monthly sample of payments the two clerks handled
+  D: Require each spouse to take two consecutive weeks of leave each year
+answer: A
+explanation:
+  why_correct: Separation of duties works because fraud then needs two people to collude, and it assumes they act
+    independently. A married couple holding the two halves of the same payment may not, so the split no longer gives that
+    protection. Having the third clerk approve payments to suppliers the other spouse set up restores an independent,
+    preventive check on every payment, whatever its size, without moving anyone out of the team.
+  why_not:
+    B: A treasury approval is a sound preventive layer for large payments, but the team's volume is in small invoices below
+      such a threshold, which is where a couple could pay a fictitious supplier unnoticed.
+    C: Sampling payments can detect a scheme after the money has gone, and a few fictitious invoices among thousands a month
+      are easily missed by a sample.
+    D: Enforced leave exposes schemes that need one person's constant attention, but a fictitious supplier set up by one spouse
+      and paid on the other's approval needs no daily juggling, and leave does not restore an independent approval.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-cissp-check
+  options_only: not_obvious

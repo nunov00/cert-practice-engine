@@ -1,0 +1,35 @@
+id: aair-d2-2.3-0030
+subdomain: '2.3'
+difficulty: hard
+stem: An online pharmacy's AI model checks each order for dangerous drug interactions before dispatch, and pharmacists review
+  the orders it flags. Timeouts come in bursts of several hundred orders at the evening peak, and timed-out orders are then
+  dispatched unchecked. The rules-based checker that the model replaced still runs nightly for reporting. Which fallback BEST
+  suits these timeouts?
+options:
+  A: Hold timed-out orders and resubmit them to the model until it responds
+  B: Check timed-out orders with the rules-based checker before dispatch
+  C: Send timed-out orders to the pharmacists' review queue before dispatch
+  D: Send timed-out orders with high-risk drugs to pharmacists and dispatch the rest
+answer: B
+explanation:
+  why_correct: A fallback has to keep the safety check in place without depending on the component that failed. The rules-based
+    checker was the production control before the model, is still maintained, and as a rules engine it does not depend on the model's capacity, so every timed-out
+    order still gets an interaction check before dispatch. It may catch less than the model, but it is a known level of protection
+    that keeps orders moving and passes on to pharmacists only what it flags.
+  why_not:
+    A: Resubmitting keeps unchecked orders from going out, but timeouts come in bursts at peak, when the model is already
+      struggling. Retrying several hundred orders adds load to the failing service and leaves the orders waiting for an unknown
+      time.
+    C: Pharmacist review is the strongest check, but a burst of several hundred orders at the evening peak would swamp the
+      queue. Orders the model has flagged as risky would then wait behind them.
+    D: Sending high-risk drugs to pharmacists targets their time well, but interactions arise between drugs, not only within
+      high-risk classes. The rest of the timed-out orders would still go out with no interaction check at all.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aair-check
+  options_only: not_obvious

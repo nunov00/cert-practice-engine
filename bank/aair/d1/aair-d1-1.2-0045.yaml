@@ -1,0 +1,36 @@
+id: aair-d1-1.2-0045
+subdomain: '1.2'
+difficulty: hard
+stem: A retailer freezes changes to its IT systems for the six peak trading weeks before year end, a rule its board set after
+  a failed release in an earlier peak. Its pricing models retrain and redeploy each week through the data science team's automated
+  pipeline, with automated accuracy checks. Last peak, a retrained model that passed those checks mispriced a product range
+  for two days. Which change BEST aligns these processes?
+options:
+  A: Add a holdout test on past peak-season data to the pipeline's checks
+  B: Monitor live prices hourly during peak and roll back unusual changes
+  C: Bring automated model releases under the peak change freeze
+  D: Have the pricing manager approve each model release during peak weeks
+answer: C
+explanation:
+  why_correct: The board has already decided how much change it will accept during peak trading, and the freeze is how that
+    decision is applied. A weekly automated model release changes what customers see as much as any IT release, yet it runs
+    on a separate route that the freeze never reached. Bringing model releases under the same freeze calendar applies the
+    board's rule to every route to production; if the business wants a retrain during peak, it can seek an exception through
+    the freeze process, where the risk is weighed openly.
+  why_not:
+    A: A peak-season holdout test would make the pipeline's checks stronger, but the model that failed had passed automated
+      checks, and better tests still leave model releases outside the rule the board set for peak. The board's choice was
+      to avoid change in those weeks, not to test change more thoroughly.
+    B: Hourly monitoring with rollback limits how long a bad release stays live, but it detects harm after customers see it.
+      It does not stop the kind of peak release the freeze exists to prevent.
+    D: Approval by the pricing manager adds a person to each release, but it puts one manager's sign-off in place of the board's
+      decision to avoid change during peak. Releases would still go ahead in those weeks on a route the freeze does not cover.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aair-check
+  options_only: not_obvious

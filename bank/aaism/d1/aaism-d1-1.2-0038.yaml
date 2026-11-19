@@ -1,0 +1,34 @@
+id: aaism-d1-1.2-0038
+subdomain: '1.2'
+difficulty: medium
+stem: 'A software firm hires developers worldwide for fully remote roles after video interviews. Two recent hires proved to
+  be impostors: they used real-time face swaps that held up when interviewers asked them to turn their heads, and the stolen
+  identities of real people with clean records. Their laptops went to freight-forwarding addresses. Which provision should
+  the hiring procedure add to BEST prevent a repeat?'
+options:
+  A: Interviewers ask candidates to move and cover their faces on camera
+  B: Background checks confirm each candidate's identity and work history
+  C: Laptops ship only to an address the hiring manager has confirmed
+  D: Each hire shows their ID in person before getting system access
+answer: D
+explanation:
+  why_correct: 'The impostors beat every remote check: their face swaps survived live movement requests, and the identities
+    they used belonged to real people with clean records. An in-person check of the hire against the identity document, done
+    before any system access, is the one step that a real-time face swap or a borrowed identity cannot pass, and it can be
+    done through a local office or partner without changing how interviews run.'
+  why_not:
+    A: Live movement and occlusion challenges are a common way to expose face swaps, but the stem says the swaps already held
+      up when interviewers asked candidates to turn their heads, and current tools keep improving at exactly this.
+    B: Background checks verify that an identity is real and its history is clean, which is what the stolen identities were
+      chosen to pass; they do not show that the person on camera is the person named.
+    C: Controlling where equipment goes removes one convenience for the impostors, but the address comes from the candidate,
+      a manager cannot verify it, and the impostor would still be employed with system access.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aaism-check
+  options_only: not_obvious
