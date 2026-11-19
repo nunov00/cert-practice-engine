@@ -1,0 +1,33 @@
+id: aaism-d2-2.3-0066
+subdomain: '2.3'
+difficulty: hard
+stem: A law firm uses a vendor's hosted AI platform, which holds the firm's document index and a model fine-tuned on its precedents.
+  Vendor engineers sign in to customer environments to fix faults, most of which arise in indexing jobs and model serving.
+  Several clients' terms forbid any person outside the firm from reading their documents, for any reason. Which requirement
+  on the vendor BEST fits?
+options:
+  A: Engineer access only after the firm approves each request
+  B: Support tooling that shows logs and metrics but no document text
+  C: Encryption of the firm's data under keys the firm holds and can revoke
+  D: Recorded engineer sessions, with each access reported to the firm
+answer: B
+explanation:
+  why_correct: The clients' terms rule out any outside reading of their documents, whoever approves it. Since most faults
+    lie in indexing jobs and model serving, engineers can diagnose them from logs and metrics, so support tooling that never
+    exposes document text lets the vendor keep the platform running without anyone outside the firm reading client documents.
+  why_not:
+    A: Approving each request puts the firm in control of when engineers get in, which suits many contracts, but an approved
+      engineer still reads the documents, and these clients forbid that whatever the firm decides.
+    C: Firm-held keys let the firm cut the vendor off, but while they are active the platform decrypts documents to process
+      them, so an engineer signed in to the live environment can still read them.
+    D: Session recording and reporting give the firm a full record, but they detect access after it happens and do not stop
+      an engineer reading documents during a fix.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aaism-check
+  options_only: not_obvious

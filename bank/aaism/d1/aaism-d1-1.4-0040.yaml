@@ -1,0 +1,33 @@
+id: aaism-d1-1.4-0040
+subdomain: '1.4'
+difficulty: hard
+stem: A company's AI security intake starts when procurement raises a purchase order. AI vendors now offer free pilots, which
+  sponsors arrange directly with them, and two pilots this year processed customer data with no security review. Procurement
+  hears of a pilot only when money becomes due. Vendors require a signed pilot agreement, which the legal team reviews for
+  every pilot. Which change BEST closes this gap?
+options:
+  A: Start security intake when legal gets a pilot agreement to review
+  B: Require sponsors to register each pilot in the AI inventory first
+  C: Review AI services found in network traffic that lack approval
+  D: Have procurement raise a zero-value order for each free pilot
+answer: A
+explanation:
+  why_correct: The intake misses pilots because it hangs on a step that free pilots skip. Every pilot does pass through legal's
+    review of the pilot agreement, so linking security intake to that step catches each pilot before it starts, without relying
+    on sponsors or on procurement learning of it.
+  why_not:
+    B: Registration in the inventory is useful, but it depends on the same sponsors who arranged the two unreviewed pilots
+      without asking for a review, so it adds a duty rather than a checkpoint.
+    C: Network discovery is a reasonable backstop for shadow AI, but it finds pilots after they are running and customer data
+      has already been sent, which is the failure the company wants to prevent.
+    D: A zero-value order would bring pilots into the existing trigger, but procurement only hears of a pilot when money is
+      due, so it would not know to raise the order before the pilot starts.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aaism-check
+  options_only: not_obvious

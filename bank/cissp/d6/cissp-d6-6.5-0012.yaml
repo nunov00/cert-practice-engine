@@ -1,0 +1,34 @@
+id: cissp-d6-6.5-0012
+subdomain: '6.5'
+difficulty: medium
+stem: A hospital's internal auditor plans to rely on the SOC 2 Type II report of its electronic prescribing SaaS provider,
+  which carries an unqualified opinion. The report states that the provider's cloud hosting company is carved out, so
+  physical and environmental controls at the data centres are excluded. How should the auditor obtain assurance over
+  those controls?
+options:
+  A: Ask the provider's service auditor to confirm in writing that the hosting controls are effective
+  B: Test the complementary user entity controls the report says the hospital must run
+  C: Review the prescribing provider's own monitoring reports on the hosting company
+  D: Obtain and assess the hosting company's own report for a matching period
+answer: D
+explanation:
+  why_correct: Under the carve-out method the service auditor did not test the subservice organisation's controls, so the
+    report gives no assurance over them. The user auditor needs independent evidence about the hosting company itself,
+    normally its own SOC report covering a period that overlaps the provider's report, assessed for scope, exceptions and
+    its own user entity controls.
+  why_not:
+    A: The service auditor carved the hosting company out and did not test its controls, so it has no basis to confirm that
+      they are effective.
+    B: Complementary user entity controls must be tested to rely on the report, but they are the hospital's own controls, not
+      the hosting company's data centre controls that were carved out.
+    C: The provider's monitoring of its supplier is relevant, but it is evidence prepared by the service organisation, not
+      an independent test of the hosting company's controls.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-cissp-check
+  options_only: not_obvious

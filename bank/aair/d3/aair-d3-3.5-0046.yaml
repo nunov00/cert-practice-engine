@@ -1,0 +1,35 @@
+id: aair-d3-3.5-0046
+subdomain: '3.5'
+difficulty: medium
+stem: A health insurer plans to send handwritten medical claim forms to a vendor's AI service that extracts diagnoses and
+  treatment codes. Its main concern is who can see patients' medical details. In a pilot on 2,000 of its own forms, the service
+  matched its quoted accuracy. Most forms come back within seconds, but forms the vendor classes as complex cost more and
+  come back within a day. What should due diligence MOST establish?
+options:
+  A: Whether the quoted accuracy holds for each type of claim form
+  B: Whether the vendor's support staff can open stored forms when fixing faults
+  C: Who processes the forms the vendor classes as complex, and where
+  D: Whether the vendor deletes each form once its data has been extracted
+answer: C
+explanation:
+  why_correct: A separate, dearer route that takes a day instead of seconds suggests that complex forms leave the automated
+    pipeline and are read by people, often at a subcontractor and sometimes in another country. Given the insurer's concern
+    about who sees medical details, that path could expose every complex form to staff and parties it has never assessed.
+    Establishing who handles those forms, and where, shows whether there is a hidden human step and a further party in the
+    supply chain that needs contract terms and assessment of its own.
+  why_not:
+    A: Accuracy by form type is a sound follow-up to a pilot, but the pilot on the insurer's own forms already matched the
+      quoted figure. More accuracy evidence does not answer who can see the medical details.
+    B: Support access to stored forms is a real exposure that due diligence should cover, but it is occasional and tied to
+      faults. The day-long complex route points to a routine path by which a whole class of forms may be read by people.
+    D: Deletion after extraction limits how long forms are kept, which is a sound requirement. It does not address who reads
+      each form before it is deleted.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aair-check
+  options_only: not_obvious

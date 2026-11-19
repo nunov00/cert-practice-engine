@@ -1,0 +1,37 @@
+id: aair-d2-2.4-0031
+subdomain: '2.4'
+difficulty: medium
+stem: A bank's feature store serves features by name to 140 models, both when they are trained and when they score live. Feature
+  owners refine definitions in place, and last month a change to average monthly balance left a credit model scoring on a
+  definition it was never trained on. Each model is retrained on its own quarterly cycle. Which practice BEST prevents a repeat?
+options:
+  A: Notify owners of models using a feature before its definition changes
+  B: Version features so each model scores on the version it was trained on
+  C: Alert model owners when a live input's distribution moves beyond set limits
+  D: Revalidate each model that uses a feature soon after its definition changes
+answer: B
+explanation:
+  why_correct: The fault is a mismatch between what a model learned from and what it is fed live. Because models read features
+    by name, any change to a definition reaches every model at once, whatever its retraining cycle. Treating a changed definition
+    as a new feature version, with each model tied to the version it was trained on, keeps live inputs consistent with training.
+    Each model moves to the improved definition when it is next retrained and validated, so owners can keep refining features
+    without breaking models in between.
+  why_not:
+    A: Advance notice is how source-system changes are usually handled, and it lets owners plan. But models here retrain quarterly
+      and read features by name, so on the day of the change each model still scores on a definition it was not trained on,
+      unless its owner can retrain at once.
+    C: A distribution alert can catch a changed feature after it reaches live scoring, which is a useful backstop. It detects
+      the mismatch rather than preventing it, and a redefinition that keeps a similar distribution can change meaning without
+      tripping any limit.
+    D: Revalidation after a change would show whether a model still performs, but the model is already scoring on the new
+      definition while the work is done. If it fails, the bank still has to retrain or roll the feature back, so the mismatch
+      is found, not avoided.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aair-check
+  options_only: not_obvious

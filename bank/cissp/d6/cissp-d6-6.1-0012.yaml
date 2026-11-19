@@ -1,0 +1,33 @@
+id: cissp-d6-6.1-0012
+subdomain: '6.1'
+difficulty: medium
+stem: A water utility needs to know which controllers at its 300 remote pumping sites run firmware with known
+  vulnerabilities. Field engineers update firmware during site visits and do not always record it. Last year an active
+  scan of one site crashed a controller and stopped pumping. Which assessment approach BEST fits?
+options:
+  A: Active scans of each site during its yearly planned maintenance window
+  B: Passive analysis of mirrored control traffic to identify firmware
+  C: Tests on a lab bench built from the same controller models used in the field
+  D: A review of the integrator's as-built records against vendor advisories
+answer: B
+explanation:
+  why_correct: The aim is a current, fleet-wide picture of what firmware each controller runs, without risking operations.
+    Passive analysis of mirrored traffic reads device identity and firmware details from normal control traffic without
+    sending anything to the controllers, so it cannot crash them, and it keeps up as engineers change firmware between
+    visits.
+  why_not:
+    A: Scanning in planned windows limits the harm if a controller crashes, but it still risks a crash, and a yearly snapshot
+      falls behind as engineers update firmware without recording it.
+    C: A lab bench is the safe place to test how a controller model behaves under attack, but it says nothing about which
+      firmware each of the 300 field controllers actually runs.
+    D: A document review is quick and safe, but engineers update firmware without always recording it, so the records do not
+      match what is installed.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-cissp-check
+  options_only: not_obvious

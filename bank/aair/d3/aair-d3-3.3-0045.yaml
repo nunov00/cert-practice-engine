@@ -1,0 +1,34 @@
+id: aair-d3-3.3-0045
+subdomain: '3.3'
+difficulty: hard
+stem: An IT operations agent proposes actions such as restarting services, changing settings and deleting cloud resources,
+  and an engineer approves each one. Engineers now approve about 400 actions a day, almost all on production systems and usually
+  within seconds, and last month one approved the deletion of a production database. Which control change BEST addresses this?
+options:
+  A: Require approval for production actions and let other actions run unapproved
+  B: Require approval for irreversible actions and let reversible ones run
+  C: Show approvers what each proposed action would affect before they decide
+  D: Require a second engineer to approve each deletion the agent proposes
+answer: B
+explanation:
+  why_correct: Approvals given in seconds at 400 a day show the control has become routine, so it fails exactly when a harmful
+    action appears. A restart or a settings change that goes wrong can be put back, while a deletion or anything else that
+    destroys data cannot. Focusing approval on irreversible actions cuts the volume so each remaining approval gets real attention,
+    and puts human judgement where an error cannot be corrected afterwards.
+  why_not:
+    A: Scoping approval to production is a common way to reduce volume, but almost all the agent's actions are on production
+      systems. Engineers would still face about 400 approvals a day, and the habit of approving in seconds would remain.
+    C: An impact preview helps an engineer judge each action, but at this volume most approvals would still be given in seconds.
+      Better information does not help if the routine means it is not read.
+    D: A second approver on deletions adds dual control where this incident happened, but both engineers still work inside
+      a routine of hundreds of quick approvals a day. Other actions that cannot be undone, such as settings that overwrite
+      data, stay under the same weakened review.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aair-check
+  options_only: not_obvious

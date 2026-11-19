@@ -1,0 +1,34 @@
+id: aair-d3-3.4-0040
+subdomain: '3.4'
+difficulty: hard
+stem: A bank sets its loan loss provisions directly from its credit model's predicted default probabilities. Monitoring reports
+  the model's ranking power each month, and it has stayed stable. The model's inputs describe each borrower, not the wider
+  economy, and interest rates have risen sharply this year. Which additional indicator MOST matters for this use of the model?
+options:
+  A: Predicted against observed default rates, by score band
+  B: Drift in applicants' input data against the training data
+  C: Ranking power for each product and customer segment
+  D: Share of applications approved against the business plan
+answer: A
+explanation:
+  why_correct: Provisions use the predicted probabilities as amounts, so what matters is whether their level is right, not
+    only whether the model orders borrowers well. A rise in rates can push defaults up across every score band while the ranking
+    stays the same, and because the model's inputs do not include economic conditions, nothing in its inputs need change.
+    Comparing predicted with observed default rates by band shows whether the probabilities have drifted out of line, which
+    feeds straight into the provision.
+  why_not:
+    B: Input drift is a useful early warning, but the inputs describe borrowers only. A rate shock can raise defaults without
+      changing those inputs, so this indicator could stay quiet while the probabilities are wrong.
+    C: Ranking power by segment shows whether the model sorts borrowers well in each part of the book, which hides weak spots
+      in an overall figure. It still measures order, not level, so it cannot show that every band now defaults more than predicted.
+    D: The approval rate against plan is a business indicator. It can move for many reasons, and it says nothing about whether
+      the predicted probabilities used for provisions match actual defaults.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aair-check
+  options_only: not_obvious

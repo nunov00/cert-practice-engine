@@ -1,0 +1,33 @@
+id: aaism-d3-3.4-0051
+subdomain: '3.4'
+difficulty: medium
+stem: A consumer AI assistant saves 'memories' from chats to personalise later answers, and most users keep the feature on
+  because they value it. A settings page lists and deletes memories, but few users ever open it. Complaints show the assistant
+  bringing up a user's diagnosis or pregnancy loss, unprompted, weeks after it was mentioned once. Which control BEST addresses
+  this?
+options:
+  A: A notice in the chat each time the assistant stores a memory
+  B: Keeping health and other sensitive facts only on request
+  C: Automatic deletion of each memory 90 days after storing it
+  D: A clear choice at sign-up to turn the whole memory feature off
+answer: B
+explanation:
+  why_correct: The harm comes from the assistant keeping highly sensitive personal facts that users mentioned in passing and
+    never expected it to retain. Keeping that category of fact only when the user explicitly asks for it to be remembered
+    removes the harm at its source, while the rest of the personalisation that users value keeps working.
+  why_not:
+    A: A notice at each save improves transparency, but users already ignore the settings page, frequent notices are soon
+      ignored too, and the sensitive fact is still kept unless the user acts.
+    C: Expiry limits how long memories last, but the complaints concern facts raised weeks after they were mentioned, well
+      inside 90 days.
+    D: An opt-out at sign-up respects choice, but most users want the feature and would keep it on, so sensitive facts would
+      still be stored and raised later.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aaism-check
+  options_only: not_obvious

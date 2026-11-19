@@ -1,0 +1,34 @@
+id: aaism-d3-3.3-0045
+subdomain: '3.3'
+difficulty: hard
+stem: A consultancy will switch on an AI assistant that answers from any file the asking employee can open, so that staff
+  can query their own working files. A scan found thousands of folders shared by link with all staff, including HR cases and
+  client deal rooms. Few files carry a sensitivity label. Launch is in six weeks. Which action BEST reduces the risk before
+  launch?
+options:
+  A: Label files by sensitivity and keep Restricted files from the assistant
+  B: Limit the assistant to an approved list of curated sites at launch
+  C: Add output rules that block client names and HR terms in answers
+  D: Remove all-staff link sharing from folders holding HR and client files
+answer: D
+explanation:
+  why_correct: The assistant respects permissions, so what it can surface is set by who can open each file. The HR cases and
+    deal rooms are already open to all staff through links; the assistant only makes them easy to find. Removing all-staff
+    sharing from those folders fixes the cause, for the assistant and for any other route, and leaves staff free to query
+    their own working files.
+  why_not:
+    A: Sensitivity labels are a sound long-term control, but few files carry one, and labelling thousands of folders well
+      within six weeks is unlikely, so the overshared files would stay reachable at launch.
+    B: A curated site list would avoid the overshared folders, but it defeats the stated purpose of letting staff query their
+      own working files.
+    C: Output rules for names and terms are easy to evade and would block legitimate client work, while the underlying files
+      stay open to everyone.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aaism-check
+  options_only: not_obvious

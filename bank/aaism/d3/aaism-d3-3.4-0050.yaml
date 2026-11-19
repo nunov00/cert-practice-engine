@@ -1,0 +1,35 @@
+id: aaism-d3-3.4-0050
+subdomain: '3.4'
+difficulty: hard
+stem: A recruiter uses a large language model to rank CVs for a client's graduate scheme, which receives about 150 applications
+  a month. The client wants evidence this quarter that the ranking does not disadvantage candidates of any ethnic group. The
+  recruiter holds no ethnicity data, and the model vendor's bias audit used other employers' applicants. Which test BEST provides
+  this evidence?
+options:
+  A: Infer applicants' groups from their names and compare rankings by group
+  B: Rank pairs of CVs identical except for names typical of each group
+  C: Ask the vendor to rerun its bias audit on a similar set of graduate CVs
+  D: Remove names, photos and addresses from CVs before the model ranks them
+answer: B
+explanation:
+  why_correct: 'With no ethnicity data and only a few hundred applications this quarter, comparing real outcomes by group
+    gives weak evidence. Paired CVs that differ only in names associated with different ethnic groups test the model directly:
+    any difference in ranking can only come from the name, and the test can be run on as many pairs as needed, now. Name pairs
+    do not catch proxies such as school or home address, so the pairs can be extended to vary those details too, and results
+    should be read with that limit in mind.'
+  why_not:
+    A: Estimating group membership from names is a recognised method when ethnicity is not held, but inferred groups are error-prone,
+      and with about 150 applications a month the group comparisons would be too small to support conclusions this quarter.
+    C: A rerun of the vendor's audit would still use applicants and conditions the recruiter does not control, and it does
+      not test the model as the recruiter actually prompts and uses it.
+    D: Removing names, photos and addresses is a reasonable mitigation, but it is a change, not evidence, and a language model
+      can still pick up ethnicity from other details in a CV.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aaism
+  check_verdict: fail
+  checked_by: 2026-11-19-daily-aaism-check
+  options_only: not_obvious

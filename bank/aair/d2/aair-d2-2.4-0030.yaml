@@ -1,0 +1,34 @@
+id: aair-d2-2.4-0030
+subdomain: '2.4'
+difficulty: hard
+stem: A dermatology network is building a model to classify skin lesions from 40,000 photos of 9,000 patients. Most patients
+  were photographed at several visits over the years, often with more than one lesion. A random split by photo gave 94% test
+  accuracy, but a pilot on patients new to the network reached 81%. Which data practice BEST addresses the likely cause?
+options:
+  A: Hold out the most recent year of photos as the test set
+  B: Stratify the random split so each diagnosis has the same share in both sets
+  C: Assign each patient's photos to the training or test set as a whole
+  D: Remove near-duplicate photos of the same lesion before splitting the data
+answer: C
+explanation:
+  why_correct: With a random split by photo, most test patients also appear in the training set, through other visits or other
+    lesions. The model can recognise the person, their skin, the camera set-up or the lesion itself, so the test score overstates
+    how it will do on people it has never seen. Splitting by patient, so that all of a person's photos fall on one side, makes
+    the test set behave like new patients and gives an honest estimate before deployment.
+  why_not:
+    A: A time-based split is the right guard against data that changes over time, but here most patients return across several
+      years. Their earlier photos would sit in training and their recent ones in the test set, so the same leakage remains.
+    B: Stratifying by diagnosis keeps the mix of labels the same in both sets, which helps when some diagnoses are rare. It
+      does nothing to stop the same patient appearing on both sides of the split.
+    D: Removing near-duplicates takes out the most obvious repeats of a single lesion, but the same patients still appear
+      on both sides through other visits and other lesions. It also discards useful images without fixing how the split is
+      made.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aair
+  check_verdict: fail
+  checked_by: 2026-11-19-daily-aair-check
+  options_only: not_obvious

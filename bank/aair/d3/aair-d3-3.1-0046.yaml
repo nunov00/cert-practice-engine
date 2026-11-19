@@ -1,0 +1,36 @@
+id: aair-d3-3.1-0046
+subdomain: '3.1'
+difficulty: hard
+stem: A grid operator uses an AI model to forecast next-day electricity demand, and too low a forecast can leave too little
+  generation scheduled. Back-testing over five mild years shows small, frequent errors that cost little to correct, and heatwaves
+  are expected to become more frequent in the region. The risk register rates likelihood and impact separately. On which basis
+  should the risk practitioner rate the impact of the under-forecast scenario?
+options:
+  A: The expected yearly cost of under-forecasts at projected heatwave frequency
+  B: The largest under-forecast that peer operators recorded in recent heatwaves
+  C: The cost of the largest single error found in the five-year back-test
+  D: The harm to customers from a large under-forecast at a heatwave peak
+answer: D
+explanation:
+  why_correct: Impact describes how bad the outcome is when the scenario happens, and this register rates it apart from likelihood.
+    For a grid operator the serious outcome of under-forecasting is a shortfall of generation when demand spikes, as in a
+    heatwave, which can mean load shedding or outages for customers. Rating impact on that credible severe case, with the
+    more frequent heatwaves feeding the likelihood rating, keeps the two dimensions separate and puts the real consequence
+    in front of the risk owner.
+  why_not:
+    A: An expected yearly cost at projected heatwave frequency is forward-looking and useful for comparing treatments, but
+      it multiplies in how often heatwaves occur. In a register that rates likelihood separately, that counts likelihood twice
+      and dilutes a severe outcome into an annual average.
+    B: 'Peer operators'' heatwave errors are good evidence of how large a forecast miss can be. But the size of an error is
+      not its impact: the consequence depends on this operator''s grid, its reserve margins and the customers affected.'
+    C: The largest back-test error is a reasonable anchor when the history covers the conditions that matter. These five years
+      were mild, so it says little about what a miss at a heatwave peak would cause.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aair-check
+  options_only: not_obvious

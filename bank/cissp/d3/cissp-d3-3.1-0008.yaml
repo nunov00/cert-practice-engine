@@ -1,0 +1,35 @@
+id: cissp-d3-3.1-0008
+subdomain: '3.1'
+difficulty: hard
+stem: A health insurer keeps claims files in cloud object storage, encrypted with keys in the cloud key management service.
+  One platform administrator role can manage both the keys and the storage, and five engineers hold it. Storage faults are
+  handled overnight by a single on-call engineer. The audit committee wants to reduce what one engineer's account, misused
+  or stolen, could expose. Which design change BEST fits?
+options:
+  A: Just-in-time elevation to the administrator role for each task, approved by a second engineer
+  B: Hardware security keys for administrator sign-in, with sessions limited to one hour
+  C: An alert whenever one account both changes key policy and reads claims files in a session
+  D: Key and storage administration split into two roles held by different engineers
+answer: D
+explanation:
+  why_correct: Reading a claims file needs both access to the encrypted object and the right to use its key. Splitting the
+    two administrative roles between different engineers means no single account, whether misused by its owner or stolen,
+    can read the files, while the on-call engineer still holds the storage role needed to fix faults alone at night
+    (separation of duties built into the design).
+  why_not:
+    A: Per-task elevation with a second approver is a strong control for daytime work, but the overnight engineer works alone,
+      so either faults wait for an approver to be woken or approvals become a formality, and once elevated the account can
+      still read files.
+    B: Hardware keys and short sessions make an account much harder to steal, but they do nothing about an engineer misusing
+      their own account, which still holds both keys and storage.
+    C: A targeted alert helps spot misuse, but it is detective, and the role already lets one account read files without any
+      policy change, so the alert's condition need never be met.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,35 @@
+id: aair-d1-1.5-0035
+subdomain: '1.5'
+difficulty: hard
+stem: A hospital will use a vendor's AI triage tool that a regional AI regulation classes as high-risk, exactly as the vendor's
+  instructions for use describe. The contract states that the vendor is responsible for the tool's compliance with that regulation
+  and indemnifies the hospital against fines under it. Which legal consideration should the risk practitioner MOST raise?
+options:
+  A: Whether fines under the regulation can lawfully be covered by an indemnity
+  B: Whether the vendor's liability cap covers patient injury from triage errors
+  C: Whether the vendor's conformity assessment is current for the version supplied
+  D: Whether the regulation gives the hospital duties a contract cannot transfer
+answer: D
+explanation:
+  why_correct: Risk-based AI regulations place duties on those who use high-risk systems as well as on those who supply them,
+    such as assigning competent human oversight, monitoring operation, keeping logs and informing affected people. Those duties
+    attach to the hospital by law, and a contract that makes the vendor responsible for compliance cannot move them. Raising
+    this first shows that the hospital must plan and staff its own compliance work, rather than relying on the contract and
+    the indemnity.
+  why_not:
+    A: Whether fines can be indemnified matters, since many legal systems limit insuring or indemnifying regulatory penalties.
+      But it only concerns who pays after a breach; the more basic question is whether the hospital is meeting its own duties
+      at all.
+    B: The liability cap affects how much of a patient claim the hospital could recover, which is a real commercial point.
+      It is about sharing losses, not about the legal obligations the hospital takes on by using the tool.
+    C: A current conformity assessment is a fair thing to check, but it is the supplier's duty and can be confirmed from the
+      vendor's documentation. Even with a valid assessment, the hospital's own duties as user remain unaddressed.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aair-check
+  options_only: not_obvious

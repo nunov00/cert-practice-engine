@@ -1,0 +1,33 @@
+id: aaism-d1-1.5-0037
+subdomain: '1.5'
+difficulty: hard
+stem: A clinic chain's patient chatbot calls a hosted model API. Its own gateway logs record user IDs, times and token counts,
+  but no message text. A patient reports that 26 days ago the chatbot showed her another patient's test results. The provider
+  keeps prompts and replies for 30 days and releases them to customers on request. What should the security manager do FIRST?
+options:
+  A: Search the gateway logs for the patient's sessions on that day
+  B: Notify the health regulator of a possible patient data breach
+  C: Ask the provider to preserve and release its stored records
+  D: Try to reproduce the disclosure on a test copy of the chatbot
+answer: C
+explanation:
+  why_correct: The only record of what the chatbot actually showed is the provider's copy of the prompts and replies, and
+    it will be deleted in about four days. Asking the provider at once to preserve and release those records protects the
+    evidence needed to confirm the disclosure, identify the other patient and scope the incident; every other step can follow
+    without that loss.
+  why_not:
+    A: Searching the company's own logs is the usual first scoping step, but these logs hold no message text, so they can
+      show sessions but not what was disclosed, and the search does not stop the provider's records expiring.
+    B: Notification duties may apply once a breach is established, but the report is unconfirmed, and confirming it depends
+      on records that will be deleted within days if they are not secured first.
+    D: Reproducing the fault helps find the cause, but the chatbot may have changed since, a failed reproduction proves nothing,
+      and it does not show which patient's results were exposed.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aaism-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: cissp-d1-1.5-0007
+subdomain: '1.5'
+difficulty: hard
+stem: A hospital group expects a software supplier to sue it over a contract it ended after a long outage. Counsel has sent
+  legal hold notices to the twelve staff involved. Relevant records include their mailboxes, a chat platform set to delete
+  messages after 30 days, and SIEM logs that roll over after 90 days. What should the security manager do FIRST?
+options:
+  A: Image the twelve staff members' laptops forensically, under chain of custody
+  B: Interview the twelve staff to find where else relevant records are kept
+  C: Suspend automatic deletion of the chat messages and SIEM logs in scope
+  D: Export the twelve mailboxes to a review platform for counsel to search
+answer: C
+explanation:
+  why_correct: Once a lawsuit is reasonably expected, the organisation must preserve relevant information. Hold notices bind
+    people, but they do not stop systems that delete on a schedule, and the chat platform will erase relevant messages within
+    30 days. Losing evidence after the duty to preserve arose can lead to court sanctions, so suspending automatic deletion
+    for the scoped chat and log data comes first; identification, collection and review can follow.
+  why_not:
+    A: Forensic imaging is a sound way to preserve devices, but the chat messages and SIEM logs sit on central platforms, not
+      on the laptops, so their scheduled deletion carries on.
+    B: Interviewing custodians to find further sources is a normal early step in e-discovery, but it takes time while the
+      chat platform keeps deleting messages already known to be relevant.
+    D: Collecting mailboxes for review comes later in e-discovery, and the mailboxes are not the records that a schedule is
+      about to delete.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-cissp-check
+  options_only: not_obvious

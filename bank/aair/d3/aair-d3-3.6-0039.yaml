@@ -1,0 +1,35 @@
+id: aair-d3-3.6-0039
+subdomain: '3.6'
+difficulty: hard
+stem: A logistics firm's AI agent rebooks shipments when carriers report delays, working through carrier messages in the order
+  they arrive. In a recovery exercise, it was restarted after a six-hour outage and rebooked several shipments that staff
+  had already rebooked by hand during the outage. Staff make such rebookings directly in the carriers' booking systems. Which
+  change BEST prevents this after future outages?
+options:
+  A: Reconcile queued messages with staff's manual rebookings before restart
+  B: Have staff approve each of the agent's actions for the first hours after restart
+  C: Clear the queue on restart and have staff handle any delays still open
+  D: Have the agent check each shipment's current booking before rebooking it
+answer: D
+explanation:
+  why_correct: The queued messages describe the world as it was when they arrived, and the agent acts on them as if nothing
+    has changed since. Staff rebook in the carriers' own systems, so the current booking there is the one reliable record
+    of what has already been done. Having the agent check it before acting makes each rebooking depend on the shipment's real
+    state, which prevents duplicates after any outage while still rebooking every shipment that staff did not reach.
+  why_not:
+    A: Reconciling the queue before restart targets the right problem, but staff rebook directly in the carriers' systems,
+      so the firm has no central record of manual rebookings to match against. The reconciliation would mean gathering them
+      by hand from each carrier under time pressure.
+    B: Staff approval after restart adds a check, but approvers would have to look up each shipment to know whether it was
+      already rebooked. It relies on people spotting duplicates one by one while the backlog arrives at once.
+    C: Clearing the queue prevents duplicates, but it moves every delay still open after the outage onto staff, who would
+      need to find them first. The agent's work during recovery is lost instead of being made safe.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aair-check
+  options_only: not_obvious

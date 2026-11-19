@@ -1,0 +1,32 @@
+id: cissp-d5-5.1-0014
+subdomain: '5.1'
+difficulty: medium
+stem: At a law firm, a printout of a confidential merger agreement was picked up from a floor printer by someone not working
+  on that deal. Each deal team is put together from lawyers on several floors for a few weeks and then disbands, and several
+  deals usually run at once. Which control BEST prevents a repeat?
+options:
+  A: Hold each job until its sender badges in at the printer they choose
+  B: Printers in rooms on each floor that open only to deal-team badges
+  C: Print each page with the sender's name as a visible watermark
+  D: Route documents labelled deal-confidential to the deal team's own printer
+answer: A
+explanation:
+  why_correct: The document reached the wrong person because it sat unattended where others could reach it. Holding each job
+    until the sender authenticates at the device releases it only into the sender's hands, at whatever printer suits them,
+    and it needs no change as deal teams form and disband.
+  why_not:
+    B: Restricting printer rooms to deal teams keeps out other staff in principle, but teams change every few weeks and several
+      deals run at once, so each room would admit members of other deals and its access lists would keep lagging.
+    C: A watermark deters leaks and helps trace a document afterwards, but the printout still sits on the tray for anyone
+      passing to read.
+    D: A dedicated printer works for a stable team in one place, but these teams are spread across floors and last only weeks,
+      so there is no settled team printer that all members can reach.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-cissp-check
+  options_only: not_obvious

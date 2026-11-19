@@ -1,0 +1,33 @@
+id: aaism-d2-2.1-0065
+subdomain: '2.1'
+difficulty: medium
+stem: A bank's pilot chatbot served 2,000 customers a month and gave a harmful reply in about 1 of 10,000 chats, which the
+  risk owner accepted as a rare risk. It will now serve all 3 million customers. Replaying 200,000 real customer questions
+  showed the same per-chat rate. The team proposes keeping the rare likelihood rating. What is the MAIN weakness of this proposal?
+options:
+  A: The wider customer base may ask kinds of questions the pilot did not see
+  B: A rate as low as 1 in 10,000 cannot be measured reliably at pilot volume
+  C: Harmful replies cost more once a service is widely used and talked about
+  D: The rating should reflect how often harm occurs at the full volume
+answer: D
+explanation:
+  why_correct: Likelihood in a risk rating is about how often the harmful event will happen to the organisation, not the chance
+    per chat. At pilot volume, 1 in 10,000 meant a harmful reply every few months; across millions of customers' chats the
+    same rate means harmful replies every day. Keeping a rare rating because the per-chat rate is unchanged understates the
+    risk the owner would be accepting.
+  why_not:
+    A: A new population can behave differently, which is a sound concern at rollout, but the replay of 200,000 real customer
+      questions already showed the same per-chat rate across the wider base.
+    B: Rare rates are hard to measure from small samples, which would have been a fair challenge to the pilot figure, but
+      the 200,000-question replay gives a much firmer estimate and confirmed it.
+    C: 'Visibility can raise the impact of each incident, and impact should be reviewed too, but the proposal''s flaw is in
+      likelihood: the same rate now produces far more harmful replies.'
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-aaism-check
+  options_only: not_obvious

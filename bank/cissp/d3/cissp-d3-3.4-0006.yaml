@@ -1,0 +1,32 @@
+id: cissp-d3-3.4-0006
+subdomain: '3.4'
+difficulty: hard
+stem: A medical device maker signs firmware updates in an automated nightly build that runs on a cluster of four build
+  servers, any of which may do the signing. Devices in the field trust a single signing key. Policy requires that the
+  private key cannot be copied out of tamper-resistant hardware. Which capability BEST fits?
+options:
+  A: A TPM in each build server, holding the signing key as a non-exportable key
+  B: A network HSM cluster holding the key, which each build server calls to sign
+  C: A smart card holding the key, inserted by the release manager for each signing
+  D: A processor enclave on each build server, holding the key sealed to that enclave
+answer: B
+explanation:
+  why_correct: A network HSM keeps the key inside tamper-resistant hardware that never releases it, while any authorised build
+    server can send it signing requests. Clustered HSMs can share the key among themselves under the HSMs' own protected
+    replication, so one key serves four servers and an unattended nightly build.
+  why_not:
+    A: A TPM keeps a non-exportable key inside one machine's chip. Four servers would need four different keys, or the key
+      would have to exist outside a TPM to be loaded into each, and the devices trust only one key.
+    C: A smart card keeps the key in tamper-resistant hardware and suits signing by a person, but the build runs unattended
+      every night, and a card in one reader cannot serve whichever of the four servers does the signing.
+    D: An enclave protects a key from the rest of the server, but a key sealed to one processor cannot be used on the other
+      three, and processor enclaves are not designed as tamper-resistant key stores in the way HSMs are.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,34 @@
+id: cissp-d7-7.6-0004
+subdomain: '7.6'
+difficulty: hard
+stem: Ransomware encrypted a design firm's file servers overnight. Responders found that the attackers first logged in through
+  a VPN account 19 days ago and placed their tools on the file servers 12 days ago; the account is now disabled and the tools'
+  file hashes are known. Immutable nightly backups go back 30 days. Staff need their files back quickly, with as little lost
+  work as possible. Which recovery approach BEST fits?
+options:
+  A: Restore the full last backup before the encryption onto the existing servers
+  B: Restore the full backup from 20 days ago, before the first login, onto rebuilt servers
+  C: Restore the full backup from 13 days ago, before the tools arrived, onto rebuilt servers
+  D: Restore only the last backup's data files, scanned for the tools, onto rebuilt servers
+answer: D
+explanation:
+  why_correct: The servers' operating systems may hold attacker changes, but the data is what staff need. Rebuilding the servers
+    from clean images and restoring only data files from the latest backup before encryption, scanned against the known tool
+    hashes, keeps nearly all recent work while leaving behind both the staged tools and any persistence in the system
+    configuration.
+  why_not:
+    A: The last backup loses the least work, but restoring it in full onto the same servers brings back the attackers' tools
+      and any persistence they set up during their 12 days on the servers.
+    B: A backup from before the first login is the cleanest restore point, but it throws away about three weeks of work, which
+      the firm's need for minimal loss does not justify when the tools can be identified and excluded.
+    C: Restoring from before the tools were placed avoids them, but it still loses 13 days of work, and the attackers had
+      access for a week before that, so a full system restore from that point is not known to be clean either.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-19-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-19-daily-cissp-check
+  options_only: not_obvious
