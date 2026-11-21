@@ -1,0 +1,34 @@
+id: aair-d3-3.4-0041
+subdomain: '3.4'
+difficulty: hard
+stem: A lender wants to monitor monthly gaps in approval rates by ethnicity for its online loan model. It does not ask applicants
+  their ethnicity when they apply, and an optional diversity survey sent after each decision is answered by about 15% of applicants,
+  most of them approved. Which approach BEST supports this monitoring?
+options:
+  A: Infer each applicant's likely group from name and area, checked on survey replies
+  B: Report approval gaps among the applicants who answered the diversity survey
+  C: Report approval gaps between postcode areas with different ethnic mixes
+  D: Run a paired-application test each quarter that varies only identity cues
+answer: A
+explanation:
+  why_correct: The lender has no reliable group data for most applicants, and the survey replies come mostly from approved
+    applicants, so gaps measured on them would be badly biased. A proxy method that estimates the likely group of each applicant
+    from surname and address, checked for accuracy against the survey replies and used only in aggregate for monitoring, gives
+    monthly estimates across the whole applicant population, which is how regulators and lenders commonly monitor where the
+    attribute is not collected.
+  why_not:
+    B: Survey-based gaps use self-reported data, but because declined applicants rarely reply, the respondents are mostly
+      approvals, so the gap they show would understate any disparity.
+    C: Area-level comparisons are easy to run, but they measure neighbourhoods, not applicants, so differences in income or
+      credit between areas mix with ethnicity, and gaps within areas are missed.
+    D: Paired tests are a strong way to probe whether the model treats identity cues differently, but they test constructed
+      cases each quarter rather than measuring gaps in real monthly decisions.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-21-daily-aair-check
+  options_only: not_obvious

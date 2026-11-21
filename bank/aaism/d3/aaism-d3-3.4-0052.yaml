@@ -1,0 +1,31 @@
+id: aaism-d3-3.4-0052
+subdomain: '3.4'
+difficulty: medium
+stem: A haulier's in-cab AI watches drivers for signs of fatigue and keeps a short clip around each alert. Drivers' representatives
+  accepted the cameras on a written promise that clips serve road safety only. Managers now want the clips searched to score
+  drivers' breaks and personal calls for bonus decisions. What should the security manager advise?
+options:
+  A: Keep clips for the safety review of the alert that triggered each one
+  B: Let an automated tool score breaks and calls, showing managers scores alone
+  C: Allow the new use once drivers are told of it in an updated privacy notice
+  D: Allow the new use if a privacy impact assessment finds it lawful
+answer: A
+explanation:
+  why_correct: The cameras were accepted on a specific, written limit on purpose. Scoring breaks and calls for pay is a different
+    purpose, so the clips should stay with the safety reviews they were collected for. Any wider use would have to be agreed
+    afresh with the drivers' representatives, not introduced by the company on its own.
+  why_not:
+    B: Automated scoring keeps managers from viewing footage, but it still uses safety clips to judge pay, which is exactly
+      the use the promise excluded.
+    C: A notice tells drivers about the change but does not undo a written promise or the trust it secured; being told is
+      not the same as agreeing.
+    D: A lawful basis may well exist, but lawfulness does not release the company from the commitment it made to the drivers.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aaism
+  checked_by: 2026-11-21-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

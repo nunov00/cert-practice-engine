@@ -1,0 +1,35 @@
+id: aair-d1-1.2-0046
+subdomain: '1.2'
+difficulty: medium
+stem: A travel insurer prices policies with a model trained on claims from its home market. Its process for entering a new
+  country covers licensing, tax, translation and distribution, and fixes launch dates months ahead. The model owner learned
+  of the last two launches from the press release, and claims costs in both countries ran well above prices for the first
+  year. Which change BEST aligns these processes?
+options:
+  A: Add a review of the model's fit for each country to the market-entry steps
+  B: Add a prudence margin to prices in each new country for its first year
+  C: Track loss ratios by country from launch and reprice when they pass a limit
+  D: Retrain the model on each new country's claims once enough have built up
+answer: A
+explanation:
+  why_correct: 'The losses come from a gap between two processes: market entry decides where the model will be used, but the
+    model''s owner has no part in it, so a model built on home-market claims was applied to new populations unchecked. Making
+    a review of the model''s fit for each target country a step in market entry, which already runs months ahead of launch,
+    lets the owner test the model against local evidence and agree any adjustment or pricing basis before customers are priced,
+    rather than finding the problem in a year of losses.'
+  why_not:
+    B: A prudence margin is a sensible interim treatment once a fit problem is known, but applied blindly it may overprice
+      one market and still underprice another, and it leaves the model owner outside the market-entry decision.
+    C: Loss ratio monitoring is needed after launch, but loss ratios on travel policies take months to mature, so it detects
+      mispricing only after a period of losses that a pre-launch review could have avoided.
+    D: Retraining on local claims is the long-term fix, but it can start only after a year or more of claims, and it does
+      nothing to make future launches consider the model before they go live.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-21-daily-aair-check
+  options_only: not_obvious

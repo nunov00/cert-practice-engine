@@ -1,0 +1,32 @@
+id: aaism-d1-1.4-0041
+subdomain: '1.4'
+difficulty: medium
+stem: A firm's AI standard requires retrieval apps to show users only content they may open, and gives detailed guidance on
+  how. Pre-launch reviews keep finding flaws in this filtering, which each app team builds in its own way, and the fixes delay
+  launches by weeks. About 30 more retrieval apps are planned this year. What should the AI security program do?
+options:
+  A: Add an automated test of permission filtering to each app's pipeline
+  B: Train each app team's developers in permission-aware retrieval design
+  C: Publish a reference design with sample code for the permission filtering
+  D: Offer a maintained retrieval service that enforces permissions itself
+answer: D
+explanation:
+  why_correct: 'The flaws come from every team building the same control again. A shared, maintained retrieval service that
+    enforces permissions takes that work out of the 30 planned apps: reviews confirm the service is used instead of examining
+    a new filter each time, and a fix to the service reaches every app that uses it.'
+  why_not:
+    A: An automated test finds flaws earlier, which helps, but each team still builds its own filter and still has to rework
+      it when the test fails.
+    B: Training improves each team's design, yet 30 separate implementations each keep their own chance of error and each
+      still needs a full review.
+    C: A reference design narrows the variation, but teams still copy and adapt the code in their own ways, which is where
+      today's flaws arise.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aaism
+  checked_by: 2026-11-21-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

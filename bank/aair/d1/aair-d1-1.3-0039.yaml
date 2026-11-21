@@ -1,0 +1,37 @@
+id: aair-d1-1.3-0039
+subdomain: '1.3'
+difficulty: hard
+stem: 'A listed retailer''s board risk committee oversees its principal risks, including conduct risk, against the board''s
+  appetite, which sets a limit on customer harm. AI matters go only to the board''s technology committee, which tracks AI
+  projects'' delivery, spend and benefits. Last year customers were overcharged twice: once by an AI pricing model, and once
+  by a manual discount rule that staff applied on top of the model''s prices. Which change BEST strengthens board oversight
+  of AI risk?'
+options:
+  A: Extend the technology committee's remit to AI risk, rated against appetite
+  B: Set up a board AI committee to oversee AI risk, ethics and delivery
+  C: Add AI risk to the terms of reference of the board risk committee
+  D: Have the two committees meet jointly each quarter to review AI risk
+answer: C
+explanation:
+  why_correct: 'The harm the board cares about is customer harm, which the risk committee already oversees against the appetite,
+    and the two overcharging events show that AI risk and conduct risk arise in the same pricing chain: a model''s prices
+    and a manual rule applied on top of them. Adding AI risk to the risk committee''s terms of reference puts AI-driven harm
+    in front of the body that owns the appetite and already sees the manual and conduct side, so it can judge the combined
+    exposure and challenge management on it. The technology committee can keep overseeing delivery and spend.'
+  why_not:
+    A: Giving the technology committee an AI risk remit would bring appetite into its reports, but it would see only the model
+      half of the pricing chain, while the manual rule and conduct risk stay with the risk committee, so the combined exposure
+      would still fall between two committees.
+    B: A dedicated AI committee suits boards where AI is a major, distinct strategic theme, but here it would add a third
+      body and split customer-harm oversight further, separating AI-driven harm from the conduct risks it interacts with.
+    D: Joint meetings improve information sharing, but no single committee would own AI risk against the appetite, and a quarterly
+      joint review leaves decisions and follow-up without a clear home.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aair
+  checked_by: 2026-11-21-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

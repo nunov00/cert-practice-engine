@@ -1,0 +1,36 @@
+id: aair-d1-1.1-0039
+subdomain: '1.1'
+difficulty: medium
+stem: A marine insurer wants staff to ask questions such as which of its 12,000 hull policies exclude a given sea area, or
+  how many carry a war-risk limit above a set amount. The answers go into reports to its reinsurers, so each list and count
+  must be complete and come out the same when rerun. The proposed assistant retrieves the ten passages most similar to each
+  question. Which approach BEST fits this use?
+options:
+  A: Retrieve many more passages for questions that ask for lists or counts
+  B: Have the model read each policy in batches whenever such a question is asked
+  C: Extract each policy's key terms into a checked table once, then query it
+  D: Combine keyword and semantic retrieval so that matching clauses rank first
+answer: C
+explanation:
+  why_correct: 'Questions that list or count across the whole portfolio need every policy taken into account and the same
+    answer on each run. Extracting the relevant terms from each policy once, checking that extraction, and holding the results
+    in a table turns these questions into ordinary queries: complete by construction, repeatable, auditable and cheap to rerun.
+    The language model is confined to a one-off extraction task whose output can be verified, instead of answering portfolio
+    questions from whatever it happens to read.'
+  why_not:
+    A: A larger retrieval window still stops at a cut-off, so policies outside it are missed without warning and the count
+      shifts with the cut-off chosen; a very large window also strains the model's context and attention.
+    B: Reading each policy at question time can reach the whole portfolio, but the model's output can differ from run to run
+      and no checked record of what it extracted is kept, so the reinsurer reports would not be repeatable or auditable, and
+      each question repeats a costly pass over 12,000 policies.
+    D: Hybrid retrieval helps the right clause rank first when looking up a specific term, but it still returns a ranked subset
+      of passages, so it cannot guarantee a complete list or an exact count.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-21-daily-aair-check
+  options_only: not_obvious

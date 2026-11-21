@@ -1,0 +1,33 @@
+id: aaism-d2-2.2-0071
+subdomain: '2.2'
+difficulty: hard
+stem: A software firm's coding agents follow instruction files kept in each repository, which set coding conventions. A tester
+  sent a pull request to one of the firm's open-source projects that edited such a file, hiding instructions in invisible
+  Unicode characters, and a reviewer approved it as a formatting fix. Later agent sessions quietly added a lookalike dependency
+  to builds. Which control BEST addresses this?
+options:
+  A: Flag hidden characters and require code-owner review for instruction files
+  B: Allow builds to use only dependencies already on an approved internal list
+  C: Scan each agent-generated change with static analysis before it is merged
+  D: Run coding agents in sandboxes that have no outbound network access
+answer: A
+explanation:
+  why_correct: The attack worked because an instruction file, which steers every later agent session, was changed through
+    ordinary review that could not see the hidden text. Showing hidden characters and requiring a code owner's review of instruction
+    files treats them as the control input they are, stopping this payload and any other the attacker might have chosen.
+  why_not:
+    B: A dependency allowlist would have blocked this particular payload, but the poisoned instructions would stay in place
+      and could direct the agents to other harmful changes.
+    C: Static analysis finds known insecure code patterns, but a lookalike dependency or other subtle change written to look
+      ordinary is unlikely to be flagged.
+    D: Removing network access limits what an agent can send out during a session, but the harmful change reaches builds through
+      the agent's normal output.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-21-daily-aaism-check
+  options_only: not_obvious

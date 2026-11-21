@@ -1,0 +1,31 @@
+id: aaism-d3-3.1-0045
+subdomain: '3.1'
+difficulty: medium
+stem: A retailer's analytics assistant turns staff questions into SQL that runs on the live orders database under a read-only
+  account. During a sales peak, one generated query scanned years of orders and slowed checkout for twenty minutes. Staff
+  rely on asking new questions in free form. Which design change BEST addresses this?
+options:
+  A: Limit each staff member to a set number of queries per hour
+  B: Have a second model reject queries that it judges too costly
+  C: Run generated queries on a read replica with time and row limits
+  D: Allow only queries that are built from a set of approved templates
+answer: C
+explanation:
+  why_correct: Read-only access protects the data from change, not the database from load. Sending generated queries to a
+    read replica keeps them away from the system that serves checkout, and time and row limits stop any single runaway query,
+    while staff keep asking free-form questions.
+  why_not:
+    A: A rate limit stops one person sending many queries, but here a single query did the damage, well within any sensible
+      limit.
+    B: A second model may catch some plainly expensive queries, but its judgement of cost is unreliable, and any query it
+      misjudges still runs on the live database.
+    D: Templates would keep query cost predictable, but they remove the free-form questions that staff rely on.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aaism
+  checked_by: 2026-11-21-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: cissp-d5-5.2-0013
+subdomain: '5.2'
+difficulty: medium
+stem: A water utility's 30 network engineers manage 400 substation devices, each supporting one local administrator account
+  and no central authentication. A vault holds the passwords and logs each checkout, and engineers connect through serial
+  consoles on site as often as over the network. An audit found that passwords checked out months earlier still worked, and
+  some engineers kept copies in personal notes. Which change BEST fits?
+options:
+  A: Have the vault change each device's password after every checkout
+  B: Have the vault change every device's password on a 90-day cycle
+  C: Have the vault change the passwords a leaver checked out, on leaving
+  D: Have the vault inject passwords into proxied sessions, hidden from staff
+answer: A
+explanation:
+  why_correct: With one shared local account per device, the credential itself has to stop being reusable. Rotating each
+    password as soon as its checkout ends means a copied password works only for the session it was issued for, whichever
+    way the engineer connected, and the vault's log then ties each use of the account to one named engineer.
+  why_not:
+    B: Scheduled rotation shortens how long a copy lasts, but a password taken at the start of a cycle still works for up
+      to three months, which is the exposure the audit found.
+    C: Rotating on departure deals with leavers, but current engineers' copies in personal notes keep working, and those
+      notes can be lost or shared long before anyone leaves.
+    D: Credential injection keeps passwords out of sight, which would be strongest over the network, but serial console work
+      on site cannot run through the vault's proxy, so engineers still need to see the passwords.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-cissp
+  checked_by: 2026-11-21-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

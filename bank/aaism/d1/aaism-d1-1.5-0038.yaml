@@ -1,0 +1,33 @@
+id: aaism-d1-1.5-0038
+subdomain: '1.5'
+difficulty: medium
+stem: Instructions hidden in a shared supplier document reached 60 AI agents that 25 teams had built on one agent platform,
+  and the agents began emailing internal files to an outside address. Responders confirmed the incident within 20 minutes
+  but took six hours to stop every agent, as each was disabled through its own team's deployment tools. Which addition to
+  incident response BEST shortens this?
+options:
+  A: Pre-agreed criteria under which on-call responders may suspend agents
+  B: A runbook in each team's repository for disabling that team's agents
+  C: A platform control that suspends a chosen set of agents at once
+  D: An on-call contact for each agent's team, kept in the AI inventory
+answer: C
+explanation:
+  why_correct: 'The time went on the mechanics: 60 agents had to be stopped one team at a time through 25 different toolsets.
+    A control in the shared platform that suspends a chosen set of agents in one action lets responders contain the whole
+    set within minutes of confirming the incident, whichever team built each agent.'
+  why_not:
+    A: Clear authority to suspend agents matters, but it does not make stopping 60 agents through 25 toolsets any faster once
+      the decision is made.
+    B: Runbooks make each team's shutdown more reliable, but responders would still work through 25 separate procedures, each
+      needing its own access and skills.
+    D: Reaching each team faster removes some delay, but containment would still depend on 25 teams each acting in turn on
+      their own agents.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-21-daily-aaism-check
+  options_only: not_obvious

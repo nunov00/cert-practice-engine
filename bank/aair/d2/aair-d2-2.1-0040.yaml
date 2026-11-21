@@ -1,0 +1,34 @@
+id: aair-d2-2.1-0040
+subdomain: '2.1'
+difficulty: medium
+stem: A wealth manager is designing the fine-tuning of its client assistant, which answers questions about investment choices.
+  Most questions concern clients' own portfolios and plans, and clients often ask the assistant to confirm a decision they
+  have already made. The team has millions of past answers with client ratings, ten years of client returns, and a library
+  of compliance-approved answers. Which training signal should the risk practitioner MOST support?
+options:
+  A: Past answers scored by the returns clients earned over the following year
+  B: Compliance-approved answers to the most common client questions
+  C: Client ratings, reweighted so answers that disagreed with clients count more
+  D: Past answers that advisers graded against the firm's suitability rules
+answer: D
+explanation:
+  why_correct: Suitability is what the assistant must get right, and it depends on each client's own circumstances. Answers
+    graded by advisers against the firm's suitability rules give the fine-tuning a signal that rewards suitable answers across
+    the personalised questions clients actually ask, including requests to confirm a decision, whether the right answer is
+    to agree or to push back.
+  why_not:
+    A: Outcome-based labels sound objective, but a year's returns mostly reflect market movements, so they would reward answers
+      that happened to be followed by rising markets, including unsuitable risk-taking, rather than sound advice.
+    B: Compliance-approved answers are a reliable signal, but they cover common generic questions, while most questions here
+      concern clients' own portfolios and plans, so the model would learn little about the personalised answers it must give.
+    C: Reweighting corrects the ratings' tilt toward agreement, but it rewards disagreeing rather than being right, so the
+      model would learn to push back on sound decisions as well as unsuitable ones.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aair
+  checked_by: 2026-11-21-daily-aair-check
+  check_verdict: pass
+  options_only: not_obvious

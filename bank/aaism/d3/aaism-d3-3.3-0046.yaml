@@ -1,0 +1,32 @@
+id: aaism-d3-3.3-0046
+subdomain: '3.3'
+difficulty: medium
+stem: An engineering group will use an AI classifier to label 40 million files so that its staff assistant can exclude Restricted
+  ones. Testing shows it labels 6% of Restricted files lower, mostly scanned contracts and HR forms. Those files sit in a
+  few dozen known HR, legal and deal-room sites. Which control BEST closes this gap?
+options:
+  A: Retrain the classifier on the scanned contracts and HR forms it missed
+  B: Label files Restricted whenever the classifier's confidence in a label is low
+  C: Have staff review a sample of files labelled below Restricted
+  D: Treat each known HR, legal and deal-room site as Restricted by default
+answer: D
+explanation:
+  why_correct: The misses cluster in a small, known set of locations. Treating those sites as Restricted by default, whatever
+    label each file receives, closes the gap where it actually sits and does not depend on the classifier reading scanned
+    documents correctly.
+  why_not:
+    A: Retraining may reduce misses on scanned documents, but some will remain, and each remaining miss exposes a Restricted
+      file through the assistant.
+    B: A low-confidence rule helps only where the classifier knows it is unsure; misread scans are often labelled lower with
+      confidence, so many would still slip through.
+    C: Sampling measures how often Restricted files are mislabelled, but it corrects only the files it happens to pick out
+      of millions.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aaism
+  checked_by: 2026-11-21-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

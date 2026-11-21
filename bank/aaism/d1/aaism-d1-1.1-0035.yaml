@@ -1,0 +1,33 @@
+id: aaism-d1-1.1-0035
+subdomain: '1.1'
+difficulty: medium
+stem: A bank's credit officers now decide loans after reading summaries that a vendor's language model writes from each applicant's
+  file. The model risk team says the tool is outside its validation scope because it produces text, not scores. The bank's
+  supervisor defines a model by how its output is used, not by its technique. What should the security manager advise?
+options:
+  A: Assess the tool as a new use case under the bank's AI risk method
+  B: Have credit officers check each summary against the applicant's file
+  C: Have model risk validate the tool as a model used in credit decisions
+  D: Manage the tool as an end-user application under the IT change process
+answer: C
+explanation:
+  why_correct: Under the supervisor's definition, what counts is use, not technique. The summaries shape credit decisions,
+    so the tool falls within the bank's model risk expectations and needs independent validation, for example of omissions
+    and distortions in its summaries, before officers rely on it. The model risk team's argument that it produces text rather
+    than scores does not hold under that definition.
+  why_not:
+    A: An AI risk assessment identifies and rates the tool's risks, which is useful, but it is not the independent validation
+      that the supervisor's model rules expect for anything used in credit decisions.
+    B: Checking every summary against the full file would remove most of the time the tool saves, and individual checks do
+      not show that the tool performs reliably across applicants, which is what validation establishes.
+    D: Change control governs how the tool is altered, not whether its output is fit to inform credit decisions, so the supervisory
+      gap stays open.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aaism
+  checked_by: 2026-11-21-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

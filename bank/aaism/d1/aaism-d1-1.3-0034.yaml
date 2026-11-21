@@ -1,0 +1,33 @@
+id: aaism-d1-1.3-0034
+subdomain: '1.3'
+difficulty: medium
+stem: A media firm's legal team reviewed an open-weight model's licence and approved the model for subtitling. Eight months
+  later, another team used its outputs to train a smaller in-house model, which the licence forbids. Every new model must
+  be registered in the AI inventory before use, with its owner, version, base model and training data sources. Which addition would MOST likely have
+  prevented this?
+options:
+  A: Licence conditions kept on each model record and checked at each new use
+  B: Legal review of each open-weight model's licence before anyone downloads it
+  C: Lineage links from each registered model to the models used to build it
+  D: A yearly audit of each model's actual uses against its licence terms
+answer: A
+explanation:
+  why_correct: The licence was reviewed once, for the first use, and its restrictions then stayed with the legal team. Keeping
+    the licence's use conditions on the model's inventory record, and checking them whenever a new use or derived model is
+    registered, puts the restriction in front of the people at the point where the forbidden use was proposed.
+  why_not:
+    B: Review before download already took place and approved subtitling. It could not foresee a different use proposed eight
+      months later.
+    C: The inventory already records each model's base model and training data sources, so the link to the licensed model
+      was visible; without the licence terms on record, nobody handling the registration would know that this use is forbidden.
+    D: A yearly audit would find the breach months after the derived model was built and in use, instead of stopping it at
+      registration.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aaism
+  checked_by: 2026-11-21-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious
