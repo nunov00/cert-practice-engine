@@ -1,0 +1,33 @@
+id: cissp-d1-1.9-0007
+subdomain: '1.9'
+difficulty: medium
+stem: A logistics firm's risk register rates its ransomware risk within appetite, based on controls their owners self-assess
+  as effective each quarter, with screenshots attached. Two intrusions this year got through controls rated effective; MFA
+  had been switched off for one VPN group, and an endpoint policy had been set to audit only. Logs show both settings were
+  correct when last assessed. Which change BEST improves the reliability of the register's control ratings?
+options:
+  A: Quarterly testing of the key controls by the second line, in place of self-assessment
+  B: Monthly self-assessments, with owners attaching system exports instead of screenshots
+  C: Automated checks on the key control settings, alerting the risk team when one changes
+  D: Penetration tests twice a year aimed at the controls that the ransomware rating relies on
+answer: C
+explanation:
+  why_correct: The ratings were accurate on the day they were made; the controls failed by changing between assessments.
+    Continuous, automated monitoring of the settings that the rating depends on catches such drift when it happens, so the
+    register reflects the controls as they are rather than as they were at the last review, and owners can restore them quickly.
+  why_not:
+    A: Independent testing fixes the bias of self-assessment, which is often the weak point, but here the owners' evidence was
+      accurate, and a quarterly test by anyone still misses a change made the week after.
+    B: Monthly assessments with system exports give stronger evidence more often, but each is still a snapshot, so a setting
+      changed between two assessments goes unnoticed for weeks.
+    D: Penetration tests show whether controls stop a real attack, which self-assessment cannot, but twice a year they are
+      further apart than the quarterly assessments that already missed both changes.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-cissp
+  checked_by: 2026-11-21-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

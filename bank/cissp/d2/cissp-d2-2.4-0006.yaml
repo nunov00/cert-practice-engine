@@ -1,0 +1,34 @@
+id: cissp-d2-2.4-0006
+subdomain: '2.4'
+difficulty: medium
+stem: A wind-farm maintenance firm's engineers carry tablets that cache each customer's site drawings for offline use, and
+  often work for weeks at sites with no connectivity. Customer contracts require the firm to delete a customer's data within
+  30 days of the contract ending. The firm's servers already delete ended customers' data on time. Which control BEST
+  extends this to the tablets?
+options:
+  A: A remote wipe of the ended customer's files sent to each tablet at contract end
+  B: Full-disk encryption on each tablet, with a PIN required whenever it starts up
+  C: A sign-off at each sync in which engineers confirm ended customers' files are gone
+  D: Cached files whose keys expire after 28 days offline, with ended customers' pruned at sync
+answer: D
+explanation:
+  why_correct: The cached copies are a second location for the data, and the deletion has to reach them even when a tablet
+    cannot be contacted. Files whose keys expire after 28 days without a sync are crypto-erased, so stranded copies become
+    unrecoverable within the 30-day limit for tablets that stay offline, while engineers keep access through weeks at offline sites, and each sync removes ended customers' files from tablets that do connect, so no copy outlives the contract
+    by more than the allowed period.
+  why_not:
+    A: A remote wipe is the usual way to remove data from managed devices, but the command waits until the tablet connects,
+      and tablets that stay offline for weeks could keep the files well past 30 days.
+    B: Full-disk encryption protects the data if a tablet is lost or stolen, but the engineer unlocks it every day, so the
+      ended customer's drawings stay readable on it indefinitely.
+    C: A sign-off adds accountability, but it relies on each engineer finding and deleting the right files by hand, and it
+      happens only when a tablet syncs, so offline tablets are still not covered.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-cissp
+  checked_by: 2026-11-21-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

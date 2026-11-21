@@ -1,0 +1,32 @@
+id: aaism-d2-2.1-0066
+subdomain: '2.1'
+difficulty: hard
+stem: In March, a retailer's risk owner accepted a vendor chatbot's residual risk because the vendor kept no prompts and the
+  bot served only signed-in customers. By June, the vendor's revised terms allowed 30-day prompt retention, and a product
+  release had opened the bot to guests. Neither change prompted a review. Which practice BEST prevents a repeat?
+options:
+  A: Expire each risk acceptance after six months unless the owner renews it
+  B: Record each acceptance's assumptions and re-review when one changes
+  C: Add a risk review step to change requests for AI systems
+  D: Require vendors to give notice before changing their data terms
+answer: B
+explanation:
+  why_correct: 'The acceptance rested on two facts, and they changed by two different routes: the vendor''s terms and an internal
+    release. Recording the assumptions behind each acceptance, and treating a change in any of them as a trigger for review,
+    covers both routes and prompts a review when the basis for the decision changes rather than on a calendar.'
+  why_not:
+    A: A six-month expiry would have forced a review only in September, months after both assumptions had failed, while adding
+      reviews where nothing has changed.
+    C: A risk step in change requests would probably have caught the release that opened the bot to guests, but not the vendor's
+      new terms, which came through no internal change request.
+    D: Vendor notice would have flagged the retention change, but not the internal release, and a notice does not by itself
+      link the change to the acceptance that relied on the old terms.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aaism
+  checked_by: 2026-11-21-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

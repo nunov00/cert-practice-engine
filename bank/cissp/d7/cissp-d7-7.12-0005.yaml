@@ -1,0 +1,34 @@
+id: cissp-d7-7.12-0005
+subdomain: '7.12'
+difficulty: medium
+stem: An insurer runs a yearly parallel test of its claims platform, chosen because the business will not accept the risk
+  of a production outage. Last year the recovery site processed the live claim feed as planned, but its payment interface
+  was also live, and 300 claimants were paid twice. The regulator expects this year's test to show claims processed at full
+  volume. How should the test BEST be designed?
+options:
+  A: A simulation at the recovery site, with no live claims processed
+  B: A full interruption test, so only the recovery site sends payments
+  C: A parallel test that processes only a 10% sample of the live claim feed
+  D: A parallel test with outbound interfaces sent to stubs and reconciled
+answer: D
+explanation:
+  why_correct: A parallel test still gives the evidence the regulator wants without risking production, provided the
+    recovery site cannot act on the outside world. Pointing its payment and other outbound interfaces at stubs that capture
+    what it would have sent, then reconciling that output with production's, shows full-volume processing is correct while
+    no claimant is paid twice.
+  why_not:
+    A: A simulation removes any chance of duplicate payments, but it processes no claims, so it cannot show the regulator
+      that the recovery site handles full volume.
+    B: A full interruption test avoids duplicates because only one site runs, but it moves production to the recovery site,
+      which is the outage risk the business has refused.
+    C: Processing a sample reduces the number of duplicate payments rather than preventing them, and it no longer shows the
+      recovery site handling full volume.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-cissp
+  checked_by: 2026-11-21-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

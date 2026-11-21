@@ -1,0 +1,34 @@
+id: cissp-d1-1.12-0007
+subdomain: '1.12'
+difficulty: medium
+stem: During a round of redundancies at an insurer, a phishing simulation offered staff a retention bonus form. Many clicked,
+  the staff union complained, and HR reports that some staff now ignore genuine HR emails. Otherwise the simulations copy the
+  invoice, shared-document and delivery lures that the insurer's mail filter catches each month. Which rule for future lures
+  BEST fits the programme?
+options:
+  A: Keep emotive themes such as pay and jobs, and debrief each clicker in private
+  B: Leave out lures about pay, jobs or health, and keep the work-based themes
+  C: Tell staff the month of each campaign, and keep the current range of themes
+  D: Use only consumer lures, such as parcel delivery notices, in future campaigns
+answer: B
+explanation:
+  why_correct: Simulations exist to rehearse the attacks staff actually face while keeping their trust and willingness to report.
+    Lures that exploit fears about pay, jobs or health damage that trust and, as here, teach staff to distrust genuine messages,
+    while the work-based lures already mirror what the filter catches. Excluding the distressing themes and keeping the realistic
+    work lures keeps the programme's value without the harm.
+  why_not:
+    A: Real attackers do use emotive themes, and a private debrief softens the blow, but the harm here is to trust in genuine
+      HR messages and in the programme, which a debrief does not repair.
+    C: Announcing the month reduces surprise and complaints, but it makes every simulation less realistic and leaves the
+      distressing themes in use.
+    D: Consumer lures avoid upsetting staff, but they drop the invoice and shared-document lures that match the attacks the
+      insurer actually receives, so the simulations stop rehearsing the real risk.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-cissp
+  checked_by: 2026-11-21-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

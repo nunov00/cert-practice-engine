@@ -1,0 +1,32 @@
+id: cissp-d6-6.5-0013
+subdomain: '6.5'
+difficulty: medium
+stem: An internal auditor at a distributor must report whether any supplier payment last year was created and approved by
+  the same person. The ERP does not block this; policy requires two people, and 40 finance staff hold both rights so they
+  can cover absences. The ERP keeps full records for the year's 90,000 payments. Which test BEST supports the conclusion?
+options:
+  A: A random sample sized for 95% confidence, checking each payment's approver
+  B: A review of the role assignments of the 40 staff who hold both rights
+  C: A sample of the largest payments by value, checking each one's approver
+  D: A comparison of creator and approver IDs across the year's payment records
+answer: D
+explanation:
+  why_correct: The question is whether any exception exists, and a sample cannot show that none does. Because the system
+    records who created and who approved each payment, data analytics can test the whole population at little cost and list
+    every self-approved payment, giving the auditor a conclusion for the full year and specific cases to follow up.
+  why_not:
+    A: Statistical sampling is the standard way to estimate an error rate, but it supports a conclusion only within a margin,
+      so a handful of self-approved payments among 90,000 could easily be missed.
+    B: Reviewing who holds both rights shows who could self-approve, which matters for access design, but the rights are held
+      on purpose for cover, and the review says nothing about what was actually done.
+    C: Targeting high-value payments is a sound risk-based choice when only a sample is possible, but a fraud split into smaller
+      payments would fall outside it, and the full population is available here.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-cissp
+  checked_by: 2026-11-21-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: cissp-d3-3.9-0005
+subdomain: '3.9'
+difficulty: medium
+stem: A bank is fitting out a new data centre with two utility feeds from separate substations, N+1 generators with 48 hours
+  of fuel, and fibre from two carriers. A design review finds that both power feeds and both carriers' fibre enter through
+  one duct bank along the north wall, beside a road the city plans to dig up next year. Which change BEST addresses this?
+options:
+  A: A third generator, with fuel storage extended to 96 hours
+  B: Concrete encasement of the north duct bank, marked for excavators
+  C: Contract terms requiring each carrier to prove diverse routes to the site
+  D: A second building entry on the south side for one feed and one carrier
+answer: D
+explanation:
+  why_correct: Two feeds and two carriers give redundancy only if they cannot fail together. Sharing one duct bank makes
+    that bank a single point of failure for power and network at once. Bringing one feed and one carrier in through a
+    separate entry on another side restores physical diversity, so one dig, flood or fire cannot cut both.
+  why_not:
+    A: More generator capacity rides out a longer power loss, but a cut duct bank also severs both carriers' fibre, which no
+      generator restores.
+    B: Encasement and markings make an accidental cut less likely, but the bank remains a single path for all feeds, so any
+      event that does reach it still takes out power and network together.
+    C: Carrier route diversity is a common gap worth closing, but both routes still converge on the same duct bank for the
+      last stretch into the building.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-cissp
+  checked_by: 2026-11-21-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

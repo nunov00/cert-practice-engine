@@ -1,0 +1,33 @@
+id: aaism-d2-2.2-0070
+subdomain: '2.2'
+difficulty: medium
+stem: 'An electronics retailer''s web chatbot keeps no state: with each new message, the browser sends the whole conversation,
+  including the bot''s earlier replies. A classifier screens only the newest user message for jailbreak phrasing. Testers
+  edited earlier replies in the request so that they showed the bot already complying with banned requests, and it carried
+  on. Which control BEST addresses this weakness?'
+options:
+  A: Screen each turn in the submitted history with the jailbreak classifier
+  B: Cap the amount of history the browser may send with each message
+  C: Tell the model in its system prompt to distrust its own earlier turns
+  D: Keep each conversation's history on the server, tied to the session
+answer: D
+explanation:
+  why_correct: The weakness is that the client controls what the model believes it has already said. Holding the history on
+    the server, so that only the newest user message comes from the browser, removes the attacker's ability to forge earlier
+    assistant turns at all.
+  why_not:
+    A: 'Screening the whole history widens the classifier''s view, but forged replies need no jailbreak phrasing: plain text
+      showing the bot complying passes a phrasing check and still steers the model.'
+    B: A cap limits attacks that rely on many fabricated examples, but one short forged reply within the cap is enough to
+      set up compliance.
+    C: A system prompt instruction is weak against the model's tendency to stay consistent with what looks like its own earlier
+      output, and it leaves the forged history in place.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aaism
+  checked_by: 2026-11-21-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

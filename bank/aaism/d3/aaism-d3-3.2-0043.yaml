@@ -1,0 +1,32 @@
+id: aaism-d3-3.2-0043
+subdomain: '3.2'
+difficulty: medium
+stem: A firm published a fine-tuned model to a public hub by uploading its training folder. A researcher found that the upload
+  also held the training settings, an evaluation file of customer emails and a notebook containing a cloud key. More model
+  releases are planned. Which life cycle control BEST prevents a repeat?
+options:
+  A: Test the weights for memorised customer data before each release
+  B: Build each release from a list of the files it needs, and nothing else
+  C: Scan each release folder for keys and secrets before it is uploaded
+  D: Have a second engineer check each upload's contents before it goes out
+answer: B
+explanation:
+  why_correct: The leak came from publishing a working folder rather than a defined release. Building each release package
+    from an explicit list of the files it needs, such as the weights, tokenizer and model card, keeps evaluation data, notebooks
+    and settings out of it, whatever else sits in the folder.
+  why_not:
+    A: Memorisation testing addresses what the weights themselves may reveal, which matters for a public release, but this
+      exposure came from extra files in the upload, not from the model.
+    C: Secret scanning would probably have caught the cloud key, but not the evaluation file of customer emails or the training
+      settings.
+    D: A second check can catch obvious extras, but a manual look through a large folder is easy to get wrong, and it still
+      starts from everything in the folder rather than from what the release needs.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aaism
+  checked_by: 2026-11-21-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

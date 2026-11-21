@@ -1,0 +1,34 @@
+id: aair-d3-3.3-0046
+subdomain: '3.3'
+difficulty: medium
+stem: A bank uses a vendor's AI credit-decisioning service, and its annual control testing of the service draws on the vendor's
+  latest independent assurance report, which has a clean opinion. The report states that its conclusions assume each customer
+  approves the decision thresholds its own staff set in the vendor's console. The bank's lending operations team adjusts those
+  thresholds most weeks. What should the practitioner add to the testing?
+options:
+  A: Obtain a bridge letter for the months after the report's period ended
+  B: Review the exceptions the vendor's auditor found in its control tests
+  C: Test the bank's own approval of threshold changes made in the console
+  D: Review the list of bank staff with access to the console each quarter
+answer: C
+explanation:
+  why_correct: The vendor's report gives assurance only on the condition that each customer operates the controls it assigns
+    to them, here approving the thresholds the customer's own staff set. Those thresholds decide who gets credit and change
+    most weeks, so the clean opinion supports reliance only if the bank's approval of each change actually operates. Testing
+    that complementary control closes the gap that the report itself points to.
+  why_not:
+    A: A bridge letter covers the period after the report, which is a normal step when relying on such reports, but it adds
+      nothing about the bank's own part, on which the report's conclusions depend.
+    B: Auditor exceptions are worth reading, but they concern the vendor's controls; a clean opinion with few exceptions still
+      assumes the bank approves its own threshold changes.
+    D: Reviewing console access limits who can change thresholds, but authorised staff can still make unapproved changes,
+      and the report relies on approval of the changes, not on who holds access.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-21-daily-aair-check
+  options_only: not_obvious

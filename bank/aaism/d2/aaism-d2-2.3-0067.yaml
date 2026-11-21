@@ -1,0 +1,31 @@
+id: aaism-d2-2.3-0067
+subdomain: '2.3'
+difficulty: hard
+stem: A firm's contract with a model provider includes zero data retention, which the provider switches on project by project
+  after reviewing each use. Any developer can create a project in the firm's provider account, and an audit found half of
+  its projects keeping prompts for 30 days. Which control BEST addresses this?
+options:
+  A: Let only a platform team create projects, each with zero retention requested
+  B: Require developers to request zero retention when they create a project
+  C: Review each project's retention setting in the account each quarter
+  D: Redact personal data from prompts at a gateway before they reach the provider
+answer: A
+explanation:
+  why_correct: The contract's protection applies only where the provider has switched it on, and anyone can create a project
+    without that step. Making a platform team the only route to a new project, with zero retention requested for each one,
+    ties the contractual term to every project from the start.
+  why_not:
+    B: A rule for each developer is reasonable policy, but it relies on many people each taking an extra step; with project
+      creation open to all, misses like those the audit found are likely to continue.
+    C: A quarterly review finds projects that keep prompts, but only after up to three months of prompts have been retained.
+    D: Redaction reduces what retained prompts reveal, but prompts also carry confidential business content that personal-data
+      redaction leaves in place, and the contract's term still goes unused.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aaism
+  checked_by: 2026-11-21-daily-aaism-check
+  check_verdict: pass
+  options_only: not_obvious

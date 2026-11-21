@@ -1,0 +1,34 @@
+id: cissp-d8-8.2-0007
+subdomain: '8.2'
+difficulty: hard
+stem: A fintech's services depend on hundreds of open-source packages declared with version ranges, and each build resolves
+  the newest matching versions through the company's caching proxy of the public registry. Last week an attacker hijacked a
+  popular package maintainer's account and published a malicious patch release, and the company's builds pulled it within
+  an hour. Which control BEST prevents a repeat?
+options:
+  A: Composition analysis that fails builds which use components with known advisories
+  B: An internal registry mirror, with builds blocked from reaching the public one
+  C: Committed lockfiles with hashes, updated only through reviewed update requests
+  D: Signed build artefacts, with each signature verified before deployment
+answer: C
+explanation:
+  why_correct: The builds took the malicious release because version ranges let them adopt any new patch automatically. A
+    committed lockfile with integrity hashes fixes each build to known versions and contents, so a new release enters only
+    through a reviewed update, ideally after a short delay, which gives time for a hijack to be noticed and pulled before
+    the company adopts it.
+  why_not:
+    A: Composition analysis catches components with published vulnerabilities, but a freshly published malicious release has
+      no advisory yet, so it passes the check in the hour that matters.
+    B: Forcing builds through an internal mirror is the fix for packages pulled from the wrong source, but the mirror fetches
+      and serves new public releases on request, so the malicious version still arrives.
+    D: Signing proves an artefact came from the company's pipeline unchanged, but the pipeline itself built the malicious
+      package in, so the artefact is signed and verifies as genuine.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-cissp
+  checked_by: 2026-11-21-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

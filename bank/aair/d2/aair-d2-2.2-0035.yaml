@@ -1,0 +1,33 @@
+id: aair-d2-2.2-0035
+subdomain: '2.2'
+difficulty: medium
+stem: A broadband provider validated its support assistant on 3,000 customer questions taken from chat logs and graded by
+  support experts, and 95% of answers were correct. In live use, customers usually reach a fix over a dozen messages, adding
+  details and trying the steps the assistant suggests. Which further validation is MOST important before launch?
+options:
+  A: Grade answers to a larger set of single questions from recent chat logs
+  B: Run each test question several times and check that answers stay the same
+  C: Grade whole scripted conversations, scoring the reply given at each turn
+  D: Run red-team prompts that try to make the assistant leave its support role
+answer: C
+explanation:
+  why_correct: The validation tested one question and one answer, but real use is a long exchange in which the assistant must
+    keep track of details given earlier, react to the results of steps it suggested and avoid contradicting itself. Those
+    failure modes appear only across turns. Grading scripted multi-turn conversations at each turn tests the assistant in
+    the way customers will use it, which single-question scores cannot show.
+  why_not:
+    A: A larger single-question set narrows the uncertainty around the 95% figure, but it still tests isolated questions and
+      says nothing about how the assistant performs as a conversation develops.
+    B: Repeated runs reveal answers that vary from run to run, which matters for generative systems, but each run is still
+      a one-shot question and would miss errors that build up over a dozen messages.
+    D: Red-team testing is worth doing for a customer-facing assistant, but the main gap here is between how it was tested
+      and how customers will use it, which red-team prompts do not cover.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-21-daily-aair-check
+  options_only: not_obvious

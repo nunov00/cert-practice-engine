@@ -1,0 +1,34 @@
+id: aair-d3-3.1-0047
+subdomain: '3.1'
+difficulty: medium
+stem: A company's HR assistant answers managers' questions about its annual staff survey, such as engagement scores by team,
+  grade, office or length of service. Staff were promised that no one would see their own answers. The assistant holds only
+  scored answers, not comments, and shows no result for a group under ten people. Managers can ask as many questions as they
+  like, with any mix of filters. Which risk scenario should the assessment MOST include?
+options:
+  A: Managers act on scores that the assistant misreports for some groups
+  B: Managers work out one person's answers by comparing overlapping groups
+  C: Managers treat a team's low scores as grounds to act against its members
+  D: Staff answer less honestly once they learn managers can query results
+answer: B
+explanation:
+  why_correct: A minimum group size protects each single result, but not combinations of results. With unlimited questions
+    and free choice of filters, a manager can ask for two groups of ten or more that differ by one person, such as a team
+    with and without its newest member, and the difference reveals that person's scores. This breaks the anonymity staff were
+    promised, and it follows directly from the assistant's design, so it is the scenario the assessment most needs.
+  why_not:
+    A: Misreported figures are a real risk for any reporting assistant, but the stem gives no sign of accuracy problems, while
+      its query design creates a specific exposure of individual answers.
+    C: Misuse of low team scores is a known survey risk, but it exists with any survey report and does not arise from the
+      assistant; the new exposure is to individuals, not teams.
+    D: A chilling effect on honesty is plausible, but it is a consequence that would follow from staff learning that answers
+      can be exposed; the scenario that creates that exposure comes first.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-21-daily-aair-check
+  options_only: not_obvious

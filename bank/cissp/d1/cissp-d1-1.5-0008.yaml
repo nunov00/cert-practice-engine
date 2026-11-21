@@ -1,0 +1,35 @@
+id: cissp-d1-1.5-0008
+subdomain: '1.5'
+difficulty: easy
+stem: A US-based manufacturer suspects an engineer at its EU subsidiary of passing designs to a supplier, and plans an internal
+  investigation that may end in dismissal. Group policy says staff have no privacy in company systems, but a local agreement
+  with the subsidiary's works council lets staff use company mail for limited personal messages. Group investigators want
+  to examine his mail. How should the investigation collect it?
+options:
+  A: Export the whole mailbox to the US team under the group's data transfer agreement
+  B: Review the mailbox in the EU using searches agreed with local counsel, sending relevant items
+  C: Obtain the engineer's written consent under local data protection law, then run agreed searches
+  D: Brief the works council under the local agreement, then export the whole mailbox for review
+answer: B
+explanation:
+  why_correct: An administrative investigation must still meet the law where the data and the employee are. Because personal
+    use is allowed locally, reading the whole mailbox would be hard to justify as proportionate under EU data protection and
+    works council rules, and evidence gathered unlawfully can undermine a later dismissal. A targeted review in the EU, scoped
+    with local counsel, gives the investigators what they need without alerting the engineer, and only relevant items leave
+    the EU.
+  why_not:
+    A: A transfer agreement gives the export a lawful route out of the EU, but it does not make reading the whole mailbox,
+      personal messages included, proportionate, so the collection itself remains open to challenge.
+    C: Targeted searches are right, but consent from an employee to an employer is rarely treated as freely given under EU
+      data protection law, and asking for it tells the suspect about the investigation.
+    D: Involving the works council respects the local agreement, but a briefing does not make a full review of mail that
+      includes permitted personal messages proportionate, and it widens who knows about the inquiry.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-cissp
+  checked_by: 2026-11-21-daily-cissp-check
+  check_verdict: fail
+  options_only: obvious

@@ -1,0 +1,32 @@
+id: aaism-d1-1.2-0039
+subdomain: '1.2'
+difficulty: medium
+stem: A company's delegation-of-authority policy lets each manager approve spending up to a personal limit, from USD 5,000
+  to USD 1 million. Staff now build AI agents that buy on their behalf without supervision, from office supplies to cloud
+  capacity, and each agent acts with its builder's limit. Which policy provision BEST fits?
+options:
+  A: Each agent keeps its builder's limit, reviewed along with the builder's role
+  B: Each agent gets a spending limit set for its task by the budget holder
+  C: Each agent gets the one company-wide limit set for unattended agents
+  D: Each agent keeps its builder's limit, with alerts on spending above its norm
+answer: B
+explanation:
+  why_correct: A manager's limit reflects that person's role and judgement over many kinds of spending, not what one unattended
+    agent needs for one task. Setting each agent's limit by its task, decided by the holder of the budget it spends, keeps
+    the authority in line with the job and caps what a faulty or manipulated agent can commit.
+  why_not:
+    A: Reviewing the builder's role keeps the personal limit current, but an agent buying office supplies would still carry
+      a director's authority, far beyond what its task needs.
+    C: A single limit is simple to apply, but it would be too high for small tasks and too low for legitimate ones such as
+      cloud capacity, so it fits neither.
+    D: Alerts on unusual spending help detect misuse, but they react after money is committed and leave the excess authority
+      in place.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-21-daily-aaism-check
+  options_only: not_obvious

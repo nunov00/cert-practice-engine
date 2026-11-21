@@ -1,0 +1,33 @@
+id: cissp-d7-7.4-0004
+subdomain: '7.4'
+difficulty: easy
+stem: A media company's cloud tenant signs in every administrator through its on-premises federation service, which also
+  handles sign-in to its privileged access vault. Last year a federation outage locked all administrators out of the tenant
+  for six hours during an incident. The company wants an emergency administrator account that would have worked then. Which
+  design BEST fits?
+options:
+  A: A cloud-only account with a hardware key kept in a safe, alerting on each use
+  B: A vault-held account whose password the on-call engineer checks out when needed
+  C: A cloud-only account kept disabled, which a second administrator enables when needed
+  D: A named administrator's federated account, exempted from conditional access policies
+answer: A
+explanation:
+  why_correct: An emergency account has to work when normal sign-in has failed, so it cannot depend on the federation
+    service or anything behind it. A cloud-only account with a strong key held in a safe has no such dependency, and an
+    alert on every sign-in, with the key under physical custody, keeps a powerful standing account under tight control.
+  why_not:
+    B: Keeping the credential in a vault with checkout logging is normal privileged access practice, but the vault signs
+      users in through the same federation service, so in the outage nobody could open it.
+    C: Keeping the account disabled cuts its standing exposure, but enabling it needs another administrator signed in to the
+      tenant, which is exactly what the outage prevented.
+    D: Exempting an emergency account from conditional access is common, but this one still signs in through the federation
+      service, so it would have been locked out with everyone else.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-cissp
+  checked_by: 2026-11-21-daily-cissp-check
+  check_verdict: fail
+  options_only: obvious

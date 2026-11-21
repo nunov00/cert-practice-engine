@@ -1,0 +1,33 @@
+id: aair-d1-1.6-0039
+subdomain: '1.6'
+difficulty: hard
+stem: A distribution company's AI system sets each warehouse picker's hourly target from the pace of the fastest recent pickers
+  on the same task, and bonuses depend on meeting it. Targets have risen every quarter since launch. Occupational health reports
+  a steady rise in strain injuries, mostly among pickers who meet their targets. What should the risk practitioner MOST recommend?
+options:
+  A: Add rest breaks to each shift, sized by safety staff
+  B: Set targets from the median pace rather than the fastest
+  C: Let pickers flag targets they cannot meet for supervisor review
+  D: Set targets from a pace that safety staff judge sustainable
+answer: D
+explanation:
+  why_correct: Injuries are concentrated among the pickers who hit their targets, so the harm comes from the level the system
+    pushes people to, not from failing to reach it. Basing targets on a pace that health and safety specialists judge sustainable
+    over a shift puts a ceiling on that level grounded in workers' wellbeing, which is what the current design, driven only
+    by observed speed and bonus pressure, lacks.
+  why_not:
+    A: Rest breaks ease fatigue, but the hourly target and the ratchet that keeps raising it stay unchanged, so pickers
+      must work even faster between breaks to meet it and the strain continues.
+    B: A median base lowers today's targets, but the median also rises as bonuses push pickers faster, so targets keep climbing
+      and are still not tied to a safe pace.
+    C: A route to challenge targets helps pickers who cannot meet them, but the injuries fall mainly on those who do meet
+      them, so the people being harmed would not use it.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-21-daily-aair-check
+  options_only: not_obvious

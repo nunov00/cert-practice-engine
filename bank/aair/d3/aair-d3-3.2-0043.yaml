@@ -1,0 +1,36 @@
+id: aair-d3-3.2-0043
+subdomain: '3.2'
+difficulty: hard
+stem: A charity runs a web chat service for people experiencing domestic abuse, in which an AI assistant answers first and
+  hands over to staff when needed. The top risk scenario is an abuser finding a conversation on the victim's phone, which
+  many abusers check. Most users reach the chat from their phone's browser. Residual risk is above appetite. Which treatment
+  BEST reduces this risk?
+options:
+  A: Require a passcode before past conversations can be reopened
+  B: Delete each conversation from the charity's servers when it ends
+  C: Remind users at the start of each chat to clear their browser history
+  D: Design the chat to leave as little trace as possible in the phone's browser
+answer: D
+explanation:
+  why_correct: The harm arises on the device, where an abuser who checks the phone can see that the service was used and what
+    was said. Designing the chat so that the conversation leaves no trace in the browser's history, cache or local storage
+    (for example by replacing history entries as the chat moves on, marking pages not to be cached and storing nothing on
+    the device) removes most of that trace without relying on the user to act or on a secret the abuser could demand, so
+    it treats the risk where it occurs. A site cannot erase the record of the first visit itself, so safety advice stays
+    a useful complement, not the main treatment.
+  why_not:
+    A: A passcode protects the content, but a visible entry for the service and a passcode prompt still reveal that it was
+      used, and an abuser who checks the phone may force the victim to open it.
+    B: Server-side deletion limits the charity's data held, which is good practice, but the scenario is exposure on the victim's
+      phone, which deleting data on the charity's servers does not touch.
+    C: Advice to clear history helps, but it depends on users remembering and acting at a stressful moment, and a newly cleared
+      history can itself draw an abuser's attention.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-21-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-21-daily-aair-check
+  options_only: not_obvious
