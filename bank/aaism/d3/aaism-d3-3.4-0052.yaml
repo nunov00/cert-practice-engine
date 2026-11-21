@@ -5,8 +5,8 @@ stem: A haulier's in-cab AI watches drivers for signs of fatigue and keeps a sho
   accepted the cameras on a written promise that clips serve road safety only. Managers now want the clips searched to score
   drivers' breaks and personal calls for bonus decisions. What should the security manager advise?
 options:
-  A: Keep clips for the safety review of the alert that triggered each one
-  B: Let an automated tool score breaks and calls, showing managers scores alone
+  A: Limit the clips to the safety review of the alert that triggered each one
+  B: Score clips only for drivers who give individual written consent
   C: Allow the new use once drivers are told of it in an updated privacy notice
   D: Allow the new use if a privacy impact assessment finds it lawful
 answer: A
@@ -15,8 +15,8 @@ explanation:
     purpose, so the clips should stay with the safety reviews they were collected for. Any wider use would have to be agreed
     afresh with the drivers' representatives, not introduced by the company on its own.
   why_not:
-    B: Automated scoring keeps managers from viewing footage, but it still uses safety clips to judge pay, which is exactly
-      the use the promise excluded.
+    B: Consent from employees to a pay-related use is rarely freely given, and asking drivers one by one goes around the
+      collective promise made to their representatives.
     C: A notice tells drivers about the change but does not undo a written promise or the trust it secured; being told is
       not the same as agreeing.
     D: A lawful basis may well exist, but lawfulness does not release the company from the commitment it made to the drivers.

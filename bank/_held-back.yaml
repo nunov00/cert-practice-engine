@@ -117,6 +117,11 @@ held:
   # 7.12-0005 have stems that rule out all but one distractor; cissp 5.3-0011
   # (one-time SAML assertion IDs) and 6.5-0013 (full-population testing) are
   # textbook answers with one strong rival.
+  # Daily batch 2026-11-21, merge run: the final review lowered cissp 3.8-0006
+  # to medium (stem rules out B and D one by one), leaving CISSP with 1 hard of
+  # 6, so the three easiest passing mediums are held: cissp 1.12-0007, 3.9-0005
+  # (distractor A weak: does nothing for fibre) and 5.2-0013. No rework needed
+  # beyond that; release when CISSP's hard share allows.
   - { id: aaism-d1-1.2-0039, pr: 93 }
   - { id: aaism-d1-1.5-0038, pr: 93 }
   - { id: aaism-d3-3.1-0045, pr: 93 }
@@ -125,3 +130,6 @@ held:
   - { id: cissp-d5-5.3-0011, pr: 93 }
   - { id: cissp-d6-6.5-0013, pr: 93 }
   - { id: cissp-d7-7.12-0005, pr: 93 }
+  - { id: cissp-d1-1.12-0007, pr: 93 }
+  - { id: cissp-d3-3.9-0005, pr: 93 }
+  - { id: cissp-d5-5.2-0013, pr: 93 }

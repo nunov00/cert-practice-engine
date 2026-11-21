@@ -22,7 +22,7 @@ explanation:
       notes can be lost or shared long before anyone leaves.
     D: Credential injection keeps passwords out of sight, which would be strongest over the network, but serial console work
       on site cannot run through the vault's proxy, so engineers still need to see the passwords.
-status: published
+status: draft
 outline_version: '2024-04-15'
 sample: false
 provenance:

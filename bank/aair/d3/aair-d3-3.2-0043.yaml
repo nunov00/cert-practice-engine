@@ -9,7 +9,7 @@ options:
   A: Require a passcode before past conversations can be reopened
   B: Delete each conversation from the charity's servers when it ends
   C: Remind users at the start of each chat to clear their browser history
-  D: Keep the chat out of the phone's browser history and local storage
+  D: Design the chat to leave as little trace as possible in the phone's browser
 answer: D
 explanation:
   why_correct: The harm arises on the device, where an abuser who checks the phone can see that the service was used and what

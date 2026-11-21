@@ -7,7 +7,7 @@ stem: A software firm's coding agents follow instruction files kept in each repo
   to builds. Which control BEST addresses this?
 options:
   A: Flag hidden characters and require code-owner review for instruction files
-  B: Allow builds to use only dependencies already on an approved internal list
+  B: Allow only approved dependencies in builds and pin their versions
   C: Scan each agent-generated change with static analysis before it is merged
   D: Run coding agents in sandboxes that have no outbound network access
 answer: A

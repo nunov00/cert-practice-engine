@@ -2,8 +2,8 @@ id: aaism-d1-1.3-0034
 subdomain: '1.3'
 difficulty: medium
 stem: A media firm's legal team reviewed an open-weight model's licence and approved the model for subtitling. Eight months
-  later, another team used its outputs to train a smaller in-house model, which the licence forbids. Every new model must
-  be registered in the AI inventory before use, with its owner, version, base model and training data sources. Which addition would MOST likely have
+  later, another team used its outputs to train a smaller in-house model, which the licence forbids. Every new model, including one still
+  to be trained, must be registered in the AI inventory before work on it starts, with its owner, version, base model and training data sources. Which addition would MOST likely have
   prevented this?
 options:
   A: Licence conditions kept on each model record and checked at each new use
@@ -14,7 +14,7 @@ answer: A
 explanation:
   why_correct: The licence was reviewed once, for the first use, and its restrictions then stayed with the legal team. Keeping
     the licence's use conditions on the model's inventory record, and checking them whenever a new use or derived model is
-    registered, puts the restriction in front of the people at the point where the forbidden use was proposed.
+    registered, puts the restriction in front of the people registering the derived model, at the point where the forbidden use was proposed.
   why_not:
     B: Review before download already took place and approved subtitling. It could not foresee a different use proposed eight
       months later.

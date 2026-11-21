@@ -3,8 +3,8 @@ subdomain: '2.1'
 difficulty: medium
 stem: A wealth manager is designing the fine-tuning of its client assistant, which answers questions about investment choices.
   Most questions concern clients' own portfolios and plans, and clients often ask the assistant to confirm a decision they
-  have already made. The team has millions of past answers with client ratings, ten years of client returns, and a library
-  of compliance-approved answers. Which training signal should the risk practitioner MOST support?
+  have already made. The team has millions of past answers with client ratings, ten years of client returns, a library
+  of compliance-approved answers, and a sample of answers that advisers graded for suitability. Which training signal should the risk practitioner MOST support?
 options:
   A: Past answers scored by the returns clients earned over the following year
   B: Compliance-approved answers to the most common client questions
@@ -20,7 +20,8 @@ explanation:
     A: Outcome-based labels sound objective, but a year's returns mostly reflect market movements, so they would reward answers
       that happened to be followed by rising markets, including unsuitable risk-taking, rather than sound advice.
     B: Compliance-approved answers are a reliable signal, but they cover common generic questions, while most questions here
-      concern clients' own portfolios and plans, so the model would learn little about the personalised answers it must give.
+      concern clients' own portfolios and plans, so the model would learn little about the personalised answers it must give;
+      the adviser-graded sample covers those.
     C: Reweighting corrects the ratings' tilt toward agreement, but it rewards disagreeing rather than being right, so the
       model would learn to push back on sound decisions as well as unsuitable ones.
 status: published

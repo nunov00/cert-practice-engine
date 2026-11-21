@@ -15,7 +15,8 @@ explanation:
     applicants, so gaps measured on them would be badly biased. A proxy method that estimates the likely group of each applicant
     from surname and address, checked for accuracy against the survey replies and used only in aggregate for monitoring, gives
     monthly estimates across the whole applicant population, which is how regulators and lenders commonly monitor where the
-    attribute is not collected.
+    attribute is not collected. Where data protection law treats inferred ethnicity as special-category data, the lender
+    confirms a lawful basis and safeguards first.
   why_not:
     B: Survey-based gaps use self-reported data, but because declined applicants rarely reply, the respondents are mostly
       approvals, so the gap they show would understate any disparity.

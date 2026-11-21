@@ -8,7 +8,7 @@ stem: A travel insurer prices policies with a model trained on claims from its h
 options:
   A: Add a review of the model's fit for each country to the market-entry steps
   B: Add a prudence margin to prices in each new country for its first year
-  C: Track loss ratios by country from launch and reprice when they pass a limit
+  C: Notify the model owner of each launch date as soon as it is fixed
   D: Retrain the model on each new country's claims once enough have built up
 answer: A
 explanation:
@@ -20,8 +20,8 @@ explanation:
   why_not:
     B: A prudence margin is a sensible interim treatment once a fit problem is known, but applied blindly it may overprice
       one market and still underprice another, and it leaves the model owner outside the market-entry decision.
-    C: Loss ratio monitoring is needed after launch, but loss ratios on travel policies take months to mature, so it detects
-      mispricing only after a period of losses that a pre-launch review could have avoided.
+    C: Advance notice tells the owner when a launch will happen, but it adds no step or authority to test the model's fit
+      for the new country before prices are set, so the owner may still learn of the problem from a year of losses.
     D: Retraining on local claims is the long-term fix, but it can start only after a year or more of claims, and it does
       nothing to make future launches consider the model before they go live.
 status: published
