@@ -1,0 +1,31 @@
+id: cissp-d4-4.3-0020
+subdomain: '4.3'
+difficulty: hard
+stem: A payments partner's servers, which support only TLS 1.2, call a company's API using RSA key exchange. A threat
+  report warns that a well-funded group records traffic on carrier links and has stolen server private keys from similar
+  firms. The company wants to limit what the group could read if it ever obtains the API's key. Which change BEST fits?
+options:
+  A: Offer the partner only ECDHE cipher suites, removing RSA key exchange
+  B: Move the API's private key into a hardware security module on the server
+  C: Replace the API's certificate and key each quarter, destroying each old key
+  D: Move the partner's sessions from AES-128 to AES-256 cipher suites
+answer: A
+explanation:
+  why_correct: With RSA key exchange, each session's secret travels encrypted under the server's long-term key, so whoever
+    holds recordings can decrypt all of them once that key is obtained. ECDHE derives a fresh secret for each session from
+    ephemeral keys that are then discarded, and the long-term key only signs the handshake, so a later theft of it exposes
+    none of the recorded sessions. TLS 1.2 supports these suites, so the partner's servers keep working.
+  why_not:
+    B: An HSM makes copying the key much harder, but an attacker who controls the server can still have the HSM decrypt
+      recorded key exchanges, so each recorded session stays one compromise away from being read.
+    C: Rotation limits each key to a quarter of sessions, but whoever obtains a key reads every recorded session from its period,
+      and a key taken from memory before it is destroyed keeps that value.
+    D: Longer bulk keys resist brute force, but each session's key can still be recovered through the server's private key,
+      which is the weakness the group exploits.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-cissp
+  check_verdict: pending

@@ -1,0 +1,32 @@
+id: aair-d1-1.5-0036
+subdomain: '1.5'
+difficulty: hard
+stem: A bank's monitoring model flagged a customer's transfers, and the bank has filed a suspicious activity report with the
+  authorities. The customer then makes a data access request for everything the bank holds about them, naming the model's
+  risk score. Anti-money-laundering law bars telling a customer that such a report was made. What should the risk practitioner
+  advise?
+options:
+  A: Answer the request in full, including the model's risk score
+  B: Answer the request, withholding the score under the crime-prevention exemption
+  C: Decline the whole request until the authorities close their investigation
+  D: Answer the request with the score, but without the factors behind it
+answer: B
+explanation:
+  why_correct: The risk score is personal data, so it would normally fall within an access request. Data protection laws,
+    however, let an organisation withhold data where disclosure would prejudice the prevention or detection of crime, and
+    here disclosing the score would tip the customer off about the report, which the anti-money-laundering law forbids. The
+    bank should rely on the exemption for that item only, record why, and answer the rest of the request on time as usual.
+  why_not:
+    A: Inferred data such as a risk score is usually disclosable, which makes this the reflex answer, but here disclosure
+      would reveal the suspicion and breach the anti-money-laundering ban on tipping off.
+    C: The exemption covers only the data whose disclosure would prejudice the investigation. Refusing the whole request breaches
+      the customer's access right for everything else, and an unexplained blanket refusal can itself alert the customer.
+    D: Leaving out the factors protects the model's logic, but the score alone still shows that the bank regards the customer
+      as high risk, which is the very disclosure the law forbids.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aair
+  check_verdict: pending

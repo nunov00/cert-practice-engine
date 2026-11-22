@@ -1,0 +1,31 @@
+id: aaism-d1-1.1-0036
+subdomain: '1.1'
+difficulty: hard
+stem: A listed retailer's AI pricing engine sets most of its online prices, and a manipulated engine could move revenue
+  materially. Its securities regulator recently criticised companies for boilerplate AI risk disclosures. Investor relations
+  asks the security manager for input to the annual report's risk section, which anyone can read. Which input BEST fits?
+options:
+  A: The main attack scenarios against the pricing engine and the controls that mitigate each
+  B: How far revenue depends on the engine, the harm a compromise could do, and board oversight
+  C: A statement that AI risks are managed under a certified security management framework
+  D: A summary of findings from the latest penetration test and red team exercise on the engine
+answer: B
+explanation:
+  why_correct: Investors are the stakeholders here, and they need to judge how material the risk is and how it is governed.
+    Describing the company's own dependence on the engine, the impact a compromise could have and how the board oversees
+    it is specific to this retailer, so it answers the regulator's criticism of boilerplate, while leaving out operational
+    detail that would help an attacker reading the same public document.
+  why_not:
+    A: Naming attack scenarios and the controls against each is specific, but the report is public, so it hands attackers
+      a map of the paths the retailer expects and the defences in their way, which investors do not need to judge materiality.
+    C: A reference to a certified framework is the kind of generic statement the regulator has criticised; it says nothing
+      about how exposed this retailer is to a manipulated pricing engine.
+    D: Test findings describe weaknesses at a point in time; publishing them exposes open gaps to attackers and gives investors
+      technical detail rather than an account of business impact and oversight.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aaism
+  check_verdict: pending

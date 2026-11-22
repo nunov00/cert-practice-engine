@@ -1,0 +1,31 @@
+id: aair-d1-1.4-0039
+subdomain: '1.4'
+difficulty: hard
+stem: A lender's credit officers override its model's decisions about 6,000 times a month, and the procedure asks them only
+  to tick an override box. The model team wants to use overrides to find where the model is weak. Management wants officers
+  to challenge the model more often, not less. Which procedure change BEST serves both aims?
+options:
+  A: Officers pick a reason for each override from a set list of codes
+  B: Officers write a reason for each override in the case notes
+  C: A supervisor approves each override before the decision is issued
+  D: The model team reviews a monthly sample of overridden files
+answer: A
+explanation:
+  why_correct: At 6,000 overrides a month, the model team needs the officer's reason for every override in a form it can count
+    and cut by product, segment and model version. A short list of reason codes captures what the officer saw at the moment
+    of decision, takes seconds, and turns overrides into data that shows where the model goes wrong. Because it adds almost
+    no effort, it does not discourage the challenge that management wants.
+  why_not:
+    B: Written reasons capture the officer's view, but free text written in each officer's own words is inconsistent and hard
+      to count reliably across thousands of overrides a month, so it does little to show where the model is weak.
+    C: Supervisor approval adds a hurdle to every override. Officers would challenge the model less, which works against management's
+      aim, and approval records still would not say why the model was wrong.
+    D: A monthly file review can find some patterns, but a sample is small against 6,000 overrides, and reviewers have to
+      reconstruct a reason the officer knew at the time and never recorded.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aair
+  check_verdict: pending

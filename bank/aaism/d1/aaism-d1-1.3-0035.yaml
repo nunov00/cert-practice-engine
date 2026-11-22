@@ -1,0 +1,33 @@
+id: aaism-d1-1.3-0035
+subdomain: '1.3'
+difficulty: hard
+stem: A bank's liquidity model is trained on Restricted client positions. Its daily output is one bank-wide cash forecast,
+  built from thousands of clients, which 200 treasury and finance staff use and share by email in daily planning. Policy
+  says derived data inherits its source's label, so the forecast is labelled Restricted, which bars email, and staff now
+  paste it into personal notes. What should the security manager advise?
+options:
+  A: Classify the forecast on what it can reveal, recording the exception to inheritance
+  B: Keep it Restricted and add data loss rules that stop it leaving by email
+  C: Give the 200 staff Restricted access, with handling training for the forecast
+  D: Keep it Restricted and issue staff a rounded summary of each day's forecast figures
+answer: A
+explanation:
+  why_correct: Inheriting the source label is a sound default for derived data, because derived data often can reveal its
+    source. A single bank-wide figure built from thousands of clients cannot show any client's position, so the rule over-classifies
+    it and drives staff to work around it. Assessing the forecast on its own content, which may still justify a Confidential
+    label for market sensitivity, and recording the deviation from the inheritance rule, puts controls where the harm is
+    and brings the work back under them.
+  why_not:
+    B: Data loss rules enforce the label, but the label is wrong for this output, and staff already paste it into personal
+      notes to get their work done; tighter blocking pushes more of it outside any control.
+    C: Wider access lets the 200 staff open the forecast, but Restricted handling still bars sharing it by email, which is
+      how the daily planning works, so the workarounds continue.
+    D: A rounded summary is still derived from the same Restricted positions, so the same inheritance rule would label it
+      Restricted too, and planners need the actual figures.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aaism
+  check_verdict: pending

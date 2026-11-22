@@ -1,0 +1,31 @@
+id: aaism-d1-1.2-0040
+subdomain: '1.2'
+difficulty: hard
+stem: A consulting firm will start enforcing its new AI policy next quarter and first needs to learn which AI tools staff
+  already use, so that it can assess them. Much of that use runs on personal accounts and phones, and a staff survey drew
+  few answers after partners warned that breaches would be disciplined. Which policy provision BEST fits?
+options:
+  A: AI tools not declared by the deadline are treated as a disciplinary breach
+  B: Unapproved AI services are blocked on the company network from the start date
+  C: AI tools declared within a set window bring no sanction for their past use
+  D: Network discovery of AI use is reported each month to the team's partner
+answer: C
+explanation:
+  why_correct: The firm's immediate need is an accurate picture of existing use, and the obstacle is that staff fear discipline
+    for telling it, while much of the use is on channels the firm cannot observe. A declaration window with no sanction for
+    past use removes the reason to hide, so staff themselves reveal the tools that only they can see, and normal enforcement
+    can follow once the window closes.
+  why_not:
+    A: A deadline backed by discipline can push declarations in some cultures, but here the threat of discipline is what
+      silenced the survey, so adding a sanction deepens the fear that keeps use hidden.
+    B: Blocking unapproved services is a common enforcement step, but use on personal accounts and phones bypasses the company
+      network, so the block reveals nothing and pushes more of that use out of sight.
+    D: Network discovery finds AI use on company devices and networks, but most of this use runs on personal accounts and phones,
+      and reporting finds to partners reinforces the fear of discipline.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aaism
+  check_verdict: pending

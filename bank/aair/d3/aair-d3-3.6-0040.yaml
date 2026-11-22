@@ -1,0 +1,32 @@
+id: aair-d3-3.6-0040
+subdomain: '3.6'
+difficulty: hard
+stem: Ransomware encrypted a payments firm's fraud-scoring servers and its model store. Investigators found that the attackers
+  had had write access to the model store for six weeks before the encryption. The firm is restoring the fraud model from
+  backups. What should the recovery procedure MOST include before the model scores payments again?
+options:
+  A: Check restored model files against the hashes recorded at validation
+  B: Restore the most recent backup, so the model loses the least retraining
+  C: Retrain the model from scratch on the restored training data
+  D: Scan the restored model files for malware before they are deployed
+answer: A
+explanation:
+  why_correct: With six weeks of write access, the attackers could have altered model files that were then backed up, so a
+    backup is not trustworthy merely because it predates the encryption. Comparing each restored file with the hash recorded
+    when that version was validated, kept apart from the model store, shows whether it is the exact file that was approved.
+    The firm can then deploy the most recent version that matches, or fall back to an earlier one that does.
+  why_not:
+    B: Restoring the latest backup is the usual way to limit lost work, but backups taken during the six weeks may contain
+      tampered files, which would then go live unchecked.
+    C: Retraining avoids reusing suspect files, but it takes time, gives a new model that must itself be validated before
+      use, and relies on training data that may also have been reached; verifying the existing files is faster and directly
+      shows whether they can be trusted.
+    D: A malware scan finds malicious code, but altered weights or thresholds are ordinary data to a scanner, so a model tampered
+      to let some fraud through would pass.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aair
+  check_verdict: pending

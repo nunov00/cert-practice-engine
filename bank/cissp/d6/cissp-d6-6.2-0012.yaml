@@ -1,0 +1,32 @@
+id: cissp-d6-6.2-0012
+subdomain: '6.2'
+difficulty: hard
+stem: A company's web tier runs on cloud instances built from one shared base image, and autoscaling replaces them every
+  few hours. Instances are never patched in place; the platform team fixes flaws only by rebuilding the image. Weekly
+  network scans of the web subnets report on few of the instances that ran that week. Which vulnerability scanning approach
+  BEST fits?
+options:
+  A: An agent on each instance that reports its installed packages to the scanner
+  B: Scans of each image in the registry, at build and daily for new advisories
+  C: Network scans of the web subnets hourly, replacing the weekly scans
+  D: Credentialed scans launched automatically as each new instance starts
+answer: B
+explanation:
+  why_correct: Every instance is a copy of the image, and the image is where each flaw is fixed. Scanning the image when it
+    is built finds flaws before any instance goes live and ties each finding to the thing the team rebuilds, and rescanning
+    stored images daily against new advisories catches flaws disclosed after the build, so one finding replaces hundreds of
+    duplicates.
+  why_not:
+    A: Agents see every running instance, which suits servers patched in place, but here they report the same flaw on each
+      short-lived copy after it is already live, while the fix is never made on the instance.
+    C: Hourly scans catch more of the instances, but from the network they see only exposed services, they still find flaws
+      after deployment, and each finding points at an instance that will soon be gone.
+    D: A credentialed scan at start-up reads each instance's packages, but it repeats the same result for every copy, after
+      the instance is already serving traffic, rather than once at the image.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-cissp
+  check_verdict: pending

@@ -1,0 +1,32 @@
+id: aaism-d3-3.1-0046
+subdomain: '3.1'
+difficulty: hard
+stem: To cut unhelpful refusals, a bank's customer assistant retries any question its safety-tuned main model refuses on a
+  smaller model with lighter safety tuning, and sends that answer to the customer. Testers got detailed money-laundering
+  advice this way. About 2% of questions are refused, and the bank's contact centre already handles chat escalations. Which
+  design change BEST addresses this?
+options:
+  A: Route refused questions to contact-centre staff instead of the smaller model
+  B: Screen the smaller model's answers with an output guardrail before they are sent
+  C: Safety-tune the smaller model to the same standard as the main model
+  D: Retry on the smaller model only for refused questions on approved topics
+answer: A
+explanation:
+  why_correct: A refusal is a safety judgement, and this design sends exactly the questions the stronger model judged harmful
+    to a weaker one, giving attackers a built-in second attempt. Handing refused questions to people removes that path, while
+    genuine questions the main model wrongly refused still get answered, which at about 2% of traffic the existing escalation
+    staff can absorb.
+  why_not:
+    B: An output guardrail is a sound layer where weaker paths cannot be avoided, but here it would be the only check on a
+      stream made up of requests already judged harmful, and a probabilistic guardrail will let some of them through.
+    C: A smaller model tuned to the main model's standard would refuse the same questions, which defeats the purpose of the
+      retry, and any gap left in its tuning keeps the bypass open.
+    D: Limiting retries to approved topics depends on judging the topic from text the customer writes, so a harmful request
+      can be phrased to look like an approved one.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aaism
+  check_verdict: pending

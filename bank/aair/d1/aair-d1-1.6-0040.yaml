@@ -1,0 +1,32 @@
+id: aair-d1-1.6-0040
+subdomain: '1.6'
+difficulty: hard
+stem: At a teaching hospital, an AI tool drafts chest X-ray reports, and trainee radiologists now check and sign the drafts
+  instead of reporting each film from scratch. Audits find the signed reports as accurate as before the tool. Most of the
+  region's future consultant radiologists train at this hospital. What is the MOST significant ethical concern?
+options:
+  A: Trainees may accept wrong drafts from a tool that is usually right
+  B: Patients may not be told that an AI tool drafted their reports
+  C: Trainees may not develop the judgment needed to check the tool
+  D: Responsibility for errors may blur between the tool and the signer
+answer: C
+explanation:
+  why_correct: The audits show that today's reports are as good as before, so the immediate output is not where the main concern
+    lies. Trainees who mostly check drafts get far less practice at reading films unaided, and they are the region's future
+    consultants, who will be expected to supervise such tools, catch their errors and take over when the tool fails. Eroding
+    that expertise across a whole generation of specialists is a lasting harm to patients and to meaningful human oversight,
+    and it does not show up in current accuracy audits.
+  why_not:
+    A: Over-reliance on a usually correct tool is a real risk, but the audits find signed reports as accurate as before, so
+      it is not showing up now. The more lasting concern is whether trainees build the skill that makes their checking meaningful.
+    B: Transparency to patients matters, but a qualified radiologist still reviews and signs each report, and telling patients
+      about the tool would not address the effect on how future specialists are trained.
+    D: The trainee who signs a report is accountable for it, as with any report a junior drafts for sign-off, so the line
+      of responsibility is clear. The concern lies in the trainee's growing ability to discharge it.
+status: draft
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aair
+  check_verdict: pending

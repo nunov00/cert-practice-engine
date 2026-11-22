@@ -1,0 +1,30 @@
+id: aaism-d1-1.4-0042
+subdomain: '1.4'
+difficulty: hard
+stem: Outside researchers have started posting jailbreaks of a retailer's public shopping assistant on social media, saying
+  the company offers no way to report them. Leadership wants the program to encourage such reports instead. The AI security
+  team can triage about ten reports a week. What should the program set up FIRST?
+options:
+  A: A paid public bug bounty for the assistant, run through an external bounty platform
+  B: Monitoring of social media to capture published jailbreaks and send them to triage
+  C: An internal red team exercise on the assistant before inviting any outside reports
+  D: A published disclosure policy with scope, a reporting channel and safe harbour
+answer: D
+explanation:
+  why_correct: Researchers post publicly because there is no sanctioned route. A published disclosure policy gives them one,
+    states what is in scope, and promises not to pursue good-faith reporters, which is the foundation any later reward scheme
+    builds on. Without the pull of payouts, report volume stays closer to what a team that triages about ten a week can handle.
+  why_not:
+    A: A paid bounty attracts reports, but rewards draw far more submissions than a team handling about ten a week can triage,
+      and a bounty still needs the scope and safe harbour rules a disclosure policy sets out.
+    B: Monitoring captures jailbreaks after they are already public, so the company keeps learning of flaws at the same time
+      as attackers instead of giving researchers a private route.
+    C: An internal exercise finds some flaws itself, but it does nothing about outside researchers who already have findings
+      and nowhere to send them.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aaism
+  check_verdict: pending

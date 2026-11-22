@@ -1,0 +1,33 @@
+id: cissp-d6-6.1-0013
+subdomain: '6.1'
+difficulty: hard
+stem: A company must agree a price within three weeks for a smaller payments firm it plans to buy. The firm's founders,
+  who gain from a high price, offer a completed security questionnaire and a summary of the penetration test they commissioned
+  last year, but will not let the buyer touch the firm's systems before signing. Which assessment BEST gives the buyer
+  independent evidence in time?
+options:
+  A: A review of the firm's questionnaire answers by the buyer's team, with follow-up interviews
+  B: An outside-in assessment, from public sources, of the firm's exposed services and leaks
+  C: A briefing from the firm's outside penetration testers on what they found and what was fixed
+  D: A review of the firm's security policies and risk register, as posted in the deal data room
+answer: B
+explanation:
+  why_correct: Every other source passes through the founders, who choose what to disclose and gain from a high price. An
+    outside-in assessment uses only what anyone can observe, such as internet-facing services and their weaknesses, leaked
+    credentials and past breaches, so it needs no access to the firm's systems, fits in three weeks and shows the security
+    the firm actually presents to attackers. Its findings can then drive pointed questions and deal protections such as
+    warranties.
+  why_not:
+    A: Questionnaire answers and interviews come from the firm's own people, so they show what the firm states rather than
+      what an independent party has observed.
+    C: The testers are independent of the firm, but the founders chose the test's scope and timing, and the testers can share
+      only what their client allows, so the buyer cannot tell what was left out.
+    D: Policies and a risk register show intended controls and the firm's own view of its risks, prepared by people with a
+      stake in the price.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-cissp
+  check_verdict: pending

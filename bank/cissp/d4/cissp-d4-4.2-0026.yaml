@@ -1,0 +1,31 @@
+id: cissp-d4-4.2-0026
+subdomain: '4.2'
+difficulty: hard
+stem: In a social-engineering test, a tester left USB sticks in a company's car park, and a receptionist plugged one into
+  her PC. Logs show that no file was read from the stick. Within seconds of it being attached, a burst of input opened
+  the built-in command shell under her account and downloaded the tester's tool. Which endpoint control BEST prevents this?
+options:
+  A: Allow only company-issued encrypted USB drives, blocking other storage devices
+  B: Turn off autorun, and scan each removable drive for malware when it is attached
+  C: Restrict the built-in command shell to signed scripts for standard user accounts
+  D: Hold newly attached keyboard-type devices until an administrator approves them
+answer: D
+explanation:
+  why_correct: Nothing was read from the stick as a drive, and the commands arrived as a fast burst of input, so the stick
+    presented itself to the PC as a keyboard. Operating systems accept a new keyboard at once and let it act with the
+    signed-in user's rights. Device control that holds newly attached keyboard-class devices until they are approved stops
+    the injected keystrokes before they reach the session, whatever they would have run.
+  why_not:
+    A: Allowing only company drives stops unknown storage, but this stick acted as a keyboard rather than a drive, and a
+      storage policy does not cover keyboard devices.
+    B: Autorun and malware scanning act on files held on a drive. No file was read from the stick; the typed commands ran
+      directly in the user's session.
+    C: Script-signing rules govern script files, not commands typed at the prompt, and injected keystrokes can also use other
+      built-in tools that the receptionist is allowed to run.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-cissp
+  check_verdict: pending
