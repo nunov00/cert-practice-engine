@@ -1,6 +1,6 @@
 id: cissp-d8-8.3-0009
 subdomain: '8.3'
-difficulty: hard
+difficulty: medium
 stem: A bank's API has an automated authorisation test suite that executes every line of its access control module. After
   a refactor, one endpoint's ownership check was inverted, yet the suite still passed, and a tester found the flaw weeks
   later. The CISO wants evidence of how well the suite would catch slips like this in future. Which assessment BEST provides
@@ -23,10 +23,12 @@ explanation:
       look complete are easy to miss by reading.
     D: A penetration test finds flaws in the API as it stands, but it says nothing about whether the suite would catch the
       next slip before release.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-22-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-cissp-check
+  options_only: not_obvious

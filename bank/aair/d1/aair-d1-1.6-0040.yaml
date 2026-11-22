@@ -23,10 +23,12 @@ explanation:
       about the tool would not address the effect on how future specialists are trained.
     D: The trainee who signs a report is accountable for it, as with any report a junior drafts for sign-off, so the line
       of responsibility is clear. The concern lies in the trainee's growing ability to discharge it.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-22-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-aair-check
+  options_only: not_obvious

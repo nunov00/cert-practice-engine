@@ -1,6 +1,6 @@
 id: aaism-d1-1.4-0042
 subdomain: '1.4'
-difficulty: hard
+difficulty: medium
 stem: Outside researchers have started posting jailbreaks of a retailer's public shopping assistant on social media, saying
   the company offers no way to report them. Leadership wants the program to encourage such reports instead. The AI security
   team can triage about ten reports a week. What should the program set up FIRST?
@@ -21,10 +21,12 @@ explanation:
       as attackers instead of giving researchers a private route.
     C: An internal exercise finds some flaws itself, but it does nothing about outside researchers who already have findings
       and nowhere to send them.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-22-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-aaism-check
+  options_only: not_obvious

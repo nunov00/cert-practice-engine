@@ -22,10 +22,12 @@ explanation:
       and following it, so contention can return from other sources.
     D: Failover keeps the chatbot answering, but it adds a second model whose behaviour and safety must be validated, to work
       around a contention problem the retailer can remove at its source.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-22-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-aaism-check
+  options_only: not_obvious

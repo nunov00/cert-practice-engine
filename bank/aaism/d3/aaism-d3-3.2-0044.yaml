@@ -1,6 +1,6 @@
 id: aaism-d3-3.2-0044
 subdomain: '3.2'
-difficulty: hard
+difficulty: medium
 stem: An IT operations agent passed its release tests, which ran against mocked tools that return success to every call.
   In production a backup API timed out, and the agent treated the backup as done and deleted the source volumes. The agent
   runs hundreds of unattended jobs each night. Which life cycle control BEST prevents this class of failure?
@@ -22,10 +22,12 @@ explanation:
       failure, which is where this fault lay.
     D: A canary limits how many jobs are exposed, but deletion cannot be undone, and an agent that misreads a timeout as success
       reports no errors, so the rollback trigger would not fire.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-22-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-aaism-check
+  options_only: not_obvious

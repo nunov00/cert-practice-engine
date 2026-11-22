@@ -5,26 +5,28 @@ stem: An auditor is testing a daily bank reconciliation control across a twelve-
   company moved to a new finance system, and since then a different team has run the reconciliation from a new report.
   The audit plan allows about 40 sample items. Which sampling approach BEST supports a conclusion for the whole period?
 options:
-  A: Separate random samples from the periods before and after the change, each tested on its own
-  B: 40 days drawn at random from across the whole year, each checked for a completed reconciliation
-  C: 40 days drawn from the months after the change, which show the control as it runs now
-  D: 40 days chosen at month and quarter ends, when reconciling errors are most likely
+  A: 20 days before the change and 20 after it, each half concluded on separately
+  B: 40 days drawn at random across the year, concluded on as a single population
+  C: 40 days stratified across the twelve months, concluded on as a single population
+  D: 40 days drawn from the months after the change, concluded on for the whole year
 answer: A
 explanation:
   why_correct: After the move the reconciliation is in effect a different control, with a new system, team and report, so
-    the year holds two populations. A random sample from each, tested and concluded on separately, gives evidence for both
-    halves of the period, and an exception in one does not get diluted by results from the other.
+    the year holds two populations. A sample from each, tested and concluded on separately, gives evidence for both parts
+    of the period, and an exception in one is not diluted by results from the other.
   why_not:
     B: A single random sample suits one control run the same way all year. Across two populations it may draw few items from
-      one of them and cannot support a conclusion on each.
-    C: Recent days show how the control works now, but the conclusion covers twelve months, and the first seven, under the
+      one of them, and one joint conclusion hides how each control performed.
+    C: Stratifying by month spreads the days across both periods, but concluding on them as one population still blends two
+      different controls, so a failure in either can be averaged away.
+    D: Recent days show how the control works now, but the conclusion covers twelve months, and the first seven, under the
       old system and team, would go untested.
-    D: Targeting high-risk dates is useful as an addition, but a judgmental sample is not representative of either period,
-      so it does not support a conclusion for the whole year.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-22-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-cissp-check
+  options_only: not_obvious

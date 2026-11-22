@@ -1,6 +1,6 @@
 id: aaism-d1-1.3-0035
 subdomain: '1.3'
-difficulty: hard
+difficulty: medium
 stem: A bank's liquidity model is trained on Restricted client positions. Its daily output is one bank-wide cash forecast,
   built from thousands of clients, which 200 treasury and finance staff use and share by email in daily planning. Policy
   says derived data inherits its source's label, so the forecast is labelled Restricted, which bars email, and staff now
@@ -24,10 +24,12 @@ explanation:
       how the daily planning works, so the workarounds continue.
     D: A rounded summary is still derived from the same Restricted positions, so the same inheritance rule would label it
       Restricted too, and planners need the actual figures.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-22-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-aaism-check
+  options_only: not_obvious

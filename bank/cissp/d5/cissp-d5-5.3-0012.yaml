@@ -1,31 +1,33 @@
 id: cissp-d5-5.3-0012
 subdomain: '5.3'
-difficulty: hard
+difficulty: medium
 stem: A university lets students use three outside learning platforms through federation with its identity provider. Each
-  platform must recognise a returning student so that saved work follows them. Two of the platforms belong to one parent
-  company, which merges usage data across its products, and the university's privacy policy bars suppliers from profiling
-  students across services. Which identifier should the identity provider release?
+  platform must recognise a returning student so that saved work follows them from year to year. Two of the platforms belong
+  to one parent company, which merges usage data across its products, and the university's privacy policy bars suppliers
+  from profiling students across services. Which identifier should the identity provider release?
 options:
-  A: A one-way hash of each student's university email address
-  B: A random identifier generated afresh each time the student signs in
-  C: The student number held in the university's student records
-  D: A persistent pseudonymous identifier generated for each platform
+  A: A persistent pseudonym generated once per student and released to each platform
+  B: A persistent pseudonym generated for each supplier company the university contracts with
+  C: A persistent pseudonym generated for each platform, then reissued at the start of each term
+  D: A persistent pseudonym generated for each platform the university connects to
 answer: D
 explanation:
-  why_correct: A persistent identifier lets each platform recognise a returning student, and generating a different one for
-    each platform means the parent company receives two unrelated values for the same student, so it cannot join their
-    activity across its products. No name, email address or student number is released.
+  why_correct: A pseudonym that stays the same lets each platform recognise a returning student, and generating a different
+    one for each platform means the parent company receives two unrelated values for the same student, so it cannot join
+    their activity across its two products. No name, email address or student number is released.
   why_not:
-    A: A hash hides the address, but every platform receives the same value for a student, so the parent company can join
-      the records, and anyone who knows the address can compute the hash.
-    B: A fresh identifier at each sign-in reveals nothing, but the platform then cannot recognise a returning student, so
-      saved work would not follow them.
-    C: The student number is stable, so saved work follows the student, but it is the same at every platform and is used
-      elsewhere at the university, which makes linking easy.
-status: draft
+    A: One pseudonym hides the student's real identity, but every platform receives the same value, so the parent company
+      and any platforms that share data can join a student's records across services.
+    B: A pseudonym per supplier stops different suppliers from linking students, but the parent company owns two of the
+      platforms and would receive the same value on both, which is exactly the merging the policy bars.
+    C: Reissuing pseudonyms each term limits long-term tracking, but platforms would then see a stranger every term, so
+      saved work would not follow students from year to year.
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-22-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-cissp-check
+  options_only: not_obvious

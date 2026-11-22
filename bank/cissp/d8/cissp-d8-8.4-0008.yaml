@@ -1,0 +1,34 @@
+id: cissp-d8-8.4-0008
+subdomain: '8.4'
+difficulty: hard
+stem: A company will embed an open-source library in its product to parse files uploaded by the public, and expects to
+  ship the product for years. Two candidate libraries meet the functional and licence requirements. The company can release
+  a product update within days of an upstream fix, but has no staff who could maintain a parsing library itself. Which
+  evidence BEST guides the choice on security?
+options:
+  A: Each project's number of active maintainers and the organisations employing them
+  B: Each project's funding, and whether a foundation sponsors its development
+  C: Each project's record of fixing reported flaws and its disclosure process
+  D: Each project's latest independent security audit and the issues it found
+answer: C
+explanation:
+  why_correct: A parser facing hostile input will have new flaws found in it over the years, and the company depends on
+    upstream to fix them, since it cannot maintain the code. A project's history of fixing reported flaws quickly, and a
+    working process for receiving and disclosing them, is the most direct evidence that fixes will keep coming for the
+    company to ship.
+  why_not:
+    A: Several paid maintainers make a project more durable, but they are an indirect sign; a well-staffed project can still
+      leave security reports waiting for months.
+    B: Funding and foundation backing suggest the project will last, but they do not show how it handles the flaws reported
+      to it, which is what the company depends on.
+    D: An audit shows the code's state and the team's response at one moment, but the company will rely on the library for
+      years, and what matters then is how each new flaw gets fixed.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-cissp-check
+  options_only: not_obvious

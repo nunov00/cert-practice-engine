@@ -1,6 +1,6 @@
 id: aaism-d3-3.3-0047
 subdomain: '3.3'
-difficulty: hard
+difficulty: medium
 stem: A hospital will send patient records to an outside analytics firm to build a model that predicts readmission within
   30 days. The contract requires de-identified data, so the firm must not receive real dates, yet the model depends on the
   number of days between each patient's admissions and discharges. Which technique BEST meets both needs?
@@ -21,10 +21,12 @@ explanation:
       destroys the intervals the model depends on.
     C: Event order keeps the sequence of admissions and discharges, but not how many days lie between them, so the 30-day
       question cannot be answered.
-status: draft
+status: published
 outline_version: '2025-08-19'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-22-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-aaism-check
+  options_only: not_obvious

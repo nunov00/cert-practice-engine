@@ -1,0 +1,32 @@
+id: cissp-d8-8.5-0007
+subdomain: '8.5'
+difficulty: easy
+stem: A company's file-conversion product is written in C, and it adds parsers for two new file formats each year. Over five
+  years, nearly all of its serious vulnerabilities were memory errors in new parsers, each of which had passed the team's
+  fuzzing and expert code review before release. Which rule should the secure coding standard add for new parsers?
+options:
+  A: Fuzz each new parser continuously for a month before it ships
+  B: Have each new parser reviewed by two experts in C memory safety
+  C: Write each new parser in a memory-safe language, called from the C core
+  D: Build each new parser with stack canaries and hardened memory allocation
+answer: C
+explanation:
+  why_correct: The flaws are memory errors, and they got past both testing and review, so finding them is not reliable
+    enough. A memory-safe language rules out most of that class when the code is written, and new parsers can be added in it
+    behind a narrow interface to the existing C core, so the product does not need rewriting.
+  why_not:
+    A: Longer fuzzing finds more crashes, but the team already fuzzed these parsers and still shipped memory errors, so more
+      of the same method narrows the gap rather than closing it.
+    B: A second expert catches more mistakes, but expert review was already in place for the parsers that failed, and memory
+      errors are easy to miss by reading.
+    D: Hardening makes memory errors harder to exploit, but the errors remain, and attackers routinely find ways around such
+      protections.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-22-daily-cissp-check
+  options_only: obvious

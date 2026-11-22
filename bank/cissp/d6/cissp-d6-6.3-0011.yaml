@@ -1,32 +1,33 @@
 id: cissp-d6-6.3-0011
 subdomain: '6.3'
-difficulty: hard
+difficulty: medium
 stem: A company's backup jobs all succeed, and quarterly restore tests meet every recovery time objective. At a peer firm,
   ransomware operators with domain administrator rights signed in to the backup console, which accepts domain accounts,
   shortened the retention on copies marked immutable and then deleted them. The board asks whether the company's backups
   would survive the same attack. Which data BEST answers this?
 options:
-  A: Share of critical systems with a backup copy held offsite at a second data centre
-  B: Share of critical systems whose backup copies are set as immutable
-  C: Share of critical systems whose backups are encrypted with vault-held keys
-  D: Share of critical systems with copies that resisted a domain admin deletion test
+  A: Results of restore tests run from each critical system's offsite backup copies
+  B: Results of a test deleting each critical system's copies with a backup operator account
+  C: Results of a test deleting each critical system's copies directly on the immutable storage
+  D: Results of a red-team attempt, from full directory control, to destroy the copies
 answer: D
 explanation:
-  why_correct: The board's question is whether an attacker holding domain administrator rights could destroy the copies.
-    A controlled test that tries, with such an account, to shorten retention on and delete each critical system's copies
-    measures exactly that, through every path the attacker would use, including the backup console, rather than inferring
-    it from settings.
+  why_correct: The board's question is whether an attacker who controls the directory could destroy the copies. A red-team
+    attempt that starts from that position, and may use any path the peer firm's attackers used, including signing in to
+    the backup console and changing retention, measures exactly that, rather than testing one setting or one account.
   why_not:
-    A: A copy at a second site survives the loss of a building, but if it is managed through the same console and accounts,
-      an attacker with domain rights can delete it as easily as the local copy.
-    B: The immutable setting is what the peer firm also had. Whether it holds depends on who can change retention, which the
-      setting alone does not show.
-    C: Encryption keeps stolen copies unreadable, but it does nothing to stop an administrator deleting them, which is how
-      the peer firm lost its backups.
-status: draft
+    A: Restores from the offsite copy show that it is usable, but not whether an attacker with directory control could
+      delete it first through the same console.
+    B: A backup operator test shows what that role can do, but the attackers held far wider rights, including the power to
+      sign in to the console as an administrator and change retention.
+    C: The storage refusing a direct deletion shows the immutable setting is on, but the peer firm's attackers first
+      shortened retention through the console, a path this test leaves out.
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-22-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-cissp-check
+  options_only: not_obvious

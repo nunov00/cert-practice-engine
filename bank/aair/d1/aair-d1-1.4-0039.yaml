@@ -22,10 +22,12 @@ explanation:
       aim, and approval records still would not say why the model was wrong.
     D: A monthly file review can find some patterns, but a sample is small against 6,000 overrides, and reviewers have to
       reconstruct a reason the officer knew at the time and never recorded.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-22-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-aair-check
+  options_only: not_obvious

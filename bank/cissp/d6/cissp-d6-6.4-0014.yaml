@@ -1,0 +1,32 @@
+id: cissp-d6-6.4-0014
+subdomain: '6.4'
+difficulty: hard
+stem: A company's monthly board report tracks open high-severity vulnerabilities, a count that had fallen for six months.
+  This month it rose by 40 percent. The analyst finds that the scanner vendor added checks for flaws present in the estate
+  for years, and that these account for about three quarters of the rise. How should the report present this month's figure?
+options:
+  A: Report the new total on the existing trend line, with a footnote on the scanner change
+  B: Report the new total, split into older flaws now detected and newly introduced ones
+  C: Report the new total as the start of a new baseline, closing the old trend line
+  D: Report the new total, explaining the rise as the effect of the scanner's new checks
+answer: B
+explanation:
+  why_correct: The board needs the true exposure and an accurate reading of the trend. Reporting the full total keeps the
+    newly visible flaws in front of it, and splitting the rise into long-standing flaws the scanner can now see and flaws
+    newly introduced shows both that most of the jump is better detection and that a real quarter of it is new exposure.
+  why_not:
+    A: A footnote is honest, but the chart still reads as a sudden reversal, and the board cannot tell how much of the rise
+      is new exposure without the split.
+    C: A new baseline avoids a misleading line, but it treats the whole rise as a change of method and hides the quarter
+      that is genuinely new.
+    D: The scanner change explains most of the rise but not all of it, so this explanation tells the board that nothing got
+      worse when a quarter of the rise is new flaws.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-cissp-check
+  options_only: not_obvious

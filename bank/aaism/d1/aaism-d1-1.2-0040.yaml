@@ -1,6 +1,6 @@
 id: aaism-d1-1.2-0040
 subdomain: '1.2'
-difficulty: hard
+difficulty: medium
 stem: A consulting firm will start enforcing its new AI policy next quarter and first needs to learn which AI tools staff
   already use, so that it can assess them. Much of that use runs on personal accounts and phones, and a staff survey drew
   few answers after partners warned that breaches would be disciplined. Which policy provision BEST fits?
@@ -28,4 +28,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-22-daily-aaism
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-aaism-check
+  options_only: not_obvious

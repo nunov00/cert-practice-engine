@@ -1,6 +1,6 @@
 id: aair-d2-2.3-0031
 subdomain: '2.3'
-difficulty: hard
+difficulty: medium
 stem: Since a lender's credit model went live four years ago, business teams have added about 40 rules that override its decisions,
   each to fix a problem found in use. Some rules apply regulatory lending limits that must stay. The rules now change about
   a third of the model's decisions, and the yearly validation covers only the model's scores. What should the risk practitioner
@@ -23,10 +23,12 @@ explanation:
       decisions, untested.
     C: Recording each rule improves transparency and ownership, but a list does not show whether the combined decisions are
       sound, so the gap in assurance remains.
-status: draft
+status: published
 outline_version: '2026-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-22-daily-aair
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-aair-check
+  options_only: not_obvious
