@@ -3,8 +3,8 @@ subdomain: '3.6'
 difficulty: medium
 stem: Ransomware encrypted a payments firm's fraud-scoring servers and its model store. Investigators found that the attackers
   had had write access to the model store for six weeks before the encryption. Its validation records, kept in a separate
-  system, hold a hash of each approved model file. The firm is restoring the fraud model from backups. What should the recovery
-  procedure MOST include before the model scores payments again?
+  system, hold a hash of each approved model file. The firm is restoring the fraud model from backups. Which step is MOST important
+  before the restored model scores payments again?
 options:
   A: Check restored model files against the hashes recorded at validation
   B: Restore the most recent backup, so the model loses the least retraining

@@ -9,11 +9,11 @@ options:
   A: Results of restore tests run from each critical system's offsite backup copies
   B: Results of a test deleting each critical system's copies with a backup operator account
   C: Results of a test deleting each critical system's copies directly on the immutable storage
-  D: Results of a red-team attempt, from full directory control, to destroy the copies
+  D: Results of a red-team test of whether full directory control could destroy the copies
 answer: D
 explanation:
   why_correct: The board's question is whether an attacker who controls the directory could destroy the copies. A red-team
-    attempt that starts from that position, and may use any path the peer firm's attackers used, including signing in to
+    test that starts from that position and tries to reach the point of deleting the copies, using any path the peer firm's attackers used, including signing in to
     the backup console and changing retention, measures exactly that, rather than testing one setting or one account.
   why_not:
     A: Restores from the offsite copy show that it is usable, but not whether an attacker with directory control could

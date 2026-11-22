@@ -6,7 +6,7 @@ stem: A hospital will send patient records to an outside analytics firm to build
   number of days between each patient's admissions and discharges. Which technique BEST meets both needs?
 options:
   A: Replace each date with only the month and year in which it falls
-  B: Shift each date by its own randomly chosen number of days
+  B: Add random noise of a few days to each date before export
   C: Replace the dates with the order in which each patient's events occurred
   D: Shift all of a patient's dates by one randomly chosen number of days
 answer: D
@@ -17,8 +17,8 @@ explanation:
   why_not:
     A: Generalising dates to month and year is a common de-identification step, but it blurs intervals by up to a month either
       way, so the model cannot tell whether a return came within 30 days.
-    B: Shifting each date separately hides the real dates too, but it scrambles the gaps between a patient's events, which
-      destroys the intervals the model depends on.
+    B: Noise added to each date separately hides the real dates too, but it changes the gaps between a patient's events by
+      up to several days, so returns near the 30-day boundary are misclassified.
     C: Event order keeps the sequence of admissions and discharges, but not how many days lie between them, so the 30-day
       question cannot be answered.
 status: published

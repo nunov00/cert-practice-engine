@@ -9,7 +9,7 @@ options:
   A: Retrain the model on recent data so that the override rules can be retired
   B: Route each new override rule through the model change process
   C: Record each rule with its owner, purpose and date in the inventory
-  D: Validate the model and its override rules together as one decision process
+  D: Extend the yearly validation to the decisions after the rules apply
 answer: D
 explanation:
   why_correct: With a third of decisions changed by rules added piecemeal, the validated model is no longer what decides most

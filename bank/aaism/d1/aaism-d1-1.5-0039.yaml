@@ -1,27 +1,27 @@
 id: aaism-d1-1.5-0039
 subdomain: '1.5'
 difficulty: hard
-stem: A retailer's customer chatbot and about 40 internal AI workloads share one account with its model provider, under one
-  organisation-wide rate limit. On a peak sales day, a new internal batch job used up the limit and the chatbot failed for
-  three hours. Teams launch new AI workloads every month. Which continuity measure BEST prevents a repeat?
+stem: An insurer's claims chatbot and about 40 internal AI workloads share one account with its model provider, under one
+  organisation-wide rate limit. During a regional storm, when claims spiked, a new internal batch job used up the limit and
+  the chatbot failed for three hours. Teams launch new AI workloads every month. Which continuity measure BEST prevents a repeat?
 options:
-  A: A higher organisation-wide rate limit, bought from the provider well ahead of each peak
+  A: A higher organisation-wide rate limit, bought from the provider ahead of storm seasons
   B: A share of the rate limit reserved for the chatbot that other workloads cannot use
-  C: A schedule that keeps internal batch jobs outside peak trading hours
+  C: A schedule that keeps internal batch jobs outside business hours
   D: Automatic failover of the chatbot to a second provider when the limit is hit
 answer: B
 explanation:
-  why_correct: The outage came from the retailer's own workloads competing for one shared limit, not from the provider failing.
+  why_correct: The outage came from the insurer's own workloads competing for one shared limit, not from the provider failing.
     Reserving capacity for the customer-facing service, for example through its own project or quota, isolates it from whatever
     internal workloads do, including the new ones launched each month, so a runaway job can no longer take the critical
     service down.
   why_not:
     A: More headroom makes contention less likely, but the limit stays shared, so a large enough job, or the next new workload,
       can still use it up and stop the chatbot.
-    C: Scheduling fixes batch jobs, but new workloads of every kind arrive monthly, and the rule depends on each team knowing
-      and following it, so contention can return from other sources.
+    C: Scheduling moves batch jobs, but claim surges follow storms rather than the clock, new workloads of every kind arrive
+      monthly, and the rule depends on each team knowing and following it, so contention can return from other sources.
     D: Failover keeps the chatbot answering, but it adds a second model whose behaviour and safety must be validated, to work
-      around a contention problem the retailer can remove at its source.
+      around a contention problem the insurer can remove at its source.
 status: published
 outline_version: '2025-08-19'
 sample: false

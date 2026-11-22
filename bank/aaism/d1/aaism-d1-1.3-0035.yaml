@@ -8,7 +8,7 @@ stem: A bank's liquidity model is trained on Restricted client positions. Its da
 options:
   A: Classify the forecast on what it can reveal, recording the exception to inheritance
   B: Keep it Restricted and add data loss rules that stop it leaving by email
-  C: Give the 200 staff Restricted access, with handling training for the forecast
+  C: Approve a standing exception that lets staff email the Restricted forecast
   D: Keep it Restricted and issue staff a rounded summary of each day's forecast figures
 answer: A
 explanation:
@@ -20,8 +20,9 @@ explanation:
   why_not:
     B: Data loss rules enforce the label, but the label is wrong for this output, and staff already paste it into personal
       notes to get their work done; tighter blocking pushes more of it outside any control.
-    C: Wider access lets the 200 staff open the forecast, but Restricted handling still bars sharing it by email, which is
-      how the daily planning works, so the workarounds continue.
+    C: An exception makes the workflow lawful, but it keeps a label that overstates what the forecast reveals and teaches
+      staff that Restricted handling can be waived for convenience; the error is in the classification, not the handling
+      rule.
     D: A rounded summary is still derived from the same Restricted positions, so the same inheritance rule would label it
       Restricted too, and planners need the actual figures.
 status: published

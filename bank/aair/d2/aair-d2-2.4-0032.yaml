@@ -5,7 +5,7 @@ stem: A screening service is building a model to grade cervical cell images. Thr
   after the guidelines were refined, they disagree on about 15% of images. The service plans to send images the model finds
   borderline for a second human read. How should the training labels BEST be kept?
 options:
-  A: Each cytologist's label for every image, alongside the agreed grade
+  A: Each cytologist's own label for every image, kept separately
   B: The majority label for each image, with a senior cytologist breaking ties
   C: Only the images on which all three cytologists agreed in their grading
   D: A fourth cytologist's ruling on each image where the three disagreed
@@ -14,7 +14,7 @@ explanation:
   why_correct: Once refined guidelines still leave experts split on about 15% of images, the disagreement reflects real ambiguity
     in those images rather than careless labelling. Keeping each expert's label records that ambiguity, so the model can be
     trained and tested on how uncertain each image is, and the service can check that the images it routes for a second read
-    are the ones experts find borderline. An agreed grade can still be kept beside them for ordinary training.
+    are the ones experts find borderline. A consensus grade can be derived from them later where training needs one.
   why_not:
     B: A majority vote is a common way to settle labels, but it turns a two-to-one split into the same certain label as a
       unanimous one, so the record of which images are borderline is lost.

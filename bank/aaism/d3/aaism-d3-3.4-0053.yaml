@@ -17,8 +17,9 @@ explanation:
     the stored values and the purposes they serve, so the customer can see, and if needed challenge, what the telecom has
     concluded about them.
   why_not:
-    A: Training sets may hold copies of the customer's records, but those copies add nothing beyond the source records
-      being sent, and they leave out the inferences the telecom actually uses.
+    A: Training sets may hold copies or features of the customer's records, and retained copies belong in a complete response,
+      but they largely repeat what is being sent; the stored score and segment are new conclusions the telecom acts on and
+      are missing from the planned reply.
     B: Information about model logic matters for significant automated decisions, but a general description of features and
       training is not the customer's personal data and leaves out what the models concluded about them.
     D: A newly computed result is not what the telecom has held and used for this customer; the request covers the score

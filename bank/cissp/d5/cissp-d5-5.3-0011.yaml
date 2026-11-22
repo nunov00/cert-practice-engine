@@ -17,8 +17,8 @@ explanation:
     so a copy is worthless once the genuine sign-in has consumed it. Checking that each response answers a request the portal
     itself sent closes the same gap for unsolicited responses.
   why_not:
-    A: A shorter window narrows the time for replay, which helps, but the consultant needed only a minute, and a window short
-      enough to stop that would reject genuine sign-ins delayed by clock skew.
+    A: A shorter window narrows the time for replay, which helps, but a copy posted within the window is still accepted, and a
+      window short enough to rule that out would reject genuine sign-ins delayed by clock skew or slow networks.
     B: Signed requests let the identity provider trust what the portal asks for, but the replay never goes back to the identity
       provider; it is the response that is reused at the portal.
     D: Forcing re-authentication makes the user prove themselves again at the identity provider, but the copied response

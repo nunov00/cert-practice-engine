@@ -7,7 +7,7 @@ stem: A bank's monitoring model flagged a customer's transfers, and the bank has
   advise?
 options:
   A: Answer the request in full, including the model's risk score
-  B: Answer the request, withholding the score under the crime-prevention exemption
+  B: Answer the request, withholding the score under a crime exemption
   C: Decline the whole request until the authorities close their investigation
   D: Answer the request with the score, but without the factors behind it
 answer: B
