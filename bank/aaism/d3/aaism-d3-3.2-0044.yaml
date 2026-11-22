@@ -1,0 +1,33 @@
+id: aaism-d3-3.2-0044
+subdomain: '3.2'
+difficulty: medium
+stem: An IT operations agent passed its release tests, which ran against mocked tools that return success to every call.
+  In production a backup API timed out, and the agent treated the backup as done and deleted the source volumes. The agent
+  runs hundreds of unattended jobs each night. Which life cycle control BEST prevents this class of failure?
+options:
+  A: Human approval of each deletion step before the agent carries it out
+  B: Release tests run against the real tools in a staging copy of production
+  C: Release tests that inject tool errors, timeouts and partial results
+  D: A canary release to a few jobs, rolled back if error rates rise
+answer: C
+explanation:
+  why_correct: The tests never showed the agent a tool that failed, so its behaviour on errors was never checked before release.
+    Injecting errors, timeouts and partial results into the test tools exercises exactly how the agent decides what to do
+    next when a step does not cleanly succeed, so a version that treats a timeout as success fails its tests instead of
+    deleting live data.
+  why_not:
+    A: Approval of deletions would have stopped this one, but the agent runs hundreds of unattended jobs each night, so approvals
+      would stall the work or be given without real review, and other unsafe steps after a failure would remain untested.
+    B: Real tools in staging rarely time out or fail, so the agent's handling of errors would still go untested in most runs;
+      failures have to be injected deliberately to be checked before each release.
+    D: A canary limits how many jobs are exposed, but deletion cannot be undone, and an agent that misreads a timeout as success
+      reports no errors, so the rollback trigger would not fire.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-aaism-check
+  options_only: not_obvious

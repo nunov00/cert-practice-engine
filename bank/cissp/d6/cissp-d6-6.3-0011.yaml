@@ -1,0 +1,33 @@
+id: cissp-d6-6.3-0011
+subdomain: '6.3'
+difficulty: medium
+stem: A company's backup jobs all succeed, and quarterly restore tests meet every recovery time objective. At a peer firm,
+  ransomware operators with domain administrator rights signed in to the backup console, which accepts domain accounts,
+  shortened the retention on copies marked immutable and then deleted them. The board asks whether the company's backups
+  would survive the same attack. Which data BEST answers this?
+options:
+  A: Results of restore tests run from each critical system's offsite backup copies
+  B: Results of a test deleting each critical system's copies with a backup operator account
+  C: Results of a test deleting each critical system's copies directly on the immutable storage
+  D: Results of a red-team test of whether full directory control could destroy the copies
+answer: D
+explanation:
+  why_correct: The board's question is whether an attacker who controls the directory could destroy the copies. A red-team
+    test that starts from that position and tries to reach the point of deleting the copies, using any path the peer firm's attackers used, including signing in to
+    the backup console and changing retention, measures exactly that, rather than testing one setting or one account.
+  why_not:
+    A: Restores from the offsite copy show that it is usable, but not whether an attacker with directory control could
+      delete it first through the same console.
+    B: A backup operator test shows what that role can do, but the attackers held far wider rights, including the power to
+      sign in to the console as an administrator and change retention.
+    C: The storage refusing a direct deletion shows the immutable setting is on, but the peer firm's attackers first
+      shortened retention through the console, a path this test leaves out.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-cissp-check
+  options_only: not_obvious

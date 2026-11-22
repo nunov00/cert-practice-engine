@@ -1,0 +1,35 @@
+id: aair-d3-3.2-0044
+subdomain: '3.2'
+difficulty: medium
+stem: A bank's AI assistant keeps full chat transcripts, in which customers describe their health and debts in their own words,
+  and the residual privacy risk is above appetite. The privacy owner proposes deleting transcripts after 30 days. The fairness
+  team compares the assistant's outcomes across customer groups every six months, and some groups have only a few dozen chats
+  a month. Which treatment BEST brings the privacy risk within appetite?
+options:
+  A: Keep transcripts for six months, with health and debt details redacted automatically
+  B: Delete transcripts at 30 days and run the fairness comparison each month instead
+  C: Keep each chat's outcome and group for six months; delete transcripts at 30 days
+  D: Keep each chat's outcome, group and a short summary for six months; delete the rest
+answer: C
+explanation:
+  why_correct: The privacy risk sits in what customers write in their own words about their health and debts, while the fairness
+    comparison needs only each chat's outcome and the customer's group. Keeping just those structured fields for the six-month
+    cycle and deleting the transcripts at 30 days removes the sensitive free text altogether without losing the evidence the
+    fairness team needs, so both risks are managed instead of one being traded for the other.
+  why_not:
+    A: Automatic redaction reduces what is kept, but customers describe health and debts in their own words, which redaction
+      tools miss often enough that six months of sensitive text would still be held for a test that does not need it.
+    B: Monthly testing would fit within the 30-day window, but with only a few dozen chats a month in some groups, the comparisons
+      would be too small to show real differences, so the fairness monitoring would be weakened.
+    D: Keeping outcome and group is the right minimisation, but a summary of each chat restates what the customer said, often
+      including the health and debt details, and the fairness comparison does not use it, so sensitive content is kept for
+      six months without need.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-aair-check
+  options_only: not_obvious

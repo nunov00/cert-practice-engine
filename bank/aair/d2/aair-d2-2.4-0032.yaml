@@ -1,0 +1,33 @@
+id: aair-d2-2.4-0032
+subdomain: '2.4'
+difficulty: hard
+stem: A screening service is building a model to grade cervical cell images. Three cytologists label each image, and even
+  after the guidelines were refined, they disagree on about 15% of images. The service plans to send images the model finds
+  borderline for a second human read. How should the training labels BEST be kept?
+options:
+  A: Each cytologist's own label for every image, kept separately
+  B: The majority label for each image, with a senior cytologist breaking ties
+  C: Only the images on which all three cytologists agreed in their grading
+  D: A fourth cytologist's ruling on each image where the three disagreed
+answer: A
+explanation:
+  why_correct: Once refined guidelines still leave experts split on about 15% of images, the disagreement reflects real ambiguity
+    in those images rather than careless labelling. Keeping each expert's label records that ambiguity, so the model can be
+    trained and tested on how uncertain each image is, and the service can check that the images it routes for a second read
+    are the ones experts find borderline. A consensus grade can be derived from them later where training needs one.
+  why_not:
+    B: A majority vote is a common way to settle labels, but it turns a two-to-one split into the same certain label as a
+      unanimous one, so the record of which images are borderline is lost.
+    C: Dropping disputed images gives cleaner labels, but it removes exactly the borderline cases the model must learn to
+      recognise and route, so it would be overconfident on them in use.
+    D: Independent adjudication gives each disputed image a considered final grade, but it still records one answer per image
+      and hides that experts disagreed on it.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-aair-check
+  options_only: not_obvious

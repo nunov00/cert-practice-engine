@@ -22,12 +22,12 @@ explanation:
       changed between two assessments goes unnoticed for weeks.
     D: Penetration tests show whether controls stop a real attack, which self-assessment cannot, but twice a year they are
       further apart than the quarterly assessments that already missed both changes.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-21-daily-cissp
-  checked_by: 2026-11-21-daily-cissp-check
+  checked_by: 2026-11-22-daily-cissp-check
   check_verdict: pass
   options_only: not_obvious

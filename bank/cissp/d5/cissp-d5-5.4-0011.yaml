@@ -1,0 +1,33 @@
+id: cissp-d5-5.4-0011
+subdomain: '5.4'
+difficulty: medium
+stem: A wholesaler's payment system requires a second person to approve each supplier payment. The clerk who enters a
+  payment chooses its approver from 30 qualified staff across several departments. An investigation found that one clerk
+  had sent each of her fraudulent payments to the same colleague, who approved them without question. Which change BEST
+  strengthens the control?
+options:
+  A: Have the system assign each payment's approver at random from the qualified staff
+  B: Require each approver to open the supporting invoice before an approval is accepted
+  C: Have the finance controller review each month's pairings of clerks and approvers
+  D: Rotate clerks between supplier accounts each quarter, so no clerk keeps a portfolio
+answer: A
+explanation:
+  why_correct: Two-person approval only works if the two act independently. While the clerk chooses her approver, she can
+    always route payments to someone who will not question them. Assigning approvers at random from the qualified pool
+    means she cannot know or pick who will see each payment, so a willing accomplice no longer decides her approvals.
+  why_not:
+    B: Forcing approvers to open the invoice counters careless rubber-stamping, but a colleague who is willing to approve
+      the clerk's payments will open the invoice and approve anyway.
+    C: Reviewing pairings would show the clerk sending everything to one colleague, but only after the payments have gone,
+      and she still chooses the approver.
+    D: Rotation stops a clerk owning a supplier relationship for years, but whichever accounts she handles, she can still
+      send each payment to the same approver.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-cissp-check
+  options_only: not_obvious

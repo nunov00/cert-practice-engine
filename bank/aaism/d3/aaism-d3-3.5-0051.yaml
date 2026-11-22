@@ -1,0 +1,34 @@
+id: aaism-d3-3.5-0051
+subdomain: '3.5'
+difficulty: medium
+stem: A bank's customer-service agent was given only the API permissions its tasks require, and these are checked against
+  its actual usage each quarter. The SOC wants early warning of prompt injection attempts against the agent, none of which
+  has yet succeeded. An input classifier raises about 300 alerts a day, mostly on harmless prompts. Which monitoring BEST
+  provides this warning?
+options:
+  A: Alerts when the agent's API calls are refused for lack of permission
+  B: Alerts when the classifier flags several prompts from one account
+  C: Alerts on agent replies or actions that break the bank's policies
+  D: Alerts when the agent's API call volume rises above its usual daily range
+answer: A
+explanation:
+  why_correct: Because the agent's permissions match what its tasks use, a legitimate task should never be refused. An attempt
+    to steer it into actions outside its job, such as reading other customers' data or calling admin functions, hits those
+    limits and is refused, so refusals are a rare, high-signal sign of manipulation that appears even while the attempts
+    keep failing.
+  why_not:
+    B: Correlating flags by account cuts some noise, but it still rests on a classifier that mostly flags harmless prompts,
+      and injected text arriving through content the agent reads would not show up as one customer's flagged prompts.
+    C: Policy-breaking replies and actions are the right signal for attacks that succeed, but none has succeeded yet, so this
+      alert would fire only after the first harm rather than give early warning.
+    D: Volume alerts catch runaway behaviour, but a probing attempt is a handful of unusual calls, which barely changes the
+      agent's overall call volume.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aaism
+  check_verdict: fail
+  checked_by: 2026-11-22-daily-aaism-check
+  options_only: not_obvious

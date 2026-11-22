@@ -1,0 +1,34 @@
+id: aair-d2-2.3-0031
+subdomain: '2.3'
+difficulty: medium
+stem: Since a lender's credit model went live four years ago, business teams have added about 40 rules that override its decisions,
+  each to fix a problem found in use. Some rules apply regulatory lending limits that must stay. The rules now change about
+  a third of the model's decisions, and the yearly validation covers only the model's scores. What should the risk practitioner
+  recommend?
+options:
+  A: Retrain the model on recent data so that the override rules can be retired
+  B: Route each new override rule through the model change process
+  C: Record each rule with its owner, purpose and date in the inventory
+  D: Extend the yearly validation to the decisions after the rules apply
+answer: D
+explanation:
+  why_correct: With a third of decisions changed by rules added piecemeal, the validated model is no longer what decides most
+    cases on its own, and nobody has tested how the rules interact with the model or with each other. Treating the model and
+    its rules as one decision process, and validating the decisions that actually reach customers, gives assurance over what
+    is really in use. That review can then show which rules to keep, merge or retire.
+  why_not:
+    A: Retraining can remove some rules that only patch model weaknesses, but the regulatory lending limits must stay whatever
+      the model learns, so a combined process would remain, and its combined decisions would still go unvalidated.
+    B: Change control for new rules helps from now on, but it leaves the 40 existing rules, which already change a third of
+      decisions, untested.
+    C: Recording each rule improves transparency and ownership, but a list does not show whether the combined decisions are
+      sound, so the gap in assurance remains.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-aair-check
+  options_only: not_obvious

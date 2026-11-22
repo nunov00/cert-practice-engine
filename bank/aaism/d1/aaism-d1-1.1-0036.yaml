@@ -1,0 +1,32 @@
+id: aaism-d1-1.1-0036
+subdomain: '1.1'
+difficulty: easy
+stem: A listed retailer's AI pricing engine sets most of its online prices, and a manipulated engine could move revenue
+  materially. Its securities regulator recently criticised companies for boilerplate AI risk disclosures. Investor relations
+  asks the security manager for input to the annual report's risk section, which anyone can read. Which input BEST fits?
+options:
+  A: The engine's share of revenue and the named security controls that protect it, with their status
+  B: The engine's share of revenue, the harm a compromise could do, and how the board oversees it
+  C: A statement that AI and cyber risks could materially affect revenue and are overseen by the board
+  D: The engine's share of revenue and the open weaknesses found in its latest security testing
+answer: B
+explanation:
+  why_correct: Investors need to judge how material the risk is and how it is governed. Setting out this retailer's dependence
+    on the engine, the impact a compromise could have and how the board oversees it is specific enough to answer the regulator's
+    criticism of boilerplate, while leaving out operational detail that would help an attacker reading the same public document.
+  why_not:
+    A: Tying the controls to the engine's revenue role is specific, but naming each control and its status in a public report
+      shows attackers which defences stand in their way, detail investors do not need to judge materiality.
+    C: A materiality statement with board oversight speaks to investors, but naming AI and cyber risk only in general terms
+      is the kind of boilerplate the regulator has criticised; it says nothing about this retailer's reliance on the engine.
+    D: Linking open weaknesses to revenue shows real exposure, but publishing unfixed gaps in a document anyone can read points
+      attackers at them before they are closed.
+status: draft
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aaism
+  check_verdict: fail
+  checked_by: 2026-11-22-daily-aaism-check
+  options_only: obvious

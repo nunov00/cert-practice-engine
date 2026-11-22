@@ -1,0 +1,32 @@
+id: aaism-d3-3.3-0047
+subdomain: '3.3'
+difficulty: medium
+stem: A hospital will send patient records to an outside analytics firm to build a model that predicts readmission within
+  30 days. The contract requires de-identified data, so the firm must not receive real dates, yet the model depends on the
+  number of days between each patient's admissions and discharges. Which technique BEST meets both needs?
+options:
+  A: Replace each date with only the month and year in which it falls
+  B: Add random noise of a few days to each date before export
+  C: Replace the dates with the order in which each patient's events occurred
+  D: Shift all of a patient's dates by one randomly chosen number of days
+answer: D
+explanation:
+  why_correct: A single random offset per patient hides the real dates while keeping every interval between that patient's
+    events exact, which is what a 30-day readmission model needs. The hospital keeps the offsets, chosen over a wide enough
+    range and never shared, and the firm loses only information tied to calendar dates, such as season or weekday.
+  why_not:
+    A: Generalising dates to month and year is a common de-identification step, but it blurs intervals by up to a month either
+      way, so the model cannot tell whether a return came within 30 days.
+    B: Noise added to each date separately hides the real dates too, but it changes the gaps between a patient's events by
+      up to several days, so returns near the 30-day boundary are misclassified.
+    C: Event order keeps the sequence of admissions and discharges, but not how many days lie between them, so the 30-day
+      question cannot be answered.
+status: published
+outline_version: '2025-08-19'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aaism
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-aaism-check
+  options_only: not_obvious

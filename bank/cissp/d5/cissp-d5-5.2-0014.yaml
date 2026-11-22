@@ -1,0 +1,34 @@
+id: cissp-d5-5.2-0014
+subdomain: '5.2'
+difficulty: medium
+stem: A charity is rolling out app-based MFA to its 3,000 staff and volunteers, most of whom work from home on their own
+  computers. Until someone enrols, they sign in with a password alone, and their next sign-in asks them to register an
+  authenticator app. Attackers with phished passwords have signed in to accounts not yet enrolled and registered their own
+  phones. HR verified each person's mobile number at onboarding. Which change BEST closes this gap?
+options:
+  A: Allow authenticator registration only from the charity's offices or managed devices
+  B: Email the account holder each time a new authenticator is registered on the account
+  C: Require a one-time code, sent to the HR-held mobile number, before registration
+  D: Enrol the remaining accounts within a fortnight through a mass enrolment campaign
+answer: C
+explanation:
+  why_correct: Registration currently trusts the password alone, which is exactly what the attackers hold. Requiring a
+    one-time code sent to the mobile number verified at onboarding ties registration to something the attacker does not
+    have, and it works for people enrolling from home on their own computers. Codes by text message are a modest factor,
+    but they are used once, for registration only, and stop password-only takeovers of the enrolment step.
+  why_not:
+    A: Limiting registration to offices or managed devices would stop the attackers, but most people work from home on their
+      own computers, so it would also block their legitimate enrolment.
+    B: The notice goes to a mailbox protected by the same phished password, so the attacker can read and delete it, and it
+      arrives only after the phone is registered.
+    D: A faster campaign shortens the window, but enrolment still trusts the password alone, so any account phished before
+      its owner enrols can still be taken.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-cissp-check
+  options_only: not_obvious

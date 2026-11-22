@@ -122,14 +122,21 @@ held:
   # 6, so the three easiest passing mediums are held: cissp 1.12-0007, 3.9-0005
   # (distractor A weak: does nothing for fibre) and 5.2-0013. No rework needed
   # beyond that; release when CISSP's hard share allows.
+  # Daily batch 2026-11-22, batch run: rechecked all 11 held drafts; all passed.
+  # Released cissp-d1-1.9-0007 and cissp-d5-5.3-0011 within CISSP's hard share
+  # (5 hard carry 11 non-hard). The other nine passed and stay held. Newly held:
+  # aaism-d1-1.2-0040 (stem rules out each distractor in turn) and
+  # aaism-d3-3.1-0046 (the strict check found it close to the idea of
+  # aaism-d3-3.1-0025; vary the decision before release), both passed the
+  # independent check but AAISM's 2 surviving hard labels carry only 4 non-hard.
   - { id: aaism-d1-1.2-0039, pr: 93 }
   - { id: aaism-d1-1.5-0038, pr: 93 }
   - { id: aaism-d3-3.1-0045, pr: 93 }
   - { id: aaism-d3-3.5-0050, pr: 93 }
-  - { id: cissp-d1-1.9-0007, pr: 93 }
-  - { id: cissp-d5-5.3-0011, pr: 93 }
   - { id: cissp-d6-6.5-0013, pr: 93 }
   - { id: cissp-d7-7.12-0005, pr: 93 }
   - { id: cissp-d1-1.12-0007, pr: 93 }
   - { id: cissp-d3-3.9-0005, pr: 93 }
   - { id: cissp-d5-5.2-0013, pr: 93 }
+  - { id: aaism-d1-1.2-0040, pr: 94 }
+  - { id: aaism-d3-3.1-0046, pr: 94 }

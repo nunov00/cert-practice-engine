@@ -1,0 +1,33 @@
+id: cissp-d5-5.5-0010
+subdomain: '5.5'
+difficulty: easy
+stem: A company with 4,000 staff is replacing individually granted rights with roles. The project team plans to derive each
+  role from the rights that people in the same team and job hold today. Last year's access reviews found that about a fifth
+  of current rights had not been used for over a year, apart from some needed only for the year-end close. Which way of
+  building the roles BEST fits?
+options:
+  A: Derive roles from the rights people hold today, with each role approved by its owner
+  B: Derive roles from rights people used in the past year, with each role approved by its owner
+  C: Derive roles from the rights people hold today, then trim them at the first quarterly review
+  D: Derive roles from the rights held by most of each team, with each role approved by its owner
+answer: B
+explanation:
+  why_correct: Roles built from today's holdings would grant the excess to everyone who later receives them. Building them
+    from rights actually used over a full year keeps what each team needs, including the year-end rights, and drops the
+    fifth that nobody exercises, while the owner's approval checks that the result makes sense for the business.
+  why_not:
+    A: Starting from current holdings is the usual bottom-up method, but with a fifth of the rights unused, each role would
+      carry that excess, and owners approving large roles rarely spot which rights are idle.
+    C: Trimming later is better than never, but until the review every new member of each role gets the unused rights, and
+      reviews have already let them build up once.
+    D: Taking only rights most team members hold removes one-off grants, but rights that a whole team holds and nobody uses
+      would still pass into the role.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-22-daily-cissp-check
+  options_only: obvious

@@ -1,0 +1,34 @@
+id: cissp-d4-4.1-0020
+subdomain: '4.1'
+difficulty: hard
+stem: A travel company's booking site runs in two cloud regions, and its authoritative DNS moves customers between them
+  within minutes when a region fails, using 60-second record lifetimes. That DNS runs on two servers in the company's own
+  data centre. Last week a query flood from thousands of compromised hosts knocked both servers out, and the site was
+  unreachable for hours although both regions were healthy. Which change BEST prevents a repeat?
+options:
+  A: Raise the record lifetimes to a day, so resolvers answer from cache during a flood
+  B: Rate-limit responses on the two DNS servers for each querying source address
+  C: Add an anycast DNS provider as a further authoritative service for the zone
+  D: Move one of the two DNS servers to a second data centre on a different carrier
+answer: C
+explanation:
+  why_correct: The site was healthy; what failed was the capacity of the servers that answer for its names. An anycast
+    DNS provider answers from many locations with far more capacity than one data centre, and once its servers are listed
+    as authoritative alongside the company's, resolvers that get no reply from flooded servers retry the provider's, so the
+    names keep resolving. Record lifetimes stay short, so regional failover keeps working.
+  why_not:
+    A: Long lifetimes let resolvers ride out a flood for names they already hold, but they also make clients keep a failed
+      region's address for up to a day, which defeats the DNS failover the site depends on.
+    B: Per-source rate limiting curbs reflection abuse and single noisy clients, but thousands of hosts each sending at a
+      modest rate stay under any per-source limit while together exhausting the servers.
+    D: A second site removes the single location, but each site's servers and links can still be flooded by thousands of
+      hosts. It spreads the target without adding the capacity needed to absorb the flood.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: cissp-d2-2.6-0006
+subdomain: '2.6'
+difficulty: medium
+stem: A health insurer outsources database administration to a service firm whose staff hold full administrator rights on
+  the claims database servers and their backups. The insurer has promised its clients that no outside party can read members'
+  diagnosis notes, which only the claims application needs to display. Which control BEST meets this promise?
+options:
+  A: Transparent encryption of the database files and backups, with keys in the database's key store
+  B: Masked views that show diagnosis notes only to the claims application's database account
+  C: Monitoring of administrator queries, alerting the insurer when diagnosis notes are read
+  D: Encryption of the notes by the claims application, with keys the database never holds
+answer: D
+explanation:
+  why_correct: The service firm's staff control the database itself, so any protection the database enforces is theirs to
+    bypass. Encrypting the notes in the claims application, with keys kept in a key service the firm cannot reach, means the
+    database and its backups hold only ciphertext, and only the application can turn it back into readable notes.
+  why_not:
+    A: Transparent encryption protects stolen disks and backup media, but the database decrypts the data for any account
+      with access, including the firm's administrators, who also manage its key store.
+    B: Masking limits what ordinary accounts see, but administrators with full rights can change the masking rules or read
+      the underlying tables directly.
+    C: Monitoring shows when administrators read the notes, but it does not stop them, and the promise is that no outside
+      party can read them.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-cissp-check
+  options_only: not_obvious

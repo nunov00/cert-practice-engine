@@ -1,0 +1,32 @@
+id: aair-d3-3.3-0047
+subdomain: '3.3'
+difficulty: medium
+stem: An audit found that during month-end peaks, staff reviewing payments flagged by an AI model cleared many in seconds
+  without opening the supporting documents. The owner has since added two reviewers and reports the issue fixed. Before the
+  issue is closed, how should the risk practitioner BEST test the remediated control?
+options:
+  A: Walk through the revised review process with the team and its lead
+  B: Re-perform a sample of reviews done during the next month-end peak
+  C: Re-perform a random sample of reviews from the month after the change
+  D: Confirm that each flagged payment was marked reviewed for a full month
+answer: B
+explanation:
+  why_correct: The control failed under the workload of the month-end peak, so the remediation is proven only if reviews hold
+    up under that workload. Re-performing a sample of reviews from the next peak, and checking that reviewers opened and weighed
+    the documents, tests the remediated control in exactly the conditions in which it failed, before the issue is closed.
+  why_not:
+    A: A walkthrough confirms the new design and staffing, but the failure was in how reviews were carried out under pressure,
+      which a walkthrough cannot show.
+    C: Re-performing reviews is the right kind of test, but a random sample across a month is drawn mostly from quiet days,
+      so it may include few or no peak reviews and could pass a control that still fails at month-end.
+    D: Payments were already being marked reviewed when the reviews were superficial, so a complete record of reviews does
+      not show that they were done properly.
+status: published
+outline_version: '2026-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-22-daily-aair
+  check_verdict: pass
+  checked_by: 2026-11-22-daily-aair-check
+  options_only: not_obvious
