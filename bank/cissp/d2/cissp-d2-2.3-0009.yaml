@@ -1,6 +1,6 @@
 id: cissp-d2-2.3-0009
 subdomain: '2.3'
-difficulty: hard
+difficulty: medium
 stem: A hospital's asset inventory records each device's model, location, purchase date and owning department. After an attack
   through an unsupported imaging workstation, a review found 300 devices past vendor support. Vendors end support anywhere
   from 4 to 15 years after sale, and each of 40 departments budgets for its own replacements, which for medical systems take
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

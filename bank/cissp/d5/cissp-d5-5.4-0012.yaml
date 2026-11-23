@@ -1,6 +1,6 @@
 id: cissp-d5-5.4-0012
 subdomain: '5.4'
-difficulty: hard
+difficulty: medium
 stem: An advisory firm's 80 analysts form one pool. Deal leads add analysts to their deals' data rooms ahead of bids, usually
   more than they will use, and drop those not needed. Policy bars anyone who has opened one bidder's files from opening a
   rival bidder's files for the same target. Last month an analyst opened the rooms of two rival bidders. Which control BEST
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

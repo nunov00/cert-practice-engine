@@ -1,6 +1,6 @@
 id: cissp-d4-4.2-0031
 subdomain: '4.2'
-difficulty: hard
+difficulty: medium
 stem: A firm's laptops join its wired and wireless networks with EAP-TLS, using machine certificates issued when each laptop
   is built. A tester with local administrator rights on a company laptop exported its certificate and private key to an unmanaged
   PC, which then joined the network as that laptop. The laptop itself stayed in daily use throughout. Which change BEST prevents
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

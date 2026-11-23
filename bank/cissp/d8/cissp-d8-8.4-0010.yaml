@@ -1,6 +1,6 @@
 id: cissp-d8-8.4-0010
 subdomain: '8.4'
-difficulty: hard
+difficulty: easy
 stem: A pharmacy chain is choosing a SaaS platform for prescription records. The vendor's support engineers can open any
   customer's tenant, and its SOC 2 Type II report shows that each such access needs a ticket approved by a team lead,
   with no exceptions found. At a peer firm, an engineer at another vendor with the same control browsed patients'
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pending
+  options_only: obvious

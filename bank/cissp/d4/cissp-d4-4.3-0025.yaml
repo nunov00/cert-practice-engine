@@ -1,6 +1,6 @@
 id: cissp-d4-4.3-0025
 subdomain: '4.3'
-difficulty: hard
+difficulty: medium
 stem: Staff at an insurer reach internal applications through a VPN that requires a password and a push approval on their
   phones. Attackers emailed staff a link to a page that relayed the real VPN sign-in in real time, including the push prompt,
   and used each resulting session within a minute of the approval. Several staff approved the prompt they had triggered themselves.
@@ -28,4 +28,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
-  check_verdict: pending
+  check_verdict: fail
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious

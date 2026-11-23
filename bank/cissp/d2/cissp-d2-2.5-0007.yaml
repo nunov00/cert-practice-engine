@@ -1,6 +1,6 @@
 id: cissp-d2-2.5-0007
 subdomain: '2.5'
-difficulty: hard
+difficulty: easy
 stem: A telecom's retention schedule sets periods per record type, from six months for call details to seven years for billing
   records. Analysts copy records into a data lake for churn models that need customer-level history, and most lake datasets
   join each customer's call details with their billing records. Nothing in the lake is deleted. Which change BEST applies
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pending
+  options_only: obvious

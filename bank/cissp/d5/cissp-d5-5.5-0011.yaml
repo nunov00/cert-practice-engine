@@ -1,6 +1,6 @@
 id: cissp-d5-5.5-0011
 subdomain: '5.5'
-difficulty: hard
+difficulty: easy
 stem: At a software company, disabling leavers' accounts has twice stopped production jobs that ran under the leaver's personal
   credentials. In one case the leaver had taken the jobs over from a departing colleague years earlier. Engineers move between
   teams every few months, and leavers must be disabled on their last day. Which change BEST prevents these outages?
@@ -27,4 +27,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
-  check_verdict: pending
+  check_verdict: fail
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: obvious

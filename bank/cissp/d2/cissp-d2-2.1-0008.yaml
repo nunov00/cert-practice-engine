@@ -1,6 +1,6 @@
 id: cissp-d2-2.1-0008
 subdomain: '2.1'
-difficulty: hard
+difficulty: easy
 stem: A drug maker's IT team classified its 2,000 collaboration sites with a scanner that rates content by the personal and
   financial data it finds. Sites holding interim clinical trial results, which contain only summary figures, were rated Internal,
   though early disclosure could invalidate a trial. Project teams open new sites most days, and each trial's results stay
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pending
+  options_only: obvious
