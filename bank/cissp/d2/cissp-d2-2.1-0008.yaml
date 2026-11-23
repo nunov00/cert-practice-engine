@@ -1,26 +1,27 @@
 id: cissp-d2-2.1-0008
 subdomain: '2.1'
-difficulty: easy
+difficulty: hard
 stem: A drug maker's IT team classified its 2,000 collaboration sites with a scanner that rates content by the personal and
   financial data it finds. Sites holding interim clinical trial results, which contain only summary figures, were rated Internal,
-  yet their early disclosure could invalidate a trial and move the share price. Which change BEST fixes the classification?
+  though early disclosure could invalidate a trial. Project teams open new sites most days, and each trial's results stay
+  sensitive until a publication date that differs by trial. Which change BEST fixes the classification?
 options:
-  A: Add trial terms to the scanner's rules, then rescan the research sites
-  B: Rate research sites Restricted by default, whatever the scan finds
-  C: Have each site's business owner set its level, using the scan as input
-  D: Have the security team review the scanner's ratings for research sites
+  A: The data governance committee sets the level of each site the scan links to a trial
+  B: The head of research sets one level for trial sites, which the committee reviews yearly
+  C: Each site's business owner sets and maintains its level, with the scan's rating as input
+  D: Each trial's sponsor sets the level of the trial's sites when the trial is registered
 answer: C
 explanation:
-  why_correct: Classification reflects the business impact of disclosure, and here the impact comes from context (what the
-    figures are and when they may be released) rather than from any data type a tool can recognise. The business owner of
-    each site knows that context and is accountable for the decision; the scan remains useful as a starting point.
+  why_correct: The sensitivity of interim results comes from business context, what the figures are and when they may be released,
+    not from any data type a scanner can recognise. The business owner of each site knows that context, is there when the
+    site is opened, and can lower the level when the trial's results are published; the scan remains a useful starting point.
   why_not:
-    A: The results are summary figures with nothing distinctive in their content; more keywords would still miss what makes
-      them sensitive and add false matches elsewhere.
-    B: A blanket default over-classifies most research content, which weakens what the top level means, and replaces the judgement
-      of the people who know each site's impact with a rule.
-    D: A second technical review checks the scanner's output but has no better knowledge of trial timing or market impact
-      than the scanner had.
+    A: A committee gives consistent decisions, but it depends on the scan to tell it which sites hold trial data, which is
+      exactly what the scan cannot see in summary figures, and sites open most days.
+    B: One level for trial sites ignores that each trial's results stop being sensitive on a different date, so sites stay
+      over-classified or are lowered too early, and a yearly review cannot follow the dates.
+    D: The sponsor is an accountable owner, but a decision made at registration reaches only the sites known then, not the
+      ones project teams open later, and it does not change at publication.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -28,4 +29,3 @@ provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pending
-  options_only: obvious

@@ -1,27 +1,27 @@
 id: cissp-d5-5.2-0015
 subdomain: '5.2'
-difficulty: easy
-stem: A university's 150 applications link each user's records to the email address the identity provider sends at sign-in.
-  When staff change their names they are issued a new address, and the applications then create fresh accounts, cutting them
-  off from their history. Visiting researchers and contractors, a third of users, have directory accounts but no HR or student
-  record. Which identifier should the applications store for each user?
+difficulty: hard
+stem: A university's 150 applications link each user's records to the email address the identity provider sends at sign-in,
+  and they pass records to one another by that value. Staff who change their names are issued new addresses, and the applications
+  then open fresh accounts. Visiting researchers and contractors, a third of users, have directory accounts but no HR or student
+  record. Which identifier should the identity provider send instead?
 options:
-  A: The email address, with each former address kept as an alias of the new one
-  B: The HR or student number, released by the identity provider at each sign-in
-  C: The sign-in name, changed through a rename process that updates each application
-  D: An opaque directory identifier, fixed for the account's life and not reissued
+  A: The HR or student number, fixed for each person's time at the university
+  B: An opaque pseudonym generated for each application, fixed for each user
+  C: The sign-in name, renamed in each application through the account-change process
+  D: An opaque directory identifier, the same in each application, fixed for each user
 answer: D
 explanation:
-  why_correct: An identifier that applications use to link records should be unique, stable and not reused. A directory-assigned
-    opaque identifier exists for every account, including visitors and contractors, and does not change when a person's name
-    does, so all 150 applications keep the link to each user's history without any rename work.
+  why_correct: The applications need a value that exists for every account, does not change with a person's name, and is the
+    same everywhere so that records passed between applications still match. An opaque identifier assigned by the directory
+    meets all three, for staff, students, visitors and contractors alike.
   why_not:
-    A: Aliases let old mail arrive, but the identity provider still sends the new primary address at sign-in, so the applications
-      see a new value and create a new account.
-    B: HR and student numbers are stable for staff and students, but a third of users have neither, so the applications would
-      have no identifier for them.
-    C: The sign-in name is usually built from the person's name, so it changes in the same way, and a rename process must
-      succeed in each of 150 applications every time.
+    A: HR and student numbers are stable and familiar, but a third of users have neither, so the applications would have nothing
+      to link their records to.
+    B: Per-application pseudonyms are good practice when services must not be able to link users, but here the applications
+      pass records to one another, and different values for the same person break those links.
+    C: A rename process can work for a few systems, but the sign-in name still changes, and every one of 150 applications,
+      and every record passed between them, must be updated in step for each rename.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -29,4 +29,3 @@ provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pending
-  options_only: obvious
