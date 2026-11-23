@@ -1,6 +1,6 @@
 id: cissp-d6-6.1-0014
 subdomain: '6.1'
-difficulty: hard
+difficulty: medium
 stem: Twelve cooperative banks run on the same cloud core-banking provider. Their regulator now requires each bank to
   obtain, this year, assurance over the provider's controls on where customer data is stored and who can reach it, which
   the provider's SOC 2 report does not cover. Each contract grants an audit right, but the provider can host only a few
@@ -30,3 +30,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

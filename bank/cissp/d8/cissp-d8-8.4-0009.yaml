@@ -1,6 +1,6 @@
 id: cissp-d8-8.4-0009
 subdomain: '8.4'
-difficulty: hard
+difficulty: easy
 stem: A government agency buys only firewalls with a Common Criteria certificate, and it relies on the certificate instead
   of testing products itself. The chosen firewall's certificate covers an evaluated configuration in which the vendor's
   cloud management service is turned off. The network team wants that service to manage 80 sites, and rollout starts
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pending
+  options_only: obvious

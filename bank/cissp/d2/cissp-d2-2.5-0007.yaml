@@ -1,6 +1,6 @@
 id: cissp-d2-2.5-0007
 subdomain: '2.5'
-difficulty: hard
+difficulty: easy
 stem: A telecom's source systems delete customer records on schedules set per record type, from six months for call details
   to seven years for billing. Analysts copy records into a data lake to build churn models that need customer-level history,
   and nothing in the lake is deleted, so call details persist there for years. Which change BEST brings the lake into line
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pending
+  options_only: obvious

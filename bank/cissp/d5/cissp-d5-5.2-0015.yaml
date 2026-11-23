@@ -1,6 +1,6 @@
 id: cissp-d5-5.2-0015
 subdomain: '5.2'
-difficulty: hard
+difficulty: easy
 stem: A university's 150 applications link each user's records to the email address the identity provider sends at sign-in.
   When staff change their names they are issued a new address, and the applications then create fresh accounts, cutting them
   off from their history. Visiting researchers and contractors, a third of users, have directory accounts but no HR or student
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pending
+  options_only: obvious

@@ -1,6 +1,6 @@
 id: cissp-d5-5.4-0012
 subdomain: '5.4'
-difficulty: hard
+difficulty: easy
 stem: An advisory firm's 80 analysts are drawn from one pool onto deals, and each deal's lead adds them to its data room,
   often late at night before a bid. Policy bars anyone who has seen one bidder's files from seeing a rival bidder's files
   for the same target. Last month two leads added the same analyst to rival bidders' rooms, neither aware of the other. Which
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pending
+  options_only: obvious

@@ -1,6 +1,6 @@
 id: cissp-d2-2.3-0009
 subdomain: '2.3'
-difficulty: hard
+difficulty: easy
 stem: A hospital's asset inventory records each device's model, location and owner. After an attack through an unsupported
   imaging workstation, a review found 300 devices past vendor support, many of them medical systems whose replacement takes
   up to two years of budgeting and validation. Which change BEST prevents this from recurring?
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pending
+  options_only: obvious
