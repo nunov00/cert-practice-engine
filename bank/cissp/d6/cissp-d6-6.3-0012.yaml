@@ -1,6 +1,6 @@
 id: cissp-d6-6.3-0012
 subdomain: '6.3'
-difficulty: hard
+difficulty: medium
 stem: A manufacturer's board asks whether its security operations centre finds intruders sooner than it did two years
   ago. The SOC reports that its time from alert to escalation has fallen each quarter. Of last year's five confirmed
   intrusions, two were first reported to the company by outside parties. Which measure BEST answers the board?

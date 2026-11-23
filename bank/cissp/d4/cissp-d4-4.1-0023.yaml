@@ -1,6 +1,6 @@
 id: cissp-d4-4.1-0023
 subdomain: '4.1'
-difficulty: hard
+difficulty: medium
 stem: A shipping line's vessels reach head office over a geostationary satellite service whose modems speed up TCP by acknowledging
   traffic locally. A new policy says the provider must not be able to read vessel traffic, which includes old engine-monitoring
   protocols that cannot be encrypted themselves. In a trial, an IPsec tunnel from ship to shore cut file-transfer throughput

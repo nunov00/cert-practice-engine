@@ -1,6 +1,6 @@
 id: cissp-d6-6.2-0013
 subdomain: '6.2'
-difficulty: hard
+difficulty: medium
 stem: A law firm sells its retired laptops after IT wipes their solid-state drives with a tool that overwrites each logical
   block, reads the blocks back and logs a pass. The risk committee wants evidence that wiped laptops leave no recoverable
   client data. Which test BEST provides it?

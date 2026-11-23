@@ -1,6 +1,6 @@
 id: cissp-d4-4.2-0030
 subdomain: '4.2'
-difficulty: hard
+difficulty: medium
 stem: A chemical plant's control network carries the same few hundred conversations between operator stations, controllers
   and one engineering workstation, day after day. A review found that an intruder on that workstation could use the vendor's
   own engineering software to change controller logic. Plant rules forbid adding any inline device that could interrupt control

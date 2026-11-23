@@ -1,6 +1,6 @@
 id: cissp-d4-4.2-0028
 subdomain: '4.2'
-difficulty: hard
+difficulty: medium
 stem: A manufacturer's server administrators run elevated management consoles from the same laptops they use for email and
   the web. Malware from a booby-trapped invoice on one laptop waited until its owner had signed in to a console, then sent
   its own commands through that session. Which change BEST prevents a repeat?

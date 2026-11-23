@@ -1,6 +1,6 @@
 id: cissp-d8-8.3-0010
 subdomain: '8.3'
-difficulty: hard
+difficulty: medium
 stem: A water utility's billing application lets customers' bank details be changed through the customer portal, the
   call-centre screens and a nightly import from a payments partner. Internal audit must assess whether the application's
   audit trail would let investigators reconstruct any change to those details. Which assessment BEST fits?

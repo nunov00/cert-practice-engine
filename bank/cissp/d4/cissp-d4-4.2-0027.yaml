@@ -1,6 +1,6 @@
 id: cissp-d4-4.2-0027
 subdomain: '4.2'
-difficulty: hard
+difficulty: medium
 stem: A healthcare group's 120 clinics authenticate each switch port with 802.1X against RADIUS servers in its data centre.
   Twice this year clinics lost RADIUS, once through a fibre cut and once when the servers' certificate expired, and patient
   monitors that restarted could not rejoin the network. Ports in waiting and exam rooms are open to the public, and clinics

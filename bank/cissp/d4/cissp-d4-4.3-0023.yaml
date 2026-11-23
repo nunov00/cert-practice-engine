@@ -1,27 +1,27 @@
 id: cissp-d4-4.3-0023
 subdomain: '4.3'
-difficulty: easy
+difficulty: hard
 stem: A retailer's 300 stores send firewall and point-of-sale logs to a central SIEM as UDP syslog, carried over each store's
-  IPsec tunnel. An investigation found gaps on busy evenings, and entries that a compromised till had forged under the store
-  firewall's address. The logs must be complete and trustworthy enough to serve as evidence. Which change BEST fits?
+  IPsec tunnel. An investigation found gaps on busy evenings, and entries that a compromised till had forged in the store
+  firewall's name. The logs must be complete and trustworthy enough to serve as evidence. Which change BEST fits?
 options:
-  A: Syslog over TLS, with a certificate for each sending device and local queuing
-  B: Hashing and signing of log batches at the SIEM as soon as they arrive
-  C: A separate IPsec tunnel for log traffic, given priority over other traffic
-  D: SIEM filters accepting each store's firewall logs only from its address
+  A: Syslog sent over mutually authenticated TLS from each device
+  B: Syslog messages signed by each device with its own private key
+  C: Syslog carried in a separate IPsec tunnel given traffic priority
+  D: Syslog sent over TCP, so that lost messages are retransmitted
 answer: A
 explanation:
-  why_correct: UDP syslog has no delivery guarantee and no sender authentication, so busy links drop messages and any host
-    can claim to be the firewall. Syslog over TLS runs on TCP, so lost packets are resent, and devices queue messages locally
-    while the link is congested. A certificate for each device means the SIEM accepts entries only from the device that holds
-    that key, so a till cannot write in the firewall's name.
+  why_correct: 'The logs fail in two ways: UDP drops messages on busy links, and nothing proves which device sent an entry.
+    Syslog over mutually authenticated TLS runs on TCP, so lost packets are resent, and the SIEM accepts each connection only
+    from the device holding that certificate''s key, so a till cannot write in the firewall''s name. One change meets both
+    needs.'
   why_not:
-    B: Signing at the SIEM proves logs have not changed since arrival, but the gaps and the forged entries arise before arrival,
-      so they are sealed into the record as they are.
-    C: A prioritised tunnel may reduce the evening losses, but the till sits inside the store, and its forged UDP messages
-      enter the tunnel like the firewall's own.
-    D: Filtering by source address seems to tie logs to the firewall, but UDP source addresses are easy to forge, which is
-      what the till did.
+    B: Per-device signatures let the SIEM reject the till's forged entries, but the signed messages still travel as UDP, so
+      the gaps on busy evenings remain.
+    C: A prioritised tunnel may reduce the evening losses, but the till sits inside the store, and its forged messages enter
+      the tunnel like the firewall's own.
+    D: TCP resends lost packets and closes the gaps, but it does not authenticate the sender, so the till can still connect
+      and write entries in the firewall's name.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -29,4 +29,3 @@ provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pending
-  options_only: obvious

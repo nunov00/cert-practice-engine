@@ -1,6 +1,6 @@
 id: cissp-d4-4.3-0024
 subdomain: '4.3'
-difficulty: hard
+difficulty: medium
 stem: A logistics firm lets a ticketing vendor's SaaS app read its shared support mailbox. As the vendor's setup guide asks,
   the app holds an application permission to read mail across the firm's whole cloud tenant. The vendor has disclosed that
   attackers inside its platform used customers' connections. The firm wants to keep the integration. Which change BEST limits
