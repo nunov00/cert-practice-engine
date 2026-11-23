@@ -1,0 +1,33 @@
+id: cissp-d8-8.5-0008
+subdomain: '8.5'
+difficulty: hard
+stem: A messaging app fetches a preview of any web page that users paste into a chat. Its code rejects URLs whose host is
+  a private or cloud-metadata address. A tester still made the server fetch the metadata service, using a hostname on her
+  own domain whose DNS answers alternated between a public address and the metadata address. Which rule should the secure
+  coding standard set?
+options:
+  A: Resolve the host once, reject internal addresses, and connect to that address
+  B: Resolve the host, reject internal addresses, then pass the URL to the HTTP client
+  C: Fetch previews only from hosts on an allow-list of approved domains
+  D: Validate the address of each redirect target again before following it
+answer: A
+explanation:
+  why_correct: The tester's hostname gave a public address when the code checked it and the metadata address when the
+    request was made. Resolving once, checking that address and connecting to exactly that address closes the gap
+    between check and use, so a changing DNS answer cannot slip an internal address past the check.
+  why_not:
+    B: Checking the resolved address looks like the fix, but handing the URL to the HTTP client makes it resolve the name
+      again, and the second answer can be the metadata address, which is the attack the tester used.
+    C: An allow-list is the strongest server-side request forgery defence when targets are known, but the feature must
+      preview any page users paste, so an allow-list would break it.
+    D: Rechecking redirect targets is a sound rule against redirect-based forgery, but this attack used no redirect; the
+      same name simply resolved differently between the check and the fetch.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious

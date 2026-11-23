@@ -1,0 +1,33 @@
+id: cissp-d8-8.4-0010
+subdomain: '8.4'
+difficulty: easy
+stem: A pharmacy chain is choosing a SaaS platform for prescription records. The vendor's support engineers can open any
+  customer's tenant, and its SOC 2 Type II report shows that each such access needs a ticket approved by a team lead,
+  with no exceptions found. At a peer firm, an engineer at another vendor with the same control browsed patients'
+  records for months under tickets he raised himself. Which contract requirement BEST addresses this?
+options:
+  A: Yearly background checks on the vendor's support engineers, with results reported
+  B: Support access to the tenant only for cases the chain opened, approved by the chain
+  C: Support access approved per ticket by a vendor manager outside the support team
+  D: A yearly right to audit the vendor's support access approvals and logs
+answer: B
+explanation:
+  why_correct: The peer firm's engineer passed every approval because each ticket looked legitimate inside the vendor.
+    Only the customer knows whether it asked for help, so tying each support access to a case the chain opened, with
+    the chain's own approval, stops an engineer from reaching its records on a ticket he invented.
+  why_not:
+    A: Screening support staff reduces insider risk at hiring and over time, but most insiders who misuse access have
+      clean records, and screening does nothing to stop access that the vendor's process approves.
+    C: Moving approval outside the support team adds separation inside the vendor, but that manager still sees a
+      plausible ticket and cannot tell whether the chain asked for help, so self-raised tickets would still pass.
+    D: An audit of approvals and logs would find every access ticketed and approved, as at the peer firm, so it would
+      pass the very misuse the chain is worried about.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: obvious

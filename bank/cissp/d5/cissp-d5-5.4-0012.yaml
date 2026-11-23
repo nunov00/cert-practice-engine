@@ -1,0 +1,32 @@
+id: cissp-d5-5.4-0012
+subdomain: '5.4'
+difficulty: medium
+stem: An advisory firm's 80 analysts form one pool. Deal leads add analysts to their deals' data rooms ahead of bids, usually
+  more than they will use, and drop those not needed. Policy bars anyone who has opened one bidder's files from opening a
+  rival bidder's files for the same target. Last month an analyst opened the rooms of two rival bidders. Which control BEST
+  enforces the policy?
+options:
+  A: Block adding an analyst to a room while they belong to a rival bidder's room
+  B: Assign each analyst to one bidder team per target, opening rooms only to it
+  C: Refuse entry to a room to anyone who has opened a rival bidder's room for that target
+  D: Alert compliance within minutes when an analyst opens two rival bidders' rooms
+answer: C
+explanation:
+  why_correct: The policy turns on what an analyst has actually opened, a conflict-of-interest rule of the Brewer-Nash kind.
+    Refusing entry based on each analyst's access history enforces it at the moment of access, while leads can keep adding
+    spare analysts to several rooms, since membership alone breaks no rule.
+  why_not:
+    A: Blocking on membership is preventive, but leads routinely add more analysts than they use, so it would refuse analysts
+      who have opened nothing, and it stops being accurate once spare members are dropped.
+    B: Fixed bidder teams enforce separation, but they split a single pool that leads staff flexibly ahead of each bid, and
+      analysts would be tied to one side before anyone knows who is needed.
+    D: A fast alert still comes after the analyst has opened both rooms, which is the exposure the policy forbids.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious

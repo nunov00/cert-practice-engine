@@ -1,0 +1,34 @@
+id: cissp-d4-4.1-0022
+subdomain: '4.1'
+difficulty: hard
+stem: A hotel chain's room thermostats and door sensors form a Zigbee network in each building. Devices join using the protocol's
+  well-known default link key. While one hotel was being fitted out, a researcher in a corridor recorded devices joining,
+  recovered the network key and sent commands to rooms. Five more hotels are about to be fitted out. Which change BEST prevents
+  this there?
+options:
+  A: Permit joining only during short windows that the installers open and close
+  B: Rotate the network key monthly from each building's Zigbee coordinator
+  C: Put each building's Zigbee coordinators on an isolated VLAN behind a firewall
+  D: Join each device using its unique install code to derive its link key
+answer: D
+explanation:
+  why_correct: When a device joins, the coordinator sends it the network key encrypted under the link key. The default link
+    key is published, so anyone who records a join can decrypt the network key. An install code printed on each device gives
+    it a unique link key, entered at the coordinator by the installer, so a recorded join reveals nothing without that code.
+    The next hotels can be commissioned this way from the start.
+  why_not:
+    A: Short join windows cut the time an attacker has to slip in a rogue device, but the researcher only listened to legitimate
+      joins during installation, which is exactly when the windows are open.
+    B: A new network key is delivered to devices encrypted under keys the researcher already holds, so recording the rotation
+      yields the new key as well.
+    C: Isolating the coordinators protects them from the IP network, but this attack ran over the Zigbee radio in the rooms
+      and never touched the wired network.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious

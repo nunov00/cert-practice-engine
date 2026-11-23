@@ -1,0 +1,33 @@
+id: cissp-d4-4.3-0022
+subdomain: '4.3'
+difficulty: medium
+stem: A company's always-on VPN sends laptop traffic through head office, where web filtering applies, but the tunnel carries
+  IPv4 only. On hotel networks that offer IPv6, testers saw laptops reach IPv6-capable sites directly, without filtering.
+  Staff often tether to phone carriers that give IPv6 only and translate traffic to reach IPv4 sites. Which change BEST closes
+  the gap?
+options:
+  A: Disable IPv6 on the laptops so that their traffic takes the IPv4 tunnel
+  B: Drop IPv6 answers at the company's DNS resolvers, so names resolve to IPv4
+  C: Block IPv6 outside the tunnel with each laptop's host firewall
+  D: Extend the VPN tunnel to carry the laptops' IPv6 traffic as well
+answer: D
+explanation:
+  why_correct: The leak exists because the tunnel captures only one address family, so IPv6 traffic follows the local network's
+    route. Carrying IPv6 through the tunnel as well brings that traffic to head office filtering, and the laptop keeps working
+    on IPv6-only tethered links, where it reaches the VPN gateway through the carrier's translation.
+  why_not:
+    A: Turning IPv6 off ends the leak on dual-stack hotel networks, but on IPv6-only tethered links the laptop then has no
+      working connection at all, the VPN included.
+    B: Suppressing IPv6 answers steers most name lookups to IPv4, but software that connects to IPv6 addresses directly, or
+      uses another resolver, still leaves outside the tunnel.
+    C: Blocking IPv6 outside the tunnel stops the leak, but on IPv6-only tethered links it also blocks the laptop's only path
+      to the internet and to the VPN gateway.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious

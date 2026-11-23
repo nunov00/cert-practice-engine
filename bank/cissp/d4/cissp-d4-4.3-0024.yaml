@@ -1,0 +1,34 @@
+id: cissp-d4-4.3-0024
+subdomain: '4.3'
+difficulty: medium
+stem: A logistics firm lets a ticketing vendor's SaaS app read its shared support mailbox. As the vendor's setup guide asks,
+  the app holds an application permission to read mail across the firm's whole cloud tenant. The vendor has disclosed that
+  attackers inside its platform used customers' connections. The firm wants to keep the integration. Which change BEST limits
+  what a repeat could reach?
+options:
+  A: Conditional access accepting the app's calls only from the vendor's published addresses
+  B: An access policy restricting the app's mail permission to the support mailbox
+  C: Monthly rotation of the app's client secret, shared with the vendor securely
+  D: MFA required for each user who signs in to the vendor's application
+answer: B
+explanation:
+  why_correct: 'The exposure is the size of the permission: an app allowed to read the whole tenant''s mail lets whoever controls
+    it read any mailbox. Restricting the app''s permission to the support mailbox, with the mail service''s access policy
+    for applications, keeps the integration working, and an attacker inside the vendor''s platform can then reach only that
+    one mailbox.'
+  why_not:
+    A: Limiting calls to the vendor's addresses stops a stolen secret being used from elsewhere, but attackers inside the
+      vendor's platform call from those very addresses.
+    C: Rotation limits how long a leaked secret works, but the vendor's platform has to hold each new secret, so attackers
+      inside it receive the new one too.
+    D: User MFA protects people's sign-ins to the app, but the app reads mail with its own application permission, with no
+      user signing in, so MFA never applies.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious

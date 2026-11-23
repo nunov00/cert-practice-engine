@@ -1,0 +1,33 @@
+id: cissp-d5-5.3-0013
+subdomain: '5.3'
+difficulty: hard
+stem: A company's identity provider puts each user's full list of group memberships, about 200 per person, into the sign-in
+  assertions it sends to 60 SaaS applications, each of which maps a few groups to its own roles. A vendor's support staff
+  saw group names in troubleshooting logs, including one named for an unannounced plant closure. Which change BEST addresses
+  this?
+options:
+  A: Send each application only the groups it maps to roles, filtered at the identity provider
+  B: Encrypt the assertions sent to each application with that application's public key
+  C: Add a clause to each SaaS contract limiting how vendors may use and log identity attributes
+  D: Stop sending groups, and have each application's owner assign its roles within the application
+answer: A
+explanation:
+  why_correct: Federation should release to each third party only the attributes it needs. Filtering group claims per application
+    at the identity provider keeps the central role mapping the applications depend on, while the vendors stop receiving the
+    other memberships that reveal internal plans and who is affected by them.
+  why_not:
+    B: Encrypting the assertion hides it from the browser and anything in between, but the vendor's application decrypts it
+      to use it, so the same group names still reach its logs.
+    C: A contract sets expectations, but all 60 vendors would still receive every membership, and the exposure seen here happened
+      inside a vendor's normal support work.
+    D: Dropping groups removes the leak but also the central control of roles that the 60 applications rely on, moving role
+      decisions into each application where leavers and movers are easier to miss.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious

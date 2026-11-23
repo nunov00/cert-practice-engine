@@ -23,12 +23,12 @@ explanation:
       distressing themes in use.
     D: Consumer lures avoid upsetting staff, but they drop the invoice and shared-document lures that match the attacks the
       insurer actually receives, so the simulations stop rehearsing the real risk.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-21-daily-cissp
-  checked_by: 2026-11-21-daily-cissp-check
+  checked_by: 2026-11-23-daily-cissp-check
   check_verdict: pass
   options_only: not_obvious

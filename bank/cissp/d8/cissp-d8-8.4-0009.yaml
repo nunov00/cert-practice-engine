@@ -1,0 +1,34 @@
+id: cissp-d8-8.4-0009
+subdomain: '8.4'
+difficulty: medium
+stem: A government agency buys only firewalls with a Common Criteria certificate, and it relies on the certificate instead
+  of testing products itself. The chosen firewall's certificate covers an evaluated configuration in which the vendor's
+  cloud management service is turned off. The network team wants that service to manage 80 sites, and rollout starts
+  next month. How should the agency deploy the firewalls?
+options:
+  A: Cloud-managed at each site, with management traffic passing through the agency's own logged proxy
+  B: Cloud-managed at each site, once an independent test of the service the agency commissions is passed
+  C: In the evaluated configuration at the 20 most sensitive sites, and cloud-managed at the rest
+  D: In the evaluated configuration at each site, managed from the agency's own network
+answer: D
+explanation:
+  why_correct: A Common Criteria certificate gives assurance only for the evaluated configuration. The agency's basis for
+    trusting any firewall it buys is that certificate, so deploying each one as evaluated, with local management, keeps
+    the assurance it paid for; cloud management can be reconsidered if a later evaluation covers it.
+  why_not:
+    A: A logged proxy is a sensible compensating control for a remote management channel, but the firewalls would still
+      run outside the evaluated configuration, so the certificate the agency relies on would no longer cover them.
+    B: An independent test is the right way to gain assurance over an unevaluated feature, but the agency relies on the
+      certificate instead of testing products, and the rollout starts next month, far sooner than a commissioned test
+      could be scoped and run.
+    C: Splitting by sensitivity looks like a proportionate, risk-based compromise, but the agency's rule applies to each
+      firewall it runs, and the 60 cloud-managed ones would be outside the certificate it depends on.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious

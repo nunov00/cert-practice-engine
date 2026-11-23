@@ -1,0 +1,34 @@
+id: cissp-d4-4.2-0027
+subdomain: '4.2'
+difficulty: medium
+stem: A healthcare group's 120 clinics authenticate each switch port with 802.1X against RADIUS servers in its data centre.
+  Twice this year clinics lost RADIUS, once through a fibre cut and once when a failed update took the data centre's RADIUS servers offline, and patient
+  monitors that restarted could not rejoin the network. Ports in waiting and exam rooms are open to the public, and clinics
+  have no server rooms or IT staff. Which change BEST addresses this?
+options:
+  A: If RADIUS is unreachable, put devices on a VLAN reaching only clinical systems
+  B: A RADIUS replica at each clinic, synchronised from the data centre servers
+  C: If RADIUS is unreachable, put devices on the data VLAN their port normally uses
+  D: A cellular backup link at each clinic, carrying RADIUS traffic if the WAN fails
+answer: A
+explanation:
+  why_correct: The clinics need devices to keep working whenever RADIUS cannot be reached, whatever the cause, without local
+    servers. A critical-authentication setting on the switches places devices that cannot be checked on a restricted VLAN
+    that reaches only the clinic's clinical systems, so monitors can rejoin their central stations, while someone plugging
+    into a public port during an outage gains only that small segment. Normal 802.1X resumes when RADIUS returns.
+  why_not:
+    B: A local replica keeps authentication working through both kinds of outage, but it puts a server in each clinic to house,
+      patch and support, and the clinics have no server rooms or IT staff.
+    C: Failing open to the normal VLAN keeps devices working, but ports in waiting and exam rooms are open to the public,
+      so anyone plugging in during an outage gets ordinary network access.
+    D: A cellular backup covers a cut fibre, but in the second outage the RADIUS servers themselves were down, so no backup
+      link could have reached them.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious

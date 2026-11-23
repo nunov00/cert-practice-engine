@@ -1,6 +1,6 @@
 id: cissp-d7-7.12-0005
 subdomain: '7.12'
-difficulty: medium
+difficulty: easy
 stem: An insurer runs a yearly parallel test of its claims platform, chosen because the business will not accept the risk
   of a production outage. Last year the recovery site processed the live claim feed as planned, but its payment interface
   was also live, and 300 claimants were paid twice. The regulator expects this year's test to show claims processed at full
@@ -29,6 +29,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-21-daily-cissp
-  checked_by: 2026-11-21-daily-cissp-check
+  checked_by: 2026-11-23-daily-cissp-check
   check_verdict: pass
   options_only: not_obvious

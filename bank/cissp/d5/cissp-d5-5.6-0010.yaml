@@ -1,0 +1,34 @@
+id: cissp-d5-5.6-0010
+subdomain: '5.6'
+difficulty: hard
+stem: A law firm's meeting-room displays sign users in with the OAuth device authorization flow; a display shows a short
+  code, which the user enters on the identity provider's sign-in page on their phone. Attackers emailed staff codes they
+  had requested themselves, with a link to that genuine page, and three partners entered them and approved, giving the
+  attackers tokens to their mailboxes. Which change BEST prevents a repeat?
+options:
+  A: Allow the device flow only when its token requests come from the meeting-room network
+  B: Require phishing-resistant security keys for each sign-in at the identity provider
+  C: Block newly registered lookalike domains at the email and web gateways
+  D: Cut the lifetime of each device code from fifteen minutes to two
+answer: A
+explanation:
+  why_correct: In the device flow the party that started the request, here the attacker, polls for and receives the
+    tokens once the user approves. The firm uses the flow only for displays on its own meeting-room network, so
+    refusing device-flow token requests from anywhere else leaves the displays working and stops a code started on an
+    attacker's machine from ever yielding tokens.
+  why_not:
+    B: Security keys stop phishing because they sign only for the real site's address. Here the partners were on the
+      genuine sign-in page, so the keys would sign as usual and the attacker's request would still be approved.
+    C: Blocking lookalike domains defeats credential-phishing pages, but the attackers linked to the identity
+      provider's genuine page, so there was no lookalike to block.
+    D: A shorter code lifetime narrows the window in which a user must act, but attackers can request codes moments
+      before sending them, and a partner who reads the email promptly would still approve in time.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious

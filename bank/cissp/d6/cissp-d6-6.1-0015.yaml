@@ -1,0 +1,34 @@
+id: cissp-d6-6.1-0015
+subdomain: '6.1'
+difficulty: medium
+stem: An online retailer's yearly penetration test covers its checkout application and APIs, with source code, and finds
+  little. The board now asks whether attackers could skim card numbers from the checkout page, as happened at a
+  competitor. The page loads scripts through a tag manager that the marketing team edits in the vendor's console, and
+  from two analytics providers. Which assessment BEST answers the board?
+options:
+  A: A white-box penetration test of the checkout application, focused on script injection
+  B: A source code review of the checkout pages for cross-site scripting flaws
+  C: A review of who can change each script the checkout page loads, and how
+  D: A weekly scan of the checkout page for vulnerable JavaScript library versions
+answer: C
+explanation:
+  why_correct: Skimming works by getting attacker script to run on the checkout page. Here much of that page's script
+    never passes through the retailer's code or pipeline; it arrives from a tag manager that marketing edits in a
+    vendor's console and from two outside providers. Mapping each source of script and testing who can change it, and
+    how those accounts and providers are protected, assesses the paths an attacker would actually use.
+  why_not:
+    A: A focused white-box test is the right tool for injection flaws in the retailer's own application, but scripts
+      loaded through the tag manager and analytics providers sit outside the application it examines.
+    B: Reviewing the checkout code for cross-site scripting finds one way to inject script, but the tag manager and the
+      analytics providers can change what runs on the page with no change to that code.
+    D: Scanning for vulnerable library versions finds known flaws in scripts as published. A malicious change pushed
+      through the tag manager or a provider is not a known vulnerable version and would pass the scan.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious

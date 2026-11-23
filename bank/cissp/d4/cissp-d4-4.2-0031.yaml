@@ -1,0 +1,33 @@
+id: cissp-d4-4.2-0031
+subdomain: '4.2'
+difficulty: medium
+stem: A firm's laptops join its wired and wireless networks with EAP-TLS, using machine certificates issued when each laptop
+  is built. A tester with local administrator rights on a company laptop exported its certificate and private key to an unmanaged
+  PC, which then joined the network as that laptop. The laptop itself stayed in daily use throughout. Which change BEST prevents
+  this?
+options:
+  A: Machine keys created in each laptop's TPM and marked non-exportable
+  B: Revocation of a laptop's certificate as soon as it is reported lost
+  C: Machine certificates valid for 30 days and renewed automatically
+  D: A posture check that the company EDR agent is running at connection
+answer: A
+explanation:
+  why_correct: The certificate proves identity only as long as its private key stays on the laptop it was issued to. Generating
+    the key inside the laptop's TPM, where it can be used but not read out, means even a local administrator cannot move it
+    to another machine, so the unmanaged PC has nothing to authenticate with, while the genuine laptop keeps working.
+  why_not:
+    B: Revoking certificates of lost laptops is essential, but this laptop was never lost and stayed in daily use, so nothing
+      would trigger a revocation while the copy was used.
+    C: Short lifetimes limit how long a copied certificate works, but a laptop in daily use keeps renewing, and anyone with
+      admin rights on it can copy each new certificate as it arrives.
+    D: An EDR posture check keeps out devices without the agent, but posture is reported by the connecting device itself,
+      and the agent can be installed on or imitated by an unmanaged PC.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious

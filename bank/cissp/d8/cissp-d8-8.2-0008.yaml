@@ -1,0 +1,32 @@
+id: cissp-d8-8.2-0008
+subdomain: '8.2'
+difficulty: hard
+stem: An insurance broker's Java quoting service deserialises objects that partner systems post to a message queue. Its
+  code is frozen until a rewrite due next year. Last month a partner's compromised server posted a crafted object that
+  ran commands on the service. Which control BEST prevents a repeat until the rewrite?
+options:
+  A: A runtime protection agent letting the service deserialise only expected classes
+  B: A web application firewall in front of the service, blocking known exploit payloads
+  C: Signing of each partner message, verified before the service deserialises it
+  D: A gateway filter on the queue that drops messages matching known gadget chains
+answer: A
+explanation:
+  why_correct: The flaw is that the service will build any class an incoming object names. A runtime protection agent
+    attaches to the running service without code changes and enforces an allow-list of the classes the quoting
+    messages legitimately contain, so a crafted object fails whoever sends it and whatever gadget chain it uses.
+  why_not:
+    B: A WAF is the usual stopgap for frozen code, but these objects arrive through a message queue, not over HTTP, so a
+      web firewall never sees them, and payload signatures miss new variants.
+    C: Signing proves which partner sent a message, which helps against outsiders. The attack came from a partner's own
+      compromised server, which can sign a crafted object as easily as a genuine one.
+    D: Filtering on the queue does sit in the right path, but matching known gadget chains is a block-list; attackers
+      build new chains from the libraries present, and the filter misses them.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious

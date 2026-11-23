@@ -1,0 +1,34 @@
+id: cissp-d6-6.5-0015
+subdomain: '6.5'
+difficulty: hard
+stem: A pharmaceutical company's IT auditor must conclude whether staff and visitors at a supplier's data centre abroad,
+  which holds the company's trial data backups, badge in and are escorted as the supplier's procedure requires. The
+  contract's audit right allows visits on two working days' notice and may be used by auditors the company appoints. The travel budget has been cut, and the supplier
+  offers a live video tour on a date of its choosing. Which approach BEST supports the conclusion?
+options:
+  A: A live video tour, with the auditor directing the camera and questioning staff
+  B: A remote review of the site's badge logs and visitor register for sampled days
+  C: A local audit firm visiting at short notice, following procedures the auditor sets
+  D: The site's ISO 27001 certificate and its latest surveillance audit report
+answer: C
+explanation:
+  why_correct: Whether people badge in and visitors are escorted is behaviour that must be observed on an ordinary day.
+    A local firm acting under the company's audit right can visit at short notice, so the supplier cannot prepare the
+    site, and following the auditor's own procedures keeps the evidence fit for the auditor's conclusion, at far less
+    cost than travel.
+  why_not:
+    A: Auditor-directed video tours are an accepted remote audit technique, but the supplier picks the date and knows
+      when it is being watched, so the tour shows a prepared site rather than everyday practice.
+    B: Badge logs and registers record the people who badged in or signed in. Tailgaters and unescorted visitors leave no
+      record, so these sources cannot show the behaviour the conclusion is about.
+    D: A certificate shows the supplier's management system met the standard when sampled. It does not test this site's
+      escort and badge practice for the auditor's own conclusion.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious

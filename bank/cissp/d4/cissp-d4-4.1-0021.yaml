@@ -1,0 +1,34 @@
+id: cissp-d4-4.1-0021
+subdomain: '4.1'
+difficulty: hard
+stem: A water utility's control centre sends DNP3 commands to 90 pumping-station outstations. The commands cross an IP WAN
+  to six regional gateways, which relay them to the outstations over licensed radio. Attackers who took over one regional
+  gateway sent start and stop commands to the pumps behind it, and the outstations carried them out. Which change BEST prevents
+  a repeat?
+options:
+  A: IPsec tunnels between the control centre and each regional gateway
+  B: DNP3 Secure Authentication between the control centre and each outstation
+  C: Encryption on the radio modems linking each gateway to its outstations
+  D: An industrial firewall at the control centre passing only the master's DNP3 traffic
+answer: B
+explanation:
+  why_correct: The forged commands came from a trusted point in the middle of the path, so any protection that ends at a hop
+    cannot tell them from real ones. DNP3 Secure Authentication lets each outstation challenge critical commands and check
+    a keyed code computed with a key it shares only with the control centre master, so a command invented or altered by a
+    gateway without that key is refused. It runs inside DNP3 itself, so it covers both the IP and the radio hops.
+  why_not:
+    A: IPsec protects the WAN between the control centre and the gateways, but it ends at the gateway the attackers controlled,
+      and their commands started there, after the tunnel.
+    C: Radio encryption stops outsiders injecting commands over the air, but the gateway feeds the radio link legitimately,
+      so commands it invents are encrypted and delivered like real ones.
+    D: A firewall at the control centre filters what leaves the centre, but the forged commands were created at a regional
+      gateway downstream and never crossed it.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious

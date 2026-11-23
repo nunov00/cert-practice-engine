@@ -1,0 +1,34 @@
+id: cissp-d6-6.2-0013
+subdomain: '6.2'
+difficulty: medium
+stem: A law firm sells its retired laptops after IT wipes their solid-state drives with a tool that overwrites each logical
+  block, reads the blocks back and logs a pass. The risk committee wants evidence that wiped laptops leave no recoverable
+  client data. Which test BEST provides it?
+options:
+  A: A forensic lab imaging a sample of wiped drives through their interface and searching the images
+  B: A re-run of the wipe tool's read-back check on a sample of laptops awaiting sale
+  C: A forensic lab reading the flash chips directly on a sample of wiped drives
+  D: A reconciliation of the tool's pass logs with the register of laptops sold last year
+answer: C
+explanation:
+  why_correct: An SSD's controller maps logical blocks onto flash cells and keeps spare and retired cells that the host
+    cannot address. A tool that overwrites logical blocks can leave old data in those cells, and anything read through
+    the drive's interface sees only the remapped, overwritten view. Reading the chips directly is the test that can
+    find data the wipe missed, so it gives the evidence the committee wants.
+  why_not:
+    A: A forensic search of a drive image is the usual way to check a wipe on magnetic disks, but on an SSD the image
+      comes through the same controller and shows only overwritten logical blocks, so it would pass a drive that still
+      holds data in spare cells.
+    B: Repeating the tool's own read-back reads through the same interface the tool wrote to. It confirms the logical
+      overwrite, not that the flash holds nothing else.
+    D: Reconciling logs with sales shows whether every laptop sold was wiped, which tests completeness. The question is
+      whether a wiped laptop still holds data, and a pass log cannot answer that.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious

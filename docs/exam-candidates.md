@@ -43,7 +43,7 @@ market; every row is *to verify* until a daily run checks it).
 | 5 | Security+ (CompTIA) | up to 90 in 90 min, MCQ and performance-based, 5 domains (16/24/19/27/14% in outline order on V8, SY0-801, launched 2026-11-17) | 5 | 3 | 3 | 4 | 3 | 23 | 2026-11-19 |
 | 6 | CC (ISC2) | Adaptive (CAT), 5 domains (outline from 2026-09-01; weights to confirm from the outline) | 4 | 5 | 4 | 2 | 4 | 23 | 2026-11-21 |
 | 7 | CEH (EC-Council) | 125 MCQ in 4 hours, v13; official blueprint v5 lists 9 domains (6/17/15/24/14/5/10/5/5%), applicability to v13 to confirm | 4 | 5 | 2 | 4 | 2 | 21 | 2026-11-22 |
-| 8 | CySA+ (CompTIA) | up to 85 in 165 min, MCQ and performance-based, 4 domains (34/26/24/16% on V4 from 2026-06-23) | 3 | 3 | 4 | 4 | 3 | 20 | 2026-11-12 |
+| 8 | CySA+ (CompTIA) | up to 85 in 165 min, MCQ and performance-based, 4 domains (34/26/24/16% on V4 from 2026-06-23) | 3 | 3 | 4 | 4 | 3 | 20 | 2026-11-23 |
 | 9 | SSCP (ISC2) | 100-125 CAT items (MCQ and advanced types) in 2 hours, 7 domains (16/15/15/14/9/16/15%) | 2 | 5 | 3 | 4 | 4 | 20 | 2026-11-13 |
 | 10 | CGRC (ISC2) | 125 items (MCQ and advanced types) in 3 hours, 7 domains (16/10/14/17/16/14/13%) | 2 | 5 | 3 | 4 | 4 | 20 | 2026-11-14 |
 
@@ -223,6 +223,13 @@ older Checked date.
   retirement of CS0-003 on 2026-12-22. The free official page of 10 V4
   practice questions is still published, with an answer key and no sign-up,
   so calibration stays at 4. Scores, total and rank unchanged.
+  Re-checked 2026-11-23: the V4 page still gives CS0-004, launched
+  2026-06-23, up to 85 questions in 165 minutes, pass mark 750/900, and the
+  same four weights (34/26/24/16%); it no longer states the question types,
+  so performance-based items rest on the earlier check (fit stays at 3). The
+  V3 page still gives the English retirement on 2026-12-22. The free official
+  set of 10 V4 practice questions with answers is still published. No price
+  or demand figures on the page. Scores, total and rank unchanged.
 - **CGRC:** solid but smaller market; kept as the tail of the queue. Checked
   2026-11-01: 125 items in 3 hours, multiple choice and advanced item types,
   pass mark 700/1000, on the outline in force since 2024-06-15 with seven
@@ -308,3 +315,4 @@ older Checked date.
 | 2026-11-19 | Security+ row re-checked: V8 (SY0-801) page live with the 2026-11-17 launch date, format and weights confirmed and listed in outline order (16/24/19/27/14%); still no free official samples; scores, total and rank unchanged | CompTIA [Security+ V8 page](https://www.comptia.org/en-us/certifications/security/v8/) |
 | 2026-11-21 | CC row re-checked: 2026-09-01 outline and its five domains confirmed, no outline change announced; weights, item count and price still render client-side and are not readable; the official CC practice quiz is still linked and no free-exam programme is mentioned; scores, total and rank unchanged | ISC2 [CC exam outline](https://www.isc2.org/certifications/cc/cc-certification-exam-outline), [CC page](https://www.isc2.org/certifications/cc), [CC self-study resources](https://www.isc2.org/certifications/cc/cc-self-study-resources) |
 | 2026-11-22 | CEH row re-checked: still v13 ("CEH AI"), no v14 announced; the CEH page no longer lists exam format, weights or the job-listing count, so those rest on earlier checks; demand evidence now an issuer survey (92% of employers prefer CEH) and 45+ mapped roles; scores, total and rank unchanged | EC-Council [CEH page](https://www.eccouncil.org/train-certify/certified-ethical-hacker-ceh/) |
+| 2026-11-23 | CySA+ row re-checked: V4 (CS0-004) format and weights and the V3 English retirement on 2026-12-22 confirmed; the V4 page no longer lists question types, so the performance-based items rest on earlier checks; the 10 free official V4 practice questions still published; scores, total and rank unchanged | CompTIA [CySA+ V4 page](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v4/), [V4 practice questions](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v4/practice-questions/), [CySA+ V3 page](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v3/) |

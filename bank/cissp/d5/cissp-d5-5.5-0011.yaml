@@ -1,0 +1,32 @@
+id: cissp-d5-5.5-0011
+subdomain: '5.5'
+difficulty: easy
+stem: At a software company, disabling leavers' accounts has twice stopped production jobs that ran under the leaver's personal
+  credentials. In one case the leaver had taken the jobs over from a departing colleague years earlier. Engineers move between
+  teams every few months, and leavers must be disabled on their last day. Which change BEST prevents these outages?
+options:
+  A: Run each team's production jobs under a shared team account, its password in a vault
+  B: Run production jobs under service accounts owned by teams, with no personal credentials
+  C: Transfer each leaver's jobs and credentials to their manager's account before they leave
+  D: Disable leavers on their last day, moving any job that then fails to a service account
+answer: B
+explanation:
+  why_correct: The outages happen because production work runs on a person's identity, so it fails whenever that person leaves.
+    Service accounts that a team owns, with credentials no individual holds, separate the job's lifecycle from any person's,
+    so leavers and movers can be disabled on time and the jobs keep running.
+  why_not:
+    A: A team account removes personal credentials, but each mover or leaver knows the shared password, so it must be changed
+      every few months as engineers move, and each change can stop the jobs again.
+    C: Handing jobs to another person keeps them tied to an individual; this is how one leaver came to own jobs from a colleague,
+      and they failed again when he left.
+    D: Disabling on time is right, but fixing jobs only after they fail accepts a production outage for each leaver who owns
+      one.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: obvious

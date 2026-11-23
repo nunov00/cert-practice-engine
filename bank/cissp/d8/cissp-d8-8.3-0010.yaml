@@ -1,0 +1,33 @@
+id: cissp-d8-8.3-0010
+subdomain: '8.3'
+difficulty: medium
+stem: A water utility's billing application lets customers' bank details be changed through the customer portal, the
+  call-centre screens and a nightly import from a payments partner. Internal audit must assess whether the application's
+  audit trail would let investigators reconstruct any change to those details. Which assessment BEST fits?
+options:
+  A: A sample of 25 audit-trail entries, each traced back to the customer's request
+  B: Test changes through each change route, each reconstructed from the audit trail
+  C: A review of the logging code against the company's application logging standard
+  D: A check that application accounts cannot alter or delete audit-trail entries
+answer: B
+explanation:
+  why_correct: The question is whether every change, by whatever route, can be reconstructed. Making known test changes
+    through the portal, the call-centre screens and the import, then rebuilding each one from the audit trail, shows
+    directly whether each route records who changed what, when and from what value, including routes such as a bulk
+    import that may bypass the code that writes the trail.
+  why_not:
+    A: Tracing entries back to requests tests that logged changes are accurate, a sound audit step, but a sample drawn
+      from the trail can never reveal changes that were never logged, which is the completeness question here.
+    C: A code review against the standard shows what the logging is designed to do. It can miss paths that change data
+      outside that code, such as the nightly import, and does not show what the trail actually records.
+    D: Tamper protection matters for evidence, but it concerns the integrity of entries that exist, not whether the trail
+      captures each change in the first place.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
+  options_only: not_obvious
