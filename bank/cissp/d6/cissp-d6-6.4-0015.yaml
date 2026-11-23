@@ -1,10 +1,10 @@
 id: cissp-d6-6.4-0015
 subdomain: '6.4'
 difficulty: hard
-stem: While trialling a scheduling SaaS used by hundreds of companies, a logistics firm's security team found that any
-  tenant's API key can read other tenants' shipment records. The supplier acknowledged the report 90 days ago, then
-  stopped replying, and has released no fix. Tenants have no setting that blocks the flaw, and there is no sign that it
-  has been exploited. What should the security manager do NEXT?
+stem: While trialling a scheduling SaaS used by hundreds of companies, a logistics firm found that any
+  tenant's API key can read other tenants' shipment records. The supplier acknowledged the report 90 days ago, was then
+  bought by a larger group, and has released no fix; mail to its security contact now bounces. Tenants have no setting
+  that blocks the flaw, and there is no sign that it has been exploited. What should the security manager do NEXT?
 options:
   A: Publish a limited advisory describing the flaw, without exploit detail
   B: Give the supplier a final date, after which the firm will publish details
@@ -13,15 +13,16 @@ options:
 answer: D
 explanation:
   why_correct: Coordinated disclosure through a national CERT is the recognised next step when a vendor goes silent. The
-    coordinator brings weight the finder lacks, can reach the vendor through other channels, and can plan how hundreds
+    coordinator brings weight the finder lacks, can find and reach the people now responsible inside the new owner, and can plan how hundreds
     of affected tenants are told once a fix exists. With no tenant-side protection and no sign of exploitation, this
     gets the flaw fixed without handing attackers a target first.
   why_not:
     A: Publishing after a disclosure window is common practice, but even a limited advisory tells attackers where to look,
       and tenants have no setting that would protect them. With no exploitation seen, it adds risk before it adds
       protection.
-    B: A firm deadline is a real lever with a slow vendor, but it commits the firm to publishing an unfixed flaw that
-      tenants cannot block, and the coordination route has not yet been tried.
+    B: A firm deadline is a real lever with a slow vendor, but the supplier's security contact now bounces, so the
+      deadline would reach nobody who can fix the flaw, and the firm would end up publishing an unfixed flaw that
+      tenants cannot block.
     C: Warning customers privately seems protective, but the firm can reach only the few it knows of, among hundreds,
       the warning gives them nothing they can do, and each extra party makes a leak more likely.
 status: draft
@@ -31,4 +32,3 @@ provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pending
-  options_only: not_obvious
