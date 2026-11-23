@@ -6,22 +6,22 @@ stem: A telecom's retention schedule sets periods per record type, from six mont
   join each customer's call details with their billing records. Nothing in the lake is deleted. Which change BEST applies
   the schedule to the lake?
 options:
-  A: Tag each lake record with its record type, deleting it when that type's period ends
+  A: Tag lake data with its source record type, deleting each part when that type's period ends
   B: Apply the schedule's shortest period, six months, to each dataset in the lake
   C: Give each dataset the longest period of any record type it holds, then delete it
   D: Have each dataset's owner choose its period from the schedule when publishing it
 answer: A
 explanation:
   why_correct: The lake's datasets mix record types with very different periods, so retention has to work at the level of
-    the record type, not the dataset. Carrying each record's type into the lake and deleting it when that type's period ends
+    the record type, not the dataset. Carrying each record's type into the lake and deleting that data when that type's period ends
     removes call details after six months while billing history stays for the models as long as the schedule allows.
   why_not:
-    B: Six months for everything meets the call-detail limit but deletes the billing history the churn models need years before
-      the schedule requires.
+    B: Six months for everything meets the call-detail limit but deletes the billing history the churn models need, years before
+      the schedule would stop it being kept.
     C: Taking the longest period of a joined dataset keeps its call details for seven years, far beyond their six-month period.
     D: An owner can choose only one period for a dataset that joins call details with billing records, so either the call
       details stay too long or the billing history goes too early.
-status: published
+status: draft
 outline_version: '2024-04-15'
 sample: false
 provenance:

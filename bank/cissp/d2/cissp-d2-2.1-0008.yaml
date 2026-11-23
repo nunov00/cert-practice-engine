@@ -9,7 +9,7 @@ options:
   A: The data governance committee sets the level of each site the scan links to a trial
   B: The head of research sets one level for trial sites, which the committee reviews yearly
   C: Each site's business owner sets and maintains its level, with the scan's rating as input
-  D: Each trial's sponsor sets the level of the trial's sites when the trial is registered
+  D: Each trial's lead sets the level of the trial's sites when the trial is registered
 answer: C
 explanation:
   why_correct: The sensitivity of interim results comes from business context, what the figures are and when they may be released,
@@ -20,9 +20,9 @@ explanation:
       exactly what the scan cannot see in summary figures, and sites open most days.
     B: One level for trial sites ignores that each trial's results stop being sensitive on a different date, so sites stay
       over-classified or are lowered too early, and a yearly review cannot follow the dates.
-    D: The sponsor is an accountable owner, but a decision made at registration reaches only the sites known then, not the
+    D: The trial lead is an accountable owner, but a decision made at registration reaches only the sites known then, not the
       ones project teams open later, and it does not change at publication.
-status: published
+status: draft
 outline_version: '2024-04-15'
 sample: false
 provenance:

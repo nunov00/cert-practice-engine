@@ -7,12 +7,12 @@ stem: Twice this year, attackers broke into a law firm's internet-facing VPN app
 options:
   A: Phishing-resistant MFA, required on each sign-in to the VPN portal
   B: An inline IPS placed in front of the VPN appliance, blocking known exploit traffic
-  C: A cloud access broker that internal connectors dial out to, with nothing inbound
+  C: A zero trust access broker that internal connectors dial out to, with nothing inbound
   D: Emergency patching of the VPN appliance within a day of each vendor advisory
 answer: C
 explanation:
   why_correct: The attacks needed only a reachable listening service, so neither credentials nor patch speed protected it.
-    With an access broker, connectors inside the firm open outbound connections to the broker, and nothing in the firm's network
+    With a zero trust access broker, connectors inside the firm open outbound connections to the broker, and nothing in the firm's network
     accepts connections from the internet, so there is no firm-owned appliance for an unauthenticated attacker to reach. Lawyers
     are authenticated at the broker before any path to an application exists. The internet-facing part becomes the broker
     provider's service, which the firm should assess as a supplier.

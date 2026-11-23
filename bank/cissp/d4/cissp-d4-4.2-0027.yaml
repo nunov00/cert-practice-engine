@@ -2,7 +2,7 @@ id: cissp-d4-4.2-0027
 subdomain: '4.2'
 difficulty: medium
 stem: A healthcare group's 120 clinics authenticate each switch port with 802.1X against RADIUS servers in its data centre.
-  Twice this year clinics lost RADIUS, once through a fibre cut and once when the servers' certificate expired, and patient
+  Twice this year clinics lost RADIUS, once through a fibre cut and once when a failed update took the data centre's RADIUS servers offline, and patient
   monitors that restarted could not rejoin the network. Ports in waiting and exam rooms are open to the public, and clinics
   have no server rooms or IT staff. Which change BEST addresses this?
 options:
@@ -21,8 +21,8 @@ explanation:
       patch and support, and the clinics have no server rooms or IT staff.
     C: Failing open to the normal VLAN keeps devices working, but ports in waiting and exam rooms are open to the public,
       so anyone plugging in during an outage gets ordinary network access.
-    D: A cellular backup covers a cut fibre, but the second outage was an expired certificate on the RADIUS servers themselves,
-      which no backup link gets around.
+    D: A cellular backup covers a cut fibre, but in the second outage the RADIUS servers themselves were down, so no backup
+      link could have reached them.
 status: published
 outline_version: '2024-04-15'
 sample: false

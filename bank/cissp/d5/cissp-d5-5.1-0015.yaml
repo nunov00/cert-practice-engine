@@ -1,6 +1,6 @@
 id: cissp-d5-5.1-0015
 subdomain: '5.1'
-difficulty: hard
+difficulty: medium
 stem: A water utility's treatment plants are run from a control room staffed around the clock. Vendor engineers reach plant
   controllers remotely through a jump host with MFA and session recording. Last month a vendor's firmware update, approved
   and scheduled a week earlier, restarted a dosing pump while operators were running that line by hand during a valve repair.

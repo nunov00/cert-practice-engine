@@ -1,6 +1,6 @@
 id: cissp-d4-4.2-0029
 subdomain: '4.2'
-difficulty: hard
+difficulty: medium
 stem: A brokerage's compliance team must be able to tie each outbound web request to a named employee. Staff browse from managed
   desktops and from 40 shared terminal servers, each hosting dozens of user sessions behind one IP address. The internet firewall
   logs each connection by source address. Which component BEST provides this attribution?
@@ -21,7 +21,7 @@ explanation:
       one address belongs to dozens of users at once.
     C: Flow records show which addresses talked to which destinations and when, but they carry no user identity and share
       the same terminal server problem.
-status: published
+status: draft
 outline_version: '2024-04-15'
 sample: false
 provenance:

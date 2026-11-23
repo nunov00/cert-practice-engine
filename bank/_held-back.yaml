@@ -142,3 +142,15 @@ held:
   - { id: cissp-d5-5.2-0013, pr: 93 }
   - { id: aaism-d1-1.2-0040, pr: 94 }
   - { id: aaism-d3-3.1-0046, pr: 94 }
+  # PR #95, merge run: the final Claude review lowered cissp-d4-4.2-0029 and
+  # cissp-d5-5.1-0015 from hard to medium and cissp-d7-7.12-0005 to easy, and
+  # dropped medium cissp-d4-4.2-0028 (near-duplicate of cissp-d5-5.2-0011), so
+  # the easiest new and released CISSP questions go back to keep the hard share
+  # at 30% (9 hard carry 21 non-hard). cissp-d8-8.4-0010 shares its key with
+  # cissp-d5-5.1-0007 and cissp-d7-7.12-0005 overlaps 7.12-0002/-0004 in
+  # setting; vary them before release.
+  - { id: cissp-d2-2.1-0008, pr: 95 }
+  - { id: cissp-d2-2.5-0007, pr: 95 }
+  - { id: cissp-d8-8.4-0010, pr: 95 }
+  - { id: cissp-d7-7.12-0005, pr: 95 }
+  - { id: cissp-d4-4.2-0029, pr: 95 }

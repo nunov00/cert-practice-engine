@@ -16,8 +16,8 @@ explanation:
     at the identity provider keeps the central role mapping the applications depend on, while the vendors stop receiving the
     other memberships that reveal internal plans and who is affected by them.
   why_not:
-    B: Encryption protects assertions in transit, but the vendor's application decrypts them to use them, so the same group
-      names still reach its logs.
+    B: Encrypting the assertion hides it from the browser and anything in between, but the vendor's application decrypts it
+      to use it, so the same group names still reach its logs.
     C: A contract sets expectations, but all 60 vendors would still receive every membership, and the exposure seen here happened
       inside a vendor's normal support work.
     D: Dropping groups removes the leak but also the central control of roles that the 60 applications rely on, moving role
