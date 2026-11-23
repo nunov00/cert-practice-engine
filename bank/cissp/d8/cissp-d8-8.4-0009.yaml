@@ -1,6 +1,6 @@
 id: cissp-d8-8.4-0009
 subdomain: '8.4'
-difficulty: hard
+difficulty: medium
 stem: A government agency buys only firewalls with a Common Criteria certificate, and it relies on the certificate instead
   of testing products itself. The chosen firewall's certificate covers an evaluated configuration in which the vendor's
   cloud management service is turned off. The network team wants that service to manage 80 sites, and rollout starts
@@ -23,11 +23,12 @@ explanation:
       could be scoped and run.
     C: Splitting by sensitivity looks like a proportionate, risk-based compromise, but the agency's rule applies to each
       firewall it runs, and the 60 cloud-managed ones would be outside the certificate it depends on.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
   options_only: not_obvious

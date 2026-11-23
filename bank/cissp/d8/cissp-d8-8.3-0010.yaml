@@ -22,11 +22,12 @@ explanation:
       outside that code, such as the nightly import, and does not show what the trail actually records.
     D: Tamper protection matters for evidence, but it concerns the integrity of entries that exist, not whether the trail
       captures each change in the first place.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
   options_only: not_obvious

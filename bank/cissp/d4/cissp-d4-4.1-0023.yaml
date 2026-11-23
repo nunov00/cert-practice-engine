@@ -23,11 +23,12 @@ explanation:
       keys, so it can still read the traffic.
     D: More bandwidth helps when a link is full, but the tunnel's loss came from TCP waiting on acknowledgements over a long
       round trip, which extra capacity does not shorten.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
   options_only: not_obvious

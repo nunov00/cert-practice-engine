@@ -23,11 +23,12 @@ explanation:
       so commands it invents are encrypted and delivered like real ones.
     D: A firewall at the control centre filters what leaves the centre, but the forged commands were created at a regional
       gateway downstream and never crossed it.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
   options_only: not_obvious

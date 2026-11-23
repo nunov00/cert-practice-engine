@@ -1,6 +1,6 @@
 id: cissp-d6-6.4-0015
 subdomain: '6.4'
-difficulty: hard
+difficulty: medium
 stem: While trialling a scheduling SaaS used by hundreds of companies, a logistics firm found that any
   tenant's API key can read other tenants' shipment records. The supplier acknowledged the report 90 days ago, was then
   bought by a larger group, and has released no fix; mail to its security contact now bounces. Tenants have no setting
@@ -25,11 +25,12 @@ explanation:
       tenants cannot block.
     C: Warning customers privately seems protective, but the firm can reach only the few it knows of, among hundreds,
       the warning gives them nothing they can do, and each extra party makes a leak more likely.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
   options_only: not_obvious

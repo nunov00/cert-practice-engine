@@ -23,11 +23,12 @@ explanation:
       to exist when the attacks came.
     D: Faster patching closes the gap after an advisory, but both attacks used flaws before any patch existed, which is exactly
       the window it does not cover.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
   options_only: not_obvious

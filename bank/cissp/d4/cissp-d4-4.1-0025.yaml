@@ -1,6 +1,6 @@
 id: cissp-d4-4.1-0025
 subdomain: '4.1'
-difficulty: hard
+difficulty: medium
 stem: A retailer's data-centre routers learn its cloud subnets over BGP sessions that run through two IPsec tunnels to the
   cloud provider's gateway, which several of its cloud accounts share. An engineer with admin rights in a development account
   mistakenly announced a more specific route inside the payroll servers' data-centre subnet, and for hours payroll traffic
@@ -23,11 +23,12 @@ explanation:
       still be legitimate and unfiltered, so the same announcement would be accepted over it.
     D: Route alerts shorten the time to notice a bad announcement, but they act after the routers have accepted it and traffic
       has already moved.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
   options_only: not_obvious

@@ -129,13 +129,15 @@ held:
   # aaism-d3-3.1-0046 (the strict check found it close to the idea of
   # aaism-d3-3.1-0025; vary the decision before release), both passed the
   # independent check but AAISM's 2 surviving hard labels carry only 4 non-hard.
+  # Daily batch 2026-11-23, batch run: rechecked the five held CISSP drafts; all
+  # passed. Released cissp-d6-6.5-0013, cissp-d7-7.12-0005 and cissp-d1-1.12-0007
+  # (oldest first) within CISSP's hard share (11 hard carry 25 non-hard).
+  # cissp-d3-3.9-0005 and cissp-d5-5.2-0013 passed and stay held (no room). AAISM
+  # drafts were not rechecked: AAISM is at its pool target.
   - { id: aaism-d1-1.2-0039, pr: 93 }
   - { id: aaism-d1-1.5-0038, pr: 93 }
   - { id: aaism-d3-3.1-0045, pr: 93 }
   - { id: aaism-d3-3.5-0050, pr: 93 }
-  - { id: cissp-d6-6.5-0013, pr: 93 }
-  - { id: cissp-d7-7.12-0005, pr: 93 }
-  - { id: cissp-d1-1.12-0007, pr: 93 }
   - { id: cissp-d3-3.9-0005, pr: 93 }
   - { id: cissp-d5-5.2-0013, pr: 93 }
   - { id: aaism-d1-1.2-0040, pr: 94 }

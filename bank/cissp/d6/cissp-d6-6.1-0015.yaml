@@ -1,6 +1,6 @@
 id: cissp-d6-6.1-0015
 subdomain: '6.1'
-difficulty: hard
+difficulty: medium
 stem: An online retailer's yearly penetration test covers its checkout application and APIs, with source code, and finds
   little. The board now asks whether attackers could skim card numbers from the checkout page, as happened at a
   competitor. The page loads scripts through a tag manager that the marketing team edits in the vendor's console, and
@@ -23,11 +23,12 @@ explanation:
       analytics providers can change what runs on the page with no change to that code.
     D: Scanning for vulnerable library versions finds known flaws in scripts as published. A malicious change pushed
       through the tag manager or a provider is not a known vulnerable version and would pass the scan.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
   options_only: not_obvious

@@ -22,11 +22,12 @@ explanation:
       pass records to one another, and different values for the same person break those links.
     C: A rename process can work for a few systems, but the sign-in name still changes, and every one of 150 applications,
       and every record passed between them, must be updated in step for each rename.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
   options_only: not_obvious

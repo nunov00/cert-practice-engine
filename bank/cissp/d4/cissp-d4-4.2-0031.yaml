@@ -22,11 +22,12 @@ explanation:
       admin rights on it can copy each new certificate as it arrives.
     D: An EDR posture check keeps out devices without the agent, but posture is reported by the connecting device itself,
       and the agent can be installed on or imitated by an unmanaged PC.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
   options_only: not_obvious

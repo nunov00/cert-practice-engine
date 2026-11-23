@@ -21,11 +21,12 @@ explanation:
       compromised server, which can sign a crafted object as easily as a genuine one.
     D: Filtering on the queue does sit in the right path, but matching known gadget chains is a block-list; attackers
       build new chains from the libraries present, and the filter misses them.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-23-daily-cissp-check
   options_only: not_obvious

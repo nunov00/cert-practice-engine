@@ -23,12 +23,12 @@ explanation:
       which is the outage risk the business has refused.
     C: Processing a sample reduces the number of duplicate payments rather than preventing them, and it no longer shows the
       recovery site handling full volume.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-21-daily-cissp
-  checked_by: 2026-11-21-daily-cissp-check
+  checked_by: 2026-11-23-daily-cissp-check
   check_verdict: pass
   options_only: not_obvious
