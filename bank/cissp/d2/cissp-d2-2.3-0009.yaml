@@ -1,0 +1,30 @@
+id: cissp-d2-2.3-0009
+subdomain: '2.3'
+difficulty: hard
+stem: A hospital's asset inventory records each device's model, location and owner. After an attack through an unsupported
+  imaging workstation, a review found 300 devices past vendor support, many of them medical systems whose replacement takes
+  up to two years of budgeting and validation. Which change BEST prevents this from recurring?
+options:
+  A: Monthly vulnerability scans that flag devices running unsupported operating systems
+  B: Replacement of each device at a fixed age set for its class in the inventory
+  C: A yearly attestation by each department that its devices are still supported
+  D: Vendor end-of-support dates in each asset record, with alerts well ahead of them
+answer: D
+explanation:
+  why_correct: Managing assets across their lifecycle means knowing when each one stops being supportable, early enough to
+    act. Recording the vendor's end-of-support date against each asset and alerting years ahead gives owners the lead time
+    that budgeting and validating a replacement medical system needs.
+  why_not:
+    A: Scans find a device once it is already unsupported, which for medical systems is up to two years too late to replace
+      it in time.
+    B: A fixed age is a useful planning proxy, but vendors end support on their own timetables, so devices can fall out of
+      support before their age limit or be replaced while still supported.
+    C: Attestations depend on departments checking each vendor themselves once a year, and they still report the problem only
+      when it has arrived.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pending

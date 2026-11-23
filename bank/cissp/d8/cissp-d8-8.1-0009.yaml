@@ -1,0 +1,31 @@
+id: cissp-d8-8.1-0009
+subdomain: '8.1'
+difficulty: hard
+stem: A transit authority's contractor builds its fare system under a waterfall plan, and an independent team tests
+  security before acceptance. That testing found that the system does not meet three of the 40 security requirements in
+  the contract, including encryption between internal services, and the fix means reworking the architecture, delaying
+  launch by four months. Which change BEST prevents this on the next project?
+options:
+  A: Threat modelling during requirements to identify missing security needs
+  B: Static analysis during coding with rules that flag unencrypted connections
+  C: Security testing of each component as soon as the contractor builds it
+  D: A design review that traces each security requirement before build starts
+answer: D
+explanation:
+  why_correct: The requirements were written; what failed was carrying them into the architecture, and nothing checked
+    that until the end. A security design review that traces each requirement to the design catches the gap while it
+    is still a change on paper, before any code depends on it, which is where a waterfall plan makes fixes cheapest.
+  why_not:
+    A: Threat modelling at the requirements stage finds needs nobody wrote down. Here the requirements already existed,
+      so better requirements would not have stopped the design from leaving them out.
+    B: Static analysis checks code for known flaw patterns. It may flag some unencrypted calls, but it finds them only
+      once the code exists, and it cannot show that an architecture meets a requirement.
+    C: Testing each component as it is built finds the gap earlier than acceptance, but the architecture is already
+      fixed by then, so the rework the stem describes would still be needed.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pending

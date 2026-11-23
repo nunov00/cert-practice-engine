@@ -1,0 +1,31 @@
+id: cissp-d8-8.4-0009
+subdomain: '8.4'
+difficulty: hard
+stem: A government agency buys only firewalls with a Common Criteria certificate, and it relies on the certificate instead
+  of testing products itself. The chosen firewall's certificate covers an evaluated configuration in which the vendor's
+  cloud management service is turned off. The network team wants that service to manage 80 sites, and rollout starts
+  next month. How should the agency deploy the firewalls?
+options:
+  A: With cloud management on, relying on the product's certificate for assurance
+  B: With cloud management on, after an independent test of the service it commissions
+  C: With cloud management on, backed by the vendor's written statement that it is secure
+  D: In the evaluated configuration, managed from the agency's own network
+answer: D
+explanation:
+  why_correct: A Common Criteria certificate gives assurance only for the evaluated configuration. The agency's whole
+    basis for trusting the product is that certificate, so deploying it as evaluated, with local management, keeps the
+    assurance it bought; the cloud service can be reconsidered if a later evaluation covers it.
+  why_not:
+    A: The product is certified, which is why this looks safe, but turning on a feature excluded from the evaluation puts
+      it outside what the certificate covers, so the agency would be relying on assurance it does not have.
+    B: An independent test is the right way to gain assurance over an unevaluated feature, but the agency does not test
+      products and the rollout starts next month, far sooner than a commissioned test could be scoped and run.
+    C: A vendor's statement is self-attestation about its own service, not the independent evaluation the agency's policy
+      depends on.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pending

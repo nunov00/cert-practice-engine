@@ -1,0 +1,30 @@
+id: cissp-d2-2.1-0008
+subdomain: '2.1'
+difficulty: hard
+stem: A drug maker's IT team classified its 2,000 collaboration sites with a scanner that rates content by the personal and
+  financial data it finds. Sites holding interim clinical trial results, which contain only summary figures, were rated Internal,
+  yet their early disclosure could invalidate a trial and move the share price. Which change BEST fixes the classification?
+options:
+  A: Add trial terms to the scanner's rules, then rescan the research sites
+  B: Rate research sites Restricted by default, whatever the scan finds
+  C: Have each site's business owner set its level, using the scan as input
+  D: Have the security team review the scanner's ratings for research sites
+answer: C
+explanation:
+  why_correct: Classification reflects the business impact of disclosure, and here the impact comes from context (what the
+    figures are and when they may be released) rather than from any data type a tool can recognise. The business owner of
+    each site knows that context and is accountable for the decision; the scan remains useful as a starting point.
+  why_not:
+    A: The results are summary figures with nothing distinctive in their content; more keywords would still miss what makes
+      them sensitive and add false matches elsewhere.
+    B: A blanket default over-classifies most research content, which weakens what the top level means, and replaces the judgement
+      of the people who know each site's impact with a rule.
+    D: A second technical review checks the scanner's output but has no better knowledge of trial timing or market impact
+      than the scanner had.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pending

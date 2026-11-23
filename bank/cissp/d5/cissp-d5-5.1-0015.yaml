@@ -1,0 +1,31 @@
+id: cissp-d5-5.1-0015
+subdomain: '5.1'
+difficulty: hard
+stem: A water utility's treatment plants are run from a control room staffed around the clock. Vendor engineers reach plant
+  controllers remotely through a jump host with MFA and session recording. Last month a vendor's firmware update, approved
+  and scheduled a week earlier, restarted a dosing pump while operators were running that line by hand during a valve repair.
+  Which change BEST prevents a repeat?
+options:
+  A: Vendor access enabled only inside the window approved on each change ticket
+  B: Vendor sessions that the control-room operator enables for each job and can end
+  C: Weekly review of session recordings, with alerts on any write to a controller
+  D: Read-only vendor sessions, with plant engineers making the changes vendors advise
+answer: B
+explanation:
+  why_correct: The update was authorised; what went wrong is that it ran when the plant's state made it unsafe, and only the
+    people running the plant knew that state. Having the control-room operator enable each vendor session, and able to end
+    it, ties remote access to live operating conditions, so a session cannot start while a line is on manual or under repair.
+  why_not:
+    A: The update was already approved and scheduled a week ahead. A window set in advance cannot know that a line will be
+      on manual during a repair that day.
+    C: Reviews and alerts tell the utility about a harmful change after it has happened; the dosing pump would still have
+      restarted.
+    D: Moving the keystrokes to plant engineers limits vendor privilege, but an engineer applying the same scheduled update
+      without checking with the control room causes the same restart.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pending

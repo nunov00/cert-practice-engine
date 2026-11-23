@@ -1,0 +1,31 @@
+id: cissp-d4-4.2-0028
+subdomain: '4.2'
+difficulty: hard
+stem: A manufacturer's server administrators run elevated management consoles from the same laptops they use for email and
+  the web. Malware from a booby-trapped invoice on one laptop waited until its owner had signed in to a console, then sent
+  its own commands through that session. Which change BEST prevents a repeat?
+options:
+  A: Just-in-time admin rights, granted for one hour after each approval
+  B: Separate admin accounts that administrators use only for elevated tasks
+  C: Dedicated admin workstations that have no email or web access
+  D: Phishing-resistant MFA each time an elevated console session starts
+answer: C
+explanation:
+  why_correct: The malware did not need the administrator's password; it used a session he had opened on a device it already
+    controlled. Dedicated admin workstations that do not read email or browse the web remove the usual ways malware arrives,
+    so the device where elevated sessions run is not the one exposed to booby-trapped documents, and the everyday laptop holds
+    no admin sessions to ride.
+  why_not:
+    A: Just-in-time rights shrink the window in which admin access exists, but the malware waited for a session the owner
+      had opened, which falls inside the approved hour.
+    B: Separate admin accounts keep everyday activity away from admin rights, but used on the same infected laptop, the admin
+      session can be ridden just the same.
+    D: Strong MFA stops stolen passwords being replayed, but here the owner completed the sign-in himself and the malware
+      acted inside the session that followed.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pending

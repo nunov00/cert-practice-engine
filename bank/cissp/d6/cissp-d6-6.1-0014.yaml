@@ -1,0 +1,32 @@
+id: cissp-d6-6.1-0014
+subdomain: '6.1'
+difficulty: hard
+stem: Twelve cooperative banks run on the same cloud core-banking provider. Their regulator now requires each bank to
+  obtain, this year, assurance over the provider's controls on where customer data is stored and who can reach it, which
+  the provider's SOC 2 report does not cover. Each contract grants an audit right, but the provider can host only a few
+  audits a year. Which approach BEST fits?
+options:
+  A: Each bank using its own audit right, in turn over the next few years
+  B: One joint audit run by the banks together, its results shared with each
+  C: The provider adding those controls to the scope of next year's SOC 2 report
+  D: A common questionnaire, with evidence the provider uploads for each bank to review
+answer: B
+explanation:
+  why_correct: A pooled audit lets the banks agree one scope covering data location and access, send one audit team,
+    and give each bank the same independent evidence. It uses the audit right every bank holds, fits within the few
+    audits the provider can host, and can be done this year. Financial regulators commonly accept pooled audits of a
+    shared provider for exactly this situation.
+  why_not:
+    A: Each bank's own audit is the textbook use of an audit right, but with twelve banks and only a few audits a year
+      most banks would wait years, and the regulator wants assurance from each of them this year.
+    C: Widening a SOC 2 report is a good way to cover more controls for many customers at once, but next year's report
+      arrives after the regulator's deadline.
+    D: Evidence is better than bare answers, but the provider chooses what to upload and nobody independent tests it, so
+      it is not the assurance the regulator asks for.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pending

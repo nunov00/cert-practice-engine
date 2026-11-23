@@ -1,0 +1,32 @@
+id: cissp-d4-4.1-0023
+subdomain: '4.1'
+difficulty: hard
+stem: A shipping line's vessels reach head office over a geostationary satellite service whose modems speed up TCP by acknowledging
+  traffic locally. A new policy says the provider must not be able to read vessel traffic, which includes old engine-monitoring
+  protocols that cannot be encrypted themselves. In a trial, an IPsec tunnel from ship to shore cut file-transfer throughput
+  by over 80%. Which design BEST meets both needs?
+options:
+  A: The company's own WAN accelerators at both ends, working inside an IPsec tunnel
+  B: TLS for each application, so the provider's modems can still accelerate TCP
+  C: Link encryption on the satellite modems, which the provider offers as an extra service
+  D: A larger satellite bandwidth plan, to absorb the IPsec tunnel's overhead
+answer: A
+explanation:
+  why_correct: The provider's modems can only speed up TCP they can see, and the tunnel hides it, so each transfer runs at
+    the pace set by a long satellite round trip. Company-owned accelerators on ship and shore do the same work before the
+    traffic is encrypted, and the IPsec tunnel then carries everything, the old protocols included, past the provider unreadable,
+    under keys the company holds.
+  why_not:
+    B: TLS leaves TCP headers visible, so the provider's acceleration still works, which suits modern applications, but the
+      old engine-monitoring protocols cannot use it and would cross the link readable.
+    C: Modem link encryption keeps acceleration working and protects the radio path, but the provider runs it and holds the
+      keys, so it can still read the traffic.
+    D: More bandwidth helps when a link is full, but the tunnel's loss came from TCP waiting on acknowledgements over a long
+      round trip, which extra capacity does not shorten.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pending

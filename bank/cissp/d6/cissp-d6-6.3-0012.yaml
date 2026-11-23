@@ -1,0 +1,31 @@
+id: cissp-d6-6.3-0012
+subdomain: '6.3'
+difficulty: hard
+stem: A manufacturer's board asks whether its security operations centre finds intruders sooner than it did two years
+  ago. The SOC reports that its time from alert to escalation has fallen each quarter. Of last year's five confirmed
+  intrusions, two were first reported to the company by outside parties. Which measure BEST answers the board?
+options:
+  A: Days from each intrusion's first attacker activity to its detection, by year
+  B: Hours from each intrusion's first alert to its escalation, by year
+  C: Share of each year's intrusions first detected by the SOC's own monitoring
+  D: Days from each intrusion's detection to its containment, by year
+answer: A
+explanation:
+  why_correct: How soon intruders are found is the time from the start of their activity to detection, often called
+    dwell time. Investigations establish when each intrusion began, so the measure covers every confirmed intrusion,
+    including those reported from outside, and trending it by year answers the board's comparison directly.
+  why_not:
+    B: Alert-to-escalation time is a real SOC efficiency measure, but it starts only once an alert fires. The two
+      intrusions reported by outsiders raised no alert, and the time attackers spend before any alert is exactly what
+      the board is asking about.
+    C: The share found internally shows whether the SOC catches intrusions at all, a useful companion measure, but not
+      whether it finds them sooner. A SOC could find every intrusion itself after months.
+    D: Detection-to-containment time measures response once an intrusion is known. It says nothing about how long the
+      intruders went unnoticed.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pending

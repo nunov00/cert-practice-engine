@@ -1,0 +1,32 @@
+id: cissp-d4-4.1-0024
+subdomain: '4.1'
+difficulty: hard
+stem: An online retailer's CDN caches any response whose URL ends in a static file extension, which takes most of the load
+  off its origin servers. A researcher sent customers links such as /account/orders/x.css; the origin ignored the suffix and
+  returned each customer's order page, which the CDN cached and served to the researcher. Product teams add new personalised
+  pages every week. Which change BEST prevents this?
+options:
+  A: A CDN rule that stops caching any response for paths under /account/
+  B: The visitor's session cookie added to the CDN cache key for each response
+  C: Origin headers marking personal responses uncacheable, which the CDN obeys
+  D: A CDN firewall rule blocking URLs that add a static extension to a dynamic path
+answer: C
+explanation:
+  why_correct: The CDN decided what to cache from the URL's ending, which the attacker controls, instead of from what the
+    origin returned. Having the origin mark personalised responses as private and not to be stored, with the CDN set to obey
+    those headers over its extension rule, ties caching to the content itself. New personalised pages are covered as soon
+    as they ship, and static files keep their caching.
+  why_not:
+    A: Excluding /account/ closes this route, but each new personalised page elsewhere needs its own rule, and with new pages
+      weekly some will be missed.
+    B: Keying the cache on the session cookie stops one customer's page reaching another, but it also gives each visitor a
+      private copy of each static file, which removes most of the offload the CDN provides.
+    D: Blocking that URL pattern stops the obvious form, but origins accept many path variations, such as encoded separators
+      or semicolons, so a rule on the URL's shape leaves other routes open.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-23-daily-cissp
+  check_verdict: pending
