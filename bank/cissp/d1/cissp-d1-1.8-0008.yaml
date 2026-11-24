@@ -1,6 +1,6 @@
 id: cissp-d1-1.8-0008
 subdomain: '1.8'
-difficulty: hard
+difficulty: easy
 stem: A bank runs credit and criminal record checks on people joining its treasury dealing team, deeper than the checks it
   runs on other staff. A call-centre supervisor who joined the bank eight years ago has been chosen for a dealer role
   starting in three weeks, and the deeper checks take about a week. What should HR do?
@@ -21,10 +21,12 @@ explanation:
       take a week and she starts in three, so there is no gap to bridge.
     C: Periodic re-screening suits staff already cleared for their role, but deferring the first dealer-level check to a yearly
       review lets her trade for months without the screening the role requires.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: obvious

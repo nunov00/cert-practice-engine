@@ -23,11 +23,12 @@ explanation:
       CIO, which weakens the evidence in a court case.
     D: A police report may follow, but the committee first wants the facts, and the company cannot control when or whether
       the police act. Preserving the evidence is still the company's own task now.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
   options_only: not_obvious

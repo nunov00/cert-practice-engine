@@ -5,28 +5,29 @@ stem: A company shares draft bid terms with five outside advisory firms, whose p
   meetings. Last month one draft appeared in the press, and each firm denies being the source. Every engagement letter already
   contains confidentiality terms. Which handling requirement BEST reduces the risk of further leaks?
 options:
-  A: Share drafts only through a data room that stamps each page with the viewer's name
+  A: Add penalties for disclosure to the confidentiality terms in each firm's letter
   B: Share drafts only through a data room with downloading and printing turned off
   C: Send drafts only as encrypted files, with each firm's password sent separately
-  D: Add penalties for disclosure to the confidentiality terms in each firm's letter
-answer: A
+  D: Share drafts only through a data room that stamps each page with the viewer's name
+answer: D
 explanation:
   why_correct: Every firm received an identical copy, so a leaked page cannot be traced, and the confidentiality terms
     already in place cannot be enforced against anyone. Stamping each page with the viewer's name, on screen and in print,
     keeps the drafts usable for printed meetings while making every copy traceable to one person. That deters leaking
     and, if a leak recurs, shows where it came from.
   why_not:
+    A: Penalties raise the cost of leaking, but they can be applied only when the source is known, and the confidentiality
+      terms already there failed for exactly that reason.
     B: Blocking downloads and printing is a common data-room control, but the partners need printed copies for client meetings,
       and screen photos would still leave untraceable copies.
     C: Encryption limits who can open the files in transit and at rest, but once opened every firm holds the same clean
       document, so a leaked copy still cannot be tied to its source.
-    D: Penalties raise the cost of leaking, but they can be applied only when the source is known, and the confidentiality
-      terms already there failed for exactly that reason.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
   options_only: not_obvious

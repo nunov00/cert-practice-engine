@@ -23,11 +23,12 @@ explanation:
       still done by the clerk's own trainee, and the manager sees only what that work produces.
     D: A surprise external confirmation is independent and hard to prepare for, but it happens once a year and checks
       balances at a point in time, while items moved between periods can still look correct on the day.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
   options_only: not_obvious

@@ -5,28 +5,29 @@ stem: A company will connect the network of a firm it has just bought within six
   shared systems. The firm's own IT staff handled a ransomware attack there last year, restoring from backups, with no outside
   responders involved, and its security logs go back 30 days. Which assessment BEST fits before the networks are connected?
 options:
-  A: A compromise assessment, hunting the firm's hosts for signs of a current intruder
+  A: A gap assessment of the firm's security policies against the buyer's own standards
   B: A penetration test of the firm's network from the buyer's side of the planned link
   C: An authenticated vulnerability scan of the firm's hosts, fixing critical flaws first
-  D: A gap assessment of the firm's security policies against the buyer's own standards
-answer: A
+  D: A compromise assessment, hunting the firm's hosts for signs of a current intruder
+answer: D
 explanation:
   why_correct: A ransomware attack cleaned up by in-house staff, with no independent investigation and short log retention,
     leaves open whether the attackers kept a foothold. Before joining the networks the buyer most needs to know whether
     someone is already inside, so a compromise assessment that hunts for persistence, unusual accounts and attacker tools
     comes first; weaknesses can be fixed after the link is safe.
   why_not:
+    A: A policy gap assessment is useful for integration planning, but it tests documents rather than the hosts, and says
+      nothing about whether attackers remain on them.
     B: A penetration test shows how an attacker could get in or move across the link, but it is not designed to find an
       intruder who is already present, which is the open question here.
     C: Scanning and patching closes known flaws, but an intruder who kept access from last year needs none of them, so a
       clean scan would not show that the network is safe to join.
-    D: A policy gap assessment is useful for integration planning, but it tests documents rather than the hosts, and says
-      nothing about whether attackers remain on them.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
   options_only: not_obvious

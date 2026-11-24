@@ -5,28 +5,29 @@ stem: A retailer's HR SaaS provider updates all its customers every fortnight, p
   each customer switch new features off in its own tenant. Last month an update turned on a feature that let managers' delegates
   see salaries. The retailer's change board reviews only changes its own teams make. Which change BEST addresses this?
 options:
-  A: A named owner who reviews each release's notes and sets new features before go-live
+  A: Regression tests run on each update in a preview tenant before it is released
   B: Contract terms requiring the provider to get the retailer's approval before each update
-  C: Regression tests run on each update in a preview tenant before it is released
+  C: A named owner who reviews each release's notes and sets new features before go-live
   D: A monthly review of who can see salary data in the tenant, removing unneeded access
-answer: A
+answer: C
 explanation:
   why_correct: Changes made by a provider still change the retailer's system, so they need a place in its change
     management. The provider already gives a week's notice and per-tenant switches, so an accountable owner who assesses
     each release for security impact and decides how new features are set before they go live brings these changes under
     control with the means available.
   why_not:
+    A: Regression tests show existing functions still work, but a new feature switched on by default passes them, because
+      nothing tests for behaviour that did not exist before.
     B: Approval rights suit a dedicated service, but a provider that updates all customers on one schedule will not hold
       its releases for one customer, so the term would be refused or unenforceable.
-    C: Regression tests show existing functions still work, but a new feature switched on by default passes them, because
-      nothing tests for behaviour that did not exist before.
     D: An access review is a useful detective control, but it would find the exposure up to a month after the update, while
       salaries were already visible.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
   options_only: not_obvious

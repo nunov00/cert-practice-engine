@@ -22,11 +22,12 @@ explanation:
       functions or network calls and capture the tokens as they are used.
     D: Short-lived, rotating tokens shrink the window, but the script receives the refresh token too and can use it before
       the app does, so the attacker still gets a working session.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
   options_only: not_obvious

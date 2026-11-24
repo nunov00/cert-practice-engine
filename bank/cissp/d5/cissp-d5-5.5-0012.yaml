@@ -22,11 +22,12 @@ explanation:
       the helpdesk re-enables for a day still returns with its full former rights.
     D: A review after 30 days would find the excess rights, but only after the rehire has held production administrator
       access for a month, and it does nothing for accounts re-enabled by the helpdesk.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
   options_only: not_obvious

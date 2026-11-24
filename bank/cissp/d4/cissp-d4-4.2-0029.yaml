@@ -21,7 +21,7 @@ explanation:
       one address belongs to dozens of users at once.
     C: Flow records show which addresses talked to which destinations and when, but they carry no user identity and share
       the same terminal server problem.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
@@ -29,4 +29,4 @@ provenance:
   run_id: 2026-11-23-daily-cissp
   check_verdict: pass
   options_only: not_obvious
-  checked_by: 2026-11-23-daily-cissp-check
+  checked_by: 2026-11-24-daily-cissp-check

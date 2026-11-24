@@ -23,11 +23,12 @@ explanation:
       have never had a real outage to draw on, so the ratings stay incomparable.
     D: Costing options is a later step. Choosing coverage by price before the requirements are set reverses the analysis
       and leaves the board choosing without knowing what each outage would cost the business.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
   options_only: not_obvious

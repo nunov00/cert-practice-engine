@@ -22,11 +22,12 @@ explanation:
       made afterwards stop the same failures recurring.
     D: Audit-verified implementation is stronger than self-reporting, but it shows that agreed actions were put in place, not
       that they removed the causes they targeted.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
   options_only: not_obvious

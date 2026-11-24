@@ -24,11 +24,12 @@ explanation:
       same people, so it cannot independently confirm their conclusion.
     D: An outside-in review shows what the chain exposes to the internet and whether credentials have leaked, which is useful
       when access is refused, but it cannot see whether an attacker is already inside the network.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
   options_only: not_obvious

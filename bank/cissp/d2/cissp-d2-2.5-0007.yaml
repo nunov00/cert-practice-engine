@@ -21,7 +21,7 @@ explanation:
     C: Taking the longest period of a joined dataset keeps its call details for seven years, far beyond their six-month period.
     D: An owner can choose only one period for a dataset that joins call details with billing records, so either the call
       details stay too long or the billing history goes too early.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
@@ -29,4 +29,4 @@ provenance:
   run_id: 2026-11-23-daily-cissp
   check_verdict: pass
   options_only: obvious
-  checked_by: 2026-11-23-daily-cissp-check
+  checked_by: 2026-11-24-daily-cissp-check

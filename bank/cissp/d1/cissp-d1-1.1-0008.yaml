@@ -1,6 +1,6 @@
 id: cissp-d1-1.1-0008
 subdomain: '1.1'
-difficulty: hard
+difficulty: easy
 stem: A certified consultant is helping a hospital choose among four vendors' patient monitoring platforms, scoring each
   against criteria the hospital agreed. Midway through, she learns that her brother has just taken a senior role at one of
   the shortlisted vendors. She has had no contact with him about the work. What should she do?
@@ -22,10 +22,12 @@ explanation:
       hospital has not been told, so it cannot judge whether the arrangement is enough.
     C: Documented scoring against agreed criteria makes her work checkable, but a hidden relationship still taints the result
       if it comes out later, and the hospital never had the chance to decide on it.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: obvious

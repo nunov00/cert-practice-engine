@@ -24,11 +24,12 @@ explanation:
       type credentials for each of five applications throughout the shift instead of signing in once.
     D: Session-only cookies end the session when the browser closes, but on the ward the browser stays open between nurses,
       so the cookie, and the previous nurse's session, survive.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
   options_only: not_obvious

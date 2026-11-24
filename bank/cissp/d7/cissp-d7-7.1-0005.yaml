@@ -21,10 +21,12 @@ explanation:
       into the compromised kernel, which a rootkit controls.
     D: A network capture is beyond the rootkit's reach and shows real connections, but it does not show which processes
       are running on the server, which is what the responder must establish.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

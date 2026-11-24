@@ -17,16 +17,18 @@ explanation:
     who sweep defined areas and report each one clear confirm the building directly, so the chief warden knows within
     minutes, while lists help afterwards to follow up on named people.
   why_not:
-    A: Exit readers would make the list more accurate on a normal day, but people evacuating crowd through fire exits that
-      must open freely, so the list is least reliable exactly when it is needed.
+    A: Exit readers would make the list of who is inside more accurate, but wardens would still have to trace each unmustered
+      name one by one, and the list misses anyone who followed someone through a door or never badged, such as visitors.
     B: A muster app quickly counts who is out, but everyone on the list who has not checked in still has to be chased,
       and most of them left earlier or are elsewhere.
     D: Team roll-calls spread out the chasing, but they still trace people one by one and cannot say whether an unknown
       visitor or contractor is still inside.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

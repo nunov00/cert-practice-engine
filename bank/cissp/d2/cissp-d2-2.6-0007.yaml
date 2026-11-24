@@ -25,11 +25,12 @@ explanation:
     D: Tailoring up from the low baseline recognises the integrity need, but the starting point is set by the highest impact,
       and picking integrity controls by hand from a lower baseline can miss supporting controls, such as configuration and
       change management, that the moderate baseline includes for that reason.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
-  check_verdict: pending
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
   options_only: not_obvious
