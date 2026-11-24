@@ -1,6 +1,6 @@
 id: cissp-d1-1.5-0009
 subdomain: '1.5'
-difficulty: hard
+difficulty: medium
 stem: An anonymous tip says a company's CIO approves inflated invoices from a supplier owned by his brother-in-law. Any action
   against him or the supplier is likely to end in court. The audit committee wants the facts before deciding what to do,
   and the security team and IT administrators all report to the CIO. Who should collect the evidence?

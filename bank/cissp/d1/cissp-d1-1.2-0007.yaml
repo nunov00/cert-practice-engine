@@ -1,6 +1,6 @@
 id: cissp-d1-1.2-0007
 subdomain: '1.2'
-difficulty: hard
+difficulty: medium
 stem: A company runs a yearly staff survey with questions on managers' conduct. The works council will approve it only if
   no one, IT administrators included, can link an answer to a person, while each employee can answer at most once. Last
   year the survey used single sign-on, and staff in small teams doubted their answers were anonymous. Which design BEST

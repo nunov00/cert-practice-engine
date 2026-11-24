@@ -13,7 +13,8 @@ answer: D
 explanation:
   why_correct: Fingerprints used to identify workers are biometric data, a special category under GDPR, so the firm must
     show the processing is necessary and that no less intrusive means would do. The problem is confined to two sites, and
-    simple measures there, supervisor checks backed by a photo at clock-in, have not been tried. Starting with those meets
+    simple measures there, supervisor checks backed by a photo at clock-in, have not been tried. A photo checked by a person is
+    not biometric processing, since no template is made to identify anyone automatically. Starting with those meets
     the firm's need while staying proportionate; biometrics could be reconsidered only if they fail.
   why_not:
     A: Consent looks like the cleanest legal basis, but consent from an employee to an employer is rarely seen as freely given,

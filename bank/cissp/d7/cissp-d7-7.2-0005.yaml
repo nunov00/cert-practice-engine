@@ -1,6 +1,6 @@
 id: cissp-d7-7.2-0005
 subdomain: '7.2'
-difficulty: hard
+difficulty: medium
 stem: A hospital's SIEM licence is priced by daily ingest, and volume has doubled in a year. The finance director wants the
   cost cut by 40%. Half the volume is firewall allowed-connection logs and DNS query logs, which rarely trigger alerts, but
   investigators relied on them in each of last year's three incidents to trace the attackers' movements. Which approach

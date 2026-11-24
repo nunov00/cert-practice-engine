@@ -1,6 +1,6 @@
 id: cissp-d5-5.4-0013
 subdomain: '5.4'
-difficulty: hard
+difficulty: medium
 stem: An online retailer's 150 microservices run on a shared container platform, whose scheduler places each instance on
   whichever node has room, and any service can call any other. An attacker who exploited a flaw in the product-review service,
   which handles signed-in customers' requests, called the payments service's refund API directly. Refunds should come only
