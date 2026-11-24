@@ -1,0 +1,34 @@
+id: cissp-d3-3.6-0007
+subdomain: '3.6'
+difficulty: hard
+stem: A land registry will keep digitally signed property deeds for at least 50 years, and courts must be able to confirm
+  each deed's original signature at any point in that time. Signers' certificates are issued by the registry's CA and
+  expire after three years. Which approach BEST meets this need?
+options:
+  A: Have each signer countersign with a fresh certificate before the old one expires
+  B: Store each signer's certificate and revocation status with the deed at signing
+  C: Re-sign each deed with the registry's current key whenever algorithms are upgraded
+  D: Archive timestamps over each deed and its validation data, renewed as algorithms age
+answer: D
+explanation:
+  why_correct: Over 50 years the certificates will expire and the hash and signature algorithms in use today will weaken.
+    Keeping the validation data and adding a trusted timestamp over the deed and that data proves the signature was valid
+    when it was checked. Adding a fresh timestamp with stronger algorithms before the old ones weaken extends that proof,
+    so the original signature can still be relied on decades later. This is the approach of long-term archival signature
+    formats.
+  why_not:
+    A: Signers would have to re-sign every deed every three years for five decades, which fails once they leave or die,
+      and each new signature proves only a later act, not that the original signature was valid when it was made.
+    B: Embedding the certificate and revocation status at signing is an essential part of long-term validation, but alone
+      it relies on today's algorithms staying unbroken for 50 years.
+    C: Re-signing keeps a valid signature on the deed, but it is the registry's signature, not the original signer's, so
+      it no longer shows what the court needs to confirm.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

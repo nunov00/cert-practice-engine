@@ -1,0 +1,34 @@
+id: cissp-d5-5.5-0012
+subdomain: '5.5'
+difficulty: hard
+stem: When staff leave a manufacturer, their directory accounts are disabled but keep their group memberships, so records
+  stay linked to each person. A rehired engineer, returning as a sales analyst, regained production administrator rights
+  from three years earlier when HR reactivated his record. The helpdesk also re-enables leavers' accounts for a day when
+  managers need their files. Which change BEST addresses this?
+options:
+  A: Give each rehire a new account, leaving their old account disabled
+  B: Clear a rehire's groups on return, then grant only those of the new role
+  C: Clear an account's groups when its holder leaves, keeping it disabled
+  D: Have each rehire's new manager review their groups after 30 days
+answer: C
+explanation:
+  why_correct: The cause is that leaving removes the ability to sign in but not the rights. Removing group memberships as
+    part of the leaver process means any later re-enabling, whether for a rehire or for a manager's file request, starts
+    from no access, while the disabled account still keeps each person's records and history linked.
+    The groups on accounts already disabled are cleared once, when the change is introduced.
+  why_not:
+    A: A new account gives the rehire a clean start, but the old account still carries its groups, and the helpdesk's
+      temporary re-enabling brings all of those rights back to life each time.
+    B: Clearing groups at rehire fixes the case that was found, but it acts only for rehires, so a leaver's account that
+      the helpdesk re-enables for a day still returns with its full former rights.
+    D: A review after 30 days would find the excess rights, but only after the rehire has held production administrator
+      access for a month, and it does nothing for accounts re-enabled by the helpdesk.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

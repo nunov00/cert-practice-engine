@@ -138,8 +138,6 @@ held:
   - { id: aaism-d1-1.5-0038, pr: 93 }
   - { id: aaism-d3-3.1-0045, pr: 93 }
   - { id: aaism-d3-3.5-0050, pr: 93 }
-  - { id: cissp-d3-3.9-0005, pr: 93 }
-  - { id: cissp-d5-5.2-0013, pr: 93 }
   - { id: aaism-d1-1.2-0040, pr: 94 }
   - { id: aaism-d3-3.1-0046, pr: 94 }
   # PR #95, merge run: the final Claude review lowered cissp-d4-4.2-0029 and
@@ -149,8 +147,12 @@ held:
   # at 30% (9 hard carry 21 non-hard). cissp-d8-8.4-0010 shares its key with
   # cissp-d5-5.1-0007 and cissp-d7-7.12-0005 overlaps 7.12-0002/-0004 in
   # setting; vary them before release.
-  - { id: cissp-d2-2.1-0008, pr: 95 }
-  - { id: cissp-d2-2.5-0007, pr: 95 }
-  - { id: cissp-d8-8.4-0010, pr: 95 }
   - { id: cissp-d7-7.12-0005, pr: 95 }
-  - { id: cissp-d4-4.2-0029, pr: 95 }
+  # Daily batch 2026-11-24, batch run: rechecked the seven held CISSP drafts.
+  # Released cissp-d2-2.1-0008, cissp-d2-2.5-0007, cissp-d3-3.9-0005 (lowered to
+  # easy: obvious from the options), cissp-d4-4.2-0029 and cissp-d5-5.2-0013
+  # within CISSP's hard share (18 hard carry 22 non-hard). cissp-d8-8.4-0010
+  # failed the recheck (same key as cissp-d5-5.1-0007) and leaves the list as a
+  # draft. cissp-d7-7.12-0005 stays held: still the same insurer claims setting
+  # as 7.12-0004, and A/B replay 7.12-0002's test-type choice; move it to a new
+  # setting with four parallel-test variants as options before release.

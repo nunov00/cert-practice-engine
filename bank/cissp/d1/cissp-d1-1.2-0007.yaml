@@ -1,0 +1,37 @@
+id: cissp-d1-1.2-0007
+subdomain: '1.2'
+difficulty: medium
+stem: A company runs a yearly staff survey with questions on managers' conduct. The works council will approve it only if
+  no one, IT administrators included, can link an answer to a person, while each employee can answer at most once. Last
+  year the survey used single sign-on, and staff in small teams doubted their answers were anonymous. Which design BEST
+  meets both requirements?
+options:
+  A: Single sign-on, with answers stored apart from the record of who has already responded
+  B: Single-use codes handed out one per employee in person, with no record of who got which
+  C: An open link with no sign-in, allowing one response per device through a cookie
+  D: Single sign-on via an outside survey firm, contracted not to disclose identities
+answer: B
+explanation:
+  why_correct: The survey needs two objectives that pull against each other, confidentiality of who gave each answer and
+    integrity of the count, one answer per employee. Handing each employee one single-use code in person, with no record
+    of who received which, lets the system accept each code once, so nobody answers twice, while the system never learns
+    an identity it could later link to an answer, whoever has access to it. The protection comes from the design rather
+    than from anyone's promise.
+  why_not:
+    A: Separating the answers from the list of respondents is a common design, but the system still knows who is signing in
+      at the moment each answer arrives, and an administrator can match the time a person is marked as responded with the
+      time an answer is stored, which in a small team identifies them.
+    C: An open link keeps identities out entirely, but a cookie is cleared or avoided by using a second device or browser,
+      so the one-answer limit, the integrity half of the requirement, is not really enforced.
+    D: An outside firm keeps the company's own administrators away from identities, but the firm still holds both identities
+      and answers, and a contract is a promise rather than a technical barrier, which is what the works council's condition
+      asks for.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

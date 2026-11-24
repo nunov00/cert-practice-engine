@@ -1,0 +1,34 @@
+id: cissp-d6-6.2-0014
+subdomain: '6.2'
+difficulty: hard
+stem: A bank learns that a developer at its software contractor hid code in another client's product that let him sign
+  in as any user by entering a username in a secret format. The same developer worked on the bank's login module, which
+  passes the bank's static analysis, dynamic scans and yearly penetration test. Which test BEST shows whether the bank's
+  module holds similar code?
+options:
+  A: A manual review of the module's source by an independent reviewer, covering his commits
+  B: Static analysis of the module with added rules for hard-coded credentials and backdoors
+  C: A penetration test of the login focused on fuzzing usernames with unusual formats
+  D: A comparison of the deployed module with a fresh build from the repository's source
+answer: A
+explanation:
+  why_correct: A deliberate backdoor is ordinary-looking logic that responds only to an input its author chose, so testing
+    from outside is unlikely to hit the trigger and tools see nothing unusual. A skilled independent reviewer reading the
+    authentication code and the developer's changes line by line can spot logic that treats some input specially, which
+    is the evidence the bank needs.
+  why_not:
+    B: Extra rules catch secrets written into the code, but a trigger built from a username format is normal-looking string
+      handling, much like the code that already passed static analysis.
+    C: Fuzzing usernames tries many malformed inputs, but the chance of producing the one secret format the developer chose
+      is tiny, so a clean result shows little.
+    D: Comparing the deployed module with a fresh build detects tampering after the source, but the concern is code the
+      developer wrote into the source itself, which both builds would contain.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

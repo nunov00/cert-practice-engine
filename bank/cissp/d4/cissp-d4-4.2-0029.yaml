@@ -13,7 +13,8 @@ answer: D
 explanation:
   why_correct: On a terminal server, dozens of people share one address, so anything that maps addresses to users can name
     at most one of them. An explicit proxy that requires each user to authenticate records the user name with each request,
-    whichever machine or session it came from, giving compliance the per-person record it needs.
+    whichever machine or session it came from, giving compliance the per-person record it needs,
+    with direct outbound web traffic blocked at the firewall, so no request bypasses the proxy.
   why_not:
     A: Sign-in mapping works for desktops, where one person holds an address, but on a terminal server it records only the
       latest user to sign in and attributes each session's traffic to that person.
@@ -21,12 +22,12 @@ explanation:
       one address belongs to dozens of users at once.
     C: Flow records show which addresses talked to which destinations and when, but they carry no user identity and share
       the same terminal server problem.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pass
-  checked_by: 2026-11-23-daily-cissp-check
   options_only: not_obvious
+  checked_by: 2026-11-24-daily-cissp-check

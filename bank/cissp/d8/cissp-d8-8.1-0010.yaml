@@ -1,0 +1,32 @@
+id: cissp-d8-8.1-0010
+subdomain: '8.1'
+difficulty: hard
+stem: A logistics firm's public API is in its fourth version, and many partners still use versions 2 and 3. Teams fix security
+  flaws only in the newest version, and an attacker recently exported shipment data through an access check fixed in version
+  4 a year earlier. Partners take many months to migrate between versions. Which change BEST addresses this in the SDLC?
+options:
+  A: Retire each older version a year after its successor ships, notifying partners
+  B: Shield older versions with gateway rules for each flaw fixed in the newest one
+  C: Run regression tests for each fixed flaw against every version on each release
+  D: Count a security fix as done only once it is in every version still supported
+answer: D
+explanation:
+  why_correct: Every version that partners may use is production code and needs the same security maintenance. Making a fix
+    complete only when it reaches each supported version closes the flaw everywhere it is exposed, and limiting how many versions
+    stay supported keeps that work manageable.
+  why_not:
+    A: A retirement schedule limits how many versions exist, but each older version stays exposed, unfixed, for the year before
+      it is retired, and partners slow to migrate remain on it.
+    B: Gateway rules can shield a flaw for a while, but they approximate the fix outside the code, and many access-check flaws
+      cannot be told apart from normal requests at a gateway.
+    C: Running each flaw's regression test against every version would show where it is still open, which is useful, but showing
+      a failing test does not fix it while teams still patch only the newest version.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

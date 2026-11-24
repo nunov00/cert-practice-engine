@@ -1,0 +1,33 @@
+id: cissp-d5-5.6-0011
+subdomain: '5.6'
+difficulty: medium
+stem: A retailer stores its 3 million customer passwords as salted SHA-256 hashes. Testers who took control of an application
+  server copied the password table and cracked most of the hashes within days. About 40 percent of accounts are dormant
+  but must be kept, and customers will not be made to reset their passwords. Which change BEST protects the stored passwords?
+options:
+  A: Replace each hash with a memory-hard one when its owner next signs in successfully
+  B: Wrap each stored hash in a memory-hard function now, replacing it at next sign-in
+  C: Apply a secret pepper to each stored hash now, its key kept on the application servers
+  D: Encrypt the password column now, under a key that the application servers retrieve
+answer: B
+explanation:
+  why_correct: Feeding each existing SHA-256 hash into a memory-hard password hashing function makes offline guessing slow
+    and costly for every account at once, including dormant ones, without needing the plaintext, and it holds even if an
+    attacker controls an application server again. At each sign-in the password can then be hashed directly with the new
+    function and the wrapped record replaced.
+  why_not:
+    A: Upgrading at sign-in is the usual path, but it protects only active users; the 40 percent of dormant accounts would
+      keep fast SHA-256 hashes indefinitely.
+    C: A pepper defeats an attacker who steals only the database, but this attacker controlled an application server, where
+      the pepper key lives, so the hashes would be as fast to crack as before.
+    D: Encryption protects a stolen database file or backup, but the application servers can decrypt the column, so an attacker
+      on one of them reads the same fast hashes.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

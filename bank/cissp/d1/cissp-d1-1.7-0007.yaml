@@ -1,0 +1,34 @@
+id: cissp-d1-1.7-0007
+subdomain: '1.7'
+difficulty: medium
+stem: In a manufacturer's business impact analysis, 26 of 30 department heads said their processes cannot stop for more than
+  four hours, which would need recovery spending far above the budget. Finance described the impact of an outage as lost revenue,
+  the quality team as customer complaints, and HR as staff morale. What should the continuity manager do NEXT?
+options:
+  A: Have executives agree common impact scales at set outage durations, then re-rate
+  B: Have executives rank the 30 processes against each other and fund the top tier
+  C: Ask each head for evidence from past outages to support their four-hour figure
+  D: Cost the recovery options for each process and let the board choose what to fund
+answer: A
+explanation:
+  why_correct: Each head measured impact in different terms, so the four-hour figures cannot be compared or challenged,
+    and every process looks critical to its owner. Executives setting common criteria, such as financial, customer,
+    regulatory and safety impact at set points in time, gives one scale. Re-rating against it shows how impact grows with
+    time for each process, which yields defensible downtime limits and separates the processes that truly need fast recovery
+    from those that do not.
+  why_not:
+    B: Executive ranking brings senior judgment and is often used to break ties, but a ranking says which processes matter
+      more, not how long each can be down, so it does not produce the downtime limits that recovery must be sized to.
+    C: Asking for evidence tests the figures, but each head would still present it on their own scale, and many processes
+      have never had a real outage to draw on, so the ratings stay incomparable.
+    D: Costing options is a later step. Choosing coverage by price before the requirements are set reverses the analysis
+      and leaves the board choosing without knowing what each outage would cost the business.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

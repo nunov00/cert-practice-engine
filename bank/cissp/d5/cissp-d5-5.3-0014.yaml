@@ -1,0 +1,35 @@
+id: cissp-d5-5.3-0014
+subdomain: '5.3'
+difficulty: medium
+stem: Hospital staff reach five cloud clinical applications, each from a different vendor, through SAML single sign-on
+  with the hospital's identity provider, signing in once per shift. On shared ward PCs, nurses sign out of the application
+  they used and walk away with the browser open. The next nurse to open another of the applications, often within a minute,
+  is signed in as the previous one. Which change BEST addresses this?
+options:
+  A: Single logout, so leaving any application ends the identity provider session too
+  B: An identity provider session that ends after five minutes of inactivity on ward PCs
+  C: Forced reauthentication at the identity provider for each application sign-in
+  D: Identity provider session cookies that are deleted when the browser is closed
+answer: A
+explanation:
+  why_correct: Signing out of one application ends only that application's session; the identity provider's session
+    stays alive in the browser, so the next application silently signs in whoever was there before. Single logout
+    carries the sign-out to the identity provider and from there to the other applications, so a nurse who signs out
+    really leaves, while staff still sign in once per shift. Each vendor must support single logout, which is worth
+    confirming application by application.
+  why_not:
+    B: An idle timeout helps where people simply walk away, but here the next nurse usually arrives within a minute, long
+      before five minutes of inactivity have passed, and the previous session is still live.
+    C: Forcing a fresh sign-in at every application would stop the carry-over, but it ends single sign-on, so nurses would
+      type credentials for each of five applications throughout the shift instead of signing in once.
+    D: Session-only cookies end the session when the browser closes, but on the ward the browser stays open between nurses,
+      so the cookie, and the previous nurse's session, survive.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,32 @@
+id: cissp-d3-3.9-0006
+subdomain: '3.9'
+difficulty: medium
+stem: A firm's server room is on a leased floor directly below another tenant's kitchen and washrooms, and the lease rules
+  out moving it for five years. Last month water from a blocked waste pipe on the floor above came through the ceiling
+  tiles onto two racks. Which measure BEST protects the equipment?
+options:
+  A: Leak-detection cable under the raised floor, alerting the on-call engineer
+  B: A drained waterproof membrane in the ceiling void above the racks
+  C: Ceiling-void water sensors that shut off the upper floor's water supply
+  D: Racks raised on plinths so that water pooling on the floor cannot reach them
+answer: B
+explanation:
+  why_correct: The threat is water arriving from above, and the room cannot be moved away from it. A waterproof membrane
+    or drip trays in the ceiling void, sloped to a drain away from the equipment, catch water from any source upstairs,
+    supply or waste, before it reaches the racks. Sensors on the membrane can still raise an alert so the leak is fixed.
+  why_not:
+    A: Under-floor leak detection is standard in server rooms, but water from above falls through the racks before it
+      reaches the floor, so the alert comes after the damage.
+    C: An automatic shut-off stops leaks from pressurised supply pipes, but last month's water came from a blocked waste
+      pipe, which keeps discharging whatever the people upstairs pour into it whether or not the supply is cut.
+    D: Plinths protect equipment from water pooling on the floor, such as a flood or a burst pipe at floor level, but this
+      water came down onto the tops of the racks.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

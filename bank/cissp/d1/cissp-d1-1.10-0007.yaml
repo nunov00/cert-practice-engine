@@ -1,0 +1,34 @@
+id: cissp-d1-1.10-0007
+subdomain: '1.10'
+difficulty: medium
+stem: An insurer's product team threat modelled its claims platform in full before launch and now releases every week.
+  Attackers recently abused a call between two internal components that a developer added mid-sprint as a workaround for
+  a slow queue, outside the epic's reviewed design, and that skips the authorisation check other calls make. Which practice
+  would MOST likely have caught this before release?
+options:
+  A: A threat and design review of each epic before its stories are planned
+  B: A threat check in code review whenever a change adds a call or data flow
+  C: A penetration test of the platform ahead of each quarterly major release
+  D: A refresh of the full threat model each quarter, led by the security team
+answer: B
+explanation:
+  why_correct: A threat model made once goes stale as the design changes, and here the change was made in code, mid-sprint,
+    by one developer. Making a short threat check part of code review whenever a change adds a call or data flow puts the
+    question "who may call this, and how is that checked?" at the one point every change must pass, including workarounds
+    that never appeared in any design, so the missing authorisation would have been found before the change shipped.
+  why_not:
+    A: Reviewing each epic's design brings threat modelling into planning, which is good practice, but this call was added
+      later as a workaround outside the reviewed design, so the epic review never saw it.
+    C: A penetration test could find a missing authorisation check, but with weekly releases a call added in one sprint is
+      usually live for weeks before the next quarterly test.
+    D: A quarterly refresh brings the model up to date, but with weekly releases the new call would normally be in production
+      long before the next refresh looked at it.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,34 @@
+id: cissp-d1-1.5-0009
+subdomain: '1.5'
+difficulty: medium
+stem: An anonymous tip says a company's CIO approves inflated invoices from a supplier owned by his brother-in-law. Any action
+  against him or the supplier is likely to end in court. The audit committee wants the facts before deciding what to do,
+  and the security team and IT administrators all report to the CIO. Who should collect the evidence?
+options:
+  A: The security team, collecting under chain of custody with the general counsel overseeing it
+  B: Internal audit, given read-only access to mail and finance records by the audit committee
+  C: A forensic firm retained by outside counsel, imaging the evidence under chain of custody
+  D: The police economic crime unit, after the company reports the suspected fraud to them
+answer: C
+explanation:
+  why_correct: The matter starts as an internal inquiry but is likely to end in court, so the evidence must be collected
+    to a forensic standard, and by people the CIO cannot influence. A forensic firm retained by outside counsel is independent
+    of the CIO, preserves the data as images under chain of custody that a court can rely on, and works under legal direction,
+    which also helps keep the inquiry confidential until the committee decides.
+  why_not:
+    A: Oversight by the general counsel adds some independence, but the people collecting the evidence still report to the
+      man under suspicion, which a court or the CIO's lawyers can challenge, and the inquiry may reach him through his own team.
+    B: Internal audit is independent of the CIO and suits a review of invoices, but reading live mailboxes and records through
+      granted access leaves no verified forensic copy, and the records stay in systems run by administrators who report to the
+      CIO, which weakens the evidence in a court case.
+    D: A police report may follow, but the committee first wants the facts, and the company cannot control when or whether
+      the police act. Preserving the evidence is still the company's own task now.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

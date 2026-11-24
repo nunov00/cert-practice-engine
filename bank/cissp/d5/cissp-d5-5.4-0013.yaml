@@ -1,0 +1,33 @@
+id: cissp-d5-5.4-0013
+subdomain: '5.4'
+difficulty: medium
+stem: An online retailer's 150 microservices run on a shared container platform, whose scheduler places each instance on
+  whichever node has room, and any service can call any other. An attacker who exploited a flaw in the product-review service,
+  which handles signed-in customers' requests, called the payments service's refund API directly. Refunds should come only
+  from the order service. Which control BEST fits?
+options:
+  A: Mutual TLS between services, each with its own certificate from the platform
+  B: Network rules that let only the order service's nodes reach the payments service
+  C: A refund API policy accepting calls only from the order service's identity
+  D: A refund API check that each call carries a valid signed-in customer's token
+answer: C
+explanation:
+  why_correct: The gap is authorisation between services. Giving each workload its own identity and having the refund API
+    decide, on each call, whether the caller is the order service limits refunds to that service wherever its instances
+    run. A compromised review service can still connect, but its identity is refused.
+  why_not:
+    A: Mutual TLS gives each service a verified identity, which the policy needs, but on its own it only authenticates.
+      The compromised review service has a valid certificate too, and nothing yet says it may not call refunds.
+    B: Node-based rules would work if each node ran one service, but the scheduler packs instances of many services onto
+      shared nodes, so a node allowed for the order service can also run the review service.
+    D: A customer token shows a customer is signed in, not that the order service is calling, and the review service handles
+      signed-in customers' requests, so a compromised review service holds valid customer tokens to pass along.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

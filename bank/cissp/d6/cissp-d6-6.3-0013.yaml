@@ -1,0 +1,33 @@
+id: cissp-d6-6.3-0013
+subdomain: '6.3'
+difficulty: medium
+stem: A logistics firm's board asks whether the fixes agreed after security incidents are working. Each incident record
+  names its root cause and the affected system, and internal audit checks a sample of completed actions each year. This
+  year the security operations centre began monitoring the firm's cloud accounts, which had not been watched before. Which
+  data BEST answers the board?
+options:
+  A: Number of significant incidents in each quarter, trended over the last two years
+  B: Share of incidents repeating an earlier one's root cause and system, by quarter
+  C: Mean time from detecting each incident to containing it, trended by quarter
+  D: Share of sampled actions that internal audit found implemented, by year
+answer: B
+explanation:
+  why_correct: If the fixes work, the failures they addressed should stop coming back. Measuring how often an incident repeats
+    an earlier one's root cause on the same system tests that outcome directly, using data the records already hold, and is
+    not distorted by how much of the estate is monitored.
+  why_not:
+    A: A falling incident count would look like success, but the new monitoring of cloud accounts will surface incidents that
+      went unseen before, so the trend mixes better detection with the effect of the fixes.
+    C: Faster containment is a real outcome, but it measures how the response runs during an incident, not whether the fixes
+      made afterwards stop the same failures recurring.
+    D: Audit-verified implementation is stronger than self-reporting, but it shows that agreed actions were put in place, not
+      that they removed the causes they targeted.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

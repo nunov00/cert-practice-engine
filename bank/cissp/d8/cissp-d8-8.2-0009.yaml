@@ -1,0 +1,33 @@
+id: cissp-d8-8.2-0009
+subdomain: '8.2'
+difficulty: hard
+stem: A company's clusters run images from its internal registry, where developers push test images alongside release builds.
+  A developer recently deployed to production an image built on his laptop, which skipped the pipeline's tests and reviews.
+  Last year attackers briefly held a stolen registry administrator credential. Which control BEST ensures production runs
+  only images the pipeline built?
+options:
+  A: Release repositories that only the pipeline can push to, with immutable tags
+  B: Cluster admission only for images with signed provenance from the release pipeline
+  C: Cluster admission only for images whose latest registry scan found no critical flaws
+  D: Cluster admission only for images from release repositories the pipeline alone writes
+answer: B
+explanation:
+  why_correct: The check has to sit where images enter production and verify how each was built, in a way that whoever controls
+    the registry cannot fake. Having the release pipeline sign provenance after its tests and reviews, with a key the registry
+    never holds, and having clusters admit only images with valid provenance, rejects a laptop build however it was stored.
+  why_not:
+    A: Pipeline-only release repositories and immutable tags stop ordinary developers placing images there, but a registry
+      administrator, or an attacker holding that credential, can still write to any repository.
+    C: A scan gate keeps out images with known flaws, but it judges contents rather than origin, so an untested laptop build
+      that scans clean would be admitted.
+    D: Admitting only images from pipeline-written repositories adds enforcement at the cluster, but it still trusts the registry's
+      write controls, which a registry administrator credential bypasses.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: cissp-d2-2.3-0010
+subdomain: '2.3'
+difficulty: hard
+stem: A breach at a cloud survey service exposed customer data that a marketing team had uploaded, and IT had not known
+  the team used it. Teams across the company sign up for such services with their work email addresses, often on free
+  plans. Which change BEST brings these services into the asset inventory?
+options:
+  A: A rule that software is bought only through procurement, with card purchases refused
+  B: A monthly review of expense claims and card statements for software subscriptions
+  C: Discovery of cloud services in use from proxy and sign-in logs, each given an owner
+  D: A yearly survey in which each department lists the cloud services that it uses
+answer: C
+explanation:
+  why_correct: An inventory has to capture services however they were acquired. Free plans involve no purchase, so the reliable
+    trace they leave is use, in web traffic and in sign-ins with work addresses. Discovering services from those logs and
+    giving each one an owner brings them into the inventory, where the owner can then decide whether the service is approved,
+    replaced or retired.
+  why_not:
+    A: Routing purchases through procurement is a good way to catch paid services early, but a free plan never reaches procurement
+      or a card, so the services behind this breach would still be missed.
+    B: Reviewing expenses and card statements finds paid subscriptions that bypassed procurement, but free plans leave no
+      charge to find.
+    D: A survey can surface services that leave no other trace, but it depends on each department remembering and reporting
+      every sign-up, and once a year leaves new services unknown for months.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: fail
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

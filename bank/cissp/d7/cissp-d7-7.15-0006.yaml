@@ -1,0 +1,34 @@
+id: cissp-d7-7.15-0006
+subdomain: '7.15'
+difficulty: hard
+stem: In a fire drill at a 900-person office, wardens took 45 minutes to confirm the building was clear. They worked from
+  the access system's list of everyone who had badged in that day and chased each listed person missing from the muster
+  point. Staff come in on varying days and often leave during the day. Visitors and contractors sign in at reception on paper. Which change BEST speeds up confirming the building
+  is clear?
+options:
+  A: Badge readers on exits as well as entrances, so the access system shows who is inside
+  B: A muster app in which staff check in at the assembly point, with wardens chasing the rest
+  C: Floor wardens who sweep assigned areas, toilets included, and report each one clear
+  D: A roll-caller for each team, who confirms by phone where each team member is
+answer: C
+explanation:
+  why_correct: The question in an evacuation is whether anyone is still in the building, and a list of people only
+    answers it once every listed person has been traced, including the many who left earlier or never came. Wardens
+    who sweep defined areas and report each one clear confirm the building directly, so the chief warden knows within
+    minutes, while lists help afterwards to follow up on named people.
+  why_not:
+    A: Exit readers would make the list of who is inside more accurate, but wardens would still have to trace each unmustered
+      name one by one, and the list misses anyone who followed someone through a door or never badged, such as visitors.
+    B: A muster app quickly counts who is out, but everyone on the list who has not checked in still has to be chased,
+      and most of them left earlier or are elsewhere.
+    D: Team roll-calls spread out the chasing, but they still trace people one by one and cannot say whether an unknown
+      visitor or contractor is still inside.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

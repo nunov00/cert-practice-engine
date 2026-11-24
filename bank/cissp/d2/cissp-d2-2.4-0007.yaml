@@ -1,0 +1,35 @@
+id: cissp-d2-2.4-0007
+subdomain: '2.4'
+difficulty: hard
+stem: A subscription service must delete a former customer's personal data within 60 days of account closure, and its production
+  systems do. An audit found closed customers' data in hundreds of extracts that analysts had saved to laptops and shared
+  drives, many of them reworked into new spreadsheets. The analysts mostly need current, customer-level views for weekly
+  churn reports. Which change BEST closes the gap?
+options:
+  A: Monthly discovery scans of laptops and shared drives, deleting closed customers' records
+  B: Governed analysis workspaces reading live warehouse views, with local extracts disabled
+  C: Extracts protected by rights management, unreadable 30 days after they are exported
+  D: Source tags on each extract, so that the deletion job can trace and purge each copy
+answer: B
+explanation:
+  why_correct: Deletion at the end of the lifecycle works only for copies the organisation can reach, and these extracts
+    scatter the data to places production deletion never touches. Since the analysts need current views rather than snapshots,
+    workspaces that read the warehouse in place, with extracts turned off, give them what they need while leaving no separate
+    copies, so a deletion in the warehouse takes effect everywhere at once.
+  why_not:
+    A: Discovery scans are a useful way to find stray personal data, but they clean up copies after they are made, they miss
+      laptops that are offline or records whose identifiers were changed in reworking, and new extracts keep appearing between
+      scans.
+    C: Expiring extracts limit how long a copy stays readable, but data reworked into a new spreadsheet usually leaves the protected
+      file behind, and weekly reports built on expiring files break every month.
+    D: Tagging extracts by source suits data held in managed stores, but once an extract is reworked into a new spreadsheet the
+      tag no longer follows the data, so the deletion job cannot find it.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

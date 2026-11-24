@@ -22,12 +22,12 @@ explanation:
       over-classified or are lowered too early, and a yearly review cannot follow the dates.
     D: The trial lead is an accountable owner, but a decision made at registration reaches only the sites known then, not the
       ones project teams open later, and it does not change at publication.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-23-daily-cissp
   check_verdict: pass
-  checked_by: 2026-11-23-daily-cissp-check
   options_only: obvious
+  checked_by: 2026-11-24-daily-cissp-check

@@ -1,0 +1,32 @@
+id: cissp-d1-1.8-0008
+subdomain: '1.8'
+difficulty: easy
+stem: A bank runs credit and criminal record checks on people joining its treasury dealing team, deeper than the checks it
+  runs on other staff. A call-centre supervisor who joined the bank eight years ago has been chosen for a dealer role
+  starting in three weeks, and the deeper checks take about a week. What should HR do?
+options:
+  A: Move her on the start date, relying on eight years of good conduct in the bank's records
+  B: Move her on the start date, with a second approver on each of her trades until checks clear
+  C: Move her on the start date, and run the dealer-level checks at her next yearly review
+  D: Move her on the start date, once the dealer-level checks have cleared as for an outside hire
+answer: D
+explanation:
+  why_correct: Screening is set by the risk of the role, not by whether someone is new to the organisation. The dealer role
+    carries risks her original checks were never meant to cover, and the deeper checks fit comfortably in the three weeks
+    before she starts, so running them first applies the same standard as for an outside hire at no cost to the move.
+  why_not:
+    A: Eight years of good conduct is real evidence about her, but it was gathered in a role with far less temptation and
+      authority, and it does not cover the financial and criminal history the dealer checks look for.
+    B: A second approver is a sound compensating control when checks cannot finish before someone must start, but here they
+      take a week and she starts in three, so there is no gap to bridge.
+    C: Periodic re-screening suits staff already cleared for their role, but deferring the first dealer-level check to a yearly
+      review lets her trade for months without the screening the role requires.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: obvious

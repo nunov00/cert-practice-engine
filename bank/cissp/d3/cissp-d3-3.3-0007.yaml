@@ -1,0 +1,32 @@
+id: cissp-d3-3.3-0007
+subdomain: '3.3'
+difficulty: medium
+stem: A retailer's new backup platform backs up its store systems every hour. After attackers holding a peer's backup
+  administrator role deleted that peer's backups, the retailer set a requirement that every backup from the last 30 days
+  must survive an attacker with the platform's highest administrative rights. Which control BEST meets this requirement?
+options:
+  A: Each night's backups copied to tape, with the tapes held offsite for 30 days
+  B: Immutable storage with 30-day retention that only a separate privileged role can lift
+  C: Immutable storage with a locked 30-day retention that no account can shorten
+  D: The backup administrator role behind phishing-resistant MFA and a second approver
+answer: C
+explanation:
+  why_correct: The requirement assumes the attacker already has the highest rights, so the control must hold against them.
+    A retention lock that no account, however privileged, can shorten or remove keeps each hourly backup until its 30 days
+    have passed, whatever the attacker does in the console.
+  why_not:
+    A: Offsite tapes are out of the attacker's reach, but only the nightly copies go to tape. The hourly backups taken since
+      the last copy stay on the platform, where the attacker can delete them, so not every backup survives.
+    B: A retention setting that a separate role can lift protects against ordinary administrators and mistakes, but an attacker
+      with the platform's highest rights can grant themselves that role and lift it.
+    D: Strong authentication and approval make it much harder to obtain the administrator role, but the requirement assumes
+      an attacker who already holds the highest rights, and these controls do nothing once they do.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious

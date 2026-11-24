@@ -1,0 +1,34 @@
+id: cissp-d7-7.4-0005
+subdomain: '7.4'
+difficulty: hard
+stem: A credit union requires its suspense-account clerk to take two consecutive weeks of leave each year, and during it
+  her assistant, whom she trained and supervises, runs the reconciliations. Nothing specific is suspected, but internal
+  audit rates the accounts high risk because large balances can sit in them for weeks. Which change BEST strengthens this
+  control?
+options:
+  A: Internal audit reviewing a sample of the clerk's reconciliations each month
+  B: Cover during the leave by a clerk from another branch, working from source records
+  C: Four weeks of required leave, with the finance manager reviewing the assistant's work
+  D: A surprise confirmation of the suspense balances by the external auditors each year
+answer: B
+explanation:
+  why_correct: Mandatory leave works because someone else does the job while the holder is away and meets anything she has
+    been hiding, such as items she keeps moving to stop them ageing. An assistant she trained and supervises does the work
+    her way and may hesitate to question her. A clerk from another branch who rebuilds the reconciliations from source
+    records during her absence makes the leave a real test.
+  why_not:
+    A: Internal audit is independent, but a monthly sample examines reconciliations the clerk has already prepared, which
+      is where concealment would already have been done.
+    C: A longer absence gives hidden items more time to surface, and the manager's review adds oversight, but the work is
+      still done by the clerk's own trainee, and the manager sees only what that work produces.
+    D: A surprise external confirmation is independent and hard to prepare for, but it happens once a year and checks
+      balances at a point in time, while items moved between periods can still look correct on the day.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pass
+  checked_by: 2026-11-24-daily-cissp-check
+  options_only: not_obvious
