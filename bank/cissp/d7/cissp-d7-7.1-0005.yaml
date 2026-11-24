@@ -1,0 +1,30 @@
+id: cissp-d7-7.1-0005
+subdomain: '7.1'
+difficulty: hard
+stem: A responder must establish which processes are running on a compromised bare-metal Linux database server, which has
+  to stay in service during the investigation. Threat intelligence on the intruders says they usually install a kernel-level
+  rootkit. Which collection method BEST serves the investigation?
+options:
+  A: An EDR live query listing the server's processes and network connections
+  B: Trusted static tools run from read-only media, saving output to an evidence drive
+  C: A memory image taken with the response kit, then analysed on another system
+  D: Traffic captured at the server's switch port, showing the connections it makes
+answer: C
+explanation:
+  why_correct: A kernel-level rootkit changes what the running kernel reports, so any tool that asks that kernel for its
+    process list can be shown a cleaned-up view. A memory image, parsed later on a separate trusted system, lets the
+    analyst examine the kernel's structures directly and find processes the rootkit hides, while the server stays up.
+  why_not:
+    A: An EDR query is fast and often the first look, but it relies on the same compromised kernel for what it reports, so
+      hidden processes can stay hidden.
+    B: Trusted binaries from read-only media are the standard defence against tampered system tools, but they still call
+      into the compromised kernel, which a rootkit controls.
+    D: A network capture is beyond the rootkit's reach and shows real connections, but it does not show which processes
+      are running on the server, which is what the responder must establish.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

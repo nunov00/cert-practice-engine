@@ -1,0 +1,31 @@
+id: cissp-d1-1.1-0008
+subdomain: '1.1'
+difficulty: hard
+stem: A certified consultant is helping a hospital choose among four vendors' patient monitoring platforms, scoring each
+  against criteria the hospital agreed. Midway through, she learns that her brother has just taken a senior role at one of
+  the shortlisted vendors. She has had no contact with him about the work. What should she do?
+options:
+  A: Withdraw from the engagement and help the hospital find a replacement consultant
+  B: Hand that vendor's scoring to a colleague, and keep scoring the other three herself
+  C: Continue, recording her scores against the agreed criteria so others can check them
+  D: Tell the hospital of the relationship, and let it decide how the work continues
+answer: D
+explanation:
+  why_correct: The code of ethics asks her to act honourably and to serve her principal diligently, and a conflict of interest
+    that the principal does not know about undermines both, even if she stays objective. The hospital is the party whose
+    decision may be affected, so it should hear of the relationship from her and choose the remedy, whether that is going
+    on with extra review, reassigning part of the work or replacing her.
+  why_not:
+    A: Withdrawing removes the conflict, but it takes from the hospital a decision that is its own to make, and it may cost
+      the hospital time and expertise it would rather keep with safeguards in place.
+    B: Reassigning that vendor's scoring reduces her influence, but she still compares the other three against it, and the
+      hospital has not been told, so it cannot judge whether the arrangement is enough.
+    C: Documented scoring against agreed criteria makes her work checkable, but a hidden relationship still taints the result
+      if it comes out later, and the hospital never had the chance to decide on it.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending
