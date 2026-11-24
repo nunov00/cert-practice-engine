@@ -14,7 +14,7 @@ answer: A
 explanation:
   why_correct: A system's baseline follows its highest impact. The data is public, so confidentiality impact is low, but
     tampering with these figures has at least a moderate integrity impact, so the moderate baseline applies. Scoping then
-    removes controls whose purpose does not exist for this system, here two that only protect confidentiality, with the
+    removes controls whose purpose does not exist for this system, here two whose purpose on this system is confidentiality, with the
     reason documented, while every integrity and availability control stays.
   why_not:
     B: Public data does suggest a low baseline at first sight, but the baseline follows the highest of the three impacts,

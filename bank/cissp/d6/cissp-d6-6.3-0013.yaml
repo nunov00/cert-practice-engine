@@ -9,7 +9,7 @@ options:
   A: Number of significant incidents in each quarter, trended over the last two years
   B: Share of incidents repeating an earlier one's root cause and system, by quarter
   C: Mean time from detecting each incident to containing it, trended by quarter
-  D: Share of sampled actions that internal audit found implemented, by quarter
+  D: Share of sampled actions that internal audit found implemented, by year
 answer: B
 explanation:
   why_correct: If the fixes work, the failures they addressed should stop coming back. Measuring how often an incident repeats

@@ -21,8 +21,9 @@ explanation:
       set of people who could come to hold it keeps growing beyond any list the office reviews.
     C: Recertification removes access that is no longer needed, but it looks back at current recipients. Between reviews
       recipients can keep sharing, so it does not bound who could obtain the data.
-    D: Mandatory labels and clearances would bound access, but the platform rather than the owner would then decide who may
-      see the data, which the owners' need to choose their collaborators rules out.
+    D: Labels and clearances cap who may receive the data, but within the cleared group recipients can still pass it on.
+      Owners then no longer decide who holds it, and the most the ethics office can name is every cleared researcher, not
+      the actual collaborators.
 status: published
 outline_version: '2024-04-15'
 sample: false

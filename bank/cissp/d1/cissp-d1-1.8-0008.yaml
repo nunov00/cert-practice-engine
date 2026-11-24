@@ -8,7 +8,7 @@ options:
   A: Move her on the start date, relying on eight years of good conduct in the bank's records
   B: Move her on the start date, with a second approver on each of her trades until checks clear
   C: Move her on the start date, and run the dealer-level checks at her next yearly review
-  D: Run the dealer-level checks before her dealing access starts, as for an outside hire
+  D: Move her on the start date, once the dealer-level checks have cleared as for an outside hire
 answer: D
 explanation:
   why_correct: Screening is set by the risk of the role, not by whether someone is new to the organisation. The dealer role

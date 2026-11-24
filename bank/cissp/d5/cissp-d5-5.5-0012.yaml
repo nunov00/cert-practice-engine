@@ -15,6 +15,7 @@ explanation:
   why_correct: The cause is that leaving removes the ability to sign in but not the rights. Removing group memberships as
     part of the leaver process means any later re-enabling, whether for a rehire or for a manager's file request, starts
     from no access, while the disabled account still keeps each person's records and history linked.
+    The groups on accounts already disabled are cleared once, when the change is introduced.
   why_not:
     A: A new account gives the rehire a clean start, but the old account still carries its groups, and the helpdesk's
       temporary re-enabling brings all of those rights back to life each time.

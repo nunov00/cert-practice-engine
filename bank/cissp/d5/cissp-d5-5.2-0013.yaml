@@ -4,7 +4,7 @@ difficulty: medium
 stem: A water utility's 30 network engineers manage 400 substation devices, each supporting one local administrator account
   and no central authentication. A vault holds the passwords and logs each checkout, and engineers connect through serial
   consoles on site as often as over the network. An audit found that passwords checked out months earlier still worked, and
-  some engineers kept copies in personal notes. Which change BEST fits?
+  some engineers kept copies in personal notes. Which change BEST addresses the audit finding?
 options:
   A: Have the vault change each device's password after every checkout
   B: Have the vault change every device's password on a 90-day cycle

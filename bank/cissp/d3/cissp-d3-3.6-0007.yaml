@@ -5,7 +5,7 @@ stem: A land registry will keep digitally signed property deeds for at least 50 
   each deed's original signature at any point in that time. Signers' certificates are issued by the registry's CA and
   expire after three years. Which approach BEST meets this need?
 options:
-  A: Sign deeds with certificates chained to a CA root that is valid for 50 years
+  A: Have each signer countersign with a fresh certificate before the old one expires
   B: Store each signer's certificate and revocation status with the deed at signing
   C: Re-sign each deed with the registry's current key whenever algorithms are upgraded
   D: Archive timestamps over each deed and its validation data, renewed as algorithms age
@@ -17,8 +17,8 @@ explanation:
     so the original signature can still be relied on decades later. This is the approach of long-term archival signature
     formats.
   why_not:
-    A: A long-lived root does not stop signers' certificates expiring, and it does nothing about the algorithms weakening
-      over five decades, after which a forged signature could no longer be told apart.
+    A: Signers would have to re-sign every deed every three years for five decades, which fails once they leave or die,
+      and each new signature proves only a later act, not that the original signature was valid when it was made.
     B: Embedding the certificate and revocation status at signing is an essential part of long-term validation, but alone
       it relies on today's algorithms staying unbroken for 50 years.
     C: Re-signing keeps a valid signature on the deed, but it is the registry's signature, not the original signer's, so

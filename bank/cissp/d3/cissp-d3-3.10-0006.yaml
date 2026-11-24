@@ -19,8 +19,9 @@ explanation:
   why_not:
     A: A contract term would cover this one need for systems bought from vendors, but it treats the symptom. Needs that
       those who run and secure a system would raise, and in-house systems, are still left out.
-    B: A blocking design review is a valuable gate, but reviews check designs against the stated requirements, and this
-      one passed because the need to patch was never stated.
+    B: A blocking security review at the design gate could catch this, but only after the architecture is drafted, and it
+      depends on a reviewer noticing a need nobody wrote down. Stating the need to patch without an outage as a requirement
+      fixes the cause earlier.
     C: A go-live test would show the problem, but only once the single-server design is built, when changing it is
       slowest and most expensive.
 status: published
