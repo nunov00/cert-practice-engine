@@ -1,0 +1,30 @@
+id: cissp-d6-6.3-0013
+subdomain: '6.3'
+difficulty: hard
+stem: A logistics firm's board asks whether its post-incident fixes are working. The incident team reports that 95 percent
+  of post-incident actions close by their due date. Each incident record names its root cause and the affected system,
+  and the team runs a review within a month of each significant incident. Which data BEST answers the board?
+options:
+  A: Share of post-incident actions closed by their due date, by quarter
+  B: Share of incidents repeating an earlier one's root cause and system, by quarter
+  C: Share of significant incidents reviewed within a month of closure, by quarter
+  D: Share of post-incident actions whose owners confirm the fix was tested, by quarter
+answer: B
+explanation:
+  why_correct: If the fixes work, the failures they addressed should stop coming back. Measuring how often an incident repeats
+    an earlier one's root cause on the same system tests the outcome directly, using data the records already hold, rather
+    than measuring the activity of closing actions.
+  why_not:
+    A: On-time closure shows the action process runs, and it is what the team already reports, but an action can close on
+      time without fixing the cause, so it does not show that fixes work.
+    C: Timely reviews show that lessons are captured, but the board's question is about what happens after the review, whether
+      the resulting fixes prevent a repeat.
+    D: Owner confirmation that fixes were tested is closer to effectiveness, but it is the action owners' own word on their
+      work, while repeat incidents show whether the fixes held in practice.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

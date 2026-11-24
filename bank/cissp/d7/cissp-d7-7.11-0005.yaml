@@ -1,0 +1,31 @@
+id: cissp-d7-7.11-0005
+subdomain: '7.11'
+difficulty: hard
+stem: A regional insurer's DR plan relies on its six infrastructure engineers, who all live near head office, to restore
+  systems in a cloud recovery region. An exercise found that in a severe regional storm most of them would be dealing with
+  damage at home for days. Its other IT staff work at an office 500 km away and have never run a recovery. Which change
+  BEST addresses this?
+options:
+  A: Train the distant office's IT staff on the runbooks and have them run the next test
+  B: Rewrite the runbooks in enough detail that any IT staff member could follow them unaided
+  C: Contract a DR services firm to carry out the restoration whenever the plan is invoked
+  D: Automate the restoration with scripts the engineers can launch remotely from anywhere
+answer: A
+explanation:
+  why_correct: The plan depends on people who would be caught by the same event as the site. Staff 500 km away are
+    unlikely to be hit by the same storm, and training them and having them run a real test makes them a proven second
+    team that the plan can rely on.
+  why_not:
+    B: Detailed runbooks help anyone stepping in, but staff who have never run a recovery would meet the procedure for the
+      first time during a disaster, with no test showing they can follow it.
+    C: A DR services firm adds capacity, but it does not know the insurer's systems, and providers stretched by a regional
+      event may not reach every customer quickly.
+    D: Automation reduces the work, but it is still the same engineers who must launch and troubleshoot it, and they are the
+      people the storm takes out of action.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

@@ -1,0 +1,32 @@
+id: cissp-d7-7.4-0005
+subdomain: '7.4'
+difficulty: hard
+stem: A credit union requires its suspense-account clerk to take two consecutive weeks of leave each year, and during it
+  her assistant, whom she trained and supervises, runs the reconciliations. Nothing specific is suspected, but internal
+  audit rates the accounts high risk because large balances can sit in them for weeks. Which change BEST strengthens this
+  control?
+options:
+  A: Extending the required leave from two consecutive weeks to four
+  B: Rotating the reconciliations between the clerk and her assistant each quarter
+  C: A monthly review by the finance manager of each signed-off reconciliation
+  D: Cover during the leave by staff from another team, outside the clerk's line
+answer: D
+explanation:
+  why_correct: Mandatory leave works because someone else does the job while the holder is away and meets anything they
+    have been hiding. An assistant the clerk trained and supervises does the work her way and may be reluctant to question
+    her, so the leave rarely exposes anything. Cover by someone independent of her line keeps the existing control but makes
+    the review during her absence a real one.
+  why_not:
+    A: Longer leave gives concealed items more time to surface, but the same assistant still covers, so the lack of
+      independence remains.
+    B: Rotation also puts a second person on the work, but the only other person here is the clerk's own trainee and report,
+      so it adds the same limited check more often.
+    C: A manager's review is a sound detective control, but it examines the reconciliations the clerk prepares, which is
+      where concealment would already have been done.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

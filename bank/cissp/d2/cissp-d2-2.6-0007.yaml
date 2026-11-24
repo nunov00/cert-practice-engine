@@ -1,0 +1,34 @@
+id: cissp-d2-2.6-0007
+subdomain: '2.6'
+difficulty: hard
+stem: A government agency applies one moderate control baseline to all its systems. Its new open-data portal publishes
+  only figures already released to the public, but altered figures could move markets and mislead policy makers. The project
+  team says encryption at rest and logging of each read of the data add cost for no benefit. How should the agency apply
+  the baseline to the portal?
+options:
+  A: Apply the moderate baseline in full, as for the agency's other systems
+  B: Apply the low baseline, the level that public information normally calls for
+  C: Scope out the controls that only protect confidentiality, recording why
+  D: Apply the moderate baseline, with a risk owner's exception for those two controls
+answer: C
+explanation:
+  why_correct: The portal's data is public, so confidentiality impact is low, but integrity impact is at least moderate,
+    which keeps the system at the moderate baseline. Scoping then removes controls whose purpose does not apply, here those
+    that only protect confidentiality, with the reason documented, while the integrity and availability controls stay in
+    full. That is how a baseline is meant to be fitted to a system.
+  why_not:
+    A: Applying the baseline unchanged is simple and consistent, but it spends money on controls that protect nothing here,
+      and baselines are designed to be scoped and tailored to each system.
+    B: Public data does suggest a low baseline at first sight, but a system's baseline follows its highest impact, and tampering
+      with these figures has at least a moderate integrity impact, so the low baseline would drop integrity controls the portal
+      needs.
+    D: An exception is for a control that applies but cannot be met yet, and it is usually time-limited and reviewed. These
+      controls do not apply to public data at all, so recording them as an accepted shortfall misstates the system's risk
+      and leaves an exception to renew indefinitely.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

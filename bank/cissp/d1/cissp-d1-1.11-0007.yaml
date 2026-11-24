@@ -1,0 +1,31 @@
+id: cissp-d1-1.11-0007
+subdomain: '1.11'
+difficulty: hard
+stem: When a critical flaw in a widely used logging library was announced, a hospital took three weeks to learn which of its
+  60 vendors' clinical systems contained it. Many are sealed appliances that only the vendor may change, and the vendors answered
+  the hospital's queries one by one, some after several days. Which measure would BEST shorten this next time?
+options:
+  A: A machine-readable SBOM with each product release, loaded into the hospital's inventory
+  B: A contract term requiring each vendor to report affected products within 72 hours
+  C: Authenticated vulnerability scans of each vendor system on the network each week
+  D: A yearly assessment of each vendor's vulnerability management and disclosure process
+answer: A
+explanation:
+  why_correct: The delay came from having to ask each vendor what its products contain after the flaw was public. An SBOM
+    supplied with every release lists the components in each product in advance, so when a flaw is announced the hospital
+    can search its own inventory within hours and start mitigating, without waiting for 60 answers. Vendor confirmation and
+    fixes still follow, but the hospital knows where to act on day one.
+  why_not:
+    B: A reporting deadline speeds vendors up and gives the hospital a contractual lever, but it still waits on each vendor's
+      own analysis, up to three days, and the hospital learns only what each vendor chooses to report.
+    C: Authenticated scans find vulnerable libraries on systems the hospital administers, but sealed appliances usually do not
+      allow the access a scan needs, and scanning them can upset clinical devices.
+    D: A yearly assessment improves the vendors' processes over time, but it does not tell the hospital which products contain
+      a given component when the next flaw is announced.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

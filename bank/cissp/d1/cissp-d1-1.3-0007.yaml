@@ -1,0 +1,33 @@
+id: cissp-d1-1.3-0007
+subdomain: '1.3'
+difficulty: hard
+stem: A retailer is buying an online marketplace chiefly for its customer database, signing and completing the deal on the
+  same day in three weeks. The marketplace has shared clean audit reports and its security policies but, as sellers often
+  do, refuses any testing of its systems before completion. A breach found after completion would sharply cut the database's
+  value. What should the CISO recommend?
+options:
+  A: Make completion conditional on a compromise assessment of the marketplace's systems
+  B: Seek warranties on undisclosed breaches, backed by part of the price held in escrow
+  C: Require the marketplace's CISO to sign a detailed security questionnaire before completion
+  D: Ask the board to delay signing until the retailer can test the marketplace's systems
+answer: B
+explanation:
+  why_correct: Security due diligence in an acquisition is limited to what the seller allows, and here it has gone as far
+    as documents can take it. The remaining risk, a breach nobody has disclosed, falls on the very asset being bought. Warranties
+    that no undisclosed breach has occurred, with part of the price held in escrow, turn that risk into a deal term, so the
+    retailer has a funded remedy if a breach surfaces after completion, and the board signs knowing what is and is not covered.
+  why_not:
+    A: A compromise assessment is the best way to find a hidden breach, and making completion depend on one is common when
+      signing and completion are apart. Here they happen on the same day and the seller refuses any testing before completion,
+      so the condition cannot be met.
+    C: A signed questionnaire adds detail to the documents already shared, but it is the seller's own account, much like the
+      reports already reviewed, and it gives the retailer no financial remedy if a breach comes to light later.
+    D: Delaying signing keeps the retailer from committing blind, but the seller refuses testing before completion, so a
+      delay alone does not buy the access, and it puts the business case at risk for no gain.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

@@ -1,0 +1,32 @@
+id: cissp-d8-8.1-0010
+subdomain: '8.1'
+difficulty: hard
+stem: A logistics firm's public API is in its fourth version, and many partners still use versions 2 and 3. Teams fix security
+  flaws only in the newest version, and an attacker recently exported shipment data through an access check fixed in version
+  4 a year earlier. Partners' release cycles mean they need up to a year to migrate. Which change BEST addresses this in the
+  SDLC?
+options:
+  A: Apply each security fix to every supported version, each retiring on a published date
+  B: Shield older versions with gateway rules written for each flaw fixed in the newest
+  C: Retire older versions faster, giving partners three months to move to the newest
+  D: Monitor older versions, alerting on requests that exploit flaws fixed in the newest one
+answer: A
+explanation:
+  why_correct: Every version that partners are allowed to use is production code and needs the same security maintenance.
+    Making a fix incomplete until it is applied to each supported version, and setting a published end-of-support date
+    for each version, closes the flaws everywhere while partners get the time their release cycles need and the number of
+    versions to maintain stays bounded.
+  why_not:
+    B: Gateway rules can shield a flaw for a while, but they approximate the fix outside the code, and many access-check
+      flaws cannot be told apart from normal requests at a gateway.
+    C: Fewer versions would mean less to maintain, but partners need up to a year to migrate, and the older versions stay
+      unfixed during the three months anyway.
+    D: Alerts help the team notice exploitation, but they detect it after data has left, while the flaws stay open in the
+      versions partners use.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

@@ -1,0 +1,31 @@
+id: cissp-d1-1.10-0007
+subdomain: '1.10'
+difficulty: hard
+stem: An insurer's product team threat modelled its claims platform in full before launch, and it now releases weekly.
+  Eight months on, attackers abused a service-to-service call between two internal components, added in a recent sprint,
+  which skipped the authorisation check that other calls make. Which practice would MOST likely have caught this before
+  release?
+options:
+  A: Re-run the full threat model each quarter, with the security team leading it
+  B: Review threats in each story that adds a data flow or crosses a trust boundary
+  C: Penetration test each release that changes the platform's external interfaces
+  D: Map data flows from production traffic each month and compare them with the model
+answer: B
+explanation:
+  why_correct: A threat model made once goes stale as each sprint changes the design. Making a short threat review part
+    of every story that adds a data flow or crosses a trust boundary looks at the new call while it is being designed, when
+    asking who may call it and how that is checked would have exposed the missing authorisation before it shipped.
+  why_not:
+    A: A quarterly full review refreshes the model, but with weekly releases a new call is usually in production for weeks
+      before the next review, which is too late to stop it shipping.
+    C: Testing releases that change external interfaces is sound, but this call ran between two internal components, so a
+      test scoped to external interfaces would not have exercised it.
+    D: Comparing observed traffic with the model is a good way to spot drift, but it works on what is already in production,
+      so it finds the call after release, not before.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

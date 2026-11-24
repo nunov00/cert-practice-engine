@@ -1,0 +1,32 @@
+id: cissp-d3-3.9-0006
+subdomain: '3.9'
+difficulty: hard
+stem: A firm's server room on a leased floor is cooled by the building's central air. After two weekend overheats, the
+  landlord now runs the air around the clock. Last month the building lost mains power for three hours. The room's UPS
+  and generator kept the servers powered, but the room overheated and two hosts shut themselves down. Which change BEST
+  addresses this?
+options:
+  A: A dedicated cooling unit for the room, on the generator-backed supply
+  B: Temperature sensors that page the on-call engineer above 27°C
+  C: Scripts that shut down less critical servers in turn as the room heats
+  D: A lease clause requiring the landlord to keep central air running in outages
+answer: A
+explanation:
+  why_correct: Backup power only keeps a server room running if everything the equipment needs is on it, and cooling is one
+    of those needs. The central air is the landlord's plant on mains power, so it stops whenever the building loses power.
+    A cooling unit dedicated to the room and fed from the same generator-backed supply as the servers keeps the room within
+    its limits through an outage.
+  why_not:
+    B: Alerts give warning, but the engineer can do little in a room whose cooling has stopped except shut systems down, so
+      the outage still happens, only more tidily.
+    C: Shedding load slows the temperature rise and protects the most critical hosts for longer, but it trades availability
+      for time and still ends with servers off if the outage lasts.
+    D: A lease clause creates an obligation and a claim after a failure, but it does not give the landlord's plant a power
+      supply during an outage, so the air would stop all the same.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

@@ -1,0 +1,32 @@
+id: cissp-d1-1.5-0009
+subdomain: '1.5'
+difficulty: hard
+stem: An anonymous tip says a company's CIO approves inflated invoices from a supplier owned by his brother-in-law. The audit
+  committee wants the facts before deciding on dismissal or a police report. The security team, and the IT staff who extract
+  email, logs and finance-system records, all report to the CIO. Who should collect the evidence?
+options:
+  A: The security team, imaging the CIO's devices and mailbox under documented chain of custody
+  B: External forensic investigators engaged by, and reporting to, the audit committee
+  C: Internal audit, reviewing the invoices and supplier approvals with data supplied by IT
+  D: The police economic crime unit, after the company reports the suspected fraud
+answer: B
+explanation:
+  why_correct: The investigation starts as an administrative one but may become criminal, so the evidence must be collected
+    to a standard that would hold up later, and by people the subject cannot influence. Everyone who can reach the systems
+    internally reports to the CIO. Forensic investigators engaged by the audit committee are independent of him, can
+    preserve the data under chain of custody without tipping him off, and give the committee the facts it needs to choose
+    its next step.
+  why_not:
+    A: Imaging under chain of custody is the right technique, but the security team reports to the person under suspicion,
+      which compromises both its independence and the secrecy of the inquiry, and a court may doubt evidence gathered that way.
+    C: Internal audit is independent of the CIO and suits an invoice review, but it would rely on data extracted by the CIO's
+      own staff, who could alert him or alter what they hand over.
+    D: A police report may follow, but the audit committee first wants to establish the facts, and the company cannot direct
+      when or whether the police act. Preserving the evidence is still the company's own task now.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

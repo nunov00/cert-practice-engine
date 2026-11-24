@@ -1,0 +1,32 @@
+id: cissp-d7-7.7-0004
+subdomain: '7.7'
+difficulty: hard
+stem: A hospital's imaging archive servers have a published remote-code flaw in their image-transfer service. The vendor's
+  fix must go through medical device re-certification, expected in nine months. Scanners and about 1,500 clinical
+  workstations across the hospital send and fetch images through that service all day. Which measure BEST protects the
+  servers until the fix?
+options:
+  A: An inline IPS in front of the servers, blocking traffic that matches the flaw's exploit
+  B: Firewall rules letting only scanners and clinical workstations reach the service
+  C: A passive IDS on a mirrored port, alerting the SOC to traffic matching the exploit
+  D: Host-based IPS agents on the archive servers, blocking exploit attempts locally
+answer: A
+explanation:
+  why_correct: An inline intrusion prevention system can act as a virtual patch, dropping traffic that matches the flaw's
+    exploit before it reaches the servers, without changing the certified devices. It protects the service whichever of
+    the many legitimate sources an attack comes from. It needs tuning and a tested bypass so a fault in the IPS does not
+    stop clinical imaging.
+  why_not:
+    B: Restricting sources is good hygiene, but 1,500 workstations across the hospital stay allowed, and any one of them
+      compromised by phishing could still send the exploit.
+    C: A passive sensor sees exploit attempts, but it only raises an alert. With a remote-code flaw the server is already
+      taken over by the time the SOC responds.
+    D: Host-based prevention would block exploits locally, but installing agents changes the certified devices, the same
+      reason the vendor's own fix has to wait for re-certification.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

@@ -1,0 +1,32 @@
+id: cissp-d3-3.2-0008
+subdomain: '3.2'
+difficulty: hard
+stem: A university's research data platform lets each dataset's owner share it with chosen collaborators, and any recipient
+  can share it onward. Before approving a study, the ethics office must be able to name everyone who could come to hold a
+  sensitive dataset, while owners must keep deciding who their collaborators are. Which change BEST meets both needs?
+options:
+  A: Let only owners grant access, so recipients can use a dataset but not pass it on
+  B: Log each share and give the ethics office a monthly list of who holds each dataset
+  C: Have owners recertify the recipients of their sensitive datasets each quarter
+  D: Label sensitive datasets and let the platform admit only researchers cleared for them
+answer: A
+explanation:
+  why_correct: Access-matrix models such as Graham-Denning and Harrison-Ruzzo-Ullman show that once holders of a right can
+    pass it on, working out who could eventually obtain it becomes hard to answer and, in the general case, cannot be decided
+    at all. Keeping the right to grant with the owner, and not giving recipients a transferable copy, bounds the possible
+    holders to the people each owner names, so the ethics office can list them in advance, and owners still choose their
+    collaborators.
+  why_not:
+    B: A share log is useful evidence, but it shows who holds a dataset now. While recipients can still share onward, the
+      set of people who could come to hold it keeps growing beyond any list the office reviews.
+    C: Recertification removes access that is no longer needed, but it looks back at current recipients. Between reviews
+      recipients can keep sharing, so it does not bound who could obtain the data.
+    D: Mandatory labels and clearances would bound access, but the platform rather than the owner would then decide who may
+      see the data, which the owners' need to choose their collaborators rules out.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

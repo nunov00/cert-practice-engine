@@ -1,0 +1,31 @@
+id: cissp-d8-8.2-0009
+subdomain: '8.2'
+difficulty: hard
+stem: A company's clusters run images from its internal registry, where developers push test images to the same repositories
+  as release builds. A developer recently deployed to production an image built on his laptop, skipping the pipeline's tests
+  and scans, by giving it a new release-style tag. Developers can edit deployment manifests and must keep pushing test images.
+  Which control BEST prevents this?
+options:
+  A: Release tags made immutable in the registry, so no push can overwrite one
+  B: Cluster admission only for images with a signed attestation from the pipeline
+  C: A deployment block on any image whose registry scan shows critical flaws
+  D: Release repositories that only the pipeline can push to, apart from test ones
+answer: B
+explanation:
+  why_correct: The control has to sit where the image is admitted to production and check how it was built, not what it is
+    called or where it is stored. Having the release pipeline sign an attestation after its tests and scans, and having the
+    clusters admit only images carrying a valid one, rejects any image built elsewhere, whatever its tag, repository or manifest.
+  why_not:
+    A: Immutable tags stop a release image being overwritten, but the developer used a new tag, so nothing was overwritten
+      and the laptop image would still be accepted.
+    C: Blocking images with critical findings stops some bad images, but an untested laptop build can scan clean and still
+      skip the pipeline's tests, so it would be deployed.
+    D: Separate release repositories protect what is stored as a release, but developers edit manifests and could point
+      production at an image in a test repository instead.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

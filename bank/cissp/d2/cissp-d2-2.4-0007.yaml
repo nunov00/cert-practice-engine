@@ -1,0 +1,32 @@
+id: cissp-d2-2.4-0007
+subdomain: '2.4'
+difficulty: hard
+stem: A subscription service must delete a former customer's personal data within 60 days of account closure, and its production
+  systems do. An audit found closed customers' data in hundreds of extracts that analysts had saved to laptops and shared
+  drives or emailed to colleagues. The analysts mostly need current, customer-level views for churn reports. Which change
+  BEST closes the gap?
+options:
+  A: Monthly discovery scans of laptops and shared drives, deleting closed customers' records
+  B: Governed analysis workspaces reading live warehouse views, with local extracts disabled
+  C: A quarterly confirmation from each analyst that closed customers' records are deleted
+  D: Source tags on each extract, so that the deletion job can trace and purge each copy
+answer: B
+explanation:
+  why_correct: Deletion at the end of the lifecycle works only for copies the organisation can reach, and these extracts
+    scatter the data to places production deletion never touches. Since the analysts need current views rather than snapshots,
+    workspaces that read the warehouse in place, with extracts turned off, give them what they need while leaving no separate
+    copies, so a deletion in the warehouse takes effect everywhere at once.
+  why_not:
+    A: Discovery scans are a useful way to find stray personal data, but they do not reach copies sent by email, and records
+      created just after one monthly scan can outlive the 60-day limit before the next scan finds them.
+    C: An analyst confirmation adds accountability, but it relies on each person finding every copy they and their colleagues
+      made, and quarterly confirmation is already longer than the 60-day limit.
+    D: Tagging extracts by source suits data held in managed stores, but spreadsheets saved locally and emailed onward are
+      beyond the reach of a deletion job, and the tags are lost once the data is reshaped.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

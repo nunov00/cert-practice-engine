@@ -1,0 +1,34 @@
+id: cissp-d1-1.2-0007
+subdomain: '1.2'
+difficulty: hard
+stem: A company runs a yearly staff survey with questions on managers' conduct. The works council will approve it only if
+  no one, IT administrators included, can link an answer to a person, while each employee can answer at most once. Last
+  year the survey used single sign-on, and staff in small teams doubted their answers were anonymous. Which design BEST
+  meets both requirements?
+options:
+  A: Single sign-on, with answers stored apart from the record of who has responded
+  B: Single-use codes drawn at random by staff, with no record of who drew which
+  C: An open link with no sign-in, allowing one response per device through a cookie
+  D: Single sign-on via an outside survey firm, contracted not to disclose identities
+answer: B
+explanation:
+  why_correct: The survey needs two objectives that pull against each other, confidentiality of who gave each answer and
+    integrity of the count, one answer per employee. Random single-use codes with no record of who drew which code let the
+    system accept each code once, so nobody answers twice, while the system never learns an identity it could later link to
+    an answer, whoever has access to it. The protection comes from the design rather than from anyone's promise.
+  why_not:
+    A: Separating the answers from the list of respondents is a common design, but the system still knows who is signing in
+      at the moment each answer arrives, and an administrator can match the time a person is marked as responded with the
+      time an answer is stored, which in a small team identifies them.
+    C: An open link keeps identities out entirely, but a cookie is cleared or avoided by using a second device or browser,
+      so the one-answer limit, the integrity half of the requirement, is not really enforced.
+    D: An outside firm keeps the company's own administrators away from identities, but the firm still holds both identities
+      and answers, and a contract is a promise rather than a technical barrier, which is what the works council's condition
+      asks for.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

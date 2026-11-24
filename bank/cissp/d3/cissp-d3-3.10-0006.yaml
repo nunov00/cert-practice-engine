@@ -1,0 +1,32 @@
+id: cissp-d3-3.10-0006
+subdomain: '3.10'
+difficulty: hard
+stem: A port's new crane-control system runs on a single server, because its requirements, written by the terminal's
+  operations team and the vendor, said only that the cranes must run around the clock. A design review signed it off as
+  meeting every stated requirement. In operation, security patches cannot be applied, since any restart stops the cranes.
+  Which lifecycle change BEST prevents this on future systems?
+options:
+  A: Including maintenance and security staff as stakeholders when requirements are set
+  B: A security architecture review at the design gate, with authority to block designs
+  C: A go-live test proving that patches can be applied without stopping the system
+  D: Contract terms requiring vendors to support patching without system downtime
+answer: A
+explanation:
+  why_correct: The design did what its requirements asked, and the review confirmed it. The gap came earlier, when only the
+    people who use the system stated its needs. Bringing the people who will maintain and secure it into stakeholder
+    analysis turns needs such as patching without an outage into requirements, which then shape the architecture, for
+    example a redundant design, before it is fixed.
+  why_not:
+    B: A blocking design review is a valuable gate, but reviews check designs against the stated requirements, and this
+      one passed because the need to patch was never stated.
+    C: A go-live test would show the problem, but only once the single-server design is built, when changing it is
+      slowest and most expensive.
+    D: A contract term would cover this one need for systems bought from vendors, but it treats the symptom. Needs that
+      those who run and secure a system would raise, and in-house systems, are still left out.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

@@ -1,0 +1,31 @@
+id: cissp-d7-7.13-0004
+subdomain: '7.13'
+difficulty: hard
+stem: A logistics firm revised its continuity plan last month so that two named deputies can invoke and lead the response
+  when the two senior managers who have always done so are unavailable. The last three tabletop exercises went smoothly with
+  the senior managers in charge. As the security member of the planning group, which design should you push for in the
+  next exercise?
+options:
+  A: A no-notice tabletop, so the team cannot prepare for the scenario in advance
+  B: A tabletop in which both senior managers are declared unreachable at the start
+  C: A functional exercise at the recovery site, with the senior managers leading
+  D: A scenario written by an outside facilitator, with injects the team has not seen
+answer: B
+explanation:
+  why_correct: Exercises should test what the plan relies on, especially what has changed and never been tried. The new
+    deputies have never invoked or led a response, so declaring the senior managers unreachable makes them do both, and
+    shows whether they have the authority, information and contacts the revised plan assumes.
+  why_not:
+    A: No-notice exercises test readiness more honestly, but the same senior managers would still lead, so the deputies'
+      new role would go untested again.
+    C: A functional exercise tests systems and procedures at the recovery site, which is valuable, but with the senior
+      managers leading it leaves the revised part of the plan untried.
+    D: An outside facilitator and fresh injects make the scenario harder to anticipate, but they change the scenario, not
+      who leads, so the deputies are still not exercised.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending
