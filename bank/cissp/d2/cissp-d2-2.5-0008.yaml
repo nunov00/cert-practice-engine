@@ -1,26 +1,28 @@
 id: cissp-d2-2.5-0008
 subdomain: '2.5'
 difficulty: hard
-stem: A supermarket chain keeps store CCTV footage for 14 days, as its privacy notice states. Customers' injury claims
-  usually arrive one to three months after the event, when the footage is gone. Nearly all claims concern falls that staff
-  recorded in the store's accident book on the day. Which retention change BEST fits?
+stem: A staffing agency keeps rejected applicants' CVs and interview notes with no end date, hoping to place them in other
+  roles. No law sets a retention period, but rejected applicants may bring discrimination claims for up to a year, and the
+  agency has defended several such claims using interview notes. Applicants are told their data is used only for the role
+  they applied for. Which retention rule BEST fits?
 options:
-  A: Keep the footage for 90 days, the time within which claims usually arrive
-  B: Keep 14 days, saving clips of incidents logged in the accident book
-  C: Keep 90 days only for cameras over the aisles and entrances where falls occur
-  D: Keep the footage for 90 days, encrypted and viewable only by the claims team
+  A: Delete each applicant's records once they are rejected, as the role's purpose has ended
+  B: Keep each applicant's records for the one-year claim period, then delete them
+  C: Keep each applicant's records for two years, the window in which placements often arise
+  D: Keep each CV for the one-year claim period, deleting interview notes on rejection
 answer: B
 explanation:
-  why_correct: Retention should keep what a purpose needs and no more. The footage that matters is of incidents the stores
-    already record on the day, so saving those clips when the incident is logged, and keeping them until any claim is settled,
-    preserves the evidence while every other shopper's footage still goes after 14 days, as the privacy notice promises.
+  why_correct: Where no law sets a period, retention follows the purposes the organisation can justify. Once an applicant
+    is rejected, the remaining legitimate need is to defend a possible claim, which can arrive for up to a year and is answered
+    with the interview notes. Keeping the whole record for that period, then deleting it, meets that need and stops the indefinite
+    retention.
   why_not:
-    A: Ninety days would cover the claims, but it keeps every shopper's movements six times longer to serve a small number
-      of recorded incidents, which is hard to justify under the privacy notice and data protection law.
-    C: Limiting longer retention to the cameras where falls happen narrows it, but those cameras cover most of the shop floor,
-      so most shoppers' footage is still kept for 90 days for the sake of a few incidents.
-    D: Encryption and restricted viewing reduce the risk of misuse, but they do not change how long every shopper's footage
-      is kept, which is the part that exceeds the purpose.
+    A: Deleting on rejection honours the original purpose most strictly, but it destroys the records the agency needs to answer
+      a discrimination claim, which it has had to do several times.
+    C: Placing applicants in later roles is a real business aim, but applicants were told their data would be used only for
+      the role they applied for, so keeping it for that new purpose would need their agreement first.
+    D: Keeping the CV while dropping notes looks like minimisation, but the notes are the evidence the agency has used to defend
+      claims, so deleting them first defeats the purpose that justifies keeping anything.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -28,3 +30,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

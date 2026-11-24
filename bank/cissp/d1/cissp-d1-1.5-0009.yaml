@@ -1,28 +1,27 @@
 id: cissp-d1-1.5-0009
 subdomain: '1.5'
 difficulty: hard
-stem: An anonymous tip says a company's CIO approves inflated invoices from a supplier owned by his brother-in-law. The audit
-  committee wants the facts before deciding on dismissal or a police report. The security team, and the IT staff who extract
-  email, logs and finance-system records, all report to the CIO. Who should collect the evidence?
+stem: An anonymous tip says a company's CIO approves inflated invoices from a supplier owned by his brother-in-law. Any action
+  against him or the supplier is likely to end in court. The audit committee wants the facts before deciding what to do,
+  and the security team and IT administrators all report to the CIO. Who should collect the evidence?
 options:
-  A: The security team, imaging the CIO's devices and mailbox under documented chain of custody
-  B: External forensic investigators engaged by, and reporting to, the audit committee
-  C: Internal audit, reviewing the invoices and supplier approvals with data supplied by IT
-  D: The police economic crime unit, after the company reports the suspected fraud
-answer: B
+  A: The security team, collecting under chain of custody with the general counsel overseeing it
+  B: Internal audit, given read-only access to mail and finance records by the audit committee
+  C: A forensic firm retained by outside counsel, imaging the evidence under chain of custody
+  D: The police economic crime unit, after the company reports the suspected fraud to them
+answer: C
 explanation:
-  why_correct: The investigation starts as an administrative one but may become criminal, so the evidence must be collected
-    to a standard that would hold up later, and by people the subject cannot influence. Everyone who can reach the systems
-    internally reports to the CIO. Forensic investigators engaged by the audit committee are independent of him, can
-    preserve the data under chain of custody without tipping him off, and give the committee the facts it needs to choose
-    its next step.
+  why_correct: The matter starts as an internal inquiry but is likely to end in court, so the evidence must be collected
+    to a forensic standard, and by people the CIO cannot influence. A forensic firm retained by outside counsel is independent
+    of the CIO, preserves the data as images under chain of custody that a court can rely on, and works under legal direction,
+    which also helps keep the inquiry confidential until the committee decides.
   why_not:
-    A: Imaging under chain of custody is the right technique, but the security team reports to the person under suspicion,
-      which compromises both its independence and the secrecy of the inquiry, and a court may doubt evidence gathered that way.
-    C: Internal audit is independent of the CIO and suits an invoice review, but it would rely on data extracted by the CIO's
-      own staff, who could alert him or alter what they hand over.
-    D: A police report may follow, but the audit committee first wants to establish the facts, and the company cannot direct
-      when or whether the police act. Preserving the evidence is still the company's own task now.
+    A: Oversight by the general counsel adds some independence, but the people collecting the evidence still report to the
+      man under suspicion, which a court or the CIO's lawyers can challenge, and the inquiry may reach him through his own team.
+    B: Internal audit is independent of the CIO and suits a review of invoices, but reading live mailboxes and records through
+      granted access leaves no forensic copy and changes the data it touches, which weakens it in a court case.
+    D: A police report may follow, but the committee first wants the facts, and the company cannot control when or whether
+      the police act. Preserving the evidence is still the company's own task now.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -30,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
   check_verdict: pending
+  options_only: obvious

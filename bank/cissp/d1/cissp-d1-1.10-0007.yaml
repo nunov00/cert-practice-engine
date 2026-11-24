@@ -1,27 +1,28 @@
 id: cissp-d1-1.10-0007
 subdomain: '1.10'
 difficulty: hard
-stem: An insurer's product team threat modelled its claims platform in full before launch, and it now releases weekly.
-  Eight months on, attackers abused a service-to-service call between two internal components, added in a recent sprint,
-  which skipped the authorisation check that other calls make. Which practice would MOST likely have caught this before
-  release?
+stem: An insurer's product team threat modelled its claims platform in full before launch and now releases every week.
+  Attackers recently abused a call between two internal components that a developer added mid-sprint as a workaround for
+  a slow queue, outside the epic's reviewed design, and that skips the authorisation check other calls make. Which practice
+  would MOST likely have caught this before release?
 options:
-  A: Re-run the full threat model each quarter, with the security team leading it
-  B: Review threats in each story that adds a data flow or crosses a trust boundary
-  C: Penetration test each release that changes the platform's external interfaces
-  D: Map data flows from production traffic each month and compare them with the model
+  A: A threat and design review of each epic before its stories are planned
+  B: A threat check in code review whenever a change adds a call or data flow
+  C: A penetration test of the platform ahead of each quarterly major release
+  D: A refresh of the full threat model each quarter, led by the security team
 answer: B
 explanation:
-  why_correct: A threat model made once goes stale as each sprint changes the design. Making a short threat review part
-    of every story that adds a data flow or crosses a trust boundary looks at the new call while it is being designed, when
-    asking who may call it and how that is checked would have exposed the missing authorisation before it shipped.
+  why_correct: A threat model made once goes stale as the design changes, and here the change was made in code, mid-sprint,
+    by one developer. Making a short threat check part of code review whenever a change adds a call or data flow puts the
+    question "who may call this, and how is that checked?" at the one point every change must pass, including workarounds
+    that never appeared in any design, so the missing authorisation would have been found before the change shipped.
   why_not:
-    A: A quarterly full review refreshes the model, but with weekly releases a new call is usually in production for weeks
-      before the next review, which is too late to stop it shipping.
-    C: Testing releases that change external interfaces is sound, but this call ran between two internal components, so a
-      test scoped to external interfaces would not have exercised it.
-    D: Comparing observed traffic with the model is a good way to spot drift, but it works on what is already in production,
-      so it finds the call after release, not before.
+    A: Reviewing each epic's design brings threat modelling into planning, which is good practice, but this call was added
+      later as a workaround outside the reviewed design, so the epic review never saw it.
+    C: A penetration test could find a missing authorisation check, but with weekly releases a call added in one sprint is
+      usually live for weeks before the next quarterly test.
+    D: A quarterly refresh brings the model up to date, but with weekly releases the new call would normally be in production
+      long before the next refresh looked at it.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -29,3 +30,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
   check_verdict: pending
+  options_only: obvious

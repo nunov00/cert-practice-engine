@@ -1,0 +1,31 @@
+id: cissp-d7-7.2-0005
+subdomain: '7.2'
+difficulty: hard
+stem: A hospital's SIEM licence is priced by daily ingest, and volume has doubled in a year. The finance director wants the
+  cost cut by 40%. Half the volume is firewall allowed-connection logs and DNS query logs, which rarely trigger alerts, but
+  investigators relied on them in each of last year's three incidents to trace the attackers' movements. Which approach
+  BEST meets the cut?
+options:
+  A: Route allowed-connection and DNS logs to cheap searchable storage outside the SIEM
+  B: Sample allowed-connection and DNS logs at one in ten before they reach the SIEM
+  C: Keep only denied connections from the firewalls, and stop collecting DNS query logs
+  D: Cut the SIEM's retention for its log sources from twelve months to three
+answer: A
+explanation:
+  why_correct: The two sources are bulky and seldom alert, but they are what investigators need to reconstruct an
+    intrusion. Sending them to low-cost storage that can still be searched during an investigation removes them from the
+    priced ingest while keeping each event, and the sources that drive alerts stay in the SIEM.
+  why_not:
+    B: Sampling keeps trends visible and cuts volume, but tracing an attacker needs the specific connections and lookups
+      they made, and nine in ten of those would be gone.
+    C: Logging only denials is a common way to cut firewall volume, but the attackers' movements showed up in allowed
+      traffic and DNS lookups, which this would stop keeping.
+    D: Shorter retention reduces storage, but the licence is priced by what is ingested each day, so the cost would hardly
+      change, and older evidence would be lost too.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

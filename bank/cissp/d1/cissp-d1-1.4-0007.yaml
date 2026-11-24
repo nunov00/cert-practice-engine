@@ -1,0 +1,32 @@
+id: cissp-d1-1.4-0007
+subdomain: '1.4'
+difficulty: hard
+stem: An EU logistics firm found workers clocking in for absent colleagues with shared badges at two of its 40 warehouses.
+  It proposes fingerprint readers for time recording at every site, and the works council objects. Supervisors do not
+  currently check clock-ins at any site. Which approach BEST meets the firm's data protection obligations?
+options:
+  A: Fingerprint readers at the 40 sites, with each worker's written consent to enrolment
+  B: Fingerprint readers at the 40 sites, with templates held only on each worker's own badge
+  C: Fingerprint readers at the two sites, after a data protection impact assessment
+  D: Supervisor checks of clock-ins at the two sites, with photos taken at clock-in there
+answer: D
+explanation:
+  why_correct: Fingerprints used to identify workers are biometric data, a special category under GDPR, so the firm must
+    show the processing is necessary and that no less intrusive means would do. The problem is confined to two sites, and
+    simple measures there, supervisor checks backed by a photo at clock-in, have not been tried. Starting with those meets
+    the firm's need while staying proportionate; biometrics could be reconsidered only if they fail.
+  why_not:
+    A: Consent looks like the cleanest legal basis, but consent from an employee to an employer is rarely seen as freely given,
+      and it does not answer whether fingerprinting all 40 sites is necessary at all.
+    B: Keeping templates on the badge is a strong privacy design that avoids a central biometric database, but it is still
+      biometric processing at every site to fix a problem at two, with less intrusive measures untried.
+    C: Limiting the readers to the two sites and assessing the impact first is far more proportionate, and a DPIA would be
+      required, but an assessment does not make the processing necessary, and with supervisor checks never tried it would
+      be hard to show that less intrusive means could not work.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-24-daily-cissp
+  check_verdict: pending

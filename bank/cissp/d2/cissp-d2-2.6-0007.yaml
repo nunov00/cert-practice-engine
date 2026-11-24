@@ -6,25 +6,25 @@ stem: A government agency applies one moderate control baseline to all its syste
   team says encryption at rest and logging of each read of the data add cost for no benefit. How should the agency apply
   the baseline to the portal?
 options:
-  A: Apply the moderate baseline in full, as for the agency's other systems
+  A: Apply the moderate baseline, scoping out encryption at rest and read logging with reasons
   B: Apply the low baseline, the level that public information normally calls for
-  C: Scope out the controls that only protect confidentiality, recording why
-  D: Apply the moderate baseline, with a risk owner's exception for those two controls
-answer: C
+  C: Apply the moderate baseline, with a risk owner's time-limited exception for those two controls
+  D: Apply the low baseline, tailored up with the moderate baseline's integrity controls
+answer: A
 explanation:
-  why_correct: The portal's data is public, so confidentiality impact is low, but integrity impact is at least moderate,
-    which keeps the system at the moderate baseline. Scoping then removes controls whose purpose does not apply, here those
-    that only protect confidentiality, with the reason documented, while the integrity and availability controls stay in
-    full. That is how a baseline is meant to be fitted to a system.
+  why_correct: A system's baseline follows its highest impact. The data is public, so confidentiality impact is low, but
+    tampering with these figures has at least a moderate integrity impact, so the moderate baseline applies. Scoping then
+    removes controls whose purpose does not exist for this system, here two that only protect confidentiality, with the
+    reason documented, while every integrity and availability control stays.
   why_not:
-    A: Applying the baseline unchanged is simple and consistent, but it spends money on controls that protect nothing here,
-      and baselines are designed to be scoped and tailored to each system.
-    B: Public data does suggest a low baseline at first sight, but a system's baseline follows its highest impact, and tampering
-      with these figures has at least a moderate integrity impact, so the low baseline would drop integrity controls the portal
-      needs.
-    D: An exception is for a control that applies but cannot be met yet, and it is usually time-limited and reviewed. These
-      controls do not apply to public data at all, so recording them as an accepted shortfall misstates the system's risk
-      and leaves an exception to renew indefinitely.
+    B: Public data does suggest a low baseline at first sight, but the baseline follows the highest of the three impacts,
+      and the low baseline would drop integrity controls the portal needs.
+    C: An exception is for a control that applies but cannot be met yet, and it is usually time-limited and reviewed. These
+      controls protect nothing on public data, so recording them as an accepted shortfall misstates the risk and leaves an
+      exception to renew for the life of the system.
+    D: Tailoring up from the low baseline recognises the integrity need, but the starting point is set by the highest impact,
+      and picking integrity controls by hand from a lower baseline can miss supporting controls, such as configuration and
+      change management, that the moderate baseline includes for that reason.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -32,3 +32,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
   check_verdict: pending
+  options_only: obvious

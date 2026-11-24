@@ -5,7 +5,7 @@ stem: In a manufacturer's business impact analysis, 26 of 30 department heads sa
   four hours, which would need recovery spending far above the budget. Finance described the impact of an outage as lost revenue,
   the quality team as customer complaints, and HR as staff morale. What should the continuity manager do NEXT?
 options:
-  A: Have executives agree common impact criteria over time, then have each head re-rate
+  A: Have executives agree common impact scales at set outage durations, then re-rate
   B: Have executives rank the 30 processes against each other and fund the top tier
   C: Ask each head for evidence from past outages to support their four-hour figure
   D: Cost the recovery options for each process and let the board choose what to fund
@@ -30,3 +30,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

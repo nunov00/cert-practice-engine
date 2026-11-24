@@ -6,16 +6,17 @@ stem: A company runs a yearly staff survey with questions on managers' conduct. 
   year the survey used single sign-on, and staff in small teams doubted their answers were anonymous. Which design BEST
   meets both requirements?
 options:
-  A: Single sign-on, with answers stored apart from the record of who has responded
-  B: Single-use codes drawn at random by staff, with no record of who drew which
+  A: Single sign-on, with answers stored apart from the record of who has already responded
+  B: Single-use codes handed out one per employee in person, with no record of who got which
   C: An open link with no sign-in, allowing one response per device through a cookie
   D: Single sign-on via an outside survey firm, contracted not to disclose identities
 answer: B
 explanation:
   why_correct: The survey needs two objectives that pull against each other, confidentiality of who gave each answer and
-    integrity of the count, one answer per employee. Random single-use codes with no record of who drew which code let the
-    system accept each code once, so nobody answers twice, while the system never learns an identity it could later link to
-    an answer, whoever has access to it. The protection comes from the design rather than from anyone's promise.
+    integrity of the count, one answer per employee. Handing each employee one single-use code in person, with no record
+    of who received which, lets the system accept each code once, so nobody answers twice, while the system never learns
+    an identity it could later link to an answer, whoever has access to it. The protection comes from the design rather
+    than from anyone's promise.
   why_not:
     A: Separating the answers from the list of respondents is a common design, but the system still knows who is signing in
       at the moment each answer arrives, and an administrator can match the time a person is marked as responded with the
@@ -32,3 +33,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

@@ -1,6 +1,6 @@
 id: cissp-d3-3.9-0005
 subdomain: '3.9'
-difficulty: medium
+difficulty: easy
 stem: A bank is fitting out a new data centre with two utility feeds from separate substations, N+1 generators with 48 hours
   of fuel, and fibre from two carriers. A design review finds that both power feeds and both carriers' fibre enter through
   one duct bank along the north wall, beside a road the city plans to dig up next year. Which change BEST addresses this?
@@ -29,4 +29,4 @@ provenance:
   run_id: 2026-11-21-daily-cissp
   checked_by: 2026-11-21-daily-cissp-check
   check_verdict: pass
-  options_only: not_obvious
+  options_only: obvious
