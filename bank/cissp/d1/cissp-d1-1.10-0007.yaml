@@ -1,6 +1,6 @@
 id: cissp-d1-1.10-0007
 subdomain: '1.10'
-difficulty: hard
+difficulty: medium
 stem: An insurer's product team threat modelled its claims platform in full before launch and now releases every week.
   Attackers recently abused a call between two internal components that a developer added mid-sprint as a workaround for
   a slow queue, outside the epic's reviewed design, and that skips the authorisation check other calls make. Which practice
@@ -30,4 +30,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
   check_verdict: pending
-  options_only: obvious
+  options_only: not_obvious

@@ -1,6 +1,6 @@
 id: cissp-d7-7.9-0004
 subdomain: '7.9'
-difficulty: hard
+difficulty: medium
 stem: A retailer's HR SaaS provider updates all its customers every fortnight, publishes release notes a week ahead, and lets
   each customer switch new features off in its own tenant. Last month an update turned on a feature that let managers' delegates
   see salaries. The retailer's change board reviews only changes its own teams make. Which change BEST addresses this?

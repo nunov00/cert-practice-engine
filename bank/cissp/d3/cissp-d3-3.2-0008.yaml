@@ -1,6 +1,6 @@
 id: cissp-d3-3.2-0008
 subdomain: '3.2'
-difficulty: hard
+difficulty: medium
 stem: A university's research data platform lets each dataset's owner share it with chosen collaborators, and any recipient
   can share it onward. Before approving a study, the ethics office must be able to name everyone who could come to hold a
   sensitive dataset, while owners must keep deciding who their collaborators are. Which change BEST meets both needs?

@@ -1,6 +1,6 @@
 id: cissp-d6-6.3-0013
 subdomain: '6.3'
-difficulty: hard
+difficulty: medium
 stem: A logistics firm's board asks whether the fixes agreed after security incidents are working. Each incident record
   names its root cause and the affected system, and internal audit checks a sample of completed actions each year. This
   year the security operations centre began monitoring the firm's cloud accounts, which had not been watched before. Which
@@ -29,4 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
   check_verdict: pending
-  options_only: obvious
+  options_only: not_obvious

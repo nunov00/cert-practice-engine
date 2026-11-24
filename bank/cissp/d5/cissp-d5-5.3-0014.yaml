@@ -1,6 +1,6 @@
 id: cissp-d5-5.3-0014
 subdomain: '5.3'
-difficulty: hard
+difficulty: medium
 stem: Hospital staff reach five cloud clinical applications, each from a different vendor, through SAML single sign-on
   with the hospital's identity provider, signing in once per shift. On shared ward PCs, nurses sign out of the application
   they used and walk away with the browser open. The next nurse to open another of the applications, often within a minute,

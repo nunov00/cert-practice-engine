@@ -19,7 +19,8 @@ explanation:
     A: Oversight by the general counsel adds some independence, but the people collecting the evidence still report to the
       man under suspicion, which a court or the CIO's lawyers can challenge, and the inquiry may reach him through his own team.
     B: Internal audit is independent of the CIO and suits a review of invoices, but reading live mailboxes and records through
-      granted access leaves no forensic copy and changes the data it touches, which weakens it in a court case.
+      granted access leaves no verified forensic copy, and the records stay in systems run by administrators who report to the
+      CIO, which weakens the evidence in a court case.
     D: A police report may follow, but the committee first wants the facts, and the company cannot control when or whether
       the police act. Preserving the evidence is still the company's own task now.
 status: draft
@@ -29,4 +30,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
   check_verdict: pending
-  options_only: obvious
+  options_only: not_obvious

@@ -1,6 +1,6 @@
 id: cissp-d3-3.3-0007
 subdomain: '3.3'
-difficulty: hard
+difficulty: medium
 stem: A retailer's new backup platform backs up its store systems every hour. After attackers holding a peer's backup
   administrator role deleted that peer's backups, the retailer set a requirement that every backup from the last 30 days
   must survive an attacker with the platform's highest administrative rights. Which control BEST meets this requirement?

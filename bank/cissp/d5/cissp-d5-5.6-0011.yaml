@@ -1,6 +1,6 @@
 id: cissp-d5-5.6-0011
 subdomain: '5.6'
-difficulty: hard
+difficulty: medium
 stem: A retailer stores its 3 million customer passwords as salted SHA-256 hashes. Testers who took control of an application
   server copied the password table and cracked most of the hashes within days. About 40 percent of accounts are dormant
   but must be kept, and customers will not be made to reset their passwords. Which change BEST protects the stored passwords?
@@ -29,4 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-24-daily-cissp
   check_verdict: pending
-  options_only: obvious
+  options_only: not_obvious
