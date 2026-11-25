@@ -1,0 +1,30 @@
+id: cissp-d8-8.2-0010
+subdomain: '8.2'
+difficulty: hard
+stem: A third-party test tool in a build job printed the pipeline's cloud access key in a debug trace. Build logs at the
+  company are readable by its 300 developers, and the key was later used from an unknown address to copy a storage bucket.
+  Which change BEST prevents a repeat?
+options:
+  A: Mask the access key in build logs wherever the CI system detects its value
+  B: Limit access to each repository's build logs to that repository's maintainers
+  C: Rotate the pipeline's access key each week through the company's secrets vault
+  D: Give each job short-lived federated credentials that expire when the job ends
+answer: D
+explanation:
+  why_correct: The harm came from a credential that stayed valid long after the job that used it. Short-lived credentials
+    issued to each job through workload identity federation expire within minutes, so a credential printed in a log, cached
+    by a tool or copied elsewhere is useless by the time anyone finds it, whatever the tool printed and whoever reads the logs.
+  why_not:
+    A: Masking hides the exact value when the CI system recognises it, which is worth having, but tools can print secrets
+      encoded, split or in error dumps that masking misses, and a key leaked any other way stays valid.
+    B: Narrowing who reads the logs reduces exposure, but maintainers and anyone who compromises their accounts can still
+      find a key that remains valid, and the key also lives in tool caches and artefacts outside the logs.
+    C: Weekly rotation shortens the life of a leaked key, but it still leaves up to a week in which anyone who finds it in
+      a log can use it.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  check_verdict: pending

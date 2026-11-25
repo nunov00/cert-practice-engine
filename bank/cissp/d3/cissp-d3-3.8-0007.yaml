@@ -5,7 +5,7 @@ stem: A bank must choose a site for a second data centre. Its storage replicates
   about 60 km of fibre from the primary. The primary stands on a river plain where floods have closed roads for days at a
   time, and the regional power grid has failed twice in ten years. Which candidate site BEST fits?
 options:
-  A: A site 5 km away, built above flood level, with generators and three days of fuel
+  A: A site 5 km away on the same plain, built above flood level, with generators and fuel
   B: A site 45 km away on higher ground, supplied by a different regional grid
   C: A site 300 km away in another region, with a separate grid and no flood record
   D: A site 55 km away on higher ground, on the same regional grid, with generators
@@ -28,4 +28,3 @@ provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
   check_verdict: pending
-  options_only: not_obvious

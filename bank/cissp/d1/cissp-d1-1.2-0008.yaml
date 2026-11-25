@@ -1,0 +1,32 @@
+id: cissp-d1-1.2-0008
+subdomain: '1.2'
+difficulty: hard
+stem: A city's 2,000 traffic sensors send readings over a private radio network, each reading carrying a message
+  authentication code under that sensor's own key. An attacker recorded genuine messages during a holiday jam and
+  retransmitted them a week later, so the control system diverted traffic away from empty roads. Which change BEST
+  stops this?
+options:
+  A: Encrypt each reading under its sensor's key, so recorded messages cannot be read
+  B: Rotate each sensor's key monthly, so recorded messages soon stop verifying
+  C: Add a counter to each reading under its MAC, rejecting values already seen
+  D: Replace the MACs with digital signatures from a key pair held in each sensor
+answer: C
+explanation:
+  why_correct: The replayed messages were genuine and unaltered, so the existing MACs verified them correctly. What failed
+    is freshness, the assurance that a message is current and not repeated. A counter or timestamp covered by the MAC lets
+    the control system reject any reading it has already accepted or that is too old, and an attacker cannot change the
+    counter without breaking the MAC.
+  why_not:
+    A: Encryption protects confidentiality, but an attacker does not need to read a message to replay it, and the encrypted
+      copy still decrypts and verifies when it is sent again.
+    B: Key rotation limits how long a stolen or captured key stays useful, but a message recorded and replayed within the
+      same month still verifies, and this one was replayed a week later.
+    D: Signatures add proof of origin that a third party can check, but a replayed signed message is still genuinely signed,
+      so the control system would accept it just as it accepts the MAC today.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  check_verdict: pending

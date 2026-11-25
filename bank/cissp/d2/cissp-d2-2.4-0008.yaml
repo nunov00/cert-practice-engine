@@ -1,0 +1,31 @@
+id: cissp-d2-2.4-0008
+subdomain: '2.4'
+difficulty: hard
+stem: A customer of an online furniture retailer asks for their personal data to be erased. Tax law requires the retailer
+  to keep each sales invoice, which shows the buyer's name and address, for ten years. The customer's account also holds
+  browsing history, saved addresses and marketing preferences. How should the retailer handle the request?
+options:
+  A: Erase the account and the invoices, recording the request as the basis for it
+  B: Keep the account and invoices, marked inactive, until the tax period ends
+  C: Erase the account, and keep invoices with the buyer's name replaced by a reference
+  D: Erase the account, and keep the invoices unchanged with access limited to finance
+answer: D
+explanation:
+  why_correct: A right to erasure does not override a legal duty to retain records, but that duty covers only the records
+    the law names. Erasing the account data, which no law requires, and keeping the invoices exactly as tax law requires
+    them, with access restricted to the finance staff who need them, honours the request as far as the law allows. The
+    invoices then follow their own retention period and are destroyed when it ends.
+  why_not:
+    A: Erasing everything satisfies the customer, but destroying invoices that tax law requires the retailer to keep breaches
+      that law, and an erasure request is not a lawful basis for doing so.
+    B: Keeping everything until the tax period ends is simple to run, but the browsing history, saved addresses and marketing
+      preferences are not covered by the tax duty, so holding them for ten years ignores the request without a reason.
+    C: Pseudonymising the invoices reduces the personal data kept, but tax law requires invoices that show the buyer's name
+      and address, so altered invoices no longer meet the retention duty they are kept for.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  check_verdict: pending

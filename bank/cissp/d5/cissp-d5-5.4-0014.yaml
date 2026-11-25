@@ -1,0 +1,32 @@
+id: cissp-d5-5.4-0014
+subdomain: '5.4'
+difficulty: hard
+stem: A software firm's developers can create IAM roles in its shared development cloud account, since each serverless function
+  they deploy runs under a role of its own, and teams ship several functions a day. A tester holding the developer role created
+  a role with broad rights, attached it to a function he wrote, and through that function made himself an administrator of
+  the account. Which control BEST closes this path?
+options:
+  A: A permissions boundary that each developer-created role must carry, capping its rights
+  B: An account policy denying developers the attachment of the built-in administrator policy
+  C: Role creation moved to the platform team, which creates roles on developers' requests
+  D: A rule that detects new roles with broad rights and deletes them within minutes
+answer: A
+explanation:
+  why_correct: The developer role could create a role more powerful than itself and then act through it. Requiring every
+    role that developers create to carry a permissions boundary, and denying them any change to that boundary, caps what
+    any such role can do at the boundary's limits, so developers keep creating roles for their functions at their own pace
+    but can no longer reach rights they were never given.
+  why_not:
+    B: Blocking the built-in administrator policy closes the most obvious route, but the tester can write a custom policy
+      granting the same rights, or the rights needed to grant them, and attach that instead.
+    C: Central role creation removes the escalation path, but with several functions shipped a day it puts the platform team
+      in the path of routine work, and the requests would soon be approved without real review.
+    D: Detection and automatic deletion limit how long a broad role exists, but the escalation needs only seconds, and the
+      administrator rights the tester gave himself remain after the role is deleted.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  check_verdict: pending
