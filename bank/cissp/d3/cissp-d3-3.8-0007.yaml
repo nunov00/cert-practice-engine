@@ -1,6 +1,6 @@
 id: cissp-d3-3.8-0007
 subdomain: '3.8'
-difficulty: hard
+difficulty: medium
 stem: A bank must choose a site for a second data centre. Its storage replicates synchronously, which limits candidates to
   about 60 km of fibre from the primary. The primary stands on a river plain where floods have closed roads for days at a
   time, and the regional power grid has failed twice in ten years. Which candidate site BEST fits?
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

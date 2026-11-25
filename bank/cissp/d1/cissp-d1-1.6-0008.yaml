@@ -1,6 +1,6 @@
 id: cissp-d1-1.6-0008
 subdomain: '1.6'
-difficulty: hard
+difficulty: medium
 stem: An audit at a logistics firm finds that the operations team does not follow its documented backup procedure, which
   describes nightly tape rotation to an offsite vault. For two years the team has instead used immutable cloud snapshots,
   which meet the backup standard's retention and offline-copy requirements and pass its quarterly restore tests. What
@@ -31,3 +31,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

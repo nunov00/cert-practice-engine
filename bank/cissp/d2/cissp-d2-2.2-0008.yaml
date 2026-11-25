@@ -1,6 +1,6 @@
 id: cissp-d2-2.2-0008
 subdomain: '2.2'
-difficulty: hard
+difficulty: medium
 stem: External auditors testing a utility's payroll controls pick a sample of 40 employees from a list of staff numbers,
   then need each sampled employee's salary and bank details, which are classified Restricted. Their professional standards
   require them to keep the evidence behind their opinion in their own files for seven years. How should the utility
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

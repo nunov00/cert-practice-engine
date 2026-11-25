@@ -1,6 +1,6 @@
 id: cissp-d7-7.3-0005
 subdomain: '7.3'
-difficulty: hard
+difficulty: medium
 stem: A media company's 60 product teams create cloud storage from their own templates, written in three different infrastructure-as-code
   tools, and engineers sometimes change settings in the console during incidents. The configuration baseline says storage
   is not public; public content is served through the CDN. Last month a bucket opened during an incident was scraped within
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

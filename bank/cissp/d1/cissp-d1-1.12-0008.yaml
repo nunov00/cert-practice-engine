@@ -1,6 +1,6 @@
 id: cissp-d1-1.12-0008
 subdomain: '1.12'
-difficulty: hard
+difficulty: medium
 stem: Penetration tests at an insurer keep finding injection flaws in apps built on its in-house web framework. Developers
   complete the yearly awareness module, which covers injection, and in interviews they explain the risk well but say they
   are unsure how to use the framework's query functions safely. Which addition to the programme BEST addresses this?
@@ -28,3 +28,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

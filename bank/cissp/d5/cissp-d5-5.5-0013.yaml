@@ -1,6 +1,6 @@
 id: cissp-d5-5.5-0013
 subdomain: '5.5'
-difficulty: hard
+difficulty: medium
 stem: A hospital trust's identity system keeps one account per person, adds the rights for each employment contract the person
   holds, and removes rights only when no contract remains active. About 800 nurses hold a permanent post in one ward and a
   casual contract for shifts in others. A nurse who gave up her permanent post kept full record access in her former ward.
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

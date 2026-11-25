@@ -1,6 +1,6 @@
 id: cissp-d1-1.5-0010
 subdomain: '1.5'
-difficulty: hard
+difficulty: medium
 stem: Attackers broke into a medical transcription firm's file server. Police investigating the gang ask by email for a
   full copy of its disk to analyse the malware, which is hidden among patient files. The firm's contracts with its hospital
   clients allow patient data to be disclosed only under legal compulsion. What should the security manager do?
@@ -30,3 +30,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

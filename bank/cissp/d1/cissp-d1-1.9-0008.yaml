@@ -1,6 +1,6 @@
 id: cissp-d1-1.9-0008
 subdomain: '1.9'
-difficulty: hard
+difficulty: medium
 stem: A food manufacturer's board has set a risk appetite that no single cyber incident may stop production for more than
   two days. The risk register's ransomware scenario, rated unlikely after recent controls, would stop the plants for about
   three weeks while control systems are rebuilt. Which addition BEST brings this risk within appetite?
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

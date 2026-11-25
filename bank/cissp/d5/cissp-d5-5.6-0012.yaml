@@ -1,6 +1,6 @@
 id: cissp-d5-5.6-0012
 subdomain: '5.6'
-difficulty: hard
+difficulty: medium
 stem: A logistics company's 1,500 Linux servers, many at depots whose network links drop for hours, accept SSH keys listed
   on each server. Keys copied from a stolen laptop opened servers for days until they were removed from every list, and a
   leaver's key was later found on 200 servers. Engineers sign in to the corporate identity provider each morning. Which approach
@@ -30,3 +30,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
   check_verdict: pending
+  options_only: not_obvious
