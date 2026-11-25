@@ -22,11 +22,12 @@ explanation:
       with the same sync it says nothing about data loss.
     C: Peak load is when lag is worst, so it is a good moment to test, but the forced sync removes the lag before failover,
       and the test would again report no loss.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

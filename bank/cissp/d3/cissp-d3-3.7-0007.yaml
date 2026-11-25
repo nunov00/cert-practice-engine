@@ -1,6 +1,6 @@
 id: cissp-d3-3.7-0007
 subdomain: '3.7'
-difficulty: hard
+difficulty: medium
 stem: Testers phished one of an accounting firm's 400 workstations, took the stored hash of the built-in local administrator
   account and, without cracking it, used it to sign in as administrator to most of the other workstations within an hour.
   The password is 24 random characters, set once in the firm's standard workstation image. Which change BEST prevents this
@@ -28,4 +28,6 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: obvious

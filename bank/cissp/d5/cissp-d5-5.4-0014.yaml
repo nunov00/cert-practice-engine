@@ -23,10 +23,12 @@ explanation:
       in the path of routine work, and the requests would soon be approved without real review.
     D: Detection and automatic deletion limit how long a broad role exists, but the escalation needs only seconds, and the
       administrator rights the tester gave himself remain after the role is deleted.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

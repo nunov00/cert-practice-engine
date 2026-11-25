@@ -22,11 +22,12 @@ explanation:
       it could still overwrite another customer's files.
     C: Generated names stop an entry choosing where it lands, but customers' tools open the files by their original paths,
       so the folder structure has to exist on disk.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

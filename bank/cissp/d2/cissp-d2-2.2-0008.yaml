@@ -22,11 +22,12 @@ explanation:
       with the auditors' duty to keep it, and the copy holds every employee's details when 40 are needed.
     D: A secure portal and engagement terms protect the transfer and the stored copy, but sending the full payroll file
       hands over far more Restricted data than the 40 sampled records require, for seven years.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

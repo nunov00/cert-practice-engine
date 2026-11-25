@@ -21,11 +21,12 @@ explanation:
       in staging, and nothing then stops the fix-forward.
     D: Smaller changes reduce what can go wrong in each window, but any window can still be extended in the same way when
       a late error appears.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

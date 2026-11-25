@@ -1,6 +1,6 @@
 id: cissp-d3-3.10-0007
 subdomain: '3.10'
-difficulty: hard
+difficulty: medium
 stem: A hospital is retiring the interface engine that passes messages between its clinical systems, now that a new engine
   is live. The configuration database lists 14 systems still connected to it, but departments have set up feeds through it
   themselves over the years, and some feeds, such as registry returns, run only monthly or yearly. The engine keeps two years
@@ -23,10 +23,12 @@ explanation:
       themselves, and those would stop without warning on the date.
     D: Asking owners adds knowledge that no record holds, but feeds set up years ago may have no current owner, or owners who
       do not know their feed passes through this engine, so some would still be missed.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

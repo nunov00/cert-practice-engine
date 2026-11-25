@@ -156,3 +156,15 @@ held:
   # draft. cissp-d7-7.12-0005 stays held: still the same insurer claims setting
   # as 7.12-0004, and A/B replay 7.12-0002's test-type choice; move it to a new
   # setting with four parallel-test variants as options before release.
+  # Daily batch 2026-11-25, batch run: passed the independent check, held
+  # because only 10 hard labels survived both checks (10 hard carry 23
+  # non-hard at 30%). The easiest new medium questions go back.
+  # cissp-d1-1.2-0008 and cissp-d3-3.7-0007 were rated obvious from the
+  # options in round 2; rework their distractors (freshness alternatives that
+  # fail on a stem detail; a second per-host option) before release.
+  - { id: cissp-d1-1.2-0008, pr: 97 }
+  - { id: cissp-d3-3.7-0007, pr: 97 }
+  - { id: cissp-d2-2.3-0011, pr: 97 }
+  - { id: cissp-d1-1.5-0010, pr: 97 }
+  - { id: cissp-d1-1.9-0008, pr: 97 }
+  - { id: cissp-d2-2.4-0008, pr: 97 }

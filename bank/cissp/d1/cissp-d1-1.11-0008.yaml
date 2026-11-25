@@ -1,6 +1,6 @@
 id: cissp-d1-1.11-0008
 subdomain: '1.11'
-difficulty: hard
+difficulty: medium
 stem: A retailer sends one 250-question security questionnaire to each of its 800 suppliers yearly, and the review team
   is many months behind. Attackers recently got in through the remote access account of a small contractor that updates
   the content on in-store advertising screens, whose questionnaire was still waiting in the queue. Which change BEST
@@ -24,11 +24,12 @@ explanation:
       contractor holds little or no sensitive data, so it would stay low while its account opens a path into the network.
     D: Tiering by how critical a service is protects against supplier failure, but advertising screens matter little to
       store operations, so the contractor would stay in a low tier although its access put the whole network at risk.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
-  check_verdict: pending
-  options_only: obvious
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -21,11 +21,12 @@ explanation:
       not the in-house framework's query functions, which is where the developers are unsure.
     C: Champions help spread good practice inside teams, but a volunteer champion starts with the same gap as the other
       developers, so the skill still has to be taught first.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

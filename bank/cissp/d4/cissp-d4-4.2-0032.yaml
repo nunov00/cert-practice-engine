@@ -1,6 +1,6 @@
 id: cissp-d4-4.2-0032
 subdomain: '4.2'
-difficulty: hard
+difficulty: medium
 stem: A hospital's clinicians use phones and tablets on Wi-Fi, each signing in with their own account through WPA2-Enterprise.
   In one wing the devices keep dropping off for minutes at a time, several times a day, and the wireless controller logs floods
   of disconnect frames that claim to come from the wing's access points. The devices were all bought in the last three years.
@@ -23,10 +23,12 @@ explanation:
       a shared passphrase, losing individual accountability and the ability to cut off one user.
     D: Fast roaming shortens each reconnection, but the forged frames keep arriving and disconnect the devices again, so the
       service still fails while the flood lasts.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious
