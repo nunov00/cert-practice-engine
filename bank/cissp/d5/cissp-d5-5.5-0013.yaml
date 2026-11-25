@@ -1,0 +1,33 @@
+id: cissp-d5-5.5-0013
+subdomain: '5.5'
+difficulty: medium
+stem: A hospital trust's identity system keeps one account per person, adds the rights for each employment contract the person
+  holds, and removes rights only when no contract remains active. About 800 nurses hold a permanent post in one ward and a
+  casual contract for shifts in others. A nurse who gave up her permanent post kept full record access in her former ward.
+  Clinical audit requires each nurse to appear under one identity. Which change BEST addresses this?
+options:
+  A: Tie each right to the contract granting it, removing it when that contract ends
+  B: Disable the account when any contract ends, then re-request rights for the rest
+  C: Review the rights of staff holding more than one contract each quarter
+  D: Issue a separate account for each contract, each disabled when its contract ends
+answer: A
+explanation:
+  why_correct: The rights outlived the job because the system tracks them per person rather than per contract. Recording which
+    contract granted each right, and removing it when that contract ends, takes away the former ward's access on the day the
+    permanent post ends, while the casual shifts keep working under the same single identity.
+  why_not:
+    B: Disabling and rebuilding the account does clear the old rights, but it cuts off a nurse who is still working casual
+      shifts until new requests are approved, and it relies on manual requests each time.
+    C: A quarterly review would find leftover rights eventually, but they would stay usable for up to three months after each
+      change, and the cause in the system remains.
+    D: Separate accounts would end each contract's rights cleanly, but nurses would appear under two identities, which the
+      clinical audit requirement rules out.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

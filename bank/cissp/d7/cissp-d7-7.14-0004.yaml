@@ -1,0 +1,32 @@
+id: cissp-d7-7.14-0004
+subdomain: '7.14'
+difficulty: hard
+stem: A telecom operator's 300 unstaffed rural equipment shelters have intrusion alarms answered by a central monitoring centre.
+  Animals, storms and engineers who forget to disarm cause hundreds of alarms a month, nearly all false, and police now attend
+  a shelter alarm only once an intrusion is confirmed. Which change BEST restores a response to real intrusions?
+options:
+  A: Dual-technology motion sensors that alarm only when both detectors trigger
+  B: A mobile guard patrol that drives to each alarming shelter to check it
+  C: Cameras at each shelter that monitoring staff check when an alarm comes in
+  D: Badge readers at shelter doors that disarm the alarm when an engineer enters
+answer: C
+explanation:
+  why_correct: Police now need confirmation, so the centre needs a way to tell a real intrusion from a false alarm as it happens.
+    Cameras checked as each alarm arrives let staff confirm an intrusion within minutes and call the police with evidence,
+    whatever the cause of the false alarms.
+  why_not:
+    A: Dual-technology sensors cut false alarms from animals and storms, but not those from engineers who forget to disarm,
+      and the centre still cannot confirm a real alarm for the police.
+    B: A guard's visit does confirm an intrusion, but across 300 rural sites the drive takes too long, and intruders are often
+      gone before anyone arrives.
+    D: Automatic disarming removes the false alarms engineers cause, but those from animals and storms remain, and no alarm
+      is confirmed for the police.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

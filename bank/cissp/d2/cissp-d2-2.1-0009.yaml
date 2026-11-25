@@ -1,0 +1,34 @@
+id: cissp-d2-2.1-0009
+subdomain: '2.1'
+difficulty: hard
+stem: An engineering firm shares a project site with two partner firms. Its collaboration platform applies sharing rules
+  by each site's classification label, which each file in the site inherits. The site holds hundreds of Internal working
+  files that partners edit daily, and a few Restricted cost models that partners may not see. How should the firm classify and
+  organise this content?
+options:
+  A: Move the cost models to a separate Restricted site, and label the project site Internal
+  B: Label the project site Restricted, the level of the most sensitive files it holds
+  C: Label the project site Internal, and mark the cost models Restricted in their file names
+  D: Label the project site Internal, and remove partner access to the cost models' folder
+answer: A
+explanation:
+  why_correct: A container takes the classification of the most sensitive information in it, and here the platform enforces
+    handling by the container's label. Separating the Restricted cost models into their own Restricted site lets each
+    container carry a label that is accurate for everything in it, so the platform protects the cost models fully and the
+    partners keep working in the Internal site.
+  why_not:
+    B: Labelling a container at its highest content level is the standard rule when content stays mixed, but it applies
+      Restricted sharing rules to the whole site and blocks the partners from the working files they edit daily.
+    C: A marking in the file name tells readers the level, but the platform applies the site's Internal label and rules, so
+      the cost models are still handled and shared as Internal.
+    D: Removing partner access helps, but the cost models still carry the inherited Internal label, so the platform handles
+      them as Internal, and any later change to folder permissions exposes them.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

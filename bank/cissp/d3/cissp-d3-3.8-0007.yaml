@@ -1,0 +1,32 @@
+id: cissp-d3-3.8-0007
+subdomain: '3.8'
+difficulty: medium
+stem: A bank must choose a site for a second data centre. Its storage replicates synchronously, which limits candidates to
+  about 60 km of fibre from the primary. The primary stands on a river plain where floods have closed roads for days at a
+  time, and the regional power grid has failed twice in ten years. Which candidate site BEST fits?
+options:
+  A: A site 5 km away on the same plain, built above flood level, with generators and fuel
+  B: A site 45 km away on higher ground, supplied by a different regional grid
+  C: A site 300 km away in another region, with a separate grid and no flood record
+  D: A site 55 km away on higher ground, on the same regional grid, with generators
+answer: B
+explanation:
+  why_correct: A second site should not share the hazards most likely to take out the first. A site on higher ground, fed
+    from a different regional grid and within the replication limit, avoids both the flooding and the grid failures that
+    threaten the primary, so one regional event is unlikely to stop both sites.
+  why_not:
+    A: Raising the building and adding generators hardens it, but it sits on the same plain. Floods that close roads for days
+      would cut off staff and fuel deliveries to both sites at the same moment.
+    C: A distant site in another region is the usual choice for avoiding regional disasters, but 300 km is far beyond the 60 km
+      that synchronous replication allows, so it cannot serve the stated design.
+    D: Higher ground avoids the floods, and generators cover outages, but a failure of the shared regional grid would put both
+      sites on generators at once, which is the common dependency the second site is meant to remove.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

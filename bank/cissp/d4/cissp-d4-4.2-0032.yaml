@@ -1,0 +1,34 @@
+id: cissp-d4-4.2-0032
+subdomain: '4.2'
+difficulty: medium
+stem: A hospital's clinicians use phones and tablets on Wi-Fi, each signing in with their own account through WPA2-Enterprise.
+  In one wing the devices keep dropping off for minutes at a time, several times a day, and the wireless controller logs floods
+  of disconnect frames that claim to come from the wing's access points. The devices were all bought in the last three years.
+  Which change BEST stops the disruption?
+options:
+  A: Wireless intrusion prevention that locates the transmitter and contains it over the air
+  B: Protected management frames, required on the clinicians' wireless network
+  C: WPA3-Personal with SAE on the clinicians' network, replacing WPA2-Enterprise
+  D: Fast roaming on the access points, so that devices rejoin within milliseconds
+answer: B
+explanation:
+  why_correct: Without protected management frames, disconnect frames are not authenticated, so anyone in radio range can forge them in the access points'
+    name. Protected management frames add integrity protection to those frames, so devices ignore forged ones, while each
+    clinician keeps signing in with their own account. Devices from the last three years support the feature, so it can be
+    required rather than left optional.
+  why_not:
+    A: Wireless intrusion prevention detects the flood and helps find the transmitter, but its containment works against rogue
+      access points and clients, not against someone sending forged frames, so devices keep dropping until the person is found.
+    C: WPA3-Personal requires protected frames, which would stop the attack, but it replaces each clinician's own sign-in with
+      a shared passphrase, losing individual accountability and the ability to cut off one user.
+    D: Fast roaming shortens each reconnection, but the forged frames keep arriving and disconnect the devices again, so the
+      service still fails while the flood lasts.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

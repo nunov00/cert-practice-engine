@@ -1,0 +1,32 @@
+id: cissp-d1-1.12-0008
+subdomain: '1.12'
+difficulty: medium
+stem: Penetration tests at an insurer keep finding injection flaws in apps built on its in-house web framework. Developers
+  complete the yearly awareness module, which covers injection, and in interviews they explain the risk well but say they
+  are unsure how to use the framework's query functions safely. Which addition to the programme BEST addresses this?
+options:
+  A: A longer injection section in the yearly module, followed by a harder quiz
+  B: Sponsored secure coding certification for developers, renewed on a three-year cycle
+  C: A security champion in each development team, chosen from volunteers
+  D: Hands-on labs in which developers fix injection flaws in the in-house framework
+answer: D
+explanation:
+  why_correct: The developers already know why injection matters, so awareness is not the gap; they lack the skill to write
+    safe queries in the framework they use. That is a training need, and hands-on labs built on the in-house framework teach
+    exactly that skill on the code they work with, so the result shows up in the next tests.
+  why_not:
+    A: More awareness content repeats what developers already understand, and a harder quiz measures recall of the risk,
+      not the ability to write safe queries in the framework.
+    B: Certification is education that builds broad knowledge over time, but it teaches common languages and frameworks,
+      not the in-house framework's query functions, which is where the developers are unsure.
+    C: Champions help spread good practice inside teams, but a volunteer champion starts with the same gap as the other
+      developers, so the skill still has to be taught first.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

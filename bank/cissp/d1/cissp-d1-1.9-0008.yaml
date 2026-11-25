@@ -1,0 +1,33 @@
+id: cissp-d1-1.9-0008
+subdomain: '1.9'
+difficulty: medium
+stem: A food manufacturer's board has set a risk appetite that no single cyber incident may stop production for more than
+  two days. The risk register's ransomware scenario, rated unlikely after recent controls, would stop the plants for about
+  three weeks while control systems are rebuilt. Which addition BEST brings this risk within appetite?
+options:
+  A: Endpoint detection and response on plant hosts, monitored around the clock
+  B: Offline control system backups, with restores tested to finish in a day
+  C: Cyber insurance that covers lost production from a ransomware outage
+  D: Phishing-resistant MFA on each remote access route into the plant network
+answer: B
+explanation:
+  why_correct: The appetite limits the impact of a single incident, measured as days of lost production, and the scenario
+    breaches it on impact, not on likelihood. Offline backups of the control systems with restores tested to finish within
+    a day cut the outage from about three weeks to within the two-day limit if the attack succeeds, which is what the
+    appetite asks for.
+  why_not:
+    A: Detection and response may stop many attacks early and lowers likelihood further, but if an attack gets through,
+      rebuilding the control systems still takes about three weeks, so the impact stays outside appetite.
+    C: Insurance transfers part of the financial loss, but the appetite is set in days of stopped production, and a payout
+      does not restart the plants any sooner.
+    D: Phishing-resistant MFA closes a common way in and lowers likelihood, but the scenario is already rated unlikely, and
+      a successful attack by another route would still stop production for weeks.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

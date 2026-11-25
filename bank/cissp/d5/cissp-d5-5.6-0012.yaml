@@ -1,0 +1,34 @@
+id: cissp-d5-5.6-0012
+subdomain: '5.6'
+difficulty: medium
+stem: A logistics company's 1,500 Linux servers, many at depots whose network links drop for hours, accept SSH keys listed
+  on each server. Keys copied from a stolen laptop opened servers for days until they were removed from every list, and a
+  leaver's key was later found on 200 servers. Engineers sign in to the corporate identity provider each morning. Which approach
+  BEST fits?
+options:
+  A: Key lists pushed hourly from the directory by the configuration tool
+  B: Day-long SSH certificates issued after identity provider sign-in
+  C: Directory sign-in with a password and one-time code, checked live
+  D: Per-engineer keys held on hardware tokens, listed on each server
+answer: B
+explanation:
+  why_correct: Each server trusts the internal certificate authority's public key, held locally, so it can verify certificates
+    while its depot link is down, and nothing per user has to be added to or removed from 1,500 servers. A certificate issued
+    after the morning sign-in lapses within a day, so copied keys and leavers' access expire on their own, and disabling the
+    identity account stops new certificates.
+  why_not:
+    A: Pushing lists from the directory keeps them in step, but depot servers that are offline keep stale lists until the
+      next successful run, and a stolen key stays valid until someone removes it.
+    C: Live checks against the directory remove standing keys, but depot servers lose their path to the directory for hours,
+      so engineers could not sign in while links are down.
+    D: Hardware tokens stop keys being copied from a laptop, but each key is still listed on every server, so a leaver keeps
+      access until all 1,500 lists are cleaned.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

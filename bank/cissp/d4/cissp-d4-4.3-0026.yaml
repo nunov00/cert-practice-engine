@@ -1,0 +1,34 @@
+id: cissp-d4-4.3-0026
+subdomain: '4.3'
+difficulty: medium
+stem: A software company's deployment automation opens SSH sessions to about 3,000 Linux servers to push configuration files
+  that include database passwords. Servers are rebuilt from images every few days with new host keys, and autoscaling adds
+  new servers each day. The automation re-learns a server's host key when the inventory shows a rebuild. A tester on the internal
+  network answered for a freshly rebuilt server and received its configuration. Which change BEST fixes this?
+options:
+  A: Host certificates issued by an internal SSH CA at build, trusted by the automation
+  B: An operator check of each new host key against the build record before it is trusted
+  C: Each server's previous host keys restored from backup at rebuild, keeping stored keys valid
+  D: Key-based client sign-in for the automation, with password sign-in turned off
+answer: A
+explanation:
+  why_correct: The automation pushes secrets, so it must know it is talking to the real server, and the weak moment is each
+    time a key is learned. When each server receives a host certificate at build, signed by an internal SSH certificate authority,
+    the automation trusts the authority rather than individual keys, so rebuilt and new servers are accepted at once while
+    an impersonator without a signed certificate is refused.
+  why_not:
+    B: A human check against the build record would catch an impersonator in principle, but with 3,000 servers rebuilt every
+      few days it means around a thousand approvals a day, which either delays deployments or turns into rubber-stamping.
+    C: Restoring old keys keeps pinned keys valid across rebuilds, but servers that autoscaling adds have no previous keys, so
+      their first contact is still unprotected, and the backups become a store of every server's private key.
+    D: Key-based client sign-in proves the automation to the server, not the server to the automation, so an impersonating
+      host can still accept the session and receive the configuration.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -44,8 +44,8 @@ market; every row is *to verify* until a daily run checks it).
 | 6 | CC (ISC2) | Adaptive (CAT), 5 domains (outline from 2026-09-01; weights to confirm from the outline) | 4 | 5 | 4 | 2 | 4 | 23 | 2026-11-21 |
 | 7 | CEH (EC-Council) | 125 MCQ in 4 hours, v13; official blueprint v5 lists 9 domains (6/17/15/24/14/5/10/5/5%), applicability to v13 to confirm | 4 | 5 | 2 | 4 | 2 | 21 | 2026-11-22 |
 | 8 | CySA+ (CompTIA) | up to 85 in 165 min, MCQ and performance-based, 4 domains (34/26/24/16% on V4 from 2026-06-23) | 3 | 3 | 4 | 4 | 3 | 20 | 2026-11-23 |
-| 9 | CGRC (ISC2) | 125 items (MCQ and advanced types) in 3 hours, 7 domains (16/10/14/17/16/14/13%) | 2 | 5 | 3 | 4 | 4 | 20 | 2026-11-14 |
-| 10 | SSCP (ISC2) | 100-125 CAT items (MCQ and advanced types) in 2 hours, 7 domains (16/15/15/14/9/16/15%) | 2 | 5 | 3 | 4 | 4 | 20 | 2026-11-24 |
+| 9 | SSCP (ISC2) | 100-125 CAT items (MCQ and advanced types) in 2 hours, 7 domains (16/15/15/14/9/16/15%) | 2 | 5 | 3 | 4 | 4 | 20 | 2026-11-24 |
+| 10 | CGRC (ISC2) | 125 items (MCQ and advanced types) in 3 hours, 7 domains (16/10/14/17/16/14/13%) | 2 | 5 | 3 | 4 | 4 | 20 | 2026-11-25 |
 
 Rank follows the total; ties go to the higher demand score, then to the
 older Checked date.
@@ -253,6 +253,15 @@ older Checked date.
   worldwide, a small audience next to CISSP or CISM, so demand stays at 2.
   Scores and total (20) unchanged; it moves from 9th to 10th, as SSCP now has
   the older Checked date.
+  Re-checked 2026-11-25: the outline page still shows the outline effective
+  2024-06-15 and its seven domains, with no outline change announced. Its
+  weight and format panels again did not load through a page fetch, so the
+  weights, item count, duration and pass mark rest on the 2026-11-01 check. The
+  CGRC page still lists U.S. DoDM 8140.03 approval and links the official CGRC
+  knowledge check and flash cards; the quiz itself was not read, so calibration
+  stays at 3. No holder count on the page, so demand stays at 2 on the 5,000
+  figure from January 2026. Scores and total (20) unchanged; it moves from 9th
+  to 10th, as SSCP now has the older Checked date.
 - **SSCP:** ISC2's practitioner-level operations exam; shares ground with
   CISSP and CCSP. Checked 2026-10-31: adaptive (CAT) since 2025-10-01, 100 to
   125 items in 2 hours, multiple choice and advanced item types, pass mark
@@ -317,3 +326,4 @@ older Checked date.
 | 2026-11-22 | CEH row re-checked: still v13 ("CEH AI"), no v14 announced; the CEH page no longer lists exam format, weights or the job-listing count, so those rest on earlier checks; demand evidence now an issuer survey (92% of employers prefer CEH) and 45+ mapped roles; scores, total and rank unchanged | EC-Council [CEH page](https://www.eccouncil.org/train-certify/certified-ethical-hacker-ceh/) |
 | 2026-11-23 | CySA+ row re-checked: V4 (CS0-004) format and weights and the V3 English retirement on 2026-12-22 confirmed; the V4 page no longer lists question types, so the performance-based items rest on earlier checks; the 10 free official V4 practice questions still published; scores, total and rank unchanged | CompTIA [CySA+ V4 page](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v4/), [V4 practice questions](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v4/practice-questions/), [CySA+ V3 page](https://www.comptia.org/en-us/certifications/cybersecurity-analyst/v3/) |
 | 2026-11-24 | SSCP row re-checked: outline effective 2025-10-01 and its seven domains confirmed, no outline change announced; the outline and SSCP pages no longer show format or weights in their text, so the CAT format (100-125 items, 2 hours) and weights rest on the 2025-10-01 outline PDF and earlier checks; the SSCP page adds DoD 8140.03 approval; no holder count and the knowledge-check list did not load, so demand stays at 2 and calibration at 3; scores and total unchanged, rank 9 to 10 (CGRC now has the older Checked date) | ISC2 [outline page](https://www.isc2.org/certifications/sscp/sscp-certification-exam-outline), [SSCP page](https://www.isc2.org/certifications/sscp), [knowledge checks](https://www.isc2.org/certifications/quizzes) |
+| 2026-11-25 | CGRC row re-checked: outline effective 2024-06-15 and its seven domains confirmed, no outline change announced; weights and format panels still do not load in the page text, so they rest on the 2026-11-01 check; DoDM 8140.03 approval and the official CGRC knowledge check still listed; no holder count, so demand stays at 2 and calibration at 3; scores and total unchanged, rank 9 to 10 (SSCP now has the older Checked date) | ISC2 [CGRC outline page](https://www.isc2.org/certifications/cgrc/cgrc-certification-exam-outline), [CGRC page](https://www.isc2.org/certifications/cgrc), [CGRC knowledge check](https://cloud.connect.isc2.org/cgrc-quiz) |

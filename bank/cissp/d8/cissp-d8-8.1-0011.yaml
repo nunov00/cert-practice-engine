@@ -1,0 +1,34 @@
+id: cissp-d8-8.1-0011
+subdomain: '8.1'
+difficulty: medium
+stem: A software company's 15 product teams plan each sprint from a backlog that their product owner ranks. Scanner and
+  penetration test findings go to a separate tracker that the security team manages, where 600 high and medium findings
+  are over a year old, although teams fix the few that security escalates. Which change BEST builds remediation into the
+  SDLC?
+options:
+  A: A hardening sprint each quarter in which each team clears its oldest findings
+  B: Findings in each team's own backlog, ranked by its owner within agreed fix times
+  C: A release gate that blocks a team's deployments while its high findings are overdue
+  D: A central remediation team that fixes findings directly in the product teams' code
+answer: B
+explanation:
+  why_correct: Teams do the work that reaches their backlog, and the findings sit in a tracker that product owners never
+    rank, so only escalated items get done. Putting findings into each team's own backlog makes remediation part of normal
+    sprint planning, and fix times agreed by risk give owners a limit within which they choose the order, so findings are
+    weighed against features instead of waiting outside the process.
+  why_not:
+    A: A hardening sprint clears a batch of old findings, but between sprints new findings still wait outside the backlog,
+      and the oldest are not always the riskiest, so the backlog builds up again each quarter.
+    C: A gate puts pressure on teams, but with hundreds of overdue findings it would block most deployments at once, and
+      it still leaves findings outside the backlog where teams plan their work.
+    D: A central team adds capacity, but it changes code it does not own or know well, and the product teams keep writing
+      the same flaws because fixing them never becomes part of their own work.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

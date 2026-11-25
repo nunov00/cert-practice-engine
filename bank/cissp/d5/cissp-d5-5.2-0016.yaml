@@ -1,0 +1,34 @@
+id: cissp-d5-5.2-0016
+subdomain: '5.2'
+difficulty: medium
+stem: To cut sign-in prompts during long document reviews, a law firm lets a browser skip MFA for 30 days after one MFA sign-in.
+  Infostealer malware on a lawyer's laptop copied her browser cookies and password, and attackers then signed in from their
+  own machine without an MFA prompt. Staff use only firm-managed laptops, each holding a device certificate in its TPM. Which
+  change BEST fits?
+options:
+  A: Shorten the period a browser may skip MFA from 30 days to seven
+  B: Require MFA at each sign-in, with number matching on the prompt
+  C: Skip MFA only on laptops presenting the firm's TPM-held certificate
+  D: Flag sign-ins from new locations or networks for security review
+answer: C
+explanation:
+  why_correct: The remembered state lives in a cookie, and malware can copy a cookie to any machine. Tying the exemption to
+    the laptop's device certificate, whose private key the TPM will not export, means only a genuine firm laptop can skip
+    MFA. The attackers' machine is challenged, while staff keep the fewer prompts the firm wanted.
+  why_not:
+    A: A shorter period narrows the window, but infostealer logs are often sold and used within hours or days,
+      well inside seven, and the
+      exemption would still work from any machine.
+    B: MFA at every sign-in would stop this attack, but it brings back the prompts the firm set out to remove, when an exemption
+      bound to the device meets both goals.
+    D: Flagging unusual locations is a useful detective layer, but it acts after the attackers are signed in, and attackers
+      often route through networks near the victim to avoid it.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,34 @@
+id: cissp-d3-3.10-0007
+subdomain: '3.10'
+difficulty: medium
+stem: A hospital is retiring the interface engine that passes messages between its clinical systems, now that a new engine
+  is live. The configuration database lists 14 systems still connected to it, but departments have set up feeds through it
+  themselves over the years, and some feeds, such as registry returns, run only monthly or yearly. The engine keeps two years
+  of message logs. Which approach to switching it off BEST fits?
+options:
+  A: Capture its live traffic for two weeks, move each feed seen, then switch it off
+  B: Move each of the 14 listed systems, then switch it off on the planned date
+  C: Analyse a year of its message logs, move each feed found, then switch it off
+  D: Survey each department's system owners, move each feed they name, then switch it off
+answer: C
+explanation:
+  why_correct: Retiring a system safely starts with knowing what still depends on it, and here the records are known to be
+    incomplete. Some feeds run only monthly or yearly, so the evidence has to span at least a full year. The engine's own
+    logs already cover that period, so analysing a year of them finds every feed that has actually used it, including the
+    rare ones, and each can be moved before the engine stops.
+  why_not:
+    A: Watching live traffic finds feeds by what they actually do rather than by what the records say, which is the right
+      idea, but two weeks would miss the monthly and yearly feeds, which would then fail after the switch-off.
+    B: Moving every system on record is necessary, but the record is known to miss the feeds that departments set up
+      themselves, and those would stop without warning on the date.
+    D: Asking owners adds knowledge that no record holds, but feeds set up years ago may have no current owner, or owners who
+      do not know their feed passes through this engine, so some would still be missed.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: cissp-d7-7.3-0005
+subdomain: '7.3'
+difficulty: medium
+stem: A media company's 60 product teams create cloud storage from their own templates, written in three different infrastructure-as-code
+  tools, and engineers sometimes change settings in the console during incidents. The configuration baseline says storage
+  is not public; public content is served through the CDN. Last month a bucket opened during an incident was scraped within
+  five minutes. Which control BEST enforces the baseline?
+options:
+  A: A shared template module that keeps storage private, required in code review
+  B: A check in each deployment pipeline that blocks public storage settings
+  C: An organisation-wide cloud policy that denies requests to make storage public
+  D: A posture scan each fifteen minutes that reverts storage it finds public
+answer: C
+explanation:
+  why_correct: A deny policy set at the organisation level applies to every request the cloud provider receives, whichever
+    tool, template or console session makes it. The baseline setting then cannot be changed at all, rather than being caught
+    and corrected afterwards.
+  why_not:
+    A: A shared module sets a good default, but teams use three tools as well as the console, and a template review does not
+      cover a setting changed by hand during an incident.
+    B: Pipeline checks stop insecure templates before deployment, but console changes made during incidents never pass through
+      a pipeline.
+    D: Automatic reverts correct drift from any source, but a bucket can stay public for up to fifteen minutes, and last month's
+      was scraped within five.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

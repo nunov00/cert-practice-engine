@@ -1,0 +1,33 @@
+id: cissp-d4-4.1-0026
+subdomain: '4.1'
+difficulty: hard
+stem: A city's 900 traffic-signal controllers connect over a mobile carrier's public internet service, each with a public
+  address, because the central traffic system in the city's data centre polls each controller and sends it timing plans. Testers on the internet reached
+  the controllers' management interfaces. The controllers' firmware is updated about once in five years, and its network
+  stack has had published flaws. Which design BEST fits?
+options:
+  A: Address allow-lists on each controller, accepting traffic only from the central system
+  B: Carrier blocking of any connection opened from the internet to the controllers
+  C: Mutual TLS on each controller's management interface, with certificates from the city
+  D: A private mobile network service routing the controllers only to the city's data centre
+answer: D
+explanation:
+  why_correct: A private network service from the carrier gives the controllers addresses that are routed only to the city's
+    data centre, with no path from the internet. The central system can still open connections to each controller, and the
+    controllers' rarely patched network stack is no longer reachable by anyone outside the city's network.
+  why_not:
+    A: An allow-list on each controller limits who it answers, but it runs in the same flawed network stack, which still
+      receives and parses every packet from the internet before deciding to drop it.
+    B: Blocking inbound connections at the carrier removes internet exposure, but the central system must open connections
+      to the controllers to poll them and send timing plans, so the block would stop the system's own traffic too.
+    C: Mutual TLS keeps strangers from using the management interface, but the TLS service itself runs on the controllers'
+      flawed stack, which stays exposed to the whole internet.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

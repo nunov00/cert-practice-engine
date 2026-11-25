@@ -1,0 +1,33 @@
+id: cissp-d4-4.1-0027
+subdomain: '4.1'
+difficulty: medium
+stem: A company's web traffic leaves through a TLS-inspecting proxy that blocks malware downloads. Laptops are managed, with
+  the browser deployed and configured centrally. Firewalls allow outbound UDP 443, which the video-conferencing service uses
+  for media to servers whose addresses change without notice. Browsers now fetch many sites over HTTP/3, and two malware downloads
+  reached laptops that way. Which change BEST closes this gap?
+options:
+  A: Firewall rules allowing UDP 443 only to the conferencing service's addresses
+  B: A browser policy turning off HTTP/3 on each managed laptop
+  C: Endpoint protection on each laptop that scans each downloaded file
+  D: DNS filtering at the resolvers that blocks domains known to host malware
+answer: B
+explanation:
+  why_correct: HTTP/3 runs over QUIC on UDP 443, so browsers using it go straight out through the firewall instead of through
+    the TCP proxy. Turning HTTP/3 off in the centrally managed browser makes it use HTTP over TCP, which the proxy handles,
+    while the conferencing service keeps the UDP 443 it needs.
+  why_not:
+    A: Restricting UDP 443 to the conferencing service is the usual network fix and would force browsers back to TCP, but
+      its servers' addresses change without notice, so the rules would keep breaking media.
+    C: Scanning on the laptop is a useful second layer, but the downloads still bypass the proxy and its inspection, and the
+      endpoint scan may miss what the proxy would have blocked.
+    D: DNS filtering blocks known bad domains for every protocol, but malware is often served from new or compromised sites,
+      and web traffic still bypasses the proxy's inspection.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

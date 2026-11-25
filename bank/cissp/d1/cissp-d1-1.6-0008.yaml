@@ -1,0 +1,35 @@
+id: cissp-d1-1.6-0008
+subdomain: '1.6'
+difficulty: medium
+stem: An audit at a logistics firm finds that the operations team does not follow its documented backup procedure, which
+  describes nightly tape rotation to an offsite vault. For two years the team has instead used immutable cloud snapshots,
+  which meet the backup standard's retention and offline-copy requirements and pass its quarterly restore tests. What
+  should the security manager do?
+options:
+  A: Update the procedure to describe the snapshot method, approved by its owner
+  B: Return the team to tape rotation until a change to the procedure is approved
+  C: Record an exception for the snapshot method, reviewed by the risk committee yearly
+  D: Move the backup steps out of the procedure into a guideline the team can adapt
+answer: A
+explanation:
+  why_correct: A procedure says how a process is actually carried out to meet a standard. Here the practice already meets
+    the standard and is tested, so the fault is that the document is out of date, not that the team is out of control.
+    Updating the procedure through its normal approval makes the documented way and the real way the same again, so audits,
+    new staff and incident responders can rely on it.
+  why_not:
+    B: Following the documented procedure is the usual response to an audit finding, but it would replace a tested method
+      that meets the standard with an older one, adding risk and effort to fix a documentation gap.
+    C: Exceptions suit deviations from a standard that a risk owner accepts for a time. The snapshot method does not deviate
+      from the standard, and recording it as an exception would leave a permanent practice outside the documents that
+      describe it.
+    D: Guidelines suit advice that teams may adapt, but backups are a mandatory process, and the team needs exact steps that
+      can be followed and checked, which is what a procedure provides.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

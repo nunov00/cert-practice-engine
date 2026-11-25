@@ -1,0 +1,34 @@
+id: cissp-d7-7.12-0006
+subdomain: '7.12'
+difficulty: medium
+stem: A hospital's patient record system replicates asynchronously to a recovery site, with a 15-minute recovery point objective.
+  Its yearly failover tests always meet the recovery time objective and report no data lost. The test runbook begins by pausing
+  clinical input and forcing a full replication sync, so that the recovery site starts complete. How should the next test
+  change?
+options:
+  A: Run the test unannounced, at a time the risk team picks without warning IT
+  B: Run a full interruption test, keeping clinical work on the recovery site for a day
+  C: Run the test at the busiest hour, when replication lag is usually at its highest
+  D: Fail over from wherever replication stands, and measure the data lost
+answer: D
+explanation:
+  why_correct: A disaster does not wait for a sync, so these tests have shown recovery time but never the data loss that the
+    recovery point objective limits. Failing over from the current replication state, without the forced sync, and counting
+    what is missing against the 15-minute objective tests the figure the plan relies on. With the primary kept intact,
+    the gap can be measured by comparing the two sites and reconciled at failback.
+  why_not:
+    A: Surprise tests check readiness at short notice, but the team would still follow the runbook, forced sync first, so
+      the result would again show no loss.
+    B: A full interruption test gives stronger evidence that clinical work can run at the recovery site, but if it starts
+      with the same sync it says nothing about data loss.
+    C: Peak load is when lag is worst, so it is a good moment to test, but the forced sync removes the lag before failover,
+      and the test would again report no loss.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

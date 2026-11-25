@@ -1,0 +1,34 @@
+id: cissp-d4-4.3-0027
+subdomain: '4.3'
+difficulty: medium
+stem: A logistics firm's 40 branch offices each set their servers' clocks from four public NTP servers over the internet.
+  In a test, a tester positioned on one branch's internet provider path moved that branch's server clocks back two days
+  over a weekend, in small steps, after which the servers accepted a certificate that had expired the day before and their logs no longer lined
+  up with head office. Which change BEST prevents this?
+options:
+  A: More public NTP sources for each branch, with clients discarding any that disagree with the majority
+  B: Branch firewall rules accepting NTP replies only from the configured servers' addresses
+  C: Network Time Security on the branches' NTP, with time servers whose certificates they verify
+  D: Client settings that refuse any single clock correction larger than a few minutes
+answer: C
+explanation:
+  why_correct: Plain NTP replies carry no proof of where they came from, so anyone on the path can forge or alter them.
+    Network Time Security adds a TLS-based key exchange and authenticates each NTP reply, so the branch servers accept time
+    only from servers they have verified, and a tester on the path can delay replies, which shifts
+    time by at most a fraction of the delay, but cannot change the time they carry.
+  why_not:
+    A: Several sources with majority voting defeats one bad or faulty server, but every source's replies cross the same
+      provider path, so the tester could alter them all consistently and the majority would agree on the wrong time.
+    B: Filtering by source address blocks replies from unexpected servers, but a tester on the path forges replies that carry
+      the configured servers' addresses, or alters the genuine ones, so they pass the filter.
+    D: Refusing large jumps stops a sudden shift, which is a common protection, but the tester moved the clocks in small steps
+      over a weekend, each one under the limit.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  checked_by: 2026-11-25-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious
