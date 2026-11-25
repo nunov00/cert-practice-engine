@@ -1,0 +1,32 @@
+id: cissp-d1-1.5-0010
+subdomain: '1.5'
+difficulty: hard
+stem: Attackers broke into a medical transcription firm's file server. Police investigating the gang ask by email for a
+  full copy of its disk to analyse the malware, which is hidden among patient files. The firm's contracts with its hospital
+  clients allow patient data to be disclosed only under legal compulsion. What should the security manager do?
+options:
+  A: Give the police a verified image of the disk now, logging the handover for counsel
+  B: Give the police the server itself, and rebuild the service from clean backups
+  C: Give the police a copy now, with patient identifiers masked out of the files
+  D: Preserve a verified image now, and release it to police under a production order
+answer: D
+explanation:
+  why_correct: A criminal investigation is run by the police, and the firm is a victim that wants to help, but the disk
+    holds patient data the firm processes for its clients, and its contracts allow disclosure only when the law compels
+    it. An informal email request is not compulsion. Preserving a verified image now protects the evidence, and releasing
+    it under a production order or warrant gives the police everything they asked for while keeping the firm within its
+    contracts and data protection duties. Counsel can usually help the police obtain the order quickly.
+  why_not:
+    A: A verified, logged image is the right form of evidence, and victims often cooperate this way, but handing it over
+      on an email request is a voluntary disclosure of patient data that the client contracts do not allow.
+    B: Police sometimes take original hardware as the best evidence, but this still discloses the patient data without
+      legal compulsion, and it gives up the original when an image would serve the investigation.
+    C: Masking reduces the patient data disclosed, but changing the files alters the evidence the police asked for, and
+      it can destroy traces of malware hidden among those files, so the copy is less useful and harder to rely on in court.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  check_verdict: pending

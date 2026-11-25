@@ -1,0 +1,31 @@
+id: cissp-d8-8.3-0011
+subdomain: '8.3'
+difficulty: hard
+stem: A software composition scan of a bank's payments service reports 300 critical and high findings in its open-source
+  dependencies. The CISO asks how many of them actually put this service at risk, so that developers fix those first.
+  Which assessment BEST answers the question?
+options:
+  A: Rank the findings by their CVSS base scores, and fix the critical ones first
+  B: Rank the findings by each flaw's predicted chance of exploitation in the wild
+  C: Upgrade each flagged dependency to its latest version, then rescan the service
+  D: Check whether the service runs each flaw's vulnerable code on a reachable path
+answer: D
+explanation:
+  why_correct: A composition scan flags a library when a vulnerable version is present, not when the service uses the
+    vulnerable part of it. Reachability analysis checks whether the service's code actually calls the vulnerable functions
+    on paths an attacker can reach, which is what decides whether a finding puts this service at risk, so developers can
+    fix those first.
+  why_not:
+    A: Base scores rate a flaw's severity in general, so they help order the work, but they say nothing about whether this
+      service ever runs the vulnerable code, and the 300 findings are already rated critical or high.
+    B: Exploit prediction shows which flaws attackers are likely to use anywhere, which is useful for ordering, but a widely
+      exploited flaw in code the service never calls still poses it little risk.
+    C: Upgrading may remove many findings, but it is a fix rather than an assessment, it can break the service, and it does
+      not tell the CISO which findings mattered.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  check_verdict: pending

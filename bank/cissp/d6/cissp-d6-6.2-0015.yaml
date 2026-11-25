@@ -1,0 +1,31 @@
+id: cissp-d6-6.2-0015
+subdomain: '6.2'
+difficulty: hard
+stem: A lending platform's authorisation module has 96% branch coverage, and a matrix links each authorisation requirement
+  to at least one test. In a code review, a reviewer noticed that a developer's change had accidentally deleted an ownership
+  check, yet every test still passed. The team wants evidence each release that its tests would catch faults like this.
+  Which practice BEST fits?
+options:
+  A: Raise the module's coverage to each branch and path, enforced in the pipeline
+  B: Run mutation testing on the module, failing the build when too few changes are caught
+  C: Review the requirement-to-test matrix with the security team before each release
+  D: Run a dynamic scanner against the API each release, with an account for each role
+answer: B
+explanation:
+  why_correct: The tests ran the ownership check but did not assert its effect, so deleting it changed nothing they
+    looked at. Mutation testing makes small deliberate faults in the code, such as removing a check or flipping a condition,
+    and measures how many the tests catch, which is direct evidence of whether the suite would notice a broken check.
+  why_not:
+    A: Higher coverage shows that more code runs during the tests, but the deleted check was already covered and its loss
+      still went unnoticed, because coverage does not measure whether tests check results.
+    C: A traceability review shows that each requirement has a test, which was already true, but not whether that test
+      would fail when the requirement is broken.
+    D: A dynamic scanner can find some access flaws in the running API, but it tests the application rather than the test
+      suite, and it does not know which customer owns which loan, so it gives no evidence about the team's tests.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  check_verdict: pending

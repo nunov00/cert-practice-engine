@@ -1,0 +1,32 @@
+id: cissp-d8-8.4-0011
+subdomain: '8.4'
+difficulty: hard
+stem: A hospital's laboratory system, bought from a vendor, bundles a web server with a critical flaw that has a public
+  exploit. The flaw is in the admin console, which any device on the hospital network can reach. The system's regulatory
+  validation lapses if anyone but the vendor changes its software, and the vendor's fix ships in three months. What should
+  the security manager do?
+options:
+  A: Add a web application firewall rule that blocks the published exploit's requests
+  B: Update the bundled web server in-house, and ask the vendor to revalidate the system
+  C: Limit the admin console to a jump host for lab administrators until the fix ships
+  D: Move the system to a segment with no internet access, and monitor it for attacks
+answer: C
+explanation:
+  why_correct: The hospital cannot change the acquired software without losing its validation, so it has to reduce exposure
+    around it until the vendor's fix arrives. The flaw sits in the admin console, and only a few administrators need it.
+    Restricting the console to a jump host used by lab administrators removes the attack path from every other device on
+    the network, whatever form the exploit takes, while the system keeps running as validated.
+  why_not:
+    A: A firewall rule is a quick virtual patch, but it matches the published exploit, and attackers often vary requests
+      to get past such rules, while the console stays reachable from the whole network.
+    B: Patching the component closes the flaw, but it breaks the validation the system needs, and revalidation by the vendor
+      may take as long as waiting for the vendor's own fix.
+    D: Cutting internet access blocks some attackers, but the console stays reachable from any device on the hospital
+      network, where ransomware and other attackers usually move once inside.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  check_verdict: pending

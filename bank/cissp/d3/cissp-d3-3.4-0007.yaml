@@ -1,0 +1,32 @@
+id: cissp-d3-3.4-0007
+subdomain: '3.4'
+difficulty: hard
+stem: An engineering firm's workstations keep the cached sign-in secrets of recent users in the memory of a protected system
+  process. In a red-team test, testers phished an engineer, used an unpatched kernel flaw to run their own code in the kernel,
+  and read the secrets of each administrator who had signed in to that workstation. Which capability BEST protects these secrets
+  against a repeat?
+options:
+  A: Running the credential process as a protected process that other processes cannot open
+  B: Processor encryption of system memory, with the encryption keys held inside the processor
+  C: A blocklist that stops known vulnerable kernel drivers from loading on workstations
+  D: Holding the secrets in a hypervisor-isolated environment that the kernel cannot read
+answer: D
+explanation:
+  why_correct: The testers ran code in the kernel, which can read any process's memory, so any protection that the kernel
+    itself enforces no longer holds. Virtualisation-based isolation keeps the secrets in a separate environment whose memory
+    the hypervisor hides from the normal kernel, so even kernel code cannot read them. The workstation still needs the kernel
+    flaw patched, but a future kernel compromise no longer yields administrators' secrets.
+  why_not:
+    A: Protected-process status stops ordinary and even administrator processes from opening the credential process, but it
+      is enforced by the kernel, and code running in the kernel can ignore it or switch it off.
+    B: Memory encryption protects against reading the memory chips or bus directly, but it is transparent to software on the
+      machine, so the kernel reads the secrets in clear.
+    C: A driver blocklist stops attackers loading a known vulnerable driver to reach the kernel, which is a common route, but
+      these testers exploited a flaw in the kernel itself, so no driver was loaded.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  check_verdict: pending

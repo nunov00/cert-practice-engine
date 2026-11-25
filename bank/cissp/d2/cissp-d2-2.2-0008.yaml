@@ -1,0 +1,31 @@
+id: cissp-d2-2.2-0008
+subdomain: '2.2'
+difficulty: hard
+stem: External auditors testing a utility's payroll controls pick a sample of 40 employees from a list of staff numbers,
+  then need each sampled employee's salary and bank details, which are classified Restricted. Their professional standards
+  require them to keep the evidence behind their opinion in their own files for seven years. How should the utility
+  provide the data?
+options:
+  A: View-only access in a supervised room, with no copies leaving the utility
+  B: Encrypted copies of the full payroll file, destroyed by the firm after the audit
+  C: Extracts of the 40 sampled records, kept by the firm under its engagement terms
+  D: The full payroll file through the firm's secure portal, kept under its engagement terms
+answer: C
+explanation:
+  why_correct: The auditors need only the sampled records, and their standards require them to keep that evidence for years.
+    Providing extracts of just the 40 records limits the Restricted data that leaves the utility to what the audit needs,
+    and the engagement's confidentiality terms govern how the firm protects it while it is kept.
+  why_not:
+    A: A supervised view-only room keeps Restricted data in-house, which suits many reviews, but the auditors cannot keep
+      the evidence their standards require, so it does not support their opinion.
+    B: Encryption and destruction at the end are sound handling terms, but destroying the evidence after the audit conflicts
+      with the auditors' duty to keep it, and the copy holds every employee's details when 40 are needed.
+    D: A secure portal and engagement terms protect the transfer and the stored copy, but sending the full payroll file
+      hands over far more Restricted data than the 40 sampled records require, for seven years.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  check_verdict: pending

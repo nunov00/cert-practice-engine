@@ -1,0 +1,31 @@
+id: cissp-d1-1.11-0008
+subdomain: '1.11'
+difficulty: hard
+stem: A retailer sends one 250-question security questionnaire to each of its 800 suppliers yearly, and the review team
+  is many months behind. Attackers recently got in through the remote access account of a small refrigeration maintenance
+  contractor whose questionnaire was still waiting in the queue. Which change BEST improves the supplier assessment programme?
+options:
+  A: Tier suppliers by annual contract value, with full reviews for the top tier
+  B: Send each supplier a shorter questionnaire, so the backlog clears this year
+  C: Tier suppliers by their access to systems and data, scaling reviews to tier
+  D: Subscribe to external security ratings of each supplier, alerting on drops
+answer: C
+explanation:
+  why_correct: One deep review for every supplier spreads a small team too thin, so the programme needs tiers. The risk a
+    supplier brings depends on what it can reach, not on what it is paid, and a low-value contractor with remote access to
+    the network can do more harm than a large supplier of goods. Tiering by access to systems and data puts the deepest
+    reviews, and the earliest ones, where a compromise would hurt most.
+  why_not:
+    A: Tiering by spend is common and easy to run, but a small maintenance contract with remote access would still land in
+      a low tier, so the kind of supplier that caused this breach would again wait behind large ones.
+    B: A shorter questionnaire clears the backlog, but it gives a stationery supplier and a contractor with network access
+      the same light review, so the higher-risk suppliers get less scrutiny than before.
+    D: Outside-in ratings scale to many suppliers, but they score what is visible on the internet, and a small contractor
+      has little to see there; they say nothing about how its remote access account is protected.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  check_verdict: pending

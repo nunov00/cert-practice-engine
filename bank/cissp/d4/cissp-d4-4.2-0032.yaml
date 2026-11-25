@@ -1,0 +1,31 @@
+id: cissp-d4-4.2-0032
+subdomain: '4.2'
+difficulty: hard
+stem: A government agency found implants in the firmware of two of its edge routers. The attackers had entered through a
+  flaw in the routers' internet-facing VPN service, and the routers' own image-check command had reported the firmware as
+  genuine. The agency is buying replacement routers. Which feature should it BEST require?
+options:
+  A: Signature checks by the running software on each firmware image before it is installed
+  B: Verification of signed firmware at every boot, anchored in immutable hardware
+  C: Image hashes from the vendor's site, compared with each router's stored image after upgrades
+  D: Management access to the routers only through a dedicated out-of-band network
+answer: B
+explanation:
+  why_correct: Once attackers control a router's running software, any check that software performs can be made to lie,
+    as the image-check command did. A hardware root of trust that verifies the firmware's signature at every boot does not
+    depend on the running software, so modified firmware fails to start and the implant cannot persist. The VPN flaw still
+    needs patching, but a compromise no longer survives a reboot unnoticed.
+  why_not:
+    A: Checking signatures before installing an upgrade stops tampered images arriving through the normal upgrade path, but
+      attackers already running code on the router can write to its flash directly and bypass that check.
+    C: Comparing hashes with the vendor's published values is a sound check, but the router must hand over its stored image
+      for the comparison, and a compromised router can hand over a genuine copy, as its own check showed.
+    D: Out-of-band management protects the management interfaces, but the attackers came in through the VPN service on the
+      internet-facing data plane, which the change leaves exposed.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  check_verdict: pending

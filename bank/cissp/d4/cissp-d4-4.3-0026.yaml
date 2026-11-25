@@ -1,0 +1,33 @@
+id: cissp-d4-4.3-0026
+subdomain: '4.3'
+difficulty: hard
+stem: A software company's deployment automation opens SSH sessions to about 3,000 Linux servers to push configuration files
+  that include database passwords. Servers are rebuilt from images every few days, each time with new host keys, so the automation
+  was set to accept any host key. A tester on the internal network impersonated a server and received its configuration. Which
+  change BEST fixes this?
+options:
+  A: Host certificates issued by an internal SSH CA at build, trusted by the automation
+  B: Recording each server's host key on first contact and refusing any later change
+  C: One host key pair built into the image, so each server presents the same key
+  D: Key-based client sign-in for the automation, with password sign-in turned off
+answer: A
+explanation:
+  why_correct: The automation pushes secrets, so it must know it is talking to the real server. When each rebuilt server
+    receives a host certificate signed by an internal SSH certificate authority, the automation trusts the authority rather
+    than individual keys, so new keys after a rebuild are accepted automatically while an impersonator without a signed
+    certificate is refused.
+  why_not:
+    B: Trust on first use works for long-lived servers, but here keys change every few days. Each rebuild would look like an
+      attack and be refused, or the check would be relaxed again, and an attacker could still answer the first contact after
+      a rebuild.
+    C: A shared key would stay stable across rebuilds, but its private half would sit in the image and on 3,000 servers, so
+      anyone who obtains one copy can impersonate them all.
+    D: Key-based client sign-in proves the automation to the server, not the server to the automation, so an impersonating
+      host can still accept the session and receive the configuration.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  check_verdict: pending

@@ -1,0 +1,30 @@
+id: cissp-d6-6.3-0014
+subdomain: '6.3'
+difficulty: hard
+stem: Investigating a breach, a utility found that a domain controller had sent events to its SIEM every day, but a policy
+  change eight months earlier had switched off its logon auditing, so no sign-in records existed. The board now asks whether
+  the SIEM would hold the records needed to investigate an attack on each critical system. Which data BEST answers this?
+options:
+  A: Share of critical systems connected to the SIEM as active log sources
+  B: Share of critical systems whose events the SIEM keeps for twelve months
+  C: Share of critical systems whose daily event volume is in its usual range
+  D: Share of critical systems sending each required event type this week
+answer: D
+explanation:
+  why_correct: The breach showed that a system can report every day while missing the records an investigation needs. Defining
+    the event types each critical system must produce, and checking that each type actually arrives, measures whether the
+    evidence exists, not just whether the source is alive.
+  why_not:
+    A: Being a connected, active source is exactly what the domain controller was, so this measure would have counted it as
+      covered.
+    B: Retention matters, since records must still be there when needed, but keeping a system's events for a year does not
+      help if the required events were never generated.
+    C: Volume monitoring can flag a sudden drop, but losing one event type may barely move the total, and a system that never
+      logged a required type looks normal against its own history.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  check_verdict: pending

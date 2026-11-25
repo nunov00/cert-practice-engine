@@ -1,0 +1,33 @@
+id: cissp-d5-5.1-0016
+subdomain: '5.1'
+difficulty: hard
+stem: At an engineering firm, employee relations keeps misconduct case files on a file share that only its own staff may open.
+  Server administrators can take ownership of any file and restore any backup to any location, as their daily work requires.
+  One administrator read the case file about himself by restoring a copy to his own folder. Which control BEST protects the
+  case files?
+options:
+  A: Remove administrator rights over the case share, granting them back per task
+  B: Alert employee relations whenever an admin account restores or opens a case file
+  C: Require a second administrator to approve each restore taken from the case share
+  D: Encrypt each case file under keys that only employee relations staff hold
+answer: D
+explanation:
+  why_correct: Administrators need ownership and restore rights for their work, so any restriction built on permissions is
+    one they can undo or step around, as the restore showed. Encrypting the files under keys that only employee relations
+    holds lets administrators keep backing up, restoring and moving the files, while what they handle is ciphertext they cannot
+    read.
+  why_not:
+    A: Removing rights over the share is the usual first step, but administrators keep the power to take ownership and to
+      restore backups elsewhere, which is how this file was read, and granting rights back for each task gives them full access
+      whenever work is needed.
+    B: Alerts tell employee relations that a file was opened, but only after the administrator has read it, so the person
+      under investigation has already seen the case against him.
+    C: A second approver adds dual control to restores, but the approvers are the subject's own colleagues approving routine
+      restores, and taking ownership of the live files needs no restore at all.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  check_verdict: pending

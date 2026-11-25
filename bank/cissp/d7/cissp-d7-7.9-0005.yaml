@@ -1,0 +1,30 @@
+id: cissp-d7-7.9-0005
+subdomain: '7.9'
+difficulty: hard
+stem: At a stock exchange operator, two weekend changes overran into Monday's market opening. In each, engineers hit an error
+  late in the window and kept fixing forward, and the duty manager approved each extension by phone on their estimate that
+  a fix was close. Both changes had a rehearsed back-out that took 90 minutes. Which change BEST prevents a repeat?
+options:
+  A: A set time in each plan after which the change is backed out unless verified
+  B: Approval of each window extension by the change board chair, not the duty manager
+  C: Rehearsal of each high-risk change on a staging copy of production before approval
+  D: Shorter change windows, with large changes split into several smaller ones
+answer: A
+explanation:
+  why_correct: The back-out existed and worked; it started too late because each extension was decided under pressure on an
+    optimistic estimate. Fixing in the plan the latest time to start the back-out, at least 90 minutes before the opening,
+    unless the change is verified as working, takes that decision out of the moment and protects the opening.
+  why_not:
+    B: A more senior approver brings more authority, but faces the same choice on the same estimate at the same hour, so the
+      pull to keep fixing remains.
+    C: Staging rehearsals catch many errors before the window and are worth doing, but some late errors cannot be reproduced
+      in staging, and nothing then stops the fix-forward.
+    D: Smaller changes reduce what can go wrong in each window, but any window can still be extended in the same way when
+      a late error appears.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-25-daily-cissp
+  check_verdict: pending
