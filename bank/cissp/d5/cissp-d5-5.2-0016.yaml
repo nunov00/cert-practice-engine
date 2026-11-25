@@ -16,7 +16,8 @@ explanation:
     the laptop's device certificate, whose private key the TPM will not export, means only a genuine firm laptop can skip
     MFA. The attackers' machine is challenged, while staff keep the fewer prompts the firm wanted.
   why_not:
-    A: A shorter period narrows the window, but stolen cookies are typically used within days, well inside seven, and the
+    A: A shorter period narrows the window, but infostealer logs are often sold and used within hours or days,
+      well inside seven, and the
       exemption would still work from any machine.
     B: MFA at every sign-in would stop this attack, but it brings back the prompts the firm set out to remove, when an exemption
       bound to the device meets both goals.

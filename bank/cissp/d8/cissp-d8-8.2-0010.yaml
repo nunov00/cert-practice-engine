@@ -18,7 +18,7 @@ explanation:
     A: Masking hides the exact value when the CI system recognises it, which is worth having, but tools can print secrets
       encoded, split or in error dumps that masking misses, and a key leaked any other way stays valid.
     B: Narrowing who reads the logs reduces exposure, but maintainers and anyone who compromises their accounts can still
-      find a key that remains valid, and the key also lives in tool caches and artefacts outside the logs.
+      find a key that remains valid long after the job.
     C: Weekly rotation shortens the life of a leaked key, but it still leaves up to a week in which anyone who finds it in
       a log can use it.
 status: published

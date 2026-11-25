@@ -3,8 +3,8 @@ subdomain: '2.1'
 difficulty: hard
 stem: An engineering firm shares a project site with two partner firms. Its collaboration platform applies sharing rules
   by each site's classification label, which each file in the site inherits. The site holds hundreds of Internal working
-  files that partners edit daily, and a few Restricted cost models that partners may not see. How should this content be
-  classified?
+  files that partners edit daily, and a few Restricted cost models that partners may not see. How should the firm classify and
+  organise this content?
 options:
   A: Move the cost models to a separate Restricted site, and label the project site Internal
   B: Label the project site Restricted, the level of the most sensitive files it holds

@@ -7,7 +7,7 @@ stem: A penetration test of a ticketing company's mobile API found six high-risk
   retest?
 options:
   A: Retest the six findings as the contract provides, reporting each closed or open
-  B: Retest the six findings and the session handling the new library now provides
+  B: Retest the six findings and the API's session handling under the new library
   C: Run a full new test of the API before launch, moving the launch date if needed
   D: Review the developers' unit tests for each fix, retesting any fix they miss
 answer: B

@@ -15,7 +15,8 @@ explanation:
   why_correct: The testers ran code in the kernel, which can read any process's memory, so any protection that the kernel
     itself enforces no longer holds. Virtualisation-based isolation keeps the secrets in a separate environment whose memory
     the hypervisor hides from the normal kernel, so even kernel code cannot read them. The workstation still needs the kernel
-    flaw patched, but a future kernel compromise no longer yields administrators' secrets.
+    flaw patched, but a future kernel compromise can no longer read stored
+    administrators' secrets from memory, though it could still capture credentials entered after the compromise.
   why_not:
     A: Protected-process status stops ordinary and even administrator processes from opening the credential process, but it
       is enforced by the kernel, and code running in the kernel can ignore it or switch it off.

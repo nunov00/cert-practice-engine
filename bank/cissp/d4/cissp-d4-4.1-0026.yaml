@@ -2,7 +2,7 @@ id: cissp-d4-4.1-0026
 subdomain: '4.1'
 difficulty: hard
 stem: A city's 900 traffic-signal controllers connect over a mobile carrier's public internet service, each with a public
-  address, because the central traffic system polls each controller and sends it timing plans. Testers on the internet reached
+  address, because the central traffic system in the city's data centre polls each controller and sends it timing plans. Testers on the internet reached
   the controllers' management interfaces. The controllers' firmware is updated about once in five years, and its network
   stack has had published flaws. Which design BEST fits?
 options:

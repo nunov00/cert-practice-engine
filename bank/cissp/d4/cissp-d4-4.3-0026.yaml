@@ -18,7 +18,7 @@ explanation:
     an impersonator without a signed certificate is refused.
   why_not:
     B: A human check against the build record would catch an impersonator in principle, but with 3,000 servers rebuilt every
-      few days it means hundreds of approvals a day, which either delays deployments or turns into rubber-stamping.
+      few days it means around a thousand approvals a day, which either delays deployments or turns into rubber-stamping.
     C: Restoring old keys keeps pinned keys valid across rebuilds, but servers that autoscaling adds have no previous keys, so
       their first contact is still unprotected, and the backups become a store of every server's private key.
     D: Key-based client sign-in proves the automation to the server, not the server to the automation, so an impersonating

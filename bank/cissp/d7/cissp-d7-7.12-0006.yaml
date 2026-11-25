@@ -14,7 +14,8 @@ answer: D
 explanation:
   why_correct: A disaster does not wait for a sync, so these tests have shown recovery time but never the data loss that the
     recovery point objective limits. Failing over from the current replication state, without the forced sync, and counting
-    what is missing against the 15-minute objective tests the figure the plan relies on.
+    what is missing against the 15-minute objective tests the figure the plan relies on. With the primary kept intact,
+    the gap can be measured by comparing the two sites and reconciled at failback.
   why_not:
     A: Surprise tests check readiness at short notice, but the team would still follow the runbook, forced sync first, so
       the result would again show no loss.

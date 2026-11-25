@@ -12,7 +12,7 @@ options:
   D: Fast roaming on the access points, so that devices rejoin within milliseconds
 answer: B
 explanation:
-  why_correct: Disconnect frames in WPA2 are not authenticated, so anyone in radio range can forge them in the access points'
+  why_correct: Without protected management frames, disconnect frames are not authenticated, so anyone in radio range can forge them in the access points'
     name. Protected management frames add integrity protection to those frames, so devices ignore forged ones, while each
     clinician keeps signing in with their own account. Devices from the last three years support the feature, so it can be
     required rather than left optional.
