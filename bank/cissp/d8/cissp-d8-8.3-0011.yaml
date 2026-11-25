@@ -1,6 +1,6 @@
 id: cissp-d8-8.3-0011
 subdomain: '8.3'
-difficulty: hard
+difficulty: medium
 stem: A software composition scan of a bank's payments service reports 300 critical and high findings in its open-source
   dependencies. The CISO asks how many of them actually put this service at risk, so that developers fix those first.
   Which assessment BEST answers the question?

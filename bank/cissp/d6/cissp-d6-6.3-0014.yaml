@@ -1,6 +1,6 @@
 id: cissp-d6-6.3-0014
 subdomain: '6.3'
-difficulty: hard
+difficulty: medium
 stem: Investigating a breach, a utility found that a domain controller had sent events to its SIEM every day, but a policy
   change eight months earlier had switched off its logon auditing, so no sign-in records existed. The board now asks whether
   the SIEM would hold the records needed to investigate an attack on each critical system. Which data BEST answers this?

@@ -1,6 +1,6 @@
 id: cissp-d6-6.4-0016
 subdomain: '6.4'
-difficulty: hard
+difficulty: medium
 stem: A penetration test of a ticketing company's mobile API found six high-risk flaws two weeks before launch. To fix one
   of them, the developers replaced the API's session-handling library, and they now report all six fixed. The contract provides
   a retest of the reported findings, and a full new test would take four weeks. What should the test lead recommend for the

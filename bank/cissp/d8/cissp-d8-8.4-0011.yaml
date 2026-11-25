@@ -1,6 +1,6 @@
 id: cissp-d8-8.4-0011
 subdomain: '8.4'
-difficulty: hard
+difficulty: medium
 stem: A hospital's laboratory system, bought from a vendor, bundles a web server with a critical flaw that has a public
   exploit. The flaw is in the admin console, which any device on the hospital network can reach. The system's regulatory
   validation lapses if anyone but the vendor changes its software, and the vendor's fix ships in three months. What should

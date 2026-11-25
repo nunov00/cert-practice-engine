@@ -1,6 +1,6 @@
 id: cissp-d5-5.2-0016
 subdomain: '5.2'
-difficulty: hard
+difficulty: medium
 stem: To cut sign-in prompts during long document reviews, a law firm lets a browser skip MFA for 30 days after one MFA sign-in.
   Infostealer malware on a lawyer's laptop copied her browser cookies and password, and attackers then signed in from their
   own machine without an MFA prompt. Staff use only firm-managed laptops, each holding a device certificate in its TPM. Which

@@ -1,6 +1,6 @@
 id: cissp-d7-7.12-0006
 subdomain: '7.12'
-difficulty: hard
+difficulty: medium
 stem: A hospital's patient record system replicates asynchronously to a recovery site, with a 15-minute recovery point objective.
   Its yearly failover tests always meet the recovery time objective and report no data lost. The test runbook begins by pausing
   clinical input and forcing a full replication sync, so that the recovery site starts complete. How should the next test

@@ -1,6 +1,6 @@
 id: cissp-d3-3.4-0007
 subdomain: '3.4'
-difficulty: hard
+difficulty: medium
 stem: An engineering firm's workstations keep the cached sign-in secrets of recent users in the memory of a protected system
   process. In a red-team test, testers phished an engineer, used an unpatched kernel flaw to run their own code in the kernel,
   and read the secrets of each administrator who had signed in to that workstation. Which capability BEST protects these secrets
