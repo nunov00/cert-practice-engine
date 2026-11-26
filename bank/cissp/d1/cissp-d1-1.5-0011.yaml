@@ -1,0 +1,35 @@
+id: cissp-d1-1.5-0011
+subdomain: '1.5'
+difficulty: hard
+stem: Inspectors from an energy market regulator arrive unannounced at a power trading firm with a written authorisation
+  to examine its trading systems and copy records under the regulator's statutory powers. They ask the security manager
+  for access to the trading servers and to the mail and chat of three named traders. Outside counsel can be on site in
+  about three hours. What should the security manager do?
+options:
+  A: Let the inspectors copy what they request, with staff logging each item they take
+  B: Confirm the authorisation's scope with counsel by phone, then give access to what it covers
+  C: Ask the inspectors to wait until outside counsel arrives before giving any access
+  D: Give access now, but release copies only once counsel has screened them for privilege
+answer: B
+explanation:
+  why_correct: A regulatory investigation runs under the powers the law gives the regulator, and the written authorisation
+    sets what the inspectors may examine and copy. Refusing or delaying within that scope can itself be an offence, while
+    material outside it need not be handed over. Checking the scope with counsel straight away, by phone, lets the firm
+    cooperate at once with what the inspectors are entitled to, raise any request that goes beyond it, and keep its own
+    record of what is copied, with counsel joining in person when they arrive.
+  why_not:
+    A: Full cooperation and a log of what is taken are good practice, but without checking the authorisation the firm may
+      hand over material it was not obliged to give, such as unrelated personal messages, and it gives up the chance to
+      question a request that goes beyond the inspectors' powers.
+    C: Inspectors sometimes allow a short wait for lawyers, but three hours with no access risks being treated as obstruction,
+      and the firm does not need counsel in the room to read the authorisation and start cooperating within it.
+    D: Legally privileged material can usually be withheld, and counsel should identify it, but holding back every copy
+      until counsel has screened it delays the inspection as a whole instead of setting aside only the items claimed as
+      privileged.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

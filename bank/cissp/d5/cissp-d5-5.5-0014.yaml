@@ -1,0 +1,32 @@
+id: cissp-d5-5.5-0014
+subdomain: '5.5'
+difficulty: hard
+stem: A food manufacturer has bought a smaller competitor, whose staff need accounts in the buyer's systems within a month.
+  The acquired firm's directory holds 3,100 enabled user accounts, while its payroll lists 2,200 employees and its finance
+  team counts about 150 active contractors. Its two-person IT team has no record of why the other accounts exist. Which way
+  of granting access BEST fits?
+options:
+  A: Federation with the acquired firm's directory, admitting any of its enabled accounts
+  B: Accounts migrated from its directory, leaving out those unused in the last 90 days
+  C: Guest access for each account its IT team confirms as staff, reviewed after six months
+  D: Accounts created from its payroll and contractor records, linked to directory entries
+answer: D
+explanation:
+  why_correct: The acquired directory is not a reliable list of who works there, since it holds hundreds of enabled accounts
+    that no employee or contractor explains. Building the new accounts from the authoritative sources, payroll for employees
+    and the finance records for contractors, gives access only to people the firm actually employs or engages, and linking
+    each one to its old directory entry keeps their history usable. Unexplained accounts are left behind for review.
+  why_not:
+    A: Federation is a quick and common way to give an acquired firm's staff access on day one, but it trusts that directory
+      as it stands, including the hundreds of accounts that belong to no current employee or contractor.
+    B: Leaving out dormant accounts removes some leftovers, but accounts that are still used, such as a leaver's account
+      someone kept or one shared by a team, pass the filter without matching any person.
+    C: Guest access limits what the accounts can reach, but it relies on the same two-person team that cannot explain the
+      surplus accounts, and any wrong confirmations last until the six-month review.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

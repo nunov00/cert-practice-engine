@@ -1,0 +1,32 @@
+id: cissp-d4-4.2-0033
+subdomain: '4.2'
+difficulty: hard
+stem: At a hospital, testers on a user wall port sent frames carrying two VLAN tags and delivered packets to a server in the
+  payment VLAN on another switch, a path that the firewall routing between VLANs does not allow. Replies from the server never
+  reached them. The user ports and the trunks between switches use the switches' factory default VLAN settings. Which change
+  BEST prevents this?
+options:
+  A: Trunk negotiation turned off on each user access port
+  B: Dynamic ARP inspection with DHCP snooping on the user VLAN
+  C: An unused native VLAN on each trunk, with native traffic tagged
+  D: Port security limiting each user port to one learned MAC address
+answer: C
+explanation:
+  why_correct: This is VLAN hopping by double tagging. Because the user port sits in the same VLAN as the trunk's untagged
+    native VLAN, the first switch strips the outer tag as native traffic and sends the frame over the trunk with only the
+    inner tag, and the next switch reads that tag and delivers the frame into the payment VLAN, skipping the firewall. That is also why no replies came back. Giving
+    trunks a native VLAN that no access port uses, and tagging native traffic on trunks, leaves the outer tag nothing to match.
+  why_not:
+    A: Turning off trunk negotiation stops the other form of VLAN hopping, where the attacker's port is talked into becoming
+      a trunk. Double tagging needs no trunk on the attacker's port, so it still works.
+    B: ARP inspection backed by DHCP snooping stops forged address mappings, such as a host claiming the gateway's address,
+      but this attack forges no ARP or DHCP messages. It relies only on the VLAN tags the frame carries.
+    D: Port security limits which devices can use a port, but the testers needed only one device, and the attack lies in
+      the tags the frame carries, not in its source address.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

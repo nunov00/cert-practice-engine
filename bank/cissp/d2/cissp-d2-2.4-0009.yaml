@@ -1,0 +1,32 @@
+id: cissp-d2-2.4-0009
+subdomain: '2.4'
+difficulty: hard
+stem: A building society sends retired server drives to a certified destruction firm, which collects them in locked bins
+  and returns a certificate of destruction for each collection. Several of the society's drives, with data intact, were later
+  offered for sale online, and the firm traced them to a driver who took them from a bin before it reached the shredding
+  plant. Which change BEST prevents a recurrence?
+options:
+  A: Reconcile each certificate against a list of drive serial numbers made at collection
+  B: Have the destruction firm shred the drives at the society's premises before they leave
+  C: Require the destruction firm to carry bins in tracked vehicles staffed by two people
+  D: Audit the destruction firm's chain of custody each year, including its staff vetting
+answer: B
+explanation:
+  why_correct: The drives were exposed in the gap between leaving the society's custody and being destroyed, and a certificate
+    only reports on what happened after that gap. Shredding on site, which the society's staff can witness, destroys the
+    data while the drives are still in its custody, so no transport step is left in which a drive can go missing with its
+    data intact.
+  why_not:
+    A: Matching certificates to serial numbers would show that drives went missing, and is good practice, but only after the
+      fact, once the data may already have been sold.
+    C: Tracked, two-person transport makes theft in transit harder, and is common in destruction contracts, but it still
+      relies on the firm's staff while the drives travel intact, which is where this loss occurred.
+    D: A yearly audit tests that the firm's procedures and vetting are sound, but it checks samples on set days, and the
+      firm in this case was already certified when one driver bypassed its procedures.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

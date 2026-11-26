@@ -3,31 +3,31 @@ subdomain: '3.7'
 difficulty: medium
 stem: Testers phished one of an accounting firm's 400 workstations, took the stored hash of the built-in local administrator
   account and, without cracking it, used it to sign in as administrator to most of the other workstations within an hour.
-  The password is 24 random characters, set once in the firm's standard workstation image. Which change BEST prevents this
-  spread?
+  The password is 24 random characters, set once in the firm's standard image. The service desk signs in remotely with
+  that account to repair workstations that have lost contact with the domain. Which change BEST prevents this spread?
 options:
-  A: A new local administrator account in the image, with the built-in account disabled
-  B: Rotation of the image's local administrator password each month by the deployment tool
-  C: A different random local administrator password on each workstation, managed centrally
-  D: Multi-factor authentication for each administrator sign-in to the firm's workstations
+  A: Network sign-in denied to local accounts on the firm's workstations by group policy
+  B: Rotation of the image's shared password each day by the deployment tool
+  C: A unique random local administrator password per workstation, held centrally
+  D: Credential isolation on each workstation, shielding hashes held in memory
 answer: C
 explanation:
-  why_correct: In a pass-the-hash attack the hash itself serves as the credential, so the attacker never needs the password.
-    The spread worked because every workstation shares the same local administrator password, and so the same hash. A unique
-    random password per workstation, managed and rotated centrally, means a hash taken from one machine opens only that machine.
+  why_correct: In a pass-the-hash attack the hash itself serves as the credential, so the length of the password does not
+    matter. The spread worked because every workstation shares one local administrator password, and so one hash. A unique
+    random password per workstation, stored and rotated centrally, means a hash taken from one machine opens only that machine,
+    while the service desk can still look up the password of the workstation it needs to repair.
   why_not:
-    A: Disabling the built-in account removes the account attackers look for first, but the new account would still have
-      one password, and so one hash, on every workstation built from the image, and the testers would replay that instead.
-    B: Monthly rotation shortens how long a stolen hash stays valid, but the password stays the same on every workstation, and
-      the testers spread within an hour, well inside any rotation period.
-    D: Multi-factor prompts are usually added to interactive sign-in, but signing in over the network with a local account
-      and its hash does not pass through them, so the shared hash still opens the other workstations.
+    A: Denying network sign-in to local accounts is a recognised defence against this kind of spread, but it would also stop
+      the service desk signing in remotely with the account to repair workstations that cannot reach the domain.
+    B: Daily rotation shortens how long a stolen hash stays useful, but the password stays the same on every workstation on
+      any given day, and the testers spread within an hour of taking the hash.
+    D: Credential isolation protects secrets that the sign-in process holds in memory, such as cached domain credentials, but
+      a local account's hash is kept in the workstation's own account database, which an administrator on that machine can
+      still read.
 status: draft
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
-  checked_by: 2026-11-25-daily-cissp-check
-  check_verdict: pass
-  options_only: obvious
+  check_verdict: pending

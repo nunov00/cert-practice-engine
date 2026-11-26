@@ -1,0 +1,31 @@
+id: cissp-d8-8.5-0011
+subdomain: '8.5'
+difficulty: hard
+stem: A company's services accept access tokens that its identity provider signs with an RSA key, using a library that
+  verifies each token with the algorithm named in the token's own header. A tester forged an administrator token by
+  signing it with HMAC, using the identity provider's published public key as the secret. Which rule should the secure
+  coding standard set?
+options:
+  A: Reject any token whose header names the 'none' algorithm before verifying it
+  B: Select the verification key by the header's key ID from the issuer's key set
+  C: Check each token's issuer, audience and expiry claims before trusting it
+  D: Verify each token only with the algorithm and key configured for its issuer
+answer: D
+explanation:
+  why_correct: The flaw is letting the token choose how it is checked. When the service fixes the algorithm and key it
+    expects from each issuer, a token claiming HMAC is rejected outright, so the public key can never be used as a shared
+    secret, and any other algorithm switch fails the same way.
+  why_not:
+    A: Rejecting unsigned tokens closes a well-known variant of the same flaw, but the tester's token was signed, with HMAC,
+      so it passes this rule.
+    B: Key lookup by key ID supports rotation, but the library still applies the header's algorithm to whatever key it
+      selects, so the public key can still serve as an HMAC secret.
+    C: Claim checks are essential, but the tester chose the claims, so the forged token can carry the right issuer, audience
+      and expiry.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

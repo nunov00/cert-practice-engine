@@ -1,0 +1,34 @@
+id: cissp-d2-2.3-0012
+subdomain: '2.3'
+difficulty: hard
+stem: Senior engineers at a construction firm travel several times a year to a country where, on earlier trips, border
+  officers took staff laptops out of sight for about an hour before handing them back. During each visit the engineers
+  need email, their calendars and a few project documents. Which way of providing their laptops BEST fits?
+options:
+  A: Their usual laptops with full-disk encryption, powered off before each border crossing
+  B: Loaner laptops holding only the trip's data, reimaged before they are used again
+  C: Their usual laptops, cleared of local files, reaching mail and documents only by VPN
+  D: Their usual laptops sealed in tamper-evident bags, inspected on return before reconnecting
+answer: B
+explanation:
+  why_correct: A laptop that has been out of its owner's sight in someone else's hands may have been copied or altered in
+    ways that cannot be ruled out afterwards. Loaner laptops carrying only what the trip needs limit what can be read or
+    demanded at the border, and reimaging them before reuse means a device that may have been tampered with never returns
+    to normal work with an engineer's everyday data and access.
+  why_not:
+    A: Full-disk encryption with the laptop powered off is strong protection for a lost or stolen device, but officers can
+      demand the password, and an hour out of sight is enough to fit a hardware or firmware implant that encryption does not
+      stop, on a laptop that then comes home to the corporate network.
+    C: Keeping no local files and working through a VPN limits what can be read at the border, but the engineer's everyday
+      laptop, with its saved credentials and trust in the network, is the device that was out of sight and is then used as
+      normal on return.
+    D: Tamper-evident bags show that a device was opened, but the officers take the laptops out of sight anyway, so the
+      bag is broken at each crossing, and an inspection on return can rarely find a well-made implant on a laptop full of
+      the engineer's own data.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

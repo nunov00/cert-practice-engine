@@ -1,0 +1,32 @@
+id: cissp-d5-5.2-0017
+subdomain: '5.2'
+difficulty: hard
+stem: A media company's build pipelines deploy to its cloud account with an access key that carries deployment rights, kept
+  as a secret in its hosted CI service. The key appeared in a public build log after a debug step printed the environment,
+  and attackers used it within hours. The pipelines run on the CI provider's shared hosted runners. Which change BEST
+  reduces the risk of a repeat?
+options:
+  A: Weekly rotation of the access key, issued to the CI service from a secrets vault
+  B: Credentials issued per job by federation with the CI provider's job identity tokens
+  C: A key policy accepting deployment calls only from the CI provider's runner addresses
+  D: Masking of secrets in build logs, with scanning that revokes any key it finds
+answer: B
+explanation:
+  why_correct: The root cause is a long-lived secret that works wherever it ends up. With workload identity federation, the
+    cloud account trusts signed tokens that the CI provider issues to each job, naming the repository and branch, and
+    exchanges them for credentials that expire when the job ends. No standing key exists to leak, and anything printed in a
+    log is useless within minutes.
+  why_not:
+    A: Weekly rotation shortens a leaked key's life from indefinite to days, but these attackers used the key within hours,
+      well inside any rotation period.
+    C: Restricting the key by source address is useful for fixed runners, but shared hosted runners use address ranges that
+      other customers' jobs also run from, so an attacker can send calls from the same ranges.
+    D: Masking and scanning address the way this key leaked, but secrets leak in other ways too, such as encoded output or a
+      compromised build dependency, and a long-lived key stays valuable wherever it ends up.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

@@ -1,0 +1,32 @@
+id: cissp-d1-1.10-0008
+subdomain: '1.10'
+difficulty: hard
+stem: A mid-sized law firm is adopting a SaaS document management service that lawyers will use from their laptops and
+  to share matter folders with clients. The provider shares an independent audit report on its controls but not its internal
+  design. The security team must threat model the adoption before go-live. Where should the model BEST focus?
+options:
+  A: The provider's internal components, rebuilt from the audit report's system description
+  B: The firm's own data flows to the service, with the identities and settings it controls
+  C: The exceptions noted in the provider's audit report, each traced to the threat it leaves open
+  D: The techniques recently used against legal-sector cloud services, from threat intelligence
+answer: B
+explanation:
+  why_correct: A threat model is most useful where its findings can be acted on. The provider runs and assures its own
+    platform, while the firm decides how lawyers sign in, which devices sync files, how folders are shared with clients and
+    what its administrators can change. Modelling those flows and trust boundaries finds threats such as over-broad sharing
+    links or stolen sync tokens that the firm itself can mitigate, and it uses the audit report as evidence for the provider's
+    side.
+  why_not:
+    A: Reconstructing the provider's design looks thorough, but a system description is written for auditors and leaves
+      out most internal detail, so the model would rest on guesses about components the firm can neither see nor change.
+    C: Audit exceptions are worth following up with the provider, but they cover only the provider's controls that failed
+      testing, not the threats in how the firm will use, configure and connect to the service.
+    D: Threat intelligence helps rank threats once they are identified, but a list of recent techniques is not a model of
+      this adoption, and without the firm's flows it cannot show where those techniques would succeed.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

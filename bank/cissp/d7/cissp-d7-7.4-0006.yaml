@@ -1,0 +1,32 @@
+id: cissp-d7-7.4-0006
+subdomain: '7.4'
+difficulty: hard
+stem: A parcel carrier's twelve infrastructure engineers each hold full administrator rights on the servers and on the
+  SIEM that stores their logs, so that whoever is on call at night can fix either. A two-person security team reviews alerts
+  in office hours. Auditors note that an engineer could misuse server access and then remove the evidence. Which change
+  BEST addresses this?
+options:
+  A: Copy logs as they are created to a store in an account that only the security team administers
+  B: Require a second engineer to approve each change to logging settings on the servers and the SIEM
+  C: Have the security team review each engineer's administrative activity in the SIEM each week
+  D: Rotate engineers between server and SIEM duties monthly, so each holds one of them at a time
+answer: A
+explanation:
+  why_correct: The weakness is that the people whose actions are logged also control the logs. Copying each log entry as
+    it is written to a store that only the security team administers separates operating the systems from keeping the
+    record of that operation, so an engineer can still fix the SIEM at night but cannot alter or delete the evidence of
+    what they did on the servers.
+  why_not:
+    B: Dual approval of logging changes is a sound control, but an engineer with full rights on the SIEM can delete stored
+      log entries directly without changing any setting, so the approval step is never triggered.
+    C: Regular review of administrator activity is good practice, but it reads logs that the engineers themselves can edit,
+      so a removed entry simply never appears in the review.
+    D: Rotation separates the two duties at any one time, but whoever holds SIEM duty that month can still remove entries,
+      and on-call cover at night would need both rights again.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

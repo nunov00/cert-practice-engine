@@ -1,0 +1,31 @@
+id: cissp-d8-8.4-0012
+subdomain: '8.4'
+difficulty: hard
+stem: A retailer's data science team wants to use pre-trained models downloaded from a public model hub where anyone can
+  publish. Many of the models it wants are stored in a pickle-based format, which the team's tools load directly on the
+  analytics servers that hold customer data. Which requirement BEST limits the security risk of these acquired models?
+options:
+  A: Scan each model file with tools that flag dangerous code before it is loaded
+  B: Use only models from verified publishers whose models have many downloads
+  C: Load only weight formats that hold data alone, converting others in a sandbox
+  D: Pin each model to the hash its publisher lists, checking it at each download
+answer: C
+explanation:
+  why_correct: Loading a pickle-based file can run any code the file's author put in it, so each such model is really
+    untrusted software. Accepting only formats that store weights as plain data, and converting other models inside an
+    isolated sandbox with no access to customer data, means nothing in a model file runs on the analytics servers, whoever
+    published it.
+  why_not:
+    A: Scanners catch many known malicious patterns, but pickle can run code in many ways, and published scanners have been
+      bypassed repeatedly, so a clean scan still leaves code running on servers with customer data.
+    B: Reputation lowers the odds of a malicious model, but publisher accounts can be taken over or imitated, and the team
+      would still run code from each file it loads.
+    D: Hash pinning proves the team got the file the publisher listed, not that the file is safe to load, so a malicious
+      model passes the check.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

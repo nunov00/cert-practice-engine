@@ -1,0 +1,32 @@
+id: cissp-d4-4.3-0028
+subdomain: '4.3'
+difficulty: hard
+stem: A travel agency's call centre takes card payments by phone. Customers read their card details aloud, and agents type
+  them into the payment page. Every call is recorded for complaint handling. An assessor found card numbers and security
+  codes in the recordings. The agency wants as little of the call centre in card-data scope as possible, while still
+  recording every call. Which change BEST fits?
+options:
+  A: Automatic pausing of each recording while the card details are read out
+  B: Encryption of the call recordings, with the keys held in an HSM
+  C: SRTP encryption of the call audio between the phone system and agents
+  D: DTMF masking, with customers keying card details on their keypad
+answer: D
+explanation:
+  why_correct: With DTMF masking the customer enters the card details on the phone keypad, and the tones go to the payment
+    provider while the agent and the recording hear only flat tones. Card data then never reaches the agents, their desktops
+    or the recordings, which takes most of the call centre out of card-data scope, and every call can still be recorded in
+    full.
+  why_not:
+    A: Pausing keeps card details out of the recordings, which is a common fix, but the agents still hear the numbers and
+      type them on their desktops, so the agents and their desktops stay in scope.
+    B: Encryption protects stored recordings, but they still hold card data, so the recording system stays in scope, and
+      card security codes may not be kept after authorisation at all, even encrypted.
+    C: SRTP protects the audio on the network, but the agents still hear and type the card details, and the recordings
+      still capture them.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

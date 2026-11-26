@@ -1,0 +1,33 @@
+id: cissp-d5-5.3-0016
+subdomain: '5.3'
+difficulty: hard
+stem: A retailer lets a cloud cost-analysis vendor read its billing data through a role in the retailer's cloud account
+  that trusts the vendor's cloud account. In a test, a consultant who is also one of the vendor's customers entered the
+  retailer's role identifier into his own vendor dashboard, and the vendor's service read the retailer's billing data for
+  him. Which change BEST stops this?
+options:
+  A: Trust only the vendor's named service role, not its whole account
+  B: Limit the role to the billing reports the vendor's analysis reads
+  C: Require an external ID unique to the retailer in the role's trust condition
+  D: Alert when the role is assumed from outside the vendor's address ranges
+answer: C
+explanation:
+  why_correct: The vendor's service assumes customer roles on behalf of whichever customer names them, so it can be steered
+    into using its own legitimate access for the wrong customer. An external ID that the vendor generates for the retailer's
+    account alone, and that the role's trust condition requires, ties each assumption to that customer relationship. The
+    consultant cannot make the vendor present the retailer's ID from his own account, so naming the retailer's role no
+    longer works.
+  why_not:
+    A: Trusting one named role rather than the whole account is sound least privilege, but the vendor's service role is the
+      one that serves every customer, including the consultant, so his request still arrives through it.
+    B: Narrowing the permissions limits what any misuse can reach, but the consultant obtained exactly the billing data the
+      role is meant to grant, so a narrower role would still hand it over.
+    D: Watching for assumptions from unexpected places can catch stolen credentials, but this request came from the vendor's
+      own service on its usual addresses, so nothing would look unusual.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

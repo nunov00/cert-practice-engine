@@ -1,0 +1,32 @@
+id: cissp-d4-4.1-0028
+subdomain: '4.1'
+difficulty: hard
+stem: A pharmaceutical plant's packaging lines, lab instruments and operator stations share one flat network. Last year
+  ransomware brought in on an operator's USB stick spread from one packaging line to the lab instruments. Each device is a
+  validated system, and any change to its software or network settings needs months of revalidation. Which design BEST
+  confines the next outbreak to one zone?
+options:
+  A: Transparent Layer 2 firewalls between the zones, inside the existing subnet
+  B: A VLAN and subnet for each zone, with a firewall routing between them
+  C: Host firewalls on the operator stations, allowing only each line's traffic
+  D: Network access control on the plant switches, admitting only registered devices
+answer: A
+explanation:
+  why_correct: Segmentation is the control that stops spread between zones, but here it must be added without touching the
+    validated devices. A transparent firewall bridges traffic within the existing subnet and filters it between zones, so
+    no device needs a new address, gateway or software, and ransomware on one line can reach the others only through the
+    flows the rules allow.
+  why_not:
+    B: Separate VLANs and subnets with a routing firewall are the usual way to segment a plant, but each device would need a
+      new address and gateway, which means months of revalidation across the site.
+    C: Host firewalls can restrict traffic, but installing and configuring them changes the validated operator stations, and
+      the lab instruments and line controllers could not take them at all.
+    D: Network access control keeps unknown devices off the network, but the ransomware arrived on a USB stick in an
+      approved operator station, which network access control admits as registered.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

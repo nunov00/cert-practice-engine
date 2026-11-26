@@ -1,0 +1,32 @@
+id: cissp-d3-3.6-0008
+subdomain: '3.6'
+difficulty: hard
+stem: An agritech firm's 50,000 battery-powered soil sensors sign each reading with ECDSA and send it in small radio frames.
+  A review found that each sensor's random number generator gives poorly random output for some minutes after waking. The
+  signing keys sit in protected storage and cannot be read out, and the sensors accept firmware updates over the radio. Which
+  change BEST protects the signing keys?
+options:
+  A: ECDSA with nonces derived deterministically from the key and the message
+  B: RSA-PSS signatures with 3,072-bit keys, replacing ECDSA on each sensor
+  C: ECDSA on the larger P-384 curve, with new keys generated for each sensor
+  D: New ECDSA keys for each sensor each month, sent through the update channel
+answer: A
+explanation:
+  why_correct: ECDSA needs a fresh, unpredictable nonce for each signature. If nonces repeat or are even slightly biased, a
+    collection of signatures lets an attacker work out the private key, without ever reading it from storage. Deriving each
+    nonce deterministically from the key and the message, as RFC 6979 and EdDSA do, removes the dependence on the weak random
+    number generator, keeps the small signatures that suit the radio frames, and can be shipped as a firmware update.
+  why_not:
+    B: Weak randomness in RSA-PSS does not expose the key, so it would remove the risk, but RSA signing is far slower on a
+      small battery-powered processor, and each signature is several hundred bytes, too large for small radio frames.
+    C: A larger curve raises the cost of attacking the key directly, but the nonces still come from the same weak generator,
+      so biased nonces still leak the new keys.
+    D: Monthly keys limit how long any one key is used, but each new key signs with the same weak nonces, so it can be
+      recovered from its own signatures within its month.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

@@ -1,0 +1,32 @@
+id: cissp-d2-2.5-0009
+subdomain: '2.5'
+difficulty: hard
+stem: A pension administrator must keep members' correspondence for 15 years after each member's last contact, and it
+  holds that correspondence in a SaaS case system. The provider has announced that it will withdraw the product next year,
+  and its contract says it deletes a customer's data 30 days after the contract ends. Which approach BEST keeps the correspondence
+  available for its full retention period?
+options:
+  A: Keep a read-only licence on the case system until the last record's period ends
+  B: Export the correspondence and its metadata into the firm's own archive, checked complete
+  C: Contract the provider to hold the firm's data in its backups until the periods end
+  D: Take the provider's full database export and store it in the firm's archive with checksums
+answer: B
+explanation:
+  why_correct: Retention means records stay complete, readable and retrievable for as long as the schedule requires, and
+    here the system that holds them is going away. Exporting the documents with the metadata that drives retention, such as
+    the member and the date of last contact, into an archive the administrator controls, and checking that nothing was lost,
+    keeps each record usable and lets its own period run to the end, independent of the provider's future.
+  why_not:
+    A: A read-only licence is a common, cheap way to keep old records reachable after moving systems, but it depends on the
+      product existing, and this one is being withdrawn next year.
+    C: Provider-held backups keep a copy, but backups are not searchable records, each retrieval depends on a provider that
+      is leaving the market for this product, and the administrator cannot delete records when their own period ends.
+    D: A full export with checksums preserves the data's integrity, but a database export in the provider's own structure
+      needs that product to make sense of it, so the records are kept intact yet cannot be read once the product is gone.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

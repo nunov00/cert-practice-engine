@@ -1,0 +1,31 @@
+id: cissp-d6-6.1-0017
+subdomain: '6.1'
+difficulty: hard
+stem: Internal audit at an insurer is planning its yearly test of user access reviews. Until June, system owners reviewed
+  access each quarter in spreadsheets. Since July, an identity governance tool has run the reviews, sending each user's
+  access to that user's manager to confirm. The audit committee wants assurance over the whole year. Which test design
+  BEST fits?
+options:
+  A: Test the tool's review settings, and a sample of the reviews it has run from July
+  B: Draw one random sample of reviews from across the year, whichever method produced each
+  C: Test a sample from each method, drawn only from the months that method was in use
+  D: Test a sample of the spreadsheet reviews, and rely on the tool vendor's assurance report
+answer: C
+explanation:
+  why_correct: The control changed in July, so the year holds two different controls, run by different people in different
+    ways. Assurance over the whole year needs each one tested as its own population, with a sample from the months it
+    operated, so the audit can conclude on each and say whether the control worked before and after the change.
+  why_not:
+    A: Testing the control as it runs today is a natural focus, and the tool's settings matter, but it leaves the first half
+      of the year, when the spreadsheet reviews were the control, untested.
+    B: A sample drawn from the whole year looks like full coverage, but it mixes two controls in one population, so it may
+      hold too few items from either to support a conclusion, and a failure cannot be traced to the method that caused it.
+    D: Testing the spreadsheet reviews covers the first half, but the vendor's report covers the vendor's own service, not
+      how the insurer set up the tool or whether managers actually reviewed the access sent to them.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

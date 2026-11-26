@@ -1,0 +1,32 @@
+id: cissp-d1-1.7-0008
+subdomain: '1.7'
+difficulty: hard
+stem: An insurer's business impact analysis sets a 4-hour maximum tolerable downtime for first notice of loss, where customers
+  phone in new claims and agents record them in a SaaS claims platform. The provider's contract commits to monthly availability
+  but not to a recovery time, and its last published disaster test restored service in 30 hours. What should the continuity manager do?
+options:
+  A: Negotiate a 4-hour recovery commitment, backed by service credits, at the next renewal
+  B: Set up a manual way to take claims during an outage, entered once the platform returns
+  C: Obtain the provider's full recovery plan and the results of its next disaster test
+  D: Record the gap for the claims owner to accept as a risk until the next renewal
+answer: B
+explanation:
+  why_correct: The downtime limit belongs to the business process, not to the platform. Taking first notice of loss needs
+    agents to capture a customer's details and claim, which they can do on forms or a simple offline tool while the platform
+    is down, then enter the claims once it returns. That keeps the process inside its 4-hour limit whatever the provider
+    achieves, and it can be put in place and tested now.
+  why_not:
+    A: A contractual recovery time is the usual way to align a supplier with the business need, but it leaves the gap open until
+      a renewal the provider may not agree to, and service credits pay out after an outage rather than keeping claims flowing
+      during one.
+    C: More detail on the provider's recovery helps assess it, but the published test already shows a recovery far beyond
+      four hours, and another report does not change how long customers would be unable to report claims.
+    D: Recording a gap for its owner is normal for risks within appetite, but the maximum tolerable downtime marks the point
+      the business has said it cannot bear, so accepting a 30-hour outage contradicts the analysis the owner approved.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending
