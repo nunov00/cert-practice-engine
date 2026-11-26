@@ -30,4 +30,4 @@ provenance:
   run_id: 2026-11-25-daily-cissp
   checked_by: 2026-11-25-daily-cissp-check
   check_verdict: pass
-  options_only: not_obvious
+  options_only: obvious

@@ -1,6 +1,6 @@
 id: cissp-d7-7.7-0005
 subdomain: '7.7'
-difficulty: hard
+difficulty: medium
 stem: Malware on a payment processor's database server sent card data out as DNS lookups of long subdomains under an
   attacker's domain, which the company's internal resolvers forwarded to the internet like any other lookup. The database
   servers, which look up only a few dozen internal and partner names, run no other internet-facing services. Which
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-26-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

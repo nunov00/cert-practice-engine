@@ -1,6 +1,6 @@
 id: cissp-d4-4.2-0033
 subdomain: '4.2'
-difficulty: hard
+difficulty: medium
 stem: At a hospital, testers on a user wall port sent frames carrying two VLAN tags and delivered packets to a server in the
   payment VLAN on another switch, a path that the firewall routing between VLANs does not allow. Replies from the server never
   reached them. The user ports and the trunks between switches use the switches' factory default VLAN settings. Which change
@@ -30,3 +30,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-26-daily-cissp
   check_verdict: pending
+  options_only: not_obvious
