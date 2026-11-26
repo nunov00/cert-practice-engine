@@ -20,8 +20,9 @@ explanation:
       tell the picker the PIN.
     B: A two-badge rule makes a single person's access harder, but a picker can borrow two badges as easily as one, and on
       busy shifts it ties up controllers at the door.
-    D: Checking that the badge entered through the main gate would have blocked the entries the audit found, but most
-      lending happens during shifts, while the lending controller is on site.
+    D: Checking the main gate's record would have blocked some of the entries the audit found, but a picker holding a
+      lent badge can present it at the gate as well, and a controller who is on shift can lend a badge that the gate shows
+      as on site.
 status: published
 outline_version: '2024-04-15'
 sample: false

@@ -8,14 +8,15 @@ stem: A city's 2,000 traffic sensors send a reading every 30 seconds over a priv
 options:
   A: Add each sensor's clock time to its readings under the MAC, rejecting readings that are too old
   B: Rotate each sensor's key daily, so recorded readings stop verifying by the next day
-  C: Add a counter to each sensor's readings under the MAC, rejecting values already seen
+  C: Add a counter to each sensor's readings under the MAC, rejecting any not above the last accepted
   D: Check each reading against those of neighbouring sensors, holding back outliers
 answer: C
 explanation:
   why_correct: The replayed messages were genuine and unaltered, so the existing MACs verified them correctly. What failed
     is freshness, the assurance that a message is new and not a repeat. A counter that each sensor increases with every
-    reading, covered by the MAC, lets the control system reject any reading it has already seen, however soon it is replayed,
-    and needs no clock. An attacker cannot change the counter without breaking the MAC.
+    reading, covered by the MAC, lets the control system reject any reading whose counter is not above the last one accepted
+    from that sensor, however soon it is replayed, and needs no clock. An attacker cannot change the counter without breaking the MAC. Authenticity covers when a message was sent,
+    not only who sent it, and a MAC alone proves only the second.
   why_not:
     A: A timestamp under the MAC is a common freshness check, but clocks that drift by minutes a day force the control system
       to accept readings that are hours old, so an attacker could still replay a jam recorded earlier the same day.

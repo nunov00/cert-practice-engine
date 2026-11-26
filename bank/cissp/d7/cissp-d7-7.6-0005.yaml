@@ -15,7 +15,8 @@ explanation:
   why_correct: Information stealers take saved passwords, session cookies and tokens from browsers and send them to the
     attacker, and the upload shows that has already happened. The malware on the laptop is stopped, but the stolen
     sessions and credentials work from anywhere, including the cloud consoles and code repositories. Revoking the
-    sessions and resetting what the browsers stored closes that access before the attacker uses it.
+    sessions and resetting what the browsers stored closes that access before the attacker uses it. The resets are done from a different, clean device, so the new
+    credentials never touch the infected laptop.
   why_not:
     B: Reimaging and a password reset is the usual clean-up for an infected laptop, but stolen session cookies let the
       attacker into services without any password, and the passwords saved for other services stay valid.

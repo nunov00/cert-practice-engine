@@ -17,8 +17,9 @@ explanation:
     while the old ones can still be read, and checking each file's hash after the copy, keeps the records readable on
     equipment the firm can still buy and support.
   why_not:
-    A: Read-back sampling catches tapes that are decaying, and the vault already guards against that, but the test passes
-      only while the one old drive and the discontinued software keep working, so it does not remove the dependency.
+    A: Read-back sampling catches tapes that are decaying, which the climate-controlled vault already makes unlikely, and
+      the test passes only while the one old drive and the discontinued software keep working, so it does not remove that
+      dependency.
     B: A second copy protects against losing the vault or a tape, but both copies are in the same ageing format and need
       the same drive and software to be read.
     C: Spare drives buy time, but they also need host interfaces, drivers and the discontinued software, and repair support

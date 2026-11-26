@@ -13,7 +13,7 @@ answer: A
 explanation:
   why_correct: The risk is code added between reviewed source and shipped binary. A reproducible build gives identical
     output from the same source, so building the reviewed source again on separate, independently controlled infrastructure
-    and comparing it with the shipped binary shows any difference that one build environment added. An attacker would have
+    and comparing it, with the signature set aside, with the shipped binary shows any difference that one build environment added. An attacker would have
     to compromise both environments to pass the comparison.
   why_not:
     B: A valid signature shows the release came through the vendor's own signing step, but code inserted on the build server

@@ -5,7 +5,7 @@ stem: During a ransomware incident, a distributor's responders needed the owner'
   offline. The asset inventory named a manager who had left eight months earlier, and three department heads each said
   the system was not theirs. Audits find a third of named owners have left. Which change BEST addresses this?
 options:
-  A: Record each system's owner as the department that budgets for it, confirmed by its head yearly
+  A: Record each system's owner as a named manager and a named deputy, confirmed yearly
   B: Record each system's owner as a senior post, such as Head of Warehousing
   C: Have IT confirm each system's named owner in a quarterly review of the inventory
   D: Make the IT operations lead the owner of any system whose named owner has left
@@ -15,9 +15,8 @@ explanation:
     hold change. Recording a stable senior post as owner keeps each system with an accountable business role through staff
     turnover, and whoever holds that post on the day of an incident is the owner, with no update needed.
   why_not:
-    A: A department survives staff turnover, but a department is not an accountable role that can decide on the day, the
-      budget for a shared system often sits with IT or finance rather than the business that relies on it, and the three
-      heads' answers show how readily a department disowns a system it does not see as its own.
+    A: A deputy and a yearly check narrow the gap, but both are still named people. At this rate of turnover many systems
+      will lose both, or keep a stale name for up to a year before the next check, while a post always has a holder.
     C: A quarterly review catches departures within months, but the inventory can still be up to a quarter out of date when
       an incident needs a decision, and IT can confirm a name without making it the right owner.
     D: The IT operations lead runs the systems as custodian, but cannot decide on the business impact of taking a warehouse

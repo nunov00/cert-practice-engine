@@ -21,8 +21,9 @@ explanation:
       product existing, and this one is being withdrawn next year.
     C: Provider-held backups keep a copy, but backups are not searchable records, each retrieval depends on a provider that
       is leaving the market for this product, and the administrator cannot delete records when their own period ends.
-    D: A full export with checksums preserves the data's integrity, but a database export in the provider's own structure
-      needs that product to make sense of it, so the records are kept intact yet cannot be read once the product is gone.
+    D: A full export with checksums proves nothing was altered, but it holds the data in the provider's internal structure,
+      often with documents stored as blobs keyed to internal IDs. Finding one member's correspondence and its date of last
+      contact would mean rebuilding the product's logic, and nobody has checked that the export is complete as records.
 status: published
 outline_version: '2024-04-15'
 sample: false

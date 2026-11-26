@@ -15,7 +15,8 @@ explanation:
   why_correct: Logging claim changes and validating input are not features to be built once. They are conditions that every
     feature handling claims or input must meet. Built as stories of their own, they were met by the first release and then
     dropped out of each later story's scope. In the definition of done, no claim feature counts as finished without them,
-    so the team plans, estimates and builds them into each story from the start.
+    so the team plans, estimates and builds them into each story from the start, and the requirements set at design
+    stay traced and verified through each later change in the system's life.
   why_not:
     A: A fixed capacity share is a sound way to work down technical debt, and the features already missing the controls do
       need it, but it repairs what has shipped and does nothing to stop the next feature shipping without them.

@@ -9,7 +9,7 @@ options:
   A: Classify the tapes Internal, relying on their encryption to protect them in transit
   B: Classify the tapes Internal, and the backup keys Restricted with dual control over them
   C: Keep the tapes Restricted, and keep the bonded courier with a weekly rotation instead
-  D: Keep the tapes Restricted, and allow a standard courier for encrypted media
+  D: Keep the tapes Restricted, and allow a standard courier for media whose keys stay on site
 answer: D
 explanation:
   why_correct: A classification describes how sensitive the information is, and the claims data on the tapes is as sensitive

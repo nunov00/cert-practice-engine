@@ -15,7 +15,8 @@ explanation:
   why_correct: The four figures count different assets against different deadlines, so they cannot be ranked against each
     other, and the 71% may describe a better patching record than the 97%. Agreeing one definition, covering which assets
     count, when the clock starts and the deadline, and having each subsidiary recompute it from the scan data it already
-    holds, gives comparable numbers in time for the board.
+    holds, gives comparable numbers in time for the board. Where the scanners' coverage differs, the definition also says
+    which assets must be in scope, so gaps show up as missing coverage rather than as a better figure.
   why_not:
     A: Checking figures against their sources confirms that each one is accurate, but four accurate figures measured in
       different ways still cannot be compared.

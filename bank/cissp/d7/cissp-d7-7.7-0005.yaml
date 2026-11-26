@@ -3,7 +3,7 @@ subdomain: '7.7'
 difficulty: medium
 stem: Malware on a payment processor's database server sent card data out as DNS lookups of long subdomains under an
   attacker's domain, which the company's internal resolvers forwarded to the internet like any other lookup. The database
-  servers, which look up only a few dozen internal and partner names, run no other internet-facing services. Which
+  servers, which look up only a few dozen internal and partner names, need no other internet access. Which
   control BEST prevents a repeat?
 options:
   A: Block DNS from the servers to anything but the internal resolvers

@@ -16,7 +16,7 @@ explanation:
     into using its own legitimate access for the wrong customer. An external ID that the vendor generates for the retailer's
     account alone, and that the role's trust condition requires, ties each assumption to that customer relationship. The
     consultant cannot make the vendor present the retailer's ID from his own account, so naming the retailer's role no
-    longer works.
+    longer works. This is the classic confused-deputy problem.
   why_not:
     A: Trusting one named role rather than the whole account is sound least privilege, but the vendor's service role is the
       one that serves every customer, including the consultant, so his request still arrives through it.

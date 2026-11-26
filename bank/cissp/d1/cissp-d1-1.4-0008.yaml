@@ -15,8 +15,9 @@ explanation:
   why_correct: The server is the only place that shows which records were copied, since the retailer's logs cannot. The
     retailer may not use the recovered password itself, because holding a password does not authorise access to someone
     else's system, but the police can obtain legal authority, including warrants and requests to the foreign provider
-    through mutual legal assistance, to examine and seize the server. That tells the retailer what was taken, removes the
-    copy, and keeps the evidence usable, so it is the one route that serves both aims.
+    through mutual legal assistance, to examine and seize the server. That route can establish what was taken and have the
+    copy removed while keeping the evidence usable, so it is the one route that can serve both aims. Meanwhile the
+    retailer notifies the regulator with what it knows and updates it as the police findings arrive.
   why_not:
     A: A court order is a lawful way to force a host to act, and it would deal with the board's concern, but deleting the
       copy destroys the only record of which customers were affected, so the retailer still could not tell the regulator
