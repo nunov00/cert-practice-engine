@@ -22,11 +22,12 @@ explanation:
       their lookups and shorten their subdomains to blend in.
     D: Threat-intelligence blocking stops many malicious domains, but an attacker can use an older domain that no list has
       flagged, and the lookups would pass.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-26-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

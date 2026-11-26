@@ -23,11 +23,12 @@ explanation:
       four hours, and another report does not change how long customers would be unable to report claims.
     D: Recording a gap for its owner is normal for risks within appetite, but the maximum tolerable downtime marks the point
       the business has said it cannot bear, so accepting a 30-hour outage contradicts the analysis the owner approved.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-26-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

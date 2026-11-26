@@ -25,11 +25,12 @@ explanation:
     D: Credential isolation protects secrets that the sign-in process holds in memory, such as cached domain credentials, but
       a local account's hash is kept in the workstation's own account database, which an administrator on that machine can
       still read.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

@@ -22,11 +22,12 @@ explanation:
       an incident needs a decision, and IT can confirm a name without making it the right owner.
     D: The IT operations lead runs the systems as custodian, but cannot decide on the business impact of taking a warehouse
       system offline, which is the decision the responders needed.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

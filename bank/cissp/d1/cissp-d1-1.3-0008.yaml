@@ -24,11 +24,12 @@ explanation:
       judge which findings are serious enough to log and how to describe them.
     D: Internal audit is independent and reports to the board, but a review of deferred findings at project gates comes on
       audit's own cycle and often after launch, so the board may still learn of a risk once it is live.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-26-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

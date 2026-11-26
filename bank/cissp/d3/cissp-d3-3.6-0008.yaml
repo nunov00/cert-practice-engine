@@ -24,11 +24,12 @@ explanation:
     D: Waiting for a health test keeps the sensor away from the generator's worst output, but start-up tests catch gross
       failures such as stuck or repeating values, not slight bias. A few biased bits per nonce, across many signatures, is
       enough to recover an ECDSA key, and keeping the sensor awake until the test passes costs battery.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-26-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

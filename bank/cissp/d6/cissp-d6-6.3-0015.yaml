@@ -23,11 +23,12 @@ explanation:
       six weeks, and it still needs a common definition of what is measured.
     D: Trends avoid comparing unlike levels, but each trend still reflects only what that subsidiary chose to measure, and
       a subsidiary improving from a poor position may need more investment than one that is flat at a good level.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-26-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
   options_only: not_obvious

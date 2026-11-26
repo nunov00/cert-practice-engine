@@ -1,6 +1,6 @@
 id: cissp-d1-1.4-0008
 subdomain: '1.4'
-difficulty: hard
+difficulty: medium
 stem: An attacker copied customer records from an online retailer to a rented server abroad, and responders recover the
   username and password the attacker used to upload them. The retailer's own logs show the attacker's sessions but not
   which records were copied. The retailer must tell its regulator which records were taken, and the board wants the
@@ -25,12 +25,13 @@ explanation:
       can still show what was copied. Over-reporting alarms customers who were not affected, and it does nothing to remove
       the stolen copy.
     D: Abuse reports to hosting companies are a lawful, common response to attack infrastructure, but a takedown removes the
-      server before anyone has lawfully examined it. The retailer loses the only source on what was taken, and taking the
-      server offline does nothing about copies held elsewhere.
-status: draft
+      server before anyone has lawfully examined it, so the retailer loses the only source on what was taken.
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-26-daily-cissp
-  check_verdict: pending
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious
