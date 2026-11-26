@@ -3,10 +3,9 @@ subdomain: '2.3'
 difficulty: medium
 stem: During a ransomware incident, a distributor's responders needed the owner's approval to take its warehouse system
   offline. The asset inventory named a manager who had left eight months earlier, and three department heads each said
-  the system was not theirs. Audits find a third of named owners have left, though the firm's senior posts have not changed
-  in years. Which change BEST addresses this?
+  the system was not theirs. Audits find a third of named owners have left. Which change BEST addresses this?
 options:
-  A: Reassign each leaver's systems to their line manager when HR records the departure
+  A: Record each system's owner as the department that budgets for it, confirmed by its head yearly
   B: Record each system's owner as a senior post, such as Head of Warehousing
   C: Have IT confirm each system's named owner in a quarterly review of the inventory
   D: Make the IT operations lead the owner of any system whose named owner has left
@@ -14,10 +13,11 @@ answer: B
 explanation:
   why_correct: Ownership goes stale because the inventory names people, and people leave far more often than the posts they
     hold change. Recording a stable senior post as owner keeps each system with an accountable business role through staff
-    turnover, and whoever holds that post is the owner on the day of an incident, with no update needed.
+    turnover, and whoever holds that post on the day of an incident is the owner, with no update needed.
   why_not:
-    A: A leaver trigger closes the gap faster than audits do, but the line manager inherits systems by accident of reporting
-      lines, not because they are accountable for the business use, and repeated moves blur ownership further.
+    A: A department survives staff turnover, but a department is not an accountable role that can decide on the day, the
+      budget for a shared system often sits with IT or finance rather than the business that relies on it, and the three
+      heads' answers show how readily a department disowns a system it does not see as its own.
     C: A quarterly review catches departures within months, but the inventory can still be up to a quarter out of date when
       an incident needs a decision, and IT can confirm a name without making it the right owner.
     D: The IT operations lead runs the systems as custodian, but cannot decide on the business impact of taking a warehouse
@@ -28,6 +28,4 @@ sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
-  checked_by: 2026-11-25-daily-cissp-check
-  check_verdict: pass
-  options_only: obvious
+  check_verdict: pending

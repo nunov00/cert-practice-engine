@@ -1,0 +1,32 @@
+id: cissp-d5-5.4-0015
+subdomain: '5.4'
+difficulty: hard
+stem: A restaurant franchisor's sales warehouse holds the daily takings of every outlet. Each of its 300 franchisees may
+  see figures for its own outlets, while head-office analysts see the whole chain. Franchisees' analysts connect to the
+  warehouse with their own query and reporting tools. Which control BEST enforces this?
+options:
+  A: Row filters in the shared sales dashboards, set from each viewer's franchisee
+  B: A view of its own outlets for each franchisee, granted to that franchisee's analysts
+  C: A row-level policy in the warehouse that matches outlets to the user's franchisee
+  D: A nightly extract of each franchisee's rows into a separate database for that franchisee
+answer: C
+explanation:
+  why_correct: The rule has to hold wherever a query comes from, and franchisees query the warehouse directly, so it must
+    be enforced in the warehouse. A row-level policy applies one rule to every query, using a mapping of outlets to
+    franchisees, so it covers 300 franchisees with one object to maintain, and head-office roles can be exempted in the same
+    policy. When an outlet changes hands, one mapping row changes.
+  why_not:
+    A: Dashboard filters are the usual way to tailor shared reports, but they apply only to people who use those dashboards.
+      Analysts connecting with their own tools reach the tables without them.
+    B: Per-franchisee views do enforce the rule in the warehouse and are a sound design for a handful of tenants, but at 300
+      franchisees they mean 300 objects and 300 sets of grants to keep correct, each a chance for an error that exposes
+      another franchisee's takings.
+    D: Separate extracts give strong isolation, but they create 300 copies to build, secure and reconcile, and franchisees see
+      figures up to a day old. A policy on the shared tables enforces the same rule without the copies.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

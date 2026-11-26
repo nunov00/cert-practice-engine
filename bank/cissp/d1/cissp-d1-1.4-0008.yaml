@@ -1,0 +1,36 @@
+id: cissp-d1-1.4-0008
+subdomain: '1.4'
+difficulty: hard
+stem: During an investigation into a theft of customer records from an online retailer, responders recover the username
+  and password the attacker used to upload the records to a rented server abroad. The retailer must tell its regulator
+  which records were taken, and the board wants the stolen copy removed. Which action BEST serves the retailer within the
+  law?
+options:
+  A: Sign in to the server with the recovered details and delete the stolen copy
+  B: Sign in to the server with the recovered details to list the records it holds
+  C: Give the recovered details and evidence to the police cybercrime unit to act on
+  D: Ask the server's hosting company to take the server offline for abuse of its terms
+answer: C
+explanation:
+  why_correct: Computer misuse laws make it an offence to access a system without its owner's authority, and holding a
+    password does not grant that authority, whatever the motive. The police can obtain legal authority, including
+    warrants and requests to the foreign provider through mutual legal assistance, to examine and seize the server, and
+    what they find can tell the retailer which records were taken. That serves both goals lawfully and keeps the evidence
+    usable.
+  why_not:
+    A: Deleting the copy looks like damage limitation, but signing in to a server the retailer does not own is unauthorised
+      access, and deleting files on it adds unauthorised modification. It also destroys evidence, and the attacker may hold
+      other copies.
+    B: The retailer does need to know which records were taken, and read-only access feels harmless, but the offence lies in
+      the access itself, not in changing anything. The record of what was taken has to come from the retailer's own logs or
+      from a lawful examination of the server.
+    D: Abuse reports to hosting companies are a lawful, common response to attack infrastructure, but a takedown removes the
+      server before anyone has lawfully examined it. The retailer loses the best source on what was taken, and taking the
+      server offline does nothing about copies held elsewhere.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

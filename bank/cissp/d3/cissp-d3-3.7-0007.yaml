@@ -2,11 +2,10 @@ id: cissp-d3-3.7-0007
 subdomain: '3.7'
 difficulty: medium
 stem: Testers phished one of an accounting firm's 400 workstations, took the stored hash of the built-in local administrator
-  account and, without cracking it, used it to sign in as administrator to most of the other workstations within an hour.
-  The password is 24 random characters, set once in the firm's standard image. The service desk signs in remotely with
-  that account to repair workstations that have lost contact with the domain. Which change BEST prevents this spread?
+  account and, without cracking it, used it to sign in as administrator to most of the other workstations. The password
+  is 24 random characters, set once in the firm's standard image. Which change BEST prevents this spread?
 options:
-  A: Network sign-in denied to local accounts on the firm's workstations by group policy
+  A: A unique password per workstation, computed at start-up from its name and a shared secret
   B: Rotation of the image's shared password each day by the deployment tool
   C: A unique random local administrator password per workstation, held centrally
   D: Credential isolation on each workstation, shielding hashes held in memory
@@ -14,13 +13,15 @@ answer: C
 explanation:
   why_correct: In a pass-the-hash attack the hash itself serves as the credential, so the length of the password does not
     matter. The spread worked because every workstation shares one local administrator password, and so one hash. A unique
-    random password per workstation, stored and rotated centrally, means a hash taken from one machine opens only that machine,
-    while the service desk can still look up the password of the workstation it needs to repair.
+    random password per workstation, generated independently and stored and rotated centrally, means a hash taken from one
+    machine opens only that machine, and nothing on that machine reveals the others' passwords, while IT can still look up
+    the password of a workstation it needs to repair.
   why_not:
-    A: Denying network sign-in to local accounts is a recognised defence against this kind of spread, but it would also stop
-      the service desk signing in remotely with the account to repair workstations that cannot reach the domain.
+    A: Deriving each password from the host name gives every workstation its own hash, but the shared secret has to sit on
+      each workstation to compute it, and the testers were administrators on the first one, so they can read the secret and
+      work out every other workstation's password.
     B: Daily rotation shortens how long a stolen hash stays useful, but the password stays the same on every workstation on
-      any given day, and the testers spread within an hour of taking the hash.
+      any given day, and spreading with a hash takes minutes once it is taken.
     D: Credential isolation protects secrets that the sign-in process holds in memory, such as cached domain credentials, but
       a local account's hash is kept in the workstation's own account database, which an administrator on that machine can
       still read.
@@ -31,4 +32,3 @@ provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
   check_verdict: pending
-  options_only: obvious

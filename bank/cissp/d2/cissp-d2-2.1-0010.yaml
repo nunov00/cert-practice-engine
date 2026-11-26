@@ -1,0 +1,36 @@
+id: cissp-d2-2.1-0010
+subdomain: '2.1'
+difficulty: hard
+stem: A health insurer classifies its claims database Restricted, and its handling standard says Restricted media travel
+  by bonded courier. Backups go to tapes encrypted with keys that stay in the insurer's key manager. Daily off-site
+  rotation would make the courier the backup budget's largest cost, so operations proposes classifying the tapes Internal
+  to use a standard courier. Which response BEST fits?
+options:
+  A: Classify the tapes Internal, relying on their encryption to protect them in transit
+  B: Classify the tapes Internal, and the backup keys Restricted with dual control over them
+  C: Keep the tapes Restricted, and keep the bonded courier with a weekly rotation instead
+  D: Keep the tapes Restricted, and allow a standard courier for encrypted media
+answer: D
+explanation:
+  why_correct: A classification describes how sensitive the information is, and the claims data on the tapes is as sensitive
+    as the database it came from. Encryption changes how exposed the information is, which is what the handling standard
+    governs. Keeping the label and adding a handling rule for media encrypted with keys held elsewhere lets the insurer use a
+    cheaper courier with the risk properly judged, while restored data, copies and disposal of the tapes still follow the
+    Restricted rules.
+  why_not:
+    A: The encryption does protect the tapes in transit, but relabelling them Internal tells everyone who handles them later,
+      for restore, retention or destruction, that they hold Internal data. The label would then be wrong whenever the data is
+      decrypted.
+    B: Protecting the keys under strict control is sound key management, but it does not change what the tapes contain. The
+      Restricted data is still on them, so labelling them Internal mislabels the information and weakens every later handling
+      decision.
+    C: This keeps both the label and the current handling, so it is safe, but it gives up daily off-site copies to save money,
+      raising how much claims data could be lost. A handling rule matched to the encryption meets the cost and recovery goals
+      together.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  check_verdict: pending

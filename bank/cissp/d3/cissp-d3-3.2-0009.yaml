@@ -7,7 +7,7 @@ stem: A defence ministry's personnel database labels each row under Bell-LaPadul
   entries from exposing covert postings?
 options:
   A: A generic failure message for any refused entry, with no reason given
-  B: An alert to security whenever an Unclassified entry collides with a Secret row
+  B: Random refusals of a share of ordinary entries, so a refusal no longer stands out
   C: Entry of cover jobs by cleared HR staff in place of Unclassified clerks
   D: An Unclassified row under the same identity number beside the Secret one
 answer: D
@@ -19,8 +19,9 @@ explanation:
   why_not:
     A: Hiding the reason still leaves the refusal. Entries for ordinary new staff succeed, so a failure on one identity number
       tells the clerk that something hidden sits under it.
-    B: Alerting lets security manage the exposure afterwards, but the clerk has already learned that the officer has a hidden
-      record, which is the leak to prevent.
+    B: Adding noise to the channel is a real inference control, but a clerk who retries is refused again each time on the
+      covert officer's number and not on others, and the cover job, which the depot's Unclassified records need, still
+      cannot be entered at all.
     C: Routing cover jobs to cleared staff keeps the refusal away from clerks, but a row written at Secret stays invisible to
       the depot's Unclassified systems, and writing at Unclassified meets the same refusal, as does any later Unclassified update.
 status: draft
@@ -30,4 +31,3 @@ provenance:
   generated_by: claude
   run_id: 2026-11-26-daily-cissp
   check_verdict: pending
-  options_only: obvious

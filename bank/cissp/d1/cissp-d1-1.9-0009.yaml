@@ -5,25 +5,26 @@ stem: A fintech's board sets capital for credit, market and operational risk fro
   once in twenty years. It now wants a cyber risk figure in the same terms for a new instant-payments service, which the
   firm has run for only a few months without a loss. Which approach BEST provides this figure?
 options:
-  A: Annualised loss expectancy from the team's best single estimates of frequency and impact
+  A: Annualised loss expectancy, with frequency and impact as ranges from calibrated estimators
   B: Loss ranges from calibrated estimators, simulated into a distribution of yearly loss
-  C: A likelihood and impact heat map, with each rating linked to a band of money values
-  D: Average losses from published industry breach studies, scaled to the firm's revenue
+  C: A severe loss scenario, costed by calibrated estimators and taken as the one-in-twenty year
+  D: A distribution of yearly loss fitted to industry breach studies, scaled to the firm's revenue
 answer: B
 explanation:
   why_correct: The board needs a loss level that is exceeded only once in twenty years, which is a point in the tail of a
-    distribution, not an average. With no loss history, estimators trained to give honest ranges for how often an event
-    occurs and how much it costs, simulated over many years, produce that distribution, so the cyber figure can be read
-    off at the same one-in-twenty level and compared with the other risks.
+    distribution, not an average or a chosen scenario. With no loss history, estimators trained to give honest ranges for
+    how often each kind of event occurs at this service and how much it costs, simulated over many years, produce that
+    distribution, so the cyber figure can be read off at the same one-in-twenty level and compared with the other risks.
   why_not:
-    A: ALE is the classic quantitative measure and expresses risk in money, but it gives one expected yearly loss. An average
-      says nothing about how bad a one-in-twenty year could be, and single-point estimates hide the uncertainty that matters
-      most here.
-    C: Heat maps are a quick and common way to rank risks, and money bands make them look comparable, but ordinal ratings
-      cannot be combined into a loss that is exceeded with a stated probability, so the figure would not match the board's
-      measure.
-    D: Industry studies are a useful external input when the firm has no history, but they report average breach costs across
-      many kinds of firms and incidents, so scaling them gives another average rather than the tail loss for this service.
+    A: Taking frequency and impact as calibrated ranges improves the inputs, but ALE combines them into one expected yearly
+      loss. An expected value says nothing about how bad a one-in-twenty year could be, so the figure would not match the
+      board's measure.
+    C: Severe scenarios are a recognised input to operational risk capital, and estimators can cost one well, but nobody has
+      estimated how often a year that bad occurs. Calling it one-in-twenty is an assertion, so the figure has no stated
+      probability behind it.
+    D: Fitting a distribution gives a tail to read from, but breach studies record the costs of disclosed breaches across
+      many sectors, not the fraud, outage and payment losses this new service is exposed to, and revenue scaling does not
+      make them fit.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -31,4 +32,3 @@ provenance:
   generated_by: claude
   run_id: 2026-11-26-daily-cissp
   check_verdict: pending
-  options_only: obvious
