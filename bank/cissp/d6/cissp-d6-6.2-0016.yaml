@@ -1,0 +1,36 @@
+id: cissp-d6-6.2-0016
+subdomain: '6.2'
+difficulty: hard
+stem: A testing firm is running an unannounced red-team test for a freight company. Only the company's CISO and her deputy,
+  named in the rules of engagement as contacts, know about it. On a file server, a tester finds a web shell that the team
+  did not plant, with timestamps from weeks before the test began. What should the test lead do FIRST?
+options:
+  A: Check that the shell is live and in use, then report it to the named contacts
+  B: Report the find straight to the company's SOC so that it can open an incident
+  C: Disable the web shell on the server, then report the find to the named contacts
+  D: Stop work on that server, and report the find to the named contacts
+answer: D
+explanation:
+  why_correct: A web shell planted before the test is most likely a real intrusion, not a test finding, and the company
+    needs to know now. The rules of engagement name the people with authority over the test, so the lead stops touching
+    the server, which keeps the testers' activity out of any evidence, and tells the contacts at once. They decide how to
+    bring in the SOC and responders and whether to pause or end the test, and they can tell responders which activity was
+    the testers'.
+  why_not:
+    A: Confirming a find before raising an alarm is normal practice, but the timestamps already show the shell predates the
+      test, and using it touches the intruder's tool, which can alert them and adds the testers' traces to the evidence
+      responders will need, while the report waits.
+    B: The SOC will have to act, but it does not know a test is under way, and going around the named contacts bypasses the
+      people who can separate the testers' activity from the intruder's and decide what happens to the test.
+    C: Cutting off the attacker's foothold seems to limit harm, but changing a production server is outside the test's
+      authority, it tells the intruder they have been seen while other footholds may remain, and it alters the state the
+      company's responders need to scope the intrusion.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: fail
+  options_only: not_obvious

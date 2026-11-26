@@ -1,0 +1,34 @@
+id: cissp-d3-3.3-0008
+subdomain: '3.3'
+difficulty: hard
+stem: A defence supplier's engineers carry laptops between client sites, usually closing the lid and packing them still running.
+  The laptops use full-disk encryption that the TPM unlocks after a pre-boot PIN. A new requirement says that data on a laptop
+  stolen in transit must stay unreadable, even to an attacker with a well-equipped hardware lab. Which control BEST meets this
+  requirement?
+options:
+  A: Kernel DMA protection that blocks new devices from reading memory while the laptop is locked
+  B: Hibernation when the lid closes, so the laptop powers off and asks for the PIN to resume
+  C: Remote wipe of the laptop's disk key as soon as it is reported stolen
+  D: Automatic sign-out when the lid closes, so the user must sign in again
+answer: B
+explanation:
+  why_correct: Full-disk encryption protects a laptop that is powered off. A sleeping laptop keeps the disk key in memory,
+    where a hardware lab can recover it, for example by chilling and reading the memory or by attacking the memory bus. Because
+    the engineers pack their laptops running, hibernating on lid close is what puts each laptop in the protected state in
+    transit. The key leaves memory, and only the pre-boot PIN brings it back.
+  why_not:
+    A: DMA protection closes one common route to the memory of a locked laptop, but the disk key is still in memory, and a lab
+      can reach it in other ways, such as cold-boot techniques.
+    C: Remote wipe is a useful backstop, but it works only once the laptop next goes online, and a thief who wants the data
+      keeps it offline.
+    D: Signing out ends the user's session, but the operating system keeps the disk unlocked and its key in memory, so the
+      laptop is no better protected against a hardware attack.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

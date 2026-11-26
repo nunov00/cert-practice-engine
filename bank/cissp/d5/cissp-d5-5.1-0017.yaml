@@ -1,0 +1,34 @@
+id: cissp-d5-5.1-0017
+subdomain: '5.1'
+difficulty: medium
+stem: At a logistics firm's warehouse, a cage holding high-value phones opens to a badge, and only eight stock controllers
+  are authorised. An audit compared the cage's badge log with shift rotas and found entries on controllers' badges while
+  they were off site. Controllers admitted lending their badges to pickers to save time on busy shifts. Which control BEST
+  ensures that only the controllers themselves enter the cage?
+options:
+  A: A PIN pad at the cage, so entry needs the badge and its holder's PIN
+  B: Two authorised badges presented together for each entry to the cage
+  C: A fingerprint reader at the cage, checked against the badge holder
+  D: Cage entry only for badges the main gate has recorded as on site
+answer: C
+explanation:
+  why_correct: The badges were not stolen; their holders handed them over. Any factor a controller can hand over or tell
+    someone goes along with the badge, so only a factor bound to the person shows that the authorised controller is the one
+    at the door. A fingerprint checked against the badge holder's enrolled print does that.
+  why_not:
+    A: A PIN stops someone who finds or steals a badge, but a controller who lends a badge to save time can just as easily
+      tell the picker the PIN.
+    B: A two-badge rule makes a single person's access harder, but a picker can borrow two badges as easily as one, and on
+      busy shifts it ties up controllers at the door.
+    D: Checking the main gate's record would have blocked some of the entries the audit found, but a picker holding a
+      lent badge can present it at the gate as well, and a controller who is on shift can lend a badge that the gate shows
+      as on site.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

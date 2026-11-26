@@ -1,0 +1,35 @@
+id: cissp-d3-3.2-0009
+subdomain: '3.2'
+difficulty: medium
+stem: A defence ministry's personnel database labels each row under Bell-LaPadula and keys people by national identity number.
+  Officers on covert postings have Secret rows. When an Unclassified HR clerk entered one officer's cover job at a supply depot,
+  the database refused the identity number as already in use, and the clerk asked colleagues why. Which change BEST stops such
+  entries from exposing covert postings?
+options:
+  A: A generic failure message for any refused entry, with no reason given
+  B: Random refusals of a share of ordinary entries, so a refusal no longer stands out
+  C: Entry of cover jobs by cleared HR staff in place of Unclassified clerks
+  D: An Unclassified row under the same identity number beside the Secret one
+answer: D
+explanation:
+  why_correct: The refusal is an inference channel. An Unclassified user learns that a Secret row exists from the way the
+    database reacts, even though she never reads it. Polyinstantiation lets the database hold an Unclassified row with the same
+    key beside the Secret one, so Unclassified users see an ordinary record, the cover job, and meet no refusal, while Secret
+    users see both rows.
+  why_not:
+    A: Hiding the reason still leaves the refusal. Entries for ordinary new staff succeed, so a failure on one identity number
+      tells the clerk that something hidden sits under it.
+    B: Adding noise to the channel is a real inference control, but a clerk who retries is refused again each time on the
+      covert officer's number and not on others, and the cover job, which the depot's Unclassified records need, still
+      cannot be entered at all.
+    C: Routing cover jobs to cleared staff keeps the refusal away from clerks, but a row written at Secret stays invisible to
+      the depot's Unclassified systems, and writing at Unclassified meets the same refusal, as does any later Unclassified update.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

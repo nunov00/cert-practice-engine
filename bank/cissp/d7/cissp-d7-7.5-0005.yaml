@@ -1,0 +1,35 @@
+id: cissp-d7-7.5-0005
+subdomain: '7.5'
+difficulty: medium
+stem: An engineering firm must keep design records for 30 years. It writes them to tape and stores the tapes in a
+  climate-controlled vault. An audit this year found that tapes written in 2011 could be read only on one ageing drive
+  that IT had bought second-hand, and that the backup software which wrote them is no longer sold. Which practice BEST
+  keeps the archive readable?
+options:
+  A: Read back a sample of archive tapes each year, replacing any that show errors
+  B: Keep a second copy of each archive tape at another climate-controlled site
+  C: Buy spare drives for each tape generation in use, kept under a repair contract
+  D: Copy the archive to current media and formats every few years, checking hashes
+answer: D
+explanation:
+  why_correct: Over 30 years the main threat is not the tape decaying but the drives, interfaces and software needed to
+    read it disappearing, as the 2011 tapes show. Moving the archive onto current media and formats on a regular cycle,
+    while the old ones can still be read, and checking each file's hash after the copy, keeps the records readable on
+    equipment the firm can still buy and support.
+  why_not:
+    A: Read-back sampling catches tapes that are decaying, which the climate-controlled vault already makes unlikely, and
+      the test passes only while the one old drive and the discontinued software keep working, so it does not remove that
+      dependency.
+    B: A second copy protects against losing the vault or a tape, but both copies are in the same ageing format and need
+      the same drive and software to be read.
+    C: Spare drives buy time, but they also need host interfaces, drivers and the discontinued software, and repair support
+      for old drive models ends long before 30 years have passed.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

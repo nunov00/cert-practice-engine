@@ -1,0 +1,38 @@
+id: cissp-d1-1.4-0008
+subdomain: '1.4'
+difficulty: medium
+stem: An attacker copied customer records from an online retailer to a rented server abroad, and responders recover the
+  username and password the attacker used to upload them. The retailer's own logs show the attacker's sessions but not
+  which records were copied. The retailer must tell its regulator which records were taken, and the board wants the
+  stolen copy removed. Which action BEST serves both aims?
+options:
+  A: Obtain a court order requiring the hosting company to delete the stolen copy
+  B: Report to the regulator that the whole customer table was taken, as the worst case
+  C: Give the recovered details and evidence to the police cybercrime unit to act on
+  D: Ask the server's hosting company to take the server offline for abuse of its terms
+answer: C
+explanation:
+  why_correct: The server is the only place that shows which records were copied, since the retailer's logs cannot. The
+    retailer may not use the recovered password itself, because holding a password does not authorise access to someone
+    else's system, but the police can obtain legal authority, including warrants and requests to the foreign provider
+    through mutual legal assistance, to examine and seize the server. That route can establish what was taken and have the
+    copy removed while keeping the evidence usable, so it is the one route that can serve both aims. Meanwhile the
+    retailer notifies the regulator with what it knows and updates it as the police findings arrive.
+  why_not:
+    A: A court order is a lawful way to force a host to act, and it would deal with the board's concern, but deleting the
+      copy destroys the only record of which customers were affected, so the retailer still could not tell the regulator
+      what was taken.
+    B: Reporting the worst case is a sound fallback when the scope of a breach cannot be established, but here the server
+      can still show what was copied. Over-reporting alarms customers who were not affected, and it does nothing to remove
+      the stolen copy.
+    D: Abuse reports to hosting companies are a lawful, common response to attack infrastructure, but a takedown removes the
+      server before anyone has lawfully examined it, so the retailer loses the only source on what was taken.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

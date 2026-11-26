@@ -1,0 +1,36 @@
+id: cissp-d1-1.1-0009
+subdomain: '1.1'
+difficulty: medium
+stem: A certified forensic examiner is retained by a defence lawyer to examine a laptop seized in a fraud case and to report
+  whether it was controlled remotely, as the accused claims. She finds no trace of remote access, and finds that a disk-wiping
+  tool was run from the laptop's own keyboard the night before the seizure. What should she do?
+options:
+  A: Report to the defence lawyer that she found no trace of remote access to the laptop
+  B: Give the defence lawyer a full report of her findings, the local wiping included
+  C: Tell the prosecutor about the local wiping, and give the defence lawyer a full report
+  D: Withdraw from the engagement, telling the lawyer she cannot support the defence case
+answer: B
+explanation:
+  why_correct: The code of ethics asks her to act honestly and to serve her principal diligently. Her principal is the
+    defence lawyer who retained her, and the local wiping bears directly on the question she was asked, who controlled
+    the laptop. A full and accurate report to the lawyer meets both duties. The lawyer, not the examiner, decides how the
+    defence uses it under the court's disclosure rules, and if she is called as a witness she must give the same honest
+    account under oath.
+  why_not:
+    A: Keeping a report to the question asked is normally good practice, but here the wiping is part of the answer to that
+      question. Leaving it out makes a literally true report misleading, which breaks the duty to act honestly.
+    C: Protecting society comes first in the code, but it does not require an expert to pass her own client's evidence to
+      the other side. The justice system gives the defence its own channel for disclosure, and going round the lawyer breaks
+      the duty to the principal without any harm to prevent.
+    D: Withdrawing is right when an engagement would require dishonesty, but an unwelcome finding requires nothing dishonest.
+      An expert's job is to report what the evidence shows, and walking away leaves the principal without the facts it paid
+      for.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

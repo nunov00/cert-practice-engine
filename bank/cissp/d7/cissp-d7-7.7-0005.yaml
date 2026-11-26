@@ -1,0 +1,33 @@
+id: cissp-d7-7.7-0005
+subdomain: '7.7'
+difficulty: medium
+stem: Malware on a payment processor's database server sent card data out as DNS lookups of long subdomains under an
+  attacker's domain, which the company's internal resolvers forwarded to the internet like any other lookup. The database
+  servers, which look up only a few dozen internal and partner names, need no other internet access. Which
+  control BEST prevents a repeat?
+options:
+  A: Block DNS from the servers to anything but the internal resolvers
+  B: Let the resolvers answer the servers only for an allow-list of names
+  C: Alert on long, random-looking subdomains in the resolvers' query logs
+  D: Block newly registered and known-malicious domains at the resolvers
+answer: B
+explanation:
+  why_correct: The data left through ordinary recursive lookups, so any name the resolvers will resolve for the servers is
+    a possible channel. The servers need only a few dozen known names, so answering only those for them and refusing
+    everything else closes the channel whatever domain the attacker uses, at little operational cost.
+  why_not:
+    A: Forcing servers to use internal resolvers is standard egress control, but these lookups already went through the
+      internal resolvers, which relayed them to the attacker's name servers.
+    C: Detecting tunnelling patterns is useful, but it is detective, so data leaves before the alert, and attackers can slow
+      their lookups and shorten their subdomains to blend in.
+    D: Threat-intelligence blocking stops many malicious domains, but an attacker can use an older domain that no list has
+      flagged, and the lookups would pass.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

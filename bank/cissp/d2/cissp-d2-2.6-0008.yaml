@@ -1,0 +1,35 @@
+id: cissp-d2-2.6-0008
+subdomain: '2.6'
+difficulty: hard
+stem: A bank is moving its customer complaints case system to a SaaS provider, whose service indexes and searches the case
+  text to route and report on complaints. The bank's regulator expects it to be able to make its data unreadable to the
+  provider at short notice, for example on exit or if the provider faces a disclosure order abroad. Which control BEST
+  meets this?
+options:
+  A: Provider-managed encryption at rest, with an independent audit of the provider's key handling
+  B: Encryption with bank-chosen keys held in the provider's key service, each use logged to the bank
+  C: Encryption with keys held in the bank's own key manager, which the service calls to decrypt
+  D: Encryption of the case text on the bank's side before upload, with keys kept on bank servers
+answer: C
+explanation:
+  why_correct: The service must read the case text to work, so the data cannot stay encrypted end to end, but the bank
+    must still be able to cut the provider off. Keys held in a key manager the bank runs, outside the provider, which the
+    service has to call each time it decrypts, let the service work normally while the bank can withdraw the key at any time,
+    leaving the provider with data it cannot read.
+  why_not:
+    A: Provider-managed encryption protects disks and backups, and an audit gives assurance on how keys are handled, but
+      the provider holds the keys, so the bank has no way to make the data unreadable to it.
+    B: Customer-managed keys give the bank control over key policy and a log of use, which suits most regulated workloads,
+      but the keys sit in a service the provider operates, so a provider under a disclosure order may still be able to use
+      them.
+    D: Encrypting before upload keeps the provider from ever reading the data, which is the strongest protection, but the
+      service could then not index or search the case text, so routing and reporting would stop working.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: fail
+  options_only: not_obvious

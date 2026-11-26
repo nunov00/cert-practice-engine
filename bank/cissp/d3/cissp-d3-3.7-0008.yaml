@@ -1,0 +1,35 @@
+id: cissp-d3-3.7-0008
+subdomain: '3.7'
+difficulty: medium
+stem: A transit authority's fare cards sign each journey record with RSA, using the Chinese remainder theorem so that a tap
+  at the gate completes in a fraction of a second. About three million cards are in circulation, and gates can load new card
+  software when a card is tapped. Researchers fired a laser pulse at a card's chip while it signed, and from one faulty
+  signature recovered the card's private key. Which change BEST counters this attack?
+options:
+  A: Blinding of each signing operation, so the card's power use does not track the key
+  B: Light and glitch sensors in the chip that erase the key when they are triggered
+  C: A check of each signature against the public key before the card releases it
+  D: Signing by plain modular exponentiation, without the Chinese remainder shortcut
+answer: C
+explanation:
+  why_correct: This is a fault injection attack. With the Chinese remainder method the card computes the signature in two
+    halves, and a fault in one half gives a signature that is right for one prime factor and wrong for the other, so a single
+    greatest-common-divisor calculation reveals the factor and with it the private key. Checking each signature with the public
+    key before output, which costs little because the public exponent is small, means a faulty result is never released,
+    whatever caused the fault. It is a software change the gates can load onto the cards already issued.
+  why_not:
+    A: Blinding is a sound countermeasure against power analysis, a different side-channel attack, but a faulty half
+      computation still yields a signature that is correct for only one prime factor, so the key still leaks.
+    B: Fault sensors are a standard hardware defence for new chips, but they cannot be added to the three million cards
+      already issued, and each sensor covers only some ways of inducing a fault.
+    D: Dropping the Chinese remainder method removes the structure this attack exploits, but signing becomes several times
+      slower, which a tap at the gate cannot absorb, and faults in other parts of the computation can still leak.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,35 @@
+id: cissp-d1-1.3-0008
+subdomain: '1.3'
+difficulty: hard
+stem: A regional hospital network's CISO reports to the CIO. Last year the CIO deferred a serious assessment finding on
+  the new patient portal so that it could launch on the date the executive team had announced, and the board first heard
+  of the weakness when attackers exploited it. The board wants to learn of significant security risks before they are
+  realised. Which change BEST achieves this?
+options:
+  A: Move the CISO's reporting line from the CIO to the chief executive
+  B: Give the CISO a standing right to report security risk to the board's risk committee
+  C: Require the CIO to log each deferred security finding in the risk register the board sees
+  D: Have internal audit review the security findings deferred at each project gate
+answer: B
+explanation:
+  why_correct: The finding existed and the CISO knew of it; it failed to reach the board because the only route ran through
+    managers who had reasons to put the launch first. A standing right for the CISO to report directly to the board's risk
+    committee gives the board an independent view of significant risks, while leaving the CIO and executives to make the
+    decisions they are delegated, now in the knowledge that the board will hear of them.
+  why_not:
+    A: Moving the CISO away from the CIO is a common fix for this conflict, but the launch date was the executive team's
+      commitment, so a report to the chief executive still passes through someone with the same pressure before it reaches
+      the board.
+    C: Recording deferrals as risks the board can see is sound practice, but it leaves the CIO, who made the deferral, to
+      judge which findings are serious enough to log and how to describe them.
+    D: Internal audit is independent and reports to the board, but a review of deferred findings at project gates comes on
+      audit's own cycle and often after launch, so the board may still learn of a risk once it is live.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

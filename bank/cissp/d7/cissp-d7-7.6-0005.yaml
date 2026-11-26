@@ -1,0 +1,35 @@
+id: cissp-d7-7.6-0005
+subdomain: '7.6'
+difficulty: hard
+stem: The EDR agent on a cloud engineer's laptop quarantined malware that had been running for six hours. Threat
+  intelligence identifies it as a widely sold information stealer, and the laptop's proxy logs show an upload to its
+  collection server three hours ago. The engineer reaches the company's cloud consoles, code repositories and SaaS tools
+  through the laptop's browsers. What should the incident team do FIRST?
+options:
+  A: Revoke the engineer's sessions, and reset the credentials stored in the browsers
+  B: Reimage the laptop, and reset the engineer's directory password
+  C: Isolate the laptop, and capture its memory for forensic analysis
+  D: Hunt for the malware's hash on other endpoints, and block it
+answer: A
+explanation:
+  why_correct: Information stealers take saved passwords, session cookies and tokens from browsers and send them to the
+    attacker, and the upload shows that has already happened. The malware on the laptop is stopped, but the stolen
+    sessions and credentials work from anywhere, including the cloud consoles and code repositories. Revoking the
+    sessions and resetting what the browsers stored closes that access before the attacker uses it. The resets are done from a different, clean device, so the new
+    credentials never touch the infected laptop.
+  why_not:
+    B: Reimaging and a password reset is the usual clean-up for an infected laptop, but stolen session cookies let the
+      attacker into services without any password, and the passwords saved for other services stay valid.
+    C: Isolation and a memory image help show what the malware did, but the EDR has already stopped it, and the harm now
+      lies in credentials that left the laptop three hours ago.
+    D: Hunting for other infections is a sound scoping step, but it does nothing about the credentials already taken from
+      this laptop, which the attacker can use now.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-26-daily-cissp
+  checked_by: 2026-11-26-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious
