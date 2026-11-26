@@ -1,6 +1,6 @@
 id: cissp-d8-8.3-0012
 subdomain: '8.3'
-difficulty: hard
+difficulty: medium
 stem: A software vendor's competitor shipped an update carrying a backdoor that attackers had inserted on its build
   server, while the code in its source repository was clean. The vendor's board asks for evidence, on each release, that
   shipped binaries contain only reviewed code. Which assessment BEST provides it?
@@ -29,3 +29,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-26-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

@@ -1,6 +1,6 @@
 id: cissp-d3-3.6-0008
 subdomain: '3.6'
-difficulty: hard
+difficulty: medium
 stem: An agritech firm's 50,000 battery-powered soil sensors sign each reading with ECDSA and send it in small radio frames.
   A review found that each sensor's random number generator gives poorly random output for some minutes after waking. The
   signing keys sit in protected storage and cannot be read out, and the sensors accept firmware updates over the radio. Which
@@ -31,3 +31,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-26-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

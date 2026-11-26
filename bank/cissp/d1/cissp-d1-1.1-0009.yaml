@@ -1,6 +1,6 @@
 id: cissp-d1-1.1-0009
 subdomain: '1.1'
-difficulty: hard
+difficulty: medium
 stem: A certified forensic examiner is retained by a defence lawyer to examine a laptop seized in a fraud case and to report
   whether it was controlled remotely, as the accused claims. She finds no trace of remote access, and finds that a disk-wiping
   tool was run from the laptop's own keyboard the night before the seizure. What should she do?
@@ -32,3 +32,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-26-daily-cissp
   check_verdict: pending
+  options_only: not_obvious

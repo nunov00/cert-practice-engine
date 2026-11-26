@@ -1,6 +1,6 @@
 id: cissp-d3-3.2-0009
 subdomain: '3.2'
-difficulty: hard
+difficulty: medium
 stem: A defence ministry's personnel database labels each row under Bell-LaPadula and keys people by national identity number.
   Officers on covert postings have Secret rows. When an Unclassified HR clerk entered one officer's cover job at a supply depot,
   the database refused the identity number as already in use, and the clerk asked colleagues why. Which change BEST stops such
@@ -31,3 +31,4 @@ provenance:
   generated_by: claude
   run_id: 2026-11-26-daily-cissp
   check_verdict: pending
+  options_only: not_obvious
