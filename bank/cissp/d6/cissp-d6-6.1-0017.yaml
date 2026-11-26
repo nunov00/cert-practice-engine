@@ -22,7 +22,8 @@ explanation:
     B: A sample drawn from the whole year looks like full coverage, but it mixes two controls in one population, so it may
       hold too few items from either to support a conclusion, and a failure cannot be traced to the method that caused it.
     D: Inquiry is a valid part of testing and cheap for a retired process, but on its own it cannot show that a control
-      operated, and the first-half spreadsheets still exist to be inspected, so the first half would rest on what owners say.
+      operated, so the first half would rest on what owners say. Quarterly reviews leave records, such as signed-off
+      spreadsheets, that the audit should inspect, and if those records no longer exist, that is itself a finding.
 status: draft
 outline_version: '2024-04-15'
 sample: false

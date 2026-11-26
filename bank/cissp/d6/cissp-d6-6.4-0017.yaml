@@ -1,25 +1,29 @@
 id: cissp-d6-6.4-0017
 subdomain: '6.4'
 difficulty: hard
-stem: A bank's first static analysis scan of its 40 application repositories reports 9,000 findings. The development teams
-  can fix about 200 findings a month between them, and they merge code changes many times a day. Which findings should the
-  report to the teams put FIRST?
+stem: A bank has added static analysis to the build pipeline of its 40 customer web and mobile apps, all reachable from
+  the internet. The first run over the existing code reports findings in the thousands, far more than the teams could
+  clear in a year alongside feature work, and the teams merge code changes many times a day. Which findings should the
+  teams be asked to address FIRST?
 options:
   A: The findings rated most severe, with fix dates set by severity for each team
-  B: The findings in internet-facing applications, ranked by severity within each team
+  B: The findings in code that handles payments, ranked by severity within each team
   C: The findings that each new change introduces, with the existing ones as a backlog
   D: The finding types that occur most often, with training for the teams on each type
 answer: C
 explanation:
-  why_correct: At about 200 fixes a month, clearing 9,000 findings takes years, and teams merging many times a day add new
-    flaws all the while, so a backlog worked from the top never shrinks. Reporting what each change introduces stops the
-    growth at the point where fixing is cheapest, because the developer still has the code open. The existing findings then
-    form a fixed backlog that can be ranked and worked down.
+  why_correct: A backlog this size takes years to clear at the teams' pace, and with changes merged many times a day, new
+    flaws arrive all the while, so a list worked from the top never shrinks. Requiring each change to add no new findings
+    stops the growth where fixing is cheapest, because the developer still has the code open. The existing findings then
+    form a fixed backlog to rank and work down. That does not mean old findings simply wait their turn. A critical,
+    exploitable finding already in the code still gets urgent handling, put at the top of the backlog and fixed out of
+    the normal order. Since every app faces the internet, exposure does not separate them; severity, exploitability and
+    the data the code handles rank the backlog.
   why_not:
-    A: Severity ranking is the usual way to order a backlog, but with new findings arriving every day the list keeps
-      growing, and severity alone ignores whether the code is reachable by an attacker.
-    B: Ranking by exposure is a strong way to order the existing backlog, but it leaves the teams adding new flaws with each
-      change, so the backlog grows faster than it is worked down.
+    A: Severity is the usual way to order a backlog, and the most severe exploitable findings do need fixing quickly, but
+      with new findings arriving every day, a list worked only from the top keeps growing.
+    B: Ranking by the data the code handles is a sound way to order the existing backlog, and payment code is a natural
+      place to start, but it leaves each change free to add new flaws, so the backlog grows faster than it is worked down.
     D: Fixing by type and training developers address causes and help in the long term, but they do not stop flaws entering
       the code from tomorrow's changes, and the most common types are not necessarily the most dangerous.
 status: draft
@@ -29,4 +33,3 @@ provenance:
   generated_by: claude
   run_id: 2026-11-26-daily-cissp
   check_verdict: pending
-  options_only: not_obvious

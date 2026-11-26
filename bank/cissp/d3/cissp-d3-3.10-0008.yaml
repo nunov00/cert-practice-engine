@@ -1,29 +1,28 @@
 id: cissp-d3-3.10-0008
 subdomain: '3.10'
 difficulty: hard
-stem: An insurer's claims app team works in two-week sprints, and a product owner measured on feature delivery ranks its
-  backlog. The app's security requirements, such as logging each change to a claim and validating input on the server,
-  were written as backlog stories of their own. A year on, most are unbuilt, while new claim features ship each sprint.
-  Which change BEST gets these requirements built?
+stem: An insurer's claims app team works in two-week sprints. When the app was designed, the team wrote its security
+  requirements, such as logging each change to a claim and validating input on the server, as stories of their own and
+  built them in the first release. A review now finds that most claim features added since then neither log changes nor
+  validate input. Which change BEST stops new claim features shipping without these controls?
 options:
-  A: Reserve a fixed share of each sprint's capacity for the security stories in the backlog
-  B: Have the security architect, not the product owner, rank the security stories in the backlog
+  A: Reserve a fixed share of each sprint for adding the controls to features that lack them
+  B: Have a security champion check each new claim feature for the controls before release
   C: Add the requirements to the definition of done that each claim feature story must meet
-  D: Block each release until the security stories ranked highest by risk are complete
+  D: Add a static analysis rule to the build that fails claim code lacking input validation
 answer: C
 explanation:
   why_correct: Logging claim changes and validating input are not features to be built once. They are conditions that every
-    feature handling claims or input must meet. As separate stories, they compete with features for priority, and each new
-    feature adds more retrofit work. Putting them in the definition of done means no claim feature counts as finished
-    without them, so new work is built securely and the backlog stops growing.
+    feature handling claims or input must meet. Built as stories of their own, they were met by the first release and then
+    dropped out of each later story's scope. In the definition of done, no claim feature counts as finished without them,
+    so the team plans, estimates and builds them into each story from the start.
   why_not:
-    A: A fixed capacity share is a sound way to make progress on technical debt, and it would build some security stories,
-      but features would keep shipping without logging or validation, adding to the retrofit work faster than a share can
-      clear it.
-    B: Ranking by risk would raise the security stories, but the product owner still owns the sprint and is still measured
-      on features, so they keep competing for the same capacity, and new features still arrive without the controls.
-    D: A release gate makes the gap visible and forces some stories through, but it acts at the end of the cycle, delays
-      releases, and still treats the requirements as separate work rather than part of each feature.
+    A: A fixed capacity share is a sound way to work down technical debt, and the features already missing the controls do
+      need it, but it repairs what has shipped and does nothing to stop the next feature shipping without them.
+    B: A security champion helps a team, but a check just before release finds the gap after the feature is built, sends it
+      back as rework, and rests on one person, while the controls stay outside the work the team plans for each story.
+    D: Automated checks in the build are a strong control, but this rule covers only input validation, and missing logging
+      of claim changes is not something a static analysis rule can reliably detect.
 status: draft
 outline_version: '2024-04-15'
 sample: false
@@ -31,4 +30,3 @@ provenance:
   generated_by: claude
   run_id: 2026-11-26-daily-cissp
   check_verdict: pending
-  options_only: not_obvious
