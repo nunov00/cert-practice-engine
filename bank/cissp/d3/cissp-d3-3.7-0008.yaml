@@ -1,6 +1,6 @@
 id: cissp-d3-3.7-0008
 subdomain: '3.7'
-difficulty: hard
+difficulty: medium
 stem: A transit authority's fare cards sign each journey record with RSA, using the Chinese remainder theorem so that a tap
   at the gate completes in a fraction of a second. About three million cards are in circulation, and gates can load new card
   software when a card is tapped. Researchers fired a laser pulse at a card's chip while it signed, and from one faulty

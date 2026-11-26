@@ -1,6 +1,6 @@
 id: cissp-d1-1.10-0008
 subdomain: '1.10'
-difficulty: hard
+difficulty: medium
 stem: A mid-sized law firm is adopting a SaaS document management service that lawyers will use from their laptops and
   to share matter folders with clients. The provider shares an independent audit report on its controls but not its internal
   design. The security team must threat model the adoption before go-live. Where should the model BEST focus?

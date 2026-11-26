@@ -1,6 +1,6 @@
 id: cissp-d7-7.4-0006
 subdomain: '7.4'
-difficulty: hard
+difficulty: medium
 stem: A parcel carrier's twelve infrastructure engineers each hold full administrator rights on the servers and on the
   SIEM that stores their logs, so that whoever is on call at night can fix either. A two-person security team reviews alerts
   in office hours. Auditors note that an engineer could misuse server access and then remove the evidence. Which change

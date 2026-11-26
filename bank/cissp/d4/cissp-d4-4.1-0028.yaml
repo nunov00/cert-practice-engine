@@ -1,6 +1,6 @@
 id: cissp-d4-4.1-0028
 subdomain: '4.1'
-difficulty: hard
+difficulty: medium
 stem: A pharmaceutical plant's packaging lines, lab instruments and operator stations share one flat network. Last year
   ransomware brought in on an operator's USB stick spread from one packaging line to the lab instruments. Each device is a
   validated system, and any change to its software or network settings needs months of revalidation. Which design BEST

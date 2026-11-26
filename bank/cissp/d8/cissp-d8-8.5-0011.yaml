@@ -1,6 +1,6 @@
 id: cissp-d8-8.5-0011
 subdomain: '8.5'
-difficulty: hard
+difficulty: medium
 stem: A company's services accept access tokens that its identity provider signs with an RSA key, using a library that
   verifies each token with the algorithm named in the token's own header. A tester forged an administrator token by
   signing it with HMAC, using the identity provider's published public key as the secret. Which rule should the secure
