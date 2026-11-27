@@ -9,11 +9,11 @@ options:
   A: Lock each ward's list in a cabinet, shredding it when the next list is printed
   B: Print each ward's list once a day instead of each shift, with fewer copies kept
   C: Let ward leaders read the record system's standby copy on hospital phones
-  D: Hold each ward's latest list on a standalone downtime PC, printing it in an outage
+  D: Hold each ward's latest list on an encrypted downtime PC that works without the network, printing it in an outage
 answer: D
 explanation:
   why_correct: 'The paper exists every day so that it is there on the rare day it is needed, and the audit shows it is not
-    handled safely. A standalone downtime PC in each ward, encrypted and refreshed with the latest list while the network
+    handled safely. A downtime PC in each ward, encrypted and refreshed with the latest list while the network
     is up, keeps the information ready without making copies: the list is printed only when an outage begins, and the PC works
     without the network, which the last outage took down.'
   why_not:

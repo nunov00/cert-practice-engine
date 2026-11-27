@@ -7,7 +7,7 @@ stem: A bank's CISO is issuing a new standard that requires personal data in dat
   take effect?
 options:
   A: At once for all databases, with an exception recorded for each of the 120 until it upgrades
-  B: At once for new and capable databases, and for each of the 120 on a date set in the standard
+  B: At once for new and capable databases, and for each of the 120 on its upgrade date, in a transition schedule in the standard
   C: In 18 months for all databases, so that every team has the same time to comply
   D: At once for all databases, with one risk acceptance covering the 120 for 18 months
 answer: B
@@ -19,7 +19,8 @@ explanation:
   why_not:
     A: Per-system exceptions suit a few systems that cannot meet a standard, approved by a risk owner. Here 40% of the estate
       would sit in the exception register for work that is already planned, which buries the exceptions that really need
-      attention and makes the standard look widely breached from its first day.
+      attention and makes the standard look widely breached from its first day. An exception is for a
+      deviation the standard did not foresee; a known, dated transition belongs in the standard.
     C: A single future date is simple, but it lets the 180 capable databases and every new one stay unencrypted for 18 months
       when they could comply now, and it gives upgrades due in a few months the same slack as the last one.
     D: One risk acceptance avoids 120 separate records, but it gives every database the full 18 months whatever its upgrade

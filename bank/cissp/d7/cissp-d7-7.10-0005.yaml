@@ -6,7 +6,7 @@ stem: A distributor's order database and its stock database are updated together
   database every ten, each on its own schedule. In a recovery test both met the objective, but thousands of orders referred
   to stock reservations that did not exist. Which strategy BEST addresses this?
 options:
-  A: Replicate the stock database at five-minute intervals, matching the order database
+  A: Replicate both databases on one shared five-minute schedule, started at the same moment
   B: Replicate the two databases together as a single consistency group
   C: Add a reconciliation step to the runbook that rebuilds missing reservations
   D: Recover the databases in a scripted order, the stock database before orders
@@ -17,8 +17,8 @@ explanation:
     order at the same instant, gives a recovery point at which every order and its reservation exist together, while still
     meeting the 15-minute objective.
   why_not:
-    A: A shorter interval narrows the gap but does not close it, because two independent schedules still capture the databases
-      at different moments, so some orders would still lack reservations.
+    A: A shared schedule narrows the gap but does not close it, because two separate replication jobs still capture each
+      database at slightly different moments and not in write order, so some orders would still lack reservations.
     C: Reconciliation can repair mismatches afterwards, but it adds time to every recovery, depends on knowing how to rebuild
       each reservation, and treats the inconsistency instead of preventing it.
     D: Start order matters when one system needs another to run, but it does not change the point each database is recovered

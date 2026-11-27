@@ -7,7 +7,7 @@ stem: A payroll bureau runs a yearly parallel test of its pay platform at the re
   recovery site. How should the test BEST be designed?
 options:
   A: A parallel test on the full live pay data, its payment file captured and reconciled
-  B: A parallel test on 10% of employees, its payment file sent to the banks as usual
+  B: A full interruption test of this month's run, with the recovery site sending the only payment file
   C: A parallel test on the full live pay data, run after that day's bank cut-off
   D: A parallel test replaying last month's pay data, its file sent to a bank test service
 answer: A
@@ -16,8 +16,8 @@ explanation:
     site cannot act on the outside world. Capturing its payment file instead of sending it, then reconciling it with production's
     file, shows that the recovery site produced this month's full run correctly while nobody is paid twice.
   why_not:
-    B: A sample still sends real payments, so a smaller group is paid twice, and it does not show the full run that clients
-      asked for.
+    B: A full interruption test proves the most, but it puts this month's live pay run on the recovery site, the risk clients
+      have said they will not accept.
     C: Missing the cut-off only delays the file, since the banks would process it with the next day's submissions and employees
       would still be paid twice.
     D: Replaying last month's data to a bank test service avoids duplicate pay, but it does not show this month's run being

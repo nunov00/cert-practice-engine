@@ -19,8 +19,9 @@ explanation:
   why_not:
     A: Schema validation is good practice for manifests, but it runs on the document the parser has already built, after the
       entity has been resolved, and a valid field can carry the entity's content.
-    B: A text filter blocks this attempt, but the same declaration can be written in another character encoding or hidden
-      in parameter entities, so the filter can be bypassed. The safe setting belongs in the parser.
+    B: A text filter blocks this attempt, but the same declaration can be sent in another character encoding, such as UTF-16,
+      that a match on the raw text misses, and each service would need the filter in front of every parser. The safe setting
+      belongs in the parser.
     C: Generic errors stop this file from being echoed back, but the parser still reads local files and can send their contents
       out through entities that call the attacker's server.
 status: published

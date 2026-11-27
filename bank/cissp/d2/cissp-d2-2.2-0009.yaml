@@ -3,7 +3,7 @@ subdomain: '2.2'
 difficulty: medium
 stem: A law firm sends encrypted backup tapes to an offsite vault by courier. Its handling standard requires each tape's
   outer label to show the client matters on the tape and its classification. Last month thieves at the courier's depot
-  took only the firm's tapes labelled Restricted, leaving other customers' tapes behind. Which labelling rule BEST fits?
+  took only the firm's tapes labelled Restricted, leaving other customers' tapes behind. Which labelling rule should the firm's handling standard adopt?
 options:
   A: Label each tape with its Restricted marking only, leaving the client matter names off
   B: Label each tape with a barcode and its Restricted marking, contents held in tracking
@@ -15,7 +15,8 @@ explanation:
     contracts and the firm's booking for each shipment, not by reading tape labels. Readable labels on media that leave the
     firm's custody mostly tell outsiders which items are worth taking. A barcode alone, linked to contents and classification
     in the firm's tracking system, keeps each tape identifiable and its handling rules known to the firm, while to everyone
-    else the tapes look alike.
+    else the tapes look alike. Classified material in transit follows the same idea, since the outer wrapping carries no sensitivity
+    marking, which is kept on the inner layer or in records.
   why_not:
     A: Dropping client names stops the label revealing whom the firm acts for, but the Restricted marking is what the thieves
       chose by, so the most sensitive tapes would still be the easiest to pick out.

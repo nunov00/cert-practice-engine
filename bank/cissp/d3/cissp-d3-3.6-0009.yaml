@@ -8,7 +8,7 @@ options:
   A: Each message signed with the exchange's private key and checked with its public key
   B: Each message tagged with an HMAC under one key the exchange shares with its subscribers
   C: Mutual TLS on each link, from the exchange to the vendors and from the vendors to the firms
-  D: Each message tagged with an HMAC under a separate secret key for each data vendor
+  D: Each message signed by the vendor that relays it, with each vendor's public key published by the exchange
 answer: A
 explanation:
   why_correct: 'The firms need to verify the origin of data that passes through parties they cannot trust, and none of the
@@ -20,8 +20,8 @@ explanation:
       any firm or vendor that holds it, including a compromised one, can tag forged prices that every other subscriber accepts.
     C: TLS protects each hop, but it ends at each vendor. A compromised vendor receives genuine prices over one session and
       sends altered ones over another, and both sessions are valid.
-    D: A key per vendor stops one vendor forging another's traffic, but the vendor holds its own key, so a compromised vendor
-      can tag altered prices, and the firms, who lack the key, cannot check the tag at all.
+    D: Vendor signatures prove which vendor relayed a price, but a compromised vendor signs its altered prices with its own
+      valid key, so the firms cannot tell they did not come from the exchange.
 status: published
 outline_version: '2024-04-15'
 sample: false

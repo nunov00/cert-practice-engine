@@ -15,7 +15,7 @@ explanation:
   why_correct: Enrolment that IT applies to each phone can be undone by anyone who resets it, so the phones leave the
     company's control the moment that happens. Registering each phone to the company at purchase, through the reseller's
     automated enrolment programme, ties the device itself to the company, so after any reset it enrols again on first use
-    and stays locked to company management, which also makes a reset phone worthless to resell.
+    and stays locked to company management, which also makes a reset phone far less attractive to resell.
   why_not:
     B: Blocking the reset option in the settings menu stops casual resets, but a phone can still be reset from its recovery
       mode without the menu, and the enrolment is lost all the same.

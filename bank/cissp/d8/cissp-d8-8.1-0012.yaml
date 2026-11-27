@@ -7,7 +7,7 @@ stem: A bank's 25 development teams build products ranging from a payments platf
   Which approach BEST fits?
 options:
   A: Benchmark against a survey of peer banks, adopting the practices peers use on their riskiest systems
-  B: Raise each team to one common level on a maturity model, starting with the highest-risk teams
+  B: Assess teams on a maturity model, then raise each team to the level the payments platform needs
   C: Assess teams on a software assurance maturity model, with targets set by product risk
   D: Fund the practices that address the highest-risk findings from last year's penetration tests
 answer: C
@@ -19,7 +19,7 @@ explanation:
   why_not:
     A: A peer survey shows what comparable banks do for their riskiest systems, which is useful context, but with no record of
       what its own teams already do, the bank cannot tell which of those practices it lacks or where.
-    B: Ordering the work by team risk is sound, but one common target for every team spends effort raising internal tools to
+    B: Assessing first is sound, but one common target for every team spends effort raising internal tools to
       the payments platform's level, and with budget for three practices that spreads it too thinly.
     D: High-risk test findings point to real weaknesses, but they show symptoms in the products that were tested, found late,
       and without a record of each team's practices they do not show which practice gaps caused them across all 25 teams.

@@ -1,10 +1,10 @@
 id: cissp-d3-3.5-0008
 subdomain: '3.5'
 difficulty: hard
-stem: At a chemical plant, engineers change controller logic from one engineering workstation, about four times a year and
+stem: At a water treatment works, engineers change controller logic from one engineering workstation, about four times a year and
   always on site. The controllers accept new logic from any host on the control network that runs the vendor's software and
   knows their shared password. Testers who took over the engineering workstation through a phishing email loaded altered logic
-  into a reactor controller. Which change BEST prevents this?
+  into a dosing controller. Which change BEST prevents this?
 options:
   A: Controllers' mode switches kept in run, turned to program on site for each approved change
   B: Firewall rules letting only the engineering workstation send logic downloads to the controllers
@@ -22,7 +22,7 @@ explanation:
     C: Individual passwords add accountability, but engineers type them into, and often save them in, the engineering software
       on the compromised workstation, where an attacker can capture or reuse them.
     D: Monitoring for logic downloads is valuable, and it is the main option where downloads must stay possible remotely,
-      but it alerts only once altered logic has reached a reactor controller. Here the plant can stop the download itself.
+      but it alerts only once altered logic has reached a dosing controller. Here the works can stop the download itself.
 status: published
 outline_version: '2024-04-15'
 sample: false

@@ -8,7 +8,7 @@ stem: A manufacturer's retention schedule says each record series is destroyed w
 options:
   A: Escalate each request still unanswered after 30 days to the owner's director for approval
   B: Move records past their periods to low-cost archive storage until owners approve destruction
-  C: Destroy each series automatically when its period ends, without any step for the owner
+  C: Destroy each series automatically when its period ends, with a report to the owner afterwards
   D: Destroy each series when its period ends unless its owner objects within a 30-day notice
 answer: D
 explanation:
@@ -21,7 +21,7 @@ explanation:
       as busy as the owner can leave requests unanswered too, so silence still means keeping the records.
     B: Cheaper storage cuts the cost of holding records, but it does nothing about the volume that must be searched and
       produced in a lawsuit, which is counsel's concern.
-    C: Automatic destruction clears the backlog and keeps the schedule, but it removes the only point where an owner can
+    C: Automatic destruction clears the backlog and keeps the schedule, and the report tells owners what went, but it removes the only point where an owner can
       stop a destruction over an audit or dispute, which owners have needed to do twice.
 status: published
 outline_version: '2024-04-15'

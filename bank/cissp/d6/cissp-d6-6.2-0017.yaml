@@ -1,6 +1,6 @@
 id: cissp-d6-6.2-0017
 subdomain: '6.2'
-difficulty: hard
+difficulty: medium
 stem: A web company has rewritten the code that generates its password-reset tokens, 32-character values emailed to users
   and valid for an hour. Before release, the security team wants evidence that an attacker who requests many resets for an
   account of their own, and studies the tokens, could not work out a token sent to someone else. Which test BEST provides

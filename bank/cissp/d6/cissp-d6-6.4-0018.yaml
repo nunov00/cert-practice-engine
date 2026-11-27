@@ -1,8 +1,8 @@
 id: cissp-d6-6.4-0018
 subdomain: '6.4'
 difficulty: medium
-stem: During an authorised external test of a retailer's web shop, testers noticed a host on a neighbouring address range
-  whose banner names a remote access product with a known critical flaw. The host belongs to the retailer's logistics subsidiary,
+stem: During an authorised external test of a retailer's web shop, the testers' scan of the in-scope range also returned a banner
+  from an adjacent address, naming a remote access product with a known critical flaw. The host belongs to the retailer's logistics subsidiary,
   which the test authorisation does not cover, so the testers sent it nothing further. How should the final report handle
   this?
 options:
@@ -15,8 +15,7 @@ explanation:
   why_correct: The testers cannot verify the flaw, but a likely critical exposure on the client's group network is something
     the client needs to know about and act on. A separate observation, clearly marked as unconfirmed, with the evidence seen
     and a recommendation that the subsidiary check the host or authorise a test, tells the client what the risk may be without
-    claiming more than the test showed. Given the possible severity, the testers should also tell the named contact promptly
-    rather than wait for the report.
+    claiming more than the test showed.
   why_not:
     B: Rating it as a critical finding presents a banner reading as a tested result, and banners can mislead, for example
       after backported fixes, so the report would claim more than the test showed.

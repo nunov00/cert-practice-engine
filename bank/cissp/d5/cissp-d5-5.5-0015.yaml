@@ -9,7 +9,7 @@ options:
   A: Have the governance tool remove revoked rights through its connectors, without tickets
   B: Reconcile each application monthly with review decisions, removing any right that returns
   C: Show reviewers which role grants each right, routing those revocations to the role's owner
-  D: Run the reviews monthly, so that returning rights are found and removed sooner
+  D: Exclude each revoked right from the nightly role run for that person, recording it as an exception
 answer: C
 explanation:
   why_correct: The revoked rights come back because the role rules that granted them still apply, and the engine restores
@@ -21,8 +21,8 @@ explanation:
       rights back the same night.
     B: A monthly reconciliation would remove the returning rights again, but it fights the role engine, leaving the rights
       in place for weeks each time while the rules that grant them stay wrong.
-    D: More frequent reviews find returned rights sooner, but the engine still restores them each night, so reviewers would
-      keep revoking the same rights.
+    D: Per-person exceptions stop the right returning, but they pile up, drift from the role model and leave the role wrong
+      for everyone else who holds it; the role's owner never learns the job no longer needs the right.
 status: published
 outline_version: '2024-04-15'
 sample: false

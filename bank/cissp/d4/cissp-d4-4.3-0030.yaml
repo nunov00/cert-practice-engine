@@ -3,16 +3,16 @@ subdomain: '4.3'
 difficulty: hard
 stem: Fraudsters send invoices that appear to come from a manufacturer's own email domain, whose DMARC policy is set to none.
   Aggregate reports show legitimate mail from its own servers and from eleven outside services, four of which, including payroll
-  and the customer billing platform, fail DMARC alignment. Which step should the company take NEXT?
+  and the customer billing platform, pass SPF for the services' own bounce domains but fail DMARC alignment. Which step should the company take NEXT?
 options:
   A: Change the DMARC policy to reject, so that receivers refuse any mail that fails alignment
-  B: Add each of the four services' sending servers to the domain's SPF record
+  B: Add each of the four services' sending servers to the domain's SPF record, then move the policy to quarantine
   C: Set up aligned DKIM signing for the four services, then move the policy to quarantine
   D: Move the four services to a subdomain whose own DMARC policy is set to none
 answer: C
 explanation:
-  why_correct: Receivers will act on an enforcing policy only for mail that passes alignment, so the four legitimate services
-    must pass before enforcement starts. DKIM signing with the company's domain gives aligned passes that also survive forwarding.
+  why_correct: An enforcing policy tells receivers to quarantine or reject mail that fails alignment, so the four legitimate
+    services must pass before enforcement starts. DKIM signing with the company's domain gives aligned passes that also survive forwarding.
     Moving to quarantine, then to reject, while watching the reports, stops the spoofed invoices without losing payroll or
     billing mail.
   why_not:
@@ -20,6 +20,7 @@ explanation:
       and customer bills, until they are fixed.
     B: SPF authorises servers, but DMARC needs the domain that SPF checks to match the visible sender domain. Outside services
       usually send with their own bounce domain, so they would still fail alignment, and SPF breaks when mail is forwarded.
+      Listing many outside services also risks the SPF limit of ten DNS lookups.
     D: Separate subdomains are a sound way to manage outside senders, but leaving the billing subdomain at none lets fraudsters
       spoof it, and bills are exactly what they imitate.
 status: published

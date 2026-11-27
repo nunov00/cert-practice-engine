@@ -8,7 +8,7 @@ stem: An aerospace firm shares draft test specifications, as office documents, w
 options:
   A: Send the documents encrypted, with a contract term to destroy each copy when the work ends
   B: Send the documents with rights management, under licences the firm can withdraw at the end
-  C: Send the documents through a portal that logs each download, with a right to audit deletion
+  C: Share the documents in a hosted workspace where engineers edit online, with access the firm can revoke
   D: Send the documents watermarked per engineer, with certified destruction when the work ends
 answer: B
 explanation:
@@ -19,8 +19,8 @@ explanation:
   why_not:
     A: Encryption protects the documents in transit and on lost devices, but once the partner holds the key, every copy it
       makes opens freely, and the destruction term relies on the partner finding and deleting copies passed between colleagues.
-    C: Download logs show which engineers took which documents, and an audit can check deletion, but copies passed on after
-      download never appear in the log, so the audit cannot show that every copy is gone.
+    C: Revocable online access suits staff who are always connected, but the engineers edit offline at test sites and pass
+      copies on, so they would download copies outside the workspace's control.
     D: Watermarks make a leaked copy traceable to one engineer and deter misuse, and certification records the partner's
       promise, but neither stops a copy that was passed on and never destroyed from being used.
 status: published

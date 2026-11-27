@@ -2,7 +2,7 @@ id: cissp-d6-6.1-0018
 subdomain: '6.1'
 difficulty: hard
 stem: For six years the same two consultants from one firm have run a payments company's yearly penetration test, working
-  from the test plan agreed in the first year. Findings have fallen from 30 to two. This spring a researcher reported an authentication
+  from the test plan agreed in the first year and extended as new systems launched. Findings have fallen from 30 to two. This spring a researcher reported an authentication
   flaw in an API launched three years ago, which every report since had listed as tested. Which change to the test strategy
   BEST fits?
 options:
@@ -20,7 +20,7 @@ explanation:
   why_not:
     A: A fresh plan deals with stale test cases, but the same two consultants would carry it out with the same habits and
       view of the system, which is where a flaw tested three times was missed.
-    B: A bug bounty adds wide and varied testing and found this flaw, but it supplements the yearly test rather than repairing
+    B: A bug bounty adds wide and varied testing, as the researcher's report shows, but it supplements the yearly test rather than repairing
       it, and the company would still rely on that test unchanged.
     C: Testing each release catches flaws as they are introduced, but this API was tested repeatedly after launch, and the
       same team would run the extra tests.
