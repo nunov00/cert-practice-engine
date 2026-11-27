@@ -1,0 +1,32 @@
+id: cissp-d5-5.1-0018
+subdomain: '5.1'
+difficulty: medium
+stem: A university's research buildings use mechanical master keys, held by about 60 facilities and security staff, that open
+  every lab door, including labs holding controlled drugs and radioactive sources. A master key goes missing about twice a
+  year, and each loss means re-keying some 400 locks over several weeks. Which change BEST addresses this?
+options:
+  A: Electronic cylinders on lab doors, opened by programmable keys that can each be cancelled
+  B: A patented restricted keyway, so that master keys cannot be copied without authorisation
+  C: An electronic key cabinet that releases master keys only to named staff and logs each one
+  D: Master keys cut down to 15 holders, with each loss reported and the locks re-keyed
+answer: A
+explanation:
+  why_correct: The recurring problem is that a lost mechanical key keeps working until every lock is changed. With electronic
+    cylinders and programmable keys, a missing key is cancelled in the system and stops opening doors at once, without touching
+    any lock. Each key can also carry only the doors and hours its holder needs, and many systems log which key opened which
+    door.
+  why_not:
+    B: A restricted keyway stops unauthorised copies being cut, which matters where duplication is the threat, but a lost
+      original still opens every lab until the locks are re-keyed.
+    C: A logging key cabinet shows who took each key and keeps keys from going home, but a key lost while signed out still
+      opens every lab, and the 400 locks must still be re-keyed.
+    D: Fewer holders should mean fewer losses, but each loss still forces weeks of re-keying, and 15 people still lose keys.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

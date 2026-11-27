@@ -161,11 +161,13 @@ held:
   # cissp-d1-1.2-0008 and cissp-d3-3.7-0007 were rated obvious from the
   # options in round 2; rework their distractors (freshness alternatives that
   # fail on a stem detail; a second per-host option) before release.
-  - { id: cissp-d7-7.12-0005, pr: 95 }
-  - { id: cissp-d2-2.4-0008, pr: 97 }
   # Daily batch 2026-11-26, batch run: rechecked the seven CISSP held drafts;
   # all passed. Released five (1.2-0008, 3.7-0007 and 2.3-0011 after distractor
   # rework, plus 1.5-0010 and 1.9-0008): 10 hard carry 23 non-hard at 30%.
   # cissp-d2-2.4-0008 stays held for lack of room. cissp-d7-7.12-0005 stays
   # held: the 2026-11-24 rework (new setting, four parallel-test variants as
   # options) has not been done yet.
+  # Daily batch 2026-11-27, batch run: cissp-d7-7.12-0005 reworked into a new
+  # setting (payroll bureau parallel test, four parallel-test variants as
+  # options) and rechecked with cissp-d2-2.4-0008; both passed and were
+  # released (11 hard carry 22 non-hard at 30%). No CISSP drafts are held now.

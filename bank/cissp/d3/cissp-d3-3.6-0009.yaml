@@ -1,0 +1,33 @@
+id: cissp-d3-3.6-0009
+subdomain: '3.6'
+difficulty: medium
+stem: A commodities exchange publishes a price feed that about 40 data vendors receive and pass on, unchanged, to some 5,000
+  trading firms. After one vendor's servers were compromised, altered prices reached that vendor's clients. The exchange wants
+  each trading firm to be able to confirm that a price came from the exchange unaltered. Which solution BEST fits?
+options:
+  A: Each message signed with the exchange's private key and checked with its public key
+  B: Each message tagged with an HMAC under one key the exchange shares with its subscribers
+  C: Mutual TLS on each link, from the exchange to the vendors and from the vendors to the firms
+  D: Each message signed by the vendor that relays it, with each vendor's public key published by the exchange
+answer: A
+explanation:
+  why_correct: 'The firms need to verify the origin of data that passes through parties they cannot trust, and none of the
+    5,000 verifiers should be able to create a valid message. A digital signature does both: only the exchange holds the private
+    key, anyone can check with the public key, and the signature travels with the message through every vendor unchanged,
+    so an altered price fails at the firm.'
+  why_not:
+    B: An HMAC proves origin only to parties that cannot produce it themselves. With one key shared among all subscribers,
+      any firm or vendor that holds it, including a compromised one, can tag forged prices that every other subscriber accepts.
+    C: TLS protects each hop, but it ends at each vendor. A compromised vendor receives genuine prices over one session and
+      sends altered ones over another, and both sessions are valid.
+    D: Vendor signatures prove which vendor relayed a price, but a compromised vendor signs its altered prices with its own
+      valid key, so the firms cannot tell they did not come from the exchange.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

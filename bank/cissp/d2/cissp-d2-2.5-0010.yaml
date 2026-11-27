@@ -1,0 +1,34 @@
+id: cissp-d2-2.5-0010
+subdomain: '2.5'
+difficulty: medium
+stem: A manufacturer's retention schedule says each record series is destroyed when its period ends, once the series owner
+  approves. Owners rarely answer the monthly requests, so 60% of records past their periods are still held, and counsel warns
+  this widens what the firm must search and produce in lawsuits. Owners have twice stopped a destruction over an audit or
+  dispute the records team had not heard of. Which change BEST fixes this?
+options:
+  A: Escalate each request still unanswered after 30 days to the owner's director for approval
+  B: Move records past their periods to low-cost archive storage until owners approve destruction
+  C: Destroy each series automatically when its period ends, with a report to the owner afterwards
+  D: Destroy each series when its period ends unless its owner objects within a 30-day notice
+answer: D
+explanation:
+  why_correct: Destruction stalls because it waits for an approval that owners do not give, so silence keeps records for ever.
+    Making destruction the default at the end of the period, with a notice that gives the owner 30 days to object, means
+    records go on schedule unless someone has a reason to keep them, while owners keep the chance to stop a destruction for
+    an audit or dispute that the records team does not know about.
+  why_not:
+    A: Escalation puts pressure on owners, but destruction still depends on someone giving approval, and a director who is
+      as busy as the owner can leave requests unanswered too, so silence still means keeping the records.
+    B: Cheaper storage cuts the cost of holding records, but it does nothing about the volume that must be searched and
+      produced in a lawsuit, which is counsel's concern.
+    C: Automatic destruction clears the backlog and keeps the schedule, and the report tells owners what went, but it removes the only point where an owner can
+      stop a destruction over an audit or dispute, which owners have needed to do twice.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

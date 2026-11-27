@@ -1,0 +1,34 @@
+id: cissp-d3-3.9-0007
+subdomain: '3.9'
+difficulty: medium
+stem: A consultancy's bid team works in a badge-controlled room in a leased office. Its partition walls stop at a suspended
+  ceiling, and the void above is open to the neighbouring tenant's unit. Overnight, a tester entered the void from the neighbour's
+  side, lifted a ceiling tile and dropped into the room. The team's discussions can also be heard next door. Which control
+  BEST protects the room?
+options:
+  A: Motion sensors in the room, alarmed to the security desk outside working hours
+  B: Partition walls extended to the structural slab, with sound insulation in the void
+  C: A sound-masking system in the room's ceiling, with the door's badge reader retained
+  D: Ceiling tiles clipped down and fitted with tamper switches that raise an alarm
+answer: B
+explanation:
+  why_correct: 'Both problems come from the same gap: the room''s boundary ends at the ceiling tiles, so the shared void is
+    a path for people and for sound. Taking the walls up to the structural slab, with insulation and a barrier where services
+    pass through, closes that path for an intruder and for speech, and makes the room''s physical boundary match its badge-controlled
+    door. It is a fit-out change a tenant can usually make within its own unit.'
+  why_not:
+    A: Motion sensors detect someone who has already dropped into the room, which helps where walls cannot be changed, but
+      they do not keep anyone out and do nothing about the discussions heard next door.
+    C: Sound masking makes speech harder to follow through walls and is useful where construction is not possible, but it
+      leaves the void open for an intruder to enter the room.
+    D: Clipped tiles with tamper switches slow and reveal an entry through the ceiling, but an alarm still relies on someone
+      responding in time, and sound still carries through the shared void.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

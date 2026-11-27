@@ -1,0 +1,34 @@
+id: cissp-d1-1.12-0009
+subdomain: '1.12'
+difficulty: medium
+stem: A software firm named and trained a volunteer security champion in each of its 20 teams last year. Most champions now
+  miss the monthly champion meetings, and their teams' security findings have not changed. In interviews, champions say they
+  still want the role, but whenever a sprint is full, champion work is what they drop. Which
+  change MOST improves the programme?
+options:
+  A: Agree a set share of each champion's sprint time with their manager, recorded in their objectives
+  B: Replace the monthly meetings with a quarterly half-day, so that they disrupt sprints less
+  C: Recognise active champions each quarter, with awards announced by the CTO to the firm
+  D: Give champions advanced training and a certification path to raise their standing
+answer: A
+explanation:
+  why_correct: The champions are willing and trained; what is missing is time, because the role sits on top of a full
+    sprint load that their managers plan without it. Setting a share of each champion's sprint time with the manager,
+    and recording it in their objectives, makes champion work part of the job that is planned and recognised, so it stops
+    losing to delivery every time.
+  why_not:
+    B: Fewer meetings lower the load, but the champion role is mostly work inside the team, such as design reviews and fixes,
+      and none of it gains time when the meetings shrink.
+    C: Recognition raises the profile of the role and helps keep willing champions, but these champions are already willing;
+      an award does not free any of their sprint time.
+    D: More training deepens champions' skills and adds standing, but they already have the training they need for the role
+      and lack the time to use it, so this adds commitments rather than removing one.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

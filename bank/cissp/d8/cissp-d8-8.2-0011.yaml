@@ -1,0 +1,34 @@
+id: cissp-d8-8.2-0011
+subdomain: '8.2'
+difficulty: medium
+stem: Developers at a fintech install code editor extensions freely from the public marketplace, and extensions update
+  themselves automatically. A formatter extension with 400,000 installs, published for two years by a verified developer,
+  was sold to a new owner, whose next update sent developers' cloud credentials to an outside server. Which control BEST
+  prevents a repeat?
+options:
+  A: Allow only extensions from publishers the marketplace has verified, through managed editor settings
+  B: Allow only extensions with many installs and two years' history, through managed editor settings
+  C: Allow any extension, with endpoint detection on laptops alerting on credential theft by editor processes
+  D: Allow only reviewed extension versions from an internal gallery, reviewing each update before release
+answer: D
+explanation:
+  why_correct: The extension was trustworthy by every outward sign until one update changed it, and automatic updates
+    delivered that update straight to developers. Serving only reviewed versions from an internal gallery, and reviewing
+    each update before it is released there, means a change of owner or a malicious update has to get past the fintech's
+    own review before it reaches any developer, while developers keep the extensions they need.
+  why_not:
+    A: Limiting extensions to verified publishers removes impostors and typosquats, but this publisher was verified, and the
+      marketplace's verification did not stop the new owner's update from flowing to every install.
+    B: Requiring many installs and a long history screens out new, little-used extensions, but this one had both, and it
+      turned malicious in an update after it had already earned that reputation.
+    C: Endpoint detection may notice credential theft, but only once the malicious update is running and the credentials
+      have probably already left; it does not stop the update from reaching developers.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: fail
+  options_only: not_obvious

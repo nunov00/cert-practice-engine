@@ -1,0 +1,33 @@
+id: cissp-d6-6.2-0017
+subdomain: '6.2'
+difficulty: medium
+stem: A web company has rewritten the code that generates its password-reset tokens, 32-character values emailed to users
+  and valid for an hour. Before release, the security team wants evidence that an attacker who requests many resets for an
+  account of their own, and studies the tokens, could not work out a token sent to someone else. Which test BEST provides
+  it?
+options:
+  A: Statistical randomness tests on a million tokens generated in staging
+  B: A review of the new code to see which generator and seed make the tokens
+  C: A brute-force test of the reset endpoint, checking rate limits and lockout
+  D: A test that requests thousands of tokens, checking that no value repeats
+answer: B
+explanation:
+  why_correct: 'The threat is prediction: working out the generator''s state from tokens the attacker has seen. Whether that
+    is possible depends on how the tokens are made, from a properly seeded cryptographically secure generator or from a general-purpose
+    one, and only reading the code shows which. Tokens from a fast non-cryptographic generator can look random to any test
+    of their output and still be predictable from a few hundred samples.'
+  why_not:
+    A: Statistical suites show that output is evenly spread and free of obvious patterns, which general-purpose generators
+      also achieve, so passing them does not show that tokens are unpredictable.
+    C: Rate limits and lockout defend against guessing, but guessing a 32-character random value is not the risk here; an
+      attacker who can predict a token needs only one try.
+    D: Tokens must not repeat, but uniqueness says nothing about predictability, since a predictable sequence need never repeat.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

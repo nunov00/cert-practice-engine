@@ -1,0 +1,34 @@
+id: cissp-d8-8.1-0012
+subdomain: '8.1'
+difficulty: medium
+stem: A bank's 25 development teams build products ranging from a payments platform its regulator scrutinises to internal
+  tools that hold no sensitive data. Nobody has recorded which secure development practices each team already follows. The
+  CISO has budget to improve about three practices next year and wants a sound way to choose which, and for which teams.
+  Which approach BEST fits?
+options:
+  A: Benchmark against a survey of peer banks, adopting the practices peers use on their riskiest systems
+  B: Assess teams on a maturity model, then raise each team to the level the payments platform needs
+  C: Assess teams on a software assurance maturity model, with targets set by product risk
+  D: Fund the practices that address the highest-risk findings from last year's penetration tests
+answer: C
+explanation:
+  why_correct: The bank cannot choose improvements well without knowing where each team stands, and the right target differs
+    between a regulated payments platform and an internal tool. Assessing each team against a prescriptive software assurance
+    maturity model records current practice on a common scale, and setting target levels by product risk shows which gaps
+    matter most, so the three improvements go where they reduce the most risk.
+  why_not:
+    A: A peer survey shows what comparable banks do for their riskiest systems, which is useful context, but with no record of
+      what its own teams already do, the bank cannot tell which of those practices it lacks or where.
+    B: Assessing first is sound, but one common target for every team spends effort raising internal tools to
+      the payments platform's level, and with budget for three practices that spreads it too thinly.
+    D: High-risk test findings point to real weaknesses, but they show symptoms in the products that were tested, found late,
+      and without a record of each team's practices they do not show which practice gaps caused them across all 25 teams.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious
