@@ -1,0 +1,34 @@
+id: cissp-d1-1.8-0009
+subdomain: '1.8'
+difficulty: hard
+stem: At a bank, hiring managers receive each finalist's full screening report, covering credit history, criminal records
+  and past addresses, and read them before choosing whom to hire. An internal review found that managers had turned down
+  finalists over debts the role's screening criteria allow. Applicants may challenge a rejection based on screening within
+  six months. Which change BEST addresses this?
+options:
+  A: Send managers each report trimmed to only the items the role's criteria consider
+  B: Train hiring managers on each role's criteria, and keep sending them the full reports
+  C: Have HR judge each report against the role's criteria and tell managers cleared or not
+  D: Have HR judge each report against the role's criteria and delete it once it has decided
+answer: C
+explanation:
+  why_correct: The managers make the hiring choice, and once they hold the detail of a finalist's background it colours
+    that choice whatever the criteria say. Having HR, or a screening officer, adjudicate each report against the role's
+    criteria and pass managers only a cleared or not-cleared result keeps the sensitive detail with the people trained to
+    apply the criteria, applies them consistently, and keeps the report on file for any challenge.
+  why_not:
+    A: Trimming the report to the criteria's items limits what managers see, but they still read and weigh the debts and
+      records themselves, which is where the inconsistent judgments came from.
+    B: Training helps managers understand the criteria, but they would still read every finalist's full credit and criminal
+      history while choosing between candidates, so the information they are told to ignore keeps shaping the decision.
+    D: HR adjudication is right, but deleting the report at once leaves the bank without the record it needs to answer a
+      challenge, which applicants may bring for six months.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

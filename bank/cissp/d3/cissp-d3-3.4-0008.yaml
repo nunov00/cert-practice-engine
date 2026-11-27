@@ -1,0 +1,34 @@
+id: cissp-d3-3.4-0008
+subdomain: '3.4'
+difficulty: medium
+stem: A defence supplier's responders found an implant on four servers that survived disk replacement and a full reinstall.
+  Malware with administrator rights had written it into the platform firmware's flash chip, where it ran before the boot loader.
+  The supplier is buying replacement servers. Which capability BEST prevents such an implant from running on them?
+options:
+  A: UEFI secure boot, allowing only boot loaders signed with approved keys
+  B: Measured boot, with each server's TPM values checked at the management console
+  C: A hardware root of trust that verifies the firmware image before the processor runs it
+  D: Firmware updates accepted only when signed by the vendor and applied through its own tool
+answer: C
+explanation:
+  why_correct: The implant sits in the platform firmware, the first code the processor runs, so anything that firmware enforces
+    or reports can be subverted by it. A hardware root of trust, such as an immutable boot ROM or platform controller that
+    checks the firmware's signature before letting the processor start, refuses a modified image however it was written, and
+    many designs then recover a known-good copy (the approach of NIST SP 800-193 on platform firmware resiliency). Keeping
+    flash write protection on helps too, but the decisive change is a check that does not depend on what is in the flash.
+  why_not:
+    A: Secure boot checks boot loaders and drivers, but those checks are carried out by the platform firmware itself. Firmware
+      that has been altered can skip them, and this implant ran before the boot loader was even loaded.
+    B: Measured boot records what ran and lets the console spot changes, but it detects rather than prevents, and when the
+      earliest measuring code lives in the altered flash, the implant can report the values of the genuine firmware.
+    D: Signed updates stop tampered images arriving through the vendor's update path, but the malware wrote to the flash chip
+      directly and never used that path. Only a check made at each boot catches an image whichever way it got there.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

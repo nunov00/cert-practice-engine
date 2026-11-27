@@ -1,0 +1,34 @@
+id: cissp-d2-2.2-0009
+subdomain: '2.2'
+difficulty: medium
+stem: A law firm sends encrypted backup tapes to an offsite vault by courier. Its handling standard requires each tape's
+  outer label to show the client matters on the tape and its classification. Last month thieves at the courier's depot
+  took only the firm's tapes labelled Restricted, leaving other customers' tapes behind. Which labelling rule BEST fits?
+options:
+  A: Label each tape with its Restricted marking only, leaving the client matter names off
+  B: Label each tape with a barcode and its Restricted marking, contents held in tracking
+  C: Label each tape with a barcode only, its contents and class held in the tracking system
+  D: Label each tape with a barcode and its client matters, its class held in the tracking system
+answer: C
+explanation:
+  why_correct: Marking exists so that handlers apply the right care, but the courier and vault apply the care set by their
+    contracts and the firm's booking for each shipment, not by reading tape labels. Readable labels on media that leave the
+    firm's custody mostly tell outsiders which items are worth taking. A barcode alone, linked to contents and classification
+    in the firm's tracking system, keeps each tape identifiable and its handling rules known to the firm, while to everyone
+    else the tapes look alike.
+  why_not:
+    A: Dropping client names stops the label revealing whom the firm acts for, but the Restricted marking is what the thieves
+      chose by, so the most sensitive tapes would still be the easiest to pick out.
+    B: A barcode with a classification marking is a common labelling scheme and keeps contents off the label, but it still
+      shows which tapes are Restricted, which is exactly how these tapes were selected.
+    D: Moving the classification into tracking removes the marking the thieves used, but client matter names on a law firm's
+      tapes reveal whom it acts for and let a thief pick out the tapes of well-known clients just as easily.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

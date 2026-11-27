@@ -37,7 +37,7 @@ market; every row is *to verify* until a daily run checks it).
 | Rank | Exam (issuer) | Format | Demand | Fit | Calib. | Pay | Synergy | Total | Checked |
 |---:|---|---|---:|---:|---:|---:|---:|---:|---|
 | 1 | CISM (ISACA) | 150 MCQ, 4 domains (18/20/33/29%, outline in force since 2026-11-03) | 5 | 5 | 5 | 5 | 5 | 30 | 2026-11-26 |
-| 2 | CISA (ISACA) | 150 MCQ, 5 domains (18/18/12/26/26%) | 5 | 5 | 5 | 5 | 4 | 29 | 2026-11-16 |
+| 2 | CISA (ISACA) | 150 MCQ, 5 domains (18/18/12/26/26%) | 5 | 5 | 5 | 5 | 4 | 29 | 2026-11-27 |
 | 3 | CRISC (ISACA) | 150 MCQ, 4 domains (26/22/32/20%) | 3 | 5 | 5 | 5 | 5 | 26 | 2026-11-17 |
 | 4 | CCSP (ISC2) | 100-150 CAT items (MCQ and advanced types), 6 domains (17/20/17/16/17/13%) | 4 | 5 | 3 | 5 | 4 | 25 | 2026-11-18 |
 | 5 | Security+ (CompTIA) | up to 90 in 90 min, MCQ and performance-based, 5 domains (16/24/19/27/14% in outline order on V8, SY0-801, launched 2026-11-17) | 5 | 3 | 3 | 4 | 3 | 23 | 2026-11-19 |
@@ -91,6 +91,13 @@ older Checked date.
   outline change announced; it now gives "more than 200,000" holders since
   1978. The free 10-question practice quiz is still listed, at exam difficulty
   per ISACA, with results shown after a form, so calibration stays at 5.
+  Scores, total and rank unchanged.
+  Re-checked 2026-11-27: the outline page still lists 150 questions over the
+  same five domains and weights (18/18/12/26/26%), with no outline change
+  announced; it gives no effective date or duration in its text, so those rest
+  on earlier checks. It still says "more than 200,000" holders. The free
+  10-question practice quiz is still live, at "the same level of difficulty"
+  as the exam per ISACA, with results after a form, so calibration stays at 5.
   Scores, total and rank unchanged.
 - **CRISC:** ISACA's IT risk exam; smaller audience but strong overlap with AAIR.
   Checked 2026-10-24: 150 questions over four domains (Governance 26%, Risk
@@ -335,3 +342,4 @@ older Checked date.
 | 2026-11-24 | SSCP row re-checked: outline effective 2025-10-01 and its seven domains confirmed, no outline change announced; the outline and SSCP pages no longer show format or weights in their text, so the CAT format (100-125 items, 2 hours) and weights rest on the 2025-10-01 outline PDF and earlier checks; the SSCP page adds DoD 8140.03 approval; no holder count and the knowledge-check list did not load, so demand stays at 2 and calibration at 3; scores and total unchanged, rank 9 to 10 (CGRC now has the older Checked date) | ISC2 [outline page](https://www.isc2.org/certifications/sscp/sscp-certification-exam-outline), [SSCP page](https://www.isc2.org/certifications/sscp), [knowledge checks](https://www.isc2.org/certifications/quizzes) |
 | 2026-11-25 | CGRC row re-checked: outline effective 2024-06-15 and its seven domains confirmed, no outline change announced; weights and format panels still do not load in the page text, so they rest on the 2026-11-01 check; DoDM 8140.03 approval and the official CGRC knowledge check still listed; no holder count, so demand stays at 2 and calibration at 3; scores and total unchanged, rank 9 to 10 (SSCP now has the older Checked date) | ISC2 [CGRC outline page](https://www.isc2.org/certifications/cgrc/cgrc-certification-exam-outline), [CGRC page](https://www.isc2.org/certifications/cgrc), [CGRC knowledge check](https://cloud.connect.isc2.org/cgrc-quiz) |
 | 2026-11-26 | CISM row re-checked: the outline page now shows the new outline (150 questions, 18/20/33/29%) and no longer carries the "will be updated effective 3 November 2026" notice, so the weights are verified on the outline itself and a recipe can cite it; ISACA gives more than 107,000 holders since 2002; the free 10-question practice quiz is still live; scores, total and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/cism/cism-exam-content-outline), [practice quiz](https://www.isaca.org/credentialing/cism/cism-practice-quiz) |
+| 2026-11-27 | CISA row re-checked: 150 questions, five domains and weights 18/18/12/26/26% confirmed, no outline change announced; "more than 200,000" holders; the free 10-question practice quiz still live at exam difficulty; scores, total and rank unchanged | ISACA [exam content outline](https://www.isaca.org/credentialing/cisa/cisa-exam-content-outline), [practice quiz](https://www.isaca.org/credentialing/cisa/cisa-practice-quiz) |

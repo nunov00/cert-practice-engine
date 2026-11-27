@@ -1,0 +1,34 @@
+id: cissp-d2-2.6-0009
+subdomain: '2.6'
+difficulty: medium
+stem: An aerospace firm shares draft test specifications, as office documents, with a partner's engineers. They edit them
+  on the partner's own laptops, often offline at test sites, and pass copies to colleagues as the work needs. The partnership
+  can be ended at short notice, and the firm must then be able to stop the partner using the specifications. Which control
+  BEST fits?
+options:
+  A: Send the documents encrypted, with a contract term to destroy each copy when the work ends
+  B: Send the documents with rights management, under licences the firm can withdraw at the end
+  C: Send the documents through a portal that logs each download, with a right to audit deletion
+  D: Send the documents watermarked per engineer, with certified destruction when the work ends
+answer: B
+explanation:
+  why_correct: The copies spread across the partner's laptops and engineers, so no one can find and remove every copy when
+    the partnership ends. Rights management keeps protection on the document itself wherever it is copied, lets the engineers
+    edit it in their normal tools and work offline for a set period, and lets the firm withdraw the licences, so every copy,
+    including ones it never knew about, stops opening once the offline period runs out.
+  why_not:
+    A: Encryption protects the documents in transit and on lost devices, but once the partner holds the key, every copy it
+      makes opens freely, and the destruction term relies on the partner finding and deleting copies passed between colleagues.
+    C: Download logs show which engineers took which documents, and an audit can check deletion, but copies passed on after
+      download never appear in the log, so the audit cannot show that every copy is gone.
+    D: Watermarks make a leaked copy traceable to one engineer and deter misuse, and certification records the partner's
+      promise, but neither stops a copy that was passed on and never destroyed from being used.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

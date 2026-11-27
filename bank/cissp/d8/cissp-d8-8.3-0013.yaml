@@ -1,0 +1,34 @@
+id: cissp-d8-8.3-0013
+subdomain: '8.3'
+difficulty: hard
+stem: A penetration test found SQL injection in a reporting helper in one of a retailer's 120 microservices, and the owning
+  team fixed it. The helper came from a starter template that teams have forked for new services over five years, often renaming
+  and editing it. The CISO wants to know which other services carry the flaw. Which assessment BEST answers this?
+options:
+  A: A search of all repositories for the helper's name and its distinctive lines of code
+  B: A data-flow query, run across all repositories, tracing request input into SQL strings
+  C: A dynamic scan of each service's endpoints, using the scanner's full set of injection tests
+  D: A penetration test of a risk-ranked sample of the services built from the template
+answer: B
+explanation:
+  why_correct: The question is where else the same flaw exists, in copies that no longer look alike. A data-flow query (variant
+    analysis) looks for the flaw's shape, untrusted request input reaching a SQL string without parameters, rather than for
+    particular names or text, so it finds renamed and edited copies, and similar code written from scratch, across all 120
+    services at once.
+  why_not:
+    A: Searching for the helper's name and code finds the copies that stayed close to the template, which is a quick first
+      pass, but renamed and edited copies are exactly the ones it misses.
+    C: A dynamic scan tests services from the outside, but it only finds injection on the endpoints and parameters it manages
+      to reach and exercise, and reporting functions are often behind sign-in or rarely linked, so a clean scan would not
+      show a service is free of the flaw.
+    D: Testing a risk-ranked sample is a sensible use of testers' time for a general assurance question, but a sample cannot
+      say which of the 120 services carry the flaw, which is what the CISO asked.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

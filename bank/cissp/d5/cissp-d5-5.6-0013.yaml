@@ -1,0 +1,33 @@
+id: cissp-d5-5.6-0013
+subdomain: '5.6'
+difficulty: medium
+stem: A company's authorization server issues access tokens to internal and partner apps for its many APIs. A partner's scheduling
+  app, approved only for the calendar API, sent one of the tokens it had been issued to the payroll API, which accepted it.
+  Each API checks a token's signature, issuer and expiry. Which change BEST stops this?
+options:
+  A: Have each API reject tokens whose audience does not name that API
+  B: Bind each token to its client's TLS certificate, checked by each API
+  C: Have each API validate tokens by introspection at the authorization server
+  D: Shorten token lifetimes to five minutes, renewed with rotating refresh tokens
+answer: A
+explanation:
+  why_correct: A token's audience claim says which API it was issued for. The payroll API checked that the token was genuine
+    and current, which it was, but not that it was meant for payroll. Issuing the partner's tokens with the calendar API as
+    their audience, and having each API refuse tokens addressed to another, stops a token for one API being spent at another,
+    whoever holds it.
+  why_not:
+    B: Sender-constrained tokens stop a stolen token being used by someone else, but here the partner app is the client the
+      token was issued to, so its certificate matches.
+    C: Introspection tells the API whether a token is active and what it carries. This token was genuinely active, so the
+      API would still accept it unless it also checked what the token was for.
+    D: Short lifetimes limit how long a leaked token stays useful, but the partner app holds fresh tokens all the time, so
+      the misuse would continue.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

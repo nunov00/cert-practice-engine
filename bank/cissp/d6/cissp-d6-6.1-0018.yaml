@@ -1,0 +1,35 @@
+id: cissp-d6-6.1-0018
+subdomain: '6.1'
+difficulty: hard
+stem: For six years the same two consultants from one firm have run a payments company's yearly penetration test, working
+  from the test plan agreed in the first year. Findings have fallen from 30 to two. This spring a researcher reported an authentication
+  flaw in an API launched three years ago, which every report since had listed as tested. Which change to the test strategy
+  BEST fits?
+options:
+  A: A new test plan from the current firm, built on a fresh threat model
+  B: A public bug bounty on the production APIs, alongside the yearly test
+  C: Tests by the current firm of each major release, before it goes live
+  D: A new firm for the next test, working from a test plan of its own
+answer: D
+explanation:
+  why_correct: The flaw was in scope, in an API the same testers had examined three times, so the gap lies in the testing
+    itself rather than its scope or timing. Long familiarity lets testers follow habits and expectations about a system they
+    know well, and a falling count can reflect that as much as better security. A different firm brings its own people and
+    methods, which tests the assumptions the old team no longer questions, and its results show whether the low count was
+    real.
+  why_not:
+    A: A fresh plan deals with stale test cases, but the same two consultants would carry it out with the same habits and
+      view of the system, which is where a flaw tested three times was missed.
+    B: A bug bounty adds wide and varied testing and found this flaw, but it supplements the yearly test rather than repairing
+      it, and the company would still rely on that test unchanged.
+    C: Testing each release catches flaws as they are introduced, but this API was tested repeatedly after launch, and the
+      same team would run the extra tests.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

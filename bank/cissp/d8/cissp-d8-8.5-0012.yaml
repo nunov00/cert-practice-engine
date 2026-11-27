@@ -1,0 +1,34 @@
+id: cissp-d8-8.5-0012
+subdomain: '8.5'
+difficulty: easy
+stem: A logistics platform accepts shipping manifests from 300 partners as XML documents, which several services parse with
+  their languages' default XML libraries. A tester uploaded a manifest declaring an entity that pointed to a local file and
+  received the server's configuration file in the error message. Partners cannot move to another format for years. Which rule
+  should the secure coding standard set?
+options:
+  A: Validate each manifest against the published XML schema before the service processes it
+  B: Reject manifests whose text contains a DOCTYPE or ENTITY declaration before parsing
+  C: Return generic error messages that never echo document content back to the sender
+  D: Configure every XML parser to refuse DTDs and to resolve no external entities
+answer: D
+explanation:
+  why_correct: The flaw is that default parser settings honour entity declarations sent by the client, and the parser resolves
+    them as it reads the document. Disabling DTDs and external entity resolution in every parser removes the behaviour itself,
+    whatever encoding or delivery the attacker uses, and partners keep sending XML. It is the rule OWASP gives for XML external
+    entity flaws.
+  why_not:
+    A: Schema validation is good practice for manifests, but it runs on the document the parser has already built, after the
+      entity has been resolved, and a valid field can carry the entity's content.
+    B: A text filter blocks this attempt, but the same declaration can be written in another character encoding or hidden
+      in parameter entities, so the filter can be bypassed. The safe setting belongs in the parser.
+    C: Generic errors stop this file from being echoed back, but the parser still reads local files and can send their contents
+      out through entities that call the attacker's server.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: obvious

@@ -1,0 +1,34 @@
+id: cissp-d2-2.3-0013
+subdomain: '2.3'
+difficulty: medium
+stem: A retailer buys about 2,000 phones a year for store managers through a reseller, and IT enrols each one in device
+  management before sending it to the store. An audit traced 60 phones reported lost to online resale listings. Each had
+  been reset to factory settings, which removes the enrolment. Which change BEST
+  keeps the company's phones under its control?
+options:
+  A: Register each phone to the company at purchase, so it re-enrols itself after a reset
+  B: Restrict each phone's settings in device management so that users cannot reset it
+  C: Block company email and apps on any phone that is not enrolled in device management
+  D: Record each phone's serial and holder at purchase, and reconcile the inventory yearly
+answer: A
+explanation:
+  why_correct: Enrolment that IT applies to each phone can be undone by anyone who resets it, so the phones leave the
+    company's control the moment that happens. Registering each phone to the company at purchase, through the reseller's
+    automated enrolment programme, ties the device itself to the company, so after any reset it enrols again on first use
+    and stays locked to company management, which also makes a reset phone worthless to resell.
+  why_not:
+    B: Blocking the reset option in the settings menu stops casual resets, but a phone can still be reset from its recovery
+      mode without the menu, and the enrolment is lost all the same.
+    C: Conditional access keeps company data off unmanaged phones, which matters, but a reset phone holds no company data
+      anyway; it does nothing to keep the phone itself under control or less attractive to sell.
+    D: Serial numbers and holders in the inventory show which phones are missing and who had them, but a yearly reconciliation
+      finds losses long after the phone has been reset and sold.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

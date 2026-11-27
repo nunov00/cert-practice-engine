@@ -1,0 +1,33 @@
+id: cissp-d4-4.1-0029
+subdomain: '4.1'
+difficulty: hard
+stem: A hosting company rents virtual servers to 8,000 customers from address blocks it owns, reaching the internet through
+  two transit providers. Its abuse team suspended several customers over floods sent from their servers' addresses, then found
+  that the floods came from other customers' servers forging those addresses. Which control BEST stops this forgery?
+options:
+  A: Egress filters at the border routers, passing only sources inside the company's own address blocks
+  B: Source checks at each virtual server's switch port, passing only addresses assigned to that server
+  C: Loose reverse-path checks on the border routers, dropping any source that has no route
+  D: Flow analysis at the border that traces each flood to its sending server before any suspension
+answer: B
+explanation:
+  why_correct: Spoofing is best stopped closest to its source. The virtual switch port of each server knows which addresses
+    that server was given, so a check there drops any packet claiming another customer's address before it enters the network,
+    whichever exit it would take. The forged addresses here belong to the company's own blocks, so this is the only point
+    where the network can tell a forged source from a genuine one.
+  why_not:
+    A: Egress filtering at the border is the right baseline and stops customers forging outside addresses, but the forged
+      sources here are other customers' addresses inside the company's own blocks, so they pass.
+    C: A loose reverse-path check drops only sources for which no route exists. Every customer address is routed, so forged
+      customer addresses pass it.
+    D: Tracing floods to the real sender protects innocent customers from wrongful suspension and finds the abuser, but the
+      forged traffic still leaves the network and reaches its targets.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

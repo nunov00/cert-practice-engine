@@ -1,0 +1,33 @@
+id: cissp-d5-5.2-0018
+subdomain: '5.2'
+difficulty: medium
+stem: A company is adding fingerprint checks to badge entry at its 40 high-security doors. Staff representatives point out
+  that a leaked fingerprint, unlike a password, cannot be replaced, and a similar firm's central template store was breached
+  last year. The doors must keep working when the network is down. Which design BEST fits?
+options:
+  A: Templates kept in an encrypted central store, with the keys held in an HSM
+  B: Templates written only to each person's badge chip and matched on the badge
+  C: Templates synced from a central store to each door reader, which matches locally
+  D: Templates salted and hashed in the central store, in the same way as passwords
+answer: B
+explanation:
+  why_correct: Storing each template only on its owner's badge, and matching on the badge chip, means there is no collection
+    of fingerprints for anyone to steal, so a breach of the company's systems exposes none. A stolen badge yields at most
+    one template, held in a chip built to protect it, and is useless without its owner's finger. Matching at the door needs
+    no network, so the doors keep working when it is down.
+  why_not:
+    A: Encryption with keys in an HSM protects the store at rest, but the templates are decrypted for each match, so the store
+      remains a single target, and every door needs the network to reach it.
+    C: Local matching keeps doors working offline, but it spreads copies of every template across 40 readers as well as the
+      central store, so there are more places for them to leak from.
+    D: Hashing works for passwords because they match exactly, but each fingerprint scan differs slightly, so an ordinary
+      hash of the template cannot be matched, and the readers would still need the network.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

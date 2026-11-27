@@ -1,0 +1,35 @@
+id: cissp-d6-6.4-0018
+subdomain: '6.4'
+difficulty: medium
+stem: During an authorised external test of a retailer's web shop, testers noticed a host on a neighbouring address range
+  whose banner names a remote access product with a known critical flaw. The host belongs to the retailer's logistics subsidiary,
+  which the test authorisation does not cover, so the testers sent it nothing further. How should the final report handle
+  this?
+options:
+  A: As a separate observation, unconfirmed, with the banner seen and a check recommended
+  B: As a critical finding in the main results, rated from the banner and the product's advisory
+  C: Raised directly with the subsidiary's IT team, and kept out of the retailer's report
+  D: Listed under the report's scope limitations as a host seen but not tested
+answer: A
+explanation:
+  why_correct: The testers cannot verify the flaw, but a likely critical exposure on the client's group network is something
+    the client needs to know about and act on. A separate observation, clearly marked as unconfirmed, with the evidence seen
+    and a recommendation that the subsidiary check the host or authorise a test, tells the client what the risk may be without
+    claiming more than the test showed. Given the possible severity, the testers should also tell the named contact promptly
+    rather than wait for the report.
+  why_not:
+    B: Rating it as a critical finding presents a banner reading as a tested result, and banners can mislead, for example
+      after backported fixes, so the report would claim more than the test showed.
+    C: Warning the subsidiary seems quick, but the testers' client is the retailer, and taking its test results to another
+      party outside the report breaks the confidentiality of the engagement and leaves the client without a record.
+    D: Recording the host as untested is accurate, but a bare scope note hides the likely critical exposure and gives the
+      client no reason or recommendation to act on it.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

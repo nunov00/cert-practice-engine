@@ -1,0 +1,34 @@
+id: cissp-d7-7.13-0005
+subdomain: '7.13'
+difficulty: easy
+stem: A hospital's continuity plan for outages of its electronic patient record has each ward print a full patient list, with
+  diagnoses and medications, at every shift change, so care can continue on paper. An audit found these lists left at nursing
+  stations and in general waste bins. The last major outage also took down the hospital network for two days. As the security
+  member of the planning group, which change should you push for?
+options:
+  A: Lock each ward's list in a cabinet, shredding it when the next list is printed
+  B: Print each ward's list once a day instead of each shift, with fewer copies kept
+  C: Let ward leaders read the record system's standby copy on hospital phones
+  D: Hold each ward's latest list on a standalone downtime PC, printing it in an outage
+answer: D
+explanation:
+  why_correct: 'The paper exists every day so that it is there on the rare day it is needed, and the audit shows it is not
+    handled safely. A standalone downtime PC in each ward, encrypted and refreshed with the latest list while the network
+    is up, keeps the information ready without making copies: the list is printed only when an outage begins, and the PC works
+    without the network, which the last outage took down.'
+  why_not:
+    A: Locking and shredding are the right handling rules, but they rely on busy staff at every shift change, the behaviour
+      the audit found failing, and the lists would still exist every day.
+    B: Printing less often means fewer copies, but each one can still be left lying around, and a once-a-day list can be up
+      to a day out of date when an outage strikes.
+    C: Reading a standby copy on phones avoids paper, but it needs the hospital network, which the last major outage took
+      down for two days.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: obvious

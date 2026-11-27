@@ -1,0 +1,34 @@
+id: cissp-d7-7.11-0006
+subdomain: '7.11'
+difficulty: hard
+stem: At 09:00 a storage fault stops a bank's lending platform, which has a four-hour recovery time objective. Failing over
+  to the recovery site takes about 90 minutes and can lose up to ten minutes of data, and failing back afterwards needs a
+  weekend outage. The storage vendor's engineer expects the repair to finish around noon but cannot promise it. What should
+  the DR manager do?
+options:
+  A: Invoke the plan now, failing over while the vendor continues the repair
+  B: Wait for the repair, invoking the plan if the vendor's estimate slips
+  C: Ready the recovery site, and invoke at the last point that still meets the RTO
+  D: Ask the business owner to decide now between failing over and waiting
+answer: C
+explanation:
+  why_correct: 'Failing over has real costs, lost data and a weekend failback, that are worth avoiding if the repair succeeds,
+    but waiting without a limit risks breaking the objective. Preparing the recovery site now and setting a decision point
+    at the latest moment a 90-minute failover still finishes within four hours, here 11:30, keeps both options open: if the
+    repair is confirmed by then the plan is not needed, and if not, failover starts in time.'
+  why_not:
+    A: Failing over at once secures the objective, but it brings data loss and a weekend failback for an outage the vendor
+      expects to clear within the objective.
+    B: 'Waiting for the noon estimate leaves too little time: if the repair slips at noon, a 90-minute failover ends after
+      13:00, beyond the objective.'
+    D: The business has already stated its tolerance in the recovery time objective, and the plan exists so that recovery
+      staff can act on it; asking now adds delay without new information.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: cissp-d2-2.4-0010
+subdomain: '2.4'
+difficulty: easy
+stem: A mobile network operator keeps customers' cell-location records for 12 months, the longest its privacy notice and regulator
+  allow. The network planning team asks to keep them for five years, to study how traffic through each cell changes by hour
+  of day and by season. Which approach BEST fits the data lifecycle?
+options:
+  A: Pseudonymised location records kept five years, with the key held by privacy staff
+  B: Encrypted archive copies after 12 months, readable by the planning team alone
+  C: Five-year retention for the customers who opt in through the operator's app
+  D: Hourly per-cell counts derived first, with the records still deleted at 12 months
+answer: D
+explanation:
+  why_correct: 'The planners'' question is about cells, not people: how much traffic each cell carries by hour and season.
+    Counts per cell and hour can be derived before the records reach their limit, and once they hold no customer-level rows
+    they are no longer personal data, so they can be kept for as long as planning needs them. The individual records still
+    go at 12 months, as the notice promises.'
+  why_not:
+    A: Pseudonymisation is good practice for analysis, but pseudonymised location histories are still personal data, and movement
+      patterns re-identify people easily, so keeping them five years still breaks the 12-month limit.
+    B: Encrypting and restricting an archive is how data under a legal retention duty is often kept, but it is still the same
+      personal data held past the limit, for a purpose that does not need it.
+    C: Consent can justify longer retention in some cases, but only a fraction of customers would opt in, so the records could
+      not show the traffic through each cell, and planners need the whole picture.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: fail
+  options_only: obvious

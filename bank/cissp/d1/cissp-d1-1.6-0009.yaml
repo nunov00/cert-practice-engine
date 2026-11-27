@@ -1,0 +1,35 @@
+id: cissp-d1-1.6-0009
+subdomain: '1.6'
+difficulty: easy
+stem: A bank's CISO is issuing a new standard that requires personal data in databases to be encrypted at rest. Of its
+  300 databases, 120 run engine versions that cannot encrypt, and each is due for an upgrade on its own date in the platform
+  roadmap, spread over the next 18 months. The other 180 databases, and any new ones, can comply now. How should the standard
+  take effect?
+options:
+  A: At once for all databases, with an exception recorded for each of the 120 until it upgrades
+  B: At once for new and capable databases, and for each of the 120 on a date set in the standard
+  C: In 18 months for all databases, so that every team has the same time to comply
+  D: At once for all databases, with one risk acceptance covering the 120 for 18 months
+answer: B
+explanation:
+  why_correct: The gap is a planned transition, not a deviation anyone chose. Writing a compliance date for each of the 120
+    databases into the standard, matching its upgrade, makes the standard binding now wherever it can be met and makes each
+    upgrade date a requirement in its own right. Compliance checks then measure every database against the date that applies
+    to it, and a database that misses its date is plainly non-compliant rather than covered by a general allowance.
+  why_not:
+    A: Per-system exceptions suit a few systems that cannot meet a standard, approved by a risk owner. Here 40% of the estate
+      would sit in the exception register for work that is already planned, which buries the exceptions that really need
+      attention and makes the standard look widely breached from its first day.
+    C: A single future date is simple, but it lets the 180 capable databases and every new one stay unencrypted for 18 months
+      when they could comply now, and it gives upgrades due in a few months the same slack as the last one.
+    D: One risk acceptance avoids 120 separate records, but it gives every database the full 18 months whatever its upgrade
+      date, so an upgrade that slips stays covered and nobody is held to the roadmap the plan depends on.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: obvious

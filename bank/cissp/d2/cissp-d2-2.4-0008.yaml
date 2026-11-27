@@ -22,12 +22,12 @@ explanation:
       preferences are not covered by the tax duty, so holding them for ten years ignores the request without a reason.
     C: Pseudonymising the invoices reduces the personal data kept, but tax law requires invoices that show the buyer's name
       and address, so altered invoices no longer meet the retention duty they are kept for.
-status: draft
+status: published
 outline_version: '2024-04-15'
 sample: false
 provenance:
   generated_by: claude
   run_id: 2026-11-25-daily-cissp
-  checked_by: 2026-11-25-daily-cissp-check
+  checked_by: 2026-11-27-daily-cissp-check
   check_verdict: pass
   options_only: not_obvious

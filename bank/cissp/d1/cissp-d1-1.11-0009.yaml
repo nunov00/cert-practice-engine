@@ -1,0 +1,34 @@
+id: cissp-d1-1.11-0009
+subdomain: '1.11'
+difficulty: hard
+stem: At a hospital, departments choose specialised SaaS suppliers on features and price, and the security team assesses
+  the winning supplier before the contract is signed. Twice this year the chosen supplier failed the assessment, and both
+  times the department, which had already planned its rollout around that supplier, won an exception from the board. Which
+  change BEST reduces this supplier risk?
+options:
+  A: Give the CISO a veto over contracts with any supplier that fails the security assessment
+  B: Complete each assessment within five days of selection, before departments plan rollout
+  C: Keep a list of pre-assessed SaaS suppliers from which departments must choose
+  D: Put security requirements in each tender, scoring bidders on them before a shortlist
+answer: D
+explanation:
+  why_correct: The assessment comes after the department has committed to one supplier, so a failure arrives as a problem
+    to be waived rather than a reason to choose differently. Writing security requirements into the tender and scoring
+    bidders on them before the shortlist makes security one of the selection criteria, so weak suppliers drop out while
+    there are still alternatives and nobody has planned around them.
+  why_not:
+    A: A veto strengthens the final check, but it still falls after selection, when the department has planned around one
+      supplier; the board granted both exceptions, and it can overrule a veto in the same way.
+    B: A faster assessment shortens the wait, but it still judges one supplier the department has already chosen, so a
+      failure still means starting the selection again or asking for an exception.
+    C: A pre-assessed list works well for common products, but departments buy specialised systems that few others use, so
+      the list would rarely hold what they need, and each new supplier would again be assessed after it is chosen.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

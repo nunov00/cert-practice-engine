@@ -1,0 +1,34 @@
+id: cissp-d5-5.5-0015
+subdomain: '5.5'
+difficulty: medium
+stem: At a distributor, each quarter's access review in the governance tool revokes about 400 entitlements, and application
+  administrators then remove each one by hand from a ticket. An audit found a third of last quarter's revocations back in
+  place within weeks. The provisioning engine assigns each job's standard rights from role rules and reapplies them every
+  night. Which change BEST addresses this?
+options:
+  A: Have the governance tool remove revoked rights through its connectors, without tickets
+  B: Reconcile each application monthly with review decisions, removing any right that returns
+  C: Show reviewers which role grants each right, routing those revocations to the role's owner
+  D: Run the reviews monthly, so that returning rights are found and removed sooner
+answer: C
+explanation:
+  why_correct: The revoked rights come back because the role rules that granted them still apply, and the engine restores
+    them each night however they were removed. The review's decision has to reach the source of the grant. When reviewers
+    can see that a right comes from a role, the revocation goes to the role's owner, who either changes the role, if the job
+    no longer needs the right, or removes the person from it. Rights granted individually can still be removed directly.
+  why_not:
+    A: Removing rights through connectors is faster and more reliable than tickets, but the engine would put the role-granted
+      rights back the same night.
+    B: A monthly reconciliation would remove the returning rights again, but it fights the role engine, leaving the rights
+      in place for weeks each time while the rules that grant them stay wrong.
+    D: More frequent reviews find returned rights sooner, but the engine still restores them each night, so reviewers would
+      keep revoking the same rights.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

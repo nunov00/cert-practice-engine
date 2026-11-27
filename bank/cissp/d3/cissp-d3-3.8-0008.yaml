@@ -1,0 +1,33 @@
+id: cissp-d3-3.8-0008
+subdomain: '3.8'
+difficulty: medium
+stem: A software firm's single-storey office has a staffed reception at its main entrance and six badge-controlled side doors
+  opening onto its car parks. An audit found visitors and former contractors entering behind staff at the side doors, out
+  of sight of reception. Fire rules require each side door to remain a free, unobstructed exit. Which design change BEST fits?
+options:
+  A: Cameras on each side door, recorded and checked against the badge log every week
+  B: A turnstile or mantrap inside each side door, admitting one person per badge
+  C: Tailgating sensors on each side door that alert the reception desk when two people pass
+  D: Side doors made alarmed exit-only doors, with all entry through the staffed reception
+answer: D
+explanation:
+  why_correct: 'The weakness is six ways in that nobody watches. Natural access control funnels everyone who enters past people
+    who can challenge them: alarmed exit-only side doors with no outside hardware leave one way in, through the staffed reception,
+    while the doors still open freely from inside as the fire rules require. Reducing and controlling entry points is a core
+    site design principle, and the alarm discourages propping. The cost is a longer walk for staff from the car parks.'
+  why_not:
+    A: Cameras record who came in, which helps an investigation, but a weekly review finds tailgaters long after they were
+      inside, and it leaves the six unwatched entrances in place.
+    B: A mantrap or turnstile enforces one person per badge, which suits a data hall entrance, but an interlocked or turnstile
+      passage obstructs a door that the fire rules require to stay a free exit.
+    C: Tailgating sensors raise an alert, but reception must then reach a door it cannot see while the person is already inside.
+      They detect the problem rather than remove the unwatched entrance.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

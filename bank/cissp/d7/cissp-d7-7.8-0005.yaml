@@ -1,0 +1,35 @@
+id: cissp-d7-7.8-0005
+subdomain: '7.8'
+difficulty: medium
+stem: An engineering firm's 3,000 staff reach internal systems through a cluster of four remote-access gateways. The vendor
+  has just released a fix for a flaw in the gateways, and its advisory says attackers have been exploiting the flaw for about
+  a month, since before it was disclosed. The firm's policy calls for actively exploited flaws to be fixed within 48 hours.
+  What should the team do FIRST?
+options:
+  A: Patch the gateways a node at a time, then rescan each to confirm the fix
+  B: Reset staff passwords and sessions on the gateways, then patch each one
+  C: Block the gateways' admin interfaces from the internet, then patch each one
+  D: Check each gateway for signs of compromise, then patch each one
+answer: D
+explanation:
+  why_correct: Exploitation began weeks before the fix existed, so any gateway may already hold an attacker's foothold, and
+    a patch closes the flaw without removing what was planted through it. Checking each gateway for compromise first, with
+    the vendor's integrity tooling and the gateway's logs, keeps the evidence and shows which gateways can simply be patched
+    and which must be rebuilt from clean images, with their secrets rotated. Taking the cluster one node at a time keeps remote
+    access running and the work within the 48 hours.
+  why_not:
+    A: Patching node by node with a rescan is the usual way to fix and verify, but a rescan shows only that the flaw is closed,
+      not whether the gateway was compromised beforehand, and patching may overwrite the evidence.
+    B: Resetting passwords and sessions deals with credentials stolen through the gateways, a real risk, but any implant left
+      on a gateway would capture the new ones.
+    C: Cutting off the admin interfaces reduces exposure while the fix is applied, but it does nothing about a month of exploitation
+      already past or anything planted during it.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

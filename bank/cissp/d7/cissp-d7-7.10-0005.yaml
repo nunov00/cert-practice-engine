@@ -1,0 +1,34 @@
+id: cissp-d7-7.10-0005
+subdomain: '7.10'
+difficulty: medium
+stem: A distributor's order database and its stock database are updated together each time an order is placed, and both have
+  a 15-minute recovery point objective. The order database replicates to the recovery site every five minutes and the stock
+  database every ten, each on its own schedule. In a recovery test both met the objective, but thousands of orders referred
+  to stock reservations that did not exist. Which strategy BEST addresses this?
+options:
+  A: Replicate the stock database at five-minute intervals, matching the order database
+  B: Replicate the two databases together as a single consistency group
+  C: Add a reconciliation step to the runbook that rebuilds missing reservations
+  D: Recover the databases in a scripted order, the stock database before orders
+answer: B
+explanation:
+  why_correct: Each database came back to a point inside its objective, but to different points, so records written together
+    for one order were split. Replicating the two as one consistency group, which captures both with their writes in the same
+    order at the same instant, gives a recovery point at which every order and its reservation exist together, while still
+    meeting the 15-minute objective.
+  why_not:
+    A: A shorter interval narrows the gap but does not close it, because two independent schedules still capture the databases
+      at different moments, so some orders would still lack reservations.
+    C: Reconciliation can repair mismatches afterwards, but it adds time to every recovery, depends on knowing how to rebuild
+      each reservation, and treats the inconsistency instead of preventing it.
+    D: Start order matters when one system needs another to run, but it does not change the point each database is recovered
+      to, so the orders and reservations would still disagree.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-27-daily-cissp
+  checked_by: 2026-11-27-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious
