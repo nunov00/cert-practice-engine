@@ -14,8 +14,8 @@ answer: C
 explanation:
   why_correct: A risk acceptance holds only for the risk the owner was shown. Long-lived tokens on an app that now holds
     payment details are a larger risk than the one accepted two years ago, so the finding should be rated as it stands today.
-    Citing the acceptance keeps the record honest about what was decided, and explaining what changed tells the owner that
-    the old decision no longer covers this risk and a new one is needed.
+    Citing the acceptance keeps the record honest about what was decided, and the higher rating beside it tells the owner
+    that the old decision no longer covers this risk and a new one is needed.
   why_not:
     A: Listing accepted risks in an appendix is normal while an acceptance still fits the facts, but this one was made for
       an app without payment data, so filing it there presents a changed risk as already decided.

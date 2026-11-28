@@ -20,7 +20,8 @@ explanation:
     A: Standard contractual clauses are a valid route for transfers within a group, but a transfer tool does not make an excessive
       transfer lawful. Whole mailboxes full of unrelated personal data would still breach data minimisation.
     B: The Hague Convention is a recognised route between the two countries, but requests take many months and US courts are
-      not bound to use it, so the 60-day order would stand while the request ran.
+      not bound to use it, so the 60-day order would stand while the request ran. Article 48 does not bar the company from relying on the
+      legal-claims derogation for a minimised, documented transfer, which is what French counsel can support here.
     C: Pseudonymising names lowers the risk, but the data is still personal data, all the unrelated messages still leave France,
       and the court may need the names of the people involved in the dispute.
 status: published

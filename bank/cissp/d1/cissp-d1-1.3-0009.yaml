@@ -15,7 +15,7 @@ explanation:
   why_correct: The regulator's point is a conflict of roles. The team that operates the controls also tells the committee
     that they work, so the committee has no independent view. In a lines-of-defence model, operating controls belongs to the
     first line, such as IT operations, while the security function sets standards and challenges how well they are met. Handing
-    over the tools removes the self-review at its source, frees the fixed headcount for assurance, and gives the risk committee
+    over the tools removes the self-review at its source, lets the security team's fixed headcount concentrate on standards and assurance, and gives the risk committee
     an ongoing view from a team that does not run what it assesses.
   why_not:
     A: Separate units with their own leads reduce the conflict on paper, but both still report to the CISO, who answers for

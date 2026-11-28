@@ -21,7 +21,7 @@ explanation:
       reach an island before the next boat, which may be a day away.
     C: Encrypted card terminals can take payments over a cellular link, but tickets are issued from the head-office booking
       system through the VPN, which runs on the failed firewall, so ticket sales still stop.
-    D: A VPN client on each PC restores access to the booking system, but the PCs and card terminals then sit on the internet
+    D: A VPN client on each PC restores access to the booking system, but the ticket PCs then sit directly on the internet
       line with no firewall in front of them until a replacement arrives by boat, possibly a day or more.
 status: published
 outline_version: '2024-04-15'

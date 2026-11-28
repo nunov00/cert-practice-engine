@@ -16,8 +16,8 @@ explanation:
     sharing at the source closes every route to them, the assistant included, and scanning every site finds the other old
     sites made under the same default.
   why_not:
-    A: Moving the reported files to restricted sites fixes access to them at the source, but only for the files staff happened
-      to notice. Other sites created under the same default, and any restricted data on them, stay open to the whole company
+    A: Moving the HR and finance files to restricted sites fixes access to them at the source, but only on the sites already
+      known to hold restricted data. Other sites created under the same default, and any restricted data on them, stay open to the whole company
       and to the assistant.
     C: Term filters catch some answers, but restricted content is worded in many ways, and the files themselves stay open to
       the whole company.

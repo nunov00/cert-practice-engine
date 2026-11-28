@@ -5,7 +5,7 @@ stem: A hospital is buying infusion pumps whose control software runs on an embe
   them for ten years. Pumps it bought earlier still work, but their vendor stopped issuing security fixes once the model was
   withdrawn from sale, four years after launch. Which purchase requirement BEST addresses this?
 options:
-  A: Security fixes for as long as the vendor sells the model, with a year's notice before they end
+  A: An option to buy extended security support each year once the model is withdrawn from sale
   B: Security fixes for the software and its components for at least ten years after delivery
   C: Escrow of the pump software's source code, released to the hospital if the fixes stop
   D: A software bill of materials with each release, listing its components and their versions
@@ -15,8 +15,8 @@ explanation:
     support, for the operating system and components as well as its own code, to the pumps' planned service life from delivery
     closes that gap, and the cost of that support can be weighed in the purchase.
   why_not:
-    A: Notice before support ends helps planning, but tying fixes to the sales period repeats the earlier problem, since models
-      are withdrawn from sale long before hospitals retire them.
+    A: Paid extended support is a real fallback, but an option gives no commitment that support will be offered, or at what
+      price, for the ten years the hospital needs, so the earlier gap can recur.
     C: Escrow protects against a vendor failing, but a hospital cannot safely build, test and certify changes to medical device
       software, so released source code would not produce fixes.
     D: A bill of materials shows which components carry known flaws, which helps assess exposure, but it does not oblige anyone

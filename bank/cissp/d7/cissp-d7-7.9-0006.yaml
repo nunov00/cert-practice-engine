@@ -6,7 +6,7 @@ stem: A media company's change board approves about 300 changes a week from shor
   and marked as having none, also added a listener that made an internal admin portal reachable from the internet. Only
   the attached configuration showed the listener. Which change BEST addresses this?
 options:
-  A: Route each change to network edge or identity components to a security reviewer
+  A: Route each change to network edge or identity components to a security reviewer of its configuration
   B: Add a security architect to the change board as a voting member at each meeting
   C: Scan the internet-facing estate daily and alert on any newly exposed service
   D: Make the security-impact question mandatory, with requesters picking set categories

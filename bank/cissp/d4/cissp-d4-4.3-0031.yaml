@@ -1,8 +1,8 @@
 id: cissp-d4-4.3-0031
 subdomain: '4.3'
 difficulty: medium
-stem: An online pharmacy redirects HTTP to HTTPS and sends an HSTS header with a one-year lifetime and includeSubDomains on every response, and all its
-  subdomains serve HTTPS. Testers on hotel and library Wi-Fi intercepted customers who typed the bare domain into shared public
+stem: An online pharmacy redirects HTTP to HTTPS and sends an HSTS header with a one-year lifetime and
+  includeSubDomains on every response, and all its subdomains serve HTTPS. Testers on hotel and library Wi-Fi intercepted customers who typed the bare domain into shared public
   computers, kept them on plain HTTP and captured their passwords. Which change BEST stops this?
 options:
   A: Close the site's plain HTTP port, so that no unencrypted request gets an answer
@@ -18,12 +18,12 @@ explanation:
     the other conditions, with HTTPS on every subdomain, includeSubDomains and a lifetime of a year or more, so it qualifies
     once the header adds the preload directive.
   why_not:
-    A: The tester intercepts the plain HTTP request on the network and answers it himself, so it never reaches the server,
+    A: The tester intercepts the plain HTTP request on the network and answers it themselves, so it never reaches the server,
       and closing the port changes nothing for the victim's browser.
-    B: DNSSEC stops forged DNS answers, but the tester did not forge DNS. He sat in the path of the connection itself, which
-      DNSSEC does not protect.
+    B: DNSSEC protects DNS answers, but a tester in the path can answer the plain HTTP request for the real address, and
+      DNSSEC does not protect the connection itself or make the browser use HTTPS.
     C: Secure cookies keep session cookies off plain HTTP, but the tester captured passwords that customers typed into the page
-      he served them, so the cookies were never needed.
+      the tester served them, so the cookies were never needed.
 status: published
 outline_version: '2024-04-15'
 sample: false

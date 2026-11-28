@@ -1,8 +1,8 @@
 id: cissp-d2-2.1-0011
 subdomain: '2.1'
 difficulty: medium
-stem: A bank classifies each system by the most sensitive data it stores. Its deployment pipeline stores only source code,
-  rated Internal, but it holds the credentials it uses to deploy releases to the payment systems, which are rated Restricted.
+stem: A bank classifies each system by the most sensitive data it stores. Its deployment pipeline's only business data is
+  source code, rated Internal, but it also holds the credentials it uses to deploy releases to the payment systems, which are rated Restricted.
   Any developer can edit the pipeline's jobs. How should the pipeline be classified?
 options:
   A: Internal, the rating of the source code that the pipeline stores
@@ -15,8 +15,9 @@ explanation:
     Whoever controls the pipeline's jobs can ship altered code to the payment systems, so the pipeline needs Restricted protection,
     including over who may edit its jobs, even though the data it stores is only Internal.
   why_not:
-    A: Rating by stored data is the bank's usual rule, but it misses that the pipeline's value lies in what it can do. An
-      Internal rating would leave the right to edit jobs as open as it is now.
+    A: The bank's own rule points higher, because the deploy credentials are stored data and their sensitivity is that of
+      the Restricted systems they unlock. Rating the pipeline Internal from its source code alone would leave the right to
+      edit jobs as open as it is now.
     B: Vaulting the credentials is good practice, but a job that any developer can edit can still use them to deploy whatever
       it builds, so protecting the secret alone leaves the path to the payment systems open.
     C: Source code can reveal weaknesses, which may justify a higher label for the code itself, but that misses the main impact,

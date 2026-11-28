@@ -13,8 +13,8 @@ options:
 answer: C
 explanation:
   why_correct: The error lies in choosing the recipient, so the control has to tie each file to the people entitled to it.
-    A portal that releases a client's file only to that client's registered contacts makes another client unreachable whatever
-    name is typed, and it works for thousands of files without adding manual checks.
+    A portal that publishes each file to the client record it belongs to, and releases it only to that client's registered
+    contacts, means a similar-looking address can no longer pull in another client's contact, and it works for thousands of files without adding manual checks.
   why_not:
     A: Encryption protects files from interception, but the wrong client was the addressee, so their own verified address
       opens the file.
