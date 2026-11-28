@@ -1,0 +1,37 @@
+id: cissp-d1-1.3-0009
+subdomain: '1.3'
+difficulty: hard
+stem: At a mid-sized insurer, the CISO's six-person team runs the firewalls, the identity platform and endpoint protection,
+  and also assesses IT's compliance with the security standards, reporting the results to the risk committee at each quarterly
+  meeting. A regulator's review notes that the committee learns whether these controls work only from the team that runs them.
+  Headcount is fixed. Which change BEST addresses the regulator's point?
+options:
+  A: Split the CISO's team into separate operations and assurance units, each with its own lead
+  B: Move running of the security tools to IT operations, keeping standards and assurance with the CISO
+  C: Have internal audit test the security controls yearly and report to the audit committee
+  D: Have an outside firm assess the key security controls yearly and report to the risk committee
+answer: B
+explanation:
+  why_correct: The regulator's point is a conflict of roles. The team that operates the controls also tells the committee
+    that they work, so the committee has no independent view. In a lines-of-defence model, operating controls belongs to the
+    first line, such as IT operations, while the security function sets standards and challenges how well they are met. Handing
+    over the tools removes the self-review at its source, frees the fixed headcount for assurance, and gives the risk committee
+    an ongoing view from a team that does not run what it assesses.
+  why_not:
+    A: Separate units with their own leads reduce the conflict on paper, but both still report to the CISO, who answers for
+      how the tools perform, so the committee still hears from the operator's own chain. Six people split two ways also leaves
+      each unit very thin.
+    C: Internal audit is independent, but it is the third line, works on a yearly or rotating cycle and reports to the audit
+      committee. Between audits the risk committee would still rely on the operating team's own reports.
+    D: An outside assessment adds independent evidence once a year, but the committee relies on a view every quarter, and
+      for the other three quarters it would still hear only from the team that runs the controls, so the self-review the regulator
+      noted continues.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

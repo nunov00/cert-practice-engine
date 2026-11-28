@@ -1,0 +1,34 @@
+id: cissp-d3-3.1-0010
+subdomain: '3.1'
+difficulty: medium
+stem: A maker of hospital infusion pumps authenticates dose commands from its central server with an in-house algorithm whose
+  design it keeps secret, under a key unique to each pump. Researchers who bought a used pump and read its firmware found a flaw
+  that let them forge valid commands to a pump after watching a few of its genuine ones, without learning its key. Which design
+  change BEST fixes this in the next model?
+options:
+  A: Encrypt and sign the firmware, so that the algorithm cannot be read from a pump again
+  B: Use a standard, publicly analysed message authentication code instead
+  C: Lengthen each pump's key, and have the central server rotate it monthly
+  D: Add a counter and a fresh nonce to each command, so no watched command is accepted twice
+answer: B
+explanation:
+  why_correct: The pumps' security rested on keeping the algorithm secret, but anyone who owns a pump can read it, and its
+    design had a flaw that no outside review had caught. Open design says a mechanism should stay secure when everything
+    about it except the key is known. A standard code such as HMAC-SHA-256 or AES-CMAC has survived years of public analysis,
+    so with the pumps' unique keys a forger needs the key itself, which watching commands does not give.
+  why_not:
+    A: Protecting the firmware raises the cost of reading the algorithm, but these researchers already know it, anyone with
+      a pump can try again, and the flaw stays in the design whether or not it can be read.
+    C: Longer keys and rotation help against attacks on the key, but this flaw lets commands be forged without learning the
+      key at all, so a longer or newer key changes nothing.
+    D: Counters and nonces stop recorded commands being replayed, which is worth having, but the researchers made new commands
+      rather than resending old ones, and the flawed algorithm accepts those as genuine.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

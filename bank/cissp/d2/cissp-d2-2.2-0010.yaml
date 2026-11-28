@@ -1,0 +1,33 @@
+id: cissp-d2-2.2-0010
+subdomain: '2.2'
+difficulty: medium
+stem: An accounting firm emails individual clients their Restricted tax files each filing season, several thousand in all,
+  to two or three named contacts per client. Last month a partner's mail client completed a similar name, and one client's
+  file went to another client. Staff already click past a warning banner on every external email. Which handling requirement
+  BEST prevents a repeat?
+options:
+  A: Restricted files go as encrypted attachments that open only for the addressee's verified email address
+  B: Restricted emails to outside addresses wait five minutes, with a prompt to confirm each recipient
+  C: Restricted files go only through a client portal, to the contacts registered for that client
+  D: Restricted emails need a second member of staff to check the recipients before they are sent
+answer: C
+explanation:
+  why_correct: The error lies in choosing the recipient, so the control has to tie each file to the people entitled to it.
+    A portal that releases a client's file only to that client's registered contacts makes another client unreachable whatever
+    name is typed, and it works for thousands of files without adding manual checks.
+  why_not:
+    A: Encryption protects files from interception, but the wrong client was the addressee, so their own verified address
+      opens the file.
+    B: A delay with a confirmation prompt catches some slips, but staff already click past the warning banner, and a prompt
+      on thousands of routine emails soon becomes the same reflex.
+    D: A second checker can catch the error, but across several thousand emails a season it adds delay, and a checker looking
+      at a similar name can miss it just as the sender did.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

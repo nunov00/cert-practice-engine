@@ -1,0 +1,35 @@
+id: cissp-d5-5.5-0016
+subdomain: '5.5'
+difficulty: medium
+stem: A remote-first software company creates each new hire's account when the offer is accepted, about three weeks before
+  the start date, and emails a temporary password to the personal address on the offer. New hires enrol MFA at first sign-in.
+  Twice this year, attackers who had phished a candidate's personal mailbox enrolled their own MFA device first and, writing
+  to HR as the candidate, changed the delivery address for the new laptop. Which change BEST prevents this?
+options:
+  A: Enable each account only on its start date, with the temporary password valid for one day
+  B: Post an MFA enrolment code to the home address, separate from the emailed password
+  C: Have the hire's interviewer verify them on a liveness-checked video call, then issue a code
+  D: Allow first sign-in and MFA enrolment only from the laptop shipped to the new hire
+answer: C
+explanation:
+  why_correct: Today whoever holds the emailed password binds the first MFA device, so the account goes to whoever controls
+    the candidate's mailbox. Having someone who interviewed the hire confirm, on a video call with liveness checks, that the person is the one they
+    met, and only then issuing a one-time enrolment code, ties the first authenticator to the real hire. A phished mailbox
+    or a changed address gives the attacker nothing, because nothing that decides enrolment travels through them. This is supervised
+    remote identity proofing of the kind NIST SP 800-63A describes.
+  why_not:
+    A: A shorter window narrows the exposure, but the attacker still holds the password and only has to sign in on the
+      morning of the start date before the hire does, binding their own device as before.
+    B: A second channel helps only if that channel can be trusted, and the attackers changed the delivery address simply
+      by writing to HR as the candidate, so a posted code can be redirected the same way.
+    D: Binding enrolment to a company device is a strong control in general, but here the laptop itself was redirected to
+      the attackers, so tying enrolment to it hands them the account.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

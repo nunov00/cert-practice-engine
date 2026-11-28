@@ -1,0 +1,34 @@
+id: cissp-d7-7.15-0007
+subdomain: '7.15'
+difficulty: medium
+stem: A regional bank's 1,800 staff work at its head office and branches in a river valley that floods. When floodwater cut
+  power to the head office for two days last spring, its phone system and the identity provider behind the staff chat
+  app, used on work laptops, went down, and managers took a day and a half to reach everyone. Most staff have no company phone. Leadership wants each
+  person's safety confirmed within hours. Which approach BEST fits?
+options:
+  A: A call tree in which managers phone their teams from printed lists of personal numbers
+  B: The staff chat app moved to a cloud identity provider, with a safety check-in feature
+  C: A hosted alerting service that texts and calls staff's personal phones and logs replies
+  D: A public status page hosted off-site, where staff report in and read instructions
+answer: C
+explanation:
+  why_correct: A notification service hosted away from the region does not depend on the head office's power, phones or
+    identity provider. Sending texts and voice calls to the personal phones staff actually carry reaches people at home or
+    on the move, and recording who has replied lets managers spend their effort only on those who have not, which makes
+    confirmation within hours realistic.
+  why_not:
+    A: Printed lists and personal phones remove the dependency on the head office, but a call tree is what took a day and
+      a half, since each manager must reach each person in turn, and managers caught by the flood break the chain.
+    B: Removing the dependency on the on-premises identity provider fixes one failure, but the chat app is used on work
+      devices, and most staff have no company phone to receive a check-in away from their desks.
+    D: An off-site status page survives the outage, but staff must think to visit it, and nothing pushes the message to
+      them or chases those who stay silent.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

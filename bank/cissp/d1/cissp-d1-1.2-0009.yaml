@@ -1,0 +1,33 @@
+id: cissp-d1-1.2-0009
+subdomain: '1.2'
+difficulty: medium
+stem: A listed retailer is negotiating to buy a rival, and any leak would move both share prices. Its deal team and the rival's
+  executives exchange drafts several times a day. In an earlier deal, staff at an outside email provider tipped off traders
+  after noticing that two companies' domains had begun writing to each other. Which arrangement BEST protects this deal?
+options:
+  A: End-to-end encrypted email between the two teams, with keys exchanged in person
+  B: Email between the two teams under a deal codename, with drafts sent as encrypted files
+  C: Drafts passed between the two sides' law firms, each relaying them to its own client
+  D: An end-to-end encrypted messaging app on both teams' work phones, used for the drafts
+answer: C
+explanation:
+  why_correct: Confidentiality here covers the fact that the two companies are talking, not only what the drafts say, and
+    the earlier leak came from exactly that. Routing the drafts through each side's law firm means an observer sees each company
+    talking to its own lawyers and two law firms talking to each other, all of which happen every day, so the pairing that
+    would reveal the deal never appears. The content can still be encrypted on each leg.
+  why_not:
+    A: End-to-end encryption hides the drafts from every provider, but the addresses on each message stay visible, so anyone
+      handling the mail can still see the two companies writing to each other.
+    B: A codename keeps the deal's name out of subject lines and the encrypted files protect the drafts, but the messages
+      still run directly between the two companies' domains, which is what gave the earlier deal away.
+    D: An encrypted messaging app protects content and moves the traffic off email, but the app's provider still learns which
+      phones contact each other, and contact records tie those numbers to the two companies.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: fail
+  options_only: not_obvious

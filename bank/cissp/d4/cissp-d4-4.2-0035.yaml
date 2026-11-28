@@ -1,0 +1,34 @@
+id: cissp-d4-4.2-0035
+subdomain: '4.2'
+difficulty: medium
+stem: A construction group's buyers visit hundreds of supplier websites a day, many of them small firms' sites that no filtering
+  service has rated. Its risk review expects more compromises like this year's two, in which advertisements served on
+  long-established supplier sites exploited browser flaws before any fix existed. Buyers must keep reaching any supplier
+  site. Which endpoint control BEST fits?
+options:
+  A: URL filtering that blocks sites rated as malicious or low in reputation
+  B: Remote browser isolation for sites outside a short list of trusted ones
+  C: EDR on each laptop, blocking processes that the browser starts unexpectedly
+  D: Browser updates pushed to the laptops within a day of each security release
+answer: B
+explanation:
+  why_correct: The attacks came from reputable sites and used flaws that had no fix yet, so neither the site's standing nor
+    the patch level of the browser can be relied on. Remote browser isolation runs the page in a disposable remote browser
+    and sends the laptop only a safe rendering, so an exploit in an advertisement runs away from the buyer's laptop, while
+    buyers can still open any supplier site.
+  why_not:
+    A: Reputation filtering stops known bad and suspicious sites, but these advertisements came through long-established
+      supplier sites with good ratings, so the pages would be allowed.
+    C: EDR catches many attacks once they act, but browser exploits can run inside the browser process itself without starting
+      a new one, and the code runs on the buyer's laptop before anything is blocked.
+    D: Fast updates close known flaws quickly and matter for every browser, but these exploits used flaws before any fix
+      existed, so the laptops were exposed however fast updates arrive.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

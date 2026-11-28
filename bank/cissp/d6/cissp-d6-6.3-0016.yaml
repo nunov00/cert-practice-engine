@@ -1,0 +1,34 @@
+id: cissp-d6-6.3-0016
+subdomain: '6.3'
+difficulty: medium
+stem: A grocery chain's 400 stores sell through a cloud point-of-sale service. If it fails, tills switch to an offline mode
+  that queues sales locally and approves cards below a floor limit. Stores differ widely in till age, network setup and
+  staffing. The board asks whether stores could keep trading through an outage of the service lasting up to a day. Which data BEST answers
+  the board?
+options:
+  A: Results of tabletop walkthroughs of the offline procedure with each store's managers
+  B: Results of a sample of stores trading in offline mode through a full planned day
+  C: Results of one pilot store trading in offline mode through a full planned week
+  D: Results of IT's offline-mode tests on lab tills, run before each software release
+answer: B
+explanation:
+  why_correct: The board's question is whether real stores can trade through an outage, and stores vary in the things that
+    decide that, from old tills with little local storage to staff who have never used offline mode. A planned day of live
+    trading in offline mode at a spread of stores shows how the tills, card approvals, queues and staff actually cope, and
+    how the queued sales reconcile afterwards, which is the evidence closest to a real outage.
+  why_not:
+    A: Tabletops check that managers know the procedure, which matters, but talking it through does not show whether each
+      store's tills hold enough sales or whether staff can run the queues at normal volume.
+    C: A week of live trading at one store tests duration well, but a single store cannot show how older tills, other
+      network setups or thinner staffing elsewhere would cope, which is where stores differ.
+    D: Lab tests show the offline software works as designed, but lab tills do not reflect the range of till ages, network
+      setups and staffing across the stores.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

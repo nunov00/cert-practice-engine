@@ -1,0 +1,34 @@
+id: cissp-d8-8.1-0013
+subdomain: '8.1'
+difficulty: medium
+stem: Business staff at an insurer have built about 300 apps on the company's low-code platform and add some 40 a month,
+  most using only their own team's data. One app, published as a public web form, exposed customers' claim details. The
+  insurer has a two-person application security team. Which change BEST brings these apps into a secure development life
+  cycle?
+options:
+  A: A design review by the application security team before each app is first shared
+  B: Platform policies that sort apps by data and audience, requiring review for the riskiest
+  C: Platform policies that block public sharing for each app until security approves it
+  D: A review by the application security team of each app its builder declares sensitive
+answer: B
+explanation:
+  why_correct: Most of these apps carry little risk, and a few, like the public form, carry a lot. Policies enforced by the
+    platform, such as which data connectors and sharing options an app may use, place each app in a tier as it is built, so
+    apps touching customer data or open to the public cannot go live without review while team-only apps move freely. That
+    puts security into the way apps are built and keeps the small team's reviews for the apps that need them.
+  why_not:
+    A: A review before sharing is how professionally built apps are gated, but two people cannot review 40 apps a month,
+      so builders would wait for weeks or find ways around the review.
+    C: Gating public sharing would have stopped this app, but it ignores the data an app uses, so internal apps that pull
+      customer data go live unreviewed, while harmless public forms queue for the two reviewers.
+    D: Focusing reviews on sensitive apps is the right idea, but it rests on each builder's own declaration, and a builder
+      who does not see that a public form handling claims is sensitive publishes it unreviewed.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: obvious

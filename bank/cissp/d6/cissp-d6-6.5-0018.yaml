@@ -1,0 +1,34 @@
+id: cissp-d6-6.5-0018
+subdomain: '6.5'
+difficulty: medium
+stem: A logistics firm's cloud policy requires customer data to stay in two approved regions, encrypted with keys the firm
+  manages, with activity logged to the firm's own SIEM. For the yearly audit, the cloud team offers its provider's compliance
+  dashboard, which scores the tenant at 94% against the provider's security benchmark. Which evidence should the auditor
+  rely on to conclude whether the tenant meets the firm's policy?
+options:
+  A: The dashboard's score, after confirming the benchmark it uses and the date of the scan
+  B: Settings extracted from the tenant by the auditor, tested against each policy requirement
+  C: A sample of the dashboard's passed checks, re-performed against the tenant's settings
+  D: The provider's SOC 2 report, including its controls over the dashboard's checks
+answer: B
+explanation:
+  why_correct: The audit criteria are the firm's own policy, and its requirements, approved regions, firm-managed keys and
+    logging to the firm's SIEM, are choices a general provider benchmark does not test. Extracting the configuration directly,
+    under the auditor's control, and testing it against each policy requirement gives evidence on the criteria that matter,
+    whatever the benchmark happens to cover.
+  why_not:
+    A: Confirming what the score measures is a sensible check on any tool output, but the score still measures the provider's
+      benchmark, not the firm's policy, so a high figure says little about regions, key ownership or where logs go.
+    C: Re-performing a sample of checks shows the dashboard reports accurately, which matters if it is relied on, but it
+      validates the benchmark's checks, and the firm's own requirements are not among them.
+    D: The provider's report gives assurance that its tooling works as described, but it says nothing about how the firm has
+      configured its own tenant against its own policy.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

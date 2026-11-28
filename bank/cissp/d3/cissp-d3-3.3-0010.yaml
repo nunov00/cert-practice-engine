@@ -1,0 +1,33 @@
+id: cissp-d3-3.3-0010
+subdomain: '3.3'
+difficulty: medium
+stem: A city library is replacing its 80 public PCs, which visitors book for an hour at a time and use under one shared guest
+  sign-in for browsing, forms and printing. The security requirement for the new PCs is that nothing a visitor leaves behind,
+  whether saved files, browser add-ons or changed settings, can carry over to the next visitor. Which control BEST meets this
+  requirement?
+options:
+  A: Standard user rights for the guest sign-in, with no administrator access to the PC
+  B: Application allowlisting on each PC, so that only approved programs can run
+  C: A sign-out script that clears browser history, downloads and saved passwords
+  D: A reset of each PC to a read-only master image whenever a visitor signs out
+answer: D
+explanation:
+  why_correct: The requirement covers anything a visitor can change, so the control has to undo every change rather than
+    block or clean up particular kinds. Restoring a read-only master image at each sign-out returns the PC to the same known
+    state for every visitor, so files, add-ons and settings from one session cannot reach the next, whatever form they take.
+  why_not:
+    A: Standard rights stop visitors changing the system itself, but the shared guest profile stays writable, and browser
+      add-ons, settings and saved files live in that profile, so they reach the next visitor.
+    B: Allowlisting stops unapproved programs running, but a browser add-on runs inside an approved browser, and saved files
+      and changed settings are not programs at all, so they carry over.
+    C: A clean-up script removes the items it was written for, but add-ons, changed settings and files saved outside the
+      download folder are left behind for the next visitor.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

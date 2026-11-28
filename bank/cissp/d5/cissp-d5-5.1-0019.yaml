@@ -1,0 +1,34 @@
+id: cissp-d5-5.1-0019
+subdomain: '5.1'
+difficulty: medium
+stem: A construction firm switched on an AI assistant that answers staff questions from any document the asking user can open.
+  Within days, staff saw salary figures and draft redundancy lists in its answers. The files sit on HR and finance sites created
+  years ago, when new sites were shared with the whole company by default. Which change BEST addresses this?
+options:
+  A: Move the HR and finance files to new sites shared only with those teams
+  B: Narrow company-wide sharing on sites that hold restricted data, found by a scan
+  C: Filter the assistant's answers for salary, redundancy and other restricted terms
+  D: Log the assistant's questions and answers, alerting HR when restricted content appears
+answer: B
+explanation:
+  why_correct: The assistant shows each user only what that user can already open, so it exposed an access problem rather
+    than creating one. Any member of staff could have found these files through search or a link for years. Narrowing the
+    sharing at the source closes every route to them, the assistant included, and scanning every site finds the other old
+    sites made under the same default.
+  why_not:
+    A: Moving the reported files to restricted sites fixes access to them at the source, but only for the files staff happened
+      to notice. Other sites created under the same default, and any restricted data on them, stay open to the whole company
+      and to the assistant.
+    C: Term filters catch some answers, but restricted content is worded in many ways, and the files themselves stay open to
+      the whole company.
+    D: Logging and alerts show who saw restricted content, but only after it has been shown, and the files remain open to
+      everyone.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

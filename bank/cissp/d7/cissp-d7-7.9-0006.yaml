@@ -1,0 +1,34 @@
+id: cissp-d7-7.9-0006
+subdomain: '7.9'
+difficulty: hard
+stem: A media company's change board approves about 300 changes a week from short summaries that requesters write, each
+  marked with the requester's view of its security impact. One load-balancer change, summarised as a routine pool update
+  and marked as having none, also added a listener that made an internal admin portal reachable from the internet. Only
+  the attached configuration showed the listener. Which change BEST addresses this?
+options:
+  A: Route each change to network edge or identity components to a security reviewer
+  B: Add a security architect to the change board as a voting member at each meeting
+  C: Scan the internet-facing estate daily and alert on any newly exposed service
+  D: Make the security-impact question mandatory, with requesters picking set categories
+answer: A
+explanation:
+  why_correct: The risk sat in technical detail that neither the requester's summary nor the requester's own impact rating
+    reflected, so any check that works from what the requester wrote will miss it. Classifying changes by the components they
+    touch, and sending those affecting the network edge or identity to a security reviewer who reads the configuration before
+    the board meets, puts expert eyes on the detail where exposure arises, while other changes flow as before.
+  why_not:
+    B: A security member on the board is a common fix, but the board works from the requesters' summaries, and this summary
+      described a routine update, so the architect would see nothing more than the rest of the board did.
+    C: Daily external scans are a useful safety net, but they find an exposure only after the change is live, and the
+      change process is meant to stop it before then.
+    D: A structured, mandatory question improves the form, but it still asks the requester to judge impact, and a requester
+      who saw this change as a routine pool update would answer the same way.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

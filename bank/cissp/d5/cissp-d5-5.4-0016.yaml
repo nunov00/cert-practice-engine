@@ -1,0 +1,32 @@
+id: cissp-d5-5.4-0016
+subdomain: '5.4'
+difficulty: hard
+stem: A city council's purchasing system lets each budget holder approve orders of up to 10,000 alone, while larger orders need
+  a director. Over five weeks one budget holder approved 14 orders, each just under 10,000, for a roofing job the contractor
+  had quoted at 135,000. Which authorization rule BEST prevents a repeat?
+options:
+  A: Director approval once a holder's quarterly total with that vendor would pass 10,000
+  B: Director approval for any order whose value falls within 10% of the solo limit
+  C: A second budget holder's approval on each order, whatever its value
+  D: Director approval for a holder's fourth order to the same vendor within seven days
+answer: A
+explanation:
+  why_correct: The current rule judges each order on its own, so splitting the job kept every order under the limit. A rule
+    that looks at the holder's running total with the vendor over a period brings that context into each decision, so the
+    order that takes the total past 10,000 goes to a director however the job is split or spaced.
+  why_not:
+    B: Catching orders just under the limit stops this exact pattern, but the rule still judges each order alone, so the job
+      could be split into orders of 8,000 that each pass without a director.
+    C: A second approver adds a check, but each order still arrives on its own, looking like a normal order under the limit,
+      so nothing shows the approver that it is one slice of a larger job.
+    D: A frequency rule does look across orders, but it counts orders rather than value. A holder who spaces the orders
+      out, three a week or fewer, never trips it, however large the total grows.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

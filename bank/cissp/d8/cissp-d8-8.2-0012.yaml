@@ -1,0 +1,33 @@
+id: cissp-d8-8.2-0012
+subdomain: '8.2'
+difficulty: medium
+stem: An open-source project's CI workflow runs whenever an issue is opened, inserting the issue's title directly into a shell
+  command that applies labels. The workflow holds a token that can push code and a secret used to publish documentation. An
+  outsider opened an issue whose title held commands that sent both credentials to his server. Which change BEST prevents
+  a repeat?
+options:
+  A: Cut the workflow's token to labelling rights, and move the publishing secret to another workflow
+  B: Require a maintainer to approve workflow runs started by people outside the project
+  C: Pin each third-party action that the workflow uses to a full commit hash instead of a tag
+  D: Pass the title to the shell step as an environment variable that the script quotes
+answer: D
+explanation:
+  why_correct: The flaw is command injection, where untrusted text becomes part of a shell command. Passing the title as data,
+    through an environment variable that the script quotes, means the shell treats it as text and does not run it, whatever
+    an issue's title says. That removes the cause in this workflow, and narrower token rights remain sensible defence in depth.
+  why_not:
+    A: Narrower rights and a separate secret reduce what a run can reach, but the attacker's commands would still run in the
+      workflow, able to use whatever rights remain, mislabel issues or tamper with shared caches.
+    B: Approval gates for outside contributors suit workflows that pull requests trigger, where a run executes their code,
+      but this workflow runs on issue events, which such gates do not hold back, and the injected title would still run.
+    C: Pinning protects against a third-party action being changed, but the commands came through the project's own step,
+      which would still run the title as code.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,34 @@
+id: cissp-d2-2.4-0011
+subdomain: '2.4'
+difficulty: medium
+stem: A courier firm is fitting cameras to its 900 vans to defend accident claims. The cameras film the road ahead, including
+  pedestrians and other drivers, and insurers want clear footage of the minute around a collision. Drivers must log any incident,
+  however minor, before their shift of up to ten hours ends, and the firm's insurer handles claims only on logged incidents.
+  Which recording design BEST fits the data lifecycle?
+options:
+  A: Continuous recording uploaded each night, kept for 30 days for claims, then deleted
+  B: A 12-hour loop in the camera, with clips kept for each incident a driver logs
+  C: Continuous recording uploaded each night, with faces and plates blurred before storage
+  D: Recording while the van is moving, uploaded each night and kept for seven days
+answer: B
+explanation:
+  why_correct: The purpose needs footage of a few moments around each incident, and every incident that can lead to a claim
+    is logged within a shift that ends before a 12-hour loop overwrites itself. Keeping the clip for each logged incident
+    and letting the rest overwrite in the camera means footage of the thousands of bystanders filmed each day is never uploaded
+    or stored, while the clips insurers want are kept in full.
+  why_not:
+    A: Thirty days of footage is a common fleet choice because claims are often reported late, but here claims are handled
+      only on incidents logged within the shift, so the weeks of film of passers-by that it collects serve no claim.
+    C: Blurring reduces what stored footage reveals about bystanders, but it still uploads everything, and blurred faces and
+      plates of other road users make the footage less useful as the clear evidence insurers want.
+    D: Recording only on the move trims parked hours, but most of the footage is still routine driving past the public, uploaded
+      and kept for a week although only the moments around a collision serve the purpose.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: cissp-d2-2.6-0010
+subdomain: '2.6'
+difficulty: medium
+stem: A public health agency will let university researchers train predictive models on ten years of patient records, including
+  rare conditions with only a handful of patients each. The work needs record-level data, and the results will be published
+  as models and summary statistics. The ethics board requires that no patient can be identified from anything the researchers
+  take away. Which control BEST fits?
+options:
+  A: A research environment hosted by the agency, releasing only outputs that pass disclosure checks
+  B: A k-anonymised extract, with ages and postcodes generalised until each record matches four others
+  C: A pseudonymised extract sent to the university under an agreement that bans re-identification
+  D: A synthetic dataset generated from the records and released to the university for model training
+answer: A
+explanation:
+  why_correct: Researchers can work with record-level data inside an environment the agency controls, where they can analyse
+    records but not export them. Checking each output before release, for small counts and for models that could reveal individuals,
+    ensures that what leaves cannot identify a patient, while the rare conditions stay intact for the research.
+  why_not:
+    B: k-anonymity suits releasing data, but patients with rare conditions are so few that generalising either suppresses
+      them, losing the cases the study needs, or leaves them unique, and the extract still leaves the agency.
+    C: A data-sharing agreement gives legal recourse, but pseudonymised records of rare conditions are easy to re-identify,
+      and once the extract is at the university the agency relies on the agreement alone.
+    D: Synthetic data can lower the risk for exploratory work, but generators either smooth away rare patients, weakening
+      models of those conditions, or reproduce them closely enough to identify them.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious
