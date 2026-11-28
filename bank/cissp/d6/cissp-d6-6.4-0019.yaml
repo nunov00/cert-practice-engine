@@ -1,0 +1,34 @@
+id: cissp-d6-6.4-0019
+subdomain: '6.4'
+difficulty: medium
+stem: A penetration test of a utility's field-service app again finds that its API accepts session tokens for 30 days. Two
+  years ago the asset owner accepted this risk, when the app showed only work orders. A release since then added customers'
+  account and payment details to the app. The acceptance record stays valid until next year. How should the report present
+  the finding?
+options:
+  A: As accepted risk, in an appendix listing the acceptance record and its expiry date
+  B: As a rated finding at the severity accepted two years ago, citing the acceptance
+  C: As a rated finding at today's severity, citing the acceptance record
+  D: As accepted risk in the main findings, recommending that the owner review it early
+answer: C
+explanation:
+  why_correct: A risk acceptance holds only for the risk the owner was shown. Long-lived tokens on an app that now holds
+    payment details are a larger risk than the one accepted two years ago, so the finding should be rated as it stands today.
+    Citing the acceptance keeps the record honest about what was decided, and the higher rating beside it tells the owner
+    that the old decision no longer covers this risk and a new one is needed.
+  why_not:
+    A: Listing accepted risks in an appendix is normal while an acceptance still fits the facts, but this one was made for
+      an app without payment data, so filing it there presents a changed risk as already decided.
+    B: Keeping the rating the owner accepted stays consistent with the record, but that rating described an app showing only
+      work orders, so it understates a flaw that now exposes payment details.
+    D: Keeping it visible and asking for an early review is closer, but labelling it accepted still tells readers that
+      the current risk has an owner's decision behind it, which it does not.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

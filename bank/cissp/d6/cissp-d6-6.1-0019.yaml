@@ -1,0 +1,34 @@
+id: cissp-d6-6.1-0019
+subdomain: '6.1'
+difficulty: hard
+stem: A regional card processor's board must tell its regulator whether the criminal groups now targeting card processors in
+  the region could reach their usual goal, raising card limits to cash out at ATMs. The processor's yearly red-team test starts
+  from the internet and uses the testing firm's standard scenarios. Which test design BEST answers the regulator?
+options:
+  A: A red-team test following an intelligence report on the sector's attackers from entry to their goal
+  B: A red-team test by a different respected firm, run from the internet with its own standard scenarios
+  C: A purple-team exercise running the techniques reported in recent attacks on regional processors
+  D: An assumed-breach test from a card operations workstation, aiming to change card limits
+answer: A
+explanation:
+  why_correct: The question is about specific adversaries, so the test has to behave like them. In threat-intelligence-led
+    red teaming, the approach of frameworks such as TIBER-EU and CBEST, an intelligence provider profiles the groups that
+    target the firm and its sector, and the red team builds its scenarios from that profile, from their usual ways in, through
+    their techniques, to their goal. The result then says whether those groups, rather than testers in general, could
+    succeed against this processor.
+  why_not:
+    B: A fresh firm brings new eyes, which helps when a long-running test has gone stale, but its standard scenarios reflect
+      its own playbook, not how these groups work, so the result still does not answer the question asked.
+    C: Running the reported techniques with defenders alongside is a good way to tune detection, but it checks techniques one
+      at a time in a cooperative setting, not whether an attacker could chain them to the goal unseen.
+    D: Starting inside and aiming at card limits tests the goal directly, but it skips how these groups get in, often the
+      step that decides whether they succeed, and uses the testers' methods rather than the groups'.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

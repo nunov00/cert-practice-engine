@@ -1,0 +1,35 @@
+id: cissp-d1-1.4-0009
+subdomain: '1.4'
+difficulty: medium
+stem: A US manufacturer is ordered by a US court to produce, within 60 days, the email of five managers at its French subsidiary
+  for a contract dispute. The mailboxes also hold many messages about staff and customers unrelated to the dispute, and French
+  counsel warns that sending them as they are would breach GDPR. What should the company do?
+options:
+  A: Transfer the five mailboxes under the group's standard contractual clauses, then review them in the US
+  B: Ask the court to obtain the email through a Hague Evidence Convention request to France
+  C: Pseudonymise each name in the five mailboxes in France, then transfer them in full to US counsel
+  D: Review and filter the mailboxes in France, then send the relevant messages under a protective order
+answer: D
+explanation:
+  why_correct: GDPR allows personal data to be used to establish or defend legal claims, but a transfer must be limited to
+    what that purpose needs. Reviewing in France, so that unrelated staff and customer messages never leave, and sending only
+    the relevant messages, redacted where that helps and covered by a court protective order that limits their use, lets the
+    company meet the 60-day order while keeping the transfer necessary and proportionate. Counsel should record the transfer
+    basis, typically the derogation for legal claims.
+  why_not:
+    A: Standard contractual clauses are a valid route for transfers within a group, but a transfer tool does not make an excessive
+      transfer lawful. Whole mailboxes full of unrelated personal data would still breach data minimisation.
+    B: The Hague Convention is a recognised route between the two countries, but requests take many months and US courts are
+      not bound to use it, so the 60-day order would stand while the request ran. Article 48 does not bar the company from relying on the
+      legal-claims derogation for a minimised, documented transfer, which is what French counsel can support here.
+    C: Pseudonymising names lowers the risk, but the data is still personal data, all the unrelated messages still leave France,
+      and the court may need the names of the people involved in the dispute.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

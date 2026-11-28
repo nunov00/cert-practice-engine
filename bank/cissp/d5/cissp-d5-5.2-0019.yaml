@@ -1,0 +1,34 @@
+id: cissp-d5-5.2-0019
+subdomain: '5.2'
+difficulty: medium
+stem: A hospital trust's 12,000 staff sign in with a password and an authenticator app. Staff who replace their phones call the
+  IT service desk, which resets their MFA after sending a code to the mobile number in HR records. Attackers holding phished
+  passwords first moved several clinicians' numbers to their own SIMs, then had their MFA reset this way. All clinicians work
+  shifts on site under a ward manager. Which change BEST closes this gap?
+options:
+  A: A callback to the HR-held mobile number, in place of the code sent by text
+  B: Extra questions drawn from HR records, such as start date and staff number
+  C: A reset approved in person by the caller's ward manager, who checks their ID
+  D: A video call in which the service desk compares the caller with their staff ID photo
+answer: C
+explanation:
+  why_correct: Resetting MFA re-establishes an identity, so it must rest on something the attackers do not control. They control
+    the phone number and the password. A ward manager who sees the clinician on shift and checks their staff ID verifies the
+    person directly, and because every clinician works on site the check adds little delay.
+  why_not:
+    A: A callback is the usual safeguard against a caller lying about who they are, but it goes to the same number the attackers
+      had already moved to their own SIM, so they answer it.
+    B: Questions from HR records add a step, but details such as start dates and staff numbers are often found on social media,
+      in breached data or on old payslips, so a prepared attacker can answer them.
+    D: A video check adds a face to the process, but here it is a comparison against an ID photo alone, often years old, by
+      service desk staff who do not know the caller. Without liveness checks or someone who knows the person, a look-alike
+      or face-swapping software can fool it.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

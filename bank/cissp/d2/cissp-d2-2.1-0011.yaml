@@ -1,0 +1,33 @@
+id: cissp-d2-2.1-0011
+subdomain: '2.1'
+difficulty: medium
+stem: A bank classifies each system by the most sensitive data it stores. Its deployment pipeline's only business data is
+  source code, rated Internal, but it also holds the credentials it uses to deploy releases to the payment systems, which are rated Restricted.
+  Any developer can edit the pipeline's jobs. How should the pipeline be classified?
+options:
+  A: Internal, the rating of the source code that the pipeline stores
+  B: Internal, with its deploy credentials rated Restricted and kept in a vault
+  C: Confidential, as its code reveals how the payment systems work
+  D: Restricted, the rating of the payment systems that it can change
+answer: D
+explanation:
+  why_correct: A system that can change Restricted systems carries their impact, because compromising it compromises them.
+    Whoever controls the pipeline's jobs can ship altered code to the payment systems, so the pipeline needs Restricted protection,
+    including over who may edit its jobs, even though the data it stores is only Internal.
+  why_not:
+    A: The bank's own rule points higher, because the deploy credentials are stored data and their sensitivity is that of
+      the Restricted systems they unlock. Rating the pipeline Internal from its source code alone would leave the right to
+      edit jobs as open as it is now.
+    B: Vaulting the credentials is good practice, but a job that any developer can edit can still use them to deploy whatever
+      it builds, so protecting the secret alone leaves the path to the payment systems open.
+    C: Source code can reveal weaknesses, which may justify a higher label for the code itself, but that misses the main impact,
+      which is that the pipeline can alter the payment systems.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

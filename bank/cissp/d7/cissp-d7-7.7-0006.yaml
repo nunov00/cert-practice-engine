@@ -1,0 +1,32 @@
+id: cissp-d7-7.7-0006
+subdomain: '7.7'
+difficulty: medium
+stem: During an intrusion at a logistics firm, attackers with local administrator rights placed their tools in a folder that
+  the EDR agent excludes from scanning, an exclusion added because scanning there made the backup agent's nightly jobs fail.
+  They ran the tools from that folder unseen. Which change BEST closes this gap?
+options:
+  A: Remove the folder exclusion, and give the backup jobs a longer window to finish
+  B: Replace the folder exclusion with one for the backup agent's signed process alone
+  C: Alert on any new executable written to the excluded folder, sent to the SOC queue
+  D: Restrict write access to the excluded folder to the backup agent's service account
+answer: B
+explanation:
+  why_correct: A folder exclusion blinds the agent to anything placed or run there, whoever put it there. Excluding only the
+    backup agent's own process, identified by its path and signature, keeps the backup working while every other program,
+    including attacker tools dropped in that folder, is still scanned and watched.
+  why_not:
+    A: Removing the exclusion closes the blind spot, but the jobs failed because of scanning, not lack of time, so a longer
+      window is likely to bring back the failures and pressure to restore the exclusion.
+    C: An alert on new executables gives some warning, but it is detective, the tools still run unscanned, and attackers can
+      use scripts or renamed files the rule does not cover.
+    D: Tighter permissions are sound hygiene, but these attackers already held local administrator rights, which let them
+      change the folder's permissions or write to it anyway.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

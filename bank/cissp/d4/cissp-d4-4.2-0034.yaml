@@ -1,0 +1,34 @@
+id: cissp-d4-4.2-0034
+subdomain: '4.2'
+difficulty: medium
+stem: A ferry operator's 14 island offices issue tickets from the head-office booking system, reached over a VPN that each
+  office's single firewall runs, and card terminals use their own end-to-end encryption. Each island gets one boat a day. Ticket
+  sales must resume within three hours of a firewall hardware failure, and office staff can follow instructions by phone.
+  Which arrangement BEST meets this?
+options:
+  A: A preconfigured spare firewall kept in each office, swapped in under phone guidance
+  B: A two-hour on-site hardware replacement contract with the firewall vendor
+  C: A cellular router in each office that carries card payments when the firewall fails
+  D: A VPN client on each ticket PC, connecting over the internet line if the firewall fails
+answer: A
+explanation:
+  why_correct: The binding constraint is getting hardware to an island within three hours when only one boat a day arrives.
+    A spare already in the office, loaded with that office's configuration, removes the journey. Staff can swap it by moving
+    labelled cables while an engineer guides them by phone, so the VPN, the booking system and the office's normal filtering
+    all return well inside the target.
+  why_not:
+    B: A two-hour on-site contract is the usual answer on the mainland, but neither the vendor's engineer nor the part can
+      reach an island before the next boat, which may be a day away.
+    C: Encrypted card terminals can take payments over a cellular link, but tickets are issued from the head-office booking
+      system through the VPN, which runs on the failed firewall, so ticket sales still stop.
+    D: A VPN client on each PC restores access to the booking system, but the ticket PCs then sit directly on the internet
+      line with no firewall in front of them until a replacement arrives by boat, possibly a day or more.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

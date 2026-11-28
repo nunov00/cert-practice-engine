@@ -1,0 +1,33 @@
+id: cissp-d3-3.3-0009
+subdomain: '3.3'
+difficulty: hard
+stem: A chemical plant's safety controllers shut down a reactor when pressure runs high. Their logic changes about twice a year,
+  during planned shutdowns, with engineers at the controllers. A security review, citing an attack elsewhere in which intruders
+  reprogrammed safety controllers from a hijacked engineering workstation, requires that the same attack cannot succeed here.
+  Which control BEST meets this requirement?
+options:
+  A: The controllers' hardware key switches kept in run mode, turned to program only for shutdown work
+  B: Engineering workstation sign-in through a jump host with MFA and recorded sessions
+  C: An industrial firewall passing logic writes to the controllers only from the engineering workstation
+  D: Hourly comparison of each controller's logic with an approved baseline, alarming on any change
+answer: A
+explanation:
+  why_correct: In run mode a hardware key switch makes the controller refuse logic downloads, whatever arrives over the network,
+    so an intruder controlling the engineering workstation cannot reprogram it. Because logic changes only twice a year with
+    engineers on site, turning the key for that work, with the keys held under control, costs the plant almost nothing.
+  why_not:
+    B: A jump host with MFA makes the workstation harder to reach, but the attack works from a workstation that is already
+      hijacked, and commands sent from it still reach the controllers.
+    C: Limiting logic writes to the engineering workstation is sound segmentation, but in the attack the writes came from
+      that very workstation, which the firewall is set to trust.
+    D: Baseline comparison detects altered logic, but only after the change, and a safety system altered between checks may
+      fail to shut the reactor down at the moment it is needed.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: fail
+  options_only: not_obvious

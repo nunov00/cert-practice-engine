@@ -1,0 +1,37 @@
+id: cissp-d1-1.7-0009
+subdomain: '1.7'
+difficulty: medium
+stem: A wholesaler takes its orders by EDI from 200 retail customers, whose contracts oblige them to resend any order sent
+  in the last 72 hours. Many orders stay open for a week before dispatch. The order owner asks for zero data loss, which would
+  need synchronous replication at three times the current recovery budget. Order processing may be down for 12 hours, and
+  resending takes about an hour. What should the continuity manager recommend?
+options:
+  A: A zero recovery point for orders, met by synchronous replication to a second data centre
+  B: A 15-minute recovery point for orders, met by cheaper asynchronous replication
+  C: A recovery point inside the resend window, with resend requests built into the plan
+  D: A 72-hour recovery point matching the resend window, met by backups at three-day intervals
+answer: C
+explanation:
+  why_correct: A recovery point objective limits the data the business cannot get back, not the data a system happens to lose.
+    Customers must resend any order from the last 72 hours, so backups taken well inside that window recover the older open
+    orders, and a documented step to request resends, and remove duplicates, fills the gap since the last backup. That meets
+    the owner's real need of no lost orders at a fraction of the cost, and the hour of resending fits inside the 12-hour downtime
+    limit.
+  why_not:
+    A: Taking the owner's figure as given is the usual starting point, but it treats zero loss of system data as the requirement,
+      when no order is actually lost if customers resend. It triples the budget for protection the contracts already give.
+    B: Asynchronous replication is a sound middle path when lost data cannot be recovered elsewhere, but here it spends money
+      protecting orders that customers must resend on request, and it still does not give the zero loss the owner asked for.
+    D: Matching the recovery point to the resend window uses the contracts, but it leaves no margin. An outage just before
+      the next backup puts the oldest lost orders at the edge of the window, and any delay in asking customers, or a failed
+      backup, pushes some orders beyond 72 hours, where nobody can resend them. Backups well inside the window keep a safe
+      overlap.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: obvious

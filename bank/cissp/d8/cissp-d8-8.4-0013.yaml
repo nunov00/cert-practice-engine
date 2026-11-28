@@ -1,0 +1,32 @@
+id: cissp-d8-8.4-0013
+subdomain: '8.4'
+difficulty: medium
+stem: A hospital is buying infusion pumps whose control software runs on an embedded operating system, and it plans to use
+  them for ten years. Pumps it bought earlier still work, but their vendor stopped issuing security fixes once the model was
+  withdrawn from sale, four years after launch. Which purchase requirement BEST addresses this?
+options:
+  A: An option to buy extended security support each year once the model is withdrawn from sale
+  B: Security fixes for the software and its components for at least ten years after delivery
+  C: Escrow of the pump software's source code, released to the hospital if the fixes stop
+  D: A software bill of materials with each release, listing its components and their versions
+answer: B
+explanation:
+  why_correct: The hospital's risk is a device it still depends on that no longer receives fixes. Tying the vendor's security
+    support, for the operating system and components as well as its own code, to the pumps' planned service life from delivery
+    closes that gap, and the cost of that support can be weighed in the purchase.
+  why_not:
+    A: Paid extended support is a real fallback, but an option gives no commitment that support will be offered, or at what
+      price, for the ten years the hospital needs, so the earlier gap can recur.
+    C: Escrow protects against a vendor failing, but a hospital cannot safely build, test and certify changes to medical device
+      software, so released source code would not produce fixes.
+    D: A bill of materials shows which components carry known flaws, which helps assess exposure, but it does not oblige anyone
+      to fix them.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,34 @@
+id: cissp-d3-3.7-0009
+subdomain: '3.7'
+difficulty: hard
+stem: A health insurer encrypts every column of its claims database deterministically, so that the schema stays uniform, although
+  its applications look records up only by member number. Testers who obtained a copy of the database grouped the claims by
+  region, matched the most common encrypted diagnosis values in each group to published regional rates of common conditions,
+  and read many members' diagnoses. Which change BEST counters this attack?
+options:
+  A: Deterministic encryption of diagnoses under a separate key for each region
+  B: A keyed hash index for diagnoses, beside values encrypted with a random nonce
+  C: Randomised encryption for diagnoses, leaving member numbers deterministic
+  D: Vault tokens in place of diagnosis codes, one fixed token per code
+answer: C
+explanation:
+  why_correct: Deterministic encryption turns the same diagnosis into the same ciphertext, so counting ciphertexts and matching
+    them to how common each condition is reveals them without touching the key. This is frequency analysis. Randomised encryption,
+    such as AES-GCM with a fresh nonce, makes identical diagnoses look unrelated. Member numbers can stay deterministic for
+    lookups, since their counts show only how many claims each member has made, not what those claims were for.
+  why_not:
+    A: Separate regional keys stop counts being pooled across the whole database, but within each region identical diagnoses
+      still match, and the testers were already matching region by region against regional rates.
+    B: Random encryption of the values helps, but the keyed hash index is itself deterministic, so the same diagnosis always
+      gives the same index entry and the same counts can be matched. Nothing even needs to search by diagnosis.
+    D: Tokens take the real codes out of the database, but with one fixed token per code the tokens repeat exactly as often
+      as the diagnoses, so they can be counted and matched in the same way.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,33 @@
+id: cissp-d6-6.2-0018
+subdomain: '6.2'
+difficulty: medium
+stem: A law firm's email gateway detonates Office attachments in a sandbox, and the vendor says this stops macro malware that
+  no signature yet knows. Before renewing the contract, the CISO wants evidence that the sandbox would block such a file in
+  the firm's own setup. Which test BEST provides it?
+options:
+  A: Send attachments holding the standard antivirus test string from an outside account
+  B: Send known macro malware samples from a public repository to a test mailbox
+  C: Review the gateway's policy to confirm sandboxing is on for each Office file type
+  D: Send a newly written macro document that harmlessly mimics malware, from outside
+answer: D
+explanation:
+  why_correct: The claim is about files that no signature or reputation list knows, so the test file has to be one of those.
+    A document written for the test, whose macro does what malware does, such as launching a script and connecting out to a
+    server the testers control, but causes no harm, has no signature anywhere. If the gateway blocks it, the sandbox's
+    behaviour analysis did the work, and sending it from outside follows the real mail path through the firm's own settings.
+  why_not:
+    A: The standard test string checks that scanning is switched on, but every signature engine recognises it by pattern,
+      so a block says nothing about the sandbox.
+    B: Real samples look like the most realistic test, but samples in public repositories are already known by hash and
+      signature, so the signature engine would likely stop them before the sandbox's verdict mattered.
+    C: Confirming the policy is a sensible first check, but a correct setting is not evidence that the sandbox catches an
+      unknown macro, which is what the vendor claims and the CISO wants shown.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

@@ -1,0 +1,34 @@
+id: cissp-d7-7.6-0006
+subdomain: '7.6'
+difficulty: medium
+stem: Responders at a pharmaceutical company have confirmed that intruders hold a global administrator account in its cloud
+  tenant, which runs its email, chat and calendars, as well as domain administrator rights on-premises. An outside response
+  firm and outside counsel will work with the internal team for several weeks, and regulators will expect a record of decisions.
+  Where should the response team coordinate?
+options:
+  A: In a private channel of the company's chat platform, open only to the named responders
+  B: On the outside response firm's own platform, signing in with responders' company accounts
+  C: On calls between responders' personal mobile phones, with decisions noted in an offline log
+  D: In a separate collaboration tenant with new accounts, used from devices outside the domain
+answer: D
+explanation:
+  why_correct: Intruders with global administrator rights can read any mailbox or channel in the tenant, and domain rights
+    reach any domain-joined device, so the response must run where they have no access. A separate tenant with fresh accounts,
+    used from devices that are not joined to the domain, keeps the plans out of the intruders' sight while still giving the
+    internal team, the outside firm and counsel a shared, controlled space whose contents form the record regulators expect.
+  why_not:
+    A: A private channel limits who sees it among staff, but a global administrator can add themselves or search its content,
+      so the intruders could follow the response as it happens.
+    B: The response firm's platform sits outside the compromised tenant, but signing in with company accounts leaves access
+      in the intruders' hands, since a global administrator can reset those accounts or their MFA and sign in as responders.
+    C: Personal phones avoid the compromised systems and suit a first urgent call, but weeks of work across several firms
+      need shared documents, and notes kept separately by each person make a poor single record.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

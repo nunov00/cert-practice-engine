@@ -1,0 +1,34 @@
+id: cissp-d4-4.3-0032
+subdomain: '4.3'
+difficulty: medium
+stem: A parcel carrier is designing how 8,000 van trackers will report positions to a message broker over the mobile network,
+  each publishing to a topic named after its van, which is where dispatch and the claims team read that van's history. Its
+  insurer accepts that history as evidence of where a van's cargo was. Trackers sit loose in cabs, and the carrier assumes
+  credentials will be pulled from some of them. Which design BEST fits?
+options:
+  A: A certificate per tracker, with the broker rejecting reports that show implausible tracks
+  B: A signing key per tracker, the broker verifying each report's signer and accepting any topic
+  C: A certificate per tracker, each allowed to publish only to the topic of its own van
+  D: A certificate per tracker, with the van number carried in each report's payload
+answer: C
+explanation:
+  why_correct: A van's history is whatever arrives on its topic, so the broker must tie each topic to the one tracker allowed
+    to publish there. A certificate per tracker gives each van its own identity, and an access rule admitting each identity
+    only to its own van's topic means credentials pulled from one tracker can write only that van's history. They can no
+    longer be used to rewrite where any other van's cargo was.
+  why_not:
+    A: Plausibility checks catch crude fakes such as jumps across the country, but a forger posting on another van's topic
+      can send a smooth, believable route, and the broker still accepts any certificate on any topic.
+    B: Signatures prove which tracker produced each report, but the broker accepts a validly signed report on any van's
+      topic, so credentials pulled from one tracker still write into other vans' histories.
+    D: Per-tracker certificates identify each device, but the broker files reports by topic and does not check the van number
+      written in the payload, so a tracker can still post on another van's topic.
+status: draft
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

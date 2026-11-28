@@ -1,0 +1,35 @@
+id: cissp-d3-3.2-0010
+subdomain: '3.2'
+difficulty: hard
+stem: A defence agency's system enforces Bell-LaPadula labels, and all its analysts are cleared for Secret, so analysts on one
+  weapons program can open the Secret reports of every other program. Analysts often serve on more than one program, and they
+  regularly write new reports that draw on earlier ones. How should the system confine each program's information to that
+  program's analysts?
+options:
+  A: An access list on each report, naming the analysts of the program it belongs to
+  B: A role for each program on the report store, granted by security officers to its analysts
+  C: Walls built from each analyst's reading history, closing other programs once one is opened
+  D: A category per program in report labels and analyst clearances, set by security officers
+answer: D
+explanation:
+  why_correct: A Bell-LaPadula label is a level plus a set of categories, and a subject may read an object only if its clearance
+    dominates the label in both. Giving each program a category makes need-to-know part of the mandatory check. Because the
+    star property applies to categories too, an analyst working at a level that includes a program's category can write only to
+    reports that carry that category, so information copied into a new report stays confined. An analyst on two programs holds both
+    categories.
+  why_not:
+    A: Access lists restrict who opens each stored report, but they protect the file rather than the information. An analyst
+      who reads a report can write its content into a new report with a different list, and lists are set report by report.
+    B: Program roles managed by security officers control who opens each program's reports, which is a sound central design,
+      but nothing follows the content when an analyst draws on a report in a new report for another program.
+    C: History-based walls suit conflicts of interest, where what someone has seen decides what they may see next. Here
+      access follows program membership, and analysts who serve on several programs would be shut out of all but the first.
+status: published
+outline_version: '2024-04-15'
+sample: false
+provenance:
+  generated_by: claude
+  run_id: 2026-11-28-daily-cissp
+  checked_by: 2026-11-28-daily-cissp-check
+  check_verdict: pass
+  options_only: not_obvious

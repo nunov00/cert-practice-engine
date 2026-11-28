@@ -171,3 +171,25 @@ held:
   # setting (payroll bureau parallel test, four parallel-test variants as
   # options) and rechecked with cissp-d2-2.4-0008; both passed and were
   # released (11 hard carry 22 non-hard at 30%). No CISSP drafts are held now.
+  # Daily batch 2026-11-28, batch run: passed the independent check, held
+  # because only 6 hard labels survived the strict hard-label check (6 hard
+  # carry 14 non-hard at 30%). cissp-d1-1.7-0009 and cissp-d8-8.1-0013 were
+  # rated obvious from the options: make 1.7's key C concrete like the other
+  # options, and replace 8.1's option A with a second platform-policy near miss
+  # before release. cissp-d5-5.5-0016: say the code is given during the call,
+  # not sent to the mailbox, and fix the line wrap in why_correct.
+  # cissp-d2-2.4-0011 and cissp-d4-4.3-0032 both use vans and an insurer;
+  # vary one setting before releasing both in the same batch.
+  - { id: cissp-d2-2.6-0010, pr: 100 }
+  - { id: cissp-d3-3.1-0010, pr: 100 }
+  - { id: cissp-d5-5.2-0019, pr: 100 }
+  - { id: cissp-d7-7.6-0006, pr: 100 }
+  - { id: cissp-d7-7.7-0006, pr: 100 }
+  - { id: cissp-d6-6.3-0016, pr: 100 }
+  - { id: cissp-d4-4.2-0035, pr: 100 }
+  - { id: cissp-d6-6.5-0018, pr: 100 }
+  - { id: cissp-d2-2.4-0011, pr: 100 }
+  - { id: cissp-d4-4.3-0032, pr: 100 }
+  - { id: cissp-d1-1.7-0009, pr: 100 }
+  - { id: cissp-d8-8.1-0013, pr: 100 }
+  - { id: cissp-d5-5.5-0016, pr: 100 }
